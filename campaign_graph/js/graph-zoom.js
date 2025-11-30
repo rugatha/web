@@ -47,10 +47,10 @@ window.RugathaZoom = (function () {
         maxY = Math.max(maxY,n.y);
       });
 
-      const pad = 40;
+      const pad = 20; // smaller padding so the full graph stays in view
       const w = maxX-minX, h=maxY-minY;
       const scale = Math.max(0.3, Math.min(3,
-        0.9*Math.min(width/(w+pad*2), height/(h+pad*2))
+        0.82*Math.min(width/(w+pad*2), height/(h+pad*2))
       ));
 
       const cx = (minX+maxX)/2;

@@ -3,13 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <title>Rugatha Campaigns</title>
-  <link rel="stylesheet" href="css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Consistent header image */
+    .hero {
+      display: grid;
+      place-items: center;
+      margin: 14px 0 0;
+    }
+    .hero img {
+      width: min(320px, 80vw);
+      border-radius: 0;
+      box-shadow: none;
+      display: block;
+      border: none;
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Rugatha Campaigns</h1>
+  <header class="hero">
+    <a href="https://rugatha.com/rugatha-home/" aria-label="Rugatha home">
+      <img src="../assets/rugatha-hero.jpg" alt="Rugatha title">
+    </a>
+  </header>
 
   <div id="rugatha-graph-plugin">
     <svg id="rugatha-graph-svg"></svg>
