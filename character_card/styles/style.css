@@ -210,4 +210,10 @@ canvas {
   .layout {
     grid-template-columns: 1fr;
   }
+  .preview-panel {
+    order: 1;
+  }
+  .form-panel {
+    order: 2;
+  }
 }
