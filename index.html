@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1a21;
-      --bg-alt: #0f2430;
-      --panel: rgba(255, 255, 255, 0.04);
-      --text: #e9f1f6;
-      --muted: #8aa7b7;
-      --accent: #7be8c6;
-      --accent-2: #8cc8ff;
-      --radius: 16px;
-      --shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+      --bg: #445f56;
+      --card: #60695e;
+      --panel: rgba(19, 28, 32, 0.6);
+      --text: #ecf2ed;
+      --muted: #d1ded6;
+      --accent: #7bdcb5;
+      --accent-soft: rgba(123, 220, 181, 0.18);
+      --radius: 18px;
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
     }
 
     * { box-sizing: border-box; }
@@ -27,96 +27,74 @@
       min-height: 100vh;
       color: var(--text);
       font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at 20% 20%, rgba(123, 232, 198, 0.18), transparent 32%),
-                  radial-gradient(circle at 80% 10%, rgba(140, 200, 255, 0.18), transparent 34%),
-                  linear-gradient(135deg, var(--bg), var(--bg-alt));
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      padding: 32px 18px 54px;
     }
 
-    .shell {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 28px 22px 48px;
+    .shell,
+    .page {
+      width: min(1180px, 100%);
     }
 
     header {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-      align-items: center;
-      padding: 16px 0 12px;
+      place-items: center;
+      margin-bottom: 18px;
     }
 
-    .hero {
-      background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(4px);
+    .hero-link {
+      display: inline-block;
+      text-decoration: none;
+      width: min(320px, 80vw);
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--muted);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 12px;
-    }
-
-    h1 {
-      margin: 12px 0 8px;
-      font-size: clamp(32px, 4vw, 40px);
-      letter-spacing: -0.02em;
-    }
-
-    p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.6;
+    .hero-logo {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
+      gap: 22px;
+      margin: 28px auto 0;
+      justify-content: center;
     }
 
-    .btn {
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    .icon-link {
+      width: 220px;
+      height: 180px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: var(--card);
       color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
       text-decoration: none;
-      font-weight: 700;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 0.01em;
       transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
     }
 
-    .btn.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #071018;
-      border: none;
-      box-shadow: 0 12px 28px rgba(123, 232, 198, 0.26);
-    }
-
-    .btn:hover, .btn:focus-visible {
-      transform: translateY(-2px);
-      border-color: rgba(255, 255, 255, 0.24);
+    .icon-link:hover,
+    .icon-link:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
       outline: none;
     }
 
     .panel {
       margin-top: 26px;
       background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius);
       padding: 18px;
       box-shadow: var(--shadow);
@@ -141,7 +119,7 @@
       padding: 14px;
       border-radius: 14px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(255, 255, 255, 0.03);
+      background: var(--card);
       text-decoration: none;
       color: inherit;
       transition: border-color 120ms ease, transform 120ms ease, background 120ms ease;
@@ -193,71 +171,23 @@
   </style>
 </head>
 <body>
-  <div class="shell">
+  <div class="shell page">
     <header>
-      <div class="hero">
-        <span class="eyebrow">Rugatha Toolkit</span>
-        <h1>One place for campaigns, NPCs, and the graph.</h1>
-        <p>All mini-sites now share a single configuration so you can update campaigns and links in one spot.</p>
-        <div class="actions">
-          <a class="btn primary" href="campaign_graph/index.html">Open Campaign Graph</a>
-          <a class="btn" href="campaigns/index.html">Campaign cards</a>
-          <a class="btn" href="npc/index.html">NPC explorer</a>
-        </div>
-      </div>
-      <div class="panel">
-        <div class="badge">Shared settings</div>
-        <p>Update campaign data once in <code>shared/rugatha.config.js</code>. Both the graph and cards consume it. NPC data stays in <code>npc/data/characters.json</code>.</p>
-        <p class="note" id="timeline-note">Timeline assets were not found; add them beside other tools when ready.</p>
+      <a class="hero-link" href="https://rugatha.com/rugatha-home/" aria-label="Go to Rugatha home">
+        <img class="hero-logo" src="assets/rugatha-hero.jpg" alt="Rugatha title">
+      </a>
+      <div class="actions">
+        <a class="icon-link" href="npc/index.html">NPC</a>
+        <a class="icon-link" href="campaigns/index.html">Campaigns</a>
+        <a class="icon-link" href="campaign_graph/index.html">Campaign Graph</a>
       </div>
     </header>
 
-    <section class="panel">
-      <h2>Tools</h2>
-      <div class="tool-grid">
-        <a class="tool-card" href="campaign_graph/index.html">
-          <div class="badge">Graph</div>
-          <strong>Collapsible D3 campaign hierarchy</strong>
-          <p>Zoom, pan, and expand to explore the Rugatha family of campaigns.</p>
-        </a>
-        <a class="tool-card" href="campaigns/index.html">
-          <div class="badge">Campaigns</div>
-          <strong>Clickable campaign cards</strong>
-          <p>Use the shared settings to update names, dates, images, and links.</p>
-        </a>
-        <a class="tool-card" href="npc/index.html">
-          <div class="badge">NPC</div>
-          <strong>Searchable NPC gallery</strong>
-          <p>Filter by letter or race and jump straight to NPC profiles.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="panel">
-      <h2>Campaigns in config</h2>
-      <div class="campaign-chips" id="campaign-chips"></div>
-    </section>
   </div>
 
   <script src="shared/rugatha.config.js"></script>
   <script>
-    const chips = document.getElementById("campaign-chips");
-    const list = window.RUGATHA_CONFIG && Array.isArray(window.RUGATHA_CONFIG.campaigns)
-      ? window.RUGATHA_CONFIG.campaigns
-      : [];
-
-    if (list.length === 0) {
-      chips.innerHTML = '<span class="note">No campaigns found in shared/rugatha.config.js.</span>';
-    } else {
-      const frag = document.createDocumentFragment();
-      list.forEach((c) => {
-        const chip = document.createElement("span");
-        chip.className = "chip";
-        chip.textContent = c.name;
-        frag.appendChild(chip);
-      });
-      chips.appendChild(frag);
-    }
+    // Shared config remains loaded for downstream pages; no UI here.
   </script>
 </body>
 </html>

@@ -9,6 +9,22 @@ Combined static package that bundles the Rugatha campaign graph, campaign cards,
 - `campaigns/` – campaign cards, now powered by the shared config.
 - `npc/` – NPC gallery (data still lives in `npc/data/characters.json`).
 
+## Campaign graph (campaign_graph/)
+- Interactive, collapsible D3 hierarchy (root → category → campaign) with zoom/pan/fit/home controls and smooth expand/collapse.
+- WordPress-safe: if scripts are blocked, link out instead of embedding.
+- Structure: `index.html`, `css/style.css`, `js/graph-*.js`, `assets/`.
+- Update data in `shared/rugatha.config.js` (graph section); graph reads `CAMPAIGN_GRAPH_DATA` from the shared config.
+
+## Campaign cards (campaigns/)
+- Card grid of campaigns, driven by `shared/rugatha.config.js` (no separate data file needed).
+- Entry point: `campaigns/index.html`; styles in `styles/campaigns.css`; logic in `scripts/app.js`.
+
+## NPC browser (npc/)
+- Pages: `index.html` (main), `npc.html` (trimmed standalone).
+- Features: search, A↔Z sorting, grouping by letter or race (multi-race entries appear in each race), lazy-loaded images, accessible live status.
+- Data source: `npc/data/characters.json` (entries shaped as `{ name, image, url, race }`).
+- No build step; open in a browser or serve statically.
+
 ## Updating content
 1. Edit campaigns or graph nodes in `shared/rugatha.config.js` (names, links, accents, node relationships). Both the graph and cards will pick it up.
 2. NPCs remain in `npc/data/characters.json` (kept separate because the schema differs).
