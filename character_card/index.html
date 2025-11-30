@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rugatha 角色卡製作器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <img src="../assets/Wordpress%20Banner.jpg" alt="Rugatha banner" class="hero-img">
+    </header>
+
+    <main class="layout">
+      <section class="panel form-panel">
+        <h2>角色資訊</h2>
+        <div class="field">
+          <label for="name">姓名</label>
+          <input id="name" type="text" placeholder="Name" value="Adventurer">
+        </div>
+        <div class="field">
+          <label for="race">種族</label>
+          <input id="race" type="text" placeholder="Race" value="Human">
+        </div>
+        <div class="field">
+          <label for="color">主色</label>
+          <div class="color-row">
+            <input id="color" type="text" placeholder="#7bdcb5" value="#7bdcb5">
+            <input id="color-picker" type="color" value="#7bdcb5" aria-label="Color picker">
+          </div>
+          <div class="swatches" aria-label="Preset colors">
+            <button type="button" class="swatch" data-color="#7bdcb5" style="background:#7bdcb5"></button>
+            <button type="button" class="swatch" data-color="#8bc8ff" style="background:#8bc8ff"></button>
+            <button type="button" class="swatch" data-color="#ffd166" style="background:#ffd166"></button>
+            <button type="button" class="swatch" data-color="#c48bff" style="background:#c48bff"></button>
+            <button type="button" class="swatch" data-color="#ff9e9e" style="background:#ff9e9e"></button>
+            <button type="button" class="swatch" data-color="#a7f0ba" style="background:#a7f0ba"></button>
+          </div>
+        </div>
+        <div class="field two">
+          <div>
+            <label for="class1">職業</label>
+            <input id="class1" type="text" placeholder="Class" value="Fighter">
+          </div>
+          <div>
+            <label for="level1">等級</label>
+            <input id="level1" type="number" min="1" max="20" value="3">
+          </div>
+        </div>
+        <div class="field checkbox">
+          <label>
+            <input id="multiclass" type="checkbox">
+            兼職
+          </label>
+        </div>
+        <div class="field two" id="multiclass-row" hidden>
+          <div>
+            <label for="class2">職業 2</label>
+            <input id="class2" type="text" placeholder="Class 2" value="Wizard">
+          </div>
+          <div>
+            <label for="level2">等級</label>
+            <input id="level2" type="number" min="1" max="20" value="2">
+          </div>
+        </div>
+        <div class="field two">
+          <div>
+            <label for="hp">生命值上限</label>
+            <input id="hp" type="number" min="1" max="999" value="20">
+          </div>
+          <div>
+            <label for="ac">護甲等級 (AC)</label>
+            <input id="ac" type="number" min="1" max="30" value="15">
+          </div>
+        </div>
+        <div class="field">
+          <label for="pp">被動觀察</label>
+          <input id="pp" type="number" min="1" max="30" value="12">
+        </div>
+        <fieldset class="field ability-grid">
+          <legend>能力值</legend>
+          <label>STR
+            <select data-ability="str"></select>
+          </label>
+          <label>DEX
+            <select data-ability="dex"></select>
+          </label>
+          <label>CON
+            <select data-ability="con"></select>
+          </label>
+          <label>INT
+            <select data-ability="int"></select>
+          </label>
+          <label>WIS
+            <select data-ability="wis"></select>
+          </label>
+          <label>CHA
+            <select data-ability="cha"></select>
+          </label>
+        </fieldset>
+        <div class="field">
+          <label for="image">角色圖片</label>
+          <input id="image" type="file" accept="image/*">
+        </div>
+        <fieldset class="field range-group">
+          <legend>裁切圖片</legend>
+          <label>縮放
+            <input id="crop-zoom" type="range" min="1" max="3" step="0.05" value="1">
+          </label>
+          <label>水平
+            <input id="crop-x" type="range" min="0" max="1" step="0.01" value="0.5">
+          </label>
+          <label>垂直
+            <input id="crop-y" type="range" min="0" max="1" step="0.01" value="0.5">
+          </label>
+        </fieldset>
+        <div class="actions">
+          <button id="download" class="btn primary" type="button">下載 PNG</button>
+          <button id="reset" class="btn ghost" type="button">重設</button>
+        </div>
+      </section>
+
+      <section class="panel preview-panel">
+        <h2>預覽</h2>
+        <canvas id="card-canvas" width="1200" height="700" aria-label="角色卡預覽"></canvas>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
