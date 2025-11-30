@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rugatha Campaigns</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+  <h1>Rugatha Campaigns</h1>
+
+  <div id="rugatha-graph-plugin">
+    <svg id="rugatha-graph-svg"></svg>
+  </div>
+
+  <div id="graph-controls">
+    <button id="btn-zoom-in"  class="graph-btn" title="Zoom In">+</button>
+    <button id="btn-zoom-out" class="graph-btn" title="Zoom Out">−</button>
+    <button id="btn-fit"      class="graph-btn" title="Fit View">🔍</button>
+    <button id="btn-home"     class="graph-btn" title="Home">🏠</button>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../shared/rugatha.config.js"></script>
+
+  <script src="js/graph-data.js"></script>
+  <script src="js/graph-layout.js"></script>
+  <script src="js/graph-render.js"></script>
+  <script src="js/graph-zoom.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

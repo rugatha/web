@@ -1,0 +1,1280 @@
+[
+  {
+    "name": "Ada",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/ada.jpeg",
+    "url": "https://rugatha.com/2023/07/16/ada/",
+    "race": "Human"
+  },
+  {
+    "name": "Addie Applewood",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/addie-applewood-1.png",
+    "url": "https://rugatha.com/2025/01/12/addie-applewood/",
+    "race": "Gnome"
+  },
+  {
+    "name": "Adrian Paulson",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/adrian-paulson.jpeg",
+    "url": "https://rugatha.com/2021/06/20/adrian-paulson/",
+    "race": "Human"
+  },
+  {
+    "name": "Alex",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/alex.png",
+    "url": "https://rugatha.com/2023/09/18/alex/",
+    "race": "Human"
+  },
+  {
+    "name": "Alfenor",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/alfenor.jpeg",
+    "url": "https://rugatha.com/2022/10/23/alfenor/",
+    "race": "God"
+  },
+  {
+    "name": "Alfie Fuller",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/alfie-fuller.jpeg",
+    "url": "https://rugatha.com/2021/05/20/alfie-fuller/",
+    "race": "Human"
+  },
+  {
+    "name": "Andrea Day",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/andrea-day.jpeg",
+    "url": "https://rugatha.com/2023/08/20/andrea-day/",
+    "race": "Human"
+  },
+  {
+    "name": "Andronikos Palaiologos",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/andronikos-papailogos.jpeg",
+    "url": "https://rugatha.com/2023/08/20/andronikos-palaiologos/",
+    "race": "Human"
+  },
+  {
+    "name": "Anna",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/anna.png",
+    "url": "https://rugatha.com/2022/09/18/anna/",
+    "race": "Elf, God"
+  },
+  {
+    "name": "Anya LaVinci",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/anya-lavinci.png",
+    "url": "https://rugatha.com/2022/04/25/anya-lavinci/",
+    "race": "Human"
+  },
+  {
+    "name": "Augustin McFly",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/augustin-mcfly.jpeg",
+    "url": "https://rugatha.com/2021/06/20/augustin-mcfly/",
+    "race": "Human"
+  },
+  {
+    "name": "Bamu Torrence",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/bamu-torrence.png",
+    "url": "https://rugatha.com/2021/05/30/bamu-torrence/",
+    "race": "Human"
+  },
+  {
+    "name": "Bartosz Richmond",
+    "image": "https://rugatha.com/wp-content/uploads/2024/03/bartosz-richmond.jpg",
+    "url": "https://rugatha.com/2024/03/17/bartosz-richmond/",
+    "race": "Human"
+  },
+  {
+    "name": "Basuu",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/basuu.png",
+    "url": "https://rugatha.com/2022/03/06/basuu/",
+    "race": "Elf"
+  },
+  {
+    "name": "Beau",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/beau.jpeg",
+    "url": "https://rugatha.com/2022/07/11/beau/",
+    "race": "Human"
+  },
+  {
+    "name": "Beatrice Eden",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/beatrice-eden.png",
+    "url": "https://rugatha.com/2022/03/06/beatrice/",
+    "race": "Human"
+  },
+  {
+    "name": "King Benevol II",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/king-benevol-ii.jpeg",
+    "url": "https://rugatha.com/2021/12/27/king-benevol-ii/",
+    "race": "Human"
+  },
+  {
+    "name": "Benny Cozlothramuda",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/benny-cozlothramuda.jpeg",
+    "url": "https://rugatha.com/2021/07/11/benny-cozlothramuda/",
+    "race": "Dwarf"
+  },
+  {
+    "name": "Bernard Norm",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/bernard-norm.jpeg",
+    "url": "https://rugatha.com/2022/11/13/bernard-norm/",
+    "race": "Human"
+  },
+  {
+    "name": "BoBo-C/BoBo-Z",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/bobo-cbobo-z.jpeg",
+    "url": "https://rugatha.com/2023/01/30/bobo-c-bobo-z/",
+    "race": "Construct"
+  },
+  {
+    "name": "BoBo-V/BoBo-W",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/bobo-vbobo-w.jpeg",
+    "url": "https://rugatha.com/2023/01/30/bobo-v-bobo-w/",
+    "race": "Construct"
+  },
+  {
+    "name": "Bol-Bol/BoBo-OMEGA",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/bol-bolbobo-omega.jpeg",
+    "url": "https://rugatha.com/2023/01/30/bol-bol-bobo-omega/",
+    "race": "Dwarf, Construct"
+  },
+  {
+    "name": "Brock",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/brock-1.jpeg",
+    "url": "https://rugatha.com/2022/03/06/brock/",
+    "race": "Half Orc"
+  },
+  {
+    "name": "Bruce Dunham",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/bruce-dunham.png",
+    "url": "https://rugatha.com/2021/05/23/bruce-dunham/",
+    "race": "Human"
+  },
+  {
+    "name": "Bruce Tallis",
+    "image": "https://rugatha.com/wp-content/uploads/2025/01/bruce-tallis.jpg",
+    "url": "https://rugatha.com/2025/01/08/bruce-tallis/",
+    "race": "Human"
+  },
+  {
+    "name": "Cash Applewood",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/cash-applewood.png",
+    "url": "https://rugatha.com/2025/01/12/cash-applewood/",
+    "race": "Gnome"
+  },
+  {
+    "name": "Cena",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/cena.jpeg",
+    "url": "https://rugatha.com/2021/12/27/cena/",
+    "race": "Human"
+  },
+  {
+    "name": "Dr. Chandra Pyresong",
+    "image": "https://rugatha.com/wp-content/uploads/2023/10/dr.-chandra-pyresong-1.jpeg",
+    "url": "https://rugatha.com/2023/08/20/chandra-pyresong/",
+    "race": "Human"
+  },
+  {
+    "name": "Chi-Chi",
+    "image": "https://rugatha.com/wp-content/uploads/2024/09/chi-chi.jpg",
+    "url": "https://rugatha.com/2024/09/03/chi-chi/",
+    "race": "Human"
+  },
+  {
+    "name": "Child Prodigy",
+    "image": "https://rugatha.com/wp-content/uploads/2025/01/child-prodigy.jpg",
+    "url": "https://rugatha.com/2025/01/08/child-prodigy/",
+    "race": "Human"
+  },
+  {
+    "name": "Clark",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/clark.jpeg",
+    "url": "https://rugatha.com/2022/03/20/clark/",
+    "race": "Human"
+  },
+  {
+    "name": "Clementine Allison",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/clementine-allison.png",
+    "url": "https://rugatha.com/2021/05/23/clementine-allison/",
+    "race": "Human"
+  },
+  {
+    "name": "Connie Cornell",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/connie-cornell.png",
+    "url": "https://rugatha.com/2025/02/24/connie-cornell/",
+    "race": "Gnome"
+  },
+  {
+    "name": "Dr. Crow",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/dr.-crow.jpeg",
+    "url": "https://rugatha.com/2022/03/06/dr-crow/",
+    "race": "Human"
+  },
+  {
+    "name": "Dan",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/dan.jpeg",
+    "url": "https://rugatha.com/2023/04/16/dan/",
+    "race": "Human"
+  },
+  {
+    "name": "Daryl Warren",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/daryl-warren.png",
+    "url": "https://rugatha.com/2021/05/20/daryl-warren/",
+    "race": "Human"
+  },
+  {
+    "name": "Dr. David",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/dr.-david.jpeg",
+    "url": "https://rugatha.com/2022/03/06/dr-david/",
+    "race": "Human"
+  },
+  {
+    "name": "Dennis",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/dennis.jpeg",
+    "url": "https://rugatha.com/2022/11/13/dennis/",
+    "race": "Human"
+  },
+  {
+    "name": "Domneil",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/domneil.png",
+    "url": "https://rugatha.com/2021/08/02/domneil/",
+    "race": "God"
+  },
+  {
+    "name": "Don",
+    "image": "https://rugatha.com/wp-content/uploads/2025/07/don.png",
+    "url": "https://rugatha.com/2025/07/13/don/",
+    "race": "Human"
+  },
+  {
+    "name": "Dosuu",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/dosuu.png",
+    "url": "https://rugatha.com/2022/03/06/dosuu/",
+    "race": "Elf"
+  },
+  {
+    "name": "Eddie",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/eddie.jpeg",
+    "url": "https://rugatha.com/2022/11/22/eddie/",
+    "race": "Human"
+  },
+  {
+    "name": "Edmond",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/edmond.png",
+    "url": "https://rugatha.com/2022/05/02/edmond/",
+    "race": "Elf"
+  },
+  {
+    "name": "Eevie",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/eevie.jpeg",
+    "url": "https://rugatha.com/2022/11/13/eevie/",
+    "race": "Human"
+  },
+  {
+    "name": "Elby / Dr. White",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/elby-dr.-white-1.jpeg",
+    "url": "https://rugatha.com/2022/09/25/dr-white/",
+    "race": "Fey"
+  },
+  {
+    "name": "King Elliot IV",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/king-elliot-iv.jpeg",
+    "url": "https://rugatha.com/2022/09/18/elliot-iv/",
+    "race": "Human"
+  },
+  {
+    "name": "Elly Riversend",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/elly-riversend.png",
+    "url": "https://rugatha.com/2025/01/12/elly-riversend/",
+    "race": "Gnome"
+  },
+  {
+    "name": "Elmond",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/elmond.jpeg",
+    "url": "https://rugatha.com/2023/04/06/elmond/",
+    "race": "Elf"
+  },
+  {
+    "name": "Emerald Gorsen",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/rpg_40_an_darkskin_medieval_masculine_lady_who_works_with_her_2.jpeg",
+    "url": "https://rugatha.com/2021/06/20/emerald-gorsen/",
+    "race": "Human"
+  },
+  {
+    "name": "Emma",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/emma.png",
+    "url": "https://rugatha.com/2021/07/11/emma/",
+    "race": "Human"
+  },
+  {
+    "name": "Enelmor Arylith",
+    "image": "https://rugatha.com/wp-content/uploads/2025/06/enelmor-arylith.png",
+    "url": "https://rugatha.com/2025/06/29/enelmor-arylith/",
+    "race": "Dragonborn"
+  },
+  {
+    "name": "Essis",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/essis.png",
+    "url": "https://rugatha.com/2024/04/18/essis/",
+    "race": "Human"
+  },
+  {
+    "name": "Eva",
+    "image": "https://rugatha.com/wp-content/uploads/2024/09/eva.jpg",
+    "url": "https://rugatha.com/2024/09/08/eva/",
+    "race": "Human"
+  },
+  {
+    "name": "Evil Be-4",
+    "image": "https://rugatha.com/wp-content/uploads/2025/01/evil-be-4.png",
+    "url": "https://rugatha.com/2025/01/12/evil-be-4/",
+    "race": "Gnome"
+  },
+  {
+    "name": "Fallon",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/fallon.jpeg",
+    "url": "https://rugatha.com/2023/04/06/fallon/",
+    "race": "Elf"
+  },
+  {
+    "name": "The Feywild Archmage",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/the-feywild-archmage.jpeg",
+    "url": "https://rugatha.com/2022/10/09/the-feywild-archmage/",
+    "race": "Elf"
+  },
+  {
+    "name": "Fiona",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/fiona.png",
+    "url": "https://rugatha.com/2021/07/11/fiona/",
+    "race": "Human"
+  },
+  {
+    "name": "Mr. Flaerry",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/mr.-flaerry.jpeg",
+    "url": "https://rugatha.com/2021/09/20/syr-flaerry/",
+    "race": "Human"
+  },
+  {
+    "name": "The Fortune Teller",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/the-fortune-teller.jpeg",
+    "url": "https://rugatha.com/2021/12/27/the-fortune-teller/",
+    "race": "Human"
+  },
+  {
+    "name": "Frankie",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/frankie.jpeg",
+    "url": "https://rugatha.com/2022/03/06/frankie/",
+    "race": "Human, Demon"
+  },
+  {
+    "name": "Franz",
+    "image": "https://rugatha.com/wp-content/uploads/2022/04/franz.jpeg",
+    "url": "https://rugatha.com/2022/04/18/franz/",
+    "race": "Human"
+  },
+  {
+    "name": "Freddy",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/freddy.jpeg",
+    "url": "https://rugatha.com/2023/05/18/freddy/",
+    "race": "Human"
+  },
+  {
+    "name": "Frederick Norman",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/frederick-norman.jpeg",
+    "url": "https://rugatha.com/2022/03/06/frederick-norman/",
+    "race": "Human"
+  },
+  {
+    "name": "Garlia",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/garlia.png",
+    "url": "https://rugatha.com/2022/11/22/garlia/",
+    "race": "Human"
+  },
+  {
+    "name": "Gary",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/gary.png",
+    "url": "https://rugatha.com/2021/06/13/gary/",
+    "race": "Wolf"
+  },
+  {
+    "name": "Gary Berners",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/gary-berners.jpeg",
+    "url": "https://rugatha.com/2022/03/07/gary-berners/",
+    "race": "Human"
+  },
+  {
+    "name": "Glen",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/glen.jpeg",
+    "url": "https://rugatha.com/2022/03/13/glen/",
+    "race": "Human"
+  },
+  {
+    "name": "Graham Dawkin",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/graham-dawkin.jpeg",
+    "url": "https://rugatha.com/2021/05/30/graham-dawkin/",
+    "race": "Human"
+  },
+  {
+    "name": "Gregory the Axe",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/gregory-the-axe.jpeg",
+    "url": "https://rugatha.com/2022/04/10/gregory-the-axe/",
+    "race": "Half Orc"
+  },
+  {
+    "name": "Grenland Folsen",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/grenland-folsen.jpeg",
+    "url": "https://rugatha.com/2021/05/23/grenland-folsen/",
+    "race": "Tiefling"
+  },
+  {
+    "name": "Gustavo Norman",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/gustavo-norman.png",
+    "url": "https://rugatha.com/2022/03/06/gustavo-norman/",
+    "race": "Human"
+  },
+  {
+    "name": "Guu-Guu",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/guu-guu.jpeg",
+    "url": "https://rugatha.com/2021/08/01/guu-guu/",
+    "race": "Orc"
+  },
+  {
+    "name": "Dr. Halloway",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/dr.-halloway.jpeg",
+    "url": "https://rugatha.com/2021/09/20/dr-halloway/",
+    "race": "Human"
+  },
+  {
+    "name": "Harrel Mizel",
+    "image": "https://rugatha.com/wp-content/uploads/2025/06/harrel-mizel.png",
+    "url": "https://rugatha.com/2025/06/29/harrel-mizel/",
+    "race": "Dragonborn, Dragon"
+  },
+  {
+    "name": "Hayes",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/hayes.jpeg",
+    "url": "https://rugatha.com/2022/08/05/hayes/",
+    "race": "Human"
+  },
+  {
+    "name": "Hobb",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/hobb.png",
+    "url": "https://rugatha.com/2022/08/22/hobb/",
+    "race": "Banderhobb"
+  },
+  {
+    "name": "The Hooded Figure",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/the-hooded-figure.jpeg",
+    "url": "https://rugatha.com/2021/05/23/the-hooded-figure/",
+    "race": "Shapeshifter"
+  },
+  {
+    "name": "Ilyra Valecrest",
+    "image": "https://rugatha.com/wp-content/uploads/2025/11/ilyra-valecrest.png",
+    "url": "https://rugatha.com/2025/11/17/ilyra-valecrest/",
+    "race": "Dragonborn"
+  },
+  {
+    "name": "Indigo",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/indigo.jpeg",
+    "url": "https://rugatha.com/2022/10/09/indigo/",
+    "race": "Elf"
+  },
+  {
+    "name": "Iochi Mari",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/iochi-mari.png",
+    "url": "https://rugatha.com/2024/04/18/iochi-mari/",
+    "race": "Foxfolk"
+  },
+  {
+    "name": "Lord Ishton",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/lord-ishton.jpeg",
+    "url": "https://rugatha.com/2022/12/05/lord-ishton/",
+    "race": "Human"
+  },
+  {
+    "name": "Jacob",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/jacob.jpeg",
+    "url": "https://rugatha.com/2022/03/06/jacob/",
+    "race": "Human"
+  },
+  {
+    "name": "Jasmine Warren",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/jasmine-warren.jpeg",
+    "url": "https://rugatha.com/2021/05/20/jasmine-warren/",
+    "race": "Human"
+  },
+  {
+    "name": "Jeff",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/jeff.jpeg",
+    "url": "https://rugatha.com/2021/09/20/jeff/",
+    "race": "Human"
+  },
+  {
+    "name": "Jefferey Berners",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/jefferey-berners.jpeg",
+    "url": "https://rugatha.com/2022/03/06/jefferey-berners/",
+    "race": "Human"
+  },
+  {
+    "name": "Jonathan",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/jonathan.jpeg",
+    "url": "https://rugatha.com/2022/03/06/jonathan/",
+    "race": "Human"
+  },
+  {
+    "name": "Joseph from Moorland Haunt",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/joseph.png",
+    "url": "https://rugatha.com/2022/03/06/joseph/",
+    "race": "Human"
+  },
+  {
+    "name": "Joseph from St. Rayami Island",
+    "image": "https://rugatha.com/wp-content/uploads/2024/05/joseph.jpg",
+    "url": "https://rugatha.com/2024/04/18/joseph-2/",
+    "race": "Human"
+  },
+  {
+    "name": "Kai",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/kai.jpeg",
+    "url": "https://rugatha.com/2021/05/23/kai/",
+    "race": "Human"
+  },
+  {
+    "name": "Father Karu",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/father-karu-1.jpeg",
+    "url": "https://rugatha.com/2021/06/20/father-karu/",
+    "race": "Human"
+  },
+  {
+    "name": "Father Kaulton",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/father-kaulton-1.jpeg",
+    "url": "https://rugatha.com/2021/05/23/father-kaulton/",
+    "race": "Human"
+  },
+  {
+    "name": "Kahn",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/kahn.png",
+    "url": "https://rugatha.com/2021/12/27/kahn/",
+    "race": "Human"
+  },
+  {
+    "name": "Kess",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/kess.png",
+    "url": "https://rugatha.com/2022/03/20/kess/",
+    "race": "Human"
+  },
+  {
+    "name": "Kevin Bolden",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/kevin.jpeg",
+    "url": "https://rugatha.com/2022/03/06/kevin-bolden/",
+    "race": "Human"
+  },
+  {
+    "name": "King Knicol",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/king-knicol.jpeg",
+    "url": "https://rugatha.com/2021/08/15/knicol/",
+    "race": "Goblin"
+  },
+  {
+    "name": "Kojo",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/kojo.png",
+    "url": "https://rugatha.com/2022/03/06/kojo/",
+    "race": "Human"
+  },
+  {
+    "name": "Lance Berners",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/lance-berners.jpeg",
+    "url": "https://rugatha.com/2022/03/06/lance-berners/",
+    "race": "Human"
+  },
+  {
+    "name": "Laura Fishburne",
+    "image": "https://rugatha.com/wp-content/uploads/2025/01/laura-fishburne.jpg",
+    "url": "https://rugatha.com/2025/01/08/laura-fishburne/",
+    "race": "Human"
+  },
+  {
+    "name": "LaVinci",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/lavinci.jpeg",
+    "url": "https://rugatha.com/2022/04/18/lavinci/",
+    "race": "Human"
+  },
+  {
+    "name": "Leonard “Old Pipe\" Riversend",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/leonard-22old-pipe22-riversend.png",
+    "url": "https://rugatha.com/2025/01/12/leonard-old-pipe-riversend/",
+    "race": "Gnome"
+  },
+  {
+    "name": "Leslie Grunfeld",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/leslie-grunfeld.jpeg",
+    "url": "https://rugatha.com/2023/08/20/leslie-grunfeld/",
+    "race": "Human"
+  },
+  {
+    "name": "Lewis",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/lewis.jpeg",
+    "url": "https://rugatha.com/2022/03/27/lewis/",
+    "race": "Human"
+  },
+  {
+    "name": "Lil’Lily",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/lillily.png",
+    "url": "https://rugatha.com/2024/05/27/lillily/",
+    "race": "Half Orc"
+  },
+  {
+    "name": "Liliana",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/liliana.png",
+    "url": "https://rugatha.com/2024/04/18/liliana/",
+    "race": "Human"
+  },
+  {
+    "name": "Logan",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/logan.png",
+    "url": "https://rugatha.com/2022/08/28/logan/",
+    "race": "Human"
+  },
+  {
+    "name": "Lorin Reese",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/lorin.jpeg",
+    "url": "https://rugatha.com/2021/05/19/lorin-reese/",
+    "race": "Elf"
+  },
+  {
+    "name": "Lumio",
+    "image": "https://rugatha.com/wp-content/uploads/2025/10/lumio.png",
+    "url": "https://rugatha.com/2025/10/12/lumio/",
+    "race": "Construct"
+  },
+  {
+    "name": "Luny",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/luny.jpeg",
+    "url": "https://rugatha.com/2022/03/06/luny/",
+    "race": "Elf"
+  },
+  {
+    "name": "Lysien Amoret",
+    "image": "https://rugatha.com/wp-content/uploads/2025/02/lysien-amoret.webp",
+    "url": "https://rugatha.com/2025/02/24/lysien-amoret/",
+    "race": "God"
+  },
+  {
+    "name": "Mafa",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/mafa.jpeg",
+    "url": "https://rugatha.com/2022/03/06/mafa/",
+    "race": "Elf"
+  },
+  {
+    "name": "Magga",
+    "image": "https://rugatha.com/wp-content/uploads/2024/03/magga.jpg",
+    "url": "https://rugatha.com/2024/03/01/magga/",
+    "race": "Elf"
+  },
+  {
+    "name": "Syr Magnus",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/syr-magnus.jpeg",
+    "url": "https://rugatha.com/2021/09/26/syr-magnus/",
+    "race": "Halfling"
+  },
+  {
+    "name": "Malcolm Hicks",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/malcolm-hicks.jpeg",
+    "url": "https://rugatha.com/2023/01/15/malcolm-hicks/",
+    "race": "Human"
+  },
+  {
+    "name": "Mango",
+    "image": "https://rugatha.com/wp-content/uploads/2024/05/mango-spidey.png",
+    "url": "https://rugatha.com/2024/08/06/mango-spidey/",
+    "race": "Shapeshifter"
+  },
+  {
+    "name": "Marco",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/marco.jpeg",
+    "url": "https://rugatha.com/2022/03/06/marco/",
+    "race": "Dog"
+  },
+  {
+    "name": "Marcus Jens",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/marcus-jens.jpeg",
+    "url": "https://rugatha.com/2023/01/15/marcus-jens/",
+    "race": "Human"
+  },
+  {
+    "name": "Lady Marian",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/lady-marian.jpeg",
+    "url": "https://rugatha.com/2022/12/05/lady-marian/",
+    "race": "Human"
+  },
+  {
+    "name": "Marianne Jens",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/marianne.jpeg",
+    "url": "https://rugatha.com/2023/03/20/marianne-jens/",
+    "race": "Human"
+  },
+  {
+    "name": "Maribel Muddlewick",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/maribel-muddlewick_17.png",
+    "url": "https://rugatha.com/2025/01/12/maribel_muddlewick/",
+    "race": "Gnome"
+  },
+  {
+    "name": "Captain Marin",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/rpg_40_medieval_woman_20s_charismatic_redhead_captain_smile_yo_3.jpeg",
+    "url": "https://rugatha.com/2022/08/05/captain-marin/",
+    "race": "Human"
+  },
+  {
+    "name": "Queen Marva",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/queen-marva.jpeg",
+    "url": "https://rugatha.com/2023/01/30/queen-marva/",
+    "race": "Dwarf"
+  },
+  {
+    "name": "Matilda",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/matilda.jpeg",
+    "url": "https://rugatha.com/2022/11/22/matilda/",
+    "race": "Human"
+  },
+  {
+    "name": "Maylee",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/maylee.png",
+    "url": "https://rugatha.com/2022/11/07/maylee/",
+    "race": "Human"
+  },
+  {
+    "name": "Melvin",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/melvin.jpeg",
+    "url": "https://rugatha.com/2023/08/20/melvin/",
+    "race": "Human"
+  },
+  {
+    "name": "Michael",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/michael.jpeg",
+    "url": "https://rugatha.com/2022/06/19/michael/",
+    "race": "Human"
+  },
+  {
+    "name": "Mikkel Drogskol",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/mikkel-drogskol.png",
+    "url": "https://rugatha.com/2024/09/08/mikkel-drogskol/",
+    "race": "Human, Spirit"
+  },
+  {
+    "name": "Moore",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/moore.jpeg",
+    "url": "https://rugatha.com/2023/08/20/moore/",
+    "race": "Human"
+  },
+  {
+    "name": "The Mother",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/mother.jpeg",
+    "url": "https://rugatha.com/2023/01/15/mother/",
+    "race": "Spider, God"
+  },
+  {
+    "name": "Mr. Moon",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/mr.-moon.jpeg",
+    "url": "https://rugatha.com/2022/03/06/mr-moon/",
+    "race": "Human"
+  },
+  {
+    "name": "Mr. Muffins",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/mr.-muffins.jpeg",
+    "url": "https://rugatha.com/2022/11/07/mr-muffins/",
+    "race": "Dog"
+  },
+  {
+    "name": "Nathaniel",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/nathaniel.jpeg",
+    "url": "https://rugatha.com/2022/04/10/nathaniel/",
+    "race": "Human"
+  },
+  {
+    "name": "Nelson",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/nelson.jpeg",
+    "url": "https://rugatha.com/2022/08/05/nelson/",
+    "race": "Human"
+  },
+  {
+    "name": "Nick Pan",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/nick-pan.jpeg",
+    "url": "https://rugatha.com/2022/04/25/nick-pan/",
+    "race": "Tiefling"
+  },
+  {
+    "name": "Norvelle",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/norvelle.png",
+    "url": "https://rugatha.com/2023/04/06/norvelle/",
+    "race": "Elf"
+  },
+  {
+    "name": "Nylessa Arylith",
+    "image": "https://rugatha.com/wp-content/uploads/2025/06/nylessa-arylith.png",
+    "url": "https://rugatha.com/2025/06/29/nylessa-arylith/",
+    "race": "Dragonborn"
+  },
+  {
+    "name": "Lord Octavian von Oderick",
+    "image": "https://rugatha.com/wp-content/uploads/2024/05/lord-octavian-von-oderick.jpg",
+    "url": "https://rugatha.com/2024/05/27/octavian-von-oderick/",
+    "race": "Human"
+  },
+  {
+    "name": "Oliver",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/oliver.jpeg",
+    "url": "https://rugatha.com/2021/10/03/oliver/",
+    "race": "Human"
+  },
+  {
+    "name": "Oliver the Wise",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/oliver-the-wise.jpeg",
+    "url": "https://rugatha.com/2022/12/05/oliver-the-wise/",
+    "race": "Owl"
+  },
+  {
+    "name": "Ona Berners",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/ona-berners.jpeg",
+    "url": "https://rugatha.com/2022/03/06/ona-berners/",
+    "race": "Human"
+  },
+  {
+    "name": "Oswald Creighton",
+    "image": "https://rugatha.com/wp-content/uploads/2025/01/oswald-creighton.jpg",
+    "url": "https://rugatha.com/2025/01/21/oswald-creighton/",
+    "race": "Human"
+  },
+  {
+    "name": "Pamela Yaso",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/pamela-yaso.png",
+    "url": "https://rugatha.com/2022/11/13/pamela-yaso/",
+    "race": "Human"
+  },
+  {
+    "name": "Pattie Sylverome",
+    "image": "https://rugatha.com/wp-content/uploads/2024/09/pattie-sylverome.jpg",
+    "url": "https://rugatha.com/2024/09/03/pattie-sylverome/",
+    "race": "Human"
+  },
+  {
+    "name": "Penny Applewood",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/penny-applewood-1.png",
+    "url": "https://rugatha.com/2025/01/12/penny-applewood/",
+    "race": "Gnome"
+  },
+  {
+    "name": "Pete Madison",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/pete-madison.png",
+    "url": "https://rugatha.com/2023/08/20/pete-madison/",
+    "race": "Human"
+  },
+  {
+    "name": "Peter",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/peter.jpeg",
+    "url": "https://rugatha.com/2022/11/07/peter/",
+    "race": "Human"
+  },
+  {
+    "name": "Phola",
+    "image": "https://rugatha.com/wp-content/uploads/2024/03/phola.jpeg",
+    "url": "https://rugatha.com/2024/03/01/phola/",
+    "race": "Elf"
+  },
+  {
+    "name": "Porter Lowe",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/porter-lowe.jpeg",
+    "url": "https://rugatha.com/2023/01/15/porter-lowe/",
+    "race": "Human"
+  },
+  {
+    "name": "Queenie",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/queenie.jpeg",
+    "url": "https://rugatha.com/2022/11/22/queenie/",
+    "race": "Halfling"
+  },
+  {
+    "name": "Quinton Leonard",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/quinton-leonard.jpeg",
+    "url": "https://rugatha.com/2023/01/15/quinton-leonard/",
+    "race": "Human"
+  },
+  {
+    "name": "Ralf",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/ralf.png",
+    "url": "https://rugatha.com/2024/04/18/ralf/",
+    "race": "Half-Elf"
+  },
+  {
+    "name": "Rashim",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/rashim.jpeg",
+    "url": "https://rugatha.com/2023/01/15/rashim/",
+    "race": "Human"
+  },
+  {
+    "name": "Ra'Leer the Herder",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/raleer-the-herder.jpeg",
+    "url": "https://rugatha.com/2021/06/13/raleer-the-herder/",
+    "race": "Elf"
+  },
+  {
+    "name": "Reese Tig",
+    "image": "https://rugatha.com/wp-content/uploads/2024/05/reese-tig.jpg",
+    "url": "https://rugatha.com/2024/04/18/reese-tig/",
+    "race": "Human"
+  },
+  {
+    "name": "Riley Richmond",
+    "image": "https://rugatha.com/wp-content/uploads/2025/01/riley-richmond.jpg",
+    "url": "https://rugatha.com/2025/01/08/riley-richmond/",
+    "race": "Human"
+  },
+  {
+    "name": "Rina & Rita",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/rina-rita.png",
+    "url": "https://rugatha.com/2024/03/01/rina-rita/",
+    "race": "Elf"
+  },
+  {
+    "name": "Bishop Robinson",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/bishop-robinson.png",
+    "url": "https://rugatha.com/2022/08/05/bishop-robinson/",
+    "race": "Human"
+  },
+  {
+    "name": "Roger Caleb Johnson",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/roger-caleb-johnson.jpeg",
+    "url": "https://rugatha.com/2021/06/20/roger-caleb-johnson/",
+    "race": "Human"
+  },
+  {
+    "name": "Roline Hughes",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/roline-hughes.png",
+    "url": "https://rugatha.com/2022/03/20/roline-hughes/",
+    "race": "Human"
+  },
+  {
+    "name": "Ronald the Magician",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/ronald-the-magician.jpeg",
+    "url": "https://rugatha.com/2023/04/05/ronald-the-magician/",
+    "race": "Human"
+  },
+  {
+    "name": "Ronfello",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/ronfello.png",
+    "url": "https://rugatha.com/2024/04/18/ronfello/",
+    "race": "Human"
+  },
+  {
+    "name": "Rosa Flaerry",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/rosa-flaerry.jpeg",
+    "url": "https://rugatha.com/2021/08/29/rosa-flaerry/",
+    "race": "Human"
+  },
+  {
+    "name": "Ryon",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/ryon.jpeg",
+    "url": "https://rugatha.com/2022/08/05/ryon/",
+    "race": "Human"
+  },
+  {
+    "name": "Samick Warren",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/sammick-warren.png",
+    "url": "https://rugatha.com/2021/05/20/samick-warren/",
+    "race": "Human"
+  },
+  {
+    "name": "Sapphire Gorsen",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/sappire-gorsen.jpeg",
+    "url": "https://rugatha.com/2021/06/20/sapphire-gorsen/",
+    "race": "Human"
+  },
+  {
+    "name": "Sarah",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/sarah.jpeg",
+    "url": "https://rugatha.com/2022/03/06/sarah/",
+    "race": "Human"
+  },
+  {
+    "name": "Scar-Face",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/scar-face.jpeg",
+    "url": "https://rugatha.com/2022/03/06/scar-face/",
+    "race": "Human"
+  },
+  {
+    "name": "Sean",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/sean.jpeg",
+    "url": "https://rugatha.com/2022/05/02/sean/",
+    "race": "Human"
+  },
+  {
+    "name": "Selene Berners",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/selene-berners.png",
+    "url": "https://rugatha.com/2022/03/06/selene-berners/",
+    "race": "Human"
+  },
+  {
+    "name": "Selyra Arylith",
+    "image": "https://rugatha.com/wp-content/uploads/2025/06/selyra-arylith.png",
+    "url": "https://rugatha.com/2025/06/29/selyra-arylith/",
+    "race": "Dragonborn"
+  },
+  {
+    "name": "Serathe Arylith",
+    "image": "https://rugatha.com/wp-content/uploads/2025/06/serathe-arylith.png",
+    "url": "https://rugatha.com/2025/06/29/serathe-arylith/",
+    "race": "Dragonborn"
+  },
+  {
+    "name": "Shalan Hartlow",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/shalan-hartlow.jpeg",
+    "url": "https://rugatha.com/2023/08/21/shalan-hartlow/",
+    "race": "Human"
+  },
+  {
+    "name": "Sham",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/sham.jpeg",
+    "url": "https://rugatha.com/2023/10/10/sham/",
+    "race": "Human"
+  },
+  {
+    "name": "Sharman",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/sharman.jpeg",
+    "url": "https://rugatha.com/2022/09/18/sharman/",
+    "race": "Human"
+  },
+  {
+    "name": "Sha'Doom",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/shadoom.jpeg",
+    "url": "https://rugatha.com/2022/03/06/shadoom/",
+    "race": "Shapeshifter"
+  },
+  {
+    "name": "Shifu",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/shifu.png",
+    "url": "https://rugatha.com/2024/03/01/shifu/",
+    "race": "Elf"
+  },
+  {
+    "name": "Sigom III",
+    "image": "https://rugatha.com/wp-content/uploads/2024/05/sigom.jpg",
+    "url": "https://rugatha.com/2024/04/18/sigom-iii/",
+    "race": "Kobold"
+  },
+  {
+    "name": "Sora",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/sora.jpeg",
+    "url": "https://rugatha.com/2023/07/16/sora/",
+    "race": "Human"
+  },
+  {
+    "name": "Speedy",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/speedy.jpeg",
+    "url": "https://rugatha.com/2022/08/15/speedy/",
+    "race": "Horse"
+  },
+  {
+    "name": "Stefano",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/stefano.jpeg",
+    "url": "https://rugatha.com/2022/03/20/stefano/",
+    "race": "Human"
+  },
+  {
+    "name": "Tam Quorr",
+    "image": "https://rugatha.com/wp-content/uploads/2025/07/tam-quorr.png",
+    "url": "https://rugatha.com/2025/07/13/tam-quorr/",
+    "race": "Human"
+  },
+  {
+    "name": "Theramond Arylith",
+    "image": "https://rugatha.com/wp-content/uploads/2025/06/theramond-arylith.png",
+    "url": "https://rugatha.com/2025/06/29/theramond-arylith/",
+    "race": "Dragonborn"
+  },
+  {
+    "name": "Thomas",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/thomas.jpeg",
+    "url": "https://rugatha.com/2022/11/07/thomas/",
+    "race": "Human"
+  },
+  {
+    "name": "Thompson",
+    "image": "https://rugatha.com/wp-content/uploads/2024/06/thompson.jpg",
+    "url": "https://rugatha.com/2024/06/16/thompson/",
+    "race": "Human"
+  },
+  {
+    "name": "Mayor Thorne",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/mayor-thorne.jpeg",
+    "url": "https://rugatha.com/2022/08/22/mayor-thorne/",
+    "race": "Human"
+  },
+  {
+    "name": "Tina",
+    "image": "https://rugatha.com/wp-content/uploads/2024/06/tina.jpg",
+    "url": "https://rugatha.com/2024/06/16/tina/",
+    "race": "Human"
+  },
+  {
+    "name": "Tommy Caleb Johnson",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/tommy-caleb-johnson.jpeg",
+    "url": "https://rugatha.com/2021/06/20/tommy-caleb-johnson/",
+    "race": "Human"
+  },
+  {
+    "name": "Trisha of Baylon",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/trisha.jpeg",
+    "url": "https://rugatha.com/2021/08/08/trisha-of-baylon/",
+    "race": "Elf"
+  },
+  {
+    "name": "Twiggle",
+    "image": "https://rugatha.com/wp-content/uploads/2024/04/twiggle.jpeg",
+    "url": "https://rugatha.com/2024/06/16/twiggle/",
+    "race": "Squirrel"
+  },
+  {
+    "name": "Queen Uma",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/queen-uma-1.jpeg",
+    "url": "https://rugatha.com/2023/01/30/queen-uma/",
+    "race": "Dwarf"
+  },
+  {
+    "name": "Vaelric Arylith",
+    "image": "https://rugatha.com/wp-content/uploads/2025/06/vaelric-arylith.png",
+    "url": "https://rugatha.com/2025/06/29/vaelric-arylith/",
+    "race": "Dragonborn"
+  },
+  {
+    "name": "Vaerodan Arylith",
+    "image": "https://rugatha.com/wp-content/uploads/2025/06/vaerodan-arylith.png",
+    "url": "https://rugatha.com/2025/06/29/vaerodan-arylith/",
+    "race": "Dragonborn"
+  },
+  {
+    "name": "Ms. Valentine",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/ms.-valentine.jpeg",
+    "url": "https://rugatha.com/2021/06/20/ms-valentine/",
+    "race": "Human"
+  },
+  {
+    "name": "Dr. Vaxon",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/dr.-vaxon.jpeg",
+    "url": "https://rugatha.com/2023/08/21/dr-vaxon/",
+    "race": "Human"
+  },
+  {
+    "name": "Valero Berners",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/valero-berners.jpeg",
+    "url": "https://rugatha.com/2023/08/21/valero-berners/",
+    "race": "Human"
+  },
+  {
+    "name": "Wesley Vance",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/wesley-vance.png",
+    "url": "https://rugatha.com/2023/01/15/wesley-vance/",
+    "race": "Human"
+  },
+  {
+    "name": "Willem",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/willem.jpeg",
+    "url": "https://rugatha.com/2022/03/13/willem/",
+    "race": "Human"
+  },
+  {
+    "name": "Lord Wind",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/lord-wind.jpeg",
+    "url": "https://rugatha.com/2022/11/07/lord-wind/",
+    "race": "Human"
+  },
+  {
+    "name": "Xandria, the Violet of Macksohn",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/xandria-the-violet-of-macksohn.jpeg",
+    "url": "https://rugatha.com/2021/12/27/xandria-the-violet-of-macksohn/",
+    "race": "Halfling"
+  },
+  {
+    "name": "Xavier",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/xavier.jpeg",
+    "url": "https://rugatha.com/2022/04/25/xavier/",
+    "race": "Human"
+  },
+  {
+    "name": "Yashin Usta",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/yashin-usta.jpeg",
+    "url": "https://rugatha.com/2023/01/15/yashin-usta/",
+    "race": "Human"
+  },
+  {
+    "name": "The Young Mage",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/the-young-mage.jpeg",
+    "url": "https://rugatha.com/2021/09/20/the-young-mage/",
+    "race": "Human"
+  },
+  {
+    "name": "Yuki",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/yuki.jpeg",
+    "url": "https://rugatha.com/2022/12/11/yuki/",
+    "race": "Human"
+  },
+  {
+    "name": "Zach",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/zach.jpeg",
+    "url": "https://rugatha.com/2023/01/30/zach/",
+    "race": "Dwarf"
+  },
+  {
+    "name": "Zek",
+    "image": "https://rugatha.com/wp-content/uploads/2024/05/zek.jpg",
+    "url": "https://rugatha.com/2024/04/18/zek/",
+    "race": "Human"
+  },
+  {
+    "name": "慢爆",
+    "image": "https://rugatha.com/wp-content/uploads/2023/05/e685a2e78886.png",
+    "url": "https://rugatha.com/2023/05/08/%e6%85%a2%e7%88%86/",
+    "race": "Laztek"
+  },
+  {
+    "name": "嘟嘟",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/e5989fe5989f.jpeg",
+    "url": "https://rugatha.com/2023/08/21/%e5%98%9f%e5%98%9f/",
+    "race": "Dog"
+  },
+  {
+    "name": "酷爆",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/e985b7e78886.jpeg",
+    "url": "https://rugatha.com/2021/07/03/%e9%85%b7%e7%88%86/",
+    "race": "Wolf"
+  },
+  {
+    "name": "雪寶",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/e99baae5afb6.jpeg",
+    "url": "https://rugatha.com/2023/08/21/%e9%9b%aa%e5%af%b6/",
+    "race": "Elemental"
+  },
+  {
+    "name": "臭皮",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/e887ade79aae-1.png",
+    "url": "https://rugatha.com/2024/04/18/%e8%87%ad%e7%9a%ae/",
+    "race": "Ratfolk"
+  },
+  {
+    "name": "鼠田佩特拉",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/e9bca0e794b0e4bda9e789b9e68b89.png",
+    "url": "https://rugatha.com/2024/04/18/%e9%bc%a0%e7%94%b0%e4%bd%a9%e7%89%b9%e6%8b%89/",
+    "race": "Ratfolk"
+  },
+  {
+    "name": "髒牙",
+    "image": "https://rugatha.com/wp-content/uploads/2025/04/e9ab92e78999.png",
+    "url": "https://rugatha.com/2024/04/18/%e9%ab%92%e7%89%99/",
+    "race": "Ratfolk"
+  },
+  {
+    "name": "伊",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/369276448_899595108261759_7337531476635741141_n.jpg",
+    "url": "https://rugatha.com/2023/03/20/%e4%bc%8a/",
+    "race": "Human"
+  },
+  {
+    "name": "勇哥",
+    "image": "https://rugatha.com/wp-content/uploads/2023/11/e58b87e593a5.jpeg",
+    "url": "https://rugatha.com/2021/12/27/%e5%8b%87%e5%93%a5/",
+    "race": "Horse"
+  }
+]

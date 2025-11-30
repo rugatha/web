@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NPC</title>
+  <style>
+    :root {
+      --bg: #445f56;
+      --panel: #151922;
+      --accent: #60a5fa;
+      --text: #e8ecf5;
+      --muted: #94a3b8;
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      --radius: 18px;
+      --font: "Inter", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+    }
+
+    header {
+      padding: 24px 5vw 12px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 16px 0 8px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    p.lead {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .hero {
+      display: block;
+      margin: 0 auto;
+      max-width: 320px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: none;
+      transition: none;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero:hover, .hero:focus-visible {
+      transform: none;
+      box-shadow: none;
+      outline: none;
+    }
+
+    .title-bar {
+      margin: 16px auto 0;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 0 12px;
+    }
+
+    .title-bar h1 {
+      margin: 0;
+      text-align: center;
+    }
+
+    .search {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      width: min(960px, 100%);
+    }
+
+    .controls > * {
+      flex-shrink: 0;
+    }
+
+    .controls input {
+      flex: 1 1 280px;
+      width: auto;
+    }
+
+    #random-btn {
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    .controls button {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.15);
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 600;
+      transition: border-color 120ms ease, background 120ms ease, color 120ms ease, box-shadow 120ms ease;
+    }
+
+    .controls button:hover, .controls button:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .controls button[aria-pressed="true"] {
+      border-color: var(--accent);
+      background: rgba(96, 165, 250, 0.12);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .controls button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .search input {
+      width: min(320px, 72vw);
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.15);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 120ms ease, background 120ms ease;
+    }
+
+    .search input::placeholder {
+      color: var(--muted);
+    }
+
+    .search input:focus {
+      border-color: var(--accent);
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .sort {
+      display: inline-flex;
+      gap: 6px;
+    }
+
+    .toggle-group {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 200px;
+      isolation: isolate;
+    }
+
+    .toggle-group .toggle-slider {
+      position: absolute;
+      top: 2px;
+      bottom: 2px;
+      left: 2px;
+      width: calc(50% - 2px);
+      border-radius: 10px;
+      background: rgba(96, 165, 250, 0.18);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) inset;
+      transition: transform 180ms ease;
+      pointer-events: none;
+    }
+
+    .toggle-group.is-race .toggle-slider {
+      transform: translateX(100%);
+    }
+
+    .toggle-group button {
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      padding: 10px 14px;
+      font-weight: 700;
+      color: var(--text);
+      border-radius: 0;
+      z-index: 1;
+    }
+
+    .toggle-group button[aria-pressed="true"] {
+      color: #e0edff;
+    }
+
+    .toggle-group button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+
+    .search-count {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    main {
+      padding: 12px 5vw 48px;
+    }
+
+    .grid {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid.single-random {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .grid.single-random .card {
+      width: clamp(300px, 70vw, 480px);
+      height: auto;
+      aspect-ratio: 1 / 1;
+      transform: none;
+    }
+
+    @media (min-width: 720px) {
+      .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1080px) {
+      .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      position: relative;
+      display: block;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      transition: transform 150ms ease, box-shadow 150ms ease;
+      text-decoration: none;
+      color: inherit;
+      isolation: isolate;
+    }
+
+    .card:hover, .card:focus-visible {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      outline: none;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.1);
+    }
+
+    .card__label {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(15, 17, 21, 0.7);
+      backdrop-filter: blur(6px);
+      font-weight: 700;
+      text-align: center;
+      color: var(--text);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+      line-height: 1.25;
+    }
+
+    .card__race {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .group-label {
+      grid-column: 1 / -1;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px 16px;
+      background: linear-gradient(145deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.05));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      font-weight: 800;
+      font-family: "Blackletter", "Old English Text MT", "UnifrakturMaguntia", serif;
+      font-size: clamp(28px, 5vw, 48px);
+      letter-spacing: 2px;
+      box-shadow: var(--shadow);
+      text-transform: uppercase;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="hero" href="https://rugatha.com/rugatha-home/" target="_blank" rel="noopener">
+      <img src="https://rugatha.wordpress.com/wp-content/uploads/2023/11/att.bo8_ollmqnnpvunt6xrsy6l3f3y-mbtmni9bna4v7xi.jpg" alt="Rugatha home">
+    </a>
+    <div class="title-bar">
+      <h1>NPC</h1>
+      <div class="search">
+        <div class="controls">
+          <input id="search" type="search" placeholder="搜尋 NPC 名稱">
+          <div class="toggle-group" role="group" aria-label="分類方式" id="group-toggle">
+            <span class="toggle-slider" aria-hidden="true"></span>
+            <button type="button" id="group-letter" aria-pressed="true">按字母</button>
+            <button type="button" id="group-race" aria-pressed="false">按種族</button>
+          </div>
+          <div class="sort">
+            <button type="button" id="sort-toggle" data-sort="asc">A → Z</button>
+          </div>
+          <span class="search-count" id="search-count"></span>
+          <button type="button" id="random-btn">隨機 NPC</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid" id="character-grid" aria-live="polite"></div>
+  </main>
+
+  <template id="card-template">
+    <a class="card" target="_blank" rel="noopener">
+      <img alt="">
+      <div class="card__label">
+        <span class="card__name"></span>
+        <span class="card__race"></span>
+      </div>
+    </a>
+  </template>
+
+  <span class="sr-only" id="status">資料載入中</span>
+
+  <script>
+    const grid = document.getElementById('character-grid');
+    const statusEl = document.getElementById('status');
+    const template = document.getElementById('card-template');
+    const searchInput = document.getElementById('search');
+    const sortToggle = document.getElementById('sort-toggle');
+    const toggleGroup = document.getElementById('group-toggle');
+    const letterToggle = document.getElementById('group-letter');
+    const raceToggle = document.getElementById('group-race');
+    const randomButton = document.getElementById('random-btn');
+    const searchCount = document.getElementById('search-count');
+    let charactersCache = [];
+    let sortOrder = 'asc';
+    let groupingMode = 'letter';
+    const isAscii = (str) => /^[A-Za-z]/.test(str || '');
+
+    async function loadCharacters() {
+      try {
+        const response = await fetch('data/characters.json');
+        if (!response.ok) throw new Error('無法載入角色資料');
+        charactersCache = await response.json();
+        applyFilters();
+        bindControls();
+      } catch (error) {
+        grid.innerHTML = '<p style="color:#f87171;font-weight:600;">載入資料時發生錯誤，請稍後重試。</p>';
+        statusEl.textContent = '資料載入失敗';
+        console.error(error);
+      }
+    }
+
+    function getLetterGroupKey(name) {
+      const first = (name || '').trim().charAt(0) || '?';
+      return /^[A-Za-z]/.test(first) ? first.toUpperCase() : '中';
+    }
+
+    function getRaceKeys(race) {
+      const keys = (race || '')
+        .split(',')
+        .map((r) => r.trim())
+        .filter(Boolean);
+      return keys.length ? keys : ['未知'];
+    }
+
+    function sortByName(a, b) {
+      const aAscii = isAscii(a.name);
+      const bAscii = isAscii(b.name);
+      if (aAscii !== bAscii) {
+        return sortOrder === 'asc' ? (aAscii ? -1 : 1) : (aAscii ? 1 : -1);
+      }
+      return sortOrder === 'asc'
+        ? a.name.localeCompare(b.name)
+        : b.name.localeCompare(a.name);
+    }
+
+    function sortCharacters(list) {
+      return [...list].sort(sortByName);
+    }
+
+    function renderCard(character) {
+      const node = template.content.firstElementChild.cloneNode(true);
+      const img = node.querySelector('img');
+      const nameEl = node.querySelector('.card__name');
+      const raceEl = node.querySelector('.card__race');
+
+      node.href = character.url;
+      nameEl.textContent = character.name;
+      raceEl.textContent = character.race || '';
+      img.src = character.image;
+      img.alt = character.name;
+      return node;
+    }
+
+    function renderCharacters(characters, { showGroupLabels = true } = {}) {
+      const fragment = document.createDocumentFragment();
+
+      if (groupingMode === 'race') {
+        const groups = new Map();
+        characters.forEach((character) => {
+          const raceKeys = getRaceKeys(character.race);
+          raceKeys.forEach((groupKey) => {
+            if (!groups.has(groupKey)) groups.set(groupKey, []);
+            groups.get(groupKey).push(character);
+          });
+        });
+
+        const sortedKeys = Array.from(groups.keys()).sort((a, b) => {
+          return sortOrder === 'asc'
+            ? a.localeCompare(b, 'en', { sensitivity: 'base' })
+            : b.localeCompare(a, 'en', { sensitivity: 'base' });
+        });
+
+        sortedKeys.forEach((groupKey) => {
+          const groupMembers = sortCharacters(groups.get(groupKey));
+          if (showGroupLabels) {
+            const label = document.createElement('div');
+            label.className = 'group-label';
+            label.textContent = groupKey;
+            fragment.appendChild(label);
+          }
+          groupMembers.forEach((character) => {
+            fragment.appendChild(renderCard(character));
+          });
+        });
+      } else {
+        let currentGroup = null;
+        characters.forEach((character) => {
+          const groupKey = getLetterGroupKey(character.name);
+          if (showGroupLabels && groupKey !== currentGroup) {
+            currentGroup = groupKey;
+            const label = document.createElement('div');
+            label.className = 'group-label';
+            label.textContent = groupKey;
+            fragment.appendChild(label);
+          }
+          fragment.appendChild(renderCard(character));
+        });
+      }
+
+      grid.innerHTML = '';
+      grid.appendChild(fragment);
+    }
+
+    function getFilteredCharacters() {
+      const term = searchInput ? searchInput.value.trim().toLowerCase() : '';
+      const filtered = term
+        ? charactersCache.filter((c) => {
+            const nameMatch = c.name.toLowerCase().includes(term);
+            const raceMatch = (c.race || '').toLowerCase().includes(term);
+            return nameMatch || raceMatch;
+          })
+        : charactersCache;
+      return { term, filtered };
+    }
+
+    function applyFilters() {
+      const { term, filtered } = getFilteredCharacters();
+      const sorted = sortCharacters(filtered);
+      renderCharacters(sorted, { showGroupLabels: term === '' });
+      statusEl.textContent = term
+        ? `顯示 ${filtered.length} 名角色`
+        : '角色列表載入完成';
+      if (searchCount) {
+        searchCount.textContent = term ? `${filtered.length} 名角色` : '';
+      }
+      grid.classList.remove('single-random');
+    }
+
+    function renderRandomCharacter() {
+      const { filtered } = getFilteredCharacters();
+      if (!filtered.length) {
+        grid.innerHTML = '<p style="color:#f87171;font-weight:600;">目前沒有符合條件的角色可隨機選取。</p>';
+        statusEl.textContent = '沒有可顯示的角色';
+        if (searchCount) searchCount.textContent = '';
+        grid.classList.remove('single-random');
+        return;
+      }
+      const randomIndex = Math.floor(Math.random() * filtered.length);
+      const randomCharacter = filtered[randomIndex];
+      renderCharacters([randomCharacter], { showGroupLabels: false });
+      statusEl.textContent = `隨機選擇：${randomCharacter.name}`;
+      if (searchCount) searchCount.textContent = '1 名角色（隨機）';
+      grid.classList.add('single-random');
+    }
+
+    function setGroupingMode(mode) {
+      const changed = groupingMode !== mode;
+      groupingMode = mode;
+      if (letterToggle) letterToggle.setAttribute('aria-pressed', mode === 'letter');
+      if (raceToggle) raceToggle.setAttribute('aria-pressed', mode === 'race');
+      if (toggleGroup) toggleGroup.classList.toggle('is-race', mode === 'race');
+      if (changed) {
+        applyFilters();
+      }
+    }
+
+    function bindControls() {
+      if (!searchInput) return;
+      searchInput.addEventListener('input', () => {
+        applyFilters();
+      });
+      if (sortToggle) {
+        sortToggle.addEventListener('click', () => {
+          sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+          sortToggle.dataset.sort = sortOrder;
+          sortToggle.textContent = sortOrder === 'asc' ? 'A → Z' : 'Z → A';
+          applyFilters();
+        });
+      }
+      if (letterToggle) {
+        letterToggle.addEventListener('click', () => setGroupingMode('letter'));
+      }
+      if (raceToggle) {
+        raceToggle.addEventListener('click', () => setGroupingMode('race'));
+      }
+      if (randomButton) {
+        randomButton.addEventListener('click', renderRandomCharacter);
+      }
+    }
+
+    loadCharacters();
+    // 初始化 slider 位置
+    setGroupingMode(groupingMode);
+  </script>
+</body>
+</html>
