@@ -29,8 +29,13 @@ const abilities = {
   cha: 10
 };
 
+const FALLBACK_ACCENTS = ["#7bdcb5", "#8bc8ff", "#ffd166", "#c48bff", "#ff9e9e", "#a7f0ba"];
+const sharedAccents = getSharedAccents();
+const accentPalette = sharedAccents.length ? sharedAccents : FALLBACK_ACCENTS;
+const defaultAccent = accentPalette[0];
+
 let imgBitmap = null;
-let accent = "#7bdcb5";
+let accent = defaultAccent;
 let logoBitmap = null;
 const cropState = { zoom: 1, cx: 0.5, cy: 0.5 };
 
@@ -234,29 +239,20 @@ function bindInputs() {
       });
     } else {
       el.addEventListener("input", () => {
-        accent = inputs.color.value || "#7bdcb5";
-        drawCard();
+        if (el === inputs.color) {
+          setAccent(inputs.color.value);
+        } else {
+          drawCard();
+        }
       });
     }
   });
 
   if (inputs.colorPicker) {
     inputs.colorPicker.addEventListener("input", () => {
-      inputs.color.value = inputs.colorPicker.value;
-      accent = inputs.color.value;
-      drawCard();
+      setAccent(inputs.colorPicker.value);
     });
   }
-
-  document.querySelectorAll(".swatch").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const c = btn.dataset.color;
-      inputs.color.value = c;
-      if (inputs.colorPicker) inputs.colorPicker.value = c;
-      accent = c;
-      drawCard();
-    });
-  });
 
   document.querySelectorAll("[data-ability]").forEach((input) => {
     input.addEventListener("input", () => {
@@ -283,14 +279,12 @@ function bindInputs() {
     inputs.pp.value = 12;
     inputs.multiclass.checked = false;
     document.getElementById("multiclass-row").hidden = true;
-    inputs.color.value = "#7bdcb5";
-    if (inputs.colorPicker) inputs.colorPicker.value = "#7bdcb5";
+    setAccent(defaultAccent, false);
     inputs.image.value = "";
     Object.assign(abilities, { str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10 });
     document.querySelectorAll("[data-ability]").forEach((input) => {
       input.value = abilities[input.dataset.ability];
     });
-    accent = "#7bdcb5";
     imgBitmap = null;
     resetCrop();
     drawCard();
@@ -306,7 +300,47 @@ function initAbilitySelects() {
   });
 }
 
+function initSwatches(colors) {
+  const container = document.querySelector(".swatches");
+  if (!container) return;
+  container.innerHTML = "";
+  colors.forEach((color) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "swatch";
+    btn.dataset.color = color;
+    btn.style.background = color;
+    btn.addEventListener("click", () => setAccent(color));
+    container.appendChild(btn);
+  });
+}
+
+function setAccent(color, shouldDraw = true) {
+  if (!color) return;
+  accent = color;
+  if (inputs.color) inputs.color.value = color;
+  if (inputs.colorPicker) inputs.colorPicker.value = color;
+  if (shouldDraw) drawCard();
+}
+
+function getSharedAccents() {
+  const campaigns = window.RUGATHA_CONFIG?.campaigns;
+  if (!Array.isArray(campaigns)) return [];
+  const seen = new Set();
+  const colors = [];
+  campaigns.forEach((campaign) => {
+    const c = typeof campaign.accent === "string" ? campaign.accent.trim() : "";
+    const key = c.toLowerCase();
+    if (!c || seen.has(key)) return;
+    seen.add(key);
+    colors.push(c);
+  });
+  return colors;
+}
+
 initAbilitySelects();
+initSwatches(accentPalette);
+setAccent(defaultAccent, false);
 bindInputs();
 drawCard();
 
@@ -318,7 +352,7 @@ drawCard();
     logoBitmap = await createImageBitmap(img);
     drawCard();
   };
-  img.src = "../campaign_graph/assets/rugatha-icon.png";
+  img.src = "../assets/rugatha-icon.png";
 })();
 
 function drawVital(x, y, label, value) {
