@@ -215,5 +215,7 @@ canvas {
   }
   .form-panel {
     order: 2;
+    max-height: none;
+    overflow: visible;
   }
 }
