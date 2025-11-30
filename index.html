@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rugatha Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1a21;
+      --bg-alt: #0f2430;
+      --panel: rgba(255, 255, 255, 0.04);
+      --text: #e9f1f6;
+      --muted: #8aa7b7;
+      --accent: #7be8c6;
+      --accent-2: #8cc8ff;
+      --radius: 16px;
+      --shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(123, 232, 198, 0.18), transparent 32%),
+                  radial-gradient(circle at 80% 10%, rgba(140, 200, 255, 0.18), transparent 34%),
+                  linear-gradient(135deg, var(--bg), var(--bg-alt));
+    }
+
+    .shell {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 22px 48px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      align-items: center;
+      padding: 16px 0 12px;
+    }
+
+    .hero {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(4px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+    }
+
+    h1 {
+      margin: 12px 0 8px;
+      font-size: clamp(32px, 4vw, 40px);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #071018;
+      border: none;
+      box-shadow: 0 12px 28px rgba(123, 232, 198, 0.26);
+    }
+
+    .btn:hover, .btn:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.24);
+      outline: none;
+    }
+
+    .panel {
+      margin-top: 26px;
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .tool-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 120ms ease, transform 120ms ease, background 120ms ease;
+    }
+
+    .tool-card:hover, .tool-card:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.05);
+      outline: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.2);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      width: fit-content;
+    }
+
+    .campaign-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .note {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="hero">
+        <span class="eyebrow">Rugatha Toolkit</span>
+        <h1>One place for campaigns, NPCs, and the graph.</h1>
+        <p>All mini-sites now share a single configuration so you can update campaigns and links in one spot.</p>
+        <div class="actions">
+          <a class="btn primary" href="campaign_graph/index.html">Open Campaign Graph</a>
+          <a class="btn" href="campaigns/index.html">Campaign cards</a>
+          <a class="btn" href="npc/index.html">NPC explorer</a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="badge">Shared settings</div>
+        <p>Update campaign data once in <code>shared/rugatha.config.js</code>. Both the graph and cards consume it. NPC data stays in <code>npc/data/characters.json</code>.</p>
+        <p class="note" id="timeline-note">Timeline assets were not found; add them beside other tools when ready.</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>Tools</h2>
+      <div class="tool-grid">
+        <a class="tool-card" href="campaign_graph/index.html">
+          <div class="badge">Graph</div>
+          <strong>Collapsible D3 campaign hierarchy</strong>
+          <p>Zoom, pan, and expand to explore the Rugatha family of campaigns.</p>
+        </a>
+        <a class="tool-card" href="campaigns/index.html">
+          <div class="badge">Campaigns</div>
+          <strong>Clickable campaign cards</strong>
+          <p>Use the shared settings to update names, dates, images, and links.</p>
+        </a>
+        <a class="tool-card" href="npc/index.html">
+          <div class="badge">NPC</div>
+          <strong>Searchable NPC gallery</strong>
+          <p>Filter by letter or race and jump straight to NPC profiles.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Campaigns in config</h2>
+      <div class="campaign-chips" id="campaign-chips"></div>
+    </section>
+  </div>
+
+  <script src="shared/rugatha.config.js"></script>
+  <script>
+    const chips = document.getElementById("campaign-chips");
+    const list = window.RUGATHA_CONFIG && Array.isArray(window.RUGATHA_CONFIG.campaigns)
+      ? window.RUGATHA_CONFIG.campaigns
+      : [];
+
+    if (list.length === 0) {
+      chips.innerHTML = '<span class="note">No campaigns found in shared/rugatha.config.js.</span>';
+    } else {
+      const frag = document.createDocumentFragment();
+      list.forEach((c) => {
+        const chip = document.createElement("span");
+        chip.className = "chip";
+        chip.textContent = c.name;
+        frag.appendChild(chip);
+      });
+      chips.appendChild(frag);
+    }
+  </script>
+</body>
+</html>
