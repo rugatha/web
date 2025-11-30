@@ -61,16 +61,16 @@
 
     .actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-      margin: 28px auto 0;
-      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      margin: 24px auto 0;
+      align-items: stretch;
     }
 
     .icon-link {
-      width: 220px;
-      height: 180px;
-      border-radius: 20px;
+      width: 320px;
+      height: 90px;
+      border-radius: 14px;
       border: 1px solid rgba(255, 255, 255, 0.14);
       background: var(--card);
       color: var(--text);
@@ -78,8 +78,9 @@
       display: grid;
       place-items: center;
       font-weight: 800;
-      font-size: 20px;
-      letter-spacing: 0.01em;
+      font-size: 18px;
+      letter-spacing: 0.005em;
+      text-align: center;
       transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
     }
 
@@ -181,6 +182,7 @@
         <a class="icon-link" href="campaigns/index.html">Campaigns</a>
         <a class="icon-link" href="campaign_graph/index.html">Campaign Graph</a>
         <a class="icon-link" href="timeline/index.html">Timeline</a>
+        <a class="icon-link" href="character_card/index.html">Character Card Generator</a>
       </div>
     </header>
 
