@@ -263,17 +263,30 @@ function bindInputs() {
   });
 
   document.getElementById("download").addEventListener("click", () => {
-    // Mobile Safari/Firefox ignore download attr; fall back to opening the image.
     const dataUrl = canvas.toDataURL("image/png");
+    const filename = `${inputs.name.value || "character"}.png`;
     const supportsDownload = "download" in document.createElement("a");
-    if (!supportsDownload) {
-      window.open(dataUrl, "_blank");
+    const isFacebookInApp = /FBAN|FBAV|FB_IAB/.test(navigator.userAgent);
+
+    // Desktop / browsers that honor download attribute
+    if (supportsDownload) {
+      const link = document.createElement("a");
+      link.download = filename;
+      link.href = dataUrl;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
       return;
     }
-    const link = document.createElement("a");
-    link.download = `${inputs.name.value || "character"}.png`;
-    link.href = dataUrl;
-    link.click();
+
+    // In-app browsers (e.g., Facebook Messenger) often block window.open; navigate in-place
+    if (isFacebookInApp) {
+      window.location.href = dataUrl;
+      return;
+    }
+
+    // Last resort: open in new tab for manual save
+    window.open(dataUrl, "_blank");
   });
 
   document.getElementById("reset").addEventListener("click", () => {
