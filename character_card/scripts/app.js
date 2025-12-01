@@ -338,6 +338,18 @@ function downloadImage() {
   const supportsDownload = "download" in document.createElement("a");
   const isFacebookInApp = /FBAN|FBAV|FB_IAB/.test(navigator.userAgent);
 
+  // In-app Facebook/Messenger webviews: skip download entirely, just show the image to long-press.
+  if (isFacebookInApp) {
+    try {
+      const dataUrl = canvas.toDataURL("image/png");
+      showInAppSavePrompt(dataUrl, filename);
+    } catch (err) {
+      // If toDataURL fails for any reason, show a minimal error prompt.
+      showInAppSavePrompt("", filename, true);
+    }
+    return;
+  }
+
   const saveWithBlob = () =>
     new Promise((resolve, reject) => {
       try {
@@ -379,15 +391,13 @@ function downloadImage() {
       const dataUrl = canvas.toDataURL("image/png");
       if (supportsDownload) {
         triggerDownload(dataUrl);
-      } else if (isFacebookInApp) {
-        showInAppSavePrompt(dataUrl, filename);
       } else {
         window.open(dataUrl, "_blank");
       }
     });
 }
 
-function showInAppSavePrompt(url, filename) {
+function showInAppSavePrompt(url, filename, isError = false) {
   const existing = document.getElementById("save-overlay");
   if (existing) existing.remove();
 
@@ -412,25 +422,30 @@ function showInAppSavePrompt(url, filename) {
   sheet.style.fontFamily = "'Space Grotesk', system-ui, sans-serif";
 
   const title = document.createElement("div");
-  title.textContent = "長按圖片即可儲存";
+  title.textContent = isError ? "無法產生圖片" : "長按圖片即可儲存";
   title.style.fontSize = "18px";
   title.style.fontWeight = "800";
   title.style.marginBottom = "10px";
 
   const note = document.createElement("div");
-  note.textContent = "Facebook 內嵌瀏覽器不支援直接下載，請長按下方圖片並選擇儲存。";
+  note.textContent = isError
+    ? "抱歉，內嵌瀏覽器封鎖了下載功能。請改用外部瀏覽器（Safari/Chrome），或截圖保存。"
+    : "Facebook 內嵌瀏覽器不支援直接下載，請長按下方圖片並選擇儲存。";
   note.style.color = "#cbd5e1";
   note.style.fontSize = "14px";
   note.style.marginBottom = "12px";
 
-  const img = document.createElement("img");
-  img.src = url;
-  img.alt = filename;
-  img.style.width = "100%";
-  img.style.height = "auto";
-  img.style.borderRadius = "12px";
-  img.style.border = "1px solid rgba(255,255,255,0.12)";
-  img.style.display = "block";
+  if (!isError && url) {
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = filename;
+    img.style.width = "100%";
+    img.style.height = "auto";
+    img.style.borderRadius = "12px";
+    img.style.border = "1px solid rgba(255,255,255,0.12)";
+    img.style.display = "block";
+    sheet.appendChild(img);
+  }
 
   const close = document.createElement("button");
   close.type = "button";
