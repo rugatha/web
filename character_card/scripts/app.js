@@ -20,6 +20,21 @@ const inputs = {
   image: document.getElementById("image")
 };
 
+const buttons = {
+  download: document.getElementById("download"),
+  reset: document.getElementById("reset"),
+  langToggle: document.getElementById("lang-toggle")
+};
+
+const textNodes = {
+  formTitle: document.getElementById("form-title"),
+  previewTitle: document.getElementById("preview-title"),
+  downloadNote: document.getElementById("download-note"),
+  abilityLegend: document.querySelector(".ability-grid legend"),
+  cropLegend: document.querySelector(".range-group legend"),
+  canvas: document.getElementById("card-canvas")
+};
+
 const abilities = {
   str: 10,
   dex: 10,
@@ -33,11 +48,127 @@ const FALLBACK_ACCENTS = ["#7bdcb5", "#8bc8ff", "#ffd166", "#c48bff", "#ff9e9e",
 const sharedAccents = getSharedAccents();
 const accentPalette = sharedAccents.length ? sharedAccents : FALLBACK_ACCENTS;
 const defaultAccent = accentPalette[0];
+const LANGS = {
+  zh: {
+    formTitle: "角色資訊",
+    previewTitle: "預覽",
+    downloadNote: "若使用手機Messenger app開啟，建議切換至瀏覽器進行下載",
+    downloadLabel: "下載角色卡圖檔",
+    toggleLabel: "English",
+    resetLabel: "重設",
+    fallbacks: {
+      name: "冒險者",
+      race: "種族",
+      class1: "職業",
+      class2: "職業 2"
+    },
+    placeholders: {
+      name: "Name",
+      race: "Race",
+      class1: "Class",
+      class2: "Class 2"
+    },
+    labels: {
+      name: "姓名",
+      race: "種族",
+      color: "主色",
+      class1: "職業",
+      level1: "等級",
+      multiclass: "兼職",
+      class2: "職業 2",
+      level2: "等級",
+      hp: "生命值上限",
+      ac: "護甲等級 (AC)",
+      pp: "被動觀察",
+      ability: "能力值",
+      image: "角色圖片",
+      crop: "裁切圖片",
+    cropZoom: "縮放",
+    cropX: "水平",
+    cropY: "垂直"
+  },
+  abilityLabels: ["力量", "敏捷", "體魄", "智力", "感知", "魅力"],
+    canvas: {
+      uploadHint: "點擊上傳角色圖片",
+      hp: "生命值上限",
+      ac: "護甲等級",
+      pp: "被動觀察"
+    },
+    overlay: {
+      title: "長按圖片即可儲存",
+      note:
+        "Facebook 內嵌瀏覽器不支援直接下載，請長按下方圖片並選擇儲存。",
+      errorTitle: "無法產生圖片",
+      errorNote: "抱歉，內嵌瀏覽器封鎖了下載功能。請改用外部瀏覽器（Safari/Chrome），或截圖保存。"
+    },
+    aria: {
+      canvas: "角色卡預覽"
+    }
+  },
+  en: {
+    formTitle: "Character Info",
+    previewTitle: "Preview",
+    downloadNote: "If using Messenger in-app, switch to a browser to download",
+    downloadLabel: "Download Character Card",
+    toggleLabel: "中文",
+    resetLabel: "Reset",
+    fallbacks: {
+      name: "Adventurer",
+      race: "Race",
+      class1: "Class",
+      class2: "Class 2"
+    },
+    placeholders: {
+      name: "Name",
+      race: "Race",
+      class1: "Class",
+      class2: "Class 2"
+    },
+    labels: {
+      name: "Name",
+      race: "Race",
+      color: "Accent",
+      class1: "Class",
+      level1: "Level",
+      multiclass: "Multiclass",
+      class2: "Class 2",
+      level2: "Level",
+      hp: "Max HP",
+      ac: "Armor Class (AC)",
+      pp: "Passive Perception",
+      ability: "Abilities",
+      image: "Character Image",
+      crop: "Crop Image",
+      cropZoom: "Zoom",
+      cropX: "Horizontal",
+      cropY: "Vertical"
+    },
+    abilityLabels: ["STR", "DEX", "CON", "INT", "WIS", "CHA"],
+  canvas: {
+    uploadHint: "Upload character image here",
+    hp: "Max HP",
+    ac: "AC",
+    pp: "Passive Perception"
+  },
+    overlay: {
+      title: "Press and hold to save",
+      note:
+        "Facebook in-app browser blocks direct download. Press and hold the image below to save.",
+      errorTitle: "Unable to generate image",
+      errorNote: "This in-app browser blocks downloads. Please use Safari/Chrome, or take a screenshot."
+    },
+    aria: {
+      canvas: "Character card preview"
+    }
+  }
+};
+let currentLang = "zh";
 
 let imgBitmap = null;
 let accent = defaultAccent;
 let logoBitmap = null;
 const cropState = { zoom: 1, cx: 0.5, cy: 0.5 };
+let portraitBounds = null;
 
 function toRGBA(hex, alpha = 1) {
   const h = hex.replace("#", "");
@@ -53,6 +184,7 @@ function drawCard() {
   const w = canvas.width;
   const h = canvas.height;
   ctx.clearRect(0, 0, w, h);
+  const fallbacks = LANGS[currentLang].fallbacks;
 
   // background
   const grad = ctx.createLinearGradient(0, 0, 0, h);
@@ -77,6 +209,7 @@ function drawCard() {
   const imgW = Math.min(Math.round(panelW * 0.32), Math.round(availableH / 1.3));
   const imgH = Math.round(imgW * 1.3);
   const imgY = panelY + Math.round((panelH - imgH) / 2);
+  portraitBounds = { x: imgX, y: imgY, w: imgW, h: imgH };
   ctx.fillStyle = "rgba(255,255,255,0.06)";
   roundRect(ctx, imgX, imgY, imgW, imgH, 16, true, false);
   if (imgBitmap) {
@@ -91,10 +224,11 @@ function drawCard() {
     const sy = clamp(centerY - cropH / 2, 0, imgBitmap.height - cropH);
     ctx.drawImage(imgBitmap, sx, sy, cropW, cropH, imgX, imgY, imgW, imgH);
   } else {
+    const canvasLabels = LANGS[currentLang].canvas;
     ctx.fillStyle = "rgba(255,255,255,0.25)";
-  ctx.font = "26px 'Space Grotesk', sans-serif";
+    ctx.font = "26px 'Space Grotesk', sans-serif";
     ctx.textAlign = "center";
-    ctx.fillText("上傳角色圖片", imgX + imgW / 2, imgY + imgH / 2);
+    ctx.fillText(canvasLabels.uploadHint, imgX + imgW / 2, imgY + imgH / 2);
   }
   // logo overlay slightly covering portrait corner
   if (logoBitmap) {
@@ -111,12 +245,12 @@ function drawCard() {
   ctx.fillStyle = "#ecf2ed";
   ctx.textAlign = "left";
   // H1
-  ctx.font = "78px 'Space Grotesk', 800";
-  ctx.fillText(inputs.name.value || "Adventurer", infoX, infoY + 52);
+  ctx.font = "92px 'Space Grotesk', 800";
+  ctx.fillText(inputs.name.value || fallbacks.name, infoX, infoY + 52);
 
   // H1-like for race/class line
   ctx.font = "48px 'Space Grotesk', 700";
-  const raceClass = `${inputs.race.value || "Race"} • ${classLine()}`;
+  const raceClass = `${inputs.race.value || fallbacks.race} • ${classLine()}`;
   ctx.fillText(raceClass, infoX, infoY + 102);
 
   // vitals
@@ -124,12 +258,13 @@ function drawCard() {
   ctx.font = "38px 'Space Grotesk', 700";
   const vitalsY = infoY + 158;
   const vitGap = 180;
-  drawVital(infoX, vitalsY, "生命值上限", inputs.hp.value || "—");
-  drawVital(infoX + vitGap, vitalsY, "AC", inputs.ac.value || "—");
-  drawVital(infoX + vitGap * 2, vitalsY, "被動觀察", inputs.pp.value || "—");
+  const canvasLabels = LANGS[currentLang].canvas;
+  drawVital(infoX, vitalsY, canvasLabels.hp, inputs.hp.value || "—");
+  drawVital(infoX + vitGap, vitalsY, canvasLabels.ac, inputs.ac.value || "—");
+  drawVital(infoX + vitGap * 2, vitalsY, canvasLabels.pp, inputs.pp.value || "—");
 
   // abilities
-  const abilityLabels = ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
+  const abilityLabels = LANGS[currentLang].abilityLabels || ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
   const abilityKeys = ["str", "dex", "con", "int", "wis", "cha"];
   const boxW = 170;
   const boxH = 140;
@@ -147,26 +282,31 @@ function drawCard() {
     ctx.lineWidth = highlight ? 4 : 2;
     roundRect(ctx, bx, by, boxW, boxH, 12, true, true);
 
+    const centerX = bx + boxW / 2;
+    const labelY = by + boxH * 0.28;
+    const valueY = by + boxH * 0.54;
+    const modY = by + boxH * 0.8;
     ctx.fillStyle = "#ecf2ed";
     ctx.textAlign = "center";
     ctx.font = "24px 'Space Grotesk', 700";
-    ctx.fillText(abilityLabels[i], bx + boxW / 2, by + 34);
+    ctx.fillText(abilityLabels[i], centerX, labelY);
     ctx.font = "50px 'Space Grotesk', 800";
-    ctx.fillText(String(val || 0), bx + boxW / 2, by + 92);
+    ctx.fillText(String(val || 0), centerX, valueY);
     const mod = Math.floor((val - 10) / 2);
     ctx.font = "24px 'Space Grotesk', 700";
-    ctx.fillText(mod >= 0 ? `+${mod}` : `${mod}`, bx + boxW / 2, by + 126);
+    ctx.fillText(mod >= 0 ? `+${mod}` : `${mod}`, centerX, modY);
   });
   ctx.textAlign = "left";
 }
 
 function classLine() {
-  const cls1 = inputs.class1.value || "Class";
+  const defaults = LANGS[currentLang].fallbacks;
+  const cls1 = inputs.class1.value || defaults.class1;
   const lvl1 = inputs.level1.value || "1";
   if (!inputs.multiclass.checked) {
     return `${cls1} ${lvl1}`;
   }
-  const cls2 = inputs.class2.value || "Class";
+  const cls2 = inputs.class2.value || defaults.class2;
   const lvl2 = inputs.level2.value || "1";
   return `${cls1} ${lvl1} / ${cls2} ${lvl2}`;
 }
@@ -262,18 +402,37 @@ function bindInputs() {
     });
   });
 
+  document.getElementById("download").addEventListener("click", downloadImage);
+  buttons.langToggle?.addEventListener("click", toggleLanguage);
   const previewCanvas = document.getElementById("card-canvas");
   if (previewCanvas) {
     previewCanvas.style.cursor = "pointer";
-    previewCanvas.title = "點擊以查看/儲存圖片";
-    previewCanvas.addEventListener("click", openPreviewImage);
+    previewCanvas.title = LANGS[currentLang].overlay.title;
+    previewCanvas.addEventListener("click", (e) => {
+      if (!portraitBounds) return;
+      const rect = previewCanvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const cx = (e.clientX - rect.left) * scaleX;
+      const cy = (e.clientY - rect.top) * scaleY;
+      const { x, y, w, h } = portraitBounds;
+      const inside =
+        cx >= x && cx <= x + w &&
+        cy >= y && cy <= y + h;
+      if (inside) {
+        inputs.image?.click();
+      }
+    });
   }
 
   document.getElementById("reset").addEventListener("click", () => {
-    inputs.name.value = "Adventurer";
-    inputs.race.value = "Human";
-    inputs.class1.value = "Fighter";
+    const defaults = LANGS[currentLang].fallbacks;
+    inputs.name.value = defaults.name;
+    inputs.race.value = defaults.race;
+    inputs.class1.value = defaults.class1;
+    inputs.class2.value = defaults.class2;
     inputs.level1.value = 3;
+    inputs.level2.value = 2;
     inputs.hp.value = 20;
     inputs.ac.value = 15;
     inputs.pp.value = 12;
@@ -292,11 +451,81 @@ function bindInputs() {
 }
 
 function initAbilitySelects() {
-  const options = Array.from({ length: 30 }, (_, i) => i + 1);
+  const options = Array.from({ length: 20 }, (_, i) => i + 1);
   document.querySelectorAll("[data-ability]").forEach((sel) => {
     sel.innerHTML = options.map((n) => `<option value="${n}">${n}</option>`).join("");
     const key = sel.dataset.ability;
     sel.value = abilities[key] ?? 10;
+  });
+}
+
+function initLevelSelects() {
+  const levels = Array.from({ length: 20 }, (_, i) => i + 1);
+  const levelDefaults = [3, 2];
+  [inputs.level1, inputs.level2].forEach((sel, idx) => {
+    if (!sel) return;
+    sel.innerHTML = levels.map((n) => `<option value="${n}">${n}</option>`).join("");
+    const preferred = levelDefaults[idx] ?? 1;
+    sel.value = String(preferred);
+  });
+}
+
+function applyTranslations() {
+  const t = LANGS[currentLang];
+  if (textNodes.formTitle) textNodes.formTitle.textContent = t.formTitle;
+  if (textNodes.previewTitle) textNodes.previewTitle.textContent = t.previewTitle;
+  if (textNodes.downloadNote) textNodes.downloadNote.textContent = t.downloadNote;
+  if (buttons.download) buttons.download.textContent = t.downloadLabel;
+  if (buttons.reset) buttons.reset.textContent = t.resetLabel;
+  if (buttons.langToggle) buttons.langToggle.textContent = t.toggleLabel;
+  if (textNodes.canvas) textNodes.canvas.setAttribute("aria-label", t.aria.canvas);
+
+  const lbl = t.labels;
+  setLabelText(document.querySelector('label[for="name"]'), lbl.name);
+  setLabelText(document.querySelector('label[for="race"]'), lbl.race);
+  setLabelText(document.querySelector('label[for="color"]'), lbl.color);
+  setLabelText(document.querySelector('label[for="class1"]'), lbl.class1);
+  setLabelText(document.querySelector('label[for="level1"]'), lbl.level1);
+  setLabelText(document.querySelector('.field.checkbox label'), lbl.multiclass);
+  setLabelText(document.querySelector('label[for="class2"]'), lbl.class2);
+  setLabelText(document.querySelector('label[for="level2"]'), lbl.level2);
+  setLabelText(document.querySelector('label[for="hp"]'), lbl.hp);
+  setLabelText(document.querySelector('label[for="ac"]'), lbl.ac);
+  setLabelText(document.querySelector('label[for="pp"]'), lbl.pp);
+  setLabelText(textNodes.abilityLegend, lbl.ability);
+  updateAbilityFormLabels();
+  setLabelText(document.querySelector('label[for="image"]'), lbl.image);
+  setLabelText(textNodes.cropLegend, lbl.crop);
+  const cropLabels = document.querySelectorAll(".range-group label .label-text");
+  if (cropLabels.length >= 3) {
+    cropLabels[0].textContent = lbl.cropZoom;
+    cropLabels[1].textContent = lbl.cropX;
+    cropLabels[2].textContent = lbl.cropY;
+  }
+
+  inputs.name.placeholder = t.placeholders.name;
+  inputs.race.placeholder = t.placeholders.race;
+  inputs.class1.placeholder = t.placeholders.class1;
+  inputs.class2.placeholder = t.placeholders.class2;
+}
+
+function toggleLanguage() {
+  currentLang = currentLang === "zh" ? "en" : "zh";
+  applyTranslations();
+  drawCard();
+}
+
+function updateAbilityFormLabels() {
+  const labels = LANGS[currentLang].abilityLabels || ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
+  const formLabels = document.querySelectorAll(".ability-grid label");
+  formLabels.forEach((label, idx) => {
+    const textNode = Array.from(label.childNodes).find((n) => n.nodeType === Node.TEXT_NODE);
+    const text = labels[idx] || "";
+    if (textNode) {
+      textNode.nodeValue = `${text} `;
+    } else {
+      label.insertBefore(document.createTextNode(`${text} `), label.firstChild);
+    }
   });
 }
 
@@ -338,34 +567,91 @@ function getSharedAccents() {
   return colors;
 }
 
+function setLabelText(label, text) {
+  if (!label) return;
+  if (label.classList && label.classList.contains("label-text")) {
+    label.textContent = text;
+    return;
+  }
+  const span = label.querySelector(".label-text");
+  if (span) {
+    span.textContent = text;
+    return;
+  }
+  const textNode = Array.from(label.childNodes).find((n) => n.nodeType === Node.TEXT_NODE);
+  if (textNode) {
+    textNode.nodeValue = `${text} `;
+  }
+}
+
 function isFacebookInApp() {
   return /FBAN|FBAV|FB_IAB/.test(navigator.userAgent);
 }
 
-function openPreviewImage() {
+function downloadImage() {
   const filename = `${inputs.name.value || "character"}.png`;
-  let dataUrl = "";
-  try {
-    dataUrl = canvas.toDataURL("image/png");
-  } catch (err) {
-    showInAppSavePrompt("", filename, true);
-    return;
-  }
+  const supportsDownload = "download" in document.createElement("a");
 
+  // In-app Facebook/Messenger webviews: skip download entirely, just show the image to long-press.
   if (isFacebookInApp()) {
-    showInAppSavePrompt(dataUrl, filename);
+    try {
+      const dataUrl = canvas.toDataURL("image/png");
+      showInAppSavePrompt(dataUrl, filename);
+    } catch (err) {
+      showInAppSavePrompt("", filename, true);
+    }
     return;
   }
 
-  const win = window.open(dataUrl, "_blank");
-  if (!win) {
-    showInAppSavePrompt(dataUrl, filename);
-  }
+  const saveWithBlob = () =>
+    new Promise((resolve, reject) => {
+      try {
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) return reject(new Error("Blob unavailable"));
+            const url = URL.createObjectURL(blob);
+            resolve(url);
+          },
+          "image/png",
+          1
+        );
+      } catch (err) {
+        reject(err);
+      }
+    });
+
+  const triggerDownload = (url) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  saveWithBlob()
+    .then((url) => {
+      if (supportsDownload) {
+        triggerDownload(url);
+      } else {
+        window.open(url, "_blank");
+      }
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+    })
+    .catch(() => {
+      const dataUrl = canvas.toDataURL("image/png");
+      if (supportsDownload) {
+        triggerDownload(dataUrl);
+      } else {
+        window.open(dataUrl, "_blank");
+      }
+    });
 }
 
 function showInAppSavePrompt(url, filename, isError = false) {
   const existing = document.getElementById("save-overlay");
   if (existing) existing.remove();
+  const overlayText = LANGS[currentLang].overlay;
 
   const overlay = document.createElement("div");
   overlay.id = "save-overlay";
@@ -388,21 +674,20 @@ function showInAppSavePrompt(url, filename, isError = false) {
   sheet.style.fontFamily = "'Space Grotesk', system-ui, sans-serif";
 
   const title = document.createElement("div");
-  title.textContent = isError ? "無法產生圖片" : "長按圖片即可儲存";
+  title.textContent = isError ? overlayText.errorTitle : overlayText.title;
   title.style.fontSize = "18px";
   title.style.fontWeight = "800";
   title.style.marginBottom = "10px";
 
   const note = document.createElement("div");
-  note.textContent = isError
-    ? "抱歉，內嵌瀏覽器封鎖了下載功能。請改用外部瀏覽器（Safari/Chrome），或截圖保存。"
-    : "Facebook 內嵌瀏覽器不支援直接下載，請長按下方圖片並選擇儲存。";
+  note.textContent = isError ? overlayText.errorNote : overlayText.note;
   note.style.color = "#cbd5e1";
   note.style.fontSize = "14px";
   note.style.marginBottom = "12px";
 
+  let img;
   if (!isError && url) {
-    const img = document.createElement("img");
+    img = document.createElement("img");
     img.src = url;
     img.alt = filename;
     img.style.width = "100%";
@@ -410,7 +695,6 @@ function showInAppSavePrompt(url, filename, isError = false) {
     img.style.borderRadius = "12px";
     img.style.border = "1px solid rgba(255,255,255,0.12)";
     img.style.display = "block";
-    sheet.appendChild(img);
   }
 
   const close = document.createElement("button");
@@ -429,14 +713,16 @@ function showInAppSavePrompt(url, filename, isError = false) {
 
   sheet.appendChild(title);
   sheet.appendChild(note);
-  sheet.appendChild(img);
+  if (img) sheet.appendChild(img);
   sheet.appendChild(close);
   overlay.appendChild(sheet);
   document.body.appendChild(overlay);
 }
 
 initAbilitySelects();
+initLevelSelects();
 initSwatches(accentPalette);
+applyTranslations();
 setAccent(defaultAccent, false);
 bindInputs();
 drawCard();

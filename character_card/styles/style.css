@@ -92,13 +92,6 @@ h2 {
   gap: 8px;
 }
 
-.preview-note {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--muted);
-  margin-left: 6px;
-}
-
 .field {
   display: flex;
   flex-direction: column;
@@ -206,6 +199,39 @@ h2 {
 .actions {
   display: flex;
   gap: 10px;
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.download-note {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.upload-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .preview-panel {

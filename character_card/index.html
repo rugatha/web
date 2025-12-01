@@ -20,19 +20,20 @@
     <main class="layout">
       <section class="panel form-panel">
         <div class="form-actions">
+          <button id="lang-toggle" class="btn ghost" type="button">English</button>
           <button id="reset" class="btn ghost" type="button">重設</button>
         </div>
-        <h2>角色資訊</h2>
+        <h2 id="form-title">角色資訊</h2>
         <div class="field">
-          <label for="name">姓名</label>
+          <label for="name"><span class="label-text">姓名</span></label>
           <input id="name" type="text" placeholder="Name" value="Adventurer">
         </div>
         <div class="field">
-          <label for="race">種族</label>
+          <label for="race"><span class="label-text">種族</span></label>
           <input id="race" type="text" placeholder="Race" value="Human">
         </div>
         <div class="field">
-          <label for="color">主色</label>
+          <label for="color"><span class="label-text">主色</span></label>
           <div class="color-row">
             <input id="color" type="text" placeholder="#7bdcb5" value="#7bdcb5">
             <input id="color-picker" type="color" value="#7bdcb5" aria-label="Color picker">
@@ -48,46 +49,46 @@
         </div>
         <div class="field two">
           <div>
-            <label for="class1">職業</label>
+            <label for="class1"><span class="label-text">職業</span></label>
             <input id="class1" type="text" placeholder="Class" value="Fighter">
           </div>
           <div>
-            <label for="level1">等級</label>
-            <input id="level1" type="number" min="1" max="20" value="3">
+            <label for="level1"><span class="label-text">等級</span></label>
+            <select id="level1"></select>
           </div>
         </div>
         <div class="field checkbox">
           <label>
             <input id="multiclass" type="checkbox">
-            兼職
+            <span class="label-text">兼職</span>
           </label>
         </div>
         <div class="field two" id="multiclass-row" hidden>
           <div>
-            <label for="class2">職業 2</label>
+            <label for="class2"><span class="label-text">職業 2</span></label>
             <input id="class2" type="text" placeholder="Class 2" value="Wizard">
           </div>
           <div>
-            <label for="level2">等級</label>
-            <input id="level2" type="number" min="1" max="20" value="2">
+            <label for="level2"><span class="label-text">等級</span></label>
+            <select id="level2"></select>
           </div>
         </div>
         <div class="field two">
           <div>
-            <label for="hp">生命值上限</label>
+            <label for="hp"><span class="label-text">生命值上限</span></label>
             <input id="hp" type="number" min="1" max="999" value="20">
           </div>
           <div>
-            <label for="ac">護甲等級 (AC)</label>
+            <label for="ac"><span class="label-text">護甲等級 (AC)</span></label>
             <input id="ac" type="number" min="1" max="30" value="15">
           </div>
         </div>
         <div class="field">
-          <label for="pp">被動觀察</label>
+          <label for="pp"><span class="label-text">被動觀察</span></label>
           <input id="pp" type="number" min="1" max="30" value="12">
         </div>
         <fieldset class="field ability-grid">
-          <legend>能力值</legend>
+          <legend class="label-text">能力值</legend>
           <label>STR
             <select data-ability="str"></select>
           </label>
@@ -107,26 +108,32 @@
             <select data-ability="cha"></select>
           </label>
         </fieldset>
-        <div class="field">
-          <label for="image">角色圖片</label>
-          <input id="image" type="file" accept="image/*">
-        </div>
         <fieldset class="field range-group">
-          <legend>裁切圖片</legend>
-          <label>縮放
+          <legend class="label-text">裁切圖片</legend>
+          <label><span class="label-text">縮放</span>
             <input id="crop-zoom" type="range" min="1" max="3" step="0.05" value="1">
           </label>
-          <label>水平
+          <label><span class="label-text">水平</span>
             <input id="crop-x" type="range" min="0" max="1" step="0.01" value="0.5">
           </label>
-          <label>垂直
+          <label><span class="label-text">縮放</span>
             <input id="crop-y" type="range" min="0" max="1" step="0.01" value="0.5">
           </label>
         </fieldset>
       </section>
 
       <section class="panel preview-panel">
-        <h2>預覽 <span class="preview-note">(點擊預覽圖片進行下載)</span></h2>
+        <div class="preview-header">
+          <div>
+            <h2 id="preview-title">預覽</h2>
+            <p class="download-note" id="download-note">若使用手機Messenger app開啟，建議切換至瀏覽器進行下載</p>
+          </div>
+          <button id="download" class="btn primary" type="button">下載角色卡圖檔</button>
+        </div>
+        <div class="upload-box sr-only">
+          <label for="image"><span class="label-text">角色圖片</span></label>
+          <input id="image" type="file" accept="image/*">
+        </div>
         <canvas id="card-canvas" width="1200" height="700" aria-label="角色卡預覽"></canvas>
       </section>
     </main>
