@@ -369,8 +369,7 @@ function downloadImage() {
       if (supportsDownload) {
         triggerDownload(url);
       } else if (isFacebookInApp) {
-        // In-app webviews may block new windows; navigate same tab
-        window.location.href = url;
+        showInAppSavePrompt(url, filename);
       } else {
         window.open(url, "_blank");
       }
@@ -381,11 +380,78 @@ function downloadImage() {
       if (supportsDownload) {
         triggerDownload(dataUrl);
       } else if (isFacebookInApp) {
-        window.location.href = dataUrl;
+        showInAppSavePrompt(dataUrl, filename);
       } else {
         window.open(dataUrl, "_blank");
       }
     });
+}
+
+function showInAppSavePrompt(url, filename) {
+  const existing = document.getElementById("save-overlay");
+  if (existing) existing.remove();
+
+  const overlay = document.createElement("div");
+  overlay.id = "save-overlay";
+  overlay.style.position = "fixed";
+  overlay.style.inset = "0";
+  overlay.style.background = "rgba(0,0,0,0.8)";
+  overlay.style.display = "grid";
+  overlay.style.placeItems = "center";
+  overlay.style.padding = "18px";
+  overlay.style.zIndex = "9999";
+
+  const sheet = document.createElement("div");
+  sheet.style.background = "#0f172a";
+  sheet.style.border = "1px solid rgba(255,255,255,0.16)";
+  sheet.style.borderRadius = "18px";
+  sheet.style.padding = "14px";
+  sheet.style.width = "min(520px, 100%)";
+  sheet.style.boxShadow = "0 20px 50px rgba(0,0,0,0.45)";
+  sheet.style.color = "#e2e8f0";
+  sheet.style.fontFamily = "'Space Grotesk', system-ui, sans-serif";
+
+  const title = document.createElement("div");
+  title.textContent = "長按圖片即可儲存";
+  title.style.fontSize = "18px";
+  title.style.fontWeight = "800";
+  title.style.marginBottom = "10px";
+
+  const note = document.createElement("div");
+  note.textContent = "Facebook 內嵌瀏覽器不支援直接下載，請長按下方圖片並選擇儲存。";
+  note.style.color = "#cbd5e1";
+  note.style.fontSize = "14px";
+  note.style.marginBottom = "12px";
+
+  const img = document.createElement("img");
+  img.src = url;
+  img.alt = filename;
+  img.style.width = "100%";
+  img.style.height = "auto";
+  img.style.borderRadius = "12px";
+  img.style.border = "1px solid rgba(255,255,255,0.12)";
+  img.style.display = "block";
+
+  const close = document.createElement("button");
+  close.type = "button";
+  close.textContent = "關閉";
+  close.style.marginTop = "12px";
+  close.style.width = "100%";
+  close.style.padding = "10px 12px";
+  close.style.borderRadius = "10px";
+  close.style.border = "1px solid rgba(255,255,255,0.16)";
+  close.style.background = "rgba(255,255,255,0.05)";
+  close.style.color = "#e2e8f0";
+  close.style.fontWeight = "700";
+  close.style.cursor = "pointer";
+  close.addEventListener("click", () => overlay.remove());
+
+  sheet.appendChild(title);
+  sheet.appendChild(note);
+  sheet.appendChild(img);
+  sheet.appendChild(close);
+  overlay.appendChild(sheet);
+  document.body.appendChild(overlay);
 }
 
 initAbilitySelects();
