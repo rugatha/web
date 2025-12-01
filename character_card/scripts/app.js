@@ -263,9 +263,16 @@ function bindInputs() {
   });
 
   document.getElementById("download").addEventListener("click", () => {
+    // Mobile Safari/Firefox ignore download attr; fall back to opening the image.
+    const dataUrl = canvas.toDataURL("image/png");
+    const supportsDownload = "download" in document.createElement("a");
+    if (!supportsDownload) {
+      window.open(dataUrl, "_blank");
+      return;
+    }
     const link = document.createElement("a");
     link.download = `${inputs.name.value || "character"}.png`;
-    link.href = canvas.toDataURL("image/png");
+    link.href = dataUrl;
     link.click();
   });
 
