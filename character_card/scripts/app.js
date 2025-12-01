@@ -262,32 +262,7 @@ function bindInputs() {
     });
   });
 
-  document.getElementById("download").addEventListener("click", () => {
-    const dataUrl = canvas.toDataURL("image/png");
-    const filename = `${inputs.name.value || "character"}.png`;
-    const supportsDownload = "download" in document.createElement("a");
-    const isFacebookInApp = /FBAN|FBAV|FB_IAB/.test(navigator.userAgent);
-
-    // Desktop / browsers that honor download attribute
-    if (supportsDownload) {
-      const link = document.createElement("a");
-      link.download = filename;
-      link.href = dataUrl;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      return;
-    }
-
-    // In-app browsers (e.g., Facebook Messenger) often block window.open; navigate in-place
-    if (isFacebookInApp) {
-      window.location.href = dataUrl;
-      return;
-    }
-
-    // Last resort: open in new tab for manual save
-    window.open(dataUrl, "_blank");
-  });
+  document.getElementById("download").addEventListener("click", downloadImage);
 
   document.getElementById("reset").addEventListener("click", () => {
     inputs.name.value = "Adventurer";
@@ -356,6 +331,61 @@ function getSharedAccents() {
     colors.push(c);
   });
   return colors;
+}
+
+function downloadImage() {
+  const filename = `${inputs.name.value || "character"}.png`;
+  const supportsDownload = "download" in document.createElement("a");
+  const isFacebookInApp = /FBAN|FBAV|FB_IAB/.test(navigator.userAgent);
+
+  const saveWithBlob = () =>
+    new Promise((resolve, reject) => {
+      try {
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) return reject(new Error("Blob unavailable"));
+            const url = URL.createObjectURL(blob);
+            resolve(url);
+          },
+          "image/png",
+          1
+        );
+      } catch (err) {
+        reject(err);
+      }
+    });
+
+  const triggerDownload = (url) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  saveWithBlob()
+    .then((url) => {
+      if (supportsDownload) {
+        triggerDownload(url);
+      } else if (isFacebookInApp) {
+        // In-app webviews may block new windows; navigate same tab
+        window.location.href = url;
+      } else {
+        window.open(url, "_blank");
+      }
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+    })
+    .catch(() => {
+      const dataUrl = canvas.toDataURL("image/png");
+      if (supportsDownload) {
+        triggerDownload(dataUrl);
+      } else if (isFacebookInApp) {
+        window.location.href = dataUrl;
+      } else {
+        window.open(dataUrl, "_blank");
+      }
+    });
 }
 
 initAbilitySelects();
