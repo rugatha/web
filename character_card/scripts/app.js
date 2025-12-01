@@ -262,7 +262,12 @@ function bindInputs() {
     });
   });
 
-  document.getElementById("download").addEventListener("click", downloadImage);
+  const previewCanvas = document.getElementById("card-canvas");
+  if (previewCanvas) {
+    previewCanvas.style.cursor = "pointer";
+    previewCanvas.title = "點擊以查看/儲存圖片";
+    previewCanvas.addEventListener("click", openPreviewImage);
+  }
 
   document.getElementById("reset").addEventListener("click", () => {
     inputs.name.value = "Adventurer";
@@ -333,68 +338,29 @@ function getSharedAccents() {
   return colors;
 }
 
-function downloadImage() {
-  const filename = `${inputs.name.value || "character"}.png`;
-  const supportsDownload = "download" in document.createElement("a");
-  const isFacebookInApp = /FBAN|FBAV|FB_IAB/.test(navigator.userAgent);
+function isFacebookInApp() {
+  return /FBAN|FBAV|FB_IAB/.test(navigator.userAgent);
+}
 
-  // In-app Facebook/Messenger webviews: skip download entirely, just show the image to long-press.
-  if (isFacebookInApp) {
-    try {
-      const dataUrl = canvas.toDataURL("image/png");
-      showInAppSavePrompt(dataUrl, filename);
-    } catch (err) {
-      // If toDataURL fails for any reason, show a minimal error prompt.
-      showInAppSavePrompt("", filename, true);
-    }
+function openPreviewImage() {
+  const filename = `${inputs.name.value || "character"}.png`;
+  let dataUrl = "";
+  try {
+    dataUrl = canvas.toDataURL("image/png");
+  } catch (err) {
+    showInAppSavePrompt("", filename, true);
     return;
   }
 
-  const saveWithBlob = () =>
-    new Promise((resolve, reject) => {
-      try {
-        canvas.toBlob(
-          (blob) => {
-            if (!blob) return reject(new Error("Blob unavailable"));
-            const url = URL.createObjectURL(blob);
-            resolve(url);
-          },
-          "image/png",
-          1
-        );
-      } catch (err) {
-        reject(err);
-      }
-    });
+  if (isFacebookInApp()) {
+    showInAppSavePrompt(dataUrl, filename);
+    return;
+  }
 
-  const triggerDownload = (url) => {
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  saveWithBlob()
-    .then((url) => {
-      if (supportsDownload) {
-        triggerDownload(url);
-      } else if (isFacebookInApp) {
-        showInAppSavePrompt(url, filename);
-      } else {
-        window.open(url, "_blank");
-      }
-      setTimeout(() => URL.revokeObjectURL(url), 5000);
-    })
-    .catch(() => {
-      const dataUrl = canvas.toDataURL("image/png");
-      if (supportsDownload) {
-        triggerDownload(dataUrl);
-      } else {
-        window.open(dataUrl, "_blank");
-      }
-    });
+  const win = window.open(dataUrl, "_blank");
+  if (!win) {
+    showInAppSavePrompt(dataUrl, filename);
+  }
 }
 
 function showInAppSavePrompt(url, filename, isError = false) {

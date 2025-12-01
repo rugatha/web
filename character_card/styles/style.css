@@ -76,11 +76,27 @@ body {
 .form-panel {
   max-height: calc(100vh - 160px);
   overflow-y: auto;
+  position: relative;
 }
 
 h2 {
   margin: 0 0 8px;
   font-size: 18px;
+}
+
+.form-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.preview-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-left: 6px;
 }
 
 .field {

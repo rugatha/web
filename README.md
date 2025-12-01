@@ -1,6 +1,6 @@
 # Rugatha Web Toolkit
 
-Combined static package that bundles the Rugatha campaign graph, campaign cards, and NPC explorer. Campaign metadata now lives in one place so updates propagate to every mini-site. All assets are local; no dependency on the original GitHub repos.
+Combined static package that bundles the Rugatha campaign graph, campaign cards, NPC explorer, character card generator, and timeline. Campaign metadata now lives in one place so updates propagate to every mini-site. All assets are local; no dependency on the original GitHub repos.
 
 ## Layout
 - `index.html` – landing page linking to every tool.
@@ -8,6 +8,8 @@ Combined static package that bundles the Rugatha campaign graph, campaign cards,
 - `campaign_graph/` – D3 collapsible hierarchy viewer, now powered by the shared config.
 - `campaigns/` – campaign cards, now powered by the shared config.
 - `npc/` – NPC gallery (data still lives in `npc/data/characters.json`).
+- `character_card/` – PNG character card generator (click preview to open/save).
+- `timeline/` – static timeline view.
 
 ## Campaign graph (campaign_graph/)
 - Interactive, collapsible D3 hierarchy (root → category → campaign) with zoom/pan/fit/home controls and smooth expand/collapse.
@@ -18,6 +20,11 @@ Combined static package that bundles the Rugatha campaign graph, campaign cards,
 ## Campaign cards (campaigns/)
 - Card grid of campaigns, driven by `shared/rugatha.config.js` (no separate data file needed).
 - Entry point: `campaigns/index.html`; styles in `styles/campaigns.css`; logic in `scripts/app.js`.
+
+## Character card generator (character_card/)
+- Canvas-based PNG generator; click/tap the preview to open the image for saving. In-app browsers (e.g., Messenger) show a long-press overlay instead of failing to download.
+- Uses shared campaign accents to build color swatches; falls back to defaults if the shared config is unavailable.
+- Entry point: `character_card/index.html`; styles in `styles/style.css`; logic in `scripts/app.js`.
 
 ## NPC browser (npc/)
 - Pages: `index.html` (main), `npc.html` (trimmed standalone).
