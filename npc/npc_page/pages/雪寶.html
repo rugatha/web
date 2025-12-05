@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雪寶</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/rugatha-icon.png">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <a href="https://rugatha.com/rugatha-home/" aria-label="Rugatha home">
+      <img src="../../../../assets/Wordpress%20Banner.jpg" alt="Rugatha banner" class="hero-img">
+    </a>
+  </header>
+
+  <main class="page">
+    <section class="card">
+        <div class="title-row">
+          <h1 id="npc-name">雪寶</h1>
+        </div>
+
+      <div class="layout">
+        <div class="portrait">
+          <img id="npc-portrait" src="" alt="">
+        </div>
+        <div class="content">
+
+          <p id="npc-desc-zh" class="body"></p>
+
+          <p id="npc-desc-en" class="body"></p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn icon-btn" href="../../index.html" aria-label="返回 NPC 清單">↩</a>
+      </div>
+    </section>
+  </main>
+
+  <script id="npc-data" type="application/json">
+    {
+      "雪寶": {
+        "id": "xuebao",
+        "descZh": "Midori和Beau在大學城歷史區遇到的魔法生物，外貌是個雪人。\n他表示自己是吉拿棒教授的助理，專門研究食物的歷史。另外他也稱區長Andrea Day為「無菜單料理」。\n在Midori差點把他帶去獻祭，回心轉意，將他送離Andrea家外後，將身上的雪挖了一塊給Midori，作為謝禮（但同時也威脅他，不吃掉就會受到詛咒）。",
+        "descEn": "A magical creature that Midori and Beau met at the History District in the Great Citadel, who had the appearance of a snowman.\nHe claimed to be the assistant of Professor Churros, majored in the history of food. Also, he called Andrea Day “Omakase".\nMidori brought it to the ritual but regretted it. After leaving Andrea’s house, it scooped some snow to Midori, as a gift (but also threatened her to finish eating them or she’ll be cursed)."
+      }
+    }
+  </script>
+  <script type="module" src="../assets/scripts.js"></script>
+</body>
+</html>

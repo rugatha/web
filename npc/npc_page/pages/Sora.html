@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/rugatha-icon.png">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <a href="https://rugatha.com/rugatha-home/" aria-label="Rugatha home">
+      <img src="../../../../assets/Wordpress%20Banner.jpg" alt="Rugatha banner" class="hero-img">
+    </a>
+  </header>
+
+  <main class="page">
+    <section class="card">
+        <div class="title-row">
+          <h1 id="npc-name">Sora</h1>
+        </div>
+
+      <div class="layout">
+        <div class="portrait">
+          <img id="npc-portrait" src="" alt="">
+        </div>
+        <div class="content">
+
+          <p id="npc-desc-zh" class="body"></p>
+
+          <p id="npc-desc-en" class="body"></p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn icon-btn" href="../../index.html" aria-label="返回 NPC 清單">↩</a>
+      </div>
+    </section>
+  </main>
+
+  <script id="npc-data" type="application/json">
+    {
+      "Sora": {
+        "id": "Sora",
+        "descZh": "謎樣的小男孩。\n看起來年齡大約十歲。\n疑似留下了他的日記，但日記中記載的年份似乎和現在的紀元不同。\n對於他的一切，可以說完全是個謎。",
+        "descEn": "A mysterious boy.\nHe looked like a 10 years old kid.\nHe seemed to left his diary, but the years in the diary was far from the current empire years.\nEverything about Sora was a mystery."
+      }
+    }
+  </script>
+  <script type="module" src="../assets/scripts.js"></script>
+</body>
+</html>

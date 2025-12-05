@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Crow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/rugatha-icon.png">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <a href="https://rugatha.com/rugatha-home/" aria-label="Rugatha home">
+      <img src="../../../../assets/Wordpress%20Banner.jpg" alt="Rugatha banner" class="hero-img">
+    </a>
+  </header>
+
+  <main class="page">
+    <section class="card">
+        <div class="title-row">
+          <h1 id="npc-name">Dr. Crow</h1>
+        </div>
+
+      <div class="layout">
+        <div class="portrait">
+          <img id="npc-portrait" src="" alt="">
+        </div>
+        <div class="content">
+
+          <p id="npc-desc-zh" class="body"></p>
+
+          <p id="npc-desc-en" class="body"></p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn icon-btn" href="../../index.html" aria-label="返回 NPC 清單">↩</a>
+      </div>
+    </section>
+  </main>
+
+  <script id="npc-data" type="application/json">
+    {
+      "Dr_Crow": {
+        "id": "Dr_Crow",
+        "descZh": "在《The False Hydra of Moorland Haunt》中Moorland Haunt當地醫生，似乎是個德魯伊。\n養了一隻狗狗，叫Marco。\n15051年在冒險者們來訪時，已經沒了狗狗，甚至不記得自己是否有養過狗。\nDr. Crow在診所的牆壁上凌亂的以德魯伊語寫下自己記得關於兩年前被怪獸襲擊的隻字片語，但卻無法將內容完整拼湊。",
+        "descEn": "The doctor in Moorland Haunt from “The False Hydra of Moorland Haunt\". Seems like a druid.\nHe has a dog companion named Marco.\nWhen the adventurers visited Dr. Crow in 15051D.E., the dog was gone, and Dr. Crow didn’t even knew if he had a dog or not.\nDr. Crow marked some druidic writings on his walls, try to record the monster attack incident that happened 2 years ago, but couldn’t piece them together."
+      }
+    }
+  </script>
+  <script type="module" src="../assets/scripts.js"></script>
+</body>
+</html>

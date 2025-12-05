@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sha'Doom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/rugatha-icon.png">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <a href="https://rugatha.com/rugatha-home/" aria-label="Rugatha home">
+      <img src="../../../../assets/Wordpress%20Banner.jpg" alt="Rugatha banner" class="hero-img">
+    </a>
+  </header>
+
+  <main class="page">
+    <section class="card">
+        <div class="title-row">
+          <h1 id="npc-name">Sha'Doom</h1>
+        </div>
+
+      <div class="layout">
+        <div class="portrait">
+          <img id="npc-portrait" src="" alt="">
+        </div>
+        <div class="content">
+
+          <p id="npc-desc-zh" class="body"></p>
+
+          <p id="npc-desc-en" class="body"></p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn icon-btn" href="../../index.html" aria-label="返回 NPC 清單">↩</a>
+      </div>
+    </section>
+  </main>
+
+  <script id="npc-data" type="application/json">
+    {
+      "ShaDoom": {
+        "id": "ShaDoom",
+        "descZh": "身份未名的Macksohn人。\n似乎與當地衛兵有很多關聯。\n手上刺有十道光芒的太陽。\n曾偽裝成Lemmy、LaVinci以及Anya LaVinci。\n由玩家義揚操控。",
+        "descEn": "A Macksohn local with unknown identity.\nSeemed to be connected to the local guards.\nHe had a Sun with 10 rays on his hand.\nSha’Doom once disguised as Lemmy, LaVinci and Anya LaVinci.\nThis character was played by Roger."
+      }
+    }
+  </script>
+  <script type="module" src="../assets/scripts.js"></script>
+</body>
+</html>
