@@ -445,7 +445,7 @@
       const nameEl = node.querySelector('.card__name');
       const raceEl = node.querySelector('.card__race');
 
-      node.href = character.url;
+      node.href = character.url || "#";
       nameEl.textContent = character.name;
       raceEl.textContent = character.race || '';
       img.src = character.image;
