@@ -7,8 +7,8 @@ Combined static package that bundles the Rugatha campaign graph, campaign cards,
 - `shared/rugatha.config.js` – single source for shared settings (campaign list + graph links).
 - `campaign_graph/` – D3 collapsible hierarchy viewer, now powered by the shared config.
 - `campaigns/` – campaign cards, now powered by the shared config.
-- `npc/` – NPC gallery (data still lives in `npc/data/characters.json`).
-- `npc/npc_page/` – template for individual NPC pages (content is embedded in `npc/npc_page/template.html`, selected via `?npc=id`).
+- `npc/` – NPC gallery (data lives in `npc/data/characters.json`).
+- `npc/npc_page/` – shared template for individual NPC pages; all page files redirect into the template with `?npc=<id>`.
 - `character_card/` – PNG character card generator (click preview to open/save).
 - `timeline/` – static timeline view.
 
@@ -30,8 +30,13 @@ Combined static package that bundles the Rugatha campaign graph, campaign cards,
 ## NPC browser (npc/)
 - Pages: `index.html` (main), `npc.html` (trimmed standalone).
 - Features: search, A↔Z sorting, grouping by letter or race (multi-race entries appear in each race), lazy-loaded images, accessible live status.
-- Data source: `npc/data/characters.json` (entries shaped as `{ name, image, url, race }`).
+- Data source: `npc/data/characters.json` (entries shaped as `{ id, name, image, url, race, descZh, descEn, related: [] }`). `id` should match the filename slug (e.g. `Ada` → `_template.html?npc=Ada`).
+- Individual pages under `npc/npc_page/pages/` are lightweight stubs that redirect to `_template.html?npc=<slug>`; the template pulls data from `characters.json`, so no per-page content needs to be maintained.
 - No build step; open in a browser or serve statically.
+
+## NPC page template (npc/npc_page/)
+- Template: `npc/npc_page/pages/_template.html` contains the shared layout and script. All other files in `npc/npc_page/pages/` are tiny redirectors pointing to this template with the NPC slug.
+- Data contract: `scripts.js` reads the `npc` query param, finds the matching record in `npc/data/characters.json`, and renders portrait, names, descriptions, and related chips. Keep descriptions in the JSON, not in the HTML stubs.
 
 ## Updating content
 1. Edit campaigns or graph nodes in `shared/rugatha.config.js` (names, links, accents, node relationships). Both the graph and cards will pick it up.
