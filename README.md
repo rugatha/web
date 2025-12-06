@@ -8,6 +8,7 @@ Combined static package that bundles the Rugatha campaign graph, campaign cards,
 - `campaign_graph/` – D3 collapsible hierarchy viewer, now powered by the shared config.
 - `campaigns/` – campaign cards, now powered by the shared config.
 - `npc/` – NPC gallery (data still lives in `npc/data/characters.json`).
+- `npc/npc_page/` – template for individual NPC pages (content is embedded in `npc/npc_page/template.html`, selected via `?npc=id`).
 - `character_card/` – PNG character card generator (click preview to open/save).
 - `timeline/` – static timeline view.
 

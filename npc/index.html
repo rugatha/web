@@ -439,13 +439,20 @@
       return [...list].sort(sortByName);
     }
 
+    function resolveUrl(url) {
+      if (!url) return "#";
+      if (url.startsWith("npc/")) return "../" + url;
+      if (url.startsWith("npc_page/")) return "../" + url;
+      return url;
+    }
+
     function renderCard(character) {
       const node = template.content.firstElementChild.cloneNode(true);
       const img = node.querySelector('img');
       const nameEl = node.querySelector('.card__name');
       const raceEl = node.querySelector('.card__race');
 
-      node.href = character.url;
+      node.href = resolveUrl(character.url);
       nameEl.textContent = character.name;
       raceEl.textContent = character.race || '';
       img.src = character.image;
