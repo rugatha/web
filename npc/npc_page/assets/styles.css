@@ -86,6 +86,7 @@ h2 {
   display: grid;
   grid-template-columns: 380px 1fr;
   gap: 20px;
+  align-items: start; /* prevent portrait from stretching to match content height */
 }
 
 .portrait {
