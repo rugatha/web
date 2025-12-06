@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-const npcId = params.get("npc") || "ada";
+const npcId = params.get("npc") || getSlugId() || "ada";
 
 const elements = {
   name: document.getElementById("npc-name"),
@@ -29,6 +29,12 @@ function normalize(str) {
   return (str || "").toLowerCase().replace(/[^0-9a-z]/g, "");
 }
 
+function getSlugId() {
+  const parts = window.location.pathname.split("/");
+  const last = parts.filter(Boolean).pop() || "";
+  return last.replace(/\.html?$/i, "");
+}
+
 async function loadCharacters() {
   try {
     const res = await fetch("../../data/characters.json", { cache: "no-store" });
@@ -45,67 +51,47 @@ function resolveImage(image) {
   return /^https?:|^\//.test(image) ? image : `../../${image}`;
 }
 
-function findCharacter(chars, name, id) {
-  const key = normalize(id || name);
-  return chars.find((c) => normalize(c.id || c.name) === key);
-}
-
-function findRelated(chars, npc, descZh, descEn) {
-  const textEn = (descEn || "").toLowerCase();
-  const textZh = descZh || "";
-  const related = [];
-  chars.forEach((c) => {
-    if (!c.name || !c.url) return;
-    if (normalize(c.id || c.name) === normalize(npc.id || npc.name)) return;
-    const nameEn = c.name.toLowerCase();
-    const nameZh = c.name;
-    const tokens = nameTokens(c.name);
-    const tokenHit = tokens.some((tok) => textEn.match(new RegExp(`\\b${tok}\\b`)));
-    const fullHit =
-      nameEn &&
-      textEn.match(new RegExp(`\\b${nameEn.replace(/[-/\\\\^$*+?.()|[\\]{}]/g, "\\\\$&")}\\b`));
-    const matchEn = tokenHit || fullHit;
-    const matchZh = nameZh && textZh.includes(nameZh);
-    if (matchEn || matchZh) {
-      related.push({ name: c.name, url: normalizeRelatedUrl(c.url) });
+function findCharacter(chars, name, id, slug) {
+  const targets = new Set([normalize(id), normalize(name), normalize(slug)]);
+  return chars.find((c) => {
+    const idKey = normalize(c.id || c.name);
+    const slugKey = normalizeSlug(c.url);
+    for (const target of targets) {
+      if (target && (target === idKey || target === slugKey)) return true;
     }
+    return false;
   });
-  return related;
 }
 
-function nameTokens(name) {
-  const cleaned = (name || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-  if (!cleaned) return [];
-  const stop = new Set([
-    "the",
-    "of",
-    "and",
-    "lord",
-    "lady",
-    "king",
-    "queen",
-    "mr",
-    "mrs",
-    "ms",
-    "sir",
-    "dr",
-    "captain",
-    "young",
-    "evil",
-    "from",
-    "father",
-    "mother",
-    "Macksohn",
-    "Evil"
-  ]);
-  return cleaned.split(/\s+/).filter((tok) => tok && !stop.has(tok));
+function normalizeSlug(url) {
+  if (!url) return "";
+  const last = (url.split("/").pop() || "").replace(/\.html?$/i, "");
+  return normalize(last);
 }
 
 function normalizeRelatedUrl(url) {
   if (!url) return "#";
   if (url.startsWith("npc_page/pages/")) return "../../" + url;
-  if (url.startsWith("npc/npc_page/pages/")) return "../../../" + url.slice(4);
+  if (url.startsWith("npc/npc_page/pages/")) return "../../" + url.slice(4);
   return url;
+}
+
+function resolveRelated(chars, relatedIds = []) {
+  if (!Array.isArray(relatedIds) || !relatedIds.length) return [];
+  const byId = new Map();
+  chars.forEach((c) => {
+    const key = normalize(c.id || c.name);
+    if (key) byId.set(key, c);
+  });
+  const result = [];
+  relatedIds.forEach((rid) => {
+    const key = normalize(rid);
+    const match = key ? byId.get(key) : null;
+    if (match && match.name) {
+      result.push({ name: match.name, url: normalizeRelatedUrl(match.url) });
+    }
+  });
+  return result;
 }
 
 function render(npc) {
@@ -120,24 +106,32 @@ function render(npc) {
 
 (async function init() {
   const npcMap = loadInlineData();
-  const npc = npcMap[npcId] || Object.values(npcMap)[0];
-  const baseNpc = npc || {
-    id: "npc",
-    name: "NPC",
+  const inlineNpc =
+    npcMap[npcId] ||
+    Object.values(npcMap).find((entry) => normalize(entry.id || entry.name) === normalize(npcId)) ||
+    Object.values(npcMap)[0];
+
+  const baseNpc = inlineNpc || {
+    id: npcId || "npc",
+    name: inlineNpc?.name || npcId || "NPC",
     image: "",
     descZh: "找不到該 NPC。",
     descEn: "NPC not found."
   };
 
   const chars = await loadCharacters();
-  const record = findCharacter(chars, baseNpc.name, baseNpc.id);
+  const record = findCharacter(chars, baseNpc.name, baseNpc.id, getSlugId());
+  const mergedNpc = { ...baseNpc };
   if (record) {
-    baseNpc.name = record.name || baseNpc.name;
-    baseNpc.image = resolveImage(record.image) || baseNpc.image;
-    baseNpc.related = findRelated(chars, baseNpc, baseNpc.descZh, baseNpc.descEn);
+    mergedNpc.id = record.id || mergedNpc.id;
+    mergedNpc.name = record.name || mergedNpc.name;
+    mergedNpc.image = resolveImage(record.image) || mergedNpc.image;
+    mergedNpc.descZh = record.descZh || mergedNpc.descZh;
+    mergedNpc.descEn = record.descEn || mergedNpc.descEn;
+    mergedNpc.related = resolveRelated(chars, record.related || mergedNpc.related);
   }
 
-  render(baseNpc);
+  render(mergedNpc);
 })();
 
 function setDescription(el, text, fallback) {
