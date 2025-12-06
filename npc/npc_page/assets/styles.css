@@ -82,6 +82,66 @@ h2 {
   text-transform: uppercase;
 }
 
+.gender-pill {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 15px;
+  width: 34px;
+  justify-content: center;
+}
+
+.gender-pill[data-gender="male"] {
+  color: #a5d8ff;
+  border-color: rgba(165, 216, 255, 0.5);
+  background: rgba(165, 216, 255, 0.16);
+}
+
+.gender-pill[data-gender="female"] {
+  color: #f7c6e0;
+  border-color: rgba(247, 198, 224, 0.5);
+  background: rgba(247, 198, 224, 0.16);
+}
+
+.gender-pill[data-gender="neutral"],
+.gender-pill[data-gender="other"] {
+  color: #e6e6e6;
+  border-color: rgba(230, 230, 230, 0.35);
+  background: rgba(230, 230, 230, 0.1);
+}
+
+.status-pill {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 15px;
+  width: 34px;
+  justify-content: center;
+}
+
+.status-pill[data-status="alive"] {
+  color: #a7f3d0;
+  border-color: rgba(167, 243, 208, 0.5);
+  background: rgba(167, 243, 208, 0.16);
+}
+
+.status-pill[data-status="dead"] {
+  color: #fca5a5;
+  border-color: rgba(252, 165, 165, 0.5);
+  background: rgba(252, 165, 165, 0.16);
+}
+
+.status-pill[data-status="historical-figure"] {
+  color: #fbd38d;
+  border-color: rgba(251, 211, 141, 0.5);
+  background: rgba(251, 211, 141, 0.16);
+}
+
+.status-pill[data-status="unknown"],
+.status-pill[data-status="other"] {
+  color: #e6e6e6;
+  border-color: rgba(230, 230, 230, 0.35);
+  background: rgba(230, 230, 230, 0.1);
+}
+
 .layout {
   display: grid;
   grid-template-columns: 380px 1fr;

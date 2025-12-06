@@ -10,6 +10,20 @@ const elements = {
 
 let charactersCache = null;
 
+const genderMap = {
+  male: { icon: "♂", label: "Male" },
+  female: { icon: "♀", label: "Female" },
+  neutral: { icon: "⚪", label: "Neutral" },
+  other: { icon: "✦", label: "Other" }
+};
+
+const statusMap = {
+  alive: { icon: "❤", label: "Alive" },
+  dead: { icon: "☠", label: "Dead" },
+  "historical figure": { icon: "⌛", label: "Historical figure" },
+  other: { icon: "?", label: "Unknown" }
+};
+
 function loadInlineData() {
   const el = document.getElementById("npc-data");
   if (!el) return {};
@@ -150,6 +164,8 @@ function render(npc) {
   elements.portrait.alt = npc.name || "NPC portrait";
   setDescription(elements.zh, npc.descZh, "（尚無中文介紹）");
   setDescription(elements.en, npc.descEn, "(Description coming soon)");
+  renderGender(npc.gender);
+  renderStatus(npc.status);
   document.title = npc.name ? `${npc.name} | NPC` : "NPC";
   insertRelated(npc.related || []);
 }
@@ -165,6 +181,7 @@ function render(npc) {
     id: npcId || "npc",
     name: inlineNpc?.name || npcId || "NPC",
     image: "",
+    gender: inlineNpc?.gender || "neutral",
     descZh: "找不到該 NPC。",
     descEn: "NPC not found."
   };
@@ -176,6 +193,8 @@ function render(npc) {
     mergedNpc.id = record.id || mergedNpc.id;
     mergedNpc.name = record.name || mergedNpc.name;
     mergedNpc.image = resolveImage(record.image) || mergedNpc.image;
+    mergedNpc.gender = record.gender || mergedNpc.gender;
+    mergedNpc.status = record.status || mergedNpc.status;
     mergedNpc.descZh = record.descZh || mergedNpc.descZh;
     mergedNpc.descEn = record.descEn || mergedNpc.descEn;
     mergedNpc.related = resolveRelated(chars, record.related || mergedNpc.related);
@@ -207,6 +226,24 @@ function setDescription(el, text, fallback) {
   });
 }
 
+function renderGender(gender) {
+  const row = document.querySelector(".title-row");
+  if (!row) return;
+
+  let badge = row.querySelector(".gender-pill");
+  if (!badge) {
+    badge = document.createElement("span");
+    badge.className = "tag gender-pill";
+    row.appendChild(badge);
+  }
+
+  const key = (gender || "").toLowerCase();
+  const info = genderMap[key] || genderMap.other;
+  badge.dataset.gender = info.label.toLowerCase();
+  badge.textContent = info.icon;
+  badge.setAttribute("aria-label", `Gender: ${info.label}`);
+}
+
 function insertRelated(items) {
   if (!elements.content || !items.length) return;
   const wrap = document.createElement("div");
@@ -226,4 +263,22 @@ function insertRelated(items) {
   });
   wrap.appendChild(list);
   elements.content.appendChild(wrap);
+}
+
+function renderStatus(status) {
+  const row = document.querySelector(".title-row");
+  if (!row) return;
+
+  let badge = row.querySelector(".status-pill");
+  if (!badge) {
+    badge = document.createElement("span");
+    badge.className = "tag status-pill";
+    row.appendChild(badge);
+  }
+
+  const key = (status || "").toLowerCase();
+  const info = statusMap[key] || statusMap.other;
+  badge.dataset.status = info.label.toLowerCase().replace(/\s+/g, "-");
+  badge.textContent = info.icon;
+  badge.setAttribute("aria-label", `Status: ${info.label}`);
 }

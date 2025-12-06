@@ -349,7 +349,7 @@
       <h1>NPC</h1>
       <div class="search">
         <div class="controls">
-          <input id="search" type="search" placeholder="搜尋 NPC 名稱">
+          <input id="search" type="search" placeholder="搜尋關鍵字">
           <div class="toggle-group" role="group" aria-label="分類方式" id="group-toggle">
             <span class="toggle-slider" aria-hidden="true"></span>
             <button type="button" id="group-letter" aria-pressed="true">按字母</button>
@@ -422,6 +422,24 @@
         .map((r) => r.trim())
         .filter(Boolean);
       return keys.length ? keys : ['未知'];
+    }
+
+    const genderAliases = {
+      male: ['male', 'm', 'man', 'boy', '♂', '男', '男性'],
+      female: ['female', 'f', 'woman', 'girl', '♀', '女', '女性'],
+      neutral: ['neutral', 'nb', 'nonbinary', '⚪', '中', '中性'],
+      other: ['other', '✦', '其他']
+    };
+
+    function genderMatches(term, gender) {
+      const normalized = (term || '').trim().toLowerCase();
+      const g = (gender || '').toLowerCase();
+      if (!normalized || !g) return false;
+      const tokens = normalized.split(/\s+/).filter(Boolean);
+      if (!tokens.length) return false;
+
+      const aliases = [g, ...(genderAliases[g] || [])].map((a) => a.toLowerCase());
+      return tokens.some((t) => aliases.includes(t));
     }
 
     function sortByName(a, b) {
@@ -514,9 +532,10 @@
       const term = searchInput ? searchInput.value.trim().toLowerCase() : '';
       const filtered = term
         ? charactersCache.filter((c) => {
-            const nameMatch = c.name.toLowerCase().includes(term);
+            const nameMatch = (c.name || '').toLowerCase().includes(term);
             const raceMatch = (c.race || '').toLowerCase().includes(term);
-            return nameMatch || raceMatch;
+            const genderMatch = genderMatches(term, c.gender);
+            return nameMatch || raceMatch || genderMatch;
           })
         : charactersCache;
       return { term, filtered };
