@@ -1,5 +1,4 @@
-const params = new URLSearchParams(window.location.search);
-const npcId = params.get("npc") || getSlugId() || "ada";
+const npcId = getRequestedNpc();
 
 const elements = {
   name: document.getElementById("npc-name"),
@@ -29,10 +28,45 @@ function normalize(str) {
   return (str || "").toLowerCase().replace(/[^0-9a-z]/g, "");
 }
 
-function getSlugId() {
-  const parts = window.location.pathname.split("/");
+function getSlugId(pathname = window.location.pathname) {
+  const parts = (pathname || "").split("/");
   const last = parts.filter(Boolean).pop() || "";
   return last.replace(/\.html?$/i, "");
+}
+
+function getRequestedNpc() {
+  const params = new URLSearchParams(window.location.search);
+  const fromQuery = params.get("npc") || params.get("id") || "";
+  const cleanedQuery = stripQuotes(fromQuery);
+  if (cleanedQuery) return cleanedQuery;
+
+  const slug = getSlugId();
+  if (slug && slug.toLowerCase() !== "_template") return slug;
+
+  const ref = document.referrer || "";
+  if (ref) {
+    try {
+      const refUrl = new URL(ref);
+      const refNpc = refUrl.searchParams.get("npc") || refUrl.searchParams.get("id");
+      const cleanedRef = stripQuotes(refNpc);
+      if (cleanedRef) return cleanedRef;
+      const refSlug = getSlugId(refUrl.pathname);
+      if (refSlug && refSlug.toLowerCase() !== "_template") return refSlug;
+    } catch (err) {
+      /* ignore parse errors */
+    }
+  }
+
+  return "ada";
+}
+
+function stripQuotes(str) {
+  const s = (str || "").trim();
+  if (!s) return "";
+  if ((s.startsWith("'") && s.endsWith("'")) || (s.startsWith('"') && s.endsWith('"'))) {
+    return s.slice(1, -1);
+  }
+  return s;
 }
 
 async function loadCharacters() {
@@ -94,6 +128,22 @@ function resolveRelated(chars, relatedIds = []) {
   return result;
 }
 
+function ensurePrettyUrl(id) {
+  if (!id || !window.history || !window.history.replaceState) return;
+  const path = window.location.pathname || "";
+  if (!/_template\.html$/i.test(path)) return;
+  const dir = path.slice(0, path.lastIndexOf("/") + 1);
+  const targetPath = `${dir}${encodeURIComponent(id)}.html`;
+  if (targetPath === path) return;
+  const params = new URLSearchParams(window.location.search);
+  params.delete("npc");
+  params.delete("id");
+  const query = params.toString();
+  const hash = window.location.hash || "";
+  const newUrl = `${targetPath}${query ? `?${query}` : ""}${hash}`;
+  window.history.replaceState(null, "", newUrl);
+}
+
 function render(npc) {
   elements.name.textContent = npc.name || "NPC";
   elements.portrait.src = npc.image || "";
@@ -131,6 +181,7 @@ function render(npc) {
     mergedNpc.related = resolveRelated(chars, record.related || mergedNpc.related);
   }
 
+  ensurePrettyUrl(mergedNpc.id || mergedNpc.name);
   render(mergedNpc);
 })();
 

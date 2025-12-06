@@ -3,14 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=_template.html?npc=Bishop_Robinson">
-  <title>Bishop_Robinson</title>
+  <title>NPC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/rugatha-icon.png">
+  <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
-  <p>Redirecting to NPC page for Bishop_Robinson...</p>
-  <p><a href="_template.html?npc=Bishop_Robinson">Click here</a> if you are not redirected.</p>
-  <script>
-    window.location.replace(`_template.html?npc=Bishop_Robinson`);
-  </script>
+  <header class="hero">
+    <a href="https://rugatha.com/rugatha-home/" aria-label="Rugatha home">
+      <img src="../../../../assets/Wordpress%20Banner.jpg" alt="Rugatha banner" class="hero-img">
+    </a>
+  </header>
+
+  <main class="page">
+    <section class="card">
+        <div class="title-row">
+          <h1 id="npc-name">NPC</h1>
+        </div>
+
+      <div class="layout">
+        <div class="portrait">
+          <img id="npc-portrait" src="" alt="">
+        </div>
+        <div class="content">
+
+          <p id="npc-desc-zh" class="body"></p>
+
+          <p id="npc-desc-en" class="body"></p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn icon-btn" href="../../index.html" aria-label="返回 NPC 清單">↩</a>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../assets/scripts.js"></script>
 </body>
 </html>
