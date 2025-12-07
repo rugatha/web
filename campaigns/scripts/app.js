@@ -15,11 +15,13 @@ const toRgba = (hex, alpha = 0.22) => {
 };
 
 const buildCard = (item) => {
+  const href = item.page || item.link;
+  const isInternal = href && href.startsWith("./");
   const card = document.createElement("a");
   card.className = "card";
-  card.href = item.link;
-  card.target = "_blank";
-  card.rel = "noreferrer noopener";
+  card.href = href || "#";
+  card.target = isInternal ? "_self" : "_blank";
+  card.rel = isInternal ? "" : "noreferrer noopener";
   const accent = item.accent || "#7bdcb5";
   card.style.setProperty("--accent", accent);
   card.style.setProperty("--accent-soft", toRgba(accent, 0.22));
