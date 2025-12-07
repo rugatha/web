@@ -35,8 +35,14 @@ const buildCard = (item) => {
       <span class="card__title">${item.name}</span>
     </div>
     <div class="card__details">
-      <p class="card__tagline">${item.tagline}</p>
-      <p class="card__meta">${item.dates}</p>
+      <div class="card__session">
+        <div class="card__session-label">下次團務 Next Session</div>
+        <div class="card__session-time">${item.nextSession || "TBD"}</div>
+      </div>
+      <div class="card__details-text">
+        <p class="card__tagline">${item.tagline}</p>
+        <p class="card__meta">${item.dates}</p>
+      </div>
     </div>
   `;
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rugatha Campaign</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/rugatha-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/rugatha-icon-32.png">
+  <link rel="stylesheet" href="../styles/campaigns.css" />
+  <link rel="stylesheet" href="../styles/campaign-detail.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero" aria-label="Rugatha title image">
+      <a href="../index.html" class="hero-link" aria-label="返回 Rugatha 活動列表">
+        <img class="hero-logo" data-role="hero-image" src="../../assets/Wordpress Banner.jpg" alt="Rugatha title" loading="lazy" />
+      </a>
+    </header>
+    <section class="canvas detail-canvas">
+      <article class="campaign-detail" data-role="campaign-detail">
+        <div class="campaign-detail__media">
+          <img data-role="campaign-image" src="../../assets/Wordpress Banner.jpg" alt="Campaign cover" loading="lazy" />
+        </div>
+        <div class="campaign-detail__content">
+          <span class="campaign-detail__badge" data-role="badge">Rugatha Campaign</span>
+          <h1 class="campaign-detail__title" data-role="title">Campaign Title</h1>
+          <p class="campaign-detail__tagline" data-role="tagline">Campaign tagline.</p>
+          <div class="campaign-detail__meta" data-role="dates">Campaign dates</div>
+          <div class="campaign-detail__actions">
+            <a class="button" data-role="campaign-link" target="_blank" rel="noreferrer noopener">前往官方頁面</a>
+            <a class="button is-ghost" href="../index.html">返回所有活動</a>
+          </div>
+        </div>
+      </article>
+      <div class="campaign-empty is-hidden" data-role="not-found">
+        <h1>找不到活動</h1>
+        <p>請回到列表並重新選擇。</p>
+        <a class="button is-ghost" href="../index.html">返回 Rugatha 活動列表</a>
+      </div>
+      <div class="campaign-footnote">
+        <span>資料來自 shared/rugatha.config.js</span>
+        <a href="../index.html">查看所有活動</a>
+      </div>
+    </section>
+  </div>
+  <script src="../../shared/rugatha.config.js"></script>
+  <script src="../scripts/detail.js"></script>
+</body>
+</html>
