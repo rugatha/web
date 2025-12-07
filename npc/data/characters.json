@@ -2346,7 +2346,7 @@
     "status": "alive",
     "race": "Human",
     "gender": "male",
-    "religion": "",
+    "religion": null,
     "descZh": "住在麥克嵩舊城區（貧民窟）的年輕男子。\n雖然自稱不信蜘蛛神教，但是對貧民窟的蜘蛛神教宗教領袖母親大人似乎十分熟悉。\n帶領華生前往母親大人的神殿。",
     "descEn": "A young man living in old town Macksohn (ghetto).\nHe claimed not believing in the Spider God, but was familiar with Mother, the religious leader at the ghetto.\nLed Watson to the temple of Mother.",
     "related": []
