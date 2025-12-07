@@ -5,13 +5,13 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-.hero {
+.banner {
   display: grid;
   place-items: center;
   margin: 14px 0 0;
 }
 
-.hero img {
+.banner img {
   width: min(320px, 80vw);
 }
 

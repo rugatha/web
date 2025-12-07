@@ -34,22 +34,22 @@ a {
   text-decoration: none;
 }
 
-.hero {
+.banner {
   display: grid;
   place-items: center;
   margin-bottom: 18px;
 }
 
-.hero-link {
+.banner-link {
   display: inline-block;
   text-decoration: none;
   width: min(320px, 80vw);
 }
 
-.hero img,
-.hero-logo,
-.hero-img,
-.hero-image {
+.banner img,
+.banner-logo,
+.banner-img,
+.banner-image {
   width: 100%;
   height: auto;
   display: block;

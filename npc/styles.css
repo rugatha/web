@@ -37,7 +37,7 @@ p.lead {
   color: var(--muted);
 }
 
-.hero {
+.banner {
   display: block;
   margin: 0 auto;
   max-width: 320px;
@@ -47,13 +47,13 @@ p.lead {
   transition: none;
 }
 
-.hero img {
+.banner img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.hero:hover, .hero:focus-visible {
+.banner:hover, .banner:focus-visible {
   transform: none;
   box-shadow: none;
   outline: none;

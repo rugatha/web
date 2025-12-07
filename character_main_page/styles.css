@@ -8,11 +8,11 @@ body {
   width: min(1200px, 100%);
 }
 
-.hero {
+.banner {
   padding: 8px 12px 0;
 }
 
-.hero-img {
+.banner-img {
   width: min(320px, 80vw);
 }
 

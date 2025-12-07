@@ -7,7 +7,7 @@
 ## 專案結構
 - `index.html`：首頁，連到各個工具。
 - `shared/rugatha.config.js`：共用設定來源（戰役列表與關係圖連結）。
-- `shared/styles/theme.css`：跨頁面的調色盤、字體與 hero 預設樣式。
+- `shared/styles/theme.css`：跨頁面的調色盤、字體與 banner 預設樣式。
 - `campaign_graph/`：D3 折疊式關係圖，資料來自共用設定。
 - `campaigns/`：戰役卡片列表，資料同樣來自共用設定。
 - `npc/`：NPC 圖鑑（資料在 `npc/data/characters.json`）。
@@ -22,7 +22,7 @@
 - 資料來源：`shared/rugatha.config.js` 的圖形區塊，圖形會讀取 `CAMPAIGN_GRAPH_DATA`。
 
 ## 戰役卡片（campaigns/）
-- 以 `shared/rugatha.config.js` 驅動的卡片網格（不需額外資料檔），樣式沿用共用色票與 hero 設定。
+- 以 `shared/rugatha.config.js` 驅動的卡片網格（不需額外資料檔），樣式沿用共用色票與 banner 設定。
 - 入口：`campaigns/index.html`；樣式在 `styles/campaigns.css`；邏輯在 `scripts/app.js`。
 
 ## 角色卡產生器（character_card/）
@@ -38,7 +38,7 @@
 - 無需建置，直接開啟瀏覽器或以靜態伺服器提供即可。
 
 ## 共用樣式
-- 基礎變數、字體匯入與 hero 預設都在 `shared/styles/theme.css`，所有頂層頁面皆引用。
+- 基礎變數、字體匯入與 banner 預設都在 `shared/styles/theme.css`，所有頂層頁面皆引用。
 - 單頁覆寫則放在各自資料夾（如 `styles/home.css`、`character_main_page/styles.css`、`npc/styles.css`），盡量沿用共用變數。
 
 ## NPC 模板（npc/npc_page/）

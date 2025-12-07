@@ -20,7 +20,7 @@ a {
   text-align: center;
 }
 
-.hero-image {
+.banner-image {
   width: min(320px, 80vw);
   height: auto;
   display: block;

@@ -129,7 +129,7 @@ const deities = [
 ];
 
 const grid = document.getElementById("deity-grid");
-const fallbackImage = "../assets/Wordpress%20Banner.jpg";
+const fallbackImage = "../assets/rugatha-banner.jpg";
 const categoryOrder = [
   "The Pantheon 主神",
   "The Newly Ascended 新生神",

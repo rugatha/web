@@ -8,19 +8,19 @@ body {
   width: min(1180px, 100%);
 }
 
-.hero {
+.banner {
   display: grid;
   place-items: center;
   margin-bottom: 18px;
 }
 
-.hero-link {
+.banner-link {
   display: inline-block;
   text-decoration: none;
   width: min(320px, 80vw);
 }
 
-.hero-logo {
+.banner-logo {
   width: 100%;
   height: auto;
   display: block;
