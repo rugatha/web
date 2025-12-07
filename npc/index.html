@@ -18,17 +18,23 @@
       <h1>NPC</h1>
       <div class="search">
         <div class="controls">
-          <input id="search" type="search" placeholder="搜尋關鍵字">
-          <div class="toggle-group" role="group" aria-label="分類方式" id="group-toggle">
-            <span class="toggle-slider" aria-hidden="true"></span>
-            <button type="button" id="group-letter" aria-pressed="true">按字母</button>
-            <button type="button" id="group-race" aria-pressed="false">按種族</button>
+          <div class="control-row control-row--search">
+            <input id="search" type="search" placeholder="以關鍵字搜尋 Search with keywords">
           </div>
-          <div class="sort">
-            <button type="button" id="sort-toggle" data-sort="asc">A → Z</button>
+          <div class="control-row control-row--actions">
+            <div class="toggle-group" role="group" aria-label="分類方式" id="group-toggle">
+              <span class="toggle-slider" aria-hidden="true"></span>
+              <button type="button" id="group-letter" aria-pressed="true">按字母<br>Alphabetical</button>
+              <button type="button" id="group-race" aria-pressed="false">按種族<br>Race</button>
+              <button type="button" id="group-religion" aria-pressed="false">按信仰<br>Religion</button>
+            </div>
+            <div class="sort">
+              <button type="button" id="sort-toggle" class="pill-btn" data-sort="asc">A → Z</button>
+            </div>
+            <span class="search-count" id="search-count"></span>
+            <button type="button" id="random-btn" class="pill-btn">隨機 NPC<br>Random NPC</button>
+            <button type="button" id="clear-search" class="pill-btn" aria-label="清除搜尋並重置">清除搜尋<br>Clear search</button>
           </div>
-          <span class="search-count" id="search-count"></span>
-          <button type="button" id="random-btn">隨機 NPC</button>
         </div>
       </div>
     </div>
@@ -55,16 +61,23 @@
     const statusEl = document.getElementById('status');
     const template = document.getElementById('card-template');
     const searchInput = document.getElementById('search');
+    const clearSearch = document.getElementById('clear-search');
     const sortToggle = document.getElementById('sort-toggle');
     const toggleGroup = document.getElementById('group-toggle');
     const letterToggle = document.getElementById('group-letter');
     const raceToggle = document.getElementById('group-race');
+    const religionToggle = document.getElementById('group-religion');
     const randomButton = document.getElementById('random-btn');
     const searchCount = document.getElementById('search-count');
     let charactersCache = [];
     let sortOrder = 'asc';
     let groupingMode = 'letter';
     const isAscii = (str) => /^[A-Za-z]/.test(str || '');
+
+    const setLines = (el, text) => {
+      if (!el) return;
+      el.innerHTML = (text || '').replace(/\n/g, '<br>');
+    };
 
     async function loadCharacters() {
       try {
@@ -91,6 +104,15 @@
         .map((r) => r.trim())
         .filter(Boolean);
       return keys.length ? keys : ['未知'];
+    }
+
+    function getReligionKeys(religion) {
+      const keys = (religion || '')
+        .split(',')
+        .map((r) => r.trim())
+        .filter(Boolean)
+        .map((r) => (r.toLowerCase() === 'not sure' ? 'Not sure' : r));
+      return keys.length ? keys : ['未知信仰'];
     }
 
     const genderAliases = {
@@ -180,17 +202,47 @@
         });
       } else {
         let currentGroup = null;
-        characters.forEach((character) => {
-          const groupKey = getLetterGroupKey(character.name);
-          if (showGroupLabels && groupKey !== currentGroup) {
-            currentGroup = groupKey;
-            const label = document.createElement('div');
-            label.className = 'group-label';
-            label.textContent = groupKey;
-            fragment.appendChild(label);
-          }
-          fragment.appendChild(renderCard(character));
-        });
+        if (groupingMode === 'religion') {
+          const groups = new Map();
+          characters.forEach((character) => {
+            const religionKeys = getReligionKeys(character.religion);
+            religionKeys.forEach((key) => {
+              if (!groups.has(key)) groups.set(key, []);
+              groups.get(key).push(character);
+            });
+          });
+
+          const sortedKeys = Array.from(groups.keys()).sort((a, b) => {
+            return sortOrder === 'asc'
+              ? a.localeCompare(b, 'en', { sensitivity: 'base' })
+              : b.localeCompare(a, 'en', { sensitivity: 'base' });
+          });
+
+          sortedKeys.forEach((groupKey) => {
+            const groupMembers = sortCharacters(groups.get(groupKey));
+            if (showGroupLabels) {
+              const label = document.createElement('div');
+              label.className = 'group-label';
+              label.textContent = groupKey;
+              fragment.appendChild(label);
+            }
+            groupMembers.forEach((character) => {
+              fragment.appendChild(renderCard(character));
+            });
+          });
+        } else {
+          characters.forEach((character) => {
+            const groupKey = getLetterGroupKey(character.name);
+            if (showGroupLabels && groupKey !== currentGroup) {
+              currentGroup = groupKey;
+              const label = document.createElement('div');
+              label.className = 'group-label';
+              label.textContent = groupKey;
+              fragment.appendChild(label);
+            }
+            fragment.appendChild(renderCard(character));
+          });
+        }
       }
 
       grid.innerHTML = '';
@@ -204,7 +256,8 @@
             const nameMatch = (c.name || '').toLowerCase().includes(term);
             const raceMatch = (c.race || '').toLowerCase().includes(term);
             const genderMatch = genderMatches(term, c.gender);
-            return nameMatch || raceMatch || genderMatch;
+            const religionMatch = (c.religion || '').toLowerCase().includes(term);
+            return nameMatch || raceMatch || genderMatch || religionMatch;
           })
         : charactersCache;
       return { term, filtered };
@@ -214,11 +267,13 @@
       const { term, filtered } = getFilteredCharacters();
       const sorted = sortCharacters(filtered);
       renderCharacters(sorted, { showGroupLabels: term === '' });
-      statusEl.textContent = term
-        ? `顯示 ${filtered.length} 名角色`
-        : '角色列表載入完成';
+      const statusText = term
+        ? `顯示 ${filtered.length} 名角色\nShowing ${filtered.length} characters`
+        : '角色列表載入完成\nCharacter list loaded';
+      setLines(statusEl, statusText);
       if (searchCount) {
-        searchCount.textContent = term ? `${filtered.length} 名角色` : '';
+        const countText = term ? `${filtered.length} 名角色\n${filtered.length} characters` : '';
+        setLines(searchCount, countText);
       }
       grid.classList.remove('single-random');
     }
@@ -235,8 +290,8 @@
       const randomIndex = Math.floor(Math.random() * filtered.length);
       const randomCharacter = filtered[randomIndex];
       renderCharacters([randomCharacter], { showGroupLabels: false });
-      statusEl.textContent = `隨機選擇：${randomCharacter.name}`;
-      if (searchCount) searchCount.textContent = '1 名角色（隨機）';
+      setLines(statusEl, `隨機選擇：${randomCharacter.name}`);
+      if (searchCount) setLines(searchCount, '');
       grid.classList.add('single-random');
     }
 
@@ -245,7 +300,11 @@
       groupingMode = mode;
       if (letterToggle) letterToggle.setAttribute('aria-pressed', mode === 'letter');
       if (raceToggle) raceToggle.setAttribute('aria-pressed', mode === 'race');
-      if (toggleGroup) toggleGroup.classList.toggle('is-race', mode === 'race');
+      if (religionToggle) religionToggle.setAttribute('aria-pressed', mode === 'religion');
+      if (toggleGroup) {
+        toggleGroup.classList.toggle('is-race', mode === 'race');
+        toggleGroup.classList.toggle('is-religion', mode === 'religion');
+      }
       if (changed) {
         applyFilters();
       }
@@ -256,6 +315,11 @@
       searchInput.addEventListener('input', () => {
         applyFilters();
       });
+      if (clearSearch) {
+        clearSearch.addEventListener('click', () => {
+          resetControls();
+        });
+      }
       if (sortToggle) {
         sortToggle.addEventListener('click', () => {
           sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
@@ -270,9 +334,24 @@
       if (raceToggle) {
         raceToggle.addEventListener('click', () => setGroupingMode('race'));
       }
+      if (religionToggle) {
+        religionToggle.addEventListener('click', () => setGroupingMode('religion'));
+      }
       if (randomButton) {
         randomButton.addEventListener('click', renderRandomCharacter);
       }
+    }
+
+    function resetControls() {
+      if (searchInput) searchInput.value = '';
+      sortOrder = 'asc';
+      if (sortToggle) {
+        sortToggle.dataset.sort = 'asc';
+        sortToggle.textContent = 'A → Z';
+      }
+      setGroupingMode('letter');
+      grid.classList.remove('single-random');
+      applyFilters();
     }
 
     loadCharacters();

@@ -54,12 +54,21 @@ body {
   gap: 12px;
   margin-bottom: 16px;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 h1 {
   margin: 0;
   font-size: clamp(36px, 5vw, 52px);
   letter-spacing: -0.01em;
+}
+
+.title-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 h2 {
@@ -142,6 +151,27 @@ h2 {
   background: rgba(230, 230, 230, 0.1);
 }
 
+.religion-pill {
+  text-transform: none;
+  letter-spacing: 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 140px;
+  text-align: center;
+}
+
+.religion-pill .en-label {
+  color: var(--muted);
+  margin-left: 6px;
+}
+
+.religion-family {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .layout {
   display: grid;
   grid-template-columns: 380px 1fr;
@@ -167,6 +197,51 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.religion {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.religion h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.religion-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.religion-chip {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 160px;
+}
+
+.religion-name {
+  font-weight: 700;
+}
+
+.religion-name .en-label {
+  font-weight: 500;
+  color: var(--muted);
+  margin-left: 6px;
+}
+
+.religion-family {
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .body {

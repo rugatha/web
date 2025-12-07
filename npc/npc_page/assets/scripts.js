@@ -42,6 +42,35 @@ function normalize(str) {
   return (str || "").toLowerCase().replace(/[^0-9a-z]/g, "");
 }
 
+const deityList = [
+  { en: "Trinix", zh: "崔尼斯" },
+  { en: "Phyneal", zh: "芬尼爾" },
+  { en: "Phynoir", zh: "芬諾爾" },
+  { en: "Nessis", zh: "涅西斯" },
+  { en: "Keinra", zh: "津菈" },
+  { en: "Jeorisan", zh: "喬里森" },
+  { en: "Ultisen", zh: "奧提森" },
+  { en: "Maxus", zh: "麥克瑟斯" },
+  { en: "Laxthos", zh: "拉索斯" },
+  { en: "Kalinius", zh: "凱里涅斯" },
+  { en: "Daligon", zh: "達里崗" },
+  { en: "Amoret", zh: "阿莫雷" },
+  { en: "The Mother", zh: "母親大人" },
+  { en: "Mother", zh: "母親大人" },
+  { en: "Anna", zh: "安娜" },
+  { en: "Alfenor", zh: "阿爾芬諾" },
+  { en: "King Knicol", zh: "神王尼可" },
+  { en: "Knicol", zh: "尼可" },
+  { en: "The Spider Religion", zh: "蜘蛛神教" }
+];
+
+const spiderKeys = ["The Mother", "Mother", "Anna", "Alfenor"].map((n) => normalize(n));
+
+const religionMap = deityList.reduce((acc, entry) => {
+  acc[normalize(entry.en)] = { en: entry.en, zh: entry.zh };
+  return acc;
+}, {});
+
 function getSlugId(pathname = window.location.pathname) {
   const parts = (pathname || "").split("/");
   const last = parts.filter(Boolean).pop() || "";
@@ -166,6 +195,7 @@ function render(npc) {
   setDescription(elements.en, npc.descEn, "(Description coming soon)");
   renderGender(npc.gender);
   renderStatus(npc.status);
+  renderReligion(npc.religion);
   document.title = npc.name ? `${npc.name} | NPC` : "NPC";
   insertRelated(npc.related || []);
 }
@@ -198,6 +228,7 @@ function render(npc) {
     mergedNpc.descZh = record.descZh || mergedNpc.descZh;
     mergedNpc.descEn = record.descEn || mergedNpc.descEn;
     mergedNpc.related = resolveRelated(chars, record.related || mergedNpc.related);
+    mergedNpc.religion = record.religion || mergedNpc.religion;
   }
 
   ensurePrettyUrl(mergedNpc.id || mergedNpc.name);
@@ -227,14 +258,14 @@ function setDescription(el, text, fallback) {
 }
 
 function renderGender(gender) {
-  const row = document.querySelector(".title-row");
-  if (!row) return;
+  const meta = getMetaContainer();
+  if (!meta) return;
 
-  let badge = row.querySelector(".gender-pill");
+  let badge = meta.querySelector(".gender-pill");
   if (!badge) {
     badge = document.createElement("span");
     badge.className = "tag gender-pill";
-    row.appendChild(badge);
+    meta.appendChild(badge);
   }
 
   const key = (gender || "").toLowerCase();
@@ -242,6 +273,70 @@ function renderGender(gender) {
   badge.dataset.gender = info.label.toLowerCase();
   badge.textContent = info.icon;
   badge.setAttribute("aria-label", `Gender: ${info.label}`);
+}
+
+function parseReligionEntries(religion) {
+  if (!religion) return [];
+  return religion
+    .split(",")
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((label) => {
+      const key = normalize(label);
+      if (!key) return null;
+      if (key === "notsure") {
+        return { en: "Not sure", zh: "不確定" };
+      }
+      const mapped = religionMap[key];
+      if (mapped) {
+        const family = spiderKeys.includes(key) ? "蜘蛛神教 / The Spider Religion" : null;
+        return { ...mapped, family };
+      }
+      return { en: label, zh: "未知", unknown: true };
+    })
+    .filter(Boolean);
+}
+
+function renderReligion(religion) {
+  const meta = getMetaContainer();
+  if (!meta) return;
+  const entries = parseReligionEntries(religion);
+  if (!entries.length) return;
+
+  entries.forEach((entry) => {
+    const pill = document.createElement("span");
+    pill.className = "tag religion-pill";
+    pill.innerHTML = `${entry.zh}<span class="en-label">${entry.en}</span>`;
+
+    if (entry.family) {
+      const fam = document.createElement("span");
+      fam.className = "religion-family";
+      fam.textContent = entry.family;
+      pill.appendChild(fam);
+    }
+
+    if (entry.unknown) {
+      const hint = document.createElement("span");
+      hint.className = "religion-family";
+      hint.textContent = "未能匹配到神祇";
+      pill.appendChild(hint);
+      console.warn(`Unknown religion mapping: ${entry.en}`);
+    }
+
+    meta.appendChild(pill);
+  });
+}
+
+function getMetaContainer() {
+  const row = document.querySelector(".title-row");
+  if (!row) return null;
+  let meta = row.querySelector(".title-meta");
+  if (!meta) {
+    meta = document.createElement("div");
+    meta.className = "title-meta";
+    row.appendChild(meta);
+  }
+  return meta;
 }
 
 function insertRelated(items) {
@@ -266,14 +361,14 @@ function insertRelated(items) {
 }
 
 function renderStatus(status) {
-  const row = document.querySelector(".title-row");
-  if (!row) return;
+  const meta = getMetaContainer();
+  if (!meta) return;
 
-  let badge = row.querySelector(".status-pill");
+  let badge = meta.querySelector(".status-pill");
   if (!badge) {
     badge = document.createElement("span");
     badge.className = "tag status-pill";
-    row.appendChild(badge);
+    meta.appendChild(badge);
   }
 
   const key = (status || "").toLowerCase();

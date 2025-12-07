@@ -82,9 +82,9 @@ p.lead {
 
 .controls {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   width: min(960px, 100%);
 }
@@ -93,14 +93,26 @@ p.lead {
   flex-shrink: 0;
 }
 
-.controls input {
-  flex: 1 1 280px;
-  width: auto;
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
-#random-btn {
-  margin-left: auto;
-  white-space: nowrap;
+.control-row--search input {
+  flex: 1 1 auto;
+  width: min(520px, 100%);
+}
+
+.control-row--search {
+  align-items: stretch;
+  justify-content: center;
+}
+
+.control-row--actions {
+  justify-content: center;
 }
 
 .controls button {
@@ -130,8 +142,16 @@ p.lead {
   cursor: not-allowed;
 }
 
+.pill-btn {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  min-height: 46px;
+}
+
 .search input {
-  width: min(320px, 72vw);
+  width: 100%;
   padding: 10px 12px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -159,45 +179,35 @@ p.lead {
 .toggle-group {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.04);
   border-radius: 12px;
   overflow: hidden;
-  min-width: 200px;
+  min-width: 280px;
   isolation: isolate;
 }
 
 .toggle-group .toggle-slider {
-  position: absolute;
-  top: 2px;
-  bottom: 2px;
-  left: 2px;
-  width: calc(50% - 2px);
-  border-radius: 10px;
-  background: rgba(96, 165, 250, 0.18);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) inset;
-  transition: transform 180ms ease;
-  pointer-events: none;
-}
-
-.toggle-group.is-race .toggle-slider {
-  transform: translateX(100%);
+  display: none;
 }
 
 .toggle-group button {
   border: none;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.15);
   box-shadow: none;
-  padding: 10px 14px;
+  padding: 12px 14px;
   font-weight: 700;
   color: var(--text);
   border-radius: 0;
   z-index: 1;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .toggle-group button[aria-pressed="true"] {
   color: #e0edff;
+  background: rgba(96, 165, 250, 0.18);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
 .toggle-group button:focus-visible {
@@ -205,10 +215,19 @@ p.lead {
   outline-offset: -2px;
 }
 
+.toggle-group button:last-child {
+  border-right: none;
+}
+
 .search-count {
   color: var(--muted);
   font-size: 13px;
   font-weight: 600;
+}
+
+.sort .pill-btn,
+#random-btn.pill-btn {
+  padding: 12px 14px;
 }
 
 main {
