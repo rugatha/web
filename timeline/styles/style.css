@@ -5,11 +5,7 @@
 }
 
 body {
-  margin: 0;
-  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
   font-size: 16px;
-  background: #445f56;
-  color: #ecf2ed;
   overflow-x: hidden;
 }
 
@@ -19,7 +15,7 @@ a {
 }
 
 .intro {
-  background-color: #445f56;
+  background-color: var(--bg);
   padding: 22px 16px 16px;
   text-align: center;
 }
@@ -111,7 +107,7 @@ a {
 }
 
 .card {
-  background: #60695e;
+  background: var(--card);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 18px;
   box-shadow: none;
@@ -129,8 +125,8 @@ a {
 }
 
 .event .card {
-  border-left: 10px solid #d1ded6;
-  background: #60695e;
+  border-left: 10px solid var(--muted);
+  background: var(--card);
   padding-left: 10px;
 }
 
@@ -142,7 +138,7 @@ a {
 
 .meta {
   margin: 0;
-  color: #d1ded6;
+  color: var(--muted);
   font-weight: 700;
   font-size: 13px;
 }

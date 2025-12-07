@@ -4,174 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rugatha Toolkit</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/rugatha-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/rugatha-icon-32.png">
-  <style>
-    :root {
-      --bg: #445f56;
-      --card: #60695e;
-      --panel: rgba(19, 28, 32, 0.6);
-      --text: #ecf2ed;
-      --muted: #d1ded6;
-      --accent: #7bdcb5;
-      --accent-soft: rgba(123, 220, 181, 0.18);
-      --radius: 18px;
-      --shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--text);
-      font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
-      background: var(--bg);
-      display: flex;
-      justify-content: center;
-      padding: 32px 18px 54px;
-    }
-
-    .shell,
-    .page {
-      width: min(1180px, 100%);
-    }
-
-    header {
-      display: grid;
-      place-items: center;
-      margin-bottom: 18px;
-    }
-
-    .hero-link {
-      display: inline-block;
-      text-decoration: none;
-      width: min(320px, 80vw);
-    }
-
-    .hero-logo {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 0;
-      box-shadow: none;
-      border: none;
-    }
-
-    .actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin: 24px auto 0;
-      align-items: stretch;
-    }
-
-    .icon-link {
-      width: 320px;
-      height: 90px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: var(--card);
-      color: var(--text);
-      text-decoration: none;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: 0.005em;
-      text-align: center;
-      transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
-    }
-
-    .icon-link:hover,
-    .icon-link:focus-visible {
-      transform: translateY(-3px);
-      border-color: rgba(255, 255, 255, 0.28);
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
-      outline: none;
-    }
-
-    .panel {
-      margin-top: 26px;
-      background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .panel h2 {
-      margin: 0 0 12px;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-    }
-
-    .tool-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-    }
-
-    .tool-card {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: var(--card);
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 120ms ease, transform 120ms ease, background 120ms ease;
-    }
-
-    .tool-card:hover, .tool-card:focus-visible {
-      transform: translateY(-2px);
-      border-color: rgba(255, 255, 255, 0.24);
-      background: rgba(255, 255, 255, 0.05);
-      outline: none;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(0, 0, 0, 0.2);
-      color: var(--muted);
-      font-weight: 700;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      width: fit-content;
-    }
-
-    .campaign-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .chip {
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .note {
-      margin-top: 14px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-  </style>
+  <link rel="stylesheet" href="shared/styles/theme.css">
+  <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
   <div class="shell page">
@@ -179,15 +15,79 @@
       <a class="hero-link" href="https://rugatha.com/rugatha-home/" aria-label="Go to Rugatha home">
         <img class="hero-logo" src="assets/rugatha-hero.jpg" alt="Rugatha title">
       </a>
-      <div class="actions">
-        <a class="icon-link" href="npc/index.html">NPC</a>
-        <a class="icon-link" href="campaigns/index.html">Campaigns</a>
-        <a class="icon-link" href="campaign_graph/index.html">Campaign Graph</a>
-        <a class="icon-link" href="timeline/index.html">Timeline</a>
-        <a class="icon-link" href="character_card/index.html">Character Card Generator</a>
-        <a class="icon-link" href="deities/index.html">Deities</a>
-      </div>
+      <p class="lede">Rugatha 工具箱｜Campaigns · NPC · Timeline · Graph · Cards</p>
     </header>
+
+    <section class="panel about">
+      <div>
+        <p class="headline">Single source of truth for Rugatha pages</p>
+        <p class="body">
+          Shared資料、色票與字體集中在 <code>shared/</code>；每個工具都載入相同設定，更新一次全站同步。
+          This toolkit is static—drop it on any host and browse.
+        </p>
+      </div>
+      <div class="meta-pills" aria-label="Quick facts">
+        <span class="pill">Shared config</span>
+        <span class="pill">Space Grotesk + Inter</span>
+        <span class="pill">No build step</span>
+      </div>
+    </section>
+
+    <section aria-label="Rugatha tools" class="tools">
+      <div class="tool-card">
+        <div class="tool-head">
+          <span class="badge">NPC</span>
+          <a class="icon-link" href="npc/index.html" aria-label="Open NPC explorer">Open</a>
+        </div>
+        <p class="tool-title">NPC Explorer｜NPC 圖鑑</p>
+        <p class="tool-copy">搜尋、依字母或種族分組、延遲載入；單頁模板依 slug 讀取資料。</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-head">
+          <span class="badge">Campaigns</span>
+          <a class="icon-link" href="campaigns/index.html" aria-label="Open campaigns">Open</a>
+        </div>
+        <p class="tool-title">Campaign Cards｜戰役卡片</p>
+        <p class="tool-copy">共用設定驅動的卡片網格，含重點色與連結；含戰役詳細頁。</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-head">
+          <span class="badge">Graph</span>
+          <a class="icon-link" href="campaign_graph/index.html" aria-label="Open campaign graph">Open</a>
+        </div>
+        <p class="tool-title">Campaign Graph｜戰役關係圖</p>
+        <p class="tool-copy">D3 折疊式階層圖，支援縮放／平移／聚焦；資料同樣來自 shared config。</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-head">
+          <span class="badge">Timeline</span>
+          <a class="icon-link" href="timeline/index.html" aria-label="Open timeline">Open</a>
+        </div>
+        <p class="tool-title">Timeline｜時間軸</p>
+        <p class="tool-copy">靜態時間軸檢視，使用共用色票，適合快速回顧事件。</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-head">
+          <span class="badge">Cards</span>
+          <a class="icon-link" href="character_card/index.html" aria-label="Open character card generator">Open</a>
+        </div>
+        <p class="tool-title">Character Card Generator｜角色卡</p>
+        <p class="tool-copy">Canvas 產生 PNG，行動版支援長按提示；重點色來自戰役設定。</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-head">
+          <span class="badge">Deities</span>
+          <a class="icon-link" href="deities/index.html" aria-label="Open deities">Open</a>
+        </div>
+        <p class="tool-title">Deities｜諸神名錄</p>
+        <p class="tool-copy">依主題分類的神祇卡片，帶標籤、連結與後備圖示。</p>
+      </div>
+    </section>
 
   </div>
 

@@ -1,51 +1,58 @@
-# Rugatha Web Toolkit
+# Rugatha 網站工具箱
 
-Combined static package that bundles the Rugatha campaign graph, campaign cards, NPC explorer, character card generator, and timeline. Campaign metadata now lives in one place so updates propagate to every mini-site. All assets are local; no dependency on the original GitHub repos.
+整合 Rugatha 的戰役關係圖、戰役卡片、NPC 導覽、角色卡產生器與時間軸的靜態套件。戰役相關設定集中在同一份檔案，更新後各小工具都會同步；所有資源皆為本地檔案，不依賴原本的 GitHub 儲存庫。
 
-## Layout
-- `index.html` – landing page linking to every tool.
-- `shared/rugatha.config.js` – single source for shared settings (campaign list + graph links).
-- `campaign_graph/` – D3 collapsible hierarchy viewer, now powered by the shared config.
-- `campaigns/` – campaign cards, now powered by the shared config.
-- `npc/` – NPC gallery (data lives in `npc/data/characters.json`).
-- `npc/npc_page/` – shared template for individual NPC pages; all page files redirect into the template with `?npc=<id>`.
-- `character_card/` – PNG character card generator (click preview to open/save).
-- `timeline/` – static timeline view.
+全域的樣式變數與字體放在 `shared/styles/theme.css`，每個頁面都會引用，確保色彩、間距與首頁圖示一致。
 
-## Campaign graph (campaign_graph/)
-- Interactive, collapsible D3 hierarchy (root → category → campaign) with zoom/pan/fit/home controls and smooth expand/collapse.
-- WordPress-safe: if scripts are blocked, link out instead of embedding.
-- Structure: `index.html`, `css/style.css`, `js/graph-*.js`, `assets/`.
-- Update data in `shared/rugatha.config.js` (graph section); graph reads `CAMPAIGN_GRAPH_DATA` from the shared config.
+## 專案結構
+- `index.html`：首頁，連到各個工具。
+- `shared/rugatha.config.js`：共用設定來源（戰役列表與關係圖連結）。
+- `shared/styles/theme.css`：跨頁面的調色盤、字體與 hero 預設樣式。
+- `campaign_graph/`：D3 折疊式關係圖，資料來自共用設定。
+- `campaigns/`：戰役卡片列表，資料同樣來自共用設定。
+- `npc/`：NPC 圖鑑（資料在 `npc/data/characters.json`）。
+- `npc/npc_page/`：單一 NPC 頁面的共用模板；所有頁面檔案都以 `?npc=<id>` 方式導向模板。
+- `character_card/`：角色卡 PNG 產生器（點擊預覽即可開啟／存檔）。
+- `timeline/`：靜態時間軸檢視。
 
-## Campaign cards (campaigns/)
-- Card grid of campaigns, driven by `shared/rugatha.config.js` (no separate data file needed).
-- Entry point: `campaigns/index.html`; styles in `styles/campaigns.css`; logic in `scripts/app.js`.
+## 戰役關係圖（campaign_graph/）
+- 互動式 D3 階層圖（root → 類別 → 戰役），支援縮放、平移、聚焦、回首頁，展開／收合有平滑動畫。
+- WordPress 安全模式：若腳本被阻擋則改為外連。
+- 結構：`index.html`、`css/style.css`（使用共用變數）、`js/graph-*.js`、`assets/`。
+- 資料來源：`shared/rugatha.config.js` 的圖形區塊，圖形會讀取 `CAMPAIGN_GRAPH_DATA`。
 
-## Character card generator (character_card/)
-- Canvas-based PNG generator; click/tap the preview to open the image for saving. In-app browsers (e.g., Messenger) show a long-press overlay instead of failing to download.
-- Uses shared campaign accents to build color swatches; falls back to defaults if the shared config is unavailable.
-- Entry point: `character_card/index.html`; styles in `styles/style.css`; logic in `scripts/app.js`.
+## 戰役卡片（campaigns/）
+- 以 `shared/rugatha.config.js` 驅動的卡片網格（不需額外資料檔），樣式沿用共用色票與 hero 設定。
+- 入口：`campaigns/index.html`；樣式在 `styles/campaigns.css`；邏輯在 `scripts/app.js`。
 
-## NPC browser (npc/)
-- Pages: `index.html` (main), `npc.html` (trimmed standalone).
-- Features: search, A↔Z sorting, grouping by letter or race (multi-race entries appear in each race), lazy-loaded images, accessible live status.
-- Data source: `npc/data/characters.json` (entries shaped as `{ id, name, image, url, race, descZh, descEn, related: [] }`). `id` should match the filename slug (e.g. `Ada` → `_template.html?npc=Ada`).
-- Individual pages under `npc/npc_page/pages/` are lightweight stubs that redirect to `_template.html?npc=<slug>`; the template pulls data from `characters.json`, so no per-page content needs to be maintained.
-- No build step; open in a browser or serve statically.
+## 角色卡產生器（character_card/）
+- Canvas 產生 PNG，點擊／點按預覽即可開啟下載；行動版內嵌瀏覽器會顯示長按提示避免下載失敗。
+- 使用共用戰役的重點色建立色票，若共用設定缺失則使用預設值。
+- 入口：`character_card/index.html`；樣式在 `styles/style.css`；邏輯在 `scripts/app.js`。
 
-## NPC page template (npc/npc_page/)
-- Template: `npc/npc_page/pages/_template.html` contains the shared layout and script. All other files in `npc/npc_page/pages/` are tiny redirectors pointing to this template with the NPC slug.
-- Data contract: `scripts.js` reads the `npc` query param, finds the matching record in `npc/data/characters.json`, and renders portrait, names, descriptions, and related chips. Keep descriptions in the JSON, not in the HTML stubs.
+## NPC 導覽（npc/）
+- 頁面：`index.html`（主頁）、`npc.html`（精簡版）。
+- 功能：搜尋、A↔Z 排序、依字母或種族分組（多種族會出現在各自族群）、延遲載入圖片、無障礙即時狀態。
+- 資料：`npc/data/characters.json`（結構 `{ id, name, image, url, race, descZh, descEn, related: [] }`），`id` 應與檔名 slug 一致（例：`Ada` → `_template.html?npc=Ada`）。
+- `npc/npc_page/pages/` 底下的檔案為輕量轉址頁，導向 `_template.html?npc=<slug>`；模板會從 `characters.json` 拉資料，因此不需維護個別頁面內容。
+- 無需建置，直接開啟瀏覽器或以靜態伺服器提供即可。
 
-## Updating content
-1. Edit campaigns or graph nodes in `shared/rugatha.config.js` (names, links, accents, node relationships). Both the graph and cards will pick it up.
-2. NPCs remain in `npc/data/characters.json` (kept separate because the schema differs).
-3. If you add a timeline tool later, place it beside the other folders and wire it to the shared config if needed.
+## 共用樣式
+- 基礎變數、字體匯入與 hero 預設都在 `shared/styles/theme.css`，所有頂層頁面皆引用。
+- 單頁覆寫則放在各自資料夾（如 `styles/home.css`、`character_main_page/styles.css`、`npc/styles.css`），盡量沿用共用變數。
 
-## Running locally
-This is a static bundle. Any simple server works, e.g.:
+## NPC 模板（npc/npc_page/）
+- 模板：`npc/npc_page/pages/_template.html` 包含共用版面與腳本；其他檔案僅為帶 slug 的轉址頁。
+- 資料契約：`scripts.js` 讀取 `npc` query 參數，找到 `npc/data/characters.json` 對應資料後渲染頭像、姓名、描述與相關角色，描述請維護在 JSON，而非 HTML 轉址頁。
+
+## 更新內容
+1. 在 `shared/rugatha.config.js` 編輯戰役或關係圖節點（名稱、連結、強調色、節點關係），卡片與關係圖都會同步。
+2. NPC 資料維持在 `npc/data/characters.json`（結構不同，因此獨立管理）。
+3. 若之後新增時間軸類工具，可放在同層資料夾並視需要連到共用設定。
+
+## 本地執行
+本專案為靜態網站，啟動任何簡易伺服器即可，例如：
 ```sh
 python -m http.server 8000
 ```
-Then open `http://localhost:8000/` and navigate via `index.html`.
+然後開啟 `http://localhost:8000/`，從 `index.html` 進入各工具。
