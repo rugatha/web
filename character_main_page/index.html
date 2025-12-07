@@ -116,6 +116,7 @@
       display: grid;
       gap: 10px;
       padding: 24px;
+      white-space: pre-line;
     }
 
     .pill {
@@ -123,13 +124,13 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 14px;
+      padding: 16px 20px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.2);
       background: rgba(255, 255, 255, 0.08);
       color: var(--text);
-      font-weight: 700;
-      font-size: 12px;
+      font-weight: 800;
+      font-size: 16px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
@@ -168,7 +169,7 @@
           <div class="orb-content">
             <span class="pill">玩家角色</span>
             <h2>Player Characters</h2>
-            <p>查看所有玩家角色的故事、卡片與紀錄。</p>
+            <p>查看各主線故事的玩家角色\n\nCheck out player characters\nin our campaigns</p>
           </div>
         </a>
 
@@ -176,11 +177,16 @@
           <div class="orb-content">
             <span class="pill">非玩家角色</span>
             <h2>NPC</h2>
-            <p>瀏覽 Rugatha 世界中的 NPC 列表與細節。</p>
+            <p>瀏覽Rugatha世界中的各NPC\n\nBrowse through NPCs\nin the Rugatha world</p>
           </div>
         </a>
       </div>
     </section>
+    <script>
+      document.querySelectorAll('.orb-content h2, .orb-content p').forEach(node => {
+        node.innerHTML = node.textContent.replace(/\\n/g, '<br>');
+      });
+    </script>
   </main>
 </body>
 </html>
