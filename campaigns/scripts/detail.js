@@ -11,49 +11,49 @@
     window.CAMPAIGN_GRAPH_DATA ||
     [];
 
-  const chapterBannerBase = "../Campaign%20Banners/";
+  const chapterBannerBase = "../campaign-banners/";
   const chapterImageMap = {
     // Rugatha main
-    "rugatha-c01": "C01 Curse of Vowalon.jpg",
-    "rugatha-c02": "C02 Beneath the Temple.jpg",
-    "rugatha-c03": "C03 Korringfield Reunion.jpg",
-    "rugatha-c04": "C04 The Blooming of Macksohn.jpg",
-    "rugatha-c05": "C05 Mattington Shattered.png",
+    "rugatha-c01": "rugatha-c01.jpg",
+    "rugatha-c02": "rugatha-c02.jpg",
+    "rugatha-c03": "rugatha-c03.jpg",
+    "rugatha-c04": "rugatha-c04.jpg",
+    "rugatha-c05": "rugatha-c05.png",
     // Mattington shared variants
-    "plus-c05": "C05R+ Mattington Shattered.jpg",
-    "lite-c05": "C05Rlite Mattington Shattered.jpg",
+    "plus-c05": "plus-c05.jpg",
+    "lite-c05": "lite-c05.jpg",
     // Rugatha Plus
-    "plus-c06": "C06R+ Hand of the Lich.jpg",
-    "plus-c07": "C07R+ Before the Next Full Moon.png",
+    "plus-c06": "plus-c06.jpg",
+    "plus-c07": "plus-c07.png",
     // Rugatha Plus 1
-    "plus1-c01": "C01R+1 To the Deep and Back.png",
+    "plus1-c01": "plus1-c01.png",
     // Rugatha lite
-    "lite-c06": "C06Rlite The Gift from Alfenor.jpg",
-    "lite-c07": "C07 Lurking Dangers_工作區域 1.jpg",
-    "lite-c08": "C08Rlite Deep into Lothum.png",
-    "lite-c09": "C09Rlite The Cave of Drogsland.jpg",
-    "lite-c10": "C10lite Requiem of the Feathered Estate.png",
-    "lite-c11": "C11lite Seats of the Eclipse.png",
+    "lite-c06": "lite-c06.jpg",
+    "lite-c07": "lite-c07.jpg",
+    "lite-c08": "lite-c08.png",
+    "lite-c09": "lite-c09.jpg",
+    "lite-c10": "lite-c10.png",
+    "lite-c11": "lite-c11.png",
     // Rugatha WILDS
-    "wilds-c01": "C01RW The Elite Bloodline.jpg",
-    "wilds-c02": "C02RW Gathering of the Chosen.png",
-    "wilds-c03": "C03RW Storm of Mudtown.png",
-    "wilds-c04": "C04RW Heir to Rathanad.png",
+    "wilds-c01": "wilds-c01.jpg",
+    "wilds-c02": "wilds-c02.png",
+    "wilds-c03": "wilds-c03.png",
+    "wilds-c04": "wilds-c04.png",
     // Rugatha Brown
-    "brown-c01": "C01 Rbrown Dark Petals.jpg",
-    "brown-howling": "C02 Rbrown Howling of the Wolf_工作區域 1.jpg",
+    "brown-c01": "brown-c01.jpg",
+    "brown-howling": "brown-c02.jpg",
     // Rugatha Legends
-    "legends-os01": "O1 The False Hydra of Moorland Haunt.jpg",
-    "legends-os02": "O2 The Disappearance of Gustavo Norman.jpg",
-    "legends-os03": "O3 The Lighthouse on the Deserted Island.jpg",
-    "legends-os04": "O4 The Deadly Prison Break.jpg",
-    "legends-os05": "O5 Dragon's Orb_工作區域 1.jpg",
-    "legends-os06": "O6 The Malicious Rise of Alfenor.jpg",
-    "legends-os07": "O7 Mylstan Colossus.jpg",
-    "legends-os08": "O8 Lord Octavian von Oderick's Dungeon of Randomness.png",
+    "legends-os01": "legends-os01.jpg",
+    "legends-os02": "legends-os02.jpg",
+    "legends-os03": "legends-os03.jpg",
+    "legends-os04": "legends-os04.jpg",
+    "legends-os05": "legends-os05.jpg",
+    "legends-os06": "legends-os06.jpg",
+    "legends-os07": "legends-os07.jpg",
+    "legends-os08": "legends-os08.png",
     // Experience (optional, in case used)
-    "exp-e01": "2025O1 The Scroll of the Golden Castle.png",
-    "exp-e02": "2025O2 Echoes of the Dragon's Roar.png"
+    "exp-e01": "exp-e01.png",
+    "exp-e02": "exp-e02.png"
   };
 
   const params = new URLSearchParams(window.location.search);
