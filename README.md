@@ -32,8 +32,8 @@
 
 ## NPC 導覽（npc/）
 - 頁面：`index.html`（主頁）、`npc.html`（精簡版）。
-- 功能：搜尋、A↔Z 排序、依字母或種族分組（多種族會出現在各自族群）、延遲載入圖片、無障礙即時狀態。
-- 資料：`npc/data/characters.json`（結構 `{ id, name, image, url, race, descZh, descEn, related: [] }`），`id` 應與檔名 slug 一致（例：`Ada` → `_template.html?npc=Ada`）。
+- 功能：搜尋、A↔Z 排序、依字母 / 種族 / 信仰分組（多種族或多信仰會出現在各自群組）、延遲載入圖片、無障礙即時狀態，並提供隨機 NPC 與一鍵重設搜尋/排序/分組。
+- 資料：`npc/data/characters.json`（結構 `{ id, name, image, url, race, religion, descZh, descEn, related: [] }`），`id` 應與檔名 slug 一致（例：`Ada` → `_template.html?npc=Ada`）。
 - `npc/npc_page/pages/` 底下的檔案為輕量轉址頁，導向 `_template.html?npc=<slug>`；模板會從 `characters.json` 拉資料，因此不需維護個別頁面內容。
 - 無需建置，直接開啟瀏覽器或以靜態伺服器提供即可。
 
@@ -43,7 +43,7 @@
 
 ## NPC 模板（npc/npc_page/）
 - 模板：`npc/npc_page/pages/_template.html` 包含共用版面與腳本；其他檔案僅為帶 slug 的轉址頁。
-- 資料契約：`scripts.js` 讀取 `npc` query 參數，找到 `npc/data/characters.json` 對應資料後渲染頭像、姓名、描述與相關角色，描述請維護在 JSON，而非 HTML 轉址頁。
+- 資料契約：`scripts.js` 讀取 `npc` query 參數，找到 `npc/data/characters.json` 對應資料後渲染頭像、姓名、描述、相關角色與信仰（中英並列，蜘蛛信仰會標示族群）。描述請維護在 JSON，而非 HTML 轉址頁。
 
 ## 更新內容
 1. 在 `shared/rugatha.config.js` 編輯戰役或關係圖節點（名稱、連結、強調色、節點關係），卡片與關係圖都會同步。
