@@ -3,7 +3,7 @@ const deities = [
     name: "Trinix\n崔尼斯",
     title: "God of Light and Hope\n光與希望之神",
     domains: ["Light", "Hope"],
-    image: "../Deities/Banners/Trinix.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Trinix.jpeg",
     link: "https://rugatha.com/2021/05/19/trinix-god-of-light/",
     category: "The Pantheon 主神"
   },
@@ -11,7 +11,7 @@ const deities = [
     name: "Phyneal\n芬尼爾",
     title: "God of Luna\n月神",
     domains: ["Luna"],
-    image: "../Deities/Banners/Phyneal.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Phyneal.jpeg",
     link: "https://rugatha.com/2021/05/19/phyneal-god-of-luna/",
     category: "The Pantheon 主神"
   },
@@ -19,7 +19,7 @@ const deities = [
     name: "Phynoir\n芬諾爾",
     title: "God of Exchange and Prophecy\n交易與預言之神",
     domains: ["Exchange", "Prophecy"],
-    image: "../Deities/Banners/Phyneal.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Phyneal.jpeg",
     link: "https://rugatha.com/2023/07/16/phynoir-god-of-exchange/",
     category: "The Obscured 隱密信仰"
   },
@@ -27,7 +27,7 @@ const deities = [
     name: "Nessis\n涅西斯",
     title: "God of Woods and Life\n樹林與生命之神",
     domains: ["Woods", "Life"],
-    image: "../Deities/Banners/Nessis.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Nessis.jpeg",
     link: "https://rugatha.com/2021/05/19/nessis-god-of-woods/",
     category: "The Pantheon 主神"
   },
@@ -35,7 +35,7 @@ const deities = [
     name: "Keinra\n津菈",
     title: "God of Protection and Justice\n守護與正義之神",
     domains: ["Protection", "Justice"],
-    image: "../Deities/Banners/Keinra.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Keinra.jpeg",
     link: "https://rugatha.com/2021/05/19/keinra-god-of-protection/",
     category: "The Pantheon 主神"
   },
@@ -43,7 +43,7 @@ const deities = [
     name: "Jeorisan\n喬里森",
     title: "God of Storm and Intelligence\n風暴與智慧之神",
     domains: ["Storm", "Intelligence"],
-    image: "../Deities/Banners/Jeorisan.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Jeorisan.jpeg",
     link: "https://rugatha.com/2021/05/19/jeorisan-god-of-storm/",
     category: "The Pantheon 主神"
   },
@@ -51,7 +51,7 @@ const deities = [
     name: "Ultisen\n奧提森",
     title: "God of Trickery and Drama\n詐欺與戲劇之神",
     domains: ["Trickery", "Drama"],
-    image: "../Deities/Banners/Ultisen.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Ultisen.jpeg",
     link: "https://rugatha.com/2021/05/19/ultisen-god-of-trickery/",
     category: "The Pantheon 主神"
   },
@@ -59,7 +59,7 @@ const deities = [
     name: "Maxus\n麥克瑟斯",
     title: "God of Fire and Forge\n火與熔鍛之神",
     domains: ["Fire", "Forge"],
-    image: "../Deities/Banners/Maxus.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Maxus.jpeg",
     link: "https://rugatha.com/2021/05/19/maxus-god-of-forge/",
     category: "The Pantheon 主神"
   },
@@ -67,7 +67,7 @@ const deities = [
     name: "Laxthos\n拉索斯",
     title: "God of Silence and Rules\n寂靜與秩序之神",
     domains: ["Silence", "Rules"],
-    image: "../Deities/Banners/Laxthos.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Laxthos.jpeg",
     link: "https://rugatha.com/2021/05/19/laxthos-god-of-silence/",
     category: "The Pantheon 主神"
   },
@@ -75,7 +75,7 @@ const deities = [
     name: "Kalinius\n凱里涅斯",
     title: "God of Trades and Wealth\n貿易與財富之神",
     domains: ["Trades", "Wealth"],
-    image: "../Deities/Banners/Kalinius.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Kalinius.jpeg",
     link: "https://rugatha.com/2021/05/19/kalinius-god-of-trades/",
     category: "The Pantheon 主神"
   },
@@ -83,7 +83,7 @@ const deities = [
     name: "Daligon\n達里崗",
     title: "God of War and Strength\n戰爭與力量之神",
     domains: ["War", "Strength"],
-    image: "../Deities/Banners/Daligon.jpeg",
+    image: "https://rugatha.github.io/web/deities/Banners/Daligon.jpeg",
     link: "https://rugatha.com/2021/05/19/daligon-god-of-war/",
     category: "The Pantheon 主神"
   },
