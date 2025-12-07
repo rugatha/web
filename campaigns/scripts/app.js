@@ -15,11 +15,13 @@ const toRgba = (hex, alpha = 0.22) => {
 };
 
 const buildCard = (item) => {
+  const href = item.page || item.link;
+  const isInternal = href && href.startsWith("./");
   const card = document.createElement("a");
   card.className = "card";
-  card.href = item.link;
-  card.target = "_blank";
-  card.rel = "noreferrer noopener";
+  card.href = href || "#";
+  card.target = isInternal ? "_self" : "_blank";
+  card.rel = isInternal ? "" : "noreferrer noopener";
   const accent = item.accent || "#7bdcb5";
   card.style.setProperty("--accent", accent);
   card.style.setProperty("--accent-soft", toRgba(accent, 0.22));
@@ -33,8 +35,14 @@ const buildCard = (item) => {
       <span class="card__title">${item.name}</span>
     </div>
     <div class="card__details">
-      <p class="card__tagline">${item.tagline}</p>
-      <p class="card__meta">${item.dates}</p>
+      <div class="card__session">
+        <div class="card__session-label">下次團務 Next Session</div>
+        <div class="card__session-time">${item.nextSession || "TBD"}</div>
+      </div>
+      <div class="card__details-text">
+        <p class="card__tagline">${item.tagline}</p>
+        <p class="card__meta">${item.dates}</p>
+      </div>
     </div>
   `;
 

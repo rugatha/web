@@ -6,56 +6,70 @@
       tagline: "Where Gods Collide",
       dates: "2021/5/22 ~ 2022/7/16",
       link: "https://rugatha.com/campaigns/",
+      page: "./pages/rugatha.html",
       image: "https://rugatha.com/wp-content/uploads/2022/07/rugatha-logo.jpg",
-      accent: "#9fe0ba"
+      accent: "#9fe0ba",
+      nextSession: "團務完結 Campaign Ended"
     },
     {
       name: "RUGATHA Plus",
       tagline: "Adventures & Mysteries Awaits",
       dates: "2022/7/23 ~",
       link: "https://rugatha.com/rugatha-plus/",
+      page: "./pages/rugatha-plus.html",
       image: "https://rugatha.com/wp-content/uploads/2022/07/rugatha-plus-logo-1.jpg",
-      accent: "#c8f9ff"
+      accent: "#c8f9ff",
+      nextSession: "2026/1"
     },
     {
       name: "Rugatha lite",
       tagline: "Stories & Treasures Awaits",
       dates: "2022/8/6 ~",
       link: "https://rugatha.com/rugatha-lite/",
+      page: "./pages/rugatha-lite.html",
       image: "https://rugatha.com/wp-content/uploads/2022/07/rugatha-light-logo-1.jpg",
-      accent: "#ffe7a3"
+      accent: "#ffe7a3",
+      nextSession: "2026/1"
     },
     {
       name: "Rugatha WILDS",
       tagline: "Wisdon & Ingenuity... Leads to Daring Success",
       dates: "2024/3/16 ~",
       link: "https://rugatha.com/rugatha-wilds/",
+      page: "./pages/rugatha-wilds.html",
       image: "https://rugatha.com/wp-content/uploads/2024/03/rugatha-wilds-logo.jpg",
-      accent: "#c1e27a"
+      accent: "#c1e27a",
+      nextSession: "2026/1"
     },
     {
       name: "RUGATHA Plus 1",
       tagline: "LET'S GET ROLLING IN THE DEEEEEEEP",
       dates: "2024/7/13 ~ 2024/11/23",
       link: "https://rugatha.com/rugatha-plus-1/",
+      page: "./pages/rugatha-plus-1.html",
       image: "https://rugatha.com/wp-content/uploads/2024/06/rugatha-plus-one.png",
-      accent: "#ffd0f0"
+      accent: "#ffd0f0",
+      nextSession: "團務完結 Campaign Ended"
     },
     {
       name: "Rugatha Brown",
       tagline: "Descend into Darkness",
       dates: "2022/11/7 ~ 2023/3/14",
       link: "https://rugatha.com/rugatha-brown/",
+      page: "./pages/rugatha-brown.html",
       image: "https://rugatha.com/wp-content/uploads/2022/11/rugatha-brown-logo-1.jpg",
-      accent: "#ffc09f"
+      accent: "#ffc09f",
+      nextSession: "團務完結 Campaign Ended"
     },
     {
       name: "Rugatha Legends",
       tagline: "Adventures. Heroes. Legends.",
       dates: "2022/2/7 ~",
       link: "https://rugatha.com/rugatha-legends/",
+      page: "./pages/rugatha-legends.html",
       image: "https://rugatha.com/wp-content/uploads/2022/07/rugatha-legends.jpg",
-      accent: "#f6d185"
+      accent: "#f6d185",
+      nextSession: "未訂 TBD"
     }
   ];
 
