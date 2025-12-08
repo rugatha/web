@@ -1,133 +1,3 @@
-const deities = [
-  {
-    name: "Trinix\n崔尼斯",
-    title: "God of Light and Hope\n光與希望之神",
-    domains: ["Light", "Hope"],
-    image: "https://rugatha.github.io/web/deities/Banners/Trinix.jpeg",
-    link: "https://rugatha.com/2021/05/19/trinix-god-of-light/",
-    category: "The Pantheon 主神"
-  },
-  {
-    name: "Phyneal\n芬尼爾",
-    title: "God of Luna\n月神",
-    domains: ["Luna"],
-    image: "https://rugatha.github.io/web/deities/Banners/Phyneal.jpeg",
-    link: "https://rugatha.com/2021/05/19/phyneal-god-of-luna/",
-    category: "The Pantheon 主神"
-  },
-  {
-    name: "Phynoir\n芬諾爾",
-    title: "God of Exchange and Prophecy\n交易與預言之神",
-    domains: ["Exchange", "Prophecy"],
-    image: "https://rugatha.github.io/web/deities/Banners/Phyneal.jpeg",
-    link: "https://rugatha.com/2023/07/16/phynoir-god-of-exchange/",
-    category: "The Obscured 隱密信仰"
-  },
-  {
-    name: "Nessis\n涅西斯",
-    title: "God of Woods and Life\n樹林與生命之神",
-    domains: ["Woods", "Life"],
-    image: "https://rugatha.github.io/web/deities/Banners/Nessis.jpeg",
-    link: "https://rugatha.com/2021/05/19/nessis-god-of-woods/",
-    category: "The Pantheon 主神"
-  },
-  {
-    name: "Keinra\n津菈",
-    title: "God of Protection and Justice\n守護與正義之神",
-    domains: ["Protection", "Justice"],
-    image: "https://rugatha.github.io/web/deities/Banners/Keinra.jpeg",
-    link: "https://rugatha.com/2021/05/19/keinra-god-of-protection/",
-    category: "The Pantheon 主神"
-  },
-  {
-    name: "Jeorisan\n喬里森",
-    title: "God of Storm and Intelligence\n風暴與智慧之神",
-    domains: ["Storm", "Intelligence"],
-    image: "https://rugatha.github.io/web/deities/Banners/Jeorisan.jpeg",
-    link: "https://rugatha.com/2021/05/19/jeorisan-god-of-storm/",
-    category: "The Pantheon 主神"
-  },
-  {
-    name: "Ultisen\n奧提森",
-    title: "God of Trickery and Drama\n詐欺與戲劇之神",
-    domains: ["Trickery", "Drama"],
-    image: "https://rugatha.github.io/web/deities/Banners/Ultisen.jpeg",
-    link: "https://rugatha.com/2021/05/19/ultisen-god-of-trickery/",
-    category: "The Pantheon 主神"
-  },
-  {
-    name: "Maxus\n麥克瑟斯",
-    title: "God of Fire and Forge\n火與熔鍛之神",
-    domains: ["Fire", "Forge"],
-    image: "https://rugatha.github.io/web/deities/Banners/Maxus.jpeg",
-    link: "https://rugatha.com/2021/05/19/maxus-god-of-forge/",
-    category: "The Pantheon 主神"
-  },
-  {
-    name: "Laxthos\n拉索斯",
-    title: "God of Silence and Rules\n寂靜與秩序之神",
-    domains: ["Silence", "Rules"],
-    image: "https://rugatha.github.io/web/deities/Banners/Laxthos.jpeg",
-    link: "https://rugatha.com/2021/05/19/laxthos-god-of-silence/",
-    category: "The Pantheon 主神"
-  },
-  {
-    name: "Kalinius\n凱里涅斯",
-    title: "God of Trades and Wealth\n貿易與財富之神",
-    domains: ["Trades", "Wealth"],
-    image: "https://rugatha.github.io/web/deities/Banners/Kalinius.jpeg",
-    link: "https://rugatha.com/2021/05/19/kalinius-god-of-trades/",
-    category: "The Pantheon 主神"
-  },
-  {
-    name: "Daligon\n達里崗",
-    title: "God of War and Strength\n戰爭與力量之神",
-    domains: ["War", "Strength"],
-    image: "https://rugatha.github.io/web/deities/Banners/Daligon.jpeg",
-    link: "https://rugatha.com/2021/05/19/daligon-god-of-war/",
-    category: "The Pantheon 主神"
-  },
-  {
-    name: "Amoret\n阿莫雷",
-    title: "God of Love and Eternity\n愛與永恆之神",
-    domains: ["Love", "Eternity"],
-    image: "../npc/individual_pics/Lysien%20Amoret.webp",
-    link: "../npc/npc_page/pages/Lysien_Amoret.html",
-    category: "The Newly Ascended 新生神"
-  },
-  {
-    name: "The Mother\n母親大人",
-    title: "The Spider King\n蜘蛛王",
-    domains: ["Spider"],
-    image: "../npc/individual_pics/The%20Mother.jpeg",
-    link: "../npc/npc_page/pages/The_Mother.html",
-    category: "The Spider Religion 蜘蛛神信仰"
-  },
-  {
-    name: "Anna\n安娜",
-    title: "The New Spider God\n新蜘蛛神",
-    domains: ["Spider"],
-    image: "../npc/individual_pics/Anna.png",
-    link: "../npc/npc_page/pages/Anna.html",
-    category: "The Spider Religion 蜘蛛神信仰"
-  },
-  {
-    name: "Alfenor\n阿爾芬諾",
-    title: "The Spider God\n蜘蛛神",
-    domains: ["Spider"],
-    image: "../npc/individual_pics/Alfenor.jpeg",
-    link: "../npc/npc_page/pages/Alfenor.html",
-    category: "The Spider Religion 蜘蛛神信仰"
-  },
-  {
-    name: "King Knicol\n神王尼可",
-    title: "King of the Underground\n地底王",
-    image: "../npc/individual_pics/King%20Knicol.jpeg",
-    link: "../npc/npc_page/pages/King_Knicol.html",
-    category: "The Dubbed 被冊封者"
-  }
-];
-
 const grid = document.getElementById("deity-grid");
 const fallbackImage = "../assets/rugatha-banner.jpg";
 const categoryOrder = [
@@ -194,7 +64,15 @@ function createCard(deity) {
   return card;
 }
 
-if (grid) {
+async function loadDeities() {
+  const response = await fetch("./data/deities.json");
+  if (!response.ok) {
+    throw new Error(`Failed to load deities.json (${response.status})`);
+  }
+  return response.json();
+}
+
+function renderDeities(deities) {
   grid.innerHTML = "";
 
   categoryOrder.forEach((categoryLabel) => {
@@ -219,4 +97,14 @@ if (grid) {
     section.append(heading, groupGrid);
     grid.appendChild(section);
   });
+}
+
+if (grid) {
+  loadDeities()
+    .then(renderDeities)
+    .catch((error) => {
+      console.error(error);
+      grid.innerHTML =
+        '<p class="load-error">Unable to load deities right now.</p>';
+    });
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deity of Rugatha</title>
+  <link rel="icon" type="image/png" href="../../assets/rugatha-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/rugatha-icon-32.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <link rel="stylesheet" href="../styles/deity-page.css">
+</head>
+<body>
+  <div class="celestial-dust"></div>
+  <main class="page-shell">
+    <section class="deity-profile">
+      <div class="portrait-wrap">
+        <span class="portrait-halo" aria-hidden="true"></span>
+        <span class="portrait-ring" aria-hidden="true"></span>
+        <img class="deity-portrait" data-deity="image" loading="lazy" alt="">
+      </div>
+      <div class="deity-meta">
+        <p class="meta-kicker">DEITY PROFILE 神祇簡介</p>
+        <h1 class="deity-name" data-deity="name"></h1>
+        <p class="deity-title" data-deity="title"></p>
+        <div class="divider"></div>
+        <p class="domains-label">Domains 權能</p>
+        <div class="domain-chips" data-deity="domains"></div>
+        <div class="domains-divider"></div>
+        <div class="deity-saying" data-deity="saying"></div>
+      </div>
+    </section>
+    <div class="page-footer">
+      <a class="back-link" href="../index.html" aria-label="Back to all deities">↩︎</a>
+    </div>
+  </main>
+  <script>window.deitySlug = 'phyneal';</script>
+  <script src="../scripts/deity-page.js"></script>
+</body>
+</html>

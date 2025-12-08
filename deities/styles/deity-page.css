@@ -1,0 +1,321 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #e8f7ef;
+  background: radial-gradient(circle at 20% 20%, rgba(123, 220, 181, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(98, 140, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.06), transparent 30%),
+    #0b1216;
+  font-family: var(--font-body, "Inter", system-ui, -apple-system, "Segoe UI", sans-serif);
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.celestial-dust,
+.celestial-dust::after {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0.8px, transparent 1px),
+    radial-gradient(circle, rgba(123, 220, 181, 0.14) 0.8px, transparent 1px);
+  background-size: 110px 110px, 180px 180px;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+.celestial-dust::after {
+  content: "";
+  animation: drift 18s ease-in-out infinite alternate;
+  opacity: 0.65;
+}
+
+
+@keyframes drift {
+  from {
+    transform: translateY(-6px) scale(1);
+  }
+  to {
+    transform: translateY(10px) scale(1.02);
+  }
+}
+
+.page-shell {
+  width: min(1100px, 94vw);
+  margin: 42px auto 60px;
+  position: relative;
+  z-index: 1;
+  padding: 22px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #9fe8c4;
+  text-decoration: none;
+  font-size: 20px;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  transition: transform 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  transform: translateY(-2px);
+  color: #c2fff5;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+  outline: none;
+}
+
+.deity-profile {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 34px 28px 32px;
+  border-radius: 24px;
+  background-image: var(--hero-image, url("../../assets/rugatha-banner.jpg"));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 48px rgba(0, 0, 0, 0.42), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.deity-profile::before {
+  content: "";
+  position: absolute;
+  inset: -60% -20% auto -20%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(123, 220, 181, 0.25), transparent 65%);
+  filter: blur(12px);
+  opacity: 0.6;
+}
+
+.deity-profile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 40%, rgba(159, 232, 196, 0.12)),
+    linear-gradient(215deg, rgba(255, 255, 255, 0.08), transparent 42%, rgba(255, 200, 120, 0.1));
+  pointer-events: none;
+}
+
+.portrait-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+}
+
+.portrait-halo {
+  display: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.98);
+    opacity: 0.7;
+  }
+}
+
+.portrait-ring {
+  display: none;
+}
+
+.deity-portrait {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 24px 34px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.deity-portrait.fallback {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #1f2b30, #2f3a42);
+  color: #e8f7ef;
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.deity-meta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(8, 12, 14, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  width: min(720px, 100%);
+}
+
+.meta-kicker {
+  margin: 0;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #9fe8c4;
+}
+
+.deity-name {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 34px);
+  letter-spacing: -0.01em;
+  white-space: pre-line;
+}
+
+.deity-title {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.domains-label {
+  margin: 12px 0 0;
+  font-weight: 700;
+  color: #c2fff5;
+  letter-spacing: 0.04em;
+}
+
+.domain-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+  justify-content: center;
+}
+
+.domains-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(159, 232, 196, 0.4), transparent);
+  margin: 10px 0 6px;
+}
+
+.page-footer {
+  margin: 26px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.domain-chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(159, 232, 196, 0.55);
+  background: rgba(159, 232, 196, 0.14);
+  color: #e9fff9;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 12px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.26);
+}
+
+.deity-saying {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  line-height: 1.5;
+  color: #f6fff7;
+  position: relative;
+  white-space: pre-line;
+  box-shadow: inset 0 0 0 1px rgba(123, 220, 181, 0.08);
+}
+
+.deity-saying::before,
+.deity-saying::after {
+  position: absolute;
+  font-weight: 800;
+  font-size: 20px;
+  color: rgba(159, 232, 196, 0.9);
+  opacity: 0.95;
+}
+
+.deity-saying::before {
+  content: "“";
+  left: 10px;
+  top: 6px;
+}
+
+.deity-saying::after {
+  content: "”";
+  right: 10px;
+  bottom: 6px;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(159, 232, 196, 0.4), transparent);
+  margin: 12px 0;
+}
+
+@media (max-width: 900px) {
+  .deity-profile {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .portrait-wrap {
+    order: -1;
+    margin-bottom: 8px;
+  }
+
+  .domain-chips {
+    justify-content: center;
+  }
+
+  .deity-saying::before {
+    left: 14px;
+  }
+
+  .deity-saying::after {
+    right: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100vw, 960px);
+    margin: 26px auto 40px;
+    padding: 16px;
+  }
+
+  .deity-profile {
+    padding: 22px 18px;
+    gap: 18px;
+  }
+
+  .deity-saying {
+    padding: 12px 14px;
+  }
+}
