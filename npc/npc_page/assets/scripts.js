@@ -39,7 +39,7 @@ function loadInlineData() {
 }
 
 function normalize(str) {
-  return (str || "").toLowerCase().replace(/[^0-9a-z]/g, "");
+  return (str || "").toLowerCase().trim().replace(/[\s_-]+/g, "");
 }
 
 const deityList = [
@@ -74,7 +74,8 @@ const religionMap = deityList.reduce((acc, entry) => {
 function getSlugId(pathname = window.location.pathname) {
   const parts = (pathname || "").split("/");
   const last = parts.filter(Boolean).pop() || "";
-  return last.replace(/\.html?$/i, "");
+  const decoded = safeDecode(last);
+  return decoded.replace(/\.html?$/i, "");
 }
 
 function getRequestedNpc() {
@@ -142,8 +143,17 @@ function findCharacter(chars, name, id, slug) {
 
 function normalizeSlug(url) {
   if (!url) return "";
-  const last = (url.split("/").pop() || "").replace(/\.html?$/i, "");
-  return normalize(last);
+  const raw = (url.split("/").pop() || "").replace(/\.html?$/i, "");
+  const decoded = safeDecode(raw);
+  return normalize(decoded);
+}
+
+function safeDecode(value) {
+  try {
+    return decodeURIComponent(value);
+  } catch (err) {
+    return value;
+  }
 }
 
 function normalizeRelatedUrl(url) {
@@ -188,6 +198,7 @@ function ensurePrettyUrl(id) {
 }
 
 function render(npc) {
+  ensureContentSections();
   elements.name.textContent = npc.name || "NPC";
   elements.portrait.src = npc.image || "";
   elements.portrait.alt = npc.name || "NPC portrait";
@@ -195,6 +206,7 @@ function render(npc) {
   setDescription(elements.en, npc.descEn, "(Description coming soon)");
   renderGender(npc.gender);
   renderStatus(npc.status);
+  renderLocationList(npc.location);
   renderReligion(npc.religion);
   document.title = npc.name ? `${npc.name} | NPC` : "NPC";
   insertRelated(npc.related || []);
@@ -212,6 +224,7 @@ function render(npc) {
     name: inlineNpc?.name || npcId || "NPC",
     image: "",
     gender: inlineNpc?.gender || "neutral",
+    location: inlineNpc?.location || [],
     descZh: "找不到該 NPC。",
     descEn: "NPC not found."
   };
@@ -229,6 +242,7 @@ function render(npc) {
     mergedNpc.descEn = record.descEn || mergedNpc.descEn;
     mergedNpc.related = resolveRelated(chars, record.related || mergedNpc.related);
     mergedNpc.religion = record.religion || mergedNpc.religion;
+    mergedNpc.location = record.location || mergedNpc.location;
   }
 
   ensurePrettyUrl(mergedNpc.id || mergedNpc.name);
@@ -339,24 +353,91 @@ function getMetaContainer() {
   return meta;
 }
 
+function renderLocationList(locations) {
+  if (!elements.locations) return;
+  elements.locations.innerHTML = "";
+  const items = Array.isArray(locations) ? locations.filter(Boolean) : [];
+  if (!items.length) {
+    const empty = document.createElement("span");
+    empty.className = "location-empty";
+    empty.textContent = "尚未提供地點 / Location unavailable";
+    elements.locations.appendChild(empty);
+    return;
+  }
+  items.forEach((loc) => {
+    const pill = document.createElement("span");
+    pill.className = "tag location-pill";
+    pill.textContent = loc;
+    elements.locations.appendChild(pill);
+  });
+}
+
+function ensureContentSections() {
+  const content = elements.content;
+  if (!content) return;
+
+  if (elements.zh && !content.querySelector(".intro-title")) {
+    const intro = document.createElement("h2");
+    intro.className = "section-title intro-title";
+    intro.textContent = "介紹 Introduction";
+    content.insertBefore(intro, elements.zh);
+  }
+
+  if (!elements.locations) {
+    const locTitle = document.createElement("h2");
+    locTitle.className = "section-title location-title";
+    locTitle.textContent = "地點 Locations";
+
+    const locWrap = document.createElement("div");
+    locWrap.id = "npc-locations";
+    locWrap.className = "location-list";
+
+    if (elements.en && elements.en.parentNode === content) {
+      const afterEn = elements.en.nextSibling;
+      if (afterEn) {
+        content.insertBefore(locTitle, afterEn);
+      } else {
+        content.appendChild(locTitle);
+      }
+      content.insertBefore(locWrap, locTitle.nextSibling);
+    } else {
+      content.appendChild(locTitle);
+      content.appendChild(locWrap);
+    }
+
+    elements.locations = locWrap;
+  }
+}
+
 function insertRelated(items) {
-  if (!elements.content || !items.length) return;
+  if (!elements.content) return;
+  const existing = elements.content.querySelector(".related");
+  if (existing) existing.remove();
   const wrap = document.createElement("div");
   wrap.className = "related";
-  const title = document.createElement("h3");
-  title.textContent = "相關 NPC / Related";
+  const title = document.createElement("h2");
+  title.className = "section-title";
+  title.textContent = "相關NPC Related NPC";
   wrap.appendChild(title);
 
-  const list = document.createElement("div");
-  list.className = "related-list";
-  items.forEach((item) => {
-    const a = document.createElement("a");
-    a.className = "related-chip";
-    a.href = item.url || "#";
-    a.textContent = item.name;
-    list.appendChild(a);
-  });
-  wrap.appendChild(list);
+  if (items.length) {
+    const list = document.createElement("div");
+    list.className = "related-list";
+    items.forEach((item) => {
+      const a = document.createElement("a");
+      a.className = "related-chip";
+      a.href = item.url || "#";
+      a.textContent = item.name;
+      list.appendChild(a);
+    });
+    wrap.appendChild(list);
+  } else {
+    const empty = document.createElement("span");
+    empty.className = "location-empty";
+    empty.textContent = "尚未提供相關 NPC / No related NPCs";
+    wrap.appendChild(empty);
+  }
+
   elements.content.appendChild(wrap);
 }
 
