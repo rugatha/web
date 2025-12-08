@@ -114,9 +114,9 @@
     "name": "Amoret\n阿莫雷",
     "title": "God of Love and Eternity\n愛與永恆之神",
     "domains": ["Love", "Eternity"],
-    "image": "../npc/individual_pics/Lysien%20Amoret.webp",
-    "link": "../npc/npc_page/pages/Lysien_Amoret.html",
-    "saying": "",
+    "image": "https://rugatha.github.io/web/deities/Banners/Amoret.png",
+    "link": "./pages/amoret.html",
+    "saying": "Those Who are Against Love, are My Nemesis\n與愛為敵之人，皆是我的仇敵",
     "category": "The Newly Ascended 新生神"
   },
   {
