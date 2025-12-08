@@ -11,17 +11,50 @@
     window.CAMPAIGN_GRAPH_DATA ||
     [];
 
+  const campaignsBaseFromConfig = typeof window.RUGATHA_CAMPAIGNS_BASE === "string" ? window.RUGATHA_CAMPAIGNS_BASE : null;
+  const buildCampaignsBase = () => {
+    const path = window.location && window.location.pathname ? window.location.pathname : "";
+    const idx = path.indexOf("/campaigns/");
+    if (idx >= 0) {
+      const origin =
+        (window.location && window.location.origin && window.location.origin !== "null"
+          ? window.location.origin
+          : "file://") || "";
+      return `${origin}${path.slice(0, idx + "/campaigns/".length)}`;
+    }
+    return window.location && window.location.origin ? window.location.origin : "/";
+  };
+  const campaignsBase = campaignsBaseFromConfig || buildCampaignsBase();
+  const withTrailingSlash = (value) => (value.endsWith("/") ? value : `${value}/`);
+  const campaignBannerBase = `${withTrailingSlash(campaignsBase)}campaign-banners/`;
+  const chapterBannerBase = `${withTrailingSlash(campaignsBase)}chapter-banners/`;
+  const resolvePath = (value) => {
+    if (typeof value !== "string" || !value.length) return value;
+    if (
+      value.startsWith("./") ||
+      value.startsWith("../") ||
+      value.startsWith("#") ||
+      /^[a-z][a-z0-9+.-]*:\/\//i.test(value) ||
+      value.startsWith("//")
+    ) {
+      return value;
+    }
+    const sanitized = value.replace(/^\//, "");
+    const base = withTrailingSlash(campaignsBase);
+    try {
+      return new URL(sanitized, base).href;
+    } catch (err) {
+      return `${base}${sanitized}`;
+    }
+  };
+
   const pathParts = window.location.pathname.replace(/\/index\.html?$/, "").split("/").filter(Boolean);
   const pagesIdx = pathParts.indexOf("pages");
   const slugSegment = pagesIdx >= 0 ? pathParts[pagesIdx + 1] : "";
   const arcSegment = pagesIdx >= 0 ? pathParts[pagesIdx + 2] : "";
   const isNestedPage = Boolean(slugSegment);
   const isArcPage = Boolean(arcSegment);
-  const chapterBannerBase = isArcPage
-    ? "../../../campaign-banners/"
-    : isNestedPage
-      ? "../../campaign-banners/"
-      : "../campaign-banners/";
+  const imageBannerBase = isArcPage || isNestedPage ? campaignBannerBase : campaignBannerBase;
   const chapterImageMap = {
     // Rugatha main
     "rugatha-c01": "rugatha-c01.jpg",
@@ -187,7 +220,7 @@
               : ch.url || `./${ch.id}/`;
         const displayTitle = ch.title || ch.label || ch.id;
         const title = document.createElement("a");
-        title.href = arcHref;
+        title.href = resolvePath(arcHref);
         title.target = "_self";
         title.textContent = displayTitle;
         meta.appendChild(title);
@@ -196,14 +229,15 @@
         li.appendChild(meta);
         if (imageName) {
           const imageLink = document.createElement("a");
-          imageLink.href = arcHref;
+          imageLink.href = resolvePath(arcHref);
           imageLink.target = "_self";
           const img = document.createElement("img");
           img.className = "chapter-list__image";
+          const base = isLevel4 ? chapterBannerBase : imageBannerBase;
           const useSrc =
             typeof imageName === "string" && (imageName.startsWith("/") || imageName.startsWith("http"))
-              ? imageName
-              : `${isLevel4 ? "/campaigns/chapter-banners/" : chapterBannerBase}${imageName}`;
+              ? resolvePath(imageName)
+              : resolvePath(`${base}${imageName}`);
           img.src = useSrc;
           img.alt = `${displayTitle} banner`;
           imageLink.appendChild(img);
