@@ -1,5 +1,49 @@
 // Shared Rugatha configuration used by the campaigns, graph, and NPC tools.
 (function (global) {
+  const currentScript =
+    (typeof document !== "undefined" && document.currentScript) ||
+    (typeof document !== "undefined" &&
+      Array.from(document.getElementsByTagName("script") || []).find((el) =>
+        (el.src || "").includes("rugatha.config.js")
+      ));
+  const scriptUrl = (() => {
+    try {
+      if (currentScript && currentScript.src) {
+        return new URL(currentScript.src, window.location.href);
+      }
+      return new URL("shared/rugatha.config.js", window.location.href);
+    } catch (_) {
+      return null;
+    }
+  })();
+  const baseUrl = scriptUrl ? new URL("./", scriptUrl).href : window.location.href;
+  const campaignsBase =
+    scriptUrl && scriptUrl.pathname.includes("/shared/")
+      ? new URL("../campaigns/", scriptUrl).href
+      : new URL("/campaigns/", baseUrl).href;
+  const resolveInternalPath = (value) => {
+    if (typeof value !== "string" || !value.length) return value;
+    if (
+      value.startsWith("./") ||
+      value.startsWith("../") ||
+      value.startsWith("#") ||
+      /^[a-z][a-z0-9+.-]*:\/\//i.test(value) ||
+      value.startsWith("//")
+    ) {
+      return value;
+    }
+    const sanitized = value.replace(/^\//, "");
+    try {
+      return new URL(sanitized, campaignsBase).href;
+    } catch (err) {
+      return `${campaignsBase}${sanitized}`;
+    }
+  };
+
+  global.RUGATHA_BASE_URL = baseUrl;
+  global.RUGATHA_CAMPAIGNS_BASE = campaignsBase;
+  global.RUGATHA_RESOLVE = resolveInternalPath;
+
   const campaigns = [
     {
       name: "Rugatha",
@@ -874,6 +918,10 @@
     "legends-os05-chpt02": "/campaigns/chapter-banners/legends-os05-chpt02.png"
   };
 
+  Object.keys(chapterImages).forEach((key) => {
+    chapterImages[key] = resolveInternalPath(chapterImages[key]);
+  });
+
   // Attach chapter image URLs directly to each level-4 node definition
   Object.entries(arcChapters).forEach(([arcId, chapters]) => {
     if (!Array.isArray(chapters)) return;
@@ -958,6 +1006,11 @@
     "exp-e01": null,
     "exp-e02": null
   };
+
+  Object.keys(graphUrlOverrides).forEach((key) => {
+    if (!graphUrlOverrides[key]) return;
+    graphUrlOverrides[key] = resolveInternalPath(graphUrlOverrides[key]);
+  });
 
   const config = {
     brand: {
