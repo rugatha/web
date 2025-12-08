@@ -108,6 +108,13 @@
   const target = targetArc || targetCampaign;
   const detail = document.querySelector("[data-role='campaign-detail']");
   const notFound = document.querySelector("[data-role='not-found']");
+  const displayName =
+    (target && (target.name || target.title || target.label)) ||
+    (targetCampaign && targetCampaign.name) ||
+    "Campaign";
+  const displayTagline = (target && target.tagline) || (targetCampaign && targetCampaign.tagline);
+  const displayDates = (target && target.dates) || (targetCampaign && targetCampaign.dates);
+  const accent = (target && target.accent) || (targetCampaign && targetCampaign.accent) || "#7bdcb5";
 
   if (!target) {
     if (detail) detail.classList.add("is-hidden");
@@ -124,18 +131,18 @@
     }
   };
 
-  const accent = target.accent || "#7bdcb5";
   document.documentElement.style.setProperty("--accent", accent);
   document.documentElement.style.setProperty("--accent-soft", toRgba(accent, 0.18));
 
-  setText("title", target.name);
-  setText("tagline", target.tagline);
-  setText("dates", target.dates);
+  setText("title", displayName);
+  setText("tagline", displayTagline);
+  setText("dates", displayDates);
 
   const img = document.querySelector("[data-role='campaign-image']");
-  if (img && target.image) {
-    img.src = target.image;
-    img.alt = `${target.name} campaign art`;
+  const heroImage = (target && target.image) || (targetCampaign && targetCampaign.image);
+  if (img && heroImage) {
+    img.src = heroImage;
+    img.alt = `${displayName} campaign art`;
   }
 
   const findCampaignNode = (slug) =>
@@ -151,7 +158,9 @@
           return node.level === 3 && (matchesParent || matchesExtra);
         })
       : [];
-  const chaptersMissingImages = chapters.filter((ch) => !chapterImageMap[ch.id]).map((ch) => ch.label || ch.id);
+  const chaptersMissingImages = chapters
+    .filter((ch) => (ch.level === 4 ? !ch.image : !chapterImageMap[ch.id]))
+    .map((ch) => ch.label || ch.id);
   if (chaptersMissingImages.length) {
     console.warn("No banner match for:", chaptersMissingImages.join(", "));
   }
@@ -224,6 +233,6 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   };
 
-  document.title = `${target.name} | Rugatha Campaign`;
+  document.title = `${displayName} | Rugatha Campaign`;
   setupHeroDrift();
 })();

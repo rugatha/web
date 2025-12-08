@@ -386,7 +386,7 @@
         url: "https://rugatha.wordpress.com/2021/08/01/chapter-1-altered-mindsets/"
       },
       {
-        id: "rugatha-c02-chpt2",
+        id: "rugatha-c02-chpt02",
         title: "Chapter 2: Venture into Darkness",
         url: "https://rugatha.wordpress.com/2021/08/08/chapter-2-venture-into-darkness/"
       },
@@ -546,7 +546,7 @@
       },
       {
         id: "lite-c05-chpt04",
-        title: "Chapter True Form",
+        title: "Chapter 4: True Form",
         url: "https://rugatha.wordpress.com/2022/10/02/chapter-4-true-form/"
       }
     ],
@@ -902,6 +902,7 @@
       id: chapter.id || `${arcId}-ch${index + 1}`,
       label: chapter.label || chapter.title || `Chapter ${index + 1}`,
       title: chapter.title,
+      image: chapter.image,
       level: 4,
       parent: arcId,
       url: chapter.url
