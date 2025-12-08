@@ -11,7 +11,17 @@
     window.CAMPAIGN_GRAPH_DATA ||
     [];
 
-  const chapterBannerBase = "../campaign-banners/";
+  const pathParts = window.location.pathname.replace(/\/index\.html?$/, "").split("/").filter(Boolean);
+  const pagesIdx = pathParts.indexOf("pages");
+  const slugSegment = pagesIdx >= 0 ? pathParts[pagesIdx + 1] : "";
+  const arcSegment = pagesIdx >= 0 ? pathParts[pagesIdx + 2] : "";
+  const isNestedPage = Boolean(slugSegment);
+  const isArcPage = Boolean(arcSegment);
+  const chapterBannerBase = isArcPage
+    ? "../../../campaign-banners/"
+    : isNestedPage
+      ? "../../campaign-banners/"
+      : "../campaign-banners/";
   const chapterImageMap = {
     // Rugatha main
     "rugatha-c01": "rugatha-c01.jpg",
@@ -41,7 +51,7 @@
     "wilds-c04": "wilds-c04.png",
     // Rugatha Brown
     "brown-c01": "brown-c01.jpg",
-    "brown-howling": "brown-c02.jpg",
+    "brown-c02": "brown-c02.jpg",
     // Rugatha Legends
     "legends-os01": "legends-os01.jpg",
     "legends-os02": "legends-os02.jpg",
@@ -58,7 +68,10 @@
 
   const params = new URLSearchParams(window.location.search);
   const slugParam =
-    (params.get("campaign") || params.get("slug") || (document.body.dataset.campaign || "")).toLowerCase();
+    (params.get("campaign") ||
+      params.get("slug") ||
+      (document.body.dataset.campaign || slugSegment || "")).toLowerCase();
+  const arcBase = "./";
 
   const slugify = (text) =>
     text
@@ -83,7 +96,16 @@
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   };
 
-  const target = campaigns.find((item) => slugify(item.name) === slugParam);
+  const targetCampaign = campaigns.find((item) => slugify(item.name) === slugParam);
+  const bodyArc = (document.body.dataset && document.body.dataset.arc) || "";
+  const targetArc = isArcPage
+    ? graphData.find(
+        (node) =>
+          node.level === 3 &&
+          (node.id === arcSegment || (bodyArc && node.id === bodyArc))
+      )
+    : null;
+  const target = targetArc || targetCampaign;
   const detail = document.querySelector("[data-role='campaign-detail']");
   const notFound = document.querySelector("[data-role='not-found']");
 
@@ -120,13 +142,15 @@
     graphData.find((node) => node.level === 2 && slugify(node.label || "") === slug);
 
   const campaignNode = findCampaignNode(slugParam);
-  const chapters = campaignNode
-    ? graphData.filter((node) => {
-        const matchesParent = node.parent === campaignNode.id;
-        const matchesExtra = Array.isArray(node.extraParents) && node.extraParents.includes(campaignNode.id);
-        return node.level === 3 && (matchesParent || matchesExtra);
-      })
-    : [];
+  const chapters = isArcPage && targetArc
+    ? graphData.filter((node) => node.level === 4 && node.parent === targetArc.id)
+    : campaignNode
+      ? graphData.filter((node) => {
+          const matchesParent = node.parent === campaignNode.id;
+          const matchesExtra = Array.isArray(node.extraParents) && node.extraParents.includes(campaignNode.id);
+          return node.level === 3 && (matchesParent || matchesExtra);
+        })
+      : [];
   const chaptersMissingImages = chapters.filter((ch) => !chapterImageMap[ch.id]).map((ch) => ch.label || ch.id);
   if (chaptersMissingImages.length) {
     console.warn("No banner match for:", chaptersMissingImages.join(", "));
@@ -144,24 +168,37 @@
         const li = document.createElement("li");
         const meta = document.createElement("div");
         meta.className = "chapter-list__meta";
+        const isLevel4 = ch.level === 4;
+        const arcHref = isLevel4
+          ? ch.url || `${arcBase}${ch.id}/`
+          : ch.id === "rugatha-c05" && slugSegment === "rugatha-plus"
+            ? "./plus-c05/"
+            : ch.id === "rugatha-c05" && slugSegment === "rugatha-lite"
+              ? "./lite-c05/"
+              : ch.url || `./${ch.id}/`;
+        const displayTitle = ch.title || ch.label || ch.id;
         const title = document.createElement("a");
-        title.href = ch.url || "#";
-        if (!ch.url) title.removeAttribute("target");
-        else {
-          title.target = "_blank";
-          title.rel = "noreferrer noopener";
-        }
-        title.textContent = ch.label || ch.id;
+        title.href = arcHref;
+        title.target = "_self";
+        title.textContent = displayTitle;
         meta.appendChild(title);
 
-        const imageName = chapterImageMap[ch.id];
+        const imageName = isLevel4 ? ch.image : chapterImageMap[ch.id];
         li.appendChild(meta);
         if (imageName) {
+          const imageLink = document.createElement("a");
+          imageLink.href = arcHref;
+          imageLink.target = "_self";
           const img = document.createElement("img");
           img.className = "chapter-list__image";
-          img.src = `${chapterBannerBase}${imageName}`;
-          img.alt = `${ch.label || ch.id} banner`;
-          li.appendChild(img);
+          const useSrc =
+            typeof imageName === "string" && (imageName.startsWith("/") || imageName.startsWith("http"))
+              ? imageName
+              : `${isLevel4 ? "/campaigns/chapter-banners/" : chapterBannerBase}${imageName}`;
+          img.src = useSrc;
+          img.alt = `${displayTitle} banner`;
+          imageLink.appendChild(img);
+          li.appendChild(imageLink);
         }
         chapterList.appendChild(li);
       });

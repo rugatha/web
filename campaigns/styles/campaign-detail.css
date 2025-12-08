@@ -91,6 +91,39 @@
   width: fit-content;
 }
 
+.arc-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.arc-detail .campaign-detail__content {
+  order: -1;
+  align-items: center;
+  position: static;
+  gap: 6px;
+  pointer-events: auto;
+  text-shadow: none;
+}
+
+.arc-detail .campaign-detail__media {
+  max-width: 720px;
+  align-self: center;
+  order: 0;
+}
+
+.arc-detail .campaign-detail__chapters {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.arc-detail .campaign-detail__chapters h2 {
+  text-align: center;
+}
+
 .campaign-detail__chapters {
   margin-top: 6px;
   padding: 12px;
@@ -126,6 +159,7 @@
 
 .chapter-list__image {
   width: 100%;
+  max-width: 520px;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
