@@ -97,8 +97,13 @@
   };
 
   const targetCampaign = campaigns.find((item) => slugify(item.name) === slugParam);
+  const bodyArc = (document.body.dataset && document.body.dataset.arc) || "";
   const targetArc = isArcPage
-    ? graphData.find((node) => node.level === 3 && node.id === arcSegment)
+    ? graphData.find(
+        (node) =>
+          node.level === 3 &&
+          (node.id === arcSegment || (bodyArc && node.id === bodyArc))
+      )
     : null;
   const target = targetArc || targetCampaign;
   const detail = document.querySelector("[data-role='campaign-detail']");
@@ -164,7 +169,13 @@
         const meta = document.createElement("div");
         meta.className = "chapter-list__meta";
         const isLevel4 = ch.level === 4;
-        const arcHref = isLevel4 ? (ch.url || `${arcBase}${ch.id}/`) : `./${ch.id}/`;
+        const arcHref = isLevel4
+          ? ch.url || `${arcBase}${ch.id}/`
+          : ch.id === "rugatha-c05" && slugSegment === "rugatha-plus"
+            ? "./plus-c05/"
+            : ch.id === "rugatha-c05" && slugSegment === "rugatha-lite"
+              ? "./lite-c05/"
+              : ch.url || `./${ch.id}/`;
         const displayTitle = ch.title || ch.label || ch.id;
         const title = document.createElement("a");
         title.href = arcHref;

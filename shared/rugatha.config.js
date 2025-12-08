@@ -112,8 +112,7 @@
       label: "Mattington Shattered",
       title: "Mattington Shattered 麥丁頓的破碎",
       level: 3,
-      parent: "rugatha-main",
-      extraParents: ["plus", "lite"]
+      parent: "rugatha-main"
     },
 
     // ===== Rugatha Plus =====
@@ -153,7 +152,8 @@
       label: "To the Deep and Back",
       title: "To the Deep and Back 往返深淵",
       level: 3,
-      parent: "plus1"
+      parent: "plus1",
+      url: "/campaigns/pages/rugatha-plus-1/plus1-c01/"
     },
 
     // ===== Rugatha lite =====
@@ -517,6 +517,14 @@
         id: "plus-c07-chpt03",
         title: "Chapter 3: Memory",
         url: "https://rugatha.com/2024/05/04/memory/"
+      }
+    ],
+
+    "plus1-c01": [
+      {
+        id: "plus1-c01-chpt01",
+        title: "Chapter 1: To the Deep and Back",
+        url: "https://rugatha.com/2024/07/17/campaign-1-to-the-deep-and-back/"
       }
     ],
 
@@ -917,31 +925,33 @@
     exp: null,
 
     // Level 3
-    "rugatha-c01": "https://rugatha.wordpress.com/campaign-1-curse-of-vowalon/",
-    "rugatha-c02": "https://rugatha.wordpress.com/campaign-2-beneath-the-temple/",
-    "rugatha-c03": "https://rugatha.com/campaign-3-korringfield-reunion/",
-    "rugatha-c04": "https://rugatha.com/campaign-4-the-blooming-of-macksohn/",
-    "rugatha-c05": "https://rugatha.com/campaign-5-mattington-shattered/",
+    "rugatha-c01": "/campaigns/pages/rugatha/rugatha-c01/",
+    "rugatha-c02": "/campaigns/pages/rugatha/rugatha-c02/",
+    "rugatha-c03": "/campaigns/pages/rugatha/rugatha-c03/",
+    "rugatha-c04": "/campaigns/pages/rugatha/rugatha-c04/",
+    "rugatha-c05": "/campaigns/pages/rugatha/rugatha-c05/",
     "plus-c05": "/campaigns/pages/rugatha-plus/plus-c05/",
     "lite-c05": "/campaigns/pages/rugatha-lite/lite-c05/",
-    "plus-c06": "https://rugatha.wordpress.com/r-campaign-6-hand-of-the-lich/",
-    "plus-c07": "https://rugatha.com/r-campaign-7-before-the-next-full-moon/",
-    "plus1-c01": "https://rugatha.com/2024/07/17/campaign-1-to-the-deep-and-back/",
-    "lite-c06": "https://rugatha.wordpress.com/rlite-campaign-6-the-gift-from-alfenor/",
-    "lite-c07": "https://rugatha.wordpress.com/rlite-campaign-7-lurking-dangers/",
-    "lite-c08": "https://rugatha.com/rlite-campaign-8-deep-into-lothum/",
-    "lite-c09": "https://rugatha.com/rlite-campaign-9-the-cave-of-drogsland/",
-    "lite-c10": "https://rugatha.com/rlite-campaign-10-requiem-of-the-feathered-estate/",
-    "lite-c11": "https://rugatha.com/rlite-campaign-11-seats-of-the-eclipse/",
-    "wilds-c02": "https://rugatha.com/rwilds-campaign-2-gathering-of-the-chosen/",
-    "wilds-c03": "https://rugatha.com/rwilds-campaign-3-storm-of-mudtown/",
-    "wilds-c04": "https://rugatha.com/rwilds-campaign-4-heir-to-rathanad/",
-    "brown-c01": "https://rugatha.wordpress.com/rbrown-campaign-1-dark-petals/",
-    "brown-c02": "https://rugatha.wordpress.com/rbrown-campaign-2-howling-of-the-wolf/",
+    "plus-c06": "/campaigns/pages/rugatha-plus/plus-c06/",
+    "plus-c07": "/campaigns/pages/rugatha-plus/plus-c07/",
+    "plus1-c01": "/campaigns/pages/rugatha-plus-1/plus1-c01/",
+    "lite-c06": "/campaigns/pages/rugatha-lite/lite-c06/",
+    "lite-c07": "/campaigns/pages/rugatha-lite/lite-c07/",
+    "lite-c08": "/campaigns/pages/rugatha-lite/lite-c08/",
+    "lite-c09": "/campaigns/pages/rugatha-lite/lite-c09/",
+    "lite-c10": "/campaigns/pages/rugatha-lite/lite-c10/",
+    "lite-c11": "/campaigns/pages/rugatha-lite/lite-c11/",
+    "wilds-c02": "/campaigns/pages/rugatha-wilds/wilds-c02/",
+    "wilds-c03": "/campaigns/pages/rugatha-wilds/wilds-c03/",
+    "wilds-c04": "/campaigns/pages/rugatha-wilds/wilds-c04/",
+    "brown-c01": "/campaigns/pages/rugatha-brown/brown-c01/",
+    "brown-c02": "/campaigns/pages/rugatha-brown/brown-c02/",
     "legends-os01": "https://rugatha.wordpress.com/2022/02/07/the-false-hydra-of-moorland-haunt/",
     "legends-os02": "https://rugatha.wordpress.com/2022/02/07/the-disappearance-of-gustavo-norman/",
+    "legends-os03": "https://rugatha.wordpress.com/2022/08/05/the-lighthouse-on-the-deserted-island/",
     "legends-os04": "https://rugatha.wordpress.com/2022/08/28/the-deadly-prison-break/",
-    "legends-os05": "https://rugatha.wordpress.com/legend-5-dragons-orb/",
+    "legends-os05": "/campaigns/pages/rugatha-legends/legends-os05/",
+    "legends-os06": "https://rugatha.wordpress.com/2023/04/06/the-malicious-rise-of-alfenor/",
     "legends-os07": "https://rugatha.wordpress.com/2023/08/29/mylstan-colossus/",
     "legends-os08": "https://rugatha.com/2024/05/27/lord-octavian-von-odericks-dungeon-of-randomness/",
     "exp-e01": null,
