@@ -42,6 +42,17 @@ function normalize(str) {
   return (str || "").toLowerCase().trim().replace(/[\s_-]+/g, "");
 }
 
+function toList(value) {
+  if (Array.isArray(value)) return value.filter(Boolean).map((v) => `${v}`.trim()).filter(Boolean);
+  if (typeof value === "string") {
+    return value
+      .split(",")
+      .map((v) => v.trim())
+      .filter(Boolean);
+  }
+  return [];
+}
+
 const deityList = [
   { en: "Trinix", zh: "崔尼斯" },
   { en: "Phyneal", zh: "芬尼爾" },
@@ -164,18 +175,22 @@ function normalizeRelatedUrl(url) {
 }
 
 function resolveRelated(chars, relatedIds = []) {
-  if (!Array.isArray(relatedIds) || !relatedIds.length) return [];
+  const related = toList(relatedIds);
+  if (!related.length) return [];
   const byId = new Map();
   chars.forEach((c) => {
     const key = normalize(c.id || c.name);
     if (key) byId.set(key, c);
   });
   const result = [];
-  relatedIds.forEach((rid) => {
+  related.forEach((rid) => {
     const key = normalize(rid);
     const match = key ? byId.get(key) : null;
     if (match && match.name) {
       result.push({ name: match.name, url: normalizeRelatedUrl(match.url) });
+    } else {
+      result.push({ name: rid, url: "#" });
+      console.warn(`Related NPC not found: ${rid}`);
     }
   });
   return result;
@@ -240,7 +255,16 @@ function render(npc) {
     mergedNpc.status = record.status || mergedNpc.status;
     mergedNpc.descZh = record.descZh || mergedNpc.descZh;
     mergedNpc.descEn = record.descEn || mergedNpc.descEn;
-    mergedNpc.related = resolveRelated(chars, record.related || mergedNpc.related);
+    const resolvedRelated = resolveRelated(chars, record.related || mergedNpc.related);
+    if (resolvedRelated.length) {
+      mergedNpc.related = resolvedRelated;
+    } else {
+      const fallbackRelated = toList(record.related || mergedNpc.related).map((rid) => ({
+        name: rid,
+        url: normalizeRelatedUrl(`npc_page/pages/${rid}.html`)
+      }));
+      mergedNpc.related = fallbackRelated;
+    }
     mergedNpc.religion = record.religion || mergedNpc.religion;
     mergedNpc.location = record.location || mergedNpc.location;
   }
@@ -290,11 +314,9 @@ function renderGender(gender) {
 }
 
 function parseReligionEntries(religion) {
-  if (!religion) return [];
-  return religion
-    .split(",")
-    .map((part) => part.trim())
-    .filter(Boolean)
+  const entries = toList(religion);
+  if (!entries.length) return [];
+  return entries
     .map((label) => {
       const key = normalize(label);
       if (!key) return null;
@@ -434,7 +456,7 @@ function insertRelated(items) {
   } else {
     const empty = document.createElement("span");
     empty.className = "location-empty";
-    empty.textContent = "尚未提供相關 NPC / No related NPCs";
+    empty.textContent = "無相關 NPC / No related NPCs";
     wrap.appendChild(empty);
   }
 
