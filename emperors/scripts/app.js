@@ -7,8 +7,8 @@ const EMPEROR_ERAS = [
         name: "Walston the First\n沃斯頓一世",
         image: "gallery/dranison-walston.jpeg",
         title: "First Emperor of the Era 王朝首任皇帝",
-        zhDesc: "「自由軍團」的首領。以「卓尼森革命」推翻艾米頓帝國的統治",
-        enDesc: "The leader of 'The Legion of Freedom'. Overthrew the rule of the Emiton Empire on the island."
+        zhDesc: "「自由軍團」的首領。\n以「卓尼森革命」推翻艾米頓帝國的統治",
+        enDesc: "The leader of 'The Legion of Freedom'.<\nOverthrew the rule of the Emiton Empire on the island."
       },
       {
         name: "Georson the Thirteenth\n喬森十三世",
@@ -47,8 +47,8 @@ const EMPEROR_ERAS = [
         name: "Lorin the Conqueror\n征服者洛林",
         image: "gallery/lothum-lorin.jpeg",
         title: "First Emperor of the Era 王朝首任皇帝",
-        zhDesc: "妖精軍團的首領洛林・瑞斯，推翻逐漸走向種族歧視的崔尼斯帝國。",
-        enDesc: "Lorin Reese, the leader of the Elvish Legion. Overthrew the Trinix Empire, who was heading towards racial discrimination."
+        zhDesc: "妖精軍團的首領洛林・瑞斯。\n推翻逐漸走向種族歧視的崔尼斯帝國。",
+        enDesc: "Lorin Reese, the leader of the Elvish Legion.\nOverthrew the Trinix Empire, who was heading towards racial discrimination."
       },
       {
         name: "Jelix the Young\n年輕的傑里斯",
@@ -67,8 +67,8 @@ const EMPEROR_ERAS = [
         name: "Carlos the Seventh\n卡洛斯七世",
         image: "gallery/new-dranison-carlos.jpeg",
         title: "First Emperor of the Era 王朝首任皇帝",
-        zhDesc: "原名卡洛斯・達米頓，自稱為卓尼斯後裔，登基後恢復自己卓尼森的姓氏。",
-        enDesc: "He was originally named Carlos Demiton, but claimed to be a descendant of the Dranison bloodline, and so he used Dranison as his last name after he sat on the throne."
+        zhDesc: "原名卡洛斯・達米頓，自稱為卓尼斯後裔。\n登基後恢復自己卓尼森的姓氏。",
+        enDesc: "He was originally named Carlos Demiton, but claimed to be a descendant of the Dranison bloodline.\nUsed Dranison as his last name after he sat on the throne."
       },
       {
         name: "Kylenor the Sixth\n凱里諾六世",
@@ -85,9 +85,8 @@ const container = document.getElementById("emperor-eras");
 
 if (container) {
   const createCard = (emperor, tag) => {
-    const card = document.createElement("a");
+    const card = document.createElement("article");
     card.className = "emperor-card";
-    card.href = emperor.link;
     card.setAttribute("aria-label", `${emperor.name} (${tag})`);
 
     const portrait = document.createElement("div");
@@ -113,11 +112,11 @@ if (container) {
 
     const descZh = document.createElement("p");
     descZh.className = "card-desc zh";
-    descZh.textContent = emperor.zhDesc || "";
+    descZh.innerHTML = (emperor.zhDesc || "").replace(/\n/g, "<br>");
 
     const descEn = document.createElement("p");
     descEn.className = "card-desc en";
-    descEn.textContent = emperor.enDesc || "";
+    descEn.innerHTML = (emperor.enDesc || "").replace(/\n/g, "<br>");
 
     const divider = document.createElement("div");
     divider.className = "card-divider";
