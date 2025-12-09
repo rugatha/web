@@ -100,20 +100,26 @@
       return /^[A-Za-z]/.test(first) ? first.toUpperCase() : '中';
     }
 
+    function normalizeList(value) {
+      if (Array.isArray(value)) return value.filter(Boolean).map((v) => `${v}`.trim()).filter(Boolean);
+      if (typeof value === 'string') {
+        return value
+          .split(',')
+          .map((v) => v.trim())
+          .filter(Boolean);
+      }
+      return [];
+    }
+
     function getRaceKeys(race) {
-      const keys = (race || '')
-        .split(',')
-        .map((r) => r.trim())
-        .filter(Boolean);
+      const keys = normalizeList(race);
       return keys.length ? keys : ['未知'];
     }
 
     function getReligionKeys(religion) {
-      const keys = (religion || '')
-        .split(',')
-        .map((r) => r.trim())
-        .filter(Boolean)
-        .map((r) => (r.toLowerCase() === 'not sure' ? 'Not sure' : r));
+      const keys = normalizeList(religion).map((r) =>
+        r.toLowerCase() === 'not sure' ? 'Not sure' : r
+      );
       return keys.length ? keys : ['未知信仰'];
     }
 
@@ -170,7 +176,7 @@
 
       node.href = resolveUrl(character.url);
       nameEl.textContent = character.name;
-      raceEl.textContent = character.race || '';
+      raceEl.textContent = getRaceKeys(character.race).join(', ');
       img.src = character.image;
       img.alt = character.name;
       return node;
@@ -289,9 +295,11 @@
       const filtered = term
         ? charactersCache.filter((c) => {
             const nameMatch = (c.name || '').toLowerCase().includes(term);
-            const raceMatch = (c.race || '').toLowerCase().includes(term);
+            const raceMatch = getRaceKeys(c.race).some((r) => r.toLowerCase().includes(term));
             const genderMatch = genderMatches(term, c.gender);
-            const religionMatch = (c.religion || '').toLowerCase().includes(term);
+            const religionMatch = getReligionKeys(c.religion).some((r) =>
+              r.toLowerCase().includes(term)
+            );
             const locationMatch = (c.location || []).some((loc) =>
               (loc || '').toLowerCase().includes(term)
             );
