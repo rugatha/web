@@ -10,17 +10,25 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <header class="intro">
-    <a href="https://rugatha.com/rugatha-home/" aria-label="Rugatha home">
-      <img src="../assets/rugatha-banner.jpg" alt="Rugatha banner" class="banner-image" loading="lazy">
-    </a>
-  </header>
+  <div class="page">
+    <header class="banner" aria-label="Rugatha banner image">
+      <a href="https://rugatha.com/rugatha-home/" class="banner-link" aria-label="Go to Rugatha home">
+        <img src="../assets/rugatha-banner.jpg" alt="Rugatha banner" class="banner-logo" loading="lazy">
+      </a>
+    </header>
 
-  <main>
-    <section class="timeline">
-      <ul id="timeline-list"></ul>
-    </section>
-  </main>
+    <main class="page-shell">
+      <section class="hero">
+        <h1>History of Dranison 卓尼森史</h1>
+      </section>
+
+      <section class="timeline-panel">
+        <div class="timeline">
+          <ul id="timeline-list"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <script type="module" src="scripts/app.js"></script>
 </body>
