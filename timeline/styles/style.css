@@ -167,6 +167,27 @@ body {
   font-size: 13px;
 }
 
+.description {
+  display: none;
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  color: var(--muted);
+  line-height: 1.5;
+  white-space: pre-line;
+  font-size: 14px;
+  border-radius: 12px;
+  background: #2a2f2d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card.has-description {
+  cursor: pointer;
+}
+
+.card.expanded .description {
+  display: block;
+}
+
 .era-dranison .label,
 .event.era-dranison .label,
 .era-trinix .label,
