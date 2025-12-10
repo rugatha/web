@@ -961,7 +961,7 @@
 
   const graphUrlOverrides = {
     // Level 1
-    rugatha: "https://rugatha.com/rugatha-home/",
+    rugatha: "/index.html",
 
     // Level 2
     "rugatha-main": "https://rugatha.com/campaigns/",
@@ -1015,7 +1015,7 @@
   const config = {
     brand: {
       name: "Rugatha",
-      home: "https://rugatha.com/rugatha-home/"
+      home: "/index.html"
     },
     campaigns,
     graph: {
