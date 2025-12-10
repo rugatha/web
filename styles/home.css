@@ -97,14 +97,22 @@ body {
 .portal-glyph {
   display: grid;
   place-items: center;
-  width: 68px;
-  height: 68px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: none;
+  border: none;
   font-weight: 800;
   font-size: 22px;
   color: #fff;
+}
+
+.portal-icon {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .portal-copy {
