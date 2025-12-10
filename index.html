@@ -10,79 +10,56 @@
   <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
-  <div class="shell page">
-    <header>
-      <a class="banner-link" href="https://rugatha.com/rugatha-home/" aria-label="Go to Rugatha home">
-        <img class="banner-logo" src="assets/rugatha-banner.jpg" alt="Rugatha banner">
-      </a>
-      <p class="lede">Rugatha 工具箱｜通往那些由GitHub部署的Rugatha頁面</p>
-    </header>
-
-    <section aria-label="Rugatha tools" class="tools">
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Campaigns</span>
-          <a class="icon-link" href="campaigns/index.html" aria-label="Open campaigns">Open</a>
-        </div>
-        <p class="tool-title">Campaign<br>團務</p>
-        <p class="tool-copy">各團務連結</p>
+  <div class="page">
+    <main class="hub" aria-label="Rugatha portals">
+      <div class="banner-core">
+        <img src="assets/rugatha-banner.jpg" alt="Rugatha banner" class="banner-image">
       </div>
-
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Character Card</span>
-          <a class="icon-link" href="character_card/index.html" aria-label="Open character card generator">Open</a>
-        </div>
-        <p class="tool-title">Simple Character Card Generator<br>簡易角色卡生成器</p>
-        <p class="tool-copy">簡易角色卡生成器，可下載為png檔</p>
+      <div class="orbit">
+        <a class="portal pos-nw" href="deities/index.html">
+          <span class="portal-glyph">✧</span>
+          <div class="portal-copy">
+            <span class="portal-title">Deities</span>
+            <span class="portal-title">神祇信仰</span>
+          </div>
+        </a>
+        <a class="portal pos-ne" href="emperors/index.html">
+          <span class="portal-glyph">♛</span>
+          <div class="portal-copy">
+            <span class="portal-title">Emperors</span>
+            <span class="portal-title">歷任皇帝</span>
+          </div>
+        </a>
+        <a class="portal pos-w" href="map/index.html">
+          <span class="portal-glyph">◎</span>
+          <div class="portal-copy">
+            <span class="portal-title">Map</span>
+            <span class="portal-title">卓尼森地圖</span>
+          </div>
+        </a>
+        <a class="portal pos-e" href="timeline/index.html">
+          <span class="portal-glyph">↺</span>
+          <div class="portal-copy">
+            <span class="portal-title">History</span>
+            <span class="portal-title">卓尼森史</span>
+          </div>
+        </a>
+        <a class="portal pos-sw" href="character_main_page/index.html">
+          <span class="portal-glyph">✦</span>
+          <div class="portal-copy">
+            <span class="portal-title">Characters</span>
+            <span class="portal-title">玩家與非玩家角色</span>
+          </div>
+        </a>
+        <a class="portal pos-se" href="campaigns/index.html">
+          <span class="portal-glyph">➤</span>
+          <div class="portal-copy">
+            <span class="portal-title">Campaigns</span>
+            <span class="portal-title">各團團錄</span>
+          </div>
+        </a>
       </div>
-
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Deities</span>
-          <a class="icon-link" href="deities/index.html" aria-label="Open deities">Open</a>
-        </div>
-        <p class="tool-title">Deities<br>信仰</p>
-        <p class="tool-copy">各神祇的卡片與專屬頁面</p>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Emperors</span>
-          <a class="icon-link" href="emperors/index.html" aria-label="Open emperors">Open</a>
-        </div>
-        <p class="tool-title">Emperors<br>皇帝</p>
-        <p class="tool-copy">歷代帝皇資訊</p>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Map</span>
-          <a class="icon-link" href="map/index.html" aria-label="Open world map">Open</a>
-        </div>
-        <p class="tool-title">Map of Dranison<br>卓尼森地圖</p>
-        <p class="tool-copy">瀏覽Rugatha卓尼森地圖</p>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">NPC</span>
-          <a class="icon-link" href="npc/index.html" aria-label="Open NPC explorer">Open</a>
-        </div>
-        <p class="tool-title">NPC</p>
-        <p class="tool-copy">搜尋、依字母、種族、信仰、地點分組</p>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Timeline</span>
-          <a class="icon-link" href="timeline/index.html" aria-label="Open timeline">Open</a>
-        </div>
-        <p class="tool-title">Timeline<br>時間軸</p>
-        <p class="tool-copy">卓尼森重大事件時間軸</p>
-      </div>
-    </section>
-
+    </main>
   </div>
 
   <script src="shared/rugatha.config.js"></script>
