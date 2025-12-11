@@ -1,44 +1,127 @@
 <!DOCTYPE html>
-
 <html lang="zh-TW">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Malicious Rise of Alfenor | Rugatha Legends</title>
+  <link rel="icon" type="image/png" href="../../../../assets/rugatha-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../../assets/rugatha-icon-32.png">
+  <link rel="stylesheet" href="../../../../shared/styles/theme.css">
+  <link rel="stylesheet" href="../../../../campaigns/styles/campaigns.css" />
+  <link rel="stylesheet" href="../../../../campaigns/styles/campaign-detail.css" />
+  <style>
+    .detail-canvas.no-gap {
+      gap: 0;
+    }
+    .detail-canvas.no-gap .campaign-detail {
+      border-radius: 0;
+      background: var(--card);
+      box-shadow: none;
+      border: none;
+    }
+    .detail-canvas.no-gap .campaign-detail:first-child {
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+    }
+    .detail-canvas.no-gap .campaign-detail:last-child {
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+      margin-top: -1px;
+    }
+    .detail-canvas.no-gap .campaign-detail:not(.arc-detail) {
+      display: block;
+      grid-template-columns: 1fr;
+    }
+    .detail-canvas.no-gap .campaign-detail:not(.arc-detail) .campaign-detail__content {
+      max-width: none;
+    }
+    .chapter-date {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .campaign-detail__meta {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: var(--panel);
+      border: 1px solid var(--detail-edge);
+      margin-top: 6px;
+    }
+  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-BZZFKMJ65Y');
   </script>
-
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>The Malicious Rise of Alfenor | Rugatha Story Arc</title>
-<link href="../../../../assets/rugatha-icon.png" rel="icon" type="image/png"/>
-<link href="../../../../assets/rugatha-icon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="../../../../shared/styles/theme.css" rel="stylesheet"/>
-<link href="../../../styles/campaigns.css" rel="stylesheet">
-<link href="../../../styles/campaign-detail.css" rel="stylesheet">
-</link></link></head>
+</head>
 <body>
-<div class="page">
-<header aria-label="Rugatha banner image" class="banner">
-<a aria-label="返回 Rugatha 活動列表" class="banner-link" href="../../../index.html">
-<img alt="Rugatha banner" class="banner-logo" loading="lazy" src="../../../../assets/rugatha-banner.jpg"/>
-</a>
-</header>
-<section class="canvas detail-canvas">
-<article class="campaign-detail arc-detail">
-<div class="campaign-detail__media">
-<img alt="The Malicious Rise of Alfenor banner" data-role="arc-image" loading="lazy" src="../../../campaign-banners/legends-os06.jpg"/>
-</div>
-<div class="campaign-detail__content">
-<span class="campaign-detail__badge">Story Arc</span>
-<h1 class="campaign-detail__title">The Malicious Rise of Alfenor</h1>
-</div>
-<div class="campaign-detail__chapters"><h2>章節 Chapters</h2><ul class="chapter-list" data-role="chapter-list"></ul></div></article>
-</section>
-</div>
-<script src="../../../../shared/rugatha.config.js"></script><script src="../../../scripts/detail.js"></script></body>
+  <div class="page">
+    <header class="banner" aria-label="Rugatha banner image">
+      <a href="../../../../campaigns/index.html" class="banner-link" aria-label="返回 Rugatha 活動列表">
+        <img class="banner-logo" src="../../../../assets/rugatha-banner.jpg" alt="Rugatha banner" loading="lazy" />
+      </a>
+    </header>
+
+    <section class="canvas detail-canvas no-gap">
+      <article class="campaign-detail arc-detail">
+        <div class="campaign-detail__media">
+          <img src="../../../../campaigns/campaign-banners/legends-os06.jpg" alt="The Malicious Rise of Alfenor banner" loading="lazy" />
+        </div>
+        <div class="campaign-detail__content">
+          <h1 class="campaign-detail__title">The Malicious Rise of Alfenor</h1>
+          <p class="campaign-detail__tagline">Rugatha Legends</p>
+          <div class="campaign-detail__meta">10836.4.1 – 10836.4.3</div>
+        </div>
+      </article>
+
+      <article class="campaign-detail">
+        <div class="campaign-detail__content">
+          <p class="chapter-date">10836.4.1</p>
+          <blockquote>
+            <p>「親愛的子民們，今天，是我們建立王朝的第78年紀念日，很高興各位在這裡，和我一起共同慶祝。希望大家開心！」</p>
+            <cite>Lorin, the Conqueror, 10836.4.1</cite>
+          </blockquote>
+          <p>《洛林精神》響遍佛萊特境廣大的野餐區，舞台上，征服者洛林帶領著大家齊聲哼唱，底下的妖精們齊聲歡呼，一同享受屬於妖精們的榮耀。</p>
+          <p>一群來自各地的妖精們坐在同一桌。海精靈 Zanlan 逃避著其他人的目光，專心吃著眼前的食物；騎著一匹靈魂馬的 Irina 戴著頭盔，始終不下馬，顯得格格不入；興致高昂的 Thomas Wake 大口大口地狼吞虎嚥，比起妖精，他似乎更像隻哥布林；MayMay 也逃避著其他人的視線，自顧自地享用美食；阿德看起來很疲憊，像是期望著這場晚宴盡快結束，可以到帳篷內休息；Vayrpher Cosmos 則不斷試著和同桌的妖精們宣傳自己信仰的星界大蛇，希望有人能加入他的信仰，不過很顯然的，沒有人想要理他。</p>
+          <p>這時，一名看起來十分有威嚴的男子走上了舞台。這名中年的妖精清了清喉嚨，表示自己叫 Norvelle，今天這場晚宴是他為 Lorin 國王所策劃的，Lorin 先去準備休息了，有任何問題歡迎向他詢問，也希望大家可吃得開心。</p>
+          <p>不久後，用完餐，妖精們紛紛從野餐區離開，尋找附近帳篷的空位。帳篷的大小可以容納 10 名左右的成年妖精，不過有些帳篷內似乎有人正在忙碌著，因此冒險者們花了不少時間找到自己舒服的位置。而 MayMay 則待在野餐區，找了附近的一棵大樹，爬上去休息。</p>
+          <p>睡著前，Vayrpher 聽見了帳篷外似乎有幾個人正在談話，談話的內容讓他感到十分好奇，好像在討論著和 Lorin 國王有關的內容。Vayrpher 悄悄揭開了帳篷的簾幕，看見其中一人是剛才在舞台上的 Norvelle，另一人是這裡的宗教領袖，樹林之神的主教 Fallon，最後一人他不認識，不過從他的口中，聽起來是名醫生。三人談話的內容，聽起來像是與 Lorin 國王之間的溝通有些隔閡，其中似乎牽涉到了某種宗教信仰。為了不被發現，Vayrpher 躲回帳篷內，不過剛才聽見的內容，他知道自己需要一些時間消化。</p>
+
+          <p class="chapter-date">10836.4.2</p>
+          <p>一早，妖精們紛紛在不同時間清醒。</p>
+          <p>Vayrpher 想著昨晚聽見的內容，心不在焉地走在路上，不過看見騎著靈魂馬的 Irina，他還是很努力想向他宣傳自己星界大蛇的宗教信仰。突然，他感受到自己身後搭上了一隻手。一回頭，昨晚看見的 Fallon 主教正對他微笑。Fallon 主教表示大家的宗教信仰都很棒，我們是個大家庭，歡迎 Vayrpher 也加入。Vayrpher 頓時腦內一陣迷糊，微笑著，便跟著 Fallon 向前走了。Irina 感到有點奇異，便決定悄悄跟在後頭。</p>
+          <p>帳篷內，Thomas 看見一名妖精夥伴的虎口似乎受傷了，熱情地想用自己的雙手斧幫忙治療。然而其他妖精看了覺得沒有幫助，於是跑出帳篷外，去尋找醫生來治療。不久後，一名被稱為 Elmond 的醫生進了帳篷。Thomas 看見醫生從背包內拿出了一綑材質特殊的繃帶，敷上傷者的傷口後，傷口快速地癒合了。Thomas 覺得神奇，偷偷地從 Elmond 醫生的背包偷走了一綑繃帶。繃帶的材質看起來是從動物身上取得的，但 Thomas 不確定是怎麼製作的。Elmond 醫生看見了，對 Thomas 微笑，表示他如果想要，可以拿去，沒問題的。Thomas 很開心，拿走繃帶後便在帳篷外到處跑跳，見人便質疑別人是不是要偷走他的繃帶。</p>
+          <p>Fallon 帶著 Vayrpher 和跟在後頭的 Irina 走到了野餐區，朝著一旁的樹林深處走去。在另一側樹上休息的 MayMay 看見了，感到好奇，便也在後面跟上。不久後，他看見昨晚同桌用餐的 Zanlan 似乎也來到了野餐區，似乎是在跟蹤著騎在馬上的 Irina。兩人結伴，在後頭看著 Fallon 帶著的兩人到底要幹嘛。</p>
+          <p>森林深處，一個突兀的平地上圍繞著一圈的妖精們。Fallon 走入圈中，讓信徒們空出一個空位，給 Vayrpher 加入。看見站在後方騎在馬上的 Irina，Fallon 禮貌性地詢問他是否也要加入，信徒們則與看見 Vayrpher 時歡迎的模樣不同，面無表情地死盯著 Irina。Irina 表示沒關係，自己站在 Vayrpher 身後就好。而遠處，MayMay 和 Zanlan 則躲在能聽見他們談話，但看不見人群的樹後默默聆聽。</p>
+          <p>圓圈內，Fallon 帶領著信徒們詠唱，祈禱，Vayrpher 很快地便融入其中。一段時間後，Vayrpher 感到身體開始發癢，有種過敏的不適感，在他身後的 Irina 也有一樣的感覺。Vayrpher 想站起身子，卻發現身體使不上力。信徒們觸摸 Vayrpher 的身體，給他安慰，但並沒有消除任何不適感，唯有 Fallon 觸碰他的肩膀時，才有一股暖流流過他的身體，暫時消除那股刺癢感，但 Vayrpher 仍沒能站起身。Irina 的身體跨在靈魂馬上，他策馬轉頭離開，身上雖然感到不適，但仍有辦法移動身體。</p>
+          <p>MayMay 和 Zanlan 看見從前方調頭離開的 Irina，便決定跟上，一探究竟。但 Irina 騎在馬上，離開的速度還是比較快，因此一下就甩開他們兩人了。回到帳篷區，Irina 在詢問其他妖精後，找到了走在一起的 Lorin 國王和 Norvelle。Irina 向 Lorin 國王表示剛剛在森林內看到了奇怪的宗教活動，建議 Lorin 去看看。Norvelle 試著將話題引開，有些可疑，Lorin 則表示他會找機會去看看。同時 Irina 詢問了附近哪裡有河水，他想去沖洗一下身體，在 Norvelle 指引後，他便策馬離開。</p>
+          <p>雙手高舉著拿到的神奇繃帶，Thomas 感到很開心，但此時他突然覺得自己的手癢癢的，不舒服，於是他奮力將繃帶丟到地上。沒想到一旁路過的妖精看見掉在地上的繃帶，便把它拿走了。Thomas 跟在那名妖精身後，竟發現那名妖精帶著繃帶，走入了一個漂亮的帳篷內，而在帳篷內的似乎是剛剛看見的 Elmond 醫生。醫生對於那名妖精將繃帶為他取回感到很滿意。在那名妖精離開帳篷後，Thomas 便跟蹤他，直到他走到人煙稀少處後，便襲擊他，把他綁到旁邊的空帳篷內拷問。</p>
+          <p>聽見隔壁傳來很大的吵鬧聲，換了個帳篷休息的阿德意興闌珊地跑來看，發現昨晚同桌用餐，長得像哥布林的妖精 Thomas 正在拷問一名妖精。不久後，Thomas 發現好像也問不到什麼，便拋下那名妖精跑走了，阿德也跟了上來。兩人討論著 Thomas 對於 Elmond 醫生的疑慮。不久後，阿德覺得疲倦，便將自己傳送到遠處一棵樹旁休息。</p>
+          <p>Thomas 走在路上，遇見了剛從樹林深處出來一段時間的 MayMay 和 Zanlan。MayMay 和 Zanlan 也告訴了他剛才在樹林聽見的奇怪宗教活動。三名妖精都覺得事情不太對勁，想去找 Lorin 國王。經過打聽，Lorin 國王和 Norvelle 似乎正在前往佛萊特境的入口處。</p>
+          <p>三名妖精朝著打聽到 Lorin 國王的方向前行，恰巧阿德在路過的樹邊休息，便加入了他們，四名妖精一起前進。好不容易追上了 Lorin 國王，大家訴說著 Elmond 醫生和 Fallon 主教的異狀，但 Norvelle 似乎一直想將話題敷衍地回答。</p>
+          <p>好不容易來到了佛萊特境的入口，妖精們看見了兩名衛兵抓著一名人類女子。人類喊著自己只是經過這裡而已，沒有別的意圖。Lorin 國王對妖精們解釋想確認他沒有別的意圖，畢竟人類對妖精是很有敵意的。誰知道在 Lorin 國王說話的同時，Norvelle 便快步走了上去，從腰際拿起匕首，迅速地劃破人類的喉嚨。眼看事情不對勁，妖精們紛紛拿起武器，準備和 Norvelle 進行對抗。</p>
+          <p>Lorin 國王試著和 Norvelle 喊話，表示不需要這樣子做，卻被 Norvelle 強行推倒在地。Zanlan 躲在後方，極力讓自己不受到傷害。Thomas、阿德和 MayMay 則合力將 Norvelle 擊潰，但倒在地上的 Norvelle 竟然化為一盤散沙，而 Thomas 和阿德身上都開始有了非常不舒服的反應。</p>
+          <p>不久後，Elmond 醫生和幾名妖精來到了現場。Lorin 國王心情沉重，但在 MayMay 的詢問下，得知 Lorin 國王對 Elmond 醫生的可疑似乎也早就有了個底。Elmond 醫生在 Norvelle 的「屍體」旁蹲了下來，偷偷抓了一把散去的沙塵放入口袋，然後才站了起來，走向 Lorin 國王，問了幾句話。Lorin 國王快速地將 Elmond 醫生支開，然後在 Elmond 醫生跟他的夥伴們離去後，也朝著帳篷區走回去了。阿德和 Thomas 身上起了非常嚴重的搔癢感，感覺像是蜘蛛在他們身上爬一樣，躺在地上用力的抓都無法消除，一旁看見的 Zanlan 心裡也開始焦慮，懷疑自己身上是否也有蜘蛛在爬。三人慌張地扭動著身體，直到疲倦。眼看就要日落。在場唯一沒事的 MayMay 走出了佛萊特境外，三名恐慌的妖精也努力撐著身體，離開了這個是非之地。但是阿德和 Thomas 隱隱約約的知道，這不適的搔癢感，恐怕會跟隨著他們一輩子。</p>
+          <p>河水內，Irina 脫下了包覆全身的盔甲，卻發現自己除了兩隻手掌外，全身上下的肌肉與皮膚都被啃食殆盡了，撲通撲通跳的心臟還運作著，但這一切怎麼樣都難以用科學解釋。他感到絕望，但想著自己也還沒死去，就再重新穿回護甲，朝著帳篷區回頭。</p>
+          <p>走在帳篷區，Irina 看見剛才跟隨著的 Vayrpher 站在一個華麗的帳篷前。Vayrpher 向 Irina 邀請共進晚餐，但 Irina 感到隱隱約約的有問題，因此便離開了。但充滿好奇的他，還是躲在野餐區附近，觀察事情的發展。</p>
+          <p>走入帳篷內，Vayrpher 加入了剛才一同繞圈的夥伴，聽著 Fallon 主教的說明，接著便一起走出了帳篷，朝著野餐區前進。他們一人坐到一桌去，面帶微笑，朝著舞台盯著。Irina 從後方看著，感到可疑。</p>
+          <p>日落。Fallon 主教和 Elmond 醫生走上了舞台，Lorin 國王似乎沒有在這裡。在 Fallon 主教的說明下，他看著台下滿滿的妖精們，表示今天大家要在這裡見識一個新的宗教的誕生。他從背後拿出一把點燃的火把，Elmond 從口袋掏出一把沙子—那是剛才從 Norvelle 屍體處取得的沙子—丟向火內，然後火把燒向兩人的衣服。Fallon 主教和 Elmond 醫生相擁，兩人帶領著舞台下的妖精們大聲狂喊：「Elmond、Fallon、Norvelle！Elmond、Fallon、Norvelle！Elmond、Fallon、Norvelle！Elmond、Fallon、Norvelle！」吶喊聲逐漸模糊，然後融在一起，形成了類似「El、Fa、Nor！」的聲響，最終成了一個名字。Alfenor。就像被火包圍的兩人一樣，融成了一個怪物，一個恐懼的化身，一個高大而醜陋的孽物，一個不再能被稱為妖精的存在。</p>
+          <p>怪物淒厲的嘶吼，然後邁開他的步伐，朝著森林深處跑去。信徒們也紛紛離開野餐區，跟上怪物的步伐。Vayrpher 意識到這新的宗教，並不是他想像中的星界巨蛇，有些失落，但他突然感受到了一股內心的衝動，有個聲音，要他「跟上」。Vayrpher 邁開腳步，朝著怪物的方向前進，那騎在馬上、穿著盔甲的妖精跟隨其後。</p>
+
+          <p class="chapter-date">10836.4.3</p>
+          <p>森林深處的一個洞穴內，怪物停了下來，跟隨著的妖精數量已經少了一些。洞穴內除了還血肉模糊的 Alfenor、疲憊不堪的妖精們，以及滿滿的蜘蛛外，還有一隻巨型的蜘蛛。那蜘蛛似乎有著人類的面孔。年長的容貌，難以解讀的表情，像是個老婆婆一樣。</p>
+          <p>「母親大人。」Alfenor 如此稱呼他。</p>
+          <p>母親大人抓起洞穴內的妖精，張口便是一吞。Irina 眼看不對勁，試著想逃脫。直到最後，他是最後剩下的妖精了。擋在洞口的蜘蛛們剛好露出了個縫隙，Irina 見機便衝了出去，頭也不回地離開了這個恐怖的洞穴。</p>
+        </div>
+      </article>
+    </section>
+  </div>
+</body>
 </html>

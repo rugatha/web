@@ -86,16 +86,6 @@
       nextSession: "2026/1"
     },
     {
-      name: "RUGATHA Plus 1",
-      tagline: "LET'S GET ROLLING IN THE DEEEEEEEP",
-      dates: "2024/7/13 ~ 2024/11/23",
-      link: "https://rugatha.com/rugatha-plus-1/",
-      page: "./pages/rugatha-plus-1/index.html",
-      image: "https://rugatha.com/wp-content/uploads/2024/06/rugatha-plus-one.png",
-      accent: "#ffd0f0",
-      nextSession: "團務完結 Campaign Ended"
-    },
-    {
       name: "Rugatha Brown",
       tagline: "Descend into Darkness",
       dates: "2022/11/7 ~ 2023/3/14",
@@ -187,17 +177,6 @@
       title: "Before the Next Full Moon 滿月來臨之前",
       level: 3,
       parent: "plus"
-    },
-
-    // ===== Rugatha Plus 1 =====
-    { id: "plus1", label: "Rugatha Plus 1", level: 2, parent: "rugatha" },
-    {
-      id: "plus1-c01",
-      label: "To the Deep and Back",
-      title: "To the Deep and Back 往返深淵",
-      level: 3,
-      parent: "plus1",
-      url: "/campaigns/pages/rugatha-plus-1/plus1-c01/"
     },
 
     // ===== Rugatha lite =====
@@ -364,6 +343,20 @@
       level: 3,
       parent: "legends"
     },
+    {
+      id: "legends-os09",
+      label: "To the Moon and Back 往返深淵",
+      title: "To the Moon and Back 往返深淵",
+      level: 3,
+      parent: "legends"
+    },
+    {
+      id: "legends-os10",
+      label: "The Invisible Spell",
+      title: "The Invisible Spell 隱形咒語",
+      level: 3,
+      parent: "legends"
+    },
 
     // ===== Rugatha Experience =====
     { id: "exp", label: "Rugatha Experience", level: 2, parent: "rugatha" },
@@ -390,110 +383,110 @@
       {
         id: "rugatha-c01-chpt01",
         title: "Chapter 1: The Curse of Vowalon",
-        url: "https://rugatha.wordpress.com/2021/05/20/chapter-1-the-curse-of-vowalon/"
+        url: "../rugatha-c01/chpt01.html"
       },
       {
         id: "rugatha-c01-chpt02",
         title: "Chapter 2: Before Sunset",
-        url: "https://rugatha.wordpress.com/2021/05/23/chapter-2-before-sunset/"
+        url: "../rugatha-c01/chpt02.html"
       },
       {
         id: "rugatha-c01-chpt03",
         title: "Chapter 3: Into the Woods",
-        url: "https://rugatha.wordpress.com/2021/05/30/chapter-3-into-the-woods/"
+        url: "../rugatha-c01/chpt03.html"
       },
       {
         id: "rugatha-c01-chpt04",
         title: "Chapter 4: Wescoe Tour",
-        url: "https://rugatha.wordpress.com/2021/06/13/chapter-4-wescoe-tour/"
+        url: "../rugatha-c01/chpt04.html"
       },
       {
         id: "rugatha-c01-chpt05",
         title: "Chapter 5: Back in the Woods",
-        url: "https://rugatha.wordpress.com/2021/06/27/chapter-5-back-in-the-woods/"
+        url: "../rugatha-c01/chpt05.html"
       },
       {
         id: "rugatha-c01-chpt06",
         title: "Chapter 6: Heroes of Vowalon",
-        url: "https://rugatha.wordpress.com/2021/07/11/chapter-6-before-the-ritual/"
+        url: "../rugatha-c01/chpt06.html"
       },
       {
         id: "rugatha-c01-chpt07",
         title: "Chapter 7: Demons of Vowalon",
-        url: "https://rugatha.wordpress.com/2021/07/18/chapter-7-demons-of-vowalon/"
+        url: "../rugatha-c01/chpt07.html"
       }
     ],
     "rugatha-c02": [
       {
         id: "rugatha-c02-chpt01",
         title: "Chapter 1: Altered Mindsets",
-        url: "https://rugatha.wordpress.com/2021/08/01/chapter-1-altered-mindsets/"
+        url: "../rugatha-c02/chpt01.html"
       },
       {
         id: "rugatha-c02-chpt02",
         title: "Chapter 2: Venture into Darkness",
-        url: "https://rugatha.wordpress.com/2021/08/08/chapter-2-venture-into-darkness/"
+        url: "../rugatha-c02/chpt02.html"
       },
       {
         id: "rugatha-c02-chpt03",
         title: "Chapter 3: The Spirit of Lorin",
-        url: "https://rugatha.wordpress.com/2021/08/22/chapter-3-venture-into-darkness/"
+        url: "../rugatha-c02/chpt03.html"
       }
     ],
     "rugatha-c03": [
       {
         id: "rugatha-c03-chpt01",
         title: "Chapter 1: Bitter Reunion",
-        url: "https://rugatha.wordpress.com/2021/09/20/chapter-1-bitter-reunion/"
+        url: "../rugatha-c03/chpt01.html"
       },
       {
         id: "rugatha-c03-chpt02",
         title: "Chapter 2: Streets of Korringfield",
-        url: "https://rugatha.wordpress.com/2021/09/20/chapter-2-streets-of-korringfield/"
+        url: "../rugatha-c03/chpt02.html"
       },
       {
         id: "rugatha-c03-chpt03",
         title: "Chapter 3: A Good Place",
-        url: "https://rugatha.wordpress.com/2021/10/03/chapter-3-a-good-place/"
+        url: "../rugatha-c03/chpt03.html"
       },
       {
         id: "rugatha-c03-chpt04",
         title: "Chapter 4: Between Life and Death",
-        url: "https://rugatha.wordpress.com/2021/11/01/chapter-4-between-life-and-death/"
+        url: "../rugatha-c03/chpt04.html"
       }
     ],
     "rugatha-c04": [
       {
         id: "rugatha-c04-chpt01",
         title: "Chapter 1: Welcome to Macksohn",
-        url: "https://rugatha.wordpress.com/2021/12/27/chapter-1-welcome-to-macksohn/"
+        url: "../rugatha-c04/chpt01.html"
       },
       {
         id: "rugatha-c04-chpt02",
         title: "Chapter 2: Sun and Moon",
-        url: "https://rugatha.wordpress.com/2022/01/19/chapter-2-sun-and-moon/"
+        url: "../rugatha-c04/chpt02.html"
       },
       {
         id: "rugatha-c04-chpt03",
         title: "Chapter 3: Upper Class Life",
-        url: "https://rugatha.wordpress.com/2022/03/20/chapter-3-upper-class-life/"
+        url: "../rugatha-c04/chpt03.html"
       },
       {
         id: "rugatha-c04-chpt04",
         title: "Chapter 4: The Father of Shadows",
-        url: "https://rugatha.wordpress.com/2022/05/02/chapter-4-the-father-of-shadows/"
+        url: "../rugatha-c04/chpt04.html"
       },
       {
         id: "rugatha-c04-chpt05",
         title: "Chapter 5: Gladiators",
-        url: "https://rugatha.wordpress.com/2022/06/13/chapter-5-gladiators/"
+        url: "../rugatha-c04/chpt05.html"
       }
     ],
     "rugatha-c05": [
       {
         id: "rugatha-c05-chpt01",
         title: "Chapter 1: The Aftermath",
-        url: "https://rugatha.wordpress.com/2022/07/11/chapter-1-the-aftermath/"
+        url: "../rugatha-c05/chpt01.html"
       }
     ],
 
@@ -501,74 +494,66 @@
       {
         id: "rugatha-c05-chpt01",
         title: "Chapter 1: The Aftermath",
-        url: "https://rugatha.wordpress.com/2022/07/11/chapter-1-the-aftermath/"
+        url: "../../rugatha/rugatha-c05/chpt01.html"
       },
       {
         id: "plus-c05-chpt02",
         title: "Chapter 2: Regroup and Reanalysis",
-        url: "https://rugatha.wordpress.com/2022/07/24/chapter-2-regroup-and-reanalysis/"
+        url: "/campaigns/pages/rugatha-plus/plus-c05/chpt02.html"
       },
       {
         id: "plus-c05-chpt03",
         title: "Chapter 3: Fey Senses",
-        url: "https://rugatha.wordpress.com/2022/09/25/chapter-3-fey-senses/"
+        url: "../plus-c05/chpt03.html"
       },
       {
         id: "plus-c05-chpt04",
         title: "Chapter 4: Trial of the Chosen One",
-        url: "https://rugatha.wordpress.com/2022/11/06/chapter-5-trial-of-the-chosen-one/"
+        url: "../plus-c05/chpt04.html"
       },
       {
         id: "plus-c05-chpt05",
         title: "Chapter 5: Feywild Lost",
-        url: "https://rugatha.wordpress.com/2023/02/28/chapter-5-feywild-lost/"
+        url: "../plus-c05/chpt05.html"
       }
     ],
     "plus-c06": [
       {
         id: "plus-c06-chpt01",
         title: "Chapter 1: Stinky Stinky",
-        url: "https://rugatha.wordpress.com/2023/03/13/chapter-1-stinky-stinky/"
+        url: "../plus-c06/chpt01.html"
       },
       {
         id: "plus-c06-chpt02",
         title: "Chapter 2: Detour to Macksohn",
-        url: "https://rugatha.wordpress.com/2023/04/30/chapter-2-detour-to-macksohn/"
+        url: "../plus-c06/chpt02.html"
       },
       {
         id: "plus-c06-chpt03",
         title: "Chapter 3: Dangerous Roads",
-        url: "https://rugatha.wordpress.com/2023/07/02/chapter-3-dangerous-roads/"
+        url: "../plus-c06/chpt03.html"
       },
       {
         id: "plus-c06-chpt04",
         title: "Chapter 4: Knowledge Unbound",
-        url: "https://rugatha.wordpress.com/2023/07/31/chapter-4-knowledge-unbound/"
+        url: "../plus-c06/chpt04.html"
       }
     ],
     "plus-c07": [
       {
         id: "plus-c07-chpt01",
         title: "Chapter 1: The Ritual of Rage",
-        url: "https://rugatha.com/2024/01/09/chapter-1-the-ritual-of-rage/"
+        url: "../plus-c07/chpt01.html"
       },
       {
         id: "plus-c07-chpt02",
         title: "Chapter 2: El Oro de los Ratones",
-        url: "https://rugatha.com/2024/01/09/chapter-2-the-mine-on-the-island"
+        url: "../plus-c07/chpt02.html"
       },
       {
         id: "plus-c07-chpt03",
         title: "Chapter 3: Memory",
-        url: "https://rugatha.com/2024/05/04/memory/"
-      }
-    ],
-
-    "plus1-c01": [
-      {
-        id: "plus1-c01-chpt01",
-        title: "Chapter 1: To the Deep and Back",
-        url: "https://rugatha.com/2024/07/17/campaign-1-to-the-deep-and-back/"
+        url: "../plus-c07/chpt03.html"
       }
     ],
 
@@ -576,144 +561,144 @@
       {
         id: "rugatha-c05-chpt01",
         title: "Chapter 1: The Aftermath",
-        url: "https://rugatha.wordpress.com/2022/07/11/chapter-1-the-aftermath/"
+        url: "../../rugatha/rugatha-c05/chpt01.html"
       },
       {
         id: "lite-c05-chpt02",
         title: "Chapter 2: Town of Villains",
-        url: "https://rugatha.wordpress.com/2022/08/07/chapter-2-town-of-villains/"
+        url: "/campaigns/pages/rugatha-lite/lite-c05/chpt02.html"
       },
       {
         id: "lite-c05-chpt03",
         title: "Chapter 3: Deal?",
-        url: "https://rugatha.wordpress.com/2022/08/22/chapter-3-deal/"
+        url: "../lite-c05/chpt03.html"
       },
       {
         id: "lite-c05-chpt04",
         title: "Chapter 4: True Form",
-        url: "https://rugatha.wordpress.com/2022/10/02/chapter-4-true-form/"
+        url: "../lite-c05/chpt04.html"
       }
     ],
     "lite-c06": [
       {
         id: "lite-c06-chpt01",
         title: "Chapter 1: Mysterious Bites",
-        url: "https://rugatha.wordpress.com/2022/10/23/chapter-1-mysterious-bites/"
+        url: "../lite-c06/chpt01.html"
       },
       {
         id: "lite-c06-chpt02",
         title: "Chapter 2: Mother of Ruins",
-        url: "https://rugatha.wordpress.com/2023/01/15/chapter-2-mother-of-ruins/"
+        url: "../lite-c06/chpt02.html"
       },
       {
         id: "lite-c06-chpt03",
         title: "Chapter 3: Count M",
-        url: "https://rugatha.wordpress.com/2023/03/20/chapter-3-count-m/"
+        url: "../lite-c06/chpt03.html"
       },
       {
         id: "lite-c06-chpt04",
         title: "Chapter 4: We Need a Plan",
-        url: "https://rugatha.wordpress.com/2023/04/16/chapter-4-we-need-a-plan/"
+        url: "../lite-c06/chpt04.html"
       },
       {
         id: "lite-c06-chpt05",
         title: "Chapter 5: The Rescue",
-        url: "https://rugatha.wordpress.com/2023/07/16/chapter-5-the-rescue/"
+        url: "../lite-c06/chpt05.html"
       }
     ],
     "lite-c07": [
       {
         id: "lite-c07-chpt01",
         title: "Chapter 1: Underneath the Theatre",
-        url: "https://rugatha.wordpress.com/2023/08/14/chapter-1-underneath-the-theatre/"
+        url: "../lite-c07/chpt01.html"
       },
       {
         id: "lite-c07-chpt02",
         title: "Chapter 2: Mother Reborn",
-        url: "https://rugatha.wordpress.com/2023/09/18/chapter-2-mother-reborn/"
+        url: "../lite-c07/chpt02.html"
       },
       {
         id: "lite-c07-chpt03",
         title: "Chapter 3: Clone of...... Us?",
-        url: "https://rugatha.com/2023/10/22/chapter-3-clones-of-us/"
+        url: "../lite-c07/chpt03.html"
       }
     ],
     "lite-c08": [
       {
         id: "lite-c08-chpt01",
         title: "Chapter 1: Moonlight Predators",
-        url: "https://rugatha.com/2024/03/04/chapter-1-moonlight-predators/"
+        url: "../lite-c08/chpt01.html"
       },
       {
         id: "lite-c08-chpt02",
         title: "Chapter 2: Hatched Companion",
-        url: "https://rugatha.com/2024/05/05/chapter-2-hatched-companion/"
+        url: "../lite-c08/chpt02.html"
       },
       {
         id: "lite-c08-chpt03",
         title: "Chapter 3: I'm Sorry for Your Loss",
-        url: "https://rugatha.com/2024/07/07/chapter-3-im-sorry-for-your-loss/"
+        url: "../lite-c08/chpt03.html"
       }
     ],
     "lite-c09": [
       {
         id: "lite-c09-chpt01",
         title: "Chapter 1: Aberration 101",
-        url: "https://rugatha.com/2024/09/08/chapter-1-aberration-101/"
+        url: "../lite-c09/chpt01.html"
       },
       {
         id: "lite-c09-chpt02",
         title: "Chapter 2: Evangelist of Phynoir",
-        url: "https://rugatha.com/2024/10/12/chapter-2-evangelist-of-phynoir/"
+        url: "../lite-c09/chpt02.html"
       },
       {
         id: "lite-c09-chpt03",
         title: "Chapter 3: Lord of the Feathers",
-        url: "https://rugatha.com/2024/12/08/chapter-3-lord-of-the-feathers/"
+        url: "../lite-c09/chpt03.html"
       }
     ],
     "lite-c10": [
       {
         id: "lite-c10-chpt01",
         title: "Chapter 1: Last Moment of Sanity",
-        url: "https://rugatha.com/2025/02/25/chapter-1-last-moment-of-sanity/"
+        url: "../lite-c10/chpt01.html"
       },
       {
         id: "lite-c10-chpt02",
         title: "Chapter 2: Fate of the Destined Past",
-        url: "https://rugatha.com/2025/03/30/chapter-2-fate-of-the-destined-past/"
+        url: "../lite-c10/chpt02.html"
       },
       {
         id: "lite-c10-chpt03",
         title: "Chapter 3: Broken Angels",
-        url: "https://rugatha.com/2025/04/20/chapter-3-broken-angels/"
+        url: "../lite-c10/chpt03.html"
       },
       {
         id: "lite-c10-chpt04",
         title: "Chapter The Divine Dominion of Everlasting and Love",
-        url: "https://rugatha.com/2025/05/25/chapter-4-the-divine-dominion-of-everlasting-and-love/"
+        url: "../lite-c10/chpt04.html"
       }
     ],
     "lite-c11": [
       {
         id: "lite-c11-chpt01",
         title: "Chapter 1: Call of Fenadra",
-        url: "https://rugatha.com/2025/07/13/chapter-1-call-of-fenadra/"
+        url: "../lite-c11/chpt01.html"
       },
       {
         id: "lite-c11-chpt02",
         title: "Chapter 2: The Council of Spirit",
-        url: "https://rugatha.com/2025/08/18/chapter-2-the-council-of-spirit/"
+        url: "../lite-c11/chpt02.html"
       },
       {
         id: "lite-c11-chpt03",
         title: "Chapter 3: The Heartless Trial",
-        url: "https://rugatha.com/2025/09/21/chapter-3-the-heartless-trial/"
+        url: "../lite-c11/chpt03.html"
       },
       {
         id: "lite-c11-chpt04",
         title: "Chapter 4: The Heartbroken Endgame",
-        url: "https://rugatha.com/2025/10/12/chapter-4-the-heartbroken-endgame/"
+        url: "../lite-c11/chpt04.html"
       }
     ],
 
@@ -721,73 +706,73 @@
       {
         id: "wilds-c01-chpt01",
         title: "Chapter 1: The Town of Trades and Goods",
-        url: "https://rugatha.com/2024/03/17/chapter-1-the-town-of-trades-and-goods/"
+        url: "../wilds-c01/chpt01.html"
       },
       {
         id: "wilds-c01-chpt02",
         title: "Chapter 2: The Siren's Cemetery",
-        url: "https://rugatha.com/2024/04/21/chapter-2-the-sirens-cemetery/"
+        url: "../wilds-c01/chpt02.html"
       },
       {
         id: "wilds-c01-chpt03",
         title: "Chapter 3: Invitation to T.I.D.E.S.",
-        url: "https://rugatha.com/2024/06/16/chapter-3-invitation-to-t-i-d-e-s/"
+        url: "../wilds-c01/chpt03.html"
       }
     ],
     "wilds-c02": [
       {
         id: "wilds-c02-chpt01",
         title: "Chapter 1: A Feast of the Exquisite",
-        url: "https://rugatha.com/2024/07/28/chapter-1-a-feast-of-the-exquisite/"
+        url: "../wilds-c02/chpt01.html"
       },
       {
         id: "wilds-c02-chpt02",
         title: "Chapter 2: Banquet Night, Holy Night",
-        url: "https://rugatha.com/2024/08/12/chapter-2-banquet-night-holy-night/"
+        url: "../wilds-c02/chpt02.html"
       },
       {
         id: "wilds-c02-chpt03",
         title: "Chapter 3: The Gathering",
-        url: "https://rugatha.com/2024/12/08/chapter-3-the-gathering/"
+        url: "../wilds-c02/chpt03.html"
       }
     ],
     "wilds-c03": [
       {
         id: "wilds-c03-chpt01",
         title: "Chapter 1: The Spirit of Spring",
-        url: "https://rugatha.com/2025/01/06/chapter-1-the-spirit-of-spring/"
+        url: "../wilds-c03/chpt01.html"
       },
       {
         id: "wilds-c03-chpt02",
         title: "Chapter 2: Banditry is a State of Mind",
-        url: "https://rugatha.com/2025/02/19/chapter-2-banditry-is-a-state-of-mind/"
+        url: "../wilds-c03/chpt02.html"
       },
       {
         id: "wilds-c03-chpt03",
         title: "Chapter 3: Dusk of the Applewoods",
-        url: "https://rugatha.com/2025/04/27/chapter-3-dusk-of-the-applewoods/"
+        url: "../wilds-c03/chpt03.html"
       }
     ],
     "wilds-c04": [
       {
         id: "wilds-c04-chpt01",
         title: "Chapter 1: Lunch with the Aryliths",
-        url: "https://rugatha.com/2025/06/29/chapter-1-lunch-with-the-arylith/"
+        url: "../wilds-c04/chpt01.html"
       },
       {
         id: "wilds-c04-chpt02",
         title: "Chapter 2: The Silver Dragon's Treat",
-        url: "https://rugatha.com/2025/08/10/chapter-2-the-silver-dragons-treat/"
+        url: "../wilds-c04/chpt02.html"
       },
       {
         id: "wilds-c04-chpt03",
         title: "Chapter 3: whodunit",
-        url: "https://rugatha.com/2025/10/26/chapter-3-whodunit/"
+        url: "../wilds-c04/chpt03.html"
       },
       {
         id: "wilds-c04-chpt04",
         title: "Chapter 4: Eternal Lost of the Dragonborn Vein",
-        url: "https://rugatha.com/2025/11/17/chapter-4-eternal-lost-of-the-dragonborn-vein/"
+        url: "../wilds-c04/chpt04.html"
       }
     ],
 
@@ -795,34 +780,98 @@
       {
         id: "brown-c01-chpt01",
         title: "Chapter 1: Offer from the Wind Family",
-        url: "https://rugatha.wordpress.com/2022/11/07/chapter-1-offer-from-the-wind-family/"
+        url: "../brown-c01/chpt01.html"
       },
       {
         id: "brown-c01-chpt02",
         title: "Chapter 2: The Basement of the Shrine",
-        url: "https://rugatha.wordpress.com/2022/11/07/chapter-2-drugged/"
+        url: "../brown-c01/chpt02.html"
       },
       {
         id: "brown-c01-chpt03",
         title: "Chapter 3: Lotus Petals",
-        url: "https://rugatha.wordpress.com/2022/12/05/chapter-3-lotus-petals/"
+        url: "../brown-c01/chpt03.html"
       },
       {
         id: "brown-c01-chpt04",
         title: "Chapter 4: Baptized",
-        url: "https://rugatha.wordpress.com/2023/01/08/chapter-4-baptized/"
+        url: "../brown-c01/chpt04.html"
       },
       {
         id: "brown-c01-chpt05",
         title: "Chapter 5: Farewell, Wescoe",
-        url: "https://rugatha.wordpress.com/2023/02/28/chapter-5-farewell-wescoe/"
+        url: "../brown-c01/chpt05.html"
       }
     ],
     "brown-c02": [
       {
         id: "brown-c02-chpt01",
         title: "Chapter 1: Mesmerized",
-        url: "https://rugatha.wordpress.com/2023/03/14/chapter-1-mesmerized/"
+        url: "../brown-c02/chpt01.html"
+      }
+    ],
+
+    "legends-os01": [
+      {
+        id: "legends-os01-chpt01",
+        title: "The False Hydra of Moorland Haunt",
+        url: "../rugatha-legends/legends-os01/"
+      }
+    ],
+    "legends-os02": [
+      {
+        id: "legends-os02-chpt01",
+        title: "The Disappearance of Gustavo Norman",
+        url: "../rugatha-legends/legends-os02/"
+      }
+    ],
+    "legends-os03": [
+      {
+        id: "legends-os03-chpt01",
+        title: "The Lighthouse on the Deserted Island",
+        url: "../rugatha-legends/legends-os03/"
+      }
+    ],
+    "legends-os04": [
+      {
+        id: "legends-os04-chpt01",
+        title: "The Deadly Prison Break",
+        url: "../rugatha-legends/legends-os04/"
+      }
+    ],
+    "legends-os06": [
+      {
+        id: "legends-os06-chpt01",
+        title: "The Malicious Rise of Alfenor",
+        url: "../rugatha-legends/legends-os06/"
+      }
+    ],
+    "legends-os07": [
+      {
+        id: "legends-os07-chpt01",
+        title: "Mylstan Colossus",
+        url: "../rugatha-legends/legends-os07/"
+      }
+    ],
+    "legends-os08": [
+      {
+        id: "legends-os08-chpt01",
+        title: "Lord Octavian von Oderick’s Dungeon of Randomness",
+        url: "../rugatha-legends/legends-os08/"
+      }
+    ],
+    "legends-os09": [
+      {
+        id: "legends-os09-chpt01",
+        title: "To the Moon and Back 往返深淵",
+        url: "../rugatha-legends/legends-os09/"
+      }
+    ],
+    "legends-os10": [
+      {
+        id: "legends-os10-chpt01",
+        title: "The Invisible Spell 隱形咒語",
+        url: "../rugatha-legends/legends-os10/"
       }
     ],
 
@@ -830,12 +879,12 @@
       {
         id: "legends-os05-chpt01",
         title: "Chapter 1: The Mine",
-        url: "https://rugatha.wordpress.com/2023/01/29/chapter-1-the-mine/"
+        url: "../rugatha-legends/legends-os05/chpt01.html"
       },
       {
         id: "legends-os05-chpt02",
         title: "Chapter 2: The Trade",
-        url: "https://rugatha.wordpress.com/2023/01/30/chapter-2-the-trade/"
+        url: "../rugatha-legends/legends-os05/chpt02.html"
       }
     ]
   };
@@ -871,7 +920,6 @@
     "plus-c07-chpt01": "../chapter-banners/plus-c07-chpt01.jpeg",
     "plus-c07-chpt02": "../chapter-banners/plus-c07-chpt02.jpeg",
     "plus-c07-chpt03": "../chapter-banners/plus-c07-chpt03.png",
-    "plus1-c01-chpt01": "../chapter-banners/plus1-c01-chpt01.png",
     "lite-c05-chpt02": "../chapter-banners/lite-c05-chpt02.png",
     "lite-c05-chpt03": "../chapter-banners/lite-c05-chpt03.png",
     "lite-c05-chpt04": "../chapter-banners/lite-c05-chpt04.png",
@@ -899,7 +947,7 @@
     "lite-c11-chpt01": "../chapter-banners/lite-c11-chpt01.jpeg",
     "lite-c11-chpt02": "../chapter-banners/lite-c11-chpt02.jpeg",
     "lite-c11-chpt03": "../chapter-banners/lite-c11-chpt03.jpeg",
-    "lite-c11-chpt04": "../chapter-banners/lite-c11-chpt04.JPG",
+    "lite-c11-chpt04": "../chapter-banners/lite-c11-chpt04.jpeg",
     "wilds-c01-chpt01": "../chapter-banners/wilds-c01-chpt01.png",
     "wilds-c01-chpt02": "../chapter-banners/wilds-c01-chpt02.png",
     "wilds-c01-chpt03": "../chapter-banners/wilds-c01-chpt03.png",
@@ -919,6 +967,15 @@
     "brown-c01-chpt04": "../chapter-banners/brown-c01-chpt04.png",
     "brown-c01-chpt05": "../chapter-banners/brown-c01-chpt05.png",
     "brown-c02-chpt01": "../chapter-banners/brown-c02-chpt01.png",
+    "legends-os01-chpt01": "../chapter-banners/legends-os01-chpt01.jpg",
+    "legends-os02-chpt01": "../campaign-banners/legends-os02.jpg",
+    "legends-os03-chpt01": "../campaign-banners/legends-os03.jpg",
+    "legends-os04-chpt01": "../campaign-banners/legends-os04.jpg",
+    "legends-os06-chpt01": "../campaign-banners/legends-os06.jpg",
+    "legends-os07-chpt01": "../campaign-banners/legends-os07.jpg",
+    "legends-os08-chpt01": "../campaign-banners/legends-os08.png",
+    "legends-os09-chpt01": "../campaign-banners/legends-os09.png",
+    "legends-os10-chpt01": "../campaign-banners/legends-os10.png",
     "legends-os05-chpt01": "../chapter-banners/legends-os05-chpt01.png",
     "legends-os05-chpt02": "../chapter-banners/legends-os05-chpt02.png"
   };
@@ -971,7 +1028,6 @@
     // Level 2
     "rugatha-main": "https://rugatha.com/campaigns/",
     plus: "https://rugatha.com/rugatha-plus/",
-    plus1: "https://rugatha.com/rugatha-plus-1/",
     lite: "https://rugatha.com/rugatha-lite/",
     wilds: "https://rugatha.com/rugatha-wilds/",
     brown: "https://rugatha.com/rugatha-brown/",
@@ -988,7 +1044,6 @@
     "lite-c05": "../rugatha-lite/lite-c05/",
     "plus-c06": "../rugatha-plus/plus-c06/",
     "plus-c07": "../rugatha-plus/plus-c07/",
-    "plus1-c01": "../rugatha-plus-1/plus1-c01/",
     "lite-c06": "../rugatha-lite/lite-c06/",
     "lite-c07": "../rugatha-lite/lite-c07/",
     "lite-c08": "../rugatha-lite/lite-c08/",
@@ -1001,14 +1056,16 @@
     "wilds-c04": "../rugatha-wilds/wilds-c04/",
     "brown-c01": "../rugatha-brown/brown-c01/",
     "brown-c02": "../rugatha-brown/brown-c02/",
-    "legends-os01": "https://rugatha.wordpress.com/2022/02/07/the-false-hydra-of-moorland-haunt/",
-    "legends-os02": "https://rugatha.wordpress.com/2022/02/07/the-disappearance-of-gustavo-norman/",
-    "legends-os03": "https://rugatha.wordpress.com/2022/08/05/the-lighthouse-on-the-deserted-island/",
-    "legends-os04": "https://rugatha.wordpress.com/2022/08/28/the-deadly-prison-break/",
+    "legends-os01": "../rugatha-legends/legends-os01/",
+    "legends-os02": "../rugatha-legends/legends-os02/",
+    "legends-os03": "../rugatha-legends/legends-os03/",
+    "legends-os04": "../rugatha-legends/legends-os04/",
     "legends-os05": "../rugatha-legends/legends-os05/",
-    "legends-os06": "https://rugatha.wordpress.com/2023/04/06/the-malicious-rise-of-alfenor/",
-    "legends-os07": "https://rugatha.wordpress.com/2023/08/29/mylstan-colossus/",
-    "legends-os08": "https://rugatha.com/2024/05/27/lord-octavian-von-odericks-dungeon-of-randomness/",
+    "legends-os06": "../rugatha-legends/legends-os06/",
+    "legends-os07": "../rugatha-legends/legends-os07/",
+    "legends-os08": "../rugatha-legends/legends-os08/",
+    "legends-os09": "../rugatha-legends/legends-os09/",
+    "legends-os10": "../rugatha-legends/legends-os10/",
     "exp-e01": null,
     "exp-e02": null
   };
