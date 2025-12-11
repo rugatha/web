@@ -15,7 +15,7 @@ body {
   min-height: 825px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, minmax(260px, auto)) minmax(180px, auto);
+  grid-template-rows: repeat(2, minmax(260px, auto)) auto minmax(180px, auto);
   gap: 12px;
   align-items: stretch;
   padding: 24px 16px 40px;
@@ -136,7 +136,7 @@ body {
 
 .bulletin {
   grid-column: 1 / span 6;
-  grid-row: 3;
+  grid-row: 4;
   background: #e1cea9;
   border-radius: 12px;
   padding: 18px 18px 16px;
@@ -189,6 +189,58 @@ body {
   height: auto;
 }
 
+.about-link {
+  grid-column: 1 / span 6;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 0;
+}
+
+.about-link-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.about-link-card:hover,
+.about-link-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(123, 220, 181, 0.6);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28), 0 0 0 4px rgba(123, 220, 181, 0.2);
+  outline: none;
+}
+
+.about-link-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.about-link-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about-link-title {
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.about-link-sub {
+  font-size: 13px;
+  color: #e0e7df;
+}
+
 @media (max-width: 900px) {
   body {
     padding: 24px 14px 40px;
@@ -202,7 +254,8 @@ body {
 
   .banner-core,
   .portals,
-  .bulletin {
+  .bulletin,
+  .about-link {
     grid-column: 1 / span 3;
   }
 
@@ -219,6 +272,14 @@ body {
 
   .portal {
     grid-column: auto;
+  }
+
+  .about-link {
+    grid-row: 3;
+  }
+
+  .bulletin {
+    grid-row: 4;
   }
 }
 
