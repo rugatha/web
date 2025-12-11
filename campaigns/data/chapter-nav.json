@@ -1,0 +1,693 @@
+{
+  "rugatha-c01-chpt01": {
+    "story-arc": {
+      "id": "rugatha-c01",
+      "url": "/campaigns/pages/rugatha/rugatha-c01/"
+    },
+    "prev-chapter": null,
+    "next-chapter": "rugatha-c01-chpt02"
+  },
+  "rugatha-c01-chpt02": {
+    "story-arc": {
+      "id": "rugatha-c01",
+      "url": "/campaigns/pages/rugatha/rugatha-c01/"
+    },
+    "prev-chapter": "rugatha-c01-chpt01",
+    "next-chapter": "rugatha-c01-chpt03"
+  },
+  "rugatha-c01-chpt03": {
+    "story-arc": {
+      "id": "rugatha-c01",
+      "url": "/campaigns/pages/rugatha/rugatha-c01/"
+    },
+    "prev-chapter": "rugatha-c01-chpt02",
+    "next-chapter": "rugatha-c01-chpt04"
+  },
+  "rugatha-c01-chpt04": {
+    "story-arc": {
+      "id": "rugatha-c01",
+      "url": "/campaigns/pages/rugatha/rugatha-c01/"
+    },
+    "prev-chapter": "rugatha-c01-chpt03",
+    "next-chapter": "rugatha-c01-chpt05"
+  },
+  "rugatha-c01-chpt05": {
+    "story-arc": {
+      "id": "rugatha-c01",
+      "url": "/campaigns/pages/rugatha/rugatha-c01/"
+    },
+    "prev-chapter": "rugatha-c01-chpt04",
+    "next-chapter": "rugatha-c01-chpt06"
+  },
+  "rugatha-c01-chpt06": {
+    "story-arc": {
+      "id": "rugatha-c01",
+      "url": "/campaigns/pages/rugatha/rugatha-c01/"
+    },
+    "prev-chapter": "rugatha-c01-chpt05",
+    "next-chapter": "rugatha-c01-chpt07"
+  },
+  "rugatha-c01-chpt07": {
+    "story-arc": {
+      "id": "rugatha-c01",
+      "url": "/campaigns/pages/rugatha/rugatha-c01/"
+    },
+    "prev-chapter": "rugatha-c01-chpt06",
+    "next-chapter": "rugatha-c02-chpt01"
+  },
+  "rugatha-c02-chpt01": {
+    "story-arc": {
+      "id": "rugatha-c02",
+      "url": "/campaigns/pages/rugatha/rugatha-c02/"
+    },
+    "prev-chapter": "rugatha-c01-chpt07",
+    "next-chapter": "rugatha-c02-chpt02"
+  },
+  "rugatha-c02-chpt02": {
+    "story-arc": {
+      "id": "rugatha-c02",
+      "url": "/campaigns/pages/rugatha/rugatha-c02/"
+    },
+    "prev-chapter": "rugatha-c02-chpt01",
+    "next-chapter": "rugatha-c02-chpt03"
+  },
+  "rugatha-c02-chpt03": {
+    "story-arc": {
+      "id": "rugatha-c02",
+      "url": "/campaigns/pages/rugatha/rugatha-c02/"
+    },
+    "prev-chapter": "rugatha-c02-chpt02",
+    "next-chapter": "rugatha-c03-chpt01"
+  },
+  "rugatha-c03-chpt01": {
+    "story-arc": {
+      "id": "rugatha-c03",
+      "url": "/campaigns/pages/rugatha/rugatha-c03/"
+    },
+    "prev-chapter": "rugatha-c02-chpt03",
+    "next-chapter": "rugatha-c03-chpt02"
+  },
+  "rugatha-c03-chpt02": {
+    "story-arc": {
+      "id": "rugatha-c03",
+      "url": "/campaigns/pages/rugatha/rugatha-c03/"
+    },
+    "prev-chapter": "rugatha-c03-chpt01",
+    "next-chapter": "rugatha-c03-chpt03"
+  },
+  "rugatha-c03-chpt03": {
+    "story-arc": {
+      "id": "rugatha-c03",
+      "url": "/campaigns/pages/rugatha/rugatha-c03/"
+    },
+    "prev-chapter": "rugatha-c03-chpt02",
+    "next-chapter": "rugatha-c03-chpt04"
+  },
+  "rugatha-c03-chpt04": {
+    "story-arc": {
+      "id": "rugatha-c03",
+      "url": "/campaigns/pages/rugatha/rugatha-c03/"
+    },
+    "prev-chapter": "rugatha-c03-chpt03",
+    "next-chapter": "rugatha-c04-chpt01"
+  },
+  "rugatha-c04-chpt01": {
+    "story-arc": {
+      "id": "rugatha-c04",
+      "url": "/campaigns/pages/rugatha/rugatha-c04/"
+    },
+    "prev-chapter": "rugatha-c03-chpt04",
+    "next-chapter": "rugatha-c04-chpt02"
+  },
+  "rugatha-c04-chpt02": {
+    "story-arc": {
+      "id": "rugatha-c04",
+      "url": "/campaigns/pages/rugatha/rugatha-c04/"
+    },
+    "prev-chapter": "rugatha-c04-chpt01",
+    "next-chapter": "rugatha-c04-chpt03"
+  },
+  "rugatha-c04-chpt03": {
+    "story-arc": {
+      "id": "rugatha-c04",
+      "url": "/campaigns/pages/rugatha/rugatha-c04/"
+    },
+    "prev-chapter": "rugatha-c04-chpt02",
+    "next-chapter": "rugatha-c04-chpt04"
+  },
+  "rugatha-c04-chpt04": {
+    "story-arc": {
+      "id": "rugatha-c04",
+      "url": "/campaigns/pages/rugatha/rugatha-c04/"
+    },
+    "prev-chapter": "rugatha-c04-chpt03",
+    "next-chapter": "rugatha-c04-chpt05"
+  },
+  "rugatha-c04-chpt05": {
+    "story-arc": {
+      "id": "rugatha-c04",
+      "url": "/campaigns/pages/rugatha/rugatha-c04/"
+    },
+    "prev-chapter": "rugatha-c04-chpt04",
+    "next-chapter": "rugatha-c05-chpt01"
+  },
+  "rugatha-c05-chpt01": {
+    "story-arc": {
+      "id": "rugatha-c05",
+      "url": "/campaigns/pages/rugatha/rugatha-c05/"
+    },
+    "prev-chapter": "rugatha-c04-chpt05",
+    "next-chapter": [
+      "plus-c05-chpt02",
+      "lite-c05-chpt02"
+    ]
+  },
+  "plus-c05-chpt02": {
+    "story-arc": {
+      "id": "plus-c05",
+      "url": "/campaigns/pages/rugatha-plus/plus-c05/"
+    },
+    "prev-chapter": "rugatha-c05-chpt01",
+    "next-chapter": "plus-c05-chpt03"
+  },
+  "plus-c05-chpt03": {
+    "story-arc": {
+      "id": "plus-c05",
+      "url": "/campaigns/pages/rugatha-plus/plus-c05/"
+    },
+    "prev-chapter": "plus-c05-chpt02",
+    "next-chapter": "plus-c05-chpt04"
+  },
+  "plus-c05-chpt04": {
+    "story-arc": {
+      "id": "plus-c05",
+      "url": "/campaigns/pages/rugatha-plus/plus-c05/"
+    },
+    "prev-chapter": "plus-c05-chpt03",
+    "next-chapter": "plus-c05-chpt05"
+  },
+  "plus-c05-chpt05": {
+    "story-arc": {
+      "id": "plus-c05",
+      "url": "/campaigns/pages/rugatha-plus/plus-c05/"
+    },
+    "prev-chapter": "plus-c05-chpt04",
+    "next-chapter": "plus-c06-chpt01"
+  },
+  "plus-c06-chpt01": {
+    "story-arc": {
+      "id": "plus-c06",
+      "url": "/campaigns/pages/rugatha-plus/plus-c06/"
+    },
+    "prev-chapter": "plus-c05-chpt05",
+    "next-chapter": "plus-c06-chpt02"
+  },
+  "plus-c06-chpt02": {
+    "story-arc": {
+      "id": "plus-c06",
+      "url": "/campaigns/pages/rugatha-plus/plus-c06/"
+    },
+    "prev-chapter": "plus-c06-chpt01",
+    "next-chapter": "plus-c06-chpt03"
+  },
+  "plus-c06-chpt03": {
+    "story-arc": {
+      "id": "plus-c06",
+      "url": "/campaigns/pages/rugatha-plus/plus-c06/"
+    },
+    "prev-chapter": "plus-c06-chpt02",
+    "next-chapter": "plus-c06-chpt04"
+  },
+  "plus-c06-chpt04": {
+    "story-arc": {
+      "id": "plus-c06",
+      "url": "/campaigns/pages/rugatha-plus/plus-c06/"
+    },
+    "prev-chapter": "plus-c06-chpt03",
+    "next-chapter": "plus-c07-chpt01"
+  },
+  "plus-c07-chpt01": {
+    "story-arc": {
+      "id": "plus-c07",
+      "url": "/campaigns/pages/rugatha-plus/plus-c07/"
+    },
+    "prev-chapter": "plus-c06-chpt04",
+    "next-chapter": "plus-c07-chpt02"
+  },
+  "plus-c07-chpt02": {
+    "story-arc": {
+      "id": "plus-c07",
+      "url": "/campaigns/pages/rugatha-plus/plus-c07/"
+    },
+    "prev-chapter": "plus-c07-chpt01",
+    "next-chapter": "plus-c07-chpt03"
+  },
+  "plus-c07-chpt03": {
+    "story-arc": {
+      "id": "plus-c07",
+      "url": "/campaigns/pages/rugatha-plus/plus-c07/"
+    },
+    "prev-chapter": "plus-c07-chpt02",
+    "next-chapter": null
+  },
+  "lite-c05-chpt02": {
+    "story-arc": {
+      "id": "lite-c05",
+      "url": "/campaigns/pages/rugatha-lite/lite-c05/"
+    },
+    "prev-chapter": "rugatha-c05-chpt01",
+    "next-chapter": "lite-c05-chpt03"
+  },
+  "lite-c05-chpt03": {
+    "story-arc": {
+      "id": "lite-c05",
+      "url": "/campaigns/pages/rugatha-lite/lite-c05/"
+    },
+    "prev-chapter": "lite-c05-chpt02",
+    "next-chapter": "lite-c05-chpt04"
+  },
+  "lite-c05-chpt04": {
+    "story-arc": {
+      "id": "lite-c05",
+      "url": "/campaigns/pages/rugatha-lite/lite-c05/"
+    },
+    "prev-chapter": "lite-c05-chpt03",
+    "next-chapter": "lite-c06-chpt01"
+  },
+  "lite-c06-chpt01": {
+    "story-arc": {
+      "id": "lite-c06",
+      "url": "/campaigns/pages/rugatha-lite/lite-c06/"
+    },
+    "prev-chapter": "lite-c05-chpt04",
+    "next-chapter": "lite-c06-chpt02"
+  },
+  "lite-c06-chpt02": {
+    "story-arc": {
+      "id": "lite-c06",
+      "url": "/campaigns/pages/rugatha-lite/lite-c06/"
+    },
+    "prev-chapter": "lite-c06-chpt01",
+    "next-chapter": "lite-c06-chpt03"
+  },
+  "lite-c06-chpt03": {
+    "story-arc": {
+      "id": "lite-c06",
+      "url": "/campaigns/pages/rugatha-lite/lite-c06/"
+    },
+    "prev-chapter": "lite-c06-chpt02",
+    "next-chapter": "lite-c06-chpt04"
+  },
+  "lite-c06-chpt04": {
+    "story-arc": {
+      "id": "lite-c06",
+      "url": "/campaigns/pages/rugatha-lite/lite-c06/"
+    },
+    "prev-chapter": "lite-c06-chpt03",
+    "next-chapter": "lite-c06-chpt05"
+  },
+  "lite-c06-chpt05": {
+    "story-arc": {
+      "id": "lite-c06",
+      "url": "/campaigns/pages/rugatha-lite/lite-c06/"
+    },
+    "prev-chapter": "lite-c06-chpt04",
+    "next-chapter": "lite-c07-chpt01"
+  },
+  "lite-c07-chpt01": {
+    "story-arc": {
+      "id": "lite-c07",
+      "url": "/campaigns/pages/rugatha-lite/lite-c07/"
+    },
+    "prev-chapter": "lite-c06-chpt05",
+    "next-chapter": "lite-c07-chpt02"
+  },
+  "lite-c07-chpt02": {
+    "story-arc": {
+      "id": "lite-c07",
+      "url": "/campaigns/pages/rugatha-lite/lite-c07/"
+    },
+    "prev-chapter": "lite-c07-chpt01",
+    "next-chapter": "lite-c07-chpt03"
+  },
+  "lite-c07-chpt03": {
+    "story-arc": {
+      "id": "lite-c07",
+      "url": "/campaigns/pages/rugatha-lite/lite-c07/"
+    },
+    "prev-chapter": "lite-c07-chpt02",
+    "next-chapter": "lite-c08-chpt01"
+  },
+  "lite-c08-chpt01": {
+    "story-arc": {
+      "id": "lite-c08",
+      "url": "/campaigns/pages/rugatha-lite/lite-c08/"
+    },
+    "prev-chapter": "lite-c07-chpt03",
+    "next-chapter": "lite-c08-chpt02"
+  },
+  "lite-c08-chpt02": {
+    "story-arc": {
+      "id": "lite-c08",
+      "url": "/campaigns/pages/rugatha-lite/lite-c08/"
+    },
+    "prev-chapter": "lite-c08-chpt01",
+    "next-chapter": "lite-c08-chpt03"
+  },
+  "lite-c08-chpt03": {
+    "story-arc": {
+      "id": "lite-c08",
+      "url": "/campaigns/pages/rugatha-lite/lite-c08/"
+    },
+    "prev-chapter": "lite-c08-chpt02",
+    "next-chapter": "lite-c09-chpt01"
+  },
+  "lite-c09-chpt01": {
+    "story-arc": {
+      "id": "lite-c09",
+      "url": "/campaigns/pages/rugatha-lite/lite-c09/"
+    },
+    "prev-chapter": "lite-c08-chpt03",
+    "next-chapter": "lite-c09-chpt02"
+  },
+  "lite-c09-chpt02": {
+    "story-arc": {
+      "id": "lite-c09",
+      "url": "/campaigns/pages/rugatha-lite/lite-c09/"
+    },
+    "prev-chapter": "lite-c09-chpt01",
+    "next-chapter": "lite-c09-chpt03"
+  },
+  "lite-c09-chpt03": {
+    "story-arc": {
+      "id": "lite-c09",
+      "url": "/campaigns/pages/rugatha-lite/lite-c09/"
+    },
+    "prev-chapter": "lite-c09-chpt02",
+    "next-chapter": "lite-c10-chpt01"
+  },
+  "lite-c10-chpt01": {
+    "story-arc": {
+      "id": "lite-c10",
+      "url": "/campaigns/pages/rugatha-lite/lite-c10/"
+    },
+    "prev-chapter": "lite-c09-chpt03",
+    "next-chapter": "lite-c10-chpt02"
+  },
+  "lite-c10-chpt02": {
+    "story-arc": {
+      "id": "lite-c10",
+      "url": "/campaigns/pages/rugatha-lite/lite-c10/"
+    },
+    "prev-chapter": "lite-c10-chpt01",
+    "next-chapter": "lite-c10-chpt03"
+  },
+  "lite-c10-chpt03": {
+    "story-arc": {
+      "id": "lite-c10",
+      "url": "/campaigns/pages/rugatha-lite/lite-c10/"
+    },
+    "prev-chapter": "lite-c10-chpt02",
+    "next-chapter": "lite-c10-chpt04"
+  },
+  "lite-c10-chpt04": {
+    "story-arc": {
+      "id": "lite-c10",
+      "url": "/campaigns/pages/rugatha-lite/lite-c10/"
+    },
+    "prev-chapter": "lite-c10-chpt03",
+    "next-chapter": "lite-c11-chpt01"
+  },
+  "lite-c11-chpt01": {
+    "story-arc": {
+      "id": "lite-c11",
+      "url": "/campaigns/pages/rugatha-lite/lite-c11/"
+    },
+    "prev-chapter": "lite-c10-chpt04",
+    "next-chapter": "lite-c11-chpt02"
+  },
+  "lite-c11-chpt02": {
+    "story-arc": {
+      "id": "lite-c11",
+      "url": "/campaigns/pages/rugatha-lite/lite-c11/"
+    },
+    "prev-chapter": "lite-c11-chpt01",
+    "next-chapter": "lite-c11-chpt03"
+  },
+  "lite-c11-chpt03": {
+    "story-arc": {
+      "id": "lite-c11",
+      "url": "/campaigns/pages/rugatha-lite/lite-c11/"
+    },
+    "prev-chapter": "lite-c11-chpt02",
+    "next-chapter": "lite-c11-chpt04"
+  },
+  "lite-c11-chpt04": {
+    "story-arc": {
+      "id": "lite-c11",
+      "url": "/campaigns/pages/rugatha-lite/lite-c11/"
+    },
+    "prev-chapter": "lite-c11-chpt03",
+    "next-chapter": null
+  },
+  "wilds-c01-chpt01": {
+    "story-arc": {
+      "id": "wilds-c01",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c01/"
+    },
+    "prev-chapter": null,
+    "next-chapter": "wilds-c01-chpt02"
+  },
+  "wilds-c01-chpt02": {
+    "story-arc": {
+      "id": "wilds-c01",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c01/"
+    },
+    "prev-chapter": "wilds-c01-chpt01",
+    "next-chapter": "wilds-c01-chpt03"
+  },
+  "wilds-c01-chpt03": {
+    "story-arc": {
+      "id": "wilds-c01",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c01/"
+    },
+    "prev-chapter": "wilds-c01-chpt02",
+    "next-chapter": "wilds-c02-chpt01"
+  },
+  "wilds-c02-chpt01": {
+    "story-arc": {
+      "id": "wilds-c02",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c02/"
+    },
+    "prev-chapter": "wilds-c01-chpt03",
+    "next-chapter": "wilds-c02-chpt02"
+  },
+  "wilds-c02-chpt02": {
+    "story-arc": {
+      "id": "wilds-c02",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c02/"
+    },
+    "prev-chapter": "wilds-c02-chpt01",
+    "next-chapter": "wilds-c02-chpt03"
+  },
+  "wilds-c02-chpt03": {
+    "story-arc": {
+      "id": "wilds-c02",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c02/"
+    },
+    "prev-chapter": "wilds-c02-chpt02",
+    "next-chapter": "wilds-c03-chpt01"
+  },
+  "wilds-c03-chpt01": {
+    "story-arc": {
+      "id": "wilds-c03",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c03/"
+    },
+    "prev-chapter": "wilds-c02-chpt03",
+    "next-chapter": "wilds-c03-chpt02"
+  },
+  "wilds-c03-chpt02": {
+    "story-arc": {
+      "id": "wilds-c03",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c03/"
+    },
+    "prev-chapter": "wilds-c03-chpt01",
+    "next-chapter": "wilds-c03-chpt03"
+  },
+  "wilds-c03-chpt03": {
+    "story-arc": {
+      "id": "wilds-c03",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c03/"
+    },
+    "prev-chapter": "wilds-c03-chpt02",
+    "next-chapter": "wilds-c04-chpt01"
+  },
+  "wilds-c04-chpt01": {
+    "story-arc": {
+      "id": "wilds-c04",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c04/"
+    },
+    "prev-chapter": "wilds-c03-chpt03",
+    "next-chapter": "wilds-c04-chpt02"
+  },
+  "wilds-c04-chpt02": {
+    "story-arc": {
+      "id": "wilds-c04",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c04/"
+    },
+    "prev-chapter": "wilds-c04-chpt01",
+    "next-chapter": "wilds-c04-chpt03"
+  },
+  "wilds-c04-chpt03": {
+    "story-arc": {
+      "id": "wilds-c04",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c04/"
+    },
+    "prev-chapter": "wilds-c04-chpt02",
+    "next-chapter": "wilds-c04-chpt04"
+  },
+  "wilds-c04-chpt04": {
+    "story-arc": {
+      "id": "wilds-c04",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c04/"
+    },
+    "prev-chapter": "wilds-c04-chpt03",
+    "next-chapter": null
+  },
+  "brown-c01-chpt01": {
+    "story-arc": {
+      "id": "brown-c01",
+      "url": "/campaigns/pages/rugatha-brown/brown-c01/"
+    },
+    "prev-chapter": null,
+    "next-chapter": "brown-c01-chpt02"
+  },
+  "brown-c01-chpt02": {
+    "story-arc": {
+      "id": "brown-c01",
+      "url": "/campaigns/pages/rugatha-brown/brown-c01/"
+    },
+    "prev-chapter": "brown-c01-chpt01",
+    "next-chapter": "brown-c01-chpt03"
+  },
+  "brown-c01-chpt03": {
+    "story-arc": {
+      "id": "brown-c01",
+      "url": "/campaigns/pages/rugatha-brown/brown-c01/"
+    },
+    "prev-chapter": "brown-c01-chpt02",
+    "next-chapter": "brown-c01-chpt04"
+  },
+  "brown-c01-chpt04": {
+    "story-arc": {
+      "id": "brown-c01",
+      "url": "/campaigns/pages/rugatha-brown/brown-c01/"
+    },
+    "prev-chapter": "brown-c01-chpt03",
+    "next-chapter": "brown-c01-chpt05"
+  },
+  "brown-c01-chpt05": {
+    "story-arc": {
+      "id": "brown-c01",
+      "url": "/campaigns/pages/rugatha-brown/brown-c01/"
+    },
+    "prev-chapter": "brown-c01-chpt04",
+    "next-chapter": "brown-c02-chpt01"
+  },
+  "brown-c02-chpt01": {
+    "story-arc": {
+      "id": "brown-c02",
+      "url": "/campaigns/pages/rugatha-brown/brown-c02/"
+    },
+    "prev-chapter": "brown-c01-chpt05",
+    "next-chapter": null
+  },
+  "legends-os01-chpt01": {
+    "story-arc": {
+      "id": "legends-os01",
+      "url": "/campaigns/pages/rugatha-legends/legends-os01/"
+    },
+    "prev-chapter": null,
+    "next-chapter": null
+  },
+  "legends-os02-chpt01": {
+    "story-arc": {
+      "id": "legends-os02",
+      "url": "/campaigns/pages/rugatha-legends/legends-os02/"
+    },
+    "prev-chapter": null,
+    "next-chapter": null
+  },
+  "legends-os03-chpt01": {
+    "story-arc": {
+      "id": "legends-os03",
+      "url": "/campaigns/pages/rugatha-legends/legends-os03/"
+    },
+    "prev-chapter": null,
+    "next-chapter": null
+  },
+  "legends-os04-chpt01": {
+    "story-arc": {
+      "id": "legends-os04",
+      "url": "/campaigns/pages/rugatha-legends/legends-os04/"
+    },
+    "prev-chapter": null,
+    "next-chapter": null
+  },
+  "legends-os06-chpt01": {
+    "story-arc": {
+      "id": "legends-os06",
+      "url": "/campaigns/pages/rugatha-legends/legends-os06/"
+    },
+    "prev-chapter": null,
+    "next-chapter": null
+  },
+  "legends-os07-chpt01": {
+    "story-arc": {
+      "id": "legends-os07",
+      "url": "/campaigns/pages/rugatha-legends/legends-os07/"
+    },
+    "prev-chapter": null,
+    "next-chapter": null
+  },
+  "legends-os08-chpt01": {
+    "story-arc": {
+      "id": "legends-os08",
+      "url": "/campaigns/pages/rugatha-legends/legends-os08/"
+    },
+    "prev-chapter": null,
+    "next-chapter": null
+  },
+  "legends-os09-chpt01": {
+    "story-arc": {
+      "id": "legends-os09",
+      "url": "/campaigns/pages/rugatha-legends/legends-os09/"
+    },
+    "prev-chapter": null,
+    "next-chapter": null
+  },
+  "legends-os10-chpt01": {
+    "story-arc": {
+      "id": "legends-os10",
+      "url": "/campaigns/pages/rugatha-legends/legends-os10/"
+    },
+    "prev-chapter": null,
+    "next-chapter": null
+  },
+  "legends-os05-chpt01": {
+    "story-arc": {
+      "id": "legends-os05",
+      "url": "/campaigns/pages/rugatha-legends/legends-os05/"
+    },
+    "prev-chapter": null,
+    "next-chapter": "legends-os05-chpt02"
+  },
+  "legends-os05-chpt02": {
+    "story-arc": {
+      "id": "legends-os05",
+      "url": "/campaigns/pages/rugatha-legends/legends-os05/"
+    },
+    "prev-chapter": "legends-os05-chpt01",
+    "next-chapter": null
+  }
+}

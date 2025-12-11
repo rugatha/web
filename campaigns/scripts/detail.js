@@ -52,6 +52,8 @@
   const pagesIdx = pathParts.indexOf("pages");
   const slugSegment = pagesIdx >= 0 ? pathParts[pagesIdx + 1] : "";
   const arcSegment = pagesIdx >= 0 ? pathParts[pagesIdx + 2] : "";
+  const lastSegment = pathParts[pathParts.length - 1] || "";
+  const isChapterPage = /^chpt/i.test(lastSegment);
   const isNestedPage = Boolean(slugSegment);
   const isArcPage = Boolean(arcSegment);
   const imageBannerBase = isArcPage || isNestedPage ? campaignBannerBase : campaignBannerBase;
@@ -345,4 +347,5 @@
 
   document.title = `${displayName} | Rugatha Campaign`;
   setupHeroDrift();
+
 })();

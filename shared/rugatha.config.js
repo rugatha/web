@@ -879,12 +879,12 @@
       {
         id: "legends-os05-chpt01",
         title: "Chapter 1: The Mine",
-        url: "../rugatha-legends/legends-os05/chpt01.html"
+        url: "../legends-os05/chpt01.html"
       },
       {
         id: "legends-os05-chpt02",
         title: "Chapter 2: The Trade",
-        url: "../rugatha-legends/legends-os05/chpt02.html"
+        url: "../legends-os05/chpt02.html"
       }
     ]
   };
