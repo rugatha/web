@@ -871,7 +871,7 @@
     "plus-c07-chpt01": "../chapter-banners/plus-c07-chpt01.jpeg",
     "plus-c07-chpt02": "../chapter-banners/plus-c07-chpt02.jpeg",
     "plus-c07-chpt03": "../chapter-banners/plus-c07-chpt03.png",
-    "plus1-c01-chpt01": "../chapter-banners/R+1.png",
+    "plus1-c01-chpt01": "../chapter-banners/plus1-c01-chpt01.png",
     "lite-c05-chpt02": "../chapter-banners/lite-c05-chpt02.png",
     "lite-c05-chpt03": "../chapter-banners/lite-c05-chpt03.png",
     "lite-c05-chpt04": "../chapter-banners/lite-c05-chpt04.png",
