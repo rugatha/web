@@ -52,6 +52,8 @@
   const pagesIdx = pathParts.indexOf("pages");
   const slugSegment = pagesIdx >= 0 ? pathParts[pagesIdx + 1] : "";
   const arcSegment = pagesIdx >= 0 ? pathParts[pagesIdx + 2] : "";
+  const lastSegment = pathParts[pathParts.length - 1] || "";
+  const isChapterPage = /^chpt/i.test(lastSegment);
   const isNestedPage = Boolean(slugSegment);
   const isArcPage = Boolean(arcSegment);
   const imageBannerBase = isArcPage || isNestedPage ? campaignBannerBase : campaignBannerBase;
@@ -84,8 +86,6 @@
     "plus-c07-chpt01": "plus-c07-chpt01.jpeg",
     "plus-c07-chpt02": "plus-c07-chpt02.jpeg",
     "plus-c07-chpt03": "plus-c07-chpt03.png",
-    "plus1-c01": "plus1-c01.png",
-    "plus1-c01-chpt01": "plus1-c01-chpt01.png",
     "brown-c01": "brown-c01.jpg",
     "brown-c01-chpt01": "brown-c01-chpt01.png",
     "brown-c01-chpt02": "brown-c01-chpt02.png",
@@ -123,8 +123,6 @@
     // Rugatha Plus
     "plus-c06": "plus-c06.jpg",
     "plus-c07": "plus-c07.png",
-    // Rugatha Plus 1
-    "plus1-c01": "plus1-c01.png",
     // Rugatha lite
     "lite-c06": "lite-c06.jpg",
     "lite-c07": "lite-c07.jpg",
@@ -163,6 +161,17 @@
     "legends-os06": "legends-os06.jpg",
     "legends-os07": "legends-os07.jpg",
     "legends-os08": "legends-os08.png",
+    "legends-os09": "legends-os09.png",
+    "legends-os10": "legends-os10.png",
+    "legends-os01-chpt01": "legends-os01-chpt01.jpg",
+    "legends-os02-chpt01": "legends-os02-chpt01.jpg",
+    "legends-os03-chpt01": "legends-os03-chpt01.jpg",
+    "legends-os04-chpt01": "legends-os04-chpt01.jpg",
+    "legends-os06-chpt01": "legends-os06-chpt01.jpg",
+    "legends-os07-chpt01": "legends-os07-chpt01.jpg",
+    "legends-os08-chpt01": "legends-os08.png",
+    "legends-os09-chpt01": "legends-os09.png",
+    "legends-os10-chpt01": "legends-os10.png",
     // Experience (optional, in case used)
     "exp-e01": "exp-e01.png",
     "exp-e02": "exp-e02.png"
@@ -338,4 +347,5 @@
 
   document.title = `${displayName} | Rugatha Campaign`;
   setupHeroDrift();
+
 })();
