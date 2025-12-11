@@ -163,8 +163,9 @@
       const displayArc = primaryMeta?.arc || fallbackArc;
 
       const hasMultiple = !isArc && list.length > 1;
+      const arcHref = "../";
       const href = isArc
-        ? resolveUrl(fallbackArc && fallbackArc.url)
+        ? arcHref
         : !hasMultiple && list[0]
           ? resolveUrl(list[0].url)
           : null;
