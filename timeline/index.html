@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BZZFKMJ65Y');
+  </script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rugatha Timeline</title>
@@ -10,17 +20,25 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <header class="intro">
-    <a href="https://rugatha.com/rugatha-home/" aria-label="Rugatha home">
-      <img src="../assets/rugatha-banner.jpg" alt="Rugatha banner" class="banner-image" loading="lazy">
-    </a>
-  </header>
+  <div class="page">
+    <header class="banner" aria-label="Rugatha banner image">
+      <a href="http://rugatha.github.io/web/" class="banner-link" aria-label="Go to Rugatha home">
+        <img src="../assets/rugatha-banner.jpg" alt="Rugatha banner" class="banner-logo" loading="lazy">
+      </a>
+    </header>
 
-  <main>
-    <section class="timeline">
-      <ul id="timeline-list"></ul>
-    </section>
-  </main>
+    <main class="page-shell">
+      <section class="hero">
+        <h1>History of Dranison 卓尼森史</h1>
+      </section>
+
+      <section class="timeline-panel">
+        <div class="timeline">
+          <ul id="timeline-list"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <script type="module" src="scripts/app.js"></script>
 </body>

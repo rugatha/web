@@ -3,92 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rugatha Toolkit</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BZZFKMJ65Y');
+  </script>
+  <title>Rugatha</title>
   <link rel="icon" type="image/png" href="assets/rugatha-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/rugatha-icon-32.png">
   <link rel="stylesheet" href="shared/styles/theme.css">
   <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
-  <div class="shell page">
-    <header>
-      <a class="banner-link" href="https://rugatha.com/rugatha-home/" aria-label="Go to Rugatha home">
-        <img class="banner-logo" src="assets/rugatha-banner.jpg" alt="Rugatha banner">
-      </a>
-      <p class="lede">Rugatha 工具箱｜Campaigns · NPC · Timeline · Graph · Cards</p>
-    </header>
+  <div class="page">
+    <main class="hub" aria-label="Rugatha portals">
 
-    <section class="panel about">
-      <div>
-        <p class="headline">Single source of truth for Rugatha pages</p>
-        <p class="body">
-          Shared資料、色票與字體集中在 <code>shared/</code>；每個工具都載入相同設定，更新一次全站同步。
-          This toolkit is static—drop it on any host and browse.
-        </p>
-      </div>
-      <div class="meta-pills" aria-label="Quick facts">
-        <span class="pill">Shared config</span>
-        <span class="pill">Space Grotesk + Inter</span>
-        <span class="pill">No build step</span>
-      </div>
-    </section>
-
-    <section aria-label="Rugatha tools" class="tools">
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">NPC</span>
-          <a class="icon-link" href="npc/index.html" aria-label="Open NPC explorer">Open</a>
+      <section class="portals" aria-label="Rugatha portals">
+        <div class="portal-grid">
+          <a class="portal" href="deities/index.html">
+            <span class="portal-glyph"><img src="assets/icons/deities-icon.png" alt="Deities icon" class="portal-icon"></span>
+            <div class="portal-copy">
+              <span class="portal-title">Deities</span>
+              <span class="portal-title">神祇信仰</span>
+            </div>
+          </a>
+          <a class="portal" href="emperors/index.html">
+            <span class="portal-glyph"><img src="assets/icons/emperors-icon.png" alt="Emperors icon" class="portal-icon"></span>
+            <div class="portal-copy">
+              <span class="portal-title">Emperors</span>
+              <span class="portal-title">歷任皇帝</span>
+            </div>
+          </a>
+          <a class="portal" href="map/index.html">
+            <span class="portal-glyph"><img src="assets/icons/map-icon.png" alt="Map icon" class="portal-icon"></span>
+            <div class="portal-copy">
+              <span class="portal-title">Map</span>
+              <span class="portal-title">卓尼森地圖</span>
+            </div>
+          </a>
+          <a class="portal" href="timeline/index.html">
+            <span class="portal-glyph"><img src="assets/icons/history-icon.png" alt="History icon" class="portal-icon"></span>
+            <div class="portal-copy">
+              <span class="portal-title">History</span>
+              <span class="portal-title">卓尼森史</span>
+            </div>
+          </a>
+          <a class="portal" href="character_main_page/index.html">
+            <span class="portal-glyph"><img src="assets/icons/characters-icon.png" alt="Characters icon" class="portal-icon"></span>
+            <div class="portal-copy">
+              <span class="portal-title">Characters</span>
+              <span class="portal-title">玩家/非玩家角色</span>
+            </div>
+          </a>
+          <a class="portal" href="campaigns/index.html">
+            <span class="portal-glyph"><img src="assets/icons/campaigns-icon.png" alt="Campaigns icon" class="portal-icon"></span>
+            <div class="portal-copy">
+              <span class="portal-title">Campaigns</span>
+              <span class="portal-title">各團團錄</span>
+            </div>
+          </a>
         </div>
-        <p class="tool-title">NPC Explorer｜NPC 圖鑑</p>
-        <p class="tool-copy">搜尋、依字母或種族分組、延遲載入；單頁模板依 slug 讀取資料。</p>
-      </div>
+      </section>
 
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Campaigns</span>
-          <a class="icon-link" href="campaigns/index.html" aria-label="Open campaigns">Open</a>
+      <section class="bulletin" aria-label="Rugatha bulletin">
+        <div class="bulletin-inner">
+          <h1 class="bulletin-title">最新公告 NEWS</h1>
+          <div class="bulletin-copy">
+            <p>2025龍山地下城</p>
+            <p>2025/12/13-14 12:00-18:00</p>
+            <p>龍山文創基地（捷運龍山寺地下街） 臺北市萬華區西園路一段145號B2</p>
+          </div>
+          <a class="bulletin-media" href="https://www.facebook.com/D3Fest/posts/pfbid06tJjDeXfPsuboPNUtYAXC7AS3pn7eUUYMiu9EiBZyRbaha62VR1TpnXMEX2Nja6Ql">
+            <img src="assets/d3-banner-2025.jpg" alt="D3 2025 poster" class="bulletin-image">
+          </a>
+          <div class="bulletin-copy">
+            <p><a href="https://www.facebook.com/D3Fest/posts/pfbid06tJjDeXfPsuboPNUtYAXC7AS3pn7eUUYMiu9EiBZyRbaha62VR1TpnXMEX2Nja6Ql">點擊閱讀更多資訊</a></p>
+            <p><a href="https://www.facebook.com/D3Fest/posts/pfbid06tJjDeXfPsuboPNUtYAXC7AS3pn7eUUYMiu9EiBZyRbaha62VR1TpnXMEX2Nja6Ql">Click to read for more information</a></p>            <p>2025龍山地下城</p>
+            <p>2025/12/13-14 12:00-18:00</p>
+            <p>龍山文創基地（捷運龍山寺地下街） 臺北市萬華區西園路一段145號B2</p>
+            <p>歡迎免費入場！我們會出席唷 :)</p>
+            <p>Free to enter! We'll be there :)</p>
+          </div>
+          <div class="bulletin-divider" aria-hidden="true"></div>
+          <a class="bulletin-media" href="https://www.surveycake.com/s/ldoL1">
+            <img src="assets/rugatha-experience.png" alt="Rugatha experience poster" class="bulletin-image">
+          </a>
+          <div class="bulletin-copy">
+            <p>報名截止！REGISTRATION CLOSED!</p>
+            <p><br></p>
+            <p><a href="https://www.surveycake.com/s/ldoL1">點擊報名2025/10/18跑團體驗！</a></p>
+            <p><a href="https://www.surveycake.com/s/ldoL1">Click to sign up for the October 18th 2025 One Shot event!</a></p>
+            <p><br></p>
+            <p>截止時間：2025/10/13 23:59 (台灣時間)</p>
+            <p>Deadline: October 13th 2025 23:59 (GMT +8)</p>
+          </div>
         </div>
-        <p class="tool-title">Campaign Cards｜戰役卡片</p>
-        <p class="tool-copy">共用設定驅動的卡片網格，含重點色與連結；含戰役詳細頁。</p>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Graph</span>
-          <a class="icon-link" href="campaign_graph/index.html" aria-label="Open campaign graph">Open</a>
-        </div>
-        <p class="tool-title">Campaign Graph｜戰役關係圖</p>
-        <p class="tool-copy">D3 折疊式階層圖，支援縮放／平移／聚焦；資料同樣來自 shared config。</p>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Timeline</span>
-          <a class="icon-link" href="timeline/index.html" aria-label="Open timeline">Open</a>
-        </div>
-        <p class="tool-title">Timeline｜時間軸</p>
-        <p class="tool-copy">靜態時間軸檢視，使用共用色票，適合快速回顧事件。</p>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Cards</span>
-          <a class="icon-link" href="character_card/index.html" aria-label="Open character card generator">Open</a>
-        </div>
-        <p class="tool-title">Character Card Generator｜角色卡</p>
-        <p class="tool-copy">Canvas 產生 PNG，行動版支援長按提示；重點色來自戰役設定。</p>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-head">
-          <span class="badge">Deities</span>
-          <a class="icon-link" href="deities/index.html" aria-label="Open deities">Open</a>
-        </div>
-        <p class="tool-title">Deities｜諸神名錄</p>
-        <p class="tool-copy">依主題分類的神祇卡片，帶標籤、連結與後備圖示。</p>
-      </div>
-    </section>
-
+      </section>
+    </main>
   </div>
 
   <script src="shared/rugatha.config.js"></script>
