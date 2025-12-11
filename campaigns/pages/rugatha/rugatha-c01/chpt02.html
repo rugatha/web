@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chapter 0: Echoes of the Jade Spire | Rugatha Demo Arc</title>
+  <title>Chapter 2: The Curse of Vowalon | Rugatha Arc</title>
   <link rel="icon" type="image/png" href="../../../../assets/rugatha-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../assets/rugatha-icon-32.png">
   <link rel="stylesheet" href="../../../../shared/styles/theme.css">
   <link rel="stylesheet" href="../../../../campaigns/styles/campaigns.css" />
   <link rel="stylesheet" href="../../../../campaigns/styles/campaign-detail.css" />
   <style>
-    /* Remove gap between the two cards on this page only */
+    /* Local layout adjustments for this chapter */
     .detail-canvas.no-gap {
       gap: 0;
     }
@@ -27,17 +27,14 @@
     .detail-canvas.no-gap .campaign-detail:last-child {
       border-bottom-left-radius: 18px;
       border-bottom-right-radius: 18px;
-      margin-top: -1px; /* hide seam where borders meet */
+      margin-top: -1px;
     }
-    /* Let text blocks span full width */
     .detail-canvas.no-gap .campaign-detail:not(.arc-detail) {
       display: block;
+      grid-template-columns: 1fr;
     }
     .detail-canvas.no-gap .campaign-detail:not(.arc-detail) .campaign-detail__content {
       max-width: none;
-    }
-    .detail-canvas.no-gap .campaign-detail:not(.arc-detail) {
-      grid-template-columns: 1fr;
     }
     .chapter-date {
       margin: 0 0 10px;
@@ -45,22 +42,15 @@
       font-weight: 600;
       letter-spacing: 0.01em;
     }
-    .quote-block {
-      margin: 18px 0;
-      padding: 14px 16px;
-      border-left: 4px solid var(--accent, #7bdcb5);
-      background: rgba(255, 255, 255, 0.04);
+    .campaign-detail__meta {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
       border-radius: 10px;
-    }
-    .quote-block__text {
-      margin: 0 0 8px;
-      font-style: italic;
-      line-height: 1.6;
-    }
-    .quote-block__cite {
-      display: block;
-      color: var(--muted);
-      font-size: 14px;
+      background: var(--panel);
+      border: 1px solid var(--detail-edge);
+      margin-top: 6px;
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -84,25 +74,27 @@
     <section class="canvas detail-canvas no-gap">
       <article class="campaign-detail arc-detail">
         <div class="campaign-detail__media">
-          <img src="../../../../campaigns/chapter-banners/rugatha-c03-chpt02.png" alt="Jade Spire night skyline" loading="lazy" />
+          <img src="../../../../campaigns/chapter-banners/rugatha-c01-chpt02.png" alt="Curse of Vowalon chapter 2 art" loading="lazy" />
         </div>
         <div class="campaign-detail__content">
-          <h1 class="campaign-detail__title">Chapter 0: Echoes of the Jade Spire</h1>
-          <p class="campaign-detail__tagline">Rugatha Demo Arc</p>
-          <p class="campaign-detail__tagline">A tranquil night investigation atop the emerald tower.</p>
-          <div class="campaign-detail__meta">15048.7.18</div>
+          <h1 class="campaign-detail__title">Chapter 2: Before Sunset</h1>
+          <p class="campaign-detail__tagline">Curse of Vowalon</p>
+          <div class="campaign-detail__meta">15048.7.19</div>
         </div>
       </article>
 
       <article class="campaign-detail">
         <div class="campaign-detail__content">
-          <p class="chapter-date">15048.7.18</p>
-          <p>Whispers ripple through the upper tiers of Rugatha as strange harmonics ring from the Jade Spire. The party ascends by moonlight, finding arcane runes pulsing beneath the glass floors.</p>
-          <p>Inside, the echo reveals a forgotten chamber tuned to amplify psionic voices. A lone custodian offers uneasy alliance, warning that the song seeks a new host before dawn.</p>
-          <div class="quote-block">
-            <p class="quote-block__text">“The spire sings for a mind strong enough to answer. Tell me, are you listening?”</p>
-            <cite class="quote-block__cite">— Custodian of the Jade Spire</cite>
-          </div>
+          <p class="chapter-date">15048.7.19</p>
+          <p>經過了一晚的睡眠，冒險者們於 Vowalon 醒來。</p>
+          <p>冒險者們來到了勞迪俱樂部吃早餐，並打聽更多消息。</p>
+          <p>早餐後，冒險者們也拜訪了 Warren 家，並前往 Samick 的墓前簡單致意。</p>
+          <p>鎮長夫人 Jasmine 和冒險者們談妥並簽了契約，委託冒險者們前往 Wescoe 鎮，將鎮上的魔法師 Grenland 帶回 Vowalon，好讓他來幫忙解決詛咒的問題。鎮長 Daryl 先給了每名冒險者 50 枚金幣，並承諾在他們歸來後，再付給他們各 150 枚金幣。</p>
+          <p>冒險者們參與了 Father Kaulton 主持的祈禱儀式，隨後進入了寂靜殿，與 Father Kaulton 進行了談話，也透過殿內的學徒 Kai 認識了寂靜殿的環境。</p>
+          <p>在勞迪俱樂部用餐後，冒險者們到 Dawkin’s Shop，Paladin、Midori 和 Samael 買賣了點武器，Usioni 和 Tai Tai 我還要也請託老闆 Graham 幫忙鍛造強化自己的武器。</p>
+          <p>接著，冒險者們到了對街的巴姆的雜貨店。除了一個 Tai Tai 我還要買下的神秘項鍊外，大家似乎沒有特別想買的物品。</p>
+          <p>日落前離開沃瓦倫鎮時，Midori 從遠方看見了一個人影，便跑了過去，好一陣子才回到鎮門口。因為 Midori 沒有解釋清楚的理由，Usioni 起頭的非人類夥伴們和 Midori 起了點小的衝突。</p>
+          <p>守門的兩位衛兵向冒險者們詢問了名字，冒險者回答道：「我們是『台北市議員』」。接著，他們便步向了神秘的嚎叫森林……</p>
         </div>
       </article>
     </section>

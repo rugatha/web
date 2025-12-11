@@ -245,8 +245,8 @@
     },
     {
       id: "lite-c10",
-      label: "Requiem of the Feathered Island",
-      title: "Requiem of the Feathered Island 覆羽莊園的輓歌",
+      label: "Requiem of the Feathered Estate",
+      title: "Requiem of the Feathered Estate 覆羽莊園的輓歌",
       level: 3,
       parent: "lite"
     },
@@ -457,8 +457,8 @@
         url: "https://rugatha.wordpress.com/2021/10/03/chapter-3-a-good-place/"
       },
       {
-        id: "rugatha-c03-chpt03-2",
-        title: "Chapter 4: Bwtween Life and Death",
+        id: "rugatha-c03-chpt04",
+        title: "Chapter 4: Between Life and Death",
         url: "https://rugatha.wordpress.com/2021/11/01/chapter-4-between-life-and-death/"
       }
     ],
@@ -616,7 +616,7 @@
         url: "https://rugatha.wordpress.com/2023/04/16/chapter-4-we-need-a-plan/"
       },
       {
-        id: "lite-c06-chpt04-2",
+        id: "lite-c06-chpt05",
         title: "Chapter 5: The Rescue",
         url: "https://rugatha.wordpress.com/2023/07/16/chapter-5-the-rescue/"
       }
@@ -871,6 +871,7 @@
     "plus-c07-chpt01": "../chapter-banners/plus-c07-chpt01.jpeg",
     "plus-c07-chpt02": "../chapter-banners/plus-c07-chpt02.jpeg",
     "plus-c07-chpt03": "../chapter-banners/plus-c07-chpt03.png",
+    "plus1-c01-chpt01": "../chapter-banners/R+1.png",
     "lite-c05-chpt02": "../chapter-banners/lite-c05-chpt02.png",
     "lite-c05-chpt03": "../chapter-banners/lite-c05-chpt03.png",
     "lite-c05-chpt04": "../chapter-banners/lite-c05-chpt04.png",
@@ -878,6 +879,10 @@
     "lite-c06-chpt02": "../chapter-banners/lite-c06-chpt02.png",
     "lite-c06-chpt03": "../chapter-banners/lite-c06-chpt03.png",
     "lite-c06-chpt04": "../chapter-banners/lite-c06-chpt04.png",
+    "lite-c06-chpt05": "../chapter-banners/lite-c06-chpt05.png",
+    "lite-c07-chpt01": "../chapter-banners/lite-c07-chpt01.png",
+    "lite-c07-chpt02": "../chapter-banners/lite-c07-chpt02.png",
+    "lite-c07-chpt03": "../chapter-banners/lite-c07-chpt03.png",
     "lite-c07-chpt01": "../chapter-banners/lite-c07-chpt01.png",
     "lite-c07-chpt02": "../chapter-banners/lite-c07-chpt02.png",
     "lite-c07-chpt03": "../chapter-banners/lite-c07-chpt03.png",
@@ -990,6 +995,7 @@
     "lite-c09": "../rugatha-lite/lite-c09/",
     "lite-c10": "../rugatha-lite/lite-c10/",
     "lite-c11": "../rugatha-lite/lite-c11/",
+    "wilds-c01": "../rugatha-wilds/wilds-c01/",
     "wilds-c02": "../rugatha-wilds/wilds-c02/",
     "wilds-c03": "../rugatha-wilds/wilds-c03/",
     "wilds-c04": "../rugatha-wilds/wilds-c04/",

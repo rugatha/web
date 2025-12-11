@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+  Usage:
+  1) Copy this file into a new chapter folder as index.html.
+  2) Replace the {{PLACEHOLDER}} values for title, image, and text.
+  3) Replace {{ROOT_PATH}} with the relative path back to repo root (default: ../../../../ for campaigns/pages/<series>/<chapter>/).
+  4) If the folder depth changes, update ROOT_PATH so the asset links resolve.
+-->
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{CHAPTER_TITLE}} | {{ARC_NAME}}</title>
+  <!-- Update ROOT_PATH if the new page sits at a different depth -->
+  <link rel="icon" type="image/png" href="{{ROOT_PATH}}assets/rugatha-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ROOT_PATH}}assets/rugatha-icon-32.png">
+  <link rel="stylesheet" href="{{ROOT_PATH}}shared/styles/theme.css">
+  <link rel="stylesheet" href="{{ROOT_PATH}}campaigns/styles/campaigns.css" />
+  <link rel="stylesheet" href="{{ROOT_PATH}}campaigns/styles/campaign-detail.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="banner" aria-label="Rugatha banner image">
+      <a href="{{ROOT_PATH}}campaigns/index.html" class="banner-link" aria-label="返回 Rugatha 活動列表">
+        <img class="banner-logo" src="{{ROOT_PATH}}assets/rugatha-banner.jpg" alt="Rugatha banner" loading="lazy" />
+      </a>
+    </header>
+
+    <section class="canvas detail-canvas">
+      <article class="campaign-detail arc-detail">
+        <div class="campaign-detail__media">
+          <img src="{{CHAPTER_IMAGE_SRC}}" alt="{{CHAPTER_IMAGE_ALT}}" loading="lazy" />
+        </div>
+        <div class="campaign-detail__content">
+          <h1 class="campaign-detail__title">{{CHAPTER_TITLE}}</h1>
+          <p class="campaign-detail__tagline">{{ARC_NAME}}</p>
+          <p class="campaign-detail__tagline">{{CHAPTER_SUBTITLE}}</p>
+          <div class="campaign-detail__meta">{{CHAPTER_DATES}}</div>
+        </div>
+      </article>
+
+      <article class="campaign-detail">
+        <div class="campaign-detail__content">
+          <p><strong>{{CHAPTER_DATES}}</strong></p>
+          <p>{{CHAPTER_SUMMARY}}</p>
+          <p>{{OPTIONAL_DETAILS}}</p>
+        </div>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
