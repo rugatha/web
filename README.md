@@ -34,6 +34,15 @@
 - 基礎變數、字體匯入與 banner 預設都在 `shared/styles/theme.css`，所有頂層頁面皆引用。
 - 單頁覆寫則放在各自資料夾（如 `styles/home.css`、`character_main_page/styles.css`、`npc/styles.css`），盡量沿用共用變數。
 
+## 建立標準 Rugatha 頁面規則
+- 頁面 `<head>` 必須帶入縮圖（社群分享）設定：  
+  ```html
+  <meta property="og:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
+  <meta name="twitter:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  ```
+- 同時保留 favicon 兩種尺寸：`rugatha-icon.png`、`rugatha-icon-32.png`。
+
 ## NPC個別頁面（npc/npc_page/）
 - 模板：`npc/npc_page/pages/_template.html` 包含共用版面與腳本；其他檔案僅為帶 slug 的轉址頁。
 - 資料契約：`scripts.js` 讀取 `npc` query 參數，找到 `npc/data/characters.json` 對應資料後渲染頭像、姓名、描述、相關角色與信仰（中英並列，蜘蛛信仰會標示族群）。描述請維護在 JSON，而非 HTML 轉址頁。
