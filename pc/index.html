@@ -111,25 +111,34 @@
     .group {
       margin-top: 12px;
       padding: 10px 0 6px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .group:first-of-type { border-top: none; }
+    .group:first-of-type { }
 
     .group-header {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-      padding: 0 6px;
+      margin-bottom: 14px;
     }
 
-    .group-title {
-      margin: 0;
-      font-size: 20px;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
+    .banner {
+      width: 75%;
+      margin: 0 auto;
+      background: #60695e;
+      border-radius: 16px;
+      padding: 18px 14px;
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .logo-img {
+      width: min(165px, 50vw);
+      height: auto;
+      display: block;
+      border: none;
+      background: transparent;
+      padding: 0;
+      border-radius: 10px;
+      object-fit: contain;
     }
 
     .card-grid {
@@ -140,7 +149,7 @@
     }
 
     figure {
-      width: 80%;
+      width: 75%;
       margin: 0;
       padding: 0;
       border-radius: 12px;
@@ -159,6 +168,7 @@
     @media (max-width: 640px) {
       body { padding: 12px 12px 28px; }
       .panel { padding: 14px 0 22px; }
+      .banner { width: 100%; }
       figure { width: 100%; }
     }
   </style>
@@ -167,11 +177,12 @@
   <main class="page">
     <header class="hero">
       <a href="https://rugatha.com/rugatha-home/" aria-label="Rugatha home">
-        <img src="../assets/Wordpress%20Banner.jpg" alt="Rugatha banner">
+        <img src="../assets/rugatha-banner.jpg" alt="Rugatha banner">
       </a>
       <div class="title">
-        <h1>Player Character 玩家角色</h1>
-        <p>Toggle the language to view the matching set of character cards.</p>
+        <h1>Player Characters 玩家角色</h1>
+        <p>The Brave Adventurers Roaming in Rugatha</p>
+        <p>漫遊在Rugatha的勇敢冒險者們</p>
       </div>
     </header>
 
@@ -220,6 +231,11 @@
     Object.values(grouped).forEach(list => list.sort((a, b) => a.key.localeCompare(b.key)));
 
     const groupOrder = ["plus", "lite", "wilds"];
+    const groupLogos = {
+      plus: "../campaigns/campaign-logos/rugatha-plus-logo.jpg",
+      lite: "../campaigns/campaign-logos/rugatha-light-logo.jpg",
+      wilds: "../campaigns/campaign-logos/rugatha-wilds-logo.jpg"
+    };
 
     const render = (lang) => {
       document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
@@ -233,11 +249,16 @@
         const header = document.createElement("div");
         header.className = "group-header";
 
-        const title = document.createElement("h2");
-        title.className = "group-title";
-        title.textContent = group;
+        const banner = document.createElement("div");
+        banner.className = "banner";
 
-        header.append(title);
+        const logo = document.createElement("img");
+        logo.className = "logo-img";
+        logo.src = groupLogos[group] || "../campaigns/campaign-logos/rugatha-logo.jpg";
+        logo.alt = `${group} logo`;
+
+        banner.append(logo);
+        header.append(banner);
         section.appendChild(header);
 
         const grid = document.createElement("div");
