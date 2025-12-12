@@ -44,6 +44,8 @@
   global.RUGATHA_CAMPAIGNS_BASE = campaignsBase;
   global.RUGATHA_RESOLVE = resolveInternalPath;
 
+  const campaignLogo = (fileName) => new URL(`campaign-logos/${fileName}`, campaignsBase).href;
+
   const campaigns = [
     {
       name: "Rugatha",
@@ -51,7 +53,7 @@
       dates: "2021/5/22 ~ 2022/7/16",
       link: "https://rugatha.com/campaigns/",
       page: "./pages/rugatha/index.html",
-      image: "https://rugatha.com/wp-content/uploads/2022/07/rugatha-logo.jpg",
+      image: campaignLogo("rugatha-logo.jpg"),
       accent: "#9fe0ba",
       nextSession: "團務完結 Campaign Ended"
     },
@@ -61,7 +63,7 @@
       dates: "2022/7/23 ~",
       link: "https://rugatha.com/rugatha-plus/",
       page: "./pages/rugatha-plus/index.html",
-      image: "https://rugatha.com/wp-content/uploads/2022/07/rugatha-plus-logo-1.jpg",
+      image: campaignLogo("rugatha-plus-logo.jpg"),
       accent: "#c8f9ff",
       nextSession: "2026/1"
     },
@@ -71,7 +73,7 @@
       dates: "2022/8/6 ~",
       link: "https://rugatha.com/rugatha-lite/",
       page: "./pages/rugatha-lite/index.html",
-      image: "https://rugatha.com/wp-content/uploads/2022/07/rugatha-light-logo-1.jpg",
+      image: campaignLogo("rugatha-light-logo.jpg"),
       accent: "#ffe7a3",
       nextSession: "2026/1"
     },
@@ -81,7 +83,7 @@
       dates: "2024/3/16 ~",
       link: "https://rugatha.com/rugatha-wilds/",
       page: "./pages/rugatha-wilds/index.html",
-      image: "https://rugatha.com/wp-content/uploads/2024/03/rugatha-wilds-logo.jpg",
+      image: campaignLogo("rugatha-wilds-logo.jpg"),
       accent: "#c1e27a",
       nextSession: "2026/1"
     },
@@ -91,7 +93,7 @@
       dates: "2022/11/7 ~ 2023/3/14",
       link: "https://rugatha.com/rugatha-brown/",
       page: "./pages/rugatha-brown/index.html",
-      image: "https://rugatha.com/wp-content/uploads/2022/11/rugatha-brown-logo-1.jpg",
+      image: campaignLogo("rugatha-brown-logo.jpg"),
       accent: "#ffc09f",
       nextSession: "團務完結 Campaign Ended"
     },
@@ -101,7 +103,7 @@
       dates: "2022/2/7 ~",
       link: "https://rugatha.com/rugatha-legends/",
       page: "./pages/rugatha-legends/index.html",
-      image: "https://rugatha.com/wp-content/uploads/2022/07/rugatha-legends.jpg",
+      image: campaignLogo("rugatha-legends-logo.jpg"),
       accent: "#f6d185",
       nextSession: "未訂 TBD"
     }
