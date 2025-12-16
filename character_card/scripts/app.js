@@ -23,7 +23,8 @@ const inputs = {
 const buttons = {
   download: document.getElementById("download"),
   reset: document.getElementById("reset"),
-  langToggle: document.getElementById("lang-toggle")
+  langToggle: document.getElementById("lang-toggle"),
+  cropFlip: document.getElementById("crop-flip")
 };
 
 const textNodes = {
@@ -83,10 +84,11 @@ const LANGS = {
       ability: "能力值",
       image: "角色圖片",
       crop: "裁切圖片",
-    cropZoom: "縮放",
-    cropX: "水平",
-    cropY: "垂直"
-  },
+      cropZoom: "縮放",
+      cropX: "水平",
+      cropY: "垂直",
+      cropFlip: "水平翻轉"
+    },
   abilityLabels: ["力量", "敏捷", "體魄", "智力", "感知", "魅力"],
     canvas: {
       uploadHint: "點擊上傳角色圖片",
@@ -141,7 +143,8 @@ const LANGS = {
       crop: "Crop Image",
       cropZoom: "Zoom",
       cropX: "Horizontal",
-      cropY: "Vertical"
+      cropY: "Vertical",
+      cropFlip: "Flip Horizontal"
     },
     abilityLabels: ["STR", "DEX", "CON", "INT", "WIS", "CHA"],
   canvas: {
@@ -167,7 +170,7 @@ let currentLang = "zh";
 let imgBitmap = null;
 let accent = defaultAccent;
 let logoBitmap = null;
-const cropState = { zoom: 1, cx: 0.5, cy: 0.5 };
+const cropState = { zoom: 1, cx: 0.5, cy: 0.5, flipX: false };
 let portraitBounds = null;
 
 function toRGBA(hex, alpha = 1) {
@@ -222,7 +225,15 @@ function drawCard() {
     const centerY = imgBitmap.height * cropState.cy;
     const sx = clamp(centerX - cropW / 2, 0, imgBitmap.width - cropW);
     const sy = clamp(centerY - cropH / 2, 0, imgBitmap.height - cropH);
-    ctx.drawImage(imgBitmap, sx, sy, cropW, cropH, imgX, imgY, imgW, imgH);
+    ctx.save();
+    if (cropState.flipX) {
+      ctx.translate(imgX + imgW, imgY);
+      ctx.scale(-1, 1);
+      ctx.drawImage(imgBitmap, sx, sy, cropW, cropH, 0, 0, imgW, imgH);
+    } else {
+      ctx.drawImage(imgBitmap, sx, sy, cropW, cropH, imgX, imgY, imgW, imgH);
+    }
+    ctx.restore();
   } else {
     const canvasLabels = LANGS[currentLang].canvas;
     ctx.fillStyle = "rgba(255,255,255,0.25)";
@@ -355,9 +366,16 @@ function resetCrop() {
   cropState.zoom = 1;
   cropState.cx = 0.5;
   cropState.cy = 0.5;
+  cropState.flipX = false;
   if (inputs.cropZoom) inputs.cropZoom.value = cropState.zoom;
   if (inputs.cropX) inputs.cropX.value = cropState.cx;
   if (inputs.cropY) inputs.cropY.value = cropState.cy;
+  updateFlipButtonState();
+}
+
+function updateFlipButtonState() {
+  if (!buttons.cropFlip) return;
+  buttons.cropFlip.setAttribute("aria-pressed", String(cropState.flipX));
 }
 
 function bindInputs() {
@@ -391,6 +409,14 @@ function bindInputs() {
   if (inputs.colorPicker) {
     inputs.colorPicker.addEventListener("input", () => {
       setAccent(inputs.colorPicker.value);
+    });
+  }
+
+  if (buttons.cropFlip) {
+    buttons.cropFlip.addEventListener("click", () => {
+      cropState.flipX = !cropState.flipX;
+      updateFlipButtonState();
+      drawCard();
     });
   }
 
@@ -502,11 +528,14 @@ function applyTranslations() {
     cropLabels[1].textContent = lbl.cropX;
     cropLabels[2].textContent = lbl.cropY;
   }
+  if (buttons.cropFlip) buttons.cropFlip.textContent = lbl.cropFlip;
 
   inputs.name.placeholder = t.placeholders.name;
   inputs.race.placeholder = t.placeholders.race;
   inputs.class1.placeholder = t.placeholders.class1;
   inputs.class2.placeholder = t.placeholders.class2;
+
+  updateFlipButtonState();
 }
 
 function toggleLanguage() {
