@@ -44,6 +44,15 @@
   background: transparent;
 }
 
+.btn.toggle {
+  width: 100%;
+}
+
+.btn.toggle[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
 .layout {
   display: grid;
   grid-template-columns: 360px 1fr;
@@ -168,6 +177,10 @@ h2 {
   color: var(--text);
   font-weight: 700;
   margin-bottom: 8px;
+}
+
+.crop-actions {
+  margin-top: 2px;
 }
 
 .range-group input[type="range"] {
