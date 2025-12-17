@@ -53,6 +53,279 @@ function toList(value) {
   return [];
 }
 
+const rootBase = new URL("../../../", window.location.href);
+const npcAppearanceUrls = {
+  mapping: new URL("campaigns/pages/npcs.json", rootBase).href,
+  config: new URL("shared/rugatha.config.js", rootBase).href
+};
+const campaignSortOrder = ["rugatha-main", "plus", "lite", "wilds", "brown", "legends"];
+const appearanceCache = {
+  npcMap: null,
+  configPromise: null,
+  graphData: null
+};
+
+async function loadNpcAppearanceMap() {
+  if (appearanceCache.npcMap) return appearanceCache.npcMap;
+  try {
+    const res = await fetch(npcAppearanceUrls.mapping, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    appearanceCache.npcMap = json && json.npcs ? json.npcs : {};
+  } catch (err) {
+    appearanceCache.npcMap = {};
+    console.warn("Unable to load NPC appearance map:", err && err.message ? err.message : err);
+  }
+  return appearanceCache.npcMap;
+}
+
+async function ensureRugathaConfig() {
+  if (window.RUGATHA_CONFIG) return window.RUGATHA_CONFIG;
+  if (appearanceCache.configPromise) return appearanceCache.configPromise;
+  appearanceCache.configPromise = new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = npcAppearanceUrls.config;
+    script.async = true;
+    script.onload = () => resolve(window.RUGATHA_CONFIG || null);
+    script.onerror = () => resolve(null);
+    document.head.appendChild(script);
+  });
+  return appearanceCache.configPromise;
+}
+
+async function loadGraphData() {
+  if (appearanceCache.graphData) return appearanceCache.graphData;
+  const config = await ensureRugathaConfig();
+  const nodes =
+    config && config.graph && Array.isArray(config.graph.data) ? config.graph.data : window.CAMPAIGN_GRAPH_DATA;
+  appearanceCache.graphData = Array.isArray(nodes) ? nodes : [];
+  return appearanceCache.graphData;
+}
+
+function resolveChapterUrl(chapter, arc) {
+  if (!chapter) return "";
+  const rawUrl = chapter.url || (arc && arc.url) || "";
+  if (!rawUrl) return "";
+
+  // If already absolute, strip to path so we stay root-relative.
+  if (/^(https?:)?\/\//i.test(rawUrl)) {
+    try {
+      const parsed = new URL(rawUrl);
+      return parsed.pathname + parsed.search + parsed.hash;
+    } catch (_) {
+      return rawUrl;
+    }
+  }
+  // If already root-relative, return as-is.
+  if (rawUrl.startsWith("/")) return rawUrl;
+
+  // Build root-relative path: /campaigns/pages/{campaignSlug}/...
+  const campaignSlugMap = {
+    "rugatha-main": "rugatha",
+    plus: "rugatha-plus",
+    lite: "rugatha-lite",
+    wilds: "rugatha-wilds",
+    brown: "rugatha-brown",
+    legends: "rugatha-legends",
+    exp: "campaigns"
+  };
+  const arcId = (arc && arc.id) || chapter.parent || "";
+  const campaignSlug = campaignSlugMap[(arc && arc.parent) || ""] || campaignSlugMap[arcId.split("-")[0]] || "campaigns";
+
+  // Normalize the provided URL by stripping leading ./ or ../
+  let cleaned = rawUrl.replace(/^\.\/+/, "").replace(/^(\.\.\/)+/, "");
+  if (!cleaned) cleaned = arcId ? `${arcId}/` : "";
+  if (cleaned.endsWith("/")) cleaned += "index.html";
+
+  // If the cleaned path already starts with the campaign slug, don't double-prefix.
+  const prefix = cleaned.startsWith(`${campaignSlug}/`) ? "" : `${campaignSlug}/`;
+  return `/campaigns/pages/${prefix}${cleaned}`;
+}
+
+function buildAppearances(mapping, graphData, npc) {
+  if (!npc) return [];
+  const targetKey = normalize(npc.id || npc.name);
+  if (!targetKey) return [];
+  const entries = Object.entries(mapping || {}).filter(
+    ([, list]) => Array.isArray(list) && list.some((id) => normalize(id) === targetKey)
+  );
+  if (!entries.length) return [];
+
+  const graphById = new Map();
+  const chaptersByArc = new Map();
+  const arcOrder = new Map();
+  const chapterOrder = new Map();
+  graphData.forEach((node, idx) => {
+    if (!node || !node.id) return;
+    graphById.set(node.id, node);
+    if (node.level === 3 && !arcOrder.has(node.id)) arcOrder.set(node.id, idx);
+    if (node.level === 4) {
+      chapterOrder.set(node.id, idx);
+      const list = chaptersByArc.get(node.parent) || [];
+      list.push(node);
+      chaptersByArc.set(node.parent, list);
+    }
+  });
+
+  const campaignOrderMap = new Map(campaignSortOrder.map((id, idx) => [id, idx]));
+  const grouped = new Map();
+  const seen = new Set();
+  const ensureNode = (node, fallbackId) => node || { id: fallbackId, label: fallbackId };
+
+  const addChapter = (chapterNode, arcNode) => {
+    if (!chapterNode || !arcNode) return;
+    const chapterId = chapterNode.id || `${arcNode.id || "arc"}-chapter`;
+    if (seen.has(chapterId)) return;
+    seen.add(chapterId);
+    const campaignNode = graphById.get(arcNode.parent) || { id: arcNode.parent || "campaign", label: arcNode.parent || "Campaign" };
+    const campaignId = campaignNode.id || "campaign";
+    const campaignGroup = grouped.get(campaignId) || { campaign: ensureNode(campaignNode, campaignId), arcs: new Map() };
+    grouped.set(campaignId, campaignGroup);
+
+    const arcId = arcNode.id || chapterNode.parent || "arc";
+    const arcGroup =
+      campaignGroup.arcs.get(arcId) ||
+      { arc: ensureNode(arcNode, arcId), chapters: [] };
+    campaignGroup.arcs.set(arcId, arcGroup);
+    arcGroup.chapters.push({ ...chapterNode, id: chapterId });
+  };
+
+  entries.forEach(([key]) => {
+    const node = graphById.get(key);
+    if (node && node.level === 4) {
+      const arcNode = graphById.get(node.parent) || { id: node.parent, label: node.parent };
+      addChapter(node, arcNode);
+      return;
+    }
+    if (node && node.level === 3) {
+      const chapters = chaptersByArc.get(node.id);
+      if (chapters && chapters.length) {
+        chapters.forEach((ch) => addChapter(ch, node));
+      } else {
+        addChapter({ ...node, parent: node.id }, node);
+      }
+      return;
+    }
+    const arcNode = graphById.get(key) || { id: key, label: key };
+    const chapters = chaptersByArc.get(key);
+    if (chapters && chapters.length) {
+      chapters.forEach((ch) => addChapter(ch, arcNode));
+    }
+  });
+
+  const campaigns = Array.from(grouped.values()).map((entry) => {
+    const arcs = Array.from(entry.arcs.values());
+    arcs.sort((a, b) => {
+      const idxA = arcOrder.get(a.arc.id) ?? 9999;
+      const idxB = arcOrder.get(b.arc.id) ?? 9999;
+      if (idxA !== idxB) return idxA - idxB;
+      return (a.arc.title || a.arc.label || a.arc.id || "").localeCompare(
+        b.arc.title || b.arc.label || b.arc.id || ""
+      );
+    });
+    arcs.forEach((arcEntry) => {
+      arcEntry.chapters.sort((a, b) => {
+        const idxA = chapterOrder.get(a.id) ?? 9999;
+        const idxB = chapterOrder.get(b.id) ?? 9999;
+        if (idxA !== idxB) return idxA - idxB;
+        return (a.title || a.label || a.id || "").localeCompare(b.title || b.label || b.id || "");
+      });
+    });
+    return { ...entry, arcs };
+  });
+
+  campaigns.sort((a, b) => {
+    const orderA = campaignOrderMap.get(a.campaign.id) ?? 99;
+    const orderB = campaignOrderMap.get(b.campaign.id) ?? 99;
+    if (orderA !== orderB) return orderA - orderB;
+    return (a.campaign.title || a.campaign.label || a.campaign.id || "").localeCompare(
+      b.campaign.title || b.campaign.label || b.campaign.id || ""
+    );
+  });
+
+  return campaigns;
+}
+
+async function renderAppearances(npc) {
+  if (!elements.content || !npc) return;
+  const existing = elements.content.querySelector(".appearances");
+  if (existing) existing.remove();
+
+  let mapping = {};
+  let graphData = [];
+  try {
+    [mapping, graphData] = await Promise.all([loadNpcAppearanceMap(), loadGraphData()]);
+  } catch (err) {
+    console.warn("Unable to load appearance data:", err && err.message ? err.message : err);
+  }
+
+  const appearances = buildAppearances(mapping, graphData, npc);
+  const section = document.createElement("div");
+  section.className = "appearances";
+  const title = document.createElement("h2");
+  title.className = "section-title";
+  title.textContent = "出現章節 Appeared Chapters";
+  section.appendChild(title);
+
+  if (!appearances.length) {
+    const empty = document.createElement("span");
+    empty.className = "location-empty";
+    empty.textContent = "尚未記錄出現章節 / No appearances logged";
+    section.appendChild(empty);
+    elements.content.appendChild(section);
+    return;
+  }
+
+  appearances.forEach((campaignEntry) => {
+    const campaignBlock = document.createElement("div");
+    campaignBlock.className = "appearance-campaign";
+
+    const campaignTitle = document.createElement("div");
+    campaignTitle.className = "appearance-campaign__title";
+    campaignTitle.textContent =
+      campaignEntry.campaign.title || campaignEntry.campaign.label || campaignEntry.campaign.id || "Campaign";
+    campaignBlock.appendChild(campaignTitle);
+
+    campaignEntry.arcs.forEach((arcEntry) => {
+      const arcWrap = document.createElement("div");
+      arcWrap.className = "appearance-arc";
+
+      const arcTitle = document.createElement("div");
+      arcTitle.className = "appearance-arc__title";
+      arcTitle.textContent = arcEntry.arc.title || arcEntry.arc.label || arcEntry.arc.id || "Story Arc";
+      arcWrap.appendChild(arcTitle);
+
+      const chapterList = document.createElement("div");
+      chapterList.className = "appearance-chapters";
+      arcEntry.chapters.forEach((ch) => {
+        const href = resolveChapterUrl(ch, arcEntry.arc);
+        const node = document.createElement(href ? "a" : "div");
+        node.className = "appearance-chip";
+        if (href) {
+          node.href = href;
+          node.target = "_self";
+        }
+        node.textContent = ch.title || ch.label || ch.id || "Chapter";
+        chapterList.appendChild(node);
+      });
+
+      arcWrap.appendChild(chapterList);
+      campaignBlock.appendChild(arcWrap);
+    });
+
+    section.appendChild(campaignBlock);
+  });
+
+  const locationTitle = elements.content.querySelector(".location-title");
+  const relatedSection = elements.content.querySelector(".related");
+  const anchor = locationTitle || relatedSection || null;
+  if (anchor && anchor.parentNode === elements.content) {
+    elements.content.insertBefore(section, anchor);
+  } else {
+    elements.content.appendChild(section);
+  }
+}
+
 const deityList = [
   { en: "Trinix", zh: "崔尼斯" },
   { en: "Phyneal", zh: "芬尼爾" },
@@ -187,7 +460,11 @@ function resolveRelated(chars, relatedIds = []) {
     const key = normalize(rid);
     const match = key ? byId.get(key) : null;
     if (match && match.name) {
-      result.push({ name: match.name, url: normalizeRelatedUrl(match.url) });
+      result.push({
+        name: match.name,
+        url: normalizeRelatedUrl(match.url),
+        image: resolveImage(match.image)
+      });
     } else {
       result.push({ name: rid, url: "#" });
       console.warn(`Related NPC not found: ${rid}`);
@@ -271,6 +548,7 @@ function render(npc) {
 
   ensurePrettyUrl(mergedNpc.id || mergedNpc.name);
   render(mergedNpc);
+  await renderAppearances(mergedNpc);
 })();
 
 function setDescription(el, text, fallback) {
@@ -439,18 +717,34 @@ function insertRelated(items) {
   wrap.className = "related";
   const title = document.createElement("h2");
   title.className = "section-title";
-  title.textContent = "相關NPC Related NPC";
+  title.textContent = "相關NPC Related NPCs";
   wrap.appendChild(title);
 
   if (items.length) {
     const list = document.createElement("div");
     list.className = "related-list";
     items.forEach((item) => {
-      const a = document.createElement("a");
-      a.className = "related-chip";
-      a.href = item.url || "#";
-      a.textContent = item.name;
-      list.appendChild(a);
+      const card = document.createElement(item.url ? "a" : "div");
+      card.className = "related-card";
+      if (item.url) {
+        card.href = item.url;
+        card.target = "_self";
+      }
+
+      if (item.image) {
+        const img = document.createElement("img");
+        img.className = "related-card__img";
+        img.src = item.image;
+        img.alt = item.name || "NPC portrait";
+        card.appendChild(img);
+      }
+
+      const name = document.createElement("div");
+      name.className = "related-card__name";
+      name.textContent = item.name || "NPC";
+      card.appendChild(name);
+
+      list.appendChild(card);
     });
     wrap.appendChild(list);
   } else {

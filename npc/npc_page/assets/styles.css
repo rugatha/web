@@ -328,29 +328,104 @@ h2 {
 }
 
 .related-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
 }
 
-.related-chip {
-  display: inline-flex;
+.related-card {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 8px 12px;
+  text-align: center;
+  padding: 10px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.08);
   color: var(--text);
   text-decoration: none;
-  font-weight: 700;
+  gap: 8px;
   transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
 }
 
-.related-chip:hover,
-.related-chip:focus-visible {
+.related-card:hover,
+.related-card:focus-visible {
   transform: translateY(-1px);
   border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.14);
+  outline: none;
+}
+
+.related-card__img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.related-card__name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.appearances {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.appearance-campaign {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.appearance-campaign__title {
+  margin: 0 0 6px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.appearance-arc {
+  margin: 6px 0 0;
+}
+
+.appearance-arc__title {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.appearance-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.appearance-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+
+.appearance-chip:hover,
+.appearance-chip:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.28);
   background: rgba(255, 255, 255, 0.14);
   outline: none;
 }
