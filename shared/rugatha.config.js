@@ -568,7 +568,7 @@
       {
         id: "lite-c05-chpt02",
         title: "Chapter 2: Town of Villains",
-        url: "/campaigns/pages/rugatha-lite/lite-c05/chpt02.html"
+        url: "../lite-c05/chpt02.html"
       },
       {
         id: "lite-c05-chpt03",

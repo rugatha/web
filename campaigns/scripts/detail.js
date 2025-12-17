@@ -266,14 +266,20 @@
   }
 
   const renderRelatedNpcs = async () => {
+    if (window.__RUGATHA_NPCS_RENDERED) return;
+    window.__RUGATHA_NPCS_RENDERED = true;
     console.log("[NPC] init related NPC render");
-    if (!isChapterPage || !arcSegment) return;
-    const chapterId = `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}`;
+    if (!isChapterPage && !arcSegment && !slugSegment) return;
+    const chapterId = isChapterPage && arcSegment ? `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}` : null;
+    const npcKeyCandidates = [];
+    if (chapterId) npcKeyCandidates.push(chapterId);
+    if (arcSegment) npcKeyCandidates.push(arcSegment);
+    if (slugSegment) npcKeyCandidates.push(slugSegment);
     const campaignsPagesBase = campaignsBase ? new URL("pages/", campaignsBase).href : null;
     const npcsUrl = campaignsPagesBase
       ? new URL("npcs.json", campaignsPagesBase).href
       : new URL("../../npcs.json", window.location.href).href;
-    console.debug("[NPC] chapterId", chapterId, "npcsUrl", npcsUrl);
+    console.debug("[NPC] npcKeyCandidates", npcKeyCandidates, "npcsUrl", npcsUrl);
     let mapping;
     try {
       const res = await fetch(npcsUrl, { cache: "no-cache" });
@@ -285,9 +291,10 @@
       return;
     }
 
-    const npcIds = mapping[chapterId];
+    const npcKey = npcKeyCandidates.find((key) => Object.prototype.hasOwnProperty.call(mapping, key));
+    const npcIds = npcKey ? mapping[npcKey] : null;
     if (!Array.isArray(npcIds) || !npcIds.length) {
-      console.debug("[NPC] no npcIds for chapter", chapterId);
+      console.debug("[NPC] no npcIds for keys", npcKeyCandidates);
       return;
     }
 
@@ -317,7 +324,7 @@
       return acc;
     }, {});
 
-    console.log("[NPC] rendering cards for", chapterId, npcIds.length, "NPCs");
+    console.log("[NPC] rendering cards for", npcKey, npcIds.length, "NPCs");
 
     const ensureStyles = () => {
       if (document.getElementById("related-npcs-style")) return;
