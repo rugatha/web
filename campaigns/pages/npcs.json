@@ -1,0 +1,679 @@
+{
+  "npcs": {
+    "rugatha-c01-chpt01": [
+      "Alfie_Fuller",
+      "Bruce_Dunham",
+      "Daryl_Warren",
+      "Clementine_Allison",
+      "The_Hooded_Figure"
+    ],
+    "rugatha-c01-chpt02": [
+      "Father_Kaulton",
+      "Kai",
+      "Bruce_Dunham",
+      "sammick_warren",
+      "Jasmine_Warren",
+      "Daryl_Warren",
+      "Grenland_Folsen",
+      "Graham_Dawkin",
+      "Bamu_Torrence"
+    ],
+    "rugatha-c01-chpt03": [
+      "Gary",
+      "RaLeer_the_Herder"
+    ],
+    "rugatha-c01-chpt04": [
+      "Father_Karu",
+      "Augustin_McFly",
+      "Ms_Valentine",
+      "Adrian_Paulson",
+      "Roger_Caleb_Johnson",
+      "Tommy_Caleb_Johnson",
+      "Sapphire_Gorsen",
+      "Emerald_Gorsen"
+    ],
+    "rugatha-c01-chpt05": [
+      "kubao",
+      "Grenland_Folsen"
+    ],
+    "rugatha-c01-chpt06": [
+      "Emma",
+      "Fiona",
+      "Graham_Dawkin",
+      "Father_Kaulton",
+      "Grenland_Folsen",
+      "Jasmine_Warren",
+      "Daryl_Warren",
+      "Bruce_Dunham",
+      "Benny_Cozlothramuda",
+      "Bamu_Torrence",
+      "Clementine_Allison"
+    ],
+    "rugatha-c01-chpt07": [
+      "Alfie_Fuller",
+      "Bruce_Dunham",
+      "Father_Kaulton",
+      "Grenland_Folsen",
+      "Bruce_Dunham",
+      "Benny_Cozlothramuda",
+      "Daryl_Warren",
+      "Clementine_Allison",
+      "Graham_Dawkin",
+      "The_Hooded_Figure"
+    ],
+    "rugatha-c02-chpt01": [
+      "Domneil",
+      "GuuGuu"
+    ],
+    "rugatha-c02-chpt02": [
+      "Domneil",
+      "Trisha_of_Baylon",
+      "kubao",
+      "King_Knicol",
+      "Jasmine_Warren"
+    ],
+    "rugatha-c02-chpt03": [
+      "King_Knicol",
+      "Trisha_of_Baylon",
+      "Rosa_Flaerry"
+    ],
+    "rugatha-c03-chpt01": [
+      "Dr_Halloway",
+      "Jeff",
+      "King_Knicol",
+      "Rosa_Flaerry",
+      "Mr_Flaerry",
+      "Syr_Magnus",
+      "Xandria_the_Violet_of_Macksohn"
+    ],
+    "rugatha-c03-chpt02": [
+      "King_Knicol",
+      "The_Young_Mage",
+      "The_Fortune_Teller",
+      "Syr_Magnus",
+      "Mr_Flaerry",
+      "Rosa_Flaerry"
+    ],
+    "rugatha-c03-chpt03": [
+      "Domneil",
+      "King_Knicol",
+      "Oliver",
+      "The_Fortune_Teller",
+      "Mr_Flaerry",
+      "Rosa_Flaerry"
+    ],
+    "rugatha-c03-chpt04": [
+      "Jeff",
+      "Mr_Flaerry",
+      "Syr_Magnus",
+      "Cena"
+    ],
+    "rugatha-c04-chpt01": [
+      "Cena",
+      "Kahn",
+      "Kevin_Bolden",
+      "King_Knicol",
+      "Xandria_the_Violet_of_Macksohn",
+      "Dr_David",
+      "Jonathan",
+      "Mr_Moon",
+      "ShaDoom"
+    ],
+    "rugatha-c04-chpt02": [
+      "Brock",
+      "Cena",
+      "Dr_David",
+      "Frankie",
+      "Gary",
+      "Glen",
+      "GuuGuu",
+      "Jefferey_Berners",
+      "Jonathan",
+      "Kahn",
+      "King_Knicol",
+      "Mr_Moon",
+      "ScarFace",
+      "ShaDoom",
+      "Stefano",
+      "Willem",
+      "The_Hooded_Figure",
+      "Kevin_Bolden",
+      "Beatrice_Eden",
+      "Ona_Berners",
+      "Lance_Berners",
+      "Selene_Berners"
+    ],
+    "rugatha-c04-chpt03": [
+      "Anya_LaVinci",
+      "Beatrice_Eden",
+      "Brock",
+      "Cena",
+      "Clark",
+      "Dr_David",
+      "Edmond",
+      "Frankie",
+      "Franz",
+      "Gary",
+      "Gary_Berners",
+      "Glen",
+      "Gregory_the_Axe",
+      "Kess",
+      "Kevin_Bolden",
+      "LaVinci",
+      "Lewis",
+      "Michael",
+      "Mr_Moon",
+      "Nathaniel",
+      "Nick_Pan",
+      "Roline_Hughes",
+      "ShaDoom",
+      "Xavier",
+      "kubao",
+      "Mr_Flaerry",
+      "Rosa_Flaerry",
+      "The_Hooded_Figure",
+      "Mr_Flaerry",
+      "Rosa_Flaerry",
+      "Jefferey_Berners",
+      "Ona_Berners",
+      "Lance_Berners",
+      "Xandria_the_Violet_of_Macksohn"
+    ],
+    "rugatha-c04-chpt04": [
+      "Brock",
+      "Edmond",
+      "Frankie",
+      "Franz",
+      "Glen",
+      "Kess",
+      "Lewis",
+      "Mr_Moon",
+      "Nathaniel",
+      "ScarFace",
+      "Sean",
+      "ShaDoom",
+      "Kevin_Bolden"
+    ],
+    "rugatha-c04-chpt05": [
+      "Cena",
+      "Dr_David",
+      "Frankie",
+      "Franz",
+      "Gregory_the_Axe",
+      "Michael",
+      "Mr_Moon",
+      "ScarFace",
+      "ShaDoom",
+      "King_Benevol_II",
+      "Michael",
+      "Mr_Flaerry",
+      "Rosa_Flaerry",
+      "Xandria_the_Violet_of_Macksohn",
+      "Jefferey_Berners",
+      "Ona_Berners",
+      "Lance_Berners"
+    ],
+    "rugatha-c05-chpt01": [
+      "Beau",
+      "Mr_Moon",
+      "Lance_Berners",
+      "Roline_Hughes",
+      "Xandria_the_Violet_of_Macksohn"
+    ],
+    "plus-c05-chpt02": [
+      "Xandria_the_Violet_of_Macksohn",
+      "Roline_Hughes",
+      "Mr_Moon",
+      "Franz",
+      "Beau",
+      "Dr_David",
+      "Speedy",
+      "kubao",
+      "yongge",
+      "Elby__Dr_White"
+    ],
+    "plus-c05-chpt03": [
+      "Elby__Dr_White",
+      "Beau",
+      "Domneil",
+      "Franz",
+      "Indigo",
+      "Yuki",
+      "kubao",
+      "yongge",
+      "The_Feywild_Archmage"
+    ],
+    "plus-c05-chpt04": [
+      "Beau",
+      "Franz",
+      "Indigo",
+      "Yuki",
+      "kubao",
+      "Elby__Dr_White"
+    ],
+    "plus-c05-chpt05": [
+      "Beau",
+      "Franz",
+      "Indigo",
+      "Mr_Moon",
+      "yongge",
+      "Elby__Dr_White"
+    ],
+    "plus-c06-chpt01": [
+      "Beau",
+      "Dan",
+      "Indigo"
+    ],
+    "plus-c06-chpt02": [
+      "Beau",
+      "Indigo",
+      "Mr_Moon",
+      "kubao",
+      "manbao",
+      "Kevin_Bolden",
+      "Roline_Hughes"
+    ],
+    "plus-c06-chpt03": [
+      "Beau",
+      "Domneil",
+      "Leslie_Grunfeld",
+      "Moore",
+      "Pete_Madison",
+      "Valero_Berners",
+      "dudu",
+      "manbao",
+      "Sora",
+      "Dr_Vaxon"
+    ],
+    "plus-c06-chpt04": [
+      "Alex",
+      "Andrea_Day",
+      "Beau",
+      "Indigo",
+      "Melvin",
+      "Shalan_Hartlow",
+      "xuebao",
+      "yi",
+      "manbao",
+      "Dr_Chandra_Pyresong",
+      "Roline_Hughes",
+      "Andronikos_Palailogos"
+    ],
+    "plus-c07-chpt01": [
+      "Beau",
+      "Essis",
+      "Liliana",
+      "Ralf",
+      "Sigom_III",
+      "Zek",
+      "manbao",
+      "Captain_Marin"
+    ],
+    "plus-c07-chpt02": [
+      "Beau",
+      "Domneil",
+      "Essis",
+      "Liliana",
+      "Ralf",
+      "Reese_Tig",
+      "Ronfello",
+      "Yuki",
+      "choupi",
+      "shutianpeitela",
+      "zangya",
+      "manbao",
+      "Iochi_Mari",
+      "Joseph_from_St_Rayami_Island"
+    ],
+    "plus-c07-chpt03": [
+      "Beau",
+      "Ryon",
+      "Yuki",
+      "Bishop_Robinson",
+      "Iochi_Mari"
+    ],
+    "lite-c05-chpt02": [
+      "Jonathan",
+      "Hobb"
+    ],
+    "lite-c05-chpt03": [
+      "Anna",
+      "Hobb",
+      "Jonathan",
+      "Sharman",
+      "Mayor_Thorne"
+    ],
+    "lite-c05-chpt04": [
+      "Anna",
+      "Hobb",
+      "Jonathan"
+    ],
+    "lite-c06-chpt01": [
+      "Alfenor",
+      "Anna",
+      "Dennis",
+      "Eevie",
+      "Gary_Berners",
+      "Oliver_the_Wise",
+      "Roline_Hughes",
+      "Bernard_Norm",
+      "Pamela_Yaso",
+      "Dr_David",
+      "King_Elliot_IV",
+      "Lady_Marian",
+      "Lord_Ishton"
+    ],
+    "lite-c06-chpt02": [
+      "Bernard_Norm",
+      "Dennis",
+      "Dr_David",
+      "Lewis",
+      "Malcolm_Hicks",
+      "Marcus_Jens",
+      "Oliver_the_Wise",
+      "Porter_Lowe",
+      "Quinton_Leonard",
+      "Rashim",
+      "Wesley_Vance",
+      "Yashin_Usta",
+      "yi",
+      "The_Mother",
+      "Bernard_Norm",
+      "Pamela_Yaso",
+      "Kevin_Bolden"
+    ],
+    "lite-c06-chpt03": [
+      "Anna",
+      "Marcus_Jens",
+      "Marianne_Jens",
+      "Oliver_the_Wise",
+      "yi",
+      "Kevin_Bolden",
+      "Bernard_Norm",
+      "The_Mother",
+      "Roline_Hughes"
+    ],
+    "lite-c06-chpt04": [
+      "Ada",
+      "Marianne_Jens",
+      "yi",
+      "Marcus_Jens",
+      "Roline_Hughes"
+    ],
+    "lite-c06-chpt05": [
+      "yi",
+      "Marianne_Jens",
+      "Marcus_Jens",
+      "Roline_Hughes"
+    ],
+    "lite-c07-chpt01": [
+      "yi",
+      "Marcus_Jens",
+      "Marianne_Jens"
+    ],
+    "lite-c07-chpt02": [
+      "Anna",
+      "Dennis",
+      "Dr_David",
+      "Lord_Ishton",
+      "Sham",
+      "yi",
+      "The_Mother",
+      "Marianne_Jens",
+      "Roline_Hughes"
+    ],
+    "lite-c07-chpt03": [
+      "Gary",
+      "Xavier",
+      "yi",
+      "RaLeer_the_Herder",
+      "Marcus_Jens",
+      "Marianne_Jens",
+      "King_Benevol_II",
+      "Lady_Marian",
+      "Sham"
+    ],
+    "lite-c08-chpt01": [
+      "Magga",
+      "Phola",
+      "Rina_Rita",
+      "RaLeer_the_Herder",
+      "Marcus_Jens",
+      "Gary",
+      "Shifu"
+    ],
+    "lite-c08-chpt02": [
+      "Gary",
+      "Phola",
+      "Sham",
+      "Mango",
+      "RaLeer_the_Herder",
+      "Marcus_Jens"
+    ],
+    "lite-c08-chpt03": [
+      "Gary",
+      "Phola",
+      "Mango",
+      "RaLeer_the_Herder",
+      "Marcus_Jens",
+      "Gary",
+      "The_Mother"
+    ],
+    "lite-c09-chpt01": [
+      "Dr_Crow",
+      "Eva",
+      "Jacob",
+      "Marianne_Jens",
+      "Mikkel_Drogskol",
+      "yi",
+      "Mango"
+    ],
+    "lite-c09-chpt02": [
+      "Eva",
+      "Mango"
+    ],
+    "lite-c09-chpt03": [
+      "Mikkel_Drogskol",
+      "Mango"
+    ],
+    "lite-c10-chpt01": [
+      "Lysien_Amoret",
+      "Mango"
+    ],
+    "lite-c10-chpt02": [
+      "yi",
+      "Lysien_Amoret",
+      "Mango"
+    ],
+    "lite-c10-chpt03": [
+      "Lysien_Amoret",
+      "Mango"
+    ],
+    "lite-c10-chpt04": [
+      "Lysien_Amoret",
+      "Mango"
+    ],
+    "lite-c11-chpt01": [
+      "Don",
+      "Tam_Quorr",
+      "Mango"
+    ],
+    "lite-c11-chpt02": [],
+    "lite-c11-chpt03": [
+      "Lumio",
+      "Tam_Quorr"
+    ],
+    "lite-c11-chpt04": [
+      "Lumio",
+      "Tam_Quorr"
+    ],
+    "wilds-c01-chpt01": [
+      "Bartosz_Richmond",
+      "Tina"
+    ],
+    "wilds-c01-chpt02": [],
+    "wilds-c01-chpt03": [
+      "Thompson",
+      "Bartosz_Richmond",
+      "Tina"
+    ],
+    "wilds-c02-chpt01": [
+      "Bruce_Tallis",
+      "Frederick_Norman",
+      "Child_Prodigy"
+    ],
+    "wilds-c02-chpt02": [
+      "Riley_Richmond",
+      "Frederick_Norman"
+    ],
+    "wilds-c02-chpt03": [
+      "Laura_Fishburne",
+      "Lord_Ishton",
+      "Riley_Richmond",
+      "Frederick_Norman"
+    ],
+    "wilds-c03-chpt01": [
+      "Addie_Applewood",
+      "Cash_Applewood",
+      "Connie_Cornell",
+      "Maribel_Muddlewick",
+      "Oswald_Creighton",
+      "Penny_Applewood",
+      "Riley_Richmond",
+      "Evil_Be4",
+      "Maribel_Muddlewick"
+    ],
+    "wilds-c03-chpt02": [
+      "Connie_Cornell",
+      "Riley_Richmond",
+      "Evil_Be4",
+      "Penny_Applewood",
+      "Oswald_Creighton"
+    ],
+    "wilds-c03-chpt03": [
+      "Addie_Applewood",
+      "Maribel_Muddlewick",
+      "Penny_Applewood",
+      "Oswald_Creighton",
+      "Connie_Cornell",
+      "Cash_Applewood",
+      "Riley_Richmond"
+    ],
+    "wilds-c04-chpt01": [
+      "Harrel_Mizel",
+      "Maribel_Muddlewick",
+      "Selyra_Arylith",
+      "Vaerodan_Arylith",
+      "Theramond_Arylith",
+      "Enelmor_Arylith",
+      "Serathe_Arylith",
+      "Nylessa_Arylith",
+      "Vaelric_Arylith"
+    ],
+    "wilds-c04-chpt02": [
+      "Harrel_Mizel",
+      "Maribel_Muddlewick",
+      "Selyra_Arylith",
+      "Vaerodan_Arylith",
+      "Theramond_Arylith",
+      "Enelmor_Arylith",
+      "Serathe_Arylith",
+      "Nylessa_Arylith",
+      "Vaelric_Arylith"
+    ],
+    "wilds-c04-chpt03": [
+      "Harrel_Mizel",
+      "Maribel_Muddlewick",
+      "Theramond_Arylith",
+      "Enelmor_Arylith",
+      "Serathe_Arylith",
+      "Nylessa_Arylith",
+      "Vaelric_Arylith"
+    ],
+    "wilds-c04-chpt04": [
+      "Ilyra_Valecrest",
+      "Harrel_Mizel",
+      "Maribel_Muddlewick",
+      "Theramond_Arylith",
+      "Enelmor_Arylith",
+      "Serathe_Arylith",
+      "Nylessa_Arylith",
+      "Vaelric_Arylith"
+    ],
+    "brown-c01-chpt01": [
+      "Lord_Wind",
+      "Mr_Muffins",
+      "Peter",
+      "Thomas"
+    ],
+    "brown-c01-chpt02": [
+      "Eddie",
+      "Garlia",
+      "Matilda",
+      "Maylee",
+      "Mr_Muffins",
+      "Ms_Valentine",
+      "Queenie",
+      "Father_Karu",
+      "Tommy_Caleb_Johnson",
+      "Roger_Caleb_Johnson"
+    ],
+    "brown-c01-chpt03": [
+      "Matilda",
+      "Maylee",
+      "Mr_Muffins",
+      "Queenie",
+      "Roger_Caleb_Johnson",
+      "Tommy_Caleb_Johnson",
+      "Father_Karu"
+    ],
+    "brown-c01-chpt04": [
+      "Mr_Muffins",
+      "Queenie",
+      "Roger_Caleb_Johnson",
+      "Father_Karu"
+    ],
+    "brown-c01-chpt05": [
+      "Mr_Muffins"
+    ],
+    "brown-c02-chpt01": [
+      "Freddy",
+      "Mr_Muffins",
+      "Ronald_the_Magician"
+    ],
+    "legends-os01-chpt01": [
+      
+    ],
+    "legends-os02-chpt01": [],
+    "legends-os03-chpt01": [],
+    "legends-os04-chpt01": [],
+    "legends-os05-chpt01": [
+      "BoBoVBoBoW",
+      "Zach"
+    ],
+    "legends-os05-chpt02": [
+      "BoBoCBoBoZ"
+    ],
+    "legends-os06-chpt01": [],
+    "legends-os07-chpt01": [],
+    "legends-os08-chpt01": [],
+    "legends-os09-chpt01": [],
+    "legends-os10-chpt01": [],
+    "legends-os01": [
+      "Joseph_from_Moorland_Haunt",
+      "Sarah",
+      "Jacob",
+      "Dr_Crow",
+      "Marco"
+    ],
+    "legends-os02": [],
+    "legends-os03": [],
+    "legends-os04": [],
+    "legends-os05": [],
+    "legends-os06": [],
+    "legends-os07": [],
+    "legends-os08": [],
+    "legends-os09": [],
+    "legends-os10": []
+  }
+}
