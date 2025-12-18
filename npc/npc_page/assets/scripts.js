@@ -53,6 +53,21 @@ function toList(value) {
   return [];
 }
 
+function toRelativePath(targetPath) {
+  if (!targetPath) return "";
+  const baseDir = (window.location.pathname || "/").replace(/[^/]*$/, "");
+  const baseParts = baseDir.split("/").filter(Boolean);
+  const targetParts = `${targetPath}`.split("/").filter(Boolean);
+  let shared = 0;
+  while (shared < baseParts.length && shared < targetParts.length && baseParts[shared] === targetParts[shared]) {
+    shared += 1;
+  }
+  const up = "../".repeat(baseParts.length - shared);
+  const down = targetParts.slice(shared).join("/");
+  const relative = `${up}${down}`;
+  return relative || "./";
+}
+
 const rootBase = new URL("../../../", window.location.href);
 const npcAppearanceUrls = {
   mapping: new URL("campaigns/pages/npcs.json", rootBase).href,
@@ -110,14 +125,16 @@ function resolveChapterUrl(chapter, arc) {
   // If already absolute, strip to path so we stay root-relative.
   if (/^(https?:)?\/\//i.test(rawUrl)) {
     try {
-      const parsed = new URL(rawUrl);
-      return parsed.pathname + parsed.search + parsed.hash;
+      const parsed = new URL(rawUrl, window.location.href);
+      if (parsed.origin && parsed.origin !== window.location.origin) return rawUrl;
+      const pathOnly = parsed.pathname + parsed.search + parsed.hash;
+      return toRelativePath(pathOnly);
     } catch (_) {
       return rawUrl;
     }
   }
   // If already root-relative, return as-is.
-  if (rawUrl.startsWith("/")) return rawUrl;
+  if (rawUrl.startsWith("/")) return toRelativePath(rawUrl);
 
   // Build root-relative path: /campaigns/pages/{campaignSlug}/...
   const campaignSlugMap = {
@@ -139,7 +156,8 @@ function resolveChapterUrl(chapter, arc) {
 
   // If the cleaned path already starts with the campaign slug, don't double-prefix.
   const prefix = cleaned.startsWith(`${campaignSlug}/`) ? "" : `${campaignSlug}/`;
-  return `/campaigns/pages/${prefix}${cleaned}`;
+  const absolutePath = new URL(`campaigns/pages/${prefix}${cleaned}`, rootBase).pathname;
+  return toRelativePath(absolutePath);
 }
 
 function buildAppearances(mapping, graphData, npc) {
