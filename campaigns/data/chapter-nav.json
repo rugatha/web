@@ -159,7 +159,10 @@
     "prev-chapter": "rugatha-c04-chpt05",
     "next-chapter": [
       "plus-c05-chpt02",
-      "lite-c05-chpt02"
+      {
+        "id": "lite-c05-chpt02",
+        "url": "../../rugatha-lite/lite-c05/chpt02.html"
+      }
     ]
   },
   "plus-c05-chpt02": {

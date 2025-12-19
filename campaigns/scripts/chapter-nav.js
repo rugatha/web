@@ -144,12 +144,34 @@
     let nextChapter = currentIdx >= 0 && currentIdx < chapters.length - 1 ? chapters[currentIdx + 1] : null;
 
     if (override) {
+      const toChapter = (value) => {
+        if (!value) return null;
+        if (typeof value === "string") {
+          return toNodeById(value, 4);
+        }
+        if (typeof value === "object") {
+          const id = typeof value.id === "string" ? value.id : null;
+          if (!id) return null;
+          const node = toNodeById(id, 4);
+          if (!node) return null;
+          if (typeof value.url === "string" && value.url.length) {
+            return Object.assign({}, node, { url: value.url });
+          }
+          return node;
+        }
+        return null;
+      };
+
       const toChapters = (value) => {
         if (Array.isArray(value)) {
-          return value.map((id) => toNodeById(id, 4)).filter(Boolean);
+          return value.map((entry) => toChapter(entry)).filter(Boolean);
         }
         if (typeof value === "string") {
-          const node = toNodeById(value, 4);
+          const node = toChapter(value);
+          return node ? [node] : [];
+        }
+        if (typeof value === "object" && value) {
+          const node = toChapter(value);
           return node ? [node] : [];
         }
         return [];

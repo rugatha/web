@@ -347,8 +347,8 @@
     },
     {
       id: "legends-os09",
-      label: "To the Moon and Back 往返深淵",
-      title: "To the Moon and Back 往返深淵",
+      label: "To the Deep and Back 往返深淵",
+      title: "To the Deep and Back 往返深淵",
       level: 3,
       parent: "legends"
     },
@@ -865,7 +865,7 @@
     "legends-os09": [
       {
         id: "legends-os09-chpt01",
-        title: "To the Moon and Back 往返深淵",
+        title: "To the Deep and Back 往返深淵",
         url: "../rugatha-legends/legends-os09/"
       }
     ],
