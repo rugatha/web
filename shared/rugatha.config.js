@@ -501,7 +501,7 @@
       {
         id: "plus-c05-chpt02",
         title: "Chapter 2: Regroup and Reanalysis",
-        url: "/campaigns/pages/rugatha-plus/plus-c05/chpt02.html"
+        url: "../../rugatha-plus/plus-c05/chpt02.html"
       },
       {
         id: "plus-c05-chpt03",
