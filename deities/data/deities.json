@@ -4,7 +4,7 @@
     "name": "Trinix\n崔尼斯",
     "title": "God of Light and Hope\n光與希望之神",
     "domains": ["Light", "Hope"],
-    "image": "Banners/Trinix.jpeg",
+    "image": "Banners/Trinix.png",
     "link": "./pages/trinix.html",
     "saying": "Let Light Lead Us\n讓光引領我們",
     "category": "The Pantheon 主神"
@@ -14,7 +14,7 @@
     "name": "Phyneal\n芬尼爾",
     "title": "God of Luna\n月神",
     "domains": ["Luna"],
-    "image": "Banners/Phyneal.jpeg",
+    "image": "Banners/Phyneal.png",
     "link": "./pages/phyneal.html",
     "saying": "The Moon Reveals All that is Hidden\n月光會照出那些隱藏的事物",
     "category": "The Pantheon 主神"
@@ -34,7 +34,7 @@
     "name": "Nessis\n涅西斯",
     "title": "God of Woods and Life\n樹林與生命之神",
     "domains": ["Woods", "Life"],
-    "image": "Banners/Nessis.jpeg",
+    "image": "Banners/Nessis.png",
     "link": "./pages/nessis.html",
     "saying": "Life, Birth in Nature, Ends in Nature\n生命，始於自然，終於自然",
     "category": "The Pantheon 主神"
@@ -44,7 +44,7 @@
     "name": "Keinra\n津菈",
     "title": "God of Protection and Justice\n守護與正義之神",
     "domains": ["Protection", "Justice"],
-    "image": "Banners/Keinra.jpeg",
+    "image": "Banners/Keinra.png",
     "link": "./pages/keinra.html",
     "saying": "I Will Protect Until the End of the World\n我會守護，直到世界毀滅",
     "category": "The Pantheon 主神"
@@ -54,7 +54,7 @@
     "name": "Jeorisan\n喬里森",
     "title": "God of Storm and Intelligence\n風暴與智慧之神",
     "domains": ["Storm", "Intelligence"],
-    "image": "Banners/Jeorisan.jpeg",
+    "image": "Banners/Jeorisan.png",
     "link": "./pages/jeorisan.html",
     "saying": "Truth Rise from Chaos\n真理從狂亂中誕生",
     "category": "The Pantheon 主神"
@@ -64,7 +64,7 @@
     "name": "Ultisen\n奧提森",
     "title": "God of Trickery and Drama\n詐欺與戲劇之神",
     "domains": ["Trickery", "Drama"],
-    "image": "Banners/Ultisen.jpeg",
+    "image": "Banners/Ultisen.png",
     "link": "./pages/ultisen.html",
     "saying": "Dramas are as Lies, Deadly Beautiful\n戲如謊言，美麗而致命",
     "category": "The Pantheon 主神"
@@ -74,7 +74,7 @@
     "name": "Maxus\n麥克瑟斯",
     "title": "God of Fire and Forge\n火與熔鍛之神",
     "domains": ["Fire", "Forge"],
-    "image": "Banners/Maxus.jpeg",
+    "image": "Banners/Maxus.png",
     "link": "./pages/maxus.html",
     "saying": "Melt, Rebirth\n熔化，重生",
     "category": "The Pantheon 主神"
@@ -94,7 +94,7 @@
     "name": "Kalinius\n凱里涅斯",
     "title": "God of Trades and Wealth\n貿易與財富之神",
     "domains": ["Trades", "Wealth"],
-    "image": "Banners/Kalinius.jpeg",
+    "image": "Banners/Kalinius.png",
     "link": "./pages/kalinius.html",
     "saying": "Gold Pieces, Omnipotent\n金幣，無所不能",
     "category": "The Pantheon 主神"
@@ -104,7 +104,7 @@
     "name": "Daligon\n達里崗",
     "title": "God of War and Strength\n戰爭與力量之神",
     "domains": ["War", "Strength"],
-    "image": "Banners/Daligon.jpeg",
+    "image": "Banners/Daligon.png",
     "link": "./pages/daligon.html",
     "saying": "Olny the Truiumphant Decide History\n唯有勝者，定義歷史",
     "category": "The Pantheon 主神"
@@ -112,8 +112,8 @@
   {
     "slug": "amoret",
     "name": "Amoret\n阿莫雷",
-    "title": "God of Love and Eternity\n愛與永恆之神",
-    "domains": ["Love", "Eternity"],
+    "title": "God of Love and Everlasting\n愛與永恆之神",
+    "domains": ["Love", "Everlasting"],
     "image": "Banners/Amoret.png",
     "link": "./pages/amoret.html",
     "saying": "Those Who are Against Love, are My Nemesis\n與愛為敵之人，皆是我的仇敵",
@@ -122,7 +122,7 @@
   {
     "slug": "the-mother",
     "name": "The Mother\n母親大人",
-    "title": "The Spider King\n蜘蛛王",
+    "title": "The Spider God\n蜘蛛神",
     "domains": ["Spider"],
     "image": "../npc/individual_pics/The%20Mother.jpeg",
     "link": "../npc/npc_page/pages/The_Mother.html",
@@ -142,7 +142,7 @@
   {
     "slug": "alfenor",
     "name": "Alfenor\n阿爾芬諾",
-    "title": "The Spider God\n蜘蛛神",
+    "title": "The Spider King\n蜘蛛王",
     "domains": ["Spider"],
     "image": "../npc/individual_pics/Alfenor.jpeg",
     "link": "../npc/npc_page/pages/Alfenor.html",
