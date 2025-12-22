@@ -19,6 +19,11 @@ const tagClasses = {
   "rugatha-brown": "tag-rugatha-brown"
 };
 
+function formatTitle(title) {
+  if (!title) return "";
+  return title.replace(/\/n/g, "<br>").replace(/\n/g, "<br>");
+}
+
 function appendDescription(cardEl, description) {
   if (!description) return;
 
@@ -55,11 +60,12 @@ function renderEra(item) {
   li.className = `timeline-item era ${eraClasses[item.era] || ""}`;
   li.dataset.era = item.era || "";
   const description = item.description || item.desc || "";
+  const title = formatTitle(item.title);
 
   const content = document.createElement("div");
   content.className = "card";
   content.innerHTML = `
-    <p class="label">${item.title}<br>${item.subtitle || ""}</p>
+    <p class="label">${title}<br>${item.subtitle || ""}</p>
     <p class="meta">${item.span || ""}</p>
   `;
   appendDescription(content, description);
@@ -79,12 +85,13 @@ function renderEvent(item) {
     li.classList.add(tagClass);
   }
   const description = item.description || item.desc || "";
+  const title = formatTitle(item.title);
 
   const content = document.createElement("div");
   content.className = "card";
 
   content.innerHTML = `
-    <p class="label">${item.title}</p>
+    <p class="label">${title}</p>
     <p class="meta">${item.date || ""}</p>
   `;
   appendDescription(content, description);
