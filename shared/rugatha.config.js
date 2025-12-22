@@ -65,7 +65,7 @@
       page: "./pages/rugatha-plus/index.html",
       image: campaignLogo("rugatha-plus-logo.jpg"),
       accent: "#c8f9ff",
-      nextSession: "2026/1"
+      nextSession: "2026/1/31"
     },
     {
       name: "Rugatha lite",
@@ -75,7 +75,7 @@
       page: "./pages/rugatha-lite/index.html",
       image: campaignLogo("rugatha-light-logo.jpg"),
       accent: "#ffe7a3",
-      nextSession: "2026/1"
+      nextSession: "2026/1/17"
     },
     {
       name: "Rugatha WILDS",
@@ -85,7 +85,7 @@
       page: "./pages/rugatha-wilds/index.html",
       image: campaignLogo("rugatha-wilds-logo.jpg"),
       accent: "#c1e27a",
-      nextSession: "2026/1"
+      nextSession: "2026/1/10"
     },
     {
       name: "Rugatha Brown",
@@ -347,8 +347,8 @@
     },
     {
       id: "legends-os09",
-      label: "To the Moon and Back 往返深淵",
-      title: "To the Moon and Back 往返深淵",
+      label: "To the Deep and Back 往返深淵",
+      title: "To the Deep and Back 往返深淵",
       level: 3,
       parent: "legends"
     },
@@ -501,7 +501,7 @@
       {
         id: "plus-c05-chpt02",
         title: "Chapter 2: Regroup and Reanalysis",
-        url: "/campaigns/pages/rugatha-plus/plus-c05/chpt02.html"
+        url: "../../rugatha-plus/plus-c05/chpt02.html"
       },
       {
         id: "plus-c05-chpt03",
@@ -568,7 +568,7 @@
       {
         id: "lite-c05-chpt02",
         title: "Chapter 2: Town of Villains",
-        url: "/campaigns/pages/rugatha-lite/lite-c05/chpt02.html"
+        url: "../lite-c05/chpt02.html"
       },
       {
         id: "lite-c05-chpt03",
@@ -865,7 +865,7 @@
     "legends-os09": [
       {
         id: "legends-os09-chpt01",
-        title: "To the Moon and Back 往返深淵",
+        title: "To the Deep and Back 往返深淵",
         url: "../rugatha-legends/legends-os09/"
       }
     ],

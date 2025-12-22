@@ -37,7 +37,6 @@
     ],
     "related": [
       "Cash_Applewood",
-      "Connie_Applewood",
       "Connie_Cornell",
       "Penny_Applewood"
     ]
@@ -95,10 +94,12 @@
     ],
     "descZh": "被稱為蜘蛛王（The Spider King）。\n是多數人認定蜘蛛神教的主神，但其實地位低於母親大人。\n10836年，由妖精王國的Elmond醫生、Fallon主教，和Norvelle的屍體粉塵，透過儀式融合而成。",
     "descEn": "Also known as the Spider King.\nAlfenor is mostly known as the God of the Spider-God religion, but is actually below Mother.\nAt year 10836, Alfenor was created by forging Dr. Elmond, Bishop Fallon and the dust of Norvelle’s body in the Elvish Kingdom through a ritual.",
-    "location": [],
+    "location": [
+      "Macksohn",
+      "Phreit"
+    ],
     "related": [
       "Anna",
-      "Bishop_Robinson",
       "Dennis",
       "Elmond",
       "Fallon",
@@ -1662,7 +1663,8 @@
       "the Deep"
     ],
     "related": [
-      "Jonathan"
+      "Jonathan",
+      "Pattie_Sylverome"
     ]
   },
   {
@@ -3127,7 +3129,9 @@
     "location": [
       "the Deep"
     ],
-    "related": []
+    "related": [
+      "Hobb"
+    ]
   },
   {
     "id": "Penny_Applewood",
@@ -3434,7 +3438,6 @@
       "Fanaur"
     ],
     "related": [
-      "Alfenor",
       "Captain_Marin",
       "Iochi_Mari",
       "Reese_Tig"

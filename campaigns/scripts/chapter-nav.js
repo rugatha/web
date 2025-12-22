@@ -42,6 +42,19 @@
           return new URL("../", window.location.href).href;
         })();
 
+  const ensureDetailScript = () => {
+    const alreadyLoaded =
+      Array.from(document.getElementsByTagName("script")).some((el) =>
+        (el.src || "").includes("/campaigns/scripts/detail.js")
+      );
+    if (alreadyLoaded) return;
+    const script = document.createElement("script");
+    script.src = new URL("../../../scripts/detail.js", window.location.href).href;
+    script.defer = true;
+    script.dataset.name = "campaign-detail-loader";
+    document.head.appendChild(script);
+  };
+
   const fetchOverrides = async () => {
     const overridesUrl = new URL("data/chapter-nav.json", campaignsBase).href;
     try {
@@ -56,6 +69,7 @@
   };
 
   const main = async () => {
+    ensureDetailScript();
     const overrides = await fetchOverrides();
 
     const pathParts = window.location.pathname.split("/").filter(Boolean);
@@ -130,12 +144,34 @@
     let nextChapter = currentIdx >= 0 && currentIdx < chapters.length - 1 ? chapters[currentIdx + 1] : null;
 
     if (override) {
+      const toChapter = (value) => {
+        if (!value) return null;
+        if (typeof value === "string") {
+          return toNodeById(value, 4);
+        }
+        if (typeof value === "object") {
+          const id = typeof value.id === "string" ? value.id : null;
+          if (!id) return null;
+          const node = toNodeById(id, 4);
+          if (!node) return null;
+          if (typeof value.url === "string" && value.url.length) {
+            return Object.assign({}, node, { url: value.url });
+          }
+          return node;
+        }
+        return null;
+      };
+
       const toChapters = (value) => {
         if (Array.isArray(value)) {
-          return value.map((id) => toNodeById(id, 4)).filter(Boolean);
+          return value.map((entry) => toChapter(entry)).filter(Boolean);
         }
         if (typeof value === "string") {
-          const node = toNodeById(value, 4);
+          const node = toChapter(value);
+          return node ? [node] : [];
+        }
+        if (typeof value === "object" && value) {
+          const node = toChapter(value);
           return node ? [node] : [];
         }
         return [];
@@ -163,7 +199,7 @@
       const displayArc = primaryMeta?.arc || fallbackArc;
 
       const hasMultiple = !isArc && list.length > 1;
-      const arcHref = "../";
+      const arcHref = isArc ? "./" : "../";
       const href = isArc
         ? arcHref
         : !hasMultiple && list[0]
@@ -251,20 +287,46 @@
       return wrapper;
     };
 
-    const contentTarget =
-      document.querySelector(".campaign-detail:not(.arc-detail) .campaign-detail__content") ||
-      document.querySelector(".campaign-detail:not(.arc-detail)");
-
-    if (!contentTarget) return;
+    const existingNav = document.querySelector("section.chapter-nav[data-role='chapter-nav']");
+    if (existingNav) existingNav.remove();
 
     const nav = document.createElement("section");
     nav.className = "chapter-nav";
     nav.setAttribute("aria-label", "章節導覽");
+    nav.dataset.role = "chapter-nav";
     nav.appendChild(buildItem("prev", prevChapter, targetArc, campaign));
     nav.appendChild(buildItem("arc", null, targetArc, campaign));
     nav.appendChild(buildItem("next", nextChapter, targetArc, campaign));
 
-    contentTarget.appendChild(nav);
+    const placeNav = () => {
+      const related = document.querySelector(".related-npcs");
+      if (related && related.parentNode) {
+        related.parentNode.insertBefore(nav, related.nextSibling);
+        return true;
+      }
+      const contentTarget =
+        document.querySelector(".campaign-detail:not(.arc-detail) .campaign-detail__content") ||
+        document.querySelector(".campaign-detail:not(.arc-detail)") ||
+        document.querySelector(".detail-canvas") ||
+        document.querySelector(".page");
+      if (contentTarget) {
+        if (nav.parentNode !== contentTarget) {
+          contentTarget.appendChild(nav);
+        }
+        return false;
+      }
+      return false;
+    };
+
+    const initialPlaced = placeNav();
+    if (!initialPlaced) {
+      const observer = new MutationObserver(() => {
+        if (placeNav()) {
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
   };
 
   main();

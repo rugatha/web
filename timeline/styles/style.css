@@ -18,10 +18,6 @@ body {
 
 .hero {
   padding: 18px 18px 16px;
-  border-radius: var(--radius);
-  background: var(--panel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow);
   text-align: center;
 }
 
@@ -38,6 +34,80 @@ body {
   margin: 6px 0 8px;
   font-size: 32px;
   letter-spacing: -0.01em;
+}
+
+.timeline-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.timeline-legend__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.timeline-legend__button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.timeline-legend__button.is-active {
+  color: #ecf2ed;
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+  outline: 2px solid color-mix(in srgb, var(--legend-color, #5f685e) 70%, white 30%);
+  outline-offset: 2px;
+}
+
+.timeline-legend__swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--legend-color, #5f685e);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.timeline-legend__button.is-rugatha {
+  --legend-color: #8fbe98;
+}
+
+.timeline-legend__button.is-rugatha-plus {
+  --legend-color: #8ab2c9;
+}
+
+.timeline-legend__button.is-history {
+  --legend-color: var(--card);
+}
+
+.timeline-legend__button.is-rugatha-lite {
+  --legend-color: #d8a07d;
+}
+
+.timeline-legend__button.is-rugatha-wilds {
+  --legend-color: #9ccf6a;
+}
+
+.timeline-legend__button.is-rugatha-brown {
+  --legend-color: #c08b6a;
+}
+
+.timeline-legend__button.is-rugatha-legends {
+  --legend-color: #d8b37a;
 }
 
 .lede {
@@ -152,6 +222,36 @@ body {
   border-left: 10px solid var(--muted);
   background: var(--card);
   padding-left: 10px;
+}
+
+.event.tag-rugatha .card {
+  background: #5d7263;
+  border-left-color: #8fbe98;
+}
+
+.event.tag-rugatha-plus .card {
+  background: #5a6c77;
+  border-left-color: #8ab2c9;
+}
+
+.event.tag-rugatha-legends .card {
+  background: #75634c;
+  border-left-color: #d8b37a;
+}
+
+.event.tag-rugatha-lite .card {
+  background: #6f5a4a;
+  border-left-color: #d8a07d;
+}
+
+.event.tag-rugatha-wilds .card {
+  background: #5f6f55;
+  border-left-color: #9ccf6a;
+}
+
+.event.tag-rugatha-brown .card {
+  background: #6b5a4f;
+  border-left-color: #c08b6a;
 }
 
 .label {

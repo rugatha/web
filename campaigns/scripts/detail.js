@@ -249,12 +249,153 @@
   setText("tagline", displayTagline);
   setText("dates", displayDates);
 
+  const normalizeUrl = (value, base) => {
+    if (!value) return null;
+    try {
+      return new URL(value, base || window.location.href).href;
+    } catch (err) {
+      return value;
+    }
+  };
+
   const img = document.querySelector("[data-role='campaign-image']");
   const heroImage = (target && target.image) || (targetCampaign && targetCampaign.image);
   if (img && heroImage) {
     img.src = heroImage;
     img.alt = `${displayName} campaign art`;
   }
+
+  const renderRelatedNpcs = async () => {
+    if (window.__RUGATHA_NPCS_RENDERED) return;
+    window.__RUGATHA_NPCS_RENDERED = true;
+    console.log("[NPC] init related NPC render");
+    if (!isChapterPage && !arcSegment && !slugSegment) return;
+    const chapterId = isChapterPage && arcSegment ? `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}` : null;
+    const npcKeyCandidates = [];
+    if (chapterId) npcKeyCandidates.push(chapterId);
+    if (arcSegment) npcKeyCandidates.push(arcSegment);
+    if (slugSegment) npcKeyCandidates.push(slugSegment);
+    const campaignsPagesBase = campaignsBase ? new URL("pages/", campaignsBase).href : null;
+    const npcsUrl = campaignsPagesBase
+      ? new URL("npcs.json", campaignsPagesBase).href
+      : new URL("../../npcs.json", window.location.href).href;
+    console.debug("[NPC] npcKeyCandidates", npcKeyCandidates, "npcsUrl", npcsUrl);
+    let mapping;
+    try {
+      const res = await fetch(npcsUrl, { cache: "no-cache" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      mapping = data && data.npcs ? data.npcs : {};
+    } catch (err) {
+      console.error("Related NPC map unavailable:", err && err.message ? err.message : err);
+      return;
+    }
+
+    const npcKey = npcKeyCandidates.find((key) => Object.prototype.hasOwnProperty.call(mapping, key));
+    const npcIds = npcKey ? mapping[npcKey] : null;
+    if (!Array.isArray(npcIds) || !npcIds.length) {
+      console.debug("[NPC] no npcIds for keys", npcKeyCandidates);
+      return;
+    }
+
+    const npcDataPath =
+      (window.RUGATHA_CONFIG &&
+        window.RUGATHA_CONFIG.dataFiles &&
+        window.RUGATHA_CONFIG.dataFiles.npcCharacters) ||
+      "/npc/data/characters.json";
+    const siteBase = campaignsBase ? new URL("../", campaignsBase).href : window.location.href;
+    const npcDataUrl = npcDataPath.startsWith("http")
+      ? npcDataPath
+      : new URL(npcDataPath, siteBase).href;
+    console.debug("[NPC] npcDataUrl", npcDataUrl);
+    let characters = [];
+    try {
+      const res = await fetch(npcDataUrl, { cache: "no-cache" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      characters = Array.isArray(json) ? json : [];
+    } catch (err) {
+      console.error("NPC data unavailable:", err && err.message ? err.message : err);
+      return;
+    }
+
+    const charById = characters.reduce((acc, ch) => {
+      if (ch && ch.id) acc[ch.id] = ch;
+      return acc;
+    }, {});
+
+    console.log("[NPC] rendering cards for", npcKey, npcIds.length, "NPCs");
+
+    const ensureStyles = () => {
+      if (document.getElementById("related-npcs-style")) return;
+      const style = document.createElement("style");
+      style.id = "related-npcs-style";
+      style.textContent = `
+        .related-npcs { margin: 28px auto 0; padding: 20px; background: var(--panel, rgba(0, 0, 0, 0.04)); border-radius: 16px; width: 100%; max-width: 1200px; }
+        .related-npcs__title { margin: 0 0 12px; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.02em; }
+        .related-npcs__grid { display: flex; gap: 16px; width: 100%; margin: 0 auto; overflow-x: auto; padding-bottom: 8px; }
+        .related-npcs__card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 12px; border-radius: 12px; background: var(--card, #fff); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06); border: 1px solid rgba(0, 0, 0, 0.04); color: inherit; text-decoration: none; transition: transform 120ms ease, box-shadow 120ms ease; }
+        .related-npcs__card:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0, 0, 0, 0.08); }
+        .related-npcs__image { width: 140px; height: 140px; object-fit: cover; border-radius: 10px; background: #f3f3f3; margin-bottom: 10px; }
+        .related-npcs__name { font-weight: 700; font-size: 0.95rem; }
+        @media (max-width: 599px) { .related-npcs { padding: 16px; } }
+      `;
+      document.head.appendChild(style);
+    };
+
+    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
+    if (!container) return;
+    ensureStyles();
+
+    const section = document.createElement("section");
+    section.className = "related-npcs";
+
+    const heading = document.createElement("h2");
+    heading.className = "related-npcs__title";
+    heading.textContent = "相關 NPC Related NPCs";
+    section.appendChild(heading);
+
+    const grid = document.createElement("div");
+    grid.className = "related-npcs__grid";
+    section.appendChild(grid);
+
+    const npcBase = new URL("npc/", siteBase).href;
+    const resolveNpcUrl = (value) => {
+      if (!value) return null;
+      if (/^(https?:)?\/\//i.test(value)) return value;
+      if (value.startsWith("/")) return new URL(value, siteBase).href;
+      if (value.startsWith("npc/")) return new URL(value, siteBase).href;
+      return new URL(value, npcBase).href;
+    };
+
+    npcIds.forEach((id) => {
+      const meta = charById[id] || { id, name: id, url: null, image: null };
+      const npcUrl = resolveNpcUrl(meta.url || "");
+      const card = document.createElement(npcUrl ? "a" : "div");
+      card.className = "related-npcs__card";
+      if (npcUrl) {
+        card.href = npcUrl;
+        card.target = "_self";
+      }
+
+      if (meta.image) {
+        const imgEl = document.createElement("img");
+        imgEl.className = "related-npcs__image";
+        imgEl.src = resolveNpcUrl(meta.image);
+        imgEl.alt = meta.name || meta.id || "NPC portrait";
+        card.appendChild(imgEl);
+      }
+
+      const name = document.createElement("div");
+      name.className = "related-npcs__name";
+      name.textContent = meta.name || meta.id || "NPC";
+      card.appendChild(name);
+
+      grid.appendChild(card);
+    });
+
+    container.appendChild(section);
+  };
 
   const findCampaignNode = (slug) =>
     graphData.find((node) => node.level === 2 && slugify(node.label || "") === slug);
@@ -347,5 +488,6 @@
 
   document.title = `${displayName} | Rugatha Campaign`;
   setupHeroDrift();
+  renderRelatedNpcs();
 
 })();
