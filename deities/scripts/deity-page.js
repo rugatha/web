@@ -24,6 +24,17 @@
     }
   };
 
+  const resolveImagePath = (path) => {
+    if (!path) return path;
+    if (/^(https?:)?\/\//.test(path) || path.startsWith("data:")) {
+      return path;
+    }
+    if (path.startsWith("../") || path.startsWith("./") || path.startsWith("/")) {
+      return path;
+    }
+    return `../${path}`;
+  };
+
   const fillContent = (data) => {
     const name = textOrFallback(data.name);
     const title = textOrFallback(data.title);
@@ -35,9 +46,10 @@
 
     if (imageEl) {
       if (data.image) {
-        imageEl.src = data.image;
+        const imagePath = resolveImagePath(data.image);
+        imageEl.src = imagePath;
         imageEl.alt = `${name} portrait`;
-        setHeroImage(data.image);
+        setHeroImage(imagePath);
       } else {
         imageEl.src = fallbackImage;
         imageEl.classList.add("fallback");
