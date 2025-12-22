@@ -31,7 +31,7 @@ export const events = [
   },
   {
     type: "event",
-    era: "new-dranison",
+    era: "dranison",
     title: "邁爾斯坦巨像之戰\nThe Battle of Mylstan Colossus",
     tag: "rugatha-legends",
     date: "3152 D.E. · Jun. 22nd",
@@ -39,7 +39,7 @@ export const events = [
   },
   {
     type: "event",
-    era: "new-dranison",
+    era: "dranison",
     title: "Oderick大人的隨機地窖試營運\nThe Trial of Lord Octavian von Oderick's Dungeon of Randomness",
     tag: "rugatha-legends",
     date: "3152 D.E. · Jun. 23rd",
