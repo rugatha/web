@@ -52,6 +52,24 @@
 2. NPC 資料維持在 `npc/data/characters.json`（結構不同，因此獨立管理）。
 3. 若之後新增時間軸類工具，可放在同層資料夾並視需要連到共用設定。
 
+## 新增頁面指南
+### 1) 團錄（包含新章節或舊章節）
+- 新增章節頁：在對應資料夾建立 `campaigns/pages/<campaign>/<arc>/chptXX.html`（舊章節補齊時請維持命名規則與編號）。
+- 更新章節清單：到 `shared/rugatha.config.js` 的 `arcChapters` 加入該章節（`id` 建議為 `<arc>-chptXX`），並依時間順序排序。
+- 章節圖：把 banner 放在 `campaigns/chapter-banners/`，並在 `shared/rugatha.config.js` 的 `chapterImages` 登記對應 key。
+- 章節導覽（若需要跨篇或插入舊章）：在 `campaigns/data/chapter-nav.json` 設定 `prev-chapter` / `next-chapter` 覆寫，避免前後章節錯位。
+- 若新增「故事弧 / 團錄」本體：新增 `campaigns/pages/<campaign>/<arc>/index.html`，並在 `shared/rugatha.config.js` 的 `graphNodes` 與 `graphUrlOverrides` 補上該 arc 資訊。
+
+### 2) NPC
+- 角色資料：新增或更新 `npc/data/characters.json`（確保 `id`、`url`、`image` 與實際檔名一致）。
+- 個別頁面：複製 `npc/npc_page/pages/_template.html` 為 `npc/npc_page/pages/<slug>.html`，`<slug>` 應與 `id` 一致；頁面會用 slug / query 參數載入 JSON 資料。
+- 角色圖片：放在 `npc/individual_pics/`，`image` 欄位填相對路徑（如 `individual_pics/Ada.jpeg`）。
+
+### 3) 歷史事件
+- 事件資料：新增 `timeline/data/events.js` 的 entry（`type: "event"` 或 `type: "era"`）。
+- 若新增 era 或 tag：同步更新 `timeline/scripts/app.js` 的 `eraClasses` / `tagClasses`，並在 `timeline/styles/style.css` 補上對應樣式。
+- 若新增 tag 篩選：在 `timeline/index.html` 的 legend 按鈕新增一個 `data-tag`。
+
 ## 本地執行
 本專案為靜態網站，啟動任何簡易伺服器即可，例如：
 ```sh
