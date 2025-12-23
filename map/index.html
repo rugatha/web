@@ -17,6 +17,7 @@
   <link rel="icon" type="image/png" href="../assets/rugatha-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-icon-32.png">
   <link rel="stylesheet" href="../shared/styles/theme.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="styles/map.css">
   <meta property="og:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
   <meta name="twitter:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
@@ -37,10 +38,96 @@
 
       <section class="map-panel" aria-label="Dranison world map">
         <figure class="map-frame">
-          <img src="assets/dranison-map.jpg" alt="卓尼森地圖" class="map-image" loading="lazy">
+          <div id="leaflet-map" class="map-image" role="img" aria-label="卓尼森地圖"></div>
         </figure>
       </section>
     </main>
   </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    const mapElement = document.getElementById('leaflet-map');
+    const map = L.map(mapElement, {
+      crs: L.CRS.Simple,
+      minZoom: -2,
+      maxZoom: 2,
+      zoomSnap: 0.25
+    });
+
+    const pinSvg = encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+        <circle cx="7" cy="7" r="4.5" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+      </svg>
+    `);
+    const pinIcon = L.icon({
+      iconUrl: `data:image/svg+xml,${pinSvg}`,
+      iconSize: [14, 14],
+      iconAnchor: [7, 7],
+      popupAnchor: [0, -8]
+    });
+
+    const mapImageUrl = 'assets/dranison-map.jpg';
+    const image = new Image();
+    image.onload = () => {
+      const bounds = [[0, 0], [image.naturalHeight, image.naturalWidth]];
+      const setMapSize = () => {
+        const width = mapElement.getBoundingClientRect().width;
+        const height = Math.round(width * (image.naturalHeight / image.naturalWidth));
+        mapElement.style.height = `${height}px`;
+        map.invalidateSize();
+      };
+      setMapSize();
+      window.addEventListener('resize', setMapSize);
+      L.imageOverlay(mapImageUrl, bounds).addTo(map);
+      map.fitBounds(bounds, { padding: [0, 0] });
+      map.setMinZoom(map.getZoom());
+      map.setMaxBounds(bounds);
+
+      const HomeControl = L.Control.extend({
+        options: {
+          position: 'topleft'
+        },
+        onAdd() {
+          const container = L.DomUtil.create('div', 'leaflet-bar');
+          const button = L.DomUtil.create('a', 'leaflet-control-home', container);
+          button.href = '#';
+          button.title = 'Reset view';
+          button.setAttribute('aria-label', 'Reset view');
+          button.textContent = '⌂';
+          L.DomEvent.disableClickPropagation(button);
+          L.DomEvent.on(button, 'click', (event) => {
+            L.DomEvent.preventDefault(event);
+            map.fitBounds(bounds, { padding: [0, 0] });
+          });
+          return container;
+        }
+      });
+      map.addControl(new HomeControl());
+
+      fetch('assets/locations.json')
+        .then((response) => response.json())
+        .then((locations) => {
+          locations.forEach((location) => {
+            let x = location.x;
+            let y = location.y;
+            if (x <= 1 && y <= 1) {
+              x = x * image.naturalWidth;
+              y = y * image.naturalHeight;
+            } else if (x <= 100 && y <= 100) {
+              x = (x / 100) * image.naturalWidth;
+              y = (y / 100) * image.naturalHeight;
+            }
+
+            const marker = L.marker([y, x], { title: location.name, icon: pinIcon });
+            marker.bindPopup(`<strong>${location.name}</strong>`);
+            marker.addTo(map);
+          });
+        })
+        .catch((error) => {
+          console.warn('Unable to load map locations.', error);
+        });
+    };
+    image.src = mapImageUrl;
+  </script>
 </body>
 </html>

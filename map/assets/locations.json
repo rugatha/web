@@ -1,0 +1,157 @@
+[
+  {
+    "name": "Batherdon",
+    "x": 1110,
+    "y": 400,
+    "status": "done"
+  },
+  {
+    "name": "Bomozan",
+    "x": 1065,
+    "y": 535,
+    "status": "done"
+  },
+  {
+    "name": "Dorrenville",
+    "x": 1250,
+    "y": 590,
+    "status": "done"
+  },
+  {
+    "name": "Drogsland",
+    "x": 1120,
+    "y": 660,
+    "status": "done"
+  },
+  {
+    "name": "El'Nore",
+    "x": 1410,
+    "y": 610,
+    "status": "done"
+  },
+  {
+    "name": "Fanaur",
+    "x": 1005,
+    "y": 290,
+    "status": "done"
+  },
+  {
+    "name": "Feathered Estate",
+    "x": 1130,
+    "y": 490,
+    "status": "done"
+  },
+  {
+    "name": "Fenadra",
+    "x": 1000,
+    "y": 485,
+    "status": "done"
+  },
+  {
+    "name": "Great Citadel",
+    "x": 995,
+    "y": 300,
+    "status": "done"
+  },
+  {
+    "name": "Howling Forest",
+    "x": 1050,
+    "y": 535,
+    "status": "done"
+  },
+  {
+    "name": "Korringfield",
+    "x": 1200,
+    "y": 580,
+    "status": "done"
+  },
+  {
+    "name": "Lark",
+    "x": 1015,
+    "y": 295,
+    "status": "done"
+  },
+  {
+    "name": "Macksohn",
+    "x": 1255,
+    "y": 600,
+    "status": "done"
+  },
+  {
+    "name": "Mudtown",
+    "x": 910,
+    "y": 500,
+    "status": "done"
+  },
+  {
+    "name": "Norman's Estate",
+    "x": 950,
+    "y": 450,
+    "status": "done"
+  },
+  {
+    "name": "Oderick's Dungeon",
+    "x": 1250,
+    "y": 320
+  },
+  {
+    "name": "Orun",
+    "x": 900,
+    "y": 600,
+    "status": "done"
+  },
+  {
+    "name": "Peak Temple",
+    "x": 1240,
+    "y": 440,
+    "status": "done"
+  },
+  {
+    "name": "Phreit",
+    "x": 1450,
+    "y": 750,
+    "status": "done"
+  },
+  {
+    "name": "Rathanad",
+    "x": 820,
+    "y": 480,
+    "status": "done"
+  },
+  {
+    "name": "Rumphton",
+    "x": 1245,
+    "y": 610,
+    "status": "done"
+  },
+  {
+    "name": "Sebano",
+    "x": 1235,
+    "y": 620,
+    "status": "done"
+  },
+  {
+    "name": "Shartingson",
+    "x": 1035,
+    "y": 550,
+    "status": "done"
+  },
+  {
+    "name": "St. Rayami Island",
+    "x": 1035,
+    "y": 270,
+    "status": "done"
+  },
+  {
+    "name": "Vowalon",
+    "x": 1050,
+    "y": 520,
+    "status": "done"
+  },
+  {
+    "name": "Wescoe",
+    "x": 1050,
+    "y": 550,
+    "status": "done"
+  }
+]
