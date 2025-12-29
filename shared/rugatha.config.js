@@ -494,7 +494,7 @@
 
     "plus-c05": [
       {
-        id: "rugatha-c05-chpt01",
+        id: "plus-c05-chpt01",
         title: "Chapter 1: The Aftermath",
         url: "../../rugatha/rugatha-c05/chpt01.html"
       },
@@ -561,7 +561,7 @@
 
     "lite-c05": [
       {
-        id: "rugatha-c05-chpt01",
+        id: "lite-c05-chpt01",
         title: "Chapter 1: The Aftermath",
         url: "../../rugatha/rugatha-c05/chpt01.html"
       },
