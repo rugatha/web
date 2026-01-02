@@ -148,6 +148,7 @@
     "wilds-c04-chpt02": "wilds-c04-chpt02.jpeg",
     "wilds-c04-chpt03": "wilds-c04-chpt03.jpeg",
     "wilds-c04-chpt04": "wilds-c04-chpt04.jpeg",
+    "wilds-c05": "wilds-c05.png",
     "wilds-c04-chpt01": "wilds-c04-chpt01.jpeg",
     // Rugatha Brown
     "brown-c01": "brown-c01.jpg",

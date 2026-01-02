@@ -269,6 +269,14 @@
       level: 3,
       parent: "wilds"
     },
+    {
+      id: "wilds-c05",
+      label: "The Unacknowledged Child",
+      title: "The Unacknowledged Child 不被承認的孩子",
+      level: 3,
+      parent: "wilds",
+      noChapters: true
+    },
 
     // ===== Rugatha Brown =====
     { id: "brown", label: "Rugatha Brown", level: 2, parent: "rugatha" },
@@ -999,7 +1007,7 @@
   graphNodes.forEach((node) => {
     if (node.level === 3) {
       arcChapters[node.id] = arcChapters[node.id] || [];
-      if (!arcChapters[node.id].length) {
+      if (!arcChapters[node.id].length && !node.noChapters) {
         arcChapters[node.id].push({
           id: `${node.id}-ch1`,
           title: "",
@@ -1056,6 +1064,7 @@
     "wilds-c02": "../rugatha-wilds/wilds-c02/",
     "wilds-c03": "../rugatha-wilds/wilds-c03/",
     "wilds-c04": "../rugatha-wilds/wilds-c04/",
+    "wilds-c05": "../rugatha-wilds/wilds-c05/",
     "brown-c01": "../rugatha-brown/brown-c01/",
     "brown-c02": "../rugatha-brown/brown-c02/",
     "legends-os01": "../rugatha-legends/legends-os01/",
