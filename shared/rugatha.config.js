@@ -238,6 +238,14 @@
       level: 3,
       parent: "lite"
     },
+    {
+      id: "lite-c12",
+      label: "Py'Par's Vision",
+      title: "Py'Par's Vision",
+      level: 3,
+      parent: "lite",
+      noChapters: true
+    },
 
     // ===== Rugatha WILDS =====
     { id: "wilds", label: "Rugatha WILDS", level: 2, parent: "rugatha" },
@@ -919,6 +927,7 @@
     "rugatha-c04-chpt04": "../chapter-banners/rugatha-c04-chpt04.png",
     "rugatha-c04-chpt05": "../chapter-banners/rugatha-c04-chpt05.jpeg",
     "rugatha-c05-chpt01": "../chapter-banners/rugatha-c05-chpt01.png",
+    "plus-c05-chpt01": "../chapter-banners/rugatha-c05-chpt01.png",
     "plus-c05-chpt02": "../chapter-banners/plus-c05-chpt02.png",
     "plus-c05-chpt03": "../chapter-banners/plus-c05-chpt03.png",
     "plus-c05-chpt04": "../chapter-banners/plus-c05-chpt04.png",
@@ -931,6 +940,7 @@
     "plus-c07-chpt02": "../chapter-banners/plus-c07-chpt02.jpeg",
     "plus-c07-chpt03": "../chapter-banners/plus-c07-chpt03.png",
     "lite-c05-chpt02": "../chapter-banners/lite-c05-chpt02.png",
+    "lite-c05-chpt01": "../chapter-banners/rugatha-c05-chpt01.png",
     "lite-c05-chpt03": "../chapter-banners/lite-c05-chpt03.png",
     "lite-c05-chpt04": "../chapter-banners/lite-c05-chpt04.png",
     "lite-c06-chpt01": "../chapter-banners/lite-c06-chpt01.png",
@@ -1060,6 +1070,7 @@
     "lite-c09": "../rugatha-lite/lite-c09/",
     "lite-c10": "../rugatha-lite/lite-c10/",
     "lite-c11": "../rugatha-lite/lite-c11/",
+    "lite-c12": "../rugatha-lite/lite-c12/",
     "wilds-c01": "../rugatha-wilds/wilds-c01/",
     "wilds-c02": "../rugatha-wilds/wilds-c02/",
     "wilds-c03": "../rugatha-wilds/wilds-c03/",
