@@ -130,6 +130,7 @@
     "lite-c09": "lite-c09.jpg",
     "lite-c10": "lite-c10.png",
     "lite-c11": "lite-c11.png",
+    "lite-c12": "lite-c12.png",
     // Rugatha WILDS
     "wilds-c01": "wilds-c01.jpg",
     "wilds-c01-chpt01": "wilds-c01-chpt01.png",

@@ -238,6 +238,14 @@
       level: 3,
       parent: "lite"
     },
+    {
+      id: "lite-c12",
+      label: "Py'Par's Vision",
+      title: "Py'Par's Vision 派琶的預示",
+      level: 3,
+      parent: "lite",
+      noChapters: true
+    },
 
     // ===== Rugatha WILDS =====
     { id: "wilds", label: "Rugatha WILDS", level: 2, parent: "rugatha" },
@@ -1060,6 +1068,7 @@
     "lite-c09": "../rugatha-lite/lite-c09/",
     "lite-c10": "../rugatha-lite/lite-c10/",
     "lite-c11": "../rugatha-lite/lite-c11/",
+    "lite-c12": "../rugatha-lite/lite-c12/",
     "wilds-c01": "../rugatha-wilds/wilds-c01/",
     "wilds-c02": "../rugatha-wilds/wilds-c02/",
     "wilds-c03": "../rugatha-wilds/wilds-c03/",
