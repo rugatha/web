@@ -240,8 +240,7 @@
     },
     {
       id: "lite-c12",
-      label: "Py'Par's Vision",
-      title: "Py'Par's Vision 派琶的預示",
+      title: "Py'Par's Vision",
       level: 3,
       parent: "lite",
       noChapters: true
@@ -927,6 +926,7 @@
     "rugatha-c04-chpt04": "../chapter-banners/rugatha-c04-chpt04.png",
     "rugatha-c04-chpt05": "../chapter-banners/rugatha-c04-chpt05.jpeg",
     "rugatha-c05-chpt01": "../chapter-banners/rugatha-c05-chpt01.png",
+    "plus-c05-chpt01": "../chapter-banners/rugatha-c05-chpt01.png",
     "plus-c05-chpt02": "../chapter-banners/plus-c05-chpt02.png",
     "plus-c05-chpt03": "../chapter-banners/plus-c05-chpt03.png",
     "plus-c05-chpt04": "../chapter-banners/plus-c05-chpt04.png",
@@ -939,6 +939,7 @@
     "plus-c07-chpt02": "../chapter-banners/plus-c07-chpt02.jpeg",
     "plus-c07-chpt03": "../chapter-banners/plus-c07-chpt03.png",
     "lite-c05-chpt02": "../chapter-banners/lite-c05-chpt02.png",
+    "lite-c05-chpt01": "../chapter-banners/rugatha-c05-chpt01.png",
     "lite-c05-chpt03": "../chapter-banners/lite-c05-chpt03.png",
     "lite-c05-chpt04": "../chapter-banners/lite-c05-chpt04.png",
     "lite-c06-chpt01": "../chapter-banners/lite-c06-chpt01.png",
