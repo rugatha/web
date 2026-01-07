@@ -240,8 +240,7 @@
     },
     {
       id: "lite-c12",
-      label: "Py'Par's Vision",
-      title: "Py'Par's Vision 派琶的預示",
+      title: "Py'Par's Vision",
       level: 3,
       parent: "lite",
       noChapters: true
