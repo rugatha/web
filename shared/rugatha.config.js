@@ -240,7 +240,6 @@
     },
     {
       id: "lite-c12",
-      label: "Py'Par's Vision",
       title: "Py'Par's Vision",
       level: 3,
       parent: "lite",
