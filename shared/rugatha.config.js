@@ -85,7 +85,7 @@
       page: "./pages/rugatha-wilds/index.html",
       image: campaignLogo("rugatha-wilds-logo.jpg"),
       accent: "#c1e27a",
-      nextSession: "2026/1/10"
+      nextSession: "2026/3/14"
     },
     {
       name: "Rugatha Brown",
@@ -281,8 +281,7 @@
       label: "The Unacknowledged Child",
       title: "The Unacknowledged Child 不被承認的孩子",
       level: 3,
-      parent: "wilds",
-      noChapters: true
+      parent: "wilds"
     },
 
     // ===== Rugatha Brown =====
@@ -792,6 +791,13 @@
         url: "../wilds-c04/chpt04.html"
       }
     ],
+    "wilds-c05": [
+      {
+        id: "wilds-c05-chpt01",
+        title: "Chapter 1: Unfamiliar Hometown",
+        url: "../wilds-c05/chpt01.html"
+      }
+    ],
 
     "brown-c01": [
       {
@@ -980,6 +986,7 @@
     "wilds-c04-chpt02": "../chapter-banners/wilds-c04-chpt02.jpeg",
     "wilds-c04-chpt03": "../chapter-banners/wilds-c04-chpt03.jpeg",
     "wilds-c04-chpt04": "../chapter-banners/wilds-c04-chpt04.jpeg",
+    "wilds-c05-chpt01": "../chapter-banners/wilds-c05-chpt01.jpeg",
     "brown-c01-chpt01": "../chapter-banners/brown-c01-chpt01.png",
     "brown-c01-chpt02": "../chapter-banners/brown-c01-chpt02.png",
     "brown-c01-chpt03": "../chapter-banners/brown-c01-chpt03.png",
