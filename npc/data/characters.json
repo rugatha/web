@@ -1456,6 +1456,27 @@
     ]
   },
   {
+    "id": "General_Maliya_Kaeyal",
+    "name": "General Maliya Kaeyal",
+    "url": "npc/npc_page/pages/General_Maliya_Kaeyal.html",
+    "image": "individual_pics/General Maliya Kaeyal.png",
+    "status": "alive",
+    "race": [
+      "Dragonborn"
+    ],
+    "gender": "female",
+    "religion": [],
+    "descZh": "萊斯諾的將軍，中年紅龍人女性。\n個性強硬且難以溝通，連市長與大臣都對他敬畏三分。\n強烈主張要「收復」對面的蜥蜴人城鎮克萊芬。",
+    "descEn": "The general in Leisnor, a mid-aged red dragonborn female.\nMaliya is very fierce, even the mayor and the minister are afraid of her.\nShe has a very strong opinion on 'recovering' the lizardfolk town Clyphen.",
+    "location": [
+      "Leisnor"
+    ],
+    "related": [
+      "Mayor_Saerus_Pharyon",
+      "Syr_Galaestrel_Freyeman"
+    ]
+  },
+  {
     "id": "Glen",
     "name": "Glen",
     "url": "npc/npc_page/pages/Glen.html",
@@ -2463,6 +2484,27 @@
       "The_Fortune_Teller",
       "Xandria_the_Violet_of_Macksohn",
       "yongge"
+    ]
+  },
+  {
+    "id": "Syr_Galaestrel_Freyeman",
+    "name": "Syr Galaestrel Freyeman",
+    "url": "npc/npc_page/pages/Syr_Galaestrel_Freyeman.html",
+    "image": "individual_pics/Syr Galaestrel Freyeman.png",
+    "status": "alive",
+    "race": [
+      "Dragonborn"
+    ],
+    "gender": "male",
+    "religion": [],
+    "descZh": "萊斯諾的大臣，中年藍龍人男性。\n個性溫和且堅定，但在將軍面前毫無插嘴的餘地。\n認為萊斯諾與克萊芬兩地應該分治，而非強硬地靠武力收復。",
+    "descEn": "The minister in Leisnor, a mid-aged blue dragonborn male.\nGalaestrel is calm but firm, but there is no room for him to interrupt the general during conversation.\nHe believes that Leisnor and Clyphen should be ruled seperatedly, not with martial force.",
+    "location": [
+      "Leisnor"
+    ],
+    "related": [
+      "General_Maliya_Kaeyal",
+      "Mayor_Saerus_Pharyon"
     ]
   },
   {
@@ -4044,6 +4086,27 @@
     "related": [
       "Anna",
       "Sharman"
+    ]
+  },
+  {
+    "id": "Mayor_Saerus_Pharyon",
+    "name": "Mayor Saerus Pharyon",
+    "url": "npc/npc_page/pages/Mayor_Saerus_Pharyon.html",
+    "image": "individual_pics/Mayor Saerus Pharyon.png",
+    "status": "alive",
+    "race": [
+      "Dragonborn"
+    ],
+    "gender": "male",
+    "religion": [],
+    "descZh": "萊斯諾的市長，即「龍冠」，中年金龍人男性。\n個性軟弱而優柔寡斷。\n對於萊斯諾和克萊芬的立場模糊。",
+    "descEn": "The mayor, a.k.a. Crown, of Lesinor, a mid-aged gold dragonborn male.\nWeak and indecisive.\nHas an ambiguous stance in the situation between Leisnor and Clyphen.",
+    "location": [
+      "Leisnor"
+    ],
+    "related": [
+      "General_Maliya_Kaeyal",
+      "Syr_Galaestrel_Freyeman"
     ]
   },
   {

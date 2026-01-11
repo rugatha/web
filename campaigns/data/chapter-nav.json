@@ -555,6 +555,14 @@
       "url": "/campaigns/pages/rugatha-wilds/wilds-c04/"
     },
     "prev-chapter": "wilds-c04-chpt03",
+    "next-chapter": "wilds-c05-chpt01"
+  },
+  "wilds-c05-chpt01": {
+    "story-arc": {
+      "id": "wilds-c05",
+      "url": "/campaigns/pages/rugatha-wilds/wilds-c05/"
+    },
+    "prev-chapter": "wilds-c04-chpt04",
     "next-chapter": null
   },
   "brown-c01-chpt01": {
