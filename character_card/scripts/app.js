@@ -4,11 +4,14 @@ const ctx = canvas.getContext("2d");
 const inputs = {
   name: document.getElementById("name"),
   race: document.getElementById("race"),
+  raceOther: document.getElementById("race-other"),
   color: document.getElementById("color"),
   colorPicker: document.getElementById("color-picker"),
   class1: document.getElementById("class1"),
+  class1Other: document.getElementById("class1-other"),
   level1: document.getElementById("level1"),
   class2: document.getElementById("class2"),
+  class2Other: document.getElementById("class2-other"),
   level2: document.getElementById("level2"),
   multiclass: document.getElementById("multiclass"),
   hp: document.getElementById("hp"),
@@ -44,11 +47,47 @@ const abilities = {
   wis: 10,
   cha: 10
 };
+const dmOverlay = document.querySelector(".dm-overlay");
 
 const FALLBACK_ACCENTS = ["#7bdcb5", "#8bc8ff", "#ffd166", "#c48bff", "#ff9e9e", "#a7f0ba"];
 const sharedAccents = getSharedAccents();
 const accentPalette = sharedAccents.length ? sharedAccents : FALLBACK_ACCENTS;
 const defaultAccent = accentPalette[0];
+const RACE_OPTIONS = [
+  { id: "dragonborn", en: "Dragonborn", zh: "龍人" },
+  { id: "dwarf", en: "Dwarf", zh: "矮人" },
+  { id: "elf", en: "Elf", zh: "妖精" },
+  { id: "gnome", en: "Gnome", zh: "地侏" },
+  { id: "half-elf", en: "Half-Elf", zh: "半妖精" },
+  { id: "half-orc", en: "Half-Orc", zh: "半獸人" },
+  { id: "halfling", en: "Halfling", zh: "半身人" },
+  { id: "human", en: "Human", zh: "人類" },
+  { id: "tiefling", en: "Tiefling", zh: "魔人" },
+  { id: "other", en: "Other", zh: "其他" }
+];
+const CLASS_OPTIONS = [
+  { id: "barbarian", en: "Barbarian", zh: "野蠻人" },
+  { id: "bard", en: "Bard", zh: "吟遊詩人" },
+  { id: "cleric", en: "Cleric", zh: "牧師" },
+  { id: "druid", en: "Druid", zh: "德魯伊" },
+  { id: "fighter", en: "Fighter", zh: "戰士" },
+  { id: "monk", en: "Monk", zh: "武僧" },
+  { id: "paladin", en: "Paladin", zh: "聖騎士" },
+  { id: "ranger", en: "Ranger", zh: "遊俠" },
+  { id: "rogue", en: "Rogue", zh: "浪客" },
+  { id: "sorcerer", en: "Sorcerer", zh: "術師" },
+  { id: "warlock", en: "Warlock", zh: "契術師" },
+  { id: "wizard", en: "Wizard", zh: "法師" },
+  { id: "other", en: "Other", zh: "其他" },
+  { id: "dm", en: "Dungeon Master", zh: "地下城主"}
+];
+const DEFAULTS = {
+  race: "human",
+  class1: "fighter",
+  class2: "wizard",
+  level1: 3,
+  level2: 2
+};
 const LANGS = {
   zh: {
     formTitle: "角色資訊",
@@ -59,15 +98,14 @@ const LANGS = {
     resetLabel: "重設",
     fallbacks: {
       name: "冒險者",
-      race: "種族",
-      class1: "職業",
-      class2: "職業 2"
+      race: "人類",
+      class1: "戰士",
+      class2: "法師"
     },
     placeholders: {
       name: "Name",
-      race: "Race",
-      class1: "Class",
-      class2: "Class 2"
+      raceOther: "輸入種族",
+      classOther: "輸入職業"
     },
     labels: {
       name: "姓名",
@@ -87,7 +125,8 @@ const LANGS = {
       cropZoom: "縮放",
       cropX: "水平",
       cropY: "垂直",
-      cropFlip: "水平翻轉"
+      cropFlip: "水平翻轉",
+      other: "自訂"
     },
   abilityLabels: ["力量", "敏捷", "體魄", "智力", "感知", "魅力"],
     canvas: {
@@ -116,15 +155,14 @@ const LANGS = {
     resetLabel: "Reset",
     fallbacks: {
       name: "Adventurer",
-      race: "Race",
-      class1: "Class",
-      class2: "Class 2"
+      race: "Human",
+      class1: "Fighter",
+      class2: "Wizard"
     },
     placeholders: {
       name: "Name",
-      race: "Race",
-      class1: "Class",
-      class2: "Class 2"
+      raceOther: "Enter race",
+      classOther: "Enter class"
     },
     labels: {
       name: "Name",
@@ -144,7 +182,8 @@ const LANGS = {
       cropZoom: "Zoom",
       cropX: "Horizontal",
       cropY: "Vertical",
-      cropFlip: "Flip Horizontal"
+      cropFlip: "Flip Horizontal",
+      other: "Custom"
     },
     abilityLabels: ["STR", "DEX", "CON", "INT", "WIS", "CHA"],
   canvas: {
@@ -261,7 +300,8 @@ function drawCard() {
 
   // H1-like for race/class line
   ctx.font = "48px 'Space Grotesk', 700";
-  const raceClass = `${inputs.race.value || fallbacks.race} • ${classLine()}`;
+  const raceLabel = getOptionLabel(RACE_OPTIONS, inputs.race.value, fallbacks.race, inputs.raceOther);
+  const raceClass = `${raceLabel} • ${classLine()}`;
   ctx.fillText(raceClass, infoX, infoY + 102);
 
   // vitals
@@ -312,12 +352,12 @@ function drawCard() {
 
 function classLine() {
   const defaults = LANGS[currentLang].fallbacks;
-  const cls1 = inputs.class1.value || defaults.class1;
+  const cls1 = getOptionLabel(CLASS_OPTIONS, inputs.class1.value, defaults.class1, inputs.class1Other);
   const lvl1 = inputs.level1.value || "1";
   if (!inputs.multiclass.checked) {
     return `${cls1} ${lvl1}`;
   }
-  const cls2 = inputs.class2.value || defaults.class2;
+  const cls2 = getOptionLabel(CLASS_OPTIONS, inputs.class2.value, defaults.class2, inputs.class2Other);
   const lvl2 = inputs.level2.value || "1";
   return `${cls1} ${lvl1} / ${cls2} ${lvl2}`;
 }
@@ -386,6 +426,7 @@ function bindInputs() {
     } else if (el.type === "checkbox") {
       el.addEventListener("change", () => {
         document.getElementById("multiclass-row").hidden = !el.checked;
+        updateDmOverlayVisibility();
         drawCard();
       });
     } else if (el.type === "range") {
@@ -404,6 +445,21 @@ function bindInputs() {
         }
       });
     }
+  });
+
+  inputs.race?.addEventListener("change", () => {
+    updateOtherVisibility();
+    drawCard();
+  });
+  inputs.class1?.addEventListener("change", () => {
+    updateOtherVisibility();
+    updateDmOverlayVisibility();
+    drawCard();
+  });
+  inputs.class2?.addEventListener("change", () => {
+    updateOtherVisibility();
+    updateDmOverlayVisibility();
+    drawCard();
   });
 
   if (inputs.colorPicker) {
@@ -454,16 +510,21 @@ function bindInputs() {
   document.getElementById("reset").addEventListener("click", () => {
     const defaults = LANGS[currentLang].fallbacks;
     inputs.name.value = defaults.name;
-    inputs.race.value = defaults.race;
-    inputs.class1.value = defaults.class1;
-    inputs.class2.value = defaults.class2;
-    inputs.level1.value = 3;
-    inputs.level2.value = 2;
+    inputs.race.value = DEFAULTS.race;
+    if (inputs.raceOther) inputs.raceOther.value = "";
+    inputs.class1.value = DEFAULTS.class1;
+    if (inputs.class1Other) inputs.class1Other.value = "";
+    inputs.class2.value = DEFAULTS.class2;
+    if (inputs.class2Other) inputs.class2Other.value = "";
+    inputs.level1.value = DEFAULTS.level1;
+    inputs.level2.value = DEFAULTS.level2;
     inputs.hp.value = 20;
     inputs.ac.value = 15;
     inputs.pp.value = 12;
     inputs.multiclass.checked = false;
     document.getElementById("multiclass-row").hidden = true;
+    updateOtherVisibility();
+    updateDmOverlayVisibility();
     setAccent(defaultAccent, false);
     inputs.image.value = "";
     Object.assign(abilities, { str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10 });
@@ -487,7 +548,7 @@ function initAbilitySelects() {
 
 function initLevelSelects() {
   const levels = Array.from({ length: 20 }, (_, i) => i + 1);
-  const levelDefaults = [3, 2];
+  const levelDefaults = [DEFAULTS.level1, DEFAULTS.level2];
   [inputs.level1, inputs.level2].forEach((sel, idx) => {
     if (!sel) return;
     sel.innerHTML = levels.map((n) => `<option value="${n}">${n}</option>`).join("");
@@ -522,6 +583,10 @@ function applyTranslations() {
   updateAbilityFormLabels();
   setLabelText(document.querySelector('label[for="image"]'), lbl.image);
   setLabelText(textNodes.cropLegend, lbl.crop);
+  setLabelText(document.querySelector('label[for="race-other"]'), lbl.other);
+  setLabelText(document.querySelector('label[for="class1-other"]'), lbl.other);
+  setLabelText(document.querySelector('label[for="class2-other"]'), lbl.other);
+  updateSelectOptions();
   const cropLabels = document.querySelectorAll(".range-group label .label-text");
   if (cropLabels.length >= 3) {
     cropLabels[0].textContent = lbl.cropZoom;
@@ -531,9 +596,9 @@ function applyTranslations() {
   if (buttons.cropFlip) buttons.cropFlip.textContent = lbl.cropFlip;
 
   inputs.name.placeholder = t.placeholders.name;
-  inputs.race.placeholder = t.placeholders.race;
-  inputs.class1.placeholder = t.placeholders.class1;
-  inputs.class2.placeholder = t.placeholders.class2;
+  if (inputs.raceOther) inputs.raceOther.placeholder = t.placeholders.raceOther;
+  if (inputs.class1Other) inputs.class1Other.placeholder = t.placeholders.classOther;
+  if (inputs.class2Other) inputs.class2Other.placeholder = t.placeholders.classOther;
 
   updateFlipButtonState();
 }
@@ -571,6 +636,64 @@ function initSwatches(colors) {
     btn.addEventListener("click", () => setAccent(color));
     container.appendChild(btn);
   });
+}
+
+function initSelectOptions() {
+  populateSelect(inputs.race, RACE_OPTIONS, DEFAULTS.race);
+  populateSelect(inputs.class1, CLASS_OPTIONS, DEFAULTS.class1);
+  populateSelect(inputs.class2, CLASS_OPTIONS, DEFAULTS.class2);
+  updateOtherVisibility();
+  updateDmOverlayVisibility();
+}
+
+function updateSelectOptions() {
+  updateSelectText(inputs.race, RACE_OPTIONS);
+  updateSelectText(inputs.class1, CLASS_OPTIONS);
+  updateSelectText(inputs.class2, CLASS_OPTIONS);
+}
+
+function populateSelect(select, options, defaultId) {
+  if (!select) return;
+  const current = select.value || defaultId;
+  select.innerHTML = options
+    .map((option) => `<option value="${option.id}">${option[currentLang]}</option>`)
+    .join("");
+  select.value = options.some((option) => option.id === current) ? current : defaultId;
+}
+
+function updateSelectText(select, options) {
+  if (!select) return;
+  Array.from(select.options).forEach((opt) => {
+    const match = options.find((option) => option.id === opt.value);
+    opt.textContent = match ? match[currentLang] : opt.textContent;
+  });
+}
+
+function getOptionLabel(options, id, fallback, customInput) {
+  if (id === "other") {
+    const custom = customInput?.value?.trim();
+    return custom || LANGS[currentLang].labels.other || fallback;
+  }
+  const match = options.find((option) => option.id === id);
+  return match ? match[currentLang] : fallback;
+}
+
+function updateOtherVisibility() {
+  toggleOther(inputs.race, document.getElementById("race-other-wrap"));
+  toggleOther(inputs.class1, document.getElementById("class1-other-wrap"));
+  toggleOther(inputs.class2, document.getElementById("class2-other-wrap"));
+}
+
+function toggleOther(select, wrapper) {
+  if (!select || !wrapper) return;
+  wrapper.hidden = select.value !== "other";
+}
+
+function updateDmOverlayVisibility() {
+  if (!dmOverlay) return;
+  const isDmPrimary = inputs.class1?.value === "dm";
+  const isDmSecondary = inputs.multiclass?.checked && inputs.class2?.value === "dm";
+  dmOverlay.hidden = !(isDmPrimary || isDmSecondary);
 }
 
 function setAccent(color, shouldDraw = true) {
@@ -749,6 +872,7 @@ function showInAppSavePrompt(url, filename, isError = false) {
 }
 
 initAbilitySelects();
+initSelectOptions();
 initLevelSelects();
 initSwatches(accentPalette);
 applyTranslations();
