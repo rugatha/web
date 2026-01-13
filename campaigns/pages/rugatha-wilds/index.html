@@ -22,6 +22,30 @@
   <meta property="og:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
   <meta name="twitter:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
   <meta name="twitter:card" content="summary_large_image">
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U",
+    authDomain: "rugatha-87e15.firebaseapp.com",
+    projectId: "rugatha-87e15",
+    storageBucket: "rugatha-87e15.firebasestorage.app",
+    messagingSenderId: "1022766499204",
+    appId: "1:1022766499204:web:a4a4c318e16ce37809c9d1",
+    measurementId: "G-KLYZ9WTYK9"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </head>
 <body data-campaign="rugatha-wilds">
   <div class="page">
