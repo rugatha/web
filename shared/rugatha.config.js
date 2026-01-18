@@ -75,7 +75,7 @@
       page: "./pages/rugatha-lite/index.html",
       image: campaignLogo("rugatha-light-logo.jpg"),
       accent: "#ffe7a3",
-      nextSession: "2026/1/17"
+      nextSession: "未訂 TBD"
     },
     {
       name: "Rugatha WILDS",
@@ -242,8 +242,7 @@
       id: "lite-c12",
       title: "Py'Par's Vision 派琶的預示",
       level: 3,
-      parent: "lite",
-      noChapters: true
+      parent: "lite"
     },
 
     // ===== Rugatha WILDS =====
@@ -717,6 +716,13 @@
         url: "../lite-c11/chpt04.html"
       }
     ],
+    "lite-c12": [
+      {
+        id: "lite-c12-chpt01",
+        title: "Chapter 1: Do Not Leave Us in the Dark",
+        url: "../lite-c12/chpt01.html"
+      }
+    ],
 
     "wilds-c01": [
       {
@@ -973,6 +979,7 @@
     "lite-c11-chpt02": "../chapter-banners/lite-c11-chpt02.jpeg",
     "lite-c11-chpt03": "../chapter-banners/lite-c11-chpt03.jpeg",
     "lite-c11-chpt04": "../chapter-banners/lite-c11-chpt04.jpeg",
+    "lite-c12-chpt01": "../chapter-banners/lite-c12-chpt01.jpeg",
     "wilds-c01-chpt01": "../chapter-banners/wilds-c01-chpt01.png",
     "wilds-c01-chpt02": "../chapter-banners/wilds-c01-chpt02.png",
     "wilds-c01-chpt03": "../chapter-banners/wilds-c01-chpt03.png",
