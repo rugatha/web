@@ -317,6 +317,18 @@
       color: var(--member-muted);
     }
 
+    .profile-member-id {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--member-muted);
+    }
+
+    .profile-member-value {
+      word-break: break-all;
+    }
+
     .profile-details {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -582,8 +594,8 @@
 <body>
   <div class="page">
     <div class="language-toggle" role="group" aria-label="Language">
-      <button type="button" data-lang="en" aria-pressed="true">English</button>
-      <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
     </div>
     <a class="corner-link" href="../index.html" aria-label="Rugatha Home">rugatha.com</a>
     <header class="member-hero">
@@ -651,6 +663,10 @@
           <div class="profile-identity">
             <div class="profile-name" id="user-name">Guest Adventurer</div>
             <div class="profile-email" id="user-email">Sign in to reveal your account info.</div>
+            <div class="profile-member-id">
+              <span class="profile-member-label" data-i18n="labelMemberId">Member ID</span>
+              <span class="profile-member-value" id="user-uid">—</span>
+            </div>
           </div>
         </div>
         <div class="profile-section">
@@ -660,11 +676,11 @@
           </div>
           <div class="profile-details">
             <div class="detail">
-              <span class="detail-label" data-i18n="labelMemberId">Member ID</span>
-              <span class="detail-value" id="user-uid">—</span>
+              <span class="detail-label" data-i18n="labelMemberNo">Member No.</span>
+              <span class="detail-value" id="user-member-no">—</span>
             </div>
             <div class="detail">
-              <span class="detail-label" data-i18n="labelAdventurerTitle">Adventurer's Title</span>
+              <span class="detail-label" data-i18n="labelAdventurerTitle">Name</span>
               <span class="detail-value view-only" id="user-title-display">—</span>
               <input class="detail-value edit-only" id="user-title" type="text" placeholder="—" autocomplete="off">
             </div>
@@ -757,7 +773,8 @@
       getDatabase,
       ref,
       get,
-      update
+      update,
+      runTransaction
     } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
     const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
@@ -765,6 +782,7 @@
     const nameEl = document.getElementById("user-name");
     const emailEl = document.getElementById("user-email");
     const uidEl = document.getElementById("user-uid");
+    const memberNoEl = document.getElementById("user-member-no");
     const campaignDividerEl = document.getElementById("campaign-divider");
     const campaignDetailEl = document.getElementById("campaign-detail");
     const characterDetailEl = document.getElementById("character-detail");
@@ -792,6 +810,7 @@
     const saveWrap = document.getElementById("profile-save");
     const toggleButtons = Array.from(document.querySelectorAll(".language-toggle button"));
     const MEMBER_COLLECTION = "members";
+    const MEMBER_COUNTER_PATH = "members_meta/memberNoCounter";
     const badgeStrEl = document.getElementById("badge-str");
     const badgeDexEl = document.getElementById("badge-dex");
     const badgeConEl = document.getElementById("badge-con");
@@ -855,9 +874,10 @@
         editLabel: "Edit",
         saveLabel: "Save",
         labelMemberId: "Member ID",
+        labelMemberNo: "Member No.",
         labelCampaign: "Campaign",
         labelCharacter: "Character",
-        labelAdventurerTitle: "Adventurer's Title",
+        labelAdventurerTitle: "Name",
         labelReligion: "Religion",
         labelSpecies: "Species",
         labelClass: "Class",
@@ -887,9 +907,10 @@
         editLabel: "編輯",
         saveLabel: "儲存",
         labelMemberId: "會員 ID",
+        labelMemberNo: "會員編號",
         labelCampaign: "團務",
         labelCharacter: "角色",
-        labelAdventurerTitle: "冒險者名號",
+        labelAdventurerTitle: "冒險者大名",
         labelReligion: "宗教信仰",
         labelSpecies: "種族",
         labelClass: "職業",
@@ -964,6 +985,35 @@
 
     const updateTimeDisplay = () => {
       totalTimeEl.textContent = formatDuration(getCurrentTotalSeconds(), authState.language);
+    };
+
+    const formatMemberNo = (value) => {
+      if (value === undefined || value === null || value === "") return "—";
+      const digits = String(value).replace(/\D/g, "");
+      if (!digits) return String(value);
+      const padded = digits.padStart(8, "0").slice(-8);
+      return `${padded.slice(0, 4)}-${padded.slice(4)}`;
+    };
+
+    const allocateMemberNo = async () => {
+      if (!db) return null;
+      const counterRef = ref(db, MEMBER_COUNTER_PATH);
+      try {
+        const result = await runTransaction(counterRef, (current) => {
+          const currentNumber = Number(current);
+          if (!Number.isFinite(currentNumber)) {
+            return 0;
+          }
+          return currentNumber + 1;
+        });
+        if (!result.committed) return null;
+        const nextValue = Number(result.snapshot.val());
+        if (!Number.isFinite(nextValue)) return null;
+        return formatMemberNo(nextValue);
+      } catch (error) {
+        console.error("Failed to allocate member number", error);
+        return null;
+      }
     };
 
     const formatLastLogin = (value) => {
@@ -1135,12 +1185,8 @@
 
     const resolveMemberId = (user, storedId) => {
       if (!user) return "—";
-      const email = (user.email || "").toLowerCase();
-      if (email === "rugathadnd@gmail.com" || email === "chernalbert@gmail.com") {
-        return "0000-0000";
-      }
-      if (storedId) return formatMemberId(storedId);
-      return generateMemberId(user.uid) || "—";
+      if (storedId) return storedId;
+      return user.uid || "—";
     };
 
     const loadProfileFromDatabase = async (user) => {
@@ -1152,6 +1198,10 @@
       let memberRef = getMemberDocRef(memberId);
       let badgeMissing = false;
       let hiddenMissing = false;
+      const currentEmail = user.email || "";
+      let emailMissing = false;
+      let memberNoAssigned = false;
+      let memberNoValue = "";
       if (!memberRef) return;
       try {
         let snapshot = await get(memberRef);
@@ -1177,6 +1227,23 @@
 
         authState.memberId = memberId;
         uidEl.textContent = memberId;
+        memberNoValue = data.memberNo ?? "";
+        if (!memberNoValue) {
+          const allocatedMemberNo = await allocateMemberNo();
+          if (allocatedMemberNo) {
+            memberNoValue = allocatedMemberNo;
+            data.memberNo = allocatedMemberNo;
+            memberNoAssigned = true;
+          }
+        }
+        const formattedMemberNo = formatMemberNo(memberNoValue);
+        if (memberNoValue && formattedMemberNo !== memberNoValue) {
+          memberNoValue = formattedMemberNo;
+          data.memberNo = formattedMemberNo;
+          memberNoAssigned = true;
+        }
+        memberNoEl.textContent = formattedMemberNo;
+        authState.memberNo = memberNoValue || null;
         titleEl.value = data.title || "";
         religionEl.value = data.religion || "";
         speciesEl.value = data.species || "";
@@ -1199,17 +1266,24 @@
         badgeScores.BadgeINT = Number(data.BadgeINT ?? badgeScores.BadgeINT);
         badgeScores.BadgeWIS = Number(data.BadgeWIS ?? badgeScores.BadgeWIS);
         badgeScores.BadgeCHA = Number(data.BadgeCHA ?? badgeScores.BadgeCHA);
+        emailMissing = emailMissing || data.email === undefined;
+        const emailChanged = currentEmail && data.email !== currentEmail;
         updateBadgeDisplay();
         baseTotalSeconds = Number(data.totalTimeSeconds || 0);
         updateTimeDisplay();
 
-        if ((needsWrite || badgeMissing || hiddenMissing) && memberRef) {
+        if (
+          (needsWrite || badgeMissing || hiddenMissing || emailMissing || emailChanged || memberNoAssigned) &&
+          memberRef
+        ) {
           await update(memberRef, {
             memberId,
             ...data,
             ...badgeScores,
             Campaign: data.Campaign ?? "",
-            Character: data.Character ?? ""
+            Character: data.Character ?? "",
+            email: currentEmail,
+            ...(memberNoValue ? { memberNo: memberNoValue } : {})
           });
         } else if (memberRef && data.memberId !== memberId) {
           await update(memberRef, { memberId });
@@ -1228,6 +1302,7 @@
       if (!ref) return;
       const payload = {
         memberId,
+        email: user.email || "",
         title: titleEl.value.trim(),
         religion: religionEl.value,
         species: speciesEl.value.trim(),
@@ -1241,6 +1316,9 @@
         BadgeCHA: badgeScores.BadgeCHA,
         photoUrl: profilePhotoUrl || ""
       };
+      if (authState.memberNo) {
+        payload.memberNo = authState.memberNo;
+      }
       try {
         await update(ref, payload);
       } catch (error) {
@@ -1276,6 +1354,7 @@
       message: null,
       language: getStoredLanguage() || "zh",
       memberId: null,
+      memberNo: null,
       characterName: ""
     };
 
@@ -1289,6 +1368,7 @@
       classEl.value = "";
       kingdomEl.value = "";
       uidEl.textContent = "—";
+      memberNoEl.textContent = "—";
       lastLoginEl.textContent = "—";
       totalTimeEl.textContent = "—";
       hintEl.textContent = message || dictionary.profileSignedOut;
@@ -1302,22 +1382,13 @@
       authState.user = null;
       authState.message = message || dictionary.profileSignedOut;
       authState.memberId = null;
+      authState.memberNo = null;
       authState.characterName = "";
     };
 
     const formatMemberId = (value) => {
       if (!value) return "—";
-      const digits = String(value).replace(/\D/g, "").padStart(8, "0").slice(0, 8);
-      return `${digits.slice(0, 4)}-${digits.slice(4)}`;
-    };
-
-    const generateMemberId = (uid) => {
-      if (!uid) return null;
-      let hash = 0;
-      for (let i = 0; i < uid.length; i += 1) {
-        hash = (hash * 31 + uid.charCodeAt(i)) % 100000000;
-      }
-      return formatMemberId(hash);
+      return String(value);
     };
 
     const setSignedIn = (user) => {
@@ -1325,6 +1396,7 @@
       emailEl.textContent = user.email || "Google account";
       authState.memberId = resolveMemberId(user, null);
       uidEl.textContent = authState.memberId;
+      memberNoEl.textContent = "—";
       lastLoginEl.textContent = formatLastLogin(user.metadata?.lastSignInTime) || "Just now";
       totalTimeEl.textContent = formatDuration(0, authState.language);
       const dictionary = translations[authState.language] || translations.en;
