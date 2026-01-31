@@ -49,6 +49,35 @@
           <p id="npc-desc-en" class="body"></p>
         </div>
       </div>
+      <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="ChiChi" data-qa-page="npc/npc_page/pages/ChiChi.html">
+        <h2 class="section-title section-title--center">命運的抉擇<br>A Choice of Fate</h2>
+        <div class="qa-question">
+          <span class="qa-label">Q</span>
+          <p class="qa-text" data-qa-question></p>
+        </div>
+        <div class="qa-choices">
+          <button class="qa-choice" type="button" data-choice="1" aria-pressed="false">
+            <span class="qa-label">C1</span>
+            <span class="qa-choice-text" data-qa-choice="1"></span>
+            <span class="qa-choice-meta" data-qa-percent="1"></span>
+          </button>
+          <button class="qa-choice" type="button" data-choice="2" aria-pressed="false">
+            <span class="qa-label">C2</span>
+            <span class="qa-choice-text" data-qa-choice="2"></span>
+            <span class="qa-choice-meta" data-qa-percent="2"></span>
+          </button>
+        </div>
+        <div class="qa-results" aria-live="polite">
+          <div class="qa-result" data-choice="1">
+            <span class="qa-label">R1</span>
+            <p class="qa-result-text" data-qa-result="1"></p>
+          </div>
+          <div class="qa-result" data-choice="2">
+            <span class="qa-label">R2</span>
+            <p class="qa-result-text" data-qa-result="2"></p>
+          </div>
+        </div>
+      </div>
       <div class="actions">
         <a class="btn icon-btn" href="../../index.html" aria-label="返回 NPC 清單">↩</a>
       </div>
@@ -57,6 +86,7 @@
 
   <script type="module" src="../assets/scripts.js"></script>
   <script src="../../../shared/firebase.config.js"></script>
+  <script type="module" src="../assets/qa.js"></script>
   <script type="module" src="../../../shared/auth.js"></script>
 </body>
 </html>
