@@ -263,8 +263,7 @@
       "St. Rayami Island"
     ],
     "related": [
-      "Elby__Dr_White",
-      "Zek"
+      "Elby__Dr_White"
     ],
     "qa": {
       "Q": "8歲的波站在冒險團隊前，說著自己要加入團隊。\nBeau, who is eight years old, stand in front of the party, saying the she wants to join the party.",
@@ -713,7 +712,7 @@
     "religion": [
       "Laxthos"
     ],
-    "descZh": "沃瓦倫鎮的鎮長。\n潔思敏的丈夫，山米克的父親。\n在山米克死後便變得鬱鬱寡歡。",
+    "descZh": "沃瓦倫鎮的鎮長。\n潔絲敏的丈夫，山米克的父親。\n在山米克死後便變得鬱鬱寡歡。",
     "descEn": "The mayor of Vowalon.\nHusband to Jasmine and father to Samick.\nBecame depressed after the death of Samick.",
     "location": [
       "Vowalon"
@@ -1102,7 +1101,7 @@
       "Jeorisan"
     ],
     "descZh": "土城的「壞蛋四人幫」，但阿龍總是稱他們為「壞四人」。成員包含：\n喜愛勒索的格林道爾，骯髒惡臭的皮伯，脾氣暴躁的湯伯，以及破壞公務的賽菲。\n時常霸凌土城的孩子們。",
-    "descEn": "The “Evil Gang of 4″ in Mudtown, but Al-lon always call them the “Evil Be-4″. With members including:\nThe blackmailing Grindle, the dirty Pibble, the irritable Tumble, and the vadalist Zaffie.\nThey often pick on and bully kids in Mudtown.",
+    "descEn": "The \"Evil Gang of 4\" in Mudtown, but Al-lon always call them the \"Evil Be-4\". With members including:\nThe blackmailing Grindle, the dirty Pibble, the irritable Tumble, and the vadalist Zaffie.\nThey often pick on and bully kids in Mudtown.",
     "location": [
       "Mudtown"
     ],
@@ -2243,7 +2242,7 @@
       "Cena",
       "Mr_Flaerry",
       "Xandria_the_Violet_of_Macksohn",
-      "yongge"
+      "Yung"
     ],
     "qa": {
       "Q": "馬格努斯爵士詢問你接下來要去哪裡？他可以提供你馬匹。\nSyr Magnus asks where you plan to go to next. He can provide you horses.",
@@ -2362,7 +2361,7 @@
       "Marianne_Jens",
       "RaLeer_the_Herder",
       "The_Mother",
-      "yi"
+      "Yi"
     ],
     "qa": {
       "Q": "馬可斯掏出一顆有彈性的球，交給你，讓你玩玩看。\nMarus takes out an elastic ball, give it to you to play with it.",
@@ -2452,7 +2451,9 @@
     "descEn": "A girl running for “the Spirit of Spring\" in Mudtown this year, but lost to Penny Applewood. She wanted to become the Spirit of Spring to negotiate with the “bandits\" for benefits for Mudtown.\nHer parents have been traveling for over two years, and haven’t returned to Mudtown.\nAfter spending some time with Maribel, the adventurers found her to be quite proficient with cooking, well-read, and also has the ability to live independently. They tried to convince her into joining the adventuring group, but Maribel still wants to finish her books before leaving the town.",
     "location": [
       "Mudtown",
-      "Rathanad"
+      "Rathanad",
+      "Leisnor",
+      "Clyphen"
     ],
     "related": [
       "Penny_Applewood"
@@ -3105,16 +3106,16 @@
       "Liliana"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你們終於救出了拉芙，他的意識還清醒，但身體很虛弱。\nYou finally save Ralf. She is still conscious, but her body is weak.",
+      "C1": "詢問他關於被抓走事情的細節。\nAsk her about the details of her being captured.",
+      "C2": "讓他先好好休息。\nLet her rest first.",
+      "R1": "拉芙告訴你他在洞穴裡看見了一隻巨大的拉茲特獸，有人在控制他。\nRalf tells you that she saw a huge Laztek. Someone is controlling it.",
+      "R2": "拉芙閉上雙眼。你們得趕快把他帶回旅店。\nRalf closes her eyes. You need to bring her back to the tavern immediately."
     }
   },
   {
     "id": "Rashim",
-    "name": "Rashim",
+    "name": "Rashim拉辛",
     "url": "npc/npc_page/pages/Rashim.html",
     "image": "individual_pics/Rashim.jpeg",
     "status": "alive",
@@ -3130,16 +3131,16 @@
     ],
     "related": [],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "拉辛帶著你走在舊城區內。\nRashim leads you in the old town.",
+      "C1": "詢問拉辛為何不信蜘蛛神教？\nAsk Rashim why he doesn't believe in the Spider God.",
+      "C2": "和拉辛詢問舊城區的歷史。\nAsk Rashim about the history of Rashim.",
+      "R1": "拉辛表示要信什麼神是自由的，蜘蛛神也不會因為不信他而對他生氣。\nRashim says it's free to believe in any god. The Spider God wouldn't be mad at him if he doesn't believe in it.",
+      "R2": "拉辛表示幾百年前，這裡是麥克嵩最熱鬧的地區。後來發生的事件讓麥克嵩的中心換了地方。\nRashim says that hundreds of years ago, this is the most popular area in Macksohn. Incidents happened, and so the center of Macksohn shifted."
     }
   },
   {
     "id": "RaLeer_the_Herder",
-    "name": "Ra'Leer the Herder",
+    "name": "Ra'Leer the Herder牧人拉黎爾",
     "url": "npc/npc_page/pages/RaLeer_the_Herder.html",
     "image": "individual_pics/Ra'Leer the Herder.jpeg",
     "status": "dead",
@@ -3150,7 +3151,7 @@
     "religion": [
       "Nessis"
     ],
-    "descZh": "居住於嚎叫森林內的妖精德魯伊。\n有一隻隨行的狼夥伴，Gary。\n對嚎叫森林內的野生動物都十分親近且熟悉。\n她近期感覺到了森林內的不平靜，覺得事有蹊蹺。\n森林之神的忠實信奉者。",
+    "descZh": "居住於嚎叫森林內的妖精德魯伊。\n有一隻隨行的狼夥伴，蓋瑞。\n對嚎叫森林內的野生動物都十分親近且熟悉。\n她近期感覺到了森林內的不平靜，覺得事有蹊蹺。\n森林之神的忠實信奉者。",
     "descEn": "The elf druid who lived in the howling forest.\nShe had a wolf companion, Gary.\nShe was familiar with the wildlife in the howling forest.\nShe sensed something wrong in the forest recently.\nShe was loyal believer of Nessis, God of Woods.",
     "location": [
       "Howling Forest",
@@ -3163,16 +3164,16 @@
       "Shifu"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你來到嚎叫森林，看見拉黎爾站在森林入口，惡狠狠的盯著你。\nYou arrive the Howling Forest. You see Ra'Leer standing in front of the forest, staring at you viciously.",
+      "C1": "拿起武器，準備和拉黎爾戰鬥。\nPrepare your weapons for a combat against Ra'Leer.",
+      "C2": "和拉黎爾點頭，表示自己在森林內會與生命為友。\nNod to Ra'Leer, promising that you'll befriends the creatures in the forest.",
+      "R1": "不知道何時，你的身邊竄出一匹狼。蓋瑞咬了你的腿一口。\nYou don't know when, a wolf comes out next to you. Gary bites you leg.",
+      "R2": "拉黎爾答應帶你穿越嚎叫森林，若遇到敵人，他會與你站在同一陣線。\nRa'Leer promise to lead you through the Howling Forest. If there is enemy, she'll be on your side."
     }
   },
   {
     "id": "Reese_Tig",
-    "name": "Reese Tig",
+    "name": "Reese Tig瑞斯・提格",
     "url": "npc/npc_page/pages/Reese_Tig.html",
     "image": "individual_pics/Reese Tig.jpg",
     "status": "dead",
@@ -3183,7 +3184,7 @@
     "religion": [
       "Keinra"
     ],
-    "descZh": "居住在方努爾市的人類冒險家。\n協助津菈教調查城市中發生的中毒以及失蹤事件。\n在Ron昏迷時將他的巫妖手臂用神秘的鍊子鍊住以抑制巫妖的法術。\n後在Nimu孤兒院前方的水井下遭遇敵人，不幸喪生。",
+    "descZh": "居住在方努爾市的人類冒險家。\n協助津菈教調查城市中發生的中毒以及失蹤事件。\n在Ron昏迷時將他的巫妖手臂用神秘的鍊子鍊住以抑制巫妖的法術。\n後在尼姆孤兒院前方的水井下遭遇敵人，不幸喪生。",
     "descEn": "A human adventurer residing in the city of Fanaur.\nHe assisted the Church of Keinra in investigating the poisoning and disappearance cases occurring throughout the city.\nWhen Ron fell unconscious, he restrained Ron’s lich arm with a mysterious chain to suppress the lich’s magic.\nHe later encountered enemies beneath the well in front of the Nimu Orphanage and was unfortunately killed.",
     "location": [
       "Fanaur"
@@ -3193,16 +3194,16 @@
       "Iochi_Mari"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "瑞斯將一本厚厚的書遞給你。\nReese hands you a grimoire.",
+      "C1": "詢問瑞斯這是什麼？\nAsk Reese what this is?",
+      "C2": "接下這本書。\nTake the book.",
+      "R1": "瑞斯表示這是他的研究筆記，希望你能拿來參考。\nReese says it's his study, hoping you can use it as a reference.",
+      "R2": "你從書上感受到一股魔法的力量。\nYou feel magical power from the book."
     }
   },
   {
     "id": "Riley_Richmond",
-    "name": "Riley Richmond",
+    "name": "Riley Richmond萊里・里奇蒙",
     "url": "npc/npc_page/pages/Riley_Richmond.html",
     "image": "individual_pics/Riley Richmond.jpg",
     "status": "alive",
@@ -3213,8 +3214,8 @@
     "religion": [
       "Jeorisan"
     ],
-    "descZh": "里奇蒙家族的當家掌門人，Bartosz的女兒。喬里森的信奉者。\n過去為T.I.D.E.S.方尖碑的成員，但被Laura Fishburne挑戰成功，而被迫帶著冒險者們離開組織。\n於土城有屬於自己的研究中心「The Raven Nexus」。",
-    "descEn": "The current frontman of the Richmond family, daughter of Bartosz. Believer of Jeorisan.\nShe was once an Obelisk in T.I.D.E.S., but was challenged by Laura Fishburne succesfully, and expelled with the adventurers by the society.\nShe has her own research center, “the Raven Nexus\" in Mudtown.",
+    "descZh": "里奇蒙家族的當家掌門人，巴托斯的女兒。喬里森的信奉者。\n過去為T.I.D.E.S.方尖碑的成員，但被蘿拉・費許朋挑戰成功，失去一隻眼，而被迫帶著冒險者們離開組織。\n於土城有屬於自己的研究中心「渡鴉中樞」。",
+    "descEn": "The current frontman of the Richmond family, daughter of Bartosz. Believer of Jeorisan.\nShe was once an Obelisk in T.I.D.E.S., but was challenged by Laura Fishburne succesfully, lost one of her eye, and expelled with the adventurers by the society.\nShe has her own research center, “the Raven Nexus\" in Mudtown.",
     "location": [
       "Mudtown",
       "Norman's Estate"
@@ -3226,16 +3227,16 @@
       "Tina"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "萊里委託你幫他尋找一個特定的物品，他會給予你豐厚的獎賞。\nRiley asks you to find her a specific object. She'll give you a grand prize for that.",
+      "C1": "詢問萊里他要這個物品的目的。\nAsk Riley the purpose of getting this object.",
+      "C2": "和萊里討價還價。\nBargain with Riley.",
+      "R1": "萊里表示，他想製作能讓他重回T.I.D.E.S.的法器，這是材料之一。\nRiley says that she wants to build an artifact that can bring her back to T.I.D.E.S., and this is one of the material.",
+      "R2": "你發現萊里願意為此付出不少錢。\nYou find Riley willing to pay a lot for this."
     }
   },
   {
     "id": "Bishop_Robinson",
-    "name": "Bishop Robinson",
+    "name": "Bishop Robinson羅賓遜主教",
     "url": "npc/npc_page/pages/Bishop_Robinson.html",
     "image": "individual_pics/Bishop Robinson.png",
     "status": "alive",
@@ -3246,8 +3247,8 @@
     "religion": [
       "Keinra"
     ],
-    "descZh": "津菈敎的主教。\n召集勇者們前往方努爾市南方的荒島，尋找津菈敎的聖典雪の化身の目覚め。",
-    "descEn": "A bishop of Keinra.\nGathered the adventurers to a island south of Fanaur, the find the holy book of 雪の化身の目覚め.",
+    "descZh": "津菈敎的主教。\n召集勇者們前往方努爾市南方的荒島，尋找津菈敎的聖典雪の化身の目覚め。\n數年後，請冒險者們調查聖拉雅米島的中毒事件，以及前往娜塔莎港尋找逃脫的Mirdori。",
+    "descEn": "A bishop of Keinra.\nGathered the adventurers to a island south of Fanaur, the find the holy book of 雪の化身の目覚め.\nYears later, Bishop Robinson asked the adventurers to investigate in the poisonous incident on St. Rayami Island, and find the escaped Midori in Natasha Port.",
     "location": [
       "Fanaur"
     ],
@@ -3257,11 +3258,11 @@
       "Reese_Tig"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見羅賓遜主教看起來很苦惱。\nYou see Bishop Robinson looking distressed.",
+      "C1": "向羅賓遜主教詢問是否有可以幫忙之處。\nAsk Bishop Robinson if there's anything you can help.",
+      "C2": "向羅賓遜主教匯報任務的進度。\nReport the current progress of the mission to Bishop Robinson.",
+      "R1": "羅賓遜主教表示，他只是需要休息一下。\nBishop Robinson says that he only needs some rest.",
+      "R2": "羅賓遜主教點頭，表示他很滿意。\nBishop Robinson nod, saying he's very satisfied."
     }
   },
   {
@@ -3275,8 +3276,8 @@
     ],
     "gender": "female",
     "religion": [],
-    "descZh": "Macksohn貴族Hughes家族的新任掌門人。\n父親為Fred Hughes。\n從小就展現出極好的社交天賦，因此父親努力培養他作為家族的接班人。\n與Midori和Ron在麥克嵩王宮花園初見。\n在比武大會事件後對Ron產生了極深的情愫。\n在認識Ron前，似乎常常出入貴族的秘密雜交派對，但如今亟欲隱藏這段過去。\n在Paladin等人於15048年再次回到麥克嵩時，用心幫助他們，甚至作為掩護讓他們逃出王宮。不久後被Anna冒用身份，襲擊Paladin。後來再次見到Paladin時，協助落魄的他買東西。\n在Tweeter打開第三隻眼時，他的靈魂成了與交易之神芬諾爾交易時，被犧牲的祭品，身體化成了陶瓷。\n15048年的蘿琳在小黑屋掛著斗篷，作為交易之神的代言人。\n15050年在YHWH等人回到麥克嵩時，與YHWH在文創區巧遇，但看起來眼神空洞，似乎還沒有恢復成原本的樣貌。\nRon等人到了大學城，透過歷史區區長安德烈亞・戴依的儀式，成功釋放了蘿琳。",
-    "descEn": "The new face of the Macksohn noble house Hughes.\nHer father was Fred Hughes.\nShe showed her expert in social contact in her youth, thus her father trained her to be the successor of the family.\nMet Midori and Ron at the Macksohn Palace Garden.\nStarted having a feeling towards Ron after the Macksohn Tournament incident.\nShe seemed to go to the nobles secret orgies quite often, but she tried hard to reveal it after knowing Ron.\nAfter Paladin and the party returned to Macksohn at 15048 D.E., she helped them and even covered them to escape the palace. Not long after that, her identity was used by Anna to sneak onto Paladin. After seeing Paladin again, she bought him stuffs to help him.\nWhen Tweeter opened his third eye, her souls was used as the sacrifice to fulfill the trade with Phynoir, becoming a pottery doll.\nShe then acted as the hooded spokesman of Phynoir at the Dark house.\nWhen YHWH and the party returned to Macksohn at 15050 D.E., she met YHWH at the art district, but she looked hollow. It seemed like she hadn’t returned to her true self.\nRon and the party went to the Great Citadel, and with the help of Andrea Day, Roline’s soul was released through a ritual.",
+    "descZh": "麥克嵩貴族休斯家族的新任掌門人。\n從小就展現出極好的社交天賦，因此父親努力培養他作為家族的接班人。\n與Midori和Ron在麥克嵩王宮花園初見。\n在比武大會事件後對Ron產生了極深的情愫。\n在認識Ron前，似乎常常出入貴族的秘密雜交派對，但如今亟欲隱藏這段過去。\n在Paladin等人於15048年再次回到麥克嵩時，用心幫助他們，甚至作為掩護讓他們逃出王宮。不久後被安娜冒用身份，襲擊Paladin。後來再次見到Paladin時，協助落魄的他買東西。\n在Tweeter打開第三隻眼時，他的靈魂成了與交易之神芬諾爾交易時，被犧牲的祭品，身體化成了陶瓷。\n15048年的蘿琳在小黑屋掛著斗篷，作為交易之神的代言人。\n15050年在YHWH等人回到麥克嵩時，與YHWH在文創區巧遇，但看起來眼神空洞，似乎還沒有恢復成原本的樣貌。\nRon等人到了大學城，透過歷史區區長安德烈亞・戴依的儀式，成功釋放了蘿琳。",
+    "descEn": "The new face of the Macksohn noble house Hughes.\nShe showed her expert in social contact in her youth, thus her father trained her to be the successor of the family.\nMet Midori and Ron at the Macksohn Palace Garden.\nStarted having a feeling towards Ron after the Macksohn Tournament incident.\nShe seemed to go to the nobles secret orgies quite often, but she tried hard to reveal it after knowing Ron.\nAfter Paladin and the party returned to Macksohn at 15048 D.E., she helped them and even covered them to escape the palace. Not long after that, her identity was used by Anna to sneak onto Paladin. After seeing Paladin again, she bought him stuffs to help him.\nWhen Tweeter opened his third eye, her souls was used as the sacrifice to fulfill the trade with Phynoir, becoming a pottery doll.\nShe then acted as the hooded spokesman of Phynoir at the Dark house.\nWhen YHWH and the party returned to Macksohn at 15050 D.E., she met YHWH at the art district, but she looked hollow. It seemed like she hadn’t returned to her true self.\nRon and the party went to the Great Citadel, and with the help of Andrea Day, Roline’s soul was released through a ritual.",
     "location": [
       "Macksohn",
       "Great Citadel"
@@ -3287,11 +3288,11 @@
       "Kevin_Bolden"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見蘿琳正在振筆疾書，非常認真。\nYou see Roline writing, very concentrating.",
+      "C1": "詢問蘿琳在寫什麼？\nAsk Roline what she's writing?",
+      "C2": "偷偷看蘿琳在寫什麼？\nPeak at what Roline is writing.",
+      "R1": "羅琳收起紙，說著不是什麼重要的東西。\nRoline puts the paper away, says it nothing.",
+      "R2": "你看見蘿琳的信中寫著滿滿的愛意。\nYou see love flowing out of Roline's letter."
     }
   },
   {
@@ -3314,16 +3315,16 @@
     "related": [
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見羅納德手上拿著一顆藍色的果實。\nYou see Ronald holding a blue fruit in his hand.",
+      "C1": "向他詢問這是他種的嗎？\nAsk him if he planted it?",
+      "C2": "向他請教這是什麼魔法變出來的？\nAsk him what magic he used to make it?",
+      "R1": "「當然，」羅納德說。「種植物是我的小小興趣。」\n\"Of course.\" Ronald says. \"Gardening is a hobby of mine.\"",
+      "R2": "「魔術師不是只會用魔法而已。」羅納德說。\n\"Magic is not the only thing that a magician use.\" Says Ronald."
     }
   },
   {
     "id": "Ronfello",
-    "name": "Ronfello",
+    "name": "Ronfello朗費羅",
     "url": "npc/npc_page/pages/Ronfello.html",
     "image": "individual_pics/Ronfello.png",
     "status": "alive",
@@ -3339,16 +3340,16 @@
     ],
     "related": [],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你準備去拜訪朗費羅。聽說他喜歡吃海鮮粥。\nYou're about to visit Ronfello. You heard he likes seafood porridge.",
+      "C1": "先到市集買一碗海鮮粥，等等好說話。\nBuy a seafood porridge at the market first. It'll help smoothening up the talk.",
+      "C2": "海鮮粥蠻貴的，只是說說話而已，不用買吧。\nSeafood porridge is quite expensive. It's just a talk, no need for that.",
+      "R1": "在朗費羅家門口，他一把拿走你手上的海鮮粥。後來的談話很順利。\nAt Ronfello's house, he grabs the seafood porridge from you. The talk goes pretty well.",
+      "R2": "朗費羅看著你們，不說一語，把門關上。\nRonfello looks at you, says nothing, and slams the door."
     }
   },
   {
     "id": "Rosa_Flaerry",
-    "name": "Rosa Flaerry",
+    "name": "Rosa Flaerry羅莎・弗列里",
     "url": "npc/npc_page/pages/Rosa_Flaerry.html",
     "image": "individual_pics/Rosa Flaerry.jpeg",
     "status": "alive",
@@ -3357,7 +3358,7 @@
     ],
     "gender": "female",
     "religion": [],
-    "descZh": "Paladin的導師，前麥丁頓王國騎士團團長弗列里爵士的夫人。\n在冒險者們踏離地下城，來到Korringfield時承諾要保護他們。\n麥克嵩比武大會時，在混亂中受傷而下肢殘廢。",
+    "descZh": "Paladin的導師，前麥丁頓王國騎士團團長弗列里爵士的夫人。\n在冒險者們踏離地下城，來到扣林菲爾德時承諾要保護他們。\n麥克嵩比武大會時，在混亂中受傷而下肢殘廢。",
     "descEn": "The wife of Syr Flaerry, Paladin’s mentor and the ex leader of the King’s Guard in Mattington.\nAs the adventurers left the dungeon, promised to protect them in Korringfield.\nRosa was hurt and became disabled in the incident of the Macksohn Tournament.",
     "location": [
       "Macksohn",
@@ -3369,16 +3370,16 @@
       "Xandria_the_Violet_of_Macksohn"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你發現羅莎和弗列里先生很少一起活動。\nYou find Rosa and Mr. Flaerry rarely do any activities together.",
+      "C1": "和羅莎詢問這件事。\nAsk Rosa about this.",
+      "C2": "不多問，這也沒什麼大不了的。\nYou don't ask. That's not a big deal.",
+      "R1": "「我們已經一起生活幾十年了，不需要永遠黏在一起。」羅莎說。\n\"We've been together for tens of years. We don't need to be together all the time.\" Says Rosa.",
+      "R2": "你偶爾看見羅莎落寞地看著弗列里先生。\nSometimes, you see Rosa staring at Mr. Flaerry in a lonely way."
     }
   },
   {
     "id": "sammick_warren",
-    "name": "Sammick Warren",
+    "name": "Sammick Warren山米克・沃倫",
     "url": "npc/npc_page/pages/Sammick_Warren.html",
     "image": "individual_pics/Sammick Warren.png",
     "status": "dead",
@@ -3389,7 +3390,7 @@
     "religion": [
       "Laxthos"
     ],
-    "descZh": "沃瓦倫鎮長Daryl與Jasmine之子。\n大約半年前，25歲的Samick被發現死於寂靜殿前，沃瓦倫的詛咒因此被鎮民廣為討論。",
+    "descZh": "沃瓦倫鎮長戴洛與傑絲敏之子。\n大約半年前，25歲的山米克被發現死於寂靜殿前，沃瓦倫的詛咒因此被鎮民廣為討論。",
     "descEn": "The son of the mayor of Vowalon, Daryl and Jasmine.\nAbout half a year ago, Samick, aged 25, was found dead in front of the Temple of Silenciom and so the Curse of Vowalon was spread and discussed among town folks.",
     "location": [
       "Vowalon"
@@ -3399,16 +3400,16 @@
       "Jasmine_Warren"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你聽說山米克死去那天，他的屍體一大清早在寂靜殿前被發現。\nYou hear that the day Sammick died, his body was found at the entrance of the Temple of Silencio early in the morning.",
+      "C1": "向他的父親戴洛詢問。\nAsk his father Daryl.",
+      "C2": "向寂靜殿的寇頓神父詢問。\nAsk Father Kaulton of the Temple of Silencio.",
+      "R1": "戴洛說平常山米克那個時間都還沒出門。\nDaryl says Sammick doesn't go out that early.",
+      "R2": "寇頓神父說他也是被告知才知道這件事。\nFather Kaulton says he only learned that after others told him."
     }
   },
   {
     "id": "ScarFace",
-    "name": "Scar-Face",
+    "name": "Scar-Face刀疤臉",
     "url": "npc/npc_page/pages/ScarFace.html",
     "image": "individual_pics/Scar-Face.jpeg",
     "status": "dead",
@@ -3419,7 +3420,7 @@
     "religion": [
       "Trinix"
     ],
-    "descZh": "Macksohn當地衛兵，因臉上有不少刀疤，而自稱Scar-Face。\n在Ron的請求下協助調查Sunrise老闆Jonathan的失蹤案件。\n對Frankie的閃爍說詞也有些起疑。\n承認自己是崔尼斯教的信徒，但也向Ron表示不是所有崔尼斯教的人都是有問題的。\n在麥克嵩比武大會上為了保護國王巴納沃二世，遭到Frankie擊斃。",
+    "descZh": "麥克嵩當地衛兵，因臉上有不少刀疤，而自稱刀疤臉。\n在Ron的請求下協助調查日出酒館老闆喬納森的失蹤案件。\n對法蘭奇的閃爍說詞也有些起疑。\n承認自己是崔尼斯教的信徒，但也向Ron表示不是所有崔尼斯教的人都是有問題的。\n在麥克嵩比武大會上為了保護國王巴納沃二世，遭到法蘭奇擊斃。",
     "descEn": "A guard in Macksohn. He called himself “Scar-Face\" due to a lot of scars on his face.\nScar-Face helped Ron investigated into the missing incident of Jonathan, the owner of Sunrise.\nHe had doubts toward Frankie.\nScar-Face admitted to be a believer of Trinix, but also explained to Ron that not all Trinix believers had something wrong with them.\nHe was killed by Frankie protecting the late King Benevol II.",
     "location": [
       "Macksohn"
@@ -3432,16 +3433,16 @@
       "King_Benevol_II"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見刀疤臉朝你走了過來。「有什麼需要幫助的嗎？」\nYou see Scar-Face walking towards you. \"Is there anything I can help you with?\"",
+      "C1": "和刀疤臉說不用。\nTell Scar-Face there's nothing to help.",
+      "C2": "和刀疤臉說剛才有個行跡怪異的衛兵。\nTell Scar-Face there was a weird guard.",
+      "R1": "「祝你有個美好的一天，崔尼斯祝福你。」刀疤臉向你行禮。\n\"Have a nice day, and may Trinix bless you.\" Scar-Face salutes to you.",
+      "R2": "「告訴我他的特徵，我請人去調查。」刀疤臉認真的看著你。\n\"Tell me their traits. I'll send people to investigate.\" Scar-Face looks at you seriously."
     }
   },
   {
     "id": "Sean",
-    "name": "Sean",
+    "name": "Sean尚",
     "url": "npc/npc_page/pages/Sean.html",
     "image": "individual_pics/Sean.jpeg",
     "status": "alive",
@@ -3450,19 +3451,19 @@
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "Ron在尖頂寺的師兄，武藝十分高強。",
-    "descEn": "A senpai of Ron from the Peak Temple. He was good in martial arts.",
+    "descZh": "Ron在尖頂寺的師兄，武藝十分高強。\n來到麥克嵩參加比武大會。",
+    "descEn": "A senpai of Ron from the Peak Temple. He was good in martial arts.\nCame to Macksohn to participate in the tournament.",
     "location": [
       "Macksohn",
       "Peak Temple"
     ],
     "related": [],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見一個手拿長棍的男人走在麥克嵩的街道上。\nYou see a man with a long stick walking in Macksohn.",
+      "C1": "向他詢問他是哪裡來的人？\nAsk him where he is from?",
+      "C2": "向他詢問他是來賣克嵩做什麼的？\nAsk him the purpose of him being in Macksohn.",
+      "R1": "尚向你鞠躬，告訴你他來自尖頂寺。\nSean bows to you, telling you that he was from the Peak Temple.",
+      "R2": "尚亮出他的長棍，表示他是要來贏下比武大會的。\nSean shows his long stick, saying he's here to win the tournament."
     }
   },
   {
@@ -3490,11 +3491,11 @@
       "Ona_Berners"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見瑟琳在柏納斯家似乎有些格格不入。\nYou see that Selene seems unfit in the Berners house.",
+      "C1": "你向瑟琳詢問這件事。\nYou ask Selene about this.",
+      "C2": "你觀察他和其他家族成員的互動。\nYou observe her interaction with other family members.",
+      "R1": "「沒有這種事。」瑟琳微笑。「能成為柏納斯家的一員，是我的驕傲。」\n\"There's nothing like that.\" Selene smiles. \"It's my honor to be part of the Berners family.\"",
+      "R2": "你發現瑟琳對所有人表現得都有些不自然。在這個家族，他就像個局外人。\nYou find Selene acting abnormal towards all people. She's like an outsider in the family."
     }
   },
   {
@@ -3508,8 +3509,8 @@
     ],
     "gender": "female",
     "religion": [],
-    "descZh": "阿龍的親生母親，拉撒拿現任龍冠費洛登的妻子。\n舉止端莊優雅。\n在阿龍去見銀龍後的隔天，瑟萊拉與老公費洛登被發現死於艾瑞利斯家的畫室。",
-    "descEn": "Al-lon’s biological mother, the wife of Vaerodan, the current Crown of Rathanad.\nBehave in a dignified and elegant matter.\nA day after Al-lon met the silver dragon, Selyra and her husband, Vaerodan, was found dead in the studio in the Arylith house.",
+    "descZh": "阿龍的親生母親，拉撒拿龍冠費洛登的妻子。\n舉止端莊優雅。\n在阿龍去見銀龍後的隔天，瑟萊拉與老公費洛登被發現死於艾瑞利斯家的畫室。",
+    "descEn": "Al-lon’s biological mother, the wife of Vaerodan, the Crown of Rathanad.\nBehave in a dignified and elegant matter.\nA day after Al-lon met the silver dragon, Selyra and her husband, Vaerodan, was found dead in the studio in the Arylith house.",
     "location": [
       "Rathanad"
     ],
@@ -3522,11 +3523,11 @@
       "Vaerodan_Arylith"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "「『賽勒涅爾』的意思是......」瑟萊拉頓了一下。「等你正式成為龍冠後，我再告訴你吧。」\n\"The meaning of 'Cyrinel' is......\" Selyra pauses. \"I'll tell you when you officially become the Crown.\"",
+      "C1": "追問瑟萊拉。\nPress Selyra for answer.",
+      "C2": "等成為龍冠後再問他吧。\nWell, ask her after becoming the Crown then.",
+      "R1": "「意思又不會變，急什麼？」瑟萊拉笑道。\n\"Why rush? The meaning wouldn't change.\" Selyra smiles.",
+      "R2": "一天後你看見瑟萊拉的屍體。\nA day later, you see the body of Selyra."
     }
   },
   {
@@ -3554,16 +3555,16 @@
       "Vaerodan_Arylith"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "「你看什麼看！」瑟拉斯瞪著你。\n\"How dare you stare at me!\" Serathe stares at you.",
+      "C1": "你避開眼神，不看著他。\nYou look away, not staring at her.",
+      "C2": "「怎麼了嗎？」你回問瑟拉斯。\n\"What's the matter?\" You ask Serathe.",
+      "R1": "「哼。」瑟拉斯悶哼道。\n\"Huh.\" Serathe groaned.",
+      "R2": "「你想打架嗎？」瑟拉斯站了起來。\n\"You wanna fight?\" Serathe stands up."
     }
   },
   {
     "id": "Shalan_Hartlow",
-    "name": "Shalan Hartlow",
+    "name": "Shalan Hartlow沙蘭・哈特洛",
     "url": "npc/npc_page/pages/Shalan_Hartlow.html",
     "image": "individual_pics/Shalan Hartlow.jpeg",
     "status": "alive",
@@ -3579,16 +3580,16 @@
     ],
     "related": [],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "「來來來，喝點茶。」沙蘭招呼你們。\n\"Come, come have some tea.\" Shalan greets you.",
+      "C1": "坐了下來用茶。\nSit and have tea.",
+      "C2": "站著和沙蘭告知你來的目的。\nStand and tell Shalan the purpose you're here.",
+      "R1": "半小時後，沙蘭終於問起你們來的目的。\nAfter half an hour, Shalan finally ask the purpose you come here.",
+      "R2": "「別著麼嚴肅，輕鬆點。」沙蘭拍拍旁邊的沙發。\n\"Don't be so serious, relax.\" Shalan pats the sofa next to him."
     }
   },
   {
     "id": "Sham",
-    "name": "Sham",
+    "name": "Sham薩姆",
     "url": "npc/npc_page/pages/Sham.html",
     "image": "individual_pics/Sham.jpeg",
     "status": "alive",
@@ -3599,7 +3600,7 @@
     "religion": [
       "Phyneal"
     ],
-    "descZh": "有著Lord Ishton身體的人，自稱是月神給予他的。\n離開小黑屋時，看見Tweeter的第三隻眼，表示無條件聽從他的命令。",
+    "descZh": "有著伊許頓大人身體的人，自稱是月神給予他的。\n離開小黑屋時，看見Tweeter的第三隻眼，表示無條件聽從他的命令。",
     "descEn": "A man with the body of Lord Ishton, who claimed was given by the God of Moon.\nAfter leaving the Dark house, Sham saw Tweeter’s third eye, and told Tweeter that he’d obey him no matter what.",
     "location": [
       "Macksohn",
@@ -3609,11 +3610,11 @@
       "Mr_Moon"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你的夥伴垂死，你呼喚薩姆，請他協助。他表示需要一些祭品。\nYour companion is dying. You summon Sham, wanting him to help. He says some sacrifices are needed.",
+      "C1": "你答應薩姆。為了救你的隊友，什麼犧牲都是值得的。\nYou agree. To save your companions, every sacrifice is worth it.",
+      "C2": "你遲疑。你知道月神的交易，通常都會讓人後悔。\nYou hesitate. You know most trades involving the God of Moon makes people regret.",
+      "R1": "當薩姆再次現身，他的身邊有兩個孩子。你來不及回應，薩姆就把兩個孩子的生命吸光，隊友的生命穩定了下來。\nWhen Sham shows up, he has two kids next to him. Before you have any time to respond, Sham absorbs the life of the tow kids, and your companions are stable.",
+      "R2": "幾分鐘後，你的隊友沒了生命。你不知道如果做了交易，會有什麼結果。\nMinutes later, your companions run out of life. You wonder what would've happened if you made the trade."
     }
   },
   {
@@ -3627,7 +3628,7 @@
     ],
     "gender": "neutral",
     "religion": [],
-    "descZh": "身份未名的Macksohn人。\n似乎與當地衛兵有很多關聯。\n手上刺有十道光芒的太陽。\n曾偽裝成Lemmy、拉芬奇以及安雅・拉芬奇。\n由玩家義揚操控。",
+    "descZh": "身份未名的麥克嵩人。\n似乎與當地衛兵有很多關聯。\n手上刺有十道光芒的太陽。\n曾偽裝成Lemmy、拉芬奇以及安雅・拉芬奇。\n由玩家義揚操控。",
     "descEn": "A Macksohn local with unknown identity.\nSeemed to be connected to the local guards.\nHe had a Sun with 10 rays on his hand.\nSha’Doom once disguised as Lemmy, LaVinci and Anya LaVinci.\nThis character was played by Roger.",
     "location": [
       "Macksohn"
@@ -3635,16 +3636,16 @@
     "related": [
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "在麥克嵩競技場，你看見兩名長得一模一樣的人互相指著對方。周圍是一團大屠殺。\nYou see at the Macksohn stadium, two identical figures pointing each other. A massacre is happening right around them.",
+      "C1": "你選擇隨機攻擊其中一位。至少有一名是假冒者。\nYou choose to attack one randomly. At least one of them is a doppelganger.",
+      "C2": "你仔細觀察，希望能找出破綻。\nYou look carefully, trying to spot the difference.",
+      "R1": "被你攻擊的那一名瞬間變形成你的模樣。\nThe one that is attacked by you transform into you immediately.",
+      "R2": "你發現其中一名身上的細節有些模糊。他比較有可能是冒名者。\nYou find the details of one of them looking blur. He has a better chance of being a doppelganger."
     }
   },
   {
     "id": "Shifu",
-    "name": "Shifu",
+    "name": "Shifu師父",
     "url": "npc/npc_page/pages/Shifu.html",
     "image": "individual_pics/Shifu.png",
     "status": "alive",
@@ -3653,7 +3654,7 @@
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "弗萊特境內拉黎爾的一名舊識，真名未知，被尊稱為「師父」。不會一般語，需要由身邊的Rina和Rita擔任翻譯與服侍。\n似乎擁有一定程度的魔法能力，能將地圖投影至空中。\n住在一個看起來蠻漂亮的帳篷內，在冒險者到訪時請他們喝下似乎可以看見一些幻象的茶。",
+    "descZh": "弗萊特境內拉黎爾的一名舊識，真名未知，被尊稱為「師父」。不會一般語，需要由身邊的莉娜和莉塔擔任翻譯與服侍。\n似乎擁有一定程度的魔法能力，能將地圖投影至空中。\n住在一個看起來蠻漂亮的帳篷內，在冒險者到訪時請他們喝下似乎可以看見一些幻象的茶。",
     "descEn": "An old acquaintance of Ra’Leer in Phreit realm. His name was not known, but he was called “Shifu\" instead. He didn’t speak the common tongue, and needed Rina and Rita, who served him, to be his translator.\nIt seemed that Shifu had some magical power, and he could project maps in the air.",
     "location": [
       "Phreit"
@@ -3664,16 +3665,16 @@
       "RaLeer_the_Herder"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "師父用魔法在空中投影出一個地圖，有些抽象。\nShifu projects a map in the air. It looks somewhat abstract.",
+      "C1": "向莉娜與莉塔詢問地圖的細節。\nAsk Rina and Rita about the details in the map.",
+      "C2": "嘗試自己解讀地圖的內容。\nTry to read the map on your own.",
+      "R1": "師父長篇大論，莉娜與莉塔用很簡短而生疏的普通語為你翻譯。\nShifu explains a lot, but Rina and Rita translate in short but broken sentences.",
+      "R2": "師父看你沒有很了解，嘗試用魔法增加更多細節與標注。\nAs you look not fully understand, Shifu adds more details and indicators on the map with magic."
     }
   },
   {
     "id": "Sigom_III",
-    "name": "Sigom III",
+    "name": "Sigom III希岡三世",
     "url": "npc/npc_page/pages/Sigom_III.html",
     "image": "individual_pics/Sigom III.jpg",
     "status": "alive",
@@ -3682,23 +3683,25 @@
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "狂暴之儀中的評議委員長，是一名瘦小的狗頭人。\n鬥名為狂暴之聲(Voice of Anger)。\n武器是一把中型的釘頭槌。",
+    "descZh": "狂暴之儀中的評議委員長，是一名瘦小的狗頭人。\n鬥名為狂暴之聲。\n武器是一把中型的釘頭槌。",
     "descEn": "The chairman of the council in the Rite of Fury, a small and slender kobold.\nHis battle title is the Voice of Anger.\nHis weapon is a medium-sized flanged mace.",
     "location": [
       "Lark"
     ],
-    "related": [],
+    "related": [
+      "Zek"
+    ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看著瘦小的希崗三世，威風凜凜。\nYou see the slender Sigom III. He looks fierce.",
+      "C1": "詢問澤克他是怎麼成為評議委員長的？\nAsk Zek how he became the chairman of the council.",
+      "C2": "向希崗三世跪下，對他高超的武藝甘拜下風。\nKneel down to Sigom III. You're awed by his superb martial arts.",
+      "R1": "「他的祖先是狂暴戰士幫的創立者。」澤克說道。「他繼承了他祖先的風範。」\n\"His ancestor was the founder of the Raging Warriors.\" Zek says. \"He inherited his ancestor's demeanor.",
+      "R2": "希岡三世扶了你起來。「你通過測試了。」他說。\nSigom III helps you up. \"You've passed the trial.\" He says."
     }
   },
   {
     "id": "Sora",
-    "name": "Sora",
+    "name": "Sora索拉",
     "url": "npc/npc_page/pages/Sora.html",
     "image": "individual_pics/Sora.jpeg",
     "status": "historical figure",
@@ -3707,29 +3710,29 @@
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "謎樣的小男孩。\n看起來年齡大約十歲。\n疑似留下了他的日記，但日記中記載的年份似乎和現在的紀元不同。\n對於他的一切，可以說完全是個謎。",
-    "descEn": "A mysterious boy.\nHe looked like a 10 years old kid.\nHe seemed to left his diary, but the years in the diary was far from the current empire years.\nEverything about Sora was a mystery.",
+    "descZh": "謎樣的小男孩。\n看起來年齡大約十歲。\n疑似留下了他的日記，但日記中記載的年份似乎和現在的紀元不同。\n有隻名為嘟嘟的狗。\n他的父母為了他的健康，在他身上做了各種儀式，最後卻讓他喪命。",
+    "descEn": "A mysterious boy.\nHe looked like a 10 years old kid.\nHe seemed to left his diary, but the years in the diary was far from the current empire years.\nHe had a dog named Dudu.\"For his health, his parents performed rituals on him, which eventually lead to his death.",
     "location": [
       "Kashla"
     ],
     "related": [
       "Dr_Vaxon",
-      "dudu",
+      "Dudu",
       "Leslie_Grunfeld",
       "Pete_Madison",
       "Valero_Berners"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "「你說我死了？」索拉困惑的看著你。「什......什麼意思？」\n\"You say I'm dead?\" Sora looks at you, confused. \"What...... what do you mean?\"",
+      "C1": "告訴索拉他是活在過去的人，你們只是到了他的記憶裡。\nTell Sora that he was from the past. You're just in his memory.",
+      "C2": "告訴索拉你們會把他救出來，不用擔心。\nTell Sora that you'll save him, and there's no need to worry.",
+      "R1": "「我不懂。」索拉皺著眉頭。「我活在......現在啊！」\n\"I don't get it.\" Sora frowns. \"I live...... in the present.\"",
+      "R2": "「啊。瓦克松醫師說過，有人會來拯救我。就是你們吧？」\n\"Ah. Dr, Vaxon said there will be someone who'll come and save me. You're those people, right?\""
     }
   },
   {
     "id": "Speedy",
-    "name": "Speedy",
+    "name": "Speedy斯比迪",
     "url": "npc/npc_page/pages/Speedy.html",
     "image": "individual_pics/Speedy.jpeg",
     "status": "alive",
@@ -3738,24 +3741,24 @@
     ],
     "gender": "neutral",
     "religion": [],
-    "descZh": "台北市議員等人在麥克嵩的Kerry’s買的馬。\n十分年輕健壯。",
-    "descEn": "A horse the party bought at Kerry’s, Macksohn.\nYoung and strong.",
+    "descZh": "台北市議員等人在麥克嵩買的馬。\n十分年輕健壯。",
+    "descEn": "A horse the party bought at Macksohn.\nYoung and strong.",
     "location": [
       "Macksohn",
       "Dorrenville"
     ],
     "related": [],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "斯比迪的速度很快，但你覺得他有點難以控制。\nSpeedy is fast, but you think he's a bit hard to control.",
+      "C1": "嘗試放慢速度，讓隊伍能跟得上。\nTry to slow Speedy down, so the rest of the partt can catch up.",
+      "C2": "任由斯比迪奔馳，他適合當偵查的先鋒。\nLet Speedy dash. He's fit to be the front scout.",
+      "R1": "不久後，斯比迪按耐不住。他不斷發出悶哼聲。\nNot after long, Speedy can't stand it anymore. He keeps growling.",
+      "R2": "你騎在斯比迪身上往前跑。你懷疑其他人是否知道你們往哪裡跑了。\nYou ride Speedy and dash. You suspect any one of the group would know where you headed."
     }
   },
   {
     "id": "Tam_Quorr",
-    "name": "Tam Quorr",
+    "name": "Tam Quorr譚・寇爾",
     "url": "npc/npc_page/pages/Tam_Quorr.html",
     "image": "individual_pics/Tam Quorr.png",
     "status": "dead",
@@ -3766,8 +3769,8 @@
     "religion": [
       "Phyneal"
     ],
-    "descZh": "在心空域的宿舍與Lott搭訕的人。年約三十的人類女子。\n對冒險者們表示自己在地面上是研究Phyneal的學者，多年前來到Fenadra後逐漸變異，現在覺得自己回不去了。\n向冒險者們說明了很多Fenadra的規則，包涵每日兩次的禱告、衣服深淺的意義、議員與區域的關係，甚至透露了心空席從缺的消息。\n雙手已嚴重變形，表情控制也十分不自然。",
-    "descEn": "A human woman in her thirties who talked to Lott in the dorm in the Realm of Hollow Heart.\nTam told the adventurers that she used to be a scholar whose topic was around Phyneal, God of Luna, and came to Fenadra. She “changed\" a lot, and deemed that she has no way back to the surface now.\nTam told the adventurers a lot of rules here in Fenadra, including the two time prayers everyday, the meaning of the color of their clothes, the relationship between the seats of councilmen and the realms. She even told the adventurers about the news of the absent of the Seat of Hollow Heart.\nHer hands are twisted, and her facial expression are extremely distorted.",
+    "descZh": "在心空域的宿舍與Lott搭訕的人。年約三十的人類女子。\n對冒險者們表示自己在地面上是研究芬尼爾的學者，多年前來到斐納札後逐漸變異，現在覺得自己回不去了。\n向冒險者們說明了很多斐納札的規則，包涵每日兩次的禱告、衣服深淺的意義、議員與區域的關係，甚至透露了心空席從缺的消息。\n雙手已嚴重變形，表情控制也十分不自然。\n譚現身為第三名爭奪心空席的人選，但沒有自己夥伴的他，第一輪就淘汰了。",
+    "descEn": "A human woman in her thirties who talked to Lott in the dorm in the Realm of Hollow Heart.\nTam told the adventurers that she used to be a scholar whose topic was around Phyneal, God of Luna, and came to Fenadra. She “changed\" a lot, and deemed that she has no way back to the surface now.\nTam told the adventurers a lot of rules here in Fenadra, including the two time prayers everyday, the meaning of the color of their clothes, the relationship between the seats of councilmen and the realms. She even told the adventurers about the news of the absent of the Seat of Hollow Heart.\nHer hands are twisted, and her facial expression are extremely distorted.\nTam showed up as the third candidate of the Seat of Hollow Heart. But with no companions, she became the first to be eliminated from the trials.",
     "location": [
       "Fenadra"
     ],
@@ -3775,11 +3778,11 @@
       "Lumio"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見譚走向你。他看起來精神有些狀況，但至少他是人類。\nYou see Tam walking towards you. She looks a bit mentally distorted, but at least she's a human.",
+      "C1": "你回覆他的搭話。也許能得到一些有用的資訊。\nYou respond to her. Maybe you can get some useful information.",
+      "C2": "你刻意避開他。這裡所有人都太古怪了。\nYou ignore her intentionally. Everyone here is just weird.",
+      "R1": "你從譚口中聽到不少關於斐納札的資訊，對你有些幫助。\nYou learn quite a lot about Fenadra from Tam. They're helpful to you.",
+      "R2": "譚沒有刻意打擾你。但幾天內，你覺得有一雙眼睛一直在監視你。\nTam doesn't interrupt you intentionally. But in the few days, you feel like someone spying on you."
     }
   },
   {
@@ -3807,16 +3810,16 @@
       "Vaerodan_Arylith"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "瑟拉蒙朝著山的那一頭走去。你有些擔心在艾瑞利斯一家發生這麼多事後，他會做什麼事出來。\nTheramond walks toward the other side of the hill. You're a bit worried what he'll do after all the things that happened to the Aryliths.",
+      "C1": "你追了上去，搭上瑟拉蒙的肩膀。\nYou run to him, putting your hands to his shoulder.",
+      "C2": "你默默看著瑟拉蒙的背影，不讓他離開你的視線。\nYou silently watch Thermond's back, make sure you don't lose him.",
+      "R1": "瑟拉蒙嘆了一口氣。「不用擔心我。」他苦笑著。\nTheramond sighs. \"Don't worry about me.\" He smiles bitterly.",
+      "R2": "瑟拉蒙在山丘頂坐了下來，眺望遠方。\nTheramond sits on the top of the hill, looking into the distance."
     }
   },
   {
     "id": "Thompson",
-    "name": "Thompson",
+    "name": "Thompson湯普生",
     "url": "npc/npc_page/pages/Thompson.html",
     "image": "individual_pics/Thompson.jpg",
     "status": "alive",
@@ -3825,23 +3828,23 @@
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "於Batherdon經營許久的小型書店「第1410頁」內工作的店員。\n與毛毛熟識，會提供雞腿給毛毛吃，似乎與領養他的貴族家庭也有不少交流。\n自稱是T.I.D.E.S.組織的相關人員，但並非內部成員。",
-    "descEn": "A bookstore clerk of “Page 1410″ in Batherdon, which is a small bookstore.\nThompson is familiar with Dawn Light Fur, even provides him chicken drumsticks. He also seemed to have been working with the noble family that adopted Dawn Light Fur.\nThompson claimed to be a related with T.I.D.E.S., but not a member of it.",
+    "descZh": "於貝瑟頓經營許久的小型書店「第1410頁」內工作的店員。\n與毛毛熟識，會提供雞腿給毛毛吃，似乎與領養他的貴族家庭也有不少交流。\n自稱是T.I.D.E.S.組織的相關人員，但並非內部成員。",
+    "descEn": "A bookstore clerk of \"Page 1410\", a small bookstore in Batherdon.\nThompson is familiar with Dawn Light Fur, even provides him chicken drumsticks. He also seemed to have been working with the noble family that adopted Dawn Light Fur.\nThompson claimed to be a related with T.I.D.E.S., but not a member of it.",
     "location": [
       "Batherdon"
     ],
     "related": [],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見湯普生和斑貓人冒險者毛毛十分熟悉。\nYou see that Thompson is quite familiar with Dawn Light Fur, the Tabaxi adventurer.",
+      "C1": "詢問湯普生他和毛毛是怎麼認識的。\nAsk Thompson how he and Dawn Light Fur met.",
+      "C2": "和湯普生表示你是毛毛的冒險夥伴。\nTell Thompson that you're an adventuring companion of Dawn Light Fur.",
+      "R1": "「他的家人過去是我重要的客戶。」湯普生說道。\n\"His family was my important clients.\" Thompson says.",
+      "R2": "「那你可要好好在冒險途中照顧他。」湯普生微笑道。\n\"Then you better take good care of him in the adventures.\" Thompson smiles."
     }
   },
   {
     "id": "Mayor_Thorne",
-    "name": "Mayor Thorne",
+    "name": "Mayor Thorne索恩市長",
     "url": "npc/npc_page/pages/Mayor_Thorne.html",
     "image": "individual_pics/Mayor Thorne.jpeg",
     "status": "dead",
@@ -3850,7 +3853,7 @@
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "Sebano的鎮長，住在一個華麗的房子內，長期拄著一根拐杖。\n因為房子被Inu放火，而對Inu十分厭惡。\n招待冒險者們在他家夜宿。\n家裡似乎有個神秘的魔法盒子。\n死亡時，身上被發現有蜘蛛的咬痕。",
+    "descZh": "瑟巴諾的鎮長，住在一個華麗的房子內，長期拄著一根拐杖。\n因為房子被Inu放火，而對Inu十分厭惡。\n招待冒險者們在他家夜宿。\n家裡似乎有個神秘的魔法盒子。\n死亡時，身上被發現有蜘蛛的咬痕。",
     "descEn": "The mayor of Sebano, who lived in a classy house, and walk with a stick.\nHe hated Inu since Inu was responsible for his house on fire.\nInvited the adventurers to live in his place.\nThere seemed to be a mysterious magic box in his house.\nWhen he died, there were bitten marks of spiders all over his body.",
     "location": [
       "Sebano"
@@ -3859,16 +3862,16 @@
       "Anna"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見索恩市長抓著狗型的Inu，用他的鞭子抽打。\nYou see Mayor Thorne whipping the dog-like Inu.",
+      "C1": "Inu本來就太頑皮了，是該好好教訓他。\nInu has been too naughty. He should totally get a lesson.",
+      "C2": "阻止索恩市長。Inu只是個孩子，至少看起來如此。\nStop Mayor Thorne. Inu is just a kid, at least he looks like it.",
+      "R1": "Inu咬了索恩市長一口，然後對著房子放火。\nInu bites Mayor Thorne, and incinerate the house.",
+      "R2": "索恩市長哼了一聲，放開了Inu。\nMayor Thorne groans, and let go of Inu."
     }
   },
   {
     "id": "Mayor_Saerus_Pharyon",
-    "name": "Mayor Saerus Pharyon",
+    "name": "Mayor Saerus Pharyon賽爾斯・費利昂市長",
     "url": "npc/npc_page/pages/Mayor_Saerus_Pharyon.html",
     "image": "individual_pics/Mayor Saerus Pharyon.png",
     "status": "alive",
@@ -3887,16 +3890,16 @@
       "Syr_Galaestrel_Freyeman"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "賽爾斯市長看起來猶豫不決，無法打斷將軍和大臣的對話。\nMayor Saerus looks indecisive. He can't interrupt the conversation between the General and the Minister.",
+      "C1": "繼續觀察賽爾斯市長的窘況。\nKeep on observing the awkwardness of Mayor Saerus.",
+      "C2": "介入將軍與大臣的對話，為市長發聲。\nIntervene the conversation between the General and the Minister, and talk for the Mayor.",
+      "R1": "一段時間後，你發現大臣也不說話了，任憑將軍發號施令。\nSome time later, you find the Minister stop talking, too, letting the General make orders.",
+      "R2": "將軍惡狠狠地瞪者你。「你以為你他媽是誰？」\nThe General stares at you viciously. \"Who the fuck do you think you are?\""
     }
   },
   {
     "id": "Tina",
-    "name": "Tina",
+    "name": "Tina蒂娜",
     "url": "npc/npc_page/pages/Tina.html",
     "image": "individual_pics/Tina.jpg",
     "status": "alive",
@@ -3905,8 +3908,8 @@
     ],
     "gender": "female",
     "religion": [],
-    "descZh": "Batherdon的貴族Richmond家中負責照顧失智的Bartosz爵士的僕人，已經在爵士宅邸工作10年了。\n據他所說，這份工作是由Bartosz爵士的女兒Riley付他薪水，且薪資十分不錯。",
-    "descEn": "The maid who had been taking care of the noble Syr Bartosz Richomnd in Batherdon for 10 years.\nAs told by Tina, she was paid well by Bartosz’s daughter, Riley.",
+    "descZh": "貝瑟頓的貴族里奇蒙家中負責照顧失智的巴托斯爵士的僕人，已經在爵士宅邸工作10年了。\n據他所說，這份工作是由巴托斯爵士的女兒萊里付他薪水，且薪資十分不錯。\n看見巴托斯爵士從失去神智，變成正常，又化作石頭。央求冒險者們別把真相告訴其他人。",
+    "descEn": "The maid who had been taking care of the noble Syr Bartosz Richomnd in Batherdon for 10 years.\nAs told by Tina, she was paid well by Syr Bartosz’s daughter, Riley.\nWitness the progress of Syr Bartosz turning from unconscious, to normal, then into stone. She pleaded the adventurers not to tell the truth to other people.",
     "location": [
       "Batherdon"
     ],
@@ -3915,25 +3918,25 @@
       "Riley_Richmond"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "面對巴托斯爵士的狀況，蒂娜失業了。\nFacing the situation of Syr Bartosz, Tina is now jobless.",
+      "C1": "隱瞞事情的真相，讓萊里繼續付蒂娜薪水。\nHide the truth, and let Riley keep on paying Tina.",
+      "C2": "利用你的人脈，替蒂娜介紹新的工作。\nUse your connections, and find a new job for Tina.",
+      "R1": "在那之後，蒂娜再也沒有收到薪水了。\nAfter that, Tina never get her salary anymore.",
+      "R2": "新的雇主對蒂娜很滿意，也很高興你能介紹他。\nThe new employer is very satisfied with Tina, and happy that you introduced her."
     }
   },
   {
     "id": "Trisha_of_Baylon",
-    "name": "Trisha of Baylon",
+    "name": "Trisha of Baylon貝倫的崔夏",
     "url": "npc/npc_page/pages/Trisha_of_Baylon.html",
     "image": "individual_pics/Trisha of Baylon.jpeg",
     "status": "alive",
     "race": [
-      "Elf"
+      "Half-Elf"
     ],
     "gender": "female",
     "religion": [],
-    "descZh": "冒險者們在地下城發現困在牢籠內的半妖精年輕女子。\nTrisha自稱來自洛森王國的貝倫部落。他的父母是拉索斯教的忠誠信徒，卻遭到背叛，而導致Trisha被綁至地下城。同時，Trisha也因為父母的關係，對拉索斯教十分了解，進而對該宗教極度厭惡。\n幼年時雙手手臂被刺上拉索斯經文的刺青。\n隨身攜帶一個裝有開鎖工具的黑色小盒子，以及兩把匕首。\n在與冒險者走在地下城的過程中，因為Uko將一顆神祕石放在他的掌心，而將神祕石吸收進了身體裡。\nTrisha曾向Midori透露自己會聽到聲音叫他做不好的事情，在石頭融入他身體後，如果他反抗，便會感到極度的頭痛。\n在與台北市議員們逃出地城後，與Uko一同從Korringfield逃亡，去尋找他的父母。",
+    "descZh": "冒險者們在地下城發現困在牢籠內的半妖精年輕女子。\n崔夏自稱來自洛森王國的貝倫部落。他的父母是拉索斯教的忠誠信徒，卻遭到背叛，而導致崔夏被綁至地下城。同時，崔夏也因為父母的關係，對拉索斯教十分了解，進而對該宗教極度厭惡。\n幼年時雙手手臂被刺上拉索斯經文的刺青。\n隨身攜帶一個裝有開鎖工具的黑色小盒子，以及兩把匕首。\n在與冒險者走在地下城的過程中，因為Uko將一顆神祕石放在他的掌心，而將神祕石吸收進了身體裡。\n崔夏曾向Midori透露自己會聽到聲音叫他做不好的事情，在石頭融入他身體後，如果他反抗，便會感到極度的頭痛。\n在與台北市議員們逃出地城後，與Uko一同從寇林菲爾德逃亡，去尋找他的父母。",
     "descEn": "The half-elf young girl the adventurers found locked up in a cage in the dungeon.\nTrisha said she was from Baylon Tribe in the Lothum Kingdom. Her parents were loyal Laxthos worshippers, but was betrayed, which led to Trisha locked up in a cage.At the same time, due to her parents, Trisha was familiar with the cult, but also hated it.\nShe had Laxthos scripts tattooed on her arms when she was young.\nShe had a black box of locket picks on her, and also two daggers.\nWhen traveling with the adventurers, a mysterious stone found by Uko was absorbed by her body.\nTrisha revealed to Midori that she heard voices telling her to do bad things, and she’d felt agony if she resisted after the mysterious stone was absorbed by her.\nWhen the party escaped the dungeon, she and Uko left Korringfield to find her parents.",
     "location": [
       "Vowalon",
@@ -3941,16 +3944,16 @@
     ],
     "related": [],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見崔夏從口袋掏出一串絕對不屬於他的項鍊。\nYou see Trisha taking out a neckless from her pocket that definitely don't belong to her.",
+      "C1": "私下告訴崔夏這樣做不對。\nTell Trisha privately that this is wrong.",
+      "C2": "和崔夏說好換來的金幣要分你一半的金幣。\nTell Trisha that you want half the gold pieces that she gets from the neckless.",
+      "R1": "崔夏露出懺悔的表情，但你知道他只是演給你看的。\nTrisha shows a regretting face, but you know she's just acting to you.",
+      "R2": "崔夏露出得意的表情，點頭答應。\nTrisha has a smug expression, nods and agrees."
     }
   },
   {
     "id": "Twiggle",
-    "name": "Twiggle",
+    "name": "Twiggle頹哥",
     "url": "npc/npc_page/pages/Twiggle.html",
     "image": "individual_pics/Twiggle.jpeg",
     "status": "alive",
@@ -3959,21 +3962,23 @@
     ],
     "gender": "neutral",
     "religion": [],
-    "descZh": "雷雅在Batherdon設下陷阱，抓到的松鼠，名為頹哥。\n目前團隊中僅有Leah可以透過動物溝通術和他對話，從對話中得知他是個滿口髒話、神經質的牆頭草。\n目前頹哥與鑰一起坐在鑰的推車上，和冒險者們一起冒險。",
-    "descEn": "A squirrel caught be Leah with her traps near Batherdon.\nLeah is the only one who can communicate with Twiggle through speak with animals. She found that Twiggle is a swearing edgy bandwagon squirrel.\nTwiggle has been staying with Kaname on her cart and travel with the adventurers.",
+    "descZh": "雷雅在貝瑟頓設下陷阱，抓到的松鼠。\n目前團隊中僅有Leah可以透過動物溝通術和他對話，從對話中得知他是個滿口髒話、神經質的牆頭草。\n目前頹哥與鑰一起坐在鑰的推車上，和冒險者們一起冒險。\n被鑰封為「嘎吱爵士」。",
+    "descEn": "A squirrel caught be Leah with her traps near Batherdon.\nLeah is the only one who can communicate with Twiggle through speak with animals. She found that Twiggle is a swearing edgy bandwagon squirrel.\nTwiggle has been staying with Kaname on her cart and travel with the adventurers.\nDubbed as \"Syr Creak\" by Kaname.",
     "location": [
       "Batherdon",
       "Norman's Estate",
       "Mudtown",
-      "Rathanad"
+      "Rathanad",
+      "Leisnor",
+      "Clyphen"
     ],
     "related": [],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見頹哥暈倒在地上。\nYou see Twiggle faint on the ground.",
+      "C1": "把頹哥撿起來，捧在手心。\nPick up Twiggle, and put him in your hands.",
+      "C2": "把頹哥撿起來，放進森林裡。\nPick up Twiggle, and put him into the forest.",
+      "R1": "頹哥沒有醒來，但不久後你就聽見他的打呼聲。\nTwiggle doesn't wake up. But some time later, you hear him snoring.",
+      "R2": "你發現頹哥趁大家不注意時，爬了起來，躲進樹林裡。\nYou find Twiggle get up when no one pays attention, and hides in the forest."
     }
   },
   {
@@ -3987,8 +3992,8 @@
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "阿龍的堂弟。\n十分年輕，卻是Arylith家族內最聰明的存在。\n與姊姊奈梨紗感情很好。\n擅長各種魔法，甚至會竄改記憶的魔法。",
-    "descEn": "Al-lon’s cousin.\nVery young, but already the smartest one in the whole Arylith family.\nVaelric is very close to his sister Nylessa.\nExpert in all kinds of magic, and can even perform magic that alter memories.",
+    "descZh": "阿龍的堂弟。\n十分年輕，卻是艾瑞利斯家族內最聰明的存在。\n與姊姊奈梨紗感情很好。\n擅長各種魔法，甚至會竄改記憶的魔法。\n在姊姊奈梨紗被定罪後，利用魔法將自己的記憶洗去。",
+    "descEn": "Al-lon’s cousin.\nVery young, but already the smartest one in the whole Arylith family.\nVaelric is very close to his sister Nylessa.\nExpert in all kinds of magic, and can even perform magic that alter memories.\nWhen his sister Nylessa got convicted, Vaelric used magic to wipe his own memory.",
     "location": [
       "Rathanad"
     ],
@@ -4001,11 +4006,11 @@
       "Vaerodan_Arylith"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你知道維瑞克是全艾瑞利斯家最聰明的。你懷疑這個事件他有插手。\nYou know Vaelric is the most clever one in the Aryliths. You suspect that he is involved in the incident.",
+      "C1": "嘗試詢問維瑞克，從他身上套出答案。\nTry to ask Vaelric, and get the answer from him.",
+      "C2": "仔細觀察維瑞克，從他身上找出把柄。\nObserve Vaelric carefully, try to find his weakness.",
+      "R1": "維瑞克說得振振有詞。你覺得他可能說謊，但你找不出破綻。\nVaelric speaks with great conviction. You think he might be lying, but you just can't find the loophole.",
+      "R2": "你發現維瑞克時不時盯著他的姊姊奈梨紗看。也許你該改對奈梨紗問話。\nYou find Vaelric staring at his sister, Nylessa. Maybe you should ask Nylessa instead."
     }
   },
   {
@@ -4019,8 +4024,8 @@
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "阿龍的親生父親，現任的拉撒拿龍冠。\n當年曾下令老尼克索將阿龍的蛋拋棄。\n舉止嚴肅但不嚴厲。\n在阿龍去見銀龍後的隔天，費洛登與老婆瑟萊拉被發現死於艾瑞利斯家的畫室。",
-    "descEn": "Al-lon’s biological father, the current Crown of Rathanad.\nOrdered Old Nixul to abandan Al-lon’s egg years ago.\nLooks serious but not strict.\nA day after Al-lon met the silver dragon, Vaerodan and his wife, Selyra, was found dead in the studio in the Arylith house.",
+    "descZh": "阿龍的親生父親，拉撒拿龍冠。\n當年曾下令老尼克索將阿龍的蛋拋棄。\n舉止嚴肅但不嚴厲。\n在阿龍去見銀龍後的隔天，費洛登與老婆瑟萊拉被發現死於艾瑞利斯家的畫室。",
+    "descEn": "Al-lon’s biological father, the Crown of Rathanad.\nOrdered Old Nixul to abandan Al-lon’s egg years ago.\nLooks serious but not strict.\nA day after Al-lon met the silver dragon, Vaerodan and his wife, Selyra, was found dead in the studio in the Arylith house.",
     "location": [
       "Rathanad"
     ],
@@ -4033,11 +4038,11 @@
       "Vaelric_Arylith"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你覺得費洛登用他嚴肅的表情，隱藏了很多秘密。\nYou think Vaerodan hides a lot of secrets behind his strict face.",
+      "C1": "向費洛登詢問關於阿龍被棄養的事。\nAsk Vaerodan about the story of Al-lon's abandonment.",
+      "C2": "向費洛登詢問關於銀龍的事。\nAsk Vaerodan about the Silver Dragon.",
+      "R1": "「那是多年前的錯，但我也是逼不得已的。」費洛登小聲說道。\n\"It was a mistake made years ago, but I had no choice.\" Vaerodan whispers.",
+      "R2": "「那傢伙......我們私下再說吧。」費洛登看了看周圍。\n\"That guy...... Let's talk later in private.\" Vaerodan looks around."
     }
   },
   {
@@ -4051,22 +4056,22 @@
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "Kashla的醫生，為匿名之聲工作。\n對Sora從小照顧，但也建議Sora的父母對其進行一些儀式，最終導致Sora的死亡。\n曾向Sora預言會有幾名冒險者會來把他救出來。\n在冒險者們與他相見時，手部似乎有些狀況，與Ron的巫妖之手十分相似。經過Midori的感知，他似乎不是人類，而是名巫妖。",
+    "descZh": "卡什拉的醫生，為匿名之聲工作。\n對索拉從小照顧，但也建議索拉的父母對其進行一些儀式，最終導致索拉的死亡。\n曾向索拉預言會有幾名冒險者會來把他救出來。\n在冒險者們與他相見時，手部似乎有些狀況，與Ron的巫妖之手十分相似。經過Midori的感知，他似乎不是人類，而是名巫妖。",
     "descEn": "The doctor in Kashla, who worked for the Voice of the Anonymous.\nLooked after Sora since Sora was a baby, but also suggested Sora’s parents with some rituals, which led to Sora’s final death.\nHe once told Sora a prophecy that there would be several adventurers who will bring him out.\nAs the adventurers met him, there seemed to be something wrong with his arms, like Ron’s arm. After Midori’s sensing, Dr. Vaxon might not be a human, but a lich.",
     "location": [
       "Kashla"
     ],
     "related": [
-      "dudu",
+      "Dudu",
       "Leslie_Grunfeld",
       "Sora"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你來到瓦克松醫師的診間。\nYou come to Dr. Vaxon's clinic.",
+      "C1": "你W%ARSFFDHd。\nYou $^!TY^%UHDYJ.",
+      "C2": "你^&JETDYKU(。\nYou @W#RFAWR&RHT.",
+      "R1": "「你以為這些選擇是你自己決定的嗎？」\n「這些問題，難道都不是有引導性的問題嗎？」\n「你怎麼不自己想想，除了兩個選項外，還有沒有別的可能性？」\n\"You think these choices are made by yourself?\"\n\"Aren't these all guiding questions?\"\n\"Why don't you stop and think if there's any options outside the two given choices?\"",
+      "R2": "「Rugatha不過是個虛幻的世界，醒醒吧。」\n「這些故事都只是被寫出來的，你很清楚，我也很清楚，所以我們別裝了。」\n「等等你骰出大失敗可別怪我。」\n\"Rugatha is just a fictional world. Wake up.\"\n\"These stories are all made up. You know it, and I know it, so let's just not pretend.\"\n\"Don't blame me if you roll a critical failure later.\""
     }
   },
   {
@@ -4091,11 +4096,11 @@
       "Sora"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看著年幼的瓦萊羅，懷中抱著一個出生不久的孩子。\nYou see the young Valero, holding a baby who was just born in her arms.",
+      "C1": "詢問瓦萊羅這是誰？\nAsk Valero who this is?",
+      "C2": "嘗試把孩子接到你手中，讓瓦萊羅休息。\nTry to take the baby from Valero, so she can rest.",
+      "R1": "「這是我的孩子，塔里。」瓦萊羅說。\n\"This is my baby, Tari.\" Valero says.",
+      "R2": "孩子大哭。瓦萊羅把他從你手中奪了回來。\nThe kid cries. Valero snatch the baby from your hands."
     }
   },
   {
@@ -4121,11 +4126,11 @@
       "Peter"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "「你給我滾出去！」溫德大人抱著昏迷的彼得。「不要讓我再看見你。」\n\"Go away!\" Lord Wind hugs Peter, who is in coma. \"Don't let me see you again.\"",
+      "C1": "嘗試和他說明彼得發生了什麼事。\nTry to explain what happened to Peter to him.",
+      "C2": "默默離開現場。\nLeave the scene silently.",
+      "R1": "溫德大人從背後抽出匕首，直對著你。\nLord Wind takes a dagger from his back, pointing at you.",
+      "R2": "你聽見溫德大人哭喊著彼得的名字。\nYou hear Lord Wind crying out Peter's name."
     }
   },
   {
@@ -4139,8 +4144,8 @@
     ],
     "gender": "female",
     "religion": [],
-    "descZh": "Paladin的生母，也是半身人。居住在麥克嵩。\n大家對她的形容是「傾國傾城」。\n在柏納斯家的晚宴上，和Paladin相認，但是似乎是靠著弗列里爵士的交涉才願意認Paladin。\n在比武大會的災難後，決定和弗列里夫婦一同回到寇林菲爾德居住。\n曾將胸前的別針和髮簪分別遞給Paladin和YHWH作為信物。",
-    "descEn": "The woman who gave birth to Paladin, who lived in Macksohn.\nShe was described as the prettiest of all in Macksohn.\nShe finally admits being Paladin’s mother in the Berners banquet, but mostly due to Syr Flaerry giving up on his title.\nAfter the Macksohn Tournament incident, she decided to go back to Korringfield with the Flaerry couple.\nShe gave Paladin her pin and YHWH her hairpin as gifts.",
+    "descZh": "Paladin的生母，居住在麥克嵩的半身人。\n大家對她的形容是「傾國傾城」。\n在柏納斯家的晚宴上，和Paladin相認，但是似乎是靠著弗列里爵士的交涉才願意認Paladin。\n在比武大會的災難後，決定和弗列里夫婦一同回到寇林菲爾德居住。\n曾將胸前的別針和髮簪分別遞給Paladin和YHWH作為信物。",
+    "descEn": "The woman who gave birth to Paladin, a halfling who lived in Macksohn.\nShe was described as the prettiest of all in Macksohn.\nShe finally admits being Paladin’s mother in the Berners banquet, but mostly due to Syr Flaerry giving up on his title.\nAfter the Macksohn Tournament incident, she decided to go back to Korringfield with the Flaerry couple.\nShe gave Paladin her pin and YHWH her hairpin as gifts.",
     "location": [
       "Macksohn",
       "Korringfield"
@@ -4153,16 +4158,16 @@
       "Syr_Magnus"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見紫羅蘭跟著柏納斯家的人一起出現在晚宴上。他被蓋瑞斯緊緊守護著。\nYou see the Violet enters the banquet with the Berners. She's escorted by Gareth.",
+      "C1": "詢問歐娜・柏納斯紫羅蘭與柏納斯家之間的關係。\nAsk Ona about the relationship between the Violet and the Berners.",
+      "C2": "詢問刀疤臉紫羅蘭與王室之間的關係。\nAsk Scar-Face about the relationship between the Violet and the royal family.",
+      "R1": "「我們都是對國王來說重要的人。」歐娜低調的說。\n\"We're all important figures to the King.\" Says Ona in low profile.",
+      "R2": "「國王十分器重紫羅蘭，他的地位和大臣一樣高。」刀疤臉說。\n\"The King values the Violet a lot. She's about as important as the Minister.\" Says Scar-Face."
     }
   },
   {
     "id": "Yuki",
-    "name": "Yuki",
+    "name": "Yuki小雪",
     "url": "npc/npc_page/pages/Yuki.html",
     "image": "individual_pics/Yuki.jpeg",
     "status": "alive",
@@ -4173,25 +4178,26 @@
     "religion": [
       "Laxthos"
     ],
-    "descZh": "對Midori而言非常重要的人，多次以幻影出現在Midori的腦中，也曾在妖精荒野時被Elby以幻象呈現在大家面前。\n過去似乎曾被關押在一個伸手不見五指的地方，現在的動向不明。",
-    "descEn": "A very important figure to Midori, who showed up in Midori’s head a lot of times, and also projected by Elby in the Feywild.\nShe was once locked up in a total dark place, and there had been no clue where she is.",
+    "descZh": "對Midori而言非常重要的人，多次以幻影出現在Midori的腦中，也曾在妖精荒野時被艾爾比以幻象呈現在大家面前。\n過去似乎曾被關押在一個伸手不見五指的地方，現在的動向不明。\n在聖拉雅米島的洞穴，被發現操控著拉茲特獸攻擊老鼠人。",
+    "descEn": "A very important figure to Midori, who showed up in Midori’s head a lot of times, and also projected by Elby in the Feywild.\nShe was once locked up in a total dark place, and there had been no clue where she is.\nShe was found controlling a Laztek, attacking the ratfolks in a cave on St. Rayami Island.",
     "location": [
-      "Fanaur"
+      "Fanaur",
+      "St. Rayami Island"
     ],
     "related": [
       "Iochi_Mari"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見Midori對著一個幻象直盯著出神。\nYou see Midori staring at an illusion, mesmerized.",
+      "C1": "詢問Midori那個人是誰？\nAsk Midori who is the person?",
+      "C2": "詢問Midori他生命中是否有很重要的人？\nAsk Midori if there is someone important in her life?",
+      "R1": "「一個我很珍惜的人。但他消失很久了。」Midori說。\n\"Someone I cherish. But she's been gone for long.\" Midori says.",
+      "R2": "「你們對我來說都很重要啊。」Midori說。\n\"You're all important to me.\" Midori says."
     }
   },
   {
     "id": "Zach",
-    "name": "Zach",
+    "name": "Zach札克",
     "url": "npc/npc_page/pages/Zach.html",
     "image": "individual_pics/Zach.jpeg",
     "status": "dead",
@@ -4200,7 +4206,7 @@
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "帶領冒險者前往礦脈的矮人，愛喝啤酒。\n有一隻名為BoBo-V的機器人夥伴。\n在礦脈因掉入陷阱而死亡。",
+    "descZh": "帶領冒險者前往礦脈的矮人，愛喝啤酒。\n有一隻名為啵啵V的機器人夥伴。\n在礦脈因掉入陷阱而死亡。",
     "descEn": "The dwarf who brought the adventurers to the mine, who lived drinking beer.\nHe had a robot companion called BoBo-V.\nZach fell into a trap and died in the mine.",
     "location": [
       "Orun"
@@ -4209,16 +4215,16 @@
       "BoBoVBoBoW"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見札克走在礦脈中，搖搖晃晃。\nYou see Zach walking in the mine, wobbling.",
+      "C1": "要札克休息一下，清醒一點再繼續往前走。\nTell Zach to take a break, and continue after he's sober.",
+      "C2": "隨時注意札克的狀況，讓他繼續。\nWatch out for Zach, and let him continue on.",
+      "R1": "「我沒事！」札克拍拍胸脯。「這裡我老熟了！」\n\"I'm alright!\" Zach pats his chest. \"I'm familiar with this hell of a place!\"",
+      "R2": "當你注意到時已經來不及了。札克踩到了陷阱。\nIt's too late when you notice it. Zach steps on a trap."
     }
   },
   {
     "id": "Zek",
-    "name": "Zek",
+    "name": "Zek澤克",
     "url": "npc/npc_page/pages/Zek.html",
     "image": "individual_pics/Zek.jpg",
     "status": "alive",
@@ -4229,28 +4235,29 @@
     "religion": [
       "Keinra"
     ],
-    "descZh": "狂暴戰士幫位於Lark渡口的首領。\n是一名有一頭紫髮的壯碩男子。\n委託冒險者去聖拉雅米島上尋找失蹤的狂暴戰士幫成員。\n並舉行了狂暴之儀測試Beau以及YHWH是否有加入狂暴戰士幫的資質。",
+    "descZh": "狂暴戰士幫位於拉克渡口的首領。\n是一名有一頭紫髮的壯碩男子。\n委託冒險者去聖拉雅米島上尋找失蹤的狂暴戰士幫成員。\n並舉行了狂暴之儀測試波以及YHWH是否有加入狂暴戰士幫的資質。",
     "descEn": "The leader of the Raging Warriors at Lark Crossing.\nHe is a burly man with purple hair.\nHe commissioned the adventurers to search St. Rayami Island for missing members of the Raging Warriors.\nHe also conducted the Rite of Fury to test whether Beau and YHWH were qualified to join the Raging Warriors.",
     "location": [
       "Lark"
     ],
     "related": [
       "Beau",
-      "Essis"
+      "Essis",
+      "Sigom_III"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "「關於狂暴戰士幫，還有什麼問題嗎？」澤克看著大家。\n\"Are there any more question about the Raging Warriors?\" Zek looks at everyone.",
+      "C1": "詢問關於狂暴戰士幫的歷史。\nAsk about the history of the Raging Warriors.",
+      "C2": "詢問自己在狂暴戰士幫可以得到什麼鬥名。\nAsk what title you can get in the Raging Warriors.",
+      "R1": "「這一切都得從希崗大人開始說起。」澤克坐了下來。\n\"It all starts with Lord Sigom.\" Zek sits down.",
+      "R2": "「你？我想想......」澤克停了一下。「大概是『說說傻話』吧！」\n\"You? Let me think......\" Zek paused. \"I'd say something like 'Nonsense Speaker', I guess.\""
     }
   },
   {
-    "id": "manbao",
-    "name": "慢爆",
-    "url": "npc/npc_page/pages/慢爆.html",
-    "image": "individual_pics/慢爆.png",
+    "id": "Manbao",
+    "name": "Manbao慢爆",
+    "url": "npc/npc_page/pages/Manbao.html",
+    "image": "individual_pics/Manbao.png",
     "status": "alive",
     "race": [
       "Laztek"
@@ -4258,7 +4265,7 @@
     "gender": "neutral",
     "religion": [],
     "descZh": "Samael於麥克嵩地下城撿到的拉茲特獸幼獸，行動緩慢，聲音低沉。\n被Samael當成酷爆的弟弟養。\n食性未知。",
-    "descEn": "A Laztek pup that Samael found in the Macksohn Dungeon.\nIt moves slowly and has a deep, rumbling voice.\nSamael keeps it as 酷爆's little brother.\nIts diet is unknown.",
+    "descEn": "A Laztek pup that Samael found in the Macksohn Dungeon.\nIt moves slowly and has a deep, rumbling voice.\nSamael keeps it as Kubao's little brother.\nIts diet is unknown.",
     "location": [
       "Macksohn",
       "Great Citadel",
@@ -4267,19 +4274,19 @@
       "Fanaur"
     ],
     "related": [
-      "kubao"
+      "Kubao"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見慢爆停在Ron手上休息。\nYou see Manbao resting on Ron's hand.",
+      "C1": "把慢爆挪下來。\nMove Manbao from Ron's hand.",
+      "C2": "問Ron這是怎麼回事？\nAsk Ron what this is about.",
+      "R1": "你發現挪下來後，慢爆又爬回去了。\nYou find Manbao crawls back after you move it away.",
+      "R2": "「啊我怎麼會知道？」Ron聳聳肩。「他就喜歡啊。」\n\"How would I know?\" Ron shrugs. \"He just likes it.\""
     }
   },
   {
-    "id": "dudu",
-    "name": "嘟嘟",
+    "id": "Dudu",
+    "name": "Dudu嘟嘟",
     "url": "npc/npc_page/pages/嘟嘟.html",
     "image": "individual_pics/嘟嘟.jpeg",
     "status": "dead",
@@ -4288,7 +4295,7 @@
     ],
     "gender": "neutral",
     "religion": [],
-    "descZh": "Sora家養的黃金獵犬，十分活潑，受到YHWH的喜愛。\n在一次Dr. Vaxon建議的儀式中，被開腸剖肚，拿來獻祭。",
+    "descZh": "索拉家養的黃金獵犬，十分活潑，受到YHWH的喜愛。\n在一次瓦克松建議的儀式中，被開腸剖肚，拿來獻祭。",
     "descEn": "The golden retriever that Sora owned, it was lively and loved by YHWH.\nIn a ritual hold by Dr. Vaxon, It was killed and slit through its body as a sacrifice.",
     "location": [
       "Kashla"
@@ -4298,25 +4305,25 @@
       "Sora"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見嘟嘟的屍體躺在你們面前。\nYou see the body of Dudu in front of all of you.",
+      "C1": "遮住索拉的眼睛。\nCover Sora's eyes.",
+      "C2": "看看索拉有什麼反應。\nObserve what reaction Sora has.",
+      "R1": "「沒事......我知道發生什麼事了。」索拉流著淚。\n\"It's alright...... I know what happened.\" Tears run out of Sora's eyes.",
+      "R2": "「嘟嘟......為什麼......」索拉跪了下來。\n\"Dudu...... Why......\" Sora kneels down."
     }
   },
   {
-    "id": "kubao",
-    "name": "酷爆",
-    "url": "npc/npc_page/pages/酷爆.html",
-    "image": "individual_pics/酷爆.jpeg",
+    "id": "Kubao",
+    "name": "Kubao酷爆",
+    "url": "npc/npc_page/pages/Kubao.html",
+    "image": "individual_pics/Kubao.jpeg",
     "status": "alive",
     "race": [
       "Wolf"
     ],
     "gender": "neutral",
     "religion": [],
-    "descZh": "Samael於嚎叫森林守夜時撿起的幼狼，隨著台北市議員們一起行動。\n在地下城時，透過Uko告知大家他的本名為Darren，不過願意接受酷爆為他的名字。",
+    "descZh": "Samael於嚎叫森林守夜時撿起的幼狼，隨著台北市議員們一起行動。\n在地下城時，透過Uko告知大家他的本名為戴倫，不過願意接受酷爆為他的名字。",
     "descEn": "A wolf pup that Samael found at the Howling Forest when she took the night shift.\n酷爆 adventured with the party.\nIn the dungeon, it told Uko that its original name was Darren, but was fine with 酷爆 being its name.",
     "location": [
       "Howling Forest",
@@ -4331,21 +4338,21 @@
       "Fanaur"
     ],
     "related": [
-      "manbao"
+      "Manbao"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "餵食酷爆的時間到了。你身上有很多種可以餵他的食物。\nIt's time to feed Kubao. You have a lot of choices of food to feed him.",
+      "C1": "拿出你的乾糧，分他一大塊。\nTake out your rations, and give him a big piece.",
+      "C2": "拿出你收藏的肉乾，拔一塊給他。\nTake out your collection of jerky, and give him a piece.",
+      "R1": "酷爆小口小口地吃，吃一半就不吃了。\nKubao takes small bites, and stops eating halfway through.",
+      "R2": "酷爆大口把肉乾吃掉，討著下一塊吃。\nKubao devours a large piece of jerkey, looking forward to a new one."
     }
   },
   {
-    "id": "shutianpeitela",
-    "name": "鼠田佩特拉",
-    "url": "npc/npc_page/pages/鼠田佩特拉.html",
-    "image": "individual_pics/鼠田佩特拉.png",
+    "id": "Petra",
+    "name": "Petra佩特拉",
+    "url": "npc/npc_page/pages/Petra.html",
+    "image": "individual_pics/Petra.png",
     "status": "alive",
     "race": [
       "Ratfolk"
@@ -4357,23 +4364,20 @@
     "location": [
       "St. Rayami Island"
     ],
-    "related": [
-      "choupi",
-      "zangya"
-    ],
+    "related": [],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見一隻鼠人冒險者，正在幫助拯救其他鼠人。\nYou see a ratfolk adventurer, saving the other ratfolks.",
+      "C1": "你上前和他致意。\nYou walk up to her and pay your tribute.",
+      "C2": "你邀請他加入你的團隊。\nYou ask her to join your adventuring group.",
+      "R1": "佩特拉和你握手，並表示救人要緊。\nPetra shakes your hand, and say that saving others is priority.",
+      "R2": "佩特拉感謝你的邀請，但他表示自己有更重要的事項。\nPetra thanks you for inviting, but says she has other priorities."
     }
   },
   {
-    "id": "yi",
-    "name": "伊",
-    "url": "npc/npc_page/pages/伊.html",
-    "image": "individual_pics/伊.jpg",
+    "id": "Yi",
+    "name": "Yi伊",
+    "url": "npc/npc_page/pages/Yi.html",
+    "image": "individual_pics/Yi.jpg",
     "status": "unknown",
     "race": [
       "Human"
@@ -4390,25 +4394,25 @@
       "Marcus_Jens"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你看見伊躡手躡腳地在馬克斯家附近逡巡。\nYou see Yi sneaking around Marcus's house.",
+      "C1": "你上前詢問他在幹麻。\nYou walk up to him, asking what he's doing.",
+      "C2": "你登門拜訪馬克斯，並告訴他你看到的事。\nYou visit Marcus, and tell him what you see.",
+      "R1": "「我不確定M伯爵有沒有在家......」伊尷尬的說道。\n\"I'm not sure if Count M is at home or not......\" Yi says awkwardly.",
+      "R2": "「噢，你說的是我的線人。」馬可斯笑了笑。「他常常這樣子，但他是個好孩子。」\n\"Oh, you're talking about my informant.\" Marcus laughs. \"He's often like that, but he's a good kid.\""
     }
   },
   {
-    "id": "yongge",
-    "name": "勇哥",
-    "url": "npc/npc_page/pages/勇哥.html",
-    "image": "individual_pics/勇哥.jpeg",
+    "id": "Yung",
+    "name": "Yung勇哥",
+    "url": "npc/npc_page/pages/Yung.html",
+    "image": "individual_pics/Yung.jpeg",
     "status": "alive",
     "race": [
       "Horse"
     ],
     "gender": "male",
     "religion": [],
-    "descZh": "Syr Magnus給Lemmy騎去麥克嵩的馬。\n年紀較大，跑的速度比較慢，但是依舊穩健且可靠。",
+    "descZh": "馬格努斯爵士給Lemmy騎去麥克嵩的馬。\n年紀較大，跑的速度比較慢，但是依舊穩健且可靠。",
     "descEn": "The horse that Syr Magnus provided Lemmy to ride to Macksohn.\nHe was old and slow, but still steady and reliable.",
     "location": [
       "Korringfield",
@@ -4419,11 +4423,11 @@
       "Syr_Magnus"
     ],
     "qa": {
-      "Q": "",
-      "C1": "",
-      "C2": "",
-      "R1": "",
-      "R2": ""
+      "Q": "你發現在團隊加入斯比迪後，勇哥好像更沒自信了。\nYou find that after Speedy joins the group, Yung seems less confident.",
+      "C1": "你利用餵食的機會，多餵勇哥一些稻草。\nYou take the opportunity to feed Yung more straw.",
+      "C2": "你故意當著勇哥的面，說著「那個斯比迪也沒什麼了不起嘛」。\nYou intentionally say \"that Speedy is nothing special\" in front of Yung.",
+      "R1": "勇哥慢慢吃，還是把多給的稻草也吃完了。\nYung takes it slow, but still finish the extra straw.",
+      "R2": "你似乎聽見勇哥嘆氣。但他只是隻馬，不會嘆氣的吧？\nYou seem to hear Yung sigh. But he's just a horse, he wouldn't sigh, right?"
     }
   }
 ]
