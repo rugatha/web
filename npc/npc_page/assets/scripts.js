@@ -9,6 +9,32 @@ const elements = {
 };
 
 let charactersCache = null;
+let currentNpc = null;
+const i18n = {
+  introTitle: { zh: "介紹", en: "Introduction" },
+  locationsTitle: { zh: "地點", en: "Locations" },
+  relatedTitle: { zh: "相關NPC", en: "Related NPCs" },
+  appearancesTitle: { zh: "出現章節", en: "Appeared Chapters" },
+  locationEmpty: { zh: "尚未提供地點", en: "Location unavailable" },
+  relatedEmpty: { zh: "無相關 NPC", en: "No related NPCs" },
+  appearancesEmpty: { zh: "尚未記錄出現章節", en: "No appearances logged" },
+  fateTitle: { zh: "命運的抉擇", en: "A Choice of Fate" }
+};
+const languageState = {
+  value: "zh",
+  wrap: null
+};
+const violentState = {
+  enabled: false
+};
+const violentOverrides = {
+  Dr_Vaxon: {
+    nameEn: "Vaxon the Lich",
+    nameZh: "巫妖瓦克松",
+    descZh: "巫妖巫妖巫妖，巫妖巫妖巫妖巫。\n妖巫妖巫妖巫妖，巫妖巫妖巫妖巫妖巫妖巫妖巫妖巫妖巫，妖巫妖巫妖巫妖巫妖巫。\n妖巫妖巫妖巫妖巫妖巫妖巫妖巫妖巫妖巫妖巫。\n妖巫妖巫妖巫妖巫妖巫，妖巫妖巫妖巫妖巫，妖Lic巫妖巫妖巫妖巫妖巫。妖巫hLichL妖巫妖巫，妖巫妖巫妖巫妖，巫妖巫妖巫。",
+    descEn: "Lic hLichL ic hLichL, ich LichLi chL ich LichL ic hLi chLichLic. hLichL ichLi chLi chLic hLic hLi c hLic, hLi chLi chLichLic hLic’h LichLic hLic hLic hLichLi, chLic hLi ch Lich’L ichLi chLic. hL ichL ichL ichL i chLichLi chLi chLic hLich Li chLichL ichLichLich Lic hLic hLich Lic hLi. ch Lic hLichLichLi chL ich, LichL ichLic hL ic hLichLich LichL ichL ich Lich, Lich Lic’h Lic. hLich LichLi’c hLichLi, ch. LichL ichLi chL ic h LichL, ich L ichL."
+  }
+};
 
 const genderMap = {
   male: { icon: "♂", label: "Male" },
@@ -23,6 +49,153 @@ const statusMap = {
   "historical figure": { icon: "⌛", label: "Historical figure" },
   other: { icon: "?", label: "Unknown" }
 };
+
+function getNameCandidates(record) {
+  if (!record) return [];
+  return [record.name, record.nameEn, record.nameZh].filter((value) => typeof value === "string" && value.trim());
+}
+
+function getDisplayName(record) {
+  if (!record) return "";
+  const preferred =
+    languageState.value === "en"
+      ? (record.nameEn || "").trim()
+      : (record.nameZh || "").trim();
+  if (preferred) return preferred;
+  return (record.name || record.nameEn || record.nameZh || "").trim();
+}
+
+function updateTitle(npc) {
+  const displayName = getDisplayName(npc) || "NPC";
+  if (elements.name) elements.name.textContent = displayName;
+  if (elements.portrait) elements.portrait.alt = displayName || "NPC portrait";
+  document.title = displayName ? `${displayName} | NPC` : "NPC";
+}
+
+function applyViolentOverride(npc) {
+  if (!npc) return npc;
+  const qaRoot = window.qaRoot;
+  const qaLocked = qaRoot && (qaRoot.dataset.locked === "true" || qaRoot.classList.contains("is-revealed"));
+  if (qaLocked && (npc.id || "").toLowerCase() === "dr_vaxon") {
+    violentState.enabled = true;
+  }
+  if (!violentState.enabled) return npc;
+  if ((npc.id || "").toLowerCase() !== "dr_vaxon") return npc;
+  const override = violentOverrides.Dr_Vaxon || {};
+  return {
+    ...npc,
+    nameEn: npc.violentNameEn || override.nameEn || npc.nameEn || npc.name,
+    nameZh: npc.violentNameZh || override.nameZh || npc.nameZh || npc.name,
+    descEn: npc.violentDescEn || override.descEn || npc.descEn,
+    descZh: npc.violentDescZh || override.descZh || npc.descZh,
+    image: resolveImage("individual_pics/Dr. Vaxon Lich.png")
+  };
+}
+
+function updateSectionTitles() {
+  const lang = languageState.value === "en" ? "en" : "zh";
+
+  const intro = document.querySelector(".intro-title");
+  if (intro) intro.textContent = i18n.introTitle[lang];
+
+  const locTitle = document.querySelector(".location-title");
+  if (locTitle) locTitle.textContent = i18n.locationsTitle[lang];
+
+  const relatedTitle = document.querySelector(".related .section-title");
+  if (relatedTitle) {
+    relatedTitle.textContent = i18n.relatedTitle[lang];
+  }
+
+  const appearanceTitle = document.querySelector(".appearances .section-title");
+  if (appearanceTitle) {
+    appearanceTitle.textContent = i18n.appearancesTitle[lang];
+  }
+
+  const appearanceEmpty = document.querySelector(".appearances .location-empty");
+  if (appearanceEmpty) {
+    appearanceEmpty.textContent = i18n.appearancesEmpty[lang];
+  }
+
+  const locationEmpty = elements.locations?.querySelector(".location-empty");
+  if (locationEmpty) {
+    locationEmpty.textContent = i18n.locationEmpty[lang];
+  }
+
+  const relatedEmpty = document.querySelector(".related .location-empty");
+  if (relatedEmpty) {
+    relatedEmpty.textContent = i18n.relatedEmpty[lang];
+  }
+
+  const fateTitle = document.querySelector(".qa .section-title--center");
+  if (fateTitle) {
+    fateTitle.textContent = i18n.fateTitle[lang];
+  }
+}
+
+function getPreferredLanguage() {
+  try {
+    const stored = localStorage.getItem("npc-lang");
+    if (stored === "zh" || stored === "en") return stored;
+  } catch (_) {
+    // ignore storage access errors
+  }
+  const docLang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
+  return docLang.startsWith("en") ? "en" : "zh";
+}
+
+function updateLanguageToggle() {
+  if (!languageState.wrap) return;
+  const buttons = languageState.wrap.querySelectorAll(".language-toggle button");
+  buttons.forEach((button) => {
+    const isActive = button.dataset.lang === languageState.value;
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+}
+
+function applyLanguage(lang) {
+  const next = lang === "en" ? "en" : "zh";
+  languageState.value = next;
+  document.documentElement.setAttribute("data-lang", next);
+  updateLanguageToggle();
+  updateSectionTitles();
+  if (currentNpc) render(currentNpc);
+  if (window.qaRoot && window.qaRoot.dataset.qaSrc) {
+    // Reload QA text when language changes.
+    window.dispatchEvent(new CustomEvent("qa:reload"));
+  }
+  try {
+    localStorage.setItem("npc-lang", next);
+  } catch (_) {
+    // ignore storage access errors
+  }
+}
+
+function ensureLanguageToggle() {
+  const row = document.querySelector(".title-row");
+  if (!row) return;
+  let wrap = row.querySelector(".language-toggle");
+  if (!wrap) {
+    wrap = document.createElement("div");
+    wrap.className = "language-toggle";
+    wrap.setAttribute("role", "group");
+    wrap.setAttribute("aria-label", "Language");
+
+    const makeButton = (label, lang) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.dataset.lang = lang;
+      button.textContent = label;
+      button.addEventListener("click", () => applyLanguage(lang));
+      return button;
+    };
+
+    wrap.appendChild(makeButton("中文", "zh"));
+    wrap.appendChild(makeButton("English", "en"));
+    row.appendChild(wrap);
+  }
+  languageState.wrap = wrap;
+  updateLanguageToggle();
+}
 
 function loadInlineData() {
   const el = document.getElementById("npc-data");
@@ -162,7 +335,7 @@ function resolveChapterUrl(chapter, arc) {
 
 function buildAppearances(mapping, graphData, npc) {
   if (!npc) return [];
-  const targetKey = normalize(npc.id || npc.name);
+  const targetKey = normalize(npc.id || npc.nameEn || npc.nameZh || npc.name);
   if (!targetKey) return [];
   const entries = Object.entries(mapping || {}).filter(
     ([, list]) => Array.isArray(list) && list.some((id) => normalize(id) === targetKey)
@@ -282,13 +455,13 @@ async function renderAppearances(npc) {
   section.className = "appearances";
   const title = document.createElement("h2");
   title.className = "section-title";
-  title.textContent = "出現章節 Appeared Chapters";
+  title.textContent = i18n.appearancesTitle[languageState.value];
   section.appendChild(title);
 
   if (!appearances.length) {
     const empty = document.createElement("span");
     empty.className = "location-empty";
-    empty.textContent = "尚未記錄出現章節 / No appearances logged";
+    empty.textContent = i18n.appearancesEmpty[languageState.value];
     section.appendChild(empty);
     elements.content.appendChild(section);
     return;
@@ -431,13 +604,18 @@ function resolveImage(image) {
   return /^https?:|^\//.test(image) ? image : `../../${image}`;
 }
 
-function findCharacter(chars, name, id, slug) {
-  const targets = new Set([normalize(id), normalize(name), normalize(slug)]);
+function findCharacter(chars, npc, slug) {
+  const targets = new Set([normalize(slug)]);
+  if (npc && npc.id) targets.add(normalize(npc.id));
+  getNameCandidates(npc).forEach((value) => targets.add(normalize(value)));
   return chars.find((c) => {
-    const idKey = normalize(c.id || c.name);
+    const idKey = normalize(c.id || c.nameEn || c.nameZh || c.name);
     const slugKey = normalizeSlug(c.url);
+    const nameKeys = getNameCandidates(c).map((value) => normalize(value));
     for (const target of targets) {
-      if (target && (target === idKey || target === slugKey)) return true;
+      if (!target) continue;
+      if (target === idKey || target === slugKey) return true;
+      if (nameKeys.includes(target)) return true;
     }
     return false;
   });
@@ -470,21 +648,23 @@ function resolveRelated(chars, relatedIds = []) {
   if (!related.length) return [];
   const byId = new Map();
   chars.forEach((c) => {
-    const key = normalize(c.id || c.name);
+    const key = normalize(c.id || c.nameEn || c.nameZh || c.name);
     if (key) byId.set(key, c);
   });
   const result = [];
   related.forEach((rid) => {
     const key = normalize(rid);
     const match = key ? byId.get(key) : null;
-    if (match && match.name) {
+    if (match) {
       result.push({
         name: match.name,
+        nameEn: match.nameEn,
+        nameZh: match.nameZh,
         url: normalizeRelatedUrl(match.url),
         image: resolveImage(match.image)
       });
     } else {
-      result.push({ name: rid, url: "#" });
+      result.push({ name: rid, nameEn: rid, nameZh: rid, url: "#" });
       console.warn(`Related NPC not found: ${rid}`);
     }
   });
@@ -509,42 +689,53 @@ function ensurePrettyUrl(id) {
 
 function render(npc) {
   ensureContentSections();
-  elements.name.textContent = npc.name || "NPC";
-  elements.portrait.src = npc.image || "";
-  elements.portrait.alt = npc.name || "NPC portrait";
-  setDescription(elements.zh, npc.descZh, "（尚無中文介紹）");
-  setDescription(elements.en, npc.descEn, "(Description coming soon)");
-  renderGender(npc.gender);
-  renderStatus(npc.status);
-  renderLocationList(npc.location);
-  renderReligion(npc.religion);
-  document.title = npc.name ? `${npc.name} | NPC` : "NPC";
-  insertRelated(npc.related || []);
+  const effectiveNpc = applyViolentOverride(npc);
+  updateTitle(effectiveNpc);
+  elements.portrait.src = effectiveNpc.image || "";
+  setDescription(elements.zh, effectiveNpc.descZh, "（尚無中文介紹）");
+  setDescription(elements.en, effectiveNpc.descEn, "(Description coming soon)");
+  renderGender(effectiveNpc.gender);
+  renderStatus(effectiveNpc.status);
+  renderLocationList(effectiveNpc);
+  renderReligion(effectiveNpc.religion);
+  insertRelated(effectiveNpc.related || []);
 }
 
 (async function init() {
+  applyLanguage(getPreferredLanguage());
+  ensureLanguageToggle();
   const npcMap = loadInlineData();
   const inlineNpc =
     npcMap[npcId] ||
-    Object.values(npcMap).find((entry) => normalize(entry.id || entry.name) === normalize(npcId)) ||
+    Object.values(npcMap).find((entry) =>
+      normalize(entry.id || entry.nameEn || entry.nameZh || entry.name) === normalize(npcId)
+    ) ||
     Object.values(npcMap)[0];
 
   const baseNpc = inlineNpc || {
     id: npcId || "npc",
     name: inlineNpc?.name || npcId || "NPC",
+    nameEn: inlineNpc?.nameEn || "",
+    nameZh: inlineNpc?.nameZh || "",
     image: "",
     gender: inlineNpc?.gender || "neutral",
     location: inlineNpc?.location || [],
+    locationEn: inlineNpc?.locationEn || [],
+    locationZh: inlineNpc?.locationZh || [],
+    religionEn: inlineNpc?.religionEn || [],
+    religionZh: inlineNpc?.religionZh || [],
     descZh: "找不到該 NPC。",
     descEn: "NPC not found."
   };
 
   const chars = await loadCharacters();
-  const record = findCharacter(chars, baseNpc.name, baseNpc.id, getSlugId());
+  const record = findCharacter(chars, baseNpc, getSlugId());
   const mergedNpc = { ...baseNpc };
   if (record) {
     mergedNpc.id = record.id || mergedNpc.id;
     mergedNpc.name = record.name || mergedNpc.name;
+    mergedNpc.nameEn = record.nameEn || mergedNpc.nameEn;
+    mergedNpc.nameZh = record.nameZh || mergedNpc.nameZh;
     mergedNpc.image = resolveImage(record.image) || mergedNpc.image;
     mergedNpc.gender = record.gender || mergedNpc.gender;
     mergedNpc.status = record.status || mergedNpc.status;
@@ -556,18 +747,32 @@ function render(npc) {
     } else {
       const fallbackRelated = toList(record.related || mergedNpc.related).map((rid) => ({
         name: rid,
+        nameEn: rid,
+        nameZh: rid,
         url: normalizeRelatedUrl(`npc_page/pages/${rid}.html`)
       }));
       mergedNpc.related = fallbackRelated;
     }
     mergedNpc.religion = record.religion || mergedNpc.religion;
+    mergedNpc.religionEn = record.religionEn || mergedNpc.religionEn;
+    mergedNpc.religionZh = record.religionZh || mergedNpc.religionZh;
     mergedNpc.location = record.location || mergedNpc.location;
+    mergedNpc.locationEn = record.locationEn || mergedNpc.locationEn;
+    mergedNpc.locationZh = record.locationZh || mergedNpc.locationZh;
   }
 
-  ensurePrettyUrl(mergedNpc.id || mergedNpc.name);
+  ensurePrettyUrl(mergedNpc.id || mergedNpc.nameEn || mergedNpc.nameZh || mergedNpc.name);
+  currentNpc = mergedNpc;
   render(mergedNpc);
   await renderAppearances(mergedNpc);
 })();
+
+window.addEventListener("qa:violent", (event) => {
+  const enabled = Boolean(event && event.detail && event.detail.enabled);
+  violentState.enabled = enabled;
+  document.documentElement.dataset.qaViolent = enabled ? "true" : "false";
+  if (currentNpc) render(currentNpc);
+});
 
 function setDescription(el, text, fallback) {
   if (!el) return;
@@ -609,8 +814,10 @@ function renderGender(gender) {
   badge.setAttribute("aria-label", `Gender: ${info.label}`);
 }
 
-function parseReligionEntries(religion) {
-  const entries = toList(religion);
+function parseReligionEntriesFromLists(religionZh, religionEn, religionLegacy) {
+  const lang = languageState.value;
+  const list = lang === "zh" ? toList(religionZh) : toList(religionEn);
+  const entries = list.length ? list : toList(religionLegacy);
   if (!entries.length) return [];
   return entries
     .map((label) => {
@@ -629,10 +836,14 @@ function parseReligionEntries(religion) {
     .filter(Boolean);
 }
 
-function renderReligion(religion) {
+function renderReligion(npc) {
   const meta = getMetaContainer();
   if (!meta) return;
-  const entries = parseReligionEntries(religion);
+  const entries = parseReligionEntriesFromLists(
+    npc?.religionZh,
+    npc?.religionEn,
+    npc?.religion
+  );
   if (!entries.length) return;
 
   entries.forEach((entry) => {
@@ -674,11 +885,14 @@ function getMetaContainer() {
 function renderLocationList(locations) {
   if (!elements.locations) return;
   elements.locations.innerHTML = "";
-  const items = Array.isArray(locations) ? locations.filter(Boolean) : [];
+  const lang = languageState.value;
+  const list = lang === "zh" ? toList(locations?.locationZh) : toList(locations?.locationEn);
+  const fallback = list.length ? list : toList(locations?.location);
+  const items = fallback.filter(Boolean);
   if (!items.length) {
     const empty = document.createElement("span");
     empty.className = "location-empty";
-    empty.textContent = "尚未提供地點 / Location unavailable";
+    empty.textContent = i18n.locationEmpty[languageState.value];
     elements.locations.appendChild(empty);
     return;
   }
@@ -697,14 +911,14 @@ function ensureContentSections() {
   if (elements.zh && !content.querySelector(".intro-title")) {
     const intro = document.createElement("h2");
     intro.className = "section-title intro-title";
-    intro.textContent = "介紹 Introduction";
+    intro.textContent = i18n.introTitle[languageState.value];
     content.insertBefore(intro, elements.zh);
   }
 
   if (!elements.locations) {
     const locTitle = document.createElement("h2");
     locTitle.className = "section-title location-title";
-    locTitle.textContent = "地點 Locations";
+    locTitle.textContent = i18n.locationsTitle[languageState.value];
 
     const locWrap = document.createElement("div");
     locWrap.id = "npc-locations";
@@ -735,7 +949,7 @@ function insertRelated(items) {
   wrap.className = "related";
   const title = document.createElement("h2");
   title.className = "section-title";
-  title.textContent = "相關NPC Related NPCs";
+  title.textContent = i18n.relatedTitle[languageState.value];
   wrap.appendChild(title);
 
   if (items.length) {
@@ -749,17 +963,18 @@ function insertRelated(items) {
         card.target = "_self";
       }
 
+      const displayName = getDisplayName(item) || "NPC";
       if (item.image) {
         const img = document.createElement("img");
         img.className = "related-card__img";
         img.src = item.image;
-        img.alt = item.name || "NPC portrait";
+        img.alt = displayName || "NPC portrait";
         card.appendChild(img);
       }
 
       const name = document.createElement("div");
       name.className = "related-card__name";
-      name.textContent = item.name || "NPC";
+      name.textContent = displayName;
       card.appendChild(name);
 
       list.appendChild(card);
@@ -768,7 +983,7 @@ function insertRelated(items) {
   } else {
     const empty = document.createElement("span");
     empty.className = "location-empty";
-    empty.textContent = "無相關 NPC / No related NPCs";
+    empty.textContent = i18n.relatedEmpty[languageState.value];
     wrap.appendChild(empty);
   }
 

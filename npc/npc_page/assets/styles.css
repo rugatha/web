@@ -6,7 +6,10 @@
   --accent: #7bdcb5;
   --radius: 18px;
   --shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --fate-title-font: "Fraunces", "Times New Roman", serif;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&display=swap");
 
 * { box-sizing: border-box; }
 
@@ -45,6 +48,7 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 24px;
+  position: relative;
 }
 
 .title-row {
@@ -55,6 +59,43 @@ body {
   margin-bottom: 16px;
   text-align: center;
   flex-wrap: wrap;
+}
+
+.language-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.language-toggle button {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+}
+
+.language-toggle button[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--text);
+}
+
+.language-toggle button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
 }
 
 h1 {
@@ -283,6 +324,11 @@ h2 {
   font-size: 18px;
 }
 
+html[data-lang="zh"] #npc-desc-en,
+html[data-lang="en"] #npc-desc-zh {
+  display: none;
+}
+
 .actions {
   margin-top: 18px;
   display: flex;
@@ -476,6 +522,13 @@ code {
   margin-bottom: 18px;
 }
 
+.qa--fate .section-title--center {
+  font-family: var(--fate-title-font);
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .qa--fate .qa-question {
   padding-bottom: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
@@ -500,6 +553,20 @@ code {
 .qa--fate .qa-result {
   background: rgba(5, 10, 14, 0.5);
   border-color: rgba(255, 255, 255, 0.16);
+}
+
+.qa--fate.qa--violent {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(248, 113, 113, 0.22), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(239, 68, 68, 0.22), transparent 50%),
+    radial-gradient(circle at 30% 85%, rgba(185, 28, 28, 0.2), transparent 45%),
+    linear-gradient(140deg, rgba(36, 6, 6, 0.92), rgba(68, 18, 20, 0.88));
+  border-color: rgba(248, 113, 113, 0.4);
+}
+
+.qa--fate.qa--violent .section-title {
+  color: #ffe4e6;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
 }
 
 .qa-question {
@@ -562,6 +629,9 @@ code {
   color: var(--muted);
   opacity: 0;
   transition: opacity 160ms ease;
+  grid-column: 2;
+  justify-self: end;
+  text-align: right;
 }
 
 .qa.show-stats .qa-choice-meta {
@@ -579,6 +649,18 @@ code {
 .qa-choice[aria-pressed="true"] {
   border-color: rgba(123, 220, 181, 0.7);
   background: rgba(123, 220, 181, 0.14);
+}
+
+.qa[data-locked="true"] .qa-choice {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.qa[data-locked="true"] .qa-choice:hover,
+.qa[data-locked="true"] .qa-choice:focus-visible {
+  transform: none;
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .qa-choice-text {

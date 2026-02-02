@@ -370,8 +370,14 @@
       return new URL(value, npcBase).href;
     };
 
+    const getNpcName = (meta) => {
+      if (!meta) return "NPC";
+      return meta.nameEn || meta.nameZh || meta.name || meta.id || "NPC";
+    };
+
     npcIds.forEach((id) => {
-      const meta = charById[id] || { id, name: id, url: null, image: null };
+      const meta = charById[id] || { id, nameEn: "", nameZh: "", name: id, url: null, image: null };
+      const displayName = getNpcName(meta);
       const npcUrl = resolveNpcUrl(meta.url || "");
       const card = document.createElement(npcUrl ? "a" : "div");
       card.className = "related-npcs__card";
@@ -384,13 +390,13 @@
         const imgEl = document.createElement("img");
         imgEl.className = "related-npcs__image";
         imgEl.src = resolveNpcUrl(meta.image);
-        imgEl.alt = meta.name || meta.id || "NPC portrait";
+        imgEl.alt = displayName || "NPC portrait";
         card.appendChild(imgEl);
       }
 
       const name = document.createElement("div");
       name.className = "related-npcs__name";
-      name.textContent = meta.name || meta.id || "NPC";
+      name.textContent = displayName;
       card.appendChild(name);
 
       grid.appendChild(card);

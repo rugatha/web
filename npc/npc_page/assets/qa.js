@@ -3,6 +3,7 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
 const qaRoot = document.querySelector("[data-qa]");
+if (qaRoot) window.qaRoot = qaRoot;
 
 if (qaRoot) {
   const qaSource = qaRoot.getAttribute("data-qa-src");
@@ -19,6 +20,15 @@ if (qaRoot) {
   let memberNo = "";
   let questionPage = qaRoot.getAttribute("data-qa-page") || "";
   let lastLoggedChoice = "";
+  const isViolentQa = (qaId || "").toLowerCase() === "dr_vaxon";
+  const getCorruptLabel = () =>
+    document.documentElement?.getAttribute("data-lang") === "en" ? "Data Corrupted" : "資料損毀";
+  const applyViolentPortrait = () => {
+    const portrait = document.getElementById("npc-portrait");
+    if (!portrait) return;
+    portrait.src = "../../individual_pics/Dr. Vaxon Lich.png";
+    portrait.alt = "Dr. Vaxon Lich";
+  };
 
   const encodeKey = (value) =>
     `${value || ""}`.replace(/%/g, "%25").replace(/\//g, "%2F").replace(/\./g, "%2E");
@@ -34,18 +44,44 @@ if (qaRoot) {
     qaRoot.dataset.choice = choice;
     qaRoot.classList.add("is-revealed");
     qaRoot.classList.add("show-stats");
+    if (isViolentQa) {
+      qaRoot.classList.add("qa--violent");
+      applyViolentPortrait();
+      window.dispatchEvent(new CustomEvent("qa:violent", { detail: { enabled: true } }));
+    }
+    if (isViolentQa) {
+      percentTextEls.forEach((el) => {
+        el.textContent = getCorruptLabel();
+      });
+    }
     setButtonState(choice);
+  };
+
+  const setChoiceLocked = (locked) => {
+    qaRoot.dataset.locked = locked ? "true" : "false";
+    choiceButtons.forEach((btn) => {
+      btn.disabled = Boolean(locked);
+    });
   };
 
   const bindChoices = () => {
     choiceButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
+        if (qaRoot.dataset.locked === "true") return;
         const choice = btn.dataset.choice;
         if (!choice) return;
         revealResults(choice);
         logChoice(choice);
+        setChoiceLocked(true);
       });
     });
+  };
+
+  const getQaPayload = (record) => {
+    if (!record || typeof record !== "object") return null;
+    const lang = document.documentElement?.getAttribute("data-lang") === "en" ? "en" : "zh";
+    if (lang === "en") return record.qaEn || record.qa || record;
+    return record.qaZh || record.qa || record;
   };
 
   const populate = (data) => {
@@ -89,15 +125,32 @@ if (qaRoot) {
       if (!questionPage && resolved.url) {
         questionPage = resolved.url;
       }
-      return populate(resolved.qa || resolved);
+      return populate(getQaPayload(resolved));
     } catch (err) {
       return false;
     }
   };
 
+  window.addEventListener("qa:reload", () => {
+    loadQa();
+    if (isViolentQa) {
+      percentTextEls.forEach((el) => {
+        el.textContent = getCorruptLabel();
+      });
+      if (qaRoot.classList.contains("is-revealed") || qaRoot.dataset.locked === "true") {
+        applyViolentPortrait();
+        window.dispatchEvent(new CustomEvent("qa:violent", { detail: { enabled: true } }));
+      }
+    }
+  });
+
   const updatePercentText = (slot, value) => {
     const el = percentTextEls.find((node) => node.dataset.qaPercent === slot);
     if (!el) return;
+    if (isViolentQa) {
+      el.textContent = getCorruptLabel();
+      return;
+    }
     el.textContent = `${value}%`;
   };
 
@@ -145,8 +198,33 @@ if (qaRoot) {
       } catch (error) {
         console.warn("Failed to load memberNo", error);
       }
+      loadSavedChoice();
     });
     loadChoiceStats();
+  };
+
+  const loadSavedChoice = async () => {
+    if (!db || !questionPage) return;
+    const memberKey = memberNo || authUid;
+    if (!memberKey) return;
+    try {
+      const pageKey = encodeKey(questionPage);
+      const snapshot = await get(ref(db, `qa_choices/${memberKey}/${pageKey}`));
+      if (!snapshot.exists()) return;
+      const value = snapshot.val();
+      const choice = value && value.choice;
+      if (choice === "C1" || choice === "C2") {
+        lastLoggedChoice = choice;
+        revealResults(choice === "C1" ? "1" : "2");
+        setChoiceLocked(true);
+        if (isViolentQa) {
+          applyViolentPortrait();
+          window.dispatchEvent(new CustomEvent("qa:violent", { detail: { enabled: true } }));
+        }
+      }
+    } catch (error) {
+      console.warn("Failed to load saved QA choice", error);
+    }
   };
 
   const logChoice = async (choice) => {
@@ -181,5 +259,6 @@ if (qaRoot) {
     }
     ensureFirebase();
     bindChoices();
+    loadSavedChoice();
   });
 }

@@ -25,6 +25,10 @@
 </head>
 <body>
   <header>
+    <div class="language-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+    </div>
     <a class="banner" href="http://rugatha.github.io/web/" target="_blank" rel="noopener">
       <img src="../assets/rugatha-banner.jpg" alt="Rugatha banner">
     </a>
@@ -33,22 +37,31 @@
       <div class="search">
         <div class="controls">
           <div class="control-row control-row--search">
-            <input id="search" type="search" placeholder="以關鍵字搜尋 Search with keywords">
+            <input id="search" type="search" placeholder="以關鍵字搜尋" data-i18n-placeholder data-zh="以關鍵字搜尋" data-en="Search with keywords">
           </div>
           <div class="control-row control-row--actions">
             <div class="toggle-group" role="group" aria-label="分類方式" id="group-toggle">
               <span class="toggle-slider" aria-hidden="true"></span>
-              <button type="button" id="group-letter" aria-pressed="true">按字母<br>Alphabetical</button>
-              <button type="button" id="group-race" aria-pressed="false">按種族<br>Race</button>
-              <button type="button" id="group-religion" aria-pressed="false">按信仰<br>Religion</button>
-              <button type="button" id="group-location" aria-pressed="false">按地點<br>Location</button>
+              <button type="button" id="group-letter" aria-pressed="true" data-i18n data-zh="按注音" data-en="Alphabetical">按注音</button>
+              <button type="button" id="group-race" aria-pressed="false" data-i18n data-zh="按種族" data-en="Race">按種族</button>
+              <button type="button" id="group-religion" aria-pressed="false" data-i18n data-zh="按信仰" data-en="Religion">按信仰</button>
+              <button type="button" id="group-location" aria-pressed="false" data-i18n data-zh="按地點" data-en="Location">按地點</button>
             </div>
             <div class="sort">
-              <button type="button" id="sort-toggle" class="pill-btn" data-sort="asc">A → Z</button>
+              <button
+                type="button"
+                id="sort-toggle"
+                class="pill-btn"
+                data-sort="asc"
+                data-zh-asc="ㄅ → ㄩ"
+                data-zh-desc="ㄩ → ㄅ"
+                data-en-asc="A → Z"
+                data-en-desc="Z → A"
+              >A → Z</button>
             </div>
             <span class="search-count" id="search-count"></span>
-            <button type="button" id="random-btn" class="pill-btn">隨機 NPC<br>Random NPC</button>
-            <button type="button" id="clear-search" class="pill-btn" aria-label="清除搜尋並重置">清除搜尋<br>Clear search</button>
+            <button type="button" id="random-btn" class="pill-btn" data-i18n data-zh="隨機 NPC" data-en="Random NPC">隨機 NPC</button>
+            <button type="button" id="clear-search" class="pill-btn" aria-label="清除搜尋並重置" data-i18n data-i18n-aria data-zh="清除搜尋" data-en="Clear search" data-zh-aria="清除搜尋並重置" data-en-aria="Clear search and reset">清除搜尋</button>
           </div>
         </div>
       </div>
@@ -69,7 +82,7 @@
     </a>
   </template>
 
-  <span class="sr-only" id="status">資料載入中</span>
+  <span class="sr-only" id="status" data-i18n data-zh="資料載入中" data-en="Loading NPC data">資料載入中</span>
 
   <script>
     const grid = document.getElementById('character-grid');
@@ -85,10 +98,146 @@
     const locationToggle = document.getElementById('group-location');
     const randomButton = document.getElementById('random-btn');
     const searchCount = document.getElementById('search-count');
+    const langButtons = document.querySelectorAll('.language-toggle button');
+    const languageState = { value: 'zh' };
+    const i18n = {
+      zh: {
+        loadError: '載入資料時發生錯誤，請稍後重試。',
+        loadErrorShort: '載入資料時發生錯誤'
+      },
+      en: {
+        loadError: 'Something went wrong while loading data. Please try again later.',
+        loadErrorShort: 'Failed to load data'
+      }
+    };
+    const zhuyinInitials = [
+      { label: 'ㄅ', sample: '八' },
+      { label: 'ㄆ', sample: '怕' },
+      { label: 'ㄇ', sample: '媽' },
+      { label: 'ㄈ', sample: '發' },
+      { label: 'ㄉ', sample: '的' },
+      { label: 'ㄊ', sample: '他' },
+      { label: 'ㄋ', sample: '你' },
+      { label: 'ㄌ', sample: '了' },
+      { label: 'ㄍ', sample: '哥' },
+      { label: 'ㄎ', sample: '科' },
+      { label: 'ㄏ', sample: '喝' },
+      { label: 'ㄐ', sample: '雞' },
+      { label: 'ㄑ', sample: '七' },
+      { label: 'ㄒ', sample: '西' },
+      { label: 'ㄓ', sample: '知' },
+      { label: 'ㄔ', sample: '吃' },
+      { label: 'ㄕ', sample: '詩' },
+      { label: 'ㄖ', sample: '日' },
+      { label: 'ㄗ', sample: '字' },
+      { label: 'ㄘ', sample: '次' },
+      { label: 'ㄙ', sample: '思' },
+      { label: 'ㄧ', sample: '一' },
+      { label: 'ㄨ', sample: '烏' },
+      { label: 'ㄩ', sample: '於' },
+      { label: 'ㄚ', sample: '啊' },
+      { label: 'ㄛ', sample: '喔' },
+      { label: 'ㄜ', sample: '鵝' },
+      { label: 'ㄝ', sample: '欸' },
+      { label: 'ㄞ', sample: '哀' },
+      { label: 'ㄟ', sample: '誒' },
+      { label: 'ㄠ', sample: '凹' },
+      { label: 'ㄡ', sample: '歐' },
+      { label: 'ㄢ', sample: '安' },
+      { label: 'ㄣ', sample: '恩' },
+      { label: 'ㄤ', sample: '昂' },
+      { label: 'ㄥ', sample: '鞥' },
+      { label: 'ㄦ', sample: '兒' }
+    ];
+    const zhuyinCollator = (() => {
+      try {
+        return new Intl.Collator('zh-Hant-u-co-zhuyin');
+      } catch (_) {
+        return null;
+      }
+    })();
+    const isCjk = (char) => /[\u4e00-\u9fff]/.test(char || '');
     let charactersCache = [];
     let sortOrder = 'asc';
     let groupingMode = 'letter';
     const isAscii = (str) => /^[A-Za-z]/.test(str || '');
+
+    const getPreferredLanguage = () => {
+      try {
+        const stored = localStorage.getItem('npc-lang');
+        if (stored === 'zh' || stored === 'en') return stored;
+      } catch (_) {
+        // ignore storage access errors
+      }
+      const docLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+      return docLang.startsWith('en') ? 'en' : 'zh';
+    };
+
+    const updateLanguageToggle = () => {
+      langButtons.forEach((button) => {
+        const active = button.dataset.lang === languageState.value;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+    };
+
+    const updateI18n = () => {
+      const lang = languageState.value;
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const next = el.dataset[lang] || el.textContent;
+        if (el.dataset.i18n !== undefined) {
+          el.textContent = next;
+        }
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        const next = el.dataset[lang] || el.getAttribute('placeholder') || '';
+        el.setAttribute('placeholder', next);
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+        const next = el.dataset[`${lang}Aria`] || el.getAttribute('aria-label') || '';
+        el.setAttribute('aria-label', next);
+      });
+    };
+
+    const updateSortToggleLabel = () => {
+      if (!sortToggle) return;
+      const lang = languageState.value;
+      const ascLabel = lang === 'zh' ? sortToggle.dataset.zhAsc : sortToggle.dataset.enAsc;
+      const descLabel = lang === 'zh' ? sortToggle.dataset.zhDesc : sortToggle.dataset.enDesc;
+      sortToggle.textContent = sortOrder === 'asc' ? (ascLabel || 'A → Z') : (descLabel || 'Z → A');
+    };
+
+    const applyLanguage = (lang) => {
+      languageState.value = lang === 'en' ? 'en' : 'zh';
+      document.documentElement.setAttribute('data-lang', languageState.value);
+      updateLanguageToggle();
+      updateI18n();
+      updateSortToggleLabel();
+      if (charactersCache.length) {
+        applyFilters();
+      }
+      try {
+        localStorage.setItem('npc-lang', languageState.value);
+      } catch (_) {
+        // ignore storage access errors
+      }
+    };
+
+    langButtons.forEach((button) => {
+      button.addEventListener('click', () => applyLanguage(button.dataset.lang));
+    });
+    applyLanguage(getPreferredLanguage());
+
+    const getDisplayName = (character) => {
+      if (!character) return '';
+      const lang = languageState.value;
+      const candidate =
+        lang === 'en'
+          ? (character.nameEn || '').trim()
+          : (character.nameZh || '').trim();
+      if (candidate) return candidate;
+      return (character.name || character.nameEn || character.nameZh || '').trim();
+    };
 
     const setLines = (el, text) => {
       if (!el) return;
@@ -103,10 +252,35 @@
         applyFilters();
         bindControls();
       } catch (error) {
-        grid.innerHTML = '<p style="color:#f87171;font-weight:600;">載入資料時發生錯誤，請稍後重試。</p>';
-        statusEl.textContent = '資料載入失敗';
+        const message = i18n[languageState.value]?.loadError || i18n.zh.loadError;
+        const status = i18n[languageState.value]?.loadErrorShort || i18n.zh.loadErrorShort;
+        grid.innerHTML = `<p style="color:#f87171;font-weight:600;">${message}</p>`;
+        statusEl.textContent = status;
         console.error(error);
       }
+    }
+
+    const sortedZhuyinInitials = [...zhuyinInitials].sort((a, b) => {
+      if (zhuyinCollator) return zhuyinCollator.compare(a.sample, b.sample);
+      return a.sample.localeCompare(b.sample, 'zh-Hant');
+    });
+
+    function getZhuyinGroupKey(name) {
+      const first = (name || '').trim().charAt(0) || '';
+      if (!first) return '其他';
+      if (!isCjk(first)) return '其他';
+      let chosen = sortedZhuyinInitials[0].label;
+      for (const entry of sortedZhuyinInitials) {
+        const order = zhuyinCollator
+          ? zhuyinCollator.compare(first, entry.sample)
+          : first.localeCompare(entry.sample, 'zh-Hant');
+        if (order >= 0) {
+          chosen = entry.label;
+        } else {
+          break;
+        }
+      }
+      return chosen;
     }
 
     function getLetterGroupKey(name) {
@@ -125,21 +299,56 @@
       return [];
     }
 
-    function getRaceKeys(race) {
-      const keys = normalizeList(race);
-      return keys.length ? keys : ['未知'];
+    function getRaceKeysAll(character) {
+      const en = normalizeList(character?.raceEn);
+      const zh = normalizeList(character?.raceZh);
+      const legacy = normalizeList(character?.race);
+      return [...en, ...zh, ...legacy].filter(Boolean);
     }
 
-    function getReligionKeys(religion) {
-      const keys = normalizeList(religion).map((r) =>
+    function getRaceKeysDisplay(character) {
+      const en = normalizeList(character?.raceEn);
+      const zh = normalizeList(character?.raceZh);
+      const legacy = normalizeList(character?.race);
+      const list = languageState.value === 'zh' ? zh : en;
+      const fallback = list.length ? list : legacy;
+      return fallback.length ? fallback : ['未知'];
+    }
+
+    function getReligionKeysAll(character) {
+      const en = normalizeList(character?.religionEn);
+      const zh = normalizeList(character?.religionZh);
+      const legacy = normalizeList(character?.religion);
+      return [...en, ...zh, ...legacy].filter(Boolean);
+    }
+
+    function getReligionKeysDisplay(character) {
+      const en = normalizeList(character?.religionEn);
+      const zh = normalizeList(character?.religionZh);
+      const legacy = normalizeList(character?.religion);
+      const list = languageState.value === 'zh' ? zh : en;
+      const fallback = list.length ? list : legacy;
+      const normalized = fallback.map((r) =>
         r.toLowerCase() === 'not sure' ? 'Not sure' : r
       );
-      return keys.length ? keys : ['未知信仰'];
+      if (normalized.length) return normalized;
+      return [languageState.value === 'zh' ? '無' : 'Unknown'];
     }
 
-    function getLocationKeys(location) {
-      const keys = Array.isArray(location) ? location.filter(Boolean).map((l) => l.trim()) : [];
-      return keys.length ? keys : ['未知地點'];
+    function getLocationKeysAll(character) {
+      const en = Array.isArray(character?.locationEn) ? character.locationEn.filter(Boolean).map((l) => `${l}`.trim()) : [];
+      const zh = Array.isArray(character?.locationZh) ? character.locationZh.filter(Boolean).map((l) => `${l}`.trim()) : [];
+      const legacy = Array.isArray(character?.location) ? character.location.filter(Boolean).map((l) => `${l}`.trim()) : [];
+      return [...en, ...zh, ...legacy].filter(Boolean);
+    }
+
+    function getLocationKeysDisplay(character) {
+      const en = Array.isArray(character?.locationEn) ? character.locationEn.filter(Boolean).map((l) => `${l}`.trim()) : [];
+      const zh = Array.isArray(character?.locationZh) ? character.locationZh.filter(Boolean).map((l) => `${l}`.trim()) : [];
+      const legacy = Array.isArray(character?.location) ? character.location.filter(Boolean).map((l) => `${l}`.trim()) : [];
+      const list = languageState.value === 'zh' ? zh : en;
+      const fallback = list.length ? list : legacy;
+      return fallback.length ? fallback : ['未知地點'];
     }
 
     const genderAliases = {
@@ -161,14 +370,22 @@
     }
 
     function sortByName(a, b) {
-      const aAscii = isAscii(a.name);
-      const bAscii = isAscii(b.name);
+      const aName = getDisplayName(a);
+      const bName = getDisplayName(b);
+      if (languageState.value === 'zh') {
+        const order = zhuyinCollator
+          ? zhuyinCollator.compare(aName, bName)
+          : aName.localeCompare(bName, 'zh-Hant');
+        return sortOrder === 'asc' ? order : -order;
+      }
+      const aAscii = isAscii(aName);
+      const bAscii = isAscii(bName);
       if (aAscii !== bAscii) {
         return sortOrder === 'asc' ? (aAscii ? -1 : 1) : (aAscii ? 1 : -1);
       }
       return sortOrder === 'asc'
-        ? a.name.localeCompare(b.name)
-        : b.name.localeCompare(a.name);
+        ? aName.localeCompare(bName)
+        : bName.localeCompare(aName);
     }
 
     function sortCharacters(list) {
@@ -187,12 +404,13 @@
       const img = node.querySelector('img');
       const nameEl = node.querySelector('.card__name');
       const raceEl = node.querySelector('.card__race');
+      const displayName = getDisplayName(character);
 
       node.href = resolveUrl(character.url);
-      nameEl.textContent = character.name;
-      raceEl.textContent = getRaceKeys(character.race).join(', ');
+      nameEl.textContent = displayName || 'NPC';
+      raceEl.textContent = getRaceKeysDisplay(character).join(', ');
       img.src = character.image;
-      img.alt = character.name;
+      img.alt = displayName || 'NPC';
       return node;
     }
 
@@ -202,7 +420,7 @@
       if (groupingMode === 'race') {
         const groups = new Map();
         characters.forEach((character) => {
-          const raceKeys = getRaceKeys(character.race);
+          const raceKeys = getRaceKeysDisplay(character);
           raceKeys.forEach((groupKey) => {
             if (!groups.has(groupKey)) groups.set(groupKey, []);
             groups.get(groupKey).push(character);
@@ -210,6 +428,10 @@
         });
 
         const sortedKeys = Array.from(groups.keys()).sort((a, b) => {
+          if (languageState.value === 'zh') {
+            const order = zhuyinCollator.compare(a, b);
+            return sortOrder === 'asc' ? order : -order;
+          }
           return sortOrder === 'asc'
             ? a.localeCompare(b, 'en', { sensitivity: 'base' })
             : b.localeCompare(a, 'en', { sensitivity: 'base' });
@@ -230,7 +452,7 @@
       } else if (groupingMode === 'location') {
         const groups = new Map();
         characters.forEach((character) => {
-          const locationKeys = getLocationKeys(character.location);
+          const locationKeys = getLocationKeysDisplay(character);
           locationKeys.forEach((groupKey) => {
             if (!groups.has(groupKey)) groups.set(groupKey, []);
             groups.get(groupKey).push(character);
@@ -238,6 +460,16 @@
         });
 
         const sortedKeys = Array.from(groups.keys()).sort((a, b) => {
+          if (languageState.value === 'zh') {
+            const emptyLabel = '無';
+            const aEmpty = a === emptyLabel;
+            const bEmpty = b === emptyLabel;
+            if (aEmpty !== bEmpty) return aEmpty ? 1 : -1;
+            const order = zhuyinCollator
+              ? zhuyinCollator.compare(a, b)
+              : a.localeCompare(b, 'zh-Hant');
+            return sortOrder === 'asc' ? order : -order;
+          }
           return sortOrder === 'asc'
             ? a.localeCompare(b, 'en', { sensitivity: 'base' })
             : b.localeCompare(a, 'en', { sensitivity: 'base' });
@@ -260,7 +492,7 @@
         if (groupingMode === 'religion') {
           const groups = new Map();
           characters.forEach((character) => {
-            const religionKeys = getReligionKeys(character.religion);
+            const religionKeys = getReligionKeysDisplay(character);
             religionKeys.forEach((key) => {
               if (!groups.has(key)) groups.set(key, []);
               groups.get(key).push(character);
@@ -287,7 +519,10 @@
           });
         } else {
           characters.forEach((character) => {
-            const groupKey = getLetterGroupKey(character.name);
+            const groupKey =
+              languageState.value === 'zh'
+                ? getZhuyinGroupKey(getDisplayName(character))
+                : getLetterGroupKey(getDisplayName(character));
             if (showGroupLabels && groupKey !== currentGroup) {
               currentGroup = groupKey;
               const label = document.createElement('div');
@@ -308,13 +543,13 @@
       const term = searchInput ? (searchInput.value || '').trim().toLowerCase() : '';
       const filtered = term
         ? charactersCache.filter((c) => {
-            const nameMatch = (c.name || '').toLowerCase().includes(term);
-            const raceMatch = getRaceKeys(c.race).some((r) => r.toLowerCase().includes(term));
+            const nameMatch = getDisplayName(c).toLowerCase().includes(term);
+            const raceMatch = getRaceKeysAll(c).some((r) => r.toLowerCase().includes(term));
             const genderMatch = genderMatches(term, c.gender);
-            const religionMatch = getReligionKeys(c.religion).some((r) =>
+            const religionMatch = getReligionKeysAll(c).some((r) =>
               r.toLowerCase().includes(term)
             );
-            const locationMatch = (c.location || []).some((loc) =>
+            const locationMatch = getLocationKeysAll(c).some((loc) =>
               (loc || '').toLowerCase().includes(term)
             );
             return nameMatch || raceMatch || genderMatch || religionMatch || locationMatch;
@@ -350,7 +585,7 @@
       const randomIndex = Math.floor(Math.random() * filtered.length);
       const randomCharacter = filtered[randomIndex];
       renderCharacters([randomCharacter], { showGroupLabels: false });
-      setLines(statusEl, `隨機選擇：${randomCharacter.name}`);
+      setLines(statusEl, `隨機選擇：${getDisplayName(randomCharacter)}`);
       if (searchCount) setLines(searchCount, '');
       grid.classList.add('single-random');
     }
@@ -386,7 +621,7 @@
         sortToggle.addEventListener('click', () => {
           sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
           sortToggle.dataset.sort = sortOrder;
-          sortToggle.textContent = sortOrder === 'asc' ? 'A → Z' : 'Z → A';
+          updateSortToggleLabel();
           applyFilters();
         });
       }
@@ -412,7 +647,7 @@
       sortOrder = 'asc';
       if (sortToggle) {
         sortToggle.dataset.sort = 'asc';
-        sortToggle.textContent = 'A → Z';
+        updateSortToggleLabel();
       }
       setGroupingMode('letter');
       grid.classList.remove('single-random');
@@ -422,6 +657,7 @@
     loadCharacters();
     // 初始化 slider 位置
     setGroupingMode(groupingMode);
+    updateSortToggleLabel();
   </script>
   <script src="../shared/firebase.config.js"></script>
   <script type="module" src="../shared/auth.js"></script>
