@@ -65,7 +65,7 @@
       page: "./pages/rugatha-plus/index.html",
       image: campaignLogo("rugatha-plus-logo.jpg"),
       accent: "#c8f9ff",
-      nextSession: "2026/1/31"
+      nextSession: "2026/3/28"
     },
     {
       name: "Rugatha lite",
@@ -75,7 +75,7 @@
       page: "./pages/rugatha-lite/index.html",
       image: campaignLogo("rugatha-light-logo.jpg"),
       accent: "#ffe7a3",
-      nextSession: "未訂 TBD"
+      nextSession: "2026/2/7"
     },
     {
       name: "Rugatha WILDS",
