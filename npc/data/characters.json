@@ -3256,13 +3256,15 @@
       "Nessis",
       "Phyneal"
     ],
-    "descZh": "弗萊特境內的嚮導之一，相對年輕而較無經驗，但根據師父的說法「很有潛力」。事後冒險者們發現他是師父的孫子。\n嗜酒。",
-    "descEn": "A young and rather inexperienced guide in Phreit Realm, who “had a lot of potential\", said Shifu. The adventurers soon found that Phola was Shifu’s grandson.\nAlcoholic.",
+    "descZh": "弗萊特境內的嚮導之一，相對年輕而較無經驗，但根據師父的說法「很有潛力」。事後冒險者們發現他是師父的孫子。\n嗜酒。\n在與冒險者們的旅行過程中，受到Tweeter感化，戒了酒，並信奉了芬尼爾。\n在母親大人異變事件後，與Lott和Mango成為僅存的三人。\n多年後，身為芬尼爾教團一員，戴著面具的他在雅洛斯和Lott的團隊狹路相逢，雙方發生激烈的戰鬥。\n在他垂死之際，Lott剝下他的面具，才發現他的身份。",
+    "descEn": "A young and rather inexperienced guide in Phreit Realm, who “had a lot of potential\", said Shifu. The adventurers soon found that Phola was Shifu’s grandson.\nAlcoholic.\nIn the journey with the adventurers, Phola was touched by Tweeter, stopped drinking, and decided to believe in Phyneal instead.\nAfter the incident of the mutated Mother, Phola became the only survivor other than Lott and Mango.\nYears later, Phola, as a member of the Phyneal, bumped into Lott's team in Yarros, while he was wearing a mask. The two sides had a fierce fight.\nOn the verge of his death, Lott removed his mask, and found his real identity.",
     "location": [
-      "Phreit"
+      "Phreit",
+      "Yarros"
     ],
     "related": [
-      "Shifu"
+      "Shifu",
+      "Mango"
     ]
   },
   {
@@ -4732,6 +4734,28 @@
     ],
     "related": [
       "Syr_Magnus"
+    ]
+  },
+  {
+    "id": "Py_Par",
+    "name": "Py'Par",
+    "url": "npc/npc_page/pages/Py_Par.html",
+    "image": "individual_pics/Py'Par.png",
+    "status": "alive",
+    "race": [
+      "Elf"
+    ],
+    "gender": "female",
+    "religion": [
+      "Nessis"
+    ],
+    "descZh": "涅西斯教團「常翠林」成員之一，在冒險者們追尋芒果的行跡時發現他。\n派琶告知冒險者們教團已將巨蛇（芒果）擊退，並拯救了被巨蛇綑綁的男人，即冒險者的夥伴Psyber。\n雖然他踏上的草地都會化為花田，但人似乎有點迷糊，對距離、時間等都沒有很精確的概念。",
+    "descEn": "A member of the Nessis order \"the Evergreen\". The adventurers found her while tracking Mango.\nPy'Par told the adventurers that the order had already defeated the serpent (Mango), and saved the man tied up by Mango, which is Psyber, the companion of the adventurers.\nAlthough the meadows she treads on turns into flower fields, Py'Par doesn't have a precise concept of time and distance.",
+    "location": [
+      "Yarros"
+    ],
+    "related": [
+      "Mango"
     ]
   }
 ]
