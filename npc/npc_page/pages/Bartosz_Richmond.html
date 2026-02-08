@@ -24,29 +24,6 @@
   <meta name="twitter:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U",
-    authDomain: "rugatha-87e15.firebaseapp.com",
-    projectId: "rugatha-87e15",
-    storageBucket: "rugatha-87e15.firebasestorage.app",
-    messagingSenderId: "1022766499204",
-    appId: "1:1022766499204:web:a4a4c318e16ce37809c9d1",
-    measurementId: "G-KLYZ9WTYK9"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 </head>
 <body>
   <header class="banner">
@@ -72,6 +49,35 @@
           <p id="npc-desc-en" class="body"></p>
         </div>
       </div>
+      <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Bartosz_Richmond" data-qa-page="npc/npc_page/pages/Bartosz_Richmond.html">
+        <h2 class="section-title section-title--center">命運的抉擇<br>A Choice of Fate</h2>
+        <div class="qa-question">
+          <span class="qa-label">Q</span>
+          <p class="qa-text" data-qa-question></p>
+        </div>
+        <div class="qa-choices">
+          <button class="qa-choice" type="button" data-choice="1" aria-pressed="false">
+            <span class="qa-label">C1</span>
+            <span class="qa-choice-text" data-qa-choice="1"></span>
+            <span class="qa-choice-meta" data-qa-percent="1"></span>
+          </button>
+          <button class="qa-choice" type="button" data-choice="2" aria-pressed="false">
+            <span class="qa-label">C2</span>
+            <span class="qa-choice-text" data-qa-choice="2"></span>
+            <span class="qa-choice-meta" data-qa-percent="2"></span>
+          </button>
+        </div>
+        <div class="qa-results" aria-live="polite">
+          <div class="qa-result" data-choice="1">
+            <span class="qa-label">R1</span>
+            <p class="qa-result-text" data-qa-result="1"></p>
+          </div>
+          <div class="qa-result" data-choice="2">
+            <span class="qa-label">R2</span>
+            <p class="qa-result-text" data-qa-result="2"></p>
+          </div>
+        </div>
+      </div>
       <div class="actions">
         <a class="btn icon-btn" href="../../index.html" aria-label="返回 NPC 清單">↩</a>
       </div>
@@ -79,5 +85,8 @@
   </main>
 
   <script type="module" src="../assets/scripts.js"></script>
+  <script src="../../../shared/firebase.config.js"></script>
+  <script type="module" src="../assets/qa.js"></script>
+  <script type="module" src="../../../shared/auth.js"></script>
 </body>
 </html>

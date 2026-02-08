@@ -3,49 +3,31 @@
     "rugatha-c01-chpt01": [
       "Alfie_Fuller",
       "Bruce_Dunham",
-      "Clementine_Allison",
       "Daryl_Warren",
       "The_Hooded_Figure"
     ],
     "rugatha-c01-chpt02": [
-      "Bamu_Torrence",
       "Bruce_Dunham",
       "Daryl_Warren",
       "Father_Kaulton",
-      "Graham_Dawkin",
       "Grenland_Folsen",
       "Jasmine_Warren",
-      "Kai",
       "sammick_warren"
     ],
     "rugatha-c01-chpt03": [
       "Gary",
       "RaLeer_the_Herder"
     ],
-    "rugatha-c01-chpt04": [
-      "Adrian_Paulson",
-      "Augustin_McFly",
-      "Emerald_Gorsen",
-      "Father_Karu",
-      "Ms_Valentine",
-      "Roger_Caleb_Johnson",
-      "Sapphire_Gorsen",
-      "Tommy_Caleb_Johnson"
-    ],
+    "rugatha-c01-chpt04": [],
     "rugatha-c01-chpt05": [
       "Grenland_Folsen",
-      "kubao"
+      "Kubao"
     ],
     "rugatha-c01-chpt06": [
-      "Bamu_Torrence",
       "Benny_Cozlothramuda",
       "Bruce_Dunham",
-      "Clementine_Allison",
       "Daryl_Warren",
-      "Emma",
       "Father_Kaulton",
-      "Fiona",
-      "Graham_Dawkin",
       "Grenland_Folsen",
       "Jasmine_Warren"
     ],
@@ -54,10 +36,8 @@
       "Benny_Cozlothramuda",
       "Bruce_Dunham",
       "Bruce_Dunham",
-      "Clementine_Allison",
       "Daryl_Warren",
       "Father_Kaulton",
-      "Graham_Dawkin",
       "Grenland_Folsen",
       "The_Hooded_Figure"
     ],
@@ -70,7 +50,7 @@
       "Jasmine_Warren",
       "King_Knicol",
       "Trisha_of_Baylon",
-      "kubao"
+      "Kubao"
     ],
     "rugatha-c02-chpt03": [
       "King_Knicol",
@@ -78,8 +58,6 @@
       "Trisha_of_Baylon"
     ],
     "rugatha-c03-chpt01": [
-      "Dr_Halloway",
-      "Jeff",
       "King_Knicol",
       "Mr_Flaerry",
       "Rosa_Flaerry",
@@ -90,21 +68,16 @@
       "King_Knicol",
       "Mr_Flaerry",
       "Rosa_Flaerry",
-      "Syr_Magnus",
-      "The_Fortune_Teller",
-      "The_Young_Mage"
+      "Syr_Magnus"
     ],
     "rugatha-c03-chpt03": [
       "Domneil",
       "King_Knicol",
       "Mr_Flaerry",
-      "Oliver",
-      "Rosa_Flaerry",
-      "The_Fortune_Teller"
+      "Rosa_Flaerry"
     ],
     "rugatha-c03-chpt04": [
       "Cena",
-      "Jeff",
       "Mr_Flaerry",
       "Syr_Magnus"
     ],
@@ -120,7 +93,6 @@
       "Xandria_the_Violet_of_Macksohn"
     ],
     "rugatha-c04-chpt02": [
-      "Beatrice_Eden",
       "Brock",
       "Cena",
       "Dr_David",
@@ -139,36 +111,25 @@
       "ScarFace",
       "Selene_Berners",
       "ShaDoom",
-      "Stefano",
-      "The_Hooded_Figure",
-      "Willem"
+      "The_Hooded_Figure"
     ],
     "rugatha-c04-chpt03": [
-      "Anya_LaVinci",
-      "Beatrice_Eden",
       "Brock",
       "Cena",
-      "Clark",
       "Dr_David",
       "Edmond",
       "Frankie",
       "Franz",
       "Gary",
-      "Gary_Berners",
+      "Gareth_Berners",
       "Glen",
-      "Gregory_the_Axe",
       "Jefferey_Berners",
-      "Kess",
       "Kevin_Bolden",
-      "LaVinci",
       "Lance_Berners",
       "Lewis",
-      "Michael",
       "Mr_Flaerry",
       "Mr_Flaerry",
       "Mr_Moon",
-      "Nathaniel",
-      "Nick_Pan",
       "Ona_Berners",
       "Roline_Hughes",
       "Rosa_Flaerry",
@@ -176,8 +137,7 @@
       "ShaDoom",
       "The_Hooded_Figure",
       "Xandria_the_Violet_of_Macksohn",
-      "Xavier",
-      "kubao"
+      "Kubao"
     ],
     "rugatha-c04-chpt04": [
       "Brock",
@@ -185,11 +145,9 @@
       "Frankie",
       "Franz",
       "Glen",
-      "Kess",
       "Kevin_Bolden",
       "Lewis",
       "Mr_Moon",
-      "Nathaniel",
       "ScarFace",
       "Sean",
       "ShaDoom"
@@ -199,12 +157,9 @@
       "Dr_David",
       "Frankie",
       "Franz",
-      "Gregory_the_Axe",
       "Jefferey_Berners",
       "King_Benevol_II",
       "Lance_Berners",
-      "Michael",
-      "Michael",
       "Mr_Flaerry",
       "Mr_Moon",
       "Ona_Berners",
@@ -229,8 +184,8 @@
       "Roline_Hughes",
       "Speedy",
       "Xandria_the_Violet_of_Macksohn",
-      "kubao",
-      "yongge"
+      "Kubao",
+      "Yung"
     ],
     "plus-c05-chpt03": [
       "Beau",
@@ -238,10 +193,9 @@
       "Elby__Dr_White",
       "Franz",
       "Indigo",
-      "The_Feywild_Archmage",
       "Yuki",
-      "kubao",
-      "yongge"
+      "Kubao",
+      "Yung"
     ],
     "plus-c05-chpt04": [
       "Beau",
@@ -249,7 +203,7 @@
       "Franz",
       "Indigo",
       "Yuki",
-      "kubao"
+      "Kubao"
     ],
     "plus-c05-chpt05": [
       "Beau",
@@ -257,11 +211,10 @@
       "Franz",
       "Indigo",
       "Mr_Moon",
-      "yongge"
+      "Yung"
     ],
     "plus-c06-chpt01": [
       "Beau",
-      "Dan",
       "Indigo"
     ],
     "plus-c06-chpt02": [
@@ -270,8 +223,8 @@
       "Kevin_Bolden",
       "Mr_Moon",
       "Roline_Hughes",
-      "kubao",
-      "manbao"
+      "Kubao",
+      "Manbao"
     ],
     "plus-c06-chpt03": [
       "Beau",
@@ -282,21 +235,19 @@
       "Pete_Madison",
       "Sora",
       "Valero_Berners",
-      "dudu",
-      "manbao"
+      "Dudu",
+      "Manbao"
     ],
     "plus-c06-chpt04": [
       "Alex",
       "Andrea_Day",
-      "Andronikos_Palailogos",
       "Beau",
       "Dr_Chandra_Pyresong",
       "Indigo",
       "Melvin",
       "Roline_Hughes",
       "Shalan_Hartlow",
-      "manbao",
-      "xuebao",
+      "Manbao",
       "yi"
     ],
     "plus-c07-chpt01": [
@@ -307,29 +258,26 @@
       "Ralf",
       "Sigom_III",
       "Zek",
-      "manbao"
+      "Manbao"
     ],
     "plus-c07-chpt02": [
       "Beau",
       "Domneil",
       "Essis",
       "Iochi_Mari",
-      "Joseph_from_St_Rayami_Island",
+      "Joseph",
       "Liliana",
       "Ralf",
       "Reese_Tig",
       "Ronfello",
       "Yuki",
-      "choupi",
-      "manbao",
-      "shutianpeitela",
-      "zangya"
+      "Manbao",
+      "Petra"
     ],
     "plus-c07-chpt03": [
       "Beau",
       "Bishop_Robinson",
       "Iochi_Mari",
-      "Ryon",
       "Yuki"
     ],
     "lite-c05-chpt02": [
@@ -340,8 +288,7 @@
       "Anna",
       "Hobb",
       "Jonathan",
-      "Mayor_Thorne",
-      "Sharman"
+      "Mayor_Thorne"
     ],
     "lite-c05-chpt04": [
       "Anna",
@@ -354,12 +301,9 @@
       "Bernard_Norm",
       "Dennis",
       "Dr_David",
-      "Eevie",
-      "Gary_Berners",
+      "Gareth_Berners",
       "King_Elliot_IV",
       "Lady_Marian",
-      "Lord_Ishton",
-      "Oliver_the_Wise",
       "Pamela_Yaso",
       "Roline_Hughes"
     ],
@@ -370,17 +314,11 @@
       "Dr_David",
       "Kevin_Bolden",
       "Lewis",
-      "Malcolm_Hicks",
       "Marcus_Jens",
-      "Oliver_the_Wise",
       "Pamela_Yaso",
-      "Porter_Lowe",
-      "Quinton_Leonard",
       "Rashim",
       "The_Mother",
-      "Wesley_Vance",
-      "Yashin_Usta",
-      "yi"
+      "Yi"
     ],
     "lite-c06-chpt03": [
       "Anna",
@@ -388,39 +326,36 @@
       "Kevin_Bolden",
       "Marcus_Jens",
       "Marianne_Jens",
-      "Oliver_the_Wise",
       "Roline_Hughes",
       "The_Mother",
-      "yi"
+      "Yi"
     ],
     "lite-c06-chpt04": [
-      "Ada",
       "Marcus_Jens",
       "Marianne_Jens",
       "Roline_Hughes",
-      "yi"
+      "Yi"
     ],
     "lite-c06-chpt05": [
       "Marcus_Jens",
       "Marianne_Jens",
       "Roline_Hughes",
-      "yi"
+      "Yi"
     ],
     "lite-c07-chpt01": [
       "Marcus_Jens",
       "Marianne_Jens",
-      "yi"
+      "Yi"
     ],
     "lite-c07-chpt02": [
       "Anna",
       "Dennis",
       "Dr_David",
-      "Lord_Ishton",
       "Marianne_Jens",
       "Roline_Hughes",
       "Sham",
       "The_Mother",
-      "yi"
+      "Yi"
     ],
     "lite-c07-chpt03": [
       "Gary",
@@ -430,16 +365,13 @@
       "Marianne_Jens",
       "RaLeer_the_Herder",
       "Sham",
-      "Xavier",
-      "yi"
+      "Yi"
     ],
     "lite-c08-chpt01": [
       "Gary",
-      "Magga",
       "Marcus_Jens",
       "Phola",
       "RaLeer_the_Herder",
-      "Rina_Rita",
       "Shifu"
     ],
     "lite-c08-chpt02": [
@@ -466,7 +398,7 @@
       "Mango",
       "Marianne_Jens",
       "Mikkel_Drogskol",
-      "yi"
+      "Yi"
     ],
     "lite-c09-chpt02": [
       "Eva",
@@ -483,7 +415,7 @@
     "lite-c10-chpt02": [
       "Lysien_Amoret",
       "Mango",
-      "yi"
+      "Yi"
     ],
     "lite-c10-chpt03": [
       "Lysien_Amoret",
@@ -494,7 +426,6 @@
       "Mango"
     ],
     "lite-c11-chpt01": [
-      "Don",
       "Mango",
       "Tam_Quorr"
     ],
@@ -524,7 +455,6 @@
     ],
     "wilds-c02-chpt01": [
       "Bruce_Tallis",
-      "Child_Prodigy",
       "Frederick_Norman"
     ],
     "wilds-c02-chpt02": [
@@ -534,7 +464,6 @@
     "wilds-c02-chpt03": [
       "Frederick_Norman",
       "Laura_Fishburne",
-      "Lord_Ishton",
       "Riley_Richmond"
     ],
     "wilds-c03-chpt01": [
@@ -543,17 +472,20 @@
       "Connie_Cornell",
       "Evil_Be4",
       "Maribel_Muddlewick",
-      "Maribel_Muddlewick",
       "Oswald_Creighton",
       "Penny_Applewood",
-      "Riley_Richmond"
+      "Riley_Richmond",
+      "Elly_Riversend",
+      "Leonard_Old_Pipe_Riversend"
     ],
     "wilds-c03-chpt02": [
       "Connie_Cornell",
       "Evil_Be4",
       "Oswald_Creighton",
       "Penny_Applewood",
-      "Riley_Richmond"
+      "Riley_Richmond",
+      "Elly_Riversend",
+      "Leonard_Old_Pipe_Riversend"
     ],
     "wilds-c03-chpt03": [
       "Addie_Applewood",
@@ -562,7 +494,9 @@
       "Maribel_Muddlewick",
       "Oswald_Creighton",
       "Penny_Applewood",
-      "Riley_Richmond"
+      "Riley_Richmond",
+      "Elly_Riversend",
+      "Leonard_Old_Pipe_Riversend"
     ],
     "wilds-c04-chpt01": [
       "Enelmor_Arylith",
@@ -598,7 +532,6 @@
     "wilds-c04-chpt04": [
       "Enelmor_Arylith",
       "Harrel_Mizel",
-      "Ilyra_Valecrest",
       "Maribel_Muddlewick",
       "Nylessa_Arylith",
       "Serathe_Arylith",
@@ -613,50 +546,35 @@
     "brown-c01-chpt01": [
       "Lord_Wind",
       "Mr_Muffins",
-      "Peter",
-      "Thomas"
+      "Peter"
     ],
     "brown-c01-chpt02": [
-      "Eddie",
-      "Father_Karu",
-      "Garlia",
       "Matilda",
       "Maylee",
       "Mr_Muffins",
-      "Ms_Valentine",
-      "Queenie",
-      "Roger_Caleb_Johnson",
-      "Tommy_Caleb_Johnson"
+      "Queenie"
     ],
     "brown-c01-chpt03": [
-      "Father_Karu",
       "Matilda",
       "Maylee",
       "Mr_Muffins",
-      "Queenie",
-      "Roger_Caleb_Johnson",
-      "Tommy_Caleb_Johnson"
+      "Queenie"
     ],
     "brown-c01-chpt04": [
-      "Father_Karu",
       "Mr_Muffins",
-      "Queenie",
-      "Roger_Caleb_Johnson"
+      "Queenie"
     ],
     "brown-c01-chpt05": [
       "Mr_Muffins"
     ],
     "brown-c02-chpt01": [
-      "Freddy",
       "Mr_Muffins",
       "Ronald_the_Magician"
     ],
     "legends-os01": [
       "Dr_Crow",
       "Jacob",
-      "Joseph_from_Moorland_Haunt",
-      "Marco",
-      "Sarah"
+      "Marco"
     ],
     "legends-os02": [
       "Basuu",
@@ -669,14 +587,9 @@
     ],
     "legends-os03": [
       "Bishop_Robinson",
-      "Captain_Marin",
-      "Hayes",
-      "Nelson",
-      "Ryon"
+      "Captain_Marin"
     ],
-    "legends-os04": [
-      "Logan"
-    ],
+    "legends-os04": [],
     "legends-os05-chpt01": [
       "BoBoVBoBoW",
       "Zach"
@@ -688,7 +601,6 @@
       "Alfenor",
       "Elmond",
       "Fallon",
-      "Lorin_Reese",
       "Norvelle",
       "The_Mother"
     ],

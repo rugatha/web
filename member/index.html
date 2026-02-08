@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rugatha Member Lodge</title>
+  <link rel="icon" type="image/png" href="../assets/rugatha-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-icon-32.png">
+  <link rel="stylesheet" href="../shared/styles/theme.css">
+  <style>
+    :root {
+      --member-ink: #f4f7f3;
+      --member-muted: rgba(244, 247, 243, 0.72);
+      --member-accent: #9fe0ba;
+      --member-accent-strong: #ffd58b;
+      --member-panel: rgba(14, 22, 26, 0.72);
+    }
+
+    body {
+      background: radial-gradient(circle at top, #5c7c72 0%, #3f534d 45%, #2a3432 100%);
+      color: var(--member-ink);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(159, 224, 186, 0.18), transparent 55%),
+        radial-gradient(circle at 80% 10%, rgba(255, 213, 139, 0.2), transparent 50%),
+        radial-gradient(circle at 80% 85%, rgba(122, 156, 255, 0.18), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      padding: 48px 6vw 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .member-hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      align-items: stretch;
+      animation: reveal 600ms ease-out;
+    }
+
+    .language-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      align-self: flex-start;
+    }
+
+    .language-toggle button {
+      border: none;
+      background: transparent;
+      color: var(--member-muted);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 150ms ease, color 150ms ease;
+      font-family: var(--font-body);
+    }
+
+    .language-toggle button[aria-pressed="true"] {
+      background: rgba(255, 255, 255, 0.18);
+      color: var(--member-ink);
+    }
+
+    .corner-link {
+      position: absolute;
+      top: 28px;
+      right: 6vw;
+      z-index: 2;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--member-muted);
+      transition: transform 150ms ease, color 150ms ease;
+    }
+
+    .corner-link:hover,
+    .corner-link:focus-visible {
+      transform: translateY(-2px);
+      color: var(--member-ink);
+      outline: none;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 520px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--member-muted);
+      margin: 0;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--member-muted);
+    }
+
+    .hero-badges {
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.22);
+      color: var(--member-muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .badge-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      gap: 14px;
+    }
+
+    .badge-item {
+      display: grid;
+      gap: 8px;
+      justify-items: center;
+      color: var(--member-ink);
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      font-size: 0.85rem;
+    }
+
+    .badge-box {
+      width: 100%;
+      min-height: 88px;
+      border-radius: 14px;
+      border: 2px solid rgba(159, 224, 186, 0.65);
+      background: rgba(0, 0, 0, 0.18);
+      display: grid;
+      place-items: center;
+      gap: 4px;
+      padding: 12px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--member-ink);
+    }
+
+    .badge-value {
+      font-size: 1.2rem;
+    }
+
+    .badge-mod {
+      color: var(--member-muted);
+      font-size: 0.9rem;
+    }
+
+    .character-card {
+      margin-top: 18px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(0, 0, 0, 0.22);
+      display: none;
+    }
+
+    .character-card img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .character-card img + img {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    @media (max-width: 720px) {
+      .badge-grid {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+      }
+    }
+
+    .badge-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      gap: 14px;
+    }
+
+    .badge-item {
+      display: grid;
+      gap: 8px;
+      justify-items: center;
+      color: var(--member-ink);
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      font-size: 0.85rem;
+    }
+
+    .badge-box {
+      width: 100%;
+      min-height: 88px;
+      border-radius: 14px;
+      border: 2px solid rgba(159, 224, 186, 0.65);
+      background: rgba(0, 0, 0, 0.18);
+      display: grid;
+      place-items: center;
+      gap: 4px;
+      padding: 12px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--member-ink);
+    }
+
+    .badge-value {
+      font-size: 1.2rem;
+    }
+
+    .badge-mod {
+      color: var(--member-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      .badge-grid {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+      }
+    }
+
+    .profile-card {
+      background: var(--member-panel);
+      border-radius: 22px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
+    }
+
+    .profile-header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .profile-photo-button {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+
+    .profile-photo-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .profile-photo-button:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.6);
+      outline-offset: 2px;
+    }
+
+    .profile-photo {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .profile-identity {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .profile-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .profile-email {
+      font-size: 0.95rem;
+      color: var(--member-muted);
+    }
+
+    .profile-member-id {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--member-muted);
+    }
+
+    .profile-member-value {
+      word-break: break-all;
+    }
+
+    .profile-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      margin: 4px 0 2px;
+    }
+
+    .detail.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .multiline-value {
+      white-space: pre-line;
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .profile-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .profile-section-action {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--member-ink);
+      cursor: pointer;
+      transition: transform 150ms ease, background 150ms ease;
+    }
+
+    .profile-section-action:hover,
+    .profile-section-action:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .profile-section-action:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .profile-save {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .profile-save button {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: linear-gradient(120deg, var(--member-accent), var(--member-accent-strong));
+      color: #1b2a26;
+      cursor: pointer;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .profile-save button:hover,
+    .profile-save button:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .profile-section-title {
+      margin: 0;
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--member-muted);
+    }
+
+    .profile-section-title.centered {
+      text-align: center;
+      width: 100%;
+    }
+
+    .detail {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.9rem;
+    }
+
+    .detail input,
+    .detail select {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      color: var(--member-ink);
+      padding: 8px 10px;
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+    }
+
+    .detail .edit-only {
+      display: none;
+    }
+
+    .detail .view-only {
+      display: inline;
+    }
+
+    #user-last-login {
+      white-space: pre-line;
+    }
+
+    .profile-card.is-editing .detail .edit-only {
+      display: inline-block;
+      width: 100%;
+    }
+
+    .profile-card.is-editing .detail .view-only {
+      display: none;
+    }
+
+    .detail.is-hidden {
+      display: none;
+    }
+
+    .detail input::placeholder {
+      color: rgba(236, 242, 237, 0.6);
+    }
+
+    .detail input:disabled,
+    .detail select:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .detail-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+      color: var(--member-muted);
+    }
+
+    .badge-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+      color: var(--member-muted);
+      text-align: center;
+    }
+
+    .detail-value {
+      font-weight: 600;
+    }
+
+    .profile-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .auth-button,
+    .ghost-button {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
+      font-family: var(--font-body);
+    }
+
+    .auth-button {
+      background: linear-gradient(120deg, var(--member-accent), var(--member-accent-strong));
+      color: #1b2a26;
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .ghost-button {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--member-ink);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .auth-button:hover,
+    .ghost-button:hover,
+    .auth-button:focus-visible,
+    .ghost-button:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .auth-button:disabled,
+    .ghost-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      transform: none;
+    }
+
+    .profile-hint {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--member-muted);
+    }
+
+
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 36px 6vw 48px;
+      }
+
+      .profile-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="language-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+    </div>
+    <a class="corner-link" href="../index.html" aria-label="Rugatha Home">rugatha.com</a>
+    <header class="member-hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow">Adventurer's Journal</p>
+        <h1 data-i18n="heroTitle">Your member vault for Rugatha.</h1>
+        <div class="hero-badges">
+          <div class="profile-section-title centered" data-i18n="heroBadgesTitle">Adventurer's Badges</div>
+          <div class="badge-grid">
+            <div class="badge-item">
+              <div class="badge-label" data-i18n="badgeSTR">STR</div>
+              <div class="badge-box">
+                <div class="badge-value" id="badge-str">0/20</div>
+                <div class="badge-mod" id="badge-str-mod">+0</div>
+              </div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-label" data-i18n="badgeDEX">DEX</div>
+              <div class="badge-box">
+                <div class="badge-value" id="badge-dex">0/20</div>
+                <div class="badge-mod" id="badge-dex-mod">+0</div>
+              </div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-label" data-i18n="badgeCON">CON</div>
+              <div class="badge-box">
+                <div class="badge-value" id="badge-con">0/20</div>
+                <div class="badge-mod" id="badge-con-mod">+0</div>
+              </div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-label" data-i18n="badgeINT">INT</div>
+              <div class="badge-box">
+                <div class="badge-value" id="badge-int">0/20</div>
+                <div class="badge-mod" id="badge-int-mod">+0</div>
+              </div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-label" data-i18n="badgeWIS">WIS</div>
+              <div class="badge-box">
+                <div class="badge-value" id="badge-wis">0/20</div>
+                <div class="badge-mod" id="badge-wis-mod">+0</div>
+              </div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-label" data-i18n="badgeCHA">CHA</div>
+              <div class="badge-box">
+                <div class="badge-value" id="badge-cha">0/20</div>
+                <div class="badge-mod" id="badge-cha-mod">+0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="character-card" id="character-card">
+          <div id="character-card-list"></div>
+        </div>
+      </div>
+
+      <section class="profile-card" id="profile-card" aria-live="polite">
+        <div class="profile-header">
+          <button class="profile-photo-button" id="profile-photo-button" type="button" aria-label="Upload profile photo">
+            <img class="profile-photo" id="user-photo" src="../assets/rugatha-icon.png" alt="Profile photo">
+          </button>
+          <input type="file" id="profile-photo-input" accept="image/*" hidden>
+          <div class="profile-identity">
+            <div class="profile-name" id="user-name">Guest Adventurer</div>
+            <div class="profile-email" id="user-email">Sign in to reveal your account info.</div>
+            <div class="profile-member-id">
+              <span class="profile-member-label" data-i18n="labelMemberId">Member ID</span>
+              <span class="profile-member-value" id="user-uid">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-section">
+          <div class="profile-section-header">
+            <h3 class="profile-section-title" data-i18n="adventurerInfoTitle">Adventurer's Info</h3>
+            <button class="profile-section-action" id="edit-adventurer" type="button" data-i18n="editLabel">Edit</button>
+          </div>
+          <div class="profile-details">
+            <div class="detail">
+              <span class="detail-label" data-i18n="labelMemberNo">Member No.</span>
+              <span class="detail-value" id="user-member-no">—</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label" data-i18n="labelAdventurerTitle">Name</span>
+              <span class="detail-value view-only" id="user-title-display">—</span>
+              <input class="detail-value edit-only" id="user-title" type="text" placeholder="—" autocomplete="off">
+            </div>
+            <div class="detail">
+              <span class="detail-label" data-i18n="labelReligion">Religion</span>
+              <span class="detail-value view-only" id="user-religion-display">—</span>
+              <select class="detail-value edit-only" id="user-religion">
+                <option value="">—</option>
+                <option value="Trinix 崔尼斯">Trinix 崔尼斯</option>
+                <option value="Phyneal 芬尼爾">Phyneal 芬尼爾</option>
+                <option value="Phynoir 芬諾爾">Phynoir 芬諾爾</option>
+                <option value="Nessis 涅西斯">Nessis 涅西斯</option>
+                <option value="Keinra 津菈">Keinra 津菈</option>
+                <option value="Jeorisan 喬里森">Jeorisan 喬里森</option>
+                <option value="Ultisen 奧提森">Ultisen 奧提森</option>
+                <option value="Maxus 麥克瑟斯">Maxus 麥克瑟斯</option>
+                <option value="Laxthos 拉索斯">Laxthos 拉索斯</option>
+                <option value="Kalinius 凱里涅斯">Kalinius 凱里涅斯</option>
+                <option value="Daligon 達里崗">Daligon 達里崗</option>
+                <option value="Amoret 阿莫雷">Amoret 阿莫雷</option>
+                <option value="The Mother 母親大人">The Mother 母親大人</option>
+                <option value="Anna 安娜">Anna 安娜</option>
+                <option value="Alfenor 阿爾芬諾">Alfenor 阿爾芬諾</option>
+                <option value="King Knicol 神王尼可">King Knicol 神王尼可</option>
+              </select>
+            </div>
+            <div class="detail">
+              <span class="detail-label" data-i18n="labelSpecies">Species</span>
+              <span class="detail-value view-only" id="user-species-display">—</span>
+              <input class="detail-value edit-only" id="user-species" type="text" placeholder="—" autocomplete="off">
+            </div>
+            <div class="detail">
+              <span class="detail-label" data-i18n="labelClass">Class</span>
+              <span class="detail-value view-only" id="user-class-display">—</span>
+              <input class="detail-value edit-only" id="user-class" type="text" placeholder="—" autocomplete="off">
+            </div>
+            <div class="detail">
+              <span class="detail-label" data-i18n="labelKingdom">Kingdom</span>
+              <span class="detail-value view-only" id="user-kingdom-display">—</span>
+              <select class="detail-value edit-only" id="user-kingdom">
+                <option value="">—</option>
+                <option value="Mattington Kingdom 麥丁頓王國">Mattington Kingdom 麥丁頓王國</option>
+                <option value="Lothum Kingdom 洛森王國">Lothum Kingdom 洛森王國</option>
+                <option value="Chryomen Kingdom 克里歐門王國">Chryomen Kingdom 克里歐門王國</option>
+              </select>
+            </div>
+            <div class="detail full-width is-hidden" id="campaign-divider">
+              <div class="profile-divider" aria-hidden="true"></div>
+            </div>
+            <div class="detail is-hidden" id="campaign-detail">
+              <span class="detail-label" data-i18n="labelCampaign">Campaign</span>
+              <span class="detail-value view-only multiline-value" id="user-campaign">—</span>
+            </div>
+            <div class="detail is-hidden" id="character-detail">
+              <span class="detail-label" data-i18n="labelCharacter">Character</span>
+              <span class="detail-value view-only multiline-value" id="user-character">—</span>
+            </div>
+          </div>
+          <div class="profile-save" id="profile-save">
+            <button type="button" id="save-adventurer" data-i18n="saveLabel">Save</button>
+          </div>
+        </div>
+        <div class="profile-section">
+          <h3 class="profile-section-title" data-i18n="loginInfoTitle">Login Info</h3>
+          <div class="profile-details">
+            <div class="detail">
+              <span class="detail-label" data-i18n="labelLastLogin">Last Login</span>
+              <span class="detail-value" id="user-last-login">—</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label" data-i18n="labelLoginTime">Login Time</span>
+              <span class="detail-value" id="user-total-time">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <button class="ghost-button" id="sign-out" type="button" disabled data-i18n="signOut">Sign out</button>
+        </div>
+        <p class="profile-hint" id="profile-hint">Sign in to load your member profile.</p>
+      </section>
+    </header>
+
+  </div>
+
+  <script src="../shared/firebase.config.js"></script>
+  <script type="module">
+    import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+    import {
+      getDatabase,
+      ref,
+      get,
+      update,
+      runTransaction
+    } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+
+    const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
+    const firebaseDisabled =
+      window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
+    const signOutButton = document.getElementById("sign-out");
+    const nameEl = document.getElementById("user-name");
+    const emailEl = document.getElementById("user-email");
+    const uidEl = document.getElementById("user-uid");
+    const memberNoEl = document.getElementById("user-member-no");
+    const campaignDividerEl = document.getElementById("campaign-divider");
+    const campaignDetailEl = document.getElementById("campaign-detail");
+    const characterDetailEl = document.getElementById("character-detail");
+    const campaignEl = document.getElementById("user-campaign");
+    const characterEl = document.getElementById("user-character");
+    const titleEl = document.getElementById("user-title");
+    const titleDisplayEl = document.getElementById("user-title-display");
+    const religionEl = document.getElementById("user-religion");
+    const religionDisplayEl = document.getElementById("user-religion-display");
+    const speciesEl = document.getElementById("user-species");
+    const speciesDisplayEl = document.getElementById("user-species-display");
+    const classEl = document.getElementById("user-class");
+    const classDisplayEl = document.getElementById("user-class-display");
+    const kingdomEl = document.getElementById("user-kingdom");
+    const kingdomDisplayEl = document.getElementById("user-kingdom-display");
+    const lastLoginEl = document.getElementById("user-last-login");
+    const totalTimeEl = document.getElementById("user-total-time");
+    const hintEl = document.getElementById("profile-hint");
+    const photoEl = document.getElementById("user-photo");
+    const photoButton = document.getElementById("profile-photo-button");
+    const photoInput = document.getElementById("profile-photo-input");
+    const profileCard = document.getElementById("profile-card");
+    const editButton = document.getElementById("edit-adventurer");
+    const saveButton = document.getElementById("save-adventurer");
+    const saveWrap = document.getElementById("profile-save");
+    const toggleButtons = Array.from(document.querySelectorAll(".language-toggle button"));
+    const MEMBER_COLLECTION = "members";
+    const MEMBER_COUNTER_PATH = "members_meta/memberNoCounter";
+    const badgeStrEl = document.getElementById("badge-str");
+    const badgeDexEl = document.getElementById("badge-dex");
+    const badgeConEl = document.getElementById("badge-con");
+    const badgeIntEl = document.getElementById("badge-int");
+    const badgeWisEl = document.getElementById("badge-wis");
+    const badgeChaEl = document.getElementById("badge-cha");
+    const badgeStrModEl = document.getElementById("badge-str-mod");
+    const badgeDexModEl = document.getElementById("badge-dex-mod");
+    const badgeConModEl = document.getElementById("badge-con-mod");
+    const badgeIntModEl = document.getElementById("badge-int-mod");
+    const badgeWisModEl = document.getElementById("badge-wis-mod");
+    const badgeChaModEl = document.getElementById("badge-cha-mod");
+    const characterCardEl = document.getElementById("character-card");
+    const characterCardListEl = document.getElementById("character-card-list");
+
+    let app = null;
+    let db = null;
+    let auth = null;
+    let profilePhotoUrl = null;
+    const badgeScores = {
+      BadgeSTR: 0,
+      BadgeDEX: 0,
+      BadgeCON: 0,
+      BadgeINT: 0,
+      BadgeWIS: 0,
+      BadgeCHA: 0
+    };
+    const characterCardCatalog = [
+      { en: "lite-buzz-en.png", zh: "lite-buzz-zh.png", tags: ["buzz"] },
+      { en: "lite-lott-en.png", zh: "lite-lott-zh.png", tags: ["lott"] },
+      { en: "lite-psyber-en.png", zh: "lite-psyber-zh.png", tags: ["psyber"] },
+      { en: "lite-ubbo-en.png", zh: "lite-ubbo-zh.png", tags: ["ubbo sathla"] },
+      { en: "plus-beau-en.png", zh: "plus-beau-zh.png", tags: ["beau farah"] },
+      { en: "plus-midori-en.png", zh: "plus-midori-zh.png", tags: ["midori"] },
+      { en: "plus-ron-en.png", zh: "plus-ron-zh.png", tags: ["ron"] },
+      { en: "plus-samael-en.png", zh: "plus-samael-zh.png", tags: ["samael"] },
+      { en: "plus-siri-en.png", zh: "plus-siri-zh.png", tags: ["siri oslee"] },
+      { en: "plus-yhwh-en.png", zh: "plus-yhwh-zh.png", tags: ["yhwh"] },
+      { en: "wilds-al-lon-en.png", zh: "wilds-al-lon-zh.png", tags: ["al-lon riversend"] },
+      { en: "wilds-dawn-light-fur-en.png", zh: "wilds-dawn-lite-fur-zh.png", tags: ["dawn light fur"] },
+      { en: "wilds-kaname-peresia-en.png", zh: "wilds-kaname-peresia-zh.png", tags: ["kaname"] },
+      { en: "wilds-leah-en.png", zh: "wilds-leah-zh.png", tags: ["leah"] },
+      { en: "wilds-maribel-muddlewick-en.png", zh: "wilds-maribel-muddlewick-zh.png", tags: ["maribel muddlewick"] },
+      { en: "wilds-ravi-en.png", zh: "wilds-ravi-zh.png", tags: ["ravi"] },
+      { en: "wilds-roel-lancelot-en.png", zh: "wilds-roel-lancelot-zh.png", tags: ["roel lancelot"] }
+    ];
+
+    const translations = {
+      en: {
+        heroEyebrow: "Adventurer's Journal",
+        heroTitle: "Your legendary stories to be told in taverns......",
+        heroBadgesTitle: "Adventurer's Sheet",
+        badgeSTR: "Strength", ///總點擊次數、點擊回到首頁次數
+        badgeDEX: "Dexterity", ///刷新頁面次數、短停留次數
+        badgeCON: "Constitution", ///上線時間長度、回訪次數
+        badgeINT: "Intelligence", ///回答問題數量、種類
+        badgeWIS: "Wisdom", ///停留頁面時間夠長、靠網址進入頁面
+        badgeCHA: "Charisma", ///修改大頭貼、編輯資訊
+        adventurerInfoTitle: "Adventurer's Info",
+        loginInfoTitle: "Login Info",
+        editLabel: "Edit",
+        saveLabel: "Save",
+        labelMemberId: "Member ID",
+        labelMemberNo: "Member No.",
+        labelCampaign: "Campaign",
+        labelCharacter: "Character",
+        labelAdventurerTitle: "Name",
+        labelReligion: "Religion",
+        labelSpecies: "Species",
+        labelClass: "Class",
+        labelKingdom: "Kingdom",
+        labelLastLogin: "Last Login",
+        labelLoginTime: "Total Time",
+        signOut: "Sign out",
+        profileSignedOut: "Please sign in to access this page.",
+        profileMissingConfig: "Missing Firebase config. Update shared/firebase.config.js.",
+        profileFirebaseDisabled: "Firebase is temporarily disabled.",
+        profileSignInFailed: "Sign-in failed. Please try again.",
+        profileSignedIn: "",
+        profileGuest: "Guest Adventurer",
+        profileEmailHint: "Sign in to reveal your account info."
+      },
+      zh: {
+        heroEyebrow: "冒險者日誌",
+        heroTitle: "你的傳奇冒險將在酒館被傳唱......",
+        heroBadgesTitle: "冒險者角色卡",
+        badgeSTR: "力量",
+        badgeDEX: "敏捷",
+        badgeCON: "體魄",
+        badgeINT: "智力",
+        badgeWIS: "感知",
+        badgeCHA: "魅力",
+        adventurerInfoTitle: "冒險者資訊",
+        loginInfoTitle: "登入資訊",
+        editLabel: "編輯",
+        saveLabel: "儲存",
+        labelMemberId: "會員 ID",
+        labelMemberNo: "會員編號",
+        labelCampaign: "團務",
+        labelCharacter: "角色",
+        labelAdventurerTitle: "冒險者大名",
+        labelReligion: "宗教信仰",
+        labelSpecies: "種族",
+        labelClass: "職業",
+        labelKingdom: "王國",
+        labelLastLogin: "上次登入",
+        labelLoginTime: "登入時間",
+        signOut: "登出",
+        profileSignedOut: "請先登入才能查看此頁面。",
+        profileMissingConfig: "缺少 Firebase 設定，請更新 shared/firebase.config.js。",
+        profileFirebaseDisabled: "Firebase 功能暫時停用。",
+        profileSignInFailed: "登入失敗，請再試一次。",
+        profileSignedIn: "",
+        profileGuest: "訪客冒險者",
+        profileEmailHint: "登入後即可查看帳戶資訊。"
+      }
+    };
+
+    const getStoredLanguage = () => {
+      try {
+        return localStorage.getItem("rugatha-member-lang");
+      } catch (error) {
+        return null;
+      }
+    };
+
+    const setStoredLanguage = (value) => {
+      try {
+        localStorage.setItem("rugatha-member-lang", value);
+      } catch (error) {}
+    };
+
+    const setLanguage = (lang) => {
+      const dictionary = translations[lang] || translations.en;
+      document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          el.textContent = dictionary[key];
+        }
+      });
+      toggleButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", button.dataset.lang === lang ? "true" : "false");
+      });
+      setStoredLanguage(lang);
+      applyProfileCopy(lang);
+      updateCharacterCard(authState.characterName);
+    };
+
+    let sessionStartMs = null;
+    let baseTotalSeconds = 0;
+    let sessionTimerId = null;
+    let sessionSaveId = null;
+
+    const formatDuration = (seconds, lang) => {
+      if (!Number.isFinite(seconds) || seconds < 0) {
+        return lang === "zh" ? "0 小時 0 分鐘" : "0 hour(s) 0 min(s)";
+      }
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      if (lang === "zh") {
+        return `${hours} 小時 ${minutes} 分鐘`;
+      }
+      const hourLabel = hours <= 1 ? "hour" : "hours";
+      const minuteLabel = minutes <= 1 ? "min" : "mins";
+      return `${hours} ${hourLabel} ${minutes} ${minuteLabel}`;
+    };
+
+    const getCurrentTotalSeconds = () => {
+      if (!sessionStartMs) return baseTotalSeconds;
+      const elapsed = Math.floor((Date.now() - sessionStartMs) / 1000);
+      return baseTotalSeconds + Math.max(0, elapsed);
+    };
+
+    const updateTimeDisplay = () => {
+      totalTimeEl.textContent = formatDuration(getCurrentTotalSeconds(), authState.language);
+    };
+
+    const formatMemberNo = (value) => {
+      if (value === undefined || value === null || value === "") return "—";
+      const digits = String(value).replace(/\D/g, "");
+      if (!digits) return String(value);
+      const padded = digits.padStart(8, "0").slice(-8);
+      return `${padded.slice(0, 4)}-${padded.slice(4)}`;
+    };
+
+    const allocateMemberNo = async () => {
+      if (!db) return null;
+      const counterRef = ref(db, MEMBER_COUNTER_PATH);
+      try {
+        const result = await runTransaction(counterRef, (current) => {
+          const currentNumber = Number(current);
+          if (!Number.isFinite(currentNumber)) {
+            return 0;
+          }
+          return currentNumber + 1;
+        });
+        if (!result.committed) return null;
+        const nextValue = Number(result.snapshot.val());
+        if (!Number.isFinite(nextValue)) return null;
+        return formatMemberNo(nextValue);
+      } catch (error) {
+        console.error("Failed to allocate member number", error);
+        return null;
+      }
+    };
+
+    const formatLastLogin = (value) => {
+      if (!value || typeof value !== "string") return "—";
+      const parsed = new Date(value);
+      if (!Number.isNaN(parsed.getTime())) {
+        const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const day = String(parsed.getUTCDate()).padStart(2, "0");
+        const dateLine = `${weekdays[parsed.getUTCDay()]} ${day} ${months[parsed.getUTCMonth()]} ${parsed.getUTCFullYear()}`;
+        const timeLine = `${String(parsed.getUTCHours()).padStart(2, "0")}:${String(parsed.getUTCMinutes()).padStart(2, "0")}:${String(parsed.getUTCSeconds()).padStart(2, "0")} GMT`;
+        return `${dateLine}\n${timeLine}`;
+      }
+      return value;
+    };
+
+    const startSessionTimer = () => {
+      if (!authState.user) return;
+      sessionStartMs = Date.now();
+      updateTimeDisplay();
+      sessionTimerId = window.setInterval(updateTimeDisplay, 1000);
+      sessionSaveId = window.setInterval(() => {
+        persistSessionTime(false);
+      }, 30000);
+    };
+
+    const stopSessionTimer = () => {
+      if (sessionTimerId) {
+        window.clearInterval(sessionTimerId);
+      }
+      if (sessionSaveId) {
+        window.clearInterval(sessionSaveId);
+      }
+      sessionTimerId = null;
+      sessionSaveId = null;
+      sessionStartMs = null;
+    };
+
+    const persistSessionTime = async (finalize) => {
+      if (!authState.user || !db) return;
+      if (!authState.memberId) return;
+      const totalSeconds = getCurrentTotalSeconds();
+      baseTotalSeconds = totalSeconds;
+      if (finalize) {
+        stopSessionTimer();
+      } else {
+        sessionStartMs = Date.now();
+      }
+      updateTimeDisplay();
+      const ref = getMemberDocRef(authState.memberId);
+      if (!ref) return;
+      try {
+        await update(ref, { totalTimeSeconds: totalSeconds });
+      } catch (error) {
+        console.error("Failed to update total time", error);
+      }
+    };
+
+    const setProfileEditable = (enabled) => {
+      [titleEl, religionEl, speciesEl, classEl, kingdomEl].forEach((field) => {
+        field.disabled = !enabled;
+      });
+      profileCard.classList.toggle("is-editing", enabled);
+      saveWrap.style.display = enabled ? "flex" : "none";
+      editButton.disabled = !authState.user || !db;
+      photoButton.disabled = !authState.user || !db;
+    };
+
+    const syncDisplayValues = () => {
+      titleDisplayEl.textContent = titleEl.value.trim() || "—";
+      religionDisplayEl.textContent = religionEl.value || "—";
+      speciesDisplayEl.textContent = speciesEl.value.trim() || "—";
+      classDisplayEl.textContent = classEl.value.trim() || "—";
+      kingdomDisplayEl.textContent = kingdomEl.value || "—";
+    };
+
+    const syncHiddenAttributes = (data = {}) => {
+      const normalize = (value) => (value || "").replace(/\\n/g, "\n").trim();
+      const campaign = normalize(data.Campaign);
+      const character = normalize(data.Character);
+      campaignEl.textContent = campaign || "—";
+      characterEl.textContent = character || "—";
+      campaignDividerEl.classList.toggle("is-hidden", !campaign && !character);
+      campaignDetailEl.classList.toggle("is-hidden", !campaign);
+      characterDetailEl.classList.toggle("is-hidden", !character);
+      authState.characterName = character;
+      updateCharacterCard(character);
+    };
+
+    const formatModifier = (score) => {
+      const value = Math.floor((Number(score) - 10) / 2);
+      return value >= 0 ? `+${value}` : `${value}`;
+    };
+
+    const updateBadgeDisplay = () => {
+      badgeStrEl.textContent = `${badgeScores.BadgeSTR}/20`;
+      badgeDexEl.textContent = `${badgeScores.BadgeDEX}/20`;
+      badgeConEl.textContent = `${badgeScores.BadgeCON}/20`;
+      badgeIntEl.textContent = `${badgeScores.BadgeINT}/20`;
+      badgeWisEl.textContent = `${badgeScores.BadgeWIS}/20`;
+      badgeChaEl.textContent = `${badgeScores.BadgeCHA}/20`;
+      badgeStrModEl.textContent = formatModifier(badgeScores.BadgeSTR);
+      badgeDexModEl.textContent = formatModifier(badgeScores.BadgeDEX);
+      badgeConModEl.textContent = formatModifier(badgeScores.BadgeCON);
+      badgeIntModEl.textContent = formatModifier(badgeScores.BadgeINT);
+      badgeWisModEl.textContent = formatModifier(badgeScores.BadgeWIS);
+      badgeChaModEl.textContent = formatModifier(badgeScores.BadgeCHA);
+    };
+
+    const setProfilePhoto = (url) => {
+      profilePhotoUrl = url || null;
+      photoEl.src = profilePhotoUrl || "../assets/rugatha-icon.png";
+    };
+
+    const normalizeCharacterName = (value) =>
+      (value || "")
+        .toLowerCase()
+        .replace(/[\n\r]+/g, " ")
+        .replace(/[^a-z0-9\s-]+/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    const getCharacterCardMatch = (name) => {
+      const normalized = normalizeCharacterName(name);
+      if (!normalized) return null;
+      const candidates = [normalized, normalized.split(" ")[0]].filter(Boolean);
+      return (
+        characterCardCatalog.find((entry) =>
+          candidates.some((candidate) =>
+            entry.tags.some((tag) => candidate.includes(tag))
+          )
+        ) || null
+      );
+    };
+
+    const updateCharacterCard = (characterName) => {
+      const names = (characterName || "")
+        .split(/\n+/)
+        .map((item) => item.trim())
+        .filter(Boolean);
+      const matches = names
+        .map((name) => ({ name, match: getCharacterCardMatch(name) }))
+        .filter((entry) => entry.match);
+      if (!matches.length) {
+        characterCardEl.style.display = "none";
+        characterCardListEl.innerHTML = "";
+        return;
+      }
+      characterCardListEl.innerHTML = "";
+      matches.forEach((entry) => {
+        const fileName = authState.language === "zh" ? entry.match.zh : entry.match.en;
+        const img = document.createElement("img");
+        img.src = `../pc/assets/${fileName}`;
+        img.alt = `${entry.name} character card`;
+        characterCardListEl.appendChild(img);
+      });
+      characterCardEl.style.display = "block";
+    };
+
+    const getMemberDocRef = (memberId) => {
+      if (!db || !memberId) return null;
+      return ref(db, `${MEMBER_COLLECTION}/${memberId}`);
+    };
+
+    const getLegacyMemberDocRef = (uid) => {
+      if (!db || !uid) return null;
+      return ref(db, `${MEMBER_COLLECTION}/${uid}`);
+    };
+
+    const resolveMemberId = (user, storedId) => {
+      if (!user) return "—";
+      if (storedId) return storedId;
+      return user.uid || "—";
+    };
+
+    const loadProfileFromDatabase = async (user) => {
+      if (!user?.uid || !db) return;
+      const defaultMemberId = resolveMemberId(user, null);
+      let memberId = defaultMemberId;
+      let data = {};
+      let needsWrite = false;
+      let memberRef = getMemberDocRef(memberId);
+      let badgeMissing = false;
+      let hiddenMissing = false;
+      const currentEmail = user.email || "";
+      let emailMissing = false;
+      let memberNoAssigned = false;
+      let memberNoValue = "";
+      if (!memberRef) return;
+      try {
+        let snapshot = await get(memberRef);
+        if (!snapshot.exists()) {
+          const legacyRef = getLegacyMemberDocRef(user.uid);
+          if (legacyRef) {
+            const legacySnapshot = await get(legacyRef);
+            if (legacySnapshot.exists()) {
+              data = legacySnapshot.val() || {};
+              memberId = resolveMemberId(user, data.memberId);
+              memberRef = getMemberDocRef(memberId);
+              needsWrite = true;
+            }
+          }
+        } else {
+          data = snapshot.val() || {};
+          memberId = resolveMemberId(user, data.memberId);
+          if (memberId !== defaultMemberId) {
+            memberRef = getMemberDocRef(memberId);
+            needsWrite = true;
+          }
+        }
+
+        authState.memberId = memberId;
+        uidEl.textContent = memberId;
+        memberNoValue = data.memberNo ?? "";
+        if (!memberNoValue) {
+          const allocatedMemberNo = await allocateMemberNo();
+          if (allocatedMemberNo) {
+            memberNoValue = allocatedMemberNo;
+            data.memberNo = allocatedMemberNo;
+            memberNoAssigned = true;
+          }
+        }
+        const formattedMemberNo = formatMemberNo(memberNoValue);
+        if (memberNoValue && formattedMemberNo !== memberNoValue) {
+          memberNoValue = formattedMemberNo;
+          data.memberNo = formattedMemberNo;
+          memberNoAssigned = true;
+        }
+        memberNoEl.textContent = formattedMemberNo;
+        authState.memberNo = memberNoValue || null;
+        titleEl.value = data.title || "";
+        religionEl.value = data.religion || "";
+        speciesEl.value = data.species || "";
+        classEl.value = data.className || "";
+        kingdomEl.value = data.kingdom || "";
+        setProfilePhoto(data.photoUrl || null);
+        syncDisplayValues();
+        syncHiddenAttributes(data);
+        badgeMissing = badgeMissing || data.BadgeSTR === undefined;
+        badgeMissing = badgeMissing || data.BadgeDEX === undefined;
+        badgeMissing = badgeMissing || data.BadgeCON === undefined;
+        badgeMissing = badgeMissing || data.BadgeINT === undefined;
+        badgeMissing = badgeMissing || data.BadgeWIS === undefined;
+        badgeMissing = badgeMissing || data.BadgeCHA === undefined;
+        hiddenMissing = hiddenMissing || data.Campaign === undefined;
+        hiddenMissing = hiddenMissing || data.Character === undefined;
+        badgeScores.BadgeSTR = Number(data.BadgeSTR ?? badgeScores.BadgeSTR);
+        badgeScores.BadgeDEX = Number(data.BadgeDEX ?? badgeScores.BadgeDEX);
+        badgeScores.BadgeCON = Number(data.BadgeCON ?? badgeScores.BadgeCON);
+        badgeScores.BadgeINT = Number(data.BadgeINT ?? badgeScores.BadgeINT);
+        badgeScores.BadgeWIS = Number(data.BadgeWIS ?? badgeScores.BadgeWIS);
+        badgeScores.BadgeCHA = Number(data.BadgeCHA ?? badgeScores.BadgeCHA);
+        emailMissing = emailMissing || data.email === undefined;
+        const emailChanged = currentEmail && data.email !== currentEmail;
+        updateBadgeDisplay();
+        baseTotalSeconds = Number(data.totalTimeSeconds || 0);
+        updateTimeDisplay();
+
+        if (
+          (needsWrite || badgeMissing || hiddenMissing || emailMissing || emailChanged || memberNoAssigned) &&
+          memberRef
+        ) {
+          await update(memberRef, {
+            memberId,
+            ...data,
+            ...badgeScores,
+            Campaign: data.Campaign ?? "",
+            Character: data.Character ?? "",
+            email: currentEmail,
+            ...(memberNoValue ? { memberNo: memberNoValue } : {})
+          });
+        } else if (memberRef && data.memberId !== memberId) {
+          await update(memberRef, { memberId });
+        }
+        startSessionTimer();
+      } catch (error) {
+        console.error("Failed to load member profile", error);
+      }
+    };
+
+    const saveProfileToDatabase = async (user) => {
+      if (!user?.uid || !db) return;
+      const memberId = authState.memberId || resolveMemberId(user, null);
+      authState.memberId = memberId;
+      const ref = getMemberDocRef(memberId);
+      if (!ref) return;
+      const payload = {
+        memberId,
+        email: user.email || "",
+        title: titleEl.value.trim(),
+        religion: religionEl.value,
+        species: speciesEl.value.trim(),
+        className: classEl.value.trim(),
+        kingdom: kingdomEl.value,
+        BadgeSTR: badgeScores.BadgeSTR,
+        BadgeDEX: badgeScores.BadgeDEX,
+        BadgeCON: badgeScores.BadgeCON,
+        BadgeINT: badgeScores.BadgeINT,
+        BadgeWIS: badgeScores.BadgeWIS,
+        BadgeCHA: badgeScores.BadgeCHA,
+        photoUrl: profilePhotoUrl || ""
+      };
+      if (authState.memberNo) {
+        payload.memberNo = authState.memberNo;
+      }
+      try {
+        await update(ref, payload);
+      } catch (error) {
+        console.error("Failed to save member profile", error);
+      }
+    };
+
+    const applyProfileCopy = (lang) => {
+      const dictionary = translations[lang] || translations.en;
+      if (!authState.user) {
+        nameEl.textContent = dictionary.profileGuest;
+        emailEl.textContent = dictionary.profileEmailHint;
+        titleEl.value = "";
+        religionEl.value = "";
+        speciesEl.value = "";
+        classEl.value = "";
+        kingdomEl.value = "";
+        totalTimeEl.textContent = "—";
+        hintEl.textContent = authState.message || dictionary.profileSignedOut;
+        setProfileEditable(false);
+        syncDisplayValues();
+        syncHiddenAttributes();
+        setProfilePhoto(null);
+        updateBadgeDisplay();
+        editButton.disabled = true;
+        return;
+      }
+      hintEl.textContent = dictionary.profileSignedIn;
+    };
+
+    const authState = {
+      user: null,
+      message: null,
+      language: getStoredLanguage() || "zh",
+      memberId: null,
+      memberNo: null,
+      characterName: ""
+    };
+
+    const setSignedOut = (message) => {
+      const dictionary = translations[authState.language] || translations.en;
+      nameEl.textContent = dictionary.profileGuest;
+      emailEl.textContent = dictionary.profileEmailHint;
+      titleEl.value = "";
+      religionEl.value = "";
+      speciesEl.value = "";
+      classEl.value = "";
+      kingdomEl.value = "";
+      uidEl.textContent = "—";
+      memberNoEl.textContent = "—";
+      lastLoginEl.textContent = "—";
+      totalTimeEl.textContent = "—";
+      hintEl.textContent = message || dictionary.profileSignedOut;
+      setProfilePhoto(null);
+      signOutButton.disabled = true;
+      setProfileEditable(false);
+      syncDisplayValues();
+      syncHiddenAttributes();
+      updateBadgeDisplay();
+      stopSessionTimer();
+      authState.user = null;
+      authState.message = message || dictionary.profileSignedOut;
+      authState.memberId = null;
+      authState.memberNo = null;
+      authState.characterName = "";
+    };
+
+    const formatMemberId = (value) => {
+      if (!value) return "—";
+      return String(value);
+    };
+
+    const setSignedIn = (user) => {
+      nameEl.textContent = user.displayName || "Member";
+      emailEl.textContent = user.email || "Google account";
+      authState.memberId = resolveMemberId(user, null);
+      uidEl.textContent = authState.memberId;
+      memberNoEl.textContent = "—";
+      lastLoginEl.textContent = formatLastLogin(user.metadata?.lastSignInTime) || "Just now";
+      totalTimeEl.textContent = formatDuration(0, authState.language);
+      const dictionary = translations[authState.language] || translations.en;
+      hintEl.textContent = dictionary.profileSignedIn;
+      setProfilePhoto(user.photoURL || null);
+      signOutButton.disabled = false;
+      authState.user = user;
+      setProfileEditable(false);
+      authState.message = dictionary.profileSignedIn;
+      loadProfileFromDatabase(user);
+    };
+
+    if (firebaseDisabled || !firebaseConfig) {
+      const dictionary = translations[authState.language] || translations.en;
+      const message = firebaseDisabled
+        ? dictionary.profileFirebaseDisabled
+        : dictionary.profileMissingConfig;
+      setSignedOut(message);
+    } else {
+      app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+      auth = getAuth(app);
+      db = getDatabase(app);
+
+      signOutButton.addEventListener("click", async () => {
+        try {
+          await persistSessionTime(true);
+          await signOut(auth);
+        } catch (error) {
+          console.error("Sign-out failed", error);
+        }
+      });
+
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setSignedIn(user);
+        } else {
+          setSignedOut();
+        }
+      });
+    }
+
+    toggleButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const lang = button.dataset.lang;
+        authState.language = lang;
+        setLanguage(lang);
+      });
+    });
+
+    editButton.addEventListener("click", () => {
+      if (!authState.user) return;
+      setProfileEditable(true);
+    });
+
+    photoButton.addEventListener("click", () => {
+      if (!authState.user || !db) return;
+      photoInput.click();
+    });
+
+    photoInput.addEventListener("change", (event) => {
+      if (!authState.user || !db) return;
+      const file = event.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const result = typeof reader.result === "string" ? reader.result : null;
+        if (!result) return;
+        setProfilePhoto(result);
+        const ref = getMemberDocRef(authState.memberId);
+        if (!ref) return;
+        try {
+          await update(ref, { photoUrl: result });
+        } catch (error) {
+          console.error("Failed to save profile photo", error);
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+
+    saveButton.addEventListener("click", () => {
+      if (!authState.user) return;
+      saveProfileToDatabase(authState.user);
+      syncDisplayValues();
+      setProfileEditable(false);
+    });
+
+    window.addEventListener("beforeunload", () => {
+      if (authState.user) {
+        persistSessionTime(true);
+      }
+    });
+
+    setLanguage(authState.language);
+  </script>
+</body>
+</html>

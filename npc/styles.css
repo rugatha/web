@@ -24,6 +24,7 @@ body {
 header {
   padding: 24px 5vw 12px;
   text-align: center;
+  position: relative;
 }
 
 h1 {
@@ -72,6 +73,54 @@ p.lead {
 .title-bar h1 {
   margin: 0;
   text-align: center;
+}
+
+.language-toggle {
+  position: absolute;
+  top: 24px;
+  left: 5vw;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.language-toggle button {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+  font-family: var(--font-body);
+}
+
+.language-toggle button[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--text);
+}
+
+.language-toggle button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  header {
+    padding-top: 72px;
+  }
+
+  .language-toggle {
+    top: 18px;
+    left: 6vw;
+  }
 }
 
 .search {
