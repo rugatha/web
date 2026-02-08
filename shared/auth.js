@@ -118,6 +118,26 @@ const ensureAuthMarkup = () => {
 };
 
 const setupAuth = () => {
+  const firebaseConfig = getFirebaseConfig();
+  const firebaseDisabled =
+    window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
+
+  if (firebaseDisabled || !firebaseConfig) {
+    const loginButton = document.getElementById("google-login");
+    if (loginButton) {
+      const container = loginButton.closest(".auth-entry");
+      if (container) {
+        container.remove();
+      } else {
+        loginButton.remove();
+      }
+    }
+    if (!firebaseDisabled && !firebaseConfig) {
+      console.warn("Missing window.RUGATHA_FIREBASE_CONFIG");
+    }
+    return;
+  }
+
   ensureAuthStyles();
   ensureAuthMarkup();
 
@@ -129,22 +149,6 @@ const setupAuth = () => {
   }
 
   const labelEl = loginButton.querySelector(".auth-label");
-  const firebaseConfig = getFirebaseConfig();
-  const firebaseDisabled =
-    window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
-
-  if (firebaseDisabled || !firebaseConfig) {
-    if (labelEl) {
-      labelEl.textContent = "Sign in";
-    }
-    statusEl.textContent = firebaseDisabled ? "Firebase disabled" : "Missing Firebase config";
-    loginButton.disabled = true;
-    loginButton.setAttribute("aria-disabled", "true");
-    if (!firebaseDisabled) {
-      console.warn("Missing window.RUGATHA_FIREBASE_CONFIG");
-    }
-    return;
-  }
 
   const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
 
