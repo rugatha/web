@@ -724,7 +724,7 @@
       },
       {
         id: "lite-c12-chpt02",
-        title: "Chapter 2:",
+        title: "Chapter 2: The Truth Beneath the Mask",
         url: "../lite-c12/chpt02.html"
       }
     ],
