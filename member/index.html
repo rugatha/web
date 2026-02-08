@@ -778,6 +778,8 @@
     } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
     const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
+    const firebaseDisabled =
+      window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
     const signOutButton = document.getElementById("sign-out");
     const nameEl = document.getElementById("user-name");
     const emailEl = document.getElementById("user-email");
@@ -887,6 +889,7 @@
         signOut: "Sign out",
         profileSignedOut: "Please sign in to access this page.",
         profileMissingConfig: "Missing Firebase config. Update shared/firebase.config.js.",
+        profileFirebaseDisabled: "Firebase is temporarily disabled.",
         profileSignInFailed: "Sign-in failed. Please try again.",
         profileSignedIn: "",
         profileGuest: "Guest Adventurer",
@@ -920,6 +923,7 @@
         signOut: "登出",
         profileSignedOut: "請先登入才能查看此頁面。",
         profileMissingConfig: "缺少 Firebase 設定，請更新 shared/firebase.config.js。",
+        profileFirebaseDisabled: "Firebase 功能暫時停用。",
         profileSignInFailed: "登入失敗，請再試一次。",
         profileSignedIn: "",
         profileGuest: "訪客冒險者",
@@ -1409,9 +1413,12 @@
       loadProfileFromDatabase(user);
     };
 
-    if (!firebaseConfig) {
+    if (firebaseDisabled || !firebaseConfig) {
       const dictionary = translations[authState.language] || translations.en;
-      setSignedOut(dictionary.profileMissingConfig);
+      const message = firebaseDisabled
+        ? dictionary.profileFirebaseDisabled
+        : dictionary.profileMissingConfig;
+      setSignedOut(message);
     } else {
       app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
       auth = getAuth(app);

@@ -5,7 +5,15 @@ import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/1
 const qaRoot = document.querySelector("[data-qa]");
 if (qaRoot) window.qaRoot = qaRoot;
 
-if (qaRoot) {
+const qaDisabled = Boolean(
+  window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.qaFateEnabled === false
+);
+
+if (qaRoot && qaDisabled) {
+  qaRoot.hidden = true;
+}
+
+if (qaRoot && !qaDisabled) {
   const qaSource = qaRoot.getAttribute("data-qa-src");
   const qaId = qaRoot.getAttribute("data-qa-id");
   const questionEl = qaRoot.querySelector("[data-qa-question]");

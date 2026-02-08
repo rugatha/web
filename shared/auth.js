@@ -130,15 +130,19 @@ const setupAuth = () => {
 
   const labelEl = loginButton.querySelector(".auth-label");
   const firebaseConfig = getFirebaseConfig();
+  const firebaseDisabled =
+    window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
 
-  if (!firebaseConfig) {
+  if (firebaseDisabled || !firebaseConfig) {
     if (labelEl) {
       labelEl.textContent = "Sign in";
     }
-    statusEl.textContent = "Missing Firebase config";
+    statusEl.textContent = firebaseDisabled ? "Firebase disabled" : "Missing Firebase config";
     loginButton.disabled = true;
     loginButton.setAttribute("aria-disabled", "true");
-    console.warn("Missing window.RUGATHA_FIREBASE_CONFIG");
+    if (!firebaseDisabled) {
+      console.warn("Missing window.RUGATHA_FIREBASE_CONFIG");
+    }
     return;
   }
 
