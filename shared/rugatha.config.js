@@ -75,7 +75,7 @@
       page: "./pages/rugatha-lite/index.html",
       image: campaignLogo("rugatha-light-logo.jpg"),
       accent: "#ffe7a3",
-      nextSession: "2026/2/7"
+      nextSession: "2026/3/7"
     },
     {
       name: "Rugatha WILDS",
@@ -721,6 +721,11 @@
         id: "lite-c12-chpt01",
         title: "Chapter 1: Do Not Leave Us in the Dark",
         url: "../lite-c12/chpt01.html"
+      },
+      {
+        id: "lite-c12-chpt02",
+        title: "Chapter 2:",
+        url: "../lite-c12/chpt02.html"
       }
     ],
 
