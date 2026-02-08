@@ -540,9 +540,10 @@ body {
 }
 
 .social-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
+  justify-content: center;
 }
 
 .boba-embed {
@@ -571,23 +572,22 @@ body {
 
 .social-btn {
   display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(135deg, rgba(96, 105, 94, 0.78), rgba(19, 28, 32, 0.88));
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
   color: inherit;
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  box-shadow: none;
   transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
 }
 
 .social-btn:hover,
 .social-btn:focus-visible {
   transform: translateY(-2px);
-  border-color: rgba(123, 220, 181, 0.45);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(123, 220, 181, 0.16);
   outline: none;
 }
@@ -603,8 +603,8 @@ body {
 .social-icon {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -616,6 +616,10 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.social-btn.threads .social-icon img {
+  transform: scale(1.3);
 }
 
 .social-text {
