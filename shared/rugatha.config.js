@@ -75,7 +75,7 @@
       page: "./pages/rugatha-lite/index.html",
       image: campaignLogo("rugatha-light-logo.jpg"),
       accent: "#ffe7a3",
-      nextSession: "2026/2/7"
+      nextSession: "2026/3/7"
     },
     {
       name: "Rugatha WILDS",
@@ -721,6 +721,11 @@
         id: "lite-c12-chpt01",
         title: "Chapter 1: Do Not Leave Us in the Dark",
         url: "../lite-c12/chpt01.html"
+      },
+      {
+        id: "lite-c12-chpt02",
+        title: "Chapter 2: The Truth Beneath the Mask",
+        url: "../lite-c12/chpt02.html"
       }
     ],
 
@@ -980,6 +985,7 @@
     "lite-c11-chpt03": "../chapter-banners/lite-c11-chpt03.jpeg",
     "lite-c11-chpt04": "../chapter-banners/lite-c11-chpt04.jpeg",
     "lite-c12-chpt01": "../chapter-banners/lite-c12-chpt01.jpeg",
+    "lite-c12-chpt02": "../chapter-banners/lite-c12-chpt02.png",
     "wilds-c01-chpt01": "../chapter-banners/wilds-c01-chpt01.png",
     "wilds-c01-chpt02": "../chapter-banners/wilds-c01-chpt02.png",
     "wilds-c01-chpt03": "../chapter-banners/wilds-c01-chpt03.png",
