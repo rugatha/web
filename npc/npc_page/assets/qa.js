@@ -524,7 +524,7 @@ if (qaRoot && !qaDisabled) {
       qaRoot.hidden = true;
       return;
     }
-    setAuthLocked(Boolean(firebaseConfig));
+    setAuthLocked(true);
     ensureFirebase();
     bindChoices();
     loadSavedChoice();
