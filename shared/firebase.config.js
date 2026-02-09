@@ -1,6 +1,6 @@
 window.RUGATHA_FEATURE_FLAGS = Object.assign({}, window.RUGATHA_FEATURE_FLAGS, {
-  firebaseEnabled: false,
-  qaFateEnabled: false
+  firebaseEnabled: true,
+  qaFateEnabled: true
 });
 
 if (window.RUGATHA_FEATURE_FLAGS.firebaseEnabled) {

@@ -14,6 +14,9 @@
       --member-accent: #9fe0ba;
       --member-accent-strong: #ffd58b;
       --member-panel: rgba(14, 22, 26, 0.72);
+      --rarity-bronze: #b57a3f;
+      --rarity-silver: #c3c9d1;
+      --rarity-gold: #d4af37;
     }
 
     body {
@@ -432,6 +435,91 @@
       width: 100%;
     }
 
+    .achievement-status-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .achievement-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    @media (max-width: 720px) {
+      .achievement-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .achievement-card {
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: rgba(0, 0, 0, 0.26);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: grid;
+      gap: 10px;
+      min-height: 56px;
+    }
+
+    .achievement-card.is-achieved {
+      border-color: rgba(159, 224, 186, 0.45);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .achievement-card.is-locked {
+      opacity: 0.7;
+    }
+
+    .achievement-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .achievement-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--member-ink);
+    }
+
+    .achievement-status {
+      margin-left: auto;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--member-muted);
+    }
+
+    .rarity-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      flex-shrink: 0;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.22);
+    }
+
+    .rarity-dot[data-rarity="C"] {
+      background: var(--rarity-bronze);
+    }
+
+    .rarity-dot[data-rarity="U"] {
+      background: var(--rarity-silver);
+    }
+
+    .rarity-dot[data-rarity="R"] {
+      background: var(--rarity-gold);
+    }
+
+    .achievement-detail {
+      display: none;
+    }
+
     .detail {
       display: flex;
       flex-direction: column;
@@ -597,7 +685,9 @@
       <button type="button" data-lang="zh" aria-pressed="true">中文</button>
       <button type="button" data-lang="en" aria-pressed="false">English</button>
     </div>
-    <a class="corner-link" href="../index.html" aria-label="Rugatha Home">rugatha.com</a>
+    <a class="corner-link" href="../index.html" aria-label="Rugatha Home">
+      <img src="../assets/rugatha-icon.png" alt="Rugatha home" width="100" height="100">
+    </a>
     <header class="member-hero">
       <div class="hero-copy">
         <p class="eyebrow" data-i18n="heroEyebrow">Adventurer's Journal</p>
@@ -608,42 +698,42 @@
             <div class="badge-item">
               <div class="badge-label" data-i18n="badgeSTR">STR</div>
               <div class="badge-box">
-                <div class="badge-value" id="badge-str">0/20</div>
+                <div class="badge-value" id="badge-str">10/20</div>
                 <div class="badge-mod" id="badge-str-mod">+0</div>
               </div>
             </div>
             <div class="badge-item">
               <div class="badge-label" data-i18n="badgeDEX">DEX</div>
               <div class="badge-box">
-                <div class="badge-value" id="badge-dex">0/20</div>
+                <div class="badge-value" id="badge-dex">10/20</div>
                 <div class="badge-mod" id="badge-dex-mod">+0</div>
               </div>
             </div>
             <div class="badge-item">
               <div class="badge-label" data-i18n="badgeCON">CON</div>
               <div class="badge-box">
-                <div class="badge-value" id="badge-con">0/20</div>
+                <div class="badge-value" id="badge-con">10/20</div>
                 <div class="badge-mod" id="badge-con-mod">+0</div>
               </div>
             </div>
             <div class="badge-item">
               <div class="badge-label" data-i18n="badgeINT">INT</div>
               <div class="badge-box">
-                <div class="badge-value" id="badge-int">0/20</div>
+                <div class="badge-value" id="badge-int">10/20</div>
                 <div class="badge-mod" id="badge-int-mod">+0</div>
               </div>
             </div>
             <div class="badge-item">
               <div class="badge-label" data-i18n="badgeWIS">WIS</div>
               <div class="badge-box">
-                <div class="badge-value" id="badge-wis">0/20</div>
+                <div class="badge-value" id="badge-wis">10/20</div>
                 <div class="badge-mod" id="badge-wis-mod">+0</div>
               </div>
             </div>
             <div class="badge-item">
               <div class="badge-label" data-i18n="badgeCHA">CHA</div>
               <div class="badge-box">
-                <div class="badge-value" id="badge-cha">0/20</div>
+                <div class="badge-value" id="badge-cha">10/20</div>
                 <div class="badge-mod" id="badge-cha-mod">+0</div>
               </div>
             </div>
@@ -744,6 +834,18 @@
           </div>
         </div>
         <div class="profile-section">
+          <h3 class="profile-section-title" data-i18n="achievementsTitle">Achievements</h3>
+          <div class="profile-details">
+            <div class="detail full-width">
+              <div class="achievement-status-line">
+                <span class="detail-label" data-i18n="achievementsEmptyLabel">Status</span>
+                <span class="detail-value" id="achievement-empty" data-i18n="achievementsEmptyValue">No achievements yet.</span>
+              </div>
+              <div class="achievement-list" id="achievement-list"></div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-section">
           <h3 class="profile-section-title" data-i18n="loginInfoTitle">Login Info</h3>
           <div class="profile-details">
             <div class="detail">
@@ -768,7 +870,13 @@
   <script src="../shared/firebase.config.js"></script>
   <script type="module">
     import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+    import {
+      getAuth,
+      onAuthStateChanged,
+      signOut,
+      GoogleAuthProvider,
+      signInWithRedirect
+    } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
     import {
       getDatabase,
       ref,
@@ -780,6 +888,7 @@
     const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
     const firebaseDisabled =
       window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
+    const MEMBER_SIGNIN_KEY = "rugatha-member-signin-attempted";
     const signOutButton = document.getElementById("sign-out");
     const nameEl = document.getElementById("user-name");
     const emailEl = document.getElementById("user-email");
@@ -827,18 +936,29 @@
     const badgeChaModEl = document.getElementById("badge-cha-mod");
     const characterCardEl = document.getElementById("character-card");
     const characterCardListEl = document.getElementById("character-card-list");
+    const achievementListEl = document.getElementById("achievement-list");
+    const achievementEmptyEl = document.getElementById("achievement-empty");
 
     let app = null;
     let db = null;
     let auth = null;
     let profilePhotoUrl = null;
+    const ACHIEVEMENTS_CSV_PATH = "./achievements.csv";
+    const ACHIEVEMENT_BADGE_MAP = {
+      STR: "BadgeSTR",
+      DEX: "BadgeDEX",
+      CON: "BadgeCON",
+      INT: "BadgeINT",
+      WIS: "BadgeWIS",
+      CHA: "BadgeCHA"
+    };
     const badgeScores = {
-      BadgeSTR: 0,
-      BadgeDEX: 0,
-      BadgeCON: 0,
-      BadgeINT: 0,
-      BadgeWIS: 0,
-      BadgeCHA: 0
+      BadgeSTR: 10,
+      BadgeDEX: 10,
+      BadgeCON: 10,
+      BadgeINT: 10,
+      BadgeWIS: 10,
+      BadgeCHA: 10
     };
     const characterCardCatalog = [
       { en: "lite-buzz-en.png", zh: "lite-buzz-zh.png", tags: ["buzz"] },
@@ -859,6 +979,10 @@
       { en: "wilds-ravi-en.png", zh: "wilds-ravi-zh.png", tags: ["ravi"] },
       { en: "wilds-roel-lancelot-en.png", zh: "wilds-roel-lancelot-zh.png", tags: ["roel lancelot"] }
     ];
+    let achievementsCatalog = [];
+    let achievementsByCode = {};
+    let achievementsLoaded = false;
+    let achievementsLoadPromise = null;
 
     const translations = {
       en: {
@@ -884,6 +1008,9 @@
         labelSpecies: "Species",
         labelClass: "Class",
         labelKingdom: "Kingdom",
+        achievementsTitle: "Achievements",
+        achievementsEmptyLabel: "Status",
+        achievementsEmptyValue: "No achievements yet.",
         labelLastLogin: "Last Login",
         labelLoginTime: "Total Time",
         signOut: "Sign out",
@@ -893,7 +1020,12 @@
         profileSignInFailed: "Sign-in failed. Please try again.",
         profileSignedIn: "",
         profileGuest: "Guest Adventurer",
-        profileEmailHint: "Sign in to reveal your account info."
+        profileEmailHint: "Sign in to reveal your account info.",
+        achievementAchieved: "Achieved",
+        achievementLocked: "Locked",
+        achievementConditionLabel: "Condition:",
+        achievementConditionUnknown: "Condition unknown.",
+        achievementsUnlockedValue: "Unlocked"
       },
       zh: {
         heroEyebrow: "冒險者日誌",
@@ -920,6 +1052,9 @@
         labelKingdom: "王國",
         labelLastLogin: "上次登入",
         labelLoginTime: "登入時間",
+        achievementsTitle: "成就",
+        achievementsEmptyLabel: "狀態",
+        achievementsEmptyValue: "尚未獲得成就。",
         signOut: "登出",
         profileSignedOut: "請先登入才能查看此頁面。",
         profileMissingConfig: "缺少 Firebase 設定，請更新 shared/firebase.config.js。",
@@ -927,7 +1062,258 @@
         profileSignInFailed: "登入失敗，請再試一次。",
         profileSignedIn: "",
         profileGuest: "訪客冒險者",
-        profileEmailHint: "登入後即可查看帳戶資訊。"
+        profileEmailHint: "登入後即可查看帳戶資訊。",
+        achievementAchieved: "已達成",
+        achievementLocked: "未解鎖",
+        achievementConditionLabel: "條件:",
+        achievementConditionUnknown: "條件未公開。",
+        achievementsUnlockedValue: "已解鎖"
+      }
+    };
+
+    const parseCsv = (text) => {
+      const rows = [];
+      let row = [];
+      let cell = "";
+      let inQuotes = false;
+      for (let i = 0; i < text.length; i += 1) {
+        const char = text[i];
+        if (inQuotes) {
+          if (char === "\"") {
+            if (text[i + 1] === "\"") {
+              cell += "\"";
+              i += 1;
+            } else {
+              inQuotes = false;
+            }
+          } else {
+            cell += char;
+          }
+        } else if (char === "\"") {
+          inQuotes = true;
+        } else if (char === ",") {
+          row.push(cell);
+          cell = "";
+        } else if (char === "\n") {
+          row.push(cell);
+          rows.push(row);
+          row = [];
+          cell = "";
+        } else if (char !== "\r") {
+          cell += char;
+        }
+      }
+      if (cell.length || row.length) {
+        row.push(cell);
+        rows.push(row);
+      }
+      return rows;
+    };
+
+    const toNumber = (value) => {
+      const parsed = Number(value);
+      return Number.isFinite(parsed) ? parsed : 0;
+    };
+
+    const normalizeAchievement = (raw = {}) => {
+      const code = String(raw.achievement || "").trim();
+      if (!code) return null;
+      const rewards = {};
+      Object.entries(ACHIEVEMENT_BADGE_MAP).forEach(([key, badgeKey]) => {
+        rewards[badgeKey] = toNumber(raw[key]);
+      });
+      return {
+        achievement: code,
+        achievementZh: String(raw.achievementZh || "").trim(),
+        achievementEn: String(raw.achievementEn || "").trim(),
+        rarity: String(raw.Rarity || "").trim() || "C",
+        flavorZh: String(raw.flavorZh || "").trim(),
+        flavorEn: String(raw.flavorEn || "").trim(),
+        note: String(raw.Note || "").trim(),
+        rewards
+      };
+    };
+
+    const loadAchievementsCatalog = async () => {
+      if (achievementsLoadPromise) {
+        return achievementsLoadPromise;
+      }
+      achievementsLoadPromise = (async () => {
+        try {
+          const response = await fetch(ACHIEVEMENTS_CSV_PATH, { cache: "no-store" });
+          if (!response.ok) {
+            throw new Error(`Failed to load achievements CSV: ${response.status}`);
+          }
+          const text = await response.text();
+          const rows = parseCsv(text);
+          if (!rows.length) {
+            achievementsCatalog = [];
+            achievementsByCode = {};
+            achievementsLoaded = true;
+            renderAchievements();
+            return achievementsCatalog;
+          }
+          const headers = rows[0].map((header) => String(header || "").trim());
+          const items = rows
+            .slice(1)
+            .map((row) => {
+              const entry = {};
+              headers.forEach((header, index) => {
+                entry[header] = row[index] ?? "";
+              });
+              return normalizeAchievement(entry);
+            })
+            .filter(Boolean);
+          achievementsCatalog = items;
+          achievementsByCode = items.reduce((map, item) => {
+            map[item.achievement] = item;
+            return map;
+          }, {});
+          achievementsLoaded = true;
+          renderAchievements();
+          return achievementsCatalog;
+        } catch (error) {
+          console.error("Failed to load achievements catalog", error);
+          achievementsCatalog = [];
+          achievementsByCode = {};
+          achievementsLoaded = true;
+          renderAchievements();
+          return achievementsCatalog;
+        }
+      })();
+      return achievementsLoadPromise;
+    };
+
+    const getAchievementName = (item, lang) =>
+      lang === "zh" ? item.achievementZh || item.achievementEn : item.achievementEn || item.achievementZh;
+
+    const getAchievementFlavor = (item, lang) =>
+      lang === "zh" ? item.flavorZh || item.flavorEn : item.flavorEn || item.flavorZh;
+
+    const getAchievementNote = (item, lang, dictionary) => {
+      const note = item.note || dictionary.achievementConditionUnknown;
+      return note;
+    };
+
+    const showAchievementToast = (flavorZh, flavorEn) => {
+      if (!flavorZh && !flavorEn) return;
+      if (!document.body) return;
+      const styleId = "rugatha-achievement-toast-style";
+      if (!document.getElementById(styleId)) {
+        const style = document.createElement("style");
+        style.id = styleId;
+        style.textContent = `
+          .achievement-toast-wrap {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 9999;
+            display: grid;
+            gap: 10px;
+            pointer-events: none;
+          }
+          .achievement-toast {
+            min-width: 220px;
+            max-width: 320px;
+            background: rgba(248, 250, 252, 0.95);
+            color: #1b2a26;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 14px;
+            padding: 12px 14px;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+            display: grid;
+            gap: 6px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            animation: toast-in 200ms ease-out;
+          }
+          .achievement-toast .toast-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: rgba(27, 42, 38, 0.7);
+          }
+          @keyframes toast-in {
+            from { transform: translateY(6px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+      let wrap = document.querySelector(".achievement-toast-wrap");
+      if (!wrap) {
+        wrap = document.createElement("div");
+        wrap.className = "achievement-toast-wrap";
+        document.body.appendChild(wrap);
+      }
+      const toast = document.createElement("div");
+      toast.className = "achievement-toast";
+      const title = document.createElement("div");
+      title.className = "toast-title";
+      title.textContent = "89e3939662105c31Ff1a";
+      toast.appendChild(title);
+      if (flavorZh) {
+        const zh = document.createElement("div");
+        zh.textContent = flavorZh;
+        toast.appendChild(zh);
+      }
+      if (flavorEn) {
+        const en = document.createElement("div");
+        en.textContent = flavorEn;
+        toast.appendChild(en);
+      }
+      wrap.appendChild(toast);
+      window.setTimeout(() => {
+        toast.remove();
+        if (wrap && !wrap.children.length) {
+          wrap.remove();
+        }
+      }, 4500);
+    };
+
+    const renderAchievements = () => {
+      if (!achievementListEl) return;
+      const dictionary = translations[authState.language] || translations.en;
+      if (!achievementsLoaded) {
+        achievementListEl.innerHTML = "";
+        return;
+      }
+      const earnedMap = authState.achievements || {};
+      let earnedCount = 0;
+      achievementListEl.innerHTML = "";
+      const rarityOrder = { C: 0, U: 1, R: 2 };
+      const locale = authState.language === "zh" ? "zh-Hant" : "en";
+      const sortedCatalog = [...achievementsCatalog].sort((a, b) => {
+        const rarityDiff = (rarityOrder[a.rarity] ?? 99) - (rarityOrder[b.rarity] ?? 99);
+        if (rarityDiff !== 0) return rarityDiff;
+        const nameA = getAchievementName(a, authState.language);
+        const nameB = getAchievementName(b, authState.language);
+        return nameA.localeCompare(nameB, locale);
+      });
+      sortedCatalog.forEach((item) => {
+        const achieved = Boolean(earnedMap[item.achievement]);
+        if (achieved) {
+          earnedCount += 1;
+        } else {
+          return;
+        }
+        const card = document.createElement("article");
+        card.className = `achievement-card ${achieved ? "is-achieved" : "is-locked"}`;
+        const header = document.createElement("div");
+        header.className = "achievement-header";
+        const dot = document.createElement("span");
+        dot.className = "rarity-dot";
+        dot.dataset.rarity = item.rarity || "C";
+        const name = document.createElement("div");
+        name.className = "achievement-name";
+        name.textContent = getAchievementName(item, authState.language);
+        header.append(dot, name);
+        card.append(header);
+        achievementListEl.appendChild(card);
+      });
+      if (achievementEmptyEl) {
+        achievementEmptyEl.textContent =
+          earnedCount === 0 ? dictionary.achievementsEmptyValue : dictionary.achievementsUnlockedValue;
       }
     };
 
@@ -960,6 +1346,7 @@
       setStoredLanguage(lang);
       applyProfileCopy(lang);
       updateCharacterCard(authState.characterName);
+      renderAchievements();
     };
 
     let sessionStartMs = null;
@@ -1067,6 +1454,7 @@
         sessionStartMs = Date.now();
       }
       updateTimeDisplay();
+      evaluateTimeAchievements(totalSeconds);
       const ref = getMemberDocRef(authState.memberId);
       if (!ref) return;
       try {
@@ -1125,6 +1513,144 @@
       badgeIntModEl.textContent = formatModifier(badgeScores.BadgeINT);
       badgeWisModEl.textContent = formatModifier(badgeScores.BadgeWIS);
       badgeChaModEl.textContent = formatModifier(badgeScores.BadgeCHA);
+    };
+
+    const syncBadgeScoresFromData = (data = {}) => {
+      badgeScores.BadgeSTR = Number(data.BadgeSTR ?? badgeScores.BadgeSTR);
+      badgeScores.BadgeDEX = Number(data.BadgeDEX ?? badgeScores.BadgeDEX);
+      badgeScores.BadgeCON = Number(data.BadgeCON ?? badgeScores.BadgeCON);
+      badgeScores.BadgeINT = Number(data.BadgeINT ?? badgeScores.BadgeINT);
+      badgeScores.BadgeWIS = Number(data.BadgeWIS ?? badgeScores.BadgeWIS);
+      badgeScores.BadgeCHA = Number(data.BadgeCHA ?? badgeScores.BadgeCHA);
+      updateBadgeDisplay();
+    };
+
+    const awardAchievement = async (achievement) => {
+      if (!authState.user || !db || !authState.memberId || !achievement) return false;
+      if (authState.achievements && authState.achievements[achievement.achievement]) return false;
+      const memberRef = getMemberDocRef(authState.memberId);
+      if (!memberRef) return false;
+      let awarded = false;
+      try {
+        const result = await runTransaction(memberRef, (current) => {
+          const existing = current || {};
+          const existingAchievements = existing.achievements || {};
+          if (existingAchievements[achievement.achievement]) {
+            return existing;
+          }
+          awarded = true;
+          const nextAchievements = { ...existingAchievements, [achievement.achievement]: true };
+          const next = { ...existing, achievements: nextAchievements };
+          Object.entries(achievement.rewards || {}).forEach(([key, value]) => {
+            const baseValue = Number(existing[key]);
+            const safeBase = Number.isFinite(baseValue) ? baseValue : Number(badgeScores[key] ?? 10);
+            const rewardValue = Number.isFinite(value) ? value : 0;
+            next[key] = safeBase + rewardValue;
+          });
+          return next;
+        });
+        if (result.committed) {
+          const updated = result.snapshot.val() || {};
+          authState.achievements = updated.achievements || {};
+          syncBadgeScoresFromData(updated);
+          renderAchievements();
+          if (awarded) {
+            showAchievementToast(achievement.flavorZh, achievement.flavorEn);
+          }
+          return true;
+        }
+      } catch (error) {
+        console.error("Failed to award achievement", error);
+      }
+      return false;
+    };
+
+    const awardAchievementByCode = async (code) => {
+      if (!code) return false;
+      await loadAchievementsCatalog();
+      const achievement = achievementsByCode[code];
+      if (!achievement) return false;
+      return awardAchievement(achievement);
+    };
+
+    const evaluateProfileAchievements = () => {
+      if (!authState.user) return;
+      const hasProfileInfo =
+        Boolean(titleEl.value.trim()) &&
+        Boolean(religionEl.value) &&
+        Boolean(speciesEl.value.trim()) &&
+        Boolean(classEl.value.trim()) &&
+        Boolean(kingdomEl.value);
+      if (hasProfileInfo) {
+        awardAchievementByCode("ach_MfA");
+      }
+    };
+
+    const evaluatePhotoAchievement = () => {
+      if (!authState.user) return;
+      if (profilePhotoUrl) {
+        awardAchievementByCode("ach_GU");
+      }
+    };
+
+    const evaluateTimeAchievements = (seconds) => {
+      if (!authState.user) return;
+      if (seconds >= 3600) {
+        awardAchievementByCode("ach_SR");
+      }
+      if (seconds >= 21600) {
+        awardAchievementByCode("ach_LR");
+      }
+    };
+
+    const loadMemberChoices = async () => {
+      if (!db || !authState.user) return null;
+      const keys = [
+        authState.memberNo,
+        authState.user.uid,
+        authState.memberId
+      ]
+        .map((value) => (value || "").trim())
+        .filter(Boolean);
+      if (!keys.length) return null;
+      const entries = [];
+      const seen = new Set();
+      try {
+        for (const memberKey of keys) {
+          const snapshot = await get(ref(db, `qa_choices/${memberKey}`));
+          if (!snapshot.exists()) continue;
+          snapshot.forEach((pageSnap) => {
+            const value = pageSnap.val();
+            if (!value || typeof value !== "object") return;
+            const identity = `${value.questionPage || pageSnap.key || ""}:${value.choice || ""}`;
+            if (seen.has(identity)) return;
+            seen.add(identity);
+            entries.push(value);
+          });
+        }
+        return { count: entries.length, entries };
+      } catch (error) {
+        console.error("Failed to load member choices", error);
+        return null;
+      }
+    };
+
+    const evaluateChoiceAchievements = async () => {
+      if (!authState.user) return;
+      const result = await loadMemberChoices();
+      if (!result) return;
+      if (result.count > 0) {
+        awardAchievementByCode("ach_EO");
+      }
+      if (result.count > 20) {
+        awardAchievementByCode("ach_PU");
+      }
+      const hasDrVaxon = result.entries.some((entry) =>
+        String(entry.questionPage || "").includes("Dr_Vaxon")
+      );
+      if (hasDrVaxon) {
+        awardAchievementByCode("ach_NbtL");
+      }
     };
 
     const setProfilePhoto = (url) => {
@@ -1256,6 +1782,8 @@
         setProfilePhoto(data.photoUrl || null);
         syncDisplayValues();
         syncHiddenAttributes(data);
+        authState.achievements = data.achievements || {};
+        renderAchievements();
         badgeMissing = badgeMissing || data.BadgeSTR === undefined;
         badgeMissing = badgeMissing || data.BadgeDEX === undefined;
         badgeMissing = badgeMissing || data.BadgeCON === undefined;
@@ -1264,17 +1792,17 @@
         badgeMissing = badgeMissing || data.BadgeCHA === undefined;
         hiddenMissing = hiddenMissing || data.Campaign === undefined;
         hiddenMissing = hiddenMissing || data.Character === undefined;
-        badgeScores.BadgeSTR = Number(data.BadgeSTR ?? badgeScores.BadgeSTR);
-        badgeScores.BadgeDEX = Number(data.BadgeDEX ?? badgeScores.BadgeDEX);
-        badgeScores.BadgeCON = Number(data.BadgeCON ?? badgeScores.BadgeCON);
-        badgeScores.BadgeINT = Number(data.BadgeINT ?? badgeScores.BadgeINT);
-        badgeScores.BadgeWIS = Number(data.BadgeWIS ?? badgeScores.BadgeWIS);
-        badgeScores.BadgeCHA = Number(data.BadgeCHA ?? badgeScores.BadgeCHA);
+        syncBadgeScoresFromData(data);
         emailMissing = emailMissing || data.email === undefined;
         const emailChanged = currentEmail && data.email !== currentEmail;
-        updateBadgeDisplay();
         baseTotalSeconds = Number(data.totalTimeSeconds || 0);
         updateTimeDisplay();
+
+        awardAchievementByCode("ach_JtG");
+        evaluateProfileAchievements();
+        evaluatePhotoAchievement();
+        evaluateTimeAchievements(baseTotalSeconds);
+        evaluateChoiceAchievements();
 
         if (
           (needsWrite || badgeMissing || hiddenMissing || emailMissing || emailChanged || memberNoAssigned) &&
@@ -1359,7 +1887,8 @@
       language: getStoredLanguage() || "zh",
       memberId: null,
       memberNo: null,
-      characterName: ""
+      characterName: "",
+      achievements: {}
     };
 
     const setSignedOut = (message) => {
@@ -1388,6 +1917,8 @@
       authState.memberId = null;
       authState.memberNo = null;
       authState.characterName = "";
+      authState.achievements = {};
+      renderAchievements();
     };
 
     const formatMemberId = (value) => {
@@ -1410,6 +1941,8 @@
       authState.user = user;
       setProfileEditable(false);
       authState.message = dictionary.profileSignedIn;
+      authState.achievements = {};
+      renderAchievements();
       loadProfileFromDatabase(user);
     };
 
@@ -1433,11 +1966,21 @@
         }
       });
 
-      onAuthStateChanged(auth, (user) => {
+      onAuthStateChanged(auth, async (user) => {
         if (user) {
+          sessionStorage.removeItem(MEMBER_SIGNIN_KEY);
           setSignedIn(user);
-        } else {
-          setSignedOut();
+          return;
+        }
+        setSignedOut();
+        if (!sessionStorage.getItem(MEMBER_SIGNIN_KEY)) {
+          sessionStorage.setItem(MEMBER_SIGNIN_KEY, "true");
+          const provider = new GoogleAuthProvider();
+          try {
+            await signInWithRedirect(auth, provider);
+          } catch (error) {
+            console.error("Redirect sign-in failed", error);
+          }
         }
       });
     }
@@ -1447,6 +1990,9 @@
         const lang = button.dataset.lang;
         authState.language = lang;
         setLanguage(lang);
+        if (authState.user) {
+          awardAchievementByCode("ach_WTT");
+        }
       });
     });
 
@@ -1469,6 +2015,7 @@
         const result = typeof reader.result === "string" ? reader.result : null;
         if (!result) return;
         setProfilePhoto(result);
+        evaluatePhotoAchievement();
         const ref = getMemberDocRef(authState.memberId);
         if (!ref) return;
         try {
@@ -1485,6 +2032,7 @@
       saveProfileToDatabase(authState.user);
       syncDisplayValues();
       setProfileEditable(false);
+      evaluateProfileAchievements();
     });
 
     window.addEventListener("beforeunload", () => {
@@ -1493,6 +2041,7 @@
       }
     });
 
+    loadAchievementsCatalog();
     setLanguage(authState.language);
   </script>
 </body>

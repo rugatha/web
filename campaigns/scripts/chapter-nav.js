@@ -55,6 +55,15 @@
     document.head.appendChild(script);
   };
 
+  const ensureAchievementScript = () => {
+    if (window.__rugathaChapterAchievementLoaded) return;
+    window.__rugathaChapterAchievementLoaded = true;
+    const src = new URL("scripts/chapter-achievement.js", campaignsBase).href;
+    import(src).catch((error) => {
+      console.warn("Failed to load chapter achievement script", error);
+    });
+  };
+
   const fetchOverrides = async () => {
     const overridesUrl = new URL("data/chapter-nav.json", campaignsBase).href;
     try {
@@ -70,6 +79,7 @@
 
   const main = async () => {
     ensureDetailScript();
+    ensureAchievementScript();
     const overrides = await fetchOverrides();
 
     const pathParts = window.location.pathname.split("/").filter(Boolean);

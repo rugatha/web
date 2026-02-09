@@ -1,0 +1,20 @@
+achievement,achievementZh,achievementEn,Rarity,flavorZh,flavorEn,Note,STR,DEX,CON,INT,WIS,CHA,
+ach_JtG,加入工會,Join the Guild,C,歡迎來到公會！,Welcome to the guild!,Login with Google,,,,,1,1,2
+ach_MfA,註記：成為冒險者,Marked for Adventure,U,所以你準備好冒險了嗎？,So you’re ready for adventuring?,Fill in infos,1,1,1,,,,2
+ach_GU,重裝出發,Geared Up,C,啊，這就是冒險者的臉！,"Ah, that’s the face of an adventurer!",Upload Profile Pic,,,,,,2,2
+ach_HRitT,聽見酒館內的八卦,Heard Rumors in the Tavern,U,「我聽見村子裡有人失蹤.....」,"""I heard that people were missing in town……""",Click for One-Shot link,,3,,,,,3
+ach_FC,第一次接案,First Contract,C,救一隻貓。完成。,Save a cat. Done.,Participate One-Shot,1,,,,,1,2
+ach_TH,可信的夥伴,Trusted Hand,U,「你很清楚流程！」,"""You know the drill!""",Participate Multiple One-Shots,3,,,,,,3
+ach_VA,老手冒險者,Veteran Adventurer,R,你便是故事的一部份。,You ARE part of the lore.,Participate Rugatha Campaigns,2,2,2,,,,6
+ach_EO,大開眼界,Eyes Open,C,事情可以有不同的發展......,Things could’ve been different……,Play one Choice,,,,2,,,2
+ach_PU,平行宇宙,Parallel Universe,C,如果我能回到過去，我可以拯救世界。,"If I could travel back in time, I could save the world.",Play 20 Choices,,1,1,,,,2
+ach_NbtL,你被巫妖注意到了,Noticed by the Lich,R,「被你發現了啊。我以為我很小心呢。」,"""So you’ve found me. I thought I was careful.""",Play Dr. Vaxon’s Choice,,,,2,2,2,6
+ach_WTT,多語通舌,Well-Traveled Tongue,C,那特英格里許。,Je bu shi Jong-Wen.,Switch the language toggle,,,,2,,,2
+ach_SR,短休息,Short Rest,C,喝點藥水，看點書。,"Drink some potions, read some books.",Login more than 1 hour,,,2,,,,2
+ach_LR,長休息,Long Rest,C,睡覺，然後也許輪班守夜。,"Sleep, and maybe take night shifts.",Login more than 6 hour,,,2,,,,2
+ach-PT,時空穿越者,Plane Traveler,C,Rugatha以外的世界......,Worlds outside Rugatha……,"Click one of our FB, IG, Threads Gmail link",,,,,2,,2
+ach_DB,虔誠信仰者,Devoted Believer,C,只有唯一的神。,There is one true God.,Click the deity page that you believe in,,,,,,2,2
+ach-RYd,骰你的20面骰！,Roll Your d20!,U,那就是你。你的角色卡。,So that’s you. Your character card.,Download a character sheet,1,1,,,1,,3
+ach_RTP,巡頁閱讀,Read Through Pages,C,所有故事都有他的發展。,All stories have developments.,Read a chapter by clicking next or previous chapter,,,,2,,,2
+ach_TWRY,世界記得你,The World Remembers You,C,你曾駐足於此。,You once stood here.,Visit a chapter more than once,,,,,2,,2
+,,,,,,,10,10,10,10,10,10,
