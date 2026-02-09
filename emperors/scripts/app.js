@@ -1,93 +1,184 @@
 const EMPEROR_ERAS = [
   {
-    title: "The Era of Dranison 卓尼森王朝",
+    title: {
+      zh: "卓尼森王朝",
+      en: "The Era of Dranison"
+    },
     tag: "Dranison",
     emperors: [
       {
-        name: "Walston the First\n沃斯頓一世",
+        name: {
+          zh: "沃斯頓一世",
+          en: "Walston I"
+        },
         image: "gallery/dranison-walston.jpeg",
-        title: "First Emperor of the Era 王朝首任皇帝",
-        zhDesc: "「自由軍團」的首領。\n以「卓尼森革命」推翻艾米頓帝國的統治",
-        enDesc: "The leader of 'The Legion of Freedom'.<\nOverthrew the rule of the Emiton Empire on the island."
+        title: {
+          zh: "王朝首任皇帝",
+          en: "First Emperor of the Era"
+        },
+        desc: {
+          zh: "「自由軍團」的首領。\n以「卓尼森革命」推翻艾米頓帝國的統治",
+          en: "The leader of 'The Legion of Freedom'.\nOverthrew the rule of the Emiton Empire on the island."
+        }
       },
       {
-        name: "Georson the Thirteenth\n喬森十三世",
+        name: {
+          zh: "喬森十三世",
+          en: "Georson XIII"
+        },
         image: "gallery/dranison-georson.jpeg",
-        title: "Last Emperor of the Era 王朝末任皇帝",
-        zhDesc: "在「平民革命」被俘，結束了卓尼森王朝的統治。",
-        enDesc: "Was captured during 'the Common Revolution', ending the reign of the Dranison Empire."
+        title: {
+          zh: "王朝末任皇帝",
+          en: "Last Emperor of the Era"
+        },
+        desc: {
+          zh: "在「平民革命」被俘，結束了卓尼森王朝的統治。",
+          en: "Was captured during 'the Common Revolution', ending the reign of the Dranison Empire."
+        }
       },
     ],
   },
   {
-    title: "The Era of Trinix 崔尼斯王朝",
+    title: {
+      zh: "崔尼斯王朝",
+      en: "The Era of Trinix"
+    },
     tag: "Trinix",
     emperors: [
       {
-        name: "Hollison the First\n霍里森一世",
+        name: {
+          zh: "霍里森一世",
+          en: "Hollison I"
+        },
         image: "gallery/trinix-hollison.jpeg",
-        title: "First Emperor of the Era 王朝首任皇帝",
-        zhDesc: "登基前為「崔尼斯的聖騎士」首領",
-        enDesc: "He was originally the leader of 'the Paladin of Trinix' before becoming the emperor."
+        title: {
+          zh: "王朝首任皇帝",
+          en: "First Emperor of the Era"
+        },
+        desc: {
+          zh: "登基前為「崔尼斯的聖騎士」首領",
+          en: "He was originally the leader of 'the Paladin of Trinix' before becoming the emperor."
+        }
       },
       {
-        name: "Reylan the Fifteenth\n瑞蘭十五世",
+        name: {
+          zh: "瑞蘭十五世",
+          en: "Reylan XV"
+        },
         image: "gallery/trinix-reylan.jpeg",
-        title: "Last Emperor of the Era 王朝末任皇帝",
-        zhDesc: "被東境妖精殘忍殺害。",
-        enDesc: "Brutally murdered by the Elves of the East."
+        title: {
+          zh: "王朝末任皇帝",
+          en: "Last Emperor of the Era"
+        },
+        desc: {
+          zh: "被東境妖精殘忍殺害。",
+          en: "Brutally murdered by the Elves of the East."
+        }
       },
     ],
   },
   {
-    title: "The Era of Lothum 洛森王朝",
+    title: {
+      zh: "洛森王朝",
+      en: "The Era of Lothum"
+    },
     tag: "Lothum",
     emperors: [
       {
-        name: "Lorin the Conqueror\n征服者洛林",
+        name: {
+          zh: "征服者洛林",
+          en: "Lorin the Conqueror"
+        },
         image: "gallery/lothum-lorin.jpeg",
-        title: "First Emperor of the Era 王朝首任皇帝",
-        zhDesc: "妖精軍團的首領洛林・瑞斯。\n推翻逐漸走向種族歧視的崔尼斯帝國。",
-        enDesc: "Lorin Reese, the leader of the Elvish Legion.\nOverthrew the Trinix Empire, who was heading towards racial discrimination."
+        title: {
+          zh: "王朝首任皇帝",
+          en: "First Emperor of the Era"
+        },
+        desc: {
+          zh: "妖精軍團的首領洛林・瑞斯。\n推翻逐漸走向種族歧視的崔尼斯帝國。",
+          en: "Lorin Reese, the leader of the Elvish Legion.\nOverthrew the Trinix Empire, who was heading towards racial discrimination."
+        }
       },
       {
-        name: "Jelix the Young\n年輕的傑里斯",
+        name: {
+          zh: "年輕的傑里斯",
+          en: "Jelix the Young"
+        },
         image: "gallery/lothum-jelix.jpeg",
-        title: "Last Emperor of the Era 王朝末任皇帝",
-        zhDesc: "洛森王朝末任皇帝，被神秘的謀殺。",
-        enDesc: "The last emperor of the Lothum Emperor, Jelix was murdered mysteriously."
+        title: {
+          zh: "王朝末任皇帝",
+          en: "Last Emperor of the Era"
+        },
+        desc: {
+          zh: "洛森王朝末任皇帝，被神秘的謀殺。",
+          en: "The last emperor of the Lothum Emperor, Jelix was murdered mysteriously."
+        }
       },
     ],
   },
   {
-    title: "The Era of New Dranison 新卓尼森王朝",
+    title: {
+      zh: "新卓尼森王朝",
+      en: "The Era of New Dranison"
+    },
     tag: "New Dranison",
     emperors: [
       {
-        name: "Carlos the Seventh\n卡洛斯七世",
+        name: {
+          zh: "卡洛斯七世",
+          en: "Carlos VII"
+        },
         image: "gallery/new-dranison-carlos.jpeg",
-        title: "First Emperor of the Era 王朝首任皇帝",
-        zhDesc: "原名卡洛斯・達米頓，自稱為卓尼斯後裔。\n登基後恢復自己卓尼森的姓氏。",
-        enDesc: "He was originally named Carlos Demiton, but claimed to be a descendant of the Dranison bloodline.\nUsed Dranison as his last name after he sat on the throne."
+        title: {
+          zh: "王朝首任皇帝",
+          en: "First Emperor of the Era"
+        },
+        desc: {
+          zh: "原名卡洛斯・達米頓，自稱為卓尼斯後裔。\n登基後恢復自己卓尼森的姓氏。",
+          en: "He was originally named Carlos Demiton, but claimed to be a descendant of the Dranison bloodline.\nUsed Dranison as his last name after he sat on the throne."
+        }
       },
       {
-        name: "Kylenor the Sixth\n凱里諾六世",
+        name: {
+          zh: "凱里諾六世",
+          en: "Kylenor VI"
+        },
         image: "gallery/new-dranison-kylenor.jpeg",
-        title: "Current Emperor of the Era 王朝現任皇帝",
-        zhDesc: "現任新卓尼森王朝卓尼森帝國皇帝。",
-        enDesc: "The current emperor of the New Dranison Empire."
+        title: {
+          zh: "王朝現任皇帝",
+          en: "Current Emperor of the Era"
+        },
+        desc: {
+          zh: "現任新卓尼森王朝卓尼森帝國皇帝。",
+          en: "The current emperor of the New Dranison Empire."
+        }
       },
     ],
   },
 ];
 
 const container = document.getElementById("emperor-eras");
+const langButtons = document.querySelectorAll(".lang-toggle__button");
+const titleEl = document.getElementById("emperors-title");
+let currentLang = "zh";
+
+const getLocalizedText = (value) => {
+  if (!value) return "";
+  if (typeof value === "string") return value;
+  if (currentLang === "en") {
+    return value.en || value.zh || "";
+  }
+  return value.zh || value.en || "";
+};
+
+const formatText = (value) => getLocalizedText(value).replace(/\n/g, "<br>");
 
 if (container) {
   const createCard = (emperor, tag) => {
     const card = document.createElement("article");
     card.className = "emperor-card";
-    card.setAttribute("aria-label", `${emperor.name} (${tag})`);
+    const nameText = getLocalizedText(emperor.name);
+    card.setAttribute("aria-label", `${nameText} (${tag})`);
 
     const portrait = document.createElement("div");
     portrait.className = "portrait";
@@ -104,50 +195,85 @@ if (container) {
 
     const nameEl = document.createElement("h3");
     nameEl.className = "card-name";
-    nameEl.innerHTML = emperor.name.replace(/\n/g, "<br>");
+    nameEl.innerHTML = formatText(emperor.name);
 
     const titleEl = document.createElement("p");
     titleEl.className = "card-title";
-    titleEl.textContent = emperor.title || tag;
+    titleEl.textContent = getLocalizedText(emperor.title) || tag;
 
-    const descZh = document.createElement("p");
-    descZh.className = "card-desc zh";
-    descZh.innerHTML = (emperor.zhDesc || "").replace(/\n/g, "<br>");
-
-    const descEn = document.createElement("p");
-    descEn.className = "card-desc en";
-    descEn.innerHTML = (emperor.enDesc || "").replace(/\n/g, "<br>");
+    const desc = document.createElement("p");
+    desc.className = `card-desc ${currentLang}`;
+    desc.innerHTML = formatText(emperor.desc);
 
     const divider = document.createElement("div");
     divider.className = "card-divider";
 
-    body.append(nameEl, titleEl, divider, descZh, descEn);
+    body.append(nameEl, titleEl, divider, desc);
     card.append(portrait, body);
 
     return card;
   };
 
-  EMPEROR_ERAS.forEach((era, index) => {
-    const section = document.createElement("section");
-    section.className = "era";
-    section.setAttribute("aria-label", era.title);
+  const render = () => {
+    container.textContent = "";
+    const frag = document.createDocumentFragment();
 
-    const title = document.createElement("h2");
-    title.className = "era-title";
-    title.textContent = era.title;
+    EMPEROR_ERAS.forEach((era) => {
+      const section = document.createElement("section");
+      section.className = "era";
+      const eraTitle = getLocalizedText(era.title);
+      section.setAttribute("aria-label", eraTitle || era.tag || "Era");
 
-    const header = document.createElement("div");
-    header.className = "era-header";
-    header.append(title);
+      const title = document.createElement("h2");
+      title.className = "era-title";
+      title.textContent = eraTitle;
 
-    const grid = document.createElement("div");
-    grid.className = "emperor-grid";
+      const header = document.createElement("div");
+      header.className = "era-header";
+      header.append(title);
 
-    era.emperors.forEach((emperor) => {
-      grid.appendChild(createCard(emperor, era.tag));
+      const grid = document.createElement("div");
+      grid.className = "emperor-grid";
+
+      era.emperors.forEach((emperor) => {
+        grid.appendChild(createCard(emperor, era.tag));
+      });
+
+      section.append(header, grid);
+      frag.appendChild(section);
     });
 
-    section.append(header, grid);
-    container.appendChild(section);
-  });
+    container.appendChild(frag);
+  };
+
+  const updateTitle = () => {
+    if (!titleEl) return;
+    const zhTitle = titleEl.dataset.titleZh || "";
+    const enTitle = titleEl.dataset.titleEn || "";
+    titleEl.textContent = currentLang === "en" ? enTitle : zhTitle;
+  };
+
+  const setupLanguageToggle = () => {
+    if (!langButtons.length) return;
+
+    const setButtonState = (button, isActive) => {
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    };
+
+    langButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextLang = button.dataset.lang || "zh";
+        if (nextLang === currentLang) return;
+        currentLang = nextLang;
+        langButtons.forEach((btn) => setButtonState(btn, btn.dataset.lang === currentLang));
+        updateTitle();
+        render();
+      });
+    });
+  };
+
+  render();
+  setupLanguageToggle();
+  updateTitle();
 }
