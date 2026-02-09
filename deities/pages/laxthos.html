@@ -26,6 +26,17 @@
 <body>
   <div class="celestial-dust"></div>
   <main class="page-shell">
+    <div class="lang-toggle-wrap">
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button class="lang-toggle__button is-active" type="button" data-lang="zh" aria-pressed="true">
+            中文
+          </button>
+          <button class="lang-toggle__button" type="button" data-lang="en" aria-pressed="false">
+            English
+          </button>
+        </div>
+      </div>
+
     <section class="deity-profile">
       <div class="portrait-wrap">
         <span class="portrait-halo" aria-hidden="true"></span>
@@ -33,18 +44,21 @@
         <img class="deity-portrait" data-deity="image" loading="lazy" alt="">
       </div>
       <div class="deity-meta">
-        <p class="meta-kicker">DEITY PROFILE 神祇簡介</p>
+        <p class="meta-kicker" data-label-zh="神祇簡介" data-label-en="Deity Profile">神祇簡介</p>
         <h1 class="deity-name" data-deity="name"></h1>
         <p class="deity-title" data-deity="title"></p>
         <div class="divider"></div>
-        <p class="domains-label">Domains 權能</p>
+        <p class="domains-label" data-label-zh="權能" data-label-en="Domains">權能</p>
         <div class="domain-chips" data-deity="domains"></div>
         <div class="domains-divider"></div>
         <div class="deity-saying" data-deity="saying"></div>
       </div>
     </section>
     <div class="page-footer">
-      <a class="back-link" href="../index.html" aria-label="Back to all deities">↩︎</a>
+      <a class="back-link" href="../index.html" data-aria-zh="返回神祇總覽" data-aria-en="Back to all deities" aria-label="返回神祇總覽">
+        <span class="back-icon">↩︎</span>
+        <span class="back-text" data-label-zh="返回" data-label-en="Back">返回</span>
+      </a>
     </div>
   </main>
   <script>window.deitySlug = 'laxthos';</script>
