@@ -32,20 +32,30 @@
     </header>
 
     <main class="page-shell">
+      <div class="lang-toggle-wrap">
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button class="lang-toggle__button is-active" type="button" data-lang="zh" aria-pressed="true">
+            中文
+          </button>
+          <button class="lang-toggle__button" type="button" data-lang="en" aria-pressed="false">
+            English
+          </button>
+        </div>
+      </div>
       <section class="hero">
-        <h1>History of Dranison 卓尼森史</h1>
+        <h1 id="timeline-title" data-title-zh="卓尼森史" data-title-en="History of Dranison">卓尼森史</h1>
         <div class="timeline-legend" role="group" aria-label="Timeline tag filters">
           <button class="timeline-legend__button is-active" type="button" data-tag="all" aria-pressed="true">
             <span class="timeline-legend__swatch" aria-hidden="true"></span>
-            全部
+            <span class="legend-label" data-label-zh="全部" data-label-en="All">全部</span>
           </button>
           <button class="timeline-legend__button is-history" type="button" data-tag="history" aria-pressed="false">
             <span class="timeline-legend__swatch" aria-hidden="true"></span>
-            History 歷史
+            <span class="legend-label" data-label-zh="歷史" data-label-en="History">歷史</span>
           </button>
           <button class="timeline-legend__button is-rugatha" type="button" data-tag="rugatha" aria-pressed="false">
             <span class="timeline-legend__swatch" aria-hidden="true"></span>
-            Rugatha 主線
+            Rugatha
           </button>
           <button class="timeline-legend__button is-rugatha-plus" type="button" data-tag="rugatha-plus" aria-pressed="false">
             <span class="timeline-legend__swatch" aria-hidden="true"></span>
