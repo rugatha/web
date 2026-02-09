@@ -301,17 +301,30 @@ if (qaRoot && !qaDisabled) {
     setButtonState(choice);
   };
 
+  const syncChoiceButtons = () => {
+    const isLocked = qaRoot.dataset.locked === "true";
+    const isAuthLocked = qaRoot.dataset.authLocked === "true";
+    const disabled = isLocked || isAuthLocked;
+    choiceButtons.forEach((btn) => {
+      btn.disabled = disabled;
+    });
+  };
+
   const setChoiceLocked = (locked) => {
     qaRoot.dataset.locked = locked ? "true" : "false";
-    choiceButtons.forEach((btn) => {
-      btn.disabled = Boolean(locked);
-    });
+    syncChoiceButtons();
+  };
+
+  const setAuthLocked = (locked) => {
+    qaRoot.dataset.authLocked = locked ? "true" : "false";
+    syncChoiceButtons();
   };
 
   const bindChoices = () => {
     choiceButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         if (qaRoot.dataset.locked === "true") return;
+        if (qaRoot.dataset.authLocked === "true") return;
         const choice = btn.dataset.choice;
         if (!choice) return;
         revealResults(choice);
@@ -433,7 +446,11 @@ if (qaRoot && !qaDisabled) {
     onAuthStateChanged(auth, async (user) => {
       memberNo = "";
       authUid = user?.uid || "";
-      if (!user || !db) return;
+      if (!user || !db) {
+        setAuthLocked(true);
+        return;
+      }
+      setAuthLocked(false);
       try {
         const snapshot = await get(ref(db, `members/${user.uid}/memberNo`));
         if (snapshot.exists()) {
@@ -502,6 +519,7 @@ if (qaRoot && !qaDisabled) {
       qaRoot.hidden = true;
       return;
     }
+    setAuthLocked(Boolean(firebaseConfig));
     ensureFirebase();
     bindChoices();
     loadSavedChoice();
