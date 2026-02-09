@@ -1,78 +1,20 @@
-# Rugatha 網站工具箱
+# Rugatha Web
 
-整合 Rugatha 的戰役卡片、NPC 導覽、角色卡產生器與時間軸的靜態套件。戰役相關設定集中在同一份檔案，更新後各小工具都會同步；所有資源皆為本地檔案，不依賴原本的 GitHub 儲存庫。
+A static, bilingual website for the Rugatha world, featuring lore, characters, and community tools.
 
-全域的樣式變數與字體放在 `shared/styles/theme.css`，每個頁面都會引用，確保色彩、間距與首頁圖示一致。
+## Main Features
+- Hub-style homepage that links to all major sections.
+- Worldbuilding pages for deities, emperors, and a chronological timeline.
+- Interactive world map with zoom/pan and location markers.
+- Character portal with dedicated Player Character and NPC sections.
+- NPC directory with search, filters, sorting, and random discovery.
+- Campaigns gallery that showcases active and past adventures.
+- Member journal with achievements/badges and bilingual copy.
+- Character card generator with form inputs, image upload/cropping, live canvas preview, and downloadable output.
+- Language toggles (Traditional Chinese and English) across key sections.
+- Optional authentication hooks for member-only experiences (no secrets stored in repo).
 
-## 專案結構
-- `index.html`：首頁，連到各個工具。
-- `shared/rugatha.config.js`：共用設定來源（戰役列表與連結）。
-- `shared/styles/theme.css`：跨頁面的調色盤、字體與 banner 預設樣式。
-- `campaigns/`：戰役卡片列表，資料同樣來自共用設定。
-- `npc/`：NPC 圖鑑（資料在 `npc/data/characters.json`）。
-- `npc/npc_page/`：單一 NPC 頁面的共用模板；所有頁面檔案都以 `?npc=<id>` 方式導向模板。
-- `character_card/`：角色卡 PNG 產生器（點擊預覽即可開啟／存檔）。
-- `timeline/`：靜態時間軸檢視。
-
-## 團務介紹（campaigns/）
-- 以 `shared/rugatha.config.js` 驅動的卡片網格（不需額外資料檔），樣式沿用共用色票與 banner 設定。
-- 入口：`campaigns/index.html`；樣式在 `styles/campaigns.css`；邏輯在 `scripts/app.js`。
-
-## 角色卡產生器（character_card/）
-- Canvas 產生 PNG，點擊／點按預覽即可開啟下載；行動版內嵌瀏覽器會顯示長按提示避免下載失敗。
-- 使用共用戰役的重點色建立色票，若共用設定缺失則使用預設值。
-- 入口：`character_card/index.html`；樣式在 `styles/style.css`；邏輯在 `scripts/app.js`。
-
-## NPC（npc/）
-- 頁面：`index.html`（主頁）、`npc.html`（精簡版）。
-- 功能：搜尋、A↔Z 排序、依字母 / 種族 / 信仰分組（多種族或多信仰會出現在各自群組）、延遲載入圖片、無障礙即時狀態，並提供隨機 NPC 與一鍵重設搜尋/排序/分組。
-- 資料：`npc/data/characters.json`（結構 `{ id, name, image, url, race, religion, descZh, descEn, related: [] }`），`id` 應與檔名 slug 一致（例：`Ada` → `_template.html?npc=Ada`）。
-- `npc/npc_page/pages/` 底下的檔案為輕量轉址頁，導向 `_template.html?npc=<slug>`；模板會從 `characters.json` 拉資料，因此不需維護個別頁面內容。
-- 無需建置，直接開啟瀏覽器或以靜態伺服器提供即可。
-
-## 共用樣式
-- 基礎變數、字體匯入與 banner 預設都在 `shared/styles/theme.css`，所有頂層頁面皆引用。
-- 單頁覆寫則放在各自資料夾（如 `styles/home.css`、`character_main_page/styles.css`、`npc/styles.css`），盡量沿用共用變數。
-
-## 建立標準 Rugatha 頁面規則
-- 頁面 `<head>` 必須帶入縮圖（社群分享）設定：  
-  ```html
-  <meta property="og:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
-  <meta name="twitter:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  ```
-- 同時保留 favicon 兩種尺寸：`rugatha-icon.png`、`rugatha-icon-32.png`。
-
-## NPC個別頁面（npc/npc_page/）
-- 模板：`npc/npc_page/pages/_template.html` 包含共用版面與腳本；其他檔案僅為帶 slug 的轉址頁。
-- 資料契約：`scripts.js` 讀取 `npc` query 參數，找到 `npc/data/characters.json` 對應資料後渲染頭像、姓名、描述、相關角色與信仰（中英並列，蜘蛛信仰會標示族群）。描述請維護在 JSON，而非 HTML 轉址頁。
-
-## 更新內容
-1. 在 `shared/rugatha.config.js` 編輯戰役設定（名稱、連結、強調色），卡片會同步更新。
-2. NPC 資料維持在 `npc/data/characters.json`（結構不同，因此獨立管理）。
-3. 若之後新增時間軸類工具，可放在同層資料夾並視需要連到共用設定。
-
-## 新增頁面指南
-### 1) 團錄（包含新章節或舊章節）
-- 新增章節頁：在對應資料夾建立 `campaigns/pages/<campaign>/<arc>/chptXX.html`（舊章節補齊時請維持命名規則與編號）。
-- 更新章節清單：到 `shared/rugatha.config.js` 的 `arcChapters` 加入該章節（`id` 建議為 `<arc>-chptXX`），並依時間順序排序。
-- 章節圖：把 banner 放在 `campaigns/chapter-banners/`，並在 `shared/rugatha.config.js` 的 `chapterImages` 登記對應 key。
-- 章節導覽（若需要跨篇或插入舊章）：在 `campaigns/data/chapter-nav.json` 設定 `prev-chapter` / `next-chapter` 覆寫，避免前後章節錯位。
-- 若新增「故事弧 / 團錄」本體：新增 `campaigns/pages/<campaign>/<arc>/index.html`，並在 `shared/rugatha.config.js` 的 `graphNodes` 與 `graphUrlOverrides` 補上該 arc 資訊。
-
-### 2) NPC
-- 角色資料：新增或更新 `npc/data/characters.json`（確保 `id`、`url`、`image` 與實際檔名一致）。
-- 個別頁面：複製 `npc/npc_page/pages/_template.html` 為 `npc/npc_page/pages/<slug>.html`，`<slug>` 應與 `id` 一致；頁面會用 slug / query 參數載入 JSON 資料。
-- 角色圖片：放在 `npc/individual_pics/`，`image` 欄位填相對路徑（如 `individual_pics/Ada.jpeg`）。
-
-### 3) 歷史事件
-- 事件資料：新增 `timeline/data/events.js` 的 entry（`type: "event"` 或 `type: "era"`）。
-- 若新增 era 或 tag：同步更新 `timeline/scripts/app.js` 的 `eraClasses` / `tagClasses`，並在 `timeline/styles/style.css` 補上對應樣式。
-- 若新增 tag 篩選：在 `timeline/index.html` 的 legend 按鈕新增一個 `data-tag`。
-
-## 本地執行
-本專案為靜態網站，啟動任何簡易伺服器即可，例如：
-```sh
-python -m http.server 8000
-```
-然後開啟 `http://localhost:8000/`，從 `index.html` 進入各工具。
+## Tech Notes
+- Pure HTML/CSS/JS with shared theming assets.
+- Client-side data loading for dynamic sections.
+- Responsive layouts for desktop and mobile.
