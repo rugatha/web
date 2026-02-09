@@ -1369,7 +1369,7 @@
   },
   {
     "id": "Elby__Dr_White",
-    "url": "npc/npc_page/pages/Elby_Dr_White.html",
+    "url": "npc/npc_page/pages/Elby__Dr_White.html",
     "image": "individual_pics/Elby : Dr. White.jpeg",
     "status": "dead",
     "gender": "female",
@@ -1379,8 +1379,8 @@
       "Beau",
       "Indigo"
     ],
-    "nameEn": "Elby",
-    "nameZh": "艾爾比/ Dr. White 白醫師",
+    "nameEn": "Elby/Dr. White",
+    "nameZh": "艾爾比/白醫師",
     "raceEn": [
       "Dryad"
     ],
