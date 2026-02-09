@@ -317,6 +317,11 @@ if (qaRoot && !qaDisabled) {
 
   const setAuthLocked = (locked) => {
     qaRoot.dataset.authLocked = locked ? "true" : "false";
+    if (locked) {
+      qaRoot.hidden = true;
+    } else {
+      qaRoot.hidden = false;
+    }
     syncChoiceButtons();
   };
 
