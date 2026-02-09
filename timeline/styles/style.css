@@ -16,6 +16,12 @@ body {
   padding: 22px 6px 56px;
 }
 
+.lang-toggle-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin: 6px 0 10px;
+}
+
 .hero {
   padding: 18px 18px 16px;
   text-align: center;
@@ -36,12 +42,39 @@ body {
   letter-spacing: -0.01em;
 }
 
+.lang-toggle {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 82%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lang-toggle__button {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease, background 200ms ease;
+}
+
+.lang-toggle__button.is-active {
+  color: #ecf2ed;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
 .timeline-legend {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .timeline-legend__button {
