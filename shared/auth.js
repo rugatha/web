@@ -6,6 +6,12 @@ import {
   signInWithPopup,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+import {
+  getDatabase,
+  ref,
+  get,
+  runTransaction
+} from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
 const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
 
@@ -59,6 +65,17 @@ const ensureAuthStyles = () => {
       opacity: 0.7;
     }
 
+    .auth-button--ghost {
+      background: rgba(255, 255, 255, 0.12);
+      color: #f0f5f2;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .auth-button--ghost:hover,
+    .auth-button--ghost:focus-visible {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
     .auth-icon {
       width: 24px;
       height: 24px;
@@ -107,6 +124,9 @@ const ensureAuthMarkup = () => {
       </span>
       <span class="auth-label">Sign in</span>
     </button>
+    <button class="auth-button auth-button--ghost" id="google-logout" type="button" aria-label="Sign out" disabled>
+      <span class="auth-label">Sign out</span>
+    </button>
     <div class="auth-status" id="auth-status" aria-live="polite">Google login</div>
   `;
   const host =
@@ -142,15 +162,17 @@ const setupAuth = () => {
   ensureAuthMarkup();
 
   const loginButton = document.getElementById("google-login");
+  const logoutButton = document.getElementById("google-logout");
   const statusEl = document.getElementById("auth-status");
 
-  if (!loginButton || !statusEl) {
+  if (!loginButton || !logoutButton || !statusEl) {
     return;
   }
 
   const labelEl = loginButton.querySelector(".auth-label");
 
   const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+  const db = getDatabase(app);
 
   isSupported()
     .then((supported) => {
@@ -162,6 +184,181 @@ const setupAuth = () => {
 
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
+  let memberId = null;
+  const VISIT_KEY_PREFIX = "rugatha-visit:";
+  const VISIT_AWARD_CODE = "ach_TWRY";
+  let visitPendingAward = false;
+  let visitAchievementPromise = null;
+
+  const resolveMemberId = async (user) => {
+    if (!user || !db) return null;
+    const defaultId = user.uid;
+    try {
+      const snapshot = await get(ref(db, `members/${defaultId}`));
+      if (snapshot.exists()) {
+        const data = snapshot.val() || {};
+        return data.memberId || defaultId;
+      }
+    } catch (error) {
+      console.warn("Failed to resolve memberId", error);
+    }
+    return defaultId;
+  };
+
+  const resolveAchievementUrls = () => {
+    const origin = window.location.origin || "";
+    const candidates = [];
+    if (window.RUGATHA_BASE_URL) {
+      try {
+        const base = new URL(window.RUGATHA_BASE_URL, window.location.href);
+        const normalizedBase =
+          base.pathname.endsWith("/shared/") || base.pathname.endsWith("/shared")
+            ? new URL("../", base)
+            : base;
+        candidates.push(new URL("member/achievements.csv", normalizedBase).href);
+      } catch (error) {}
+    }
+    if (origin) {
+      candidates.push(`${origin}/member/achievements.csv`);
+      candidates.push(`${origin}/web/member/achievements.csv`);
+    }
+    return Array.from(new Set(candidates));
+  };
+
+  const parseCsv = (text) => {
+    const rows = [];
+    let row = [];
+    let cell = "";
+    let inQuotes = false;
+    for (let i = 0; i < text.length; i += 1) {
+      const char = text[i];
+      if (inQuotes) {
+        if (char === "\"") {
+          if (text[i + 1] === "\"") {
+            cell += "\"";
+            i += 1;
+          } else {
+            inQuotes = false;
+          }
+        } else {
+          cell += char;
+        }
+      } else if (char === "\"") {
+        inQuotes = true;
+      } else if (char === ",") {
+        row.push(cell);
+        cell = "";
+      } else if (char === "\n") {
+        row.push(cell);
+        rows.push(row);
+        row = [];
+        cell = "";
+      } else if (char !== "\r") {
+        cell += char;
+      }
+    }
+    if (cell.length || row.length) {
+      row.push(cell);
+      rows.push(row);
+    }
+    return rows;
+  };
+
+  const loadVisitAchievement = async () => {
+    if (visitAchievementPromise) return visitAchievementPromise;
+    visitAchievementPromise = (async () => {
+      const urls = resolveAchievementUrls();
+      let response = null;
+      for (const url of urls) {
+        try {
+          const attempt = await fetch(url, { cache: "no-store" });
+          if (attempt.ok) {
+            response = attempt;
+            break;
+          }
+        } catch (error) {}
+      }
+      if (!response) {
+        throw new Error("Failed to load achievements CSV");
+      }
+      const text = await response.text();
+      const rows = parseCsv(text);
+      if (!rows.length) return null;
+      const headers = rows[0].map((header) => String(header || "").trim());
+      const target = rows.slice(1).find((row) => row[0] === VISIT_AWARD_CODE);
+      if (!target) return null;
+      const record = {};
+      headers.forEach((header, index) => {
+        record[header] = target[index] ?? "";
+      });
+      return {
+        achievement: VISIT_AWARD_CODE,
+        rewards: {
+          BadgeSTR: Number(record.STR || 0),
+          BadgeDEX: Number(record.DEX || 0),
+          BadgeCON: Number(record.CON || 0),
+          BadgeINT: Number(record.INT || 0),
+          BadgeWIS: Number(record.WIS || 0),
+          BadgeCHA: Number(record.CHA || 0)
+        }
+      };
+    })();
+    return visitAchievementPromise;
+  };
+
+  const awardVisitAchievement = async () => {
+    if (!memberId || !db) return;
+    let achievement = null;
+    try {
+      achievement = await loadVisitAchievement();
+    } catch (error) {
+      console.warn("Failed to load visit achievement", error);
+      return;
+    }
+    if (!achievement) return;
+    const memberRef = ref(db, `members/${memberId}`);
+    try {
+      await runTransaction(memberRef, (current) => {
+        const existing = current || {};
+        const existingAchievements = existing.achievements || {};
+        if (existingAchievements[achievement.achievement]) {
+          return existing;
+        }
+        const nextAchievements = { ...existingAchievements, [achievement.achievement]: true };
+        const next = { ...existing, achievements: nextAchievements };
+        Object.entries(achievement.rewards || {}).forEach(([key, value]) => {
+          const baseValue = Number(existing[key]);
+          const safeBase = Number.isFinite(baseValue) ? baseValue : 10;
+          const rewardValue = Number.isFinite(value) ? value : 0;
+          next[key] = safeBase + rewardValue;
+        });
+        return next;
+      });
+    } catch (error) {
+      console.warn("Failed to award visit achievement", error);
+    }
+  };
+
+  const maybeAwardVisitAchievement = () => {
+    if (!visitPendingAward) return;
+    if (!memberId || !db) return;
+    visitPendingAward = false;
+    awardVisitAchievement();
+  };
+
+  const trackPageVisit = () => {
+    const path = window.location.pathname || "";
+    const key = `${VISIT_KEY_PREFIX}${path}`;
+    let seen = false;
+    try {
+      seen = Boolean(localStorage.getItem(key));
+      localStorage.setItem(key, String(Date.now()));
+    } catch (error) {}
+    if (seen) {
+      visitPendingAward = true;
+      maybeAwardVisitAchievement();
+    }
+  };
 
   const setSignedOut = () => {
     if (labelEl) {
@@ -170,6 +367,9 @@ const setupAuth = () => {
     statusEl.textContent = "Google login";
     loginButton.disabled = false;
     loginButton.removeAttribute("aria-disabled");
+    logoutButton.disabled = true;
+    logoutButton.setAttribute("aria-disabled", "true");
+    memberId = null;
   };
 
   const setSignedIn = (user) => {
@@ -180,6 +380,8 @@ const setupAuth = () => {
     statusEl.textContent = user?.displayName ? `Hi, ${user.displayName}` : fallback;
     loginButton.disabled = true;
     loginButton.setAttribute("aria-disabled", "true");
+    logoutButton.disabled = false;
+    logoutButton.removeAttribute("aria-disabled");
   };
 
   loginButton.addEventListener("click", async () => {
@@ -191,13 +393,28 @@ const setupAuth = () => {
     }
   });
 
+  logoutButton.addEventListener("click", async () => {
+    try {
+      await auth.signOut();
+    } catch (error) {
+      console.error("Sign-out failed", error);
+      statusEl.textContent = "Sign-out failed";
+    }
+  });
+
   onAuthStateChanged(auth, (user) => {
     if (user) {
       setSignedIn(user);
+      resolveMemberId(user).then((resolved) => {
+        memberId = resolved;
+        maybeAwardVisitAchievement();
+      });
       return;
     }
     setSignedOut();
   });
+
+  trackPageVisit();
 };
 
 if (document.readyState === "loading") {

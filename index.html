@@ -74,10 +74,21 @@
 
       <section class="about-link" aria-label="About Rugatha">
         <a href="about-us/index.html" class="about-link-card">
-          <img src="assets/rugatha-icon.png" alt="" class="about-link-icon" aria-hidden="true">
-          <div class="about-link-copy">
+          <div class="about-link-copy about-link-copy--centered">
             <span class="about-link-title">About Us</span>
-            <span class="about-link-sub">關於 Rugatha</span>
+            <span class="about-link-title">關於 Rugatha</span>
+          </div>
+        </a>
+        <a href="member/index.html" class="about-link-card">
+          <div class="about-link-copy about-link-copy--centered">
+            <span class="about-link-title">Adventurer's Journal</span>
+            <span class="about-link-title">冒險者日誌</span>
+          </div>
+        </a>
+        <a href="character_card/index.html" class="about-link-card">
+          <div class="about-link-copy about-link-copy--centered">
+            <span class="about-link-title">Character Card Generator</span>
+            <span class="about-link-title">角色卡製作器</span>
           </div>
         </a>
       </section>
@@ -112,8 +123,269 @@
   <script src="shared/rugatha.config.js"></script>
   <script src="shared/firebase.config.js"></script>
   <script type="module" src="shared/auth.js"></script>
-  <script>
-    // Shared config remains loaded for downstream pages; no UI here.
+  <script type="module">
+    import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+    import {
+      getDatabase,
+      ref,
+      get,
+      runTransaction
+    } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+
+    const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
+    const firebaseDisabled =
+      window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
+    const SURVEYCAKE_PREFIX = "https://www.surveycake.com/";
+    const ACHIEVEMENTS_CSV_PATH = "member/achievements.csv";
+    const ACHIEVEMENT_CODE = "ach_HRitT";
+
+    let auth = null;
+    let db = null;
+    let currentUser = null;
+    let achievementData = null;
+    let achievementLoadPromise = null;
+
+    const parseCsv = (text) => {
+      const rows = [];
+      let row = [];
+      let cell = "";
+      let inQuotes = false;
+      for (let i = 0; i < text.length; i += 1) {
+        const char = text[i];
+        if (inQuotes) {
+          if (char === "\"") {
+            if (text[i + 1] === "\"") {
+              cell += "\"";
+              i += 1;
+            } else {
+              inQuotes = false;
+            }
+          } else {
+            cell += char;
+          }
+        } else if (char === "\"") {
+          inQuotes = true;
+        } else if (char === ",") {
+          row.push(cell);
+          cell = "";
+        } else if (char === "\n") {
+          row.push(cell);
+          rows.push(row);
+          row = [];
+          cell = "";
+        } else if (char !== "\r") {
+          cell += char;
+        }
+      }
+      if (cell.length || row.length) {
+        row.push(cell);
+        rows.push(row);
+      }
+      return rows;
+    };
+
+    const loadAchievementData = async () => {
+      if (achievementLoadPromise) {
+        return achievementLoadPromise;
+      }
+      achievementLoadPromise = (async () => {
+        try {
+          const response = await fetch(ACHIEVEMENTS_CSV_PATH, { cache: "no-store" });
+          if (!response.ok) {
+            throw new Error(`Failed to load achievements CSV: ${response.status}`);
+          }
+          const text = await response.text();
+          const rows = parseCsv(text);
+          if (!rows.length) return null;
+          const headers = rows[0].map((header) => String(header || "").trim());
+          const target = rows.slice(1).find((row) => row[0] === ACHIEVEMENT_CODE);
+          if (!target) return null;
+          const record = {};
+          headers.forEach((header, index) => {
+            record[header] = target[index] ?? "";
+          });
+          achievementData = {
+            achievement: ACHIEVEMENT_CODE,
+            flavorZh: record.flavorZh || "",
+            flavorEn: record.flavorEn || "",
+            rewards: {
+              BadgeSTR: Number(record.STR || 0),
+              BadgeDEX: Number(record.DEX || 0),
+              BadgeCON: Number(record.CON || 0),
+              BadgeINT: Number(record.INT || 0),
+              BadgeWIS: Number(record.WIS || 0),
+              BadgeCHA: Number(record.CHA || 0)
+            }
+          };
+          return achievementData;
+        } catch (error) {
+          console.error("Failed to load achievement data", error);
+          return null;
+        }
+      })();
+      return achievementLoadPromise;
+    };
+
+    const showAchievementToast = (flavorZh, flavorEn) => {
+      if (!flavorZh && !flavorEn) return;
+      if (!document.body) return;
+      const styleId = "rugatha-achievement-toast-style";
+      if (!document.getElementById(styleId)) {
+        const style = document.createElement("style");
+        style.id = styleId;
+        style.textContent = `
+          .achievement-toast-wrap {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 9999;
+            display: grid;
+            gap: 10px;
+            pointer-events: none;
+          }
+          .achievement-toast {
+            min-width: 220px;
+            max-width: 320px;
+            background: rgba(248, 250, 252, 0.95);
+            color: #1b2a26;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 14px;
+            padding: 12px 14px;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+            display: grid;
+            gap: 6px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            animation: toast-in 200ms ease-out;
+          }
+          .achievement-toast .toast-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: rgba(27, 42, 38, 0.7);
+          }
+          @keyframes toast-in {
+            from { transform: translateY(6px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+      let wrap = document.querySelector(".achievement-toast-wrap");
+      if (!wrap) {
+        wrap = document.createElement("div");
+        wrap.className = "achievement-toast-wrap";
+        document.body.appendChild(wrap);
+      }
+      const toast = document.createElement("div");
+      toast.className = "achievement-toast";
+      const title = document.createElement("div");
+      title.className = "toast-title";
+      title.textContent = "89e3939662105c31Ff1a";
+      toast.appendChild(title);
+      if (flavorZh) {
+        const zh = document.createElement("div");
+        zh.textContent = flavorZh;
+        toast.appendChild(zh);
+      }
+      if (flavorEn) {
+        const en = document.createElement("div");
+        en.textContent = flavorEn;
+        toast.appendChild(en);
+      }
+      wrap.appendChild(toast);
+      window.setTimeout(() => {
+        toast.remove();
+        if (wrap && !wrap.children.length) {
+          wrap.remove();
+        }
+      }, 4500);
+    };
+
+    const resolveMemberId = async (user) => {
+      if (!user || !db) return null;
+      const defaultId = user.uid;
+      try {
+        const snapshot = await get(ref(db, `members/${defaultId}`));
+        if (snapshot.exists()) {
+          const data = snapshot.val() || {};
+          return data.memberId || defaultId;
+        }
+      } catch (error) {
+        console.error("Failed to resolve member id", error);
+      }
+      return defaultId;
+    };
+
+    const awardAchievement = async () => {
+      if (!currentUser || !db) return;
+      const achievement = await loadAchievementData();
+      if (!achievement) return;
+      const memberId = await resolveMemberId(currentUser);
+      if (!memberId) return;
+      const memberRef = ref(db, `members/${memberId}`);
+      let awarded = false;
+      try {
+        const result = await runTransaction(memberRef, (current) => {
+          const existing = current || {};
+          const existingAchievements = existing.achievements || {};
+          if (existingAchievements[achievement.achievement]) {
+            return existing;
+          }
+          awarded = true;
+          const nextAchievements = { ...existingAchievements, [achievement.achievement]: true };
+          const next = { ...existing, achievements: nextAchievements };
+          Object.entries(achievement.rewards || {}).forEach(([key, value]) => {
+            const baseValue = Number(existing[key]);
+            const safeBase = Number.isFinite(baseValue) ? baseValue : 10;
+            const rewardValue = Number.isFinite(value) ? value : 0;
+            next[key] = safeBase + rewardValue;
+          });
+          return next;
+        });
+        if (result.committed && awarded) {
+          showAchievementToast(achievement.flavorZh, achievement.flavorEn);
+        }
+      } catch (error) {
+        console.error("Failed to award achievement", error);
+      }
+    };
+
+    const setupSurveycakeTracking = () => {
+      const links = Array.from(document.querySelectorAll("a[href]")).filter((link) =>
+        link.href.startsWith(SURVEYCAKE_PREFIX)
+      );
+      if (!links.length) return;
+      links.forEach((link) => {
+        link.addEventListener("click", async (event) => {
+          const isPrimaryClick =
+            event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+          if (isPrimaryClick) {
+            event.preventDefault();
+            await awardAchievement();
+            window.location.assign(link.href);
+            return;
+          }
+          awardAchievement();
+        });
+      });
+    };
+
+    if (!firebaseDisabled && firebaseConfig) {
+      const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+      auth = getAuth(app);
+      db = getDatabase(app);
+      onAuthStateChanged(auth, (user) => {
+        currentUser = user || null;
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", setupSurveycakeTracking);
+    } else {
+      setupSurveycakeTracking();
+    }
   </script>
 </body>
 </html>

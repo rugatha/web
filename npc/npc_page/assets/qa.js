@@ -1,6 +1,6 @@
 import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
-import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+import { getDatabase, ref, get, set, runTransaction } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
 const qaRoot = document.querySelector("[data-qa]");
 if (qaRoot) window.qaRoot = qaRoot;
@@ -29,6 +29,14 @@ if (qaRoot && !qaDisabled) {
   let questionPage = qaRoot.getAttribute("data-qa-page") || "";
   let lastLoggedChoice = "";
   const isViolentQa = (qaId || "").toLowerCase() === "dr_vaxon";
+  const ACHIEVEMENTS_CSV_PATH = "../../../member/achievements.csv";
+  const ACHIEVEMENT_CODES = {
+    anyChoice: "ach_EO",
+    manyChoices: "ach_PU",
+    drVaxon: "ach_NbtL"
+  };
+  const achievementCache = {};
+  let achievementLoadPromise = null;
   const getCorruptLabel = () =>
     document.documentElement?.getAttribute("data-lang") === "en" ? "Data Corrupted" : "資料損毀";
   const applyViolentPortrait = () => {
@@ -46,6 +54,234 @@ if (qaRoot && !qaDisabled) {
       const isSelected = btn.dataset.choice === choice;
       btn.setAttribute("aria-pressed", isSelected ? "true" : "false");
     });
+  };
+
+  const parseCsv = (text) => {
+    const rows = [];
+    let row = [];
+    let cell = "";
+    let inQuotes = false;
+    for (let i = 0; i < text.length; i += 1) {
+      const char = text[i];
+      if (inQuotes) {
+        if (char === "\"") {
+          if (text[i + 1] === "\"") {
+            cell += "\"";
+            i += 1;
+          } else {
+            inQuotes = false;
+          }
+        } else {
+          cell += char;
+        }
+      } else if (char === "\"") {
+        inQuotes = true;
+      } else if (char === ",") {
+        row.push(cell);
+        cell = "";
+      } else if (char === "\n") {
+        row.push(cell);
+        rows.push(row);
+        row = [];
+        cell = "";
+      } else if (char !== "\r") {
+        cell += char;
+      }
+    }
+    if (cell.length || row.length) {
+      row.push(cell);
+      rows.push(row);
+    }
+    return rows;
+  };
+
+  const loadAchievementData = async (code) => {
+    if (achievementCache[code]) return achievementCache[code];
+    if (!achievementLoadPromise) {
+      achievementLoadPromise = fetch(ACHIEVEMENTS_CSV_PATH, { cache: "no-store" })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Failed to load achievements CSV: ${response.status}`);
+          }
+          return response.text();
+        })
+        .then((text) => parseCsv(text));
+    }
+    try {
+      const rows = await achievementLoadPromise;
+      if (!rows.length) return null;
+      const headers = rows[0].map((header) => String(header || "").trim());
+      const target = rows.slice(1).find((row) => row[0] === code);
+      if (!target) return null;
+      const record = {};
+      headers.forEach((header, index) => {
+        record[header] = target[index] ?? "";
+      });
+      const data = {
+        achievement: code,
+        flavorZh: record.flavorZh || "",
+        flavorEn: record.flavorEn || "",
+        rewards: {
+          BadgeSTR: Number(record.STR || 0),
+          BadgeDEX: Number(record.DEX || 0),
+          BadgeCON: Number(record.CON || 0),
+          BadgeINT: Number(record.INT || 0),
+          BadgeWIS: Number(record.WIS || 0),
+          BadgeCHA: Number(record.CHA || 0)
+        }
+      };
+      achievementCache[code] = data;
+      return data;
+    } catch (error) {
+      console.warn("Failed to load achievement data", error);
+      return null;
+    }
+  };
+
+  const showAchievementToast = (flavorZh, flavorEn) => {
+    if (!flavorZh && !flavorEn) return;
+    if (!document.body) return;
+    const styleId = "rugatha-achievement-toast-style";
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement("style");
+      style.id = styleId;
+      style.textContent = `
+        .achievement-toast-wrap {
+          position: fixed;
+          right: 20px;
+          bottom: 20px;
+          z-index: 9999;
+          display: grid;
+          gap: 10px;
+          pointer-events: none;
+        }
+        .achievement-toast {
+          min-width: 220px;
+          max-width: 320px;
+          background: rgba(248, 250, 252, 0.95);
+          color: #1b2a26;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          border-radius: 14px;
+          padding: 12px 14px;
+          box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+          display: grid;
+          gap: 6px;
+          font-size: 0.85rem;
+          line-height: 1.4;
+          animation: toast-in 200ms ease-out;
+        }
+        .achievement-toast .toast-title {
+          font-size: 0.7rem;
+          text-transform: uppercase;
+          letter-spacing: 0.18em;
+          color: rgba(27, 42, 38, 0.7);
+        }
+        @keyframes toast-in {
+          from { transform: translateY(6px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+    let wrap = document.querySelector(".achievement-toast-wrap");
+    if (!wrap) {
+      wrap = document.createElement("div");
+      wrap.className = "achievement-toast-wrap";
+      document.body.appendChild(wrap);
+    }
+    const toast = document.createElement("div");
+    toast.className = "achievement-toast";
+    const title = document.createElement("div");
+    title.className = "toast-title";
+    title.textContent = "解鎖成就：";
+    toast.appendChild(title);
+    if (flavorZh) {
+      const zh = document.createElement("div");
+      zh.textContent = flavorZh;
+      toast.appendChild(zh);
+    }
+    if (flavorEn) {
+      const en = document.createElement("div");
+      en.textContent = flavorEn;
+      toast.appendChild(en);
+    }
+    wrap.appendChild(toast);
+    window.setTimeout(() => {
+      toast.remove();
+      if (wrap && !wrap.children.length) {
+        wrap.remove();
+      }
+    }, 4500);
+  };
+
+  const resolveMemberIdForAchievement = async () => {
+    if (!db || !authUid) return null;
+    try {
+      const snapshot = await get(ref(db, `members/${authUid}`));
+      if (snapshot.exists()) {
+        const data = snapshot.val() || {};
+        return data.memberId || authUid;
+      }
+    } catch (error) {
+      console.warn("Failed to resolve member id for achievement", error);
+    }
+    return authUid || null;
+  };
+
+  const awardAchievementByCode = async (code) => {
+    if (!db || !authUid) return;
+    const achievement = await loadAchievementData(code);
+    if (!achievement) return;
+    const memberId = await resolveMemberIdForAchievement();
+    if (!memberId) return;
+    const memberRef = ref(db, `members/${memberId}`);
+    let awarded = false;
+    try {
+      const result = await runTransaction(memberRef, (current) => {
+        const existing = current || {};
+        const existingAchievements = existing.achievements || {};
+        if (existingAchievements[achievement.achievement]) {
+          return existing;
+        }
+        awarded = true;
+        const nextAchievements = { ...existingAchievements, [achievement.achievement]: true };
+        const next = { ...existing, achievements: nextAchievements };
+        Object.entries(achievement.rewards || {}).forEach(([key, value]) => {
+          const baseValue = Number(existing[key]);
+          const safeBase = Number.isFinite(baseValue) ? baseValue : 10;
+          const rewardValue = Number.isFinite(value) ? value : 0;
+          next[key] = safeBase + rewardValue;
+        });
+        return next;
+      });
+      if (result.committed && awarded) {
+        showAchievementToast(achievement.flavorZh, achievement.flavorEn);
+      }
+    } catch (error) {
+      console.warn("Failed to award achievement", error);
+    }
+  };
+
+  const evaluateChoiceAchievements = async () => {
+    await awardAchievementByCode(ACHIEVEMENT_CODES.anyChoice);
+    if (isViolentQa) {
+      await awardAchievementByCode(ACHIEVEMENT_CODES.drVaxon);
+    }
+    const memberKey = memberNo || authUid;
+    if (!memberKey) return;
+    try {
+      const snapshot = await get(ref(db, `qa_choices/${memberKey}`));
+      if (!snapshot.exists()) return;
+      let count = 0;
+      snapshot.forEach(() => {
+        count += 1;
+      });
+      if (count > 20) {
+        await awardAchievementByCode(ACHIEVEMENT_CODES.manyChoices);
+      }
+    } catch (error) {
+      console.warn("Failed to evaluate choice achievements", error);
+    }
   };
 
   const revealResults = (choice) => {
@@ -255,6 +491,7 @@ if (qaRoot && !qaDisabled) {
       const entryRef = ref(db, `qa_choices/${memberKey}/${pageKey}`);
       await set(entryRef, payload);
       loadChoiceStats();
+      evaluateChoiceAchievements();
     } catch (error) {
       console.warn("Failed to log QA choice", error);
     }
