@@ -32,8 +32,18 @@
     </header>
 
     <main class="page-shell">
+      <div class="lang-toggle-wrap">
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button class="lang-toggle__button is-active" type="button" data-lang="zh" aria-pressed="true">
+            中文
+          </button>
+          <button class="lang-toggle__button" type="button" data-lang="en" aria-pressed="false">
+            English
+          </button>
+        </div>
+      </div>
       <section class="hero">
-        <h1>Emperors of Dranison 卓尼森歷任皇帝</h1>
+        <h1 id="emperors-title" data-title-zh="卓尼森歷任皇帝" data-title-en="Emperors of Dranison">卓尼森歷任皇帝</h1>
       </section>
 
       <section id="emperor-eras" class="eras" aria-label="Emperor eras"></section>

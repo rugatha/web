@@ -21,12 +21,41 @@ body {
   padding: 22px 6px 56px;
 }
 
+.lang-toggle-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin: 6px 0 10px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 82%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lang-toggle__button {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease, background 200ms ease;
+}
+
+.lang-toggle__button.is-active {
+  color: #ecf2ed;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
 .hero {
   padding: 18px 18px 16px;
-  border-radius: var(--radius);
-  background: var(--panel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow);
   text-align: center;
 }
 
