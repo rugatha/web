@@ -1,15 +1,40 @@
 (() => {
   const fallbackImage = "../assets/rugatha-banner.jpg";
 
-  const textOrFallback = (value, fallback = "") =>
-    value ? String(value) : fallback;
-
   const nameEl = document.querySelector("[data-deity='name']");
   const titleEl = document.querySelector("[data-deity='title']");
   const domainsEl = document.querySelector("[data-deity='domains']");
   const sayingEl = document.querySelector("[data-deity='saying']");
   const imageEl = document.querySelector("[data-deity='image']");
   const profileEl = document.querySelector(".deity-profile");
+  const langButtons = document.querySelectorAll(".lang-toggle__button");
+  const labelEls = document.querySelectorAll("[data-label-zh]");
+  const ariaLabelEls = document.querySelectorAll("[data-aria-zh]");
+
+  let currentLang = "zh";
+  let deityData = null;
+
+  const textOrFallback = (value, fallback = "") =>
+    value ? String(value) : fallback;
+
+  const getLocalizedText = (value, fallback = "") => {
+    if (!value) return fallback;
+    if (typeof value === "string") return value;
+    if (currentLang === "en") {
+      return value.en || value.zh || fallback;
+    }
+    return value.zh || value.en || fallback;
+  };
+
+  const getLocalizedList = (value) => {
+    if (!value) return [];
+    if (Array.isArray(value)) return value;
+    if (typeof value === "object") {
+      if (currentLang === "en") return value.en || value.zh || [];
+      return value.zh || value.en || [];
+    }
+    return [];
+  };
 
   const getSlug = () => {
     if (window.deitySlug) return window.deitySlug;
@@ -36,10 +61,11 @@
   };
 
   const fillContent = (data) => {
-    const name = textOrFallback(data.name);
-    const title = textOrFallback(data.title);
-    const domains = Array.isArray(data.domains) ? data.domains : [];
-    const saying = textOrFallback(data.saying).trim();
+    if (!data) return;
+    const name = textOrFallback(getLocalizedText(data.name));
+    const title = textOrFallback(getLocalizedText(data.title));
+    const domains = getLocalizedList(data.domains);
+    const saying = textOrFallback(getLocalizedText(data.saying)).trim();
 
     if (nameEl) nameEl.textContent = name;
     if (titleEl) titleEl.textContent = title;
@@ -78,8 +104,45 @@
 
     if (name) {
       const plainName = name.replace(/\s+/g, " ").trim();
-      document.title = `${plainName} | Deity of Rugatha`;
+      const suffix =
+        currentLang === "en" ? "Deity of Rugatha" : "魯伽薩神祇";
+      document.title = `${plainName} | ${suffix}`;
     }
+  };
+
+  const updateStaticLabels = () => {
+    labelEls.forEach((el) => {
+      const zh = el.dataset.labelZh || "";
+      const en = el.dataset.labelEn || "";
+      el.textContent = currentLang === "en" ? en : zh;
+    });
+
+    ariaLabelEls.forEach((el) => {
+      const zh = el.dataset.ariaZh || "";
+      const en = el.dataset.ariaEn || "";
+      const next = currentLang === "en" ? en : zh;
+      if (next) el.setAttribute("aria-label", next);
+    });
+  };
+
+  const setupLanguageToggle = () => {
+    if (!langButtons.length) return;
+
+    const setButtonState = (button, isActive) => {
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    };
+
+    langButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextLang = button.dataset.lang || "zh";
+        if (nextLang === currentLang) return;
+        currentLang = nextLang;
+        langButtons.forEach((btn) => setButtonState(btn, btn.dataset.lang === currentLang));
+        updateStaticLabels();
+        fillContent(deityData);
+      });
+    });
   };
 
   const loadDeity = async () => {
@@ -89,7 +152,10 @@
     const list = await res.json();
     const data = list.find((item) => item.slug === slug);
     if (!data) throw new Error(`Deity not found for slug: ${slug}`);
-    fillContent(data);
+    deityData = data;
+    fillContent(deityData);
+    updateStaticLabels();
+    setupLanguageToggle();
   };
 
   loadDeity().catch((err) => {

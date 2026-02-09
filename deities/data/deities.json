@@ -1,161 +1,338 @@
 [
   {
     "slug": "trinix",
-    "name": "Trinix\n崔尼斯",
-    "title": "God of Light and Hope\n光與希望之神",
-    "domains": ["Light", "Hope"],
+    "name": {
+      "en": "Trinix",
+      "zh": "崔尼斯"
+    },
+    "title": {
+      "en": "God of Light and Hope",
+      "zh": "光與希望之神"
+    },
+    "domains": {
+      "en": ["Light", "Hope"],
+      "zh": ["光", "希望"]
+    },
     "image": "Banners/Trinix.png",
     "link": "./pages/trinix.html",
-    "saying": "Let Light Lead Us\n讓光引領我們",
-    "category": "The Pantheon 主神"
+    "saying": {
+      "en": "Let Light Lead Us",
+      "zh": "讓光引領我們"
+    },
+    "category": "pantheon"
   },
   {
     "slug": "phyneal",
-    "name": "Phyneal\n芬尼爾",
-    "title": "God of Luna\n月神",
-    "domains": ["Luna"],
+    "name": {
+      "en": "Phyneal",
+      "zh": "芬尼爾"
+    },
+    "title": {
+      "en": "God of Luna",
+      "zh": "月神"
+    },
+    "domains": {
+      "en": ["Luna"],
+      "zh": ["月"]
+    },
     "image": "Banners/Phyneal.png",
     "link": "./pages/phyneal.html",
-    "saying": "The Moon Reveals All that is Hidden\n月光會照出那些隱藏的事物",
-    "category": "The Pantheon 主神"
+    "saying": {
+      "en": "The Moon Reveals All that is Hidden",
+      "zh": "月光會照出那些隱藏的事物"
+    },
+    "category": "pantheon"
   },
   {
     "slug": "phynoir",
-    "name": "Phynoir\n芬諾爾",
-    "title": "God of Exchange and Prophecy\n交易與預言之神",
-    "domains": ["Exchange", "Prophecy"],
+    "name": {
+      "en": "Phynoir",
+      "zh": "芬諾爾"
+    },
+    "title": {
+      "en": "God of Exchange and Prophecy",
+      "zh": "交易與預言之神"
+    },
+    "domains": {
+      "en": ["Exchange", "Prophecy"],
+      "zh": ["交易", "預言"]
+    },
     "image": "Banners/Phynoir.png",
     "link": "./pages/phynoir.html",
-    "saying": "What Would You Offer for a Trade?\n你願意拿什麼來做個交易？",
-    "category": "The Obscured 隱密信仰"
+    "saying": {
+      "en": "What Would You Offer for a Trade?",
+      "zh": "你願意拿什麼來做個交易？"
+    },
+    "category": "obscured"
   },
   {
     "slug": "nessis",
-    "name": "Nessis\n涅西斯",
-    "title": "God of Woods and Life\n樹林與生命之神",
-    "domains": ["Woods", "Life"],
+    "name": {
+      "en": "Nessis",
+      "zh": "涅西斯"
+    },
+    "title": {
+      "en": "God of Woods and Life",
+      "zh": "樹林與生命之神"
+    },
+    "domains": {
+      "en": ["Woods", "Life"],
+      "zh": ["樹林", "生命"]
+    },
     "image": "Banners/Nessis.png",
     "link": "./pages/nessis.html",
-    "saying": "Life, Birth in Nature, Ends in Nature\n生命，始於自然，終於自然",
-    "category": "The Pantheon 主神"
+    "saying": {
+      "en": "Life, Birth in Nature, Ends in Nature",
+      "zh": "生命，始於自然，終於自然"
+    },
+    "category": "pantheon"
   },
   {
     "slug": "keinra",
-    "name": "Keinra\n津菈",
-    "title": "God of Protection and Justice\n守護與正義之神",
-    "domains": ["Protection", "Justice"],
+    "name": {
+      "en": "Keinra",
+      "zh": "津菈"
+    },
+    "title": {
+      "en": "God of Protection and Justice",
+      "zh": "守護與正義之神"
+    },
+    "domains": {
+      "en": ["Protection", "Justice"],
+      "zh": ["守護", "正義"]
+    },
     "image": "Banners/Keinra.png",
     "link": "./pages/keinra.html",
-    "saying": "I Will Protect Until the End of the World\n我會守護，直到世界毀滅",
-    "category": "The Pantheon 主神"
+    "saying": {
+      "en": "I Will Protect Until the End of the World",
+      "zh": "我會守護，直到世界毀滅"
+    },
+    "category": "pantheon"
   },
   {
     "slug": "jeorisan",
-    "name": "Jeorisan\n喬里森",
-    "title": "God of Storm and Intelligence\n風暴與智慧之神",
-    "domains": ["Storm", "Intelligence"],
+    "name": {
+      "en": "Jeorisan",
+      "zh": "喬里森"
+    },
+    "title": {
+      "en": "God of Storm and Intelligence",
+      "zh": "風暴與智慧之神"
+    },
+    "domains": {
+      "en": ["Storm", "Intelligence"],
+      "zh": ["風暴", "智慧"]
+    },
     "image": "Banners/Jeorisan.png",
     "link": "./pages/jeorisan.html",
-    "saying": "Truth Rise from Chaos\n真理從狂亂中誕生",
-    "category": "The Pantheon 主神"
+    "saying": {
+      "en": "Truth Rise from Chaos",
+      "zh": "真理從狂亂中誕生"
+    },
+    "category": "pantheon"
   },
   {
     "slug": "ultisen",
-    "name": "Ultisen\n奧提森",
-    "title": "God of Trickery and Drama\n詐欺與戲劇之神",
-    "domains": ["Trickery", "Drama"],
+    "name": {
+      "en": "Ultisen",
+      "zh": "奧提森"
+    },
+    "title": {
+      "en": "God of Trickery and Drama",
+      "zh": "詐欺與戲劇之神"
+    },
+    "domains": {
+      "en": ["Trickery", "Drama"],
+      "zh": ["詐欺", "戲劇"]
+    },
     "image": "Banners/Ultisen.png",
     "link": "./pages/ultisen.html",
-    "saying": "Dramas are as Lies, Deadly Beautiful\n戲如謊言，美麗而致命",
-    "category": "The Pantheon 主神"
+    "saying": {
+      "en": "Dramas are as Lies, Deadly Beautiful",
+      "zh": "戲如謊言，美麗而致命"
+    },
+    "category": "pantheon"
   },
   {
     "slug": "maxus",
-    "name": "Maxus\n麥克瑟斯",
-    "title": "God of Fire and Forge\n火與熔鍛之神",
-    "domains": ["Fire", "Forge"],
+    "name": {
+      "en": "Maxus",
+      "zh": "麥克瑟斯"
+    },
+    "title": {
+      "en": "God of Fire and Forge",
+      "zh": "火與熔鍛之神"
+    },
+    "domains": {
+      "en": ["Fire", "Forge"],
+      "zh": ["火", "熔鍛"]
+    },
     "image": "Banners/Maxus.png",
     "link": "./pages/maxus.html",
-    "saying": "Melt, Rebirth\n熔化，重生",
-    "category": "The Pantheon 主神"
+    "saying": {
+      "en": "Melt, Rebirth",
+      "zh": "熔化，重生"
+    },
+    "category": "pantheon"
   },
   {
     "slug": "laxthos",
-    "name": "Laxthos\n拉索斯",
-    "title": "God of Silence and Rules\n寂靜與秩序之神",
-    "domains": ["Silence", "Rules"],
+    "name": {
+      "en": "Laxthos",
+      "zh": "拉索斯"
+    },
+    "title": {
+      "en": "God of Silence and Rules",
+      "zh": "寂靜與秩序之神"
+    },
+    "domains": {
+      "en": ["Silence", "Rules"],
+      "zh": ["寂靜", "秩序"]
+    },
     "image": "Banners/Laxthos.png",
     "link": "./pages/laxthos.html",
-    "saying": "Obey Destiny in Silence\n沈默地服從命運",
-    "category": "The Pantheon 主神"
+    "saying": {
+      "en": "Obey Destiny in Silence",
+      "zh": "沈默地服從命運"
+    },
+    "category": "pantheon"
   },
   {
     "slug": "kalinius",
-    "name": "Kalinius\n凱里涅斯",
-    "title": "God of Trades and Wealth\n貿易與財富之神",
-    "domains": ["Trades", "Wealth"],
+    "name": {
+      "en": "Kalinius",
+      "zh": "凱里涅斯"
+    },
+    "title": {
+      "en": "God of Trades and Wealth",
+      "zh": "貿易與財富之神"
+    },
+    "domains": {
+      "en": ["Trades", "Wealth"],
+      "zh": ["貿易", "財富"]
+    },
     "image": "Banners/Kalinius.png",
     "link": "./pages/kalinius.html",
-    "saying": "Gold Pieces, Omnipotent\n金幣，無所不能",
-    "category": "The Pantheon 主神"
+    "saying": {
+      "en": "Gold Pieces, Omnipotent",
+      "zh": "金幣，無所不能"
+    },
+    "category": "pantheon"
   },
   {
     "slug": "daligon",
-    "name": "Daligon\n達里崗",
-    "title": "God of War and Strength\n戰爭與力量之神",
-    "domains": ["War", "Strength"],
+    "name": {
+      "en": "Daligon",
+      "zh": "達里崗"
+    },
+    "title": {
+      "en": "God of War and Strength",
+      "zh": "戰爭與力量之神"
+    },
+    "domains": {
+      "en": ["War", "Strength"],
+      "zh": ["戰爭", "力量"]
+    },
     "image": "Banners/Daligon.png",
     "link": "./pages/daligon.html",
-    "saying": "Olny the Truiumphant Decide History\n唯有勝者，定義歷史",
-    "category": "The Pantheon 主神"
+    "saying": {
+      "en": "Only the Truiumphant Decide History",
+      "zh": "唯有勝者，定義歷史"
+    },
+    "category": "pantheon"
   },
   {
     "slug": "amoret",
-    "name": "Amoret\n阿莫雷",
-    "title": "God of Love and Everlasting\n愛與永恆之神",
-    "domains": ["Love", "Everlasting"],
+    "name": {
+      "en": "Amoret",
+      "zh": "阿莫雷"
+    },
+    "title": {
+      "en": "God of Love and Everlasting",
+      "zh": "愛與永恆之神"
+    },
+    "domains": {
+      "en": ["Love", "Everlasting"],
+      "zh": ["愛", "永恆"]
+    },
     "image": "Banners/Amoret.png",
     "link": "./pages/amoret.html",
-    "saying": "Those Who are Against Love, are My Nemesis\n與愛為敵之人，皆是我的仇敵",
-    "category": "The Newly Ascended 新生神"
+    "saying": {
+      "en": "Those Who are Against Love, are My Nemesis",
+      "zh": "與愛為敵之人，皆是我的仇敵"
+    },
+    "category": "newly-ascended"
   },
   {
     "slug": "the-mother",
-    "name": "The Mother\n母親大人",
-    "title": "The Spider God\n蜘蛛神",
-    "domains": ["Spider"],
+    "name": {
+      "en": "The Mother",
+      "zh": "母親大人"
+    },
+    "title": {
+      "en": "The Spider God",
+      "zh": "蜘蛛神"
+    },
+    "domains": {
+      "en": ["Spider"],
+      "zh": ["蜘蛛"]
+    },
     "image": "../npc/individual_pics/The%20Mother.jpeg",
     "link": "../npc/npc_page/pages/The_Mother.html",
     "saying": null,
-    "category": "The Spider Religion 蜘蛛神信仰"
+    "category": "spider-religion"
   },
   {
     "slug": "anna",
-    "name": "Anna\n安娜",
-    "title": "The New Spider God\n新蜘蛛神",
-    "domains": ["Spider"],
+    "name": {
+      "en": "Anna",
+      "zh": "安娜"
+    },
+    "title": {
+      "en": "The New Spider God",
+      "zh": "新蜘蛛神"
+    },
+    "domains": {
+      "en": ["Spider"],
+      "zh": ["蜘蛛"]
+    },
     "image": "../npc/individual_pics/Anna.png",
     "link": "../npc/npc_page/pages/Anna.html",
     "saying": null,
-    "category": "The Spider Religion 蜘蛛神信仰"
+    "category": "spider-religion"
   },
   {
     "slug": "alfenor",
-    "name": "Alfenor\n阿爾芬諾",
-    "title": "The Spider King\n蜘蛛王",
-    "domains": ["Spider"],
+    "name": {
+      "en": "Alfenor",
+      "zh": "阿爾芬諾"
+    },
+    "title": {
+      "en": "The Spider King",
+      "zh": "蜘蛛王"
+    },
+    "domains": {
+      "en": ["Spider"],
+      "zh": ["蜘蛛"]
+    },
     "image": "../npc/individual_pics/Alfenor.jpeg",
     "link": "../npc/npc_page/pages/Alfenor.html",
     "saying": null,
-    "category": "The Spider Religion 蜘蛛神信仰"
+    "category": "spider-religion"
   },
   {
     "slug": "king-knicol",
-    "name": "King Knicol\n神王尼可",
-    "title": "King of the Underground\n地底王",
+    "name": {
+      "en": "King Knicol",
+      "zh": "神王尼可"
+    },
+    "title": {
+      "en": "King of the Underground",
+      "zh": "地底王"
+    },
     "image": "../npc/individual_pics/King%20Knicol.jpeg",
     "link": "../npc/npc_page/pages/King_Knicol.html",
     "saying": null,
-    "category": "The Dubbed 被冊封者"
+    "category": "dubbed"
   }
 ]
