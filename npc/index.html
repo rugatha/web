@@ -269,6 +269,14 @@
       const first = (name || '').trim().charAt(0) || '';
       if (!first) return '其他';
       if (!isCjk(first)) return '其他';
+      if (first === '艾') return 'ㄞ';
+      if (first === '阿') return 'ㄚ';
+      if (first === '屋') return 'ㄨ';
+      if (first === '師') return 'ㄕ';
+      if (first === '哈') return 'ㄏ';
+      if (first === '拉') return 'ㄌ';
+      if (first === '奈') return 'ㄋ';
+      if (first === '大') return 'ㄉ';
       let chosen = sortedZhuyinInitials[0].label;
       for (const entry of sortedZhuyinInitials) {
         const order = zhuyinCollator
