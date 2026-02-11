@@ -1386,6 +1386,16 @@
       return `${padded.slice(0, 4)}-${padded.slice(4)}`;
     };
 
+    const fallbackMemberNoFromUid = (uid) => {
+      if (!uid) return "";
+      let hash = 0;
+      for (let i = 0; i < uid.length; i += 1) {
+        hash = (hash * 31 + uid.charCodeAt(i)) % 100000000;
+      }
+      const safeValue = hash === 0 ? 1 : hash;
+      return formatMemberNo(safeValue);
+    };
+
     const allocateMemberNo = async () => {
       if (!db) return null;
       const counterRef = ref(db, MEMBER_COUNTER_PATH);
@@ -1393,7 +1403,7 @@
         const result = await runTransaction(counterRef, (current) => {
           const currentNumber = Number(current);
           if (!Number.isFinite(currentNumber)) {
-            return 0;
+            return 1;
           }
           return currentNumber + 1;
         });
@@ -1764,6 +1774,13 @@
             memberNoValue = allocatedMemberNo;
             data.memberNo = allocatedMemberNo;
             memberNoAssigned = true;
+          } else {
+            const fallbackMemberNo = fallbackMemberNoFromUid(user.uid);
+            if (fallbackMemberNo) {
+              memberNoValue = fallbackMemberNo;
+              data.memberNo = fallbackMemberNo;
+              memberNoAssigned = true;
+            }
           }
         }
         const formattedMemberNo = formatMemberNo(memberNoValue);
