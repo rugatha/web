@@ -72,6 +72,27 @@
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
     }
 
+    .google-signin {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0 6px;
+    }
+
+    .google-signin a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #1a1a1a;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    }
+
     @media (max-width: 720px) {
       .auth-status {
         display: none;
@@ -196,12 +217,37 @@
         </div>
       </section>
 
+      <section class="google-signin" aria-label="Google sign in">
+        <a id="google-signin-link-bottom" href="#">
+          Sign In with Google 以Google登入
+        </a>
+      </section>
+
     </main>
   </div>
 
   <script src="shared/rugatha.config.js"></script>
   <script src="shared/firebase.config.js"></script>
   <script type="module" src="shared/auth.js"></script>
+  <script>
+    (function () {
+      const link = document.getElementById("google-signin-link-bottom");
+      if (!link) return;
+      const apiKey =
+        (window.RUGATHA_FIREBASE_CONFIG && window.RUGATHA_FIREBASE_CONFIG.apiKey) ||
+        "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U";
+      const params = new URLSearchParams({
+        apiKey,
+        appName: "[DEFAULT]",
+        authType: "signInViaRedirect",
+        redirectUrl: window.location.href,
+        v: "12.7.0",
+        providerId: "google.com",
+        scopes: "email profile"
+      });
+      link.href = `https://rugatha-87e15.firebaseapp.com/__/auth/handler?${params.toString()}`;
+    })();
+  </script>
   <script type="module">
     import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
