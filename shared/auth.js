@@ -3,7 +3,7 @@ import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/12
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithPopup,
+  signInWithRedirect,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
 import {
@@ -14,6 +14,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
 const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
+const isLikelyInAppBrowser = () => {
+  const ua = navigator.userAgent || "";
+  return /(FBAN|FBAV|Instagram|Line|TikTok|Twitter|WeChat|QQ|Weibo|WebView|wv)/i.test(
+    ua
+  );
+};
 
 const ensureAuthStyles = () => {
   if (document.getElementById("rugatha-auth-style")) {
@@ -164,6 +170,7 @@ const setupAuth = () => {
   const loginButton = document.getElementById("google-login");
   const logoutButton = document.getElementById("google-logout");
   const statusEl = document.getElementById("auth-status");
+  const inAppBrowser = isLikelyInAppBrowser();
 
   if (!loginButton || !logoutButton || !statusEl) {
     return;
@@ -364,7 +371,9 @@ const setupAuth = () => {
     if (labelEl) {
       labelEl.textContent = "Sign in";
     }
-    statusEl.textContent = "Google login";
+    statusEl.textContent = inAppBrowser
+      ? "Open in Chrome/Safari to sign in"
+      : "Google login";
     loginButton.disabled = false;
     loginButton.removeAttribute("aria-disabled");
     logoutButton.disabled = true;
@@ -386,7 +395,7 @@ const setupAuth = () => {
 
   loginButton.addEventListener("click", async () => {
     try {
-      await signInWithPopup(auth, provider);
+      await signInWithRedirect(auth, provider);
     } catch (error) {
       console.error("Google sign-in failed", error);
       statusEl.textContent = "Sign-in failed";
