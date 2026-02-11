@@ -218,9 +218,9 @@
       </section>
 
       <section class="google-signin" aria-label="Google sign in">
-        <a id="google-signin-link-bottom" href="#">
+        <button class="auth-button" id="google-signin-link-bottom" type="button">
           Sign In with Google 以Google登入
-        </a>
+        </button>
       </section>
 
     </main>
@@ -228,24 +228,17 @@
 
   <script src="shared/rugatha.config.js"></script>
   <script src="shared/firebase.config.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-auth-compat.js"></script>
   <script type="module" src="shared/auth.js"></script>
   <script>
     (function () {
-      const link = document.getElementById("google-signin-link-bottom");
-      if (!link) return;
-      const apiKey =
-        (window.RUGATHA_FIREBASE_CONFIG && window.RUGATHA_FIREBASE_CONFIG.apiKey) ||
-        "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U";
-      const params = new URLSearchParams({
-        apiKey,
-        appName: "[DEFAULT]",
-        authType: "signInViaRedirect",
-        redirectUrl: window.location.href,
-        v: "12.7.0",
-        providerId: "google.com",
-        scopes: "email profile"
+      const button = document.getElementById("google-signin-link-bottom");
+      if (!button) return;
+      button.addEventListener("click", async () => {
+        window.location.href =
+          "https://rugatha-87e15.firebaseapp.com/__/auth/handler?apiKey=AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U&appName=%5BDEFAULT%5D&authType=signInViaPopup&redirectUrl=https%3A%2F%2Frugatha.com%2F&v=12.7.0&eventId=6843788891&providerId=google.com&scopes=profile";
       });
-      link.href = `https://rugatha-87e15.firebaseapp.com/__/auth/handler?${params.toString()}`;
     })();
   </script>
   <script type="module">
