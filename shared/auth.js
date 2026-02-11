@@ -6,6 +6,10 @@ const isLikelyInAppBrowser = () => {
     ua
   );
 };
+const isMobileDevice = () => {
+  const ua = navigator.userAgent || "";
+  return /Android|iPhone|iPad|iPod|Mobi/i.test(ua);
+};
 
 const ensureAuthStyles = () => {
   if (document.getElementById("rugatha-auth-style")) {
@@ -166,6 +170,20 @@ const setupAuth = async () => {
   const logoutButton = document.getElementById("google-logout");
   const statusEl = document.getElementById("auth-status");
   const inAppBrowser = isLikelyInAppBrowser();
+  const useRedirectOnly = inAppBrowser || isMobileDevice();
+
+  const buildGoogleHandlerUrl = (apiKey) => {
+    const params = new URLSearchParams({
+      apiKey,
+      appName: "[DEFAULT]",
+      authType: "signInViaRedirect",
+      redirectUrl: window.location.href,
+      v: "12.7.0",
+      providerId: "google.com",
+      scopes: "email profile"
+    });
+    return `https://rugatha-87e15.firebaseapp.com/__/auth/handler?${params.toString()}`;
+  };
 
   const showAuthStatus = (message) => {
     if (!statusEl) return;
@@ -183,11 +201,17 @@ const setupAuth = async () => {
   }
 
   if (firebaseDisabled || !firebaseConfig) {
-    loginButton.disabled = true;
-    loginButton.setAttribute("aria-disabled", "true");
+    const handlerUrl = buildGoogleHandlerUrl(
+      (firebaseConfig && firebaseConfig.apiKey) || "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U"
+    );
+    loginButton.disabled = false;
+    loginButton.removeAttribute("aria-disabled");
+    loginButton.addEventListener("click", () => {
+      window.location.href = handlerUrl;
+    });
     logoutButton.disabled = true;
     logoutButton.setAttribute("aria-disabled", "true");
-    statusEl.textContent = firebaseDisabled ? "Login disabled" : "Login unavailable";
+    statusEl.textContent = firebaseDisabled ? "Login disabled" : "Tap to sign in";
     if (!firebaseDisabled && !firebaseConfig) {
       console.warn("Missing window.RUGATHA_FIREBASE_CONFIG");
     }
@@ -199,11 +223,17 @@ const setupAuth = async () => {
     firebase = await loadFirebaseImports();
   } catch (error) {
     console.error("Failed to load Firebase modules", error);
-    loginButton.disabled = true;
-    loginButton.setAttribute("aria-disabled", "true");
+    const handlerUrl = buildGoogleHandlerUrl(
+      (firebaseConfig && firebaseConfig.apiKey) || "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U"
+    );
+    loginButton.disabled = false;
+    loginButton.removeAttribute("aria-disabled");
+    loginButton.addEventListener("click", () => {
+      window.location.href = handlerUrl;
+    });
     logoutButton.disabled = true;
     logoutButton.setAttribute("aria-disabled", "true");
-    showAuthError(error);
+    showAuthStatus("Tap to sign in");
     return;
   }
 
@@ -544,16 +574,20 @@ const setupAuth = async () => {
     try {
       await persistenceReady;
       showAuthStatus("Auth: redirecting...");
-      try {
-        showAuthStatus("Auth: opening popup...");
-        await signInWithPopup(auth, provider);
-      } catch (popupError) {
-        const code = popupError?.code || "";
-        if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
-          showAuthStatus("Auth: popup blocked, redirecting...");
-          await signInWithRedirect(auth, provider);
-        } else {
-          throw popupError;
+      if (useRedirectOnly) {
+        await signInWithRedirect(auth, provider);
+      } else {
+        try {
+          showAuthStatus("Auth: opening popup...");
+          await signInWithPopup(auth, provider);
+        } catch (popupError) {
+          const code = popupError?.code || "";
+          if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
+            showAuthStatus("Auth: popup blocked, redirecting...");
+            await signInWithRedirect(auth, provider);
+          } else {
+            throw popupError;
+          }
         }
       }
     } catch (error) {
