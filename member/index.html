@@ -880,7 +880,10 @@
       onAuthStateChanged,
       signOut,
       GoogleAuthProvider,
-      signInWithRedirect
+      signInWithRedirect,
+      signInWithPopup,
+      setPersistence,
+      browserLocalPersistence
     } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
     import {
       getDatabase,
@@ -891,7 +894,7 @@
     } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
     const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
-    const loginHidden = true;
+    const loginHidden = false;
     const firebaseDisabled =
       window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
     const MEMBER_SIGNIN_KEY = "rugatha-member-signin-attempted-at";
@@ -949,6 +952,7 @@
     let app = null;
     let db = null;
     let auth = null;
+    let persistenceReady = Promise.resolve();
     let profilePhotoUrl = null;
     const ACHIEVEMENTS_CSV_PATH = "./achievements.csv";
     const ACHIEVEMENT_BADGE_MAP = {
@@ -1395,15 +1399,7 @@
       return `${padded.slice(0, 4)}-${padded.slice(4)}`;
     };
 
-    const fallbackMemberNoFromUid = (uid) => {
-      if (!uid) return "";
-      let hash = 0;
-      for (let i = 0; i < uid.length; i += 1) {
-        hash = (hash * 31 + uid.charCodeAt(i)) % 100000000;
-      }
-      const safeValue = hash === 0 ? 1 : hash;
-      return formatMemberNo(safeValue);
-    };
+    const ADMIN_EMAIL = "rugathadnd@gmail.com";
 
     const allocateMemberNo = async () => {
       if (!db) return null;
@@ -1777,19 +1773,17 @@
         authState.memberId = memberId;
         uidEl.textContent = memberId;
         memberNoValue = data.memberNo ?? "";
+        if (!memberNoValue && user.email === ADMIN_EMAIL) {
+          memberNoValue = "0000-0000";
+          data.memberNo = memberNoValue;
+          memberNoAssigned = true;
+        }
         if (!memberNoValue) {
           const allocatedMemberNo = await allocateMemberNo();
           if (allocatedMemberNo) {
             memberNoValue = allocatedMemberNo;
             data.memberNo = allocatedMemberNo;
             memberNoAssigned = true;
-          } else {
-            const fallbackMemberNo = fallbackMemberNoFromUid(user.uid);
-            if (fallbackMemberNo) {
-              memberNoValue = fallbackMemberNo;
-              data.memberNo = fallbackMemberNo;
-              memberNoAssigned = true;
-            }
           }
         }
         const formattedMemberNo = formatMemberNo(memberNoValue);
@@ -1997,7 +1991,17 @@
       const provider = new GoogleAuthProvider();
       sessionStorage.setItem(MEMBER_SIGNIN_KEY, `${Date.now()}`);
       try {
-        await signInWithRedirect(auth, provider);
+        await persistenceReady;
+        try {
+          await signInWithPopup(auth, provider);
+        } catch (popupError) {
+          const code = popupError?.code || "";
+          if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
+            await signInWithRedirect(auth, provider);
+          } else {
+            throw popupError;
+          }
+        }
       } catch (error) {
         console.error("Redirect sign-in failed", error);
         const dictionary = translations[authState.language] || translations.en;
@@ -2015,12 +2019,17 @@
       app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
       auth = getAuth(app);
       db = getDatabase(app);
+      persistenceReady = setPersistence(auth, browserLocalPersistence).catch((error) => {
+        console.error("Failed to set auth persistence", error);
+      });
 
       if (!loginHidden) {
         signOutButton.addEventListener("click", async () => {
           try {
             await persistSessionTime(true);
             await signOut(auth);
+            alert("You've logged out 您已登出");
+            window.location.href = "../index.html";
           } catch (error) {
             console.error("Sign-out failed", error);
           }
@@ -2040,9 +2049,6 @@
           return;
         }
         setSignedOut();
-        if (!loginHidden && shouldAttemptRedirect()) {
-          await attemptRedirectSignIn();
-        }
       });
     }
 
