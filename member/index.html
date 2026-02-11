@@ -859,6 +859,7 @@
           </div>
         </div>
         <div class="profile-actions">
+          <button class="ghost-button" id="sign-in" type="button" disabled data-i18n="signIn">Sign in</button>
           <button class="ghost-button" id="sign-out" type="button" disabled data-i18n="signOut">Sign out</button>
         </div>
         <p class="profile-hint" id="profile-hint">Sign in to load your member profile.</p>
@@ -888,8 +889,9 @@
     const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
     const firebaseDisabled =
       window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
-    const MEMBER_SIGNIN_KEY = "rugatha-member-signin-attempted";
+    const MEMBER_SIGNIN_KEY = "rugatha-member-signin-attempted-at";
     const signOutButton = document.getElementById("sign-out");
+    const signInButton = document.getElementById("sign-in");
     const nameEl = document.getElementById("user-name");
     const emailEl = document.getElementById("user-email");
     const uidEl = document.getElementById("user-uid");
@@ -1013,6 +1015,7 @@
         achievementsEmptyValue: "No achievements yet.",
         labelLastLogin: "Last Login",
         labelLoginTime: "Total Time",
+        signIn: "Sign in",
         signOut: "Sign out",
         profileSignedOut: "Please sign in to access this page.",
         profileMissingConfig: "Missing Firebase config. Update shared/firebase.config.js.",
@@ -1052,6 +1055,7 @@
         labelKingdom: "王國",
         labelLastLogin: "上次登入",
         labelLoginTime: "登入時間",
+        signIn: "登入",
         achievementsTitle: "成就",
         achievementsEmptyLabel: "狀態",
         achievementsEmptyValue: "尚未獲得成就。",
@@ -1923,6 +1927,10 @@
       totalTimeEl.textContent = "—";
       hintEl.textContent = message || dictionary.profileSignedOut;
       setProfilePhoto(null);
+      if (signInButton) {
+        signInButton.hidden = false;
+        signInButton.disabled = firebaseDisabled || !firebaseConfig;
+      }
       signOutButton.disabled = true;
       setProfileEditable(false);
       syncDisplayValues();
@@ -1954,6 +1962,10 @@
       const dictionary = translations[authState.language] || translations.en;
       hintEl.textContent = dictionary.profileSignedIn;
       setProfilePhoto(user.photoURL || null);
+      if (signInButton) {
+        signInButton.hidden = true;
+        signInButton.disabled = true;
+      }
       signOutButton.disabled = false;
       authState.user = user;
       setProfileEditable(false);
@@ -1961,6 +1973,25 @@
       authState.achievements = {};
       renderAchievements();
       loadProfileFromDatabase(user);
+    };
+
+    const shouldAttemptRedirect = () => {
+      const lastAttempt = Number(sessionStorage.getItem(MEMBER_SIGNIN_KEY));
+      if (!Number.isFinite(lastAttempt)) return true;
+      return Date.now() - lastAttempt > 15000;
+    };
+
+    const attemptRedirectSignIn = async () => {
+      if (!auth) return;
+      const provider = new GoogleAuthProvider();
+      sessionStorage.setItem(MEMBER_SIGNIN_KEY, `${Date.now()}`);
+      try {
+        await signInWithRedirect(auth, provider);
+      } catch (error) {
+        console.error("Redirect sign-in failed", error);
+        const dictionary = translations[authState.language] || translations.en;
+        setSignedOut(dictionary.profileSignInFailed);
+      }
     };
 
     if (firebaseDisabled || !firebaseConfig) {
@@ -1983,6 +2014,12 @@
         }
       });
 
+      if (signInButton) {
+        signInButton.addEventListener("click", () => {
+          attemptRedirectSignIn();
+        });
+      }
+
       onAuthStateChanged(auth, async (user) => {
         if (user) {
           sessionStorage.removeItem(MEMBER_SIGNIN_KEY);
@@ -1990,14 +2027,8 @@
           return;
         }
         setSignedOut();
-        if (!sessionStorage.getItem(MEMBER_SIGNIN_KEY)) {
-          sessionStorage.setItem(MEMBER_SIGNIN_KEY, "true");
-          const provider = new GoogleAuthProvider();
-          try {
-            await signInWithRedirect(auth, provider);
-          } catch (error) {
-            console.error("Redirect sign-in failed", error);
-          }
+        if (shouldAttemptRedirect()) {
+          await attemptRedirectSignIn();
         }
       });
     }
