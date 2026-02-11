@@ -1,19 +1,19 @@
+import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+import {
+  getDatabase,
+  ref,
+  get,
+  runTransaction
+} from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+
 const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
-const loginHidden = false;
-const isLikelyInAppBrowser = () => {
-  const ua = navigator.userAgent || "";
-  return /(FBAN|FBAV|Instagram|Line|TikTok|Twitter|WeChat|QQ|Weibo|WebView|wv)/i.test(
-    ua
-  );
-};
-const isMobileDevice = () => {
-  const ua = navigator.userAgent || "";
-  return /Android|iPhone|iPad|iPod|Mobi/i.test(ua);
-};
-const isCoarsePointer = () => {
-  if (typeof window === "undefined" || !window.matchMedia) return false;
-  return window.matchMedia("(pointer: coarse)").matches;
-};
 
 const ensureAuthStyles = () => {
   if (document.getElementById("rugatha-auth-style")) {
@@ -104,23 +104,6 @@ const ensureAuthStyles = () => {
   document.head.appendChild(style);
 };
 
-let firebaseImportsPromise = null;
-const loadFirebaseImports = () => {
-  if (firebaseImportsPromise) return firebaseImportsPromise;
-  firebaseImportsPromise = Promise.all([
-    import("https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js"),
-    import("https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js"),
-    import("https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js"),
-    import("https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js")
-  ]).then(([app, analytics, auth, database]) => ({
-    app,
-    analytics,
-    auth,
-    database
-  }));
-  return firebaseImportsPromise;
-};
-
 const ensureAuthMarkup = () => {
   if (document.getElementById("google-login")) {
     return;
@@ -154,108 +137,39 @@ const ensureAuthMarkup = () => {
   host.appendChild(container);
 };
 
-const setupAuth = async () => {
+const setupAuth = () => {
   const firebaseConfig = getFirebaseConfig();
   const firebaseDisabled =
     window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
 
-  ensureAuthStyles();
-  ensureAuthMarkup();
-
-  if (loginHidden) {
-    const container = document.querySelector(".auth-entry");
-    if (container) {
-      container.remove();
-    }
-    return;
-  }
-
-  const loginButton = document.getElementById("google-login");
-  const logoutButton = document.getElementById("google-logout");
-  const statusEl = document.getElementById("auth-status");
-  const inAppBrowser = isLikelyInAppBrowser();
-  const useRedirectOnly = inAppBrowser || isMobileDevice() || isCoarsePointer();
-
-  const buildGoogleHandlerUrl = (apiKey) => {
-    const params = new URLSearchParams({
-      apiKey,
-      appName: "[DEFAULT]",
-      authType: "signInViaRedirect",
-      redirectUrl: window.location.href,
-      v: "12.7.0",
-      providerId: "google.com",
-      scopes: "email profile"
-    });
-    return `https://rugatha-87e15.firebaseapp.com/__/auth/handler?${params.toString()}`;
-  };
-
-  const showAuthStatus = (message) => {
-    if (!statusEl) return;
-    statusEl.textContent = message;
-  };
-
-  const showAuthError = (error) => {
-    if (!statusEl) return;
-    const code = error?.code || "auth/unknown";
-    statusEl.textContent = `Auth error: ${code}`;
-  };
-
-  if (!loginButton || !logoutButton || !statusEl) {
-    return;
-  }
-
   if (firebaseDisabled || !firebaseConfig) {
-    const handlerUrl = buildGoogleHandlerUrl(
-      (firebaseConfig && firebaseConfig.apiKey) || "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U"
-    );
-    loginButton.disabled = false;
-    loginButton.removeAttribute("aria-disabled");
-    loginButton.addEventListener("click", () => {
-      window.location.href = handlerUrl;
-    });
-    logoutButton.disabled = true;
-    logoutButton.setAttribute("aria-disabled", "true");
-    statusEl.textContent = firebaseDisabled ? "Login disabled" : "Tap to sign in";
+    const loginButton = document.getElementById("google-login");
+    if (loginButton) {
+      const container = loginButton.closest(".auth-entry");
+      if (container) {
+        container.remove();
+      } else {
+        loginButton.remove();
+      }
+    }
     if (!firebaseDisabled && !firebaseConfig) {
       console.warn("Missing window.RUGATHA_FIREBASE_CONFIG");
     }
     return;
   }
 
-  let firebase = null;
-  try {
-    firebase = await loadFirebaseImports();
-  } catch (error) {
-    console.error("Failed to load Firebase modules", error);
-    const handlerUrl = buildGoogleHandlerUrl(
-      (firebaseConfig && firebaseConfig.apiKey) || "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U"
-    );
-    loginButton.disabled = false;
-    loginButton.removeAttribute("aria-disabled");
-    loginButton.addEventListener("click", () => {
-      window.location.href = handlerUrl;
-    });
-    logoutButton.disabled = true;
-    logoutButton.setAttribute("aria-disabled", "true");
-    showAuthStatus("Tap to sign in");
+  ensureAuthStyles();
+  ensureAuthMarkup();
+
+  const loginButton = document.getElementById("google-login");
+  const logoutButton = document.getElementById("google-logout");
+  const statusEl = document.getElementById("auth-status");
+
+  if (!loginButton || !logoutButton || !statusEl) {
     return;
   }
 
   const labelEl = loginButton.querySelector(".auth-label");
-
-  const { initializeApp, getApps } = firebase.app;
-  const { getAnalytics, isSupported } = firebase.analytics;
-  const {
-    getAuth,
-    GoogleAuthProvider,
-    signInWithPopup,
-    signInWithRedirect,
-    onAuthStateChanged,
-    getRedirectResult,
-    setPersistence,
-    browserLocalPersistence
-  } = firebase.auth;
-  const { getDatabase, ref, get, runTransaction } = firebase.database;
 
   const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
   const db = getDatabase(app);
@@ -269,114 +183,12 @@ const setupAuth = async () => {
     .catch(() => {});
 
   const auth = getAuth(app);
-  let authResolved = false;
-  let signedIn = false;
-  const persistenceReady = setPersistence(auth, browserLocalPersistence).catch((error) => {
-    console.error("Failed to set auth persistence", error);
-    showAuthError(error);
-  });
   const provider = new GoogleAuthProvider();
   let memberId = null;
-  const MEMBER_COUNTER_PATH = "members_meta/memberNoCounter";
-  const ADMIN_EMAIL = "rugathadnd@gmail.com";
   const VISIT_KEY_PREFIX = "rugatha-visit:";
   const VISIT_AWARD_CODE = "ach_TWRY";
   let visitPendingAward = false;
   let visitAchievementPromise = null;
-
-  const formatMemberNo = (value) => {
-    if (value === undefined || value === null || value === "") return "";
-    const digits = String(value).replace(/\D/g, "");
-    if (!digits) return String(value);
-    const padded = digits.padStart(8, "0").slice(-8);
-    return `${padded.slice(0, 4)}-${padded.slice(4)}`;
-  };
-
-  const allocateMemberNo = async () => {
-    if (!db) return "";
-    const counterRef = ref(db, MEMBER_COUNTER_PATH);
-    try {
-      const result = await runTransaction(counterRef, (current) => {
-        const currentNumber = Number(current);
-        if (!Number.isFinite(currentNumber)) {
-          return 1;
-        }
-        return currentNumber + 1;
-      });
-      if (!result.committed) return "";
-      const nextValue = Number(result.snapshot.val());
-      if (!Number.isFinite(nextValue)) return "";
-      return formatMemberNo(nextValue);
-    } catch (error) {
-      console.error("Failed to allocate member number", error);
-      showAuthError(error);
-      return "";
-    }
-  };
-
-  const ensureMemberRecord = async (user, resolvedId) => {
-    if (!user || !db || !resolvedId) return;
-    const memberRef = ref(db, `members/${resolvedId}`);
-    try {
-      await runTransaction(memberRef, (current) => {
-        const existing = current || {};
-        const hasExisting = Object.keys(existing).length > 0;
-        if (!hasExisting) {
-          const isAdmin = user.email === ADMIN_EMAIL;
-          const adminMemberNo = isAdmin ? "0000-0000" : "";
-          return {
-            memberId: resolvedId,
-            email: user.email || "",
-            displayName: user.displayName || "",
-            memberNo: adminMemberNo,
-            createdAt: new Date().toISOString()
-          };
-        }
-        let changed = false;
-        const next = { ...existing };
-        if (!next.memberId) {
-          next.memberId = resolvedId;
-          changed = true;
-        }
-        if (!next.email && user.email) {
-          next.email = user.email;
-          changed = true;
-        }
-        if (!next.displayName && user.displayName) {
-          next.displayName = user.displayName;
-          changed = true;
-        }
-        return changed ? next : existing;
-      });
-      const snapshot = await get(memberRef);
-      if (!snapshot.exists()) return;
-      const data = snapshot.val() || {};
-      if (data.memberNo) return;
-      if (user.email === ADMIN_EMAIL) {
-        await runTransaction(memberRef, (current) => {
-          const existing = current || {};
-          if (existing.memberNo) return existing;
-          return { ...existing, memberNo: "0000-0000" };
-        });
-        showAuthStatus("Auth: memberNo set (admin)");
-        return;
-      }
-      const allocated = await allocateMemberNo();
-      if (!allocated) {
-        showAuthStatus("Auth: memberNo allocation failed");
-        return;
-      }
-      await runTransaction(memberRef, (current) => {
-        const existing = current || {};
-        if (existing.memberNo) return existing;
-        return { ...existing, memberNo: allocated };
-      });
-      showAuthStatus(`Auth: memberNo set (${allocated})`);
-    } catch (error) {
-      console.warn("Failed to ensure member record", error);
-      showAuthError(error);
-    }
-  };
 
   const resolveMemberId = async (user) => {
     if (!user || !db) return null;
@@ -552,9 +364,7 @@ const setupAuth = async () => {
     if (labelEl) {
       labelEl.textContent = "Sign in";
     }
-    statusEl.textContent = inAppBrowser
-      ? "Open in Chrome/Safari to sign in"
-      : "Google login";
+    statusEl.textContent = "Google login";
     loginButton.disabled = false;
     loginButton.removeAttribute("aria-disabled");
     logoutButton.disabled = true;
@@ -576,27 +386,10 @@ const setupAuth = async () => {
 
   loginButton.addEventListener("click", async () => {
     try {
-      await persistenceReady;
-      showAuthStatus("Auth: redirecting...");
-      if (useRedirectOnly) {
-        await signInWithRedirect(auth, provider);
-      } else {
-        try {
-          showAuthStatus("Auth: opening popup...");
-          await signInWithPopup(auth, provider);
-        } catch (popupError) {
-          const code = popupError?.code || "";
-          if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
-            showAuthStatus("Auth: popup blocked, redirecting...");
-            await signInWithRedirect(auth, provider);
-          } else {
-            throw popupError;
-          }
-        }
-      }
+      await signInWithPopup(auth, provider);
     } catch (error) {
       console.error("Google sign-in failed", error);
-      showAuthError(error);
+      statusEl.textContent = "Sign-in failed";
     }
   });
 
@@ -611,37 +404,15 @@ const setupAuth = async () => {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      authResolved = true;
-      signedIn = true;
-      showAuthStatus(`Auth: signed in (${user.uid})`);
       setSignedIn(user);
       resolveMemberId(user).then((resolved) => {
         memberId = resolved;
-        ensureMemberRecord(user, resolved);
         maybeAwardVisitAchievement();
       });
       return;
     }
-    authResolved = true;
-    signedIn = false;
-    showAuthStatus("Auth: signed out");
     setSignedOut();
   });
-
-  getRedirectResult(auth)
-    .then((result) => {
-      if (result?.user) {
-        showAuthStatus(`Auth: redirect user (${result.user.uid})`);
-      } else if (!signedIn && !authResolved) {
-        showAuthStatus("Auth: no redirect result");
-      }
-    })
-    .catch((error) => {
-      if (error) {
-        console.error("Redirect result error", error);
-        showAuthError(error);
-      }
-    });
 
   trackPageVisit();
 };
