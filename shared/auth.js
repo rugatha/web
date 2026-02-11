@@ -14,6 +14,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
 const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
+const loginHidden = true;
 const isLikelyInAppBrowser = () => {
   const ua = navigator.userAgent || "";
   return /(FBAN|FBAV|Instagram|Line|TikTok|Twitter|WeChat|QQ|Weibo|WebView|wv)/i.test(
@@ -147,6 +148,14 @@ const setupAuth = () => {
   const firebaseConfig = getFirebaseConfig();
   const firebaseDisabled =
     window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
+
+  if (loginHidden) {
+    const container = document.querySelector(".auth-entry");
+    if (container) {
+      container.remove();
+    }
+    return;
+  }
 
   if (firebaseDisabled || !firebaseConfig) {
     const loginButton = document.getElementById("google-login");

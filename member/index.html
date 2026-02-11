@@ -598,6 +598,10 @@
       gap: 12px;
     }
 
+    #sign-in {
+      display: none !important;
+    }
+
     .auth-button,
     .ghost-button {
       border: none;
@@ -859,8 +863,8 @@
           </div>
         </div>
         <div class="profile-actions">
-          <button class="ghost-button" id="sign-in" type="button" disabled data-i18n="signIn">Sign in</button>
-          <button class="ghost-button" id="sign-out" type="button" disabled data-i18n="signOut">Sign out</button>
+          <button class="ghost-button" id="sign-in" type="button" disabled hidden data-i18n="signIn">Sign in</button>
+          <button class="ghost-button" id="sign-out" type="button" disabled hidden data-i18n="signOut">Sign out</button>
         </div>
         <p class="profile-hint" id="profile-hint">Sign in to load your member profile.</p>
       </section>
@@ -887,6 +891,7 @@
     } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
     const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
+    const loginHidden = true;
     const firebaseDisabled =
       window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
     const MEMBER_SIGNIN_KEY = "rugatha-member-signin-attempted-at";
@@ -1928,10 +1933,13 @@
       hintEl.textContent = message || dictionary.profileSignedOut;
       setProfilePhoto(null);
       if (signInButton) {
-        signInButton.hidden = false;
+        signInButton.hidden = loginHidden ? true : false;
         signInButton.disabled = firebaseDisabled || !firebaseConfig;
       }
-      signOutButton.disabled = true;
+      if (signOutButton) {
+        signOutButton.hidden = loginHidden ? true : false;
+        signOutButton.disabled = true;
+      }
       setProfileEditable(false);
       syncDisplayValues();
       syncHiddenAttributes();
@@ -1966,7 +1974,10 @@
         signInButton.hidden = true;
         signInButton.disabled = true;
       }
-      signOutButton.disabled = false;
+      if (signOutButton) {
+        signOutButton.hidden = loginHidden ? true : false;
+        signOutButton.disabled = false;
+      }
       authState.user = user;
       setProfileEditable(false);
       authState.message = dictionary.profileSignedIn;
@@ -2005,16 +2016,18 @@
       auth = getAuth(app);
       db = getDatabase(app);
 
-      signOutButton.addEventListener("click", async () => {
-        try {
-          await persistSessionTime(true);
-          await signOut(auth);
-        } catch (error) {
-          console.error("Sign-out failed", error);
-        }
-      });
+      if (!loginHidden) {
+        signOutButton.addEventListener("click", async () => {
+          try {
+            await persistSessionTime(true);
+            await signOut(auth);
+          } catch (error) {
+            console.error("Sign-out failed", error);
+          }
+        });
+      }
 
-      if (signInButton) {
+      if (signInButton && !loginHidden) {
         signInButton.addEventListener("click", () => {
           attemptRedirectSignIn();
         });
@@ -2027,7 +2040,7 @@
           return;
         }
         setSignedOut();
-        if (shouldAttemptRedirect()) {
+        if (!loginHidden && shouldAttemptRedirect()) {
           await attemptRedirectSignIn();
         }
       });
