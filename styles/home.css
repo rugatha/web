@@ -15,7 +15,7 @@ body {
   min-height: 825px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, minmax(260px, auto)) auto minmax(180px, auto);
+  grid-template-rows: repeat(2, minmax(260px, auto)) auto auto minmax(180px, auto);
   gap: 12px;
   align-items: stretch;
   padding: 24px 16px 40px;
@@ -136,7 +136,7 @@ body {
 
 .bulletin {
   grid-column: 1 / span 6;
-  grid-row: 4;
+  grid-row: 5;
   background: #e1cea9;
   border-radius: 12px;
   padding: 18px 18px 16px;
@@ -200,6 +200,11 @@ body {
   padding: 0;
 }
 
+.auth-entry {
+  grid-column: 1 / span 6;
+  grid-row: 4;
+}
+
 .about-link-card {
   display: inline-flex;
   align-items: center;
@@ -259,14 +264,15 @@ body {
 
   .hub {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     gap: 10px;
   }
 
   .banner-core,
   .portals,
   .bulletin,
-  .about-link {
+  .about-link,
+  .auth-entry {
     grid-column: 1 / span 3;
   }
 
@@ -289,8 +295,12 @@ body {
     grid-row: 3;
   }
 
-  .bulletin {
+  .auth-entry {
     grid-row: 4;
+  }
+
+  .bulletin {
+    grid-row: 5;
   }
 }
 
