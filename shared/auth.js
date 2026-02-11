@@ -10,6 +10,10 @@ const isMobileDevice = () => {
   const ua = navigator.userAgent || "";
   return /Android|iPhone|iPad|iPod|Mobi/i.test(ua);
 };
+const isCoarsePointer = () => {
+  if (typeof window === "undefined" || !window.matchMedia) return false;
+  return window.matchMedia("(pointer: coarse)").matches;
+};
 
 const ensureAuthStyles = () => {
   if (document.getElementById("rugatha-auth-style")) {
@@ -170,7 +174,7 @@ const setupAuth = async () => {
   const logoutButton = document.getElementById("google-logout");
   const statusEl = document.getElementById("auth-status");
   const inAppBrowser = isLikelyInAppBrowser();
-  const useRedirectOnly = inAppBrowser || isMobileDevice();
+  const useRedirectOnly = inAppBrowser || isMobileDevice() || isCoarsePointer();
 
   const buildGoogleHandlerUrl = (apiKey) => {
     const params = new URLSearchParams({
