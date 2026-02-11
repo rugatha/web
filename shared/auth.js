@@ -1,22 +1,3 @@
-import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signInWithRedirect,
-  onAuthStateChanged,
-  getRedirectResult,
-  setPersistence,
-  browserLocalPersistence
-} from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
-import {
-  getDatabase,
-  ref,
-  get,
-  runTransaction
-} from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
-
 const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
 const loginHidden = false;
 const isLikelyInAppBrowser = () => {
@@ -115,6 +96,23 @@ const ensureAuthStyles = () => {
   document.head.appendChild(style);
 };
 
+let firebaseImportsPromise = null;
+const loadFirebaseImports = () => {
+  if (firebaseImportsPromise) return firebaseImportsPromise;
+  firebaseImportsPromise = Promise.all([
+    import("https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js"),
+    import("https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js"),
+    import("https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js"),
+    import("https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js")
+  ]).then(([app, analytics, auth, database]) => ({
+    app,
+    analytics,
+    auth,
+    database
+  }));
+  return firebaseImportsPromise;
+};
+
 const ensureAuthMarkup = () => {
   if (document.getElementById("google-login")) {
     return;
@@ -148,10 +146,13 @@ const ensureAuthMarkup = () => {
   host.appendChild(container);
 };
 
-const setupAuth = () => {
+const setupAuth = async () => {
   const firebaseConfig = getFirebaseConfig();
   const firebaseDisabled =
     window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
+
+  ensureAuthStyles();
+  ensureAuthMarkup();
 
   if (loginHidden) {
     const container = document.querySelector(".auth-entry");
@@ -160,25 +161,6 @@ const setupAuth = () => {
     }
     return;
   }
-
-  if (firebaseDisabled || !firebaseConfig) {
-    const loginButton = document.getElementById("google-login");
-    if (loginButton) {
-      const container = loginButton.closest(".auth-entry");
-      if (container) {
-        container.remove();
-      } else {
-        loginButton.remove();
-      }
-    }
-    if (!firebaseDisabled && !firebaseConfig) {
-      console.warn("Missing window.RUGATHA_FIREBASE_CONFIG");
-    }
-    return;
-  }
-
-  ensureAuthStyles();
-  ensureAuthMarkup();
 
   const loginButton = document.getElementById("google-login");
   const logoutButton = document.getElementById("google-logout");
@@ -200,7 +182,46 @@ const setupAuth = () => {
     return;
   }
 
+  if (firebaseDisabled || !firebaseConfig) {
+    loginButton.disabled = true;
+    loginButton.setAttribute("aria-disabled", "true");
+    logoutButton.disabled = true;
+    logoutButton.setAttribute("aria-disabled", "true");
+    statusEl.textContent = firebaseDisabled ? "Login disabled" : "Login unavailable";
+    if (!firebaseDisabled && !firebaseConfig) {
+      console.warn("Missing window.RUGATHA_FIREBASE_CONFIG");
+    }
+    return;
+  }
+
+  let firebase = null;
+  try {
+    firebase = await loadFirebaseImports();
+  } catch (error) {
+    console.error("Failed to load Firebase modules", error);
+    loginButton.disabled = true;
+    loginButton.setAttribute("aria-disabled", "true");
+    logoutButton.disabled = true;
+    logoutButton.setAttribute("aria-disabled", "true");
+    showAuthError(error);
+    return;
+  }
+
   const labelEl = loginButton.querySelector(".auth-label");
+
+  const { initializeApp, getApps } = firebase.app;
+  const { getAnalytics, isSupported } = firebase.analytics;
+  const {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signInWithRedirect,
+    onAuthStateChanged,
+    getRedirectResult,
+    setPersistence,
+    browserLocalPersistence
+  } = firebase.auth;
+  const { getDatabase, ref, get, runTransaction } = firebase.database;
 
   const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
   const db = getDatabase(app);
