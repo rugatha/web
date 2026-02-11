@@ -79,11 +79,10 @@
             <span class="about-link-title">關於 Rugatha</span>
           </div>
         </a>
-        <a href="#" class="about-link-card" aria-disabled="true" onclick="return false;">
+        <a href="member/index.html" class="about-link-card" id="adventurer-journal-link">
           <div class="about-link-copy about-link-copy--centered">
             <span class="about-link-title">Adventurer's Journal</span>
             <span class="about-link-title">冒險者日誌</span>
-            <span class="about-link-title">COMING SOON - 即將推出！</span>
           </div>
         </a>
         <a href="character_card/index.html" class="about-link-card">
@@ -146,6 +145,7 @@
     let currentUser = null;
     let achievementData = null;
     let achievementLoadPromise = null;
+    const journalLink = document.getElementById("adventurer-journal-link");
 
     const parseCsv = (text) => {
       const rows = [];
@@ -379,6 +379,15 @@
       db = getDatabase(app);
       onAuthStateChanged(auth, (user) => {
         currentUser = user || null;
+      });
+    }
+
+    if (journalLink) {
+      journalLink.addEventListener("click", (event) => {
+        if (!currentUser) {
+          event.preventDefault();
+          alert("Please sign in 請登入");
+        }
       });
     }
 

@@ -3,8 +3,12 @@ import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/12
 import {
   getAuth,
   GoogleAuthProvider,
+  signInWithPopup,
   signInWithRedirect,
-  onAuthStateChanged
+  onAuthStateChanged,
+  getRedirectResult,
+  setPersistence,
+  browserLocalPersistence
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
 import {
   getDatabase,
@@ -14,7 +18,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
 const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
-const loginHidden = true;
+const loginHidden = false;
 const isLikelyInAppBrowser = () => {
   const ua = navigator.userAgent || "";
   return /(FBAN|FBAV|Instagram|Line|TikTok|Twitter|WeChat|QQ|Weibo|WebView|wv)/i.test(
@@ -181,6 +185,17 @@ const setupAuth = () => {
   const statusEl = document.getElementById("auth-status");
   const inAppBrowser = isLikelyInAppBrowser();
 
+  const showAuthStatus = (message) => {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+  };
+
+  const showAuthError = (error) => {
+    if (!statusEl) return;
+    const code = error?.code || "auth/unknown";
+    statusEl.textContent = `Auth error: ${code}`;
+  };
+
   if (!loginButton || !logoutButton || !statusEl) {
     return;
   }
@@ -199,12 +214,114 @@ const setupAuth = () => {
     .catch(() => {});
 
   const auth = getAuth(app);
+  let authResolved = false;
+  let signedIn = false;
+  const persistenceReady = setPersistence(auth, browserLocalPersistence).catch((error) => {
+    console.error("Failed to set auth persistence", error);
+    showAuthError(error);
+  });
   const provider = new GoogleAuthProvider();
   let memberId = null;
+  const MEMBER_COUNTER_PATH = "members_meta/memberNoCounter";
+  const ADMIN_EMAIL = "rugathadnd@gmail.com";
   const VISIT_KEY_PREFIX = "rugatha-visit:";
   const VISIT_AWARD_CODE = "ach_TWRY";
   let visitPendingAward = false;
   let visitAchievementPromise = null;
+
+  const formatMemberNo = (value) => {
+    if (value === undefined || value === null || value === "") return "";
+    const digits = String(value).replace(/\D/g, "");
+    if (!digits) return String(value);
+    const padded = digits.padStart(8, "0").slice(-8);
+    return `${padded.slice(0, 4)}-${padded.slice(4)}`;
+  };
+
+  const allocateMemberNo = async () => {
+    if (!db) return "";
+    const counterRef = ref(db, MEMBER_COUNTER_PATH);
+    try {
+      const result = await runTransaction(counterRef, (current) => {
+        const currentNumber = Number(current);
+        if (!Number.isFinite(currentNumber)) {
+          return 1;
+        }
+        return currentNumber + 1;
+      });
+      if (!result.committed) return "";
+      const nextValue = Number(result.snapshot.val());
+      if (!Number.isFinite(nextValue)) return "";
+      return formatMemberNo(nextValue);
+    } catch (error) {
+      console.error("Failed to allocate member number", error);
+      showAuthError(error);
+      return "";
+    }
+  };
+
+  const ensureMemberRecord = async (user, resolvedId) => {
+    if (!user || !db || !resolvedId) return;
+    const memberRef = ref(db, `members/${resolvedId}`);
+    try {
+      await runTransaction(memberRef, (current) => {
+        const existing = current || {};
+        const hasExisting = Object.keys(existing).length > 0;
+        if (!hasExisting) {
+          const isAdmin = user.email === ADMIN_EMAIL;
+          const adminMemberNo = isAdmin ? "0000-0000" : "";
+          return {
+            memberId: resolvedId,
+            email: user.email || "",
+            displayName: user.displayName || "",
+            memberNo: adminMemberNo,
+            createdAt: new Date().toISOString()
+          };
+        }
+        let changed = false;
+        const next = { ...existing };
+        if (!next.memberId) {
+          next.memberId = resolvedId;
+          changed = true;
+        }
+        if (!next.email && user.email) {
+          next.email = user.email;
+          changed = true;
+        }
+        if (!next.displayName && user.displayName) {
+          next.displayName = user.displayName;
+          changed = true;
+        }
+        return changed ? next : existing;
+      });
+      const snapshot = await get(memberRef);
+      if (!snapshot.exists()) return;
+      const data = snapshot.val() || {};
+      if (data.memberNo) return;
+      if (user.email === ADMIN_EMAIL) {
+        await runTransaction(memberRef, (current) => {
+          const existing = current || {};
+          if (existing.memberNo) return existing;
+          return { ...existing, memberNo: "0000-0000" };
+        });
+        showAuthStatus("Auth: memberNo set (admin)");
+        return;
+      }
+      const allocated = await allocateMemberNo();
+      if (!allocated) {
+        showAuthStatus("Auth: memberNo allocation failed");
+        return;
+      }
+      await runTransaction(memberRef, (current) => {
+        const existing = current || {};
+        if (existing.memberNo) return existing;
+        return { ...existing, memberNo: allocated };
+      });
+      showAuthStatus(`Auth: memberNo set (${allocated})`);
+    } catch (error) {
+      console.warn("Failed to ensure member record", error);
+      showAuthError(error);
+    }
+  };
 
   const resolveMemberId = async (user) => {
     if (!user || !db) return null;
@@ -404,10 +521,23 @@ const setupAuth = () => {
 
   loginButton.addEventListener("click", async () => {
     try {
-      await signInWithRedirect(auth, provider);
+      await persistenceReady;
+      showAuthStatus("Auth: redirecting...");
+      try {
+        showAuthStatus("Auth: opening popup...");
+        await signInWithPopup(auth, provider);
+      } catch (popupError) {
+        const code = popupError?.code || "";
+        if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
+          showAuthStatus("Auth: popup blocked, redirecting...");
+          await signInWithRedirect(auth, provider);
+        } else {
+          throw popupError;
+        }
+      }
     } catch (error) {
       console.error("Google sign-in failed", error);
-      statusEl.textContent = "Sign-in failed";
+      showAuthError(error);
     }
   });
 
@@ -422,15 +552,37 @@ const setupAuth = () => {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      authResolved = true;
+      signedIn = true;
+      showAuthStatus(`Auth: signed in (${user.uid})`);
       setSignedIn(user);
       resolveMemberId(user).then((resolved) => {
         memberId = resolved;
+        ensureMemberRecord(user, resolved);
         maybeAwardVisitAchievement();
       });
       return;
     }
+    authResolved = true;
+    signedIn = false;
+    showAuthStatus("Auth: signed out");
     setSignedOut();
   });
+
+  getRedirectResult(auth)
+    .then((result) => {
+      if (result?.user) {
+        showAuthStatus(`Auth: redirect user (${result.user.uid})`);
+      } else if (!signedIn && !authResolved) {
+        showAuthStatus("Auth: no redirect result");
+      }
+    })
+    .catch((error) => {
+      if (error) {
+        console.error("Redirect result error", error);
+        showAuthError(error);
+      }
+    });
 
   trackPageVisit();
 };
