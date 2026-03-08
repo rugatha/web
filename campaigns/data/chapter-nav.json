@@ -459,6 +459,22 @@
       "url": "/campaigns/pages/rugatha-lite/lite-c12/"
     },
     "prev-chapter": "lite-c11-chpt04",
+    "next-chapter": "lite-c12-chpt02"
+  },
+  "lite-c12-chpt02": {
+    "story-arc": {
+      "id": "lite-c12",
+      "url": "/campaigns/pages/rugatha-lite/lite-c12/"
+    },
+    "prev-chapter": "lite-c12-chpt01",
+    "next-chapter": "lite-c12-chpt03"
+  },
+  "lite-c12-chpt03": {
+    "story-arc": {
+      "id": "lite-c12",
+      "url": "/campaigns/pages/rugatha-lite/lite-c12/"
+    },
+    "prev-chapter": "lite-c12-chpt02",
     "next-chapter": null
   },
   "wilds-c01-chpt01": {
