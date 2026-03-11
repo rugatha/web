@@ -189,7 +189,7 @@
   {
     "id": "Andrea_Day",
     "url": "npc/npc_page/pages/Andrea_Day.html",
-    "image": "individual_pics/Andrea Day.jpeg",
+    "image": "individual_pics/Andrea Day.png",
     "status": "alive",
     "gender": "male",
     "descZh": "大學城歷史區的現任區長。\n個性古怪，有強烈的毒癮，辦公室基本上是煙霧瀰漫。\n有個叫麥爾文的助手。\n對各種不同宗教都有研究，過去曾研究攔截靈魂的方法，因此捕捉到蘿琳被月神帶走的靈魂。",
@@ -430,7 +430,7 @@
   {
     "id": "King_Benevol_II",
     "url": "npc/npc_page/pages/King_Benevol_II.html",
-    "image": "individual_pics/King Benevol II.jpeg",
+    "image": "individual_pics/King Benevol II.png",
     "status": "unknown",
     "gender": "male",
     "descZh": "麥丁頓的前任統治者。\n在麥克嵩比武大會時遭到法蘭奇吸乾精力，卻在法蘭奇消失後彷彿完全恢復元氣，悄悄逃離了包廂。\n在那之後，據說他傳位給了他的兒子艾略特四世，不見了。",
@@ -794,7 +794,7 @@
   {
     "id": "Bruce_Tallis",
     "url": "npc/npc_page/pages/Bruce_Tallis.html",
-    "image": "individual_pics/Bruce Tallis.jpg",
+    "image": "individual_pics/Bruce Tallis.png",
     "status": "alive",
     "gender": "male",
     "descZh": "T.I.D.E.S.的成員之一，身形孔武有力，因此和阿龍在組織集會時，建立了交情。\n但因一連串的誤會，導致自己陷入萬劫不復的深淵……",
@@ -928,7 +928,7 @@
   {
     "id": "Dr_Chandra_Pyresong",
     "url": "npc/npc_page/pages/Dr_Chandra_Pyresong.html",
-    "image": "individual_pics/Dr. Chandra Pyresong.jpeg",
+    "image": "individual_pics/Dr. Chandra Pyresong.png",
     "status": "dead",
     "gender": "female",
     "descZh": "YHWH過去的師傅，是一名烈焰術士。一頭短髮，繡有火焰的黑色皮衣是他的專屬標誌。\n在冒險者們來到大學城時，正好在外修行。\n在大學城有個十分舒服的住處，讓冒險者們可以暫時居住。\n在趕回大學城後，追逐有著巫妖之手的Ron，在兩人單獨戰鬥時自爆而亡，但Ron僅重傷而已。",
@@ -1370,7 +1370,7 @@
   {
     "id": "Elby__Dr_White",
     "url": "npc/npc_page/pages/Elby__Dr_White.html",
-    "image": "individual_pics/Elby : Dr. White.jpeg",
+    "image": "individual_pics/Elby : Dr. White.png",
     "status": "dead",
     "gender": "female",
     "descZh": "出現在多侖維爾的「醫生」。\n外觀年齡約二十初頭，皮膚蒼白，髮色銀白，穿著也是全白，只有雙眼是碧藍色的。身形非常纖瘦到看起來不健康的程度，給人一種妖精的感覺，卻沒有尖耳朵。\n可以在一般時空和妖精荒野間穿越。\n他的群體似乎有著一般時空沒有的醫療技術。\n在一般世界被稱為白醫師，而在妖精荒野則被稱為艾爾比。\n在主持Midori和波的救世主試煉的最後，被發現是拉索斯在妖精荒野的間諜，善於使用魔法，且手上刺滿拉索斯教的經文。在將Midori拖往另一個時空時，被Midori殺死。",
@@ -1897,7 +1897,7 @@
   {
     "id": "Franz",
     "url": "npc/npc_page/pages/Franz.html",
-    "image": "individual_pics/Franz.jpeg",
+    "image": "individual_pics/Franz.png",
     "status": "alive",
     "gender": "male",
     "descZh": "荒野旋律在柏納斯家晚宴認識的吟遊詩人，年輕人類男性。\n他表示自己也曾和冒險者們到處遊歷，搜集了不少故事，對於《沃瓦倫之歌》有著很濃厚的興趣，邀請荒野旋律和他談談這首歌的故事。\n在麥克嵩期間，居住於布蘭登的角落。\n過去的冒險團為追影者，因成員之一正義的涅巴倫被暗影之父殺死而解散。除了法朗茲之外的團員都決定引退。法朗茲因此投身於研究暗影之父，而來到麥克嵩。對於拉索斯教也有一定程度的認識，而且懂拉索斯語。\n在比武大會遭暗影之父襲擊後，似乎受到了刺激，創作了相關的樂曲，並加入台北市議員，追查暗影之父與拉索斯教的線索。\n在從妖精荒野回來後，因為發現自己和台北市議員的方向不同，而決定自行離開了。",
@@ -2182,7 +2182,7 @@
   {
     "id": "Grenland_Folsen",
     "url": "npc/npc_page/pages/Grenland_Folsen.html",
-    "image": "individual_pics/Grenland Folsen.jpeg",
+    "image": "individual_pics/Grenland Folsen.png",
     "status": "dead",
     "gender": "male",
     "descZh": "隱居於魏斯科鎮的大法師。\n寂靜神拉索斯的追隨者。\n在台北市議員們的陪同下，穿越嚎叫森林，前往沃瓦倫鎮。\n協助寇頓神父主持解除詛咒的祈禱儀式，卻也造成了沃瓦倫滅鎮事件，而後被台北市議員殺死。",
@@ -2456,7 +2456,7 @@
   {
     "id": "Indigo",
     "url": "npc/npc_page/pages/Indigo.html",
-    "image": "individual_pics/Indigo.jpeg",
+    "image": "individual_pics/Indigo.png",
     "status": "alive",
     "gender": "female",
     "descZh": "Samael的阿嬤。\n原本以為在十多年前已經病死，卻離奇地出現在妖精荒野。\n懂一般語、妖精語，以及仙靈語，而且有穿越一般世界與妖精荒野的能力。\n在妖精荒野作為冒險者們的嚮導之一。\n喜歡挖苦Samael，但其實對Samael也很照顧與看好。\n身邊時常跟著不同的男伴。",
@@ -2689,7 +2689,7 @@
   {
     "id": "Jonathan",
     "url": "npc/npc_page/pages/Jonathan.html",
-    "image": "individual_pics/Jonathan.jpeg",
+    "image": "individual_pics/Jonathan.png",
     "status": "dead",
     "gender": "male",
     "descZh": "麥克嵩日出酒館的老闆與主廚。\n因為小時候曾被龍人欺凌，而在酒館鬥毆事件中對Ron出手。鬥毆後為表歉意，聘用Ron在日出酒館作為廚師，並讓Ron住在日出酒館後台的員工休息室。\n然而因Ron住宿的第一晚就遇到Lemmy造成的突發事件，讓喬納森決定出錢給Ron在外面找地方住。\n隔天喬納森卻失蹤了。\n隨著法蘭奇給予的線索，Paladin與他的新夥伴們在瑟巴諾發現了化名為喬納斯的喬納森，但他似乎被捲入了什麼事件，被霍布五花大綁。\n最後，在Paladin面前被安娜殺死。",
@@ -4960,7 +4960,7 @@
   {
     "id": "Reese_Tig",
     "url": "npc/npc_page/pages/Reese_Tig.html",
-    "image": "individual_pics/Reese Tig.jpg",
+    "image": "individual_pics/Reese Tig.png",
     "status": "dead",
     "gender": "male",
     "descZh": "居住在方努爾市的人類冒險家。\n協助津菈教調查城市中發生的中毒以及失蹤事件。\n在Ron昏迷時將他的巫妖手臂用神秘的鍊子鍊住以抑制巫妖的法術。\n後在尼姆孤兒院前方的水井下遭遇敵人，不幸喪生。",
