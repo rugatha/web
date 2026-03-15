@@ -6919,6 +6919,142 @@
     }
   },
   {
+    "id": "President_Bonza",
+    "url": "npc/npc_page/pages/President_Bonza.html",
+    "image": "individual_pics/President Bonza.png",
+    "status": "alive",
+    "gender": "male",
+    "descZh": "克萊芬「市民連線」的首領，被稱為彭薩公會長。\n他代表商人、公會與一般平民的利益，主張維持現狀，避免讓城市被戰火拖垮。\n他與利斯達上校一同密談刺殺皮尼歐教授的計畫，並親手槍擊了拉比。",
+    "descEn": "The leader of the Citizen's Connection in Clyphen, known as President Bonza.\nHe represents merchants, guilds, and ordinary civilians, favoring stability over reckless political escalation.\nBonza secretly discussed the assassination plot against Professor Peneo with Colonel Lisdar and personally shot Ravi.",
+    "related": [
+      "Colonel_Lisdar"
+    ],
+    "nameEn": "President Bonza",
+    "nameZh": "彭薩公會長",
+    "raceEn": [
+      "Lizardfolk"
+    ],
+    "raceZh": [
+      "蜥蜴人"
+    ],
+    "religionEn": [
+      "Kalinius"
+    ],
+    "religionZh": [
+      "凱里涅斯"
+    ],
+    "locationEn": [
+      "Clyphen"
+    ],
+    "locationZh": [
+      "克萊芬"
+    ],
+    "qaZh": {
+      "Q": "你看見彭薩公會長在市場走著，逢人便給予一枚金幣。",
+      "C1": "你伸手拿了一枚金幣，和公會長道謝。",
+      "C2": "你看了一眼，但不拿錢。",
+      "R1": "「謝謝你站在人民陣線的一方。」彭薩公會長微笑。",
+      "R2": "「哼，自以為清高。」你聽見彭薩公會長碎念。"
+    },
+    "qaEn": {
+      "Q": "You see President Bonza walking in the market, handing out gold coins to everyone.",
+      "C1": "You take a gold coin, and thank the President.",
+      "C2": "You glance, but don't take the coin.",
+      "R1": "\"Thank you for standing on the side of the Citizen's Connection.\" President Bonza smiles.",
+      "R2": "\"Huh, so self-righteous.\" You hear President Bonza rambling."
+    }
+  },
+  {
+    "id": "Professor_Peneo",
+    "url": "npc/npc_page/pages/Professor_Peneo.html",
+    "image": "individual_pics/Professor Peneo.png",
+    "status": "alive",
+    "gender": "female",
+    "descZh": "克萊芬學者，也是「新書院」的領袖與市長候選人。\n他崇尚民主、知識與理想，主張由克萊芬自行決定未來。\n皮尼歐教授接見冒險者，得知自己遭到刺殺計畫鎖定，並委託中途之家協助贏下選舉。",
+    "descEn": "A scholar of Clyphen and the leader of the New Academy, as well as a mayoral candidate.\nPeneo stands for democracy, knowledge, and idealism, believing Clyphen should decide its own future.\nShe met with the Halfway Home after learning about an assassination plot and asked for their help in securing the election.",
+    "related": [],
+    "nameEn": "Professor Peneo",
+    "nameZh": "皮尼歐教授",
+    "raceEn": [
+      "Lizardfolk"
+    ],
+    "raceZh": [
+      "蜥蜴人"
+    ],
+    "religionEn": [
+      "Jeorisan"
+    ],
+    "religionZh": [
+      "喬里森"
+    ],
+    "locationEn": [
+      "Clyphen"
+    ],
+    "locationZh": [
+      "克萊芬"
+    ],
+    "qaZh": {
+      "Q": "「我很抱歉，為了人民，必須這麼做。」你看見皮尼歐教授默默讓衛兵把你帶走。",
+      "C1": "「這是政治迫害！」你大聲喊道。",
+      "C2": "「我可以理解。」你點點頭。",
+      "R1": "就職典禮上，你看見皮尼歐教授成為了市長。你握著匕首，滿是憤怒。",
+      "R2": "「這是欠你的。」皮尼歐市長邀請你擔任他的下屬。"
+    },
+    "qaEn": {
+      "Q": "\"I'm sorry, but for the people, this is neccessary.\" You see Professor Peneo letting the guards take you.",
+      "C1": "\"This is political persecution!\" You yell.",
+      "C2": "\"I can understand.\" You nod.",
+      "R1": "At the inauguration ceremony, you see President Peneo become the mayor. You hold your dagger in your hand angrily.",
+      "R2": "\"I owe you this.\" Mayor Peneo invites you to be her subordinate."
+    }
+  },
+  {
+    "id": "Colonel_Lisdar",
+    "url": "npc/npc_page/pages/Colonel_Lisdar.html",
+    "image": "individual_pics/Colonel Lisdar.png",
+    "status": "alive",
+    "gender": "male",
+    "descZh": "克萊芬「老樹盟」的領導者，利斯達上校。\n他由老兵、軍閥與大型企業支持，主張克萊芬回歸萊斯諾，必要時也接受以武力達成目標。\n他與彭薩公會長討論刺殺皮尼歐教授的密謀。",
+    "descEn": "Colonel Lisdar leads the Ancient Tree League.\nBacked by veterans, warlords, and major businesses, he believes Clyphen should return to Lesnor and is willing to use force if necessary.\nHe discussed the secret assassination plot against Professor Peneo with President Bonza.",
+    "related": [
+      "President_Bonza"
+    ],
+    "nameEn": "Colonel Lisdar",
+    "nameZh": "利斯達上校",
+    "raceEn": [
+      "Lizardfolk"
+    ],
+    "raceZh": [
+      "蜥蜴人"
+    ],
+    "religionEn": [
+      "Daligon"
+    ],
+    "religionZh": [
+      "達里崗"
+    ],
+    "locationEn": [
+      "Clyphen"
+    ],
+    "locationZh": [
+      "克萊芬"
+    ],
+    "qaZh": {
+      "Q": "利斯達上校在餐會上走向你，向你敬酒。",
+      "C1": "你舉杯接受他的敬酒。",
+      "C2": "你告訴利斯達上校你不喝酒，以其他飲料代替。",
+      "R1": "幾天後，你收到利斯達上校的邀請，在酒館與他的夥伴們狂歡。",
+      "R2": "利斯達上校舉起他的酒杯，朝你的臉上潑去。"
+    },
+    "qaEn": {
+      "Q": "Colonel Lisdar walks to you in the dinner party, toasting to you.",
+      "C1": "You raise your glass and accept his toast.",
+      "C2": "You tell Colonel Lisdar that you don't drink, you can use other beverage for replacement.",
+      "R1": "Days later, you recieve an invitation from Colonel Lisdar, inviting you to the tavern to have fun with his friends.",
+      "R2": "Colonel Lisdar raises his cup of alcohol, spill it towards your face."
+    }
+  },
+  {
     "id": "Py_Par",
     "url": "npc/npc_page/pages/Py_Par.html",
     "image": "individual_pics/Py'Par.png",
