@@ -1022,12 +1022,17 @@
       return window.matchMedia("(pointer: coarse)").matches;
     };
 
+    const getCanonicalRedirectUrl = () => {
+      const path = `${window.location.pathname || "/"}${window.location.search || ""}${window.location.hash || ""}`;
+      return new URL(path, "https://rugatha.com").href;
+    };
+
     const buildGoogleHandlerUrl = (apiKey) => {
       const params = new URLSearchParams({
         apiKey,
         appName: "[DEFAULT]",
         authType: "signInViaRedirect",
-        redirectUrl: window.location.href,
+        redirectUrl: getCanonicalRedirectUrl(),
         v: "12.7.0",
         providerId: "google.com",
         scopes: "email profile"
