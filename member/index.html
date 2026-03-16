@@ -1022,6 +1022,19 @@
       return window.matchMedia("(pointer: coarse)").matches;
     };
 
+    const buildGoogleHandlerUrl = (apiKey) => {
+      const params = new URLSearchParams({
+        apiKey,
+        appName: "[DEFAULT]",
+        authType: "signInViaRedirect",
+        redirectUrl: window.location.href,
+        v: "12.7.0",
+        providerId: "google.com",
+        scopes: "email profile"
+      });
+      return `https://rugatha-87e15.firebaseapp.com/__/auth/handler?${params.toString()}`;
+    };
+
     const translations = {
       en: {
         heroEyebrow: "Adventurer's Journal",
@@ -2017,11 +2030,14 @@
       if (!auth) return;
       const provider = new GoogleAuthProvider();
       const useRedirectOnly = isLikelyInAppBrowser() || isMobileDevice() || isCoarsePointer();
+      const handlerUrl = buildGoogleHandlerUrl(
+        (firebaseConfig && firebaseConfig.apiKey) || "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U"
+      );
       sessionStorage.setItem(MEMBER_SIGNIN_KEY, `${Date.now()}`);
       try {
         await persistenceReady;
         if (useRedirectOnly) {
-          await signInWithRedirect(auth, provider);
+          window.location.href = handlerUrl;
           return;
         }
         try {
@@ -2033,7 +2049,7 @@
             code === "auth/popup-closed-by-user" ||
             code === "auth/operation-not-supported-in-this-environment"
           ) {
-            await signInWithRedirect(auth, provider);
+            window.location.href = handlerUrl;
           } else {
             throw popupError;
           }
