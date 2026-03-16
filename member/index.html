@@ -1013,6 +1013,8 @@
       );
     };
 
+    const isLineInAppBrowser = () => /Line/i.test(navigator.userAgent || "");
+
     const isMobileDevice = () => {
       const ua = navigator.userAgent || "";
       return /Android|iPhone|iPad|iPod|Mobi/i.test(ua);
@@ -1957,6 +1959,8 @@
       achievements: {}
     };
 
+    const lineInAppBrowser = isLineInAppBrowser();
+
     const setSignedOut = (message) => {
       const dictionary = translations[authState.language] || translations.en;
       nameEl.textContent = dictionary.profileGuest;
@@ -2086,6 +2090,15 @@
         ? dictionary.profileFirebaseDisabled
         : dictionary.profileMissingConfig;
       setSignedOut(message);
+    } else if (lineInAppBrowser) {
+      setSignedOut("Google login is blocked inside LINE. Open this page in Safari or Chrome.");
+      if (signInButton && !loginHidden) {
+        signInButton.hidden = false;
+        signInButton.disabled = false;
+        signInButton.addEventListener("click", () => {
+          alert("Google login is blocked inside LINE. Please open this page in Safari or Chrome and sign in there.");
+        });
+      }
     } else {
       app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
       auth = getAuth(app);
