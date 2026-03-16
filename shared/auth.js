@@ -6,6 +6,7 @@ const isLikelyInAppBrowser = () => {
     ua
   );
 };
+const isLineInAppBrowser = () => /Line/i.test(navigator.userAgent || "");
 const isMobileDevice = () => {
   const ua = navigator.userAgent || "";
   return /Android|iPhone|iPad|iPod|Mobi/i.test(ua);
@@ -173,6 +174,7 @@ const setupAuth = async () => {
   const logoutButton = document.getElementById("google-logout");
   const statusEl = document.getElementById("auth-status");
   const inAppBrowser = isLikelyInAppBrowser();
+  const lineInAppBrowser = isLineInAppBrowser();
   const useRedirectOnly = inAppBrowser;
   const getCanonicalRedirectUrl = () => {
     const path = `${window.location.pathname || "/"}${window.location.search || ""}${window.location.hash || ""}`;
@@ -206,6 +208,18 @@ const setupAuth = async () => {
   };
 
   if (!loginButton || !logoutButton || !statusEl) {
+    return;
+  }
+
+  if (lineInAppBrowser) {
+    loginButton.disabled = false;
+    loginButton.removeAttribute("aria-disabled");
+    loginButton.addEventListener("click", () => {
+      alert("Google login is blocked inside LINE. Please open Rugatha in Safari or Chrome and sign in there.");
+    });
+    logoutButton.disabled = true;
+    logoutButton.setAttribute("aria-disabled", "true");
+    statusEl.textContent = "Open in Safari/Chrome to sign in";
     return;
   }
 
