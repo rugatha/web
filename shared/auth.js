@@ -599,7 +599,7 @@ const setupAuth = async () => {
       await persistenceReady;
       showAuthStatus("Auth: redirecting...");
       if (useRedirectOnly) {
-        window.location.href = buildGoogleHandlerUrl(firebaseConfig.apiKey);
+        await signInWithRedirect(auth, provider);
         return;
       } else {
         try {
@@ -609,7 +609,7 @@ const setupAuth = async () => {
           const code = popupError?.code || "";
           if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
             showAuthStatus("Auth: popup blocked, redirecting...");
-            window.location.href = buildGoogleHandlerUrl(firebaseConfig.apiKey);
+            await signInWithRedirect(auth, provider);
           } else {
             throw popupError;
           }
