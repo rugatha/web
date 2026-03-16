@@ -95,6 +95,19 @@ const ensureAuthStyles = () => {
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
     }
 
+    .auth-debug {
+      width: min(520px, 100%);
+      margin: 8px auto 0;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.34);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #e9f5ef;
+      font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
     @media (max-width: 720px) {
       .auth-status {
         display: none;
@@ -173,11 +186,31 @@ const setupAuth = async () => {
   const loginButton = document.getElementById("google-login");
   const logoutButton = document.getElementById("google-logout");
   const statusEl = document.getElementById("auth-status");
+  let debugEl = document.getElementById("auth-debug");
+  if (!debugEl && statusEl?.parentElement) {
+    debugEl = document.createElement("pre");
+    debugEl.id = "auth-debug";
+    debugEl.className = "auth-debug";
+    debugEl.textContent = "Auth debug ready";
+    statusEl.parentElement.appendChild(debugEl);
+  }
   const inAppBrowser = isLikelyInAppBrowser();
   const useRedirectOnly = inAppBrowser || isMobileDevice() || isCoarsePointer();
   const getCanonicalRedirectUrl = () => {
     const path = `${window.location.pathname || "/"}${window.location.search || ""}${window.location.hash || ""}`;
     return new URL(path, "https://rugatha.com").href;
+  };
+  const debugLines = [];
+  const pushDebug = (message) => {
+    const line = `[${new Date().toISOString().slice(11, 19)}] ${message}`;
+    debugLines.push(line);
+    while (debugLines.length > 12) {
+      debugLines.shift();
+    }
+    if (debugEl) {
+      debugEl.textContent = debugLines.join("\n");
+    }
+    console.log(`[auth-debug] ${message}`);
   };
 
   const buildGoogleHandlerUrl = (apiKey) => {
@@ -196,12 +229,14 @@ const setupAuth = async () => {
   const showAuthStatus = (message) => {
     if (!statusEl) return;
     statusEl.textContent = message;
+    pushDebug(`status: ${message}`);
   };
 
   const showAuthError = (error) => {
     if (!statusEl) return;
     const code = error?.code || "auth/unknown";
     statusEl.textContent = `Auth error: ${code}`;
+    pushDebug(`error: ${code}`);
   };
 
   if (!loginButton || !logoutButton || !statusEl) {
@@ -279,10 +314,13 @@ const setupAuth = async () => {
   const persistenceReady = (async () => {
     try {
       await setPersistence(auth, browserLocalPersistence);
+      pushDebug("persistence: local");
     } catch (localError) {
       console.warn("Failed to set local auth persistence, falling back to session", localError);
+      pushDebug(`persistence local failed: ${localError?.code || localError?.message || "unknown"}`);
       try {
         await setPersistence(auth, browserSessionPersistence);
+        pushDebug("persistence: session");
       } catch (sessionError) {
         console.error("Failed to set auth persistence", sessionError);
         showAuthError(sessionError);
@@ -339,6 +377,7 @@ const setupAuth = async () => {
     if (!user || !db || !resolvedId) return;
     const memberRef = ref(db, `members/${resolvedId}`);
     try {
+      pushDebug(`member write start: ${resolvedId}`);
       await runTransaction(memberRef, (current) => {
         const existing = current || {};
         const hasExisting = Object.keys(existing).length > 0;
@@ -372,6 +411,7 @@ const setupAuth = async () => {
       const snapshot = await get(memberRef);
       if (!snapshot.exists()) return;
       const data = snapshot.val() || {};
+      pushDebug(`member write ok: ${resolvedId}`);
       if (data.memberNo) return;
       if (user.email === ADMIN_EMAIL) {
         await runTransaction(memberRef, (current) => {
@@ -395,6 +435,7 @@ const setupAuth = async () => {
       showAuthStatus(`Auth: memberNo set (${allocated})`);
     } catch (error) {
       console.warn("Failed to ensure member record", error);
+      pushDebug(`member write failed: ${error?.code || error?.message || "unknown"}`);
       showAuthError(error);
     }
   };
@@ -406,11 +447,14 @@ const setupAuth = async () => {
       const snapshot = await get(ref(db, `members/${defaultId}`));
       if (snapshot.exists()) {
         const data = snapshot.val() || {};
+        pushDebug(`member resolved: ${data.memberId || defaultId}`);
         return data.memberId || defaultId;
       }
     } catch (error) {
       console.warn("Failed to resolve memberId", error);
+      pushDebug(`member resolve failed: ${error?.code || error?.message || "unknown"}`);
     }
+    pushDebug(`member resolved default: ${defaultId}`);
     return defaultId;
   };
 
@@ -606,6 +650,7 @@ const setupAuth = async () => {
 
   loginButton.addEventListener("click", async () => {
     const fallbackToHandler = () => {
+      pushDebug("login start fallback: handler url");
       window.location.href = buildGoogleHandlerUrl(firebaseConfig.apiKey);
     };
     try {
@@ -613,24 +658,29 @@ const setupAuth = async () => {
       showAuthStatus("Auth: redirecting...");
       if (useRedirectOnly) {
         try {
+          pushDebug("login start: redirect");
           await signInWithRedirect(auth, provider);
         } catch (redirectError) {
           console.warn("Redirect sign-in failed, falling back to handler URL", redirectError);
+          pushDebug(`redirect start failed: ${redirectError?.code || redirectError?.message || "unknown"}`);
           fallbackToHandler();
         }
         return;
       } else {
         try {
           showAuthStatus("Auth: opening popup...");
+          pushDebug("login start: popup");
           await signInWithPopup(auth, provider);
         } catch (popupError) {
           const code = popupError?.code || "";
           if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
             showAuthStatus("Auth: popup blocked, redirecting...");
             try {
+              pushDebug(`popup fallback: redirect (${code})`);
               await signInWithRedirect(auth, provider);
             } catch (redirectError) {
               console.warn("Redirect sign-in failed, falling back to handler URL", redirectError);
+              pushDebug(`redirect fallback failed: ${redirectError?.code || redirectError?.message || "unknown"}`);
               fallbackToHandler();
             }
           } else {
@@ -657,6 +707,7 @@ const setupAuth = async () => {
     if (user) {
       authResolved = true;
       signedIn = true;
+      pushDebug(`auth state user: ${user.uid}`);
       showAuthStatus(`Auth: signed in (${user.uid})`);
       setSignedIn(user);
       resolveMemberId(user).then((resolved) => {
@@ -668,6 +719,7 @@ const setupAuth = async () => {
     }
     authResolved = true;
     signedIn = false;
+    pushDebug("auth state user: none");
     showAuthStatus("Auth: signed out");
     setSignedOut();
   });
@@ -677,6 +729,7 @@ const setupAuth = async () => {
       if (result?.user) {
         authResolved = true;
         signedIn = true;
+        pushDebug(`redirect result user: ${result.user.uid}`);
         showAuthStatus(`Auth: redirect user (${result.user.uid})`);
         setSignedIn(result.user);
         resolveMemberId(result.user).then((resolved) => {
@@ -685,12 +738,14 @@ const setupAuth = async () => {
           maybeAwardVisitAchievement();
         });
       } else if (!signedIn && !authResolved) {
+        pushDebug("redirect result: none");
         showAuthStatus("Auth: no redirect result");
       }
     })
     .catch((error) => {
       if (error) {
         console.error("Redirect result error", error);
+        pushDebug(`redirect result failed: ${error?.code || error?.message || "unknown"}`);
         showAuthError(error);
       }
     });
