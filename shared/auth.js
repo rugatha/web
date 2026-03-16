@@ -186,7 +186,7 @@ const setupAuth = async () => {
       providerId: "google.com",
       scopes: "email profile"
     });
-    return `${window.location.origin}/__/auth/handler/?${params.toString()}`;
+    return `https://rugatha-87e15.firebaseapp.com/__/auth/handler?${params.toString()}`;
   };
 
   const showAuthStatus = (message) => {
