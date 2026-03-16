@@ -284,6 +284,13 @@ const setupAuth = async () => {
   let visitPendingAward = false;
   let visitAchievementPromise = null;
 
+  const normalizeAchievementMap = (value) => {
+    if (value && typeof value === "object" && !Array.isArray(value)) {
+      return value;
+    }
+    return {};
+  };
+
   const formatMemberNo = (value) => {
     if (value === undefined || value === null || value === "") return "";
     const digits = String(value).replace(/\D/g, "");
@@ -508,12 +515,21 @@ const setupAuth = async () => {
     try {
       await runTransaction(memberRef, (current) => {
         const existing = current || {};
-        const existingAchievements = existing.achievements || {};
-        if (existingAchievements[achievement.achievement]) {
+        const existingAchievements = normalizeAchievementMap(existing.achievements);
+        const rewardedAchievements = normalizeAchievementMap(existing.rewardedAchievements);
+        if (existingAchievements[achievement.achievement] || rewardedAchievements[achievement.achievement]) {
           return existing;
         }
         const nextAchievements = { ...existingAchievements, [achievement.achievement]: true };
-        const next = { ...existing, achievements: nextAchievements };
+        const nextRewardedAchievements = {
+          ...rewardedAchievements,
+          [achievement.achievement]: true
+        };
+        const next = {
+          ...existing,
+          achievements: nextAchievements,
+          rewardedAchievements: nextRewardedAchievements
+        };
         Object.entries(achievement.rewards || {}).forEach(([key, value]) => {
           const baseValue = Number(existing[key]);
           const safeBase = Number.isFinite(baseValue) ? baseValue : 10;

@@ -889,6 +889,7 @@
       onAuthStateChanged,
       signOut,
       GoogleAuthProvider,
+      getRedirectResult,
       signInWithRedirect,
       signInWithPopup,
       setPersistence,
@@ -1003,6 +1004,23 @@
     let achievementsByCode = {};
     let achievementsLoaded = false;
     let achievementsLoadPromise = null;
+
+    const isLikelyInAppBrowser = () => {
+      const ua = navigator.userAgent || "";
+      return /(FBAN|FBAV|Instagram|Line|TikTok|Twitter|WeChat|QQ|Weibo|WebView|wv)/i.test(
+        ua
+      );
+    };
+
+    const isMobileDevice = () => {
+      const ua = navigator.userAgent || "";
+      return /Android|iPhone|iPad|iPod|Mobi/i.test(ua);
+    };
+
+    const isCoarsePointer = () => {
+      if (typeof window === "undefined" || !window.matchMedia) return false;
+      return window.matchMedia("(pointer: coarse)").matches;
+    };
 
     const translations = {
       en: {
@@ -1998,14 +2016,23 @@
     const attemptRedirectSignIn = async () => {
       if (!auth) return;
       const provider = new GoogleAuthProvider();
+      const useRedirectOnly = isLikelyInAppBrowser() || isMobileDevice() || isCoarsePointer();
       sessionStorage.setItem(MEMBER_SIGNIN_KEY, `${Date.now()}`);
       try {
         await persistenceReady;
+        if (useRedirectOnly) {
+          await signInWithRedirect(auth, provider);
+          return;
+        }
         try {
           await signInWithPopup(auth, provider);
         } catch (popupError) {
           const code = popupError?.code || "";
-          if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
+          if (
+            code === "auth/popup-blocked" ||
+            code === "auth/popup-closed-by-user" ||
+            code === "auth/operation-not-supported-in-this-environment"
+          ) {
             await signInWithRedirect(auth, provider);
           } else {
             throw popupError;
@@ -2031,6 +2058,18 @@
       persistenceReady = setPersistence(auth, browserLocalPersistence).catch((error) => {
         console.error("Failed to set auth persistence", error);
       });
+
+      getRedirectResult(auth)
+        .then((result) => {
+          if (result?.user) {
+            sessionStorage.removeItem(MEMBER_SIGNIN_KEY);
+          }
+        })
+        .catch((error) => {
+          console.error("Failed to resolve redirect sign-in", error);
+          const dictionary = translations[authState.language] || translations.en;
+          setSignedOut(dictionary.profileSignInFailed);
+        });
 
       if (!loginHidden) {
         signOutButton.addEventListener("click", async () => {
