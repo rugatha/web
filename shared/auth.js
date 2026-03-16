@@ -605,11 +605,19 @@ const setupAuth = async () => {
   };
 
   loginButton.addEventListener("click", async () => {
+    const fallbackToHandler = () => {
+      window.location.href = buildGoogleHandlerUrl(firebaseConfig.apiKey);
+    };
     try {
       await persistenceReady;
       showAuthStatus("Auth: redirecting...");
       if (useRedirectOnly) {
-        await signInWithRedirect(auth, provider);
+        try {
+          await signInWithRedirect(auth, provider);
+        } catch (redirectError) {
+          console.warn("Redirect sign-in failed, falling back to handler URL", redirectError);
+          fallbackToHandler();
+        }
         return;
       } else {
         try {
@@ -619,7 +627,12 @@ const setupAuth = async () => {
           const code = popupError?.code || "";
           if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
             showAuthStatus("Auth: popup blocked, redirecting...");
-            await signInWithRedirect(auth, provider);
+            try {
+              await signInWithRedirect(auth, provider);
+            } catch (redirectError) {
+              console.warn("Redirect sign-in failed, falling back to handler URL", redirectError);
+              fallbackToHandler();
+            }
           } else {
             throw popupError;
           }
