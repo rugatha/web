@@ -2094,6 +2094,7 @@
         .then((result) => {
           if (result?.user) {
             sessionStorage.removeItem(MEMBER_SIGNIN_KEY);
+            setSignedIn(result.user);
           }
         })
         .catch((error) => {

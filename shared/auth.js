@@ -662,7 +662,15 @@ const setupAuth = async () => {
   getRedirectResult(auth)
     .then((result) => {
       if (result?.user) {
+        authResolved = true;
+        signedIn = true;
         showAuthStatus(`Auth: redirect user (${result.user.uid})`);
+        setSignedIn(result.user);
+        resolveMemberId(result.user).then((resolved) => {
+          memberId = resolved;
+          ensureMemberRecord(result.user, resolved);
+          maybeAwardVisitAchievement();
+        });
       } else if (!signedIn && !authResolved) {
         showAuthStatus("Auth: no redirect result");
       }
