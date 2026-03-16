@@ -26,6 +26,7 @@ const ensureAuthStyles = () => {
     .auth-entry {
       position: static;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       gap: 12px;
@@ -37,6 +38,10 @@ const ensureAuthStyles = () => {
       align-self: center;
       grid-column: 1 / -1;
       font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    .auth-entry [hidden] {
+      display: none !important;
     }
 
     .auth-button {
@@ -94,12 +99,6 @@ const ensureAuthStyles = () => {
       max-width: 240px;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
     }
-
-    @media (max-width: 720px) {
-      .auth-status {
-        display: none;
-      }
-    }
   `;
   document.head.appendChild(style);
 };
@@ -139,12 +138,12 @@ const ensureAuthMarkup = () => {
           <path fill="#EA4335" d="M130 51.9c19.1 0 36.3 6.6 49.8 19.6l37.3-37.3C194.5 12.7 165.1 0 130 0 79.9 0 35.4 30.5 13.6 70.6l43.1 33.8C67 74.9 95.9 51.9 130 51.9z"/>
         </svg>
       </span>
-      <span class="auth-label">Sign in</span>
+      <span class="auth-label">Log In</span>
     </button>
-    <button class="auth-button auth-button--ghost" id="google-logout" type="button" aria-label="Sign out" disabled>
+    <button class="auth-button auth-button--ghost" id="google-logout" type="button" aria-label="Sign out" disabled hidden>
       <span class="auth-label">Sign out</span>
     </button>
-    <div class="auth-status" id="auth-status" aria-live="polite">Google login</div>
+    <div class="auth-status" id="auth-status" aria-live="polite" hidden></div>
   `;
   const host =
     document.querySelector(".page") ||
@@ -195,12 +194,14 @@ const setupAuth = async () => {
 
   const showAuthStatus = (message) => {
     if (!statusEl) return;
+    statusEl.hidden = !message;
     statusEl.textContent = message;
   };
 
   const showAuthError = (error) => {
     if (!statusEl) return;
     const code = error?.code || "auth/unknown";
+    statusEl.hidden = false;
     statusEl.textContent = `Auth error: ${code}`;
   };
 
@@ -212,6 +213,9 @@ const setupAuth = async () => {
     const handlerUrl = buildGoogleHandlerUrl(
       (firebaseConfig && firebaseConfig.apiKey) || "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U"
     );
+    loginButton.hidden = false;
+    logoutButton.hidden = true;
+    statusEl.hidden = false;
     loginButton.disabled = false;
     loginButton.removeAttribute("aria-disabled");
     loginButton.addEventListener("click", () => {
@@ -234,6 +238,8 @@ const setupAuth = async () => {
     const handlerUrl = buildGoogleHandlerUrl(
       (firebaseConfig && firebaseConfig.apiKey) || "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U"
     );
+    loginButton.hidden = false;
+    logoutButton.hidden = true;
     loginButton.disabled = false;
     loginButton.removeAttribute("aria-disabled");
     loginButton.addEventListener("click", () => {
@@ -246,6 +252,10 @@ const setupAuth = async () => {
   }
 
   const labelEl = loginButton.querySelector(".auth-label");
+  const setVisibility = (element, isVisible) => {
+    if (!element) return;
+    element.hidden = !isVisible;
+  };
 
   const { initializeApp, getApps } = firebase.app;
   const { getAnalytics, isSupported } = firebase.analytics;
@@ -379,12 +389,11 @@ const setupAuth = async () => {
           if (existing.memberNo) return existing;
           return { ...existing, memberNo: "0000-0000" };
         });
-        showAuthStatus("Auth: memberNo set (admin)");
         return;
       }
       const allocated = await allocateMemberNo();
       if (!allocated) {
-        showAuthStatus("Auth: memberNo allocation failed");
+        console.warn("Member number allocation failed");
         return;
       }
       await runTransaction(memberRef, (current) => {
@@ -392,7 +401,6 @@ const setupAuth = async () => {
         if (existing.memberNo) return existing;
         return { ...existing, memberNo: allocated };
       });
-      showAuthStatus(`Auth: memberNo set (${allocated})`);
     } catch (error) {
       console.warn("Failed to ensure member record", error);
       showAuthError(error);
@@ -580,11 +588,12 @@ const setupAuth = async () => {
 
   const setSignedOut = () => {
     if (labelEl) {
-      labelEl.textContent = "Sign in";
+      labelEl.textContent = "Log In";
     }
-    statusEl.textContent = inAppBrowser
-      ? "Open in Chrome/Safari to sign in"
-      : "Google login";
+    setVisibility(loginButton, true);
+    setVisibility(logoutButton, false);
+    setVisibility(statusEl, false);
+    statusEl.textContent = "";
     loginButton.disabled = false;
     loginButton.removeAttribute("aria-disabled");
     logoutButton.disabled = true;
@@ -593,11 +602,11 @@ const setupAuth = async () => {
   };
 
   const setSignedIn = (user) => {
-    if (labelEl) {
-      labelEl.textContent = "Signed in";
-    }
-    const fallback = user?.email || "Signed in";
-    statusEl.textContent = user?.displayName ? `Hi, ${user.displayName}` : fallback;
+    const fallback = user?.displayName || user?.email || "friend";
+    setVisibility(loginButton, false);
+    setVisibility(logoutButton, true);
+    setVisibility(statusEl, true);
+    statusEl.textContent = `Hi, ${fallback}`;
     loginButton.disabled = true;
     loginButton.setAttribute("aria-disabled", "true");
     logoutButton.disabled = false;
