@@ -2042,7 +2042,7 @@
       try {
         await persistenceReady;
         if (useRedirectOnly) {
-          window.location.href = handlerUrl;
+          await signInWithRedirect(auth, provider);
           return;
         }
         try {
@@ -2054,7 +2054,7 @@
             code === "auth/popup-closed-by-user" ||
             code === "auth/operation-not-supported-in-this-environment"
           ) {
-            window.location.href = handlerUrl;
+            await signInWithRedirect(auth, provider);
           } else {
             throw popupError;
           }
