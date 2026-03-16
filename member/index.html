@@ -2039,11 +2039,19 @@
       const handlerUrl = buildGoogleHandlerUrl(
         (firebaseConfig && firebaseConfig.apiKey) || "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U"
       );
+      const fallbackToHandler = () => {
+        window.location.href = handlerUrl;
+      };
       sessionStorage.setItem(MEMBER_SIGNIN_KEY, `${Date.now()}`);
       try {
         await persistenceReady;
         if (useRedirectOnly) {
-          await signInWithRedirect(auth, provider);
+          try {
+            await signInWithRedirect(auth, provider);
+          } catch (redirectError) {
+            console.warn("Redirect sign-in failed, falling back to handler URL", redirectError);
+            fallbackToHandler();
+          }
           return;
         }
         try {
@@ -2055,7 +2063,12 @@
             code === "auth/popup-closed-by-user" ||
             code === "auth/operation-not-supported-in-this-environment"
           ) {
-            await signInWithRedirect(auth, provider);
+            try {
+              await signInWithRedirect(auth, provider);
+            } catch (redirectError) {
+              console.warn("Redirect sign-in failed, falling back to handler URL", redirectError);
+              fallbackToHandler();
+            }
           } else {
             throw popupError;
           }
