@@ -893,7 +893,8 @@
       signInWithRedirect,
       signInWithPopup,
       setPersistence,
-      browserLocalPersistence
+      browserLocalPersistence,
+      browserSessionPersistence
     } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
     import {
       getDatabase,
@@ -2076,9 +2077,18 @@
       app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
       auth = getAuth(app);
       db = getDatabase(app);
-      persistenceReady = setPersistence(auth, browserLocalPersistence).catch((error) => {
-        console.error("Failed to set auth persistence", error);
-      });
+      persistenceReady = (async () => {
+        try {
+          await setPersistence(auth, browserLocalPersistence);
+        } catch (localError) {
+          console.warn("Failed to set local auth persistence, falling back to session", localError);
+          try {
+            await setPersistence(auth, browserSessionPersistence);
+          } catch (sessionError) {
+            console.error("Failed to set auth persistence", sessionError);
+          }
+        }
+      })();
 
       getRedirectResult(auth)
         .then((result) => {

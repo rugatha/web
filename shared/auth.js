@@ -257,7 +257,8 @@ const setupAuth = async () => {
     onAuthStateChanged,
     getRedirectResult,
     setPersistence,
-    browserLocalPersistence
+    browserLocalPersistence,
+    browserSessionPersistence
   } = firebase.auth;
   const { getDatabase, ref, get, runTransaction } = firebase.database;
 
@@ -275,10 +276,19 @@ const setupAuth = async () => {
   const auth = getAuth(app);
   let authResolved = false;
   let signedIn = false;
-  const persistenceReady = setPersistence(auth, browserLocalPersistence).catch((error) => {
-    console.error("Failed to set auth persistence", error);
-    showAuthError(error);
-  });
+  const persistenceReady = (async () => {
+    try {
+      await setPersistence(auth, browserLocalPersistence);
+    } catch (localError) {
+      console.warn("Failed to set local auth persistence, falling back to session", localError);
+      try {
+        await setPersistence(auth, browserSessionPersistence);
+      } catch (sessionError) {
+        console.error("Failed to set auth persistence", sessionError);
+        showAuthError(sessionError);
+      }
+    }
+  })();
   const provider = new GoogleAuthProvider();
   let memberId = null;
   const MEMBER_COUNTER_PATH = "members_meta/memberNoCounter";
