@@ -48,6 +48,13 @@ let achievementData = null;
 let achievementLoadPromise = null;
 let pendingAward = false;
 
+const normalizeAchievementMap = (value) => {
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    return value;
+  }
+  return {};
+};
+
 const parseCsv = (text) => {
   const rows = [];
   let row = [];
@@ -238,13 +245,22 @@ const awardAchievement = async () => {
   try {
     const result = await runTransaction(memberRef, (current) => {
       const existing = current || {};
-      const existingAchievements = existing.achievements || {};
-      if (existingAchievements[achievement.achievement]) {
+      const existingAchievements = normalizeAchievementMap(existing.achievements);
+      const rewardedAchievements = normalizeAchievementMap(existing.rewardedAchievements);
+      if (existingAchievements[achievement.achievement] || rewardedAchievements[achievement.achievement]) {
         return existing;
       }
       awarded = true;
       const nextAchievements = { ...existingAchievements, [achievement.achievement]: true };
-      const next = { ...existing, achievements: nextAchievements };
+      const nextRewardedAchievements = {
+        ...rewardedAchievements,
+        [achievement.achievement]: true
+      };
+      const next = {
+        ...existing,
+        achievements: nextAchievements,
+        rewardedAchievements: nextRewardedAchievements
+      };
       Object.entries(achievement.rewards || {}).forEach(([key, value]) => {
         const baseValue = Number(existing[key]);
         const safeBase = Number.isFinite(baseValue) ? baseValue : 10;
