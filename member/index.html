@@ -2035,7 +2035,7 @@
     const attemptRedirectSignIn = async () => {
       if (!auth) return;
       const provider = new GoogleAuthProvider();
-      const useRedirectOnly = isLikelyInAppBrowser() || isMobileDevice() || isCoarsePointer();
+      const useRedirectOnly = isLikelyInAppBrowser();
       const handlerUrl = buildGoogleHandlerUrl(
         (firebaseConfig && firebaseConfig.apiKey) || "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U"
       );

@@ -196,7 +196,7 @@ const setupAuth = async () => {
     statusEl.parentElement.appendChild(debugEl);
   }
   const inAppBrowser = isLikelyInAppBrowser();
-  const useRedirectOnly = inAppBrowser || isMobileDevice() || isCoarsePointer();
+  const useRedirectOnly = inAppBrowser;
   const getCanonicalRedirectUrl = () => {
     const path = `${window.location.pathname || "/"}${window.location.search || ""}${window.location.hash || ""}`;
     return new URL(path, "https://rugatha.com").href;
