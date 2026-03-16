@@ -175,13 +175,17 @@ const setupAuth = async () => {
   const statusEl = document.getElementById("auth-status");
   const inAppBrowser = isLikelyInAppBrowser();
   const useRedirectOnly = inAppBrowser || isMobileDevice() || isCoarsePointer();
+  const getCanonicalRedirectUrl = () => {
+    const path = `${window.location.pathname || "/"}${window.location.search || ""}${window.location.hash || ""}`;
+    return new URL(path, "https://rugatha.com").href;
+  };
 
   const buildGoogleHandlerUrl = (apiKey) => {
     const params = new URLSearchParams({
       apiKey,
       appName: "[DEFAULT]",
       authType: "signInViaRedirect",
-      redirectUrl: window.location.href,
+      redirectUrl: getCanonicalRedirectUrl(),
       v: "12.7.0",
       providerId: "google.com",
       scopes: "email profile"
@@ -595,7 +599,8 @@ const setupAuth = async () => {
       await persistenceReady;
       showAuthStatus("Auth: redirecting...");
       if (useRedirectOnly) {
-        await signInWithRedirect(auth, provider);
+        window.location.href = buildGoogleHandlerUrl(firebaseConfig.apiKey);
+        return;
       } else {
         try {
           showAuthStatus("Auth: opening popup...");
@@ -604,7 +609,7 @@ const setupAuth = async () => {
           const code = popupError?.code || "";
           if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
             showAuthStatus("Auth: popup blocked, redirecting...");
-            await signInWithRedirect(auth, provider);
+            window.location.href = buildGoogleHandlerUrl(firebaseConfig.apiKey);
           } else {
             throw popupError;
           }
