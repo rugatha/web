@@ -1,5 +1,15 @@
 // Shared Rugatha configuration used by the campaigns, graph, and NPC tools.
 (function (global) {
+  if (
+    typeof window !== "undefined" &&
+    window.location.protocol === "http:" &&
+    /(^|\.)rugatha\.com$/i.test(window.location.hostname || "")
+  ) {
+    const secureUrl = `https://${window.location.host}${window.location.pathname}${window.location.search}${window.location.hash}`;
+    window.location.replace(secureUrl);
+    return;
+  }
+
   const currentScript =
     (typeof document !== "undefined" && document.currentScript) ||
     (typeof document !== "undefined" &&
