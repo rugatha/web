@@ -186,6 +186,7 @@ const setupAuth = async () => {
   const loginButton = document.getElementById("google-login");
   const logoutButton = document.getElementById("google-logout");
   const statusEl = document.getElementById("auth-status");
+  const DEBUG_STORAGE_KEY = "rugatha-auth-debug-log";
   let debugEl = document.getElementById("auth-debug");
   if (!debugEl && statusEl?.parentElement) {
     debugEl = document.createElement("pre");
@@ -200,18 +201,54 @@ const setupAuth = async () => {
     const path = `${window.location.pathname || "/"}${window.location.search || ""}${window.location.hash || ""}`;
     return new URL(path, "https://rugatha.com").href;
   };
-  const debugLines = [];
+  let debugLines = [];
+  try {
+    const saved = sessionStorage.getItem(DEBUG_STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed)) {
+        debugLines = parsed.slice(-20);
+      }
+    }
+  } catch (error) {}
   const pushDebug = (message) => {
     const line = `[${new Date().toISOString().slice(11, 19)}] ${message}`;
     debugLines.push(line);
-    while (debugLines.length > 12) {
+    while (debugLines.length > 20) {
       debugLines.shift();
     }
+    try {
+      sessionStorage.setItem(DEBUG_STORAGE_KEY, JSON.stringify(debugLines));
+    } catch (error) {}
     if (debugEl) {
       debugEl.textContent = debugLines.join("\n");
     }
     console.log(`[auth-debug] ${message}`);
   };
+  const clearDebug = () => {
+    debugLines = [];
+    try {
+      sessionStorage.removeItem(DEBUG_STORAGE_KEY);
+    } catch (error) {}
+    if (debugEl) {
+      debugEl.textContent = "";
+    }
+  };
+  if (!debugLines.length) {
+    pushDebug("Auth debug ready");
+  } else if (debugEl) {
+    debugEl.textContent = debugLines.join("\n");
+  }
+  pushDebug(`location: ${window.location.href}`);
+  if (document.referrer) {
+    pushDebug(`referrer: ${document.referrer}`);
+  }
+  if (window.location.search) {
+    pushDebug(`search: ${window.location.search}`);
+  }
+  if (window.location.hash) {
+    pushDebug(`hash: ${window.location.hash}`);
+  }
 
   const buildGoogleHandlerUrl = (apiKey) => {
     const params = new URLSearchParams({
@@ -654,6 +691,9 @@ const setupAuth = async () => {
       window.location.href = buildGoogleHandlerUrl(firebaseConfig.apiKey);
     };
     try {
+      clearDebug();
+      pushDebug("Auth debug ready");
+      pushDebug(`location: ${window.location.href}`);
       await persistenceReady;
       showAuthStatus("Auth: redirecting...");
       if (useRedirectOnly) {
@@ -740,6 +780,8 @@ const setupAuth = async () => {
       } else if (!signedIn && !authResolved) {
         pushDebug("redirect result: none");
         showAuthStatus("Auth: no redirect result");
+      } else if (!result?.user) {
+        pushDebug("redirect result: empty after auth resolved");
       }
     })
     .catch((error) => {
