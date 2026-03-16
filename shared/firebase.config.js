@@ -6,7 +6,7 @@ window.RUGATHA_FEATURE_FLAGS = Object.assign({}, window.RUGATHA_FEATURE_FLAGS, {
 if (window.RUGATHA_FEATURE_FLAGS.firebaseEnabled) {
   window.RUGATHA_FIREBASE_CONFIG = {
     apiKey: "AIzaSyBvVXMxGHHJH2KCGhi5AjJeu-7_48irc1U",
-    authDomain: "rugatha.com",
+    authDomain: "rugatha-87e15.firebaseapp.com",
     projectId: "rugatha-87e15",
     storageBucket: "rugatha-87e15.firebasestorage.app",
     messagingSenderId: "1022766499204",
