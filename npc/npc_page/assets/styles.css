@@ -711,6 +711,27 @@ code {
 }
 
 @media (max-width: 820px) {
+  .card {
+    padding-top: 96px;
+  }
+
+  .title-row {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .language-toggle {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100%, calc(100% - 40px));
+    justify-content: center;
+  }
+
+  .language-toggle button {
+    flex: 1 1 0;
+  }
+
   .layout {
     grid-template-columns: 1fr;
   }
