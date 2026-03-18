@@ -95,7 +95,7 @@
       page: "./pages/rugatha-wilds/index.html",
       image: campaignLogo("rugatha-wilds-logo.jpg"),
       accent: "#c1e27a",
-      nextSession: "2026/4/11"
+      nextSession: "2026/4/12"
     },
     {
       name: "Rugatha Brown",
