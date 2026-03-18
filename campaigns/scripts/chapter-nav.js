@@ -77,10 +77,99 @@
     }
   };
 
+  const fetchChapterTitles = async () => {
+    if (window.__RUGATHA_CHAPTER_TITLE_MAP) return window.__RUGATHA_CHAPTER_TITLE_MAP;
+    if (window.__RUGATHA_CHAPTER_TITLES_PROMISE) return window.__RUGATHA_CHAPTER_TITLES_PROMISE;
+    const titlesUrl = new URL("data/chapter-titles.json", campaignsBase).href;
+    window.__RUGATHA_CHAPTER_TITLES_PROMISE = fetch(titlesUrl, { cache: "no-cache" })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        const map = data && typeof data === "object" ? data : {};
+        window.__RUGATHA_CHAPTER_TITLE_MAP = map;
+        return map;
+      })
+      .catch((err) => {
+        console.warn("Chapter title map unavailable:", err && err.message ? err.message : err);
+        const empty = {};
+        window.__RUGATHA_CHAPTER_TITLE_MAP = empty;
+        return empty;
+      });
+    return window.__RUGATHA_CHAPTER_TITLES_PROMISE;
+  };
+
+  const fetchStoryArcTitles = async () => {
+    if (window.__RUGATHA_STORY_ARC_TITLE_MAP) return window.__RUGATHA_STORY_ARC_TITLE_MAP;
+    if (window.__RUGATHA_STORY_ARC_TITLES_PROMISE) return window.__RUGATHA_STORY_ARC_TITLES_PROMISE;
+    const titlesUrl = new URL("data/story-arc-titles.json", campaignsBase).href;
+    window.__RUGATHA_STORY_ARC_TITLES_PROMISE = fetch(titlesUrl, { cache: "no-cache" })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        const map = data && typeof data === "object" ? data : {};
+        window.__RUGATHA_STORY_ARC_TITLE_MAP = map;
+        return map;
+      })
+      .catch((err) => {
+        console.warn("Story arc title map unavailable:", err && err.message ? err.message : err);
+        const empty = {};
+        window.__RUGATHA_STORY_ARC_TITLE_MAP = empty;
+        return empty;
+      });
+    return window.__RUGATHA_STORY_ARC_TITLES_PROMISE;
+  };
+
+  const getCurrentLanguage = () => {
+    const stateLang = window.__RUGATHA_CHAPTER_LANG;
+    if (stateLang === "zh" || stateLang === "en") return stateLang;
+    try {
+      const stored = localStorage.getItem("npc-lang");
+      if (stored === "zh" || stored === "en") return stored;
+    } catch (_) {
+      // ignore storage access errors
+    }
+    const docLang = (document.documentElement.getAttribute("data-lang") || document.documentElement.getAttribute("lang") || "").toLowerCase();
+    return docLang.startsWith("en") ? "en" : "zh";
+  };
+
   const main = async () => {
     ensureDetailScript();
     ensureAchievementScript();
-    const overrides = await fetchOverrides();
+    const [overrides, chapterTitles, storyArcTitles] = await Promise.all([
+      fetchOverrides(),
+      fetchChapterTitles(),
+      fetchStoryArcTitles()
+    ]);
+    const lang = getCurrentLanguage();
+    const i18n = {
+      navAria: { zh: "章節導覽", en: "Chapter navigation" },
+      prev: { zh: "上一章節", en: "Last Chapter" },
+      next: { zh: "下一章節", en: "Next Chapter" },
+      arc: { zh: "故事弧", en: "Story Arc" },
+      noChapter: { zh: "沒有章節", en: "No chapter" }
+    };
+    const getLocalizedTitle = (item) => {
+      if (!item) return i18n.noChapter[lang];
+      const entry = chapterTitles && item.id ? chapterTitles[item.id] : null;
+      if (entry && typeof entry === "object") {
+        if (lang === "en") return entry.en || entry.zh || item.title || item.label || item.id;
+        return entry.zh || entry.en || item.title || item.label || item.id;
+      }
+      return item.title || item.label || item.id;
+    };
+    const getLocalizedArcTitle = (item) => {
+      if (!item) return "";
+      const entry = storyArcTitles && item.id ? storyArcTitles[item.id] : null;
+      if (entry && typeof entry === "object") {
+        if (lang === "en") return entry.en || entry.zh || item.title || item.label || item.id;
+        return entry.zh || entry.en || item.title || item.label || item.id;
+      }
+      return item.title || item.label || item.id;
+    };
 
     const pathParts = window.location.pathname.split("/").filter(Boolean);
     const pagesIdx = pathParts.indexOf("pages");
@@ -226,7 +315,7 @@
       const eyebrow = document.createElement("div");
       eyebrow.className = "chapter-nav__eyebrow";
       eyebrow.textContent =
-        type === "prev" ? "上一章節 Last Chapter" : type === "next" ? "下一章節 Next Chapter" : "故事弧 Story Arc";
+        type === "prev" ? i18n.prev[lang] : type === "next" ? i18n.next[lang] : i18n.arc[lang];
       wrapper.appendChild(eyebrow);
 
       const meta = document.createElement("div");
@@ -244,7 +333,7 @@
         if (displayArc) {
           const arcLine = document.createElement("span");
           arcLine.className = "chapter-nav__line";
-          arcLine.textContent = displayArc.title || displayArc.label || displayArc.id;
+          arcLine.textContent = getLocalizedArcTitle(displayArc);
           meta.appendChild(arcLine);
         }
       }
@@ -259,7 +348,7 @@
             link.className = "chapter-nav__link";
             const useHref = resolveUrl(item.url);
             link.href = useHref || "#";
-            link.textContent = item.title || item.label || item.id;
+            link.textContent = getLocalizedTitle(item);
             link.target = "_self";
             const itemCampaign = itemMeta.campaign;
             const itemArc = itemMeta.arc;
@@ -278,7 +367,7 @@
             if (shouldShowArcBadge) {
               const badge = document.createElement("span");
               badge.className = "chapter-nav__link-arc";
-              badge.textContent = itemArc.title || itemArc.label || itemArc.id;
+              badge.textContent = getLocalizedArcTitle(itemArc);
               link.appendChild(badge);
             }
             links.appendChild(link);
@@ -288,7 +377,7 @@
           const chapterLine = document.createElement("span");
           chapterLine.className = "chapter-nav__line chapter-nav__line--chapter";
           const item = list[0];
-          chapterLine.textContent = item ? item.title || item.label || item.id : "沒有章節";
+          chapterLine.textContent = getLocalizedTitle(item);
           meta.appendChild(chapterLine);
         }
       }
@@ -302,7 +391,7 @@
 
     const nav = document.createElement("section");
     nav.className = "chapter-nav";
-    nav.setAttribute("aria-label", "章節導覽");
+    nav.setAttribute("aria-label", i18n.navAria[lang]);
     nav.dataset.role = "chapter-nav";
     nav.appendChild(buildItem("prev", prevChapter, targetArc, campaign));
     nav.appendChild(buildItem("arc", null, targetArc, campaign));
@@ -340,4 +429,7 @@
   };
 
   main();
+  window.addEventListener("rugatha:chapter-language-change", () => {
+    main();
+  });
 })();

@@ -55,7 +55,7 @@
   const lastSegment = pathParts[pathParts.length - 1] || "";
   const isChapterPage = /^chpt/i.test(lastSegment);
   const isNestedPage = Boolean(slugSegment);
-  const isArcPage = Boolean(arcSegment);
+  const isArcPage = !isChapterPage && Boolean(arcSegment);
   const imageBannerBase = isArcPage || isNestedPage ? campaignBannerBase : campaignBannerBase;
   const chapterImageMap = {
     // Rugatha main
@@ -229,7 +229,9 @@
   const displayDates = (target && target.dates) || (targetCampaign && targetCampaign.dates);
   const accent = (target && target.accent) || (targetCampaign && targetCampaign.accent) || "#7bdcb5";
   const i18n = {
-    relatedTitle: { zh: "相關 NPC", en: "Related NPCs" }
+    relatedTitle: { zh: "相關 NPC", en: "Related NPCs" },
+    chaptersTitle: { zh: "章節", en: "Chapters" },
+    storyArcBadge: { zh: "故事弧", en: "Story Arc" }
   };
   const languageState = {
     value: "zh",
@@ -239,6 +241,20 @@
     npcIds: null,
     charById: null,
     siteBase: null
+  };
+  const currentChapterId = isChapterPage && arcSegment ? `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}` : null;
+  const currentArcId = (isArcPage && targetArc && targetArc.id) || bodyArc || arcSegment || null;
+  const chapterTitleState = {
+    map: null,
+    fallbackTitle: ""
+  };
+  const arcTitleState = {
+    map: null,
+    fallbackTitle: "",
+    fallbackTagline: ""
+  };
+  const chapterListState = {
+    chapters: []
   };
 
   if (!target) {
@@ -258,6 +274,194 @@
     }
     const docLang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
     return docLang.startsWith("en") ? "en" : "zh";
+  };
+
+  const loadChapterTitleMap = async () => {
+    if (window.__RUGATHA_CHAPTER_TITLE_MAP) return window.__RUGATHA_CHAPTER_TITLE_MAP;
+    if (window.__RUGATHA_CHAPTER_TITLES_PROMISE) return window.__RUGATHA_CHAPTER_TITLES_PROMISE;
+    const titlesUrl = new URL("data/chapter-titles.json", campaignsBase).href;
+    window.__RUGATHA_CHAPTER_TITLES_PROMISE = fetch(titlesUrl, { cache: "no-cache" })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        const map = data && typeof data === "object" ? data : {};
+        window.__RUGATHA_CHAPTER_TITLE_MAP = map;
+        return map;
+      })
+      .catch((err) => {
+        console.warn("Chapter title map unavailable:", err && err.message ? err.message : err);
+        const empty = {};
+        window.__RUGATHA_CHAPTER_TITLE_MAP = empty;
+        return empty;
+      });
+    return window.__RUGATHA_CHAPTER_TITLES_PROMISE;
+  };
+
+  const loadStoryArcTitleMap = async () => {
+    if (window.__RUGATHA_STORY_ARC_TITLE_MAP) return window.__RUGATHA_STORY_ARC_TITLE_MAP;
+    if (window.__RUGATHA_STORY_ARC_TITLES_PROMISE) return window.__RUGATHA_STORY_ARC_TITLES_PROMISE;
+    const titlesUrl = new URL("data/story-arc-titles.json", campaignsBase).href;
+    window.__RUGATHA_STORY_ARC_TITLES_PROMISE = fetch(titlesUrl, { cache: "no-cache" })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        const map = data && typeof data === "object" ? data : {};
+        window.__RUGATHA_STORY_ARC_TITLE_MAP = map;
+        return map;
+      })
+      .catch((err) => {
+        console.warn("Story arc title map unavailable:", err && err.message ? err.message : err);
+        const empty = {};
+        window.__RUGATHA_STORY_ARC_TITLE_MAP = empty;
+        return empty;
+      });
+    return window.__RUGATHA_STORY_ARC_TITLES_PROMISE;
+  };
+
+  const getLocalizedChapterTitle = (chapterId, fallback) => {
+    if (!chapterId) return fallback || "Chapter";
+    const map = chapterTitleState.map || window.__RUGATHA_CHAPTER_TITLE_MAP || {};
+    const entry = map[chapterId];
+    if (entry && typeof entry === "object") {
+      if (languageState.value === "en") {
+        return entry.en || entry.zh || fallback || chapterId;
+      }
+      return entry.zh || entry.en || fallback || chapterId;
+    }
+    return fallback || chapterId;
+  };
+
+  const getLocalizedArcTitle = (arcId, fallback) => {
+    if (!arcId) return fallback || "Story Arc";
+    const map = arcTitleState.map || window.__RUGATHA_STORY_ARC_TITLE_MAP || {};
+    const entry = map[arcId];
+    if (entry && typeof entry === "object") {
+      if (languageState.value === "en") {
+        return entry.en || entry.zh || fallback || arcId;
+      }
+      return entry.zh || entry.en || fallback || arcId;
+    }
+    return fallback || arcId;
+  };
+
+  const updateChapterTitle = () => {
+    if (!isChapterPage || !currentChapterId) return;
+    const titleEl = document.querySelector(".campaign-detail.arc-detail .campaign-detail__title");
+    if (titleEl && !chapterTitleState.fallbackTitle) {
+      chapterTitleState.fallbackTitle = titleEl.textContent.trim();
+    }
+    const localizedTitle = getLocalizedChapterTitle(currentChapterId, chapterTitleState.fallbackTitle || displayName);
+    if (titleEl && localizedTitle) {
+      titleEl.textContent = localizedTitle;
+    }
+    if (localizedTitle) {
+      document.title = `${localizedTitle} | Rugatha Campaign`;
+    }
+  };
+
+  const updateArcTitle = () => {
+    if (!isArcPage || !targetArc) return;
+    const titleEl = document.querySelector(".campaign-detail.arc-detail .campaign-detail__title");
+    if (titleEl && !arcTitleState.fallbackTitle) {
+      arcTitleState.fallbackTitle = titleEl.textContent.trim();
+    }
+    const localizedTitle = getLocalizedArcTitle(
+      targetArc.id,
+      arcTitleState.fallbackTitle || displayName
+    );
+    if (titleEl && localizedTitle) {
+      titleEl.textContent = localizedTitle;
+    }
+    if (localizedTitle) {
+      document.title = `${localizedTitle} | Rugatha Campaign`;
+    }
+  };
+
+  const updateChapterArcTagline = () => {
+    if (!isChapterPage || !currentArcId) return;
+    const taglineEl = document.querySelector(".campaign-detail.arc-detail .campaign-detail__tagline");
+    if (!taglineEl) return;
+    if (!arcTitleState.fallbackTagline) {
+      arcTitleState.fallbackTagline = taglineEl.textContent.trim();
+    }
+    const localizedTagline = getLocalizedArcTitle(currentArcId, arcTitleState.fallbackTagline || displayTagline || currentArcId);
+    if (localizedTagline) {
+      taglineEl.textContent = localizedTagline;
+    }
+  };
+
+  const updateArcChaptersHeading = () => {
+    if (!isArcPage) return;
+    const heading = document.querySelector(".campaign-detail__chapters h2");
+    if (!heading) return;
+    heading.textContent = i18n.chaptersTitle[languageState.value];
+  };
+
+  const updateStoryArcBadge = () => {
+    if (!isArcPage) return;
+    const badge = document.querySelector(".campaign-detail.arc-detail .campaign-detail__badge");
+    if (!badge) return;
+    badge.textContent = i18n.storyArcBadge[languageState.value];
+  };
+
+  const renderChapterList = () => {
+    const chapterList = document.querySelector("[data-role='chapter-list']");
+    if (!chapterList) return;
+
+    const chaptersToRender = Array.isArray(chapterListState.chapters) ? chapterListState.chapters : [];
+    chapterList.innerHTML = "";
+
+    if (!chaptersToRender.length) {
+      const li = document.createElement("li");
+      li.textContent = "尚未有章節";
+      chapterList.appendChild(li);
+      return;
+    }
+
+    chaptersToRender.forEach((ch) => {
+      const li = document.createElement("li");
+      const meta = document.createElement("div");
+      meta.className = "chapter-list__meta";
+      const isLevel4 = ch.level === 4;
+      const arcHref = isLevel4
+        ? ch.url || `${arcBase}${ch.id}/`
+        : ch.id === "rugatha-c05" && slugSegment === "rugatha-plus"
+          ? "./plus-c05/"
+          : ch.id === "rugatha-c05" && slugSegment === "rugatha-lite"
+            ? "./lite-c05/"
+            : ch.url || `./${ch.id}/`;
+      const fallbackTitle = ch.title || ch.label || ch.id;
+      const displayTitle = getLocalizedChapterTitle(ch.id, fallbackTitle);
+      const title = document.createElement("a");
+      title.href = resolvePath(arcHref);
+      title.target = "_self";
+      title.textContent = displayTitle;
+      meta.appendChild(title);
+
+      const imageName = isLevel4 ? ch.image : chapterImageMap[ch.id];
+      li.appendChild(meta);
+      if (imageName) {
+        const imageLink = document.createElement("a");
+        imageLink.href = resolvePath(arcHref);
+        imageLink.target = "_self";
+        const img = document.createElement("img");
+        img.className = "chapter-list__image";
+        const base = isLevel4 ? chapterBannerBase : imageBannerBase;
+        const useSrc =
+          typeof imageName === "string" && (imageName.startsWith("/") || imageName.startsWith("http"))
+            ? resolvePath(imageName)
+            : resolvePath(`${base}${imageName}`);
+        img.src = useSrc;
+        img.alt = `${displayTitle} banner`;
+        imageLink.appendChild(img);
+        li.appendChild(imageLink);
+      }
+      chapterList.appendChild(li);
+    });
   };
 
   const updateLanguageToggle = () => {
@@ -338,9 +542,17 @@
   const applyLanguage = (lang) => {
     const next = lang === "en" ? "en" : "zh";
     languageState.value = next;
+    window.__RUGATHA_CHAPTER_LANG = next;
     document.documentElement.setAttribute("data-lang", next);
     updateLanguageToggle();
+    updateChapterTitle();
+    updateArcTitle();
+    updateChapterArcTagline();
+    updateStoryArcBadge();
+    updateArcChaptersHeading();
+    renderChapterList();
     renderRelatedNpcSection();
+    window.dispatchEvent(new CustomEvent("rugatha:chapter-language-change", { detail: { lang: next } }));
     try {
       localStorage.setItem("npc-lang", next);
     } catch (_) {
@@ -348,8 +560,8 @@
     }
   };
 
-  const ensureChapterLanguageToggle = () => {
-    if (!isChapterPage) return;
+  const ensureLanguageToggle = () => {
+    if (!isChapterPage && !isArcPage) return;
     const container = document.querySelector(".detail-canvas") || document.querySelector(".page");
     if (!container) return;
 
@@ -497,55 +709,8 @@
     console.warn("No banner match for:", chaptersMissingImages.join(", "));
   }
 
-  const chapterList = document.querySelector("[data-role='chapter-list']");
-  if (chapterList) {
-    chapterList.innerHTML = "";
-    if (!chapters.length) {
-      const li = document.createElement("li");
-      li.textContent = "尚未有章節";
-      chapterList.appendChild(li);
-    } else {
-      chapters.forEach((ch) => {
-        const li = document.createElement("li");
-        const meta = document.createElement("div");
-        meta.className = "chapter-list__meta";
-        const isLevel4 = ch.level === 4;
-        const arcHref = isLevel4
-          ? ch.url || `${arcBase}${ch.id}/`
-          : ch.id === "rugatha-c05" && slugSegment === "rugatha-plus"
-            ? "./plus-c05/"
-            : ch.id === "rugatha-c05" && slugSegment === "rugatha-lite"
-              ? "./lite-c05/"
-              : ch.url || `./${ch.id}/`;
-        const displayTitle = ch.title || ch.label || ch.id;
-        const title = document.createElement("a");
-        title.href = resolvePath(arcHref);
-        title.target = "_self";
-        title.textContent = displayTitle;
-        meta.appendChild(title);
-
-        const imageName = isLevel4 ? ch.image : chapterImageMap[ch.id];
-        li.appendChild(meta);
-        if (imageName) {
-          const imageLink = document.createElement("a");
-          imageLink.href = resolvePath(arcHref);
-          imageLink.target = "_self";
-          const img = document.createElement("img");
-          img.className = "chapter-list__image";
-          const base = isLevel4 ? chapterBannerBase : imageBannerBase;
-          const useSrc =
-            typeof imageName === "string" && (imageName.startsWith("/") || imageName.startsWith("http"))
-              ? resolvePath(imageName)
-              : resolvePath(`${base}${imageName}`);
-          img.src = useSrc;
-          img.alt = `${displayTitle} banner`;
-          imageLink.appendChild(img);
-          li.appendChild(imageLink);
-        }
-        chapterList.appendChild(li);
-      });
-    }
-  }
+  chapterListState.chapters = chapters;
+  renderChapterList();
 
   const setupHeroDrift = () => {
     const root = document.documentElement;
@@ -568,9 +733,22 @@
 
   document.title = `${displayName} | Rugatha Campaign`;
   languageState.value = getPreferredLanguage();
+  window.__RUGATHA_CHAPTER_LANG = languageState.value;
   document.documentElement.setAttribute("data-lang", languageState.value);
-  ensureChapterLanguageToggle();
+  ensureLanguageToggle();
   setupHeroDrift();
+  updateStoryArcBadge();
+  updateArcChaptersHeading();
   renderRelatedNpcs();
+  loadChapterTitleMap().then((map) => {
+    chapterTitleState.map = map;
+    updateChapterTitle();
+    renderChapterList();
+  });
+  loadStoryArcTitleMap().then((map) => {
+    arcTitleState.map = map;
+    updateArcTitle();
+    updateChapterArcTagline();
+  });
 
 })();

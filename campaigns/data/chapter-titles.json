@@ -1,0 +1,374 @@
+{
+  "brown-c01-chpt01": {
+    "en": "Chapter 1: Offer from the Wind Family",
+    "zh": "第一章：溫德家的提案"
+  },
+  "brown-c01-chpt02": {
+    "en": "Chapter 2: The Basement of the Shrine",
+    "zh": "第二章：祭祠地下室"
+  },
+  "brown-c01-chpt03": {
+    "en": "Chapter 3: Lotus Petals",
+    "zh": "第三章：蓮花瓣"
+  },
+  "brown-c01-chpt04": {
+    "en": "Chapter 4: Baptized",
+    "zh": "第四章：受洗"
+  },
+  "brown-c01-chpt05": {
+    "en": "Chapter 5: Farewell, Wescoe",
+    "zh": "第五章：告別魏斯科"
+  },
+  "brown-c02-chpt01": {
+    "en": "Chapter 1: Mesmerized",
+    "zh": "第一章：催眠"
+  },
+  "legends-os01-chpt01": {
+    "en": "The False Hydra of Moorland Haunt",
+    "zh": "鬧鬼荒野的偽多頭龍"
+  },
+  "legends-os02-chpt01": {
+    "en": "The Disappearance of Gustavo Norman",
+    "zh": "古斯塔夫．諾曼的失蹤"
+  },
+  "legends-os03-chpt01": {
+    "en": "The Lighthouse on the Deserted Island",
+    "zh": "荒島上的燈塔"
+  },
+  "legends-os04-chpt01": {
+    "en": "The Deadly Prison Break",
+    "zh": "致命越獄"
+  },
+  "legends-os05-chpt01": {
+    "en": "Chapter 1: The Mine",
+    "zh": "第一章：礦坑"
+  },
+  "legends-os05-chpt02": {
+    "en": "Chapter 2: The Trade",
+    "zh": "第二章：交易"
+  },
+  "legends-os06-chpt01": {
+    "en": "The Malicious Rise of Alfenor",
+    "zh": "阿爾芬諾的惡鞋崛起"
+  },
+  "legends-os07-chpt01": {
+    "en": "Mylstan Colossus",
+    "zh": "邁爾斯坦巨像"
+  },
+  "legends-os08-chpt01": {
+    "en": "Lord Octavian von Oderick’s Dungeon of Randomness",
+    "zh": "屋大維．馮．歐德里克大人的隨機地城"
+  },
+  "legends-os09-chpt01": {
+    "en": "To the Deep and Back",
+    "zh": "往返深淵"
+  },
+  "legends-os10-chpt01": {
+    "en": "The Invisible Spell",
+    "zh": "隱形咒語"
+  },
+  "lite-c05-chpt01": {
+    "en": "Chapter 1: The Aftermath",
+    "zh": "第一章：餘波"
+  },
+  "lite-c05-chpt02": {
+    "en": "Chapter 2: Town of Villains",
+    "zh": "第二章：惡棍之城"
+  },
+  "lite-c05-chpt03": {
+    "en": "Chapter 3: Deal?",
+    "zh": "第三章：成交？"
+  },
+  "lite-c05-chpt04": {
+    "en": "Chapter 4: True Form",
+    "zh": "第四章：真實形態"
+  },
+  "lite-c06-chpt01": {
+    "en": "Chapter 1: Mysterious Bites",
+    "zh": "第一章：神秘咬痕"
+  },
+  "lite-c06-chpt02": {
+    "en": "Chapter 2: Mother of Ruins",
+    "zh": "第二章：廢墟之母"
+  },
+  "lite-c06-chpt03": {
+    "en": "Chapter 3: Count M",
+    "zh": "第三章：M伯爵"
+  },
+  "lite-c06-chpt04": {
+    "en": "Chapter 4: We Need a Plan",
+    "zh": "第四章：我們需要一個計畫"
+  },
+  "lite-c06-chpt05": {
+    "en": "Chapter 5: The Rescue",
+    "zh": "第五章：救援行動"
+  },
+  "lite-c07-chpt01": {
+    "en": "Chapter 1: Underneath the Theatre",
+    "zh": "第一章：劇院之下"
+  },
+  "lite-c07-chpt02": {
+    "en": "Chapter 2: Mother Reborn",
+    "zh": "第二章：母親重生"
+  },
+  "lite-c07-chpt03": {
+    "en": "Chapter 3: Clone of...... Us?",
+    "zh": "第三章：......我們的複製體？"
+  },
+  "lite-c08-chpt01": {
+    "en": "Chapter 1: Moonlight Predators",
+    "zh": "第一章：月光狩獵會"
+  },
+  "lite-c08-chpt02": {
+    "en": "Chapter 2: Hatched Companion",
+    "zh": "第二章：孵化而出的夥伴"
+  },
+  "lite-c08-chpt03": {
+    "en": "Chapter 3: I'm Sorry for Your Loss",
+    "zh": "第三章：請節哀"
+  },
+  "lite-c09-chpt01": {
+    "en": "Chapter 1: Aberration 101",
+    "zh": "第一章：孽物入門"
+  },
+  "lite-c09-chpt02": {
+    "en": "Chapter 2: Evangelist of Phynoir",
+    "zh": "第二章：芬諾爾的傳道者"
+  },
+  "lite-c09-chpt03": {
+    "en": "Chapter 3: Lord of the Feathers",
+    "zh": "第三章：羽王"
+  },
+  "lite-c10-chpt01": {
+    "en": "Chapter 1: Last Moment of Sanity",
+    "zh": "第一章：失去理智前的最後一刻"
+  },
+  "lite-c10-chpt02": {
+    "en": "Chapter 2: Fate of the Destined Past",
+    "zh": "第二章：注定過往的命運"
+  },
+  "lite-c10-chpt03": {
+    "en": "Chapter 3: Broken Angels",
+    "zh": "第三章：破碎天使"
+  },
+  "lite-c10-chpt04": {
+    "en": "Chapter 4: The Divine Dominion of Everlasting and Love",
+    "zh": "第四章：永恆與愛的權能"
+  },
+  "lite-c11-chpt01": {
+    "en": "Chapter 1: Call of Fenadra",
+    "zh": "第一章：斐納札的呼喚"
+  },
+  "lite-c11-chpt02": {
+    "en": "Chapter 2: The Council of Spirit",
+    "zh": "第二章：靈魂議會"
+  },
+  "lite-c11-chpt03": {
+    "en": "Chapter 3: The Heartless Trial",
+    "zh": "第三章：決心之煉"
+  },
+  "lite-c11-chpt04": {
+    "en": "Chapter 4: The Heartbroken Endgame",
+    "zh": "第四章：心碎殘局"
+  },
+  "lite-c12-chpt01": {
+    "en": "Chapter 1: Do Not Leave Us in the Dark",
+    "zh": "第一章：別在黑暗中離開我們"
+  },
+  "lite-c12-chpt02": {
+    "en": "Chapter 2: The Truth Beneath the Mask",
+    "zh": "第二章：面具下的真相"
+  },
+  "lite-c12-chpt03": {
+    "en": "Chapter 3: Forces of the Serpent",
+    "zh": "第三章：巨蛇之勢"
+  },
+  "plus-c05-chpt01": {
+    "en": "Chapter 1: The Aftermath",
+    "zh": "第一章：餘波"
+  },
+  "plus-c05-chpt02": {
+    "en": "Chapter 2: Regroup and Reanalysis",
+    "zh": "第二章：重整與再分析"
+  },
+  "plus-c05-chpt03": {
+    "en": "Chapter 3: Fey Senses",
+    "zh": "第三章：妖精感知"
+  },
+  "plus-c05-chpt04": {
+    "en": "Chapter 4: Trial of the Chosen One",
+    "zh": "第四章：天選之人的試煉"
+  },
+  "plus-c05-chpt05": {
+    "en": "Chapter 5: Feywild Lost",
+    "zh": "第五章：妖精荒野失守"
+  },
+  "plus-c06-chpt01": {
+    "en": "Chapter 1: Stinky Stinky",
+    "zh": "第一章：臭臭臭"
+  },
+  "plus-c06-chpt02": {
+    "en": "Chapter 2: Detour to Macksohn",
+    "zh": "第二章：繞道麥克嵩"
+  },
+  "plus-c06-chpt03": {
+    "en": "Chapter 3: Dangerous Roads",
+    "zh": "第三章：危險之路"
+  },
+  "plus-c06-chpt04": {
+    "en": "Chapter 4: Knowledge Unbound",
+    "zh": "第四章：知識無垠"
+  },
+  "plus-c07-chpt01": {
+    "en": "Chapter 1: The Ritual of Rage",
+    "zh": "第一章：狂怒之儀"
+  },
+  "plus-c07-chpt02": {
+    "en": "Chapter 2: El Oro de los Ratones",
+    "zh": "第二章：老鼠的黃金"
+  },
+  "plus-c07-chpt03": {
+    "en": "Chapter 3: Memory",
+    "zh": "第三章：記憶"
+  },
+  "rugatha-c01-chpt01": {
+    "en": "Chapter 1: The Curse of Vowalon",
+    "zh": "第一章：沃瓦倫的詛咒"
+  },
+  "rugatha-c01-chpt02": {
+    "en": "Chapter 2: Before Sunset",
+    "zh": "第二章：日落之前"
+  },
+  "rugatha-c01-chpt03": {
+    "en": "Chapter 3: Into the Woods",
+    "zh": "第三章：走入森林"
+  },
+  "rugatha-c01-chpt04": {
+    "en": "Chapter 4: Wescoe Tour",
+    "zh": "第四章：魏斯科巡遊"
+  },
+  "rugatha-c01-chpt05": {
+    "en": "Chapter 5: Back in the Woods",
+    "zh": "第五章：重返森林"
+  },
+  "rugatha-c01-chpt06": {
+    "en": "Chapter 6: Heroes of Vowalon",
+    "zh": "第六章：沃瓦倫的英雄"
+  },
+  "rugatha-c01-chpt07": {
+    "en": "Chapter 7: Demons of Vowalon",
+    "zh": "第七章：沃瓦倫的惡魔"
+  },
+  "rugatha-c02-chpt01": {
+    "en": "Chapter 1: Altered Mindsets",
+    "zh": "第一章：變異的心智"
+  },
+  "rugatha-c02-chpt02": {
+    "en": "Chapter 2: Venture into Darkness",
+    "zh": "第二章：遁入黑暗"
+  },
+  "rugatha-c02-chpt03": {
+    "en": "Chapter 3: The Spirit of Lorin",
+    "zh": "第三章：洛林精神"
+  },
+  "rugatha-c03-chpt01": {
+    "en": "Chapter 1: Bitter Reunion",
+    "zh": "第一章：苦澀重逢"
+  },
+  "rugatha-c03-chpt02": {
+    "en": "Chapter 2: Streets of Korringfield",
+    "zh": "第二章：寇林菲爾德的街道"
+  },
+  "rugatha-c03-chpt03": {
+    "en": "Chapter 3: A Good Place",
+    "zh": "第三章：好地方"
+  },
+  "rugatha-c03-chpt04": {
+    "en": "Chapter 4: Between Life and Death",
+    "zh": "第四章：生死之間"
+  },
+  "rugatha-c04-chpt01": {
+    "en": "Chapter 1: Welcome to Macksohn",
+    "zh": "第一章：歡迎來到麥克嵩"
+  },
+  "rugatha-c04-chpt02": {
+    "en": "Chapter 2: Sun and Moon",
+    "zh": "第二章：日與月"
+  },
+  "rugatha-c04-chpt03": {
+    "en": "Chapter 3: Upper Class Life",
+    "zh": "第三章：上流生活"
+  },
+  "rugatha-c04-chpt04": {
+    "en": "Chapter 4: The Father of Shadows",
+    "zh": "第四章：闇影之父"
+  },
+  "rugatha-c04-chpt05": {
+    "en": "Chapter 5: Gladiators",
+    "zh": "第五章：角鬥士"
+  },
+  "rugatha-c05-chpt01": {
+    "en": "Chapter 1: The Aftermath",
+    "zh": "第一章：餘波"
+  },
+  "wilds-c01-chpt01": {
+    "en": "Chapter 1: The Town of Trades and Goods",
+    "zh": "第一章：貿易之都"
+  },
+  "wilds-c01-chpt02": {
+    "en": "Chapter 2: The Siren's Cemetery",
+    "zh": "第二章：海妖的墓場"
+  },
+  "wilds-c01-chpt03": {
+    "en": "Chapter 3: Invitation to T.I.D.E.S.",
+    "zh": "第三章：T.I.D.E.S.的邀請"
+  },
+  "wilds-c02-chpt01": {
+    "en": "Chapter 1: A Feast of the Exquisite",
+    "zh": "第一章：奢華盛宴"
+  },
+  "wilds-c02-chpt02": {
+    "en": "Chapter 2: Banquet Night, Holy Night",
+    "zh": "第二章：宴會之夜，聖潔之夜"
+  },
+  "wilds-c02-chpt03": {
+    "en": "Chapter 3: The Gathering",
+    "zh": "第三章：集結"
+  },
+  "wilds-c03-chpt01": {
+    "en": "Chapter 1: The Spirit of Spring",
+    "zh": "第一章：春天精靈"
+  },
+  "wilds-c03-chpt02": {
+    "en": "Chapter 2: Banditry is a State of Mind",
+    "zh": "第二章：山賊是一種心態"
+  },
+  "wilds-c03-chpt03": {
+    "en": "Chapter 3: Dusk of the Applewoods",
+    "zh": "第三章：蘋果木之暮"
+  },
+  "wilds-c04-chpt01": {
+    "en": "Chapter 1: Lunch with the Aryliths",
+    "zh": "第一章：與艾瑞里斯一家的午餐"
+  },
+  "wilds-c04-chpt02": {
+    "en": "Chapter 2: The Silver Dragon's Treat",
+    "zh": "第二章：銀龍的款待"
+  },
+  "wilds-c04-chpt03": {
+    "en": "Chapter 3: whodunit",
+    "zh": "第三章：誰下此手"
+  },
+  "wilds-c04-chpt04": {
+    "en": "Chapter 4: Eternal Lost of the Dragonborn Vein",
+    "zh": "第四章：龍人血脈的永恆失落"
+  },
+  "wilds-c05-chpt01": {
+    "en": "Chapter 1: Unfamiliar Hometown",
+    "zh": "第一章：陌生的家鄉"
+  },
+  "wilds-c05-chpt02": {
+    "en": "Chapter 2: Blue, Red and Brown",
+    "zh": "第二章：藍色、紅色與土色"
+  }
+}
