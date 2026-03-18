@@ -123,6 +123,8 @@ const loadAchievementData = async () => {
       });
       achievementData = {
         achievement: ACHIEVEMENT_CODE,
+        achievementZh: record.achievementZh || "",
+        achievementEn: record.achievementEn || "",
         flavorZh: record.flavorZh || "",
         flavorEn: record.flavorEn || "",
         rewards: {
@@ -143,8 +145,8 @@ const loadAchievementData = async () => {
   return achievementLoadPromise;
 };
 
-const showAchievementToast = (flavorZh, flavorEn) => {
-  if (!flavorZh && !flavorEn) return;
+const showAchievementToast = (nameZh, nameEn, flavorZh, flavorEn) => {
+  if (!nameZh && !nameEn && !flavorZh && !flavorEn) return;
   if (!document.body) return;
   const styleId = "rugatha-achievement-toast-style";
   if (!document.getElementById(styleId)) {
@@ -176,10 +178,16 @@ const showAchievementToast = (flavorZh, flavorEn) => {
         animation: toast-in 200ms ease-out;
       }
       .achievement-toast .toast-title {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        color: rgba(27, 42, 38, 0.7);
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #f4f7f3;
+      }
+      .achievement-toast .toast-title--secondary {
+        font-size: 0.95rem;
+        font-weight: 700;
+        line-height: 1.3;
+        color: rgba(244, 247, 243, 0.9);
       }
       @keyframes toast-in {
         from { transform: translateY(6px); opacity: 0; }
@@ -196,10 +204,18 @@ const showAchievementToast = (flavorZh, flavorEn) => {
   }
   const toast = document.createElement("div");
   toast.className = "achievement-toast";
-  const title = document.createElement("div");
-  title.className = "toast-title";
-  title.textContent = "89e3939662105c31Ff1a";
-  toast.appendChild(title);
+  if (nameZh) {
+    const titleZh = document.createElement("div");
+    titleZh.className = "toast-title";
+    titleZh.textContent = nameZh;
+    toast.appendChild(titleZh);
+  }
+  if (nameEn) {
+    const titleEn = document.createElement("div");
+    titleEn.className = "toast-title toast-title--secondary";
+    titleEn.textContent = nameEn;
+    toast.appendChild(titleEn);
+  }
   if (flavorZh) {
     const zh = document.createElement("div");
     zh.textContent = flavorZh;
@@ -246,20 +262,14 @@ const awardAchievement = async () => {
     const result = await runTransaction(memberRef, (current) => {
       const existing = current || {};
       const existingAchievements = normalizeAchievementMap(existing.achievements);
-      const rewardedAchievements = normalizeAchievementMap(existing.rewardedAchievements);
-      if (existingAchievements[achievement.achievement] || rewardedAchievements[achievement.achievement]) {
+      if (existingAchievements[achievement.achievement]) {
         return existing;
       }
       awarded = true;
       const nextAchievements = { ...existingAchievements, [achievement.achievement]: true };
-      const nextRewardedAchievements = {
-        ...rewardedAchievements,
-        [achievement.achievement]: true
-      };
       const next = {
         ...existing,
-        achievements: nextAchievements,
-        rewardedAchievements: nextRewardedAchievements
+        achievements: nextAchievements
       };
       Object.entries(achievement.rewards || {}).forEach(([key, value]) => {
         const baseValue = Number(existing[key]);
@@ -270,7 +280,15 @@ const awardAchievement = async () => {
       return next;
     });
     if (result.committed && awarded) {
-      showAchievementToast(achievement.flavorZh, achievement.flavorEn);
+      try {
+        localStorage.removeItem(PENDING_KEY);
+      } catch (error) {}
+      showAchievementToast(
+        achievement.achievementZh,
+        achievement.achievementEn,
+        achievement.flavorZh,
+        achievement.flavorEn
+      );
     }
   } catch (error) {
     console.error("Failed to award achievement", error);

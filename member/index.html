@@ -1256,8 +1256,8 @@
       return note;
     };
 
-    const showAchievementToast = (flavorZh, flavorEn) => {
-      if (!flavorZh && !flavorEn) return;
+    const showAchievementToast = (nameZh, nameEn, flavorZh, flavorEn) => {
+      if (!nameZh && !nameEn && !flavorZh && !flavorEn) return;
       if (!document.body) return;
       const styleId = "rugatha-achievement-toast-style";
       if (!document.getElementById(styleId)) {
@@ -1289,10 +1289,16 @@
             animation: toast-in 200ms ease-out;
           }
           .achievement-toast .toast-title {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: rgba(27, 42, 38, 0.7);
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #1b2a26;
+          }
+          .achievement-toast .toast-title--secondary {
+            font-size: 0.95rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: rgba(27, 42, 38, 0.9);
           }
           @keyframes toast-in {
             from { transform: translateY(6px); opacity: 0; }
@@ -1309,10 +1315,18 @@
       }
       const toast = document.createElement("div");
       toast.className = "achievement-toast";
-      const title = document.createElement("div");
-      title.className = "toast-title";
-      title.textContent = "89e3939662105c31Ff1a";
-      toast.appendChild(title);
+      if (nameZh) {
+        const titleZh = document.createElement("div");
+        titleZh.className = "toast-title";
+        titleZh.textContent = nameZh;
+        toast.appendChild(titleZh);
+      }
+      if (nameEn) {
+        const titleEn = document.createElement("div");
+        titleEn.className = "toast-title toast-title--secondary";
+        titleEn.textContent = nameEn;
+        toast.appendChild(titleEn);
+      }
       if (flavorZh) {
         const zh = document.createElement("div");
         zh.textContent = flavorZh;
@@ -1618,7 +1632,12 @@
           syncBadgeScoresFromData(updated);
           renderAchievements();
           if (awarded) {
-            showAchievementToast(achievement.flavorZh, achievement.flavorEn);
+            showAchievementToast(
+              achievement.achievementZh,
+              achievement.achievementEn,
+              achievement.flavorZh,
+              achievement.flavorEn
+            );
           }
           return true;
         }

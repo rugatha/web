@@ -1,0 +1,142 @@
+{
+  "brown-c01": {
+    "en": "Dark Petals",
+    "zh": "深色花瓣"
+  },
+  "brown-c02": {
+    "en": "Howling of the Wolf",
+    "zh": "狼嚎"
+  },
+  "exp-e01": {
+    "en": "The Scroll of the Golden Castle",
+    "zh": "金之堡的卷軸"
+  },
+  "exp-e02": {
+    "en": "Echoes of the Dragon’s Roar",
+    "zh": "龍鳴的回音"
+  },
+  "legends-os01": {
+    "en": "The False Hydra of Moorland Haunt",
+    "zh": "鬧鬼荒野的偽多頭龍"
+  },
+  "legends-os02": {
+    "en": "The Disappearance of Gustavo Norman",
+    "zh": "古斯塔夫．諾曼的失蹤"
+  },
+  "legends-os03": {
+    "en": "The Lighthouse on the Deserted Island",
+    "zh": "荒島上的燈塔"
+  },
+  "legends-os04": {
+    "en": "The Deadly Prison Break",
+    "zh": "致命越獄"
+  },
+  "legends-os05": {
+    "en": "Dragon’s Orb",
+    "zh": "龍之寶珠"
+  },
+  "legends-os06": {
+    "en": "The Malicious Rise of Alfenor",
+    "zh": "阿爾芬諾的惡鞋崛起"
+  },
+  "legends-os07": {
+    "en": "Mylstan Colossus",
+    "zh": "邁爾斯坦巨像"
+  },
+  "legends-os08": {
+    "en": "Lord Octavian von Oderick’s Dungeon of Randomness",
+    "zh": "屋大維．馮．歐德里克大人的隨機地城"
+  },
+  "legends-os09": {
+    "en": "To the Deep and Back",
+    "zh": "往返深淵"
+  },
+  "legends-os10": {
+    "en": "The Invisible Spell",
+    "zh": "隱形咒語"
+  },
+  "lite-c05": {
+    "en": "Mattington Shattered",
+    "zh": "麥丁頓的破碎"
+  },
+  "lite-c06": {
+    "en": "The Gift from Alfenor",
+    "zh": "阿爾芬諾之禮"
+  },
+  "lite-c07": {
+    "en": "Lurking Dangers",
+    "zh": "潛伏的危機"
+  },
+  "lite-c08": {
+    "en": "Deep into Lothum",
+    "zh": "深入洛森"
+  },
+  "lite-c09": {
+    "en": "The Cave of Drogsland",
+    "zh": "卓茲蘭之穴"
+  },
+  "lite-c10": {
+    "en": "Requiem of the Feathered Estate",
+    "zh": "覆羽莊園的輓歌"
+  },
+  "lite-c11": {
+    "en": "Seats of the Eclipse",
+    "zh": "月蝕之席"
+  },
+  "lite-c12": {
+    "en": "Py'Par's Vision",
+    "zh": "派琶的預示"
+  },
+  "plus-c05": {
+    "en": "Mattington Shattered",
+    "zh": "麥丁頓的破碎"
+  },
+  "plus-c06": {
+    "en": "Hand of the Lich",
+    "zh": "巫妖之手"
+  },
+  "plus-c07": {
+    "en": "Before the Next Full Moon",
+    "zh": "下次滿月之前"
+  },
+  "rugatha-c01": {
+    "en": "Curse of Vowalon",
+    "zh": "沃瓦倫的詛咒"
+  },
+  "rugatha-c02": {
+    "en": "Beneath the Temple",
+    "zh": "殿堂之下"
+  },
+  "rugatha-c03": {
+    "en": "Korringfield Reunion",
+    "zh": "寇林菲爾德重逢"
+  },
+  "rugatha-c04": {
+    "en": "The Blooming of Macksohn",
+    "zh": "麥克嵩的綻放"
+  },
+  "rugatha-c05": {
+    "en": "Mattington Shattered",
+    "zh": "麥丁頓的破碎"
+  },
+  "wilds-c01": {
+    "en": "The Elite Bloodline",
+    "zh": "菁英血脈"
+  },
+  "wilds-c02": {
+    "en": "Gathering of the Chosen",
+    "zh": "天選者集會"
+  },
+  "wilds-c03": {
+    "en": "Storm of Mudtown",
+    "zh": "土城風暴"
+  },
+  "wilds-c04": {
+    "en": "Heir to Rathanad",
+    "zh": "拉撒拿的繼承人"
+  },
+  "wilds-c05": {
+    "en": "The Unacknowledged Child",
+    "zh": "不被承認的孩子"
+  }
+}
