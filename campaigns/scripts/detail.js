@@ -228,6 +228,18 @@
   const displayTagline = (target && target.tagline) || (targetCampaign && targetCampaign.tagline);
   const displayDates = (target && target.dates) || (targetCampaign && targetCampaign.dates);
   const accent = (target && target.accent) || (targetCampaign && targetCampaign.accent) || "#7bdcb5";
+  const i18n = {
+    relatedTitle: { zh: "相關 NPC", en: "Related NPCs" }
+  };
+  const languageState = {
+    value: "zh",
+    wrap: null
+  };
+  const relatedNpcState = {
+    npcIds: null,
+    charById: null,
+    siteBase: null
+  };
 
   if (!target) {
     if (detail) detail.classList.add("is-hidden");
@@ -236,6 +248,139 @@
     console.warn("Campaign slug not found:", slugParam);
     return;
   }
+
+  const getPreferredLanguage = () => {
+    try {
+      const stored = localStorage.getItem("npc-lang");
+      if (stored === "zh" || stored === "en") return stored;
+    } catch (_) {
+      // ignore storage access errors
+    }
+    const docLang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
+    return docLang.startsWith("en") ? "en" : "zh";
+  };
+
+  const updateLanguageToggle = () => {
+    if (!languageState.wrap) return;
+    const buttons = languageState.wrap.querySelectorAll(".language-toggle button");
+    buttons.forEach((button) => {
+      const isActive = button.dataset.lang === languageState.value;
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  };
+
+  const getNpcDisplayName = (meta) => {
+    if (!meta) return "NPC";
+    if (languageState.value === "en") {
+      return meta.nameEn || meta.nameZh || meta.name || meta.id || "NPC";
+    }
+    return meta.nameZh || meta.nameEn || meta.name || meta.id || "NPC";
+  };
+
+  const renderRelatedNpcSection = () => {
+    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
+    if (!container || !Array.isArray(relatedNpcState.npcIds) || !relatedNpcState.charById || !relatedNpcState.siteBase) return;
+
+    const existing = container.querySelector(".related-npcs");
+    if (existing) existing.remove();
+
+    const section = document.createElement("section");
+    section.className = "related-npcs";
+
+    const heading = document.createElement("h2");
+    heading.className = "related-npcs__title";
+    heading.textContent = i18n.relatedTitle[languageState.value];
+    section.appendChild(heading);
+
+    const grid = document.createElement("div");
+    grid.className = "related-npcs__grid";
+    section.appendChild(grid);
+
+    const npcBase = new URL("npc/", relatedNpcState.siteBase).href;
+    const resolveNpcUrl = (value) => {
+      if (!value) return null;
+      if (/^(https?:)?\/\//i.test(value)) return value;
+      if (value.startsWith("/")) return new URL(value, relatedNpcState.siteBase).href;
+      if (value.startsWith("npc/")) return new URL(value, relatedNpcState.siteBase).href;
+      return new URL(value, npcBase).href;
+    };
+
+    relatedNpcState.npcIds.forEach((id) => {
+      const meta = relatedNpcState.charById[id] || { id, nameEn: "", nameZh: "", name: id, url: null, image: null };
+      const displayName = getNpcDisplayName(meta);
+      const npcUrl = resolveNpcUrl(meta.url || "");
+      const card = document.createElement(npcUrl ? "a" : "div");
+      card.className = "related-npcs__card";
+      if (npcUrl) {
+        card.href = npcUrl;
+        card.target = "_self";
+      }
+
+      if (meta.image) {
+        const imgEl = document.createElement("img");
+        imgEl.className = "related-npcs__image";
+        imgEl.src = resolveNpcUrl(meta.image);
+        imgEl.alt = displayName || "NPC portrait";
+        card.appendChild(imgEl);
+      }
+
+      const name = document.createElement("div");
+      name.className = "related-npcs__name";
+      name.textContent = displayName;
+      card.appendChild(name);
+
+      grid.appendChild(card);
+    });
+
+    container.appendChild(section);
+  };
+
+  const applyLanguage = (lang) => {
+    const next = lang === "en" ? "en" : "zh";
+    languageState.value = next;
+    document.documentElement.setAttribute("data-lang", next);
+    updateLanguageToggle();
+    renderRelatedNpcSection();
+    try {
+      localStorage.setItem("npc-lang", next);
+    } catch (_) {
+      // ignore storage access errors
+    }
+  };
+
+  const ensureChapterLanguageToggle = () => {
+    if (!isChapterPage) return;
+    const container = document.querySelector(".detail-canvas") || document.querySelector(".page");
+    if (!container) return;
+
+    let bar = container.querySelector(".chapter-language-toggle-bar");
+    if (!bar) {
+      bar = document.createElement("div");
+      bar.className = "chapter-language-toggle-bar";
+
+      const wrap = document.createElement("div");
+      wrap.className = "language-toggle";
+      wrap.setAttribute("role", "group");
+      wrap.setAttribute("aria-label", "Language");
+
+      const makeButton = (label, lang) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.dataset.lang = lang;
+        button.textContent = label;
+        button.addEventListener("click", () => applyLanguage(lang));
+        return button;
+      };
+
+      wrap.appendChild(makeButton("中文", "zh"));
+      wrap.appendChild(makeButton("English", "en"));
+      bar.appendChild(wrap);
+      container.insertBefore(bar, container.firstChild);
+    }
+
+    languageState.wrap = bar.querySelector(".language-toggle");
+    updateLanguageToggle();
+  };
 
   const setText = (role, value) => {
     const el = document.querySelector(`[data-role='${role}']`);
@@ -268,8 +413,6 @@
   }
 
   const renderRelatedNpcs = async () => {
-    if (window.__RUGATHA_NPCS_RENDERED) return;
-    window.__RUGATHA_NPCS_RENDERED = true;
     console.log("[NPC] init related NPC render");
     if (!isChapterPage && !arcSegment && !slugSegment) return;
     const chapterId = isChapterPage && arcSegment ? `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}` : null;
@@ -328,81 +471,10 @@
 
     console.log("[NPC] rendering cards for", npcKey, npcIds.length, "NPCs");
 
-    const ensureStyles = () => {
-      if (document.getElementById("related-npcs-style")) return;
-      const style = document.createElement("style");
-      style.id = "related-npcs-style";
-      style.textContent = `
-        .related-npcs { margin: 28px auto 0; padding: 20px; background: var(--panel, rgba(0, 0, 0, 0.04)); border-radius: 16px; width: 100%; max-width: 1200px; }
-        .related-npcs__title { margin: 0 0 12px; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.02em; }
-        .related-npcs__grid { display: flex; gap: 16px; width: 100%; margin: 0 auto; overflow-x: auto; padding-bottom: 8px; }
-        .related-npcs__card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 12px; border-radius: 12px; background: var(--card, #fff); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06); border: 1px solid rgba(0, 0, 0, 0.04); color: inherit; text-decoration: none; transition: transform 120ms ease, box-shadow 120ms ease; }
-        .related-npcs__card:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0, 0, 0, 0.08); }
-        .related-npcs__image { width: 140px; height: 140px; object-fit: cover; border-radius: 10px; background: #f3f3f3; margin-bottom: 10px; }
-        .related-npcs__name { font-weight: 700; font-size: 0.95rem; }
-        @media (max-width: 599px) { .related-npcs { padding: 16px; } }
-      `;
-      document.head.appendChild(style);
-    };
-
-    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
-    if (!container) return;
-    ensureStyles();
-
-    const section = document.createElement("section");
-    section.className = "related-npcs";
-
-    const heading = document.createElement("h2");
-    heading.className = "related-npcs__title";
-    heading.textContent = "相關 NPC Related NPCs";
-    section.appendChild(heading);
-
-    const grid = document.createElement("div");
-    grid.className = "related-npcs__grid";
-    section.appendChild(grid);
-
-    const npcBase = new URL("npc/", siteBase).href;
-    const resolveNpcUrl = (value) => {
-      if (!value) return null;
-      if (/^(https?:)?\/\//i.test(value)) return value;
-      if (value.startsWith("/")) return new URL(value, siteBase).href;
-      if (value.startsWith("npc/")) return new URL(value, siteBase).href;
-      return new URL(value, npcBase).href;
-    };
-
-    const getNpcName = (meta) => {
-      if (!meta) return "NPC";
-      return meta.nameEn || meta.nameZh || meta.name || meta.id || "NPC";
-    };
-
-    npcIds.forEach((id) => {
-      const meta = charById[id] || { id, nameEn: "", nameZh: "", name: id, url: null, image: null };
-      const displayName = getNpcName(meta);
-      const npcUrl = resolveNpcUrl(meta.url || "");
-      const card = document.createElement(npcUrl ? "a" : "div");
-      card.className = "related-npcs__card";
-      if (npcUrl) {
-        card.href = npcUrl;
-        card.target = "_self";
-      }
-
-      if (meta.image) {
-        const imgEl = document.createElement("img");
-        imgEl.className = "related-npcs__image";
-        imgEl.src = resolveNpcUrl(meta.image);
-        imgEl.alt = displayName || "NPC portrait";
-        card.appendChild(imgEl);
-      }
-
-      const name = document.createElement("div");
-      name.className = "related-npcs__name";
-      name.textContent = displayName;
-      card.appendChild(name);
-
-      grid.appendChild(card);
-    });
-
-    container.appendChild(section);
+    relatedNpcState.npcIds = npcIds;
+    relatedNpcState.charById = charById;
+    relatedNpcState.siteBase = siteBase;
+    renderRelatedNpcSection();
   };
 
   const findCampaignNode = (slug) =>
@@ -495,6 +567,9 @@
   };
 
   document.title = `${displayName} | Rugatha Campaign`;
+  languageState.value = getPreferredLanguage();
+  document.documentElement.setAttribute("data-lang", languageState.value);
+  ensureChapterLanguageToggle();
   setupHeroDrift();
   renderRelatedNpcs();
 
