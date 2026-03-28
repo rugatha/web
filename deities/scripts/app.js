@@ -19,6 +19,7 @@ const categoryLabels = {
 
 let currentLang = "zh";
 let deitiesCache = [];
+const DEITY_SKELETON_GROUPS = [3, 3];
 
 const getLocalizedText = (value) => {
   if (!value) return "";
@@ -97,6 +98,64 @@ function createCard(deity) {
   return card;
 }
 
+function createSkeletonCard() {
+  const card = document.createElement("article");
+  card.className = "deity-card deity-card--skeleton";
+  card.setAttribute("aria-hidden", "true");
+
+  const image = document.createElement("div");
+  image.className = "deity-image skeleton-block";
+
+  const body = document.createElement("div");
+  body.className = "deity-body";
+
+  const title = document.createElement("div");
+  title.className = "deity-name skeleton-block";
+
+  const tagline = document.createElement("div");
+  tagline.className = "deity-tagline skeleton-block";
+
+  const chipRow = document.createElement("div");
+  chipRow.className = "chip-row";
+
+  for (let index = 0; index < 2; index += 1) {
+    const chip = document.createElement("span");
+    chip.className = "chip skeleton-block";
+    chipRow.appendChild(chip);
+  }
+
+  body.append(title, tagline, chipRow);
+  card.append(image, body);
+  return card;
+}
+
+function renderLoadingState() {
+  if (!grid) return;
+  grid.innerHTML = "";
+
+  DEITY_SKELETON_GROUPS.forEach((count) => {
+    const section = document.createElement("section");
+    section.className = "category-group";
+    section.setAttribute("aria-hidden", "true");
+
+    const heading = document.createElement("div");
+    heading.className = "category-title skeleton-block";
+    heading.style.width = "220px";
+    heading.style.height = "34px";
+    heading.style.margin = "0 auto 10px";
+
+    const groupGrid = document.createElement("div");
+    groupGrid.className = "deity-grid";
+
+    for (let index = 0; index < count; index += 1) {
+      groupGrid.appendChild(createSkeletonCard());
+    }
+
+    section.append(heading, groupGrid);
+    grid.appendChild(section);
+  });
+}
+
 async function loadDeities() {
   const response = await fetch("./data/deities.json");
   if (!response.ok) {
@@ -150,6 +209,7 @@ function setupLanguageToggle() {
 }
 
 if (grid) {
+  renderLoadingState();
   loadDeities()
     .then((data) => {
       deitiesCache = data;

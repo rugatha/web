@@ -161,6 +161,7 @@
     let sortOrder = 'asc';
     let groupingMode = 'letter';
     const isAscii = (str) => /^[A-Za-z]/.test(str || '');
+    const SKELETON_CARD_COUNT = 8;
 
     const getPreferredLanguage = () => {
       try {
@@ -215,6 +216,8 @@
       updateSortToggleLabel();
       if (charactersCache.length) {
         applyFilters();
+      } else {
+        renderLoadingSkeletons();
       }
       try {
         localStorage.setItem('npc-lang', languageState.value);
@@ -244,7 +247,43 @@
       el.innerHTML = (text || '').replace(/\n/g, '<br>');
     };
 
+    function renderLoadingSkeletons(count = SKELETON_CARD_COUNT) {
+      const fragment = document.createDocumentFragment();
+      for (let index = 0; index < count; index += 1) {
+        const card = document.createElement('div');
+        card.className = 'card card--skeleton';
+        card.setAttribute('aria-hidden', 'true');
+        card.innerHTML = `
+          <div class="skeleton-block" style="position:absolute;inset:0;"></div>
+          <div class="card__label">
+            <span class="card__name skeleton-block"></span>
+            <span class="card__race skeleton-block"></span>
+          </div>
+        `;
+        fragment.appendChild(card);
+      }
+      grid.replaceChildren(fragment);
+      statusEl.textContent = languageState.value === 'en' ? 'Loading NPC data' : '資料載入中';
+    }
+
+    function wireImageLoad(img, card) {
+      if (!img || !card) return;
+
+      const markLoaded = () => {
+        img.classList.add('is-loaded');
+        card.classList.add('is-image-loaded');
+      };
+
+      img.addEventListener('load', markLoaded, { once: true });
+      img.addEventListener('error', markLoaded, { once: true });
+
+      if (img.complete) {
+        markLoaded();
+      }
+    }
+
     async function loadCharacters() {
+      renderLoadingSkeletons();
       try {
         const response = await fetch('data/characters.json');
         if (!response.ok) throw new Error('無法載入角色資料');
@@ -419,6 +458,7 @@
       raceEl.textContent = getRaceKeysDisplay(character).join(', ');
       img.src = character.image;
       img.alt = displayName || 'NPC';
+      wireImageLoad(img, node);
       return node;
     }
 
