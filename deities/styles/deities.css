@@ -161,6 +161,41 @@ body {
   z-index: 0;
 }
 
+.deity-card--skeleton {
+  pointer-events: none;
+}
+
+.deity-card--skeleton .deity-image,
+.deity-card--skeleton .deity-name,
+.deity-card--skeleton .deity-tagline,
+.deity-card--skeleton .chip {
+  color: transparent;
+}
+
+.deity-card--skeleton .deity-name,
+.deity-card--skeleton .deity-tagline,
+.deity-card--skeleton .chip {
+  border-radius: 999px;
+  min-height: 14px;
+}
+
+.deity-card--skeleton .deity-name {
+  width: 72%;
+  min-height: 20px;
+  margin: 0 auto;
+}
+
+.deity-card--skeleton .deity-tagline {
+  width: 56%;
+  min-height: 14px;
+  margin: 0 auto;
+}
+
+.deity-card--skeleton .chip {
+  max-width: 180px;
+  border-color: transparent;
+}
+
 .deity-body > * {
   position: relative;
   z-index: 2;
