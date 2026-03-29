@@ -75,7 +75,7 @@
       page: "./pages/rugatha-plus/index.html",
       image: campaignLogo("rugatha-plus-logo.jpg"),
       accent: "#c8f9ff",
-      nextSession: "2026/3/28"
+      nextSession: "2026/4/25"
     },
     {
       name: "Rugatha lite",
