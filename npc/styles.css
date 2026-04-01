@@ -425,7 +425,7 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--text);
   font-weight: 800;
-  font-family: "Blackletter", "Old English Text MT", "UnifrakturMaguntia", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(28px, 5vw, 48px);
   letter-spacing: 2px;
   box-shadow: var(--shadow);
