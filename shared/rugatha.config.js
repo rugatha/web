@@ -89,7 +89,7 @@
     },
     {
       name: "Rugatha WILDS",
-      tagline: "Wisdon & Ingenuity... Leads to Daring Success",
+      tagline: "Wisdom & Ingenuity... Leads to Daring Success",
       dates: "2024/3/16 ~",
       link: "https://rugatha.com/rugatha-wilds/",
       page: "./pages/rugatha-wilds/index.html",

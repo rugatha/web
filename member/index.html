@@ -23,9 +23,6 @@
       --member-accent: #9fe0ba;
       --member-accent-strong: #ffd58b;
       --member-panel: rgba(14, 22, 26, 0.72);
-      --rarity-bronze: #b57a3f;
-      --rarity-silver: #c3c9d1;
-      --rarity-gold: #d4af37;
     }
 
     body {
@@ -502,27 +499,6 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--member-muted);
-    }
-
-    .rarity-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      flex-shrink: 0;
-      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.22);
-    }
-
-    .rarity-dot[data-rarity="C"] {
-      background: var(--rarity-bronze);
-    }
-
-    .rarity-dot[data-rarity="U"] {
-      background: var(--rarity-silver);
-    }
-
-    .rarity-dot[data-rarity="R"] {
-      background: var(--rarity-gold);
     }
 
     .achievement-detail {
@@ -1046,7 +1022,7 @@
     const translations = {
       en: {
         heroEyebrow: "Adventurer's Journal",
-        heroTitle: "Your legendary stories to be told in taverns......",
+        heroTitle: "Your legendary stories are to be told in taverns......",
         heroBadgesTitle: "Adventurer's Sheet",
         badgeSTR: "Strength", ///總點擊次數、點擊回到首頁次數
         badgeDEX: "Dexterity", ///刷新頁面次數、短停留次數
@@ -1089,7 +1065,7 @@
       },
       zh: {
         heroEyebrow: "冒險者日誌",
-        heroTitle: "你的傳奇冒險將在酒館被傳唱......",
+        heroTitle: "你的傳奇冒險將在酒館被傳唱……",
         heroBadgesTitle: "冒險者角色卡",
         badgeSTR: "力量",
         badgeDEX: "敏捷",
@@ -1376,13 +1352,10 @@
         card.className = `achievement-card ${achieved ? "is-achieved" : "is-locked"}`;
         const header = document.createElement("div");
         header.className = "achievement-header";
-        const dot = document.createElement("span");
-        dot.className = "rarity-dot";
-        dot.dataset.rarity = item.rarity || "C";
         const name = document.createElement("div");
         name.className = "achievement-name";
         name.textContent = getAchievementName(item, authState.language);
-        header.append(dot, name);
+        header.append(name);
         card.append(header);
         achievementListEl.appendChild(card);
       });

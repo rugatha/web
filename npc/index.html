@@ -42,7 +42,7 @@
           <div class="control-row control-row--actions">
             <div class="toggle-group" role="group" aria-label="分類方式" id="group-toggle">
               <span class="toggle-slider" aria-hidden="true"></span>
-              <button type="button" id="group-letter" aria-pressed="true" data-i18n data-zh="按注音" data-en="Alphabetical">按注音</button>
+              <button type="button" id="group-letter" aria-pressed="true" data-i18n data-zh="預設" data-en="Default">預設</button>
               <button type="button" id="group-race" aria-pressed="false" data-i18n data-zh="按種族" data-en="Race">按種族</button>
               <button type="button" id="group-religion" aria-pressed="false" data-i18n data-zh="按信仰" data-en="Religion">按信仰</button>
               <button type="button" id="group-location" aria-pressed="false" data-i18n data-zh="按地點" data-en="Location">按地點</button>
@@ -53,8 +53,8 @@
                 id="sort-toggle"
                 class="pill-btn"
                 data-sort="asc"
-                data-zh-asc="ㄅ → ㄩ"
-                data-zh-desc="ㄩ → ㄅ"
+                data-zh-asc="ㄅ → ㄦ"
+                data-zh-desc="ㄦ → ㄅ"
                 data-en-asc="A → Z"
                 data-en-desc="Z → A"
               >A → Z</button>
@@ -156,6 +156,9 @@
         return null;
       }
     })();
+    const zhuyinOrder = new Map(
+      zhuyinInitials.map((entry, index) => [entry.label, index])
+    );
     const isCjk = (char) => /[\u4e00-\u9fff]/.test(char || '');
     let charactersCache = [];
     let sortOrder = 'asc';
@@ -299,10 +302,7 @@
       }
     }
 
-    const sortedZhuyinInitials = [...zhuyinInitials].sort((a, b) => {
-      if (zhuyinCollator) return zhuyinCollator.compare(a.sample, b.sample);
-      return a.sample.localeCompare(b.sample, 'zh-Hant');
-    });
+    const sortedZhuyinInitials = [...zhuyinInitials];
 
     function getZhuyinGroupKey(name) {
       const first = (name || '').trim().charAt(0) || '';
@@ -311,6 +311,8 @@
       if (first === '艾') return 'ㄞ';
       if (first === '阿') return 'ㄚ';
       if (first === '屋') return 'ㄨ';
+      if (first === '月') return 'ㄩ';
+      if (first === '勇') return 'ㄩ';
       if (first === '師') return 'ㄕ';
       if (first === '哈') return 'ㄏ';
       if (first === '拉') return 'ㄌ';
@@ -328,6 +330,21 @@
         }
       }
       return chosen;
+    }
+
+    function getZhuyinOrderIndex(name) {
+      const groupKey = getZhuyinGroupKey(name);
+      return zhuyinOrder.has(groupKey) ? zhuyinOrder.get(groupKey) : Number.MAX_SAFE_INTEGER;
+    }
+
+    function compareZhuyinStrings(a, b) {
+      const groupOrder = getZhuyinOrderIndex(a) - getZhuyinOrderIndex(b);
+      if (groupOrder !== 0) return groupOrder;
+      const collatorOrder = zhuyinCollator
+        ? zhuyinCollator.compare(a, b)
+        : a.localeCompare(b, 'zh-Hant');
+      if (collatorOrder !== 0) return collatorOrder;
+      return a.localeCompare(b, 'zh-Hant');
     }
 
     function getLetterGroupKey(name) {
@@ -420,9 +437,7 @@
       const aName = getDisplayName(a);
       const bName = getDisplayName(b);
       if (languageState.value === 'zh') {
-        const order = zhuyinCollator
-          ? zhuyinCollator.compare(aName, bName)
-          : aName.localeCompare(bName, 'zh-Hant');
+        const order = compareZhuyinStrings(aName, bName);
         return sortOrder === 'asc' ? order : -order;
       }
       const aAscii = isAscii(aName);
@@ -477,7 +492,7 @@
 
         const sortedKeys = Array.from(groups.keys()).sort((a, b) => {
           if (languageState.value === 'zh') {
-            const order = zhuyinCollator.compare(a, b);
+            const order = compareZhuyinStrings(a, b);
             return sortOrder === 'asc' ? order : -order;
           }
           return sortOrder === 'asc'
@@ -513,9 +528,7 @@
             const aEmpty = a === emptyLabel;
             const bEmpty = b === emptyLabel;
             if (aEmpty !== bEmpty) return aEmpty ? 1 : -1;
-            const order = zhuyinCollator
-              ? zhuyinCollator.compare(a, b)
-              : a.localeCompare(b, 'zh-Hant');
+            const order = compareZhuyinStrings(a, b);
             return sortOrder === 'asc' ? order : -order;
           }
           return sortOrder === 'asc'

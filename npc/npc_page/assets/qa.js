@@ -21,6 +21,10 @@ if (qaRoot && !qaDisabled) {
   const choiceTextEls = Array.from(qaRoot.querySelectorAll("[data-qa-choice]"));
   const percentTextEls = Array.from(qaRoot.querySelectorAll("[data-qa-percent]"));
   const resultTextEls = Array.from(qaRoot.querySelectorAll("[data-qa-result]"));
+  const confirmLabels = {
+    zh: "確認",
+    en: "Confirm"
+  };
   const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
 
   let db = null;
@@ -28,6 +32,7 @@ if (qaRoot && !qaDisabled) {
   let memberNo = "";
   let questionPage = qaRoot.getAttribute("data-qa-page") || "";
   let lastLoggedChoice = "";
+  let pendingChoice = "";
   const isViolentQa = (qaId || "").toLowerCase() === "dr_vaxon";
   const ACHIEVEMENTS_CSV_PATH = "../../../member/achievements.csv";
   const ACHIEVEMENT_CODES = {
@@ -48,6 +53,25 @@ if (qaRoot && !qaDisabled) {
 
   const encodeKey = (value) =>
     `${value || ""}`.replace(/%/g, "%25").replace(/\//g, "%2F").replace(/\./g, "%2E");
+
+  const getCurrentLanguage = () =>
+    document.documentElement?.getAttribute("data-lang") === "en" ? "en" : "zh";
+
+  const confirmButton = document.createElement("button");
+  confirmButton.type = "button";
+  confirmButton.className = "qa-confirm";
+  confirmButton.disabled = true;
+  qaRoot.appendChild(confirmButton);
+
+  const updateConfirmButtonLabel = () => {
+    confirmButton.textContent = confirmLabels[getCurrentLanguage()];
+  };
+
+  const syncConfirmState = () => {
+    const isLocked = qaRoot.dataset.locked === "true";
+    const isAuthLocked = qaRoot.dataset.authLocked === "true";
+    confirmButton.disabled = isLocked || isAuthLocked || !pendingChoice;
+  };
 
   const setButtonState = (choice) => {
     choiceButtons.forEach((btn) => {
@@ -308,6 +332,7 @@ if (qaRoot && !qaDisabled) {
     choiceButtons.forEach((btn) => {
       btn.disabled = disabled;
     });
+    syncConfirmState();
   };
 
   const setChoiceLocked = (locked) => {
@@ -332,10 +357,19 @@ if (qaRoot && !qaDisabled) {
         if (qaRoot.dataset.authLocked === "true") return;
         const choice = btn.dataset.choice;
         if (!choice) return;
-        revealResults(choice);
-        logChoice(choice);
-        setChoiceLocked(true);
+        pendingChoice = choice;
+        setButtonState(choice);
+        syncConfirmState();
       });
+    });
+
+    confirmButton.addEventListener("click", () => {
+      if (qaRoot.dataset.locked === "true") return;
+      if (qaRoot.dataset.authLocked === "true") return;
+      if (!pendingChoice) return;
+      revealResults(pendingChoice);
+      logChoice(pendingChoice);
+      setChoiceLocked(true);
     });
   };
 
@@ -395,6 +429,7 @@ if (qaRoot && !qaDisabled) {
 
   window.addEventListener("qa:reload", () => {
     loadQa();
+    updateConfirmButtonLabel();
     if (isViolentQa) {
       percentTextEls.forEach((el) => {
         el.textContent = getCorruptLabel();
@@ -481,6 +516,7 @@ if (qaRoot && !qaDisabled) {
       const choice = value && value.choice;
       if (choice === "C1" || choice === "C2") {
         lastLoggedChoice = choice;
+        pendingChoice = choice === "C1" ? "1" : "2";
         revealResults(choice === "C1" ? "1" : "2");
         setChoiceLocked(true);
         if (isViolentQa) {
@@ -524,6 +560,7 @@ if (qaRoot && !qaDisabled) {
       qaRoot.hidden = true;
       return;
     }
+    updateConfirmButtonLabel();
     setAuthLocked(true);
     ensureFirebase();
     bindChoices();
