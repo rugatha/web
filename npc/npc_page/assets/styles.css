@@ -668,6 +668,43 @@ code {
   white-space: pre-line;
 }
 
+.qa-confirm {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 13px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(123, 220, 181, 0.38);
+  background: rgba(123, 220, 181, 0.16);
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease, opacity 140ms ease;
+}
+
+.qa-confirm:hover,
+.qa-confirm:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(123, 220, 181, 0.75);
+  background: rgba(123, 220, 181, 0.24);
+  outline: none;
+}
+
+.qa-confirm:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.qa[data-locked="true"] .qa-confirm:hover,
+.qa[data-locked="true"] .qa-confirm:focus-visible,
+.qa[data-auth-locked="true"] .qa-confirm:hover,
+.qa[data-auth-locked="true"] .qa-confirm:focus-visible {
+  transform: none;
+}
+
 .qa-results {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
