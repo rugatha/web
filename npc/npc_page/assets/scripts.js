@@ -158,7 +158,10 @@ function applyLanguage(lang) {
   document.documentElement.setAttribute("data-lang", next);
   updateLanguageToggle();
   updateSectionTitles();
-  if (currentNpc) render(currentNpc);
+  if (currentNpc) {
+    render(currentNpc);
+    renderAppearances(currentNpc);
+  }
   if (window.qaRoot && window.qaRoot.dataset.qaSrc) {
     // Reload QA text when language changes.
     window.dispatchEvent(new CustomEvent("qa:reload"));
@@ -244,14 +247,21 @@ function toRelativePath(targetPath) {
 const rootBase = new URL("../../../", window.location.href);
 const npcAppearanceUrls = {
   mapping: new URL("campaigns/pages/npcs.json", rootBase).href,
-  config: new URL("shared/rugatha.config.js", rootBase).href
+  config: new URL("shared/rugatha.config.js", rootBase).href,
+  chapterTitles: new URL("campaigns/data/chapter-titles.json", rootBase).href,
+  storyArcTitles: new URL("campaigns/data/story-arc-titles.json", rootBase).href
 };
 const campaignSortOrder = ["rugatha-main", "plus", "lite", "wilds", "brown", "legends"];
 const appearanceCache = {
   npcMap: null,
   configPromise: null,
-  graphData: null
+  graphData: null,
+  chapterTitleMap: null,
+  chapterTitlePromise: null,
+  storyArcTitleMap: null,
+  storyArcTitlePromise: null
 };
+let appearanceRenderToken = 0;
 
 async function loadNpcAppearanceMap() {
   if (appearanceCache.npcMap) return appearanceCache.npcMap;
@@ -288,6 +298,37 @@ async function loadGraphData() {
     config && config.graph && Array.isArray(config.graph.data) ? config.graph.data : window.CAMPAIGN_GRAPH_DATA;
   appearanceCache.graphData = Array.isArray(nodes) ? nodes : [];
   return appearanceCache.graphData;
+}
+
+async function loadLocalizedTitleMap(cacheKey, promiseKey, url, label) {
+  if (appearanceCache[cacheKey]) return appearanceCache[cacheKey];
+  if (appearanceCache[promiseKey]) return appearanceCache[promiseKey];
+  appearanceCache[promiseKey] = fetch(url, { cache: "no-cache" })
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then((json) => {
+      const map = json && typeof json === "object" ? json : {};
+      appearanceCache[cacheKey] = map;
+      return map;
+    })
+    .catch((err) => {
+      console.warn(`${label} unavailable:`, err && err.message ? err.message : err);
+      appearanceCache[cacheKey] = {};
+      return appearanceCache[cacheKey];
+    });
+  return appearanceCache[promiseKey];
+}
+
+function getLocalizedTitle(item, titleMap, fallback, lang = languageState.value) {
+  if (!item) return fallback;
+  const entry = titleMap && item.id ? titleMap[item.id] : null;
+  if (entry && typeof entry === "object") {
+    if (lang === "en") return entry.en || entry.zh || fallback;
+    return entry.zh || entry.en || fallback;
+  }
+  return fallback;
 }
 
 function resolveChapterUrl(chapter, arc) {
@@ -439,29 +480,49 @@ function buildAppearances(mapping, graphData, npc) {
 
 async function renderAppearances(npc) {
   if (!elements.content || !npc) return;
+  const renderToken = ++appearanceRenderToken;
   const existing = elements.content.querySelector(".appearances");
   if (existing) existing.remove();
 
   let mapping = {};
   let graphData = [];
+  let chapterTitles = {};
+  let storyArcTitles = {};
   try {
-    [mapping, graphData] = await Promise.all([loadNpcAppearanceMap(), loadGraphData()]);
+    [mapping, graphData, chapterTitles, storyArcTitles] = await Promise.all([
+      loadNpcAppearanceMap(),
+      loadGraphData(),
+      loadLocalizedTitleMap(
+        "chapterTitleMap",
+        "chapterTitlePromise",
+        npcAppearanceUrls.chapterTitles,
+        "Chapter title map"
+      ),
+      loadLocalizedTitleMap(
+        "storyArcTitleMap",
+        "storyArcTitlePromise",
+        npcAppearanceUrls.storyArcTitles,
+        "Story arc title map"
+      )
+    ]);
   } catch (err) {
     console.warn("Unable to load appearance data:", err && err.message ? err.message : err);
   }
+  if (renderToken !== appearanceRenderToken) return;
 
   const appearances = buildAppearances(mapping, graphData, npc);
+  const lang = languageState.value;
   const section = document.createElement("div");
   section.className = "appearances";
   const title = document.createElement("h2");
   title.className = "section-title";
-  title.textContent = i18n.appearancesTitle[languageState.value];
+  title.textContent = i18n.appearancesTitle[lang];
   section.appendChild(title);
 
   if (!appearances.length) {
     const empty = document.createElement("span");
     empty.className = "location-empty";
-    empty.textContent = i18n.appearancesEmpty[languageState.value];
+    empty.textContent = i18n.appearancesEmpty[lang];
     section.appendChild(empty);
     elements.content.appendChild(section);
     return;
@@ -483,7 +544,8 @@ async function renderAppearances(npc) {
 
       const arcTitle = document.createElement("div");
       arcTitle.className = "appearance-arc__title";
-      arcTitle.textContent = arcEntry.arc.title || arcEntry.arc.label || arcEntry.arc.id || "Story Arc";
+      const arcFallback = arcEntry.arc.title || arcEntry.arc.label || arcEntry.arc.id || "Story Arc";
+      arcTitle.textContent = getLocalizedTitle(arcEntry.arc, storyArcTitles, arcFallback, lang);
       arcWrap.appendChild(arcTitle);
 
       const chapterList = document.createElement("div");
@@ -496,7 +558,8 @@ async function renderAppearances(npc) {
           node.href = href;
           node.target = "_self";
         }
-        node.textContent = ch.title || ch.label || ch.id || "Chapter";
+        const chapterFallback = ch.title || ch.label || ch.id || "Chapter";
+        node.textContent = getLocalizedTitle(ch, chapterTitles, chapterFallback, lang);
         chapterList.appendChild(node);
       });
 
