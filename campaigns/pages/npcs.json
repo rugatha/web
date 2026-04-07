@@ -456,24 +456,30 @@
       "Bartosz_Richmond",
       "Tina"
     ],
-    "wilds-c01-chpt02": [],
+    "wilds-c01-chpt02": [
+      "Twiggle"
+    ],
     "wilds-c01-chpt03": [
       "Bartosz_Richmond",
       "Thompson",
-      "Tina"
+      "Tina",
+      "Twiggle"
     ],
     "wilds-c02-chpt01": [
       "Bruce_Tallis",
-      "Frederick_Norman"
+      "Frederick_Norman",
+      "Twiggle"
     ],
     "wilds-c02-chpt02": [
       "Frederick_Norman",
-      "Riley_Richmond"
+      "Riley_Richmond",
+      "Twiggle"
     ],
     "wilds-c02-chpt03": [
       "Frederick_Norman",
       "Laura_Fishburne",
-      "Riley_Richmond"
+      "Riley_Richmond",
+      "Twiggle"
     ],
     "wilds-c03-chpt01": [
       "Addie_Applewood",
@@ -484,6 +490,7 @@
       "Oswald_Creighton",
       "Penny_Applewood",
       "Riley_Richmond",
+      "Twiggle",
       "Elly_Riversend",
       "Leonard_Old_Pipe_Riversend"
     ],
@@ -493,6 +500,7 @@
       "Oswald_Creighton",
       "Penny_Applewood",
       "Riley_Richmond",
+      "Twiggle",
       "Elly_Riversend",
       "Leonard_Old_Pipe_Riversend"
     ],
@@ -504,6 +512,7 @@
       "Oswald_Creighton",
       "Penny_Applewood",
       "Riley_Richmond",
+      "Twiggle",
       "Elly_Riversend",
       "Leonard_Old_Pipe_Riversend"
     ],
@@ -515,6 +524,7 @@
       "Selyra_Arylith",
       "Serathe_Arylith",
       "Theramond_Arylith",
+      "Twiggle",
       "Vaelric_Arylith",
       "Vaerodan_Arylith"
     ],
@@ -526,6 +536,7 @@
       "Selyra_Arylith",
       "Serathe_Arylith",
       "Theramond_Arylith",
+      "Twiggle",
       "Vaelric_Arylith",
       "Vaerodan_Arylith"
     ],
@@ -536,6 +547,7 @@
       "Nylessa_Arylith",
       "Serathe_Arylith",
       "Theramond_Arylith",
+      "Twiggle",
       "Vaelric_Arylith"
     ],
     "wilds-c04-chpt04": [
@@ -545,17 +557,22 @@
       "Nylessa_Arylith",
       "Serathe_Arylith",
       "Theramond_Arylith",
+      "Twiggle",
       "Vaelric_Arylith"
     ],
     "wilds-c05-chpt01": [
       "General_Maliya_Kaeyal",
+      "Maribel_Muddlewick",
       "Mayor_Saerus_Pharyon",
-      "Syr_Galaestrel_Freyeman"
+      "Syr_Galaestrel_Freyeman",
+      "Twiggle"
     ],
     "wilds-c05-chpt02": [
+      "Maribel_Muddlewick",
       "Professor_Peneo",
       "Colonel_Lisdar",
-      "President_Bonza"
+      "President_Bonza",
+      "Twiggle"
     ],
     "brown-c01-chpt01": [
       "Lord_Wind",
