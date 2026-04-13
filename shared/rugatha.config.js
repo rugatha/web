@@ -95,7 +95,7 @@
       page: "./pages/rugatha-wilds/index.html",
       image: campaignLogo("rugatha-wilds-logo.jpg"),
       accent: "#c1e27a",
-      nextSession: "2026/4/12"
+      nextSession: "2026/5/16"
     },
     {
       name: "Rugatha Brown",
@@ -832,6 +832,11 @@
         id: "wilds-c05-chpt02",
         title: "Chapter 2: Blue, Red and Brown",
         url: "../wilds-c05/chpt02.html"
+      },
+      {
+        id: "wilds-c05-chpt03",
+        title: "Chapter 3: New Dawn",
+        url: "../wilds-c05/chpt03.html"
       }
     ],
 
@@ -1028,6 +1033,7 @@
     "wilds-c04-chpt04": "../chapter-banners/wilds-c04-chpt04.jpeg",
     "wilds-c05-chpt01": "../chapter-banners/wilds-c05-chpt01.jpeg",
     "wilds-c05-chpt02": "../chapter-banners/wilds-c05-chpt02.jpeg",
+    "wilds-c05-chpt03": "../chapter-banners/wilds-c05-chpt03.jpeg",
     "brown-c01-chpt01": "../chapter-banners/brown-c01-chpt01.png",
     "brown-c01-chpt02": "../chapter-banners/brown-c01-chpt02.png",
     "brown-c01-chpt03": "../chapter-banners/brown-c01-chpt03.png",
