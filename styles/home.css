@@ -97,8 +97,8 @@ body {
 .portal-glyph {
   display: grid;
   place-items: center;
-  width: 88px;
-  height: 88px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: none;
   border: none;
@@ -108,8 +108,8 @@ body {
 }
 
 .portal-icon {
-  width: 54px;
-  height: 54px;
+  width: 72px;
+  height: 72px;
   object-fit: cover;
   border-radius: 50%;
   overflow: hidden;
