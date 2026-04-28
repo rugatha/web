@@ -533,6 +533,26 @@ export const events = [
   {
     type: "event",
     era: "new-dranison",
+    titleZh: "拉比遭槍擊",
+    titleEn: "Ravi was Shot",
+    tag: "rugatha-wilds",
+    date: "15049 D.E. · Oct. 20th",
+    descZh: "雷亞與拉比在酒館聽見利斯達上校與彭薩公會長談論隔日辯論會的刺殺事件，隨後拉比遭彭薩公會長槍擊。",
+    descEn: "Leah and Ravi heard Colonel Lisdar and President Bonza talking about the assassination on the debate tomorrow. Ravi was shot by President Bonza later."
+  },
+  {
+    type: "event",
+    era: "new-dranison",
+    titleZh: "新曙光",
+    titleEn: "New Dawn",
+    tag: "rugatha-wilds",
+    date: "15049 D.E. · Oct. 20th",
+    descZh: "克萊芬市長辯論會上，皮尼歐教授遭自己的學生槍殺。事件後，新書院學生高喊「新曙光」。",
+    descEn: "During the Clyphen Mayoral Debate, Professor Peneo was shot by her student. After the event, the students of the New Academy roared 'New Dawn'."
+  },
+  {
+    type: "event",
+    era: "new-dranison",
     titleZh: "往返深淵",
     titleEn: "To the Deep and Back",
     tag: "rugatha-legends",
@@ -709,5 +729,5 @@ export const events = [
     date: "15051 D.E. · Oct. 19th",
     descZh: "Lott與團隊在雅洛斯與涅西斯妖精派琶同行，遭遇戴面具的芬尼爾信徒攻擊，戰後發現其中一人為Lott過去的夥伴佛拉。",
     descEn: "Lott and the team traveled with the Nessis elf Py'Par in Yarros. They were attacked by masked Phyneal followers, and after the battle discovered one of them was Phola, Lott's former companion."
-  },
+  }
 ];
