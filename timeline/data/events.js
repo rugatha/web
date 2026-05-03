@@ -729,5 +729,15 @@ export const events = [
     date: "15051 D.E. · Oct. 19th",
     descZh: "Lott與團隊在雅洛斯與涅西斯妖精派琶同行，遭遇戴面具的芬尼爾信徒攻擊，戰後發現其中一人為Lott過去的夥伴佛拉。",
     descEn: "Lott and the team traveled with the Nessis elf Py'Par in Yarros. They were attacked by masked Phyneal followers, and after the battle discovered one of them was Phola, Lott's former companion."
+  },
+  {
+    type: "event",
+    era: "new-dranison",
+    titleZh: "撤離常翠林中繼站",
+    titleEn: "Retreat from the Evergreen Grove Relay Station",
+    tag: "rugatha-lite",
+    date: "15051 D.E. · Oct. 20th",
+    descZh: "冒險者們來到常翠林中繼站，並協助中繼站人員一起將物品帶回常翠林本部。",
+    descEn: "The adventurers arrived at the relay station of the Evergreen Grove, and helped the members bring their belongings to the center of the grove."
   }
 ];

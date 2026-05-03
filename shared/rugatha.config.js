@@ -85,7 +85,7 @@
       page: "./pages/rugatha-lite/index.html",
       image: campaignLogo("rugatha-light-logo.jpg"),
       accent: "#ffe7a3",
-      nextSession: "2026/5/2"
+      nextSession: "2026/6/20"
     },
     {
       name: "Rugatha WILDS",
@@ -746,6 +746,11 @@
         id: "lite-c12-chpt03",
         title: "Chapter 3: Forces of the Serpent",
         url: "../lite-c12/chpt03.html"
+      },
+      {
+        id: "lite-c12-chpt04",
+        title: "Chapter 4: The Evergreen Grove",
+        url: "../lite-c12/chpt04.html"
       }
     ],
 
