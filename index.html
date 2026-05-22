@@ -21,6 +21,7 @@
     .auth-entry {
       position: static;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       gap: 12px;
@@ -32,6 +33,25 @@
       align-self: center;
       grid-column: 1 / -1;
       font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    .auth-browser-note {
+      flex-basis: 100%;
+      max-width: 680px;
+      margin: 0 auto 4px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(12, 22, 18, 0.58);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #f0f5f2;
+      font-size: 13px;
+      line-height: 1.6;
+      text-align: left;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .auth-browser-note p {
+      margin: 0;
     }
 
     .auth-button {
@@ -176,6 +196,11 @@
       </section>
 
       <section class="auth-entry" aria-label="Account">
+        <div class="auth-browser-note" role="note" aria-label="Browser sign-in notice">
+          <p>若使用Threads或LINE內建瀏覽器，建議用手機預設瀏覽器開啟此網頁，以免無法登入Google帳號</p>
+          <p>LINE請點選右下角選單，點擊「使用預設瀏覽器開啟」</p>
+          <p>Threads請點選右上角選單，點擊「在Chrome開啟」</p>
+        </div>
         <button class="auth-button" id="google-login" type="button" aria-label="Sign in with Google">
           <span class="auth-icon" aria-hidden="true">
             <svg viewBox="0 0 256 262" width="18" height="18" role="presentation" focusable="false">
@@ -258,6 +283,7 @@
     let achievementData = null;
     let achievementLoadPromise = null;
     const journalLink = document.getElementById("adventurer-journal-link");
+    const authBrowserNote = document.querySelector(".auth-browser-note");
 
     const parseCsv = (text) => {
       const rows = [];
@@ -491,6 +517,9 @@
       db = getDatabase(app);
       onAuthStateChanged(auth, (user) => {
         currentUser = user || null;
+        if (authBrowserNote) {
+          authBrowserNote.hidden = Boolean(currentUser);
+        }
       });
     }
 
