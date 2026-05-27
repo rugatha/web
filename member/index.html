@@ -644,6 +644,66 @@
       color: var(--member-muted);
     }
 
+    .admin-directory {
+      width: min(1120px, calc(100vw - 32px));
+      margin: 24px auto 48px;
+      padding: 28px;
+      border-radius: 28px;
+      background: rgba(10, 16, 19, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    .admin-directory[hidden] {
+      display: none !important;
+    }
+
+    .admin-directory-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .admin-directory-title {
+      margin: 0;
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .admin-directory-hint,
+    .admin-directory-status {
+      margin: 6px 0 0;
+      color: var(--member-muted);
+      font-size: 0.92rem;
+    }
+
+    .admin-directory-select {
+      width: 100%;
+      min-height: 54px;
+      padding: 0 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--member-ink);
+      font: inherit;
+      font-weight: 600;
+      appearance: none;
+    }
+
+    .admin-directory-select:focus-visible {
+      outline: none;
+      border-color: rgba(159, 224, 186, 0.6);
+      box-shadow: 0 0 0 3px rgba(159, 224, 186, 0.14);
+    }
+
+    .admin-directory-select option {
+      color: #10201d;
+    }
+
 
 
     @keyframes reveal {
@@ -867,6 +927,21 @@
 
   </div>
 
+  <section class="admin-directory" id="admin-directory" hidden aria-live="polite">
+    <div class="admin-directory-header">
+      <div>
+        <h2 class="admin-directory-title" data-i18n="adminDirectoryTitle">Member Directory</h2>
+        <p class="admin-directory-hint" id="admin-directory-hint" data-i18n="adminDirectoryHint">
+          Sign in as admin to browse member pages.
+        </p>
+      </div>
+      <div class="admin-directory-status" id="admin-directory-status"></div>
+    </div>
+    <select class="admin-directory-select" id="admin-directory-list" hidden>
+      <option value="">Select a member</option>
+    </select>
+  </section>
+
   <script src="../shared/firebase.config.js"></script>
   <script type="module">
     import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
@@ -945,6 +1020,10 @@
     const characterCardListEl = document.getElementById("character-card-list");
     const achievementListEl = document.getElementById("achievement-list");
     const achievementEmptyEl = document.getElementById("achievement-empty");
+    const adminDirectoryEl = document.getElementById("admin-directory");
+    const adminDirectoryListEl = document.getElementById("admin-directory-list");
+    const adminDirectoryHintEl = document.getElementById("admin-directory-hint");
+    const adminDirectoryStatusEl = document.getElementById("admin-directory-status");
 
     let app = null;
     let db = null;
@@ -1029,6 +1108,9 @@
       return `https://rugatha-87e15.firebaseapp.com/__/auth/handler?${params.toString()}`;
     };
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const requestedMemberId = (urlParams.get("memberId") || "").trim();
+
     const translations = {
       en: {
         heroEyebrow: "Adventurer's Journal",
@@ -1067,11 +1149,23 @@
         profileSignedIn: "",
         profileGuest: "Guest Adventurer",
         profileEmailHint: "Sign in to reveal your account info.",
+        profileViewOnlyHint: "Admin view: this member profile is read-only.",
+        profileMemberNotFound: "Member profile not found.",
+        profileAdminUnauthorized: "Only the admin account can open another member's page.",
         achievementAchieved: "Achieved",
         achievementLocked: "Locked",
         achievementConditionLabel: "Condition:",
         achievementConditionUnknown: "Condition unknown.",
-        achievementsUnlockedValue: "Unlocked"
+        achievementsUnlockedValue: "Unlocked",
+        adminDirectoryTitle: "Member Directory",
+        adminDirectoryHint: "Sign in as the admin account to browse each member page.",
+        adminDirectoryLoading: "Loading members...",
+        adminDirectoryEmpty: "No member records found.",
+        adminDirectoryCount: "{count} members",
+        adminViewLink: "Open member page",
+        adminDirectoryPlaceholder: "Select a member page...",
+        adminDirectoryReady: "Signed in as admin. Select a member to open their page.",
+        adminDirectoryPermissionDenied: "Firebase denied reading the full member list. Update Realtime Database Rules for admin access."
       },
       zh: {
         heroEyebrow: "冒險者日誌",
@@ -1110,11 +1204,23 @@
         profileSignedIn: "",
         profileGuest: "訪客冒險者",
         profileEmailHint: "登入後即可查看帳戶資訊。",
+        profileViewOnlyHint: "管理員檢視模式：目前頁面為唯讀。",
+        profileMemberNotFound: "找不到這位會員的資料。",
+        profileAdminUnauthorized: "只有 admin 帳號可以查看其他會員頁面。",
         achievementAchieved: "已達成",
         achievementLocked: "未解鎖",
         achievementConditionLabel: "條件:",
         achievementConditionUnknown: "條件未公開。",
-        achievementsUnlockedValue: "已解鎖"
+        achievementsUnlockedValue: "已解鎖",
+        adminDirectoryTitle: "會員清單",
+        adminDirectoryHint: "請使用 admin 帳號登入，即可點選查看各會員頁面。",
+        adminDirectoryLoading: "正在載入會員資料…",
+        adminDirectoryEmpty: "目前沒有會員資料。",
+        adminDirectoryCount: "共 {count} 位會員",
+        adminViewLink: "開啟會員頁",
+        adminDirectoryPlaceholder: "請選擇要查看的會員頁…",
+        adminDirectoryReady: "已使用 admin 帳號登入，點選下方會員即可查看頁面。",
+        adminDirectoryPermissionDenied: "Firebase 拒絕讀取完整會員清單，需調整 Realtime Database Rules 才能讓 admin 查看。"
       }
     };
 
@@ -1446,6 +1552,17 @@
 
     const ADMIN_EMAIL = "rugathadnd@gmail.com";
 
+    const formatCopy = (template, values = {}) =>
+      String(template || "").replace(/\{(\w+)\}/g, (_, key) => values[key] ?? "");
+
+    const getRequestedMemberPath = (memberId) => {
+      const params = new URLSearchParams(window.location.search);
+      params.set("memberId", memberId);
+      return `${window.location.pathname}?${params.toString()}`;
+    };
+
+    const isAdminUser = (user) => Boolean(user?.email && user.email === ADMIN_EMAIL);
+
     const allocateMemberNo = async () => {
       if (!db) return null;
       const counterRef = ref(db, MEMBER_COUNTER_PATH);
@@ -1479,6 +1596,106 @@
         return `${dateLine}\n${timeLine}`;
       }
       return value;
+    };
+
+    const resetAdminDirectory = () => {
+      if (adminDirectoryEl) {
+        adminDirectoryEl.hidden = true;
+      }
+      if (adminDirectoryListEl) {
+        adminDirectoryListEl.hidden = true;
+        adminDirectoryListEl.innerHTML = "";
+      }
+      if (adminDirectoryStatusEl) {
+        adminDirectoryStatusEl.textContent = "";
+      }
+    };
+
+    const renderAdminDirectory = (members) => {
+      if (!adminDirectoryEl || !adminDirectoryListEl || !adminDirectoryStatusEl) return;
+      const dictionary = translations[authState.language] || translations.en;
+      adminDirectoryEl.hidden = false;
+      adminDirectoryStatusEl.textContent = formatCopy(dictionary.adminDirectoryCount, {
+        count: members.length
+      });
+      if (adminDirectoryHintEl) {
+        adminDirectoryHintEl.textContent = dictionary.adminDirectoryReady;
+      }
+      adminDirectoryListEl.innerHTML = "";
+      adminDirectoryListEl.hidden = false;
+      const placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.textContent = dictionary.adminDirectoryPlaceholder;
+      adminDirectoryListEl.appendChild(placeholder);
+      if (!members.length) {
+        const empty = document.createElement("option");
+        empty.value = "";
+        empty.textContent = dictionary.adminDirectoryEmpty;
+        adminDirectoryListEl.appendChild(empty);
+        adminDirectoryListEl.disabled = true;
+        return;
+      }
+      adminDirectoryListEl.disabled = false;
+      members.forEach((member) => {
+        const option = document.createElement("option");
+        option.value = getRequestedMemberPath(member.memberId);
+        option.textContent = `${member.memberNo || "—"} | ${member.displayName} | ${member.email || member.memberId}`;
+        if (member.memberId === requestedMemberId || member.memberId === authState.viewedMemberId) {
+          option.selected = true;
+        }
+        adminDirectoryListEl.appendChild(option);
+      });
+    };
+
+    const loadAdminDirectory = async () => {
+      if (!db || !authState.isAdmin || !adminDirectoryStatusEl) {
+        resetAdminDirectory();
+        return;
+      }
+      const dictionary = translations[authState.language] || translations.en;
+      adminDirectoryEl.hidden = false;
+      if (adminDirectoryHintEl) {
+        adminDirectoryHintEl.textContent = dictionary.adminDirectoryReady;
+      }
+      adminDirectoryStatusEl.textContent = dictionary.adminDirectoryLoading;
+      adminDirectoryListEl.innerHTML = "";
+      adminDirectoryListEl.hidden = false;
+      adminDirectoryListEl.disabled = true;
+      try {
+        const snapshot = await get(ref(db, MEMBER_COLLECTION));
+        const members = [];
+        if (snapshot.exists()) {
+          snapshot.forEach((child) => {
+            const data = child.val() || {};
+            const memberId = String(data.memberId || child.key || "").trim();
+            if (!memberId) return;
+            members.push({
+              memberId,
+              memberNo: formatMemberNo(data.memberNo),
+              email: String(data.email || "").trim(),
+              displayName:
+                String(data.title || data.displayName || data.email || memberId).trim() || memberId
+            });
+          });
+        }
+        members.sort((a, b) => {
+          const noA = a.memberNo === "—" ? "9999-9999" : a.memberNo;
+          const noB = b.memberNo === "—" ? "9999-9999" : b.memberNo;
+          const memberNoCompare = noA.localeCompare(noB);
+          if (memberNoCompare !== 0) return memberNoCompare;
+          return a.displayName.localeCompare(
+            b.displayName,
+            authState.language === "zh" ? "zh-Hant" : "en"
+          );
+        });
+        renderAdminDirectory(members);
+      } catch (error) {
+        console.error("Failed to load member directory", error);
+        const errorCode = String(error?.code || error?.message || "").toLowerCase();
+        adminDirectoryStatusEl.textContent = errorCode.includes("permission_denied")
+          ? dictionary.adminDirectoryPermissionDenied
+          : dictionary.profileSignInFailed;
+      }
     };
 
     const startSessionTimer = () => {
@@ -1530,8 +1747,8 @@
       });
       profileCard.classList.toggle("is-editing", enabled);
       saveWrap.style.display = enabled ? "flex" : "none";
-      editButton.disabled = !authState.user || !db;
-      photoButton.disabled = !authState.user || !db;
+      editButton.disabled = !authState.user || !db || authState.readOnlyView;
+      photoButton.disabled = !authState.user || !db || authState.readOnlyView;
     };
 
     const syncDisplayValues = () => {
@@ -1784,22 +2001,86 @@
       return user.uid || "—";
     };
 
+    const applyMemberDataToView = (user, memberId, data, options = {}) => {
+      const { readOnly = false } = options;
+      const dictionary = translations[authState.language] || translations.en;
+      const displayName = data.title || data.displayName || user?.displayName || "Member";
+      const displayEmail = data.email || user?.email || "Google account";
+
+      authState.readOnlyView = readOnly;
+      authState.viewedMemberId = memberId;
+      uidEl.textContent = memberId;
+      nameEl.textContent = displayName;
+      emailEl.textContent = displayEmail;
+      memberNoEl.textContent = formatMemberNo(data.memberNo);
+      titleEl.value = data.title || "";
+      religionEl.value = data.religion || "";
+      speciesEl.value = data.species || "";
+      classEl.value = data.className || "";
+      kingdomEl.value = data.kingdom || "";
+      setProfilePhoto(data.photoUrl || user?.photoURL || null);
+      syncDisplayValues();
+      syncHiddenAttributes(data);
+      authState.achievements = data.achievements || {};
+      renderAchievements();
+      syncBadgeScoresFromData(data);
+      baseTotalSeconds = Number(data.totalTimeSeconds || 0);
+      updateTimeDisplay();
+      lastLoginEl.textContent =
+        formatLastLogin(data.lastLoginAt || user?.metadata?.lastSignInTime) || "—";
+      hintEl.textContent = readOnly ? dictionary.profileViewOnlyHint : dictionary.profileSignedIn;
+      setProfileEditable(false);
+    };
+
+    const showReadOnlyMessage = (memberId, message) => {
+      authState.readOnlyView = true;
+      authState.viewedMemberId = memberId || null;
+      authState.achievements = {};
+      nameEl.textContent = "—";
+      emailEl.textContent = "—";
+      uidEl.textContent = memberId || "—";
+      memberNoEl.textContent = "—";
+      lastLoginEl.textContent = "—";
+      totalTimeEl.textContent = "—";
+      titleEl.value = "";
+      religionEl.value = "";
+      speciesEl.value = "";
+      classEl.value = "";
+      kingdomEl.value = "";
+      setProfilePhoto(null);
+      syncDisplayValues();
+      syncHiddenAttributes();
+      updateBadgeDisplay();
+      renderAchievements();
+      hintEl.textContent = message;
+      setProfileEditable(false);
+      stopSessionTimer();
+    };
+
     const loadProfileFromDatabase = async (user) => {
       if (!user?.uid || !db) return;
       const defaultMemberId = resolveMemberId(user, null);
-      let memberId = defaultMemberId;
+      const dictionary = translations[authState.language] || translations.en;
+      const canViewRequestedMember = Boolean(requestedMemberId && isAdminUser(user));
+      const readOnly = Boolean(canViewRequestedMember && requestedMemberId !== defaultMemberId);
+      let memberId = canViewRequestedMember ? requestedMemberId : defaultMemberId;
       let data = {};
       let needsWrite = false;
       let memberRef = getMemberDocRef(memberId);
       let badgeMissing = false;
       let hiddenMissing = false;
       const currentEmail = user.email || "";
+      const currentLastLogin = new Date().toISOString();
       let emailMissing = false;
       let memberNoAssigned = false;
       let memberNoValue = "";
       if (!memberRef) return;
       try {
         let snapshot = await get(memberRef);
+        if (!snapshot.exists() && readOnly) {
+          showReadOnlyMessage(memberId, dictionary.profileMemberNotFound);
+          return;
+        }
         if (!snapshot.exists()) {
           const legacyRef = getLegacyMemberDocRef(user.uid);
           if (legacyRef) {
@@ -1814,13 +2095,21 @@
         } else {
           data = snapshot.val() || {};
           memberId = resolveMemberId(user, data.memberId);
-          if (memberId !== defaultMemberId) {
+          if (!readOnly && memberId !== defaultMemberId) {
             memberRef = getMemberDocRef(memberId);
             needsWrite = true;
           }
         }
 
+        if (readOnly) {
+          applyMemberDataToView(user, memberId, data, { readOnly: true });
+          stopSessionTimer();
+          return;
+        }
+
+        authState.readOnlyView = false;
         authState.memberId = memberId;
+        authState.viewedMemberId = memberId;
         uidEl.textContent = memberId;
         memberNoValue = data.memberNo ?? "";
         if (!memberNoValue && user.email === ADMIN_EMAIL) {
@@ -1867,6 +2156,7 @@
         const emailChanged = currentEmail && data.email !== currentEmail;
         baseTotalSeconds = Number(data.totalTimeSeconds || 0);
         updateTimeDisplay();
+        lastLoginEl.textContent = formatLastLogin(data.lastLoginAt || currentLastLogin) || "—";
 
         awardAchievementByCode("ach_JtG");
         evaluateProfileAchievements();
@@ -1885,14 +2175,20 @@
             Campaign: data.Campaign ?? "",
             Character: data.Character ?? "",
             email: currentEmail,
+            lastLoginAt: currentLastLogin,
             ...(memberNoValue ? { memberNo: memberNoValue } : {})
           });
-        } else if (memberRef && data.memberId !== memberId) {
-          await update(memberRef, { memberId });
+        } else if (memberRef) {
+          await update(memberRef, { memberId, lastLoginAt: currentLastLogin });
         }
         startSessionTimer();
       } catch (error) {
         console.error("Failed to load member profile", error);
+        if (readOnly) {
+          showReadOnlyMessage(memberId, dictionary.profileSignInFailed);
+          return;
+        }
+        setSignedOut(dictionary.profileSignInFailed);
       }
     };
 
@@ -1930,6 +2226,9 @@
 
     const applyProfileCopy = (lang) => {
       const dictionary = translations[lang] || translations.en;
+      if (adminDirectoryHintEl) {
+        adminDirectoryHintEl.textContent = dictionary.adminDirectoryHint;
+      }
       if (!authState.user) {
         nameEl.textContent = dictionary.profileGuest;
         emailEl.textContent = dictionary.profileEmailHint;
@@ -1948,7 +2247,9 @@
         editButton.disabled = true;
         return;
       }
-      hintEl.textContent = dictionary.profileSignedIn;
+      hintEl.textContent = authState.readOnlyView
+        ? dictionary.profileViewOnlyHint
+        : dictionary.profileSignedIn;
     };
 
     const authState = {
@@ -1956,10 +2257,22 @@
       message: null,
       language: getStoredLanguage() || "zh",
       memberId: null,
+      ownMemberId: null,
+      viewedMemberId: null,
       memberNo: null,
       characterName: "",
-      achievements: {}
+      achievements: {},
+      isAdmin: false,
+      readOnlyView: false
     };
+
+    const isViewingOtherMember = () =>
+      Boolean(
+        authState.isAdmin &&
+          authState.ownMemberId &&
+          authState.viewedMemberId &&
+          authState.ownMemberId !== authState.viewedMemberId
+      );
 
     const lineInAppBrowser = isLineInAppBrowser();
 
@@ -1994,9 +2307,14 @@
       authState.user = null;
       authState.message = message || dictionary.profileSignedOut;
       authState.memberId = null;
+      authState.ownMemberId = null;
+      authState.viewedMemberId = null;
       authState.memberNo = null;
       authState.characterName = "";
       authState.achievements = {};
+      authState.isAdmin = false;
+      authState.readOnlyView = false;
+      resetAdminDirectory();
       renderAchievements();
     };
 
@@ -2009,6 +2327,10 @@
       nameEl.textContent = user.displayName || "Member";
       emailEl.textContent = user.email || "Google account";
       authState.memberId = resolveMemberId(user, null);
+      authState.ownMemberId = authState.memberId;
+      authState.viewedMemberId = authState.memberId;
+      authState.isAdmin = isAdminUser(user);
+      authState.readOnlyView = false;
       uidEl.textContent = authState.memberId;
       memberNoEl.textContent = "—";
       lastLoginEl.textContent = formatLastLogin(user.metadata?.lastSignInTime) || "Just now";
@@ -2029,6 +2351,7 @@
       authState.message = dictionary.profileSignedIn;
       authState.achievements = {};
       renderAchievements();
+      loadAdminDirectory();
       loadProfileFromDatabase(user);
     };
 
@@ -2150,6 +2473,14 @@
         });
       }
 
+      if (adminDirectoryListEl) {
+        adminDirectoryListEl.addEventListener("change", (event) => {
+          const nextPath = event.target.value;
+          if (!nextPath) return;
+          window.location.href = nextPath;
+        });
+      }
+
       onAuthStateChanged(auth, async (user) => {
         if (user) {
           sessionStorage.removeItem(MEMBER_SIGNIN_KEY);
@@ -2165,6 +2496,9 @@
         const lang = button.dataset.lang;
         authState.language = lang;
         setLanguage(lang);
+        if (authState.isAdmin) {
+          loadAdminDirectory();
+        }
         if (authState.user) {
           awardAchievementByCode("ach_WTT");
         }
@@ -2172,17 +2506,17 @@
     });
 
     editButton.addEventListener("click", () => {
-      if (!authState.user) return;
+      if (!authState.user || isViewingOtherMember()) return;
       setProfileEditable(true);
     });
 
     photoButton.addEventListener("click", () => {
-      if (!authState.user || !db) return;
+      if (!authState.user || !db || isViewingOtherMember()) return;
       photoInput.click();
     });
 
     photoInput.addEventListener("change", (event) => {
-      if (!authState.user || !db) return;
+      if (!authState.user || !db || isViewingOtherMember()) return;
       const file = event.target.files?.[0];
       if (!file) return;
       const reader = new FileReader();
@@ -2203,7 +2537,7 @@
     });
 
     saveButton.addEventListener("click", () => {
-      if (!authState.user) return;
+      if (!authState.user || isViewingOtherMember()) return;
       saveProfileToDatabase(authState.user);
       syncDisplayValues();
       setProfileEditable(false);
