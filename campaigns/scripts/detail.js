@@ -473,6 +473,21 @@
     });
   };
 
+  const updateChapterContentLanguage = () => {
+    const lang = languageState.value === "en" ? "en" : "zh";
+    const articles = document.querySelectorAll(".campaign-detail:not(.arc-detail)");
+    articles.forEach((article) => {
+      const zhBlocks = article.querySelectorAll(":scope > .campaign-detail__content_zh");
+      const enBlocks = article.querySelectorAll(":scope > .campaign-detail__content_en");
+      zhBlocks.forEach((block) => {
+        block.hidden = lang !== "zh";
+      });
+      enBlocks.forEach((block) => {
+        block.hidden = lang !== "en";
+      });
+    });
+  };
+
   const getNpcDisplayName = (meta) => {
     if (!meta) return "NPC";
     if (languageState.value === "en") {
@@ -550,6 +565,7 @@
     updateChapterArcTagline();
     updateStoryArcBadge();
     updateArcChaptersHeading();
+    updateChapterContentLanguage();
     renderChapterList();
     renderRelatedNpcSection();
     window.dispatchEvent(new CustomEvent("rugatha:chapter-language-change", { detail: { lang: next } }));
@@ -736,6 +752,7 @@
   window.__RUGATHA_CHAPTER_LANG = languageState.value;
   document.documentElement.setAttribute("data-lang", languageState.value);
   ensureLanguageToggle();
+  updateChapterContentLanguage();
   setupHeroDrift();
   updateStoryArcBadge();
   updateArcChaptersHeading();

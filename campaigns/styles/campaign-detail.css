@@ -80,10 +80,20 @@
   object-fit: contain;
 }
 
-.campaign-detail__content {
+.campaign-detail__content,
+.campaign-detail__content_zh,
+.campaign-detail__content_en {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+html:not([data-lang="en"]) .campaign-detail:not(.arc-detail) > .campaign-detail__content_en {
+  display: none;
+}
+
+html[data-lang="en"] .campaign-detail:not(.arc-detail) > .campaign-detail__content_zh {
+  display: none;
 }
 
 .campaign-detail__back {
