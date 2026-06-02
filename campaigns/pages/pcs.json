@@ -1,0 +1,579 @@
+{
+  "pcs": {
+    "rugatha-c01-chpt01": [
+      "Jiaheng",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Tai Tai Wo Hai Yao",
+      "Uko",
+      "Usioni"
+    ],
+    "rugatha-c01-chpt02": [
+      "Jiaheng",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Tai Tai Wo Hai Yao",
+      "Uko",
+      "Usioni"
+    ],
+    "rugatha-c01-chpt03": [
+      "Jiaheng",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Tai Tai Wo Hai Yao",
+      "Uko",
+      "Usioni"
+    ],
+    "rugatha-c01-chpt04": [],
+    "rugatha-c01-chpt05": [
+      "Jiaheng",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Tai Tai Wo Hai Yao",
+      "Uko",
+      "Usioni"
+    ],
+    "rugatha-c01-chpt06": [
+      "Jiaheng",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Tai Tai Wo Hai Yao",
+      "Uko",
+      "Usioni",
+      "YHWH"
+    ],
+    "rugatha-c01-chpt07": [
+      "Jiaheng",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Uko",
+      "Usioni",
+      "YHWH"
+    ],
+    "rugatha-c02-chpt01": [
+      "Jiaheng",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Uko",
+      "Usioni",
+      "YHWH"
+    ],
+    "rugatha-c02-chpt02": [
+      "Jiaheng",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Uko",
+      "Usioni",
+      "YHWH"
+    ],
+    "rugatha-c02-chpt03": [
+      "Jiaheng",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Uko",
+      "Usioni",
+      "YHWH"
+    ],
+    "rugatha-c03-chpt01": [
+      "Jiaheng",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Uko",
+      "Usioni",
+      "YHWH"
+    ],
+    "rugatha-c03-chpt02": [
+      "Jiaheng",
+      "Lemmy",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Usioni",
+      "YHWH"
+    ],
+    "rugatha-c03-chpt03": [
+      "Jiaheng",
+      "Lemmy",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Usioni",
+      "YHWH"
+    ],
+    "rugatha-c03-chpt04": [
+      "Jiaheng",
+      "Lemmy",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Usioni",
+      "YHWH"
+    ],
+    "rugatha-c04-chpt01": [
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "YHWH"
+    ],
+    "rugatha-c04-chpt02": [
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "YHWH"
+    ],
+    "rugatha-c04-chpt03": [
+      "Anedak",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "YHWH"
+    ],
+    "rugatha-c04-chpt04": [
+      "Anedak",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "YHWH"
+    ],
+    "rugatha-c04-chpt05": [
+      "Anedak",
+      "Jiaheng",
+      "Lemmy",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "rugatha-c05-chpt01": [
+      "Drayer",
+      "Lemmy",
+      "Midori",
+      "Paladin",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "Sugalu",
+      "YHWH"
+    ],
+    "plus-c05-chpt02": [
+      "Lemmy",
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c05-chpt03": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c05-chpt04": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c05-chpt05": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c06-chpt01": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c06-chpt02": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c06-chpt03": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c06-chpt04": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c07-chpt01": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c07-chpt02": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c07-chpt03": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "plus-c07-chpt04": [
+      "Midori",
+      "Ron",
+      "Samael",
+      "Siri Oslee",
+      "YHWH"
+    ],
+    "lite-c05-chpt02": [
+      "Drayer",
+      "Paladin",
+      "Sugalu",
+      "Tweeter"
+    ],
+    "lite-c05-chpt03": [
+      "Inu",
+      "Paladin",
+      "Sugalu",
+      "Tweeter"
+    ],
+    "lite-c05-chpt04": [
+      "Inu",
+      "Paladin",
+      "Sugalu",
+      "Tweeter"
+    ],
+    "lite-c06-chpt01": [
+      "Inu",
+      "Paladin",
+      "Sugalu",
+      "Tweeter"
+    ],
+    "lite-c06-chpt02": [
+      "Inu",
+      "Paladin",
+      "Sugalu",
+      "Tweeter",
+      "Yi"
+    ],
+    "lite-c06-chpt03": [
+      "Inu",
+      "Paladin",
+      "Sugalu",
+      "Tweeter",
+      "Yi"
+    ],
+    "lite-c06-chpt04": [
+      "Inu",
+      "Paladin",
+      "Sugalu",
+      "Tweeter",
+      "Yi"
+    ],
+    "lite-c06-chpt05": [
+      "Inu",
+      "Paladin",
+      "Sugalu",
+      "Tweeter",
+      "Yi"
+    ],
+    "lite-c07-chpt01": [
+      "Inu",
+      "Lott",
+      "Paladin",
+      "Sugalu",
+      "Tweeter"
+    ],
+    "lite-c07-chpt02": [
+      "Inu",
+      "Lott",
+      "Paladin",
+      "Sugalu",
+      "Tweeter"
+    ],
+    "lite-c07-chpt03": [
+      "Lott",
+      "Pascal",
+      "Sugalu",
+      "Tweeter"
+    ],
+    "lite-c08-chpt01": [
+      "Iren",
+      "Lott",
+      "Pascal",
+      "Tweeter"
+    ],
+    "lite-c08-chpt02": [
+      "Iren",
+      "Lott",
+      "Pascal",
+      "Tweeter"
+    ],
+    "lite-c08-chpt03": [
+      "Iren",
+      "Lott",
+      "Pascal",
+      "Tweeter"
+    ],
+    "lite-c09-chpt01": [
+      "GoR",
+      "Kudan",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c09-chpt02": [
+      "GoR",
+      "Kudan",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c09-chpt03": [
+      "GoR",
+      "Kudan",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c10-chpt01": [
+      "GoR",
+      "Kudan",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c10-chpt02": [
+      "GoR",
+      "Kudan",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c10-chpt03": [
+      "GoR",
+      "Kudan",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c10-chpt04": [
+      "GoR",
+      "Kudan",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c11-chpt01": [
+      "Buzz",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c11-chpt02": [
+      "Buzz",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c11-chpt03": [
+      "Buzz",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c11-chpt04": [
+      "Buzz",
+      "Lott",
+      "Psyber",
+      "Ubbo"
+    ],
+    "lite-c12-chpt02": [
+      "Buzz",
+      "Lott",
+      "Ubbo"
+    ],
+    "lite-c12-chpt03": [
+      "Buzz",
+      "Lott",
+      "Ubbo"
+    ],
+    "lite-c12-chpt04": [
+      "Buzz",
+      "Lott",
+      "Ubbo"
+    ],
+    "wilds-c01-chpt01": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c01-chpt02": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c01-chpt03": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c02-chpt01": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c02-chpt02": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c02-chpt03": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c03-chpt01": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c03-chpt02": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c03-chpt03": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c04-chpt01": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c04-chpt02": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c04-chpt03": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c04-chpt04": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c05-chpt01": [
+      "Al-lon",
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c05-chpt02": [
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "wilds-c05-chpt03": [
+      "Dawn Light Fur",
+      "Kaname",
+      "Leah",
+      "Roel"
+    ],
+    "brown-c01-chpt01": [
+      "Brown"
+    ],
+    "brown-c01-chpt02": [
+      "Brown"
+    ],
+    "brown-c01-chpt03": [
+      "Brown"
+    ],
+    "brown-c01-chpt04": [
+      "Brown"
+    ],
+    "brown-c01-chpt05": [
+      "Brown"
+    ],
+    "brown-c02-chpt01": [
+      "Brown"
+    ]
+  }
+}

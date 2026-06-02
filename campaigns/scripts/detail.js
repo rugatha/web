@@ -229,9 +229,11 @@
   const displayDates = (target && target.dates) || (targetCampaign && targetCampaign.dates);
   const accent = (target && target.accent) || (targetCampaign && targetCampaign.accent) || "#7bdcb5";
   const i18n = {
+    relatedPcTitle: { zh: "玩家角色", en: "Player Characters" },
     relatedTitle: { zh: "相關 NPC", en: "Related NPCs" },
     chaptersTitle: { zh: "章節", en: "Chapters" },
-    storyArcBadge: { zh: "故事弧", en: "Story Arc" }
+    storyArcBadge: { zh: "故事弧", en: "Story Arc" },
+    pcMetaSeparator: { zh: "｜", en: " | " }
   };
   const languageState = {
     value: "zh",
@@ -241,6 +243,10 @@
     npcIds: null,
     charById: null,
     siteBase: null
+  };
+  const relatedPcState = {
+    pcIds: null,
+    charById: null
   };
   const currentChapterId = isChapterPage && arcSegment ? `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}` : null;
   const currentArcId = (isArcPage && targetArc && targetArc.id) || bodyArc || arcSegment || null;
@@ -496,6 +502,79 @@
     return meta.nameZh || meta.nameEn || meta.name || meta.id || "NPC";
   };
 
+  const normalizePcKey = (value) =>
+    typeof value === "string" ? value.trim().toLowerCase() : "";
+
+  const getPcDisplayName = (meta, fallbackId) => {
+    if (languageState.value === "en") {
+      return meta?.name_en || meta?.name_zh || fallbackId || "PC";
+    }
+    return meta?.name_zh || meta?.name_en || fallbackId || "PC";
+  };
+
+  const getPcMetaText = (meta) => {
+    if (!meta) return "";
+    const race = languageState.value === "en"
+      ? meta.race_en || meta.race_zh || ""
+      : meta.race_zh || meta.race_en || "";
+    const role = languageState.value === "en"
+      ? meta.class_en || meta.class_zh || ""
+      : meta.class_zh || meta.class_en || "";
+    if (race && role) return `${race}${i18n.pcMetaSeparator[languageState.value]}${role}`;
+    return race || role || "";
+  };
+
+  const renderRelatedPcSection = () => {
+    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
+    if (!container || !Array.isArray(relatedPcState.pcIds) || !relatedPcState.charById) return;
+
+    const existing = container.querySelector(".related-pcs");
+    if (existing) existing.remove();
+
+    const pcIds = relatedPcState.pcIds.filter(Boolean);
+    if (!pcIds.length) return;
+
+    const section = document.createElement("section");
+    section.className = "related-pcs";
+
+    const heading = document.createElement("h2");
+    heading.className = "related-pcs__title";
+    heading.textContent = i18n.relatedPcTitle[languageState.value];
+    section.appendChild(heading);
+
+    const grid = document.createElement("div");
+    grid.className = "related-pcs__grid";
+    section.appendChild(grid);
+
+    pcIds.forEach((id) => {
+      const meta = relatedPcState.charById[normalizePcKey(id)] || null;
+      const card = document.createElement("div");
+      card.className = "related-pcs__card";
+
+      const name = document.createElement("div");
+      name.className = "related-pcs__name";
+      name.textContent = getPcDisplayName(meta, id);
+      card.appendChild(name);
+
+      const detailText = getPcMetaText(meta);
+      if (detailText) {
+        const detail = document.createElement("div");
+        detail.className = "related-pcs__meta";
+        detail.textContent = detailText;
+        card.appendChild(detail);
+      }
+
+      grid.appendChild(card);
+    });
+
+    const npcSection = container.querySelector(".related-npcs");
+    if (npcSection && npcSection.parentNode === container) {
+      container.insertBefore(section, npcSection);
+      return;
+    }
+    container.appendChild(section);
+  };
+
   const renderRelatedNpcSection = () => {
     const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
     if (!container || !Array.isArray(relatedNpcState.npcIds) || !relatedNpcState.charById || !relatedNpcState.siteBase) return;
@@ -567,6 +646,7 @@
     updateArcChaptersHeading();
     updateChapterContentLanguage();
     renderChapterList();
+    renderRelatedPcSection();
     renderRelatedNpcSection();
     window.dispatchEvent(new CustomEvent("rugatha:chapter-language-change", { detail: { lang: next } }));
     try {
@@ -705,6 +785,64 @@
     renderRelatedNpcSection();
   };
 
+  const renderRelatedPcs = async () => {
+    if (!isChapterPage || !arcSegment) return;
+    const chapterId = `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}`;
+    const campaignsPagesBase = campaignsBase
+      ? new URL("pages/", campaignsBase).href
+      : new URL("../../npcs.json", window.location.href).href;
+    const pcsUrl = new URL("pcs.json", campaignsPagesBase).href;
+
+    let mapping;
+    try {
+      const res = await fetch(pcsUrl, { cache: "no-cache" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      mapping = data && data.pcs ? data.pcs : {};
+    } catch (err) {
+      console.error("Related PC map unavailable:", err && err.message ? err.message : err);
+      return;
+    }
+
+    const pcIds = Array.isArray(mapping[chapterId]) ? mapping[chapterId] : null;
+    if (!pcIds || !pcIds.length) return;
+
+    const siteBase = campaignsBase ? new URL("../", campaignsBase).href : window.location.href;
+    const pcDataUrl = new URL("pc/pc_lib", siteBase).href;
+
+    let csvText = "";
+    try {
+      const res = await fetch(pcDataUrl, { cache: "no-cache" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      csvText = await res.text();
+    } catch (err) {
+      console.error("PC data unavailable:", err && err.message ? err.message : err);
+      return;
+    }
+
+    const lines = csvText
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+    if (lines.length < 2) return;
+
+    const headers = lines[0].split(",").map((cell) => cell.trim());
+    const charById = lines.slice(1).reduce((acc, line) => {
+      const values = line.split(",").map((cell) => cell.trim());
+      const entry = headers.reduce((obj, header, index) => {
+        obj[header] = values[index] || "";
+        return obj;
+      }, {});
+      const key = normalizePcKey(entry.name_en);
+      if (key) acc[key] = entry;
+      return acc;
+    }, {});
+
+    relatedPcState.pcIds = pcIds;
+    relatedPcState.charById = charById;
+    renderRelatedPcSection();
+  };
+
   const findCampaignNode = (slug) =>
     graphData.find((node) => node.level === 2 && slugify(node.label || "") === slug);
 
@@ -756,6 +894,7 @@
   setupHeroDrift();
   updateStoryArcBadge();
   updateArcChaptersHeading();
+  renderRelatedPcs();
   renderRelatedNpcs();
   loadChapterTitleMap().then((map) => {
     chapterTitleState.map = map;
