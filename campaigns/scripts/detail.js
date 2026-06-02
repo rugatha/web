@@ -230,7 +230,7 @@
   const accent = (target && target.accent) || (targetCampaign && targetCampaign.accent) || "#7bdcb5";
   const i18n = {
     relatedPcTitle: { zh: "玩家角色", en: "Player Characters" },
-    relatedTitle: { zh: "相關 NPC", en: "Related NPCs" },
+    relatedTitle: { zh: "登場NPC", en: "NPCs" },
     chaptersTitle: { zh: "章節", en: "Chapters" },
     storyArcBadge: { zh: "故事弧", en: "Story Arc" },
     pcMetaSeparator: { zh: "｜", en: " | " }
@@ -246,7 +246,8 @@
   };
   const relatedPcState = {
     pcIds: null,
-    charById: null
+    charById: null,
+    siteBase: null
   };
   const currentChapterId = isChapterPage && arcSegment ? `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}` : null;
   const currentArcId = (isArcPage && targetArc && targetArc.id) || bodyArc || arcSegment || null;
@@ -526,7 +527,12 @@
 
   const renderRelatedPcSection = () => {
     const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
-    if (!container || !Array.isArray(relatedPcState.pcIds) || !relatedPcState.charById) return;
+    if (
+      !container ||
+      !Array.isArray(relatedPcState.pcIds) ||
+      !relatedPcState.charById ||
+      !relatedPcState.siteBase
+    ) return;
 
     const existing = container.querySelector(".related-pcs");
     if (existing) existing.remove();
@@ -546,22 +552,66 @@
     grid.className = "related-pcs__grid";
     section.appendChild(grid);
 
+    const resolvePcImageCandidates = (value) => {
+      if (!value) return [];
+      const baseName = String(value).trim();
+      if (!baseName) return [];
+      return ["jpg", "jpeg", "png"].map((ext) =>
+        new URL(`pc/pics/${baseName}.${ext}`, relatedPcState.siteBase).href
+      );
+    };
+
     pcIds.forEach((id) => {
       const meta = relatedPcState.charById[normalizePcKey(id)] || null;
-      const card = document.createElement("div");
+      const card = document.createElement("a");
       card.className = "related-pcs__card";
+      card.href = new URL(`pc/articles/${slugify(id)}.html`, relatedPcState.siteBase).href;
+      card.target = "_self";
+
+      const body = document.createElement("div");
+      body.className = "related-pcs__body";
+      card.appendChild(body);
+
+      const textWrap = document.createElement("div");
+      textWrap.className = "related-pcs__text";
+      body.appendChild(textWrap);
 
       const name = document.createElement("div");
       name.className = "related-pcs__name";
       name.textContent = getPcDisplayName(meta, id);
-      card.appendChild(name);
+      textWrap.appendChild(name);
 
       const detailText = getPcMetaText(meta);
       if (detailText) {
         const detail = document.createElement("div");
         detail.className = "related-pcs__meta";
         detail.textContent = detailText;
-        card.appendChild(detail);
+        textWrap.appendChild(detail);
+      }
+
+      const imageWrap = document.createElement("div");
+      imageWrap.className = "related-pcs__portrait";
+      body.appendChild(imageWrap);
+
+      const imageCandidates = resolvePcImageCandidates(id);
+      if (imageCandidates.length) {
+        const imgEl = document.createElement("img");
+        imgEl.className = "related-pcs__portrait-image";
+        imgEl.alt = getPcDisplayName(meta, id);
+        imgEl.loading = "lazy";
+        imgEl.decoding = "async";
+        imgEl.src = imageCandidates[0];
+        let candidateIndex = 0;
+        imgEl.addEventListener("error", () => {
+          candidateIndex += 1;
+          if (candidateIndex < imageCandidates.length) {
+            imgEl.src = imageCandidates[candidateIndex];
+            return;
+          }
+          imageWrap.classList.add("is-empty");
+          imgEl.remove();
+        });
+        imageWrap.appendChild(imgEl);
       }
 
       grid.appendChild(card);
@@ -840,6 +890,7 @@
 
     relatedPcState.pcIds = pcIds;
     relatedPcState.charById = charById;
+    relatedPcState.siteBase = siteBase;
     renderRelatedPcSection();
   };
 
