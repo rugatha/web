@@ -889,7 +889,7 @@
     "status": "alive",
     "gender": "male",
     "descZh": "馬格努斯爵士聘請的馬伕，本名約翰，被Paladin稱為希納。\n在駕馬車前往麥克嵩前，才剛被馬格努斯爵士聘用一個月不到，薪水都還沒領。\n協助Paladin將拷問他的衛兵擊暈，假扮成衛兵押解Paladin走在麥克嵩城內。\n與Paladin一同在日出酒館鬥毆，帶著Paladin的魅力頭帶與大部分的武器消失在麥克嵩。\n在比武大會說明會前，與一名女子，碧翠絲，出現在王宮前市集。",
-    "descEn": "A stableman hired by Syr Magnus. His name was John, but was mocked by Paladin as Cena.\nBefore driving the carriage to Macksohn, he had only been hired less than a month, without getting his payment yet.\nCena helped knocked out the guard that tortured Paladin, and disguised as the guard to take Paladin into Macksohn.\nCena joined Paladin in the tavern fight in Sunrise, but disappeared with Paladin’s Headband of Charm and most weapons after the fight.\nBefore the Macksohn Tournament, he was seen with a noble lady, Beatrice, at the Macksohn Plaza.",
+    "descEn": "A coachman hired by Syr Magnus. His name was John, but was mocked by Paladin as Cena.\nBefore driving the carriage to Macksohn, he had only been hired less than a month, without getting his payment yet.\nCena helped knocked out the guard that tortured Paladin, and disguised as the guard to take Paladin into Macksohn.\nCena joined Paladin in the tavern fight in Sunrise, but disappeared with Paladin’s Headband of Charm and most weapons after the fight.\nBefore the Macksohn Tournament, he was seen with a noble lady, Beatrice, at the Macksohn Plaza.",
     "related": [
       "Kahn",
       "Syr_Magnus"
@@ -2792,7 +2792,7 @@
     "status": "dead",
     "gender": "male",
     "descZh": "麥克嵩的衛兵。\n奉命在小木屋內看守Paladin，卻被Paladin的馬伕希納襲擊而被反綁在椅子上並換成馬伕裝。\n被Midori和YHWH拯救，卻在帶兩人到日出酒館後被Lemmy劃破喉嚨而死。\n手上刺有十道光芒的太陽。",
-    "descEn": "A guard in Macksohn.\nOrdered to watch for Paladin in the cabin, but attacked by Cena and was disguised as Cena, tied on a chair.\nRescued by Midori and YHWH, but was cut by the throat by Lemmy after he brought the two to Sunrise.\nHe has a tattoo of a sun with ten rays on his arm.",
+    "descEn": "A guard in Macksohn.\nOrdered to watch for Paladin in the cabin, but attacked by Cena the coachman and was disguised as a coachman, tied on a chair.\nRescued by Midori and YHWH, but was cut by the throat by Lemmy after he brought the two to Sunrise.\nHe has a tattoo of a sun with ten rays on his arm.",
     "related": [
       "Cena"
     ],
