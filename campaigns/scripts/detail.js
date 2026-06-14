@@ -230,6 +230,7 @@
   const accent = (target && target.accent) || (targetCampaign && targetCampaign.accent) || "#7bdcb5";
   const i18n = {
     relatedPcTitle: { zh: "玩家角色", en: "Player Characters" },
+    relatedGuestTitle: { zh: "客串玩家", en: "Guest Players" },
     relatedTitle: { zh: "登場NPC", en: "NPCs" },
     chaptersTitle: { zh: "章節", en: "Chapters" },
     storyArcBadge: { zh: "故事弧", en: "Story Arc" },
@@ -245,6 +246,11 @@
     siteBase: null
   };
   const relatedPcState = {
+    pcIds: null,
+    charById: null,
+    siteBase: null
+  };
+  const relatedGuestState = {
     pcIds: null,
     charById: null,
     siteBase: null
@@ -525,27 +531,13 @@
     return race || role || "";
   };
 
-  const renderRelatedPcSection = () => {
-    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
-    if (
-      !container ||
-      !Array.isArray(relatedPcState.pcIds) ||
-      !relatedPcState.charById ||
-      !relatedPcState.siteBase
-    ) return;
-
-    const existing = container.querySelector(".related-pcs");
-    if (existing) existing.remove();
-
-    const pcIds = relatedPcState.pcIds.filter(Boolean);
-    if (!pcIds.length) return;
-
+  const createPcSection = (title, ids, charById, siteBase, extraClassName) => {
     const section = document.createElement("section");
-    section.className = "related-pcs";
+    section.className = `related-pcs${extraClassName ? ` ${extraClassName}` : ""}`;
 
     const heading = document.createElement("h2");
     heading.className = "related-pcs__title";
-    heading.textContent = i18n.relatedPcTitle[languageState.value];
+    heading.textContent = title;
     section.appendChild(heading);
 
     const grid = document.createElement("div");
@@ -557,15 +549,15 @@
       const baseName = String(value).trim();
       if (!baseName) return [];
       return ["jpg", "jpeg", "png"].map((ext) =>
-        new URL(`pc/pics/${baseName}.${ext}`, relatedPcState.siteBase).href
+        new URL(`pc/pics/${baseName}.${ext}`, siteBase).href
       );
     };
 
-    pcIds.forEach((id) => {
-      const meta = relatedPcState.charById[normalizePcKey(id)] || null;
+    ids.forEach((id) => {
+      const meta = charById[normalizePcKey(id)] || null;
       const card = document.createElement("a");
       card.className = "related-pcs__card";
-      card.href = new URL(`pc/articles/${slugify(id)}.html`, relatedPcState.siteBase).href;
+      card.href = new URL(`pc/articles/${slugify(id)}.html`, siteBase).href;
       card.target = "_self";
 
       const body = document.createElement("div");
@@ -616,6 +608,65 @@
 
       grid.appendChild(card);
     });
+
+    return section;
+  };
+
+  const renderRelatedPcSection = () => {
+    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
+    if (
+      !container ||
+      !Array.isArray(relatedPcState.pcIds) ||
+      !relatedPcState.charById ||
+      !relatedPcState.siteBase
+    ) return;
+
+    const existing = container.querySelector(".related-pcs--main");
+    if (existing) existing.remove();
+
+    const pcIds = relatedPcState.pcIds.filter(Boolean);
+    if (!pcIds.length) return;
+
+    const section = createPcSection(
+      i18n.relatedPcTitle[languageState.value],
+      pcIds,
+      relatedPcState.charById,
+      relatedPcState.siteBase,
+      "related-pcs--main"
+    );
+
+    const guestSection = container.querySelector(".related-guests");
+    const npcSection = container.querySelector(".related-npcs");
+    const anchor = guestSection || npcSection;
+    if (anchor && anchor.parentNode === container) {
+      container.insertBefore(section, anchor);
+      return;
+    }
+    container.appendChild(section);
+  };
+
+  const renderRelatedGuestSection = () => {
+    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
+    if (
+      !container ||
+      !Array.isArray(relatedGuestState.pcIds) ||
+      !relatedGuestState.charById ||
+      !relatedGuestState.siteBase
+    ) return;
+
+    const existing = container.querySelector(".related-guests");
+    if (existing) existing.remove();
+
+    const guestIds = relatedGuestState.pcIds.filter(Boolean);
+    if (!guestIds.length) return;
+
+    const section = createPcSection(
+      i18n.relatedGuestTitle[languageState.value],
+      guestIds,
+      relatedGuestState.charById,
+      relatedGuestState.siteBase,
+      "related-guests"
+    );
 
     const npcSection = container.querySelector(".related-npcs");
     if (npcSection && npcSection.parentNode === container) {
@@ -697,6 +748,7 @@
     updateChapterContentLanguage();
     renderChapterList();
     renderRelatedPcSection();
+    renderRelatedGuestSection();
     renderRelatedNpcSection();
     window.dispatchEvent(new CustomEvent("rugatha:chapter-language-change", { detail: { lang: next } }));
     try {
@@ -894,6 +946,65 @@
     renderRelatedPcSection();
   };
 
+  const renderRelatedGuests = async () => {
+    if (!isChapterPage || !arcSegment) return;
+    const chapterId = `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}`;
+    const campaignsPagesBase = campaignsBase
+      ? new URL("pages/", campaignsBase).href
+      : new URL("../../guest.json", window.location.href).href;
+    const guestUrl = new URL("guest.json", campaignsPagesBase).href;
+
+    let mapping;
+    try {
+      const res = await fetch(guestUrl, { cache: "no-cache" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      mapping = data && data.guest ? data.guest : {};
+    } catch (err) {
+      console.error("Related guest map unavailable:", err && err.message ? err.message : err);
+      return;
+    }
+
+    const guestIds = Array.isArray(mapping[chapterId]) ? mapping[chapterId] : null;
+    if (!guestIds || !guestIds.length) return;
+
+    const siteBase = campaignsBase ? new URL("../", campaignsBase).href : window.location.href;
+    const pcDataUrl = new URL("pc/pc_lib", siteBase).href;
+
+    let csvText = "";
+    try {
+      const res = await fetch(pcDataUrl, { cache: "no-cache" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      csvText = await res.text();
+    } catch (err) {
+      console.error("Guest PC data unavailable:", err && err.message ? err.message : err);
+      return;
+    }
+
+    const lines = csvText
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+    if (lines.length < 2) return;
+
+    const headers = lines[0].split(",").map((cell) => cell.trim());
+    const charById = lines.slice(1).reduce((acc, line) => {
+      const values = line.split(",").map((cell) => cell.trim());
+      const entry = headers.reduce((obj, header, index) => {
+        obj[header] = values[index] || "";
+        return obj;
+      }, {});
+      const key = normalizePcKey(entry.name_en);
+      if (key) acc[key] = entry;
+      return acc;
+    }, {});
+
+    relatedGuestState.pcIds = guestIds;
+    relatedGuestState.charById = charById;
+    relatedGuestState.siteBase = siteBase;
+    renderRelatedGuestSection();
+  };
+
   const findCampaignNode = (slug) =>
     graphData.find((node) => node.level === 2 && slugify(node.label || "") === slug);
 
@@ -946,6 +1057,7 @@
   updateStoryArcBadge();
   updateArcChaptersHeading();
   renderRelatedPcs();
+  renderRelatedGuests();
   renderRelatedNpcs();
   loadChapterTitleMap().then((map) => {
     chapterTitleState.map = map;

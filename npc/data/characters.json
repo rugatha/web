@@ -3905,6 +3905,48 @@
     }
   },
   {
+    "id": "Captain_Reid",
+    "url": "npc/npc_page/pages/Captain_Reid.html",
+    "image": "individual_pics/Captain Reid.png",
+    "status": "alive",
+    "gender": "male",
+    "descZh": "利斯達上校手下的軍官，身穿紅色軍裝，身材精瘦。\n在皮尼歐教授遇刺後，立德上尉安排了替身潛入酒館，私下向雷亞提出條件，希望雷亞公開支持老樹盟與利斯達上校。\n他拿出兩枚白金幣，並以雷亞父母的情報作為籌碼，試圖說服雷亞倒向老樹盟。",
+    "descEn": "A lean officer in a red military uniform who serves under Colonel Lisdar.\nAfter Professor Peneo's assassination, Captain Reid arranged a step-in to slip into the tavern and privately approached Leah with an offer, asking her to publicly support the Old Tree Alliance and Colonel Lisdar.\nHe placed two platinum coins on the table and tried to sway Leah by offering information about her parents.",
+    "related": [
+      "Colonel_Lisdar"
+    ],
+    "nameEn": "Captain Reid",
+    "nameZh": "立德上尉",
+    "raceEn": [
+      "Lizardfolk"
+    ],
+    "raceZh": [
+      "蜥蜴人"
+    ],
+    "religionEn": [],
+    "religionZh": [],
+    "locationEn": [
+      "Clyphen"
+    ],
+    "locationZh": [
+      "克萊芬"
+    ],
+    "qaZh": {
+      "Q": "立德上尉把兩枚白金幣推到你面前，說只要你表態支持老樹盟，他們就願意談更多。",
+      "C1": "先把白金幣收下，聽他把條件說完。",
+      "C2": "把白金幣推回去，表示你不打算被收買。",
+      "R1": "立德上尉露出一抹薄笑，開始談起你的父母與老樹盟的盤算。",
+      "R2": "立德上尉神色不變，只淡淡說你還有一天可以改變主意。"
+    },
+    "qaEn": {
+      "Q": "Captain Reid slides two platinum coins toward you and says that if you openly support the Old Tree Alliance, they are willing to discuss more.",
+      "C1": "Take the coins for now and let him finish laying out the deal.",
+      "C2": "Push the coins back and make it clear that you are not for sale.",
+      "R1": "A thin smile crosses Captain Reid's face as he begins speaking about your parents and the Old Tree Alliance's plans.",
+      "R2": "Captain Reid's expression does not change. He only says that you still have one day to change your mind."
+    }
+  },
+  {
     "id": "Matilda",
     "url": "npc/npc_page/pages/Matilda.html",
     "image": "individual_pics/Matilda.jpeg",
@@ -6829,6 +6871,48 @@
     }
   },
   {
+    "id": "Varoen",
+    "url": "npc/npc_page/pages/Varoen.html",
+    "image": "individual_pics/Varoen.png",
+    "status": "alive",
+    "gender": "female",
+    "descZh": "克萊芬「新書院」的參謀與秘書長，頭上繫著藍色頭巾。\n在皮尼歐教授於辯論會上遭到刺殺後，瓦羅恩走上舞台，宣稱新書院不會有新的主席，而自己仍會作為秘書長帶領派系前進。\n他冷靜得近乎冷酷的反應，以及輕輕一指便讓雷亞雙腿發麻跪下的手段，都讓冒險者們感到不寒而慄。",
+    "descEn": "A strategist and secretary-general of the New Academy in Clyphen, known for the blue headscarf she wears.\nAfter Professor Peneo was assassinated during the debate, Varoen stepped onto the stage and declared that the New Academy would not choose a new chair, and that she would continue leading it as secretary-general.\nHer calm, almost cold response, along with the casual gesture that made Leah's legs go numb and forced her to kneel, left the adventurers deeply unsettled.",
+    "related": [
+      "Professor_Peneo"
+    ],
+    "nameEn": "Varoen",
+    "nameZh": "瓦羅恩",
+    "raceEn": [
+      "Lizardfolk"
+    ],
+    "raceZh": [
+      "蜥蜴人"
+    ],
+    "religionEn": [],
+    "religionZh": [],
+    "locationEn": [
+      "Clyphen"
+    ],
+    "locationZh": [
+      "克萊芬"
+    ],
+    "qaZh": {
+      "Q": "「皮尼歐教授死了，但新書院不會就此消失。」冷靜的瓦羅恩秘書長站上講台。",
+      "C1": "不論換了誰領導，終究是新書院，你願意繼續追隨。",
+      "C2": "你清楚知道瓦羅恩秘書長與皮尼歐教授的路線不同，是時候與新書院切割關係了。",
+      "R1": "隔天，你接獲瓦羅恩秘書長的安排，要你去執行一件不光彩的任務。",
+      "R2": "一週後，新書院已經變成你不認得的樣子了。你慶幸你離開的是時候。"
+    },
+    "qaEn": {
+      "Q": "\"Professor Peneo is dead, but the New Academy will not disappear.\" The calm secretary-general, Varoen, stepped onto the stage.",
+      "C1": "No matter who is leading the New Academy, it's still the same organization that you would follow.",
+      "C2": "You know clearly that Varoen, the secretary-general has a different path from Professor Peneo. It would be a good time to sever ties with the New Academy.",
+      "R1": "The next day, secretary-general Varoen assign you a task, that is rather disgraceful.",
+      "R2": "A week later, the New Academy is nothing like you remembered. You're pretty fortunate that you left on time."
+    }
+  },
+  {
     "id": "Yi",
     "url": "npc/npc_page/pages/Yi.html",
     "image": "individual_pics/Yi.jpg",
@@ -6972,7 +7056,9 @@
     "gender": "female",
     "descZh": "克萊芬學者，也是「新書院」的領袖與市長候選人。\n他崇尚民主、知識與理想，主張由克萊芬自行決定未來。\n皮尼歐教授接見冒險者，得知自己遭到刺殺計畫鎖定，並委託中途之家協助贏下選舉。",
     "descEn": "A scholar of Clyphen and the leader of the New Academy, as well as a mayoral candidate.\nPeneo stands for democracy, knowledge, and idealism, believing Clyphen should decide its own future.\nShe met with the Halfway Home after learning about an assassination plot and asked for their help in securing the election.",
-    "related": [],
+    "related": [
+      "Varoen"
+    ],
     "nameEn": "Professor Peneo",
     "nameZh": "皮尼歐教授",
     "raceEn": [

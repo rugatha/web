@@ -137,6 +137,18 @@
       max-width: 100%;
     }
 
+    .related-pcs__player {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      opacity: 0.88;
+    }
+
+    .related-pcs__player.is-guest {
+      font-size: 0.82rem;
+      opacity: 0.72;
+    }
+
     .error {
       padding: 16px 18px;
       border-radius: 14px;
@@ -180,6 +192,10 @@
       sectionTitle: {
         zh: "",
         en: ""
+      },
+      guestPlayer: {
+        zh: "客串玩家",
+        en: "Guest Player"
       }
     };
 
@@ -230,10 +246,19 @@
         class_zh: values[5] || "",
         player: "",
         campaign_1: "",
-        campaign_2: ""
+        campaign_2: "",
+        guest: "0"
       };
 
-      if (values.length >= 9) {
+      if (values.length >= 10) {
+        entry.player = values[6] || "";
+        entry.campaign_1 = values[7] || "";
+        entry.campaign_2 = values[8] || "";
+        entry.guest = values[9] || "0";
+        return entry;
+      }
+
+      if (values.length === 9) {
         entry.player = values[6] || "";
         entry.campaign_1 = values[7] || "";
         entry.campaign_2 = values[8] || "";
@@ -251,6 +276,8 @@
       entry.campaign_2 = values[8] || "";
       return entry;
     };
+
+    const isGuestPlayer = (pc) => String(pc.guest || "").trim() === "1";
 
     const getCampaigns = (pc) =>
       [pc.campaign_1, pc.campaign_2]
@@ -283,6 +310,14 @@
         meta.className = "related-pcs__meta";
         meta.textContent = metaText;
         text.appendChild(meta);
+      }
+
+      if (isGuestPlayer(pc)) {
+        const player = document.createElement("div");
+        player.className = "related-pcs__player";
+        player.classList.add("is-guest");
+        player.textContent = i18n.guestPlayer[currentLang];
+        text.appendChild(player);
       }
 
       const portrait = document.createElement("div");
@@ -322,7 +357,14 @@
 
       const grid = document.createElement("div");
       grid.className = "related-pcs__grid";
-      pcs.forEach((pc) => grid.appendChild(createCard(pc)));
+      pcs
+        .slice()
+        .sort((a, b) => {
+          const guestDiff = Number(isGuestPlayer(a)) - Number(isGuestPlayer(b));
+          if (guestDiff !== 0) return guestDiff;
+          return a.name_en.localeCompare(b.name_en);
+        })
+        .forEach((pc) => grid.appendChild(createCard(pc)));
       section.appendChild(grid);
 
       return section;

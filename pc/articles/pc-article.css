@@ -171,10 +171,19 @@ body {
   line-height: 1.05;
 }
 
+.hero > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
 .subtitle {
-  margin: 8px 0 0;
-  color: var(--muted);
-  font-size: 1rem;
+  order: -1;
+  margin: 0 0 8px;
+  color: #f5e6b8;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .meta-grid {

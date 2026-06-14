@@ -842,6 +842,11 @@
         id: "wilds-c05-chpt03",
         title: "Chapter 3: New Dawn",
         url: "../wilds-c05/chpt03.html"
+      },
+      {
+        id: "wilds-c05-chpt04",
+        title: "Chapter 4: To Be Continued",
+        url: "../wilds-c05/chpt04.html"
       }
     ],
 
@@ -1039,6 +1044,7 @@
     "wilds-c05-chpt01": "../chapter-banners/wilds-c05-chpt01.jpeg",
     "wilds-c05-chpt02": "../chapter-banners/wilds-c05-chpt02.jpeg",
     "wilds-c05-chpt03": "../chapter-banners/wilds-c05-chpt03.jpeg",
+    "wilds-c05-chpt04": "../campaign-banners/wilds-c05.png",
     "brown-c01-chpt01": "../chapter-banners/brown-c01-chpt01.png",
     "brown-c01-chpt02": "../chapter-banners/brown-c01-chpt02.png",
     "brown-c01-chpt03": "../chapter-banners/brown-c01-chpt03.png",
