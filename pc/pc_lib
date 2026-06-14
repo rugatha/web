@@ -1,33 +1,36 @@
-name_en, name_zh, race_en, race_zh, class_en, class_zh, player, campaign_1, campaign_2
-Usioni, 嗚兮噢尼, Minatour, 牛頭怪, Fighter, 戰士, Nathan, Rugatha, NA
-Midori, 米多莉, Human, 人類, Paladin, 聖騎士, Joseph, Rugatha, Rugatha Plus
-Paladin, 帕拉丁, Halfling, 半身人, Ranger/Paladin, 遊俠/聖騎士, Samuel, Rugatha, Rugatha lite
-Uko, 烏柯, Dragonborn, 龍人, Druid, 德魯伊, Roger, Rugatha, NA
-Ron, 龍恩, Dragonborn, 龍人, Monk, 武僧, Hark, Rugatha, Rugatha Plus
-Samael, 薩梅爾, Elf, 妖精, Bard/Ranger, 吟遊詩人/遊俠, HugeCat, Rugatha, Rugatha Plus
-Jiaheng, 家亨, Elf, 妖精, Cleric, 牧師, Henry, Rugatha, NA
-Tai Tai Wo Hai Yao, Tai Tai我還要, Tiefling, 魔人, Wizard, 法師, 拉拉, Rugatha, NA
-YHWH, YHWH, Human, 人類, Sorcerer, 術士, 拉拉, Rugatha, Rugatha Plus
-Lemmy, 雷米, Half-Elf, 半妖精, Rogue, 浪客, Roger, Rugatha, Rugatha Plus
-Siri Oslee, 喜利・噢喜力, Gnome, 地侏, Rogue, 浪客, 式謙, Rugatha, Rugatha Plus
-Tweeter, 圖伊特, Aarakocra, 天狗, Warlock, 契術師, Milker, Rugatha lite, NA
-Yi, 伊, Human, 人類, Rogue, 浪客, Nasa, Rugatha lite, NA
-Inu, 伊努, Spirit, 精靈, Sorcerer, 術士, Lala, Rugatha lite, NA
-Lott, 羅特, Tiefling, 魔人, Rogue/Warlock, 浪客/契術師, Nasa, Rugatha lite, NA
-Al-lon, 阿龍, Dragonborn, 龍人, Barbarian, 野蠻人, 仰山, Rugatha WILDS, NA
-Roel, 羅羅, Elf, 妖精, Warlock, 契術師, 雀, Rugatha WILDS, NA
-Dawn Light Fur, 毛毛, Tabaxi, 班貓人, Rogue, 浪客, MoYu, Rugatha WILDS, NA
-Kaname, 鑰, Merfolk, 人魚, Cleric, 牧師, 阿流, Rugatha WILDS, NA
-Buzz, 巴斯, Elf, 妖精, Fighter, 戰士, Joseph, Rugatha lite, NA
-Pascal, 帕斯卡, Halfling, 半身人, Paladin/Barbarian, 聖騎士/野蠻人, Samuel, Rugatha lite, NA
-Leah, 雷亞, Lizardfolk, 蜥蜴人, Druid/Fighter, 德魯伊/戰士, Rugatha WILDS, NA
-Watson, 華生, Aasimar, 天使人, Wizard, 法師, Nasa, Rugatha lite, NA
-Sugalu, 蘇加魯, Half-Orc, 半獸人, Fighter, 戰士, Nathan, Rugatha, Rugatha lite
-Anedak, 安納戴克, Naga, 那伽, Barbarian, 野蠻人, Nathan, Rugatha, NA
-Iren, 艾倫, Half-Orc, 半獸人, Fighter, 戰士, Nathan, Rugatha lite, NA
-Ubbo, 烏波, Slime, 流漿人, Druid, 德魯伊, Milker, Rugatha lite, NA
-Psyber, 賽柏, Half-Orc, 半獸人, Paladin/Barbarian, 聖騎士/野蠻人, Samuel, Rugatha lite, NA
-Drayer, 墜兒, Elf, 妖精, Cleric, 牧師, Henry, Rugatha, Rugatha lite
-Kudan, 庫登, Minotaur, 牛頭怪, Sorcerer, 術士, Nathan, Rugatha lite, NA
-Brown, 布朗, Half-Orc, 半獸人, Barbarian, 野蠻人, Timothy, Rugatha Brown, NA
-GoR, GoR, Kalashtar, 離夢人, Ranger, 遊俠, Amber, Rugatha lite, NA
+name_en, name_zh, race_en, race_zh, class_en, class_zh, player, campaign_1, campaign_2, guest
+Usioni, 嗚兮噢尼, Minatour, 牛頭怪, Fighter, 戰士, Nathan, Rugatha, NA, 0
+Midori, 米多莉, Human, 人類, Paladin, 聖騎士, Joseph, Rugatha, Rugatha Plus, 0
+Paladin, 帕拉丁, Halfling, 半身人, Ranger/Paladin, 遊俠/聖騎士, Samuel, Rugatha, Rugatha lite, 0
+Uko, 烏柯, Dragonborn, 龍人, Druid, 德魯伊, Roger, Rugatha, NA, 0
+Ron, 龍恩, Dragonborn, 龍人, Monk, 武僧, Hark, Rugatha, Rugatha Plus, 0
+Samael, 薩梅爾, Elf, 妖精, Bard/Ranger, 吟遊詩人/遊俠, HugeCat, Rugatha, Rugatha Plus, 0
+Jiaheng, 家亨, Elf, 妖精, Cleric, 牧師, Henry, Rugatha, NA, 0
+Tai Tai Wo Hai Yao, Tai Tai我還要, Tiefling, 魔人, Wizard, 法師, 拉拉, Rugatha, NA, 0
+YHWH, YHWH, Human, 人類, Sorcerer, 術士, 拉拉, Rugatha, Rugatha Plus, 0
+Lemmy, 雷米, Half-Elf, 半妖精, Rogue, 浪客, Roger, Rugatha, Rugatha Plus, 0
+Siri Oslee, 喜利・噢喜力, Gnome, 地侏, Rogue, 浪客, 式謙, Rugatha, Rugatha Plus, 0
+Tweeter, 圖伊特, Aarakocra, 天狗, Warlock, 契術師, Milker, Rugatha lite, NA, 0
+Yi, 伊, Human, 人類, Rogue, 浪客, Nasa, Rugatha lite, NA, 1
+Inu, 伊努, Spirit, 精靈, Sorcerer, 術士, Lala, Rugatha lite, NA, 0
+Lott, 羅特, Tiefling, 魔人, Rogue/Warlock, 浪客/契術師, Nasa, Rugatha lite, NA, 0
+Al-lon, 阿龍, Dragonborn, 龍人, Barbarian, 野蠻人, 仰山, Rugatha WILDS, NA, 0
+Roel, 羅羅, Elf, 妖精, Warlock, 契術師, 雀, Rugatha WILDS, NA, 0
+Dawn Light Fur, 毛毛, Tabaxi, 班貓人, Rogue, 浪客, MoYu, Rugatha WILDS, NA, 0
+Kaname, 鑰, Merfolk, 人魚, Cleric, 牧師, 阿流, Rugatha WILDS, NA, 0
+Buzz, 巴斯, Elf, 妖精, Fighter, 戰士, Joseph, Rugatha lite, NA, 0
+Pascal, 帕斯卡, Halfling, 半身人, Paladin/Barbarian, 聖騎士/野蠻人, Samuel, Rugatha lite, NA, 0
+Leah, 雷亞, Lizardfolk, 蜥蜴人, Druid/Fighter, 德魯伊/戰士, Rugatha WILDS, NA, 0
+Watson, 華生, Aasimar, 天使人, Wizard, 法師, Nasa, Rugatha lite, NA, 0
+Sugalu, 蘇加魯, Half-Orc, 半獸人, Fighter, 戰士, Nathan, Rugatha, Rugatha lite, 0
+Anedak, 安納戴克, Naga, 那伽, Barbarian, 野蠻人, Nathan, Rugatha, NA, 0
+Iren, 艾倫, Half-Orc, 半獸人, Fighter, 戰士, Nathan, Rugatha lite, NA, 0
+Ubbo, 烏波, Slime, 流漿人, Druid, 德魯伊, Milker, Rugatha lite, NA, 0
+Psyber, 賽柏, Half-Orc, 半獸人, Paladin/Barbarian, 聖騎士/野蠻人, Samuel, Rugatha lite, NA, 0
+Drayer, 墜兒, Elf, 妖精, Cleric, 牧師, Henry, Rugatha, Rugatha lite, 0
+Kudan, 庫登, Minotaur, 牛頭怪, Sorcerer, 術士, Nathan, Rugatha lite, NA, 0
+Brown, 布朗, Half-Orc, 半獸人, Barbarian, 野蠻人, Timothy, Rugatha Brown, NA, 0
+GoR, GoR, Kalashtar, 離夢人, Ranger, 遊俠, Amber, Rugatha lite, NA, 0
+Cecil, 賽希爾, Shadar-Kai, 幽族, Wizard, 法師, 阿樂, Rugatha WILDS, NA, 1
+Mr. Green, 綠先生, Human, 人類, Paladin, 聖騎士, Hark, Rugatha WILDS, NA, 1
+Ravi, 拉比, Lizardfolk, 蜥蜴人, Ranger/Bard, 遊俠/吟遊詩人, Joseph, Rugatha WILDS, NA, 1

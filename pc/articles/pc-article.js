@@ -13,6 +13,11 @@
     pageEyebrow: { zh: "玩家角色", en: "Player Character" },
     race: { zh: "種族", en: "Race" },
     role: { zh: "職業", en: "Class" },
+    guestPlayer: { zh: "客串玩家", en: "Guest Player" },
+    guestPlayerCharacterPrefix: {
+      zh: "客串玩家角色",
+      en: "Guest Player Character"
+    },
     appearances: { zh: "登場故事弧與章節", en: "Story Arcs and Chapters" },
     noAppearances: { zh: "目前尚未整理到章節登場紀錄。", en: "No chapter appearances have been indexed yet." },
     loadFailed: { zh: "資料載入失敗。", en: "Failed to load data." },
@@ -50,6 +55,8 @@
     }
     return "zh";
   };
+
+  const isGuestPlayer = (pc) => String(pc && pc.guest ? pc.guest : "").trim() === "1";
 
   const parseCsv = (text) => {
     const lines = String(text || "")
@@ -204,8 +211,11 @@
 
     document.title = `${pc.name_en} | Rugatha PC`;
     document.getElementById("page-eyebrow").textContent = i18n.pageEyebrow[lang];
-    document.getElementById("page-title").textContent = lang === "en" ? pc.name_en : pc.name_zh || pc.name_en;
-    document.getElementById("page-subtitle").textContent = "";
+    const baseName = lang === "en" ? pc.name_en : pc.name_zh || pc.name_en;
+    document.getElementById("page-title").textContent = baseName;
+    document.getElementById("page-subtitle").textContent = isGuestPlayer(pc)
+      ? i18n.guestPlayerCharacterPrefix[lang].trim()
+      : "";
     document.getElementById("race-label").textContent = i18n.race[lang];
     document.getElementById("role-label").textContent = i18n.role[lang];
     document.getElementById("race-value").textContent = lang === "en"
@@ -260,21 +270,23 @@
     });
 
     try {
-      const [pcRes, pcsRes, navRes, arcRes, chapterRes] = await Promise.all([
+      const [pcRes, pcsRes, guestRes, navRes, arcRes, chapterRes] = await Promise.all([
         fetch("../pc_lib", { cache: "no-cache" }),
         fetch("../../campaigns/pages/pcs.json", { cache: "no-cache" }),
+        fetch("../../campaigns/pages/guest.json", { cache: "no-cache" }),
         fetch("../../campaigns/data/chapter-nav.json", { cache: "no-cache" }),
         fetch("../../campaigns/data/story-arc-titles.json", { cache: "no-cache" }),
         fetch("../../campaigns/data/chapter-titles.json", { cache: "no-cache" })
       ]);
 
-      if (!pcRes.ok || !pcsRes.ok || !navRes.ok || !arcRes.ok || !chapterRes.ok) {
+      if (!pcRes.ok || !pcsRes.ok || !guestRes.ok || !navRes.ok || !arcRes.ok || !chapterRes.ok) {
         throw new Error(i18n.loadFailed[state.lang]);
       }
 
-      const [pcCsv, pcsJson, chapterNav, arcTitles, chapterTitles] = await Promise.all([
+      const [pcCsv, pcsJson, guestJson, chapterNav, arcTitles, chapterTitles] = await Promise.all([
         pcRes.text(),
         pcsRes.json(),
+        guestRes.json(),
         navRes.json(),
         arcRes.json(),
         chapterRes.json()
@@ -287,14 +299,24 @@
       }
 
       const pcMap = (pcsJson && pcsJson.pcs) || {};
+      const guestMap = (guestJson && guestJson.guest) || {};
       const chapterOrder = Object.keys(chapterNav || {}).reduce((acc, key, index) => {
         acc[key] = index;
         return acc;
       }, {});
 
-      const appearanceChapters = Object.entries(pcMap)
-        .filter(([, names]) => Array.isArray(names) && names.some((name) => normalizePcKey(name) === normalizePcKey(targetPcName)))
+      const combinedMap = { ...pcMap };
+      Object.entries(guestMap).forEach(([chapterId, names]) => {
+        const existing = Array.isArray(combinedMap[chapterId]) ? combinedMap[chapterId] : [];
+        combinedMap[chapterId] = existing.concat(Array.isArray(names) ? names : []);
+      });
+
+      const appearanceChapters = Object.entries(combinedMap)
+        .filter(([, names]) =>
+          Array.isArray(names) && names.some((name) => normalizePcKey(name) === normalizePcKey(targetPcName))
+        )
         .map(([chapterId]) => chapterId)
+        .filter((chapterId, index, list) => list.indexOf(chapterId) === index)
         .sort((a, b) => (chapterOrder[a] ?? Number.MAX_SAFE_INTEGER) - (chapterOrder[b] ?? Number.MAX_SAFE_INTEGER));
 
       const grouped = [];
