@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BZZFKMJ65Y');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rugatha Experience | Rugatha 體驗團資訊</title>
+  <link rel="icon" type="image/png" href="../assets/rugatha-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-icon-32.png">
+  <link rel="stylesheet" href="../shared/styles/theme.css">
+  <link rel="stylesheet" href="styles/experience.css">
+  <meta property="og:image" content="https://rugatha.github.io/web/assets/rugatha-experience.jpeg">
+  <meta name="twitter:image" content="https://rugatha.github.io/web/assets/rugatha-experience.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div class="page">
+    <header class="banner" aria-label="Rugatha banner image">
+      <a href="../index.html" class="banner-link" aria-label="Back to Rugatha home">
+        <img src="../assets/rugatha-banner.jpg" alt="Rugatha banner" class="banner-logo" loading="lazy">
+      </a>
+    </header>
+
+    <main class="page-shell experience-shell">
+      <section class="experience-hero">
+        <div class="experience-hero__copy">
+          <p class="experience-hero__eyebrow">Rugatha Experience</p>
+          <h1>Rugatha 體驗團</h1>
+          <p class="experience-hero__lede">
+            Rugatha D&D 每個月定期舉辦適合新手的體驗團<br>我們每半年會推出一次新的劇本<br>歡迎關注我們的網站及社群媒體，報名我們的體驗團！
+          </p>
+        </div>
+      </section>
+
+      <section class="experience-list" aria-label="Experience list">
+        <article class="experience-card">
+          <img
+            class="experience-card__banner"
+            src="../campaigns/campaign-banners/exp-e01.png"
+            alt="The Scroll of the Golden Castle banner"
+            loading="lazy"
+          >
+          <div class="experience-card__body">
+            <p class="experience-card__tag">2025 exp1</p>
+            <h2 class="experience-card__title">The Scroll of the Golden Castle</h2>
+            <h2 class="experience-card__title">金之堡的卷軸</h2>
+            <p class="experience-card__description">
+              一場神秘的夢、一樁來自貴族的請託<br>
+              竟是要冒險者們闖入貝瑟頓當地<br>
+              貿易與財富之神凱里涅斯最大的教堂「金之堡」<br>
+              偷取一個......卷軸！？<br>
+              遊走在道德與信仰的灰色地帶<br>
+              這項任務到底有什麼蹊蹺？<br>
+            </p>
+          </div>
+        </article>
+
+        <article class="experience-card">
+          <img
+            class="experience-card__banner"
+            src="../campaigns/campaign-banners/exp-e02.png"
+            alt="Echoes of the Dragon's Roar banner"
+            loading="lazy"
+          >
+          <div class="experience-card__body">
+            <p class="experience-card__tag">2026 exp1</p>
+            <h2 class="experience-card__title">Echoes of the Dragon's Roar</h2>
+            <h2 class="experience-card__title">龍鳴的回音</h2>
+            <p class="experience-card__description">
+              陣陣龍鳴不時從洞穴傳出<br>
+              鬧得小鎮人心惶惶<br>
+              你們依鎮長委託，進入洞穴探索<br>
+              但你們不知道，將面對的是什麼<br>
+              危險與陰謀，正等著你們......
+            </p>
+          </div>
+        </article>
+
+        <article class="experience-card">
+          <img
+            class="experience-card__banner"
+            src="../campaigns/campaign-banners/exp-e03.jpeg"
+            alt="The Spirit of Lorin banner"
+            loading="lazy"
+          >
+          <div class="experience-card__body">
+            <p class="experience-card__tag">2026 exp2</p>
+            <h2 class="experience-card__title">The Spirit of Lorin</h2>
+            <h2 class="experience-card__title">洛林精神</h2>
+            <p class="experience-card__description">
+              旅行途中，你們在人類王國麥丁頓的首都「麥克嵩」停留一天休息<br>
+              麥克嵩博物館正在舉辦一場名為《洛林精神》的特展<br>
+              你們知道，前朝的洛森王朝是妖精統治的帝國<br>
+              「洛林精神」則是以洛森王朝開國君王「征服者洛林」為名<br>
+              象徵妖精一族的榮耀<br>
+              然而，如今這場關於他的展覽，卻被嘲弄成了這副模樣......<br>
+              檔期都快結束了，門票也不貴，不如就進去逛逛吧！
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="feedback-section" aria-label="Player feedback">
+        <div class="feedback-section__intro">
+          <p class="feedback-section__eyebrow">Rugatha Experience Player Feedback</p>
+          <h2 class="feedback-section__title">體驗團玩家回饋</h2>
+          <p class="feedback-section__note">回饋內容包含每月體驗團與各活動體驗團，時長依活動屬性不同而有異</p>
+        </div>
+
+        <div class="feedback-wall" id="feedback-wall"></div>
+      </section>
+    </main>
+  </div>
+  <script>
+    async function loadFeedback() {
+      const wall = document.getElementById('feedback-wall');
+      if (!wall) return;
+
+      try {
+        const response = await fetch('exp_public_comment.csv');
+        if (!response.ok) {
+          throw new Error('Failed to load feedback CSV');
+        }
+
+        const csvText = await response.text();
+        const comments = csvText
+          .split(/\r?\n/)
+          .slice(1)
+          .map((line) => line.trim())
+          .filter(Boolean);
+
+        if (!comments.length) {
+          wall.innerHTML = '<p class="feedback-empty">目前還沒有公開回饋。</p>';
+          return;
+        }
+
+        for (let i = comments.length - 1; i > 0; i -= 1) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [comments[i], comments[j]] = [comments[j], comments[i]];
+        }
+
+        const fragment = document.createDocumentFragment();
+
+        comments.forEach((comment) => {
+          const card = document.createElement('article');
+          card.className = 'feedback-card';
+
+          const quote = document.createElement('p');
+          quote.className = 'feedback-card__quote';
+          quote.textContent = comment;
+
+          card.appendChild(quote);
+          fragment.appendChild(card);
+        });
+
+        wall.replaceChildren(fragment);
+      } catch (error) {
+        wall.innerHTML = '<p class="feedback-empty">玩家回饋暫時無法載入。</p>';
+        console.error(error);
+      }
+    }
+
+    loadFeedback();
+  </script>
+</body>
+</html>
