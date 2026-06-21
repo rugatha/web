@@ -75,7 +75,7 @@
       page: "./pages/rugatha-plus/index.html",
       image: campaignLogo("rugatha-plus-logo.jpg"),
       accent: "#c8f9ff",
-      nextSession: "2026/4/25"
+      nextSession: "2026/7/27"
     },
     {
       name: "Rugatha lite",
@@ -85,7 +85,7 @@
       page: "./pages/rugatha-lite/index.html",
       image: campaignLogo("rugatha-light-logo.jpg"),
       accent: "#ffe7a3",
-      nextSession: "2026/6/20"
+      nextSession: "2026/7/4"
     },
     {
       name: "Rugatha WILDS",
@@ -95,7 +95,7 @@
       page: "./pages/rugatha-wilds/index.html",
       image: campaignLogo("rugatha-wilds-logo.jpg"),
       accent: "#c1e27a",
-      nextSession: "2026/5/16"
+      nextSession: "2026/7/11"
     },
     {
       name: "Rugatha Brown",
