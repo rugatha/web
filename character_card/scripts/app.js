@@ -47,7 +47,13 @@ const abilities = {
   wis: 10,
   cha: 10
 };
-const dmOverlay = document.querySelector(".dm-overlay");
+const dmOverlayImage = document.querySelector(".dm-overlay");
+const DM_OVERLAY_SOURCE_BOUNDS = {
+  x: 250,
+  y: 250,
+  width: 1420,
+  height: 590
+};
 
 const FALLBACK_ACCENTS = ["#7bdcb5", "#8bc8ff", "#ffd166", "#c48bff", "#ff9e9e", "#a7f0ba"];
 const sharedAccents = getSharedAccents();
@@ -226,6 +232,8 @@ function drawCard() {
   const w = canvas.width;
   const h = canvas.height;
   ctx.clearRect(0, 0, w, h);
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
   const fallbacks = LANGS[currentLang].fallbacks;
 
   // background
@@ -287,6 +295,31 @@ function drawCard() {
     const lx = imgX - 10;
     const ly = imgY - 20;
     ctx.drawImage(logoBitmap, lx, ly, logoW, logoH);
+  }
+
+  if (shouldRenderDmOverlay() && dmOverlayImage?.complete) {
+    const overlayW = Math.round(imgW * 0.82);
+    const overlayH = Math.round(
+      (DM_OVERLAY_SOURCE_BOUNDS.height / DM_OVERLAY_SOURCE_BOUNDS.width) * overlayW
+    );
+    const overlayX = imgX + Math.round((imgW - overlayW) / 2);
+    const overlayY = panelY + panelH - overlayH - 18;
+    ctx.save();
+    ctx.shadowColor = "rgba(0, 0, 0, 0.35)";
+    ctx.shadowBlur = 18;
+    ctx.shadowOffsetY = 12;
+    ctx.drawImage(
+      dmOverlayImage,
+      DM_OVERLAY_SOURCE_BOUNDS.x,
+      DM_OVERLAY_SOURCE_BOUNDS.y,
+      DM_OVERLAY_SOURCE_BOUNDS.width,
+      DM_OVERLAY_SOURCE_BOUNDS.height,
+      overlayX,
+      overlayY,
+      overlayW,
+      overlayH
+    );
+    ctx.restore();
   }
 
   // text info
@@ -690,10 +723,13 @@ function toggleOther(select, wrapper) {
 }
 
 function updateDmOverlayVisibility() {
-  if (!dmOverlay) return;
+  if (dmOverlayImage) dmOverlayImage.hidden = true;
+}
+
+function shouldRenderDmOverlay() {
   const isDmPrimary = inputs.class1?.value === "dm";
   const isDmSecondary = inputs.multiclass?.checked && inputs.class2?.value === "dm";
-  dmOverlay.hidden = !(isDmPrimary || isDmSecondary);
+  return Boolean(isDmPrimary || isDmSecondary);
 }
 
 function setAccent(color, shouldDraw = true) {
@@ -890,6 +926,12 @@ drawCard();
   };
   img.src = "../assets/rugatha-icon.png";
 })();
+
+if (dmOverlayImage && !dmOverlayImage.complete) {
+  dmOverlayImage.addEventListener("load", () => {
+    drawCard();
+  });
+}
 
 function drawVital(x, y, label, value) {
   ctx.fillStyle = "#ecf2ed";
