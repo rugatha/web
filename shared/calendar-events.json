@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Rugatha lite S44",
+    "date": "2026-07-04",
+    "category": "長團",
+    "link": "/campaigns/pages/rugatha-lite/lite-c12/",
+    "note": "《Py'Par's Vision 派琶的預示》",
+    "image": "campaigns/campaign-banners/lite-c12.png",
+    "deadline": false
+  },
+  {
+    "title": "Rugatha WILDS S20",
+    "date": "2026-07-11",
+    "category": "長團",
+    "link": "/campaigns/pages/rugatha-wilds/wilds-c05/",
+    "note": "《The Unacknowledged Child 不被承認的孩子》",
+    "image": "campaigns/campaign-banners/wilds-c05.png",
+    "deadline": false
+  },
+  {
+    "title": "Rugatha 7月體驗團 《洛林精神》報名",
+    "date": "2026-07-11",
+    "category": "體驗團",
+    "link": "https://www.surveycake.com/s/wq6GX",
+    "note": "尚有名額，歡迎報名！",
+    "image": "assets/survey-cake.png",
+    "deadline": true
+  },
+  {
+    "title": "Rugatha 7月體驗團 《洛林精神》",
+    "date": "2026-07-18",
+    "category": "體驗團",
+    "link": "https://www.surveycake.com/s/wq6GX",
+    "note": "報名截止 2026/7/11 23:59 (GMT+8)",
+    "image": "assets/rugatha-experience.jpeg",
+    "deadline": false
+  },
+  {
+    "title": "Rugatha WILDS 公仔預購截止",
+    "date": "2026-06-30",
+    "category": "預購",
+    "link": "https://www.surveycake.com/s/8ZnWY",
+    "note": "預購截止 2026/6/30 ，一隻 200，共 5 款",
+    "image": "assets/Miniatures_2026.jpg",
+    "deadline": true
+  },
+  {
+    "title": "2027 長團調查",
+    "date": "2026-06-30",
+    "category": "長團",
+    "link": "https://www.surveycake.com/s/2kwAo",
+    "note": "調查截止 2026/6/30",
+    "image": "assets/rugatha-banner.jpg",
+    "deadline": true
+  }
+]

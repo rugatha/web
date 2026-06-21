@@ -118,11 +118,6 @@
         display: none;
       }
     }
-
-    .bulletin-image--half {
-      width: 50%;
-      height: auto;
-    }
   </style>
   <meta property="og:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
   <meta name="twitter:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
@@ -223,62 +218,15 @@
         <div class="auth-status" id="auth-status" aria-live="polite">Google login</div>
       </section>
 
-      <section class="bulletin" aria-label="Rugatha bulletin">
-        <div class="bulletin-inner">
-          <h1 class="bulletin-title">最新公告 NEWS</h1>
-          <!--<div class="bulletin-copy">
-            <p>2025龍山地下城</p>
-            <p>🎊完美落幕🎊</p>
+      <section class="schedule-widget" aria-label="Important schedule">
+        <div class="schedule-widget__inner">
+          <div class="schedule-widget__header">
+            <div>
+              <p class="schedule-widget__eyebrow">The Rugatha Calender</p>
+              <h2 class="schedule-widget__title">Rugatha 行事曆</h2>
+            </div>
           </div>
-          <a class="bulletin-media" href="https://www.facebook.com/D3Fest/posts/pfbid06tJjDeXfPsuboPNUtYAXC7AS3pn7eUUYMiu9EiBZyRbaha62VR1TpnXMEX2Nja6Ql">
-            <img src="assets/cons/d3/2025.jpg" alt="D3 2025 poster" class="bulletin-image">
-          </a>
-          <div class="bulletin-divider" aria-hidden="true"></div>-->
-          <!--<div class="bulletin-copy">
-            <p>2026 TRPG FES. 5/23（六） 9:30-16:30 三重體育館</p>
-            <p>歡迎提前報名Rugatha體驗團《寂靜與秩序之下》</p>
-            <p>活動場次與報名資訊，請參考以下連結：</p>
-            <p><a href="https://www.accupass.com/event/2603191209191161308510">點擊報名2026 TRPG FES.</a></p>
-          </div>
-          <a class="bulletin-media" href="https://www.accupass.com/event/2603191209191161308510">
-            <img src="assets/cons/trpg_fes/2026.jpg" alt="TRPG FES. 2026 poster" class="bulletin-image">
-          </a>
-          <div class="bulletin-divider" aria-hidden="true"></div>-->
-          <div class="bulletin-copy">
-          </div>
-          <a class="bulletin-media">
-            <img src="assets/rugatha-experience.jpeg" alt="Rugatha experience poster" class="bulletin-image bulletin-image--half">
-          </a>
-          <div class="bulletin-copy">
-            <p><a href="https://www.surveycake.com/s/wq6GX">點擊報名2026/7/18跑團體驗！</a></p>
-            <p><a href="https://www.surveycake.com/s/wq6GX">Click to sign up for the July 18th 2026 One Shot event!</a></p>
-            <p>截止時間：2026/7/11 23:59 (台灣時間)</p>
-            <p>Deadline: July 11th 2026 23:59 (GMT +8)</p>
-          </div>
-          <div>
-          <a class="bulletin-media">
-            <img src="assets/Miniatures_2026.jpg" alt="Rugatha WILDS Miniatures 2026" class="bulletin-image">
-          </a>
-          </div>
-          <div>
-            <a class="bulletin-copy">
-            <p>2026 Rugatha WILDS公仔預購</p>
-            <p>即日起開放預購至2026/6/30，一隻200，共5隻</p>
-            <p>請參考以下連結：</p>
-            </a>
-          </div>
-          <div class="bulletin-copy">
-            <p><a href="https://www.surveycake.com/s/8ZnWY">點擊預購公仔</a></p>
-          </div>
-          <div>
-            <a class="bulletin-copy">
-            <p><br>2027長團調查</p>
-            <p>請參考以下連結：</p>
-          <div class="bulletin-copy">
-            <p><a href="https://www.surveycake.com/s/2kwAo">點擊填寫長團調查</a></p>
-          </div>
-            </a>
-          </div>
+          <div class="schedule-widget__list" id="schedule-list"></div>
         </div>
       </section>
 
@@ -306,14 +254,157 @@
     const SURVEYCAKE_PREFIX = "https://www.surveycake.com/";
     const ACHIEVEMENTS_CSV_PATH = "member/achievements.csv";
     const ACHIEVEMENT_CODE = "ach_HRitT";
+    const CALENDAR_TIMEZONE = "Asia/Taipei";
+    const CATEGORY_ACCENTS = {
+      長團: "#c8f9ff",
+      體驗團: "#f6d185",
+      預購: "#ffc09f",
+      活動: "#9fe0ba",
+      調查: "#d6c7ff"
+    };
 
     let auth = null;
     let db = null;
     let currentUser = null;
     let achievementData = null;
     let achievementLoadPromise = null;
+    let scheduleLoadPromise = null;
     const journalLink = document.getElementById("adventurer-journal-link");
     const authBrowserNote = document.querySelector(".auth-browser-note");
+    const scheduleList = document.getElementById("schedule-list");
+
+    const parseDateValue = (value) => {
+      if (typeof value !== "string") return null;
+      const match = value.trim().match(/^(\d{4})[/-](\d{1,2})[/-](\d{1,2})$/);
+      if (!match) return null;
+      const [, year, month, day] = match;
+      const isoDate = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}T00:00:00+08:00`;
+      const parsed = new Date(isoDate);
+      return Number.isNaN(parsed.getTime()) ? null : parsed;
+    };
+
+    const formatFullDate = (date) =>
+      new Intl.DateTimeFormat("zh-TW", {
+        timeZone: CALENDAR_TIMEZONE,
+        year: "numeric",
+        month: "numeric",
+        day: "numeric"
+      }).format(date);
+
+    const formatDateYear = (date) =>
+      new Intl.DateTimeFormat("zh-TW", {
+        timeZone: CALENDAR_TIMEZONE,
+        year: "numeric"
+      }).format(date);
+
+    const formatDateMonthDay = (date) =>
+      new Intl.DateTimeFormat("zh-TW", {
+        timeZone: CALENDAR_TIMEZONE,
+        month: "numeric",
+        day: "numeric"
+      }).format(date);
+
+    const formatDateWeekday = (date) =>
+      new Intl.DateTimeFormat("zh-TW", {
+        timeZone: CALENDAR_TIMEZONE,
+        weekday: "long"
+      }).format(date);
+
+    const resolveCategoryAccent = (category) => CATEGORY_ACCENTS[category] || "#9fe0ba";
+    const isDeadlineEvent = (value) => value === true || String(value).toLowerCase() === "true";
+
+    const createScheduleItems = (events) =>
+      Array.isArray(events)
+        ? events
+            .map((event) => {
+              const date = parseDateValue(event.date);
+              if (!date) return null;
+              return {
+                title: event.title || "Untitled event",
+                category: event.category || "Event",
+                date,
+                href: event.link || null,
+                note: event.note || "",
+                accent: resolveCategoryAccent(event.category || "Event"),
+                image: event.image || "",
+                deadline: isDeadlineEvent(event.deadline)
+              };
+            })
+            .filter(Boolean)
+            .sort((a, b) => a.date - b.date)
+        : [];
+
+    const loadScheduleEvents = async () => {
+      if (scheduleLoadPromise) {
+        return scheduleLoadPromise;
+      }
+      const config = window.RUGATHA_CONFIG || {};
+      const schedulePath = config.dataFiles && config.dataFiles.calendarEvents;
+      if (!schedulePath) {
+        return [];
+      }
+      scheduleLoadPromise = (async () => {
+        try {
+          const response = await fetch(schedulePath, { cache: "no-store" });
+          if (!response.ok) {
+            throw new Error(`Failed to load calendar events: ${response.status}`);
+          }
+          const data = await response.json();
+          return Array.isArray(data) ? data : [];
+        } catch (error) {
+          console.error("Failed to load calendar events", error);
+          return [];
+        }
+      })();
+      return scheduleLoadPromise;
+    };
+
+    const renderScheduleWidget = async () => {
+      if (!scheduleList) return;
+      const events = await loadScheduleEvents();
+      const items = createScheduleItems(events);
+      if (!items.length) {
+        scheduleList.innerHTML = '<p class="schedule-widget__empty">目前沒有可顯示的近期行程。</p>';
+        return;
+      }
+
+      scheduleList.innerHTML = items
+        .map((item) => {
+          const tagStyle = item.accent ? ` style="--schedule-accent: ${item.accent};"` : "";
+          const cardClasses = ["schedule-card"];
+          if (item.image) cardClasses.push("schedule-card--with-image");
+          if (item.deadline) cardClasses.push("schedule-card--deadline");
+          const media = item.image
+            ? `
+            <div class="schedule-card__media" aria-hidden="true">
+              <img class="schedule-card__image" src="${item.image}" alt="">
+            </div>
+          `
+            : "";
+          const deadlineBadge = item.deadline
+            ? '<span class="schedule-card__deadline-badge">Deadline</span>'
+            : "";
+          const cardInner = `
+            ${media}
+            <div class="schedule-card__date">
+              <span class="schedule-card__year">${formatDateYear(item.date)}</span>
+              <span class="schedule-card__day">${formatDateMonthDay(item.date)}</span>
+              <span class="schedule-card__weekday">${formatDateWeekday(item.date)}</span>
+              ${deadlineBadge}
+            </div>
+            <div class="schedule-card__body">
+              <span class="schedule-card__tag"${tagStyle}>${item.category}</span>
+              <h3 class="schedule-card__title">${item.title}</h3>
+              ${item.note ? `<p class="schedule-card__note">${item.note}</p>` : ""}
+            </div>
+          `;
+          if (item.href) {
+            return `<a class="${cardClasses.join(" ")}" href="${item.href}">${cardInner}</a>`;
+          }
+          return `<article class="${cardClasses.join(" ")}">${cardInner}</article>`;
+        })
+        .join("");
+    };
 
     const parseCsv = (text) => {
       const rows = [];
@@ -563,8 +654,12 @@
     }
 
     if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", setupSurveycakeTracking);
+      document.addEventListener("DOMContentLoaded", () => {
+        renderScheduleWidget();
+        setupSurveycakeTracking();
+      });
     } else {
+      renderScheduleWidget();
       setupSurveycakeTracking();
     }
   </script>

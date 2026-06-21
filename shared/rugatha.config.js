@@ -75,7 +75,7 @@
       page: "./pages/rugatha-plus/index.html",
       image: campaignLogo("rugatha-plus-logo.jpg"),
       accent: "#c8f9ff",
-      nextSession: "2026/7/27"
+      nextSession: "2026/6/27"
     },
     {
       name: "Rugatha lite",
@@ -1173,6 +1173,7 @@
       urlOverrides: graphUrlOverrides
     },
     dataFiles: {
+      calendarEvents: "shared/calendar-events.json",
       npcCharacters: "npc/data/characters.json"
     }
   };
