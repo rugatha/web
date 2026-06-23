@@ -175,7 +175,9 @@
       "YHWH"
     ],
     "rugatha-c05-chpt01": [
+      "Anedak",
       "Drayer",
+      "Jiaheng",
       "Lemmy",
       "Midori",
       "Paladin",
@@ -191,6 +193,7 @@
       "Ron",
       "Samael",
       "Siri Oslee",
+      "Uko",
       "YHWH"
     ],
     "plus-c05-chpt03": [
@@ -274,19 +277,22 @@
       "Drayer",
       "Paladin",
       "Sugalu",
-      "Tweeter"
+      "Tweeter",
+      "Watson"
     ],
     "lite-c05-chpt03": [
       "Inu",
       "Paladin",
       "Sugalu",
-      "Tweeter"
+      "Tweeter",
+      "Watson"
     ],
     "lite-c05-chpt04": [
       "Inu",
       "Paladin",
       "Sugalu",
-      "Tweeter"
+      "Tweeter",
+      "Watson"
     ],
     "lite-c06-chpt01": [
       "Inu",
@@ -298,45 +304,53 @@
       "Inu",
       "Paladin",
       "Sugalu",
-      "Tweeter"
+      "Tweeter",
+      "Watson"
     ],
     "lite-c06-chpt03": [
       "Inu",
       "Paladin",
       "Sugalu",
-      "Tweeter"
+      "Tweeter",
+      "Watson"
     ],
     "lite-c06-chpt04": [
       "Inu",
       "Paladin",
       "Sugalu",
-      "Tweeter"
+      "Tweeter",
+      "Watson"
     ],
     "lite-c06-chpt05": [
       "Inu",
+      "Lott",
       "Paladin",
       "Sugalu",
-      "Tweeter"
+      "Tweeter",
+      "Watson"
     ],
     "lite-c07-chpt01": [
       "Inu",
       "Lott",
       "Paladin",
       "Sugalu",
-      "Tweeter"
+      "Tweeter",
+      "Watson"
     ],
     "lite-c07-chpt02": [
       "Inu",
       "Lott",
       "Paladin",
       "Sugalu",
-      "Tweeter"
+      "Tweeter",
+      "Watson"
     ],
     "lite-c07-chpt03": [
       "Lott",
       "Pascal",
       "Sugalu",
-      "Tweeter"
+      "Tweeter",
+      "Watson"
     ],
     "lite-c08-chpt01": [
       "Iren",
@@ -407,6 +421,7 @@
     ],
     "lite-c11-chpt01": [
       "Buzz",
+      "GoR",
       "Lott",
       "Psyber",
       "Ubbo"
