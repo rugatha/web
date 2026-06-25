@@ -20,6 +20,10 @@ const categoryLabels = {
 let currentLang = "zh";
 let deitiesCache = [];
 const DEITY_SKELETON_GROUPS = [3, 3];
+const PAGE_TITLES = {
+  zh: "Rugatha 神祇",
+  en: "Deities of Rugatha"
+};
 
 const getLocalizedText = (value) => {
   if (!value) return "";
@@ -203,6 +207,7 @@ function setupLanguageToggle() {
       if (nextLang === currentLang) return;
       currentLang = nextLang;
       langButtons.forEach((btn) => setButtonState(btn, btn.dataset.lang === currentLang));
+      document.title = PAGE_TITLES[currentLang] || PAGE_TITLES.en;
       renderDeities(deitiesCache);
     });
   });
@@ -210,6 +215,7 @@ function setupLanguageToggle() {
 
 if (grid) {
   renderLoadingState();
+  document.title = PAGE_TITLES[currentLang] || PAGE_TITLES.en;
   loadDeities()
     .then((data) => {
       deitiesCache = data;

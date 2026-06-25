@@ -6,6 +6,7 @@ const titleEl = document.getElementById("timeline-title");
 const legendLabels = document.querySelectorAll(".legend-label");
 let currentLang = "zh";
 let activeTags = [];
+const titleSuffix = "Rugatha";
 
 const eraClasses = {
   dranison: "era-dranison",
@@ -240,7 +241,9 @@ function updateTitle() {
   if (!titleEl) return;
   const zhTitle = titleEl.dataset.titleZh || "";
   const enTitle = titleEl.dataset.titleEn || "";
-  titleEl.textContent = currentLang === "en" ? enTitle : zhTitle;
+  const nextTitle = currentLang === "en" ? enTitle : zhTitle;
+  titleEl.textContent = nextTitle;
+  document.title = nextTitle ? `${nextTitle} | ${titleSuffix}` : titleSuffix;
 }
 
 function updateLegendLabels() {

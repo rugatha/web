@@ -25,6 +25,28 @@
 - 角色資料索引
 - 社群工具與互動頁面
 
+## 全站標頭與網址正規化
+
+專案提供一支批次整理腳本，用來統一全站的：
+
+- `meta description`
+- canonical URL
+- Open Graph / Twitter meta
+- 正式網域 `https://rugatha.com`
+- 常見模板殘留，例如多餘的 `</link>`
+
+執行方式：
+
+```bash
+python3 shared/scripts/normalize_site_html.py
+```
+
+建議在以下情況執行一次：
+
+1. 新增或大量修改 HTML 頁面後
+2. 批次產生 campaign / NPC / deity 內容頁後
+3. 調整正式網域、分享圖或 SEO 文案規則後
+
 ## 專案架構
 
 這個專案是靜態網站架構，沒有傳統後端伺服器。大部分頁面直接由瀏覽器載入 HTML、CSS、JS 與 JSON / JS 資料檔來組成內容。

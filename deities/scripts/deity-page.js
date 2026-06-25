@@ -105,7 +105,7 @@
     if (name) {
       const plainName = name.replace(/\s+/g, " ").trim();
       const suffix =
-        currentLang === "en" ? "Deity of Rugatha" : "魯伽薩神祇";
+        currentLang === "en" ? "Deity of Rugatha" : "Rugatha 神祇";
       document.title = `${plainName} | ${suffix}`;
     }
   };

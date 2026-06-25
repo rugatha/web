@@ -69,7 +69,8 @@ function updateTitle(npc) {
   const displayName = getDisplayName(npc) || "NPC";
   if (elements.name) elements.name.textContent = displayName;
   if (elements.portrait) elements.portrait.alt = displayName || "NPC portrait";
-  document.title = displayName ? `${displayName} | NPC` : "NPC";
+  const suffix = languageState.value === "en" ? "NPC | Rugatha" : "非玩家角色 | Rugatha";
+  document.title = displayName ? `${displayName} | ${suffix}` : suffix;
 }
 
 function applyViolentOverride(npc) {

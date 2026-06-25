@@ -14,14 +14,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NPC</title>
-  <link rel="icon" type="image/png" href="../assets/rugatha-icon.png">
+  <meta name="description" content="Search and browse Rugatha NPCs by keyword, race, faith, and location.">
+  <link rel="canonical" href="https://rugatha.com/npc/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NPC">
+  <meta property="og:description" content="Search and browse Rugatha NPCs by keyword, race, faith, and location.">
+  <meta property="og:url" content="https://rugatha.com/npc/">
+  <meta property="og:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NPC">
+  <meta name="twitter:description" content="Search and browse Rugatha NPCs by keyword, race, faith, and location.">
+  <meta name="twitter:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+<link rel="icon" type="image/png" href="../assets/rugatha-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-icon-32.png">
   <link rel="stylesheet" href="../shared/styles/theme.css">
   <link rel="stylesheet" href="styles.css">
-  <meta property="og:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
-  <meta name="twitter:image" content="https://rugatha.github.io/web/assets/rugatha-banner.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
 </head>
 <body>
   <header>
@@ -29,7 +36,7 @@
       <button type="button" data-lang="zh" aria-pressed="true">中文</button>
       <button type="button" data-lang="en" aria-pressed="false">English</button>
     </div>
-    <a class="banner" href="http://rugatha.github.io/web/" target="_blank" rel="noopener">
+    <a class="banner" href="https://rugatha.com/" target="_blank" rel="noopener">
       <img src="../assets/rugatha-banner.jpg" alt="Rugatha banner">
     </a>
     <div class="title-bar">
@@ -211,12 +218,17 @@
       sortToggle.textContent = sortOrder === 'asc' ? (ascLabel || 'A → Z') : (descLabel || 'Z → A');
     };
 
+    const updateDocumentTitle = () => {
+      document.title = languageState.value === 'en' ? 'NPC | Rugatha' : '非玩家角色 | Rugatha';
+    };
+
     const applyLanguage = (lang) => {
       languageState.value = lang === 'en' ? 'en' : 'zh';
       document.documentElement.setAttribute('data-lang', languageState.value);
       updateLanguageToggle();
       updateI18n();
       updateSortToggleLabel();
+      updateDocumentTitle();
       if (charactersCache.length) {
         applyFilters();
       } else {

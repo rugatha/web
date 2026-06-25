@@ -12,8 +12,19 @@
 
     gtag('config', 'G-BZZFKMJ65Y');
   </script>
-  <title>Adventurer's Journal | 冒險者日誌</title>
-  <link rel="icon" type="image/png" href="../assets/rugatha-icon.png">
+  <title>Adventurer&amp;#x27;s Journal | 冒險者日誌</title>
+  <meta name="description" content="Access the Adventurer&#x27;s Journal for member records, character references, and account-related tools.">
+  <link rel="canonical" href="https://rugatha.com/member/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Adventurer&amp;#x27;s Journal | 冒險者日誌">
+  <meta property="og:description" content="Access the Adventurer&#x27;s Journal for member records, character references, and account-related tools.">
+  <meta property="og:url" content="https://rugatha.com/member/">
+  <meta property="og:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Adventurer&amp;#x27;s Journal | 冒險者日誌">
+  <meta name="twitter:description" content="Access the Adventurer&#x27;s Journal for member records, character references, and account-related tools.">
+  <meta name="twitter:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+<link rel="icon" type="image/png" href="../assets/rugatha-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-icon-32.png">
   <link rel="stylesheet" href="../shared/styles/theme.css">
   <style>
@@ -704,8 +715,6 @@
       color: #10201d;
     }
 
-
-
     @keyframes reveal {
       from {
         opacity: 0;
@@ -1113,6 +1122,7 @@
 
     const translations = {
       en: {
+        documentTitle: "Adventurer's Journal | Rugatha",
         heroEyebrow: "Adventurer's Journal",
         heroTitle: "Your legendary stories are to be told in taverns......",
         heroBadgesTitle: "Adventurer's Sheet",
@@ -1168,6 +1178,7 @@
         adminDirectoryPermissionDenied: "Firebase denied reading the full member list. Update Realtime Database Rules for admin access."
       },
       zh: {
+        documentTitle: "冒險者日誌 | Rugatha",
         heroEyebrow: "冒險者日誌",
         heroTitle: "你的傳奇冒險將在酒館被傳唱……",
         heroBadgesTitle: "冒險者角色卡",
@@ -1497,6 +1508,7 @@
 
     const setLanguage = (lang) => {
       const dictionary = translations[lang] || translations.en;
+      document.title = dictionary.documentTitle || "Adventurer's Journal | Rugatha";
       document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.getAttribute("data-i18n");

@@ -96,6 +96,7 @@ const DEFAULTS = {
 };
 const LANGS = {
   zh: {
+    documentTitle: "角色卡製作器 | Rugatha",
     formTitle: "角色資訊",
     previewTitle: "預覽",
     downloadNote: "若使用手機Messenger app開啟，建議切換至瀏覽器進行下載",
@@ -153,6 +154,7 @@ const LANGS = {
     }
   },
   en: {
+    documentTitle: "Character Card Generator | Rugatha",
     formTitle: "Character Info",
     previewTitle: "Preview",
     downloadNote: "If using Messenger in-app, switch to a browser to download",
@@ -592,6 +594,7 @@ function initLevelSelects() {
 
 function applyTranslations() {
   const t = LANGS[currentLang];
+  document.title = t.documentTitle;
   if (textNodes.formTitle) textNodes.formTitle.textContent = t.formTitle;
   if (textNodes.previewTitle) textNodes.previewTitle.textContent = t.previewTitle;
   if (textNodes.downloadNote) textNodes.downloadNote.textContent = t.downloadNote;

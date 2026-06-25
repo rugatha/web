@@ -82,6 +82,9 @@
    - 章節頁是否能顯示相關 PC / Guest / NPC
    - 圖片是否正常載入
    - 時間線與 NPC 資料是否仍與最新劇情一致
+6. 若有新增或大量修改 HTML，請執行：
+   - `python3 shared/scripts/normalize_site_html.py`
+   以同步 canonical、meta description、OG / Twitter meta、正式網域與常見模板殘留。
 
 ## 5. 執行優先順序
 

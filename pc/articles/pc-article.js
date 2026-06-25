@@ -11,6 +11,7 @@
 
   const i18n = {
     pageEyebrow: { zh: "玩家角色", en: "Player Character" },
+    documentSuffix: { zh: "玩家角色 | Rugatha", en: "Rugatha PC" },
     race: { zh: "種族", en: "Race" },
     role: { zh: "職業", en: "Class" },
     guestPlayer: { zh: "客串玩家", en: "Guest Player" },
@@ -209,9 +210,9 @@
     const pc = state.pc;
     if (!pc) return;
 
-    document.title = `${pc.name_en} | Rugatha PC`;
     document.getElementById("page-eyebrow").textContent = i18n.pageEyebrow[lang];
     const baseName = lang === "en" ? pc.name_en : pc.name_zh || pc.name_en;
+    document.title = `${baseName} | ${i18n.documentSuffix[lang]}`;
     document.getElementById("page-title").textContent = baseName;
     document.getElementById("page-subtitle").textContent = isGuestPlayer(pc)
       ? i18n.guestPlayerCharacterPrefix[lang].trim()

@@ -161,6 +161,7 @@ const container = document.getElementById("emperor-eras");
 const langButtons = document.querySelectorAll(".lang-toggle__button");
 const titleEl = document.getElementById("emperors-title");
 let currentLang = "zh";
+const titleSuffix = "Rugatha";
 
 const getLocalizedText = (value) => {
   if (!value) return "";
@@ -250,7 +251,9 @@ if (container) {
     if (!titleEl) return;
     const zhTitle = titleEl.dataset.titleZh || "";
     const enTitle = titleEl.dataset.titleEn || "";
-    titleEl.textContent = currentLang === "en" ? enTitle : zhTitle;
+    const nextTitle = currentLang === "en" ? enTitle : zhTitle;
+    titleEl.textContent = nextTitle;
+    document.title = nextTitle ? `${nextTitle} | ${titleSuffix}` : titleSuffix;
   };
 
   const setupLanguageToggle = () => {
