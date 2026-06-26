@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relation Graph</title>
+  <meta name="description" content="View the relationship graph between Rugatha chapters, PCs, guests, and NPCs.">
+  <link rel="canonical" href="https://rugatha.com/relation-graph/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Relation Graph">
+  <meta property="og:description" content="View the relationship graph between Rugatha chapters, PCs, guests, and NPCs.">
+  <meta property="og:url" content="https://rugatha.com/relation-graph/">
+  <meta property="og:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Relation Graph">
+  <meta name="twitter:description" content="View the relationship graph between Rugatha chapters, PCs, guests, and NPCs.">
+  <meta name="twitter:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <link rel="icon" type="image/png" href="../assets/rugatha-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-icon-32.png">
+  <link rel="stylesheet" href="../shared/styles/theme.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="shell">
+      <header class="hero">
+        <div class="language-toggle" role="group" aria-label="Language">
+          <button id="language-zh" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button id="language-en" type="button" data-lang="en" aria-pressed="false">English</button>
+        </div>
+        <a href="../index.html" class="hero__brand" aria-label="回到首頁">
+          <img src="../assets/rugatha-banner.jpg" alt="Rugatha banner" class="hero__banner">
+        </a>
+        <div class="hero__copy">
+          <h1>關聯圖</h1>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="圖譜篩選">
+        <div class="facet-grid" aria-label="facet controls">
+          <article class="facet-card">
+            <div class="facet-card__top">
+              <span class="facet-card__label" data-i18n-key="campaign">Campaign</span>
+              <label class="facet-card__toggle"><input id="toggle-campaigns" type="checkbox" checked></label>
+            </div>
+            <div class="facet-card__count" id="count-campaigns">0</div>
+            <select id="campaign-filter" class="facet-card__select"></select>
+          </article>
+
+          <article class="facet-card">
+            <div class="facet-card__top">
+              <span class="facet-card__label" data-i18n-key="storyArc">Story Arc</span>
+              <label class="facet-card__toggle"><input id="toggle-arcs" type="checkbox" checked></label>
+            </div>
+            <div class="facet-card__count" id="count-arcs">0</div>
+            <select id="arc-filter" class="facet-card__select"></select>
+          </article>
+
+          <article class="facet-card">
+            <div class="facet-card__top">
+              <span class="facet-card__label" data-i18n-key="chapter">Chapter</span>
+              <label class="facet-card__toggle"><input id="toggle-chapters" type="checkbox" checked></label>
+            </div>
+            <div class="facet-card__count" id="count-chapters">0</div>
+            <select id="chapter-filter" class="facet-card__select"></select>
+          </article>
+
+          <article class="facet-card facet-card--compact">
+            <div class="facet-card__top">
+              <span class="facet-card__label" data-i18n-key="pcsGroup">PC</span>
+              <label class="facet-card__toggle"><input id="toggle-pcs" type="checkbox" checked></label>
+            </div>
+            <div class="facet-card__count" id="count-pcs">0</div>
+            <select id="pc-filter" class="facet-card__select"></select>
+          </article>
+
+          <article class="facet-card facet-card--compact">
+            <div class="facet-card__top">
+              <span class="facet-card__label" data-i18n-key="guestsGroup">Guest</span>
+              <label class="facet-card__toggle"><input id="toggle-guests" type="checkbox" checked></label>
+            </div>
+            <div class="facet-card__count" id="count-guests">0</div>
+            <select id="guest-filter" class="facet-card__select"></select>
+          </article>
+
+          <article class="facet-card facet-card--compact">
+            <div class="facet-card__top">
+              <span class="facet-card__label" data-i18n-key="npcsGroup">NPC</span>
+              <label class="facet-card__toggle"><input id="toggle-npcs" type="checkbox" checked></label>
+            </div>
+            <div class="facet-card__count" id="count-npcs">0</div>
+            <select id="npc-filter" class="facet-card__select"></select>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="legend">
+          <div class="legend__header">
+            <h2 data-i18n-key="legend">圖例</h2>
+            <button id="reset-view" class="ghost-btn ghost-btn--small" type="button" data-i18n-key="resetView">重設視角</button>
+          </div>
+          <ul class="legend__list">
+            <li><span class="swatch swatch--campaign"></span><span data-i18n-key="campaign">Campaign</span></li>
+            <li><span class="swatch swatch--arc"></span><span data-i18n-key="storyArc">Story Arc</span></li>
+            <li><span class="swatch swatch--chapter"></span><span data-i18n-key="legendChapter">團錄 / Chapter</span></li>
+            <li><span class="swatch swatch--pc"></span><span data-i18n-key="legendPc">PC</span></li>
+            <li><span class="swatch swatch--guest"></span><span data-i18n-key="legendGuest">Guest</span></li>
+            <li><span class="swatch swatch--npc"></span><span data-i18n-key="legendNpc">NPC</span></li>
+            <li><span class="line-swatch line-swatch--appearance"></span><span data-i18n-key="legendAppearance">章節出場</span></li>
+            <li><span class="line-swatch line-swatch--related"></span><span data-i18n-key="legendRelated">NPC 關聯</span></li>
+          </ul>
+          <button id="clear-selection" class="ghost-btn legend__action" type="button" data-i18n-key="clearSelection">清除高亮</button>
+          <div id="detail-panel" class="detail-panel">
+            <p class="detail-panel__hint" data-i18n-key="detailHint">點一個節點後，這裡會顯示詳細資訊。</p>
+          </div>
+        </aside>
+
+        <div class="graph-frame">
+          <div id="status" class="status" data-i18n-key="loading">資料載入中...</div>
+          <svg id="graph" class="graph" viewBox="0 0 1600 980" preserveAspectRatio="xMidYMid meet" role="img" aria-label="關聯圖">
+            <g id="viewport"></g>
+          </svg>
+        </div>
+      </section>
+
+      <section class="rankings" aria-label="node rankings">
+        <div class="rankings__header">
+          <h2 data-i18n-key="rankingsTitle">Top 10 連結數</h2>
+          <p data-i18n-key="rankingsHint">以下統計會跟目前 filters 與顯示設定同步。</p>
+        </div>
+        <div id="rankings-grid" class="rankings__grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="../shared/rugatha.config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
