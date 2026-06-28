@@ -1,14 +1,22 @@
 from __future__ import annotations
 
 import html
+import json
 import re
 from pathlib import Path
 
 
 ROOT = Path.cwd()
 SITE_ORIGIN = "https://rugatha.com"
+SITE_NAME = "Rugatha"
+SITE_LOCALE = "en_US"
+ALTERNATE_SITE_LOCALE = "zh_TW"
 DEFAULT_OG_IMAGE = "/assets/rugatha-banner.jpg"
 SKIP_DIRS = {".git", ".github", ".agents", ".codex", "node_modules"}
+RELATED_CHARACTER_TAG_LIMIT = 40
+
+
+_RELATED_CHARACTER_CACHE: dict[str, object] | None = None
 
 
 def strip_tags(value: str) -> str:
@@ -16,17 +24,23 @@ def strip_tags(value: str) -> str:
     text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.I)
     text = re.sub(r"<br\s*/?>", " ", text, flags=re.I)
     text = re.sub(r"<[^>]+>", " ", text)
-    text = (
-        text.replace("&nbsp;", " ")
-        .replace("&amp;", "&")
-        .replace("&quot;", '"')
-        .replace("&#39;", "'")
-    )
+    previous = None
+    while text != previous:
+        previous = text
+        text = html.unescape(text)
+    text = text.replace("\xa0", " ")
     return re.sub(r"\s+", " ", text).strip()
 
 
 def escape_attr(value: str) -> str:
     return html.escape(value or "", quote=True)
+
+
+def load_json_file(relative_path: str) -> object:
+    file_path = ROOT / relative_path
+    if not file_path.exists():
+        return {}
+    return json.loads(file_path.read_text(encoding="utf-8"))
 
 
 def normalize_canonical_path(relative_path: str) -> str:
@@ -59,6 +73,133 @@ def to_absolute_site_url(relative_path: str, raw_url: str | None) -> str:
 def extract_match(source: str, pattern: str) -> str:
     match = re.search(pattern, source, flags=re.I)
     return strip_tags(match.group(1)) if match else ""
+
+
+def has_zh_tw_body_content(content: str) -> bool:
+    body = extract_match(content, r"<body[^>]*>([\s\S]*?)</body>") or strip_tags(content)
+    return bool(re.search(r"[\u4e00-\u9fff]", body))
+
+
+def unique_values(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    result: list[str] = []
+    for value in values:
+        cleaned = strip_tags(str(value)).strip()
+        key = cleaned.casefold()
+        if not cleaned or key in seen:
+            continue
+        seen.add(key)
+        result.append(cleaned)
+    return result
+
+
+def pretty_id(value: str) -> str:
+    return str(value).replace("__", " / ").replace("_", " ").strip()
+
+
+def load_related_character_data() -> dict[str, object]:
+    global _RELATED_CHARACTER_CACHE
+    if _RELATED_CHARACTER_CACHE is not None:
+        return _RELATED_CHARACTER_CACHE
+
+    pcs_json = load_json_file("campaigns/pages/pcs.json")
+    guest_json = load_json_file("campaigns/pages/guest.json")
+    npcs_json = load_json_file("campaigns/pages/npcs.json")
+    npc_rows = load_json_file("npc/data/characters.json")
+
+    npc_names: dict[str, str] = {}
+    if isinstance(npc_rows, list):
+        for row in npc_rows:
+            if not isinstance(row, dict):
+                continue
+            npc_id = str(row.get("id") or "").strip()
+            if not npc_id:
+                continue
+            name = str(row.get("nameEn") or row.get("name") or pretty_id(npc_id)).strip()
+            npc_names[npc_id] = name
+            npc_names[npc_id.casefold()] = name
+
+    _RELATED_CHARACTER_CACHE = {
+        "pcs": pcs_json.get("pcs", {}) if isinstance(pcs_json, dict) else {},
+        "guest": guest_json.get("guest", {}) if isinstance(guest_json, dict) else {},
+        "npcs": npcs_json.get("npcs", {}) if isinstance(npcs_json, dict) else {},
+        "npc_names": npc_names,
+    }
+    return _RELATED_CHARACTER_CACHE
+
+
+def chapter_key_from_path(relative_path: str) -> str | None:
+    path = Path(relative_path)
+    if not relative_path.startswith("campaigns/pages/"):
+        return None
+    if not re.match(r"chpt[^/]+\.html?$", path.name, flags=re.I):
+        return None
+    return f"{path.parent.name}-{path.stem.lower()}"
+
+
+def arc_key_from_path(relative_path: str) -> str | None:
+    path = Path(relative_path)
+    if not relative_path.startswith("campaigns/pages/"):
+        return None
+    if path.name.lower() != "index.html":
+        return None
+    if len(path.parts) < 4:
+        return None
+    return path.parent.name
+
+
+def related_character_names(relative_path: str) -> dict[str, list[str]]:
+    chapter_key = chapter_key_from_path(relative_path)
+    arc_key = arc_key_from_path(relative_path)
+    if not chapter_key and not arc_key:
+        return {"pcs": [], "guests": [], "npcs": [], "tags": []}
+
+    data = load_related_character_data()
+    pcs_map = data.get("pcs", {}) if isinstance(data.get("pcs"), dict) else {}
+    guest_map = data.get("guest", {}) if isinstance(data.get("guest"), dict) else {}
+    npcs_map = data.get("npcs", {}) if isinstance(data.get("npcs"), dict) else {}
+    npc_names = data.get("npc_names", {}) if isinstance(data.get("npc_names"), dict) else {}
+
+    pc_names = unique_values(pcs_map.get(chapter_key, []) if chapter_key and isinstance(pcs_map.get(chapter_key), list) else [])
+    guest_names = unique_values(
+        guest_map.get(chapter_key, []) if chapter_key and isinstance(guest_map.get(chapter_key), list) else []
+    )
+    npc_key = next(
+        (
+            key
+            for key in [chapter_key, arc_key]
+            if key and isinstance(npcs_map.get(key), list) and npcs_map.get(key)
+        ),
+        None,
+    )
+    npc_ids = npcs_map.get(npc_key, []) if npc_key else []
+    npc_display_names = unique_values(
+        [str(npc_names.get(str(npc_id), npc_names.get(str(npc_id).casefold(), pretty_id(str(npc_id))))) for npc_id in npc_ids]
+    )
+    return {
+        "pcs": pc_names,
+        "guests": guest_names,
+        "npcs": npc_display_names,
+        "tags": unique_values([*pc_names, *guest_names, *npc_display_names])[:RELATED_CHARACTER_TAG_LIMIT],
+    }
+
+
+def summarize_name_group(label: str, names: list[str], limit: int) -> str:
+    if not names:
+        return ""
+    shown = names[:limit]
+    suffix = f", and {len(names) - limit} more" if len(names) > limit else ""
+    return f"{label} {', '.join(shown)}{suffix}"
+
+
+def related_character_summary(related: dict[str, list[str]]) -> str:
+    parts = [
+        summarize_name_group("PCs", related.get("pcs", []), 5),
+        summarize_name_group("guests", related.get("guests", []), 2),
+        summarize_name_group("NPCs", related.get("npcs", []), 4),
+    ]
+    joined = "; ".join(part for part in parts if part)
+    return f" Featuring {joined}." if joined else ""
 
 
 def clean_title(title: str) -> str:
@@ -112,6 +253,8 @@ def summarize(value: str, max_length: int = 155) -> str:
 
 def infer_description(relative_path: str, content: str, title: str) -> str:
     page_name = get_page_name(relative_path, content, title)
+    related = related_character_names(relative_path)
+    character_summary = related_character_summary(related)
 
     if relative_path == "index.html":
         return "Explore Rugatha campaigns, characters, deities, maps, history, and community tools in one place."
@@ -121,10 +264,10 @@ def infer_description(relative_path: str, content: str, title: str) -> str:
         return "Explore Rugatha campaigns, story arcs, and chapter records across the main line and side stories."
     if relative_path.startswith("campaigns/pages/"):
         if re.search(r"/chpt[^/]+\.html$", relative_path, flags=re.I):
-            return f"Read {page_name}, a Rugatha chapter record with story content, chapter navigation, and related characters."
+            return f"Read {page_name}, a Rugatha chapter record with story content, chapter navigation, and related characters.{character_summary}"
         if "story arc" in clean_title(title).lower():
-            return f"Explore {page_name}, a Rugatha story arc with overview, chapter navigation, and related campaign context."
-        return f"Explore {page_name}, a Rugatha campaign page with chapter navigation, story context, and related records."
+            return f"Explore {page_name}, a Rugatha story arc with overview, chapter navigation, and related campaign context.{character_summary}"
+        return f"Explore {page_name}, a Rugatha campaign page with chapter navigation, story context, and related records.{character_summary}"
     if relative_path == "character_main_page/index.html":
         return "Browse Rugatha player characters and NPCs from across the campaigns and worldbuilding archive."
     if relative_path == "character_card/index.html":
@@ -167,12 +310,30 @@ def infer_og_type(relative_path: str) -> str:
     return "website"
 
 
-def build_meta_block(title: str, description: str, canonical_url: str, og_image: str, og_type: str) -> str:
-    return "\n".join(
+def build_meta_block(
+    title: str,
+    description: str,
+    canonical_url: str,
+    og_image: str,
+    og_type: str,
+    has_alternate_locale: bool,
+    article_tags: list[str] | None = None,
+) -> str:
+    lines = [
+        f'  <meta name="description" content="{escape_attr(description)}">',
+        '  <meta name="robots" content="index, follow">',
+        f'  <link rel="canonical" href="{escape_attr(canonical_url)}">',
+        f'  <meta property="og:type" content="{escape_attr(og_type)}">',
+        f'  <meta property="og:site_name" content="{escape_attr(SITE_NAME)}">',
+        f'  <meta property="og:locale" content="{escape_attr(SITE_LOCALE)}">',
+    ]
+    if has_alternate_locale:
+        lines.append(f'  <meta property="og:locale:alternate" content="{escape_attr(ALTERNATE_SITE_LOCALE)}">')
+    if og_type == "article":
+        for tag in article_tags or []:
+            lines.append(f'  <meta property="article:tag" content="{escape_attr(tag)}">')
+    lines.extend(
         [
-            f'  <meta name="description" content="{escape_attr(description)}">',
-            f'  <link rel="canonical" href="{escape_attr(canonical_url)}">',
-            f'  <meta property="og:type" content="{escape_attr(og_type)}">',
             f'  <meta property="og:title" content="{escape_attr(title)}">',
             f'  <meta property="og:description" content="{escape_attr(description)}">',
             f'  <meta property="og:url" content="{escape_attr(canonical_url)}">',
@@ -183,6 +344,7 @@ def build_meta_block(title: str, description: str, canonical_url: str, og_image:
             f'  <meta name="twitter:image" content="{escape_attr(og_image)}">',
         ]
     )
+    return "\n".join(lines)
 
 
 def collect_html_files(root: Path) -> list[Path]:
@@ -217,6 +379,8 @@ def normalize_html(file_path: Path) -> bool:
     )
     description = infer_description(relative_path, content, title)
     canonical_url = f"{SITE_ORIGIN}{normalize_canonical_path(relative_path)}"
+    has_alternate_locale = has_zh_tw_body_content(content)
+    related = related_character_names(relative_path)
 
     existing_og_image = (
         extract_match(content, r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\'][^>]*>')
@@ -227,13 +391,15 @@ def normalize_html(file_path: Path) -> bool:
     og_type = infer_og_type(relative_path)
 
     content = re.sub(r'\s*<meta[^>]+name=["\']description["\'][^>]*>\n?', "", content, flags=re.I)
+    content = re.sub(r'\s*<meta[^>]+name=["\']robots["\'][^>]*>\n?', "", content, flags=re.I)
     content = re.sub(r'\s*<link[^>]+rel=["\']canonical["\'][^>]*>\n?', "", content, flags=re.I)
     content = re.sub(
-        r'\s*<meta[^>]+property=["\']og:(type|title|description|url|image)["\'][^>]*>\n?',
+        r'\s*<meta[^>]+property=["\']og:(type|site_name|locale(?::alternate)?|title|description|url|image)["\'][^>]*>\n?',
         "",
         content,
         flags=re.I,
     )
+    content = re.sub(r'\s*<meta[^>]+property=["\']article:tag["\'][^>]*>\n?', "", content, flags=re.I)
     content = re.sub(
         r'\s*<meta[^>]+name=["\']twitter:(card|title|description|image)["\'][^>]*>\n?',
         "",
@@ -241,7 +407,15 @@ def normalize_html(file_path: Path) -> bool:
         flags=re.I,
     )
 
-    meta_block = build_meta_block(title, description, canonical_url, og_image, og_type)
+    meta_block = build_meta_block(
+        title,
+        description,
+        canonical_url,
+        og_image,
+        og_type,
+        has_alternate_locale,
+        related.get("tags", []),
+    )
     content = re.sub(r"(<title[^>]*>[\s\S]*?</title>\s*)", rf"\1{meta_block}\n", content, count=1, flags=re.I)
     content = re.sub(r"(</title>)\s*(<meta name=\"description\")", r"\1\n  \2", content)
     content = re.sub(r"(twitter:image\" content=\"[^\"]+\">)\s*(<link)", r"\1\n\2", content)
