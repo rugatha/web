@@ -167,8 +167,9 @@ body {
 
 .title {
   margin: 0;
-  font-size: clamp(30px, 5vw, 44px);
-  line-height: 1.05;
+  font-size: clamp(44px, 8vw, 76px);
+  line-height: 0.95;
+  white-space: pre-line;
 }
 
 .hero > div:last-child {
@@ -189,11 +190,10 @@ body {
 .meta-grid {
   margin-top: 18px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: 1fr;
+  gap: 6px;
 }
 
-.meta-card,
 .section {
   border-radius: 20px;
   background: var(--panel);
@@ -202,21 +202,29 @@ body {
 }
 
 .meta-card {
-  padding: 16px 18px;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .meta-label {
-  margin: 0 0 6px;
+  margin: 0;
   color: #f5e6b8;
   font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  min-width: 4.5em;
 }
 
 .meta-value {
   margin: 0;
-  font-size: 1.1rem;
-  font-weight: 700;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .section {
@@ -228,6 +236,26 @@ body {
   margin: 0 0 14px;
   font-size: 1.2rem;
   text-align: center;
+}
+
+.adventure-log__body {
+  margin: 0;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.adventure-log__body p {
+  margin: 0;
+}
+
+.adventure-log__body p + p {
+  margin-top: 1em;
 }
 
 .arc-list {
@@ -346,5 +374,9 @@ body {
 
   .meta-grid {
     grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: clamp(38px, 13vw, 58px);
   }
 }

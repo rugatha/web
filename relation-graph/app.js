@@ -222,13 +222,6 @@ function applyStaticI18n() {
   });
 }
 
-function parseCsv(text) {
-  return `${text || ""}`
-    .trim()
-    .split(/\r?\n/)
-    .map((line) => line.split(",").map((part) => part.trim()));
-}
-
 function getCampaignLabel(id) {
   const configCampaign = (window.RUGATHA_CONFIG && window.RUGATHA_CONFIG.campaigns || []).find((item) => {
     if (!item || !item.page) return false;
@@ -284,24 +277,25 @@ function loadGraphMeta() {
 }
 
 function buildGraphDataset(resources) {
-  const { meta, pcsJson, guestsJson, npcsJson, npcCharacters, chapterTitles, storyArcTitles, pcRows } = resources;
+  const { meta, pcsJson, guestsJson, npcsJson, npcCharacters, chapterTitles, storyArcTitles, pcData } = resources;
   const pcInfoMap = new Map();
-  pcRows.slice(1).forEach((row) => {
-    const [nameEn, nameZh, raceEn, raceZh, classEn, classZh, player, campaign1, campaign2, guest] = row;
+  (Array.isArray(pcData) ? pcData : []).forEach((entry) => {
+    const nameEn = entry && entry.name_en;
     if (!nameEn) return;
     pcInfoMap.set(nameEn, {
       id: `pc:${nameEn}`,
       key: nameEn,
       nameEn,
-      nameZh,
-      raceEn,
-      raceZh,
-      classEn,
-      classZh,
-      player,
-      campaign1,
-      campaign2,
-      guest: guest === "1"
+      nameZh: entry.name_zh || "",
+      raceEn: entry.race_en || "",
+      raceZh: entry.race_zh || "",
+      classEn: entry.class_en || "",
+      classZh: entry.class_zh || "",
+      player: entry.player || "",
+      campaign: Array.isArray(entry.campaign)
+        ? entry.campaign
+        : [entry.campaign_1, entry.campaign_2].filter(Boolean),
+      guest: entry.guest === "1"
     });
   });
 
@@ -1393,14 +1387,14 @@ async function init() {
     applyStaticI18n();
     setStatus(t("loading"));
     const meta = loadGraphMeta();
-    const [pcsJson, guestsJson, npcsJson, npcCharacters, chapterTitles, storyArcTitles, pcLibText] = await Promise.all([
+    const [pcsJson, guestsJson, npcsJson, npcCharacters, chapterTitles, storyArcTitles, pcData] = await Promise.all([
       fetch(DATA_URLS.pcs, { cache: "no-store" }).then((res) => res.json()),
       fetch(DATA_URLS.guests, { cache: "no-store" }).then((res) => res.json()),
       fetch(DATA_URLS.npcs, { cache: "no-store" }).then((res) => res.json()),
       fetch(DATA_URLS.npcCharacters, { cache: "no-store" }).then((res) => res.json()),
       fetch(DATA_URLS.chapterTitles, { cache: "no-store" }).then((res) => res.json()),
       fetch(DATA_URLS.storyArcTitles, { cache: "no-store" }).then((res) => res.json()),
-      fetch(DATA_URLS.pcLib, { cache: "no-store" }).then((res) => res.text())
+      fetch(DATA_URLS.pcLib, { cache: "no-store" }).then((res) => res.json())
     ]);
 
     state.graphData = buildGraphDataset({
@@ -1411,7 +1405,7 @@ async function init() {
       npcCharacters,
       chapterTitles,
       storyArcTitles,
-      pcRows: parseCsv(pcLibText)
+      pcData
     });
     installEvents();
     installPanAndZoom();
