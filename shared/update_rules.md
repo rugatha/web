@@ -23,7 +23,7 @@
    - `/campaigns/pages/pcs.json`
    - `/campaigns/pages/guest.json`
    - `/campaigns/pages/npcs.json`
-7. NPC 對照請以 `/npc/data/characters.json` 內實際存在的 `id` 為準；PC 請以 `/pc/pc_lib` 內名稱為準。
+7. NPC 對照請以 `/npc/data/characters.json` 內實際存在的 `id` 為準；PC 請以 JSON 格式的 `/pc/pc_lib` 內名稱為準，所屬 campaign 請填在 `campaign` 字串陣列。
 8. 請檢查章節首圖與文內附圖是否存在、路徑是否正確。
 9. 若新增或更換章節首圖，請同步檢查：
    - `/campaigns/chapter-banners/`

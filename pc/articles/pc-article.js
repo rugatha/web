@@ -19,6 +19,11 @@
       zh: "客串玩家角色",
       en: "Guest Player Character"
     },
+    adventureLog: { zh: "冒險紀錄", en: "Adventure Log" },
+    adventureLogText: {
+      zh: "這裡暫放角色的旅程摘要、重要抉擇與值得記下的冒險片段。後續可依章節紀錄補上更完整的內容。",
+      en: "A temporary space for this character's journey notes, key choices, and memorable adventure moments. A fuller chapter-by-chapter record can be added later."
+    },
     appearances: { zh: "登場故事弧與章節", en: "Story Arcs and Chapters" },
     noAppearances: { zh: "目前尚未整理到章節登場紀錄。", en: "No chapter appearances have been indexed yet." },
     loadFailed: { zh: "資料載入失敗。", en: "Failed to load data." },
@@ -59,22 +64,6 @@
 
   const isGuestPlayer = (pc) => String(pc && pc.guest ? pc.guest : "").trim() === "1";
 
-  const parseCsv = (text) => {
-    const lines = String(text || "")
-      .split(/\r?\n/)
-      .map((line) => line.trim())
-      .filter(Boolean);
-    if (lines.length < 2) return [];
-    const headers = lines[0].split(",").map((cell) => cell.trim());
-    return lines.slice(1).map((line) => {
-      const values = line.split(",").map((cell) => cell.trim());
-      return headers.reduce((entry, header, index) => {
-        entry[header] = values[index] || "";
-        return entry;
-      }, {});
-    });
-  };
-
   const resolvePortraitCandidates = (name) => [
     `../portrait/${name}.jpg`,
     `../portrait/${name}.jpeg`,
@@ -103,6 +92,44 @@
   const getChapterTitle = (chapter, lang, chapterId) => {
     if (!chapter) return chapterId;
     return (chapter[lang] || chapter.zh || chapter.en || chapterId || "").trim();
+  };
+
+  const getAdventureLogText = (pc, lang) => {
+    if (!pc) return "";
+    const key = lang === "en" ? "record_en" : "record_zh";
+    return String(pc[key] || "").trim();
+  };
+
+  const getLocalizedValue = (pc, key, fallbackKey) => {
+    const primary = pc[key];
+    const fallback = pc[fallbackKey];
+    const value = Array.isArray(primary) && primary.length ? primary : primary || fallback;
+    const normalized = Array.isArray(value) ? value : String(value || "").split("/");
+    return normalized
+      .map((item) => String(item || "").trim())
+      .filter(Boolean)
+      .join(" / ");
+  };
+
+  const getDisplayName = (pc, lang) => {
+    const name = lang === "en" ? pc.name_en : pc.name_zh || pc.name_en;
+    if (lang === "en" && name === "Tai Tai Wo Hai Yao") return "Tai Tai\n\nWo Hai Yao";
+    return name;
+  };
+
+  const renderAdventureLogBody = (body, text, fallback) => {
+    body.innerHTML = "";
+    const content = text || fallback;
+    const paragraphs = String(content || "")
+      .split(/\n{2,}/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean);
+
+    paragraphs.forEach((paragraph) => {
+      const node = document.createElement("p");
+      node.textContent = paragraph;
+      body.appendChild(node);
+    });
   };
 
   const setLanguage = (nextLang) => {
@@ -205,6 +232,31 @@
     });
   };
 
+  const ensureAdventureLog = () => {
+    if (document.getElementById("adventure-log-title")) return;
+
+    const metaGrid = document.querySelector(".meta-grid");
+    const appearancesSection = document.getElementById("appearance-list")?.closest(".section");
+    const anchor = metaGrid || appearancesSection;
+    if (!anchor || !anchor.parentNode) return;
+
+    const section = document.createElement("section");
+    section.className = "section adventure-log";
+
+    const title = document.createElement("h2");
+    title.id = "adventure-log-title";
+    title.textContent = "冒險紀錄";
+    section.appendChild(title);
+
+    const body = document.createElement("div");
+    body.className = "adventure-log__body";
+    body.id = "adventure-log-body";
+    renderAdventureLogBody(body, "", i18n.adventureLogText.zh);
+    section.appendChild(body);
+
+    anchor.insertAdjacentElement("afterend", section);
+  };
+
   const render = () => {
     const lang = state.lang;
     const pc = state.pc;
@@ -213,21 +265,31 @@
     document.getElementById("page-eyebrow").textContent = i18n.pageEyebrow[lang];
     const baseName = lang === "en" ? pc.name_en : pc.name_zh || pc.name_en;
     document.title = `${baseName} | ${i18n.documentSuffix[lang]}`;
-    document.getElementById("page-title").textContent = baseName;
+    document.getElementById("page-title").textContent = getDisplayName(pc, lang);
     document.getElementById("page-subtitle").textContent = isGuestPlayer(pc)
       ? i18n.guestPlayerCharacterPrefix[lang].trim()
       : "";
     document.getElementById("race-label").textContent = i18n.race[lang];
     document.getElementById("role-label").textContent = i18n.role[lang];
     document.getElementById("race-value").textContent = lang === "en"
-      ? (pc.race_en || pc.race_zh || "")
-      : (pc.race_zh || pc.race_en || "");
+      ? getLocalizedValue(pc, "race_en", "race_zh")
+      : getLocalizedValue(pc, "race_zh", "race_en");
     document.getElementById("role-value").textContent = lang === "en"
-      ? (pc.class_en || pc.class_zh || "")
-      : (pc.class_zh || pc.class_en || "");
+      ? getLocalizedValue(pc, "class_en", "class_zh")
+      : getLocalizedValue(pc, "class_zh", "class_en");
     document.getElementById("back-link").textContent = i18n.back[lang];
     const prevLabel = document.getElementById("previous-view-label");
     if (prevLabel) prevLabel.textContent = i18n.previousView[lang];
+    const adventureLogTitle = document.getElementById("adventure-log-title");
+    if (adventureLogTitle) adventureLogTitle.textContent = i18n.adventureLog[lang];
+    const adventureLogBody = document.getElementById("adventure-log-body");
+    if (adventureLogBody) {
+      renderAdventureLogBody(
+        adventureLogBody,
+        getAdventureLogText(pc, lang),
+        i18n.adventureLogText[lang]
+      );
+    }
 
     document.querySelectorAll("[data-lang]").forEach((button) => {
       const active = button.dataset.lang === lang;
@@ -269,6 +331,7 @@
     document.querySelectorAll("[data-lang]").forEach((button) => {
       button.addEventListener("click", () => setLanguage(button.dataset.lang));
     });
+    ensureAdventureLog();
 
     try {
       const [pcRes, pcsRes, guestRes, navRes, arcRes, chapterRes] = await Promise.all([
@@ -284,8 +347,8 @@
         throw new Error(i18n.loadFailed[state.lang]);
       }
 
-      const [pcCsv, pcsJson, guestJson, chapterNav, arcTitles, chapterTitles] = await Promise.all([
-        pcRes.text(),
+      const [pcs, pcsJson, guestJson, chapterNav, arcTitles, chapterTitles] = await Promise.all([
+        pcRes.json(),
         pcsRes.json(),
         guestRes.json(),
         navRes.json(),
@@ -293,7 +356,6 @@
         chapterRes.json()
       ]);
 
-      const pcs = parseCsv(pcCsv);
       const pc = pcs.find((entry) => normalizePcKey(entry.name_en) === normalizePcKey(targetPcName));
       if (!pc) {
         throw new Error(`PC not found: ${targetPcName}`);

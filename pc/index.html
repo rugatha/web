@@ -146,10 +146,54 @@
       max-width: 320px;
       color: inherit;
       text-decoration: none;
+      background:
+        radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.08), transparent 28%),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 7px),
+        var(--pc-card-bg, rgba(35, 43, 58, 0.96));
+      border-color: var(--pc-card-border, rgba(255, 223, 163, 0.16));
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 12px 26px rgba(0, 0, 0, 0.18);
+    }
+
+    .related-pcs__card::before,
+    .related-pcs__card::after {
+      content: none;
     }
 
     .related-pcs__meta {
       max-width: 100%;
+      width: auto;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      color: rgba(203, 214, 207, 0.72);
+      font-size: 0.8rem;
+      font-weight: 500;
+      line-height: 1.12;
+      backdrop-filter: none;
+    }
+
+    .related-pcs__name {
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .related-pcs__body {
+      grid-template-columns: 92px minmax(0, 1fr);
+      grid-template-areas: "portrait text";
+    }
+
+    .related-pcs__text {
+      grid-area: text;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .related-pcs__portrait {
+      grid-area: portrait;
+      justify-self: start;
     }
 
     .related-pcs__player {
@@ -222,6 +266,16 @@
       "Rugatha Brown"
     ];
 
+    const campaignAccents = {
+      "Rugatha": "#9fe0ba",
+      "Rugatha Plus": "#c8f9ff",
+      "RUGATHA Plus": "#c8f9ff",
+      "Rugatha lite": "#ffe7a3",
+      "Rugatha WILDS": "#c1e27a",
+      "Rugatha Brown": "#ffc09f",
+      "Rugatha Legends": "#f6d185"
+    };
+
     let currentLang = "zh";
 
     const normalizePcKey = (value) =>
@@ -236,73 +290,62 @@
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-|-$)/g, "");
 
-    const getMetaText = (pc) => {
+    const hexToRgb = (hex) => {
+      const normalized = String(hex || "").replace("#", "").trim();
+      if (!/^[0-9a-f]{6}$/i.test(normalized)) return null;
+      const value = Number.parseInt(normalized, 16);
+      return {
+        r: (value >> 16) & 255,
+        g: (value >> 8) & 255,
+        b: value & 255
+      };
+    };
+
+    const applyCampaignAccent = (card, campaign) => {
+      const accent = campaignAccents[campaign] || campaignAccents.Rugatha;
+      const rgb = hexToRgb(accent);
+      if (!rgb) return;
+      const { r, g, b } = rgb;
+      card.style.setProperty("--pc-card-bg", `rgba(${Math.max(18, Math.round(r * 0.2))}, ${Math.max(22, Math.round(g * 0.2))}, ${Math.max(30, Math.round(b * 0.2))}, 0.96)`);
+      card.style.setProperty("--pc-card-border", `rgba(${r}, ${g}, ${b}, 0.56)`);
+    };
+
+    const getLocalizedValue = (pc, key, fallbackKey) => {
+      const primary = pc[key];
+      const fallback = pc[fallbackKey];
+      const value = Array.isArray(primary) && primary.length ? primary : primary || fallback;
+      const normalized = Array.isArray(value) ? value : String(value || "").split("/");
+      return normalized
+        .map((item) => String(item || "").trim())
+        .filter(Boolean)
+        .join(" / ");
+    };
+
+    const getMetaValues = (pc) => {
       const race = currentLang === "en"
-        ? (pc.race_en || pc.race_zh || "")
-        : (pc.race_zh || pc.race_en || "");
+        ? getLocalizedValue(pc, "race_en", "race_zh")
+        : getLocalizedValue(pc, "race_zh", "race_en");
       const role = currentLang === "en"
-        ? (pc.class_en || pc.class_zh || "")
-        : (pc.class_zh || pc.class_en || "");
-      if (race && role) return `${race}｜${role}`;
-      return race || role || "";
+        ? getLocalizedValue(pc, "class_en", "class_zh")
+        : getLocalizedValue(pc, "class_zh", "class_en");
+      return { race, role };
     };
 
     const resolvePcImageCandidates = (name) =>
       ["jpg", "jpeg", "png"].map((ext) => `./pics/${name}.${ext}`);
 
-    const parsePcLine = (line) => {
-      const values = line.split(",").map((cell) => cell.trim());
-      const entry = {
-        name_en: values[0] || "",
-        name_zh: values[1] || "",
-        race_en: values[2] || "",
-        race_zh: values[3] || "",
-        class_en: values[4] || "",
-        class_zh: values[5] || "",
-        player: "",
-        campaign_1: "",
-        campaign_2: "",
-        guest: "0"
-      };
-
-      if (values.length >= 10) {
-        entry.player = values[6] || "";
-        entry.campaign_1 = values[7] || "";
-        entry.campaign_2 = values[8] || "";
-        entry.guest = values[9] || "0";
-        return entry;
-      }
-
-      if (values.length === 9) {
-        entry.player = values[6] || "";
-        entry.campaign_1 = values[7] || "";
-        entry.campaign_2 = values[8] || "";
-        return entry;
-      }
-
-      if (values.length === 8) {
-        entry.campaign_1 = values[6] || "";
-        entry.campaign_2 = values[7] || "";
-        return entry;
-      }
-
-      entry.player = values[6] || "";
-      entry.campaign_1 = values[7] || "";
-      entry.campaign_2 = values[8] || "";
-      return entry;
-    };
-
     const isGuestPlayer = (pc) => String(pc.guest || "").trim() === "1";
 
     const getCampaigns = (pc) =>
-      [pc.campaign_1, pc.campaign_2]
+      (Array.isArray(pc.campaign) ? pc.campaign : [pc.campaign_1, pc.campaign_2])
         .map((value) => String(value || "").trim())
-        .filter((value) => value && value !== "NA");
+        .filter((value) => value && value !== "NA" && value !== "0");
 
-    const createCard = (pc) => {
+    const createCard = (pc, campaign) => {
       const card = document.createElement("a");
       card.className = "related-pcs__card";
       card.href = `./articles/${slugify(pc.name_en)}.html`;
+      applyCampaignAccent(card, campaign);
 
       const body = document.createElement("div");
       body.className = "related-pcs__body";
@@ -319,7 +362,8 @@
         : (pc.name_zh || pc.name_en || "");
       text.appendChild(name);
 
-      const metaText = getMetaText(pc);
+      const metaValues = getMetaValues(pc);
+      const metaText = [metaValues.race, metaValues.role].filter(Boolean).join(" | ");
       if (metaText) {
         const meta = document.createElement("div");
         meta.className = "related-pcs__meta";
@@ -379,7 +423,7 @@
           if (guestDiff !== 0) return guestDiff;
           return a.name_en.localeCompare(b.name_en);
         })
-        .forEach((pc) => grid.appendChild(createCard(pc)));
+        .forEach((pc) => grid.appendChild(createCard(pc, campaign)));
       section.appendChild(grid);
 
       return section;
@@ -402,16 +446,10 @@
       try {
         const res = await fetch("./pc_lib", { cache: "no-cache" });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const csvText = await res.text();
-        const lines = csvText
-          .split(/\r?\n/)
-          .map((line) => line.trim())
-          .filter(Boolean);
+        const data = await res.json();
+        if (!Array.isArray(data) || !data.length) throw new Error("pc_lib is empty");
 
-        if (lines.length < 2) throw new Error("pc_lib is empty");
-
-        const pcs = lines.slice(1)
-          .map(parsePcLine)
+        const pcs = data
           .filter((entry) => normalizePcKey(entry.name_en))
           .sort((a, b) => a.name_en.localeCompare(b.name_en));
 

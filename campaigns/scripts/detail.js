@@ -913,33 +913,20 @@
     const siteBase = campaignsBase ? new URL("../", campaignsBase).href : window.location.href;
     const pcDataUrl = new URL("pc/pc_lib", siteBase).href;
 
-    let csvText = "";
+    let charById;
     try {
       const res = await fetch(pcDataUrl, { cache: "no-cache" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      csvText = await res.text();
+      const data = await res.json();
+      charById = (Array.isArray(data) ? data : []).reduce((acc, entry) => {
+        const key = normalizePcKey(entry && entry.name_en);
+        if (key) acc[key] = entry;
+        return acc;
+      }, {});
     } catch (err) {
       console.error("PC data unavailable:", err && err.message ? err.message : err);
       return;
     }
-
-    const lines = csvText
-      .split(/\r?\n/)
-      .map((line) => line.trim())
-      .filter(Boolean);
-    if (lines.length < 2) return;
-
-    const headers = lines[0].split(",").map((cell) => cell.trim());
-    const charById = lines.slice(1).reduce((acc, line) => {
-      const values = line.split(",").map((cell) => cell.trim());
-      const entry = headers.reduce((obj, header, index) => {
-        obj[header] = values[index] || "";
-        return obj;
-      }, {});
-      const key = normalizePcKey(entry.name_en);
-      if (key) acc[key] = entry;
-      return acc;
-    }, {});
 
     relatedPcState.pcIds = pcIds;
     relatedPcState.charById = charById;
@@ -972,33 +959,20 @@
     const siteBase = campaignsBase ? new URL("../", campaignsBase).href : window.location.href;
     const pcDataUrl = new URL("pc/pc_lib", siteBase).href;
 
-    let csvText = "";
+    let charById;
     try {
       const res = await fetch(pcDataUrl, { cache: "no-cache" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      csvText = await res.text();
+      const data = await res.json();
+      charById = (Array.isArray(data) ? data : []).reduce((acc, entry) => {
+        const key = normalizePcKey(entry && entry.name_en);
+        if (key) acc[key] = entry;
+        return acc;
+      }, {});
     } catch (err) {
       console.error("Guest PC data unavailable:", err && err.message ? err.message : err);
       return;
     }
-
-    const lines = csvText
-      .split(/\r?\n/)
-      .map((line) => line.trim())
-      .filter(Boolean);
-    if (lines.length < 2) return;
-
-    const headers = lines[0].split(",").map((cell) => cell.trim());
-    const charById = lines.slice(1).reduce((acc, line) => {
-      const values = line.split(",").map((cell) => cell.trim());
-      const entry = headers.reduce((obj, header, index) => {
-        obj[header] = values[index] || "";
-        return obj;
-      }, {});
-      const key = normalizePcKey(entry.name_en);
-      if (key) acc[key] = entry;
-      return acc;
-    }, {});
 
     relatedGuestState.pcIds = guestIds;
     relatedGuestState.charById = charById;

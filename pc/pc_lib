@@ -1,36 +1,675 @@
-name_en, name_zh, race_en, race_zh, class_en, class_zh, player, campaign_1, campaign_2, guest
-Usioni, 嗚兮噢尼, Minatour, 牛頭怪, Fighter, 戰士, Nathan, Rugatha, NA, 0
-Midori, 米多莉, Human, 人類, Paladin, 聖騎士, Joseph, Rugatha, Rugatha Plus, 0
-Paladin, 帕拉丁, Halfling, 半身人, Ranger/Paladin, 遊俠/聖騎士, Samuel, Rugatha, Rugatha lite, 0
-Uko, 烏柯, Dragonborn, 龍人, Druid, 德魯伊, Roger, Rugatha, NA, 0
-Ron, 龍恩, Dragonborn, 龍人, Monk, 武僧, Hark, Rugatha, Rugatha Plus, 0
-Samael, 薩梅爾, Elf, 妖精, Bard/Ranger, 吟遊詩人/遊俠, HugeCat, Rugatha, Rugatha Plus, 0
-Jiaheng, 家亨, Elf, 妖精, Cleric, 牧師, Henry, Rugatha, NA, 0
-Tai Tai Wo Hai Yao, Tai Tai我還要, Tiefling, 魔人, Wizard, 法師, 拉拉, Rugatha, NA, 0
-YHWH, YHWH, Human, 人類, Sorcerer, 術士, 拉拉, Rugatha, Rugatha Plus, 0
-Lemmy, 雷米, Half-Elf, 半妖精, Rogue, 浪客, Roger, Rugatha, Rugatha Plus, 0
-Siri Oslee, 喜利・噢喜力, Gnome, 地侏, Rogue, 浪客, 式謙, Rugatha, Rugatha Plus, 0
-Tweeter, 圖伊特, Aarakocra, 天狗, Warlock/Sorcerer, 契術師/術士, Milker, Rugatha lite, NA, 0
-Yi, 伊, Human, 人類, Rogue, 浪客, Nasa, Rugatha lite, NA, 1
-Inu, 伊努, Spirit, 精靈, Sorcerer, 術士, Lala, Rugatha lite, NA, 0
-Lott, 羅特, Tiefling, 魔人, Rogue/Warlock, 浪客/契術師, Nasa, Rugatha lite, NA, 0
-Al-lon, 阿龍, Dragonborn, 龍人, Barbarian, 野蠻人, 仰山, Rugatha WILDS, NA, 0
-Roel, 羅羅, Elf, 妖精, Warlock, 契術師, 雀, Rugatha WILDS, NA, 0
-Dawn Light Fur, 毛毛, Tabaxi, 班貓人, Rogue, 浪客, MoYu, Rugatha WILDS, NA, 0
-Kaname, 鑰, Merfolk, 人魚, Cleric, 牧師, 阿流, Rugatha WILDS, NA, 0
-Buzz, 巴斯, Elf, 妖精, Fighter, 戰士, Joseph, Rugatha lite, NA, 0
-Pascal, 帕斯卡, Halfling, 半身人, Paladin/Barbarian, 聖騎士/野蠻人, Samuel, Rugatha lite, NA, 0
-Leah, 雷亞, Lizardfolk, 蜥蜴人, Druid/Fighter, 德魯伊/戰士, Rugatha WILDS, NA, 0
-Watson, 華生, Aasimar, 天使人, Wizard, 法師, Nasa, Rugatha lite, NA, 0
-Sugalu, 蘇加魯, Half-Orc, 半獸人, Fighter, 戰士, Nathan, Rugatha, Rugatha lite, 0
-Anedak, 安納戴克, Naga, 那伽, Barbarian, 野蠻人, Nathan, Rugatha, NA, 0
-Iren, 艾倫, Half-Orc, 半獸人, Fighter, 戰士, Nathan, Rugatha lite, NA, 0
-Ubbo, 烏波, Plasmoid, 流漿怪, Druid/Sorcerer, 德魯伊/術士, Milker, Rugatha lite, NA, 0
-Psyber, 賽柏, Half-Orc, 半獸人, Paladin/Barbarian, 聖騎士/野蠻人, Samuel, Rugatha lite, NA, 0
-Drayer, 墜兒, Elf, 妖精, Cleric, 牧師, Henry, Rugatha, Rugatha lite, 0
-Kudan, 庫登, Minotaur, 牛頭怪, Sorcerer, 術士, Nathan, Rugatha lite, NA, 0
-Brown, 布朗, Half-Orc, 半獸人, Barbarian, 野蠻人, Timothy, Rugatha Brown, NA, 0
-GoR, GoR, Kalashtar, 離夢人, Ranger, 遊俠, Amber, Rugatha lite, NA, 0
-Cecil, 賽希爾, Shadar-Kai, 幽族, Wizard, 法師, 阿樂, Rugatha WILDS, NA, 1
-Mr. Green, 綠先生, Human, 人類, Paladin, 聖騎士, Hark, Rugatha WILDS, NA, 1
-Ravi, 拉比, Lizardfolk, 蜥蜴人, Ranger/Bard, 遊俠/吟遊詩人, Joseph, Rugatha WILDS, NA, 1
+[
+  {
+    "name_en": "Usioni",
+    "name_zh": "烏犧奧泥",
+    "race_en": "Minatour",
+    "race_zh": "牛頭怪",
+    "class_en": [
+      "Fighter"
+    ],
+    "class_zh": [
+      "戰士"
+    ],
+    "player": "Nathan",
+    "guest": "0",
+    "campaign": [
+      "Rugatha"
+    ],
+    "record_zh": "烏犧奧泥在沃瓦倫與台北市議員相遇，參與調查山米克死亡與沃瓦倫詛咒，拜訪鎮長家、寂靜殿與魏斯科。穿越嚎叫森林時，他與同伴吃下有毒三明治，遭遇狼群襲擊，並經歷部分成員死亡後又復甦的異常事件。\n\n眾人帶回葛蘭倫大法師後，沃瓦倫的驅咒儀式變成屠殺。烏犧奧泥與倖存者進入寂靜殿地下城，並與家亨、烏柯一同聽見多姆尼爾的聲音，被要求在冒險團中完成玩笑。烏犧奧泥在地下城中將被俘虜的哥布林加冕為「地底王神王尼可」。\n\n寇林菲爾德後，隊伍前往麥克嵩途中，烏犧奧泥悄悄帶著神王尼可跳下馬車，與其他夥伴暫時告別。",
+    "record_en": "Usioni met the Taipei City Councilors in Vowalon and joined the investigation into Shanmik's death and the curse on Vowalon, visiting the mayor's house, the Temple of Silence, and Weisco. While crossing the Howling Forest, he and his companions ate poisoned sandwiches, were attacked by wolves, and experienced the abnormal event in which several members died and then revived.\n\nAfter the group brought back Archmage Granlen, Vowalon's curse-breaking ritual turned into a massacre. Usioni and the survivors entered the dungeon beneath the Temple of Silence, where he, Jiaheng, and Uko heard Domneil's voice and were told to complete jokes within the adventuring party. In the dungeon, Usioni crowned a captured goblin as the underground king, God-King Knicol.\n\nAfter Korringfield, while the party was traveling toward Macksohn, Usioni quietly jumped off the carriage with God-King Knicol and temporarily parted ways with the others."
+  },
+  {
+    "name_en": "Midori",
+    "name_zh": "米多莉",
+    "race_en": "Human",
+    "race_zh": "人類",
+    "class_en": [
+      "Paladin"
+    ],
+    "class_zh": [
+      "聖騎士"
+    ],
+    "player": "Joseph",
+    "guest": "0",
+    "campaign": [
+      "Rugatha",
+      "Rugatha Plus"
+    ],
+    "record_zh": "米多莉在沃瓦倫加入台北市議員，接受潔絲敏委託，前往魏斯科尋找葛蘭倫大法師。旅途中，他因潔絲敏準備的三明治中毒，也曾在過橋時被河水沖走，幾乎溺死，並在津菈的庇護下爬上岸。此事之後，他與部分同伴發生摩擦。\n\n沃瓦倫儀式失控時，米多莉因獨自行動而被同伴質疑，之後道歉並繼續進入寂靜殿地下城。後來他經歷寇林菲爾德、麥克嵩、麥丁頓餘波與妖精荒野事件。在多倫維爾，雷米消失的爆炸中，米多莉失去左前臂；之後他得到金屬手臂，並持續參與巫妖之手與滿月前的事件。",
+    "record_en": "Midori joined the Taipei City Councilors in Vowalon, accepted Jasmine's commission, and went to Weisco to find Archmage Granlen. During the journey, he was poisoned by sandwiches prepared by Jasmine, and he was also swept away by the river while crossing a bridge, nearly drowning before climbing ashore under Tsuna's protection. After this incident, friction arose between him and some of his companions.\n\nWhen the Vowalon ritual went out of control, Midori was questioned by his companions for acting alone. He later apologized and continued into the dungeon beneath the Temple of Silence. He subsequently went through Korringfield, Macksohn, the aftermath of Mattington, and the Feywild incident. In Dolenville, during the explosion in which Lemmy disappeared, Midori lost his left forearm; afterward, he received a metal arm and continued to take part in the Hand of the Lich and the events before the full moon."
+  },
+  {
+    "name_en": "Paladin",
+    "name_zh": "帕拉丁",
+    "race_en": "Halfling",
+    "race_zh": "半身人",
+    "class_en": [
+      "Ranger",
+      "Paladin"
+    ],
+    "class_zh": [
+      "遊俠",
+      "聖騎士"
+    ],
+    "player": "Samuel",
+    "guest": "0",
+    "campaign": [
+      "Rugatha",
+      "Rugatha lite"
+    ],
+    "record_zh": "帕拉丁在沃瓦倫與台北市議員同行，參與調查詛咒、前往魏斯科、穿越嚎叫森林，並帶回葛蘭倫大法師。他經歷毒三明治、狼群戰鬥、死亡與復甦，以及沃瓦倫儀式中鎮民化為屍體與殭屍的事件，之後進入寂靜殿地下城。\n\n在寇林菲爾德，帕拉丁為拯救病危的父親，割下了自己的耳朵來做月神芬諾爾的交易儀式。他也得知自己的生母是麥克嵩的紫羅蘭珊吉雅。前往麥克嵩後，他與生母相認，並被封為新任寇林菲爾德爵士。\n\n家亨與安納戴克死後，隊伍在朗甫頓分家：米多莉等人帶波前往方努爾，帕拉丁爵士則與蘇加魯、墜兒前往瑟巴諾追查拉索斯教。之後他又參與瑟巴諾與阿爾芬諾相關事件。最終，帕拉丁遭被奪舍的蜘蛛神教神明「母親大人」鑽入其體內而死去。麥丁頓王國為其舉行了國葬。",
+    "record_en": "Paladin traveled with the Taipei City Councilors in Vowalon, taking part in the curse investigation, the trip to Weisco, the crossing of the Howling Forest, and the return of Archmage Granlen. He experienced the poisoned sandwiches, the wolf battle, death and revival, and the incident in which Vowalon's ritual turned the townspeople into corpses and zombies, after which he entered the dungeon beneath the Temple of Silence.\n\nIn Korringfield, Paladin cut off his own ear to perform a ritual bargain with the moon god Fenor in order to save his dying father. He also learned that his birth mother was Sangia Violet of Macksohn. After reaching Macksohn, he reunited with his birth mother and was named the new Syr Korringfield.\n\nAfter Jiaheng and Anedak died, the party split in Lompton: Midori and the others took Bo to Fanor, while Syr Paladin went with Sugalu and Drayer to Sebano to investigate the Rathos cult. He later took part in events related to Sebano and Alfenor. In the end, Paladin died when the possessed deity of the Spider God cult, Mother, entered his body. The Kingdom of Mattington held a state funeral for him."
+  },
+  {
+    "name_en": "Uko",
+    "name_zh": "烏柯",
+    "race_en": "Dragonborn",
+    "race_zh": "龍人",
+    "class_en": [
+      "Druid"
+    ],
+    "class_zh": [
+      "德魯伊"
+    ],
+    "player": "Roger",
+    "guest": "0",
+    "campaign": [
+      "Rugatha"
+    ],
+    "record_zh": "烏柯在沃瓦倫加入台北市議員，以德魯伊的經驗帶領隊伍穿越嚎叫森林，並在路邊讀出德魯伊語留下的訊息。狼群襲擊中，他與同伴經歷瀕死與復甦。沃瓦倫儀式失控時，他化身動物，背起倒地的薩梅爾與 YHWH，與其他倖存者衝入寂靜殿。\n\n進入地下城後，烏柯與家亨、烏犧奧泥一同聽見多姆尼爾的呼喚。他協助被囚的崔夏，並在背著她前進時，讓神秘石頭融入崔夏體內。後來崔夏因拉索斯教威脅父母而決定回去面對危機，烏柯選擇跟隨她離開隊伍。",
+    "record_en": "Uko joined the Taipei City Councilors in Vowalon. Drawing on his experience as a druid, he led the party through the Howling Forest and read messages left in Druidic by the roadside. During the wolf attack, he and his companions experienced near death and revival. When the Vowalon ritual went out of control, he transformed into an animal, carried the fallen Samael and YHWH on his back, and rushed into the Temple of Silence with the other survivors.\n\nAfter entering the dungeon, Uko heard Domneil's call together with Jiaheng and Usioni. He helped the imprisoned Trisha, and while carrying her onward, allowed a mysterious stone to merge into Trisha's body. Later, when Trisha decided to return and face the danger because the Rathos cult was threatening her parents, Uko chose to follow her and leave the party."
+  },
+  {
+    "name_en": "Ron",
+    "name_zh": "龍恩",
+    "race_en": "Dragonborn",
+    "race_zh": "龍人",
+    "class_en": [
+      "Monk"
+    ],
+    "class_zh": [
+      "武僧"
+    ],
+    "player": "Hark",
+    "guest": "0",
+    "campaign": [
+      "Rugatha",
+      "Rugatha Plus"
+    ],
+    "record_zh": "龍恩在沃瓦倫加入台北市議員，參與鎮長委託、嚎叫森林行軍、狼群戰鬥與沃瓦倫驅咒儀式。儀式失控時，他踏出黑暗與寂靜，發現周圍滿是鎮民屍體與殭屍，並與後來化身為冰原狼的烏柯衝向葛蘭倫。\n\n之後龍恩經歷寂靜殿地下城、洛林精神、寇林菲爾德、麥克嵩與 Plus 的後續事件。巫妖之手篇中，他在大學城禁書區接觸與「手與眼睛」相關的書並一度消失。回歸後，他與茜卓博士衝突；在同伴試圖帶走他時，迷霧散去後只剩垂落的繩子，龍恩與茜卓博士皮衣一同不見。",
+    "record_en": "Ron joined the Taipei City Councilors in Vowalon and took part in the mayor's commission, the march through the Howling Forest, the wolf battle, and Vowalon's curse-breaking ritual. When the ritual went out of control, he stepped out of the darkness and silence, found the area filled with townspeople's corpses and zombies, and charged toward Granlen together with Uko, who had transformed into a winter wolf.\n\nRon later went through the dungeon beneath the Temple of Silence, the spirit of Lorin, Korringfield, Macksohn, and the later Plus events. In the Hand of the Lich, he encountered a book connected to the Hand and Eye in the restricted section of University City and disappeared for a time. After returning, he came into conflict with Dr. Xandria; when his companions tried to take him away, the mist cleared and only a dangling rope remained. Ron and Dr. Xandria's leather coat had vanished together."
+  },
+  {
+    "name_en": "Samael",
+    "name_zh": "薩梅爾",
+    "race_en": "Elf",
+    "race_zh": "妖精",
+    "class_en": [
+      "Bard",
+      "Ranger"
+    ],
+    "class_zh": [
+      "吟遊詩人",
+      "遊俠"
+    ],
+    "player": "HugeCat",
+    "guest": "0",
+    "campaign": [
+      "Rugatha",
+      "Rugatha Plus"
+    ],
+    "record_zh": "薩梅爾在沃瓦倫加入台北市議員，參與詛咒調查、魏斯科之行與嚎叫森林行軍。他在森林中與家亨輪流守夜，也在重返森林途中撿到一隻親近自己的幼狼，並為牠取名酷爆。沃瓦倫儀式失控後，他在虛弱中看見黑影推開寂靜殿大門，提醒眾人追入地下。\n\n地下城中，薩梅爾與被囚禁的崔夏談話，因她被背叛與囚禁的經歷想起自己的過往。之後他前往寇林菲爾德、麥克嵩與麥丁頓，並參與妖精荒野、巫妖之手與滿月前的事件。薩梅爾在妖精荒野遇見了自己「已死」的祖母英荻格，也學會了自由穿越妖精荒野與物質世界的魔法。",
+    "record_en": "Samael joined the Taipei City Councilors in Vowalon and took part in the curse investigation, the trip to Weisco, and the march through the Howling Forest. In the forest, he took turns keeping watch with Jiaheng, and on the return through the woods he found a wolf cub that had taken a liking to him, naming it Kubao. After the Vowalon ritual went out of control, he saw a black shadow push open the doors of the Temple of Silence while he was weakened, prompting the group to pursue it underground.\n\nIn the dungeon, Samael spoke with the imprisoned Trisha, whose betrayal and captivity reminded him of his own past. He later went to Korringfield, Macksohn, and Mattington, and took part in the Feywild, Hand of the Lich, and pre-full-moon events. In the Feywild, Samael met his supposedly dead grandmother Indig, and also learned magic that allowed him to move freely between the Feywild and the Material World."
+  },
+  {
+    "name_en": "Jiaheng",
+    "name_zh": "家亨",
+    "race_en": "Elf",
+    "race_zh": "妖精",
+    "class_en": [
+      "Cleric"
+    ],
+    "class_zh": [
+      "牧師"
+    ],
+    "player": "Henry",
+    "guest": "0",
+    "campaign": [
+      "Rugatha"
+    ],
+    "record_zh": "家亨在沃瓦倫加入台北市議員，參與詛咒調查、魏斯科之行與嚎叫森林行軍。他曾因潔絲敏準備的三明治中毒，也在狼群戰鬥中經歷死亡與復甦。沃瓦倫毀滅後，他隨倖存者進入寂靜殿地下城，並與烏柯、烏犧奧泥一同聽見多姆尼爾的聲音。\n\n麥克嵩篇中，家亨曾被士兵帶走，後來於角鬥士事件中被釋放並與隊友重逢。比武大會慘劇後，他與安納戴克、雷米離去後未歸；雷米後來帶回消息，說家亨與安納戴克被殺。眾人沿城牆找到家亨被斬首的遺體，他的右手將安納戴克的頭按在地上。隊伍挖墓後將他安葬。",
+    "record_en": "Jiaheng joined the Taipei City Councilors in Vowalon and took part in the curse investigation, the trip to Weisco, and the march through the Howling Forest. He was poisoned by sandwiches prepared by Jasmine, and during the wolf battle he experienced death and revival. After Vowalon's destruction, he entered the dungeon beneath the Temple of Silence with the survivors, and heard Domneil's voice together with Uko and Usioni.\n\nIn the Macksohn arc, Jiaheng was taken away by soldiers, then later released during the gladiator incident and reunited with his teammates. After the tragedy at the tournament, he left with Anedak and Lemmy and did not return; Lemmy later brought back word that Jiaheng and Anedak had been killed. The group found Jiaheng's decapitated body along the city wall, with his right hand pressing Anedak's head to the ground. The party dug a grave and buried him."
+  },
+  {
+    "name_en": "Tai Tai Wo Hai Yao",
+    "name_zh": "Tai Tai我還要",
+    "race_en": "Tiefling",
+    "race_zh": "魔人",
+    "class_en": [
+      "Wizard"
+    ],
+    "class_zh": [
+      "法師"
+    ],
+    "player": "拉拉",
+    "guest": "0",
+    "campaign": [
+      "Rugatha"
+    ],
+    "record_zh": "Tai Tai我還要在沃瓦倫加入台北市議員，參與鎮長委託、魏斯科之行與嚎叫森林行軍。他曾在巴姆的雜貨店買下神秘項鍊。米多莉因落水事件對他出手並搶奪背包時，他選擇不正面衝突，將背包與項鍊交給米多莉。\n\n回到沃瓦倫後，台北市議員受到鎮民款待，參加慶祝葛蘭倫歸來的派對。當晚，YHWH 以 Tai Tai我還要老師的身份出現。Tai Tai我還要決定皈依拉索斯教，與 YHWH 前往寂靜殿。隔日驅咒儀式開始前，寇頓神父表示 Tai Tai我還要一早已被派去執行任務，因此沒有出現在沃瓦倫毀滅的現場。",
+    "record_en": "Tai Tai Wo Hai Yao joined the Taipei City Councilors in Vowalon and took part in the mayor's commission, the trip to Weisco, and the march through the Howling Forest. At Bam's general store, he purchased a mysterious necklace. When Midori attacked him and seized his backpack after the river incident, he chose not to confront him directly and handed both the backpack and necklace to Midori.\n\nAfter returning to Vowalon, the Taipei City Councilors were hosted by the townspeople and attended a party celebrating Granlen's return. That night, YHWH appeared as Tai Tai Wo Hai Yao's teacher. Tai Tai Wo Hai Yao decided to convert to the Rathos cult and went with YHWH to the Temple of Silence. Before the curse-breaking ritual began the next day, Father Cotton said that Tai Tai Wo Hai Yao had already been sent on a mission early that morning, so he was not present at the destruction of Vowalon."
+  },
+  {
+    "name_en": "YHWH",
+    "name_zh": "YHWH",
+    "race_en": "Human",
+    "race_zh": "人類",
+    "class_en": [
+      "Sorcerer"
+    ],
+    "class_zh": [
+      "術士"
+    ],
+    "player": "拉拉",
+    "guest": "0",
+    "campaign": [
+      "Rugatha",
+      "Rugatha Plus"
+    ],
+    "record_zh": "YHWH在沃瓦倫慶功夜以 Tai Tai我還要老師的身份登場，隨後加入台北市議員。沃瓦倫儀式失控後，他與倖存者一同進入寂靜殿地下城。地下城中，他曾從異界傳送回來後，以法術射殺正在宣言的哥布林王，使剩餘哥布林逃散。\n\n之後 YHWH 前往寇林菲爾德、麥克嵩、麥丁頓與多倫維爾。在雷米爆炸消失後，他取走雷米留下的項鍊掛在自己脖子上。他參與妖精荒野失守、巫妖之手與滿月前事件。在大學城，龍恩與茜卓博士皮衣消失後，YHWH 要求同伴找到茜卓博士的皮衣，自己進入茜卓博士家並關上門。最終，YHWH 繼承茜卓博士在大學城的房子，並與冒險者前往方努爾市。",
+    "record_en": "YHWH appeared on the night of Vowalon's celebration as Tai Tai Wo Hai Yao's teacher, then joined the Taipei City Councilors. After the Vowalon ritual went out of control, he entered the dungeon beneath the Temple of Silence with the survivors. In the dungeon, after being transported back from another plane, he used magic to shoot down the goblin king while the king was making a proclamation, causing the remaining goblins to scatter.\n\nYHWH later went to Korringfield, Macksohn, Mattington, and Dolenville. After Lemmy vanished in the explosion, he took the necklace Lemmy left behind and wore it around his own neck. He took part in the fall of the Feywild, the Hand of the Lich, and the events before the full moon. In University City, after Ron and Dr. Xandria's leather coat disappeared, YHWH asked his companions to find Dr. Xandria's coat, then entered Dr. Xandria's house and closed the door. In the end, YHWH inherited Dr. Xandria's house in University City and went with the adventurers to Fanor City."
+  },
+  {
+    "name_en": "Lemmy",
+    "name_zh": "雷米",
+    "race_en": "Half-Elf",
+    "race_zh": "半妖精",
+    "class_en": [
+      "Rogue"
+    ],
+    "class_zh": [
+      "浪客"
+    ],
+    "player": "Roger",
+    "guest": "0",
+    "campaign": [
+      "Rugatha",
+      "Rugatha Plus"
+    ],
+    "record_zh": "雷米在寇林菲爾德加入台北市議員，與隊伍一同經歷寇林菲爾德街道、好地方與生死之間的事件。雷米接著脫隊，並未與冒險者們同時前往麥克嵩。也因此，一名易容者取代他的身份，靠近冒險者團隊。\n\n在麥克嵩比武大會，雷米終於回歸。然而，比武大會後後，雷米與家亨、安納戴克一同離去，卻只有他回來，並帶回兩人被殺的消息。他後來向米多莉談起家亨與安納戴克遇害的經過。在多倫維爾夜裡，米多莉祈禱時爆炸發生，雷米消失，只留下肉塊、衣物與項鍊。雷米在意識消失前聽見熟悉聲音呼喚自己離去。",
+    "record_en": "Lemmy joined the Taipei City Councilors in Korringfield and went through the events of Korringfield's streets, the Good Place, and the space between life and death with the party. Lemmy then separated from the group and did not travel to Macksohn at the same time as the adventurers. As a result, a disguised impostor took his place and approached the adventuring party.\n\nAt the Macksohn tournament, Lemmy finally returned. However, after the tournament, Lemmy left together with Jiaheng and Anedak, but only he came back, bringing news that the other two had been killed. He later told Midori what had happened to Jiaheng and Anedak. During the night in Dolenville, an explosion occurred while Midori was praying, and Lemmy disappeared, leaving only flesh, clothing, and a necklace behind. Before losing consciousness, Lemmy heard a familiar voice calling him away."
+  },
+  {
+    "name_en": "Siri Oslee",
+    "name_zh": "喜利・歐喜利",
+    "race_en": "Gnome",
+    "race_zh": "地侏",
+    "class_en": [
+      "Rogue"
+    ],
+    "class_zh": [
+      "浪客"
+    ],
+    "player": "式謙",
+    "guest": "0",
+    "campaign": [
+      "Rugatha",
+      "Rugatha Plus"
+    ],
+    "record_zh": "喜利・歐喜利在麥克嵩比武大會事件中登場，之後加入台北市議員後續行動。他參與麥丁頓餘波，並在與米多莉、龍恩、薩梅爾、YHWH 等人同行，前往多倫維爾、妖精荒野、大學城與方努爾相關地點。\n\n在多倫維爾，白醫師以白光帶走多名同伴時，喜利・歐喜利靠意志抵抗，醒來後發現房內只剩自己與法朗茲。巫妖之手篇中，他曾獨自離開隊伍一段時間，表示需要靜一靜，晚上再於茜卓博士家會合。之後他協助調查龍恩失蹤、茜卓博士皮衣與艾麗克斯工作舖相關事件。",
+    "record_en": "Siri Oslee appeared during the Macksohn tournament incident and later joined the Taipei City Councilors' subsequent actions. He took part in the aftermath of Mattington, traveling with Midori, Ron, Samael, YHWH, and others to Dolenville, the Feywild, University City, and locations connected to Fanor.\n\nIn Dolenville, when Dr. White used white light to take away several companions, Siri Oslee resisted through willpower. After waking, he found that only he and Franz remained in the room. During the Hand of the Lich, he left the party alone for a time, saying he needed quiet and would regroup at Dr. Xandria's house that evening. Afterward, he helped investigate Ron's disappearance, Dr. Xandria's leather coat, and events connected to Alex's workshop."
+  },
+  {
+    "name_en": "Tweeter",
+    "name_zh": "圖伊特",
+    "race_en": "Aarakocra",
+    "race_zh": "天狗",
+    "class_en": [
+      "Warlock",
+      "Sorcerer"
+    ],
+    "class_zh": [
+      "契術師",
+      "術士"
+    ],
+    "player": "Milker",
+    "guest": "0",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "圖伊特在麥丁頓破碎篇登場，與帕拉丁、蘇加魯、華生等人走入惡棍之城，接著參與交易、真實形態與阿爾芬諾之禮。阿爾芬諾事件中，他調查蜘蛛王相關書籍，也在王宮與奧利佛同行。\n\n之後圖伊特前往潛伏的危機與洛森王國。月光狩獵會襲擊時，他失去意識並在黑暗中聽見宗主的聲音，醒來後得知攻擊者是月神支派。後續他參與劇院之下、母親重生、複製體、月光狩獵會、孵化而出的夥伴與深入洛森等事件。最終，圖伊特在異變的母親大人屠殺中，與芬諾爾做交易，以自己存在的現實與記憶，換取羅特的安危。",
+    "record_en": "Tweeter appeared in the Shattered Mattington arc, entering the City of Villains with Paladin, Sugalu, Watson, and others, then taking part in the Deal, True Form, and Gift of Alfenor. During the Alfenor incident, he investigated books related to the Spider King and also traveled with Oliver in the palace.\n\nTweeter later went into the Hidden Crisis and the Kingdom of Losen. During the Moonlight Hunt attack, he lost consciousness and heard the patron's voice in the darkness; after waking, he learned that the attackers belonged to a branch of the moon god. He later took part in Under the Theater, Mother's Rebirth, the clones, the Moonlight Hunt, the Hatched Companion, and Into Losen. In the end, during the transformed Mother's massacre, Tweeter made a bargain with Fenor, exchanging the reality and memory of his own existence for Lott's safety."
+  },
+  {
+    "name_en": "Yi",
+    "name_zh": "伊",
+    "race_en": "Human",
+    "race_zh": "人類",
+    "class_en": [
+      "Rogue"
+    ],
+    "class_zh": [
+      "浪客"
+    ],
+    "player": "Nasa",
+    "guest": "1",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "伊是M伯爵手下的情報員。他在阿爾芬諾之禮篇出現，參與廢墟之母、M伯爵、計畫討論與救援行動。她曾與伊努、帕拉丁、蘇加魯、圖伊特、華生等人一同行動，面對麥丁頓災後的異變與母親相關事件。\n\n之後伊短暫出現在潛伏的危機與深入洛森相關章節，包括劇院之下與月光狩獵會。覆羽莊園篇中，她也在過往命運相關事件裡再度出現。\n\n後續，伊在巫妖之手篇中再度登場，透露自己計畫潛入安德烈亞的研究室拯救蘿琳；龍恩在衝突中將他敲暈，波則扛著昏迷的伊前往目的地。",
+    "record_en": "Yi was an intelligence agent under Count M. She appeared in the Gift of Alfenor arc and took part in events involving the Mother of Ruins, Count M, planning discussions, and rescue operations. She acted alongside Inu, Paladin, Sugalu, Tweeter, Watson, and others while facing the abnormalities after the Mattington disaster and incidents related to Mother.\n\nYi later appeared briefly in chapters connected to the Hidden Crisis and Into Losen, including Under the Theater and the Moonlight Hunt. In the Feathered Estate arc, she also appeared again in events tied to past fate.\n\nLater, Yi appeared again in the Hand of the Lich, revealing that she planned to infiltrate Andrea's laboratory to rescue Roline. During the conflict, Ron knocked her unconscious, and Bo carried the unconscious Yi toward the destination."
+  },
+  {
+    "name_en": "Inu",
+    "name_zh": "伊努",
+    "race_en": "Spirit",
+    "race_zh": "精靈",
+    "class_en": [
+      "Sorcerer"
+    ],
+    "class_zh": [
+      "術士"
+    ],
+    "player": "Lala",
+    "guest": "0",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "伊努為 YHWH 柴犬玩偶型態施法工具中寄宿的靈魂，幻化成一名小男童作為其真身。他在麥丁頓破碎篇加入隊伍，從交易與真實形態開始，與帕拉丁、蘇加魯、圖伊特、華生一同面對災後局勢。阿爾芬諾之禮中，他身上出現蜘蛛王相關詛咒，被半神丹尼斯檢查後得知若不前往深淵處理，一到兩週內可能死亡。\n\n在麥克嵩王宮事件中，伊努與圖伊特、帕拉丁、奧利佛一同逃離伊什頓大人的辦公室。奧利佛被衛兵殺死後，伊努以傳送方式把奧利佛的屍體移到自己手上，避免屍體被帶走。之後他參與劇院之下、母親重生與複製體相關事件，也跟著隊伍面對阿爾芬諾、母親與救援計畫的後續，最終以其獨有的傳送能力消失了。",
+    "record_en": "Inu was a soul dwelling inside YHWH's Shiba Inu doll-shaped spellcasting focus, manifesting in his true form as a small boy. He joined the party in the Shattered Mattington arc, starting from the Deal and True Form, and faced the post-disaster situation together with Paladin, Sugalu, Tweeter, and Watson. In the Gift of Alfenor, a curse connected to the Spider King appeared on him, and after the demigod Dennis examined him, he learned that he might die within one to two weeks if he did not go to the Abyss to deal with it.\n\nDuring the Macksohn palace incident, Inu fled Lord Ishton's office with Tweeter, Paladin, and Oliver. After Oliver was killed by guards, Inu teleported Oliver's corpse into his own hands to prevent the body from being taken away. He later took part in events connected to Under the Theater, Mother's Rebirth, and the clones, and followed the party through the aftermath of Alfenor, Mother, and the rescue plan. In the end, he disappeared through his distinctive teleportation ability."
+  },
+  {
+    "name_en": "Lott",
+    "name_zh": "羅特",
+    "race_en": "Tiefling",
+    "race_zh": "魔人",
+    "class_en": [
+      "Rogue",
+      "Warlock"
+    ],
+    "class_zh": [
+      "浪客",
+      "契術師"
+    ],
+    "player": "Nasa",
+    "guest": "0",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "羅特原為伊照顧的孤兒小弟，在阿爾芬諾之禮後段加入冒險團隊，參與救援行動，之後走過潛伏的危機、深入洛森。他面對所有團隊成員之死，唯有他存活的悲劇，甚至遺忘他所鍾愛的圖伊特相關的記憶，被迫成長。數年後，羅特與新的冒險團隊經歷在一次的神秘委託下去尋找月神的王冠，經歷卓茲蘭之穴，在覆羽莊園見證自己的委託者躍升成神。後續也參與月蝕之席與派琶的預示。他在洛森王國學習妖精語與長笛，也經歷複製體、月光狩獵會與洛森深處的事件。\n\n覆羽莊園後，羅特與烏波、賽柏沿著烏波的直覺前往斐納札；GoR 在抵達前一夜失蹤。斐納札中，羅特以單音節化名「蘭」行動，接觸譚，調查衣服顏色、議會與工作制度。他對芬諾爾信仰產生排斥，並透過覆羽莊園取得的面具與愛神阿莫雷特締約。派琶預示篇中，他追尋賽柏下落，並照顧從死亡邊緣回歸的佛拉。",
+    "record_en": "Lott was originally an orphan younger brother cared for by Yi, and joined the adventuring party in the later part of the Gift of Alfenor to take part in the rescue operation. He later went through the Hidden Crisis and Into Losen. He faced the tragedy in which every member of the party died and only he survived, and he even forgot the memories related to Tweeter, whom he loved, forcing him to grow up. Years later, Lott and a new adventuring party accepted another mysterious commission to search for the moon god's crown, went through the Cave of Drogsland, and witnessed his client ascend to godhood at the Feathered Estate. He later also took part in the Seat of the Lunar Eclipse and Py'Par's Prophecy. In the Kingdom of Losen, he learned Sylvan and the flute, and experienced the clones, the Moonlight Hunt, and events deep within Losen.\n\nAfter the Feathered Estate, Lott, Ubbo, and Psyber followed Ubbo's intuition toward Fenazza; GoR disappeared the night before they arrived. In Fenazza, Lott operated under the single-syllable alias \"Lan,\" contacted Tan, and investigated clothing colors, the council, and the work system. He developed aversion toward the faith of Fenor, and made a pact with the god of love Amoret through the mask obtained at the Feathered Estate. In Py'Par's Prophecy, he pursued Psyber's whereabouts and cared for Phola after she returned from the edge of death."
+  },
+  {
+    "name_en": "Al-lon",
+    "name_zh": "阿龍",
+    "race_en": "Dragonborn",
+    "race_zh": "龍人",
+    "class_en": [
+      "Barbarian"
+    ],
+    "class_zh": [
+      "野蠻人"
+    ],
+    "player": "仰山",
+    "guest": "0",
+    "campaign": [
+      "Rugatha WILDS"
+    ],
+    "record_zh": "阿龍在貿易之都貝瑟頓開始冒險，與毛毛、鑰、雷亞、羅羅一同接觸幽深林與 T.I.D.E.S. 相關線索。他在酒館詢問菸草，拿出父親留下的小煙斗試抽，也在幽深林與海妖墓場中面對骷髏與歌聲。\n\n在第1410頁書店，鑰讀到《喬里森與其神話》中「從河流漂下的孩子是喬里森選中之子」的內容，與阿龍以蛋的形態順流而來的身世相符。之後阿龍參與 T.I.D.E.S. 的邀請、天選者集會。\n\n在土城風暴中，阿龍回到從小長大的家鄉「土城」，與父母相見、與青梅竹馬佩妮重逢，卻得知佩妮心有所屬、參與剿山賊，最終卻被逐出土城，剝奪其姓氏。\n\n拉撒拿繼承人事件中，阿龍見到自己的原生家庭，但也在與銀龍對話的隔天，目睹父母之死。在冒險團的偵破下，以本名賽拉尼爾・艾瑞利斯繼任拉撒拿龍冠的阿龍，親自宣判堂妹奈梨莎的罪行。\n\n阿龍在與冒險者們來到克萊芬時，接獲情敵大奧斯的消息，而趕回拉撒拿，暫時離開了冒險團。",
+    "record_en": "Al-lon began his adventure in the trade city of Betheton, encountering clues related to the Deepwood and T.I.D.E.S. together with Fur, Kaname, Leah, and Roel. At a tavern, he asked about tobacco and tried smoking the small pipe left by his father. In the Deepwood and the Siren Graveyard, he faced skeletons and song.\n\nAt Page 1410 Books, Kaname read a passage in Jorisan and His Myths saying that a child drifting down the river was the chosen child of Jorisan, which matched Al-lon's origin of arriving downstream in egg form. Al-lon then took part in the T.I.D.E.S. invitation and the Chosen gathering.\n\nDuring the Storm of Tucheng, Al-lon returned to Tucheng, the hometown where he had grown up, met his parents, and reunited with his childhood friend Penny. He learned that Penny's heart belonged to someone else, joined the campaign against the bandits, and was ultimately expelled from Tucheng and stripped of his surname.\n\nIn the Rasanna Heir incident, Al-lon met his birth family, but the day after speaking with the silver dragon, he witnessed his parents' deaths. After the adventuring party's investigation, Al-lon, under his true name Selaniel Aerylis, inherited the dragon crown of Rasanna and personally pronounced judgment on his cousin Narissa.\n\nWhen Al-lon reached Kleifen with the adventurers, he received news about his romantic rival, Big Os, and returned to Rasanna, temporarily leaving the party."
+  },
+  {
+    "name_en": "Roel",
+    "name_zh": "羅羅",
+    "race_en": "Elf",
+    "race_zh": "妖精",
+    "class_en": [
+      "Warlock"
+    ],
+    "class_zh": [
+      "契術師"
+    ],
+    "player": "雀",
+    "guest": "0",
+    "campaign": [
+      "Rugatha WILDS"
+    ],
+    "record_zh": "羅羅在冒險初期以身分不明的妖精加入隊伍，同行者一度懷疑他可能是通緝犯。他表示自己的許多行動與神秘的「祂」有關。貝瑟頓期間，他與雷亞前往糖果店與破舊甜點店，購買大量甜食。\n\n在幽深林與海妖墓場事件中，羅羅以遠距離攻擊協助同伴擊倒骷髏。之後他參與 T.I.D.E.S. 的邀請、天選者集會、土城風暴、拉撒拿繼承人與不被承認的孩子等事件。土城後期，他與毛毛在掛衣間偷聽老樹盟與市民連線相關交談，也在拉比帶領下於夜間外出調查利斯達上校相關線索。",
+    "record_en": "Roel joined the party early in the adventure as a fey of unknown identity, and his companions once suspected that he might be a wanted criminal. He said that many of his actions were connected to the mysterious \"Him.\" During the Betheton period, he went with Leah to a candy shop and an old dessert shop, buying large amounts of sweets.\n\nDuring the Deepwood and Siren Graveyard incidents, Roel helped his companions defeat skeletons with ranged attacks. He later took part in the T.I.D.E.S. invitation, the Chosen gathering, the Storm of Tucheng, the Rasanna Heir, and the Unacknowledged Child. Late in Tucheng, he and Fur eavesdropped in a coatroom on conversations related to the Old Tree League and the Citizens' Line, and under Ravi's guidance, went out at night to investigate clues related to Colonel Lisda."
+  },
+  {
+    "name_en": "Dawn Light Fur",
+    "name_zh": "毛毛",
+    "race_en": "Tabaxi",
+    "race_zh": "班貓人",
+    "class_en": [
+      "Rogue"
+    ],
+    "class_zh": [
+      "浪客"
+    ],
+    "player": "MoYu",
+    "guest": "0",
+    "campaign": [
+      "Rugatha WILDS"
+    ],
+    "record_zh": "毛毛在貿易之都開始與冒險團同行。他從小在貝瑟頓生活，熟悉貝瑟頓店家與街道，也在幽深林中爬上樹偵查，發現巡守衛兵。海妖墓場戰鬥中，他受重傷後逃進小木屋休息，之後與同伴擊倒骷髏。夜晚守夜時，阿龍曾試圖剪他腳上的毛做耳塞，毛毛因此醒來並感到不滿。\n\n毛毛與第1410頁書店熟識，店員湯普生以他的全名黎輝毛稱呼他，也為他準備雞腿。後續他參與 T.I.D.E.S.、土城風暴與拉撒拿繼承人事件。土城後期，他跟蹤可疑黑衣人，發現對方談到辯論會場地與槍擊；皮尼歐教授遇刺後，他也試圖用尾巴悄悄取走瑪莉貝爾手中的槍械。",
+    "record_en": "Fur began traveling with the adventuring party in the trade city. He had lived in Betheton since childhood, knew the city's shops and streets, and climbed trees to scout in the Deepwood, discovering patrolling guards. In the Siren Graveyard battle, he was badly wounded and fled into a small cabin to rest, then later helped his companions defeat the skeletons. During the night watch, Al-lon tried to cut fur from his foot to make earplugs, causing Fur to wake and become displeased.\n\nFur was familiar with Page 1410 Books. The clerk Thompson addressed him by his full name, Dawn Light Fur, and prepared a chicken leg for him. He later took part in T.I.D.E.S., the Storm of Tucheng, and the Rasanna Heir. Late in Tucheng, he followed suspicious people in black and discovered that they were discussing the debate venue and a shooting. After Professor Pinio was assassinated, he also tried to quietly take the gun from Maribel's hand with his tail."
+  },
+  {
+    "name_en": "Kaname",
+    "name_zh": "鑰",
+    "race_en": "Merfolk",
+    "race_zh": "人魚",
+    "class_en": [
+      "Cleric"
+    ],
+    "class_zh": [
+      "牧師"
+    ],
+    "player": "阿流",
+    "guest": "0",
+    "campaign": [
+      "Rugatha WILDS"
+    ],
+    "record_zh": "鑰在乘著推車同行，從貝瑟頓到幽深林一路照顧同伴。她安置被雷亞抓到的松鼠頹哥，並將牠命名為嘎吱爵士，使牠在推車中安定下來。海妖墓場戰鬥中，她以輔助協助隊伍擊倒骷髏。\n\n之後鑰參與 T.I.D.E.S. 的邀請、天選者集會、土城風暴、拉撒拿繼承人與不被承認的孩子等事件。土城後期，她以傳訊術聯絡被送往診所的拉比，讓拉比得知皮尼歐教授遇刺、城市陷入動亂。",
+    "record_en": "Kaname traveled along with a cart, caring for her companions from Betheton to the Deepwood. She settled the squirrel that Leah had caught, Tuigo, named it Sir Squeak, and helped it calm down in the cart. In the Siren Graveyard battle, she supported the party in defeating the skeletons.\n\nKaname later took part in the T.I.D.E.S. invitation, the Chosen gathering, the Storm of Tucheng, the Rasanna Heir, and the Unacknowledged Child. Late in Tucheng, she used Sending to contact Ravi, who had been taken to a clinic, letting him know that Professor Pinio had been assassinated and that the city had fallen into unrest."
+  },
+  {
+    "name_en": "Buzz",
+    "name_zh": "巴斯",
+    "race_en": "Elf",
+    "race_zh": "妖精",
+    "class_en": [
+      "Fighter"
+    ],
+    "class_zh": [
+      "戰士"
+    ],
+    "player": "Joseph",
+    "guest": "0",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "巴斯在月蝕之席篇加入冒險團，與羅特、烏波等人面對斐納札後續與賽柏失蹤的狀況。派琶的預示篇中，他扛著虛弱的羅特，跟著烏波追尋賽柏留下的痕跡，進入一座不斷提醒外人「別在夜晚離開這裡」的村莊。\n\n在村莊裡，巴斯與村民、孩子互動，教一名年輕人玩牌，也與烏波討論村莊的古怪處。離開村莊後，他繼續與羅特、烏波前往派琶所在之處，參與面具下的真相、巨蛇之勢與常翠林相關事件。旅途中，他也在佛拉事件中對羅特治療敵人一事感到不滿，並當場質問羅特。",
+    "record_en": "Buzz joined the adventuring party in the Seat of the Lunar Eclipse arc, facing the aftermath of Fenazza and Psyber's disappearance together with Lott, Ubbo, and others. In Py'Par's Prophecy, he carried the weakened Lott, followed Ubbo in tracing the signs left by Psyber, and entered a village that repeatedly warned outsiders not to leave at night.\n\nIn the village, Buzz interacted with the villagers and children, taught a young person to play cards, and discussed the village's oddities with Ubbo. After leaving the village, he continued with Lott and Ubbo toward Py'Par's location, taking part in the Truth Beneath the Mask, the Serpent's Momentum, and events related to the Evergreen Forest. During the journey, he was also dissatisfied when Lott treated the enemy in the Phola incident, and questioned Lott on the spot."
+  },
+  {
+    "name_en": "Pascal",
+    "name_zh": "帕斯卡",
+    "race_en": "Halfling",
+    "race_zh": "半身人",
+    "class_en": [
+      "Paladin",
+      "Barbarian"
+    ],
+    "class_zh": [
+      "聖騎士",
+      "野蠻人"
+    ],
+    "player": "Samuel",
+    "guest": "0",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "冒險團在前往洛森時遇見帕斯卡，得知他是帕拉丁的兄弟；他聽聞帕拉丁在麥克嵩死亡的消息後，前往洛森尋找可能知道帕拉丁消息的人，並在途中與冒險者相遇。\n\n帕斯卡之後與羅特、蘇加魯、圖伊特等人一同行動，經歷月光狩獵會、孵化而出的夥伴等事件。他加入時，隊伍正在洛森王國內尋找蜘蛛神教與母親相關線索，也要面對非妖精在洛森過夜可能遭遇危險的問題。",
+    "record_en": "The adventuring party met Pascal on the way to Losen and learned that he was Paladin's brother. After hearing that Paladin had died in Macksohn, he went to Losen to search for people who might know news about Paladin, and met the adventurers on the way.\n\nPascal then acted together with Lott, Sugalu, Tweeter, and others, going through events such as the Moonlight Hunt and the Hatched Companion. When he joined, the party was searching within the Kingdom of Losen for clues related to the Spider God cult and Mother, while also facing the danger that non-fey might encounter if they spent the night in Losen."
+  },
+  {
+    "name_en": "Leah",
+    "name_zh": "雷亞",
+    "race_en": "Lizardfolk",
+    "race_zh": "蜥蜴人",
+    "class_en": [
+      "Druid",
+      "Fighter"
+    ],
+    "class_zh": [
+      "德魯伊",
+      "戰士"
+    ],
+    "player": "",
+    "guest": "0",
+    "campaign": [
+      "Rugatha WILDS"
+    ],
+    "record_zh": "雷亞加入冒險團隊，與阿龍、毛毛、鑰、羅羅一起從貝瑟頓前往幽深林。海妖墓場戰鬥中，雷亞施放雲霧術限制視線，並以近戰攻擊參與擊倒骷髏。\n\n之後雷亞參與 T.I.D.E.S.、天選者集會、土城風暴與拉撒拿繼承人事件。\n\n在拉撒拿，雷亞從銀龍口中得知自己家鄉的事，而來到她龍人血脈的家鄉，克萊芬。隨後雷亞與冒險團隊被迫以間諜身份潛入她蜥蜴人血脈的家鄉，萊斯諾，意外捲入政治鬥爭。雷亞所支持的新書院皮尼歐教授遇刺時，她跳上舞台試圖以醫藥技巧搶救教授，但教授胸口被炸開，衛兵也將她推開。秘書長瓦羅恩接掌新書院後，雷亞試圖與她激辯，卻被對方一指點到雙腿發麻而跪下。老樹盟派了立德上尉接觸雷亞，想利用其混血的身份為老樹盟站台。",
+    "record_en": "Leah joined the adventuring party and traveled from Betheton to the Deepwood with Al-lon, Fur, Kaname, and Roel. In the Siren Graveyard battle, Leah cast Fog Cloud to limit visibility and joined the fight against the skeletons in melee.\n\nLeah later took part in T.I.D.E.S., the Chosen gathering, the Storm of Tucheng, and the Rasanna Heir.\n\nIn Rasanna, Leah learned from the silver dragon about her homeland, then came to Kleifen, the homeland of her dragonborn bloodline. Afterward, Leah and the adventuring party were forced to infiltrate Lesno, the homeland of her lizardfolk bloodline, as spies, unexpectedly becoming involved in a political struggle. When Professor Pinio of the New Academy, whom Leah supported, was assassinated, she jumped onto the stage and tried to save him with medical skill, but the professor's chest had been blown open and guards pushed her away. After Secretary-General Valorn took control of the New Academy, Leah tried to argue with her, but Valorn touched her with one finger and numbed her legs, causing her to kneel. The Old Tree League sent Lieutenant Lide to contact Leah, hoping to use her mixed-blood identity to speak for the Old Tree League."
+  },
+  {
+    "name_en": "Watson",
+    "name_zh": "華生",
+    "race_en": "Aasimar",
+    "race_zh": "天使人",
+    "class_en": [
+      "Wizard"
+    ],
+    "class_zh": [
+      "法師"
+    ],
+    "player": "Nasa",
+    "guest": "0",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "華生在麥丁頓破碎篇登場，與帕拉丁、蘇加魯、圖伊特、墜兒等在惡棍之城瑟巴諾成為夥伴。她參與交易、真實形態與阿爾芬諾之禮。阿爾芬諾事件中，她以化名露西亞小姐接觸貴族，也在舊城區見到母親大人，得知貧民窟居民受到她幫助。\n\n在潘蜜拉家與伯納德相關事件中，華生與同伴發現母親大人的臥房裡有巨型繭，並在門口發現伯納德乾枯的屍體。暴民放火後，華生抱起伯納德，與扛著圖伊特的蘇加魯、帕拉丁趁機逃走。後續她在來到洛森王國後，因戴上月光狩獵會的面具，而消失不見，只留下她的懷錶。",
+    "record_en": "Watson appeared in the Shattered Mattington arc and became companions with Paladin, Sugalu, Tweeter, Drayer, and others in Sebano, the City of Villains. She took part in the Deal, True Form, and Gift of Alfenor. During the Alfenor incident, she used the alias Miss Lucia to contact nobles, and also met Mother in the old district, learning that she had helped the residents of the slums.\n\nDuring the events at Pamela's house and those related to Bernard, Watson and her companions found a giant cocoon in Mother's bedroom, and discovered Bernard's dried corpse at the doorway. After the mob set the fire, Watson picked up Bernard and escaped with Sugalu, who was carrying Tweeter, and Paladin. Later, after reaching the Kingdom of Losen, she disappeared after putting on a Moonlight Hunt mask, leaving only her pocket watch behind."
+  },
+  {
+    "name_en": "Sugalu",
+    "name_zh": "蘇加魯",
+    "race_en": "Half-Orc",
+    "race_zh": "半獸人",
+    "class_en": [
+      "Fighter"
+    ],
+    "class_zh": [
+      "戰士"
+    ],
+    "player": "Nathan",
+    "guest": "0",
+    "campaign": [
+      "Rugatha",
+      "Rugatha lite"
+    ],
+    "record_zh": "蘇加魯先在麥丁頓餘波中登場。家亨與安納戴克死後，他與帕拉丁爵士、墜兒分家前往瑟巴諾追查拉索斯教。之後他與帕拉丁、圖伊特、華生等人走入惡棍之城，參與交易、真實形態與阿爾芬諾之禮。\n\n阿爾芬諾相關事件中，蘇加魯曾被神王呼喚回去。深入洛森時，他以外貌略有變化的新身份「艾倫・卓茲克」短暫回到隊伍；他的膚色與衣著都與過去不同，對神王的態度也轉為崇敬。月光狩獵會襲擊後，眾人清醒時發現剛回歸的艾倫又不見了，買給佛拉的酒也被他帶走，間接成為佛拉戒酒的一大契機。",
+    "record_en": "Sugalu first appeared in the aftermath of Mattington. After Jiaheng and Anedak died, he split off with Syr Paladin and Drayer to go to Sebano and investigate the Rathos cult. He later entered the City of Villains with Paladin, Tweeter, Watson, and others, taking part in the Deal, True Form, and Gift of Alfenor.\n\nDuring the Alfenor-related events, Sugalu was once called back by the God-King. In Into Losen, he briefly returned to the party under a new identity, Allen Drogske, with a slightly changed appearance; his skin color and clothing differed from before, and his attitude toward the God-King had turned reverent. After the Moonlight Hunt attack, when everyone woke up, they found that the recently returned Allen had disappeared again. The alcohol he had bought for Phola had also been taken with him, indirectly becoming a major trigger for Phola to stop drinking."
+  },
+  {
+    "name_en": "Anedak",
+    "name_zh": "安納戴克",
+    "race_en": "Naga",
+    "race_zh": "那伽",
+    "class_en": [
+      "Barbarian"
+    ],
+    "class_zh": [
+      "野蠻人"
+    ],
+    "player": "Nathan",
+    "guest": "0",
+    "campaign": [
+      "Rugatha"
+    ],
+    "record_zh": "安納戴克在麥克嵩篇後段加入主線，參與上流生活、闇影之父、角鬥士與麥丁頓餘波等事件。他在地下行動中與隊伍調查拉茲特獸、闇影之父與瑟巴諾相關線索，也曾在火勢與爆炸後身受重傷，由帕拉丁以治療法術救回。\n\n比武大會慘劇後，安納戴克與家亨、雷米離去後沒有回來。雷米後來宣稱三人遭到惡徒圍毆，只有自己逃出。隊伍沿城牆西北方找到安納戴克與家亨的遺體：安納戴克的身體被斬首，左手將家亨的頭按置在地上。眾人挖墓後將他與家亨安葬。",
+    "record_en": "Anedak joined the main story in the later part of the Macksohn arc, taking part in Upper Life, Father of Shadows, the Gladiator, and the aftermath of Mattington. During underground operations, he and the party investigated clues related to the Razte beast, the Father of Shadows, and Sebano. He was also badly wounded after fire and explosions, and Paladin saved him with healing magic.\n\nAfter the tragedy at the tournament, Anedak left with Jiaheng and Lemmy and did not return. Lemmy later claimed that the three had been surrounded and beaten by villains, and that only he escaped. The party found Anedak's and Jiaheng's bodies northwest along the city wall: Anedak's body had been decapitated, and his left hand had placed Jiaheng's head on the ground. The group dug a grave and buried him together with Jiaheng."
+  },
+  {
+    "name_en": "Ubbo",
+    "name_zh": "烏波",
+    "race_en": "Plasmoid",
+    "race_zh": "流漿怪",
+    "class_en": [
+      "Druid",
+      "Sorcerer"
+    ],
+    "class_zh": [
+      "德魯伊",
+      "術士"
+    ],
+    "player": "Milker",
+    "guest": "0",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "烏波在卓茲蘭之穴篇加入冒險團隊，與 GoR、庫登、羅特、賽柏等人接觸孽物、芬諾爾傳道者與羽王。覆羽莊園後，他依循直覺，與羅特、賽柏花了一個月前往自己的出生地；抵達前，GoR 在守夜時沒有留下訊息便消失。\n\n在斐納札，烏波被唐歡迎回家，卻察覺關於出生地的記憶像是被植入腦中。他以單音節化名「波」行動，會自然跟隨鐘聲跪下，也熟悉月神禱詞。夢中，他得到芬諾爾神諭與新的能力。",
+    "record_en": "Ubbo joined the adventuring party in the Cave of Drogsland arc, encountering the wretched creatures, Fenor missionaries, and the Feather King together with GoR, Kudan, Lott, Psyber, and others. After the Feathered Estate, he followed his intuition, traveling for a month with Lott and Psyber toward his birthplace; before they arrived, GoR disappeared during the night watch without leaving any message.\n\nIn Fenazza, Ubbo was welcomed home by Tang, but noticed that his memories of his birthplace seemed to have been implanted in his mind. He operated under the single-syllable alias \"Bo,\" would naturally kneel when the bells rang, and was familiar with prayers to the moon god. In a dream, he received an oracle from Fenor and gained a new ability."
+  },
+  {
+    "name_en": "Psyber",
+    "name_zh": "賽柏",
+    "race_en": "Half-Orc",
+    "race_zh": "半獸人",
+    "class_en": [
+      "Paladin",
+      "Barbarian"
+    ],
+    "class_zh": [
+      "聖騎士",
+      "野蠻人"
+    ],
+    "player": "Samuel",
+    "guest": "0",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "賽柏在卓茲蘭之穴篇加入冒險團隊，與 GoR、庫登、羅特、烏波等人面對孽物入門、芬諾爾傳道者與羽王。覆羽莊園後，他與羅特陪同烏波追尋出生地的直覺。\n\n在斐納札，賽柏以單音節化名「潤」行動，和羅特、烏波一起被要求穿上外來者衣服，進入溫室工作並搬土。用餐時，他勉強吃下乾草，但吃不下土，將自己的份給了烏波。鐘聲響起時，賽柏會自動跪下。月蝕之席後段，賽柏一度失蹤，羅特、烏波與巴斯在派琶的預示篇追尋他的下落。",
+    "record_en": "Psyber joined the adventuring party in the Cave of Drogsland arc, facing the wretched creatures, Fenor missionaries, and the Feather King together with GoR, Kudan, Lott, Ubbo, and others. After the Feathered Estate, he accompanied Lott in following Ubbo's intuition toward his birthplace.\n\nIn Fenazza, Psyber operated under the single-syllable alias \"Run.\" Along with Lott and Ubbo, he was required to wear outsiders' clothing, enter the greenhouse to work, and move soil. During a meal, he forced himself to eat hay, but could not eat soil, and gave his portion to Ubbo. When the bells rang, Psyber would automatically kneel. In the later part of the Seat of the Lunar Eclipse, Psyber disappeared for a time, and Lott, Ubbo, and Buzz searched for his whereabouts in Py'Par's Prophecy."
+  },
+  {
+    "name_en": "Drayer",
+    "name_zh": "墜兒",
+    "race_en": "Elf",
+    "race_zh": "妖精",
+    "class_en": [
+      "Cleric"
+    ],
+    "class_zh": [
+      "牧師"
+    ],
+    "player": "Henry",
+    "guest": "0",
+    "campaign": [
+      "Rugatha",
+      "Rugatha lite"
+    ],
+    "record_zh": "墜兒先在麥丁頓餘波中與蘇加魯一同現身。家亨與安納戴克死後，她與帕拉丁爵士、蘇加魯分家前往瑟巴諾追查拉索斯教，名義上是為死去的夥伴復仇。之後在 Rugatha lite 的惡棍之城篇，她與帕拉丁、蘇加魯、圖伊特、華生同行。\n\n惡棍之城篇末段，墜兒在冒險者與霍布面前揭曉自己是拉索斯教間諜。她透過傳送法陣消失，沒有繼續與隊伍同行。",
+    "record_en": "Drayer first appeared with Sugalu in the aftermath of Mattington. After Jiaheng and Anedak died, she split off with Syr Paladin and Sugalu to go to Sebano and investigate the Rathos cult, nominally to avenge their dead companions. Later, in Rugatha lite's City of Villains arc, she traveled with Paladin, Sugalu, Tweeter, and Watson.\n\nIn the later part of the City of Villains arc, Drayer revealed before the adventurers and Hob that she was a spy of the Rathos cult. She vanished through a teleportation circle and did not continue traveling with the party."
+  },
+  {
+    "name_en": "Kudan",
+    "name_zh": "庫登",
+    "race_en": "Minotaur",
+    "race_zh": "牛頭怪",
+    "class_en": [
+      "Sorcerer"
+    ],
+    "class_zh": [
+      "術士"
+    ],
+    "player": "Nathan",
+    "guest": "0",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "庫登在卓茲蘭之穴篇加入冒險團隊，與 GoR、羅特、賽柏、烏波等人一同探索孽物入門、芬諾爾傳道者與羽王相關事件。這段旅程中，隊伍接觸孽物、羽王與芬諾爾信仰，也逐漸前往覆羽莊園。\n\n庫登之後參與覆羽莊園的輓歌，經歷失去理智前的時刻、注定過往的命運、破碎天使，以及永恆與愛的權能。覆羽莊園後，羅特、烏波、賽柏與 GoR 繼續往烏波直覺指向的地方前進。隨著覆羽莊園的崩塌，庫登也消失了。",
+    "record_en": "Kudan joined the adventuring party in the Cave of Drogsland arc, exploring events related to the wretched creatures, Fenor missionaries, and the Feather King together with GoR, Lott, Psyber, Ubbo, and others. During this journey, the party encountered the wretched creatures, the Feather King, and the faith of Fenor, and gradually moved toward the Feathered Estate.\n\nKudan later took part in the Elegy of the Feathered Estate, experiencing the moments before losing reason, the fate of a destined past, the broken angel, and the powers of eternity and love. After the Feathered Estate, Lott, Ubbo, Psyber, and GoR continued toward the place indicated by Ubbo's intuition. As the Feathered Estate collapsed, Kudan also disappeared."
+  },
+  {
+    "name_en": "Brown",
+    "name_zh": "布朗",
+    "race_en": "Half-Orc",
+    "race_zh": "半獸人",
+    "class_en": [
+      "Barbarian"
+    ],
+    "class_zh": [
+      "野蠻人"
+    ],
+    "player": "Timothy",
+    "guest": "0",
+    "campaign": [
+      "Rugatha Brown"
+    ],
+    "record_zh": "布朗的冒險從接受溫德家的護衛委託開始。他計畫護送溫德一家穿越森林，但聽見「殺了溫德」的低語，也遇上失蹤又回來的巴哥犬瑪芬先生。\n\n獨自抵達魏斯科後，他在酒館被梅莉與瑪蒂達下藥，醒來時被扔進服從神社地下室，四周坐滿乾枯屍骨。\n\n為了找回瑪芬先生，布朗追查梅莉、瑪蒂達與黑蓮花，並在服從神社地下室經歷受洗。他在無限黑暗中失去部分記憶，又被卡魯神父告知自己將走上拉索斯之路。離開魏斯科後，他用黑蓮花花瓣換得馬匹，前往夏庭森途中認識魔術師羅納德，並確認瑪芬先生能變成野狼。",
+    "record_en": "Brown's adventure began with accepting an escort commission from the Wind family. He planned to escort the Winds through the forest, but heard whispers saying, \"Kill Wind,\" and also encountered Mr. Muffin, a pug who had disappeared and returned.\n\nAfter reaching Weisco alone, he was drugged by Melly and Matilda at the tavern. When he woke, he had been thrown into the basement of the Shrine of Obedience, surrounded by dried corpses.\n\nTo find Mr. Muffin, Brown investigated Melly, Matilda, and the Black Lotus, and underwent baptism in the basement of the Shrine of Obedience. In endless darkness, he lost part of his memory, and Father Karu told him that he would walk the path of Rathos. After leaving Weisco, he traded Black Lotus petals for a horse, met the magician Ronald on the way to Shatinson, and confirmed that Mr. Muffin could transform into a dire wolf."
+  },
+  {
+    "name_en": "GoR",
+    "name_zh": "GoR",
+    "race_en": "Kalashtar",
+    "race_zh": "離夢人",
+    "class_en": [
+      "Ranger"
+    ],
+    "class_zh": [
+      "遊俠"
+    ],
+    "player": "Amber",
+    "guest": "0",
+    "campaign": [
+      "Rugatha lite"
+    ],
+    "record_zh": "GoR 在卓茲蘭之穴篇加入冒險團，與庫登、羅特、賽柏、烏波等人面對孽物與芬諾爾傳道者。之後他參與覆羽莊園的輓歌，經歷失去理智前的時刻、注定過往的命運、破碎天使，以及永恆與愛的權能。\n\n覆羽莊園後，GoR 與羅特、烏波、賽柏沿著烏波的直覺前往其出生地。抵達目的地前一夜，GoR 在守夜中沒有留下任何訊息便消失。",
+    "record_en": "GoR joined the adventuring party in the Cave of Drogsland arc, facing the wretched creatures and Fenor missionaries together with Kudan, Lott, Psyber, Ubbo, and others. He later took part in the Elegy of the Feathered Estate, experiencing the moments before losing reason, the fate of a destined past, the broken angel, and the powers of eternity and love.\n\nAfter the Feathered Estate, GoR followed Ubbo's intuition toward Ubbo's birthplace together with Lott, Ubbo, and Psyber. On the night before they reached their destination, GoR disappeared during the night watch without leaving any message."
+  },
+  {
+    "name_en": "Cecil",
+    "name_zh": "賽希爾",
+    "race_en": "Shadar-Kai",
+    "race_zh": "幽族",
+    "class_en": [
+      "Wizard"
+    ],
+    "class_zh": [
+      "法師"
+    ],
+    "player": "阿樂",
+    "guest": "1",
+    "campaign": [
+      "Rugatha WILDS"
+    ],
+    "record_zh": "賽希爾在 WILDS 的天選者集會篇客串登場。他以 T.I.D.E.S. 成員身份，參與奢華盛宴與集結事件，與阿龍、毛毛、鑰、雷亞、羅羅等人一同身處 T.I.D.E.S. 相關集會與宴會場合。當時隊伍已從里奇蒙爵士接觸到 T.I.D.E.S. 的組織結構。\n\n在集會中，眾人得知 T.I.D.E.S. 的編制與高層變動，也見到萊里被宣布不再是方尖碑成員與 T.I.D.E.S. 成員。被萊里邀請的冒險者也被要求離場。",
+    "record_en": "Cecil made a guest appearance in WILDS during the Chosen Gathering arc. As a member of T.I.D.E.S., she took part in the Luxury Feast and Gathering events, attending T.I.D.E.S.-related meetings and banquet occasions together with Al-lon, Fur, Kaname, Leah, Roel, and others. At that time, the party had already learned about T.I.D.E.S.'s organizational structure through Syr Richmond.\n\nDuring the gathering, the group learned about T.I.D.E.S.'s organization and changes among its leadership, and also saw Larry announced as no longer being a member of the Obelisk or T.I.D.E.S. The adventurers invited by Larry were also asked to leave."
+  },
+  {
+    "name_en": "Mr. Green",
+    "name_zh": "綠先生",
+    "race_en": "Human",
+    "race_zh": "人類",
+    "class_en": [
+      "Paladin"
+    ],
+    "class_zh": [
+      "聖騎士"
+    ],
+    "player": "Hark",
+    "guest": "1",
+    "campaign": [
+      "Rugatha WILDS"
+    ],
+    "record_zh": "綠先生是 WILDS 的客串聖騎士，為萊里手下的員工，從土城風暴篇開始同行，參與春天精靈、山賊是一種心態與蘋果木之暮等事件。他加入時，隊伍已接觸 T.I.D.E.S.、天選者與地方勢力，並開始被捲入土城周邊的政治與治安問題。\n\n在拉撒拿繼承人篇，綠先生與隊伍一同經歷艾瑞里斯家的午餐、銀龍的款待、誰下此手，以及龍人血脈永恆失落。這些事件涉及艾瑞里斯家、銀龍、血脈與繼承問題。",
+    "record_en": "Mr. Green was a guest paladin in WILDS and an employee under Larry. He began traveling with the party in the Storm of Tucheng arc, taking part in events such as the Spring Spirit, Banditry Is a State of Mind, and Applewood's Dusk. When he joined, the party had already encountered T.I.D.E.S., the Chosen, and local powers, and had begun to be drawn into political and public security problems around Tucheng.\n\nIn the Rasanna Heir arc, Mr. Green went with the party through the Aerylis family lunch, the silver dragon's hospitality, Who Did This, and the eternal loss of the dragonborn bloodline. These events involved the Aerylis family, the silver dragon, bloodlines, and inheritance."
+  },
+  {
+    "name_en": "Ravi",
+    "name_zh": "拉比",
+    "race_en": "Lizardfolk",
+    "race_zh": "蜥蜴人",
+    "class_en": [
+      "Ranger",
+      "Bard"
+    ],
+    "class_zh": [
+      "遊俠",
+      "吟遊詩人"
+    ],
+    "player": "Joseph",
+    "guest": "1",
+    "campaign": [
+      "Rugatha WILDS"
+    ],
+    "record_zh": "拉比在 WILDS 的不被承認的孩子篇登場，陪同隊伍進入陌生的家鄉、藍色紅色與土色，以及雷亞的困境等事件。他加入時，土城與新曙光相關衝突升高，老樹盟、市民連線、新書院與軍方之間的關係逐漸惡化。\n\n皮尼歐教授遇刺前夕，拉比因槍傷被送往診所。他透過鑰的傳訊得知教授死亡與城市動亂，撐著虛弱身體離開診所，朝酒館返回。傳訊術耗盡後，他呼叫自己的梟，捎口信給斷訊的鑰。回到酒館後，他與冒險者會合，主張調查城市局勢，並提出先到隔壁包廂討論的折衷方案。",
+    "record_en": "Ravi appeared in WILDS during the Unacknowledged Child arc, accompanying the party into the events of the unfamiliar hometown, blue, red, and earth colors, and Leah's predicament. When he joined, the conflicts related to Tucheng and New Dawn were escalating, and relations among the Old Tree League, Citizens' Line, New Academy, and the military were gradually worsening.\n\nOn the eve of Professor Pinio's assassination, Ravi was sent to a clinic because of a gunshot wound. Through Kaname's Sending, he learned of the professor's death and the city's unrest, then left the clinic despite his weakened body and headed back toward the tavern. After Sending was exhausted, he called his owl and sent a verbal message to Kaname, whose communication had been cut off. After returning to the tavern, he regrouped with the adventurers, argued for investigating the city situation, and proposed the compromise of first discussing matters in the private room next door."
+  }
+]
