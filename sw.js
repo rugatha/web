@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v6";
+const CACHE_VERSION = "rugatha-pwa-v7";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
@@ -13,7 +13,7 @@ const PRECACHE_URLS = [
   "/assets/rugatha-icon-maskable-512.png",
   "/shared/pwa.js",
   "/shared/styles/theme.css",
-  "/styles/home.css"
+  "/styles/home.css?v=campaign-link-20260701"
 ];
 
 self.addEventListener("install", (event) => {

@@ -76,8 +76,8 @@ body {
 .portal-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(6, minmax(200px, 1fr));
-  grid-auto-rows: minmax(570px, auto);
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  grid-auto-rows: minmax(500px, auto);
   gap: 10px;
 }
 
@@ -120,8 +120,8 @@ body {
 }
 
 .portal-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   border-radius: 50%;
   overflow: hidden;
@@ -156,7 +156,7 @@ body {
 
 .schedule-widget {
   grid-column: 1 / span 6;
-  grid-row: 4;
+  grid-row: 5;
   background:
     radial-gradient(circle at top left, rgba(159, 224, 186, 0.18), transparent 32%),
     linear-gradient(135deg, rgba(18, 30, 26, 0.96), rgba(37, 55, 49, 0.96));
@@ -348,9 +348,106 @@ body {
   line-height: 1.5;
 }
 
-.about-link {
+.campaign-link {
   grid-column: 1 / span 6;
   grid-row: 3;
+  display: block;
+  background: var(--home-bg);
+}
+
+.campaign-link-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 84px;
+  padding: 14px 24px;
+  background: transparent;
+  border: 0;
+  color: #e1cea9;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.campaign-link-card::before,
+.campaign-link-card::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 7px;
+  background:
+    linear-gradient(rgba(225, 206, 169, 0.72), rgba(225, 206, 169, 0.72)) top / 100% 1px no-repeat,
+    linear-gradient(rgba(225, 206, 169, 0.72), rgba(225, 206, 169, 0.72)) bottom / 100% 1px no-repeat;
+}
+
+.campaign-link-card:hover,
+.campaign-link-card:focus-visible {
+  color: #f2dfb9;
+  outline: none;
+}
+
+.campaign-link-copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  text-align: center;
+  transform-origin: center;
+  transition: transform 150ms ease;
+}
+
+.campaign-link-card:hover .campaign-link-copy,
+.campaign-link-card:focus-visible .campaign-link-copy,
+.campaign-link-card:active .campaign-link-copy {
+  transform: scale(1.05);
+}
+
+.campaign-link-cursor {
+  position: absolute;
+  right: -26px;
+  bottom: -1px;
+  color: #e1cea9;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Noto Serif TC", serif;
+  font-size: 28px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.28));
+  pointer-events: none;
+  transform: rotate(-30deg);
+  transform-origin: center;
+  transition: color 150ms ease, transform 150ms ease;
+}
+
+.campaign-link-card:hover .campaign-link-cursor,
+.campaign-link-card:focus-visible .campaign-link-cursor,
+.campaign-link-card:active .campaign-link-cursor {
+  color: #f2dfb9;
+  transform: translate(-2px, -2px) rotate(-30deg) scale(1.05);
+}
+
+.campaign-link-title:first-child {
+  font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  font-size: clamp(16px, 1.9vw, 30px);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: currentColor;
+}
+
+.campaign-link-title--zh {
+  display: inline-block;
+  font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  font-size: clamp(34px, 3.7vw, 54px);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 0.95;
+  white-space: nowrap;
+  color: currentColor;
+}
+
+.about-link {
+  grid-column: 1 / span 6;
+  grid-row: 4;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
@@ -486,6 +583,7 @@ body {
 
   .banner-core,
   .portals,
+  .campaign-link,
   .about-link,
   .auth-entry,
   .schedule-widget {
@@ -559,7 +657,7 @@ body {
   .portal-grid {
     width: 100%;
     min-width: 0;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     grid-auto-columns: auto;
     grid-auto-rows: var(--mobile-portal-row-height);
     column-gap: 2px;
@@ -622,8 +720,31 @@ body {
     white-space: nowrap;
   }
 
-  .about-link {
+  .campaign-link {
     grid-row: 3;
+  }
+
+  .campaign-link-card {
+    min-height: 68px;
+    padding: 10px 16px;
+  }
+
+  .campaign-link-cursor {
+    right: -20px;
+    bottom: -1px;
+    font-size: 21px;
+  }
+
+  .campaign-link-title:first-child {
+    font-size: clamp(12px, 3.5vw, 18px);
+  }
+
+  .campaign-link-title--zh {
+    font-size: clamp(29px, 7.2vw, 40px);
+  }
+
+  .about-link {
+    grid-row: 4;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     border-radius: 16px;
     margin-top: -4px;
@@ -639,7 +760,7 @@ body {
   }
 
   .auth-entry {
-    grid-row: 4;
+    grid-row: 5;
   }
 
   .hub .auth-entry {
@@ -661,7 +782,7 @@ body {
   }
 
   .schedule-widget {
-    grid-row: 5;
+    grid-row: 6;
     margin-top: max(96px, 12vh);
     margin-top: max(96px, 12svh);
   }
@@ -670,19 +791,21 @@ body {
 @media (min-width: 901px) {
   .hub {
     --home-about-height: clamp(92px, 12vh, 118px);
-    --home-hero-height: clamp(300px, calc(100vh - var(--home-about-height) - 52px), 640px);
+    --home-hero-height: clamp(280px, calc(100vh - var(--home-about-height) - 176px), 540px);
     grid-template-rows: var(--home-hero-height) var(--home-about-height) auto auto;
   }
 
   @supports (height: 100svh) {
     .hub {
       --home-about-height: clamp(92px, 12svh, 118px);
-      --home-hero-height: clamp(300px, calc(100svh - var(--home-about-height) - 52px), 640px);
+      --home-hero-height: clamp(280px, calc(100svh - var(--home-about-height) - 176px), 540px);
     }
   }
 
   .portals {
     grid-row: 1;
+    background-position: center 50%;
+    background-size: auto min(44%, 210px);
     overflow-x: visible;
   }
 
@@ -698,7 +821,6 @@ body {
     padding: 8px 14px 10px;
     text-shadow: none;
     top: 50%;
-    transform: translateY(-50%);
     pointer-events: none;
     white-space: nowrap;
   }
@@ -706,21 +828,23 @@ body {
   .portals::before {
     content: "Your Path Begins in";
     left: clamp(16px, 4vw, 60px);
-    right: calc(50% + clamp(120px, 18vw, 230px));
+    right: calc(50% + clamp(112px, 16vw, 200px));
+    transform: translateY(-50%);
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(16px, 1.9vw, 32px);
   }
 
   .portals::after {
     content: "冒險旅途的起點";
-    left: calc(50% + clamp(120px, 18vw, 230px));
+    left: calc(50% + clamp(112px, 16vw, 200px));
     right: clamp(16px, 4vw, 60px);
+    transform: translateY(-50%);
     font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
     font-size: clamp(18px, 2.7vw, 48px);
   }
 
   .portal-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     grid-auto-rows: var(--home-hero-height);
     grid-auto-flow: row;
   }
@@ -755,16 +879,20 @@ body {
     transform: translate(-50%, -50%) scale(1.20);
   }
 
-  .about-link {
+  .campaign-link {
     grid-row: 2;
   }
 
-  .auth-entry {
+  .about-link {
     grid-row: 3;
   }
 
-  .schedule-widget {
+  .auth-entry {
     grid-row: 4;
+  }
+
+  .schedule-widget {
+    grid-row: 5;
   }
 }
 
@@ -784,7 +912,7 @@ body {
 
   .portal-grid {
     grid-auto-rows: var(--mobile-portal-row-height);
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     column-gap: 2px;
     row-gap: 0;
   }
@@ -869,7 +997,7 @@ body {
 
   .portal-grid {
     grid-auto-rows: var(--mobile-portal-row-height);
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     column-gap: 1px;
     row-gap: 0;
   }
