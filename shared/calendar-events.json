@@ -34,23 +34,5 @@
     "note": "報名截止 2026/7/11 23:59 (GMT+8)",
     "image": "assets/rugatha-experience.jpeg",
     "deadline": false
-  },
-  {
-    "title": "Rugatha WILDS 公仔預購截止",
-    "date": "2026-06-30",
-    "category": "預購",
-    "link": "https://www.surveycake.com/s/8ZnWY",
-    "note": "預購截止 2026/6/30 ，一隻 200，共 5 款",
-    "image": "assets/Miniatures_2026.jpg",
-    "deadline": true
-  },
-  {
-    "title": "2027 長團調查",
-    "date": "2026-06-30",
-    "category": "長團",
-    "link": "https://www.surveycake.com/s/2kwAo",
-    "note": "調查截止 2026/6/30",
-    "image": "assets/rugatha-banner.jpg",
-    "deadline": true
   }
 ]
