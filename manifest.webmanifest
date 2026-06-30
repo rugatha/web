@@ -3,7 +3,7 @@
   "short_name": "Rugatha",
   "description": "Explore Rugatha campaigns, characters, deities, maps, history, and community tools.",
   "id": "/",
-  "start_url": "/?source=pwa",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone", "browser"],

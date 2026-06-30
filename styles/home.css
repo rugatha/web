@@ -24,7 +24,7 @@ body {
 .banner-core {
   grid-column: 1 / span 6;
   grid-row: 1;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background: #445f56;
@@ -445,13 +445,15 @@ body {
 
 @media (max-width: 900px) {
   body {
-    padding: 24px 14px 40px;
+    padding: 14px 12px 36px;
   }
 
   .hub {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto auto auto;
     gap: 10px;
+    min-height: auto;
+    padding: 10px 0 32px;
   }
 
   .banner-core,
@@ -461,28 +463,93 @@ body {
     grid-column: 1 / span 3;
   }
 
+  .banner-core {
+    grid-row: 1;
+    display: flex;
+    height: auto;
+    min-height: 150px;
+    padding: 10px 10px 6px;
+    border-radius: 18px 18px 8px 8px;
+    background: #445f56;
+    overflow: hidden;
+  }
+
+  .banner-image {
+    width: min(640px, 100%);
+    max-height: 164px;
+    object-fit: contain;
+  }
+
   .portals {
-    grid-row: 1 / span 2;
-    background-position: center;
-    background-size: 100% auto;
+    grid-row: 2;
+    align-items: stretch;
+    padding: 12px;
+    border-radius: 18px;
+    background-color: #334a42;
+    background-image: none;
+    overflow-x: visible;
   }
 
   .portal-grid {
-    grid-template-columns: repeat(6, minmax(200px, 1fr));
-    grid-auto-columns: minmax(200px, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: auto;
+    grid-auto-rows: minmax(104px, auto);
+    gap: 10px;
   }
 
   .portal {
-    grid-column: auto;
+    min-width: 0;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    border-radius: 14px;
+    background: linear-gradient(
+      180deg,
+      #22302b 0%,
+      rgba(51, 74, 66, 0.9) 34%,
+      rgba(68, 95, 86, 0.82) 66%,
+      #e1cea9 100%
+    );
+    color: #f4f0e6;
+    box-shadow: inset 0 0 0 1px rgba(225, 206, 169, 0.16);
+  }
+
+  .portal-glyph {
+    flex: 0 0 54px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .portal-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .portal-copy {
+    min-width: 0;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+  }
+
+  .portal-title {
+    line-height: 1.15;
   }
 
   .about-link {
     grid-row: 3;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-radius: 16px;
+  }
+
+  .auth-entry {
+    grid-row: 4;
   }
 
   .schedule-widget {
-    grid-row: 4;
+    grid-row: 5;
   }
 }
 
@@ -498,6 +565,23 @@ body {
 }
 
 @media (max-width: 720px) {
+  .portals {
+    padding: 10px;
+  }
+
+  .banner-core {
+    min-height: 132px;
+    padding-top: 6px;
+  }
+
+  .banner-image {
+    max-height: 146px;
+  }
+
+  .portal-grid {
+    grid-auto-rows: minmax(92px, auto);
+  }
+
   .about-link-card {
     min-height: 82px;
     padding: 12px 12px 16px;
@@ -513,6 +597,26 @@ body {
 
   .portal {
     border-radius: 14px;
+    padding: 12px;
+  }
+
+  .portal-glyph {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .portal-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .portal-title:first-child {
+    font-size: 14px;
+  }
+
+  .portal-title:last-child {
+    font-size: 15px;
   }
 
   .schedule-widget__inner {
@@ -537,6 +641,48 @@ body {
 }
 
 @media (max-width: 560px) {
+  body {
+    padding-inline: 10px;
+  }
+
+  .banner-core {
+    min-height: 112px;
+    padding-inline: 6px;
+  }
+
+  .banner-image {
+    max-height: 126px;
+  }
+
+  .portal-grid {
+    gap: 8px;
+  }
+
+  .portal {
+    min-height: 86px;
+    gap: 7px;
+    padding: 10px;
+  }
+
+  .portal-glyph {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .portal-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .portal-title:first-child {
+    font-size: 12px;
+  }
+
+  .portal-title:last-child {
+    font-size: 13px;
+  }
+
   .schedule-widget__inner {
     padding: 16px;
     gap: 14px;
