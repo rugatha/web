@@ -22,15 +22,15 @@
     "date": "2026-07-11",
     "category": "體驗團",
     "link": "https://www.surveycake.com/s/wq6GX",
-    "note": "尚有名額，歡迎報名！",
+    "note": "名額已滿，敬請期待八月體驗團資訊！",
     "image": "assets/survey-cake.png",
-    "deadline": true
+    "deadline": false
   },
   {
     "title": "Rugatha 7月體驗團 《洛林精神》",
     "date": "2026-07-18",
     "category": "體驗團",
-    "link": "https://www.surveycake.com/s/wq6GX",
+    "link": "/experience/index.html",
     "note": "報名截止 2026/7/11 23:59 (GMT+8)",
     "image": "assets/rugatha-experience.jpeg",
     "deadline": false
