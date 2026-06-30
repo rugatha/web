@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&display=swap");
 
+:root {
+  --home-bg: #455f56;
+}
+
 body {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   width: 100%;
   padding: 0 18px 64px;
-  background: #445f56;
+  background: var(--home-bg);
   margin: 0;
 }
 
@@ -31,7 +35,7 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  background: #445f56;
+  background: var(--home-bg);
   padding: 0;
   height: 110px;
   overflow: visible;
@@ -53,7 +57,7 @@ body {
 .portals {
   grid-column: 1 / span 6;
   grid-row: 1 / span 2;
-  background-color: #445f56;
+  background-color: var(--home-bg);
   background-image: url("../assets/rugatha-banner.jpg");
   background-repeat: no-repeat;
   background-position: center 50%;
@@ -88,17 +92,17 @@ body {
   padding: 18px 16px;
   padding-top: 30%;
   padding-bottom: 30%;
-  border-radius: 16px;
+  border-radius: 24px;
   background: linear-gradient(180deg, #22302b 0%, transparent 30%, transparent 70%, #e1cea9 100%);
   color: #111;
   text-decoration: none;
   box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0);
-  transition: box-shadow 140ms ease;
+  transition: transform 240ms ease, background 240ms ease, box-shadow 180ms ease;
 }
 
 .portal:hover,
 .portal:focus-visible {
-  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.9);
+  box-shadow: none;
   outline: none;
 }
 
@@ -116,11 +120,20 @@ body {
 }
 
 .portal-icon {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   border-radius: 50%;
   overflow: hidden;
+  transform-origin: center;
+  transition: transform 150ms ease;
+  will-change: transform;
+}
+
+.portal:hover .portal-icon,
+.portal:focus-visible .portal-icon,
+.portal:active .portal-icon {
+  transform: scale(1.20);
 }
 
 .portal-copy {
@@ -342,7 +355,7 @@ body {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   padding: 0;
-  background: rgba(68, 95, 86, 0.98);
+  background: var(--home-bg);
   overflow: hidden;
 }
 
@@ -461,6 +474,8 @@ body {
     --mobile-title-height: clamp(168px, 24svh, 246px);
     --mobile-portal-icon-size: clamp(42px, 13.5vw, 72px);
     --mobile-portal-row-height: calc(var(--mobile-portal-icon-size) + 52px);
+    --mobile-slogan-width: min(76vw, 430px);
+    --mobile-slogan-font-size: clamp(18px, 4.7vw, 29px);
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto auto minmax(0, 1fr) auto;
     gap: 10px;
@@ -486,7 +501,7 @@ body {
     min-height: var(--mobile-title-height);
     padding: 10px 10px 8px;
     border-radius: 18px 18px 8px 8px;
-    background: #445f56;
+    background: var(--home-bg);
     overflow: hidden;
   }
 
@@ -500,19 +515,27 @@ body {
     letter-spacing: 0.06em;
     line-height: 1;
     text-align: center;
-    text-shadow:
-      0 2px 0 rgba(80, 61, 32, 0.55),
-      0 8px 18px rgba(18, 30, 26, 0.58);
+    text-shadow: none;
   }
 
   .banner-text--top {
-    font-size: clamp(14px, 3.6vw, 22px);
+    margin: 0 auto;
+    font-size: var(--mobile-slogan-font-size);
+    white-space: nowrap;
   }
 
   .banner-text--bottom {
-    font-family: "Noto Serif TC", Georgia, "Times New Roman", serif;
-    font-size: clamp(14px, 3.8vw, 22px);
-    letter-spacing: 0.08em;
+    width: 100%;
+    padding: 4px 0 6px;
+    font-size: var(--mobile-slogan-font-size);
+    white-space: nowrap;
+  }
+
+  .banner-tagline-image {
+    display: block;
+    width: auto;
+    height: calc(var(--mobile-slogan-font-size) * 1.39);
+    margin: 0 auto;
   }
 
   .banner-image {
@@ -575,6 +598,15 @@ body {
     width: var(--mobile-portal-icon-size);
     height: var(--mobile-portal-icon-size);
     border-radius: 24px;
+    transform-origin: center;
+    transition: transform 150ms ease;
+    will-change: transform;
+  }
+
+  .portal:hover .portal-icon,
+  .portal:focus-visible .portal-icon,
+  .portal:active .portal-icon {
+    transform: scale(1.20);
   }
 
   .portal-copy {
@@ -663,9 +695,8 @@ body {
     letter-spacing: 0.06em;
     line-height: 1;
     text-align: center;
-    text-shadow:
-      0 2px 0 rgba(80, 61, 32, 0.55),
-      0 8px 18px rgba(18, 30, 26, 0.58);
+    padding: 8px 14px 10px;
+    text-shadow: none;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
@@ -673,7 +704,7 @@ body {
   }
 
   .portals::before {
-    content: "Explore the world of";
+    content: "Your Path Begins in";
     left: clamp(16px, 4vw, 60px);
     right: calc(50% + clamp(120px, 18vw, 230px));
     font-family: Georgia, "Times New Roman", serif;
@@ -681,12 +712,11 @@ body {
   }
 
   .portals::after {
-    content: "世 界  等 著  你 探 索";
+    content: "冒險旅途的起點";
     left: calc(50% + clamp(120px, 18vw, 230px));
     right: clamp(16px, 4vw, 60px);
-    font-family: "Noto Serif TC", Georgia, "Times New Roman", serif;
-    font-size: clamp(16px, 1.9vw, 32px);
-    letter-spacing: 0.02em;
+    font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+    font-size: clamp(18px, 2.7vw, 48px);
   }
 
   .portal-grid {
@@ -698,6 +728,31 @@ body {
   .portal {
     padding-top: clamp(18px, 8vh, 96px);
     padding-bottom: clamp(18px, 8vh, 96px);
+  }
+
+  .portal:hover,
+  .portal:focus-visible,
+  .portal:active {
+    transform: scale(1.025);
+    background: linear-gradient(180deg, #1b2823 0%, rgba(27, 40, 35, 0.25) 30%, rgba(27, 40, 35, 0.23) 70%, #c8b58f 100%);
+  }
+
+  .portal-glyph {
+    position: relative;
+    transform: translateY(-24px);
+  }
+
+  .portal-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .portal:hover .portal-icon,
+  .portal:focus-visible .portal-icon,
+  .portal:active .portal-icon {
+    transform: translate(-50%, -50%) scale(1.20);
   }
 
   .about-link {
