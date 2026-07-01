@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v11";
+const CACHE_VERSION = "rugatha-pwa-v12";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
@@ -6,6 +6,8 @@ const PRECACHE_URLS = [
   "/",
   "/index.html",
   "/manifest.webmanifest",
+  "/assets/rugatha-favicon.png",
+  "/assets/rugatha-favicon-32.png",
   "/assets/rugatha-icon.png",
   "/assets/rugatha-icon-32.png",
   "/assets/rugatha-icon-192.png",

@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&D 法術表 | Rugatha</title>
+  <meta name="description" content="以表格方式瀏覽、篩選與排序 D&D 5e PHB 法術資料。">
+  <link rel="icon" type="image/png" href="../assets/rugatha-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-favicon-32.png">
+  <link rel="stylesheet" href="../shared/styles/theme.css">
+  <style>
+    :root {
+      --spell-bg: var(--bg);
+      --spell-ink: #1f2a24;
+      --spell-muted: #d1ded6;
+      --spell-table-muted: #607066;
+      --spell-line: rgba(68, 95, 86, 0.24);
+      --spell-panel: #eef3ea;
+      --spell-panel-alt: #e5ede4;
+      --spell-panel-strong: #d3dfd2;
+      --spell-accent: #3f7d69;
+      --spell-accent-dark: #244f43;
+      --spell-focus: #c58b46;
+      --spell-gold-soft: #ead7ad;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    body {
+      background: var(--spell-bg);
+      color: var(--spell-ink);
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .banner {
+      margin: 20px 0 10px;
+    }
+
+    .spells-shell {
+      width: min(1480px, calc(100vw - 28px));
+      margin: 0 auto 40px;
+    }
+
+    .title-bar {
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+      padding: 18px 0 14px;
+      text-align: center;
+      color: var(--text);
+      border-bottom: 1px solid rgba(236, 242, 237, 0.28);
+    }
+
+    .title-copy {
+      display: grid;
+      justify-items: center;
+    }
+
+    .title-copy h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .title-copy p {
+      max-width: 680px;
+      margin: 10px auto 0;
+      color: var(--spell-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .result-count {
+      min-width: 0;
+      text-align: center;
+      color: var(--spell-muted);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .view-toggle {
+      display: inline-grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      padding: 4px;
+      margin: 16px 0 0;
+      border: 1px solid rgba(236, 242, 237, 0.28);
+      border-radius: 8px;
+      background: rgba(19, 28, 32, 0.22);
+    }
+
+    .view-toggle button {
+      min-height: 36px;
+      padding: 0 14px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .view-toggle button[aria-pressed="true"] {
+      background: var(--accent);
+      color: #10231d;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1.5fr) repeat(5, minmax(120px, 1fr)) auto;
+      gap: 10px;
+      align-items: end;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(236, 242, 237, 0.28);
+    }
+
+    .control {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .control label,
+    .control-label {
+      color: var(--spell-muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    input,
+    select,
+    button {
+      min-height: 42px;
+      border: 1px solid var(--spell-line);
+      border-radius: 6px;
+      background: var(--spell-panel);
+      color: var(--spell-ink);
+      font: inherit;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 0 11px;
+    }
+
+    .check-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-height: 42px;
+      align-items: center;
+    }
+
+    .check-option {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 34px;
+      padding: 0 10px;
+      border: 1px solid var(--spell-line);
+      border-radius: 999px;
+      background: rgba(238, 243, 234, 0.82);
+      color: var(--spell-ink);
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .control .check-option {
+      color: var(--spell-ink);
+      font-size: 0.92rem;
+    }
+
+    .check-option input {
+      width: 16px;
+      min-height: 16px;
+      height: 16px;
+      margin: 0;
+      accent-color: var(--spell-accent);
+      cursor: pointer;
+    }
+
+    input:focus,
+    select:focus,
+    button:focus-visible {
+      outline: 3px solid rgba(179, 95, 43, 0.26);
+      border-color: var(--spell-focus);
+    }
+
+    button {
+      padding: 0 14px;
+      cursor: pointer;
+      font-weight: 700;
+      background: var(--spell-accent);
+      color: #fffaf0;
+      border-color: var(--spell-accent);
+    }
+
+    button:hover {
+      background: var(--spell-accent-dark);
+    }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--spell-line);
+      border-radius: 8px;
+      background: var(--spell-panel);
+      box-shadow: 0 18px 42px rgba(18, 29, 25, 0.24);
+    }
+
+    table {
+      width: 100%;
+      min-width: 1180px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--spell-line);
+      padding: 10px 11px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: var(--spell-panel-strong);
+      color: #203b33;
+      font-size: 0.82rem;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    th button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      min-height: 28px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    th button:hover {
+      background: transparent;
+      color: var(--spell-accent-dark);
+    }
+
+    .spell-row:nth-of-type(4n + 1) {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .spell-row:hover {
+      background: rgba(63, 125, 105, 0.16);
+    }
+
+    .col-level {
+      width: 76px;
+    }
+
+    .col-school {
+      width: 96px;
+    }
+
+    .col-name {
+      width: 210px;
+    }
+
+    .col-time {
+      width: 130px;
+    }
+
+    .col-range {
+      width: 130px;
+    }
+
+    .col-duration {
+      width: 150px;
+    }
+
+    .col-components {
+      width: 110px;
+    }
+
+    .col-concentration,
+    .col-ritual {
+      width: 96px;
+    }
+
+    .col-attack,
+    .col-save,
+    .col-damage {
+      width: 120px;
+    }
+
+    .col-detail {
+      width: 80px;
+    }
+
+    .col-book {
+      width: 96px;
+    }
+
+    .name-cell {
+      display: grid;
+      gap: 3px;
+    }
+
+    .name-zh {
+      font-weight: 800;
+      line-height: 1.25;
+      color: #17382f;
+    }
+
+    .name-en {
+      color: var(--spell-table-muted);
+      font-size: 0.82rem;
+      line-height: 1.25;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(63, 125, 105, 0.14);
+      color: #25463c;
+      font-size: 0.8rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      border: 1px solid rgba(63, 125, 105, 0.16);
+    }
+
+    .detail-button {
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.24);
+      color: var(--spell-accent-dark);
+      border-color: rgba(63, 125, 105, 0.35);
+    }
+
+    .detail-button:hover {
+      color: #fffaf0;
+      background: var(--spell-accent-dark);
+    }
+
+    .book-button,
+    .remove-button,
+    .clear-button {
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .book-button[disabled] {
+      cursor: default;
+      background: rgba(63, 125, 105, 0.16);
+      color: var(--spell-table-muted);
+      border-color: rgba(63, 125, 105, 0.16);
+    }
+
+    .remove-button,
+    .clear-button {
+      background: #8c4c37;
+      border-color: #8c4c37;
+      color: #fffaf0;
+    }
+
+    .remove-button:hover,
+    .clear-button:hover {
+      background: #683728;
+    }
+
+    .detail-row[hidden] {
+      display: none;
+    }
+
+    .detail-row > td {
+      background: rgba(211, 223, 210, 0.32);
+    }
+
+    .detail-panel {
+      display: grid;
+      gap: 12px;
+      padding: 14px 12px 10px;
+      line-height: 1.65;
+      color: #27251f;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(211, 223, 210, 0.38));
+      border-left: 4px solid var(--spell-accent);
+    }
+
+    .detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .detail-text {
+      display: grid;
+      gap: 10px;
+      max-width: 980px;
+    }
+
+    .detail-text p,
+    .detail-text ul,
+    .detail-text table {
+      margin: 0;
+    }
+
+    .detail-text ul {
+      padding-left: 1.2rem;
+    }
+
+    .detail-text table {
+      width: 100%;
+      min-width: 0;
+      table-layout: auto;
+      border: 1px solid var(--spell-line);
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .detail-text table th,
+    .detail-text table td {
+      position: static;
+      padding: 7px 8px;
+      font-size: 0.92rem;
+    }
+
+    .detail-text table th {
+      background: var(--spell-panel-strong);
+    }
+
+    .empty-state,
+    .load-state {
+      padding: 28px;
+      color: var(--spell-muted);
+      text-align: center;
+    }
+
+    .error-state {
+      padding: 18px;
+      border: 1px solid #b35f2b;
+      border-radius: 8px;
+      background: #fff1e4;
+      color: #6d3218;
+      line-height: 1.6;
+    }
+
+    .class-view {
+      display: grid;
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .class-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .class-card {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      border: 1px solid var(--spell-line);
+      border-radius: 8px;
+      background: var(--spell-panel);
+      box-shadow: 0 14px 34px rgba(18, 29, 25, 0.18);
+      overflow: hidden;
+    }
+
+    .class-card h2 {
+      margin: 0;
+      padding: 12px 14px;
+      background: var(--spell-panel-strong);
+      color: #17382f;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+
+    .level-groups {
+      display: grid;
+      gap: 10px;
+      padding: 0 14px 14px;
+    }
+
+    .level-group {
+      display: grid;
+      gap: 6px;
+      padding-top: 10px;
+      border-top: 1px solid var(--spell-line);
+    }
+
+    .level-group:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .level-group h3 {
+      margin: 0;
+      color: #244f43;
+      font-size: 0.95rem;
+      letter-spacing: 0;
+    }
+
+    .class-spell-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .class-spell-list li {
+      display: inline-flex;
+      max-width: 100%;
+    }
+
+    .class-spell-button {
+      display: inline-flex;
+      gap: 4px;
+      align-items: baseline;
+      min-height: 0;
+      max-width: 100%;
+      padding: 4px 8px;
+      border: 1px solid rgba(63, 125, 105, 0.16);
+      border-radius: 999px;
+      background: rgba(63, 125, 105, 0.14);
+      color: #25463c;
+      font-size: 0.85rem;
+      line-height: 1.25;
+      font-weight: 600;
+    }
+
+    .class-spell-button:hover,
+    .class-spell-button[aria-expanded="true"] {
+      background: var(--spell-accent-dark);
+      color: #eef3ea;
+      border-color: var(--spell-accent-dark);
+    }
+
+    .class-spell-button small {
+      color: var(--spell-table-muted);
+      font-size: 0.75rem;
+    }
+
+    .class-spell-button:hover small,
+    .class-spell-button[aria-expanded="true"] small {
+      color: rgba(238, 243, 234, 0.76);
+    }
+
+    .class-spell-detail {
+      display: grid;
+      gap: 10px;
+      margin-top: 2px;
+      padding: 12px;
+      border-left: 4px solid var(--spell-accent);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.42);
+      color: #27251f;
+      line-height: 1.62;
+    }
+
+    .class-spell-detail h4 {
+      margin: 0;
+      color: #17382f;
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
+    .class-spell-detail .detail-text {
+      max-width: none;
+    }
+
+    .book-view {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .book-tools {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto;
+      gap: 10px;
+      align-items: end;
+      padding: 12px;
+      border: 1px solid var(--spell-line);
+      border-radius: 8px;
+      background: var(--spell-panel);
+    }
+
+    .book-search-results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-height: 32px;
+      padding: 0 12px;
+    }
+
+    .book-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .book-card {
+      display: grid;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--spell-line);
+      border-left: 4px solid var(--spell-accent);
+      border-radius: 8px;
+      background: var(--spell-panel);
+      box-shadow: 0 14px 34px rgba(18, 29, 25, 0.18);
+    }
+
+    .book-card-header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .book-card h2 {
+      margin: 0;
+      color: #17382f;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+
+    .book-card small {
+      display: block;
+      margin-top: 2px;
+      color: var(--spell-table-muted);
+      font-size: 0.85rem;
+    }
+
+    .mobile-label {
+      display: none;
+    }
+
+    @media (max-width: 1080px) {
+      .toolbar {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .toolbar .control:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .spells-shell {
+        width: min(100vw - 20px, 1480px);
+        margin-bottom: 24px;
+      }
+
+      .title-bar {
+        display: grid;
+        align-items: start;
+        gap: 12px;
+        padding-top: 10px;
+      }
+
+      .result-count {
+        text-align: left;
+      }
+
+      .view-toggle {
+        width: 100%;
+      }
+
+      .toolbar {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 12px 0;
+      }
+
+      .table-wrap {
+        overflow: visible;
+        border: 0;
+        border-radius: 6px;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      table,
+      thead,
+      tbody,
+      tr,
+      td {
+        display: block;
+        width: 100%;
+        min-width: 0;
+      }
+
+      table {
+        table-layout: auto;
+        border-collapse: separate;
+      }
+
+      thead {
+        display: none;
+      }
+
+      .spell-row {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 10px;
+        padding: 12px;
+        border: 1px solid var(--spell-line);
+        border-radius: 8px;
+        background: var(--spell-panel);
+        box-shadow: 0 10px 24px rgba(18, 29, 25, 0.16);
+      }
+
+      .spell-row:nth-of-type(4n + 1) {
+        background: var(--spell-panel);
+      }
+
+      .spell-row:hover {
+        background: var(--spell-panel);
+      }
+
+      .spell-row td {
+        display: grid;
+        grid-template-columns: 5.5em minmax(0, 1fr);
+        gap: 8px;
+        align-items: start;
+        padding: 0;
+        border-bottom: 0;
+      }
+
+      .spell-row td::before {
+        content: attr(data-label);
+        color: var(--spell-table-muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .spell-row td[data-label="內容"] {
+        grid-template-columns: 1fr;
+      }
+
+      .spell-row td[data-label="內容"]::before {
+        display: none;
+      }
+
+      .spell-row td[data-label="名稱"] {
+        order: -1;
+        grid-template-columns: 1fr;
+      }
+
+      .spell-row td[data-label="名稱"]::before {
+        display: none;
+      }
+
+      .spell-row .name-zh {
+        font-size: 1.25rem;
+      }
+
+      .spell-row .name-en {
+        font-size: 0.92rem;
+      }
+
+      .spell-row td[data-label="法術書"] {
+        grid-template-columns: 1fr;
+      }
+
+      .spell-row td[data-label="法術書"]::before {
+        display: none;
+      }
+
+      .spell-row .detail-button {
+        width: 100%;
+      }
+
+      .spell-row .book-button {
+        width: 100%;
+      }
+
+      .detail-row {
+        margin: -2px 0 12px;
+      }
+
+      .detail-row > td {
+        display: block;
+        padding: 0;
+        border-bottom: 0;
+        background: transparent;
+      }
+
+      .detail-panel,
+      .class-spell-detail {
+        padding: 12px;
+        border-radius: 8px;
+      }
+
+      .detail-meta {
+        gap: 5px;
+      }
+
+      .tag {
+        white-space: normal;
+      }
+
+      .class-view {
+        margin-top: 12px;
+      }
+
+      .class-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .class-card {
+        gap: 10px;
+      }
+
+      .level-groups {
+        padding: 0 10px 10px;
+      }
+
+      .class-spell-list {
+        gap: 5px;
+      }
+
+      .class-spell-list li,
+      .class-spell-button {
+        max-width: 100%;
+      }
+
+      .class-spell-button {
+        white-space: normal;
+        text-align: left;
+        flex-wrap: wrap;
+      }
+
+      .class-spell-detail .detail-meta {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .book-tools {
+        grid-template-columns: 1fr;
+        padding: 10px;
+      }
+
+      .book-search-results {
+        padding: 0;
+      }
+
+      .book-card {
+        padding: 12px;
+      }
+
+      .book-card-header {
+        display: grid;
+      }
+
+      .book-card .remove-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="banner" aria-label="Rugatha banner image">
+      <a href="../index.html" class="banner-link" aria-label="Back to Rugatha home">
+        <img src="../assets/rugatha-banner.jpg" alt="Rugatha banner" class="banner-logo" loading="lazy">
+      </a>
+    </header>
+
+    <main class="spells-shell">
+      <section class="title-bar">
+        <div class="title-copy">
+          <h1>D&D 法術表</h1>
+          <p>採用D&amp;D 5e玩家手冊內容<br>僅供遊玩使用，請勿外流</p>
+          <div class="view-toggle" aria-label="切換法術視圖">
+            <button type="button" data-view="list" aria-pressed="true">法術清單</button>
+            <button type="button" data-view="class" aria-pressed="false">職業法術</button>
+            <button type="button" data-view="book" aria-pressed="false">法術書</button>
+          </div>
+        </div>
+        <div class="result-count" id="resultCount">載入中</div>
+      </section>
+
+      <section class="toolbar" id="filterToolbar" aria-label="法術篩選工具">
+        <div class="control">
+          <label for="searchInput">搜尋</label>
+          <input id="searchInput" type="search" placeholder="法術名稱、英文、內容、材料">
+        </div>
+        <div class="control">
+          <label for="levelFilter">等級</label>
+          <select id="levelFilter">
+            <option value="">全部</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="schoolFilter">學派</label>
+          <select id="schoolFilter">
+            <option value="">全部</option>
+          </select>
+        </div>
+        <div class="control">
+          <span class="control-label">成分</span>
+          <div class="check-group" id="componentFilter" aria-label="成分篩選">
+            <label class="check-option"><input type="checkbox" value="聲">聲</label>
+            <label class="check-option"><input type="checkbox" value="勢">勢</label>
+            <label class="check-option"><input type="checkbox" value="材">材</label>
+          </div>
+        </div>
+        <div class="control">
+          <label for="damageFilter">傷害</label>
+          <select id="damageFilter">
+            <option value="">全部</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="saveFilter">豁免</label>
+          <select id="saveFilter">
+            <option value="">全部</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="concentrationFilter">專注</label>
+          <select id="concentrationFilter">
+            <option value="">全部</option>
+            <option value="是">是</option>
+            <option value="否">否</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="attackFilter">攻擊</label>
+          <select id="attackFilter">
+            <option value="">全部</option>
+            <option value="法術命中">法術命中</option>
+            <option value="豁免攻擊">豁免攻擊</option>
+            <option value="非攻擊">非攻擊</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="ritualFilter">儀式</label>
+          <select id="ritualFilter">
+            <option value="">全部</option>
+            <option value="是">是</option>
+            <option value="否">否</option>
+          </select>
+        </div>
+        <button id="resetButton" type="button">重設</button>
+      </section>
+
+      <section class="table-wrap" id="spellListView" aria-live="polite">
+        <div class="load-state" id="loadState">讀取法術資料中</div>
+        <table id="spellTable" hidden>
+          <thead>
+            <tr>
+              <th class="col-level"><button type="button" data-sort="level">等級 <span aria-hidden="true"></span></button></th>
+              <th class="col-school"><button type="button" data-sort="schoolText">學派 <span aria-hidden="true"></span></button></th>
+              <th class="col-name"><button type="button" data-sort="name_zh">名稱 <span aria-hidden="true"></span></button></th>
+              <th class="col-time"><button type="button" data-sort="timeText">施法時間 <span aria-hidden="true"></span></button></th>
+              <th class="col-range"><button type="button" data-sort="rangeText">距離 <span aria-hidden="true"></span></button></th>
+              <th class="col-duration"><button type="button" data-sort="durationText">持續時間 <span aria-hidden="true"></span></button></th>
+              <th class="col-components"><button type="button" data-sort="componentSummaryText">成分 <span aria-hidden="true"></span></button></th>
+              <th class="col-concentration"><button type="button" data-sort="concentrationText">專注 <span aria-hidden="true"></span></button></th>
+              <th class="col-ritual"><button type="button" data-sort="ritualText">儀式 <span aria-hidden="true"></span></button></th>
+              <th class="col-attack"><button type="button" data-sort="attackText">攻擊 <span aria-hidden="true"></span></button></th>
+              <th class="col-save">豁免</th>
+              <th class="col-damage">傷害</th>
+              <th class="col-book">法術書</th>
+              <th class="col-detail">內容</th>
+            </tr>
+          </thead>
+          <tbody id="spellRows"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState" hidden>沒有符合條件的法術</div>
+      </section>
+
+      <section class="class-view" id="classSpellView" hidden>
+        <div class="class-grid" id="classGrid"></div>
+      </section>
+
+      <section class="book-view" id="spellBookView" hidden>
+        <div class="book-tools">
+          <div class="control">
+            <label for="bookSearchInput">搜尋新增法術</label>
+            <input id="bookSearchInput" type="search" placeholder="輸入法術名稱、英文或內容">
+          </div>
+          <button class="clear-button" id="clearBookButton" type="button">清空法術</button>
+        </div>
+        <div class="book-search-results" id="bookSearchResults"></div>
+        <div class="book-list" id="bookList"></div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const state = {
+      spells: [],
+      filtered: [],
+      view: "list",
+      sortKey: "level",
+      sortDirection: "asc",
+      expanded: new Set(),
+      classExpanded: null,
+      spellBook: new Set(),
+    };
+
+    const SPELLBOOK_STORAGE_KEY = "rugatha.phb.spellbook";
+
+    const classOrder = ["吟遊詩人", "牧師", "德魯伊", "聖騎士", "遊俠", "術士", "契術師", "法師"];
+
+    const schoolNames = {
+      A: "防護",
+      C: "咒法",
+      D: "預言",
+      E: "附魔",
+      I: "幻術",
+      N: "死靈",
+      T: "變化",
+      V: "塑能",
+    };
+
+    const elements = {
+      search: document.getElementById("searchInput"),
+      level: document.getElementById("levelFilter"),
+      school: document.getElementById("schoolFilter"),
+      component: document.getElementById("componentFilter"),
+      damage: document.getElementById("damageFilter"),
+      save: document.getElementById("saveFilter"),
+      concentration: document.getElementById("concentrationFilter"),
+      attack: document.getElementById("attackFilter"),
+      ritual: document.getElementById("ritualFilter"),
+      reset: document.getElementById("resetButton"),
+      toolbar: document.getElementById("filterToolbar"),
+      count: document.getElementById("resultCount"),
+      load: document.getElementById("loadState"),
+      listView: document.getElementById("spellListView"),
+      classView: document.getElementById("classSpellView"),
+      bookView: document.getElementById("spellBookView"),
+      bookSearch: document.getElementById("bookSearchInput"),
+      bookSearchResults: document.getElementById("bookSearchResults"),
+      bookList: document.getElementById("bookList"),
+      clearBook: document.getElementById("clearBookButton"),
+      classGrid: document.getElementById("classGrid"),
+      table: document.getElementById("spellTable"),
+      rows: document.getElementById("spellRows"),
+      empty: document.getElementById("emptyState"),
+    };
+
+    function levelText(level) {
+      return Number(level) === 0 ? "戲法" : `${level} 環`;
+    }
+
+    function arrayText(value) {
+      return Array.isArray(value) && value.length ? value.join("、") : "—";
+    }
+
+    function formatTime(time) {
+      if (!Array.isArray(time) || !time.length) return "—";
+      return time.map((item) => {
+        const amount = item.number && item.number !== 1 ? `${item.number} ` : "";
+        const condition = item.condition ? `（${item.condition}）` : "";
+        return `${amount}${item.unit || ""}${condition}`;
+      }).join("、");
+    }
+
+    function formatRange(range) {
+      if (!range) return "—";
+      if (range.type === "自身") return "自身";
+      if (!range.distance) return range.type || "—";
+      const amount = range.distance.amount ? `${range.distance.amount} ` : "";
+      const unit = range.distance.type || "";
+      return `${amount}${unit}`.trim() || range.type || "—";
+    }
+
+    function formatDuration(duration) {
+      if (!Array.isArray(duration) || !duration.length) return "—";
+      return duration.map((item) => {
+        if (item.duration) {
+          const amount = item.duration.amount ? `${item.duration.amount} ` : "";
+          return `${amount}${item.duration.type || ""}`.trim();
+        }
+        return `${item.type || ""}`.trim();
+      }).join("、");
+    }
+
+    function hasConcentration(duration) {
+      return Array.isArray(duration) && duration.some((item) => item && item.concentration);
+    }
+
+    function componentText(components) {
+      if (!components) return "—";
+      const parts = [];
+      if (components.v) parts.push("聲");
+      if (components.s) parts.push("勢");
+      if (components.m) {
+        const material = typeof components.m === "string" ? components.m : components.m.text;
+        parts.push(`材：${material || ""}`);
+      }
+      return parts.join("、") || "—";
+    }
+
+    function componentKinds(components) {
+      if (!components) return [];
+      const parts = [];
+      if (components.v) parts.push("聲");
+      if (components.s) parts.push("勢");
+      if (components.m) parts.push("材");
+      return parts;
+    }
+
+    function normalizeSpell(spell, index) {
+      const components = componentKinds(spell.components);
+      const normalized = {
+        ...spell,
+        index,
+        schoolText: schoolNames[spell.school] || spell.school || "—",
+        timeText: formatTime(spell.time),
+        rangeText: formatRange(spell.range),
+        durationText: formatDuration(spell.duration),
+        componentText: componentText(spell.components),
+        componentKinds: components,
+        componentSummaryText: arrayText(components),
+        concentrationText: hasConcentration(spell.duration) ? "是" : "否",
+        attackText: attackText(spell),
+        savingText: arrayText(spell.savingThrow),
+        damageText: arrayText(spell.damageInflict),
+        ritualText: spell.meta && spell.meta.ritual ? "是" : "否",
+      };
+      normalized.contentText = [
+        plainEntryText(normalized.entries),
+        plainEntryText(normalized.entriesHigherLevel),
+      ].join(" ").toLowerCase();
+      normalized.searchText = [
+        normalized.name_zh,
+        normalized.name_en,
+        normalized.schoolText,
+        normalized.timeText,
+        normalized.rangeText,
+        normalized.durationText,
+        normalized.componentText,
+        normalized.componentSummaryText,
+        normalized.concentrationText,
+        normalized.attackText,
+        normalized.ritualText,
+        normalized.savingText,
+        normalized.damageText,
+        normalized.contentText,
+      ].join(" ").toLowerCase();
+      return normalized;
+    }
+
+    function plainEntryText(entries) {
+      if (!entries) return "";
+      if (typeof entries === "string") return stripTags(entries);
+      if (Array.isArray(entries)) return entries.map(plainEntryText).join(" ");
+      if (typeof entries === "object") {
+        return Object.values(entries).map(plainEntryText).join(" ");
+      }
+      return "";
+    }
+
+    function attackText(spell) {
+      if (!hasDamageCalculation(spell)) return "非攻擊";
+      if (spell.spellAttack && spell.spellAttack.length) return "法術命中";
+      if (spell.savingThrow && spell.savingThrow.length) return "豁免攻擊";
+      return "非攻擊";
+    }
+
+    function hasDamageCalculation(spell) {
+      return Boolean(
+        (spell.damageInflict && spell.damageInflict.length) ||
+        entryHasDamageCalculation(spell.entries) ||
+        entryHasDamageCalculation(spell.entriesHigherLevel)
+      );
+    }
+
+    function entryHasDamageCalculation(entries) {
+      if (!entries) return false;
+      if (typeof entries === "string") return /\{@(?:damage|scaledamage)\s/i.test(entries);
+      if (Array.isArray(entries)) return entries.some(entryHasDamageCalculation);
+      if (typeof entries === "object") return Object.values(entries).some(entryHasDamageCalculation);
+      return false;
+    }
+
+    function stripTags(text) {
+      return String(text).replace(/\{@([^|}]+)\|?([^}]*)\}/g, (_, raw, display) => {
+        if (display) return display.split("|").pop();
+        return raw.replace(/^[a-zA-Z]+\s+/, "");
+      });
+    }
+
+    function renderTagList(text) {
+      if (!text || text === "—") return "—";
+      return `<div class="tag-list">${text.split("、").map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("")}</div>`;
+    }
+
+    function populateFilters() {
+      const levels = [...new Set(state.spells.map((spell) => spell.level))].sort((a, b) => a - b);
+      const schools = [...new Set(state.spells.map((spell) => spell.schoolText))].sort((a, b) => a.localeCompare(b, "zh-Hant"));
+      const damages = [...new Set(state.spells.flatMap((spell) => spell.damageInflict || []))].sort((a, b) => a.localeCompare(b, "zh-Hant"));
+      const saves = [...new Set(state.spells.flatMap((spell) => spell.savingThrow || []))].sort((a, b) => a.localeCompare(b, "zh-Hant"));
+
+      levels.forEach((level) => elements.level.append(new Option(levelText(level), String(level))));
+      schools.forEach((school) => elements.school.append(new Option(school, school)));
+      damages.forEach((damage) => elements.damage.append(new Option(damage, damage)));
+      saves.forEach((save) => elements.save.append(new Option(save, save)));
+    }
+
+    function applyFilters() {
+      const query = elements.search.value.trim().toLowerCase();
+      const level = elements.level.value;
+      const school = elements.school.value;
+      const components = selectedComponents();
+      const damage = elements.damage.value;
+      const save = elements.save.value;
+      const concentration = elements.concentration.value;
+      const attack = elements.attack.value;
+      const ritual = elements.ritual.value;
+
+      state.filtered = state.spells.filter((spell) => {
+        if (query && !spell.searchText.includes(query)) return false;
+        if (level !== "" && String(spell.level) !== level) return false;
+        if (school && spell.schoolText !== school) return false;
+        if (components.length && !components.every((component) => spell.componentKinds.includes(component))) return false;
+        if (damage && !(spell.damageInflict || []).includes(damage)) return false;
+        if (save && !(spell.savingThrow || []).includes(save)) return false;
+        if (concentration && spell.concentrationText !== concentration) return false;
+        if (attack && spell.attackText !== attack) return false;
+        if (ritual && spell.ritualText !== ritual) return false;
+        return true;
+      });
+
+      sortSpells();
+      renderRows();
+      updateCount();
+    }
+
+    function selectedComponents() {
+      return Array.from(elements.component.querySelectorAll("input:checked"), (input) => input.value);
+    }
+
+    function sortClasses(a, b) {
+      const ai = classOrder.indexOf(a);
+      const bi = classOrder.indexOf(b);
+      if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+      return a.localeCompare(b, "zh-Hant");
+    }
+
+    function sortSpells() {
+      const direction = state.sortDirection === "asc" ? 1 : -1;
+      state.filtered.sort((a, b) => {
+        let left = a[state.sortKey];
+        let right = b[state.sortKey];
+        if (state.sortKey === "level") {
+          return (Number(left) - Number(right) || a.name_zh.localeCompare(b.name_zh, "zh-Hant")) * direction;
+        }
+        left = String(left || "");
+        right = String(right || "");
+        return (left.localeCompare(right, "zh-Hant") || a.name_zh.localeCompare(b.name_zh, "zh-Hant")) * direction;
+      });
+    }
+
+    function renderRows() {
+      elements.empty.hidden = state.filtered.length !== 0;
+      elements.table.hidden = state.filtered.length === 0;
+      updateSortIndicators();
+
+      const rows = [];
+      state.filtered.forEach((spell) => {
+        const rowId = `spell-${spell.index}`;
+        const expanded = state.expanded.has(spell.index);
+        rows.push(`
+          <tr class="spell-row">
+            <td data-label="等級">${levelText(spell.level)}</td>
+            <td data-label="學派">${escapeHtml(spell.schoolText)}</td>
+            <td data-label="名稱">
+              <div class="name-cell">
+                <span class="name-zh">${escapeHtml(spell.name_zh)}</span>
+                <span class="name-en">${escapeHtml(spell.name_en)}</span>
+              </div>
+            </td>
+            <td data-label="施法">${escapeHtml(spell.timeText)}</td>
+            <td data-label="距離">${escapeHtml(spell.rangeText)}</td>
+            <td data-label="持續">${escapeHtml(spell.durationText)}</td>
+            <td data-label="成分">${renderTagList(spell.componentSummaryText)}</td>
+            <td data-label="專注">${escapeHtml(spell.concentrationText)}</td>
+            <td data-label="儀式">${escapeHtml(spell.ritualText)}</td>
+            <td data-label="攻擊">${renderTagList(spell.attackText)}</td>
+            <td data-label="豁免">${renderTagList(spell.savingText)}</td>
+            <td data-label="傷害">${renderTagList(spell.damageText)}</td>
+            <td data-label="法術書">${renderBookButton(spell)}</td>
+            <td data-label="內容"><button class="detail-button" type="button" data-toggle="${spell.index}" aria-expanded="${expanded}" aria-controls="${rowId}">${expanded ? "收合" : "展開"}</button></td>
+          </tr>
+          <tr class="detail-row" id="${rowId}" ${expanded ? "" : "hidden"}>
+            <td colspan="14">
+              <div class="detail-panel">
+                <div class="detail-meta">
+                  <span class="tag">成分 ${escapeHtml(spell.componentText)}</span>
+                  <span class="tag">專注 ${escapeHtml(spell.concentrationText)}</span>
+                  <span class="tag">儀式 ${escapeHtml(spell.ritualText)}</span>
+                  <span class="tag">來源 ${escapeHtml(spell.source || "—")} p.${escapeHtml(spell.page || "—")}</span>
+                </div>
+                <div class="detail-text">
+                  ${renderEntries(spell.entries)}
+                  ${spell.entriesHigherLevel ? renderEntries(spell.entriesHigherLevel) : ""}
+                </div>
+              </div>
+            </td>
+          </tr>
+        `);
+      });
+      elements.rows.innerHTML = rows.join("");
+    }
+
+    function renderClassView() {
+      const classes = [...new Set(state.spells.flatMap((spell) => spell.classes || []))].sort(sortClasses);
+      elements.classGrid.innerHTML = classes.map((className) => {
+        const spells = state.spells
+          .filter((spell) => (spell.classes || []).includes(className))
+          .sort((a, b) => Number(a.level) - Number(b.level) || a.name_zh.localeCompare(b.name_zh, "zh-Hant"));
+        const groups = [];
+        for (let level = 0; level <= 9; level += 1) {
+          const levelSpells = spells.filter((spell) => Number(spell.level) === level);
+          if (!levelSpells.length) continue;
+          groups.push(`
+            <section class="level-group">
+              <h3>${levelText(level)} · ${levelSpells.length}</h3>
+              <ul class="class-spell-list">
+                ${levelSpells.map((spell) => `
+                  <li>
+                    <button class="class-spell-button" type="button" data-class-spell="${spell.index}" data-class-spell-key="${classSpellKey(className, level, spell.index)}" aria-expanded="${state.classExpanded === classSpellKey(className, level, spell.index)}">
+                      <span>${escapeHtml(spell.name_zh)}</span>
+                      <small>${escapeHtml(spell.name_en)}</small>
+                    </button>
+                  </li>
+                `).join("")}
+              </ul>
+              ${renderClassSpellDetail(className, level, levelSpells)}
+            </section>
+          `);
+        }
+        return `
+          <article class="class-card">
+            <h2>${escapeHtml(className)} <small>${spells.length}</small></h2>
+            <div class="level-groups">${groups.join("")}</div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function classSpellKey(className, level, index) {
+      return `${className}::${level}::${index}`;
+    }
+
+    function renderClassSpellDetail(className, level, levelSpells) {
+      const spell = levelSpells.find((item) => classSpellKey(className, level, item.index) === state.classExpanded);
+      if (!spell) return "";
+      return `
+        <article class="class-spell-detail">
+          <h4>${escapeHtml(spell.name_zh)} <small>${escapeHtml(spell.name_en)}</small></h4>
+          <div class="detail-meta">
+            <span class="tag">${levelText(spell.level)}</span>
+            <span class="tag">${escapeHtml(spell.schoolText)}</span>
+            <span class="tag">施法 ${escapeHtml(spell.timeText)}</span>
+            <span class="tag">距離 ${escapeHtml(spell.rangeText)}</span>
+            <span class="tag">持續 ${escapeHtml(spell.durationText)}</span>
+            <span class="tag">專注 ${escapeHtml(spell.concentrationText)}</span>
+            <span class="tag">儀式 ${escapeHtml(spell.ritualText)}</span>
+            <span class="tag">成分 ${escapeHtml(spell.componentText)}</span>
+          </div>
+          <div>${renderBookButton(spell)}</div>
+          <div class="detail-text">
+            ${renderEntries(spell.entries)}
+            ${spell.entriesHigherLevel ? renderEntries(spell.entriesHigherLevel) : ""}
+          </div>
+        </article>
+      `;
+    }
+
+    function spellBookKey(spell) {
+      return spell.name_en;
+    }
+
+    function isInSpellBook(spell) {
+      return state.spellBook.has(spellBookKey(spell));
+    }
+
+    function renderBookButton(spell) {
+      const inBook = isInSpellBook(spell);
+      return `<button class="book-button" type="button" data-book-add="${spell.index}" ${inBook ? "disabled" : ""}>${inBook ? "已加入" : "加入"}</button>`;
+    }
+
+    function loadSpellBook() {
+      try {
+        const stored = JSON.parse(localStorage.getItem(SPELLBOOK_STORAGE_KEY) || "[]");
+        state.spellBook = new Set(Array.isArray(stored) ? stored : []);
+      } catch {
+        state.spellBook = new Set();
+      }
+    }
+
+    function saveSpellBook() {
+      localStorage.setItem(SPELLBOOK_STORAGE_KEY, JSON.stringify([...state.spellBook]));
+    }
+
+    function addToSpellBook(spell) {
+      state.spellBook.add(spellBookKey(spell));
+      saveSpellBook();
+      refreshSpellBookDisplays();
+    }
+
+    function removeFromSpellBook(key) {
+      state.spellBook.delete(key);
+      saveSpellBook();
+      refreshSpellBookDisplays();
+    }
+
+    function clearSpellBook() {
+      state.spellBook.clear();
+      saveSpellBook();
+      refreshSpellBookDisplays();
+    }
+
+    function refreshSpellBookDisplays() {
+      renderRows();
+      renderClassView();
+      renderBookSearchResults();
+      renderBookView();
+      updateCount();
+    }
+
+    function renderBookSearchResults() {
+      const query = elements.bookSearch.value.trim().toLowerCase();
+      if (!query) {
+        elements.bookSearchResults.innerHTML = "";
+        return;
+      }
+      const matches = state.spells
+        .filter((spell) => !isInSpellBook(spell) && spell.searchText.includes(query))
+        .slice(0, 18);
+      elements.bookSearchResults.innerHTML = matches.length
+        ? matches.map((spell) => `<button class="book-button" type="button" data-book-add="${spell.index}">${escapeHtml(spell.name_zh)} <small>${escapeHtml(spell.name_en)}</small></button>`).join("")
+        : '<span class="tag">沒有可新增的法術</span>';
+    }
+
+    function renderBookView() {
+      const spells = state.spells
+        .filter((spell) => state.spellBook.has(spellBookKey(spell)))
+        .sort((a, b) => Number(a.level) - Number(b.level) || a.name_zh.localeCompare(b.name_zh, "zh-Hant"));
+      elements.clearBook.disabled = spells.length === 0;
+      if (!spells.length) {
+        elements.bookList.innerHTML = '<div class="empty-state">法術書目前是空的</div>';
+        return;
+      }
+      elements.bookList.innerHTML = spells.map((spell) => `
+        <article class="book-card">
+          <div class="book-card-header">
+            <div>
+              <h2>${escapeHtml(spell.name_zh)}</h2>
+              <small>${escapeHtml(spell.name_en)}</small>
+            </div>
+            <button class="remove-button" type="button" data-book-remove="${escapeHtml(spellBookKey(spell))}">移除法術</button>
+          </div>
+          <div class="detail-meta">
+            <span class="tag">${levelText(spell.level)}</span>
+            <span class="tag">${escapeHtml(spell.schoolText)}</span>
+            <span class="tag">施法 ${escapeHtml(spell.timeText)}</span>
+            <span class="tag">距離 ${escapeHtml(spell.rangeText)}</span>
+            <span class="tag">持續 ${escapeHtml(spell.durationText)}</span>
+            <span class="tag">專注 ${escapeHtml(spell.concentrationText)}</span>
+            <span class="tag">儀式 ${escapeHtml(spell.ritualText)}</span>
+            <span class="tag">成分 ${escapeHtml(spell.componentText)}</span>
+          </div>
+          <div class="detail-text">
+            ${renderEntries(spell.entries)}
+            ${spell.entriesHigherLevel ? renderEntries(spell.entriesHigherLevel) : ""}
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function updateView() {
+      const isList = state.view === "list";
+      const isClass = state.view === "class";
+      const isBook = state.view === "book";
+      elements.toolbar.hidden = !isList;
+      elements.listView.hidden = !isList;
+      elements.classView.hidden = !isClass;
+      elements.bookView.hidden = !isBook;
+      document.querySelectorAll("[data-view]").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.view === state.view));
+      });
+      updateCount();
+    }
+
+    function updateCount() {
+      if (state.view === "class") {
+        const classCount = new Set(state.spells.flatMap((spell) => spell.classes || [])).size;
+        elements.count.textContent = `${classCount} 個職業 / ${state.spells.length} 個法術`;
+      } else if (state.view === "book") {
+        elements.count.textContent = `${state.spellBook.size} 個法術`;
+      } else {
+        elements.count.textContent = `${state.filtered.length} / ${state.spells.length} 個法術`;
+      }
+    }
+
+    function renderEntries(entries) {
+      if (!entries) return "";
+      if (typeof entries === "string") return `<p>${renderInline(entries)}</p>`;
+      if (Array.isArray(entries)) return entries.map(renderEntries).join("");
+      if (entries.type === "entries" || entries.type === "條目") {
+        const name = entries.name ? `<p><strong>${escapeHtml(entries.name)}</strong></p>` : "";
+        return `${name}${renderEntries(entries.entries || [])}`;
+      }
+      if (entries.type === "list" || entries.type === "列表") {
+        const items = (entries.items || []).map((item) => `<li>${renderInline(typeof item === "string" ? item : plainEntryText(item))}</li>`).join("");
+        return `<ul>${items}</ul>`;
+      }
+      if (entries.type === "table" || entries.type === "表格") {
+        const caption = entries.caption ? `<p><strong>${escapeHtml(entries.caption)}</strong></p>` : "";
+        const labels = (entries.colLabels || []).map((label) => `<th>${escapeHtml(label)}</th>`).join("");
+        const rows = (entries.rows || []).map((row) => `<tr>${row.map((cell) => `<td>${renderInline(typeof cell === "string" ? cell : plainEntryText(cell))}</td>`).join("")}</tr>`).join("");
+        return `${caption}<table><thead><tr>${labels}</tr></thead><tbody>${rows}</tbody></table>`;
+      }
+      return `<p>${renderInline(plainEntryText(entries))}</p>`;
+    }
+
+    function renderInline(value) {
+      return escapeHtml(stripTags(value)).replace(/\n/g, "<br>");
+    }
+
+    function updateSortIndicators() {
+      document.querySelectorAll("[data-sort]").forEach((button) => {
+        const icon = button.querySelector("span");
+        icon.textContent = button.dataset.sort === state.sortKey ? (state.sortDirection === "asc" ? "▲" : "▼") : "";
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;",
+      })[char]);
+    }
+
+    elements.search.addEventListener("input", applyFilters);
+    elements.level.addEventListener("change", applyFilters);
+    elements.school.addEventListener("change", applyFilters);
+    elements.component.querySelectorAll("input").forEach((input) => input.addEventListener("change", applyFilters));
+    elements.damage.addEventListener("change", applyFilters);
+    elements.save.addEventListener("change", applyFilters);
+    elements.concentration.addEventListener("change", applyFilters);
+    elements.attack.addEventListener("change", applyFilters);
+    elements.ritual.addEventListener("change", applyFilters);
+    document.querySelectorAll("[data-view]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.view = button.dataset.view;
+        if (state.view === "book") {
+          renderBookSearchResults();
+          renderBookView();
+        }
+        updateView();
+      });
+    });
+    elements.reset.addEventListener("click", () => {
+      elements.search.value = "";
+      elements.level.value = "";
+      elements.school.value = "";
+      elements.component.querySelectorAll("input").forEach((input) => {
+        input.checked = false;
+      });
+      elements.damage.value = "";
+      elements.save.value = "";
+      elements.concentration.value = "";
+      elements.attack.value = "";
+      elements.ritual.value = "";
+      state.sortKey = "level";
+      state.sortDirection = "asc";
+      state.expanded.clear();
+      applyFilters();
+    });
+
+    document.querySelectorAll("[data-sort]").forEach((button) => {
+      button.addEventListener("click", () => {
+        if (state.sortKey === button.dataset.sort) {
+          state.sortDirection = state.sortDirection === "asc" ? "desc" : "asc";
+        } else {
+          state.sortKey = button.dataset.sort;
+          state.sortDirection = "asc";
+        }
+        sortSpells();
+        renderRows();
+      });
+    });
+
+    elements.rows.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-toggle]");
+      if (!button) return;
+      const index = Number(button.dataset.toggle);
+      if (state.expanded.has(index)) {
+        state.expanded.delete(index);
+      } else {
+        state.expanded.add(index);
+      }
+      renderRows();
+    });
+
+    document.addEventListener("click", (event) => {
+      const addButton = event.target.closest("[data-book-add]");
+      if (addButton) {
+        const spell = state.spells[Number(addButton.dataset.bookAdd)];
+        if (spell) addToSpellBook(spell);
+        return;
+      }
+
+      const removeButton = event.target.closest("[data-book-remove]");
+      if (removeButton) {
+        removeFromSpellBook(removeButton.dataset.bookRemove);
+      }
+    });
+
+    elements.bookSearch.addEventListener("input", renderBookSearchResults);
+    elements.clearBook.addEventListener("click", clearSpellBook);
+
+    elements.classGrid.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-class-spell]");
+      if (button) {
+        const key = button.dataset.classSpellKey;
+        state.classExpanded = state.classExpanded === key ? null : key;
+        renderClassView();
+        return;
+      }
+      if (event.target.closest(".class-spell-detail")) return;
+      if (state.classExpanded !== null) {
+        state.classExpanded = null;
+        renderClassView();
+      }
+    });
+
+    fetch("spells-phb.json")
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((data) => {
+        state.spells = (data.spell || []).map(normalizeSpell);
+        loadSpellBook();
+        populateFilters();
+        renderClassView();
+        renderBookView();
+        elements.load.hidden = true;
+        elements.table.hidden = false;
+        applyFilters();
+        updateView();
+      })
+      .catch((error) => {
+        elements.load.className = "error-state";
+        elements.load.textContent = `無法讀取 spells-phb.json：${error.message}`;
+        elements.count.textContent = "讀取失敗";
+      });
+  </script>
+</body>
+</html>
