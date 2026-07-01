@@ -479,6 +479,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 14px;
+      align-items: start;
     }
 
     .class-card {
@@ -492,13 +493,74 @@
       overflow: hidden;
     }
 
+    .class-card.is-collapsed {
+      gap: 0;
+    }
+
     .class-card h2 {
       margin: 0;
+      background: var(--spell-panel-strong);
+    }
+
+    .class-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      min-height: 52px;
       padding: 12px 14px;
+      border: 0;
+      border-radius: 0;
       background: var(--spell-panel-strong);
       color: #17382f;
       font-size: 1.25rem;
       letter-spacing: 0;
+      text-align: left;
+    }
+
+    .class-toggle:hover {
+      background: #c7d8c7;
+      color: #17382f;
+    }
+
+    .class-toggle-label {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .class-toggle-label small {
+      color: var(--spell-table-muted);
+      font-size: 0.92rem;
+    }
+
+    .class-toggle-state {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(63, 125, 105, 0.28);
+      border-radius: 999px;
+      background: rgba(238, 243, 234, 0.72);
+    }
+
+    .class-toggle-state::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+
+    .class-toggle-state.is-collapse::before {
+      border-top: 8px solid var(--spell-accent-dark);
+    }
+
+    .class-toggle-state.is-expand::before {
+      border-bottom: 8px solid var(--spell-accent-dark);
     }
 
     .level-groups {
@@ -1028,6 +1090,7 @@
       sortDirection: "asc",
       expanded: new Set(),
       classExpanded: null,
+      collapsedClasses: new Set(),
       spellBook: new Set(),
     };
 
@@ -1345,6 +1408,8 @@
         const spells = state.spells
           .filter((spell) => (spell.classes || []).includes(className))
           .sort((a, b) => Number(a.level) - Number(b.level) || a.name_zh.localeCompare(b.name_zh, "zh-Hant"));
+        const classCollapsed = state.collapsedClasses.has(className);
+        const classPanelId = `class-panel-${className}`;
         const groups = [];
         for (let level = 0; level <= 9; level += 1) {
           const levelSpells = spells.filter((spell) => Number(spell.level) === level);
@@ -1367,9 +1432,14 @@
           `);
         }
         return `
-          <article class="class-card">
-            <h2>${escapeHtml(className)} <small>${spells.length}</small></h2>
-            <div class="level-groups">${groups.join("")}</div>
+          <article class="class-card${classCollapsed ? " is-collapsed" : ""}">
+            <h2>
+              <button class="class-toggle" type="button" data-class-toggle="${escapeHtml(className)}" aria-expanded="${!classCollapsed}" aria-controls="${escapeHtml(classPanelId)}" aria-label="${classCollapsed ? `展開${className}` : `收合${className}`}">
+                <span class="class-toggle-label">${escapeHtml(className)} <small>${spells.length}</small></span>
+                <span class="class-toggle-state ${classCollapsed ? "is-expand" : "is-collapse"}" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <div class="level-groups" id="${escapeHtml(classPanelId)}" ${classCollapsed ? "hidden" : ""}>${groups.join("")}</div>
           </article>
         `;
       }).join("");
@@ -1653,6 +1723,21 @@
     elements.clearBook.addEventListener("click", clearSpellBook);
 
     elements.classGrid.addEventListener("click", (event) => {
+      const classButton = event.target.closest("[data-class-toggle]");
+      if (classButton) {
+        const className = classButton.dataset.classToggle;
+        if (state.collapsedClasses.has(className)) {
+          state.collapsedClasses.delete(className);
+        } else {
+          state.collapsedClasses.add(className);
+          if (state.classExpanded && state.classExpanded.startsWith(`${className}::`)) {
+            state.classExpanded = null;
+          }
+        }
+        renderClassView();
+        return;
+      }
+
       const button = event.target.closest("[data-class-spell]");
       if (button) {
         const key = button.dataset.classSpellKey;
@@ -1674,6 +1759,7 @@
       })
       .then((data) => {
         state.spells = (data.spell || []).map(normalizeSpell);
+        state.collapsedClasses = new Set([...new Set(state.spells.flatMap((spell) => spell.classes || []))]);
         loadSpellBook();
         populateFilters();
         renderClassView();
