@@ -59,7 +59,8 @@
   const campaigns = [
     {
       name: "Rugatha",
-      tagline: "When Heroes and Villains Wake, Gods Tremble",
+      tagline_en: "When Heroes and Villains Wake, Gods Tremble",
+      tagline_zh: "當英雄與反派甦醒，眾神震顫",
       dates: "2021/5/22 ~ 2022/7/16",
       link: "https://rugatha.com/campaigns/",
       page: "./pages/rugatha/index.html",
@@ -69,8 +70,9 @@
     },
     {
       name: "RUGATHA Plus",
-      tagline: "Through Lost Roads, Truth Hunts Back",
-      dates: "2022/7/23 ~",
+      tagline_en: "Through Lost Roads, Truth Hunts Back",
+      tagline_zh: "穿越迷失之路，真相反獵而來",
+      dates: "2022/7/23 ~ 2026/6/27",
       link: "https://rugatha.com/rugatha-plus/",
       page: "./pages/rugatha-plus/index.html",
       image: campaignLogo("rugatha-plus-logo.jpg"),
@@ -79,7 +81,8 @@
     },
     {
       name: "Rugatha lite",
-      tagline: "Small Lights Against an Endless Night",
+      tagline_en: "Small Lights Against an Endless Night",
+      tagline_zh: "小小光芒，對抗無盡長夜",
       dates: "2022/8/6 ~",
       link: "https://rugatha.com/rugatha-lite/",
       page: "./pages/rugatha-lite/index.html",
@@ -89,7 +92,8 @@
     },
     {
       name: "Rugatha WILDS",
-      tagline: "Blood, Legacy, and the Call Beyond the Walls",
+      tagline_en: "Blood, Legacy, and the Call Beyond the Walls",
+      tagline_zh: "鮮血、傳承，與牆外的呼喚",
       dates: "2024/3/16 ~",
       link: "https://rugatha.com/rugatha-wilds/",
       page: "./pages/rugatha-wilds/index.html",
@@ -99,7 +103,8 @@
     },
     {
       name: "Rugatha Brown",
-      tagline: "In Every Bloom, Obedience Rots",
+      tagline_en: "In Every Bloom, Obedience Rots",
+      tagline_zh: "每朵綻放之中，服從悄然腐朽",
       dates: "2022/11/7 ~ 2023/3/14",
       link: "https://rugatha.com/rugatha-brown/",
       page: "./pages/rugatha-brown/index.html",
@@ -109,7 +114,8 @@
     },
     {
       name: "Rugatha Legends",
-      tagline: "One Night, One Tale, One Legend",
+      tagline_en: "One Night, One Tale, One Legend",
+      tagline_zh: "一夜，一則故事，一段傳奇",
       dates: "2022/2/7 ~",
       link: "https://rugatha.com/rugatha-legends/",
       page: "./pages/rugatha-legends/index.html",

@@ -44,7 +44,7 @@
       "name": "Characters",
       "short_name": "Characters",
       "description": "Open Rugatha character pages.",
-      "url": "/character_main_page/"
+      "url": "/characters/"
     },
     {
       "name": "Map",

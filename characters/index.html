@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BZZFKMJ65Y');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>角色總覽 | Rugatha</title>
+  <meta name="description" content="Browse Rugatha player characters and NPCs from across the campaigns and worldbuilding archive.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rugatha.com/characters/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rugatha">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="角色總覽 | Rugatha">
+  <meta property="og:description" content="Browse Rugatha player characters and NPCs from across the campaigns and worldbuilding archive.">
+  <meta property="og:url" content="https://rugatha.com/characters/">
+  <meta property="og:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="角色總覽 | Rugatha">
+  <meta name="twitter:description" content="Browse Rugatha player characters and NPCs from across the campaigns and worldbuilding archive.">
+  <meta name="twitter:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <link rel="icon" type="image/png" href="../assets/rugatha-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-favicon-32.png">
+  <link rel="stylesheet" href="../shared/styles/theme.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Rugatha PWA -->
+  <link rel="manifest" href="../manifest.webmanifest">
+  <meta name="theme-color" content="#0f2d24">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Rugatha">
+  <link rel="apple-touch-icon" href="../assets/rugatha-icon-192.png">
+  <script defer src="../shared/pwa.js"></script>
+</head>
+<body data-lang="zh">
+  <main class="page">
+    <header class="site-header" aria-label="Rugatha characters">
+      <a class="brand" href="../" aria-label="Rugatha home">
+        <img src="../assets/rugatha-banner.jpg" alt="Rugatha">
+      </a>
+    </header>
+
+    <div class="language-toggle" aria-label="Language">
+      <button class="language-toggle__button" type="button" data-lang-option="zh" aria-pressed="true">中文</button>
+      <button class="language-toggle__button" type="button" data-lang-option="en" aria-pressed="false">English</button>
+    </div>
+
+    <section class="entry-grid" aria-label="Character indexes">
+      <a class="entry-card entry-card--pc" href="../pc/">
+        <span class="collage" data-collage="pc" aria-hidden="true">
+          <img class="tile tile--large" src="../pc/pics/Kaname.jpg" alt="">
+          <img class="tile" src="../pc/pics/Lott.jpeg" alt="">
+          <img class="tile" src="../pc/pics/Al-lon.png" alt="">
+          <img class="tile tile--wide" src="../pc/pics/Leah.jpeg" alt="">
+          <img class="tile" src="../pc/pics/Ravi.png" alt="">
+        </span>
+        <span class="entry-card__label">
+          <strong data-i18n data-zh="玩家角色" data-en="Player Characters">玩家角色</strong>
+        </span>
+      </a>
+
+      <a class="entry-card entry-card--npc" href="../npc/">
+        <span class="collage" data-collage="npc" aria-hidden="true">
+          <img class="tile tile--large" src="../npc/individual_pics/Enelmor Arylith.png" alt="">
+          <img class="tile" src="../npc/individual_pics/Maribel Muddlewick.png" alt="">
+          <img class="tile" src="../npc/individual_pics/Harrel Mizel.png" alt="">
+          <img class="tile tile--wide" src="../npc/individual_pics/Laura Fishburne.jpg" alt="">
+          <img class="tile" src="../npc/individual_pics/Dr. Crow.jpeg" alt="">
+        </span>
+        <span class="entry-card__label">
+          <strong data-i18n data-zh="非玩家角色" data-en="NPC">非玩家角色</strong>
+        </span>
+      </a>
+    </section>
+  </main>
+  <script>
+    const PC_IMAGES = [
+      "Al-lon.png",
+      "Anedak.png",
+      "Brown.png",
+      "Buzz.jpg",
+      "Cecil.png",
+      "Dawn Light Fur.jpg",
+      "Drayer.png",
+      "GoR.png",
+      "Inu.png",
+      "Jiaheng.png",
+      "Kaname.jpg",
+      "Kudan.jpg",
+      "Leah.jpeg",
+      "Lemmy.png",
+      "Lott.jpeg",
+      "Midori.png",
+      "Mr. Green.png",
+      "Paladin.png",
+      "Pascal.png",
+      "Psyber.jpg",
+      "Ravi.png",
+      "Roel.png",
+      "Ron.png",
+      "Samael.jpg",
+      "Siri Oslee.png",
+      "Sugalu.png",
+      "Tai Tai Wo Hai Yao.png",
+      "Tweeter.png",
+      "Ubbo.png",
+      "Uko.jpg",
+      "Usioni.png",
+      "Watson.png",
+      "YHWH.png",
+      "Yi.png"
+    ];
+
+    const tileClasses = ["tile tile--large", "tile", "tile", "tile tile--wide", "tile"];
+    const fallbackNpcImages = [
+      { src: "../npc/individual_pics/Enelmor Arylith.png", alt: "Enelmor Arylith" },
+      { src: "../npc/individual_pics/Maribel Muddlewick.png", alt: "Maribel Muddlewick" },
+      { src: "../npc/individual_pics/Harrel Mizel.png", alt: "Harrel Mizel" },
+      { src: "../npc/individual_pics/Laura Fishburne.jpg", alt: "Laura Fishburne" },
+      { src: "../npc/individual_pics/Dr. Crow.jpeg", alt: "Dr. Crow" }
+    ];
+
+    const shuffle = (items) => {
+      const copy = [...items];
+      for (let i = copy.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    };
+
+    const renderCollage = (target, images) => {
+      if (!target || images.length < tileClasses.length) return;
+      target.replaceChildren(...images.slice(0, tileClasses.length).map((image, index) => {
+        const img = document.createElement("img");
+        img.className = tileClasses[index];
+        img.src = image.src;
+        img.alt = "";
+        img.loading = "eager";
+        img.decoding = "async";
+        return img;
+      }));
+    };
+
+    const applyLanguage = (lang) => {
+      document.documentElement.lang = lang === "en" ? "en" : "zh-Hant";
+      document.body.dataset.lang = lang;
+      document.title = lang === "en" ? "Characters | Rugatha" : "角色總覽 | Rugatha";
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        node.textContent = node.dataset[lang] || node.textContent;
+      });
+      document.querySelectorAll("[data-lang-option]").forEach((button) => {
+        const isActive = button.dataset.langOption === lang;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+      try {
+        localStorage.setItem("characters-lang", lang);
+      } catch (_) {
+        // Storage may be unavailable in private browsing contexts.
+      }
+    };
+
+    const getInitialLanguage = () => {
+      try {
+        const stored = localStorage.getItem("characters-lang");
+        if (stored === "zh" || stored === "en") return stored;
+      } catch (_) {
+        // Ignore storage access errors.
+      }
+      return navigator.language && navigator.language.toLowerCase().startsWith("en") ? "en" : "zh";
+    };
+
+    renderCollage(
+      document.querySelector('[data-collage="pc"]'),
+      shuffle(PC_IMAGES).map((fileName) => ({
+        src: `../pc/pics/${encodeURIComponent(fileName).replace(/%2F/g, "/")}`,
+        alt: fileName.replace(/\.[^.]+$/, "")
+      }))
+    );
+
+    fetch("../npc/data/characters.json", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("NPC data failed")))
+      .then((characters) => {
+        const images = characters
+          .filter((character) => character.image)
+          .map((character) => ({
+            src: `../npc/${character.image.split("/").map(encodeURIComponent).join("/")}`,
+            alt: character.nameEn || character.nameZh || character.id || ""
+          }));
+        renderCollage(document.querySelector('[data-collage="npc"]'), shuffle(images));
+      })
+      .catch(() => {
+        renderCollage(document.querySelector('[data-collage="npc"]'), fallbackNpcImages);
+      });
+
+    document.querySelectorAll("[data-lang-option]").forEach((button) => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.langOption));
+    });
+    applyLanguage(getInitialLanguage());
+  </script>
+  <script src="../shared/firebase.config.js"></script>
+  <script type="module" src="../shared/auth.js"></script>
+</body>
+</html>

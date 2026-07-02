@@ -46,6 +46,8 @@ def load_json_file(relative_path: str) -> object:
 def normalize_canonical_path(relative_path: str) -> str:
     if relative_path == "index.html":
         return "/"
+    if relative_path in {"characters/index.html", "character_main_page/index.html"}:
+        return "/characters/"
     if relative_path.endswith("/index.html"):
         return f"/{relative_path[:-len('index.html')]}"
     return f"/{relative_path}"
@@ -268,7 +270,7 @@ def infer_description(relative_path: str, content: str, title: str) -> str:
         if "story arc" in clean_title(title).lower():
             return f"Explore {page_name}, a Rugatha story arc with overview, chapter navigation, and related campaign context.{character_summary}"
         return f"Explore {page_name}, a Rugatha campaign page with chapter navigation, story context, and related records.{character_summary}"
-    if relative_path == "character_main_page/index.html":
+    if relative_path in {"characters/index.html", "character_main_page/index.html"}:
         return "Browse Rugatha player characters and NPCs from across the campaigns and worldbuilding archive."
     if relative_path == "character_card/index.html":
         return "Create and export a Rugatha-style D&D character card with custom stats, portraits, and colors."

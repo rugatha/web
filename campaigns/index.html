@@ -14,19 +14,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rugatha Campaigns</title>
-  <meta name="description" content="Explore Rugatha campaigns, story arcs, and chapter records across the main line and side stories.">
+  <meta name="description" content="Choose between active and closed Rugatha campaign portals.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://rugatha.com/campaigns/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rugatha">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Rugatha Campaigns">
-  <meta property="og:description" content="Explore Rugatha campaigns, story arcs, and chapter records across the main line and side stories.">
+  <meta property="og:description" content="Choose between active and closed Rugatha campaign portals.">
   <meta property="og:url" content="https://rugatha.com/campaigns/">
   <meta property="og:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rugatha Campaigns">
-  <meta name="twitter:description" content="Explore Rugatha campaigns, story arcs, and chapter records across the main line and side stories.">
+  <meta name="twitter:description" content="Choose between active and closed Rugatha campaign portals.">
   <meta name="twitter:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
 <link rel="icon" type="image/png" href="../assets/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-favicon-32.png">
@@ -41,7 +41,7 @@
   <link rel="apple-touch-icon" href="../assets/rugatha-icon-192.png">
   <script defer src="../shared/pwa.js"></script>
 </head>
-<body>
+<body data-lang="zh">
   <div class="page">
     <header class="banner" aria-label="Rugatha banner image">
       <a href="https://rugatha.com/" class="banner-link" aria-label="前往 Rugatha 首頁">
@@ -49,10 +49,24 @@
       </a>
     </header>
     <section class="canvas">
-      <div id="campaign-grid" class="immersive-grid"></div>
+      <div class="chapter-language-toggle-bar">
+        <div class="language-toggle" aria-label="Language">
+          <button type="button" data-lang-option="zh">中文</button>
+          <button type="button" data-lang-option="en">English</button>
+        </div>
+      </div>
+      <div class="portal-grid" aria-label="Campaign portals">
+        <a class="portal-card portal-card--active" href="active/">
+          <span class="portal-card__label" data-lang-copy="zh">進行中團務</span>
+          <span class="portal-card__label" data-lang-copy="en">Active Campaign</span>
+        </a>
+        <a class="portal-card portal-card--closed" href="closed/">
+          <span class="portal-card__label" data-lang-copy="zh">結團團務</span>
+          <span class="portal-card__label" data-lang-copy="en">Closed Campaign</span>
+        </a>
+      </div>
     </section>
   </div>
-  <script src="../shared/rugatha.config.js"></script>
   <script src="scripts/app.js"></script>
   <script src="../shared/firebase.config.js"></script>
   <script type="module" src="../shared/auth.js"></script>

@@ -226,7 +226,14 @@
     (target && (target.name || target.title || target.label)) ||
     (targetCampaign && targetCampaign.name) ||
     "Campaign";
-  const displayTagline = (target && target.tagline) || (targetCampaign && targetCampaign.tagline);
+  const getLocalizedTagline = (item, lang) => {
+    if (!item) return "";
+    if (lang === "en") return item.tagline_en || item.tagline || item.tagline_zh || "";
+    return item.tagline_zh || item.tagline || item.tagline_en || "";
+  };
+  const getDisplayTagline = (lang) =>
+    getLocalizedTagline(target, lang) || getLocalizedTagline(targetCampaign, lang);
+  const displayTagline = getDisplayTagline("zh");
   const displayDates = (target && target.dates) || (targetCampaign && targetCampaign.dates);
   const accent = (target && target.accent) || (targetCampaign && targetCampaign.accent) || "#7bdcb5";
   const i18n = {
@@ -743,6 +750,7 @@
     updateLanguageToggle();
     updateChapterTitle();
     updateArcTitle();
+    setText("tagline", getDisplayTagline(next));
     updateChapterArcTagline();
     updateStoryArcBadge();
     updateArcChaptersHeading();
@@ -1026,6 +1034,7 @@
   languageState.value = getPreferredLanguage();
   window.__RUGATHA_CHAPTER_LANG = languageState.value;
   document.documentElement.setAttribute("data-lang", languageState.value);
+  setText("tagline", getDisplayTagline(languageState.value));
   ensureLanguageToggle();
   updateChapterContentLanguage();
   setupHeroDrift();
