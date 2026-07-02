@@ -23,11 +23,11 @@
   <meta property="og:title" content="Rugatha">
   <meta property="og:description" content="Explore Rugatha campaigns, characters, deities, maps, history, and community tools in one place.">
   <meta property="og:url" content="https://rugatha.com/">
-  <meta property="og:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <meta property="og:image" content="https://rugatha.com/assets/rugatha-banner.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rugatha">
   <meta name="twitter:description" content="Explore Rugatha campaigns, characters, deities, maps, history, and community tools in one place.">
-  <meta name="twitter:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <meta name="twitter:image" content="https://rugatha.com/assets/rugatha-banner.png">
 <link rel="icon" type="image/png" href="assets/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/rugatha-favicon-32.png">
   <link rel="stylesheet" href="shared/styles/theme.css">
@@ -148,11 +148,22 @@
     <main class="hub" aria-label="Rugatha portals">
       <section class="banner-core" aria-label="Rugatha">
         <span class="banner-text banner-text--top">Your Path Begins in</span>
-        <img class="banner-image" src="assets/rugatha-banner.jpg" alt="Rugatha">
+        <span class="banner-flip banner-flip--mobile" tabindex="0" aria-label="Rugatha">
+          <span class="banner-flip__inner">
+            <img class="banner-flip__face banner-flip__face--front" src="assets/rugatha-banner.png" alt="Rugatha">
+            <img class="banner-flip__face banner-flip__face--back" src="assets/rugatha-icon.png" alt="" aria-hidden="true">
+          </span>
+        </span>
         <span class="banner-text banner-text--bottom">冒險旅途的起點</span>
       </section>
 
       <section class="portals" aria-label="Rugatha portals">
+        <span class="banner-flip banner-flip--desktop" tabindex="0" aria-label="Rugatha">
+          <span class="banner-flip__inner">
+            <img class="banner-flip__face banner-flip__face--front" src="assets/rugatha-banner.png" alt="Rugatha">
+            <img class="banner-flip__face banner-flip__face--back" src="assets/rugatha-icon.png" alt="" aria-hidden="true">
+          </span>
+        </span>
         <div class="portal-grid">
           <a class="portal" href="deities/index.html">
             <span class="portal-glyph"><img src="assets/icons/deities-icon.png" alt="Deities icon" class="portal-icon"></span>

@@ -42,12 +42,49 @@ body {
   z-index: 1;
 }
 
-.banner-image {
+.banner-flip {
   display: block;
-  width: auto;
-  max-width: min(760px, 100%);
-  max-height: 180px;
-  height: auto;
+  width: min(684px, 90%);
+  max-height: 162px;
+  aspect-ratio: 3 / 2;
+  perspective: 1000px;
+  cursor: pointer;
+  outline: none;
+}
+
+.banner-flip__inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1000ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.banner-flip:hover .banner-flip__inner,
+.banner-flip:focus .banner-flip__inner,
+.banner-flip:focus-visible .banner-flip__inner,
+.banner-flip:active .banner-flip__inner {
+  transform: rotateY(180deg);
+}
+
+.banner-flip__face {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.banner-flip__face--back {
+  transform: rotateY(180deg);
+}
+
+.banner-flip--desktop {
+  display: none;
 }
 
 .banner-text {
@@ -58,10 +95,6 @@ body {
   grid-column: 1 / span 6;
   grid-row: 1 / span 2;
   background-color: var(--home-bg);
-  background-image: url("../assets/rugatha-banner.jpg");
-  background-repeat: no-repeat;
-  background-position: center 50%;
-  background-size: auto 40%;
   padding: 0 10px;
   margin-top: 0;
   display: flex;
@@ -579,6 +612,23 @@ body {
     --mobile-stage-height: calc(100svh - var(--mobile-auth-height));
     --mobile-hub-padding-top: 10px;
     --mobile-hub-padding-bottom: 18px;
+    --mobile-banner-padding-top: 10px;
+    --mobile-portal-padding-top: 14px;
+    --mobile-portal-card-padding-top: 8px;
+    --mobile-banner-top: calc((var(--mobile-stage-height) - var(--mobile-title-height)) / 2);
+    --mobile-top-slogan-top: calc(
+      var(--mobile-banner-top) +
+      var(--mobile-banner-padding-top)
+    );
+    --mobile-portal-top: max(
+      0px,
+      calc(
+        (var(--mobile-top-slogan-top) / 2) -
+        var(--mobile-portal-padding-top) -
+        var(--mobile-portal-card-padding-top) -
+        (var(--mobile-portal-icon-size) / 2)
+      )
+    );
     --mobile-lower-spacer: max(
       28px,
       calc(
@@ -624,8 +674,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    height: auto;
-    min-height: var(--mobile-title-height);
+    box-sizing: border-box;
+    height: var(--mobile-title-height);
     padding: 10px 10px 8px;
     border-radius: 18px 18px 8px 8px;
     background: var(--home-bg);
@@ -665,22 +715,30 @@ body {
     margin: 0 auto;
   }
 
-  .banner-image {
+  .banner-flip {
     position: relative;
     z-index: 1;
-    width: min(960px, 150%);
-    max-height: calc(var(--mobile-title-height) - 64px);
-    object-fit: contain;
+    width: min(864px, 135%);
+    height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 38px);
+    max-height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 38px);
+    aspect-ratio: 3 / 2;
   }
 
   .portals {
+    position: absolute;
+    top: var(--mobile-portal-top);
+    left: 0;
+    right: 0;
     grid-row: 1;
     align-items: stretch;
-    padding: 14px 0 4px;
+    box-sizing: border-box;
+    height: var(--mobile-portal-row-height);
+    padding: var(--mobile-portal-padding-top) 0 4px;
     border-radius: 0;
     background-color: transparent;
     background-image: none;
     overflow-x: visible;
+    z-index: 3;
   }
 
   .portal-grid {
@@ -700,7 +758,7 @@ body {
     justify-content: flex-start;
     gap: 0;
     width: auto;
-    padding: 8px 0 6px;
+    padding: var(--mobile-portal-card-padding-top) 0 6px;
     border-radius: 0;
     background: transparent;
     color: #e1cea9;
@@ -834,9 +892,22 @@ body {
 
   .portals {
     grid-row: 1;
-    background-position: center 50%;
-    background-size: auto min(44%, 210px);
     overflow-x: visible;
+  }
+
+  .banner-flip--desktop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    display: block;
+    width: min(684px, 43.2vw);
+    height: min(189px, 39.6%);
+    transform: translate(-50%, -50%);
+  }
+
+  .banner-flip--mobile {
+    display: none;
   }
 
   .portals::before,
@@ -874,6 +945,8 @@ body {
   }
 
   .portal-grid {
+    position: relative;
+    z-index: 2;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     grid-auto-rows: var(--home-hero-height);
     grid-auto-flow: row;
@@ -927,17 +1000,23 @@ body {
 }
 
 @media (max-width: 720px) {
+  .hub {
+    --mobile-banner-padding-top: 6px;
+    --mobile-portal-padding-top: 12px;
+    --mobile-portal-card-padding-top: 7px;
+  }
+
   .portals {
-    padding: 12px 10px 2px;
+    padding: var(--mobile-portal-padding-top) 10px 2px;
   }
 
   .banner-core {
-    min-height: var(--mobile-title-height);
     padding-top: 6px;
   }
 
-  .banner-image {
-    max-height: var(--mobile-title-height);
+  .banner-flip {
+    height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px);
+    max-height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px);
   }
 
   .portal-grid {
@@ -966,7 +1045,7 @@ body {
   .portal {
     border-radius: 0;
     width: auto;
-    padding: 7px 0 6px;
+    padding: var(--mobile-portal-card-padding-top) 0 6px;
   }
 
   .portal-glyph {
@@ -1016,13 +1095,17 @@ body {
     padding-inline: 10px;
   }
 
+  .hub {
+    --mobile-portal-card-padding-top: 6px;
+  }
+
   .banner-core {
-    min-height: var(--mobile-title-height);
     padding-inline: 6px;
   }
 
-  .banner-image {
-    max-height: var(--mobile-title-height);
+  .banner-flip {
+    height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px);
+    max-height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px);
   }
 
   .portal-grid {
@@ -1036,7 +1119,7 @@ body {
     min-height: 0;
     gap: 0;
     width: auto;
-    padding: 6px 0 5px;
+    padding: var(--mobile-portal-card-padding-top) 0 5px;
     border-radius: 0;
   }
 

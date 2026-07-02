@@ -115,7 +115,7 @@ body {
   gap: 20px;
   padding: 32px 28px 32px;
   border-radius: 24px;
-  background-image: var(--hero-image, url("../../assets/rugatha-banner.jpg"));
+  background-image: var(--hero-image, url("../../assets/rugatha-banner.png"));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

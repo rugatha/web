@@ -1,6 +1,6 @@
 const grid = document.getElementById("deity-grid");
 const langButtons = document.querySelectorAll(".lang-toggle__button");
-const fallbackImage = "../assets/rugatha-banner.jpg";
+const fallbackImage = "../assets/rugatha-banner.png";
 const categoryOrder = [
   "pantheon",
   "newly-ascended",
