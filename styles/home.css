@@ -574,23 +574,35 @@ body {
     --mobile-gap: 10px;
     --mobile-campaign-height: 68px;
     --mobile-about-height: 74px;
+    --mobile-auth-height: 76px;
+    --mobile-stage-height: calc(100vh - var(--mobile-auth-height));
+    --mobile-stage-height: calc(100svh - var(--mobile-auth-height));
     --mobile-hub-padding-top: 10px;
-    --mobile-hub-padding-bottom: 32px;
-    --mobile-first-screen-content: calc(
-      var(--mobile-hub-padding-top) +
-      var(--mobile-portal-row-height) +
-      var(--mobile-title-height) +
-      var(--mobile-campaign-height) +
-      var(--mobile-about-height) +
-      (var(--mobile-gap) * 4)
+    --mobile-hub-padding-bottom: 18px;
+    --mobile-lower-spacer: max(
+      28px,
+      calc(
+        var(--mobile-stage-height) -
+        var(--mobile-hub-padding-top) -
+        var(--mobile-hub-padding-bottom) -
+        var(--mobile-portal-row-height) -
+        var(--mobile-campaign-height) -
+        var(--mobile-about-height) -
+        (var(--mobile-gap) * 3)
+      )
     );
     --mobile-slogan-width: min(76vw, 430px);
     --mobile-slogan-font-size: clamp(18px, 4.7vw, 29px);
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows:
+      var(--mobile-portal-row-height)
+      var(--mobile-lower-spacer)
+      var(--mobile-campaign-height)
+      var(--mobile-about-height)
+      auto
+      auto;
     gap: var(--mobile-gap);
-    min-height: calc(100vh - 50px);
-    min-height: calc(100svh - 50px);
+    min-height: var(--mobile-stage-height);
     padding: var(--mobile-hub-padding-top) 0 var(--mobile-hub-padding-bottom);
   }
 
@@ -604,7 +616,11 @@ body {
   }
 
   .banner-core {
-    grid-row: 2;
+    position: absolute;
+    top: calc(var(--mobile-stage-height) / 2);
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -735,6 +751,7 @@ body {
 
   .campaign-link {
     grid-row: 3;
+    align-self: center;
   }
 
   .campaign-link-card {
@@ -758,6 +775,7 @@ body {
 
   .about-link {
     grid-row: 4;
+    align-self: end;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     border-radius: 16px;
     margin-top: -4px;
@@ -796,8 +814,7 @@ body {
 
   .schedule-widget {
     grid-row: 6;
-    margin-top: max(96px, calc(100vh - var(--mobile-first-screen-content)));
-    margin-top: max(96px, calc(100svh - var(--mobile-first-screen-content)));
+    margin-top: 24px;
   }
 }
 
