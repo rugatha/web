@@ -44,8 +44,8 @@ body {
 
 .banner-flip {
   display: block;
-  width: min(684px, 90%);
-  max-height: 162px;
+  width: min(821px, 108%);
+  max-height: 194px;
   aspect-ratio: 3 / 2;
   perspective: 1000px;
   cursor: pointer;
@@ -679,7 +679,7 @@ body {
     padding: 10px 10px 8px;
     border-radius: 18px 18px 8px 8px;
     background: var(--home-bg);
-    overflow: hidden;
+    overflow: visible;
   }
 
   .banner-text {
@@ -690,7 +690,7 @@ body {
     font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
     font-weight: 900;
     letter-spacing: 0.06em;
-    line-height: 1;
+    line-height: 1.16;
     text-align: center;
     text-shadow: none;
   }
@@ -717,11 +717,23 @@ body {
 
   .banner-flip {
     position: relative;
+    flex: 0 0 auto;
     z-index: 1;
-    width: min(864px, 135%);
-    height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 38px);
-    max-height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 38px);
+    width: min(1037px, 162%);
+    height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 38px) * 1.2);
+    max-height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 38px) * 1.2);
     aspect-ratio: 3 / 2;
+  }
+
+  .banner-flip--mobile {
+    overflow: hidden;
+  }
+
+  .banner-flip--mobile .banner-flip__face--front {
+    inset: auto 0;
+    top: 50%;
+    height: 142%;
+    transform: translateY(-50%);
   }
 
   .portals {
@@ -901,9 +913,17 @@ body {
     left: 50%;
     z-index: 4;
     display: block;
-    width: min(684px, 43.2vw);
-    height: min(189px, 39.6%);
+    width: min(821px, 51.84vw);
+    height: min(227px, 47.52%);
+    overflow: hidden;
     transform: translate(-50%, -50%);
+  }
+
+  .banner-flip--desktop .banner-flip__face--front {
+    inset: auto 0;
+    top: 50%;
+    height: 142%;
+    transform: translateY(-50%);
   }
 
   .banner-flip--mobile {
@@ -1015,8 +1035,8 @@ body {
   }
 
   .banner-flip {
-    height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px);
-    max-height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px);
+    height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px) * 1.2);
+    max-height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px) * 1.2);
   }
 
   .portal-grid {
@@ -1104,8 +1124,8 @@ body {
   }
 
   .banner-flip {
-    height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px);
-    max-height: calc(var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px);
+    height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px) * 1.2);
+    max-height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px) * 1.2);
   }
 
   .portal-grid {
