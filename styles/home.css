@@ -571,14 +571,27 @@ body {
     --mobile-title-height: clamp(168px, 24svh, 246px);
     --mobile-portal-icon-size: clamp(34px, 10.8vw, 58px);
     --mobile-portal-row-height: calc(var(--mobile-portal-icon-size) + 52px);
+    --mobile-gap: 10px;
+    --mobile-campaign-height: 68px;
+    --mobile-about-height: 74px;
+    --mobile-hub-padding-top: 10px;
+    --mobile-hub-padding-bottom: 32px;
+    --mobile-first-screen-content: calc(
+      var(--mobile-hub-padding-top) +
+      var(--mobile-portal-row-height) +
+      var(--mobile-title-height) +
+      var(--mobile-campaign-height) +
+      var(--mobile-about-height) +
+      (var(--mobile-gap) * 4)
+    );
     --mobile-slogan-width: min(76vw, 430px);
     --mobile-slogan-font-size: clamp(18px, 4.7vw, 29px);
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
-    gap: 10px;
+    grid-template-rows: auto auto auto auto auto auto;
+    gap: var(--mobile-gap);
     min-height: calc(100vh - 50px);
     min-height: calc(100svh - 50px);
-    padding: 10px 0 32px;
+    padding: var(--mobile-hub-padding-top) 0 var(--mobile-hub-padding-bottom);
   }
 
   .banner-core,
@@ -725,7 +738,7 @@ body {
   }
 
   .campaign-link-card {
-    min-height: 68px;
+    min-height: var(--mobile-campaign-height);
     padding: 10px 16px;
   }
 
@@ -783,8 +796,8 @@ body {
 
   .schedule-widget {
     grid-row: 6;
-    margin-top: max(96px, 12vh);
-    margin-top: max(96px, 12svh);
+    margin-top: max(96px, calc(100vh - var(--mobile-first-screen-content)));
+    margin-top: max(96px, calc(100svh - var(--mobile-first-screen-content)));
   }
 }
 
@@ -918,7 +931,7 @@ body {
   }
 
   .about-link-card {
-    min-height: 74px;
+    min-height: var(--mobile-about-height);
     padding: 10px 5px 12px;
   }
 
