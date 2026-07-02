@@ -1,33 +1,209 @@
 # Rugatha Web
 
-這是一個以 `HTML / CSS / JavaScript` 為主的靜態網站專案，用來整理與展示 Rugatha 世界觀、角色資料、團錄、時間線與社群工具。
+Rugatha Web 是 Rugatha 世界觀與跑團內容的靜態網站。網站以原生 `HTML / CSS / JavaScript` 製作，集中整理首頁、團錄、角色資料、世界時間線、地圖、神祇、帝王、咒語、關係圖、角色卡工具與會員登入相關頁面。
 
-## 專案用途
+正式網域：
 
-這個網站的主要目的，是把 Rugatha 相關內容集中在同一個入口，方便玩家、觀眾與管理者查閱與更新。
+- `https://rugatha.com`
 
-目前包含的主要功能有：
+## 專案概覽
 
-1. 活動首頁與各系列團務入口。
-2. 團錄 / 章節頁面，支援中英雙語內容、章節導覽、相關角色顯示。
-3. Campaigns 圖譜與故事弧結構資料。
-4. NPC 資料庫與個別 NPC 頁面，支援搜尋、分類、排序、隨機探索與「命運的抉擇」。
-5. PC 相關頁面與角色資料展示。
-6. 世界時間線頁面。
-7. 神祇、帝王、地圖等世界觀頁面。
-8. 角色卡產生器等工具頁面。
-9. 會員 / 登入相關前端流程，使用 Firebase 做登入整合。
-
-簡單來說，這個專案同時負責：
+這個 repo 主要負責四件事：
 
 - 世界觀資料展示
-- 團務內容整理
-- 角色資料索引
-- 社群工具與互動頁面
+- 團務與章節內容整理
+- PC / NPC / 神祇 / 帝王等角色索引
+- 社群工具、登入與互動頁面
 
-## 全站標頭與網址正規化
+目前包含的主要頁面與功能：
 
-專案提供一支批次整理腳本，用來統一全站的：
+1. 網站首頁與主要導覽。
+2. Campaigns 團務入口、活動分類、章節頁與故事弧頁。
+3. 團錄章節頁，支援中英雙語內容、章節導覽、相關 PC / Guest / NPC 顯示。
+4. NPC 資料庫與個別 NPC 頁面，支援搜尋、分類、排序、隨機探索與「命運的抉擇」內容。
+5. PC 列表、角色文章、圖片、三視圖與角色資料展示。
+6. 世界時間線。
+7. 德拉尼森地圖與地點資料。
+8. 神祇、帝王、角色總覽、關係圖等世界觀頁面。
+9. 角色卡產生器、咒語查詢、體驗 / 回饋頁、關於我們頁。
+10. 會員 / 登入相關前端流程，使用 Firebase 整合。
+11. PWA manifest 與 service worker。
+
+## 技術與部署
+
+本專案是靜態網站，沒有傳統後端與固定 build step。大部分頁面直接由瀏覽器載入 HTML、CSS、JS、JSON、CSV 與圖片資源。
+
+- 前端：原生 HTML / CSS / JavaScript
+- 資料：JSON、JS、CSV 與靜態資源
+- 登入：Firebase 前端整合
+- PWA：`manifest.webmanifest`、`sw.js`、`shared/pwa.js`
+- 部署：GitHub Pages
+- 自訂網域：`CNAME`
+
+GitHub Pages workflow 位於：
+
+- `.github/workflows/pages.yml`
+
+部署流程：
+
+1. `main` 分支有更新時自動觸發。
+2. GitHub Actions 直接把 repo 根目錄作為 Pages artifact 上傳。
+3. 不需額外安裝依賴或執行 build 指令。
+
+## 目錄結構
+
+- `index.html`
+  網站首頁。
+
+- `assets/`
+  全站共用圖片、icon、PWA icon 與首頁視覺素材。
+
+- `styles/`
+  首頁與全站層級樣式。
+
+- `shared/`
+  全站共用設定、登入、PWA、字典與維護規則。
+
+- `campaigns/`
+  團務入口、章節頁、故事弧頁、團錄資料、banner、logo、章節導覽與相關腳本。
+
+- `npc/`
+  NPC 資料庫、NPC 主資料、NPC 圖片與個別 NPC 頁面。
+
+- `pc/`
+  PC 首頁、角色文章、圖片、三視圖、玩家提供圖片與角色資料來源。
+
+- `characters/`、`character_main_page/`
+  角色總覽與相關入口頁。
+
+- `character_card/`
+  角色卡產生器工具。
+
+- `timeline/`
+  世界時間線頁面、事件資料與渲染腳本。
+
+- `map/`
+  地圖頁、地圖圖片與地點資料。
+
+- `deities/`
+  神祇列表、神祇資料、個別神祇頁、banner 與腳本。
+
+- `emperors/`
+  帝王 / 歷史人物相關頁面、圖片與腳本。
+
+- `relation-graph/`
+  角色關係圖頁面、樣式與互動腳本。
+
+- `spells/`
+  咒語查詢頁與 `spells-phb.json` 資料。
+
+- `experience/`
+  體驗 / 回饋展示頁與公開留言 CSV。
+
+- `about-us/`
+  關於我們頁與社群 / 聯絡素材。
+
+- `member/`
+  會員頁與成就 CSV。
+
+- `src/`
+  Firebase 初始化相關模組。
+
+## 核心資料檔
+
+內容更新時，最常需要同步檢查這些檔案：
+
+1. `shared/rugatha.config.js`
+   Campaign 清單、故事弧圖譜、章節節點、URL override、章節圖片對應與全站共用設定。
+
+2. `campaigns/data/campaigns.js`
+   Campaign 頁面的活動資料。
+
+3. `campaigns/data/chapter-nav.json`
+   章節上一章 / 下一章導覽。
+
+4. `campaigns/data/chapter-titles.json`
+   章節中英文標題。
+
+5. `campaigns/data/story-arc-titles.json`
+   故事弧中英文標題。
+
+6. `campaigns/pages/pcs.json`
+   章節出現的 PC。
+
+7. `campaigns/pages/guest.json`
+   章節出現的 Guest。
+
+8. `campaigns/pages/npcs.json`
+   章節出現的 NPC。
+
+9. `npc/data/characters.json`
+   NPC 主資料來源，包含名稱、介紹、關聯、地點、圖片與「命運的抉擇」。
+
+10. `pc/pc_lib`
+    PC 資料來源。
+
+11. `timeline/data/events.js`
+    世界時間線事件資料。
+
+12. `deities/data/deities.json`
+    神祇資料來源。
+
+13. `map/assets/locations.json`
+    地圖地點資料。
+
+14. `member/achievements.csv`
+    會員成就資料。
+
+15. `experience/exp_public_comment.csv`
+    體驗頁公開留言資料。
+
+## 本機預覽
+
+請使用本機 HTTP server 預覽，不建議直接用 `file://` 開啟，因為部分頁面會透過 `fetch` 載入資料。
+
+在專案根目錄執行：
+
+```bash
+python3 -m http.server 8000
+```
+
+開啟：
+
+```text
+http://localhost:8000
+```
+
+常用入口：
+
+```text
+http://localhost:8000/campaigns/
+http://localhost:8000/npc/
+http://localhost:8000/pc/
+http://localhost:8000/timeline/
+http://localhost:8000/relation-graph/
+http://localhost:8000/spells/
+```
+
+其他可用的靜態 server：
+
+```bash
+npx serve .
+```
+
+```bash
+npx http-server .
+```
+
+注意事項：
+
+1. 登入功能依賴 Firebase 設定；本機環境若缺少設定或授權網域，登入可能無法完整測試。
+2. Service worker 可能快取舊檔，測試 PWA 或靜態資源時可在瀏覽器 DevTools 清除 site data。
+3. 本專案沒有固定 build step，修改後主要透過瀏覽器與資料格式檢查驗證。
+
+## 全站 HTML 正規化
+
+專案提供批次整理腳本，用來統一全站 HTML 的：
 
 - `meta description`
 - canonical URL
@@ -41,280 +217,111 @@
 python3 shared/scripts/normalize_site_html.py
 ```
 
-建議在以下情況執行一次：
+建議在以下情況執行：
 
-1. 新增或大量修改 HTML 頁面後
-2. 批次產生 campaign / NPC / deity 內容頁後
-3. 調整正式網域、分享圖或 SEO 文案規則後
-
-## 專案架構
-
-這個專案是靜態網站架構，沒有傳統後端伺服器。大部分頁面直接由瀏覽器載入 HTML、CSS、JS 與 JSON / JS 資料檔來組成內容。
-
-### 技術組成
-
-- 前端：原生 HTML / CSS / JavaScript
-- 資料載入：前端讀取 JSON、JS、CSV 類型資料
-- 登入整合：Firebase
-- 部署方式：GitHub Pages
-
-GitHub Pages 部署設定位於：
-
-- `/.github/workflows/pages.yml`
-
-目前流程是：只要 `main` 分支有更新，就會重新部署整個網站。
-
-### 目錄結構
-
-- `/assets`
-  共用圖片、icon 等靜態資源。
-
-- `/shared`
-  全站共用設定與樣式。
-  重要檔案：
-  - `/shared/rugatha.config.js`
-  - `/shared/auth.js`
-  - `/shared/update_rules.md`
-
-- `/campaigns`
-  團錄與團務相關頁面、資料、圖片與腳本。
-  重要子目錄：
-  - `/campaigns/pages`
-  - `/campaigns/data`
-  - `/campaigns/scripts`
-  - `/campaigns/campaign-banners`
-  - `/campaigns/chapter-banners`
-  - `/campaigns/campaign-logos`
-
-- `/npc`
-  NPC 資料庫、NPC 列表頁、個別 NPC 頁面與圖片。
-  重要子目錄：
-  - `/npc/data`
-  - `/npc/npc_page/pages`
-  - `/npc/individual_pics`
-
-- `/pc`
-  PC 相關頁面、圖片與資料來源。
-
-- `/timeline`
-  世界時間線頁面、資料與腳本。
-
-- `/map`
-  地圖相關頁面與資產。
-
-- `/deities`
-  神祇頁面與資料。
-
-- `/emperors`
-  帝王 / 歷史人物相關頁面。
-
-- `/character_card`
-  角色卡工具頁面。
-
-- `/member`
-  會員相關頁面。
-
-- `/src`
-  目前主要是 Firebase 初始化等共用模組程式。
-
-### 核心資料檔
-
-這個專案有幾個特別重要的資料來源：
-
-1. `/shared/rugatha.config.js`
-   管理 campaigns 清單、故事弧圖譜、章節節點、部分圖片對應與全站共用設定。
-
-2. `/campaigns/data/chapter-nav.json`
-   管理章節前後導覽。
-
-3. `/campaigns/data/chapter-titles.json`
-   管理章節中英文標題。
-
-4. `/campaigns/data/story-arc-titles.json`
-   管理故事弧中英文標題。
-
-5. `/campaigns/pages/pcs.json`
-   管理章節出現的 PC。
-
-6. `/campaigns/pages/guest.json`
-   管理章節出現的 Guest。
-
-7. `/campaigns/pages/npcs.json`
-   管理章節出現的 NPC。
-
-8. `/npc/data/characters.json`
-   NPC 主資料來源，包含名稱、介紹、關聯、地點、命運的抉擇等資料。
-
-9. `/timeline/data/events.js`
-   世界時間線事件資料。
-
-因此，這個專案的更新通常不是只改單一頁面，而是會同時改：
-
-- 頁面本身
-- 導覽資料
-- 角色對照資料
-- 標題資料
-- 圖片資源
-- 全站設定
+1. 新增或大量修改 HTML 頁面後。
+2. 批次產生 campaign / NPC / deity 內容頁後。
+3. 調整正式網域、分享圖或 SEO 文案規則後。
 
 ## 更新流程
 
-更新前請先判斷，這次改動屬於哪一類：
+每次更新前，先判斷改動類型：
 
-1. 團錄 / 章節內容更新
-2. NPC 更新
-3. 新增章節或新增故事弧
-4. 純文案或樣式修正
+1. 團錄 / 章節內容更新。
+2. NPC 更新。
+3. 新增章節或新增故事弧。
+4. 新增或修改 PC、神祇、帝王、地圖、咒語、時間線資料。
+5. 純文案、樣式或資源修正。
 
-### 基本流程
-
-建議依照下面順序進行：
+基本順序：
 
 1. 先修改實際頁面內容。
 2. 再補資料檔與連動設定。
-3. 最後檢查圖片、導覽、雙語內容與角色對照是否一致。
+3. 最後檢查圖片、導覽、雙語內容、角色對照與連結是否一致。
 
-### 團錄與章節更新
+完整內容更新規則請參考：
 
-若你更新的是團錄或章節頁，通常要檢查：
+- [shared/update_rules.md](shared/update_rules.md)
+
+## 團錄與章節更新
+
+若更新的是團錄或章節頁，通常要檢查：
 
 1. 頁面位置是否正確：
-   - `/campaigns/pages/**/chpt*.html`
-   - 少數單章節故事可能是 `/campaigns/pages/**/index.html`
+   - `campaigns/pages/**/chpt*.html`
+   - 少數單章節故事可能是 `campaigns/pages/**/index.html`
 
 2. 中英雙語是否完整：
    - `.campaign-detail__content_zh`
    - `.campaign-detail__content_en`
 
 3. 是否需要同步更新：
-   - `/campaigns/data/chapter-nav.json`
-   - `/campaigns/data/chapter-titles.json`
-   - `/campaigns/data/story-arc-titles.json`
-   - `/campaigns/pages/pcs.json`
-   - `/campaigns/pages/guest.json`
-   - `/campaigns/pages/npcs.json`
-   - `/timeline/data/events.js`
+   - `campaigns/data/chapter-nav.json`
+   - `campaigns/data/chapter-titles.json`
+   - `campaigns/data/story-arc-titles.json`
+   - `campaigns/pages/pcs.json`
+   - `campaigns/pages/guest.json`
+   - `campaigns/pages/npcs.json`
+   - `timeline/data/events.js`
 
 4. 若章節圖有新增或替換，請同步檢查：
-   - `/campaigns/chapter-banners`
-   - `/campaigns/campaign-banners`
-   - `/shared/rugatha.config.js`
+   - `campaigns/chapter-banners/`
+   - `campaigns/campaign-banners/`
+   - `campaigns/campaign-logos/`
+   - `shared/rugatha.config.js`
 
-### NPC 更新
+## NPC 更新
 
-若你更新的是 NPC，通常要檢查：
+若更新的是 NPC，通常要檢查：
 
 1. 主資料是否已更新：
-   - `/npc/data/characters.json`
+   - `npc/data/characters.json`
 
 2. 個別 NPC 頁面是否已建立或同步修改：
-   - `/npc/npc_page/pages/*.html`
+   - `npc/npc_page/pages/*.html`
 
 3. 若該 NPC 已在團錄中登場，是否同步更新：
-   - `/campaigns/pages/npcs.json`
+   - `campaigns/pages/npcs.json`
 
-4. 若有新增命運的抉擇，是否補上：
+4. 若有新增「命運的抉擇」，是否補上：
    - `qaZh`
    - `qaEn`
 
-### 新增章節與故事弧
+5. 圖片路徑是否對應到：
+   - `npc/individual_pics/`
 
-這是最容易漏檔的更新類型。
+## 其他資料更新
 
-請至少檢查：
+- 更新 PC 時，檢查 `pc/pc_lib`、`pc/articles/`、`pc/pics/`、`pc/three_views/` 與章節 PC 對照。
+- 更新時間線時，檢查 `timeline/data/events.js` 的時間排序、中英標題與描述。
+- 更新地圖時，檢查 `map/assets/locations.json` 與地圖圖片座標是否一致。
+- 更新神祇時，檢查 `deities/data/deities.json`、`deities/pages/` 與 `deities/Banners/`。
+- 更新咒語時，檢查 `spells/spells-phb.json` 格式是否可被頁面讀取。
+- 更新會員成就時，檢查 `member/achievements.csv` 欄位格式。
 
-1. 新頁面是否建立在正確位置：
-   - `/campaigns/pages/`
+## 驗證建議
 
-2. 是否同步更新：
-   - `/campaigns/data/chapter-nav.json`
-   - `/campaigns/data/chapter-titles.json`
-   - `/campaigns/data/story-arc-titles.json`
-   - `/shared/rugatha.config.js`
-   - `/campaigns/pages/pcs.json`
-   - `/campaigns/pages/guest.json`
-   - `/campaigns/pages/npcs.json`
+修改後至少做以下檢查：
 
-3. 是否補齊圖片資源：
-   - `/campaigns/campaign-banners`
-   - `/campaigns/chapter-banners`
-   - `/campaigns/campaign-logos`
-
-4. 若劇情已造成世界觀重大推進，是否更新：
-   - `/timeline/data/events.js`
-
-## 更新檢查清單
-
-若你是要做內容更新，請直接參考：
-
-- [shared/update_rules.md](/Users/chernalbert/Documents/GitHub/web/shared/update_rules.md)
-
-這份文件是針對這個 repo 已整理好的更新檢查清單，適合在每次改團錄、NPC、章節或故事弧時一起檢查。
-
-## 本機預覽
-
-這個專案本質上是靜態網站，所以本機預覽方式很單純，只要能提供靜態檔案伺服器即可。
-
-最簡單的方式，是在專案根目錄啟動一個本機靜態 server，然後用瀏覽器開啟 localhost。
-
-### 使用 Python 啟動
-
-在專案根目錄執行：
-
-```bash
-python3 -m http.server 8000
-```
-
-啟動後，用瀏覽器開啟：
-
-```text
-http://localhost:8000
-```
-
-如果要直接打開 campaigns 頁面，可用：
-
-```text
-http://localhost:8000/campaigns/
-```
-
-如果要直接打開 NPC 頁面，可用：
-
-```text
-http://localhost:8000/npc/
-```
-
-要停止 server 時，在終端機按 `Ctrl + C` 即可。
-
-### 其他方式
-
-如果本機有其他靜態 server 工具，也可以使用，例如：
-
-```bash
-npx serve .
-```
-
-或：
-
-```bash
-npx http-server .
-```
-
-注意事項：
-
-1. 某些資料是透過 `fetch` 載入，本機請不要直接用 `file://` 開頁，應使用本機 HTTP server。
-2. 登入功能依賴 Firebase 設定；若本機缺少對應設定，登入功能可能無法正常測試。
-3. 本專案沒有固定 build step，主要是直接部署靜態檔。
+1. 用本機 HTTP server 開啟受影響頁面。
+2. 確認瀏覽器 console 沒有路徑、JSON parse、module 或 Firebase 初始化錯誤。
+3. 確認圖片、CSS、JS、JSON、CSV 都能正常載入。
+4. 確認中英文內容一致，沒有只改其中一個語言版本。
+5. 若有新增 HTML 或批次修改 HTML，執行正規化腳本。
+6. 若有改 JSON / JS / CSV 資料，確認格式合法，避免多餘逗號、缺漏括號或欄位錯位。
 
 ## 維護原則
 
 這個專案最重要的維護觀念是：資料一致性比單頁修改更重要。
 
-也就是說，當你更新：
+當你更新：
 
 - 一篇團錄
 - 一個 NPC
+- 一位 PC
 - 一個故事弧
 - 一張章節圖
+- 一個世界觀事件
 
 都應該同時檢查它對以下資料的影響：
 
@@ -324,5 +331,6 @@ npx http-server .
 - 全站設定
 - 時間線
 - 圖片資源
+- SEO / share metadata
 
 只改頁面而不補資料檔，通常就是最常見的錯誤來源。
