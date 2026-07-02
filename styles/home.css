@@ -4,11 +4,16 @@
   --home-bg: #455f56;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   width: 100%;
+  overflow-x: hidden;
   padding: 0 18px 64px;
   background: var(--home-bg);
   margin: 0;
@@ -722,7 +727,7 @@ body {
     position: relative;
     flex: 0 0 auto;
     z-index: 1;
-    width: min(1037px, 162%);
+    width: min(100%, 100vw);
     height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 38px) * 1.2);
     max-height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 38px) * 1.2);
     aspect-ratio: 3 / 2;
@@ -733,10 +738,11 @@ body {
   }
 
   .banner-flip--mobile .banner-flip__face--front {
-    inset: auto 0;
+    inset: auto auto auto 50%;
     top: 50%;
+    width: 162%;
     height: 142%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
   }
 
   .portals {
