@@ -148,7 +148,7 @@
     <main class="hub" aria-label="Rugatha portals">
       <section class="banner-core" aria-label="Rugatha">
         <span class="banner-text banner-text--top">Your Path Begins in</span>
-        <span class="banner-flip banner-flip--mobile" tabindex="0" aria-label="Rugatha">
+        <span class="banner-flip banner-flip--mobile" tabindex="0" role="button" aria-label="Rugatha" aria-pressed="false">
           <span class="banner-flip__inner">
             <img class="banner-flip__face banner-flip__face--front" src="assets/rugatha-banner.png" alt="Rugatha">
             <img class="banner-flip__face banner-flip__face--back" src="assets/rugatha-icon.png" alt="" aria-hidden="true">
@@ -158,7 +158,7 @@
       </section>
 
       <section class="portals" aria-label="Rugatha portals">
-        <span class="banner-flip banner-flip--desktop" tabindex="0" aria-label="Rugatha">
+        <span class="banner-flip banner-flip--desktop" tabindex="0" role="button" aria-label="Rugatha" aria-pressed="false">
           <span class="banner-flip__inner">
             <img class="banner-flip__face banner-flip__face--front" src="assets/rugatha-banner.png" alt="Rugatha">
             <img class="banner-flip__face banner-flip__face--back" src="assets/rugatha-icon.png" alt="" aria-hidden="true">
@@ -698,12 +698,36 @@
       });
     }
 
+    const setupBannerFlip = () => {
+      document.querySelectorAll(".banner-flip").forEach((bannerFlip) => {
+        const toggleFlip = () => {
+          const isFlipped = bannerFlip.classList.toggle("is-flipped");
+          bannerFlip.setAttribute("aria-pressed", String(isFlipped));
+        };
+
+        bannerFlip.addEventListener("click", () => {
+          toggleFlip();
+          if (window.matchMedia("(hover: none)").matches) {
+            bannerFlip.blur();
+          }
+        });
+        bannerFlip.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleFlip();
+          }
+        });
+      });
+    };
+
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", () => {
+        setupBannerFlip();
         renderScheduleWidget();
         setupSurveycakeTracking();
       });
     } else {
+      setupBannerFlip();
       renderScheduleWidget();
       setupSurveycakeTracking();
     }

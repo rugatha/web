@@ -61,11 +61,14 @@ body {
   transition: transform 1000ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.banner-flip:hover .banner-flip__inner,
-.banner-flip:focus .banner-flip__inner,
-.banner-flip:focus-visible .banner-flip__inner,
-.banner-flip:active .banner-flip__inner {
+.banner-flip.is-flipped .banner-flip__inner {
   transform: rotateY(180deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .banner-flip:hover .banner-flip__inner {
+    transform: rotateY(180deg);
+  }
 }
 
 .banner-flip__face {
