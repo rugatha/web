@@ -687,7 +687,7 @@ body {
     padding: 10px 10px 8px;
     border-radius: 18px 18px 8px 8px;
     background: var(--home-bg);
-    overflow: hidden;
+    overflow: visible;
   }
 
   .banner-text {
@@ -698,13 +698,14 @@ body {
     font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
     font-weight: 900;
     letter-spacing: 0.06em;
-    line-height: 1.16;
+    line-height: 1.24;
     text-align: center;
     text-shadow: none;
   }
 
   .banner-text--top {
     margin: 0 auto;
+    padding-top: 2px;
     font-size: var(--mobile-slogan-font-size);
     white-space: nowrap;
   }
@@ -725,18 +726,19 @@ body {
 
   .banner-flip {
     position: relative;
-    flex: 0 0 auto;
+    flex: 1 1 0;
+    min-height: 0;
     z-index: 1;
     width: min(100%, 100vw);
-    height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 38px) * 1.2);
-    max-height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 38px) * 1.2);
+    height: auto;
+    max-height: none;
     aspect-ratio: 3 / 2;
   }
 
   .banner-flip--mobile {
     contain: paint;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .banner-flip--mobile .banner-flip__face--front {
@@ -1045,8 +1047,8 @@ body {
   }
 
   .banner-flip {
-    height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px) * 1.2);
-    max-height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px) * 1.2);
+    height: auto;
+    max-height: none;
   }
 
   .portal-grid {
@@ -1134,8 +1136,8 @@ body {
   }
 
   .banner-flip {
-    height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px) * 1.2);
-    max-height: calc((var(--mobile-title-height) - (var(--mobile-slogan-font-size) * 2) - 34px) * 1.2);
+    height: auto;
+    max-height: none;
   }
 
   .portal-grid {
