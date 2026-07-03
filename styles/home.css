@@ -608,8 +608,8 @@ body {
   }
 
   .hub {
-    --mobile-title-height: clamp(168px, 24vh, 246px);
-    --mobile-title-height: clamp(168px, 24svh, 246px);
+    --mobile-title-height: clamp(252px, 36vh, 369px);
+    --mobile-title-height: clamp(252px, 36svh, 369px);
     --mobile-portal-icon-size: clamp(34px, 10.8vw, 58px);
     --mobile-portal-row-height: calc(var(--mobile-portal-icon-size) + 52px);
     --mobile-gap: 10px;
