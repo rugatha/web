@@ -11,7 +11,7 @@ SITE_ORIGIN = "https://rugatha.com"
 SITE_NAME = "Rugatha"
 SITE_LOCALE = "en_US"
 ALTERNATE_SITE_LOCALE = "zh_TW"
-DEFAULT_OG_IMAGE = "/assets/rugatha-banner.png"
+DEFAULT_OG_IMAGE = "/assets/rugatha-banner.jpg"
 SKIP_DIRS = {".git", ".github", ".agents", ".codex", "node_modules"}
 RELATED_CHARACTER_TAG_LIMIT = 40
 
