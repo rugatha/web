@@ -3,10 +3,10 @@
     "id": "Addie_Applewood",
     "url": "npc/npc_page/pages/Addie_Applewood.html",
     "image": "individual_pics/Addie Applewood.png",
-    "status": "alive",
+    "status": "dead",
     "gender": "male",
-    "descZh": "土城太陽議會蘋果席的代表，負責土城的外交。\n有兩個孩子：佩妮・蘋果木和凱許・蘋果木。",
-    "descEn": "The representative of the Seat of Apple in the Council of Sols in Mudtown, in charge of diplomacy.\nAddie has two kids: Penny Applewood and Cash Applewood.",
+    "descZh": "土城太陽議會蘋果席的代表，負責土城的外交。\n有兩個孩子：佩妮・蘋果木和凱許・蘋果木。\n在「海雅特終章」襲擊後，佩妮與山賊首領奧斯華私奔。艾迪以議員身份將阿龍逐出土城，隨後上吊自殺。",
+    "descEn": "The representative of the Seat of Apple in the Council of Sols in Mudtown, in charge of diplomacy.\nAddie had two children: Penny Applewood and Cash Applewood.\nAfter the Hyatt Finale attack, Penny ran away with the bandit leader Oswald. Acting as a councilor, Addie expelled Al-lon from Mudtown, then hanged himself.",
     "related": [
       "Cash_Applewood",
       "Connie_Cornell",
@@ -53,8 +53,8 @@
     "image": "individual_pics/Alex.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "大學城科技區的工匠，專長是製作機甲。個性很直，但同時也討厭個性很直的人。\n冒險者們帶著金屬手臂來找他研究，他十分有興趣。\n比起和冒險者們討錢，他提出了請Midori把手臂拆下來借他研究，隔天再還給他，作為交易的籌碼。",
-    "descEn": "A mechanic in the tech division at the Great Citadel, who is best at working on mechas. She is a straight forward woman, but also dislike others who is straight forward.\nThe adventurers came to her with a metal arm, and she was interested in examining it.\nRather than charging the adventurers fee, Alex proposed that Midori take her arm down for her to do some research.",
+    "descZh": "流浪商人兼研究者，常販賣或研究奇特魔法物品。在方努爾，他檢查米多莉的手臂，辨識出其中罕見的「滑銀」材質，判斷那很可能與妖精荒野的生態有關，並替手臂加裝可收納小物的腕部管槽。",
+    "descEn": "A wandering merchant and researcher who sells and studies unusual magical items. In Fanaur, he examined Midori’s arm and identified the rare material inside it as slipsilver, likely connected to Feywild ecology, then added a small wrist-mounted storage tube to the arm.",
     "related": [],
     "nameEn": "Alex",
     "nameZh": "艾麗克斯",
@@ -93,8 +93,8 @@
     "image": "individual_pics/Alfenor.jpeg",
     "status": "dead",
     "gender": "neutral",
-    "descZh": "被稱為蜘蛛王。\n是多數人認定蜘蛛神教的主神，但其實地位低於母親大人。\n10836年，由妖精王國的艾蒙醫生、法倫主教，和諾威爾的屍體粉塵，透過儀式融合而成。",
-    "descEn": "Also known as the Spider King.\nAlfenor is mostly known as the God of the Spider-God religion, but is actually below Mother.\nAt year 10836, Alfenor was created by forging Dr. Elmond, Bishop Fallon and the dust of Norvelle’s body in the Elvish Kingdom through a ritual.",
+    "descZh": "被稱為蜘蛛王。\n是多數人認定蜘蛛神教的主神，但其實地位低於母親大人。\n10836年，由妖精王國的艾蒙醫生、法倫主教，和諾威爾的屍體粉塵，透過儀式融合而成。\n冒險者在麥克嵩王宮圖書館地下特殊館藏中得知，阿爾芬諾並非單一妖精化身，而是由一群妖精對人類的恨意灌入單一妖精軀體後形成的集體意志。\n阿爾芬諾曾透過圖書館員與圖伊特、伊努進行心靈對話，展現強大的力量；對話結束時，圖書館員也被吸成乾屍。",
+    "descEn": "Known as the Spider King.\nMost people regard Alfenor as the main god of the Spider God religion, but his standing is actually below the Mother.\nIn 10836, Alfenor was created through a ritual that fused Dr. Aemon, Bishop Falon, and the powdered corpse of Norwell from the elven kingdom.\nIn the restricted collections beneath the Macksohn royal library, the adventurers learned that Alfenor was not a single elf incarnation, but a collective will born when the hatred of many elves toward humans was poured into one elven body.\nAlfenor once used a librarian to communicate telepathically with Tweeter and Inu, displaying immense power; when the conversation ended, the librarian had been drained into a dried corpse.",
     "related": [
       "Anna",
       "Dennis",
@@ -146,8 +146,8 @@
     "image": "individual_pics/Alfie Fuller.jpeg",
     "status": "dead",
     "gender": "male",
-    "descZh": "沃瓦倫鎮的酒鬼，似乎總是醉醺醺的遊蕩在街上。\n年約50，看起來在鎮上沒有家人。\n時常酒醉後闖入勞迪俱樂部嚇唬來訪的外地人。\n住在布魯斯家隔壁的破舊房屋內。",
-    "descEn": "The local drunk of Vowalon, who was always drunk on the road.\nHe was in his 50s and seems to be all alone in the town.\nAlfie is often drunk while entering the Rowdy’s Club and scared travelers.\nHe lived in a house that is quite in a bad condition next the Bruce’s house.",
+    "descZh": "沃瓦倫鎮的酒鬼，年約50，看起來在鎮上沒有家人，似乎總是醉醺醺地遊蕩在街上。\n時常酒醉後闖入勞迪俱樂部嚇唬來訪的外地人，住在布魯斯家隔壁的破舊房屋內。\n解除詛咒儀式前，艾菲驚慌地衝進勞迪俱樂部，預感自己再也見不到明天的太陽。沃瓦倫滅鎮後，艾菲也成為死者之一。",
+    "descEn": "The town drunk of Vowalon, about fifty years old, with no apparent family in town. He was usually seen wandering the streets drunk.\nHe often burst into Rowdy's Club while drunk to frighten visiting outsiders, and lived in a shabby house next to Bruce's home.\nBefore the ritual meant to lift the curse, Alfie rushed into Rowdy's Club in panic and said he believed he would never see tomorrow's sun. After the Vowalon massacre, Alfie was among the dead.",
     "related": [
       "Bruce_Dunham"
     ],
@@ -192,8 +192,8 @@
     "image": "individual_pics/Andrea Day.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "大學城歷史區的現任區長。\n個性古怪，有強烈的毒癮，辦公室基本上是煙霧瀰漫。\n有個叫麥爾文的助手。\n對各種不同宗教都有研究，過去曾研究攔截靈魂的方法，因此捕捉到蘿琳被月神帶走的靈魂。",
-    "descEn": "The current leader of the History District in the Great Citadel.\nAndrea is a weird tempered man who has a very strong addiction to drugs, with his office mostly covered with dust.\nHe had an assistant named Melvin.\nAndrea did research on all different religions, and once succeeded to intercept a soul, who happened to be Roline that was taken away by Phynoir.",
+    "descZh": "大學城歷史區區長，外表年輕但資歷很深的學者。\n研究月神教與靈魂相關魔法，曾囚禁蘿琳的靈魂，也長期壓迫助手麥爾文。\n冒險者與他交涉後，安德烈亞示範了月神教的靈魂轉移儀式，犧牲作為「無辜靈魂」的麥爾文，讓蘿琳的靈魂回到身體。",
+    "descEn": "The head of the History District at the Great Citadel: a scholar who looks young but has deep seniority.\nAndrea studies Phyneal and soul-related magic, once imprisoned Roline's soul, and long oppressed his assistant Melvin.\nAfter dealing with the adventurers, Andrea demonstrated a Phyneal soul-transfer ritual, sacrificing Melvin as an innocent soul so Roline's soul could return to her body.",
     "related": [
       "Melvin",
       "Roline_Hughes"
@@ -235,7 +235,7 @@
     "image": "individual_pics/Anna.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "瑟巴諾鎮長索恩的妻子，視覺年齡約二十初頭，是個妖精。在索恩當上鎮長一段時間後來到瑟巴諾，與索恩相識並結婚。\n在瑟巴諾被離奇屠村後，出現在Paladin面前，並透過自己的技術，將溶成泥的冒險者們重新培育出來。\n似乎是蜘蛛王阿爾芬諾的後裔以及信徒。\n在鎮長家的地底有座自己的實驗室。\n將冒險者們重新培育出來後，安娜便消失了，但冒險者們卻發現自己身上出現了蜘蛛網型的印記，似乎是個詛咒。\n再次出現時，安娜與母親大人一同威脅Paladin，後來又偽裝成蘿琳試著將Paladin帶走，實際是想對Paladin逼婚，以藉由他的貴族身份拿點好處。\n透過Paladin的身體，將母親大人奪舍後，成為新的蜘蛛神。",
+    "descZh": "瑟巴諾鎮長索恩的妻子，視覺年齡約二十初頭，是個妖精。在索恩當上鎮長一段時間後來到瑟巴諾，與索恩相識並結婚。\n在瑟巴諾被離奇屠村後，出現在帕拉丁面前，並透過自己的技術，將溶成泥的冒險者們重新培育出來。\n似乎是蜘蛛王阿爾芬諾的後裔以及信徒。\n在鎮長家的地底有座自己的實驗室。\n將冒險者們重新培育出來後，安娜便消失了，但冒險者們卻發現自己身上出現了蜘蛛網型的印記，似乎是個詛咒。\n再次出現時，安娜與母親大人一同威脅帕拉丁，後來又偽裝成蘿琳試著將帕拉丁帶走，實際是想對帕拉丁逼婚，以藉由他的貴族身份拿點好處。\n透過帕拉丁的身體，將母親大人奪舍後，成為新的蜘蛛神。",
     "descEn": "Anna is an elf who is the wife of mayor Thorne of Sebano, and looks like in her early 20s. She came to Sebano short after Thorne became the mayor of the town, and got married in a short time.\nAfter the macabre slaughter of Sebano, Anna showed up to Paladin, and reformed the other adventurers from mud.\nAnna seems to be a descendant and believer of Alfenor.\nShe has her own lab at the basement of the mayor’s house.\nAfter recreating the adventurers, Anna disappeared, but the adventurers found some spider web-shaped totem on their bodies, that seems like a curse.\nWhen Anna reappeared, she and Mother threatened Paladin, and also disguised as Roline, trying to take Paladin away. She was intended to force Paladin into marriage to take advantage of his noble identity.\nAnna later invaded Mother’s body through Paladin, and became the new Spider God.",
     "related": [
       "Alfenor",
@@ -289,8 +289,8 @@
     "image": "individual_pics/Bartosz Richmond.jpg",
     "status": "dead",
     "gender": "male",
-    "descZh": "貝瑟頓的里奇蒙爵士。\n里奇蒙家族似乎過去十分興旺，如今卻風華不再，且淪為城內人的笑話。\n爵士於60歲左右時便開始失智，如今只能靠宅邸內的傭人用輪椅推著他才能行動。\n他時不時會呼喊著「艾格妮絲」這個名字，但從家譜無法確定他喊的是他的老婆，還是祖母，兩人都叫艾格尼絲。\n他有個女兒叫萊里。\n爵士也對部分詞語有所反應，如「T.I.D.E.S.」。",
-    "descEn": "Syr Richmond from Batherdon.\nThe Richmond family used to be rich, but now they are nothing but a joke in Batherdon.\nBartosz suffered from dementia around his 60s, and can only move in a wheelchair with the aid of a maid in his mansion.\nHe often yells the name \"Agnes\", but can’t tell if it was his wife or grandmother, who both had the name Agnes.\nHe has a daughter named Riley.\nBartosz also responds to some words, like \"T.I.D.E.S.\".",
+    "descZh": "貝瑟頓的里奇蒙爵士。\n里奇蒙家族似乎過去十分興旺，如今卻風華不再，且淪為城內人的笑話。\n爵士於60歲左右時便開始失智，只能靠宅邸內的傭人用輪椅推著行動。他時不時會呼喊「艾格妮絲」這個名字，但從家譜無法確定他喊的是老婆，還是同名的祖母。\n他有個女兒叫萊里，也對「T.I.D.E.S.」等詞語有所反應。\n冒險者帶回箱子後，巴托斯短暫恢復神智，透露自己曾是T.I.D.E.S.高層，且高層能與智慧之神喬里森溝通；他將五枚不同顏色的戒指作為報酬交給冒險者後，坐回輪椅並石化。",
+    "descEn": "Syr Richmond of Batherdon.\nThe Richmond family was once prosperous, but has now declined into something of a joke in the city.\nBartosz began suffering from dementia around the age of sixty and could only move with the help of a servant pushing his wheelchair. He often called out the name Agnes, though the family tree made it unclear whether he meant his wife or his grandmother, who shared the same name.\nHe has a daughter named Riley and reacts to words such as T.I.D.E.S.\nAfter the adventurers brought back the box, Bartosz briefly regained his mind and revealed that he had once been a high-ranking member of T.I.D.E.S., whose leaders could communicate with Jeorisan, the god of wisdom. He gave the adventurers five rings of different colors as their reward, then sat back in his wheelchair and turned to stone.",
     "related": [
       "Riley_Richmond",
       "Tina"
@@ -383,8 +383,8 @@
     "image": "individual_pics/Beau.jpeg",
     "status": "alive",
     "gender": "female",
-    "descZh": "麥克嵩當地的七歲小女孩。父母在比武大會中死去，因此成為孤兒。\n因為視台北市議員為偶像，要求加入一起冒險。在Midori與Siri的認可下加入台北市議員，並視Midori為媽媽，Siri為爸爸。\n說話十分衝動不忌言，才剛加入台北市議員，得罪了當中不少人。\n到妖精荒野後，以救世主的身份留在那裡，但最終除了波外，其他當地居民都在拉索斯教入侵後被消滅。回到物質世界時已年過40，便和冒險者們一起繼續以剿滅拉索斯教為目標冒險。",
-    "descEn": "A 7 years old girl fro, Macksohn, who lost her parents in the Macksohn Tournament, thus became an orphan.\nBeau sees the Councilor of Tapei as her idol, so she asked to join them. With Midori and Siri acknowledging her, she joined the party and sees them as her parents.\nBeau often speaks recklessly, and have already offended quite a lot of the party members.\nWhen the party traveled to the Feywild, Beau stayed as the Messiah, but later she only survived to be the only one left after the Laxthos invasion. She was in her 40s when she came back to the material world, with the adventurers not aged yet. She traveled with the party and aimed to defeat the Laxthos.",
+    "descZh": "麥克嵩當地的七歲小女孩。父母在比武大會中死去，因此成為孤兒。\n因為視台北市議員為偶像，要求加入一起冒險。在米多莉與喜利的認可下加入台北市議員，並視米多莉為媽媽，喜利為爸爸。\n說話十分衝動不忌言，才剛加入台北市議員，得罪了當中不少人。\n到妖精荒野後，以救世主的身份留在那裡，但最終除了波外，其他當地居民都在拉索斯教入侵後被消滅。回到物質世界時已年過40，便和冒險者們一起繼續以剿滅拉索斯教為目標冒險。",
+    "descEn": "A seven-year-old girl from Macksohn whose parents died in the Macksohn Tournament, leaving her an orphan.\nBeau idolized the Councilors of Taipei and asked to join them. With Midori and Siri's approval, she joined the party and came to see Midori as her mother and Siri as her father.\nShe speaks recklessly and offended several party members soon after joining.\nAfter traveling to the Feywild, Beau stayed there as the Savior. When the Laxthos invasion destroyed the local civilization, she was the only survivor. Because of the Feywild's time distortion, she returned to the material world in her forties and continued traveling with the adventurers to fight Laxthos.",
     "related": [
       "Elby__Dr_White"
     ],
@@ -433,8 +433,8 @@
     "image": "individual_pics/King Benevol II.png",
     "status": "unknown",
     "gender": "male",
-    "descZh": "麥丁頓的前任統治者。\n在麥克嵩比武大會時遭到法蘭奇吸乾精力，卻在法蘭奇消失後彷彿完全恢復元氣，悄悄逃離了包廂。\n在那之後，據說他傳位給了他的兒子艾略特四世，不見了。",
-    "descEn": "The ex-ruler of the Mattington Kingdom.\nHis soul was sucked out but Frankie at the Macksohn Tournament, but recovered after Frankie was gone, leaving the private box sneakily.\nAfter that, it was known that he passed the throne to his son, Elliot IV, and was not seen again.",
+    "descZh": "麥丁頓的前任統治者。\n在麥克嵩比武大會時遭到法蘭奇吸乾精力，卻在法蘭奇消失後彷彿完全恢復元氣，悄悄逃離包廂。\n在那之後，據說他傳位給兒子艾略特四世，並自此失蹤。後來冒險者在瑟巴諾附近發現，一對不知情的夫妻正奉麥克嵩拉索斯主教之命運送巴納沃二世的皇冠、玉璽與屍體；夫妻隨後遭疑似瑪莉恩派出的刺客射殺。",
+    "descEn": "The former ruler of the Mattington Kingdom.\nDuring the Macksohn Tournament, Frankie drained his vitality, but after Frankie vanished, Benevol seemed to recover completely and quietly fled the private box.\nAfterward, he was said to have passed the throne to his son Elliot IV and then disappeared. Later, near Sebano, the adventurers found an unwitting couple transporting Benevol II's crown, royal seal, and corpse on orders from a Laxthos bishop in Macksohn. The couple were then shot dead by assassins likely sent by Marian.",
     "related": [
       "Frankie",
       "King_Elliot_IV",
@@ -482,8 +482,8 @@
     "image": "individual_pics/Benny Cozlothramuda.jpeg",
     "status": "dead",
     "gender": "male",
-    "descZh": "本名班傑明，出身於歷史悠久的矮人家族。\n沃瓦倫長年的腕力冠軍。\n於沃瓦倫擔任潔絲敏失蹤事件的搜救隊一員，雖然對於沒能找到潔絲敏感到很懊惱，但本身爽朗的個性讓他對此沒有過度責怪自己。",
-    "descEn": "Benjamin was his full name, and he was from an ancient dwarf family.\nBenny had been the longtime arm-wrestling champion in Vowalon.\nHe was also one of the rescue team to find Jasmine, but was upset that he failed. Good for him that he was a bright man that it didn’t linger too long.",
+    "descZh": "本名班傑明，出身於歷史悠久的矮人家族。\n沃瓦倫長年的腕力冠軍，個性爽朗。曾作為潔絲敏失蹤事件的搜救隊一員，雖然對於沒能找到潔絲敏感到懊惱，但沒有過度責怪自己。\n慶祝葛蘭倫回到沃瓦倫的派對上，班尼與烏西歐尼比腕力，輸後大方把刻有家族姓氏的金戒指送給他。沃瓦倫滅鎮事件中，班尼死亡並被化為殭屍，最後由冒險者們讓他安息。",
+    "descEn": "Born Benjamin, from an old dwarven family.\nBenny was Vowalon's long-time arm-wrestling champion and had a cheerful personality. He joined the search party for the missing Jasmine, and though he regretted failing to find her, he did not blame himself too harshly.\nAt the party celebrating Grenland's return to Vowalon, Benny arm-wrestled Usioni and, after losing, generously gave him a gold ring engraved with his family name. During the Vowalon massacre, Benny died and was turned into a zombie, and the adventurers ultimately laid him to rest.",
     "related": [
       "Jasmine_Warren"
     ],
@@ -528,8 +528,8 @@
     "image": "individual_pics/Bernard Norm.jpeg",
     "status": "dead",
     "gender": "male",
-    "descZh": "麥克嵩的年輕貴族，家族似是經營牲畜的。\n似乎對貴族間的雜交派對頗為熟悉。\n與華生和Sugalu在王宮花園相談甚歡，而且對Sugalu十分在意。\n似乎在鬥爭中被他所信任的潘蜜拉害死。",
-    "descEn": "A young noble in Macksohn, whose family does livestock business.\nBernard is quite familiar with the secret orgy parties within the noble circle.\nHe met Watson and Sugalu at the Palace Garden, and seemed to care about Sugalu pretty much.\nIt was suspected that his death was directed by his noble friend Pamela, who seemed to betray him due to the conflict between the nobles on whether to support the new king or not.",
+    "descZh": "麥克嵩的年輕貴族，家族似是經營牲畜的。\n似乎對貴族間的雜交派對頗為熟悉。\n與華生和蘇加魯在王宮花園相談甚歡，而且對蘇加魯十分在意。\n在潘蜜拉家的晚宴後，伯納德帶蘇加魯到母親大人所在的三樓房間請安，展現出明顯畏懼。當晚冒險者們逃離伯納德宅邸時，發現伯納德的屍體倒在門口，身體像被吸乾般毫無血色；外頭則是潘蜜拉與暴民縱火。後續拷問刺客得知，伯納德宅邸事件與潘蜜拉的勢力有關。",
+    "descEn": "A young noble of Macksohn, whose family appears to be in the livestock business.\nHe seemed familiar with secret orgy parties among the nobility.\nBernard had a pleasant conversation with Watson and Sugalu in the royal garden, and seemed especially interested in Sugalu.\nAfter Pamela's dinner, Bernard brought Sugalu to a third-floor room to greet the Mother, showing clear fear. That night, as the adventurers fled Bernard's estate, they found Bernard's bloodless corpse at the door while Pamela and a mob set the house on fire outside. Later interrogation of assassins connected the incident at Bernard's estate to Pamela's faction.",
     "related": [
       "Pamela_Yaso",
       "The_Mother"
@@ -708,8 +708,8 @@
     "image": "individual_pics/Brock.jpeg",
     "status": "other",
     "gender": "male",
-    "descZh": "麥克嵩當地人，年約30的半獸人，舉止溫文有禮，有他自己的幽默感。對麥克嵩與崔尼斯教有些不信任。\n在月先生的推薦下，加入冒險者們組成的樂團「荒野旋律」，擔任打擊手。\n從小在麥克嵩長大，父母經營武器打鐵鋪，卻因經營不善而倒閉。\n曾在黃昏酒館演出。\n被斗篷人攻擊後陷入昏迷，且逐漸變得黝黑，長出毛皮，越來越不像人型生物了，最後成了拉茲特獸。",
-    "descEn": "A local Macksohn half-orc who is polite and humor in his own way. He didn’t trust Macksohn and the Trinix religion.\nAfter the introduction by Mr. Moon, Brock joined the adventurer-formed band, Rhythm of the Wild as the drummer.\nBrock grew up in Macksohn, with his parents as smiths, but the shop was closed due to bad business.\nBrock used to play music in the tavern Nightfall.\nHe was down after attacked by the hooded figure and started to grew dark fur out of his skin, less human-like than before. He ended up becoming a Laztek.",
+    "descZh": "麥克嵩當地人，年約30的半獸人，舉止溫文有禮，有他自己的幽默感。對麥克嵩與崔尼斯教有些不信任。\n在月先生的推薦下，加入冒險者們組成的樂團「荒野旋律」，擔任打擊手。他從小在麥克嵩長大，父母曾經營武器打鐵鋪，卻因經營不善而倒閉，也曾在黃昏酒館演出。\n被斗篷人攻擊後陷入昏迷，身體逐漸變黑、長出毛皮，越來越不像人型生物。冒險者探望時，他已像拉茲特獸一樣低鳴，父母的認知也受到影響。\n後來布拉克從床下沉入地底並消失，房間地板下出現通往麥克嵩舊城區地下通道的洞穴，冒險者在其中遇見多隻拉茲特獸。",
+    "descEn": "A local Macksohn half-orc around thirty years old, polite and humorous in his own way. He distrusted Macksohn and the Trinix religion.\nIntroduced by Mr. Moon, Brock joined the adventurers' band, Rhythm of the Wild, as its drummer. He grew up in Macksohn, where his parents once ran a weapon smithy that failed, and he had performed at the Nightfall tavern.\nAfter being attacked by the hooded figure, Brock fell unconscious. His body darkened, grew fur, and became less and less humanoid. When the adventurers visited him, he could only whimper like a Laztek, and his parents' perception of reality had also been affected.\nLater, Brock sank through the floor beneath his bed and disappeared, leaving a tunnel into the underground passages of old-town Macksohn, where the adventurers encountered multiple Lazteks.",
     "related": [
       "Mr_Moon",
       "The_Hooded_Figure"
@@ -751,8 +751,8 @@
     "image": "individual_pics/Bruce Dunham.jpeg",
     "status": "dead",
     "gender": "male",
-    "descZh": "勞迪俱樂部的老闆，年約50。",
-    "descEn": "The owner of Rowdy’s Club. About 50 years old.",
+    "descZh": "勞迪俱樂部的老闆，年約50，壯碩但溫和，對冒險者有求必應。\n台北市議員帶回葛蘭倫大法師後，布魯斯在勞迪俱樂部舉辦派對，請全鎮享用餐點慶祝詛咒即將解除。\n沃瓦倫滅鎮事件中，布魯斯死亡並被化為殭屍；冒險者們在黑暗與寂靜消散後，忍痛將包含布魯斯在內的熟識鎮民真正殺死，讓他們安息。",
+    "descEn": "The owner of Rowdy's Club, about fifty years old: strong-built but gentle, and willing to help the adventurers when asked.\nAfter the Councilors of Taipei brought Archmage Grenland back, Bruce hosted a party at Rowdy's Club and treated the whole town to celebrate the coming end of the curse.\nDuring the Vowalon massacre, Bruce died and was turned into a zombie. After the darkness and silence faded, the adventurers painfully put down the familiar townsfolk, including Bruce, so they could rest.",
     "related": [
       "Alfie_Fuller"
     ],
@@ -888,7 +888,7 @@
     "image": "individual_pics/Cena.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "馬格努斯爵士聘請的馬伕，本名約翰，被Paladin稱為希納。\n在駕馬車前往麥克嵩前，才剛被馬格努斯爵士聘用一個月不到，薪水都還沒領。\n協助Paladin將拷問他的衛兵擊暈，假扮成衛兵押解Paladin走在麥克嵩城內。\n與Paladin一同在日出酒館鬥毆，帶著Paladin的魅力頭帶與大部分的武器消失在麥克嵩。\n在比武大會說明會前，與一名女子，碧翠絲，出現在王宮前市集。",
+    "descZh": "馬格努斯爵士聘請的馬伕，本名約翰，被帕拉丁稱為希納。\n在駕馬車前往麥克嵩前，才剛被馬格努斯爵士聘用一個月不到，薪水都還沒領。\n協助帕拉丁將拷問他的衛兵擊暈，假扮成衛兵押解帕拉丁走在麥克嵩城內。\n與帕拉丁一同在日出酒館鬥毆，帶著帕拉丁的魅力頭帶與大部分的武器消失在麥克嵩。\n在比武大會說明會前，與一名女子，碧翠絲，出現在王宮前市集。",
     "descEn": "A coachman hired by Syr Magnus. His name was John, but was mocked by Paladin as Cena.\nBefore driving the carriage to Macksohn, he had only been hired less than a month, without getting his payment yet.\nCena helped knocked out the guard that tortured Paladin, and disguised as the guard to take Paladin into Macksohn.\nCena joined Paladin in the tavern fight in Sunrise, but disappeared with Paladin’s Headband of Charm and most weapons after the fight.\nBefore the Macksohn Tournament, he was seen with a noble lady, Beatrice, at the Macksohn Plaza.",
     "related": [
       "Kahn",
@@ -931,8 +931,8 @@
     "image": "individual_pics/Dr. Chandra Pyresong.png",
     "status": "dead",
     "gender": "female",
-    "descZh": "YHWH過去的師傅，是一名烈焰術士。一頭短髮，繡有火焰的黑色皮衣是他的專屬標誌。\n在冒險者們來到大學城時，正好在外修行。\n在大學城有個十分舒服的住處，讓冒險者們可以暫時居住。\n在趕回大學城後，追逐有著巫妖之手的Ron，在兩人單獨戰鬥時自爆而亡，但Ron僅重傷而已。",
-    "descEn": "The former master of YHWH, a pyromancer. She had short hair and shapes of flames on her black leather jacket.\nShe was out of town traveling when the adventurers arrived the Great Citadel.\nShe had a nice place to live in the Great Citadel, that acted as a temporary home for the adventurers.\nAfter she hurried back to the Great Citadel, Dr. Chandra chased down Ron, who had the lich’s hand, but self-exploded during the fight, while Ron only had some scratches.",
+    "descZh": "龍恩在大學城追捕的一名方努爾研究者，擅長火焰與機械，身旁有一隻疑似鳳凰企鵝的奇特鳥類。\n冒險者抵達方努爾時，他的住處因事件而被燒毀，後來只留下皮革般的殘餘物；他最終在與龍恩的戰鬥中引爆裝置自毀，試圖炸死龍恩但失敗。\n茜卓・派松博士死後，沙蘭將他的方努爾房產轉給YHWH。",
+    "descEn": "A Fanaur researcher pursued by Ron in University Town, skilled with fire and machinery, and accompanied by a strange bird resembling a phoenix penguin.\nWhen the adventurers arrived in Fanaur, his home had burned down after the incident, leaving only leather-like remains. He ultimately detonated a device during his fight with Ron, trying and failing to kill him.\nAfter Chandra’s death, Shalan transferred his Fanaur property to YHWH.",
     "related": [],
     "nameEn": "Dr. Chandra Pyresong",
     "nameZh": "茜卓・派松博士",
@@ -1099,8 +1099,8 @@
     "image": "individual_pics/Daryl Warren.png",
     "status": "dead",
     "gender": "male",
-    "descZh": "沃瓦倫鎮的鎮長。\n潔絲敏的丈夫，山米克的父親。\n在山米克死後便變得鬱鬱寡歡。",
-    "descEn": "The mayor of Vowalon.\nHusband to Jasmine and father to Samick.\nBecame depressed after the death of Samick.",
+    "descZh": "沃瓦倫鎮的鎮長。\n潔絲敏的丈夫，山米克的父親；在山米克死後便變得鬱鬱寡歡。潔絲敏失蹤後，戴洛向冒險者說明她前往寂靜殿後便再也沒有回來，並先支付賞金，希望他們能找回潔絲敏。\n沃瓦倫滅鎮事件中，戴洛死亡並被化為殭屍；冒險者們最後將他與其他熟識鎮民一同安息。",
+    "descEn": "The mayor of Vowalon.\nDaryl was Jasmine's husband and Sammick's father, and became depressed after Sammick's death. After Jasmine disappeared, he told the adventurers that she had left for the Temple of Silence and never returned, and paid them in advance in the hope that they would find her.\nDuring the Vowalon massacre, Daryl died and was turned into a zombie. The adventurers ultimately laid him to rest alongside the other townsfolk they knew.",
     "related": [
       "Jasmine_Warren",
       "sammick_warren"
@@ -1146,7 +1146,7 @@
     "image": "individual_pics/Dr. David.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "麥克嵩當地醫生。\n在日出酒館目睹殺人事件後被Lemmy威脅。\n在Midori博得他的信任後，從他身上得到不少關於這座城市的情報，也引薦Ron去艾德蒙餐酒館（麥克嵩分店）擔任廚師。\n為人十分理性與冷靜。\n與日出酒館前老闆喬納森、衛兵刀疤臉以及艾德蒙餐酒館的店長路易斯都是舊識。\n非常照顧他的弟弟，丹尼斯。",
+    "descZh": "麥克嵩當地醫生。\n在日出酒館目睹殺人事件後被雷米威脅。\n在米多莉博得他的信任後，從他身上得到不少關於這座城市的情報，也引薦龍恩去艾德蒙餐酒館（麥克嵩分店）擔任廚師。\n為人十分理性與冷靜。\n與日出酒館前老闆喬納森、衛兵刀疤臉以及艾德蒙餐酒館的店長路易斯都是舊識。\n非常照顧他的弟弟，丹尼斯。",
     "descEn": "A local doctor in Macksohn.\nThreatened by Lemmy after he saw the murder in Sunrise.\nAfter gaining his trust, Midori got a lot of information about Macksohn from him, and also recommend Ron to Edmond’s Diner as a cook\nIs a radical and calm man.\nHe had known the ex-owner of Sunrise, Jonathan, the guard, Scar-Face, and the manager of Edmond’s Diner, Lewis for a long time.\nDr. David takes very good care of his brother, Dennis.",
     "related": [
       "Dennis",
@@ -1237,7 +1237,7 @@
     "image": "individual_pics/Domneil.png",
     "status": "alive",
     "gender": "neutral",
-    "descZh": "自稱是詐欺之神奧提森的兒子。\n透過項鍊與Tai Tai我還要以及Midori對話，並簽下契約。\n曾將Jiaheng、Uko與Usioni從死亡救起，而與他們訂下契約，要他們比賽惡作劇，讓勝者成為他在人世間的代理人。",
+    "descZh": "自稱是詐欺之神奧提森的兒子。\n透過項鍊與太太我還要以及米多莉對話，並簽下契約。\n曾將家亨、烏柯與烏西歐尼從死亡救起，而與他們訂下契約，要他們比賽惡作劇，讓勝者成為他在人世間的代理人。",
     "descEn": "Claimed to be the son of Ultisen, the God of Trickster.\nTalked to Tai Tai and Midori through a necklace, and made them signed a contract.\nHe onced save Jiaheng, Uko and Usioni from death, and forced them to sign a contract to race out who is the best trickster. The winner would be his champion in the material world.",
     "related": [],
     "nameEn": "Domneil",
@@ -1373,7 +1373,7 @@
     "image": "individual_pics/Elby : Dr. White.png",
     "status": "dead",
     "gender": "female",
-    "descZh": "出現在多侖維爾的「醫生」。\n外觀年齡約二十初頭，皮膚蒼白，髮色銀白，穿著也是全白，只有雙眼是碧藍色的。身形非常纖瘦到看起來不健康的程度，給人一種妖精的感覺，卻沒有尖耳朵。\n可以在一般時空和妖精荒野間穿越。\n他的群體似乎有著一般時空沒有的醫療技術。\n在一般世界被稱為白醫師，而在妖精荒野則被稱為艾爾比。\n在主持Midori和波的救世主試煉的最後，被發現是拉索斯在妖精荒野的間諜，善於使用魔法，且手上刺滿拉索斯教的經文。在將Midori拖往另一個時空時，被Midori殺死。",
+    "descZh": "出現在多侖維爾的「醫生」。\n外觀年齡約二十初頭，皮膚蒼白，髮色銀白，穿著也是全白，只有雙眼是碧藍色的。身形非常纖瘦到看起來不健康的程度，給人一種妖精的感覺，卻沒有尖耳朵。\n可以在一般時空和妖精荒野間穿越。\n他的群體似乎有著一般時空沒有的醫療技術。\n在一般世界被稱為白醫師，而在妖精荒野則被稱為艾爾比。\n在主持米多莉和波的救世主試煉的最後，被發現是拉索斯在妖精荒野的間諜，善於使用魔法，且手上刺滿拉索斯教的經文。在將米多莉拖往另一個時空時，被米多莉殺死。",
     "descEn": "A \"doctor\" appearing in Dorrenville.\nLooked like in her early 20s, with pale skin, silver-white hair, and also wears in all white, with only her eyes blue. She was so thin that it looked unhealthy. She gave a feeling of elf, but without the pointy ears.\nElby can transport between the material world and the Feywild freely.\nHer people seemed the have a high-tech medical profession not seen in the material world.\nShe was called Dr. White in the material world, but Elby in the Feywild.\nAfter hosting the trial of the Messiah between Midori and Beau, she was found to be the spy working for Laxthos in Feywild. She was good in magic, and had Laxthos writings all on her arms. She was killed by Midori after dragging Midori in another plane.",
     "related": [
       "Beau",
@@ -1422,8 +1422,8 @@
     "image": "individual_pics/King Elliot IV.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "麥丁頓王國的新任國王。\n年約10歲，母后為瑪莉恩女士。\n被認為只是個魁儡而已。",
-    "descEn": "The new King of the Mattington Kingdom.\nHe is about 10 years old, and his mother is Lady Marian.\nHe is seemed as a puppet only.",
+    "descZh": "麥丁頓王國的新任國王。\n年約10歲，母后為瑪莉恩女士。\n在冒險者謁見時，艾略特四世看起來年幼而缺乏實權；瑪莉安也認為他只是魁儡。其父巴納沃二世退位失蹤後，後來被發現已成屍體，且其皇冠與玉璽被人秘密運送。",
+    "descEn": "The new king of the Mattington Kingdom.\nHe is about ten years old, and his mother is Lady Marian.\nWhen the adventurers met him, Elliot IV seemed young and lacking real power; Marianne also regarded him as a puppet. After his father Benevol II abdicated and disappeared, Benevol was later found dead, with his crown and royal seal being secretly transported.",
     "related": [
       "King_Benevol_II",
       "Lady_Marian",
@@ -1611,8 +1611,8 @@
     "image": "individual_pics/Essis.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "狂暴戰士幫成員之一，鬥名為「巫妖剋星」。\n前往聖拉雅米島調查後下落不明。\n冒險者在金海岸礦坑下方的廢墟中找到了她的下落並一同打到了礦坑中的怪物。\n戰鬥結束後艾希斯將她的武器「異教徒殺手」送給了冒險者。",
-    "descEn": "A member of the Raging Warriors, known in battle as the \"Lichbane.\nShe went missing after traveling to St. Rayami Island for an investigation.\nThe adventurers eventually discovered her fate in the ruins beneath the Golden Coast Mines and fought alongside her against the monsters lurking there.\nAfter the battle, Essis entrusted her weapon, \"the Heretic Slayer,” to the adventurers.",
+    "descZh": "狂暴戰士幫成員之一，鬥名為「巫妖剋星」。\n前往聖拉雅米島調查後下落不明。冒險者在金海岸礦坑下方的廢墟中找到了精神不穩、幾乎倒下的艾希斯，並得知拉索斯教徒一直在礦坑中擄人與實驗。\n礦坑戰鬥結束後，艾希斯將「異教徒剋星」插入傳送法陣，使其釋出寶石與拉索斯的訊息。之後他將武器交給波，並返回狂暴戰士幫向澤克回報。",
+    "descEn": "A member of the Raging Warriors, known in battle as Lichbane.\nShe went missing after traveling to St. Rayami Island for an investigation. The adventurers found her in the ruins beneath the Gold Coast Mines, mentally unstable and near collapse, and learned that Laxthos cultists had been abducting people and experimenting there.\nAfter the battle in the mines, Essis thrust Heretic Slayer into the teleportation circle, causing it to release gems and a message from Laxthos. She later entrusted the weapon to Beau and returned to the Raging Warriors to report to Zek.",
     "related": [
       "Zek"
     ],
@@ -1659,8 +1659,8 @@
     "image": "individual_pics/Eva.jpg",
     "status": "alive",
     "gender": "female",
-    "descZh": "卓茲蘭的寧靜酒館老闆雅各的新婚妻子，年紀十分的輕。\n看起來十分靦腆害羞，穿著也很樸素。\n後來被冒險者們發現在卓茲蘭的洞穴，被改造成恐怖的怪物。",
-    "descEn": "The newly wed young wife of Jacob of the tavern Silence in Drogsland.\nEva looked shy and dressed very simple. The adventurerslater found her transformed into a scary creature in the Cave of Drogsland",
+    "descZh": "卓茲蘭的寧靜酒館老闆雅各的新婚妻子，年紀十分年輕。\n看起來十分靦腆害羞，穿著也很樸素。\n冒險者們在卓茲克別莊洞穴深處的診間發現昏迷的伊娃，頭上戴著他們受託尋找的月神王冠，頭皮也留下像被牙齒咬過的血痕。眾人取下王冠並替他包紮後，被迫暫時離開。之後伊娃重新站起，但眼神呆滯、身上滿是觸肢，口中以月神語讚美，已被改造成恐怖的怪物。",
+    "descEn": "The young newlywed wife of Jacob, the owner of the Silence tavern in Drogsland.\nEva looked shy and dressed plainly.\nThe adventurers later found her unconscious in a clinic deep inside the caves beneath the Drogskol Estate, wearing the Crown of Phyneal they had been hired to retrieve. Her scalp bore bleeding marks like bite wounds. After removing the crown and bandaging her, they were forced to leave her behind for the moment. Eva later rose again, hollow-eyed and covered in tendrils, praising Phyneal in Phyneal's tongue after having been transformed into a horrifying creature.",
     "related": [
       "Jacob"
     ],
@@ -1801,7 +1801,7 @@
     "image": "individual_pics/Mr. Flaerry.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "Paladin的老師，前邁丁頓王國騎士團團長，現已退休。\n待客十分大方，不過似乎和太太羅莎之間有些相處上的狀況，分房睡。\n對於寇林菲爾德一代的性產業似乎暸若指掌。\n膝下無子，視Paladin為己出。\n為了讓麥克嵩的紫羅蘭承認Paladin是她的兒子，放棄了自己的爵位。",
+    "descZh": "帕拉丁的老師，前邁丁頓王國騎士團團長，現已退休。\n待客十分大方，不過似乎和太太羅莎之間有些相處上的狀況，分房睡。\n對於寇林菲爾德一代的性產業似乎暸若指掌。\n膝下無子，視帕拉丁為己出。\n為了讓麥克嵩的紫羅蘭承認帕拉丁是她的兒子，放棄了自己的爵位。",
     "descEn": "The mentor of Paladin, ex-head of the knight in the Mattington Kingdom, now retired.\nWas a generous host, but seems to have some gap with his wife, as they slept separately.\nKnew a lot about the sex industry in Korringfield.\nFlaerry didn’t have any child, thus saw Paladin as his son.\nHe gave up his title to ask for the Violet of Macksohn to admit Paladin as her child.",
     "related": [
       "Rosa_Flaerry",
@@ -1848,8 +1848,8 @@
     "image": "individual_pics/Frankie.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "麥克嵩日出酒館的店小二。\n在荒野旋律組成時，搶先擔任樂團的贊助人，被Samael敬稱為老闆。\n在日出老闆喬納森失蹤時，與Ron一同前往老闆家，但沒有找到人。法蘭奇前後言詞不一的行為讓Ron感到非常可疑。之後暫時擔任日出的老闆，但與老闆失蹤似乎有什麼關聯……\n在台北市議員重返日出酒館時，因為態度惡劣且敲詐他們，法蘭奇被切斷右手臂，且放入百寶袋內，慘遭滅口。在他被放入袋子前的最後一刻，口中吐出了瑟巴諾的地名。\n台北市議員們將法蘭奇棄屍於地下道內一處開口的底下。\n在麥克嵩比武大會授獎儀式後，悄悄出現在國王巴納沃二世身後。在吸乾了國王的精力後，化身為名為「暗影之父」的惡魔，飛向台北市議員們所處的觀眾席，對他們出擊。在被台北市議員們擊敗時，留下了「我會回來的。」一句話，便消失不見。",
-    "descEn": "A waiter in Sunrise, the local tavern in Macksohn.\nWhen the adventurers formed the band \"Rhythm of the Wild\", he became the patron of the band, with Samael calling him boss.\nWhen Jonathan, the owner of Sunrise gone missing, Ron and him went to Jonathan’s house, but couldn’t find anyone. His contradictory words got Ron suspicious. He later became the temporary owner of Sunrise, but it seemed like the missing of Jonathan had something to do with him……\nAs the party got back to Sunrise, he became mean and even extorted them, leading to his arm chopped off and himself dropped into the bag of holding. Before his last breath, he whispered the name of a nearby village \"Sebano\".\nThe party dropped his body under the sewer.\nAfter the awarding ceremony at the Macksohn Tournament, Frankie sneaked up behind King Benevol II, and transformed into a demon named \" the Father of Shadows\" after sucking out his spirit, flying to the auditorium, and attacked the party and the people. As the party defeated him, he left the words \"I’ll be back\" and disappeared.",
+    "descZh": "麥克嵩日出酒館的店小二。\n在荒野旋律組成時，搶先擔任樂團的贊助人，被薩梅爾敬稱為老闆。\n在日出老闆喬納森失蹤時，與龍恩一同前往老闆家，但沒有找到人。法蘭奇前後言詞不一的行為讓龍恩感到非常可疑。之後暫時擔任日出的老闆，但與老闆失蹤似乎有什麼關聯。\n在台北市議員重返日出酒館時，因為態度惡劣且敲詐他們，法蘭奇被切斷右手臂，且放入百寶袋內，慘遭滅口。在他被放入袋子前的最後一刻，口中吐出了瑟巴諾的地名。\n台北市議員們將法蘭奇棄屍於地下道內一處開口的底下。\n在麥克嵩比武大會授獎儀式後，悄悄出現在國王巴納沃二世身後。在吸乾了國王的精力後，化身為名為「暗影之父」的惡魔，飛向台北市議員們所處的觀眾席，對他們出擊。在被台北市議員們擊敗時，留下了「我會回來的。」一句話，便消失不見。\n後來法朗茲判斷，暗影之父可能會附身或幻化成不同的人，法蘭奇只是其顯現之一。",
+    "descEn": "A waiter at Sunrise in Macksohn.\nWhen Rhythm of the Wild formed, Frankie became the band's first sponsor and was respectfully called Boss by Samael.\nWhen Jonathan, the owner of Sunrise, disappeared, Frankie went with Ron to Jonathan's house, but they found nothing. His inconsistent statements made Ron suspicious. Frankie later became Sunrise's temporary owner and seemed connected to Jonathan's disappearance.\nWhen the Councilors of Taipei returned to Sunrise, Frankie was maimed and killed after acting hostile and extorting them. In his final moment before being placed in the bag of holding, he uttered the name Sebano.\nThe Councilors abandoned Frankie's body in the sewers.\nAfter the Macksohn Tournament award ceremony, Frankie appeared behind King Benevol II. After draining the king's vitality, he transformed into the demon known as the Shadow Father and attacked the party. When the Councilors defeated him, he said, \"I will return,\" then vanished.\nFranz later concluded that the Shadow Father may possess or manifest through different people, with Frankie being one of those appearances.",
     "related": [
       "Franz",
       "Glen",
@@ -1900,8 +1900,8 @@
     "image": "individual_pics/Franz.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "荒野旋律在柏納斯家晚宴認識的吟遊詩人，年輕人類男性。\n他表示自己也曾和冒險者們到處遊歷，搜集了不少故事，對於《沃瓦倫之歌》有著很濃厚的興趣，邀請荒野旋律和他談談這首歌的故事。\n在麥克嵩期間，居住於布蘭登的角落。\n過去的冒險團為追影者，因成員之一正義的涅巴倫被暗影之父殺死而解散。除了法朗茲之外的團員都決定引退。法朗茲因此投身於研究暗影之父，而來到麥克嵩。對於拉索斯教也有一定程度的認識，而且懂拉索斯語。\n在比武大會遭暗影之父襲擊後，似乎受到了刺激，創作了相關的樂曲，並加入台北市議員，追查暗影之父與拉索斯教的線索。\n在從妖精荒野回來後，因為發現自己和台北市議員的方向不同，而決定自行離開了。",
-    "descEn": "A young bard that the Rhythm of the Wild got to know at the Berners Family banquet.\nHe told the party that he once was an adventurer, collected quite a lot of stories, and was very interested in \"the Song of Vowalon\", inviting the adventurers to tell him about the story behind it.\nLived in Brandon’s Corner while he was in Macksohn.\nHis past party was named Shadow Trackers, and the party broke up after one of the member, Nebalon the Justice, was killed by the Father of Shadows. Everyone but Franz chose to retire, while Franz came to Macksohn to study on the Father of Shadows. He knew quite a lot about Laxthos and can speak Laxthosian.\nAfter being attacked by the Father of Shadows at the Macksohn Tournament, Franz was somewhat inspired and chose to travel with the Councilor of Taipei to gather more information about the Father of Shadows and Laxthos.\nAfter coming back from the Feywild, Franz realized that his goal is different from the party, so he the party left quietly.",
+    "descZh": "荒野旋律在柏納斯家晚宴認識的吟遊詩人，年輕人類男性。\n他表示自己也曾和冒險者們到處遊歷、搜集故事，對《沃瓦倫之歌》很感興趣，邀請荒野旋律談談這首歌背後的故事。\n在麥克嵩期間，居住於柏納斯家附近旅店。冒險者在他的客房發現法蘭茲真實身份是暗影追蹤者的前成員：年輕時，被稱為「湛藍法朗茲」的他曾與尼巴隆、史瓦茲、達里歐一起調查暗影之父，之後也學會拉索斯語。\n法蘭茲曾引發暗影之父現身襲擊，但也在之後加入冒險者，跟隨眾人穿越妖精荒野。回到物質世界後，他沒有與隊伍繼續同行。",
+    "descEn": "A young human bard whom Rhythm of the Wild met at the Berners family banquet.\nHe said he had also traveled and collected stories with other adventurers, showed interest in The Song of Vowalon, and invited Rhythm of the Wild to discuss the story behind it.\nWhile in Macksohn, he stayed at an inn near the Berners household. In his room, the adventurers discovered that Franz was actually a former Shadow Tracker: when he was younger, he, with the name \"Franz the Blue\",  had investigated the Father of Shadows alongside Nebalon, Schwartz, and Dario, and later learned the language Laxthosian.\nFranz once caused the Father of Shadows to manifest and attack, but later joined the adventurers and traveled with them through the Feywild. After returning to the material world, he did not continue with the party.",
     "related": [
       "Frankie",
       "The_Hooded_Figure"
@@ -1947,8 +1947,8 @@
     "image": "individual_pics/Frederick Norman.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "T.I.D.E.S.組織的現任領導者。\n在《古斯塔夫諾曼的神秘失蹤》中，出錢聘請冒險者們尋找其失蹤兒子古斯塔夫的貴族。\n人稱諾曼爵士。\n雖然愛護他的兒子古斯塔夫，但不想太過介入其生活。\n有非常多眼線，以及不小的影響力。\n在冒險者們逃離艾爾諾後，讓他們在諾曼宅邸待了好一段日子。",
-    "descEn": "The current leader of T.I.D.E.S.\nThe nobleman who paid the adventurers to find his lost son in \"The Disappearance of Gustavo Norman\".\nHe was often called Syr Norman.\nAlthough he loved hos son Gustavo, he tried hard not to intervene Gustavo’s life.\nFrederick had many informant working under him, and also he was quite powerful in the Kingdom, even in the Empire.\nAfter the adventurers escaped El'Nore, he let them lived in the Norman mansion for quite a while.",
+    "descZh": "T.I.D.E.S.組織的現任領導者，人稱諾曼爵士。\n在《古斯塔夫諾曼的神秘失蹤》中，出錢聘請冒險者們尋找其失蹤兒子古斯塔夫。雖然愛護兒子，但不想太過介入其生活。\n有非常多眼線，以及不小的影響力；冒險者逃離艾爾諾後，也曾讓他們在諾曼宅邸待了好一段日子。\n在T.I.D.E.S.集會中，弗雷德里克介紹組織階級與規則，主持方尖碑挑戰制度，並在蘿拉・費許朋成功挑戰萊里後，正式宣布萊里不再是方尖碑、也不再是T.I.D.E.S.成員。",
+    "descEn": "The current leader of T.I.D.E.S., commonly called Syr Norman.\nIn The Disappearance of Gustavo Norman, he hired the adventurers to find his missing son Gustavo. Though he loved his son, he tried not to interfere too much in Gustavo's life.\nFrederick has many informants and considerable influence; after the adventurers escaped El'Nore, he also let them stay at the Norman estate for some time.\nAt a T.I.D.E.S. gathering, Frederick explained the organization's ranks and rules, presided over the Obelisk challenge system, and after Laura Fishburne successfully challenged Riley, formally declared that Riley was no longer an Obelisk or a member of T.I.D.E.S.",
     "related": [
       "Gustavo_Norman",
       "Laura_Fishburne",
@@ -1995,8 +1995,8 @@
     "image": "individual_pics/Gary.png",
     "status": "dead",
     "gender": "male",
-    "descZh": "拉黎爾的狼夥伴，有比一般狼較高的智慧與力量。\n異色瞳，左眼藍色，右眼橘色。\n與拉黎爾形影不離，甚至願意為了保護拉黎爾而死。",
-    "descEn": "The companion of Ra’Leer, also a wolf with higher intelligence and stronger than most wolves.\nHad heterochromatic pupils, with its left pupil blue and right orange.\nGary is always with Ra’Leer, and would even die protecting her.",
+    "descZh": "拉黎爾的狼夥伴，有比一般狼更高的智慧與力量。\n異色瞳，左眼藍色，右眼橘色，與拉黎爾形影不離，甚至願意為了保護拉黎爾而死。\n後來蓋瑞跟隨拉黎爾與羅特等人前往洛森王國。在母親大人的巢穴中，異變的母親大人以「治療」為名用觸手纏住蓋瑞，硬生生折斷他的脊椎，使他死亡。",
+    "descEn": "Ra'Leer's wolf companion, with greater intelligence and strength than an ordinary wolf.\nGary had heterochromia: a blue left eye and an orange right eye. He was always with Ra'Leer and would even die to protect her.\nGary later accompanied Ra'Leer, Lott, and the others into the Lothum Kingdom. In the Mother's lair, the mutated Mother claimed to be healing Gary, wrapped him in tentacles, and snapped his spine, killing him.",
     "related": [
       "RaLeer_the_Herder"
     ],
@@ -2094,8 +2094,8 @@
     "image": "individual_pics/General Maliya Kaeyal.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "萊斯諾的將軍，中年紅龍人女性。\n個性強硬且難以溝通，連市長與大臣都對他敬畏三分。\n強烈主張要「收復」對面的蜥蜴人城鎮克萊芬。",
-    "descEn": "The general in Leisnor, a mid-aged red dragonborn female.\nMaliya is very fierce, even the mayor and the minister are afraid of her.\nShe has a very strong opinion on 'recovering' the lizardfolk town Clyphen.",
+    "descZh": "萊斯諾的將軍，中年紅龍人女性。\n個性強硬且難以溝通，連市長與大臣都對他敬畏三分。\n強烈主張要「收復」對面的蜥蜴人城鎮克萊芬。\n中途之家抵達萊斯諾後，被瑪萊雅安排的衛兵圍捕。瑪萊雅將他們押到市長與大臣面前，並強迫他們前往克萊芬當一週的間諜，承諾任務完成後給予報酬。",
+    "descEn": "The general of Leisnor, a middle-aged red dragonborn woman.\nMaliya is fierce and difficult to negotiate with; even the mayor and the minister fear her.\nShe strongly advocates \"recovering\" the lizardfolk town of Clyphen.\nAfter the Halfway Home reached Leisnor, Maliya had city guards ambush and capture them. She brought them before the mayor and minister, then forced them to act as spies in Clyphen for a week, promising payment if they completed the mission.",
     "related": [
       "Mayor_Saerus_Pharyon",
       "Syr_Galaestrel_Freyeman"
@@ -2137,7 +2137,7 @@
     "image": "individual_pics/Glen.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "麥克嵩衛兵，據說是紅髮有雀斑的年輕人類男子。\n刀疤臉承諾Ron將派遣葛蘭至日出酒館配合調查喬納森失蹤的事件。",
+    "descZh": "麥克嵩衛兵，據說是紅髮有雀斑的年輕人類男子。\n刀疤臉承諾龍恩將派遣葛蘭至日出酒館配合調查喬納森失蹤的事件。",
     "descEn": "A young guard in Macksohn, seems like he was red-headed and had freckles.\nScar-Face committed to Ron the he would send Glen to help him investigate in the missing incident of Jonathan.",
     "related": [
       "Frankie",
@@ -2365,8 +2365,8 @@
     "image": "individual_pics/Hobb.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "瑟巴諾當地的黑幫老大之一，身材十分壯碩，但是手下似乎都不太擅長打架。\n鎮上的一間酒館「霍布的派對屋」似乎是他的黑幫的集散地。\n似乎是拉索斯教的信奉者，手下的身上有刺拉索斯語的祝禱文。\n與Drayer似乎過去就認識了。\n和冒險者們談了交易，只要他們將鎮長家的魔法盒交給他，就能贖回被他綁走的喬納森。\n真身是來自深淵的一頭綁匪怪蛙，其手下為魚人，與拉索斯教簽訂了契約。\n計劃在瑟巴諾蓋一個建設，卻被冒險者們打斷了計劃，也殺光了他的手下。\n在從冒險者們手上搶走魔法盒子之後就消失了，也連帶將幾名冒險者們溶成了泥。",
-    "descEn": "The leader of a local gangster in Sebano who had a very strong-build body.\nHis henchmen were not good fighters.\nA local \"tavern\" was pretty much like the base of his gang.\nHobb seemed to be a believer of Laxthos, with his arms tattooed with Laxthos prayers.\nIt seemed like he and Drayer had known each other for some time.\nHobb negotiated a deal with the adventurers, with them handing him the magic box from Mayor Thorne’s house to release Jonathan, who was kidnapped by him.\nThe real identity of Hobb is a Banderhobb from the Deep, with merfolks has his henchmen, and he signed a contract with the Laxthos.\nHobb planned to build a construct in Sebano, but was interrupted by the adventurers and all his henchmen was killed.\nAfter taking the magic box from the adventurers, Hobb disappeared after melting several adventurers into mud.",
+    "descZh": "瑟巴諾當地的黑幫老大之一，身材十分壯碩，但是手下似乎都不太擅長打架。\n鎮上的一間酒館「霍布的派對屋」似乎是他的黑幫集散地。\n似乎是拉索斯教的信奉者，手下的身上有刺拉索斯語的祝禱文，與德雷爾過去就認識。\n和冒險者們談了交易，只要他們將鎮長家的魔法盒交給他，就能贖回被他綁走的喬納森。\n真身是來自深淵的一頭綁匪怪蛙，其手下為魚人，與拉索斯教簽訂了契約。他計劃在瑟巴諾建造某種偉大的裝置，卻被冒險者們打斷，也失去大多數手下。\n在搶到魔法盒子後，霍布利用盒子與黏液製造出冒險者們的複製體，將多名冒險者溶成泥後消失。",
+    "descEn": "One of Sebano's local gang bosses, very large and strong, though his men did not seem very capable.\nHis tavern, Hobb's Party House, served as a gathering place for his gang.\nHe appeared to be a follower of Laxthos; his men bore Laxthosian prayers tattooed on their bodies, and he seemed to have known Drayer from before.\nHobb struck a deal with the adventurers: if they brought him the magic box from the mayor's house, he would release the kidnapped Jonathan.\nHis true form was a kidnapper frog-like creature from the Deep, served by fishmen and bound by contract to Laxthos. He planned to build a great device in Sebano, but the adventurers disrupted the plan and killed most of his workers.\nAfter seizing the magic box, Hobb used it and slime to create copies of the adventurers, melted several of them into mud, and vanished.",
     "related": [
       "Jonathan",
       "Pattie_Sylverome"
@@ -2410,7 +2410,7 @@
     "image": "individual_pics/The Hooded-Figure.jpeg",
     "status": "alive",
     "gender": "neutral",
-    "descZh": "沃瓦倫鎮出現的神秘存在。\n只有在深夜時，會披著黑色斗篷，出現在鎮上的街道上，露出他橘紅色閃閃發光的雙眼，有人還曾聽過他發出惡魔般的狂笑聲。\n他的身份至今無人知曉。\n在沃瓦倫滅鎮事件後，被冒險者目擊逃入寂靜殿內，疑似躲進了神父辦公室後掩藏通往地下的密室。\n在麥克嵩曾被Paladin和Samael分別目擊到。\n依照法朗茲的說明，他是拉索斯教的傳訊者，會出現在不同的城市。",
+    "descZh": "沃瓦倫鎮出現的神秘存在。\n只有在深夜時，會披著黑色斗篷，出現在鎮上的街道上，露出他橘紅色閃閃發光的雙眼，有人還曾聽過他發出惡魔般的狂笑聲。\n他的身份至今無人知曉。\n在沃瓦倫滅鎮事件後，被冒險者目擊逃入寂靜殿內，疑似躲進了神父辦公室後掩藏通往地下的密室。\n在麥克嵩曾被帕拉丁和薩梅爾分別目擊到。\n依照法朗茲的說明，他是拉索斯教的傳訊者，會出現在不同的城市。",
     "descEn": "A mysterious figure seen in Vowalon.\nOnly at midnight, this hooded figure would be seen on the streets, with its orange eyes glowing. Some even claimed that they heard it laughed manically.\nIts identity had not been revealed until now.\nAfter the incident in Vowalon, it was seen sneaking into the Temple of Silencio, suspected to delve into the dungeon from the Father’s office.\nHe was seen by both Paladin and Samael at Mackoshn.\nAs Franz’s investigation implied, it is a courier of Laxthos, appearing in different cities.",
     "related": [
       "Brock",
@@ -2459,7 +2459,7 @@
     "image": "individual_pics/Indigo.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "Samael的阿嬤。\n原本以為在十多年前已經病死，卻離奇地出現在妖精荒野。\n懂一般語、妖精語，以及仙靈語，而且有穿越一般世界與妖精荒野的能力。\n在妖精荒野作為冒險者們的嚮導之一。\n喜歡挖苦Samael，但其實對Samael也很照顧與看好。\n身邊時常跟著不同的男伴。",
+    "descZh": "薩梅爾的阿嬤。\n原本以為在十多年前已經病死，卻離奇地出現在妖精荒野。\n懂一般語、妖精語，以及仙靈語，而且有穿越一般世界與妖精荒野的能力。\n在妖精荒野作為冒險者們的嚮導之一。\n喜歡挖苦薩梅爾，但其實對薩梅爾也很照顧與看好。\n身邊時常跟著不同的男伴。",
     "descEn": "The grandmother of Samael.\nShe was considered dead from illness more than 10 years ago, but appeared in the Feywild instead.\nKnowing common, Elvish, and Fey, Indigo also had the ability to travel between the material world and Feywild.\nAct as a guide to the adventurers in the Feywild.\nLiked to talk to Samael sarcastically, but actually looked after Samael and had high expectation to Samael.\nIndigo often had different male partners along her side.",
     "related": [
       "Elby__Dr_White"
@@ -2505,8 +2505,8 @@
     "image": "individual_pics/Iochi Mari.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "一名有著銀白毛色的狐狸人修女，目前在方努爾市的聖津菈大教堂服務。\n小時候和Midori、小雪一起在尼姆孤兒院長大。",
-    "descEn": "A fox-folk nun with silver-white fur, currently serving at St. Keinra Cathedral in Fanaur City.\nShe grew up in the Nimu Orphanage together with Midori and Yuki.",
+    "descZh": "一名有著銀白毛色的狐狸人修女，目前在方努爾市的聖津菈大教堂服務。\n小時候和米多莉、小雪一起在尼姆孤兒院長大。\n米多莉等人回到方努爾市後，伊洛協助接待他們，也陪同處理聖拉雅米島事件後續與小雪相關的狀況。",
+    "descEn": "A foxfolk nun with silver-white fur, currently serving at St. Ginra Cathedral in Fanaur City.\nShe grew up in Nym Orphanage together with Midori and Yuki.\nAfter Midori and the others returned to Fanaur, Iochi helped receive them and became involved in the aftermath of the St. Rayami Island incident and the situation surrounding Yuki.",
     "related": [
       "Bishop_Robinson",
       "Reese_Tig",
@@ -2553,8 +2553,8 @@
     "image": "individual_pics/Jacob.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "在《鬧鬼荒野的偽多頭龍》中鬧鬼荒野當地寧靜酒館的店小二。\n然而在冒險者隔天起床後，卻成了寧靜酒館的老闆。\n15051年時，與伊娃結婚。",
-    "descEn": "The waiter working in the local tavern Silence in Moorland Haunt in \"the False Hydra of Moorland Haunt\".\nAs the adventurer woke up the next morning, he was turned into the owner of Silence.\nJacob married Eva in 15051D.E.",
+    "descZh": "在鬧鬼荒野卓茲蘭當地寧靜酒館的店小二。\n然而在冒險者隔天起床後，卻成了寧靜酒館的老闆。15051年時，與伊娃結婚。\n洛特等人抵達卓茲蘭時，雅各熱情招呼他們，並為慶祝與伊娃新婚，宣布當週酒館啤酒免費。他也向冒險者說明前往卓茲克別莊的路線。",
+    "descEn": "A former server at the Silence tavern in Drogsland, the haunted wilds.\nAfter the adventurers woke the next day, he had somehow become the owner of Silence. By 15051, he had married Eva.\nWhen Lott and the others arrived in Drogsland, Jacob welcomed them warmly and, to celebrate his marriage to Eva, announced that beer would be free for the week. He also explained the route to the Drogskol Estate.",
     "related": [
       "Eva"
     ],
@@ -2692,7 +2692,7 @@
     "image": "individual_pics/Jonathan.png",
     "status": "dead",
     "gender": "male",
-    "descZh": "麥克嵩日出酒館的老闆與主廚。\n因為小時候曾被龍人欺凌，而在酒館鬥毆事件中對Ron出手。鬥毆後為表歉意，聘用Ron在日出酒館作為廚師，並讓Ron住在日出酒館後台的員工休息室。\n然而因Ron住宿的第一晚就遇到Lemmy造成的突發事件，讓喬納森決定出錢給Ron在外面找地方住。\n隔天喬納森卻失蹤了。\n隨著法蘭奇給予的線索，Paladin與他的新夥伴們在瑟巴諾發現了化名為喬納斯的喬納森，但他似乎被捲入了什麼事件，被霍布五花大綁。\n最後，在Paladin面前被安娜殺死。",
+    "descZh": "麥克嵩日出酒館的老闆與主廚。\n因為小時候曾被龍人欺凌，而在酒館鬥毆事件中對龍恩出手。鬥毆後為表歉意，聘用龍恩在日出酒館作為廚師，並讓龍恩住在日出酒館後台的員工休息室。\n然而因龍恩住宿的第一晚就遇到雷米造成的突發事件，讓喬納森決定出錢給龍恩在外面找地方住。\n隔天喬納森卻失蹤了。\n隨著法蘭奇給予的線索，帕拉丁與他的新夥伴們在瑟巴諾發現了化名為喬納斯的喬納森，但他似乎被捲入了什麼事件，被霍布五花大綁。\n最後，在帕拉丁面前被安娜殺死。",
     "descEn": "The owner and chef of Sunrise, a local tavern in Macksohn.\nJonathan was bullied by dragonborns when he was a kid, so he attacked Ron in the tavern fight. To apologize, he hired Ron as the chef in Sunrise, and permit him to live in the employee’s room.\nHowever, the first night Ron lived in Sunrise, there were incident caused by Lemmy, which led to Jonathan changed his mind and instead gave money for Ron to find somewhere else to live outside the tavern.\nThe next day, Jonathan was nowhere to be found.\nFollowing Frankie’s lead, Paladin and his new group of adventurers found Jonathan at Sebano, with the alias Jonas. But he was in the midst of some trouble, as he got tied up by Hobb.\nIn the end, Jonathan was brutally murdered by Anna in front of Paladin.",
     "related": [
       "Anna",
@@ -2791,7 +2791,7 @@
     "image": "individual_pics/Kahn.png",
     "status": "dead",
     "gender": "male",
-    "descZh": "麥克嵩的衛兵。\n奉命在小木屋內看守Paladin，卻被Paladin的馬伕希納襲擊而被反綁在椅子上並換成馬伕裝。\n被Midori和YHWH拯救，卻在帶兩人到日出酒館後被Lemmy劃破喉嚨而死。\n手上刺有十道光芒的太陽。",
+    "descZh": "麥克嵩的衛兵。\n奉命在小木屋內看守帕拉丁，卻被帕拉丁的馬伕希納襲擊而被反綁在椅子上並換成馬伕裝。\n被米多莉和YHWH拯救，卻在帶兩人到日出酒館後被雷米劃破喉嚨而死。\n手上刺有十道光芒的太陽。",
     "descEn": "A guard in Macksohn.\nOrdered to watch for Paladin in the cabin, but attacked by Cena the coachman and was disguised as a coachman, tied on a chair.\nRescued by Midori and YHWH, but was cut by the throat by Lemmy after he brought the two to Sunrise.\nHe has a tattoo of a sun with ten rays on his arm.",
     "related": [
       "Cena"
@@ -2837,8 +2837,8 @@
     "image": "individual_pics/Kevin Bolden.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "麥克嵩城門旅店的老闆。是貴族家庭的後代，但為了證明自己可以自力更生，開了城門旅店。\n個性十分單純，容易相信人。\n對Midori有所迷戀。為了向Midori賠罪，送了他一條家中的珍珠項鍊。",
-    "descEn": "The owner of the Gates Inn, a local tavern in Macksohn. Kevin was from a noble family, but to prove his ability to be self-reliance, he opened the Gates Inn.\nKevin was a naive man who believed in others easily.\nHe had a crush on Midori. To apologize to her, Kevin gave her a pearl necklace from his family.",
+    "descZh": "麥克嵩城門旅店的老闆。是貴族家庭的後代，但為了證明自己可以自力更生，開了城門旅店。\n個性十分單純，容易相信人。對米多莉有所迷戀，為了向米多莉賠罪，曾送他一條家中的珍珠項鍊。\n兩年後台北市議員重返麥克嵩時，凱文仍經營城門旅店；他見到米多莉後反應強烈，又因聽見波稱米多莉為媽媽而心碎。當冒險者調查空洞的蘿琳時，凱文表示自己幾個月前仍見過蘿琳，但已快兩年沒和他說話。",
+    "descEn": "The owner of the Gates Inn in Macksohn. He came from a noble family, but opened the inn to prove that he could live independently.\nKevin is naive and trusts people easily. He had a crush on Midori, and once gave her a pearl necklace from his family as an apology.\nTwo years later, when the Councilors of Taipei returned to Macksohn, Kevin was still running the Gates Inn. He reacted strongly on seeing Midori again, and was heartbroken when he heard Beau call Midori her mother. When the adventurers investigated the hollow-seeming Roline, Kevin said he had still seen Roline a few months earlier, but had not spoken with her for almost two years.",
     "related": [
       "Roline_Hughes"
     ],
@@ -2879,8 +2879,8 @@
     "image": "individual_pics/King Knicol.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "地底王尼可大人。\n冒險者於地下城與哥布林激戰後俘虜的一隻哥布林。在哥布林王戰死後，被冒險者加冕為地底王，並賜名尼可。\n被Usioni五花大綁，大多數時間掛在他的背後，作為防身的工具。\n本名呱啦。",
-    "descEn": "Lord Knicol, King of the Underground, aka King Kincol.\nThe goblin that the adventurers captured after the fight in the dungeon. After the Goblin King was dead, he was crown the King of the Underground and Knicol was given as his name by the adventurers.\nKing Knicol was mostly tied behind Usioni and was acted as his shield.\nHis birth name was Guala.",
+    "descZh": "地底王尼可大人。\n冒險者於地下城與哥布林激戰後俘虜的一隻哥布林。在哥布林王戰死後，被冒險者加冕為地底王，並賜名尼可；本名呱啦。\n尼可大多數時間被烏西歐尼五花大綁掛在背後，作為防身工具。後來在占卜老太太施法後，他變得乖順，像活生生的魁儡國王。\n安納戴克加入冒險時自稱受神王尼可與烏西歐尼大法師指派。後來安納戴克身上掛著「神王的指引」，也就是神王尼可的手指項鍊；米多莉曾以定位魔法追蹤它到麥克嵩西北方的朗甫頓。",
+    "descEn": "Lord Knicol, King of the Underground.\nA goblin captured by the adventurers after a battle in the dungeon. After the Goblin King died, the adventurers crowned him King of the Underground and named him Knicol; his birth name was Guala.\nKnicol spent most of his time tied to Usioni's back as a defensive tool. After a fortune-telling old woman cast magic on him, he became obedient, like a living puppet king.\nWhen Anedak joined the adventurers, he claimed to have been sent by God-King Knicol and Archmage Usioni. Later, Anedak carried the Guidance of the God-King: a necklace made from King Knicol's finger. Midori once tracked it with magic to Rumpton, northwest of Macksohn.",
     "related": [],
     "nameEn": "King Knicol",
     "nameZh": "神王尼可",
@@ -2927,7 +2927,7 @@
     "image": "individual_pics/Kojo.png",
     "status": "dead",
     "gender": "male",
-    "descZh": "在《古斯塔夫諾曼失蹤事件》中，住在艾爾諾的中年男性人類。經營著一間小店，裡面有不少材料與雜貨。\n向冒險者們揭露艾爾諾當地妖精的陰謀。\n在儀式當晚，協助Anedak拯救遭到綁架的其他冒險者們。\n似乎有強大的魔法能力。\n最後在儀式現場倒地，沒能逃離。",
+    "descZh": "在《古斯塔夫諾曼失蹤事件》中，住在艾爾諾的中年男性人類。經營著一間小店，裡面有不少材料與雜貨。\n向冒險者們揭露艾爾諾當地妖精的陰謀。\n在儀式當晚，協助安納戴克拯救遭到綁架的其他冒險者們。\n似乎有強大的魔法能力。\n最後在儀式現場倒地，沒能逃離。",
     "descEn": "A middle aged human who run a small store at El'Nore from \"the Disappearance of Gustavo Norman\".\nRevealed the conspiracy of the elves to the adventurers.\nHelped Anedak save the other kidnapped adventurers at the night of the ritual.\nSeems to have strong magical power.\nFainted at the ritual at the end, and didn’t survive.",
     "related": [],
     "nameEn": "Kojo",
@@ -2967,7 +2967,7 @@
     "image": "individual_pics/Lance Berners.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "麥克嵩當地貴族柏納斯家成員之一，祖父為傑弗瑞，祖母為歐娜，母親為瑟琳，父親為蓋瑞斯。\n對於冒險者們與冒險故事十分有興趣。\n在Lemmy等人闖入其宅邸後，將Lemmy綁住並拷問他，最後將一枚黑色寶石沒入Lemmy胸前以進行追蹤。",
+    "descZh": "麥克嵩當地貴族柏納斯家成員之一，祖父為傑弗瑞，祖母為歐娜，母親為瑟琳，父親為蓋瑞斯。\n對於冒險者們與冒險故事十分有興趣。\n在雷米等人闖入其宅邸後，將雷米綁住並拷問他，最後將一枚黑色寶石沒入雷米胸前以進行追蹤。",
     "descEn": "A family member of the Macksohn local noble house Berners. Jefferey is his grandfather, Ona his grandmother, Selene and Gareth his parents.\nHad high interest in the stories of the adventurers.\nAfter Lemmy and the others intruded the Berners house, he tied up Lemmy and tortured him, and put a black diamond into his chest to track him.",
     "related": [
       "Gareth_Berners",
@@ -3016,8 +3016,8 @@
     "image": "individual_pics/Laura Fishburne.jpg",
     "status": "alive",
     "gender": "female",
-    "descZh": "T.I.D.E.S.的成員之一。\n藉由挑戰萊里・里奇蒙成功，晉升為方尖碑的一員。",
-    "descEn": "A member of the T.I.D.E.S.\nAfter succeeding challenging Riley Richmond, Laura became one of the Obelisk.",
+    "descZh": "T.I.D.E.S.的成員之一。\n在T.I.D.E.S.集會中，蘿拉以「天賦者」身份向方尖碑萊里・里奇蒙發起挑戰。經萊里同意使用魔法後，蘿拉隔空挖出萊里的右眼，將其作為信物，挑戰成功並晉升為方尖碑的一員。",
+    "descEn": "A member of T.I.D.E.S.\nAt a T.I.D.E.S. gathering, Laura, then one of the Gifted, challenged Riley Richmond for her Obelisk seat. After Riley agreed to allow magic, Laura tore out Riley's right eye from a distance and claimed it as the token of victory, succeeding in the challenge and becoming an Obelisk.",
     "related": [
       "Frederick_Norman",
       "Riley_Richmond"
@@ -3109,8 +3109,8 @@
     "image": "individual_pics/Leslie Grunfeld.jpeg",
     "status": "historical figure",
     "gender": "female",
-    "descZh": "索拉的母親，彼特的妻子，婚後雖然冠夫姓為萊斯麗・麥迪遜，主要還是以自己的本名自稱。\n父親為匿名之聲的領導人，但他並不相信這個宗教團體。\n在索拉死後，召集匿名之聲的群眾，創立了拉索斯教，被尊稱為拉索斯夫人。",
-    "descEn": "The mother of Sora and the wife of Pete. Even though changed her last name to Madison after marriage, she mostly used her original family name.\nHer father was the leader of Voice of the Anonymous, but she never believed in the religious group.\nAfter the death of Sora, she gathered the members of Voice of the Anonymous and found the religion Laxthos, and was remembered as the Lady of Laxthos.",
+    "descZh": "卡什拉鎮匿名之聲的領袖，父親曾帶領信眾崇拜暗影之父。索拉死後，她集結匿名之聲追隨者，並成為拉索斯夫人，將卡什拉推向更深的獻祭與災難。冒險者在麥迪遜家閣樓發現始祖拉茲特獸，也確認萊斯麗與匿名之聲是卡什拉異變的核心之一。",
+    "descEn": "The leader of the Anonymous Voice in Kashla, whose father once led followers in worship of the Father of Shadows.\nAfter Sora’s death, she rallied the Anonymous Voice followers and became Lady Laxthos, pushing Kashla further into sacrifice and disaster.\nThe adventurers found the Progenitor Laztek in the Madison attic, confirming Leslie and the Anonymous Voice as central causes of Kashla’s corruption.",
     "related": [
       "Dr_Vaxon",
       "Pete_Madison",
@@ -3157,7 +3157,7 @@
     "image": "individual_pics/Lewis.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "艾德蒙餐酒館的店長。\n與大衛醫師熟識，考慮聘用Ron為廚師。",
+    "descZh": "艾德蒙餐酒館的店長。\n與大衛醫師熟識，考慮聘用龍恩為廚師。",
     "descEn": "The manager of Edmond’s Diner.\nFamiliar with Dr. David.\nConsidered hiring Ron as a chef.",
     "related": [
       "Dr_David",
@@ -3246,8 +3246,8 @@
     "image": "individual_pics/Liliana.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "有著一頭銀白色短髮的津菈教聖騎士，和半妖精拉芙是冒險夥伴。\n兩人受瑪琳船長之邀來到聖拉雅米島協助調查島上的失蹤以及中毒事件。",
-    "descEn": "A Paladin of Keinra with short silver-white hair, and the adventuring partner of the half-elf Ralf.\nThe two were invited by Captain Marin to come to St. Rayami Island to help investigate the disappearances and poisoning incidents occurring there.",
+    "descZh": "有著一頭銀白色短髮的津菈教聖騎士，和半妖精拉芙是冒險夥伴。\n兩人受瑪琳船長之邀來到聖拉雅米島協助調查島上的失蹤以及中毒事件。拉芙在調查中失蹤後，莉蓮娜向冒險者求援，並協助將調查推向金海岸礦坑。",
+    "descEn": "A paladin of Keinra with short silver-white hair, and the adventuring partner of the half-elf Ralf.\nThe two were invited by Captain Marin to St. Rayami Island to help investigate the disappearances and poisoning incidents there. After Ralf went missing during the investigation, Liliana sought the adventurers' help and helped push the investigation toward the Gold Coast Mines.",
     "related": [
       "Captain_Marin",
       "Ralf"
@@ -3297,8 +3297,8 @@
     "image": "individual_pics/Lumio.png",
     "status": "dead",
     "gender": "neutral",
-    "descZh": "斐納札的機器人衛兵，十分有群眾魅力。\n與Ubbo一同爭取心空席的席次，並順利晉級到決選。\n在決賽中對Ubbo造成極大量的傷害，但最後在其他冒險夥伴的聯手下被擊敗，於空中化為火球，在地面炸開。",
-    "descEn": "A charismatic warforged guard in Fenadra.\nLumio ran for the vacancy of the Seat of Heartless against Ubbo, and entered the finals.\nIn the final contest, Lumio dealt tons of damage to Ubbo, but was defeated by the other adventurers. He turned into a huge fireball and exloded on the ground.",
+    "descZh": "斐納札的機器人衛兵，十分有群眾魅力。\n與烏波一同爭取心空席的席次，並順利晉級到決選。\n在決賽中，魯米歐多次重創烏波，幾乎殺死他；最後在冒險夥伴們介入下被擊敗，被賽博的釘頭錘擊飛，在空中化為火球後墜地爆炸。冒險者回到靈魂議會後，魯米歐沒有再出現。",
+    "descEn": "A charismatic warforged guard in Fenadra.\nLumio ran for the vacancy of the Seat of Hollow Heart against Ubbo and reached the final round.\nIn the final contest, Lumio repeatedly devastated Ubbo and nearly killed him. After the other adventurers intervened, Psyber's mace launched Lumio into the air; he turned into a fireball and exploded when he hit the ground. When the adventurers returned to the Soul Parliament, Lumio did not appear again.",
     "related": [
       "Tam_Quorr"
     ],
@@ -3389,8 +3389,8 @@
     "image": "individual_pics/Lysien Amoret.webp",
     "status": "alive",
     "gender": "male",
-    "descZh": "長期資助Lott與其冒險夥伴的匿名神秘貴族。\n在一次給Lott等人的信中，邀請他們至他的「覆羽莊園」，並署名為「羽王」。\n在晚宴中，提及自己曾被月神芬尼爾賜予愛人，卻也被芬尼爾將其奪走，因此再也不信仰芬尼爾。另外，從他的話語中，可得知他已經生存了數百年。\n利希恩的莊園內似乎有不明的力量。",
-    "descEn": "The anonymous patron who had supported Lott and his adventuring group for a long time.\nIn a letter to Lott and his adventuring group, Lysien invited them to his \"Feathered Estate\", with \"the Lord of Feathers\" as his signature.\nIn the feast, Lysien mentioned that he was gifted a love by Phyneal, the God of Luna, but taken away later, thus he never believed in Phyneal again. Also, from his words, it seemed that he had already live for hundreds of years.\nThere seemed to be some mysterious power working in Lysien’s estate.",
+    "descZh": "覆羽莊園的主人，周遭時間流動異常，與羽毛、天使和岡斯身上的詛咒有關。他曾視岡斯為實驗失敗品，並稱他的變化與芬尼爾王冠有關。冒險者介入後，利希恩透過儀式被推向芬尼爾的神性，最終成為「永恆與愛之神阿莫雷」；覆羽莊園消失，原址留下供奉他的新神殿。",
+    "descEn": "A son of the Amoret family in Baker and master of the Feathered Estate, where time behaved strangely. His condition was tied to feathers, angels, and the curse affecting GoR.\nGons considered him a failed experiment and linked his transformation to the Crown of Phyneal.\nAfter the adventurers intervened, Lysien was pushed through a ritual into the divinity of Phyneal and the Amoret line, becoming the Amoret God of Eternity and Love; the Feathered Estate vanished, leaving a new shrine to him in its place.",
     "related": [],
     "nameEn": "Lysien Amoret",
     "nameZh": "利希恩・阿莫雷",
@@ -3479,7 +3479,7 @@
     "image": "individual_pics/Syr Magnus.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "Paladin的父親。\n麥丁頓王國騎士團的副團長，因在王都麥克嵩遭到匪徒攻擊，未及時治療傷勢，導致傷口感染，被迫退休，回到寇林菲爾德養傷，卻因重傷，很有可能喪命。\n在Paladin犧牲了自己的左耳，透過神秘的月神教儀式後，產出了一罐粉紅色的液體。馬格努斯爵士喝下後，竟然神奇的完全康復了。\n向Paladin透露他的生母並不是他長期以來稱為母親的那位女人，而是他在麥克嵩遇見的另一個女子，珊吉雅，又被稱為麥克嵩的紫羅蘭。",
+    "descZh": "帕拉丁的父親。\n麥丁頓王國騎士團的副團長，因在王都麥克嵩遭到匪徒攻擊，未及時治療傷勢，導致傷口感染，被迫退休，回到寇林菲爾德養傷，卻因重傷，很有可能喪命。\n在帕拉丁犧牲了自己的左耳，透過神秘的月神教儀式後，產出了一罐粉紅色的液體。馬格努斯爵士喝下後，竟然神奇的完全康復了。\n向帕拉丁透露他的生母並不是他長期以來稱為母親的那位女人，而是他在麥克嵩遇見的另一個女子，珊吉雅，又被稱為麥克嵩的紫羅蘭。",
     "descEn": "The father of Paladin.\nThe former vice-leader of the kings guard of Mattington. Syr Magnus was attacked by bandits in Macksohn, but wasn’t cured right after that, which led to his wound infected and forced to retire to rest back in Korringfield. However, the injury was too severe that it might cost him his life.\nAfter Paladin sacrificed his left ear, with the help of the mysterious ritual of Phyneal, a pink potion was made for Syr Magnus to drink, which got him healed magically.\nHe revealed to Paladin that his mother was actually a woman called Xandria, aka the Violet of Macksohn, whom he met at Macksohn.",
     "related": [
       "Cena",
@@ -3526,8 +3526,8 @@
     "image": "individual_pics/Syr Galaestrel Freyeman.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "萊斯諾的大臣，中年藍龍人男性。\n個性溫和且堅定，但在將軍面前毫無插嘴的餘地。\n認為萊斯諾與克萊芬兩地應該分治，而非強硬地靠武力收復。",
-    "descEn": "The minister in Leisnor, a mid-aged blue dragonborn male.\nGalaestrel is calm but firm, but there is no room for him to interrupt the general during conversation.\nHe believes that Leisnor and Clyphen should be ruled seperatedly, not with martial force.",
+    "descZh": "萊斯諾的大臣，中年藍龍人男性。\n個性溫和且堅定，但在將軍面前毫無插嘴的餘地。\n認為萊斯諾與克萊芬兩地應該分治，而非強硬地靠武力收復。\n在中途之家被押到萊斯諾高層面前時，格雷斯卓認出了阿龍是拉撒拿的新任龍冠，也提到來自拉撒拿的信使正在尋找他。當格雷斯卓試圖反對瑪萊雅將軍的武力路線時，立刻被將軍打斷。",
+    "descEn": "The minister of Leisnor, a middle-aged blue dragonborn man.\nGalaestrel is calm and firm, but has little room to speak in front of the general.\nHe believes Leisnor and Clyphen should remain separately governed, rather than being reclaimed by force.\nWhen the Halfway Home was brought before Leisnor's leadership, Galaestrel recognized Al-lon as Rathanad's new Crown and mentioned that a messenger from Rathanad was looking for him. When he tried to oppose General Maliya's military approach, she immediately cut him off.",
     "related": [
       "General_Maliya_Kaeyal",
       "Mayor_Saerus_Pharyon"
@@ -3569,8 +3569,8 @@
     "image": "individual_pics/Mango.png",
     "status": "alive",
     "gender": "neutral",
-    "descZh": "由妖精王國的能量產出的蛋，孵出的魔法生物。\n其外型由照養他的Lott的意識所塑型。\n擁有超出想象的知識，但有時候會突然說出讓人恐懼又無法理解的話語。\n與Lott一起在母親大人的屠殺中生存。\n與Lott一起來到斐納札後消失了一段時間，最終在Ubbo成為心空席後，以巨蛇的型態現身，且有著痛苦人臉的花紋與殘肢長在身上。\n芒果將Psyber咬傷，將他拖入傳送門消失了。",
-    "descEn": "A magical creature hatched from an egg made by the energy in Lothum Kingdom.\nIts appearance is decided by Lott, its caretaker.\nMango has crazy amount of knowledge, but sometimes says things that creeps out people.\nSurvived with Lott after the Mother’s Massacre.\nAfter arriving Fendra with Lott, Mango disappeared for a while. It showed up after Ubbo ascended into the Seats of Eclipsed as a huge snake with tormented faces as its pattern, and appendages on its body.\nMango bit Psyber, and dragged him into a portal hole.",
+    "descZh": "由妖精王國的能量產出的蛋，孵出的魔法生物。\n其外型由照養他的洛特的意識所塑型。\n擁有超出想像的知識，但有時候會突然說出讓人恐懼又無法理解的話語。\n與洛特一起在母親大人的屠殺中生存。\n與洛特一起來到斐納札後消失了一段時間，最終在烏波成為心空席後，以巨蛇的型態現身，且有著痛苦人臉的花紋與殘肢長在身上。\n芒果將賽博咬傷，將他拖入傳送門消失。後來派琶告知冒險者，常翠林已擊退芒果並救出賽博。",
+    "descEn": "A magical creature hatched from an egg born of Feywild energy.\nIts form was shaped by the consciousness of Lott, who cared for it.\nMango possesses knowledge far beyond expectation, but sometimes says frightening and incomprehensible things.\nMango survived the Mother's massacre together with Lott.\nAfter arriving in Fenadra with Lott, Mango disappeared for a time. After Ubbo became the Seat of Hollow Heart, Mango reappeared as a giant serpent, patterned with anguished human faces and bearing severed limbs on its body.\nMango bit Psyber and dragged him through a portal before vanishing. Py'Par later told the adventurers that the Evergreen had driven Mango off and rescued Psyber.",
     "related": [
       "Shifu",
       "The_Mother"
@@ -3665,7 +3665,7 @@
     "status": "dead",
     "gender": "male",
     "descZh": "麥克嵩的貴族，家族從事情報搜集。\n雇用了一名叫伊的貧民窟少年（伊稱呼他為M伯爵），似乎在調查和蜘蛛神教相關的事。\n有一名叫瑪莉安的妹妹被關在王宮監獄內，冒險者受他委託，將瑪莉安從監獄救出來。\n多年前曾購買了大量的魔法球，魔法球的功能似乎非常多元，而且不是只有他自己能使用。\n馬可斯是月神教的信徒。\n在麥克嵩的擁王派失利後，與冒險者們一同逃往洛森王國，前往尋找母親大人的旅途。然而，在一次與月光狩獵會的戰鬥中，被敵人的詛咒殺死。冒險者將他安葬，並立了一個木製的墓碑。",
-    "descEn": "A noble from Macksohn whose family did intelligence gathering.\nHe hired a young man from the ghetto named Yi to do some investigation about the Spider God religion.\nHe had a sister named Marianne who was locked up in the Macksohn Palace Jail. The adventurers was paid by him to get her out of the jail.\nMarcus bought a lot of magical orbs years ago, which seemed to have multiple functions, and could even be used by people other than him.\nMarcus is a believer of Phyneal.\nAfter the royalist faction failed in Macksohn, Marcus traveled with the party to Lothum, on a trip to find the Mother. However, he was cursed to death in a battle against the Moonlight Predators. The party buried him, erected a wooden tombstone for him, and paid their respect.",
+    "descEn": "A Macksohn noble whose family specializes in intelligence gathering.\nMarcus hired a young man from the old town named Yi, who called him Count M, to collect information about the Spider religion.\nHis sister Marianne was imprisoned in the royal prison, and Marcus commissioned the adventurers to rescue her.\nYears earlier, he purchased a large number of magical spheres with many functions, and he did not seem to be their only user.\nMarcus was a follower of the moon god.\nAfter the pro-king faction lost in Macksohn, he fled with the adventurers to the Lothum Kingdom to search for the Mother. During a battle with the Moonlight Hunters, he was killed by a curse. The adventurers buried him and marked his grave with a wooden marker.",
     "related": [
       "Marianne_Jens",
       "RaLeer_the_Herder",
@@ -3711,8 +3711,8 @@
     "image": "individual_pics/Lady Marian.jpeg",
     "status": "alive",
     "gender": "female",
-    "descZh": "麥丁頓現任國王艾略特四世的母親，在前國王時期似乎沒有人知道他的存在。\n被智者奧利佛暗示不是人類。\n似乎有一定程度的魔法能力，能主動進行心靈溝通。\n根據瑪莉安的說法，本名為瑪麗蓮，過去是他蜘蛛神教的夥伴，但後來信奉了拉索斯教，改名為瑪莉恩，並揭發他臥底的身份，使他被關入地牢，因此瑪莉安對他恨之入骨。",
-    "descEn": "The mother of the current King of Mattington, Elliot IV. She was not known when the former king reigned.\nShe was hinted not a human by Oliver the Wise.\nSeemed to have some kind of magical powers, and could do active telepathy.\nAs Marianne said, Marian’s name was originally Marilyn, and was her companion of followers of the Spider God, but turned to believe in Laxthos and changed her name to Marian, also turning her in. Marianne was then locked up in jail, thus she hated Marianne deeply.",
+    "descZh": "麥丁頓現任國王艾略特四世的母親，在前國王時期似乎沒有人知道他的存在。\n被智者奧利佛暗示不是人類，似乎有一定程度的魔法能力，能主動進行心靈溝通。\n根據瑪莉安的說法，本名為瑪麗蓮，過去是他蜘蛛神教的夥伴，但後來信奉拉索斯教，改名為瑪莉恩，並揭發瑪莉安臥底的身份，使他被關入地牢，因此瑪莉安對他恨之入骨。\n瑪莉安也認為艾略特四世只是魁儡。後來冒險者發現運送巴納沃二世屍體、皇冠與玉璽的夫妻被刺客射殺，而線索指向瑪莉恩。",
+    "descEn": "The mother of the current King of Mattington, Elliot IV. No one seemed to know of her during the former king's reign.\nOliver the Wise hinted that she was not human. She appears to possess magical power, including active telepathy.\nAccording to Marianne, Marian was originally named Marilyn and had once been her companion among the followers of the Spider God. She later turned to Laxthos, changed her name to Marian, exposed Marianne as an infiltrator, and caused her imprisonment, earning Marianne's hatred.\nMarianne also regarded Elliot IV as a puppet. Later, when the adventurers found a couple transporting Benevol II's corpse, crown, and royal seal, the assassins who killed the couple appeared to point back to Marian.",
     "related": [
       "King_Benevol_II",
       "King_Elliot_IV",
@@ -3808,8 +3808,8 @@
     "image": "individual_pics/Maribel Muddlewick.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "本年度競爭土城「春天精靈」的女孩之一，但輸給了佩妮・蘋果木。他原本想透過擔任春天精靈，來和「聽說存在」的山賊進行談判，為土城謀取較為公平的利益。\n父母外出旅行兩年以上都還沒回到土城來。\n在與瑪莉貝爾相處後，冒險者們發現他廚藝精湛、飽讀詩書，且有足夠的獨立生活能力，力邀他加入冒險團隊，但瑪莉貝爾暫時沒有想離開土城的心，只想好好把書看完。",
-    "descEn": "A girl running for \"the Spirit of Spring\" in Mudtown this year, but lost to Penny Applewood. She wanted to become the Spirit of Spring to negotiate with the \"bandits\" for benefits for Mudtown.\nHer parents have been traveling for over two years, and haven’t returned to Mudtown.\nAfter spending some time with Maribel, the adventurers found her to be quite proficient with cooking, well-read, and also has the ability to live independently. They tried to convince her into joining the adventuring group, but Maribel still wants to finish her books before leaving the town.",
+    "descZh": "本年度競爭土城「春天精靈」的女孩之一，但輸給了佩妮・蘋果木。他原本想透過擔任春天精靈，來和「聽說存在」的山賊進行談判，為土城謀取較為公平的利益。\n父母外出旅行兩年以上都還沒回到土城來。\n在與瑪莉貝爾相處後，冒險者們發現他廚藝精湛、飽讀詩書，且有足夠的獨立生活能力。\n後來瑪莉貝爾離開土城，加入阿龍等人組成的冒險團「中途之家」。他在萊斯諾被瑪萊雅將軍脅迫前往克萊芬當間諜，並在克萊芬市長辯論會中目睹皮尼歐教授遭槍殺。\n教授之死讓瑪莉貝爾受到極大衝擊。他偷走行兇的槍械，緊抓著它不放，並開始研究槍械與立德上尉留下的通訊裝置。",
+    "descEn": "A girl who ran for Mudtown's Spirit of Spring that year, but lost to Penny Applewood. She wanted to become the Spirit of Spring so she could negotiate with the rumored bandits and win fairer terms for Mudtown.\nHer parents had been traveling for more than two years and had not returned to Mudtown.\nAfter spending time with Maribel, the adventurers found her to be an excellent cook, well-read, and capable of living independently.\nMaribel later left Mudtown and joined Al-lon's adventuring group, the Halfway Home. In Leisnor, General Maliya coerced the group into spying in Clyphen, where Maribel witnessed Professor Peneo's assassination during the mayoral debate.\nThe professor's death deeply shook Maribel. She stole the murder weapon, clung to it, and began studying both the gun and the communication device Captain Reid left behind.",
     "related": [
       "Penny_Applewood"
     ],
@@ -3910,8 +3910,8 @@
     "image": "individual_pics/Captain Reid.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "利斯達上校手下的軍官，身穿紅色軍裝，身材精瘦。\n在皮尼歐教授遇刺後，立德上尉安排了替身潛入酒館，私下向雷亞提出條件，希望雷亞公開支持老樹盟與利斯達上校。\n他拿出兩枚白金幣，並以雷亞父母的情報作為籌碼，試圖說服雷亞倒向老樹盟。",
-    "descEn": "A lean officer in a red military uniform who serves under Colonel Lisdar.\nAfter Professor Peneo's assassination, Captain Reid arranged a step-in to slip into the tavern and privately approached Leah with an offer, asking her to publicly support the Old Tree Alliance and Colonel Lisdar.\nHe placed two platinum coins on the table and tried to sway Leah by offering information about her parents.",
+    "descZh": "利斯達上校手下的軍官，身穿紅色軍裝，身材精瘦。\n在皮尼歐教授遇刺後，立德上尉安排替身潛入酒館，私下向雷亞提出條件，希望雷亞公開支持老樹盟與利斯達上校。\n他拿出兩枚白金幣，並以雷亞父母的情報作為籌碼，試圖說服雷亞倒向老樹盟。拉比憤而將他從包廂窗戶丟了出去，但立德上尉留下通訊裝置，表示會給雷亞一天時間決定。",
+    "descEn": "A lean officer in a red military uniform who serves under Colonel Lisdar.\nAfter Professor Peneo's assassination, Captain Reid arranged a decoy to slip into the tavern and privately approached Leah with an offer, asking her to publicly support the Old Tree Alliance and Colonel Lisdar.\nHe placed two platinum coins on the table and tried to sway Leah by offering information about her parents. Ravi angrily threw him through the booth window, but Reid left behind a communication device and gave Leah one day to decide.",
     "related": [
       "Colonel_Lisdar"
     ],
@@ -3998,7 +3998,7 @@
     "image": "individual_pics/Maylee.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "魏斯科的一名女子，年輕且十分漂亮。\n在酒食樂酒館與瑪蒂達和Brown說明了關於拉索斯教的事，並請Brown喝了一杯似乎被下了藥的啤酒。",
+    "descZh": "魏斯科的一名女子，年輕且十分漂亮。\n在酒食樂酒館與瑪蒂達和布朗說明了關於拉索斯教的事，並請布朗喝了一杯似乎被下了藥的啤酒。",
     "descEn": "A woman from Wescoe, young and pretty.\nTold Brown about Laxthos with Matilda at Beer, Food, Fun, and treated Brown a beer that was suspiciously poisoned.",
     "related": [
       "Matilda"
@@ -4044,8 +4044,8 @@
     "image": "individual_pics/Melvin.jpeg",
     "status": "dead",
     "gender": "male",
-    "descZh": "大學城歷史區區長安德烈亞・戴依的助理。\n自稱沒有什麼學術能力，只能幫安德烈亞打雜。似乎對安德烈亞十分懼怕。\n最終在安德烈亞示範給冒險者們看的月神教靈魂轉移儀式中，因為是無辜的靈魂，而被犧牲。",
-    "descEn": "The assistant of Andrea Day, the leader of the History District at the Great Citadel.\nClaimed that he had not much academic abilities, and could only help Andrea with chores. Seemed to be afraid of Andrea.\nAt the end, he was sacrificed by Andra as the innocent soul for the soul-transport ritual of Phyneal to the adventurers.",
+    "descZh": "大學城歷史區區長安德烈亞・戴依的助理。\n自稱沒有什麼學術能力，只能幫安德烈亞打雜，且似乎十分懼怕安德烈亞。\n最終在安德烈亞示範給冒險者們看的月神教靈魂轉移儀式中，麥爾文被當作「無辜的靈魂」犧牲，使蘿琳的靈魂得以回到身體。",
+    "descEn": "The assistant of Andrea Day, the head of the History District at the Great Citadel.\nHe claimed to have little academic ability and said he could only help Andrea with chores, and he seemed deeply afraid of Andrea.\nDuring Andrea's demonstration of a Phyneal soul-transfer ritual for the adventurers, Melvin was sacrificed as the innocent soul, allowing Roline's soul to return to her body.",
     "related": [
       "Andrea_Day"
     ],
@@ -4086,8 +4086,8 @@
     "image": "individual_pics/Mikkel Drogskol.png",
     "status": "dead",
     "gender": "male",
-    "descZh": "卓茲克家族的最後一名成員，年約二十多。在睡夢中被殺死，如今成為幽魂，徘徊在卓茲克別莊，有時會與來訪的客人攀談，但對方不一定聽得到他的聲音。",
-    "descEn": "The last member of the Drogskol family, at the age of 20ish. Mikkel was killed in his bed, and became a spirit, lingering in the Drogskol Manor. He sometimes talk to visitors, but they were not guaranteed to hear his voice.",
+    "descZh": "卓茲克家族的最後一名成員，年約二十多。\n在睡夢中被殺死，如今成為幽魂，徘徊在卓茲克別莊，有時會與來訪的客人攀談，但對方不一定聽得到他的聲音。\n冒險者探索卓茲克別莊時，米可與庫登交談，透露卓茲克家族是在睡夢中被滅門，也提到烏西歐尼其實是卓茲克家族的一員。後來他讓所有冒險者逐漸看見並聽見自己，卻阻止他們直接離開宅邸。戰鬥後，米可化為玻璃般的碎片；庫登拾起碎片時，看見了烏西歐尼在此活動的片段。",
+    "descEn": "The last member of the Drogskol family, around his twenties.\nHe was killed in his sleep and now lingers as a ghost in the Drogskol Estate, sometimes speaking with visitors who may or may not be able to hear him.\nWhen the adventurers explored the estate, Mikkel spoke with Kuden, revealing that the Drogskol family had been wiped out in their sleep and that Usioni was also a member of the Drogskol family. He later allowed the other adventurers to gradually see and hear him, but prevented them from simply leaving the mansion. After the battle, Mikkel shattered into glass-like fragments; when Kuden picked one up, he saw a memory of Usioni moving through the estate.",
     "related": [],
     "nameEn": "Mikkel Drogskol",
     "nameZh": "米可・卓茲克",
@@ -4132,8 +4132,8 @@
     "image": "individual_pics/Moore.jpeg",
     "status": "dead",
     "gender": "male",
-    "descZh": "卡什拉的書店店員。\n店內的書似乎都是出現在卡什拉的人的人生記錄。",
-    "descEn": "A bookstore clerk at Kashla.\nThe books in the store seemed to all be life records of people appearing in Kashla.",
+    "descZh": "卡什拉鎮無名書店的店主。書店中的書其實都是卡什拉居民的傳記，冒險者也在店內找到自己名字微弱浮現、內容仍空白的傳記。摩爾默許眾人取走那些書，也因此讓他們更接近卡什拉鎮被重複保存的真相。",
+    "descEn": "The keeper of the unnamed bookstore in Kashla. The books in the shop were actually biographies of Kashla’s residents, and the adventurers found empty biographies of themselves with their names faintly appearing. Moore allowed them to take the books, helping them move closer to the truth behind Kashla’s preserved loop.",
     "related": [],
     "nameEn": "Moore",
     "nameZh": "摩爾",
@@ -4172,8 +4172,8 @@
     "image": "individual_pics/The Mother.jpeg",
     "status": "unknown",
     "gender": "neutral",
-    "descZh": "麥克嵩舊城區蜘蛛神教的宗教領袖。\n據說是舊城區出生，因為不知名原因頓悟，而對蜘蛛神教有所領悟的人。\n出現在舊城區的一座隱密神殿（被稱為母親大人的寺廟）內，接見來訪者時，會從牆壁內的洞穴出現，現身於床上。\n冒險者們也發現在貴族伯納德・諾姆家的三樓，有個房間，和寺廟格局相似，母親大人也會在這裡出現。\n有一張佈滿皺紋的臉，表情難以解讀。會發出各種奇異的聲響來進行溝通，也會以普通語說話。\n實際上，早在阿爾芬諾誕生前就已存在於妖精王國境內，但其起源未知。\n被安娜奪舍後，鑽入Paladin的體內逃走。\n之後在洛森王國的一座洞穴內，異變的母親大人殺死了Lott以外的冒險者們。",
-    "descEn": "The religious leader of the Spider God religion in old town Macksohn.\nShe was said to be born in the old town, but had an epiphany for some unknown reason, thus understood the religion.\nShe appeared in a cryptic temple, being known as Mother’s Temple. When she greeted visitors, she would appear from the hole on the wall, moving to the large ancient bed.\nThe adventurers also found a room similar to the temple at the third floor of the noble Bernard Norm’s house, where the Mother also appeared.\nThe Mother had a wrinkled face, and her facial expression was hard to interpret. She made different kinds of sounds to communicate, as she also used Common.\nIn fact, the Mother was born in the Elvish Kingdom even before Alfenor, but her origin was not known.\nAfter being replaced by Anna, the Mother escaped into Paladin's body.\nLater, in a cave in Lothum, the mutated Mother killed the group of adventurers except Lott.",
+    "descZh": "麥克嵩舊城區蜘蛛神教的宗教領袖。\n出現在舊城區的一座隱密神殿（被稱為母親大人的寺廟）內，接見來訪者時，會從牆壁內的洞穴出現，現身於床上。\n冒險者們也發現在貴族伯納德・諾姆家的三樓，有個房間，和寺廟格局相似，母親大人也會在這裡出現。\n有一張佈滿皺紋的臉，表情難以解讀。會發出各種奇異的聲響來進行溝通，也會以普通語說話。\n實際上，早在阿爾芬諾誕生前就已存在於妖精王國境內，但其起源未知。\n被安娜奪舍後，鑽入帕拉丁的體內逃走。\n之後在洛森王國的一座洞穴內，異變的母親大人殺死了拉黎爾、蓋瑞，以及洛特以外的多數冒險者；佛拉因在洞外等待而倖存，洛特與芒果則因圖伊特以自身存在的所有證據作為交易才得以活下來。",
+    "descEn": "The religious leader of the Spider religion in old town Macksohn.\nShe appeared in a hidden temple in old town, known as the Mother's temple. When receiving visitors, she emerged from a hole in the wall and appeared on a bed.\nThe adventurers also discovered a similar room on the third floor of Bernard Norm's house, where the Mother could also appear.\nShe had a wrinkled face and an unreadable expression. She communicated through strange sounds and could also speak Common.\nIn truth, she had existed in the Feywild before Alfenor's birth, though her origin remains unknown.\nAfter Anna possessed her body, the Mother's soul escaped into Paladin's body.\nLater, in a cave in the Lothum Kingdom, the mutated Mother killed Ra'Leer, Gary, and most of the adventurers except Lott. Phola survived because he waited outside, while Lott and Mango survived because Tweeter traded away every proof of his own existence.",
     "related": [
       "Alfenor",
       "Bernard_Norm",
@@ -4226,7 +4226,7 @@
     "image": "individual_pics/Mr. Moon.jpeg",
     "status": "dead",
     "gender": "male",
-    "descZh": "麥克嵩當地的音樂經紀人，有個辦公室名叫「派頓」。\n給人一種精明狡黠的感覺。\n在崔尼斯劇院挖掘到Samael，邀請Samael與他簽約，並給了Samael一個有🎵符號的名片。\n帶冒險者們組成的樂團「荒野旋律」來到柏納斯家的宅邸演奏。\n與柏納斯家族似乎有長期穩地的合作。\n月之神芬尼爾的信徒。\n在麥克嵩似乎有些許影響力，曾告訴Samael與Paladin遇到衛兵找麻煩時，可以報上他的名號。\n在（部分）台北市議員離開麥克嵩前，透露自己過去和月神的交易，讓他已與死亡距離不遠。\n在冒險者們回到麥克嵩時，月先生已經死去了。",
+    "descZh": "麥克嵩當地的音樂經紀人，有個辦公室名叫「派頓」。\n給人一種精明狡黠的感覺。\n在崔尼斯劇院挖掘到薩梅爾，邀請薩梅爾與他簽約，並給了薩梅爾一個有🎵符號的名片。\n帶冒險者們組成的樂團「荒野旋律」來到柏納斯家的宅邸演奏。\n與柏納斯家族似乎有長期穩地的合作。\n月之神芬尼爾的信徒。\n在麥克嵩似乎有些許影響力，曾告訴薩梅爾與帕拉丁遇到衛兵找麻煩時，可以報上他的名號。\n在（部分）台北市議員離開麥克嵩前，透露自己過去和月神的交易，讓他已與死亡距離不遠。\n在冒險者們回到麥克嵩時，月先生已經死去了。",
     "descEn": "A local agent in Macksohn, who owned an office called Patton’s.\nHe gave people a sense of smart and cunning.\nWhen Mr. Moon found Samael at the Trinix Theatre, he invited Samael to sign with him and gave Samael a name card with the musical note 🎵.\nMr. Moon brought Rhythm of the Wild, the band formed by the adventurers to perform at the mansion of the Berners family.\nHe seemed to be working with the Berners family long term.\nMr. Moon is a worshiper of Phyneal, the God of Moon.\nHe had some power in Macksohn, as he once told Samael and Paladin that whenever they had some problem with the guards, they can simply say his name.\nAs some members of the adventurers left Macksohn, he revealed the deal he had with the God of Moon, that made him close to death.\nWhen the adventurers got back to Macksohn, Mr. Moon was already dead.",
     "related": [
       "Brock",
@@ -4273,8 +4273,8 @@
     "image": "individual_pics/Mr. Muffins.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "過去由溫德家飼養的巴哥犬，現在與Brown一起冒險。\n似乎有能透過心靈感應的方式與人溝通，甚至可以化成似人的生物。\n對溫德大人似乎懷有很深的敵意，但對彼得則是非常保護。",
-    "descEn": "The pug that was formerly owned by the Wind family, now traveling with Brown.\nMr. Muffins seemed to have the ability to telepathy, and even morph into humanoid.\nHe seemed to have great hatred toward Lord Wind, but protective toward Peter.",
+    "descZh": "過去由溫德家飼養的巴哥犬，現在與布朗一起冒險。\n似乎能透過心靈感應的方式與人溝通，甚至可以化成似人的生物或野狼。\n對溫德大人似乎懷有很深的敵意，但對彼得則是非常保護。\n在布朗離開波馬贊後跟隨他前往魏斯科與夏庭森。途中，瑪芬先生曾變成野狼撲倒馬匹，證實布朗先前在波馬贊見到的野狼正是他。\n之後，瑪芬先生似乎失去與布朗溝通的能力，只剩下普通犬隻般的反應；即使戴著羅納德給他的魔術師帽，也只會吠叫與抗拒布朗修剪指甲。",
+    "descEn": "A pug formerly kept by the Wind family, now adventuring with Brown.\nMr. Muffins seems able to communicate telepathically and can even transform into a humanoid being or a wolf.\nHe appears to harbor deep hostility toward Lord Wind, but is very protective of Peter.\nAfter Brown left Bomozan, Mr. Muffins followed him to Wescoe and Shartingson. On the road, he transformed into a wolf and pounced on Brown's horse, confirming that the wolf Brown had seen in Bomozan was indeed him.\nLater, Mr. Muffins seemed to lose the ability to communicate with Brown and behaved more like an ordinary dog; even while wearing the magician's hat Ronald gave him, he only barked and resisted when Brown tried to trim his claws.",
     "related": [
       "Lord_Wind",
       "Peter"
@@ -4504,8 +4504,8 @@
     "image": "individual_pics/Oswald Creighton.jpg",
     "status": "alive",
     "gender": "male",
-    "descZh": "土城附近海雅特山上的山賊首領。\n被佩妮・蘋果木暱稱為「大奧斯」。\n為了控制手下的山賊，需每個月利用土城春天精靈身上的翠綠印記執行儀式，卻反而因為長時間相處，而讓佩妮愛上他。\n在佩妮的口中「強壯、可靠，且善良」、「人不壞」。\n在「斬殺交響樂」襲擊時，為了讓佩妮不受傷害，帶著佩妮私奔。\n一段時間後，跑到拉撒拿尋找阿龍，表示佩妮的狀況不太妙。",
-    "descEn": "The bandit lord in Mt. Hyatt near Mudtown.\nNamed Big Os by Penny Applewood.\nOswald needs to use the Mark of Verdant on the Spirit of Spring to perform a ritual in order to control his bandits. However, with tons of time staying together, Penny fell in love with him.\nHe is, quoted by Penny, \"strong, reliable and kind\", and also \"not a bad person\".\nTo keep Penny from getting hurt, Oswald ran away with Penny when the Slashing Symphany attacks.\nAfter a while, Oswald came to Rathanad to tell Al-lon that things went wrong with Penny.",
+    "descZh": "土城附近海雅特山上的山賊首領。\n被佩妮・蘋果木暱稱為「大奧斯」。\n為了控制手下的山賊，需每個月利用土城春天精靈身上的翠綠印記執行儀式，卻反而因為長時間相處，而讓佩妮愛上他。\n在佩妮的口中「強壯、可靠，且善良」、「人不壞」。\n在「斬殺交響樂」襲擊時，為了讓佩妮不受傷害，帶著佩妮私奔。\n一段時間後，失去雙手的奧斯華跑到拉撒拿尋找阿龍，表示佩妮的狀況不太妙，並請求協助。",
+    "descEn": "The bandit lord of Mt. Hyatt near Mudtown.\nPenny Applewood nicknamed him Big Os.\nOswald had to use the Mark of Verdant on Mudtown's Spirit of Spring each month to perform a ritual that controlled his bandits, but the time they spent together caused Penny to fall in love with him.\nPenny described him as strong, reliable, kind, and not a bad person.\nTo keep Penny from getting hurt, Oswald ran away with her during the Slashing Symphony attack.\nSome time later, Oswald came to Rathanad with both hands missing, looking for Al-lon and asking for help because Penny was in serious trouble.",
     "related": [
       "Penny_Applewood"
     ],
@@ -4548,8 +4548,8 @@
     "image": "individual_pics/Pamela Yaso.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "麥克嵩的貴族，家裡似乎是經營農作物的，幾個世代前才搬遷到麥克嵩。\n與華生和Sugalu在王宮花園相談甚歡，並邀請他們前來家裡作客。\n在家中的晚宴，要求貴族們表態是否支持新任國王。\n潘蜜拉實際上是反對國王派，也被認為在鬥爭中策劃將支持國王派的人馬幾乎都殺光了，其中包含他的朋友伯納德.",
-    "descEn": "A noble in Macksohn, whose family does crop business, and moved to Macksohn a few generations ago.\nHad a great talk with Watson and Sugalu at the Palace Garden, and invited them for dinner.\nAt the banquet at her place, she asked the nobles whether they support the new king or not.\nPamela was actually against the new king, and believed to be the one killing off the nobles who supported the new king, including her old time friend, Bernard.",
+    "descZh": "麥克嵩的貴族，家裡似乎是經營農作物的，幾個世代前才搬遷到麥克嵩。\n與華生和蘇加魯在王宮花園相談甚歡，並邀請他們前來家裡作客。\n在家中的晚宴，潘蜜拉要求貴族們表態是否支持新任國王；他實際上是反對國王派，也被認為在鬥爭中策劃將支持國王派的人馬幾乎都殺光，其中包含他的朋友伯納德。\n伯納德宅邸被燒時，潘蜜拉出現在外頭率領暴民高喊「異教徒」。後來冒險者拷問刺客，得知潘蜜拉至少掌握近百名傭兵，並計畫結合奴隸與傭兵攻入王宮、發動政變。",
+    "descEn": "A Macksohn noble whose family seems to be in the crop business and moved to Macksohn a few generations ago.\nPamela had a pleasant conversation with Watson and Sugalu in the royal garden and invited them to her home.\nAt dinner, she demanded that the nobles declare whether they supported the new king. Pamela was actually aligned against the king, and was believed to have orchestrated the elimination of almost everyone in the pro-king faction, including her friend Bernard.\nWhen Bernard's estate was burned, Pamela appeared outside leading a mob shouting heretic. Later, the adventurers interrogated assassins and learned that Pamela controlled nearly a hundred mercenaries and planned to combine slaves and mercenaries to storm the palace in a coup.",
     "related": [
       "Bernard_Norm"
     ],
@@ -4636,8 +4636,8 @@
     "image": "individual_pics/Penny Applewood.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "本名佩妮洛普。\n蘋果木家的長女，是土城最漂亮的女孩之一，也是阿龍的初戀。\n已蟬聯土城連續三年的「春日精靈」。\n愛上山賊首領奧斯華・克雷頓，暱稱他為大奧斯。\n在斬殺交響樂襲擊時，與大奧斯私奔，但不久後似乎遇到了危機。",
-    "descEn": "Penelope Applewood.\nThe eldest daughter in the Applewood family. One of the prettiest girl in Mudtown, and alos Al-lon’s first love.\nPenny has been the \"Spirit of Spring\" in Mudtown for three consecutive years.\nIn love with the bandit lord Oswald Creighton, whom she called as Big Os.\nRan away with Big Os when the Slashing Symphany attacks, but fall into crisis not long after.",
+    "descZh": "本名佩妮洛普。\n蘋果木家的長女，是土城最漂亮的女孩之一，也是阿龍的初戀。\n已蟬聯土城連續三年的「春日精靈」。\n愛上山賊首領奧斯華・克雷頓，暱稱他為大奧斯。\n在斬殺交響樂襲擊時，與大奧斯私奔；後來失去雙手的奧斯華前往拉撒拿尋找阿龍，表示佩妮陷入危機並需要援助。",
+    "descEn": "Penelope Applewood.\nThe eldest daughter of the Applewood family, one of the prettiest girls in Mudtown, and Al-lon's first love.\nPenny had been Mudtown's Spirit of Spring for three consecutive years.\nShe fell in love with the bandit lord Oswald Creighton, whom she nicknamed Big Os.\nDuring the Slashing Symphony attack, she ran away with Big Os. Later, Oswald appeared in Rathanad with both hands missing, looking for Al-lon and saying that Penny was in danger and needed help.",
     "related": [
       "Addie_Applewood",
       "Cash_Applewood",
@@ -4686,8 +4686,8 @@
     "image": "individual_pics/Pete Madison.png",
     "status": "historical figure",
     "gender": "male",
-    "descZh": "索拉的父親，萊斯莉的老公。\n卡什拉的鎮長，但在索拉死後也抑鬱而死。",
-    "descEn": "The father of Sora, and the husband of Leslie.\nThe mayor of Kashla, but was depressed to death after the dead of Sora.",
+    "descZh": "卡什拉鎮長，原本與兒子索拉同住。索拉被匿名之聲與瓦克松醫師的儀式奪走生命後，彼特無法接受事實，將索拉與嘟嘟的屍體藏在床底，自己也逐漸失去照顧自己的能力並死去。冒險者在三樓找到他的屍體與遺書，後來將他安葬在教堂花園。",
+    "descEn": "The mayor of Kashla and Sora’s father.\nAfter Sora was killed by the ritual involving the Anonymous Voice and Dr. Vaxon, Pete could not accept the truth and kept Sora’s and Dudu’s bodies under his bed. He eventually lost the ability to care for himself and died.\nThe adventurers found his corpse and note on the third floor, then buried him in the church garden.",
     "related": [
       "Leslie_Grunfeld",
       "Sora"
@@ -4772,8 +4772,8 @@
     "image": "individual_pics/Phola.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "弗萊特境內的嚮導之一，相對年輕而較無經驗，但根據師父的說法「很有潛力」。事後冒險者們發現他是師父的孫子。\n嗜酒。\n在與冒險者們的旅行過程中，受到Tweeter感化，戒了酒，並信奉了芬尼爾。\n在母親大人異變事件後，與Lott和Mango成為僅存的三人。\n多年後，身為芬尼爾教團一員，戴著面具的他在雅洛斯和Lott的團隊狹路相逢，雙方發生激烈的戰鬥。\n在他垂死之際，Lott剝下他的面具，才發現他的身份。",
-    "descEn": "A young and rather inexperienced guide in Phreit Realm, who “had a lot of potential\", said Shifu. The adventurers soon found that Phola was Shifu’s grandson.\nAlcoholic.\nIn the journey with the adventurers, Phola was touched by Tweeter, stopped drinking, and decided to believe in Phyneal instead.\nAfter the incident of the mutated Mother, Phola became the only survivor other than Lott and Mango.\nYears later, Phola, as a member of the Phyneal, bumped into Lott's team in Yarros, while he was wearing a mask. The two sides had a fierce fight.\nOn the verge of his death, Lott removed his mask, and found his real identity.",
+    "descZh": "弗萊特境內的嚮導之一，相對年輕而較無經驗，但根據師父的說法「很有潛力」。事後冒險者們發現他是師父的孫子。\n嗜酒。\n在與冒險者們的旅行過程中，受到圖伊特感化，戒了酒，並信奉了芬尼爾。\n在母親大人異變事件後，與洛特和芒果成為僅存的三人。\n多年後，身為芬尼爾教團一員，戴著面具的他在雅洛斯和洛特的團隊狹路相逢，雙方發生激烈的戰鬥。\n在他垂死之際，洛特剝下他的面具，才發現他的身份。之後洛特將重傷疲憊的佛拉帶在身邊，跟著派琶前往常翠林的中繼站。",
+    "descEn": "One of the guides in Phreit. He was younger and less experienced than the others, but Shifu described him as promising. The adventurers later learned that he was Shifu's grandson.\nPhola was addicted to alcohol.\nDuring his travels with the adventurers, Tweeter influenced him to quit drinking and become a follower of Phynoir.\nAfter the mutated Mother's massacre, Phola, Lott, and Mango were the only survivors.\nYears later, as a masked member of Phynoir's order, he clashed with Lott's team in Yalos. As he lay dying, Lott removed his mask and discovered who he was. Lott then kept the badly wounded, exhausted Phola with him as the group followed Py'Par toward an Evergreen relay station.",
     "related": [
       "Shifu",
       "Mango"
@@ -4866,8 +4866,8 @@
     "image": "individual_pics/Ralf.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "有著一頭金色長髮的半妖精遊俠，和聖騎士莉蓮娜是旅行的夥伴。\n兩人受瑪琳船長之邀前往聖拉雅米島協助調查島上的失蹤以及中毒事件。\n拉芙在調查中被綁架到金海岸礦坑內，後被冒險者救出。",
-    "descEn": "A half-elf ranger with long golden hair, and the traveling companion of the paladin Liliana.\nThe two were invited by Captain Marin to travel to St. Rayami Island to help investigate the disappearances and poisoning incidents occurring there.\nDuring the investigation, Ralf was kidnapped and taken into the Gold Coast Mines, where he was later rescued by the adventurers.",
+    "descZh": "有著一頭金色長髮的半妖精遊俠，和聖騎士莉蓮娜是旅行的夥伴。\n兩人受瑪琳船長之邀前往聖拉雅米島協助調查島上的失蹤以及中毒事件。\n拉芙在調查中被綁架到金海岸礦坑內，身體虛弱但仍保有意識；冒險者救出他後，得知他曾看見有人操控巨大的拉茲特獸。",
+    "descEn": "A half-elf ranger with long golden hair, and the traveling companion of the paladin Liliana.\nThe two were invited by Captain Marin to St. Rayami Island to help investigate the disappearances and poisoning incidents there.\nDuring the investigation, Ralf was kidnapped and taken into the Gold Coast Mines. He was weak but conscious when the adventurers rescued him, and told them he had seen someone controlling a giant Laztek.",
     "related": [
       "Captain_Marin",
       "Liliana"
@@ -4953,8 +4953,8 @@
     "image": "individual_pics/Ra'Leer the Herder.jpeg",
     "status": "dead",
     "gender": "female",
-    "descZh": "居住於嚎叫森林內的妖精德魯伊。\n有一隻隨行的狼夥伴，蓋瑞。\n對嚎叫森林內的野生動物都十分親近且熟悉。\n她近期感覺到了森林內的不平靜，覺得事有蹊蹺。\n森林之神的忠實信奉者。",
-    "descEn": "The elf druid who lived in the howling forest.\nShe had a wolf companion, Gary.\nShe was familiar with the wildlife in the howling forest.\nShe sensed something wrong in the forest recently.\nShe was loyal believer of Nessis, God of Woods.",
+    "descZh": "居住於嚎叫森林內的妖精德魯伊。\n有一隻隨行的狼夥伴蓋瑞，對嚎叫森林內的野生動物都十分親近且熟悉，是森林之神涅西斯的忠實信奉者。\n後來拉黎爾作為馬可斯在妖精王國的線人，帶領羅特等人前往洛森王國，教羅特與華生妖精語，也協助羅特理解一支封有妖精靈魂的笛子。\n在母親大人的巢穴中，異變的母親大人先折斷蓋瑞的脊椎，再將觸手灌入拉黎爾體內，使他的身體破裂而死。",
+    "descEn": "An elf druid who lived in the Howling Forest.\nRa'Leer had a wolf companion named Gary, was deeply familiar with the wildlife of the forest, and was a loyal believer of Nessis, god of woods.\nLater, as Marcus's contact in the elven kingdom, Ra'Leer guided Lott and the others toward the Lothum Kingdom, taught Lott and Watson some Elvish, and helped Lott understand a flute containing an elf spirit.\nIn the Mother's lair, the mutated Mother first snapped Gary's spine, then forced tentacles into Ra'Leer's body until it burst, killing her.",
     "related": [
       "Gary",
       "Marcus_Jens",
@@ -5005,8 +5005,8 @@
     "image": "individual_pics/Reese Tig.png",
     "status": "dead",
     "gender": "male",
-    "descZh": "居住在方努爾市的人類冒險家。\n協助津菈教調查城市中發生的中毒以及失蹤事件。\n在Ron昏迷時將他的巫妖手臂用神秘的鍊子鍊住以抑制巫妖的法術。\n後在尼姆孤兒院前方的水井下遭遇敵人，不幸喪生。",
-    "descEn": "A human adventurer residing in the city of Fanaur.\nHe assisted the Church of Keinra in investigating the poisoning and disappearance cases occurring throughout the city.\nWhen Ron fell unconscious, he restrained Ron’s lich arm with a mysterious chain to suppress the lich’s magic.\nHe later encountered enemies beneath the well in front of the Nimu Orphanage and was unfortunately killed.",
+    "descZh": "居住在方努爾市的人類冒險家，又被稱為「鐵鎚」瑞斯。\n協助津菈教調查城市中發生的中毒以及失蹤事件，並與瑪莉、龍恩一同追查尼姆孤兒院前方水井下的異狀。\n在龍恩昏迷時，他曾將龍恩的巫妖手臂用神秘的鍊子鍊住以抑制巫妖的法術。\n在水井下的戰鬥中，瑞斯被怪物咬斷頭部而死；龍恩事後安排將他的遺體送回教會。",
+    "descEn": "A human adventurer living in Fanaur, also known as Reese the Hammer.\nHe helped the Church of Keinra investigate poisoning and disappearance cases in the city, and worked with Mary and Ron to investigate the strange activity beneath the well in front of Nym Orphanage.\nWhen Ron was unconscious, Reese bound Ron's lich arm with mysterious chains to suppress the lich's magic.\nDuring the battle beneath the well, a monster bit off Reese's head and killed him. Ron later arranged for his body to be taken back to the church.",
     "related": [
       "Bishop_Robinson",
       "Iochi_Mari"
@@ -5052,8 +5052,8 @@
     "image": "individual_pics/Riley Richmond.jpg",
     "status": "alive",
     "gender": "female",
-    "descZh": "里奇蒙家族的當家掌門人，巴托斯的女兒。喬里森的信奉者。\n過去為T.I.D.E.S.方尖碑的成員，但被蘿拉・費許朋挑戰成功，失去一隻眼，而被迫帶著冒險者們離開組織。\n於土城有屬於自己的研究中心「渡鴉中樞」。",
-    "descEn": "The current frontman of the Richmond family, daughter of Bartosz. Believer of Jeorisan.\nShe was once an Obelisk in T.I.D.E.S., but was challenged by Laura Fishburne succesfully, lost one of her eye, and expelled with the adventurers by the society.\nShe has her own research center, \"the Raven Nexus\" in Mudtown.",
+    "descZh": "里奇蒙家族的當家掌門人，巴托斯的女兒，喬里森的信奉者。\n過去為T.I.D.E.S.方尖碑的成員。冒險者受邀參與T.I.D.E.S.集會時，蘿拉・費許朋向他發起挑戰，直接奪走他的右眼作為信物；萊里因此失去方尖碑席位並被逐出T.I.D.E.S.，連他邀請的冒險者們也被迫離場。\n被逐出後，萊里帶冒險者前往土城，使用自己在赫洛登瀑布後方的研究中心「渡鴉中樞」，並委託他們取得受喬里森祝福河水漂流的蘋果木枝幹，用來製作讓自己重返T.I.D.E.S.的神秘器具。",
+    "descEn": "The head of the Richmond family, daughter of Bartosz, and a believer of Jeorisan.\nRiley was once an Obelisk of T.I.D.E.S. When the adventurers attended a T.I.D.E.S. gathering, Laura Fishburne challenged her and took Riley's right eye as the token of victory. Riley lost her Obelisk seat, was expelled from T.I.D.E.S., and even the adventurers she had invited were forced to leave.\nAfter her expulsion, Riley took the adventurers to Mudtown and used her research center behind Heroden Falls, the Raven Nexus. She commissioned them to obtain a branch from apple-tree driftwood carried by river water blessed by Jeorisan, intending to craft a mysterious device that could help her return to T.I.D.E.S.",
     "related": [
       "Bartosz_Richmond",
       "Frederick_Norman",
@@ -5103,8 +5103,8 @@
     "image": "individual_pics/Bishop Robinson.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "津菈敎的主教。\n召集勇者們前往方努爾市南方的荒島，尋找津菈敎的聖典雪の化身の目覚め。\n數年後，請冒險者們調查聖拉雅米島的中毒事件，以及前往娜塔莎港尋找逃脫的Mirdori。",
-    "descEn": "A bishop of Keinra.\nGathered the adventurers to a island south of Fanaur, the find the holy book of 雪の化身の目覚め.\nYears later, Bishop Robinson asked the adventurers to investigate in the poisonous incident on St. Rayami Island, and find the escaped Midori in Natasha Port.",
+    "descZh": "太陽教大主教。\n台北市議員過去曾護送他與人偶莫頓的頭返回拉森德教廷。\n在聖拉雅米事件中，羅賓遜主教來到波特娜塔莎協助調查，也努力尋找失蹤的米多莉；當米多莉在檔案室與眾人對峙並逃離後，他在混亂中負傷，之後由卡諾等人照料。",
+    "descEn": "An archbishop of the Church of the Sun.\nThe Councilors of Taipei once escorted him and the head of the Morton puppet back to the Church of Lathander.\nDuring the St. Rayami incident, Bishop Robinson came to Port Natasha to assist the investigation and search for the missing Midori. After Midori confronted the others in the archive room and fled, Robinson was injured in the chaos and was later cared for by Kano and others.",
     "related": [
       "Captain_Marin",
       "Iochi_Mari",
@@ -5151,8 +5151,8 @@
     "image": "individual_pics/Roline Hughes.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "麥克嵩貴族休斯家族的新任掌門人。\n從小就展現出極好的社交天賦，因此父親努力培養他作為家族的接班人。\n與Midori和Ron在麥克嵩王宮花園初見。\n在比武大會事件後對Ron產生了極深的情愫。\n在認識Ron前，似乎常常出入貴族的秘密雜交派對，但如今亟欲隱藏這段過去。\n在Paladin等人於15048年再次回到麥克嵩時，用心幫助他們，甚至作為掩護讓他們逃出王宮。不久後被安娜冒用身份，襲擊Paladin。後來再次見到Paladin時，協助落魄的他買東西。\n在Tweeter打開第三隻眼時，他的靈魂成了與交易之神芬諾爾交易時，被犧牲的祭品，身體化成了陶瓷。\n15048年的蘿琳在小黑屋掛著斗篷，作為交易之神的代言人。\n15050年在YHWH等人回到麥克嵩時，與YHWH在文創區巧遇，但看起來眼神空洞，似乎還沒有恢復成原本的樣貌。\nRon等人到了大學城，透過歷史區區長安德烈亞・戴依的儀式，成功釋放了蘿琳。",
-    "descEn": "The new face of the Macksohn noble house Hughes.\nShe showed her expert in social contact in her youth, thus her father trained her to be the successor of the family.\nMet Midori and Ron at the Macksohn Palace Garden.\nStarted having a feeling towards Ron after the Macksohn Tournament incident.\nShe seemed to go to the nobles secret orgies quite often, but she tried hard to reveal it after knowing Ron.\nAfter Paladin and the party returned to Macksohn at 15048 D.E., she helped them and even covered them to escape the palace. Not long after that, her identity was used by Anna to sneak onto Paladin. After seeing Paladin again, she bought him stuffs to help him.\nWhen Tweeter opened his third eye, her souls was used as the sacrifice to fulfill the trade with Phynoir, becoming a pottery doll.\nShe then acted as the hooded spokesman of Phynoir at the Dark house.\nWhen YHWH and the party returned to Macksohn at 15050 D.E., she met YHWH at the art district, but she looked hollow. It seemed like she hadn’t returned to her true self.\nRon and the party went to the Great Citadel, and with the help of Andrea Day, Roline’s soul was released through a ritual.",
+    "descZh": "麥克嵩貴族休斯家族的新任掌門人。\n從小就展現出極好的社交天賦，因此父親努力培養他作為家族的接班人。\n與米多莉和龍恩在麥克嵩王宮花園初見。\n在比武大會事件後對龍恩產生了極深的情愫。\n在認識龍恩前，似乎常常出入貴族的秘密雜交派對，但如今亟欲隱藏這段過去。\n在帕拉丁等人於15048年再次回到麥克嵩時，用心幫助他們，甚至作為掩護讓他們逃出王宮。不久後被安娜冒用身份，襲擊帕拉丁。後來再次見到帕拉丁時，協助落魄的他買東西。\n在圖伊特打開第三隻眼時，他的靈魂成了與交易之神芬諾爾交易時，被犧牲的祭品，身體化成了陶瓷。\n15048年的蘿琳在小黑屋掛著斗篷，作為交易之神的代言人。\n15050年在YHWH等人回到麥克嵩時，與YHWH在文創區巧遇，但看起來眼神空洞，似乎還沒有恢復成原本的樣貌。\n龍恩等人到了大學城，透過歷史區區長安德烈亞・戴依的儀式，犧牲靈魂乾淨的麥爾文，成功將蘿琳的靈魂送回他的體內。",
+    "descEn": "The new head of the noble Hughes family of Macksohn.\nRoline showed exceptional social talent from childhood, and her father raised her as the family's successor.\nShe first met Midori and Ron in the Macksohn Royal Garden.\nAfter the Macksohn Tournament, she developed deep feelings for Ron.\nBefore meeting Ron, she seemed to have frequently attended secret noble orgies, a past she now desperately wants to hide.\nWhen Paladin and the others returned to Macksohn in 15048, Roline helped them sincerely and even covered their escape from the palace. Soon after, Anna impersonated her and attacked Paladin. When Roline later met the ruined Paladin again, she helped him buy supplies.\nWhen Tweeter opened his third eye, Roline's soul became the sacrifice in a bargain with Phennor, god of trade, and her body turned into porcelain.\nThe Roline of 15048 hung a cloak in the Dark House as Phennor's proxy.\nIn 15050, when YHWH and the others returned to Macksohn, YHWH met her in the Creative District, but her eyes looked hollow and she did not seem fully restored.\nWhen Ron and the others reached the Great Citadel, they performed a ritual with Andrea Day of the History District, sacrificing the pure-souled Melvin and successfully returning Roline's soul to her body.",
     "related": [
       "Andrea_Day",
       "Anna",
@@ -5197,8 +5197,8 @@
     "image": "individual_pics/Ronald, the Magician.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "被稱為魔術師，看起來會使用魔法。\n在嚎叫森林出現，有種植一種藍色的小顆果實。\n似乎是個喜歡追求樂趣的人。",
-    "descEn": "He was called the Magician, and seemed like he can use magic.\nAppeared in the Howling Forest, planting a blue fruit.\nRonald seemed like someone who enjoy fun.",
+    "descZh": "被稱為魔術師，看起來會使用魔法。\n在嚎叫森林出現，種植一種藍色的小顆果實，吃下後會有強烈飽足感。\n他似乎是個喜歡追求樂趣的人，對植物與奇異事物很感興趣。\n布朗在前往夏庭森途中遇見羅納德。羅納德替瑪芬先生戴上魔術師帽，帶布朗前往夏庭森，並對傳說中的黑蓮花和紀念巴納沃二世的小雕像展現出強烈興趣。",
+    "descEn": "Known as Ronald the Magician, he appears capable of using magic.\nHe appeared in the Howling Forest, where he grows small blue fruits that create a strong sense of fullness when eaten.\nRonald seems to enjoy pursuing fun and is interested in plants and strange curiosities.\nBrown met Ronald while traveling to Shartingson. Ronald placed a magician's hat on Mr. Muffins, guided Brown to Shartingson, and showed strong interest in the legendary black lotus and in a small figurine commemorating King Benevol II.",
     "related": [],
     "nameEn": "Ronald the Magician",
     "nameZh": "魔術師羅納德",
@@ -5239,8 +5239,8 @@
     "image": "individual_pics/Ronfello.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "聖拉雅米島上一名脾氣古怪的老礦工。\n在金海岸礦坑崩塌事件中的唯一倖存者。\n從此之後便一個人居住在島上的舊燈塔附近。",
-    "descEn": "An eccentric old miner on St. Rayami Island.\nHe is the sole survivor of the Gold Coast Mines collapse.\nSince then, he has lived alone near the old lighthouse on the island.",
+    "descZh": "住在聖拉雅米島舊燈塔附近的老礦工，是金海岸礦坑坍塌事件的唯一倖存者。\n冒險者遇見他時，他近期遭到毒害，臉色發黑、步伐不穩，行動時很容易疲憊。\n他向冒險者提供煤油燈與金絲雀籠，協助他們進入金海岸礦坑調查。",
+    "descEn": "An old miner living near the old lighthouse on St. Rayami Island, and the sole survivor of the Gold Coast Mines collapse.\nWhen the adventurers met him, he had recently been poisoned: his face was darkened, his steps were unsteady, and he tired easily.\nRonfello provided the adventurers with kerosene lamps and a canary cage to help them investigate the Gold Coast Mines.",
     "related": [],
     "nameEn": "Ronfello",
     "nameZh": "朗費羅",
@@ -5279,7 +5279,7 @@
     "image": "individual_pics/Rosa Flaerry.jpeg",
     "status": "alive",
     "gender": "female",
-    "descZh": "Paladin的導師，前麥丁頓王國騎士團團長弗列里爵士的夫人。\n在冒險者們踏離地下城，來到扣林菲爾德時承諾要保護他們。\n麥克嵩比武大會時，在混亂中受傷而下肢殘廢。",
+    "descZh": "帕拉丁的導師，前麥丁頓王國騎士團團長弗列里爵士的夫人。\n在冒險者們踏離地下城，來到扣林菲爾德時承諾要保護他們。\n麥克嵩比武大會時，在混亂中受傷而下肢殘廢。",
     "descEn": "The wife of Syr Flaerry, Paladin’s mentor and the ex leader of the King’s Guard in Mattington.\nAs the adventurers left the dungeon, promised to protect them in Korringfield.\nRosa was hurt and became disabled in the incident of the Macksohn Tournament.",
     "related": [
       "Gareth_Berners",
@@ -5372,7 +5372,7 @@
     "image": "individual_pics/Scar-Face.jpeg",
     "status": "dead",
     "gender": "male",
-    "descZh": "麥克嵩當地衛兵，因臉上有不少刀疤，而自稱刀疤臉。\n在Ron的請求下協助調查日出酒館老闆喬納森的失蹤案件。\n對法蘭奇的閃爍說詞也有些起疑。\n承認自己是崔尼斯教的信徒，但也向Ron表示不是所有崔尼斯教的人都是有問題的。\n在麥克嵩比武大會上為了保護國王巴納沃二世，遭到法蘭奇擊斃。",
+    "descZh": "麥克嵩當地衛兵，因臉上有不少刀疤，而自稱刀疤臉。\n在龍恩的請求下協助調查日出酒館老闆喬納森的失蹤案件。\n對法蘭奇的閃爍說詞也有些起疑。\n承認自己是崔尼斯教的信徒，但也向龍恩表示不是所有崔尼斯教的人都是有問題的。\n在麥克嵩比武大會上為了保護國王巴納沃二世，遭到法蘭奇擊斃。",
     "descEn": "A guard in Macksohn. He called himself \"Scar-Face\" due to a lot of scars on his face.\nScar-Face helped Ron investigated into the missing incident of Jonathan, the owner of Sunrise.\nHe had doubts toward Frankie.\nScar-Face admitted to be a believer of Trinix, but also explained to Ron that not all Trinix believers had something wrong with them.\nHe was killed by Frankie protecting the late King Benevol II.",
     "related": [
       "Dr_David",
@@ -5422,7 +5422,7 @@
     "image": "individual_pics/Sean.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "Ron在尖頂寺的師兄，武藝十分高強。\n來到麥克嵩參加比武大會。",
+    "descZh": "龍恩在尖頂寺的師兄，武藝十分高強。\n來到麥克嵩參加比武大會。",
     "descEn": "A senpai of Ron from the Peak Temple. He was good in martial arts.\nCame to Macksohn to participate in the tournament.",
     "related": [],
     "nameEn": "Sean",
@@ -5607,8 +5607,8 @@
     "image": "individual_pics/Shalan Hartlow.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "大學城現任的城主，歷史區出生。\n待人感覺十分隨興。",
-    "descEn": "The current leader of the Great Citadel, Shalan was from the history district.\nHe treat people with a casual attitude.",
+    "descZh": "方努爾學術界的重要人物，也是茜卓・派松博士的熟人。他輕鬆准許冒險者進入限制書庫，知道茜卓・派松博士的脾氣很快會冷靜下來，並透露方努爾傳送門與代號「狐狸」的滲透者相關。茜卓・派松博士身亡後，他將茜卓・派松博士在方努爾的房產轉到YHWH名下。",
+    "descEn": "An important academic figure in Fanaur and an acquaintance of Dr. Chandra Pyresong. He casually granted the adventurers access to the restricted library, knew Chandra would calm down quickly, and revealed information about the Fanaur portal and an infiltrator known as Fox. After Chandra’s death, he transferred Chandra’s Fanaur property to YHWH.",
     "related": [],
     "nameEn": "Shalan Hartlow",
     "nameZh": "沙蘭・哈特洛",
@@ -5647,7 +5647,7 @@
     "image": "individual_pics/Sham.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "有著伊許頓大人身體的人，自稱是月神給予他的。\n離開小黑屋時，看見Tweeter的第三隻眼，表示無條件聽從他的命令。",
+    "descZh": "有著伊許頓大人身體的人，自稱是月神給予他的。\n離開小黑屋時，看見圖伊特的第三隻眼，表示無條件聽從他的命令。",
     "descEn": "A man with the body of Lord Ishton, who claimed was given by the God of Moon.\nAfter leaving the Dark house, Sham saw Tweeter’s third eye, and told Tweeter that he’d obey him no matter what.",
     "related": [
       "Mr_Moon"
@@ -5695,7 +5695,7 @@
     "image": "individual_pics/Sha'Doom.jpeg",
     "status": "alive",
     "gender": "neutral",
-    "descZh": "身份未名的麥克嵩人。\n似乎與當地衛兵有很多關聯。\n手上刺有十道光芒的太陽。\n曾偽裝成Lemmy、拉芬奇以及安雅・拉芬奇。\n由玩家義揚操控。",
+    "descZh": "身份未名的麥克嵩人。\n似乎與當地衛兵有很多關聯。\n手上刺有十道光芒的太陽。\n曾偽裝成雷米、拉芬奇以及安雅・拉芬奇。\n由玩家義揚操控。",
     "descEn": "A Macksohn local with unknown identity.\nSeemed to be connected to the local guards.\nHe had a Sun with 10 rays on his hand.\nSha’Doom once disguised as Lemmy, LaVinci and Anya LaVinci.\nThis character was played by Roger.",
     "related": [],
     "nameEn": "Sha'Doom",
@@ -5825,8 +5825,8 @@
     "image": "individual_pics/Sora.jpeg",
     "status": "historical figure",
     "gender": "male",
-    "descZh": "謎樣的小男孩。\n看起來年齡大約十歲。\n疑似留下了他的日記，但日記中記載的年份似乎和現在的紀元不同。\n有隻名為嘟嘟的狗。\n他的父母為了他的健康，在他身上做了各種儀式，最後卻讓他喪命。",
-    "descEn": "A mysterious boy.\nHe looked like a 10 years old kid.\nHe seemed to left his diary, but the years in the diary was far from the current empire years.\nHe had a dog named Dudu.\" For his health, his parents performed rituals on him, which eventually lead to his death.",
+    "descZh": "卡什拉鎮居民，被匿名之聲的領袖萊斯麗與瓦克松醫師利用作為儀式材料而死亡；他的父親彼特之後一直與他的屍體同住。\n在746年的卡什拉幻象或記憶中，索拉依照瓦克松醫師的預言等待冒險者，介紹嘟嘟與瓦萊羅給眾人認識，也逐漸想起自己早已死去；真相揭露後，他在眾人面前化為塵土。\n冒險者後來在彼特家床底找到他與嘟嘟的屍體，並得知始祖拉茲特獸曾抽乾他的靈魂。",
+    "descEn": "A resident of Kashla who was used as ritual material by Leslie Grunfeld, leader of the Anonymous Voice, and Dr. Vaxon. His father Pete later lived with his corpse.\nIn the Kashla illusion or memory of year 746, Sora waited for the adventurers according to Dr. Vaxon’s prophecy, introduced Dudu and Valero, and gradually remembered that he had already died; when the truth surfaced, he dissolved into dust before them.\nThe adventurers later found his and Dudu’s bodies under Pete’s bed, and learned that the Progenitor Laztek had drained his soul.",
     "related": [
       "Dr_Vaxon",
       "Dudu",
@@ -5913,8 +5913,8 @@
     "image": "individual_pics/Tam Quorr.png",
     "status": "dead",
     "gender": "female",
-    "descZh": "在心空域的宿舍與Lott搭訕的人。年約三十的人類女子。\n對冒險者們表示自己在地面上是研究芬尼爾的學者，多年前來到斐納札後逐漸變異，現在覺得自己回不去了。\n向冒險者們說明了很多斐納札的規則，包涵每日兩次的禱告、衣服深淺的意義、議員與區域的關係，甚至透露了心空席從缺的消息。\n雙手已嚴重變形，表情控制也十分不自然。\n譚現身為第三名爭奪心空席的人選，但沒有自己夥伴的他，第一輪就淘汰了。",
-    "descEn": "A human woman in her thirties who talked to Lott in the dorm in the Realm of Hollow Heart.\nTam told the adventurers that she used to be a scholar whose topic was around Phyneal, God of Luna, and came to Fenadra. She \"changed\" a lot, and deemed that she has no way back to the surface now.\nTam told the adventurers a lot of rules here in Fenadra, including the two time prayers everyday, the meaning of the color of their clothes, the relationship between the seats of councilmen and the realms. She even told the adventurers about the news of the absent of the Seat of Hollow Heart.\nHer hands are twisted, and her facial expression are extremely distorted.\nTam showed up as the third candidate of the Seat of Hollow Heart. But with no companions, she became the first to be eliminated from the trials.",
+    "descZh": "斐納札的機器人，受到冒險者們推舉，成為心空席候選人之一。\n因為缺乏夥伴與支持者，在選拔後段未能晉級決賽。烏波成為心空席並回到靈魂議會後，譚與其支持者都沒有再出現。",
+    "descEn": "A warforged from Fenadra who was nominated by the adventurers as one of the candidates for the Seat of Hollow Heart.\nBecause Tam lacked companions and supporters, she failed to reach the final round of the selection. After Ubbo became the Seat of Hollow Heart and returned to the Soul Parliament, Tam and her supporters did not appear again.",
     "related": [
       "Lumio"
     ],
@@ -6006,8 +6006,8 @@
     "image": "individual_pics/Thompson.jpg",
     "status": "alive",
     "gender": "male",
-    "descZh": "於貝瑟頓經營許久的小型書店「第1410頁」內工作的店員。\n與毛毛熟識，會提供雞腿給毛毛吃，似乎與領養他的貴族家庭也有不少交流。\n自稱是T.I.D.E.S.組織的相關人員，但並非內部成員。",
-    "descEn": "A bookstore clerk of \" Page 1410\", a small bookstore in Batherdon.\nThompson is familiar with Dawn Light Fur, even provides him chicken drumsticks. He also seemed to have been working with the noble family that adopted Dawn Light Fur.\nThompson claimed to be a related with T.I.D.E.S., but not a member of it.",
+    "descZh": "於貝瑟頓經營許久的小型書店「第1410頁」內工作的店員。\n與毛毛熟識，會提供雞腿給毛毛吃，似乎與領養他的貴族家庭也有不少交流。\n自稱是T.I.D.E.S.組織的相關人員，但並非內部成員。冒險者依照紙條來到第1410頁書店時，湯普生告訴他們當晚搭上T.I.D.E.S.馬車後會得到更多答案，也向鑰分享了與喬里森和T.I.D.E.S.相關的線索。",
+    "descEn": "A clerk at Page 1410, a long-running small bookstore in Batherdon.\nThompson is familiar with Dawn Light Fur and gives him chicken drumsticks, and also seems to have contact with the noble family that adopted Fur.\nHe claims to be connected to T.I.D.E.S., but not an actual member. When the adventurers came to Page 1410 following the note, Thompson told them they would receive more answers after boarding the T.I.D.E.S. carriage that night, and shared clues with Kaname about Jeorisan and T.I.D.E.S.",
     "related": [],
     "nameEn": "Thompson",
     "nameZh": "湯普生",
@@ -6046,7 +6046,7 @@
     "image": "individual_pics/Mayor Thorne.jpeg",
     "status": "dead",
     "gender": "male",
-    "descZh": "瑟巴諾的鎮長，住在一個華麗的房子內，長期拄著一根拐杖。\n因為房子被Inu放火，而對Inu十分厭惡。\n招待冒險者們在他家夜宿。\n家裡似乎有個神秘的魔法盒子。\n死亡時，身上被發現有蜘蛛的咬痕。",
+    "descZh": "瑟巴諾的鎮長，住在一個華麗的房子內，長期拄著一根拐杖。\n因為房子被伊努放火，而對伊努十分厭惡。\n招待冒險者們在他家夜宿。\n家裡似乎有個神秘的魔法盒子。\n死亡時，身上被發現有蜘蛛的咬痕。",
     "descEn": "The mayor of Sebano, who lived in a classy house, and walk with a stick.\nHe hated Inu since Inu was responsible for his house on fire.\nInvited the adventurers to live in his place.\nThere seemed to be a mysterious magic box in his house.\nWhen he died, there were bitten marks of spiders all over his body.",
     "related": [
       "Anna"
@@ -6088,8 +6088,8 @@
     "image": "individual_pics/Mayor Saerus Pharyon.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "萊斯諾的市長，即「龍冠」，中年金龍人男性。\n個性軟弱而優柔寡斷。\n對於萊斯諾和克萊芬的立場模糊。",
-    "descEn": "The mayor, a.k.a. Crown, of Lesinor, a mid-aged gold dragonborn male.\nWeak and indecisive.\nHas an ambiguous stance in the situation between Leisnor and Clyphen.",
+    "descZh": "萊斯諾的市長，即「龍冠」，中年金龍人男性。\n個性軟弱而優柔寡斷，對於萊斯諾和克萊芬的立場模糊。\n中途之家被萊斯諾衛兵逮捕後，賽爾斯與瑪萊雅將軍、格雷斯卓大臣一同接見他們，但幾乎沒有說話的餘地。真正主導局勢的是強硬主戰的瑪萊雅將軍。",
+    "descEn": "The mayor, or Crown, of Leisnor: a middle-aged gold dragonborn man.\nHe is weak and indecisive, with an ambiguous stance on the situation between Leisnor and Clyphen.\nAfter the Halfway Home was captured by Leisnor guards, Saerus received them alongside General Maliya and Minister Galaestrel, but he had almost no room to speak. The situation was effectively controlled by the hardline, pro-war General Maliya.",
     "related": [
       "General_Maliya_Kaeyal",
       "Syr_Galaestrel_Freyeman"
@@ -6174,7 +6174,7 @@
     "image": "individual_pics/Trisha of Baylon.jpeg",
     "status": "alive",
     "gender": "female",
-    "descZh": "冒險者們在地下城發現困在牢籠內的半妖精年輕女子。\n崔夏自稱來自洛森王國的貝倫部落。他的父母是拉索斯教的忠誠信徒，卻遭到背叛，而導致崔夏被綁至地下城。同時，崔夏也因為父母的關係，對拉索斯教十分了解，進而對該宗教極度厭惡。\n幼年時雙手手臂被刺上拉索斯經文的刺青。\n隨身攜帶一個裝有開鎖工具的黑色小盒子，以及兩把匕首。\n在與冒險者走在地下城的過程中，因為Uko將一顆神祕石放在他的掌心，而將神祕石吸收進了身體裡。\n崔夏曾向Midori透露自己會聽到聲音叫他做不好的事情，在石頭融入他身體後，如果他反抗，便會感到極度的頭痛。\n在與台北市議員們逃出地城後，與Uko一同從寇林菲爾德逃亡，去尋找他的父母。",
+    "descZh": "冒險者們在地下城發現困在牢籠內的半妖精年輕女子。\n崔夏自稱來自洛森王國的貝倫部落。他的父母是拉索斯教的忠誠信徒，卻遭到背叛，而導致崔夏被綁至地下城。同時，崔夏也因為父母的關係，對拉索斯教十分了解，進而對該宗教極度厭惡。\n幼年時雙手手臂被刺上拉索斯經文的刺青。\n隨身攜帶一個裝有開鎖工具的黑色小盒子，以及兩把匕首。\n在與冒險者走在地下城的過程中，因為烏柯將一顆神祕石放在他的掌心，而將神祕石吸收進了身體裡。\n崔夏曾向米多莉透露自己會聽到聲音叫他做不好的事情，在石頭融入他身體後，如果他反抗，便會感到極度的頭痛。\n在與台北市議員們逃出地城後，與烏柯一同從寇林菲爾德逃亡，去尋找他的父母。",
     "descEn": "The half-elf young girl the adventurers found locked up in a cage in the dungeon.\nTrisha said she was from Baylon Tribe in the Lothum Kingdom. Her parents were loyal Laxthos worshippers, but was betrayed, which led to Trisha locked up in a cage.At the same time, due to her parents, Trisha was familiar with the cult, but also hated it.\nShe had Laxthos scripts tattooed on her arms when she was young.\nShe had a black box of locket picks on her, and also two daggers.\nWhen traveling with the adventurers, a mysterious stone found by Uko was absorbed by her body.\nTrisha revealed to Midori that she heard voices telling her to do bad things, and she’d felt agony if she resisted after the mysterious stone was absorbed by her.\nWhen the party escaped the dungeon, she and Uko left Korringfield to find her parents.",
     "related": [],
     "nameEn": "Trisha of Baylon",
@@ -6216,8 +6216,8 @@
     "image": "individual_pics/Twiggle.png",
     "status": "alive",
     "gender": "neutral",
-    "descZh": "雷雅在貝瑟頓設下陷阱，抓到的松鼠。\n目前團隊中僅有Leah可以透過動物溝通術和他對話，從對話中得知他是個滿口髒話、神經質的牆頭草。\n目前頹哥與鑰一起坐在鑰的推車上，和冒險者們一起冒險。\n被鑰封為「嘎吱爵士」。",
-    "descEn": "A squirrel caught be Leah with her traps near Batherdon.\nLeah is the only one who can communicate with Twiggle through speak with animals. She found that Twiggle is a swearing edgy bandwagon squirrel.\nTwiggle has been staying with Kaname on her cart and travel with the adventurers.\nDubbed as \" Syr Creak\" by Kaname.",
+    "descZh": "雷雅在貝瑟頓設下陷阱，抓到的松鼠。\n目前團隊中僅有雷亞可以透過動物溝通術和他對話，從對話中得知他是個滿口髒話、神經質的牆頭草。\n目前頹哥與鑰一起坐在鑰的推車上，和中途之家的冒險者們一起行動，也被迫捲入萊斯諾與克萊芬之間的間諜任務。\n被鑰封為「嘎吱爵士」。",
+    "descEn": "A squirrel caught by Leah with her traps near Batherdon.\nLeah is the only one who can communicate with Twiggle through speak with animals. She learned that Twiggle is a foul-mouthed, nervous bandwagon squirrel.\nTwiggle currently stays with Kaname on her cart and travels with the Halfway Home adventurers, and was also dragged into their forced spying mission between Leisnor and Clyphen.\nDubbed Syr Creak by Kaname.",
     "related": [],
     "nameEn": "Twiggle",
     "nameZh": "頹哥",
@@ -6360,8 +6360,8 @@
     "image": "individual_pics/Dr. Vaxon.jpeg",
     "status": "historical figure",
     "gender": "male",
-    "descZh": "卡什拉的醫生，為匿名之聲工作。\n對索拉從小照顧，但也建議索拉的父母對其進行一些儀式，最終導致索拉的死亡。\n曾向索拉預言會有幾名冒險者會來把他救出來。\n在冒險者們與他相見時，手部似乎有些狀況，與Ron的巫妖之手十分相似。經過Midori的感知，他似乎不是人類，而是名巫妖。",
-    "descEn": "The doctor in Kashla, who worked for the Voice of the Anonymous.\nLooked after Sora since Sora was a baby, but also suggested Sora’s parents with some rituals, which led to Sora’s final death.\nHe once told Sora a prophecy that there would be several adventurers who will bring him out.\nAs the adventurers met him, there seemed to be something wrong with his arms, like Ron’s arm. After Midori’s sensing, Dr. Vaxon might not be a human, but a lich.",
+    "descZh": "卡什拉鎮中最早與始祖拉茲特獸接觸的醫師之一。他從匿名之聲教堂的預言得知冒險者會來到卡什拉，並在746年的記憶中讓索拉等待他們。瓦克松的手部異變與龍恩相似，也顯示他早已深受拉索斯力量影響。",
+    "descEn": "One of the first doctors in Kashla to come into contact with the Progenitor Laztek. Through a prophecy from the Anonymous Voice church, he learned that adventurers would come to Kashla, and in the memory of year 746 he had Sora wait for them. Vaxon’s hand mutation resembled Ron’s, showing that he had long been affected by Laxthosian power.",
     "related": [
       "Dudu",
       "Leslie_Grunfeld",
@@ -6404,8 +6404,8 @@
     "image": "individual_pics/Valero Berners.jpeg",
     "status": "historical figure",
     "gender": "female",
-    "descZh": "年僅10歲左右，與索拉生下兒子塔里・柏納斯。\n父母為懷雅特和露西。",
-    "descEn": "About age 10. She had a baby with Sora, named Tari Berners.\nValero’s parents were Wyatt and Lucy.",
+    "descZh": "卡什拉鎮居民，索拉年幼時的女友。她大約十歲時與索拉有了孩子塔里・柏納斯，孩子仍使用柏納斯姓氏；她的父母是懷亞特與露西，家中也曾為麥迪遜家工作。她的身世補上了索拉、麥迪遜家與柏納斯家之間被卡什拉記憶掩蓋的關係。",
+    "descEn": "A resident of Kashla and Sora’s childhood girlfriend. At about ten years old, she had a child with Sora named Tari Berners, who kept the Berners family name. Her parents were Wyatt and Lucy, and her family had worked for the Madisons. Her history revealed the buried connection between Sora, the Madisons, and the Berners family.",
     "related": [
       "Sora"
     ],
@@ -6497,7 +6497,7 @@
     "image": "individual_pics/Xandria, the Violet of Macksohn.jpeg",
     "status": "alive",
     "gender": "female",
-    "descZh": "Paladin的生母，居住在麥克嵩的半身人。\n大家對她的形容是「傾國傾城」。\n在柏納斯家的晚宴上，和Paladin相認，但是似乎是靠著弗列里爵士的交涉才願意認Paladin。\n在比武大會的災難後，決定和弗列里夫婦一同回到寇林菲爾德居住。\n曾將胸前的別針和髮簪分別遞給Paladin和YHWH作為信物。",
+    "descZh": "帕拉丁的生母，居住在麥克嵩的半身人。\n大家對她的形容是「傾國傾城」。\n在柏納斯家的晚宴上，和帕拉丁相認，但是似乎是靠著弗列里爵士的交涉才願意認帕拉丁。\n在比武大會的災難後，決定和弗列里夫婦一同回到寇林菲爾德居住。\n曾將胸前的別針和髮簪分別遞給帕拉丁和YHWH作為信物。",
     "descEn": "The woman who gave birth to Paladin, a halfling who lived in Macksohn.\nShe was described as the prettiest of all in Macksohn.\nShe finally admits being Paladin’s mother in the Berners banquet, but mostly due to Syr Flaerry giving up on his title.\nAfter the Macksohn Tournament incident, she decided to go back to Korringfield with the Flaerry couple.\nShe gave Paladin her pin and YHWH her hairpin as gifts.",
     "related": [
       "Gareth_Berners",
@@ -6545,8 +6545,8 @@
     "image": "individual_pics/Yuki.jpg",
     "status": "alive",
     "gender": "female",
-    "descZh": "對Midori而言非常重要的人，多次以幻影出現在Midori的腦中，也曾在妖精荒野時被艾爾比以幻象呈現在大家面前。\n過去似乎曾被關押在一個伸手不見五指的地方，現在的動向不明。\n在聖拉雅米島的洞穴，被發現操控著拉茲特獸攻擊老鼠人。",
-    "descEn": "A very important figure to Midori, who showed up in Midori’s head a lot of times, and also projected by Elby in the Feywild.\nShe was once locked up in a total dark place, and there had been no clue where she is.\nShe was found controlling a Laztek, attacking the ratfolks in a cave on St. Rayami Island.",
+    "descZh": "對米多莉而言非常重要的人，多次以幻影出現在米多莉的腦中，也曾在妖精荒野時被艾爾比以幻象呈現在大家面前。\n過去似乎曾被關押在一個伸手不見五指的地方。\n在聖拉雅米島的洞穴，被發現操控著拉茲特獸攻擊老鼠人；在金海岸礦坑事件中，冒險者取得的紀錄顯示他與拉索斯教的實驗與滿月儀式有關，且與米多莉可能站在對立面。",
+    "descEn": "A very important figure to Midori, who appeared in Midori's mind many times and was also shown to the party as an illusion by Elby in the Feywild.\nShe seems to have once been imprisoned in a place of complete darkness.\nOn St. Rayami Island, Yuki was found controlling a Laztek to attack ratfolk. During the Gold Coast Mines incident, records recovered by the adventurers tied her to Laxthos experiments and a full-moon ritual, suggesting that she and Midori may now stand on opposing sides.",
     "related": [
       "Iochi_Mari"
     ],
@@ -6635,8 +6635,8 @@
     "image": "individual_pics/Zek.jpg",
     "status": "alive",
     "gender": "male",
-    "descZh": "狂暴戰士幫位於拉克渡口的首領。\n是一名有一頭紫髮的壯碩男子。\n委託冒險者去聖拉雅米島上尋找失蹤的狂暴戰士幫成員。\n並舉行了狂暴之儀測試波以及YHWH是否有加入狂暴戰士幫的資質。",
-    "descEn": "The leader of the Raging Warriors at Lark Crossing.\nHe is a burly man with purple hair.\nHe commissioned the adventurers to search St. Rayami Island for missing members of the Raging Warriors.\nHe also conducted the Rite of Fury to test whether Beau and YHWH were qualified to join the Raging Warriors.",
+    "descZh": "狂暴戰士幫的領袖，鬥名為「鬥破蒼穹」。\n在狂怒儀式中帶領戰士們以戰鬥與吶喊祭拜津菈，並將波與YHWH分別取名為「撓撓耳朵」與「舔舔地板」。\n艾希斯前往聖拉雅米島後失蹤，澤克請冒險者尋找他的下落，並交給他們艾希斯的劍「異教徒剋星」與一封要轉交給艾希斯的信。",
+    "descEn": "The leader of the Raging Warriors, known in battle as Skybreaker.\nDuring the Rite of Fury, Zek led the warriors in honoring Keinra through combat and shouting, and gave Beau and YHWH the fighting names Scratches-Ears and Licks-Floor.\nAfter Essis disappeared on St. Rayami Island, Zek asked the adventurers to find her, giving them Essis's sword, Heretic Slayer, and a letter to deliver to her.",
     "related": [
       "Beau",
       "Essis",
@@ -6683,8 +6683,8 @@
     "image": "individual_pics/Manbao.png",
     "status": "alive",
     "gender": "neutral",
-    "descZh": "Samael於麥克嵩地下城撿到的拉茲特獸幼獸，行動緩慢，聲音低沉。\n被Samael當成酷爆的弟弟養。\n食性未知。",
-    "descEn": "A Laztek pup that Samael found in the Macksohn Dungeon.\nIt moves slowly and has a deep, rumbling voice.\nSamael keeps it as Kubao's little brother.\nIts diet is unknown.",
+    "descZh": "薩梅爾於麥克嵩地下城撿到的拉茲特獸幼獸，行動緩慢，聲音低沉。\n被薩梅爾當成酷爆的弟弟養。\n在前往聖拉雅米島和金海岸礦坑的旅途中，慢爆依然跟著隊伍行動。\n食性未知。",
+    "descEn": "A Laztek pup that Samael found in the Macksohn Dungeon.\nIt moves slowly and has a deep, rumbling voice.\nSamael keeps it as Kubao's little brother.\nManbao continued traveling with the party during the journey to St. Rayami Island and the Gold Coast Mines.\nIts diet is unknown.",
     "related": [
       "Kubao"
     ],
@@ -6733,8 +6733,8 @@
     "image": "individual_pics/Dudu.jpeg",
     "status": "dead",
     "gender": "neutral",
-    "descZh": "索拉家養的黃金獵犬，十分活潑，受到YHWH的喜愛。\n在一次瓦克松建議的儀式中，被開腸剖肚，拿來獻祭。",
-    "descEn": "The golden retriever that Sora owned, it was lively and loved by YHWH.\nIn a ritual hold by Dr. Vaxon, It was killed and slit through its body as a sacrifice.",
+    "descZh": "索拉最親近的狗，被卡什拉鎮民視為索拉的玩伴。在746年的卡什拉幻象或記憶中，嘟嘟仍陪在索拉身邊；真相揭露後，冒險者在彼特家的床底發現牠與索拉的屍體。牠早在瓦克松醫師與匿名之聲相關的儀式中被犧牲。",
+    "descEn": "Sora’s beloved dog and closest companion. In the Kashla illusion or memory of year 746, Dudu still appeared beside Sora; after the truth surfaced, the adventurers found Dudu’s body under Pete Madison’s bed together with Sora’s. Dudu had already been sacrificed in a ritual connected to Dr. Vaxon and the Anonymous Voice.",
     "related": [
       "Dr_Vaxon",
       "Sora"
@@ -6776,7 +6776,7 @@
     "image": "individual_pics/Kubao.jpeg",
     "status": "alive",
     "gender": "neutral",
-    "descZh": "Samael於嚎叫森林守夜時撿起的幼狼，隨著台北市議員們一起行動。\n在地下城時，透過Uko告知大家他的本名為戴倫，不過願意接受酷爆為他的名字。",
+    "descZh": "薩梅爾於嚎叫森林守夜時撿起的幼狼，隨著台北市議員們一起行動。\n在地下城時，透過烏柯告知大家他的本名為戴倫，不過願意接受酷爆為他的名字。",
     "descEn": "A wolf pup that Samael found at the Howling Forest when she took the night shift.\n酷爆 adventured with the party.\nIn the dungeon, it told Uko that its original name was Darren, but was fine with 酷爆 being its name.",
     "related": [
       "Manbao"
@@ -6836,8 +6836,8 @@
     "image": "individual_pics/Petra.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "居住在金海岸礦坑中的老鼠人。\n受到拉索斯教徒的脅迫，在島上綁架居民。\n在金海岸礦坑的戰鬥中展現了驚人的求生意志。",
-    "descEn": "A ratfolk living in the Gold Coast Mines.\nForced by followers of Laxthos to kidnap residents on the island.\nShe displayed an astonishing will to survive during the battle in the Gold Coast Mines.",
+    "descZh": "居住在金海岸礦坑中的老鼠人，本名鼠田佩特拉。\n受到拉索斯教徒的脅迫，在島上綁架居民。\n冒險者們在礦坑中救下驚魂未定的佩特拉，得知他的夥伴臭皮已被殺死；他也向冒險者說明礦坑中有人類拉索斯教徒和長爪黑毛怪物出沒。\n在金海岸礦坑的戰鬥中展現了驚人的求生意志。",
+    "descEn": "A ratfolk living in the Gold Coast Mines, whose full name is Petra Ratfield.\nForced by followers of Laxthos, Petra kidnapped residents on the island.\nThe adventurers rescued a terrified Petra in the mines and learned that his companion Stooges had been killed. Petra also told them that a human Laxthos cultist and a black-furred, long-clawed monster had been appearing in the tunnels.\nPetra displayed an astonishing will to survive during the battle in the Gold Coast Mines.",
     "related": [],
     "nameEn": "Petra",
     "nameZh": "佩特拉",
@@ -6876,8 +6876,8 @@
     "image": "individual_pics/Varoen.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "克萊芬「新書院」的參謀與秘書長，頭上繫著藍色頭巾。\n在皮尼歐教授於辯論會上遭到刺殺後，瓦羅恩走上舞台，宣稱新書院不會有新的主席，而自己仍會作為秘書長帶領派系前進。\n他冷靜得近乎冷酷的反應，以及輕輕一指便讓雷亞雙腿發麻跪下的手段，都讓冒險者們感到不寒而慄。",
-    "descEn": "A strategist and secretary-general of the New Academy in Clyphen, known for the blue headscarf she wears.\nAfter Professor Peneo was assassinated during the debate, Varoen stepped onto the stage and declared that the New Academy would not choose a new chair, and that she would continue leading it as secretary-general.\nHer calm, almost cold response, along with the casual gesture that made Leah's legs go numb and forced her to kneel, left the adventurers deeply unsettled.",
+    "descZh": "克萊芬「新書院」的參謀與秘書長，頭上繫著藍色頭巾。\n在皮尼歐教授於辯論會上遭到刺殺後，瓦羅恩走上舞台，宣稱新書院不會有新的主席，而自己仍會作為秘書長帶領派系前進。\n他冷靜得近乎冷酷的反應，以及輕輕一指便讓雷亞雙腿發麻跪下的手段，都讓冒險者們感到不寒而慄。\n教授死後，瓦羅恩順理成章地接掌新書院，使雷亞與中途之家開始懷疑他與「新曙光」和刺殺事件之間可能有所牽連。",
+    "descEn": "A strategist and secretary-general of the New Academy in Clyphen, known for the blue headscarf she wears.\nAfter Professor Peneo was assassinated during the debate, Varoen stepped onto the stage and declared that the New Academy would not choose a new chair, and that she would continue leading it as secretary-general.\nHer calm, almost cold response, along with the casual gesture that made Leah's legs go numb and forced her to kneel, left the adventurers deeply unsettled.\nAfter the professor's death, Varoen smoothly took control of the New Academy, leading Leah and the Halfway Home to suspect she may be connected to New Dawn and the assassination.",
     "related": [
       "Professor_Peneo"
     ],
@@ -6918,8 +6918,8 @@
     "image": "individual_pics/Yi.jpg",
     "status": "unknown",
     "gender": "male",
-    "descZh": "麥克嵩貧民窟的年輕男子，似乎和貧民窟裡的多數人都認識。\n受僱於被他稱為M伯爵的馬可斯・詹斯之下，擔任類似情報員的角色，負責搜集和蜘蛛神教相關的情報。\n有一座秘密基地，裡面有不少和宗教相關的書籍。\n由玩家Nasa扮演。",
-    "descEn": "A young man from old town Macksohn, who seemed to know everyone in the old town.\nHe was hired by Marcus Jens, whom he called Count M, as an agent, in charge of information on the Spider-God religion.\nHe had a secret base with lots of books on religion.\nThis character was played by Nasa.",
+    "descZh": "神祕盜賊，洛特的師父，常以假名和地下交易活動。\n龍恩、烏柯與伊努在王都祕密基地買下推特出版的伊寫真書時，伊正因先前事件受傷，躺在馬可斯莊園中恢復，並與徒弟洛特短暫重逢。\n在大學城安德烈亞儀式後，龍恩將被綁住且昏迷的伊丟進後院坑洞，再把逐漸陶瓷化的麥爾文壓在上面一同埋下；之後龍恩曾想確認伊與麥爾文是否還在洞裡，卻找不到安德烈亞的房子。",
+    "descEn": "A mysterious thief, Lott’s mentor, and a figure who often operates through aliases and underground dealings.\nWhen Ron, Uko, and Inu bought Tweeter’s photo book of Yi at the capital’s secret base, Yi was recovering from earlier injuries at Marcus’s estate and briefly reunited with his apprentice Lott.\nAfter Andrea’s ritual in University Town, Ron threw the bound and unconscious Yi into a backyard pit, buried the increasingly ceramic Melvin on top of him, and later tried to check on them but could no longer find Andrea’s house.",
     "related": [
       "Marcus_Jens"
     ],
@@ -6962,7 +6962,7 @@
     "image": "individual_pics/Yung.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "馬格努斯爵士給Lemmy騎去麥克嵩的馬。\n年紀較大，跑的速度比較慢，但是依舊穩健且可靠。",
+    "descZh": "馬格努斯爵士給雷米騎去麥克嵩的馬。\n年紀較大，跑的速度比較慢，但是依舊穩健且可靠。",
     "descEn": "The horse that Syr Magnus provided Lemmy to ride to Macksohn.\nHe was old and slow, but still steady and reliable.",
     "related": [
       "Syr_Magnus"
@@ -7146,8 +7146,8 @@
     "image": "individual_pics/Py'Par.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "涅西斯教團「常翠林」成員之一，在冒險者們追尋芒果的行跡時發現他。\n派琶告知冒險者們教團已將巨蛇（芒果）擊退，並拯救了被巨蛇綑綁的男人，即冒險者的夥伴Psyber。\n雖然他踏上的草地都會化為花田，但人似乎有點迷糊，對距離、時間等都沒有很精確的概念。",
-    "descEn": "A member of the Nessis order \"the Evergreen\". The adventurers found her while tracking Mango.\nPy'Par told the adventurers that the order had already defeated the serpent (Mango), and saved the man tied up by Mango, which is Psyber, the companion of the adventurers.\nAlthough the meadows she treads on turns into flower fields, Py'Par doesn't have a precise concept of time and distance.",
+    "descZh": "涅西斯教團「常翠林」成員之一，在冒險者們追尋芒果的行跡時發現他。\n派琶告知冒險者們教團已將巨蛇（芒果）擊退，並拯救了被巨蛇綑綁的男人，即冒險者的夥伴賽博。\n雖然他踏上的草地都會化為花田，但人似乎有點迷糊，對距離、時間等都沒有很精確的概念。\n在護送冒險者前往常翠林中繼站時，派琶遭到芬尼爾信徒與蛇身女妖襲擊。雖然受傷，他仍催促眾人趕路，並警告金髮的佛拉可能有危險。",
+    "descEn": "A member of the Nessis order known as the Evergreen. The adventurers found her while tracking Mango.\nPy'Par told the adventurers that the order had already driven off the giant serpent, Mango, and saved the man Mango had bound: Psyber, the adventurers' companion.\nAlthough meadows turn into flower fields wherever she steps, Py'Par seems somewhat scatterbrained and has an imprecise sense of distance and time.\nWhile guiding the adventurers toward an Evergreen relay station, Py'Par was attacked by followers of Phynoir and a gorgon-like foe. Though wounded, she urged everyone onward and warned that their blond friend, Phola, might be in danger.",
     "related": [
       "Mango"
     ],
