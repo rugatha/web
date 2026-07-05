@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BZZFKMJ65Y');
+  </script>
   <title>D&D 法術表 | Rugatha</title>
   <meta name="description" content="以表格方式瀏覽、篩選與排序 D&D 5e PHB 法術資料。">
   <link rel="icon" type="image/png" href="../assets/rugatha-favicon.png">
@@ -74,6 +83,14 @@
       color: var(--spell-muted);
       font-size: 1rem;
       line-height: 1.6;
+    }
+
+    .title-divider {
+      width: min(320px, 72vw);
+      height: 1px;
+      margin: 12px auto 2px;
+      border: 0;
+      background: rgba(236, 242, 237, 0.32);
     }
 
     .result-count {
@@ -149,7 +166,7 @@
       padding: 0 11px;
     }
 
-    .check-group {
+    .component-toggle {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -157,10 +174,8 @@
       align-items: center;
     }
 
-    .check-option {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .component-toggle button {
+      min-width: 42px;
       min-height: 34px;
       padding: 0 10px;
       border: 1px solid var(--spell-line);
@@ -169,21 +184,12 @@
       color: var(--spell-ink);
       font-size: 0.92rem;
       font-weight: 700;
-      cursor: pointer;
     }
 
-    .control .check-option {
-      color: var(--spell-ink);
-      font-size: 0.92rem;
-    }
-
-    .check-option input {
-      width: 16px;
-      min-height: 16px;
-      height: 16px;
-      margin: 0;
-      accent-color: var(--spell-accent);
-      cursor: pointer;
+    .component-toggle button[aria-pressed="true"] {
+      background: var(--accent);
+      color: #10231d;
+      border-color: var(--accent);
     }
 
     input:focus,
@@ -399,7 +405,7 @@
     }
 
     .detail-row > td {
-      background: rgba(211, 223, 210, 0.32);
+      background: var(--spell-panel);
     }
 
     .detail-panel {
@@ -408,7 +414,7 @@
       padding: 14px 12px 10px;
       line-height: 1.65;
       color: #27251f;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(211, 223, 210, 0.38));
+      background: var(--spell-panel);
       border-left: 4px solid var(--spell-accent);
     }
 
@@ -416,6 +422,14 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
+    }
+
+    .mobile-detail-meta {
+      display: none;
+    }
+
+    .mobile-detail-actions {
+      display: none;
     }
 
     .detail-text {
@@ -790,7 +804,10 @@
 
       .spell-row {
         display: grid;
-        gap: 8px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 10px;
+        row-gap: 0;
+        align-items: center;
         margin-bottom: 10px;
         padding: 12px;
         border: 1px solid var(--spell-line);
@@ -808,6 +825,11 @@
       }
 
       .spell-row td {
+        display: none;
+      }
+
+      .spell-row td[data-label="名稱"],
+      .spell-row td[data-label="內容"] {
         display: grid;
         grid-template-columns: 5.5em minmax(0, 1fr);
         gap: 8px;
@@ -825,6 +847,7 @@
       }
 
       .spell-row td[data-label="內容"] {
+        justify-self: end;
         grid-template-columns: 1fr;
       }
 
@@ -858,7 +881,10 @@
       }
 
       .spell-row .detail-button {
-        width: 100%;
+        min-height: 30px;
+        width: auto;
+        padding: 0 12px;
+        font-size: 0.88rem;
       }
 
       .spell-row .book-button {
@@ -873,17 +899,34 @@
         display: block;
         padding: 0;
         border-bottom: 0;
-        background: transparent;
+        background: var(--spell-panel);
       }
 
       .detail-panel,
       .class-spell-detail {
         padding: 12px;
         border-radius: 8px;
+        background: var(--spell-panel);
       }
 
       .detail-meta {
         gap: 5px;
+      }
+
+      .desktop-detail-meta {
+        display: none;
+      }
+
+      .mobile-detail-meta {
+        display: flex;
+      }
+
+      .mobile-detail-actions {
+        display: block;
+      }
+
+      .mobile-detail-actions .book-button {
+        width: 100%;
       }
 
       .tag {
@@ -963,6 +1006,8 @@
         <div class="title-copy">
           <h1>D&D 法術表</h1>
           <p>採用D&amp;D 5e玩家手冊內容<br>僅供遊玩使用，請勿外流</p>
+          <hr class="title-divider" aria-hidden="true">
+          <p>可將會使用到的法術按下「加入」<br>一併在「法術書」裡檢視</p>
           <div class="view-toggle" aria-label="切換法術視圖">
             <button type="button" data-view="list" aria-pressed="true">法術清單</button>
             <button type="button" data-view="class" aria-pressed="false">職業法術</button>
@@ -991,10 +1036,10 @@
         </div>
         <div class="control">
           <span class="control-label">成分</span>
-          <div class="check-group" id="componentFilter" aria-label="成分篩選">
-            <label class="check-option"><input type="checkbox" value="聲">聲</label>
-            <label class="check-option"><input type="checkbox" value="勢">勢</label>
-            <label class="check-option"><input type="checkbox" value="材">材</label>
+          <div class="component-toggle" id="componentFilter" aria-label="成分篩選">
+            <button type="button" value="聲" aria-pressed="false">聲</button>
+            <button type="button" value="勢" aria-pressed="false">勢</button>
+            <button type="button" value="材" aria-pressed="false">材</button>
           </div>
         </div>
         <div class="control">
@@ -1326,7 +1371,10 @@
     }
 
     function selectedComponents() {
-      return Array.from(elements.component.querySelectorAll("input:checked"), (input) => input.value);
+      return Array.from(
+        elements.component.querySelectorAll("button[aria-pressed='true']"),
+        (button) => button.value
+      );
     }
 
     function sortClasses(a, b) {
@@ -1384,11 +1432,14 @@
           <tr class="detail-row" id="${rowId}" ${expanded ? "" : "hidden"}>
             <td colspan="14">
               <div class="detail-panel">
-                <div class="detail-meta">
-                  <span class="tag">成分 ${escapeHtml(spell.componentText)}</span>
-                  <span class="tag">專注 ${escapeHtml(spell.concentrationText)}</span>
-                  <span class="tag">儀式 ${escapeHtml(spell.ritualText)}</span>
+                <div class="detail-meta desktop-detail-meta">
                   <span class="tag">來源 ${escapeHtml(spell.source || "—")} p.${escapeHtml(spell.page || "—")}</span>
+                </div>
+                <div class="detail-meta mobile-detail-meta">
+                  ${renderSpellDetailMeta(spell)}
+                </div>
+                <div class="mobile-detail-actions">
+                  ${renderBookButton(spell)}
                 </div>
                 <div class="detail-text">
                   ${renderEntries(spell.entries)}
@@ -1400,6 +1451,24 @@
         `);
       });
       elements.rows.innerHTML = rows.join("");
+    }
+
+    function renderSpellDetailMeta(spell) {
+      const metaItems = [
+        levelText(spell.level),
+        spell.schoolText,
+        `施法 ${spell.timeText}`,
+        `距離 ${spell.rangeText}`,
+        `持續 ${spell.durationText}`,
+        `成分 ${spell.componentText}`,
+        `專注 ${spell.concentrationText}`,
+        `儀式 ${spell.ritualText}`,
+        `攻擊 ${spell.attackText}`,
+        `豁免 ${spell.savingText}`,
+        `傷害 ${spell.damageText}`,
+        `來源 ${spell.source || "—"} p.${spell.page || "—"}`,
+      ];
+      return metaItems.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("");
     }
 
     function renderClassView() {
@@ -1646,7 +1715,12 @@
     elements.search.addEventListener("input", applyFilters);
     elements.level.addEventListener("change", applyFilters);
     elements.school.addEventListener("change", applyFilters);
-    elements.component.querySelectorAll("input").forEach((input) => input.addEventListener("change", applyFilters));
+    elements.component.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.setAttribute("aria-pressed", button.getAttribute("aria-pressed") !== "true");
+        applyFilters();
+      });
+    });
     elements.damage.addEventListener("change", applyFilters);
     elements.save.addEventListener("change", applyFilters);
     elements.concentration.addEventListener("change", applyFilters);
@@ -1666,8 +1740,8 @@
       elements.search.value = "";
       elements.level.value = "";
       elements.school.value = "";
-      elements.component.querySelectorAll("input").forEach((input) => {
-        input.checked = false;
+      elements.component.querySelectorAll("button").forEach((button) => {
+        button.setAttribute("aria-pressed", "false");
       });
       elements.damage.value = "";
       elements.save.value = "";
