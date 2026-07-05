@@ -757,6 +757,11 @@
         id: "lite-c12-chpt04",
         title: "Chapter 4: The Evergreen Grove",
         url: "../lite-c12/chpt04.html"
+      },
+      {
+        id: "lite-c12-chpt05",
+        title: "Chapter 5: The Champion of Nessis",
+        url: "../lite-c12/chpt05.html"
       }
     ],
 
@@ -1034,6 +1039,8 @@
     "lite-c12-chpt01": "../chapter-banners/lite-c12-chpt01.jpeg",
     "lite-c12-chpt02": "../chapter-banners/lite-c12-chpt02.png",
     "lite-c12-chpt03": "../chapter-banners/lite-c12-chpt03.jpeg",
+    "lite-c12-chpt04": "../chapter-banners/lite-c12-chpt04.jpeg",
+    "lite-c12-chpt05": "../chapter-banners/lite-c12-chpt05.jpeg",
     "wilds-c01-chpt01": "../chapter-banners/wilds-c01-chpt01.png",
     "wilds-c01-chpt02": "../chapter-banners/wilds-c01-chpt02.png",
     "wilds-c01-chpt03": "../chapter-banners/wilds-c01-chpt03.png",

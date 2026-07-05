@@ -739,5 +739,15 @@ export const events = [
     date: "15051 D.E. · Oct. 20th",
     descZh: "冒險者們來到常翠林中繼站，並協助中繼站人員一起將物品帶回常翠林本部。",
     descEn: "The adventurers arrived at the relay station of the Evergreen Grove, and helped the members bring their belongings to the center of the grove."
+  },
+  {
+    type: "event",
+    era: "new-dranison",
+    titleZh: "巨蛇之死",
+    titleEn: "The Death of the Giant Serpent",
+    tag: "rugatha-lite",
+    date: "15051 D.E. · Oct. 20th",
+    descZh: "芒果帶著四隻蛇妖襲擊常翠林總部。\n涅西斯藉由派琶召出的樹木困住芒果，賽柏給予芒果最後一擊。\n戰後，賽柏決定留在常翠林。",
+    descEn: "Mango attacked the Evergreen Grove headquarters with four snake fiends.\nNessis trapped Mango with trees called forth through Py'Par, and Psyber delivered the final blow.\nAfter the battle, Psyber chose to remain with the Evergreen Grove."
   }
 ];
