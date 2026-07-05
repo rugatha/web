@@ -3567,11 +3567,13 @@
     "id": "Mango",
     "url": "npc/npc_page/pages/Mango.html",
     "image": "individual_pics/Mango.png",
-    "status": "alive",
+    "status": "dead",
     "gender": "neutral",
-    "descZh": "由妖精王國的能量產出的蛋，孵出的魔法生物。\n其外型由照養他的洛特的意識所塑型。\n擁有超出想像的知識，但有時候會突然說出讓人恐懼又無法理解的話語。\n與洛特一起在母親大人的屠殺中生存。\n與洛特一起來到斐納札後消失了一段時間，最終在烏波成為心空席後，以巨蛇的型態現身，且有著痛苦人臉的花紋與殘肢長在身上。\n芒果將賽博咬傷，將他拖入傳送門消失。後來派琶告知冒險者，常翠林已擊退芒果並救出賽博。",
-    "descEn": "A magical creature hatched from an egg born of Feywild energy.\nIts form was shaped by the consciousness of Lott, who cared for it.\nMango possesses knowledge far beyond expectation, but sometimes says frightening and incomprehensible things.\nMango survived the Mother's massacre together with Lott.\nAfter arriving in Fenadra with Lott, Mango disappeared for a time. After Ubbo became the Seat of Hollow Heart, Mango reappeared as a giant serpent, patterned with anguished human faces and bearing severed limbs on its body.\nMango bit Psyber and dragged him through a portal before vanishing. Py'Par later told the adventurers that the Evergreen had driven Mango off and rescued Psyber.",
+    "descZh": "由妖精王國的能量產出的蛋，孵出的魔法生物。\n其外型由照養他的洛特的意識所塑型。\n擁有超出想像的知識，但有時候會突然說出讓人恐懼又無法理解的話語。\n與洛特一起在母親大人的屠殺中生存。\n與洛特一起來到斐納札後消失了一段時間，最終在烏波成為心空席後，以巨蛇的型態現身，且有著痛苦人臉的花紋與殘肢長在身上。\n芒果將賽柏咬傷，將他拖入傳送門消失。後來派琶告知冒險者，常翠林已擊退芒果並救出賽柏。\n芒果最終帶著四隻蛇妖襲擊常翠林總部，被涅西斯藉由派琶喚出的樹木困住，並在賽柏的致命一擊下死去。",
+    "descEn": "A magical creature hatched from an egg born of Feywild energy.\nIts form was shaped by the consciousness of Lott, who cared for it.\nMango possesses knowledge far beyond expectation, but sometimes says frightening and incomprehensible things.\nMango survived the Mother's massacre together with Lott.\nAfter arriving in Fenadra with Lott, Mango disappeared for a time. After Ubbo became the Seat of Hollow Heart, Mango reappeared as a giant serpent, patterned with anguished human faces and bearing severed limbs on its body.\nMango bit Psyber and dragged him through a portal before vanishing. Py'Par later told the adventurers that the Evergreen had driven Mango off and rescued Psyber.\nMango ultimately attacked the Evergreen headquarters with four snake fiends, was trapped by trees called forth by Nessis through Py'Par, and died under Psyber's fatal strike.",
     "related": [
+      "Phola",
+      "Py_Par",
       "Shifu",
       "The_Mother"
     ],
@@ -4772,11 +4774,12 @@
     "image": "individual_pics/Phola.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "弗萊特境內的嚮導之一，相對年輕而較無經驗，但根據師父的說法「很有潛力」。事後冒險者們發現他是師父的孫子。\n嗜酒。\n在與冒險者們的旅行過程中，受到圖伊特感化，戒了酒，並信奉了芬尼爾。\n在母親大人異變事件後，與洛特和芒果成為僅存的三人。\n多年後，身為芬尼爾教團一員，戴著面具的他在雅洛斯和洛特的團隊狹路相逢，雙方發生激烈的戰鬥。\n在他垂死之際，洛特剝下他的面具，才發現他的身份。之後洛特將重傷疲憊的佛拉帶在身邊，跟著派琶前往常翠林的中繼站。",
-    "descEn": "One of the guides in Phreit. He was younger and less experienced than the others, but Shifu described him as promising. The adventurers later learned that he was Shifu's grandson.\nPhola was addicted to alcohol.\nDuring his travels with the adventurers, Tweeter influenced him to quit drinking and become a follower of Phynoir.\nAfter the mutated Mother's massacre, Phola, Lott, and Mango were the only survivors.\nYears later, as a masked member of Phynoir's order, he clashed with Lott's team in Yalos. As he lay dying, Lott removed his mask and discovered who he was. Lott then kept the badly wounded, exhausted Phola with him as the group followed Py'Par toward an Evergreen relay station.",
+    "descZh": "弗萊特境內的嚮導之一，相對年輕而較無經驗，但根據師父的說法「很有潛力」。事後冒險者們發現他是師父的孫子。\n嗜酒。\n在與冒險者們的旅行過程中，受到圖伊特感化，戒了酒，並信奉了芬尼爾。\n在母親大人異變事件後，與洛特和芒果成為僅存的三人。\n多年後，身為芬尼爾教團一員，戴著面具的他在雅洛斯和洛特的團隊狹路相逢，雙方發生激烈的戰鬥。\n在他垂死之際，洛特剝下他的面具，才發現他的身份。之後洛特將重傷疲憊的佛拉帶在身邊，跟著派琶前往常翠林的中繼站。抵達常翠林總部後，佛拉在芒果襲擊時支援冒險者與派琶，於危急時刻為眾人治療。",
+    "descEn": "One of the guides in Phreit. He was younger and less experienced than the others, but Shifu described him as promising. The adventurers later learned that he was Shifu's grandson.\nPhola was addicted to alcohol.\nDuring his travels with the adventurers, Tweeter influenced him to quit drinking and become a follower of Phynoir.\nAfter the mutated Mother's massacre, Phola, Lott, and Mango were the only survivors.\nYears later, as a masked member of Phynoir's order, he clashed with Lott's team in Yalos. As he lay dying, Lott removed his mask and discovered who he was. Lott then kept the badly wounded, exhausted Phola with him as the group followed Py'Par toward an Evergreen relay station. After reaching the Evergreen headquarters, Phola supported the adventurers and Py'Par during Mango's attack, healing them at critical moments.",
     "related": [
       "Shifu",
-      "Mango"
+      "Mango",
+      "Py_Par"
     ],
     "nameEn": "Phola",
     "nameZh": "佛拉",
@@ -7146,10 +7149,11 @@
     "image": "individual_pics/Py'Par.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "涅西斯教團「常翠林」成員之一，在冒險者們追尋芒果的行跡時發現他。\n派琶告知冒險者們教團已將巨蛇（芒果）擊退，並拯救了被巨蛇綑綁的男人，即冒險者的夥伴賽博。\n雖然他踏上的草地都會化為花田，但人似乎有點迷糊，對距離、時間等都沒有很精確的概念。\n在護送冒險者前往常翠林中繼站時，派琶遭到芬尼爾信徒與蛇身女妖襲擊。雖然受傷，他仍催促眾人趕路，並警告金髮的佛拉可能有危險。",
-    "descEn": "A member of the Nessis order known as the Evergreen. The adventurers found her while tracking Mango.\nPy'Par told the adventurers that the order had already driven off the giant serpent, Mango, and saved the man Mango had bound: Psyber, the adventurers' companion.\nAlthough meadows turn into flower fields wherever she steps, Py'Par seems somewhat scatterbrained and has an imprecise sense of distance and time.\nWhile guiding the adventurers toward an Evergreen relay station, Py'Par was attacked by followers of Phynoir and a gorgon-like foe. Though wounded, she urged everyone onward and warned that their blond friend, Phola, might be in danger.",
+    "descZh": "涅西斯教團「常翠林」成員之一，在冒險者們追尋芒果的行跡時發現他。\n派琶告知冒險者們教團已將巨蛇（芒果）擊退，並拯救了被巨蛇綑綁的男人，即冒險者的夥伴賽柏。\n雖然他踏上的草地都會化為花田，但人似乎有點迷糊，對距離、時間等都沒有很精確的概念。\n在護送冒險者前往常翠林中繼站時，派琶遭到芬尼爾信徒與蛇身女妖襲擊。雖然受傷，他仍催促眾人趕路，並警告金髮的佛拉可能有危險。\n抵達常翠林總部後，派琶在芒果與四隻蛇妖的襲擊中保護冒險者與佛拉，數度倒下仍繼續戰鬥。關鍵時刻，涅西斯藉由派琶的身體發聲並召出樹木困住芒果，最終讓賽柏得以給予芒果致命一擊。",
+    "descEn": "A member of the Nessis order known as the Evergreen. The adventurers found Py'Par while tracking Mango.\nPy'Par told the adventurers that the order had already driven off the giant serpent, Mango, and saved the man Mango had bound: Psyber, the adventurers' companion.\nAlthough meadows turn into flower fields wherever Py'Par steps, Py'Par seems somewhat scatterbrained and has an imprecise sense of distance and time.\nWhile guiding the adventurers toward an Evergreen relay station, Py'Par was attacked by followers of Phynoir and a gorgon-like foe. Though wounded, Py'Par urged everyone onward and warned that their blond friend, Phola, might be in danger.\nAfter reaching the Evergreen headquarters, Py'Par protected the adventurers and Phola during Mango and four snake fiends' attack, falling several times but continuing to fight. At the critical moment, Nessis spoke through Py'Par's body and called forth trees to bind Mango, ultimately allowing Psyber to deliver the fatal blow.",
     "related": [
-      "Mango"
+      "Mango",
+      "Phola"
     ],
     "nameEn": "Py'Par",
     "nameZh": "派琶",
