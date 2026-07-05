@@ -88,7 +88,7 @@
       page: "./pages/rugatha-lite/index.html",
       image: campaignLogo("rugatha-light-logo.jpg"),
       accent: "#ffe7a3",
-      nextSession: "2026/7/4"
+      nextSession: "2026/9"
     },
     {
       name: "Rugatha WILDS",
