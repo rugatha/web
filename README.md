@@ -116,46 +116,49 @@ GitHub Pages workflow 位於：
 1. `shared/rugatha.config.js`
    Campaign 清單、故事弧圖譜、章節節點、URL override、章節圖片對應與全站共用設定。
 
-2. `campaigns/data/campaigns.js`
+2. `campaigns/data/chapter-content.json`
+   團錄章節正文資料來源。章節頁 HTML 只保留頁面骨架，實際中英內文、日期段落、引用與少數文內 HTML 都由這個 JSON 提供。
+
+3. `campaigns/data/campaigns.js`
    Campaign 頁面的活動資料。
 
-3. `campaigns/data/chapter-nav.json`
+4. `campaigns/data/chapter-nav.json`
    章節上一章 / 下一章導覽。
 
-4. `campaigns/data/chapter-titles.json`
+5. `campaigns/data/chapter-titles.json`
    章節中英文標題。
 
-5. `campaigns/data/story-arc-titles.json`
+6. `campaigns/data/story-arc-titles.json`
    故事弧中英文標題。
 
-6. `campaigns/pages/pcs.json`
+7. `campaigns/pages/pcs.json`
    章節出現的 PC。
 
-7. `campaigns/pages/guest.json`
+8. `campaigns/pages/guest.json`
    章節出現的 Guest。
 
-8. `campaigns/pages/npcs.json`
+9. `campaigns/pages/npcs.json`
    章節出現的 NPC。
 
-9. `npc/data/characters.json`
+10. `npc/data/characters.json`
    NPC 主資料來源，包含名稱、介紹、關聯、地點、圖片與「命運的抉擇」。
 
-10. `pc/pc_lib`
+11. `pc/pc_lib`
     PC 資料來源。
 
-11. `timeline/data/events.js`
+12. `timeline/data/events.js`
     世界時間線事件資料。
 
-12. `deities/data/deities.json`
+13. `deities/data/deities.json`
     神祇資料來源。
 
-13. `map/assets/locations.json`
+14. `map/assets/locations.json`
     地圖地點資料。
 
-14. `member/achievements.csv`
+15. `member/achievements.csv`
     會員成就資料。
 
-15. `experience/exp_public_comment.csv`
+16. `experience/exp_public_comment.csv`
     體驗頁公開留言資料。
 
 ## 本機預覽
@@ -235,7 +238,7 @@ python3 shared/scripts/normalize_site_html.py
 
 基本順序：
 
-1. 先修改實際頁面內容。
+1. 先修改實際內容資料或頁面。團錄正文請優先改 `campaigns/data/chapter-content.json`，不要直接寫進章節 HTML。
 2. 再補資料檔與連動設定。
 3. 最後檢查圖片、導覽、雙語內容、角色對照與連結是否一致。
 
@@ -247,15 +250,27 @@ python3 shared/scripts/normalize_site_html.py
 
 若更新的是團錄或章節頁，通常要檢查：
 
-1. 頁面位置是否正確：
+1. 團錄正文是否更新在資料檔，而不是直接寫進 HTML：
+   - `campaigns/data/chapter-content.json`
+
+2. 頁面骨架位置是否正確：
    - `campaigns/pages/**/chpt*.html`
    - 少數單章節故事可能是 `campaigns/pages/**/index.html`
+   - 頁面應保留 `data-role="chapter-content"` 容器並載入 `campaigns/scripts/chapter-content.js`
 
-2. 中英雙語是否完整：
-   - `.campaign-detail__content_zh`
-   - `.campaign-detail__content_en`
+3. `chapter-content.json` 的內容格式是否清楚且可維護：
+   - `content.zh` / `content.en` / `content.default` 使用 section 陣列
+   - 每個 section 可有 `date`
+   - 一般段落放在 `paragraphs` 字串陣列
+   - 引言使用 `{ "quote": "...", "cite": "..." }`
+   - 圖片或特殊 HTML 才使用 `{ "html": "..." }`
 
-3. 是否需要同步更新：
+4. 中英雙語是否完整：
+   - `content.zh`
+   - `content.en`
+   - 單語章節可使用 `content.default`
+
+5. 是否需要同步更新：
    - `campaigns/data/chapter-nav.json`
    - `campaigns/data/chapter-titles.json`
    - `campaigns/data/story-arc-titles.json`
@@ -264,7 +279,7 @@ python3 shared/scripts/normalize_site_html.py
    - `campaigns/pages/npcs.json`
    - `timeline/data/events.js`
 
-4. 若章節圖有新增或替換，請同步檢查：
+6. 若章節圖有新增或替換，請同步檢查：
    - `campaigns/chapter-banners/`
    - `campaigns/campaign-banners/`
    - `campaigns/campaign-logos/`

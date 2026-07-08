@@ -10,27 +10,82 @@
 ## 1. 團錄 / 章節內容更新
 
 常見位置：
-- `/campaigns/pages/**/chpt*.html`
-- 少數單章節故事弧會使用 `/campaigns/pages/**/index.html` 承載正文，例如部分 `rugatha-legends`
+- `/campaigns/data/chapter-content.json`
+- `/campaigns/pages/**/chpt*.html` 只保留章節頁骨架與載入 script
+- 少數單章節故事弧會使用 `/campaigns/pages/**/index.html` 作為章節頁骨架，例如部分 `rugatha-legends`
+
+團錄正文不應再直接寫進章節 HTML。章節頁會透過 `/campaigns/scripts/chapter-content.js` 依照目前 URL 讀取 `/campaigns/data/chapter-content.json`。
+
+`chapter-content.json` 的維護格式：
+
+```json
+{
+  "rugatha-c01-chpt01": {
+    "title": "Chapter 1: The Curse of Vowalon",
+    "tagline": "Curse of Vowalon",
+    "date": "15048.7.18",
+    "image": {
+      "src": "../../../../campaigns/chapter-banners/rugatha-c01-chpt01.png",
+      "alt": "Curse of Vowalon chapter art"
+    },
+    "content": {
+      "zh": [
+        {
+          "date": "15048.7.18",
+          "paragraphs": [
+            "第一段中文團錄。",
+            "第二段中文團錄。",
+            {
+              "quote": "引用文字",
+              "cite": "引用來源"
+            },
+            {
+              "html": "<p style=\"text-align: center;\"><img src=\"...\" alt=\"\" loading=\"lazy\" /></p>"
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "date": "15048.7.18",
+          "paragraphs": [
+            "First English paragraph."
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+格式規則：
+1. key 請使用章節 id，例如 `rugatha-c01-chpt01`、`lite-c12-chpt05`。單章節 `index.html` 故事可使用故事弧 id，例如 `legends-os04`。
+2. `content.zh`、`content.en` 或 `content.default` 都是 section 陣列。
+3. 每個 section 可有一個 `date`，並用 `paragraphs` 存放段落。
+4. 一般文字段落請用純字串，不要包 `<p>`。
+5. 引言請用 `{ "quote": "...", "cite": "..." }`。
+6. 圖片或少數特殊 HTML 才用 `{ "html": "..." }`。
+7. 不要把章節導覽、語言切換、相關角色卡等頁面 UI 寫進 `chapter-content.json`。
 
 更新團錄時，請檢查：
-1. 若頁面使用雙語章節格式，請確認 `.campaign-detail__content_zh` 與 `.campaign-detail__content_en` 都存在且內容對應；若只有中文，請補上英文翻譯。
-2. 請確認章節標題、日期、內文、圖片 alt、頁面 `<title>` 沒有互相矛盾。
-3. 請確認前後章與故事弧導覽是否正確，必要時更新 `/campaigns/data/chapter-nav.json`。
-4. 請確認章節標題對照是否正確，必要時更新 `/campaigns/data/chapter-titles.json`。
-5. 若是新增故事弧或修改故事弧名稱，請同步更新 `/campaigns/data/story-arc-titles.json`。
-6. 請從團錄內容整理出本章出現的 PC、Guest、NPC，並同步更新：
+1. 請先更新 `/campaigns/data/chapter-content.json`，不要直接把團錄正文寫進 HTML。
+2. 若章節有中英雙語，請確認 `content.zh` 與 `content.en` 都存在且段落對應；若只有單語內容，使用 `content.default`。
+3. 請確認章節標題、日期、內文、圖片 alt、頁面 `<title>` 沒有互相矛盾。
+4. 請確認前後章與故事弧導覽是否正確，必要時更新 `/campaigns/data/chapter-nav.json`。
+5. 請確認章節標題對照是否正確，必要時更新 `/campaigns/data/chapter-titles.json`。
+6. 若是新增故事弧或修改故事弧名稱，請同步更新 `/campaigns/data/story-arc-titles.json`。
+7. 請從團錄內容整理出本章出現的 PC、Guest、NPC，並同步更新：
    - `/campaigns/pages/pcs.json`
    - `/campaigns/pages/guest.json`
    - `/campaigns/pages/npcs.json`
-7. NPC 對照請以 `/npc/data/characters.json` 內實際存在的 `id` 為準；PC 請以 JSON 格式的 `/pc/pc_lib` 內名稱為準，所屬 campaign 請填在 `campaign` 字串陣列。
-8. 請檢查章節首圖與文內附圖是否存在、路徑是否正確。
-9. 若新增或更換章節首圖，請同步檢查：
+8. NPC 對照請以 `/npc/data/characters.json` 內實際存在的 `id` 為準；PC 請以 JSON 格式的 `/pc/pc_lib` 內名稱為準，所屬 campaign 請填在 `campaign` 字串陣列。
+9. 請檢查章節首圖與文內附圖是否存在、路徑是否正確。
+10. 若新增或更換章節首圖，請同步檢查：
    - `/campaigns/chapter-banners/`
    - `/shared/rugatha.config.js` 內的 chapter image mapping
-10. 若該章沒有獨立章節圖，可暫時沿用對應的 `/campaigns/campaign-banners/`，但請優先在 `/campaigns/chapter-banners/` 建立對應檔案，方便後續替換。
-11. 請從團錄判斷是否有足夠重要、且適合放入世界時間線的大事件；若有，更新 `/timeline/data/events.js`。
-12. 更新 `/timeline/data/events.js` 時，請維持時間排序為升冪，並補齊中英文標題與描述。
+11. 若該章沒有獨立章節圖，可暫時沿用對應的 `/campaigns/campaign-banners/`，但請優先在 `/campaigns/chapter-banners/` 建立對應檔案，方便後續替換。
+12. 請從團錄判斷是否有足夠重要、且適合放入世界時間線的大事件；若有，更新 `/timeline/data/events.js`。
+13. 更新 `/timeline/data/events.js` 時，請維持時間排序為升冪，並補齊中英文標題與描述。
 
 ## 2. NPC 更新
 
@@ -54,21 +109,23 @@
 
 請檢查：
 1. 新章節或新故事弧頁面是否已建立在 `/campaigns/pages/` 正確位置。
-2. 是否已更新 `/campaigns/data/chapter-nav.json`。
-3. 是否已更新 `/campaigns/data/chapter-titles.json`。
-4. 若是新增故事弧，是否已更新 `/campaigns/data/story-arc-titles.json`。
-5. 是否已更新 `/shared/rugatha.config.js` 內：
+2. 若新章節已有正文，是否已在 `/campaigns/data/chapter-content.json` 建立對應章節 id 的內容。
+3. 章節 HTML 是否只保留頁面骨架、`data-role="chapter-content"` 容器與 `/campaigns/scripts/chapter-content.js`，不要把正文硬寫回 HTML。
+4. 是否已更新 `/campaigns/data/chapter-nav.json`。
+5. 是否已更新 `/campaigns/data/chapter-titles.json`。
+6. 若是新增故事弧，是否已更新 `/campaigns/data/story-arc-titles.json`。
+7. 是否已更新 `/shared/rugatha.config.js` 內：
    - 故事弧節點
    - 章節節點
    - url override
    - chapter image mapping
-6. 若新增的是全新系列 / 新活動卡片，是否已更新 `/shared/rugatha.config.js` 中的 `campaigns` 資料來源所需內容。
-7. 是否已補上對應 banner：
+8. 若新增的是全新系列 / 新活動卡片，是否已更新 `/shared/rugatha.config.js` 中的 `campaigns` 資料來源所需內容。
+9. 是否已補上對應 banner：
    - `/campaigns/campaign-banners/`
    - `/campaigns/chapter-banners/`
    - 必要時 `/campaigns/campaign-logos/`
-8. 若新章節已有正文，是否已同步更新 `/campaigns/pages/pcs.json`、`/campaigns/pages/guest.json`、`/campaigns/pages/npcs.json`。
-9. 若新章節屬於時間線重要事件，是否已同步更新 `/timeline/data/events.js`。
+10. 若新章節已有正文，是否已同步更新 `/campaigns/pages/pcs.json`、`/campaigns/pages/guest.json`、`/campaigns/pages/npcs.json`。
+11. 若新章節屬於時間線重要事件，是否已同步更新 `/timeline/data/events.js`。
 
 ## 4. 一般內容驗證
 
@@ -78,6 +135,8 @@
 3. 角色 id、章節 id、故事弧 id 是否與既有命名規則一致。
 4. JSON / JS / HTML 是否維持合法格式，沒有多餘逗號、缺漏括號、錯字路徑。
 5. 若本次更新涉及團錄內容，至少回頭檢查一次：
+   - `chapter-content.json` 是否可被 JSON parser 正常讀取
+   - 章節頁是否能從 `chapter-content.json` 顯示正文
    - 導覽是否能切到上一章 / 下一章
    - 章節頁是否能顯示相關 PC / Guest / NPC
    - 圖片是否正常載入
@@ -91,6 +150,7 @@
 若不確定該從哪裡開始檢查，請依照這個順序：
 1. 先確認這次更新屬於哪一類：團錄、NPC、章節/故事弧、或純文案修正。
 2. 先改正文，再補資料檔：
+   - `/campaigns/data/chapter-content.json`
    - `/campaigns/data/chapter-nav.json`
    - `/campaigns/data/chapter-titles.json`
    - `/campaigns/data/story-arc-titles.json`
@@ -103,5 +163,5 @@
 
 ## 6. 特別提醒
 
-1. 並不是每個故事頁都一定是 `chpt*.html`；部分單章節故事會用 `index.html` 呈現正文。
+1. 並不是每個故事頁都一定是 `chpt*.html`；部分單章節故事會用 `index.html` 作為頁面骨架，但正文仍應放在 `/campaigns/data/chapter-content.json`。
 2. 並不是每次更新都一定要改時間線或 NPC，但只要團錄內容已經造成可見設定變動，就要一併檢查。
