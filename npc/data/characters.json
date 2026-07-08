@@ -841,8 +841,8 @@
     "image": "individual_pics/Cash Applewood.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "本名凱希斯。\n佩妮的弟弟，長相清秀。\n想藉由贏得本屆的「春日精靈」，來讓姊姊佩妮卸下重擔，同時不失去家庭因「春日精靈」得到的好處。\n十分崇拜阿龍。",
-    "descEn": "Cassius Applewood.\nPenny’s younger brother. Has a delicate and pretty face.\nCash wants to win the title of \" the Spirit of Spring\" to unleash the burden of his sister, while keeping the benefits of the title for the family.\nCash looks up to Al-lon pretty much.",
+    "descZh": "本名凱希斯。\n佩妮的弟弟，長相清秀，十分崇拜阿龍。\n為了讓連任三年的姊姊佩妮卸下「春天精靈」的重擔，同時保住蘋果木家因春天精靈得到的利益，曾想女裝參選。\n後來議會確認翠綠印記只適用於女性，凱許無法真正履行春天精靈的義務。海雅特終章襲擊後，艾迪辭去議員席位並將身份交給凱許；凱許曾想撤銷父親驅逐阿龍的決定，卻得知無法更改。",
+    "descEn": "Cassius Applewood.\nPenny's younger brother, a delicate-looking boy who deeply admires Al-lon.\nTo free Penny from the burden of being the Spirit of Spring for a fourth year while preserving the benefits the title brought the Applewood family, Cash tried to run while dressed as a girl.\nThe council later confirmed that the Mark of Verdant only worked on girls, so Cash could not actually fulfill the Spirit of Spring's duties. After the Hyatt Finale attack, Addie resigned from the council and passed his seat to Cash; Cash tried to revoke his father's decision to expel Al-lon, only to learn that it could not be undone.",
     "related": [
       "Addie_Applewood",
       "Penny_Applewood"
@@ -1328,8 +1328,8 @@
     "image": "individual_pics/Edmond.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "艾德蒙餐酒館的老闆兼大廚，不過現在不太親自下廚了。\n戴著特殊設計的廚師帽，似乎很刻意地把自己的耳朵塞在帽子底下。",
-    "descEn": "The owner and chef of Edmond’s Diner, but he rarely goes into the kitchen now.\nEdmond wears a specially-designed chef’s hat, trying to hide his ears to hide his identity as an elf.",
+    "descZh": "艾德蒙餐酒館的老闆兼大廚，不過現在不太親自下廚了。\n戴著特殊設計的廚師帽，似乎很刻意地把自己的耳朵塞在帽子底下。\n在麥克嵩分店中，艾德蒙曾親自邀請龍恩試做牛排，並肯定他的廚藝，希望龍恩能留在餐酒館工作。",
+    "descEn": "The owner and chef of Edmond's Diner, though he rarely cooks in person now.\nEdmond wears a specially designed chef's hat and seems to deliberately tuck his ears underneath it to hide his elven identity.\nAt the Macksohn branch, Edmond personally invited Ron to cook steaks for him, approved of Ron's skill, and hoped Ron would stay to work at the diner.",
     "related": [
       "Dr_David",
       "Lewis"
@@ -1564,8 +1564,8 @@
     "image": "individual_pics/Enelmor Arylith.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "阿龍的嬸嬸。\n與瑟拉蒙為夫妻，有三名孩子：瑟拉斯、奈梨紗和維瑞克。\n有嚴重的失眠，因此自己磨製安眠藥，存放在廚房內。",
-    "descEn": "Al-lon’s aunt.\nWife of Theramond, father of three: Serathe, Nylessa, and Vaelric.\nShe suffers from severe insomnia, so she made sleeping powders herself, and kept it in the kitchen.",
+    "descZh": "阿龍的嬸嬸。\n與瑟拉蒙為夫妻，有三名孩子：瑟拉斯、奈梨紗和維瑞克。\n有嚴重的失眠，因此自己磨製安眠藥，存放在廚房內。費洛登與瑟萊拉死後，艾內莫在艾瑞利斯家的繼承與審判風波中多半保持低調旁觀。",
+    "descEn": "Al-lon's aunt.\nWife of Theramond and mother of three children: Serathe, Nylessa, and Vaelric.\nShe suffers from severe insomnia, so she grinds her own sleeping powder and keeps it in the kitchen. After Vaerodan and Selyra died, Enelmor mostly kept a low profile during the Arylith inheritance and trial turmoil.",
     "related": [
       "Nylessa_Arylith",
       "Selyra_Arylith",
@@ -2137,8 +2137,8 @@
     "image": "individual_pics/Glen.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "麥克嵩衛兵，據說是紅髮有雀斑的年輕人類男子。\n刀疤臉承諾龍恩將派遣葛蘭至日出酒館配合調查喬納森失蹤的事件。",
-    "descEn": "A young guard in Macksohn, seems like he was red-headed and had freckles.\nScar-Face committed to Ron the he would send Glen to help him investigate in the missing incident of Jonathan.",
+    "descZh": "麥克嵩衛兵，是紅髮有雀斑的年輕人類男子。\n刀疤臉承諾龍恩將派遣葛蘭至日出酒館配合調查喬納森失蹤的事件。葛蘭偽裝成客人到日出酒館觀察，並告訴龍恩所謂喬納森的家其實只是廢棄房屋。\n後來龍恩在王宮花園再次遇見葛蘭，從他口中得知衛兵隊正在清查可能的滲透者，沙度也列在名單內；葛蘭也向龍恩保證自己和刀疤臉可信。",
+    "descEn": "A young Macksohn guard, a red-haired human man with freckles.\nScar-Face promised Ron that he would send Glen to Sunrise to help investigate Jonathan's disappearance. Glen visited the tavern disguised as a customer and told Ron that the supposed house of Jonathan was actually only an abandoned building.\nLater, Ron met Glen again in the Royal Garden and learned that the guard was investigating possible infiltrators, with Sha'Doom on the list. Glen also assured Ron that he and Scar-Face could be trusted.",
     "related": [
       "Frankie",
       "Jonathan",
@@ -2186,7 +2186,7 @@
     "status": "dead",
     "gender": "male",
     "descZh": "隱居於魏斯科鎮的大法師。\n寂靜神拉索斯的追隨者。\n在台北市議員們的陪同下，穿越嚎叫森林，前往沃瓦倫鎮。\n協助寇頓神父主持解除詛咒的祈禱儀式，卻也造成了沃瓦倫滅鎮事件，而後被台北市議員殺死。",
-    "descEn": "An archmage living in Wescoe.\nA follower of Laxthos.\nTraveled through the Howling Forest and arrived at Vowalon with the accompany of the Councilor of Taipei.\nHelped Father Kaulton for the ritual to remove the curse, but ended up leading the town to be destroyed, but was killed by the Councilor of Taipei at the end.",
+    "descEn": "An archmage living in Wescoe.\nA follower of Laxthos.\nGrenland traveled through the Howling Forest with the Taipei City Council adventurers and arrived in Vowalon.\nHe helped Father Kaulton conduct the prayer ritual meant to lift the curse, but the ritual caused the Vowalon massacre; afterward, Grenland was killed by the Taipei City Council adventurers.",
     "related": [
       "Father_Kaulton"
     ],
@@ -2234,7 +2234,7 @@
     "status": "dead",
     "gender": "male",
     "descZh": "在《古斯塔夫諾曼失蹤事件》中失蹤的年輕男子，是貴族諾曼爵士的兒子。\n經冒險者調查後，發現他在妖精部落艾爾諾中意外殺死當地長老，被當地居民打死。",
-    "descEn": "The missing young man from \"The Disappearance of Gustavo Norman\", who is the son of Syr Norman.\nAfter the investigation by the adventurers, Gustavo was found killed in the elvish tribe El'Nore by the locals.",
+    "descEn": "The missing young man from The Disappearance of Gustavo Norman, and the son of Syr Norman.\nAfter the adventurers investigated, they learned that Gustavo had accidentally killed the elder of the elven tribe El'Nore and was beaten to death by the locals.",
     "related": [
       "Basuu",
       "Dosuu",
@@ -2643,8 +2643,8 @@
     "image": "individual_pics/Jefferey Berners.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "麥克嵩貴族柏納斯家現任的代表人。\n老婆為歐娜，孫子為蘭斯。",
-    "descEn": "The current face of the Macksohn noble family, the Berners Family.\nHis wife is Ona, and his grandson is Lance.",
+    "descZh": "麥克嵩貴族柏納斯家現任的代表人。\n老婆為歐娜，孫子為蘭斯。\n在月先生安排下接待荒野旋律，邀請冒險者們用餐，並讓他們為柏納斯家的晚宴表演。後來雷米等人闖入柏納斯宅邸時，傑弗瑞露出詭異笑容，讓三人陷入昏迷。",
+    "descEn": "The current face of the Macksohn noble house Berners.\nHis wife is Ona, and his grandson is Lance.\nThrough Mr. Moon's arrangement, Jefferey received the band Rhythm of the Wild, invited the adventurers to dine, and allowed them to perform at a Berners banquet. Later, when Lemmy and others broke into the Berners estate, Jefferey gave an eerie smile and caused the three intruders to fall unconscious.",
     "related": [
       "Gareth_Berners",
       "Lance_Berners",
@@ -2746,7 +2746,7 @@
     "status": "dead",
     "gender": "male",
     "descZh": "沃瓦倫鎮的神父，負責管理寂靜殿，並帶領鎮上民眾禱告。\n於一年前來到沃瓦倫鎮擔任神父。\n主持解除詛咒的祈禱儀式，卻也造成了沃瓦倫滅鎮事件，而後被台北市議員殺死。",
-    "descEn": "The Father in Vowalon, in charge of the Temple of Silencio, and leading the prayers for the town folks.\nCame to Vowalon a year ago.\nHosted the ritual to remove the cursed, but was also responsible for the slaughter of Vowalon, and later killed by the Councilor of Taipei.",
+    "descEn": "The priest of Vowalon, in charge of the Temple of Silencio and leading prayers for the townsfolk.\nHe came to Vowalon a year earlier.\nHe hosted the ritual meant to lift the curse, but the ritual also caused the Vowalon massacre; afterward, he was killed by the Taipei City Council adventurers.",
     "related": [
       "Grenland_Folsen"
     ],
@@ -3157,8 +3157,8 @@
     "image": "individual_pics/Lewis.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "艾德蒙餐酒館的店長。\n與大衛醫師熟識，考慮聘用龍恩為廚師。",
-    "descEn": "The manager of Edmond’s Diner.\nFamiliar with Dr. David.\nConsidered hiring Ron as a chef.",
+    "descZh": "艾德蒙餐酒館的店長。\n與大衛醫師熟識，考慮聘用龍恩為廚師。\n在龍恩因不祥預感打算放棄工作機會後，路易斯仍邀請他協助將餐點送往柏納斯宅邸，並在晚宴上擔任服務生。",
+    "descEn": "The manager of Edmond's Diner.\nHe is familiar with Dr. David and considered hiring Ron as a chef.\nAfter Ron decided to give up the job opportunity because of an ominous feeling, Lewis still invited him to help deliver food to the Berners estate and serve during the banquet.",
     "related": [
       "Dr_David",
       "Edmond"
@@ -3624,8 +3624,8 @@
     "image": "individual_pics/Marco.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "在《鬧鬼荒野的偽多頭龍》中鬧鬼荒野當地醫生烏鴉醫師養的狗。\n帶領冒險者們尋找腐臭味發出的源頭。",
-    "descEn": "The dog that Dr. Crow owned in Moorland Haunt from \"the False Hydra of Moorland Haunt\".\nGuided the adventurers to find the source of the rotten smell.",
+    "descZh": "在《鬧鬼荒野的偽多頭龍》中鬧鬼荒野當地醫生烏鴉醫師養的狗。\n帶領冒險者們尋找腐臭味發出的源頭，並會對看不見的偽多頭龍所在之處狂吠。",
+    "descEn": "Dr. Crow's dog in Moorland Haunt during The False Hydra of Moorland Haunt.\nMarco guided the adventurers toward the source of the rotten smell and barked furiously at places where the invisible false hydra was present.",
     "related": [
       "Dr_Crow"
     ],
@@ -3863,7 +3863,7 @@
     "status": "alive",
     "gender": "female",
     "descZh": "方努爾市的一名船長。\n受羅賓遜主教委託，載冒險者們到南方的荒島，尋找雪の化身の目覚め的下落。\n多年後，聖拉雅米島成為他的封地。他也帶了新的冒險者來到島上調查中毒事件。",
-    "descEn": "A captain from Fonaur.\nComissioned by Bishop Robinson to bring the adventurers to the Southern island to find the book \"雪の化身の目覚め\".\nYears later, St. Rayami Island became her fiefdom. She also brings new adventurers to the island to investigate the poisoning incident.",
+    "descEn": "A captain from Fanaur.\nCommissioned by Bishop Robinson to bring the adventurers to the southern island to find the book \"雪の化身の目覚め\".\nYears later, St. Rayami Island became her fiefdom. She also brings new adventurers to the island to investigate the poisoning incident.",
     "related": [
       "Bishop_Robinson",
       "Liliana",
@@ -3954,8 +3954,8 @@
     "image": "individual_pics/Matilda.jpeg",
     "status": "alive",
     "gender": "female",
-    "descZh": "魏斯科的一名女子。\n話不多，但與他的夥伴梅莉之間似乎頗有默契。",
-    "descEn": "A woman from Wescoe.\nDidn’t talk much, but seemed to have a good understanding with her companion Maylee.",
+    "descZh": "魏斯科的一名女子。\n話不多，但與他的夥伴梅莉之間似乎頗有默契。\n在酒食樂酒館與梅莉向布朗說明拉索斯教，後來兩人將瑪芬先生關在梅莉家中。布朗在羅傑家門口看見瑪蒂達鬼鬼祟祟地溜進服從神社。",
+    "descEn": "A woman from Wescoe.\nShe did not talk much, but seemed to share a strong understanding with her companion Maylee.\nAt Beer, Food, Fun, Matilda and Maylee told Brown about Laxthos, and later the two locked Mr. Muffins in Maylee's home. Brown later saw Matilda sneaking suspiciously into the Shrine of Obedience near Roger's house.",
     "related": [
       "Maylee"
     ],
@@ -4000,8 +4000,8 @@
     "image": "individual_pics/Maylee.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "魏斯科的一名女子，年輕且十分漂亮。\n在酒食樂酒館與瑪蒂達和布朗說明了關於拉索斯教的事，並請布朗喝了一杯似乎被下了藥的啤酒。",
-    "descEn": "A woman from Wescoe, young and pretty.\nTold Brown about Laxthos with Matilda at Beer, Food, Fun, and treated Brown a beer that was suspiciously poisoned.",
+    "descZh": "魏斯科的一名女子，年輕且十分漂亮。\n在酒食樂酒館與瑪蒂達和布朗說明了關於拉索斯教的事，並請布朗喝了一杯似乎被下了藥的啤酒。\n他很喜歡瑪芬先生，後來將牠關在自己家中的鐵籠裡。布朗威脅並審問梅莉後，從盆栽旁找到線索，救出了瑪芬先生。",
+    "descEn": "A young and very pretty woman from Wescoe.\nAt Beer, Food, Fun, she and Matilda told Brown about Laxthos, and Maylee bought Brown a beer that seemed to be drugged.\nShe was very fond of Mr. Muffins and later kept him locked in a cage in her home. After Brown threatened and questioned Maylee, he found the clue near a potted plant and rescued Mr. Muffins.",
     "related": [
       "Matilda"
     ],
@@ -4456,8 +4456,8 @@
     "image": "individual_pics/Ona Berners.jpeg",
     "status": "alive",
     "gender": "female",
-    "descZh": "麥克嵩貴族柏納斯家的成員之一，老公是傑弗瑞，孫子是蘭斯。\n似乎與邁克嵩的紫羅蘭有些交情。",
-    "descEn": "A member of the Macksohn noble house Berners. Jefferey’s wife and Lance’s grandmother.\nSeemed to have friendship with the Violet of Macksohn.",
+    "descZh": "麥克嵩貴族柏納斯家的成員之一，老公是傑弗瑞，孫子是蘭斯。\n似乎與麥克嵩的紫羅蘭有些交情，曾表示可以在柏納斯家的大型晚宴上將冒險者介紹給紫羅蘭。",
+    "descEn": "A member of the Macksohn noble house Berners. She is Jefferey's wife and Lance's grandmother.\nOna seems to have some friendship with the Violet of Macksohn, and once offered to introduce the adventurers to the Violet at a large Berners banquet.",
     "related": [
       "Gareth_Berners",
       "Jefferey_Berners",
@@ -4731,8 +4731,8 @@
     "image": "individual_pics/Peter.jpeg",
     "status": "unknown",
     "gender": "male",
-    "descZh": "溫德家的公子，年約7歲，個性十分單純。\n有隻叫瑪芬先生的巴哥犬。",
-    "descEn": "The boy from the Wind family, age seven, and was very naive.\nHe had a pug named Mr. Muffins.",
+    "descZh": "溫德家的公子，年約7歲，個性十分單純。\n有隻叫瑪芬先生的巴哥犬，並把牠視為自己唯一的朋友。\n布朗護送溫德家前，彼得告訴他村人和溫德家並不親近，也提到一家人準備前往魏斯科。後來彼得聞了布朗摘下的黑蓮花後昏倒，導致溫德大人解除委託。",
+    "descEn": "The boy of the Wind family, about seven years old and very naive.\nHe has a pug named Mr. Muffins, whom he considers his only friend.\nBefore Brown escorted the Wind family, Peter told him that the villagers were not close to the Winds and that the family planned to travel to Wescoe. Later, Peter fainted after smelling the black lotus Brown had picked, causing Lord Wind to cancel the job.",
     "related": [
       "Lord_Wind",
       "Mr_Muffins"
@@ -4825,8 +4825,8 @@
     "image": "individual_pics/Queenie.jpeg",
     "status": "alive",
     "gender": "female",
-    "descZh": "在魏斯科服務中心工作的半身人女子。\n對顧客非常熱情，講話有點急切。",
-    "descEn": "A halfling woman who worked in the Wescoe service center.\nShe was enthusiastic toward customers, and talks quickly.",
+    "descZh": "在魏斯科服務中心工作的半身人女子。\n對顧客非常熱情，講話有點急切。\n布朗曾邀請昆妮下班後共進晚餐，兩人一起去了艾德蒙餐酒館與恬靜花園。後來布朗在教堂醒來後，昆妮已不記得前一晚與他同行的經歷，只把他當作精神狀況不佳的客人。",
+    "descEn": "A halfling woman who works at the Wescoe service center.\nShe is very enthusiastic toward customers and speaks a little hastily.\nBrown once invited Queenie to dinner after work, and they went together to Edmond's Diner and the Tranquil Garden. After Brown woke in the church, Queenie no longer remembered accompanying him the previous night and only treated him as a customer in poor mental condition.",
     "related": [],
     "nameEn": "Queenie",
     "nameZh": "昆妮",
@@ -5282,8 +5282,8 @@
     "image": "individual_pics/Rosa Flaerry.jpeg",
     "status": "alive",
     "gender": "female",
-    "descZh": "帕拉丁的導師，前麥丁頓王國騎士團團長弗列里爵士的夫人。\n在冒險者們踏離地下城，來到扣林菲爾德時承諾要保護他們。\n麥克嵩比武大會時，在混亂中受傷而下肢殘廢。",
-    "descEn": "The wife of Syr Flaerry, Paladin’s mentor and the ex leader of the King’s Guard in Mattington.\nAs the adventurers left the dungeon, promised to protect them in Korringfield.\nRosa was hurt and became disabled in the incident of the Macksohn Tournament.",
+    "descZh": "帕拉丁的導師，前麥丁頓王國騎士團團長弗列里爵士的夫人。\n在冒險者們踏離地下城，來到寇林菲爾德時承諾要保護他們。\n麥克嵩比武大會時，在混亂中受傷而下肢殘廢。先前在柏納斯家的晚宴中，曾與弗列里爵士一同出面，協助帕拉丁面對紫羅蘭。",
+    "descEn": "The wife of Syr Flaerry, Paladin's mentor and the former leader of the King's Guard in Mattington.\nWhen the adventurers left the dungeon and reached Korringfield, she promised to protect them.\nDuring the Macksohn Tournament, Rosa was injured in the chaos and lost the use of her lower body. Earlier, at the Berners banquet, she and Syr Flaerry stepped in to help Paladin face the Violet.",
     "related": [
       "Gareth_Berners",
       "Mr_Flaerry",
@@ -5328,8 +5328,8 @@
     "image": "individual_pics/Sammick Warren.png",
     "status": "dead",
     "gender": "male",
-    "descZh": "沃瓦倫鎮長戴洛與傑絲敏之子。\n大約半年前，25歲的山米克被發現死於寂靜殿前，沃瓦倫的詛咒因此被鎮民廣為討論。",
-    "descEn": "The son of the mayor of Vowalon, Daryl and Jasmine.\nAbout half a year ago, Samick, aged 25, was found dead in front of the Temple of Silenciom and so the Curse of Vowalon was spread and discussed among town folks.",
+    "descZh": "沃瓦倫鎮長戴洛與潔絲敏之子。\n大約半年前，25歲的山米克被發現死於寂靜殿前，沃瓦倫的詛咒因此被鎮民廣為討論。",
+    "descEn": "The son of Daryl and Jasmine Warren, the mayor and mayor's wife of Vowalon.\nAbout half a year earlier, Sammick, age twenty-five, was found dead in front of the Temple of Silencio, causing the Curse of Vowalon to become a widely discussed fear among the townsfolk.",
     "related": [
       "Daryl_Warren",
       "Jasmine_Warren"
@@ -5467,8 +5467,8 @@
     "image": "individual_pics/Selene Berners.png",
     "status": "alive",
     "gender": "female",
-    "descZh": "麥克嵩當地貴族柏納斯家成員之一。\n蘭斯的母親，丈夫為蓋瑞斯。",
-    "descEn": "A member of the Macksohn noble house, the Berners family.\nThe mother of Lance, and her husband is Gareth.",
+    "descZh": "麥克嵩當地貴族柏納斯家成員之一。\n蘭斯的母親，丈夫為蓋瑞斯。\n在柏納斯家接待荒野旋律時，瑟琳曾現身與冒險者們見面；他在家族中的互動顯得有些不自然，像個局外人。",
+    "descEn": "A member of the Macksohn noble house Berners.\nShe is Lance's mother, and her husband is Gareth.\nWhen the Berners family hosted Rhythm of the Wild, Selene appeared and met the adventurers; her interactions within the family seemed somewhat unnatural, as if she were an outsider.",
     "related": [
       "Gareth_Berners",
       "Jefferey_Berners",
@@ -5516,8 +5516,8 @@
     "image": "individual_pics/Selyra Arylith.png",
     "status": "dead",
     "gender": "female",
-    "descZh": "阿龍的親生母親，拉撒拿龍冠費洛登的妻子。\n舉止端莊優雅。\n在阿龍去見銀龍後的隔天，瑟萊拉與老公費洛登被發現死於艾瑞利斯家的畫室。",
-    "descEn": "Al-lon’s biological mother, the wife of Vaerodan, the Crown of Rathanad.\nBehave in a dignified and elegant matter.\nA day after Al-lon met the silver dragon, Selyra and her husband, Vaerodan, was found dead in the studio in the Arylith house.",
+    "descZh": "阿龍的親生母親，拉撒拿龍冠費洛登的妻子。\n舉止端莊優雅，初次見到阿龍時認出了他的艾瑞利斯名「賽勒涅爾」，並邀請冒險者們共進午餐。\n在阿龍去見銀龍後的隔天，瑟萊拉與老公費洛登被發現死於艾瑞利斯家的畫室。",
+    "descEn": "Al-lon's biological mother and the wife of Vaerodan, the Crown of Rathanad.\nDignified and elegant, Selyra recognized Al-lon's Arylith name, Cyrinel, when she first saw him, and invited the adventurers to lunch.\nA day after Al-lon went to meet the silver dragon, Selyra and her husband Vaerodan were found dead in the studio of the Arylith house.",
     "related": [
       "Enelmor_Arylith",
       "Nylessa_Arylith",
@@ -5874,8 +5874,8 @@
     "image": "individual_pics/Speedy.jpeg",
     "status": "alive",
     "gender": "neutral",
-    "descZh": "台北市議員等人在麥克嵩買的馬。\n十分年輕健壯。",
-    "descEn": "A horse the party bought at Macksohn.\nYoung and strong.",
+    "descZh": "台北市議員等人在麥克嵩買的馬。\n十分年輕健壯，適合拉馬車或快速奔跑。\n在多侖維爾時曾被竊馬賊騎走，後來被冒險者們攔下牽回。雷米爆炸身亡後，斯比迪一度受驚想往前衝，嚇到了正在啃食肉塊的酷爆。後來薩梅爾短暫回到一般世界時，發現斯比迪和馬車都不見了。",
+    "descEn": "A horse the party bought in Macksohn.\nSpeedy is young and strong, suited for pulling a carriage or running fast.\nIn Dorrenville, a horse thief once rode Speedy away before the adventurers stopped him and brought Speedy back. After Lemmy died in an explosion, Speedy was startled and tried to rush forward, frightening Kubao while Kubao was eating pieces of flesh. Later, when Samael briefly returned to the material world, Speedy and the carriage were both gone.",
     "related": [],
     "nameEn": "Speedy",
     "nameZh": "斯比迪",
@@ -5963,7 +5963,7 @@
     "status": "alive",
     "gender": "male",
     "descZh": "阿龍的叔叔，費洛登的弟弟。\n與艾內莫為夫妻，有三名孩子：瑟拉斯、奈梨紗和維瑞克。\n在費洛登死後，成為代理龍冠。\n預計在完成審判後，將龍冠交給正式成為艾瑞利斯一族的賽勒涅爾（即阿龍）。",
-    "descEn": "Al-lon’s uncle, Vaerodan’s younger brother.\nHusband of Enelmor, father of three: Serathe, Nylessa, and Vaelric.\nBecame the acting Crown after the death of Vaerodan.\nExpect to give the Crown to Cyrinel (Al-lon), who had officially became one of the Aryliths, after the trial.",
+    "descEn": "Al-lon's uncle and Vaerodan's younger brother.\nHusband of Enelmor and father of three children: Serathe, Nylessa, and Vaelric.\nHe became acting Crown after Vaerodan's death.\nAfter the trial, he expects to pass the Crown to Cyrinel, Al-lon, who has officially become one of the Aryliths.",
     "related": [
       "Enelmor_Arylith",
       "Nylessa_Arylith",
@@ -6316,8 +6316,8 @@
     "image": "individual_pics/Vaerodan Arylith.png",
     "status": "dead",
     "gender": "male",
-    "descZh": "阿龍的親生父親，拉撒拿龍冠。\n當年曾下令老尼克索將阿龍的蛋拋棄。\n舉止嚴肅但不嚴厲。\n在阿龍去見銀龍後的隔天，費洛登與老婆瑟萊拉被發現死於艾瑞利斯家的畫室。",
-    "descEn": "Al-lon’s biological father, the Crown of Rathanad.\nOrdered Old Nixul to abandan Al-lon’s egg years ago.\nLooks serious but not strict.\nA day after Al-lon met the silver dragon, Vaerodan and his wife, Selyra, was found dead in the studio in the Arylith house.",
+    "descZh": "阿龍的親生父親，拉撒拿龍冠。\n當年曾下令老尼克索將阿龍的蛋拋棄。\n舉止嚴肅但不嚴厲，重新見到阿龍後讓他得知自己作為艾瑞利斯繼承人的身份，並涉及銀龍相關的秘密。\n在阿龍去見銀龍後的隔天，費洛登與老婆瑟萊拉被發現死於艾瑞利斯家的畫室。",
+    "descEn": "Al-lon's biological father and the Crown of Rathanad.\nYears ago, he ordered Old Nixul to abandon Al-lon's egg.\nSerious but not harsh, Vaerodan revealed Al-lon's place as an Arylith heir after they reunited, and was connected to secrets involving the silver dragon.\nA day after Al-lon went to meet the silver dragon, Vaerodan and his wife Selyra were found dead in the studio of the Arylith house.",
     "related": [
       "Enelmor_Arylith",
       "Nylessa_Arylith",
@@ -6453,8 +6453,8 @@
     "image": "individual_pics/Lord Wind.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "溫德家中的父親。\n似乎是拉索斯教的人員，或是從事相關的貿易工作。",
-    "descEn": "The father in the Wind family.\nHe seemed to be working for Laxthos, or did some business that is related to Laxthos.",
+    "descZh": "溫德家中的父親。\n似乎是拉索斯教的人員，或是從事相關的貿易工作。\n曾聘請布朗護送溫德一家穿越森林前往魏斯科，承諾支付五十枚金幣。彼得聞到黑蓮花昏倒後，溫德大人憤怒地解除委託並將彼得抱回屋內求醫。",
+    "descEn": "The father of the Wind family.\nHe seemed to work for Laxthos, or to be involved in business related to Laxthos.\nHe hired Brown to escort the Wind family through the forest to Wescoe and promised fifty gold pieces as payment. After Peter fainted from smelling the black lotus, Lord Wind angrily canceled the job and carried Peter inside to seek a doctor.",
     "related": [
       "Mr_Muffins",
       "Peter"
@@ -6779,8 +6779,8 @@
     "image": "individual_pics/Kubao.jpeg",
     "status": "alive",
     "gender": "neutral",
-    "descZh": "薩梅爾於嚎叫森林守夜時撿起的幼狼，隨著台北市議員們一起行動。\n在地下城時，透過烏柯告知大家他的本名為戴倫，不過願意接受酷爆為他的名字。",
-    "descEn": "A wolf pup that Samael found at the Howling Forest when she took the night shift.\n酷爆 adventured with the party.\nIn the dungeon, it told Uko that its original name was Darren, but was fine with 酷爆 being its name.",
+    "descZh": "薩梅爾於嚎叫森林守夜時撿起的幼狼，隨著台北市議員們一起行動。\n在地下城時，透過烏柯告知大家他的本名為戴倫，不過願意接受酷爆為他的名字。\n雷米在多侖維爾爆炸身亡後，酷爆曾啃食地上的肉塊，被薩梅爾趕緊抱起制止。",
+    "descEn": "A wolf pup that Samael found during a night watch in the Howling Forest, who then traveled with the Taipei City Council adventurers.\nIn the dungeon, Kubao told the group through Uko that his original name was Darren, though he was willing to accept Kubao as his name.\nAfter Lemmy died in the Dorrenville explosion, Kubao started eating the pieces of flesh on the ground, and Samael quickly picked him up to stop him.",
     "related": [
       "Manbao"
     ],
@@ -6965,8 +6965,8 @@
     "image": "individual_pics/Yung.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "馬格努斯爵士給雷米騎去麥克嵩的馬。\n年紀較大，跑的速度比較慢，但是依舊穩健且可靠。",
-    "descEn": "The horse that Syr Magnus provided Lemmy to ride to Macksohn.\nHe was old and slow, but still steady and reliable.",
+    "descZh": "馬格努斯爵士給雷米騎去麥克嵩的馬。\n年紀較大，跑的速度比較慢，但是依舊穩健且可靠。\n在多侖維爾時一度因缺水而十分虛弱；眾人遷就勇哥的狀態放慢馬車速度。後來薩梅爾短暫回到一般世界時，發現斯比迪和馬車不見了，勇哥仍在原處但更加虛弱；之後勇哥也從酒館旁消失。",
+    "descEn": "The horse Syr Magnus gave Lemmy to ride to Macksohn.\nYung is older and slower, but still steady and reliable.\nIn Dorrenville, he became extremely weak from dehydration, so the group slowed the carriage to match his condition. When Samael briefly returned to the material world, Speedy and the carriage were gone while Yung remained, even weaker; later, Yung also disappeared from beside the tavern.",
     "related": [
       "Syr_Magnus"
     ],
