@@ -251,6 +251,7 @@
   const relatedNpcState = {
     npcIds: null,
     charById: null,
+    pcCharById: null,
     siteBase: null
   };
   const relatedPcState = {
@@ -520,6 +521,9 @@
   const normalizePcKey = (value) =>
     typeof value === "string" ? value.trim().toLowerCase() : "";
 
+  const isPcNpcRef = (value) => /^pc:/i.test(String(value || "").trim());
+  const pcNameFromNpcRef = (value) => String(value || "").trim().replace(/^pc:/i, "").trim();
+
   const getPcDisplayName = (meta, fallbackId) => {
     if (languageState.value === "en") {
       return meta?.name_en || meta?.name_zh || fallbackId || "PC";
@@ -713,9 +717,17 @@
     };
 
     relatedNpcState.npcIds.forEach((id) => {
-      const meta = relatedNpcState.charById[id] || { id, nameEn: "", nameZh: "", name: id, url: null, image: null };
-      const displayName = getNpcDisplayName(meta);
-      const npcUrl = resolveNpcUrl(meta.url || "");
+      const pcNpcName = isPcNpcRef(id) ? pcNameFromNpcRef(id) : "";
+      const pcMeta = pcNpcName && relatedNpcState.pcCharById
+        ? relatedNpcState.pcCharById[normalizePcKey(pcNpcName)]
+        : null;
+      const meta = pcNpcName
+        ? { id, nameEn: pcMeta?.name_en || pcNpcName, nameZh: pcMeta?.name_zh || pcMeta?.name_en || pcNpcName, name: pcNpcName, url: null, image: null }
+        : relatedNpcState.charById[id] || { id, nameEn: "", nameZh: "", name: id, url: null, image: null };
+      const displayName = pcNpcName ? getPcDisplayName(pcMeta, pcNpcName) : getNpcDisplayName(meta);
+      const npcUrl = pcNpcName
+        ? new URL(`pc/articles/${slugify(pcNpcName)}.html`, relatedNpcState.siteBase).href
+        : resolveNpcUrl(meta.url || "");
       const card = document.createElement(npcUrl ? "a" : "div");
       card.className = "related-npcs__card";
       if (npcUrl) {
@@ -723,7 +735,27 @@
         card.target = "_self";
       }
 
-      if (meta.image) {
+      if (pcNpcName) {
+        const imageCandidates = ["jpg", "jpeg", "png"].map((ext) =>
+          new URL(`pc/pics/${pcNpcName}.${ext}`, relatedNpcState.siteBase).href
+        );
+        const imgEl = document.createElement("img");
+        imgEl.className = "related-npcs__image";
+        imgEl.alt = displayName || "PC portrait";
+        imgEl.loading = "lazy";
+        imgEl.decoding = "async";
+        imgEl.src = imageCandidates[0];
+        let candidateIndex = 0;
+        imgEl.addEventListener("error", () => {
+          candidateIndex += 1;
+          if (candidateIndex < imageCandidates.length) {
+            imgEl.src = imageCandidates[candidateIndex];
+            return;
+          }
+          imgEl.remove();
+        });
+        card.appendChild(imgEl);
+      } else if (meta.image) {
         const imgEl = document.createElement("img");
         imgEl.className = "related-npcs__image";
         imgEl.src = resolveNpcUrl(meta.image);
@@ -888,10 +920,29 @@
       return acc;
     }, {});
 
+    const needsPcData = npcIds.some((id) => isPcNpcRef(id));
+    let pcCharById = null;
+    if (needsPcData) {
+      const pcDataUrl = new URL("pc/pc_lib", siteBase).href;
+      try {
+        const res = await fetch(pcDataUrl, { cache: "no-cache" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        pcCharById = (Array.isArray(data) ? data : []).reduce((acc, entry) => {
+          const key = normalizePcKey(entry && entry.name_en);
+          if (key) acc[key] = entry;
+          return acc;
+        }, {});
+      } catch (err) {
+        console.error("PC data unavailable for NPC section:", err && err.message ? err.message : err);
+      }
+    }
+
     console.log("[NPC] rendering cards for", npcKey, npcIds.length, "NPCs");
 
     relatedNpcState.npcIds = npcIds;
     relatedNpcState.charById = charById;
+    relatedNpcState.pcCharById = pcCharById;
     relatedNpcState.siteBase = siteBase;
     renderRelatedNpcSection();
   };

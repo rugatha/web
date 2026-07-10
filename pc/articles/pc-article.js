@@ -334,23 +334,25 @@
     ensureAdventureLog();
 
     try {
-      const [pcRes, pcsRes, guestRes, navRes, arcRes, chapterRes] = await Promise.all([
+      const [pcRes, pcsRes, guestRes, npcRes, navRes, arcRes, chapterRes] = await Promise.all([
         fetch("../pc_lib", { cache: "no-cache" }),
         fetch("../../campaigns/pages/pcs.json", { cache: "no-cache" }),
         fetch("../../campaigns/pages/guest.json", { cache: "no-cache" }),
+        fetch("../../campaigns/pages/npcs.json", { cache: "no-cache" }),
         fetch("../../campaigns/data/chapter-nav.json", { cache: "no-cache" }),
         fetch("../../campaigns/data/story-arc-titles.json", { cache: "no-cache" }),
         fetch("../../campaigns/data/chapter-titles.json", { cache: "no-cache" })
       ]);
 
-      if (!pcRes.ok || !pcsRes.ok || !guestRes.ok || !navRes.ok || !arcRes.ok || !chapterRes.ok) {
+      if (!pcRes.ok || !pcsRes.ok || !guestRes.ok || !npcRes.ok || !navRes.ok || !arcRes.ok || !chapterRes.ok) {
         throw new Error(i18n.loadFailed[state.lang]);
       }
 
-      const [pcs, pcsJson, guestJson, chapterNav, arcTitles, chapterTitles] = await Promise.all([
+      const [pcs, pcsJson, guestJson, npcJson, chapterNav, arcTitles, chapterTitles] = await Promise.all([
         pcRes.json(),
         pcsRes.json(),
         guestRes.json(),
+        npcRes.json(),
         navRes.json(),
         arcRes.json(),
         chapterRes.json()
@@ -363,15 +365,37 @@
 
       const pcMap = (pcsJson && pcsJson.pcs) || {};
       const guestMap = (guestJson && guestJson.guest) || {};
+      const npcMap = (npcJson && npcJson.npcs) || {};
       const chapterOrder = Object.keys(chapterNav || {}).reduce((acc, key, index) => {
         acc[key] = index;
         return acc;
       }, {});
+      const getAppearanceOrder = (chapterId) => {
+        if (
+          normalizePcKey(targetPcName) === "yi" &&
+          chapterId === "plus-c06-chpt04" &&
+          Number.isFinite(chapterOrder["lite-c07-chpt03"])
+        ) {
+          return chapterOrder["lite-c07-chpt03"] + 0.5;
+        }
+        return chapterOrder[chapterId] ?? Number.MAX_SAFE_INTEGER;
+      };
 
       const combinedMap = { ...pcMap };
       Object.entries(guestMap).forEach(([chapterId, names]) => {
         const existing = Array.isArray(combinedMap[chapterId]) ? combinedMap[chapterId] : [];
         combinedMap[chapterId] = existing.concat(Array.isArray(names) ? names : []);
+      });
+      Object.entries(npcMap).forEach(([chapterId, names]) => {
+        const pcNpcNames = Array.isArray(names)
+          ? names
+              .filter((name) => /^pc:/i.test(String(name || "").trim()))
+              .map((name) => String(name || "").trim().replace(/^pc:/i, "").trim())
+              .filter(Boolean)
+          : [];
+        if (!pcNpcNames.length) return;
+        const existing = Array.isArray(combinedMap[chapterId]) ? combinedMap[chapterId] : [];
+        combinedMap[chapterId] = existing.concat(pcNpcNames);
       });
 
       const appearanceChapters = Object.entries(combinedMap)
@@ -380,7 +404,7 @@
         )
         .map(([chapterId]) => chapterId)
         .filter((chapterId, index, list) => list.indexOf(chapterId) === index)
-        .sort((a, b) => (chapterOrder[a] ?? Number.MAX_SAFE_INTEGER) - (chapterOrder[b] ?? Number.MAX_SAFE_INTEGER));
+        .sort((a, b) => getAppearanceOrder(a) - getAppearanceOrder(b));
 
       const grouped = [];
       const byArc = new Map();

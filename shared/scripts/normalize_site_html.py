@@ -108,6 +108,7 @@ def load_related_character_data() -> dict[str, object]:
     guest_json = load_json_file("campaigns/pages/guest.json")
     npcs_json = load_json_file("campaigns/pages/npcs.json")
     npc_rows = load_json_file("npc/data/characters.json")
+    pc_rows = load_json_file("pc/pc_lib")
 
     npc_names: dict[str, str] = {}
     if isinstance(npc_rows, list):
@@ -121,11 +122,22 @@ def load_related_character_data() -> dict[str, object]:
             npc_names[npc_id] = name
             npc_names[npc_id.casefold()] = name
 
+    pc_names: dict[str, str] = {}
+    if isinstance(pc_rows, list):
+        for row in pc_rows:
+            if not isinstance(row, dict):
+                continue
+            name = str(row.get("name_en") or "").strip()
+            if not name:
+                continue
+            pc_names[f"pc:{name}".casefold()] = name
+
     _RELATED_CHARACTER_CACHE = {
         "pcs": pcs_json.get("pcs", {}) if isinstance(pcs_json, dict) else {},
         "guest": guest_json.get("guest", {}) if isinstance(guest_json, dict) else {},
         "npcs": npcs_json.get("npcs", {}) if isinstance(npcs_json, dict) else {},
         "npc_names": npc_names,
+        "pc_names": pc_names,
     }
     return _RELATED_CHARACTER_CACHE
 
@@ -161,6 +173,7 @@ def related_character_names(relative_path: str) -> dict[str, list[str]]:
     guest_map = data.get("guest", {}) if isinstance(data.get("guest"), dict) else {}
     npcs_map = data.get("npcs", {}) if isinstance(data.get("npcs"), dict) else {}
     npc_names = data.get("npc_names", {}) if isinstance(data.get("npc_names"), dict) else {}
+    pc_name_map = data.get("pc_names", {}) if isinstance(data.get("pc_names"), dict) else {}
 
     pc_names = unique_values(pcs_map.get(chapter_key, []) if chapter_key and isinstance(pcs_map.get(chapter_key), list) else [])
     guest_names = unique_values(
@@ -176,7 +189,15 @@ def related_character_names(relative_path: str) -> dict[str, list[str]]:
     )
     npc_ids = npcs_map.get(npc_key, []) if npc_key else []
     npc_display_names = unique_values(
-        [str(npc_names.get(str(npc_id), npc_names.get(str(npc_id).casefold(), pretty_id(str(npc_id))))) for npc_id in npc_ids]
+        [
+            str(
+                pc_name_map.get(
+                    str(npc_id).casefold(),
+                    npc_names.get(str(npc_id), npc_names.get(str(npc_id).casefold(), pretty_id(str(npc_id)))),
+                )
+            )
+            for npc_id in npc_ids
+        ]
     )
     return {
         "pcs": pc_names,
