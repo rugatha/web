@@ -260,6 +260,14 @@
       level: 3,
       parent: "lite"
     },
+    {
+      id: "lite-c13",
+      label: "Before Stonefield",
+      title: "Before Stonefield 石原鎮之前",
+      level: 3,
+      parent: "lite",
+      noChapters: true
+    },
 
     // ===== Rugatha WILDS =====
     { id: "wilds", label: "Rugatha WILDS", level: 2, parent: "rugatha" },
@@ -764,6 +772,7 @@
         url: "../lite-c12/chpt05.html"
       }
     ],
+    "lite-c13": [],
 
     "wilds-c01": [
       {
@@ -1148,6 +1157,7 @@
     "lite-c10": "../rugatha-lite/lite-c10/",
     "lite-c11": "../rugatha-lite/lite-c11/",
     "lite-c12": "../rugatha-lite/lite-c12/",
+    "lite-c13": "../rugatha-lite/lite-c13/",
     "wilds-c01": "../rugatha-wilds/wilds-c01/",
     "wilds-c02": "../rugatha-wilds/wilds-c02/",
     "wilds-c03": "../rugatha-wilds/wilds-c03/",

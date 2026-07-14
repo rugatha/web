@@ -1,14 +1,5 @@
 [
   {
-    "title": "Rugatha WILDS S20",
-    "date": "2026-07-11",
-    "category": "長團",
-    "link": "/campaigns/pages/rugatha-wilds/wilds-c05/",
-    "note": "《The Unacknowledged Child 不被承認的孩子》",
-    "image": "campaigns/campaign-banners/wilds-c05.png",
-    "deadline": false
-  },
-  {
     "title": "Rugatha 7月體驗團 《洛林精神》報名",
     "date": "2026-07-11",
     "category": "體驗團",
@@ -24,6 +15,24 @@
     "link": "/experience/index.html",
     "note": "報名截止 2026/7/11 23:59 (GMT+8)",
     "image": "assets/rugatha-experience.jpeg",
+    "deadline": false
+  },
+  {
+    "title": "Rugatha WILDS S20",
+    "date": "2026-08-01",
+    "category": "長團",
+    "link": "/campaigns/pages/rugatha-wilds/wilds-c05/",
+    "note": "《The Unacknowledged Child 不被承認的孩子》",
+    "image": "campaigns/campaign-banners/wilds-c05.png",
+    "deadline": false
+  },
+  {
+    "title": "Rugatha lite S45",
+    "date": "2026-09-05",
+    "category": "長團",
+    "link": "/campaigns/pages/rugatha-lite/lite-c13/",
+    "note": "《Before Stonefield 石原鎮之前》",
+    "image": "campaigns/campaign-banners/lite-c13.png",
     "deadline": false
   }
 ]
