@@ -600,7 +600,11 @@ function applyTranslations() {
   if (textNodes.downloadNote) textNodes.downloadNote.textContent = t.downloadNote;
   if (buttons.download) buttons.download.textContent = t.downloadLabel;
   if (buttons.reset) buttons.reset.textContent = t.resetLabel;
-  if (buttons.langToggle) buttons.langToggle.textContent = t.toggleLabel;
+  if (buttons.langToggle) {
+    buttons.langToggle.dataset.lang = currentLang;
+    buttons.langToggle.setAttribute("aria-label", currentLang === "en" ? "目前語言：English" : "目前語言：中文");
+    buttons.langToggle.innerHTML = `<img class="language-toggle__icon" src="../assets/lan-${currentLang}.png" alt="" aria-hidden="true">`;
+  }
   if (textNodes.canvas) textNodes.canvas.setAttribute("aria-label", t.aria.canvas);
 
   const lbl = t.labels;

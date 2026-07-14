@@ -44,6 +44,33 @@
   background: transparent;
 }
 
+#lang-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  display: inline-grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  transition: transform 150ms ease;
+}
+
+#lang-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.language-toggle__icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .btn.toggle {
   width: 100%;
 }

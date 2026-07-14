@@ -51,8 +51,7 @@
     </header>
 
     <div class="language-toggle" aria-label="Language">
-      <button class="language-toggle__button" type="button" data-lang-option="zh" aria-pressed="true">中文</button>
-      <button class="language-toggle__button" type="button" data-lang-option="en" aria-pressed="false">English</button>
+      <button class="language-toggle__button" type="button" data-lang-option="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle><img class="language-toggle__icon" src="../assets/lan-zh.png" alt="" aria-hidden="true"></button>
     </div>
 
     <section class="entry-grid" aria-label="Character indexes">
@@ -160,9 +159,12 @@
         node.textContent = node.dataset[lang] || node.textContent;
       });
       document.querySelectorAll("[data-lang-option]").forEach((button) => {
-        const isActive = button.dataset.langOption === lang;
-        button.classList.toggle("is-active", isActive);
-        button.setAttribute("aria-pressed", String(isActive));
+        button.dataset.langOption = lang;
+        button.classList.add("is-active");
+        button.setAttribute("aria-pressed", "true");
+        button.setAttribute("aria-label", lang === "en" ? "目前語言：English" : "目前語言：中文");
+        const icon = button.querySelector(".language-toggle__icon");
+        if (icon) icon.setAttribute("src", icon.getAttribute("src").replace(/lan-(zh|en)\.png$/, `lan-${lang}.png`));
       });
       try {
         localStorage.setItem("characters-lang", lang);
@@ -205,7 +207,7 @@
       });
 
     document.querySelectorAll("[data-lang-option]").forEach((button) => {
-      button.addEventListener("click", () => applyLanguage(button.dataset.langOption));
+      button.addEventListener("click", () => applyLanguage(button.dataset.langOption === "en" ? "zh" : "en"));
     });
     applyLanguage(getInitialLanguage());
   </script>

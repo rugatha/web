@@ -196,17 +196,20 @@ function renderDeities(deities) {
 function setupLanguageToggle() {
   if (!langButtons.length) return;
 
-  const setButtonState = (button, isActive) => {
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+  const updateButtonState = (button) => {
+    button.dataset.lang = currentLang;
+    button.classList.add("is-active");
+    button.setAttribute("aria-pressed", "true");
+    button.setAttribute("aria-label", currentLang === "en" ? "目前語言：English" : "目前語言：中文");
+    const icon = button.querySelector(".language-toggle__icon");
+    if (icon) icon.setAttribute("src", icon.getAttribute("src").replace(/lan-(zh|en)\.png$/, `lan-${currentLang}.png`));
   };
 
   langButtons.forEach((button) => {
+    updateButtonState(button);
     button.addEventListener("click", () => {
-      const nextLang = button.dataset.lang || "zh";
-      if (nextLang === currentLang) return;
-      currentLang = nextLang;
-      langButtons.forEach((btn) => setButtonState(btn, btn.dataset.lang === currentLang));
+      currentLang = currentLang === "en" ? "zh" : "en";
+      langButtons.forEach(updateButtonState);
       document.title = PAGE_TITLES[currentLang] || PAGE_TITLES.en;
       renderDeities(deitiesCache);
     });

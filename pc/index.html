@@ -91,37 +91,53 @@
     }
 
     .toolbar {
-      margin: 0 0 18px;
+      height: 0;
+      margin: 0;
       display: flex;
       justify-content: flex-start;
     }
 
     .language-toggle {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 1000;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 6px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.28);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0;
     }
 
     .language-toggle button {
+      display: inline-grid;
+      place-items: center;
+      width: 88px;
+      height: 88px;
       border: none;
       background: transparent;
       color: var(--muted);
       font: inherit;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0;
       text-transform: uppercase;
-      padding: 8px 14px;
+      padding: 0;
       border-radius: 999px;
       cursor: pointer;
+      transition: background 150ms ease, box-shadow 150ms ease, opacity 150ms ease, transform 150ms ease;
     }
 
     .language-toggle button[aria-pressed="true"] {
-      background: rgba(255, 255, 255, 0.18);
-      color: var(--text);
+      opacity: 1;
+    }
+
+    .language-toggle button:hover {
+      transform: translateY(-1px);
+    }
+
+    .language-toggle__icon {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .related-pcs {
@@ -244,8 +260,7 @@
 
     <div class="toolbar">
       <div class="language-toggle" role="group" aria-label="Language">
-        <button type="button" data-lang="zh" aria-pressed="true">中文</button>
-        <button type="button" data-lang="en" aria-pressed="false">English</button>
+        <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle><img class="language-toggle__icon" src="../assets/lan-zh.png" alt="" aria-hidden="true"></button>
       </div>
     </div>
 
@@ -451,7 +466,11 @@
       document.getElementById("page-title").textContent = i18n.title[currentLang];
       document.querySelector(".related-pcs__title").textContent = i18n.sectionTitle[currentLang];
       document.querySelectorAll("[data-lang]").forEach((button) => {
-        button.setAttribute("aria-pressed", button.dataset.lang === currentLang ? "true" : "false");
+        button.dataset.lang = currentLang;
+        button.setAttribute("aria-pressed", "true");
+        button.setAttribute("aria-label", currentLang === "en" ? "目前語言：English" : "目前語言：中文");
+        const icon = button.querySelector(".language-toggle__icon");
+        if (icon) icon.setAttribute("src", icon.getAttribute("src").replace(/lan-(zh|en)\.png$/, `lan-${currentLang}.png`));
       });
     };
 
@@ -494,7 +513,7 @@
 
     document.querySelectorAll("[data-lang]").forEach((button) => {
       button.addEventListener("click", () => {
-        currentLang = button.dataset.lang === "en" ? "en" : "zh";
+        currentLang = button.dataset.lang === "en" ? "zh" : "en";
         render();
       });
     });

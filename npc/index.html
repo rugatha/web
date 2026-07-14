@@ -45,8 +45,7 @@
 <body>
   <header>
     <div class="language-toggle" role="group" aria-label="Language">
-      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
-      <button type="button" data-lang="en" aria-pressed="false">English</button>
+      <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle><img class="language-toggle__icon" src="../assets/lan-zh.png" alt="" aria-hidden="true"></button>
     </div>
     <a class="banner" href="https://rugatha.com/" target="_blank" rel="noopener">
       <img src="../assets/rugatha-banner.png" alt="Rugatha banner">
@@ -198,9 +197,12 @@
 
     const updateLanguageToggle = () => {
       langButtons.forEach((button) => {
-        const active = button.dataset.lang === languageState.value;
-        button.classList.toggle('is-active', active);
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        button.dataset.lang = languageState.value;
+        button.classList.add('is-active');
+        button.setAttribute('aria-pressed', 'true');
+        button.setAttribute('aria-label', languageState.value === 'en' ? '目前語言：English' : '目前語言：中文');
+        const icon = button.querySelector('.language-toggle__icon');
+        if (icon) icon.setAttribute('src', icon.getAttribute('src').replace(/lan-(zh|en)\.png$/, `lan-${languageState.value}.png`));
       });
     };
 
@@ -254,7 +256,7 @@
     };
 
     langButtons.forEach((button) => {
-      button.addEventListener('click', () => applyLanguage(button.dataset.lang));
+      button.addEventListener('click', () => applyLanguage(button.dataset.lang === 'en' ? 'zh' : 'en'));
     });
     applyLanguage(getPreferredLanguage());
 

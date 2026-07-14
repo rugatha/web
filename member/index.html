@@ -76,33 +76,47 @@
     }
 
     .language-toggle {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 1000;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 6px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.28);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0;
       align-self: flex-start;
     }
 
     .language-toggle button {
+      display: inline-grid;
+      place-items: center;
+      width: 88px;
+      height: 88px;
       border: none;
       background: transparent;
       color: var(--member-muted);
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 8px 14px;
+      padding: 0;
       border-radius: 999px;
       cursor: pointer;
-      transition: background 150ms ease, color 150ms ease;
+      transition: background 150ms ease, box-shadow 150ms ease, opacity 150ms ease, transform 150ms ease;
       font-family: var(--font-body);
     }
 
     .language-toggle button[aria-pressed="true"] {
-      background: rgba(255, 255, 255, 0.18);
-      color: var(--member-ink);
+      opacity: 1;
+    }
+
+    .language-toggle button:hover {
+      transform: translateY(-1px);
+    }
+
+    .language-toggle__icon {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .corner-link {
@@ -129,6 +143,7 @@
       flex-direction: column;
       gap: 16px;
       max-width: 520px;
+      margin-top: 72px;
     }
 
     .eyebrow {
@@ -745,6 +760,10 @@
         padding: 36px 6vw 48px;
       }
 
+      .hero-copy {
+        margin-top: 88px;
+      }
+
       .profile-card {
         padding: 22px;
       }
@@ -762,8 +781,7 @@
 <body>
   <div class="page">
     <div class="language-toggle" role="group" aria-label="Language">
-      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
-      <button type="button" data-lang="en" aria-pressed="false">English</button>
+      <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle><img class="language-toggle__icon" src="../assets/lan-zh.png" alt="" aria-hidden="true"></button>
     </div>
     <a class="corner-link" href="../index.html" aria-label="Rugatha Home">
       <img src="../assets/rugatha-icon.png" alt="Rugatha home" width="100" height="100">
@@ -1529,7 +1547,11 @@
         }
       });
       toggleButtons.forEach((button) => {
-        button.setAttribute("aria-pressed", button.dataset.lang === lang ? "true" : "false");
+        button.dataset.lang = lang;
+        button.setAttribute("aria-pressed", "true");
+        button.setAttribute("aria-label", lang === "en" ? "目前語言：English" : "目前語言：中文");
+        const icon = button.querySelector(".language-toggle__icon");
+        if (icon) icon.setAttribute("src", icon.getAttribute("src").replace(/lan-(zh|en)\.png$/, `lan-${lang}.png`));
       });
       setStoredLanguage(lang);
       applyProfileCopy(lang);
@@ -2517,7 +2539,7 @@
 
     toggleButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        const lang = button.dataset.lang;
+        const lang = button.dataset.lang === "en" ? "zh" : "en";
         authState.language = lang;
         setLanguage(lang);
         if (authState.isAdmin) {

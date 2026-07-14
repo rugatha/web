@@ -211,7 +211,11 @@ function applyStaticI18n() {
   if (heroTitle) heroTitle.textContent = t("heroTitle");
   if (els.languageButtons) {
     els.languageButtons.forEach((button) => {
-      button.setAttribute("aria-pressed", button.dataset.lang === state.language ? "true" : "false");
+      button.dataset.lang = state.language;
+      button.setAttribute("aria-pressed", "true");
+      button.setAttribute("aria-label", state.language === "en" ? "目前語言：English" : "目前語言：中文");
+      const icon = button.querySelector(".language-toggle__icon");
+      if (icon) icon.setAttribute("src", icon.getAttribute("src").replace(/lan-(zh|en)\.png$/, `lan-${state.language}.png`));
     });
   }
   if (els.graph) els.graph.setAttribute("aria-label", t("graphAria"));
@@ -1298,8 +1302,7 @@ function installEvents() {
   if (els.languageButtons) {
     els.languageButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        if (!button.dataset.lang || button.dataset.lang === state.language) return;
-        state.language = button.dataset.lang;
+        state.language = state.language === "en" ? "zh" : "en";
         applyStaticI18n();
         refresh();
       });

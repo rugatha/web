@@ -489,10 +489,13 @@
 
   const updateLanguageToggle = () => {
     if (!languageState.wrap) return;
-    const buttons = languageState.wrap.querySelectorAll(".language-toggle button");
+    const buttons = languageState.wrap.querySelectorAll("button");
     buttons.forEach((button) => {
-      const isActive = button.dataset.lang === languageState.value;
-      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      button.dataset.lang = languageState.value;
+      button.setAttribute("aria-pressed", "true");
+      button.setAttribute("aria-label", languageState.value === "en" ? "目前語言：English" : "目前語言：中文");
+      const icon = button.querySelector(".language-toggle__icon");
+      if (icon) icon.setAttribute("src", getLanguageIconSrc(languageState.value));
     });
   };
 
@@ -800,6 +803,14 @@
     }
   };
 
+  const getLanguageIconSrc = (lang) => {
+    try {
+      return new URL(`../assets/lan-${lang}.png`, withTrailingSlash(campaignsBase)).href;
+    } catch (_) {
+      return `../../../assets/lan-${lang}.png`;
+    }
+  };
+
   const ensureLanguageToggle = () => {
     if (!isChapterPage && !isArcPage) return;
     const container = document.querySelector(".detail-canvas") || document.querySelector(".page");
@@ -815,17 +826,22 @@
       wrap.setAttribute("role", "group");
       wrap.setAttribute("aria-label", "Language");
 
-      const makeButton = (label, lang) => {
+      const makeButton = () => {
         const button = document.createElement("button");
         button.type = "button";
-        button.dataset.lang = lang;
-        button.textContent = label;
-        button.addEventListener("click", () => applyLanguage(lang));
+        button.dataset.lang = languageState.value;
+        button.dataset.langToggle = "";
+        button.setAttribute("aria-pressed", "true");
+        const icon = document.createElement("img");
+        icon.className = "language-toggle__icon";
+        icon.alt = "";
+        icon.setAttribute("aria-hidden", "true");
+        button.appendChild(icon);
+        button.addEventListener("click", () => applyLanguage(button.dataset.lang === "en" ? "zh" : "en"));
         return button;
       };
 
-      wrap.appendChild(makeButton("中文", "zh"));
-      wrap.appendChild(makeButton("English", "en"));
+      wrap.appendChild(makeButton());
       bar.appendChild(wrap);
       container.insertBefore(bar, container.firstChild);
     }

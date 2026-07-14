@@ -76,35 +76,46 @@ p.lead {
 }
 
 .language-toggle {
-  position: absolute;
-  top: 24px;
-  left: 5vw;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.28);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0;
 }
 
 .language-toggle button {
+  display: inline-grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
   border: none;
   background: transparent;
   color: var(--muted);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
-  padding: 8px 14px;
+  padding: 0;
   border-radius: 999px;
   cursor: pointer;
-  transition: background 150ms ease, color 150ms ease;
+  transition: background 150ms ease, box-shadow 150ms ease, opacity 150ms ease, transform 150ms ease;
   font-family: var(--font-body);
 }
 
 .language-toggle button[aria-pressed="true"] {
-  background: rgba(255, 255, 255, 0.18);
-  color: var(--text);
+  opacity: 1;
+}
+
+.language-toggle button:hover {
+  transform: translateY(-1px);
+}
+
+.language-toggle__icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .language-toggle button:focus-visible {
@@ -118,8 +129,8 @@ p.lead {
   }
 
   .language-toggle {
-    top: 18px;
-    left: 6vw;
+    top: 12px;
+    left: 12px;
   }
 }
 

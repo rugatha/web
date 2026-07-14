@@ -36,9 +36,12 @@ const setLanguage = (language) => {
   document.documentElement.lang = language === "zh" ? "zh-TW" : "en";
   document.body.dataset.lang = language;
   languageToggleButtons.forEach((button) => {
-    const isActive = button.dataset.langOption === language;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
+    button.dataset.langOption = language;
+    button.classList.add("is-active");
+    button.setAttribute("aria-pressed", "true");
+    button.setAttribute("aria-label", language === "en" ? "目前語言：English" : "目前語言：中文");
+    const icon = button.querySelector(".language-toggle__icon");
+    if (icon) icon.setAttribute("src", icon.getAttribute("src").replace(/lan-(zh|en)\.png$/, `lan-${language}.png`));
   });
   document.querySelectorAll("[data-i18n='sessionLabel']").forEach((el) => {
     el.textContent = i18n[language].sessionLabel;
@@ -55,7 +58,7 @@ const setLanguage = (language) => {
 };
 
 languageToggleButtons.forEach((button) => {
-  button.addEventListener("click", () => setLanguage(button.dataset.langOption));
+  button.addEventListener("click", () => setLanguage(button.dataset.langOption === "en" ? "zh" : "en"));
 });
 
 const toRgba = (hex, alpha = 0.22) => {
