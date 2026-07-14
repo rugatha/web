@@ -13,7 +13,7 @@
       "en": ["Light", "Hope"],
       "zh": ["光", "希望"]
     },
-    "image": "Banners/Trinix.png",
+    "image": "images/Trinix.png",
     "link": "./pages/trinix.html",
     "saying": {
       "en": "Let Light Lead Us",
@@ -35,7 +35,7 @@
       "en": ["Luna"],
       "zh": ["月"]
     },
-    "image": "Banners/Phyneal.png",
+    "image": "images/Phyneal.png",
     "link": "./pages/phyneal.html",
     "saying": {
       "en": "The Moon Reveals All that is Hidden",
@@ -57,7 +57,7 @@
       "en": ["Exchange", "Prophecy"],
       "zh": ["交易", "預言"]
     },
-    "image": "Banners/Phynoir.png",
+    "image": "images/Phynoir.png",
     "link": "./pages/phynoir.html",
     "saying": {
       "en": "What Would You Offer for a Trade?",
@@ -79,7 +79,7 @@
       "en": ["Woods", "Life"],
       "zh": ["樹林", "生命"]
     },
-    "image": "Banners/Nessis.png",
+    "image": "images/Nessis.png",
     "link": "./pages/nessis.html",
     "saying": {
       "en": "Life, Birth in Nature, Ends in Nature",
@@ -101,7 +101,7 @@
       "en": ["Protection", "Justice"],
       "zh": ["守護", "正義"]
     },
-    "image": "Banners/Keinra.png",
+    "image": "images/Keinra.png",
     "link": "./pages/keinra.html",
     "saying": {
       "en": "I Will Protect Until the End of the World",
@@ -123,7 +123,7 @@
       "en": ["Storm", "Intelligence"],
       "zh": ["風暴", "智慧"]
     },
-    "image": "Banners/Jeorisan.png",
+    "image": "images/Jeorisan.png",
     "link": "./pages/jeorisan.html",
     "saying": {
       "en": "Truth Rise from Chaos",
@@ -145,7 +145,7 @@
       "en": ["Trickery", "Drama"],
       "zh": ["詐欺", "戲劇"]
     },
-    "image": "Banners/Ultisen.png",
+    "image": "images/Ultisen.png",
     "link": "./pages/ultisen.html",
     "saying": {
       "en": "Dramas are as Lies, Deadly Beautiful",
@@ -167,7 +167,7 @@
       "en": ["Fire", "Forge"],
       "zh": ["火", "熔鍛"]
     },
-    "image": "Banners/Maxus.png",
+    "image": "images/Maxus.png",
     "link": "./pages/maxus.html",
     "saying": {
       "en": "Melt, Rebirth",
@@ -189,7 +189,7 @@
       "en": ["Silence", "Rules"],
       "zh": ["寂靜", "秩序"]
     },
-    "image": "Banners/Laxthos.png",
+    "image": "images/Laxthos.png",
     "link": "./pages/laxthos.html",
     "saying": {
       "en": "Obey Destiny in Silence",
@@ -211,7 +211,7 @@
       "en": ["Trades", "Wealth"],
       "zh": ["貿易", "財富"]
     },
-    "image": "Banners/Kalinius.png",
+    "image": "images/Kalinius.png",
     "link": "./pages/kalinius.html",
     "saying": {
       "en": "Gold Pieces, Omnipotent",
@@ -233,7 +233,7 @@
       "en": ["War", "Strength"],
       "zh": ["戰爭", "力量"]
     },
-    "image": "Banners/Daligon.png",
+    "image": "images/Daligon.png",
     "link": "./pages/daligon.html",
     "saying": {
       "en": "Only the Truiumphant Decide History",
@@ -255,7 +255,7 @@
       "en": ["Love", "Everlasting"],
       "zh": ["愛", "永恆"]
     },
-    "image": "Banners/Amoret.png",
+    "image": "images/Amoret.png",
     "link": "./pages/amoret.html",
     "saying": {
       "en": "Those Who are Against Love, are My Nemesis",

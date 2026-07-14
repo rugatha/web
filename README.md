@@ -73,7 +73,7 @@ GitHub Pages workflow 位於：
 - `pc/`
   PC 首頁、角色文章、圖片、三視圖、玩家提供圖片與角色資料來源。
 
-- `characters/`、`character_main_page/`
+- `characters/`
   角色總覽與相關入口頁。
 
 - `character_card/`
@@ -310,7 +310,7 @@ python3 shared/scripts/normalize_site_html.py
 - 更新 PC 時，檢查 `pc/pc_lib`、`pc/articles/`、`pc/pics/`、`pc/three_views/` 與章節 PC 對照。
 - 更新時間線時，檢查 `timeline/data/events.js` 的時間排序、中英標題與描述。
 - 更新地圖時，檢查 `map/assets/locations.json` 與地圖圖片座標是否一致。
-- 更新神祇時，檢查 `deities/data/deities.json`、`deities/pages/` 與 `deities/Banners/`。
+- 更新神祇時，檢查 `deities/data/deities.json`、`deities/pages/` 與 `deities/images/`。
 - 更新咒語時，檢查 `spells/spells-phb.json` 格式是否可被頁面讀取。
 - 更新會員成就時，檢查 `member/achievements.csv` 欄位格式。
 
