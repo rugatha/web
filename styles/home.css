@@ -858,9 +858,20 @@ body {
   .about-link {
     grid-row: 4;
     align-self: end;
+    justify-self: stretch;
+    width: 100%;
+    min-width: 0;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: stretch;
     border-radius: 16px;
     margin-top: -4px;
+  }
+
+  .about-link-card {
+    align-self: stretch;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
   }
 
   .about-link-card::after {
