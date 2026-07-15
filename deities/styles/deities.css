@@ -302,6 +302,16 @@ body {
 }
 
 @media (max-width: 640px) {
+  .lang-toggle {
+    top: 12px;
+    left: 12px;
+  }
+
+  .lang-toggle__button {
+    width: 44px;
+    height: 44px;
+  }
+
   .hero-content {
     padding: 54px 16px 42px;
   }

@@ -132,6 +132,11 @@ p.lead {
     top: 12px;
     left: 12px;
   }
+
+  .language-toggle button {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .search {

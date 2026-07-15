@@ -777,7 +777,9 @@ code {
   }
 
   .language-toggle button {
-    flex: 1 1 0;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
   }
 
   .layout {

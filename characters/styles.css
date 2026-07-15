@@ -211,6 +211,8 @@ body {
 
   .language-toggle__button {
     flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
   }
 
   .entry-card {

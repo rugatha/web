@@ -302,6 +302,13 @@ canvas {
   background: #253234;
 }
 
+@media (max-width: 720px) {
+  #lang-toggle {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 @media (max-width: 1000px) {
   .layout {
     grid-template-columns: 1fr;

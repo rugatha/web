@@ -271,6 +271,16 @@ body {
 }
 
 @media (max-width: 720px) {
+  .lang-toggle {
+    top: 12px;
+    left: 12px;
+  }
+
+  .lang-toggle__button {
+    width: 44px;
+    height: 44px;
+  }
+
   body {
     padding: 22px 14px 40px;
   }

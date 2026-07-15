@@ -358,6 +358,16 @@ body {
 }
 
 @media (max-width: 640px) {
+  .lang-toggle {
+    top: 12px;
+    left: 12px;
+  }
+
+  .lang-toggle__button {
+    width: 44px;
+    height: 44px;
+  }
+
   .page-shell {
     width: min(100vw, 960px);
     margin: 26px auto 40px;

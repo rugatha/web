@@ -696,6 +696,8 @@ html[data-lang="en"] .campaign-detail:not(.arc-detail) > .campaign-detail__conte
 
   .language-toggle button {
     flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
   }
 
   .campaign-detail {

@@ -531,6 +531,11 @@ body {
     width: fit-content;
   }
 
+  .language-toggle button {
+    width: 44px;
+    height: 44px;
+  }
+
   .facet-grid {
     grid-template-columns: 1fr;
   }
