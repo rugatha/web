@@ -490,7 +490,7 @@ body {
   grid-column: 1 / span 6;
   grid-row: 4;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
   padding: 0;
   background: var(--home-bg);
@@ -858,7 +858,7 @@ body {
   .about-link {
     grid-row: 4;
     align-self: end;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     border-radius: 16px;
     margin-top: -4px;
   }
