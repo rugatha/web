@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BZZFKMJ65Y');
+  </script>
+  <title>Race & Class | Rugatha</title>
+  <meta name="description" content="Browse Rugatha character race and class options.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rugatha.com/race_class/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rugatha">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="Race &amp; Class | Rugatha">
+  <meta property="og:description" content="Browse Rugatha character race and class options.">
+  <meta property="og:url" content="https://rugatha.com/race_class/">
+  <meta property="og:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Race &amp; Class | Rugatha">
+  <meta name="twitter:description" content="Browse Rugatha character race and class options.">
+  <meta name="twitter:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <link rel="icon" type="image/png" href="../assets/rugatha-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-favicon-32.png">
+  <link rel="stylesheet" href="../shared/styles/theme.css">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <meta name="theme-color" content="#0f2d24">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Rugatha">
+  <link rel="apple-touch-icon" href="../assets/rugatha-icon-192.png">
+  <script defer src="../shared/pwa.js"></script>
+  <script src="../shared/language-toggle.js"></script>
+  <style>
+    :root {
+      --rc-line: rgba(236, 242, 237, 0.2);
+      --rc-line-strong: rgba(236, 242, 237, 0.42);
+      --rc-panel: rgba(236, 242, 237, 0.08);
+      --rc-panel-hover: rgba(236, 242, 237, 0.14);
+      --rc-muted: rgba(236, 242, 237, 0.72);
+      --rc-gold: #d9b66f;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .page {
+      width: min(920px, calc(100vw - 32px));
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 28px 0 64px;
+      display: grid;
+      align-content: start;
+      gap: 34px;
+    }
+
+    .language-toggle {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      display: inline-flex;
+    }
+
+    .language-toggle button {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .language-toggle button:hover,
+    .language-toggle button:focus-visible {
+      opacity: 0.86;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .language-toggle__icon {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .banner {
+      display: flex;
+      justify-content: center;
+    }
+
+    .banner-link {
+      display: inline-flex;
+    }
+
+    .banner-img {
+      width: min(360px, 78vw);
+      height: auto;
+      display: block;
+    }
+
+    main {
+      display: grid;
+      gap: 28px;
+    }
+
+    .title {
+      display: grid;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .mode-toggle {
+      width: min(520px, 100%);
+      justify-self: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+      padding: 6px;
+      border: 1px solid var(--rc-line);
+      border-radius: 8px;
+      background: rgba(236, 242, 237, 0.07);
+    }
+
+    .mode-toggle button {
+      min-height: 48px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--rc-muted);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 160ms ease, color 160ms ease;
+    }
+
+    .mode-toggle button[aria-pressed="true"] {
+      background: rgba(217, 182, 111, 0.18);
+      color: var(--text);
+    }
+
+    .option-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .option-item {
+      display: grid;
+      gap: 10px;
+    }
+
+    .option-card {
+      width: 100%;
+      min-height: 88px;
+      display: grid;
+      grid-template-columns: auto minmax(150px, 0.65fr) minmax(240px, 1fr);
+      align-items: center;
+      gap: 18px;
+      padding: 18px 22px;
+      border: 1px solid var(--rc-line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(217, 182, 111, 0.12), transparent 34%),
+        var(--rc-panel);
+      color: var(--text);
+      font: inherit;
+      text-align: left;
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.16);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    button.option-card {
+      cursor: pointer;
+    }
+
+    button.option-card:hover,
+    button.option-card:focus-visible {
+      transform: translateX(4px);
+      border-color: var(--rc-line-strong);
+      background:
+        linear-gradient(135deg, rgba(217, 182, 111, 0.18), transparent 38%),
+        var(--rc-panel-hover);
+      outline: none;
+    }
+
+    .option-mark {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .option-mark img {
+      width: 48px;
+      height: 48px;
+      display: block;
+      object-fit: contain;
+      filter: brightness(0.68);
+    }
+
+    .option-copy {
+      display: grid;
+      min-width: 0;
+    }
+
+    .option-name {
+      font-size: clamp(1.3rem, 2vw, 1.65rem);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .subrace-list {
+      display: grid;
+      gap: 8px;
+      margin: 0 0 0 92px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .subrace-card {
+      display: grid;
+      grid-template-columns: auto minmax(140px, 0.55fr) minmax(220px, 1fr);
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1px solid rgba(236, 242, 237, 0.16);
+      border-radius: 8px;
+      background: rgba(236, 242, 237, 0.06);
+    }
+
+    .subrace-mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .subrace-mark img {
+      width: 28px;
+      height: 28px;
+      display: block;
+      object-fit: contain;
+      filter: brightness(0.68);
+    }
+
+    .subrace-name {
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .note-box {
+      min-height: 0;
+      display: grid;
+      align-content: center;
+      padding: 0;
+      color: rgba(236, 242, 237, 0.86);
+      font-size: 0.95rem;
+      line-height: 1.55;
+      text-align: right;
+      white-space: pre-line;
+    }
+
+    .note-box.is-empty {
+      color: rgba(236, 242, 237, 0.46);
+      font-style: italic;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 24px, 920px);
+        padding-top: 72px;
+      }
+
+      .language-toggle {
+        top: 8px;
+        left: 8px;
+      }
+
+      .language-toggle button {
+        width: 58px;
+        height: 58px;
+      }
+
+      .mode-toggle button {
+        min-height: 44px;
+      }
+
+      .option-card {
+        grid-template-columns: auto minmax(0, 1fr);
+        padding: 16px;
+      }
+
+      .option-mark {
+        width: 48px;
+        height: 48px;
+      }
+
+      .option-mark img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .subrace-list {
+        margin-left: 66px;
+      }
+
+      .subrace-card {
+        grid-template-columns: auto minmax(0, 1fr);
+        padding: 10px 12px;
+      }
+
+      .note-box {
+        grid-column: 1 / -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
+  </div>
+
+  <div class="page">
+    <header class="banner">
+      <a class="banner-link" href="../index.html" aria-label="Rugatha home">
+        <img src="../assets/rugatha-banner.png" alt="Rugatha banner" class="banner-img">
+      </a>
+    </header>
+
+    <main>
+      <section class="title" aria-labelledby="page-title">
+        <h1 id="page-title" data-i18n="title">種族與職業</h1>
+      </section>
+
+      <div class="mode-toggle" role="group" aria-label="Race and class toggle">
+        <button type="button" data-mode="race" aria-pressed="true" data-i18n="raceToggle">Race 種族</button>
+        <button type="button" data-mode="class" aria-pressed="false" data-i18n="classToggle">Class 職業</button>
+      </div>
+
+      <ul class="option-list" id="option-list" aria-live="polite"></ul>
+    </main>
+  </div>
+
+  <script>
+    const translations = {
+      zh: {
+        browserTitle: "種族與職業 | Rugatha",
+        title: "種族與職業",
+        raceToggle: "種族",
+        classToggle: "職業",
+        aria: "目前語言：中文"
+      },
+      en: {
+        browserTitle: "Race & Class | Rugatha",
+        title: "Race & Class",
+        raceToggle: "Race",
+        classToggle: "Class",
+        aria: "Current language: English"
+      }
+    };
+
+    // Edit each race, class, and subrace note in the `note` fields below.
+    const data = {
+      race: [
+        { id: "dragonborn", en: "Dragonborn", zh: "龍人", note: { zh: "力量+2\n魅力+1", en: "STR+2\nCHA+1" } },
+        {
+          id: "dwarf",
+          en: "Dwarf",
+          zh: "矮人",
+          note: { zh: "體魄+2", en: "CON+2" },
+          subraces: [
+            { id: "hill-dwarf", en: "Hill Dwarf", zh: "丘陵矮人", note: { zh: "感知+1", en: "WIS+1" } },
+            { id: "mountain-dwarf", en: "Mountain Dwarf", zh: "山矮人", note: { zh: "力量+2", en: "STR+2" } }
+          ]
+        },
+        {
+          id: "elf",
+          en: "Elf",
+          zh: "妖精",
+          note: { zh: "敏捷+2", en: "DEX+2" },
+          subraces: [
+            { id: "high-elf", en: "High Elf", zh: "高妖精", note: { zh: "智力+1", en: "INT+1" } },
+            { id: "wood-elf", en: "Wood Elf", zh: "木妖精", note: { zh: "感知+1", en: "WIS+1" } },
+            { id: "drow", en: "Drow", zh: "暗妖精", note: { zh: "魅力+1", en: "CHA+1" } }
+          ]
+        },
+        {
+          id: "gnome",
+          en: "Gnome",
+          zh: "地侏",
+          note: { zh: "智力+2", en: "INT+2" },
+          subraces: [
+            { id: "forest-gnome", en: "Forest Gnome", zh: "森地侏", note: { zh: "敏捷+1", en: "DEX+1" } },
+            { id: "rock-gnome", en: "Rock Gnome", zh: "岩地侏", note: { zh: "體魄+1", en: "CON+1" } }
+          ]
+        },
+        { id: "half-elf", en: "Half-Elf", zh: "半妖精", note: { zh: "魅力+2\n選二能力各+1", en: "CHA+2\nChoose 2 Abilities Each +1" } },
+        { id: "half-orc", en: "Half-Orc", zh: "半獸人", note: { zh: "力量+2\n體魄+1", en: "STR+2\nCON+1" } },
+        {
+          id: "halfling",
+          en: "Halfling",
+          zh: "半身人",
+          note: { zh: "敏捷+2", en: "DEX+2" },
+          subraces: [
+            { id: "lightfoot", en: "Lightfoot", zh: "輕足半身人", note: { zh: "魅力+1", en: "CHA+1" } },
+            { id: "stout", en: "Stout", zh: "強魄半身人", note: { zh: "體魄+1", en: "CON+1" } }
+          ]
+        },
+        { id: "human", en: "Human", zh: "人類",note: { zh: "所有能力+1", en: "All Abilities +1" }},
+        { id: "tiefling", en: "Tiefling", zh: "魔人", note: { zh: "智力+1\n魅力+2", en: "INT+1\nCHA+2" } }
+      ],
+      class: [
+        { id: "barbarian", en: "Barbarian", zh: "野蠻人", note: { zh: "生命骰：1d12\n豁免：力量、體魄", en: "Hit Dice: 1d12\nSaving Throw: STR, CON" } },
+        { id: "bard", en: "Bard", zh: "吟遊詩人", note: { zh: "生命骰：1d8\n豁免：敏捷、魅力", en: "Hit Dice: 1d8\nSaving Throw: DEX, CHA" } },
+        { id: "cleric", en: "Cleric", zh: "牧師", note: { zh: "生命骰：1d8\n豁免：感知、魅力", en: "Hit Dice: 1d8\nSaving Throw: WIS, CHA" } },
+        { id: "druid", en: "Druid", zh: "德魯伊", note: { zh: "生命骰：1d8\n豁免：智力、感知", en: "Hit Dice: 1d8\nSaving Throw: INT, WIS" } },
+        { id: "fighter", en: "Fighter", zh: "戰士", note: { zh: "生命骰：1d10\n豁免：力量、體魄", en: "Hit Dice: 1d10\nSaving Throw: STR, CON" } },
+        { id: "monk", en: "Monk", zh: "武僧", note: { zh: "生命骰：1d8\n豁免：力量、敏捷", en: "Hit Dice: 1d8\nSaving Throw: STR, DEX" } },
+        { id: "paladin", en: "Paladin", zh: "聖騎士", note: { zh: "生命骰：1d10\n豁免：感知、魅力", en: "Hit Dice: 1d10\nSaving Throw: WIS, CHA" } },
+        { id: "ranger", en: "Ranger", zh: "遊俠", note: { zh: "生命骰：1d10\n豁免：力量、敏捷", en: "Hit Dice: 1d10\nSaving Throw: STR, DEX" } },
+        { id: "rogue", en: "Rogue", zh: "浪客", note: { zh: "生命骰：1d8\n豁免：敏捷、智力", en: "Hit Dice: 1d8\nSaving Throw: DEX, INT" } },
+        { id: "sorcerer", en: "Sorcerer", zh: "術師", note: { zh: "生命骰：1d6\n豁免：體魄、魅力", en: "Hit Dice: 1d6\nSaving Throw: CON, CHA" } },
+        { id: "warlock", en: "Warlock", zh: "契術師", note: { zh: "生命骰：1d8\n豁免：感知、魅力", en: "Hit Dice: 1d8\nSaving Throw: WIS, CHA" } },
+        { id: "wizard", en: "Wizard", zh: "法師", note: { zh: "生命骰：1d6\n豁免：智力、感知", en: "Hit Dice: 1d6\nSaving Throw:INT, WIS" } }
+      ]
+    };
+
+    const buttons = Array.from(document.querySelectorAll("[data-mode]"));
+    const list = document.getElementById("option-list");
+    const languageButton = document.querySelector("[data-lang-toggle]");
+    const i18nElements = document.querySelectorAll("[data-i18n]");
+    const storageKey = "rugatha-language";
+    let currentMode = "race";
+    let currentLanguage = "zh";
+    let expandedRaceId = null;
+
+    const normalizeLanguage = (language) => language === "en" ? "en" : "zh";
+    const escapeHTML = (value) => String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+
+    const getNote = (item) => {
+      const note = item.note && item.note[currentLanguage] ? item.note[currentLanguage].trim() : "";
+      return {
+        text: note,
+        isEmpty: !note
+      };
+    };
+
+    const getStoredLanguage = () => {
+      try {
+        return localStorage.getItem(storageKey);
+      } catch (error) {
+        return null;
+      }
+    };
+
+    const storeLanguage = (language) => {
+      try {
+        localStorage.setItem(storageKey, language);
+      } catch (error) {
+        return;
+      }
+    };
+
+    const renderOptions = (mode) => {
+      list.replaceChildren();
+      data[mode].forEach((item) => {
+        const label = currentLanguage === "zh" ? item.zh : item.en;
+        const note = getNote(item);
+        const hasSubraces = mode === "race" && Array.isArray(item.subraces) && item.subraces.length > 0;
+        const isExpanded = hasSubraces && expandedRaceId === item.id;
+        const li = document.createElement("li");
+        li.className = "option-item";
+
+        const card = document.createElement(hasSubraces ? "button" : "div");
+        card.className = "option-card";
+        if (hasSubraces) {
+          card.type = "button";
+          card.setAttribute("aria-expanded", String(isExpanded));
+        }
+        card.innerHTML = `
+          <span class="option-mark" aria-hidden="true">
+            <img src="../assets/D&D_logo.png" alt="">
+          </span>
+          <span class="option-copy">
+            <span class="option-name">${escapeHTML(label)}</span>
+          </span>
+          <span class="note-box${note.isEmpty ? " is-empty" : ""}">${escapeHTML(note.text)}</span>
+        `;
+        if (hasSubraces) {
+          card.addEventListener("click", () => {
+            expandedRaceId = expandedRaceId === item.id ? null : item.id;
+            renderOptions("race");
+          });
+        }
+        li.appendChild(card);
+
+        if (isExpanded) {
+          const subraceList = document.createElement("ul");
+          subraceList.className = "subrace-list";
+          item.subraces.forEach((subrace) => {
+            const subraceLabel = currentLanguage === "zh" ? subrace.zh : subrace.en;
+            const subraceNote = getNote(subrace);
+            const subraceItem = document.createElement("li");
+            subraceItem.className = "subrace-card";
+            subraceItem.innerHTML = `
+              <span class="subrace-mark" aria-hidden="true">
+                <img src="../assets/D&D_logo.png" alt="">
+              </span>
+              <span class="subrace-name">${escapeHTML(subraceLabel)}</span>
+              <span class="note-box${subraceNote.isEmpty ? " is-empty" : ""}">${escapeHTML(subraceNote.text)}</span>
+            `;
+            subraceList.appendChild(subraceItem);
+          });
+          li.appendChild(subraceList);
+        }
+
+        list.appendChild(li);
+      });
+    };
+
+    const setLanguage = (language) => {
+      const lang = normalizeLanguage(language);
+      const dictionary = translations[lang];
+      currentLanguage = lang;
+      document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
+      document.body.dataset.lang = lang;
+      document.title = dictionary.browserTitle;
+      storeLanguage(lang);
+
+      i18nElements.forEach((element) => {
+        const key = element.dataset.i18n;
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      languageButton.dataset.lang = lang;
+      languageButton.setAttribute("aria-label", dictionary.aria);
+      if (window.RugathaLanguageToggle) {
+        window.RugathaLanguageToggle.setButtonIcon(languageButton, lang);
+      }
+
+      renderOptions(currentMode);
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const mode = button.dataset.mode;
+        currentMode = mode;
+        if (mode !== "race") {
+          expandedRaceId = null;
+        }
+        buttons.forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === button));
+        });
+        renderOptions(mode);
+      });
+    });
+
+    languageButton.addEventListener("click", () => {
+      setLanguage(languageButton.dataset.lang === "en" ? "zh" : "en");
+    });
+
+    setLanguage(getStoredLanguage() || "zh");
+  </script>
+</body>
+</html>

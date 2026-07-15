@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BZZFKMJ65Y');
+  </script>
+  <title>Tools | Rugatha</title>
+  <meta name="description" content="Rugatha tools for creating character cards and browsing D&amp;D spells.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rugatha.com/tools/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rugatha">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="Tools | Rugatha">
+  <meta property="og:description" content="Rugatha tools for creating character cards and browsing D&amp;D spells.">
+  <meta property="og:url" content="https://rugatha.com/tools/">
+  <meta property="og:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tools | Rugatha">
+  <meta name="twitter:description" content="Rugatha tools for creating character cards and browsing D&amp;D spells.">
+  <meta name="twitter:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <link rel="icon" type="image/png" href="../assets/rugatha-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-favicon-32.png">
+  <link rel="stylesheet" href="../shared/styles/theme.css">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <meta name="theme-color" content="#0f2d24">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Rugatha">
+  <link rel="apple-touch-icon" href="../assets/rugatha-icon-192.png">
+  <script defer src="../shared/pwa.js"></script>
+  <script src="../shared/language-toggle.js"></script>
+  <style>
+    :root {
+      --tools-line: rgba(236, 242, 237, 0.2);
+      --tools-line-strong: rgba(236, 242, 237, 0.42);
+      --tools-panel: rgba(236, 242, 237, 0.08);
+      --tools-panel-hover: rgba(236, 242, 237, 0.14);
+      --tools-muted: rgba(236, 242, 237, 0.74);
+      --tools-gold: #d9b66f;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .page {
+      width: min(920px, calc(100vw - 32px));
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 28px 0 64px;
+      display: grid;
+      align-content: start;
+      gap: 36px;
+    }
+
+    .language-toggle {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      display: inline-flex;
+    }
+
+    .language-toggle button {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .language-toggle button:hover,
+    .language-toggle button:focus-visible {
+      opacity: 0.86;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .language-toggle__icon {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .banner {
+      display: flex;
+      justify-content: center;
+    }
+
+    .banner-link {
+      display: inline-flex;
+    }
+
+    .banner-img {
+      width: min(360px, 78vw);
+      height: auto;
+      display: block;
+    }
+
+    .title {
+      display: grid;
+      justify-items: center;
+      text-align: center;
+    }
+
+    main {
+      display: grid;
+      gap: 32px;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .tool-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tool-link {
+      min-height: 112px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: 18px;
+      padding: 22px 24px;
+      border: 1px solid var(--tools-line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(217, 182, 111, 0.13), transparent 34%),
+        var(--tools-panel);
+      color: var(--text);
+      text-decoration: none;
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .tool-link:hover,
+    .tool-link:focus-visible {
+      transform: translateX(4px);
+      border-color: var(--tools-line-strong);
+      background:
+        linear-gradient(135deg, rgba(217, 182, 111, 0.2), transparent 38%),
+        var(--tools-panel-hover);
+      box-shadow: 0 20px 52px rgba(0, 0, 0, 0.24);
+      outline: none;
+    }
+
+    .tool-mark {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .tool-mark img {
+      width: 68px;
+      height: 68px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .tool-mark img.logo-dnd {
+      width: 54px;
+      height: 54px;
+      filter: brightness(0.78);
+    }
+
+    .tool-copy {
+      display: grid;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .tool-name {
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 24px, 920px);
+        padding-top: 72px;
+      }
+
+      .language-toggle {
+        top: 8px;
+        left: 8px;
+      }
+
+      .language-toggle button {
+        width: 58px;
+        height: 58px;
+      }
+
+      .tool-link {
+        grid-template-columns: auto minmax(0, 1fr);
+        padding: 18px;
+      }
+
+      .tool-mark {
+        width: 56px;
+        height: 56px;
+      }
+
+      .tool-mark img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .tool-mark img.logo-dnd {
+        width: 42px;
+        height: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
+  </div>
+
+  <div class="page">
+    <header class="banner">
+      <a class="banner-link" href="../index.html" aria-label="Rugatha home">
+        <img src="../assets/rugatha-banner.png" alt="Rugatha banner" class="banner-img">
+      </a>
+    </header>
+
+    <main>
+      <section class="title" aria-labelledby="tools-title">
+        <h1 id="tools-title" data-i18n="title">工具</h1>
+      </section>
+
+      <ul class="tool-list" aria-label="Tools">
+        <li>
+          <a class="tool-link" href="../character_card/">
+            <span class="tool-mark" aria-hidden="true">
+              <img src="../assets/rugatha-icon.png" alt="">
+            </span>
+            <span class="tool-copy">
+              <span class="tool-name" data-i18n="characterCard">角色卡製作器</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="tool-link" href="../spells/">
+            <span class="tool-mark" aria-hidden="true">
+              <img class="logo-dnd" src="../assets/D&D_logo.png" alt="">
+            </span>
+            <span class="tool-copy">
+              <span class="tool-name" data-i18n="spells">D&amp;D 法術表</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </div>
+  <script>
+    const translations = {
+      zh: {
+        browserTitle: "工具 | Rugatha",
+        title: "工具",
+        characterCard: "角色卡製作器",
+        spells: "D&D 法術表",
+        aria: "目前語言：中文"
+      },
+      en: {
+        browserTitle: "Tools | Rugatha",
+        title: "Tools",
+        characterCard: "Character Card",
+        spells: "D&D Spells",
+        aria: "Current language: English"
+      }
+    };
+
+    const languageButton = document.querySelector("[data-lang-toggle]");
+    const i18nElements = document.querySelectorAll("[data-i18n]");
+    const storageKey = "rugatha-language";
+
+    const normalizeLanguage = (language) => language === "en" ? "en" : "zh";
+    const getStoredLanguage = () => {
+      try {
+        return localStorage.getItem(storageKey);
+      } catch (error) {
+        return null;
+      }
+    };
+
+    const storeLanguage = (language) => {
+      try {
+        localStorage.setItem(storageKey, language);
+      } catch (error) {
+        return;
+      }
+    };
+
+    const setLanguage = (language) => {
+      const lang = normalizeLanguage(language);
+      const dictionary = translations[lang];
+      document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
+      document.body.dataset.lang = lang;
+      document.title = dictionary.browserTitle;
+      storeLanguage(lang);
+
+      i18nElements.forEach((element) => {
+        const key = element.dataset.i18n;
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      languageButton.dataset.lang = lang;
+      languageButton.setAttribute("aria-label", dictionary.aria);
+      if (window.RugathaLanguageToggle) {
+        window.RugathaLanguageToggle.setButtonIcon(languageButton, lang);
+      }
+    };
+
+    languageButton.addEventListener("click", () => {
+      setLanguage(languageButton.dataset.lang === "en" ? "zh" : "en");
+    });
+
+    setLanguage(getStoredLanguage() || "zh");
+  </script>
+</body>
+</html>
