@@ -603,7 +603,7 @@ function applyTranslations() {
   if (buttons.langToggle) {
     buttons.langToggle.dataset.lang = currentLang;
     buttons.langToggle.setAttribute("aria-label", currentLang === "en" ? "目前語言：English" : "目前語言：中文");
-    buttons.langToggle.innerHTML = `<img class="language-toggle__icon" src="../assets/lan-${currentLang}.png" alt="" aria-hidden="true">`;
+    window.RugathaLanguageToggle?.setButtonIcon(buttons.langToggle, currentLang);
   }
   if (textNodes.canvas) textNodes.canvas.setAttribute("aria-label", t.aria.canvas);
 

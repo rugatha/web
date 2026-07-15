@@ -295,8 +295,7 @@
       button.dataset.lang = lang;
       button.setAttribute("aria-pressed", "true");
       button.setAttribute("aria-label", lang === "en" ? "目前語言：English" : "目前語言：中文");
-      const icon = button.querySelector(".language-toggle__icon");
-      if (icon) icon.setAttribute("src", icon.getAttribute("src").replace(/lan-(zh|en)\.png$/, `lan-${lang}.png`));
+      window.RugathaLanguageToggle?.setButtonIcon(button, lang);
     });
 
     renderAppearances();

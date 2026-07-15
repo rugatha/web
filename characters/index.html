@@ -41,6 +41,7 @@
   <meta name="apple-mobile-web-app-title" content="Rugatha">
   <link rel="apple-touch-icon" href="../assets/rugatha-icon-192.png">
   <script defer src="../shared/pwa.js"></script>
+  <script src="../shared/language-toggle.js"></script>
 </head>
 <body data-lang="zh">
   <main class="page">
@@ -51,7 +52,7 @@
     </header>
 
     <div class="language-toggle" aria-label="Language">
-      <button class="language-toggle__button" type="button" data-lang-option="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle><img class="language-toggle__icon" src="../assets/lan-zh.png" alt="" aria-hidden="true"></button>
+      <button class="language-toggle__button" type="button" data-lang-option="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
     </div>
 
     <section class="entry-grid" aria-label="Character indexes">
@@ -163,8 +164,7 @@
         button.classList.add("is-active");
         button.setAttribute("aria-pressed", "true");
         button.setAttribute("aria-label", lang === "en" ? "目前語言：English" : "目前語言：中文");
-        const icon = button.querySelector(".language-toggle__icon");
-        if (icon) icon.setAttribute("src", icon.getAttribute("src").replace(/lan-(zh|en)\.png$/, `lan-${lang}.png`));
+        window.RugathaLanguageToggle?.setButtonIcon(button, lang);
       });
       try {
         localStorage.setItem("characters-lang", lang);

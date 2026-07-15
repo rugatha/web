@@ -151,8 +151,7 @@ function updateLanguageToggle() {
     button.dataset.lang = languageState.value;
     button.setAttribute("aria-pressed", "true");
     button.setAttribute("aria-label", languageState.value === "en" ? "目前語言：English" : "目前語言：中文");
-    const icon = button.querySelector(".language-toggle__icon");
-    if (icon) icon.setAttribute("src", getLanguageIconSrc(languageState.value));
+    window.RugathaLanguageToggle?.setButtonIcon(button, languageState.value);
   });
 }
 
@@ -195,6 +194,8 @@ function ensureLanguageToggle() {
       button.setAttribute("aria-pressed", "true");
       const icon = document.createElement("img");
       icon.className = "language-toggle__icon";
+      icon.width = 44;
+      icon.height = 44;
       icon.alt = "";
       icon.setAttribute("aria-hidden", "true");
       button.appendChild(icon);
@@ -207,10 +208,6 @@ function ensureLanguageToggle() {
   }
   languageState.wrap = wrap;
   updateLanguageToggle();
-}
-
-function getLanguageIconSrc(lang) {
-  return `../../../assets/lan-${lang}.png`;
 }
 
 function loadInlineData() {

@@ -494,8 +494,7 @@
       button.dataset.lang = languageState.value;
       button.setAttribute("aria-pressed", "true");
       button.setAttribute("aria-label", languageState.value === "en" ? "目前語言：English" : "目前語言：中文");
-      const icon = button.querySelector(".language-toggle__icon");
-      if (icon) icon.setAttribute("src", getLanguageIconSrc(languageState.value));
+      window.RugathaLanguageToggle?.setButtonIcon(button, languageState.value);
     });
   };
 
@@ -803,14 +802,6 @@
     }
   };
 
-  const getLanguageIconSrc = (lang) => {
-    try {
-      return new URL(`../assets/lan-${lang}.png`, withTrailingSlash(campaignsBase)).href;
-    } catch (_) {
-      return `../../../assets/lan-${lang}.png`;
-    }
-  };
-
   const ensureLanguageToggle = () => {
     if (!isChapterPage && !isArcPage) return;
     const container = document.querySelector(".detail-canvas") || document.querySelector(".page");
@@ -834,6 +825,8 @@
         button.setAttribute("aria-pressed", "true");
         const icon = document.createElement("img");
         icon.className = "language-toggle__icon";
+        icon.width = 44;
+        icon.height = 44;
         icon.alt = "";
         icon.setAttribute("aria-hidden", "true");
         button.appendChild(icon);

@@ -787,11 +787,12 @@
   <meta name="apple-mobile-web-app-title" content="Rugatha">
   <link rel="apple-touch-icon" href="../assets/rugatha-icon-192.png">
   <script defer src="../shared/pwa.js"></script>
+  <script src="../shared/language-toggle.js"></script>
 </head>
 <body>
   <div class="page">
     <div class="language-toggle" role="group" aria-label="Language">
-      <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle><img class="language-toggle__icon" src="../assets/lan-zh.png" alt="" aria-hidden="true"></button>
+      <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
     </div>
     <a class="corner-link" href="../index.html" aria-label="Rugatha Home">
       <img src="../assets/rugatha-icon.png" alt="Rugatha home" width="100" height="100">
@@ -1560,8 +1561,7 @@
         button.dataset.lang = lang;
         button.setAttribute("aria-pressed", "true");
         button.setAttribute("aria-label", lang === "en" ? "目前語言：English" : "目前語言：中文");
-        const icon = button.querySelector(".language-toggle__icon");
-        if (icon) icon.setAttribute("src", icon.getAttribute("src").replace(/lan-(zh|en)\.png$/, `lan-${lang}.png`));
+        window.RugathaLanguageToggle?.setButtonIcon(button, lang);
       });
       setStoredLanguage(lang);
       applyProfileCopy(lang);

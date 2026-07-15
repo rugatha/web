@@ -214,8 +214,7 @@ function applyStaticI18n() {
       button.dataset.lang = state.language;
       button.setAttribute("aria-pressed", "true");
       button.setAttribute("aria-label", state.language === "en" ? "目前語言：English" : "目前語言：中文");
-      const icon = button.querySelector(".language-toggle__icon");
-      if (icon) icon.setAttribute("src", icon.getAttribute("src").replace(/lan-(zh|en)\.png$/, `lan-${state.language}.png`));
+      window.RugathaLanguageToggle?.setButtonIcon(button, state.language);
     });
   }
   if (els.graph) els.graph.setAttribute("aria-label", t("graphAria"));
