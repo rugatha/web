@@ -769,11 +769,11 @@ code {
   }
 
   .language-toggle {
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(100%, calc(100% - 40px));
-    justify-content: center;
+    top: 12px;
+    left: 12px;
+    transform: none;
+    width: fit-content;
+    justify-content: flex-start;
   }
 
   .language-toggle button {
