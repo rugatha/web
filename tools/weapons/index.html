@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BZZFKMJ65Y');
+  </script>
+  <title>D&amp;D 武器表 | Rugatha</title>
+  <link rel="icon" type="image/png" href="../../assets/rugatha-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/rugatha-favicon-32.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <script src="../../shared/language-toggle.js"></script>
+  <style>
+    :root {
+      --weapon-ink: #1f2a24;
+      --weapon-muted: #d1ded6;
+      --weapon-table-muted: #607066;
+      --weapon-line: rgba(68, 95, 86, 0.24);
+      --weapon-panel: #eef3ea;
+      --weapon-panel-strong: #d3dfd2;
+      --weapon-accent: #3f7d69;
+      --weapon-accent-dark: #244f43;
+      --weapon-focus: #c58b46;
+    }
+
+    [hidden] { display: none !important; }
+
+    body {
+      background: var(--bg);
+      color: var(--weapon-ink);
+    }
+
+    .page { min-height: 100vh; }
+    .banner { margin: 20px 0 10px; }
+
+    .language-toggle {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      display: inline-flex;
+    }
+
+    .language-toggle button {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .language-toggle button:hover,
+    .language-toggle button:focus-visible {
+      opacity: 0.86;
+      transform: translateY(-1px);
+      background: transparent;
+      outline: none;
+    }
+
+    .language-toggle__icon {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .weapons-shell {
+      width: min(1320px, calc(100vw - 28px));
+      margin: 0 auto 40px;
+    }
+
+    .title-bar {
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+      padding: 18px 0 14px;
+      text-align: center;
+      color: var(--text);
+      border-bottom: 1px solid rgba(236, 242, 237, 0.28);
+    }
+
+    .title-copy h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 0.95;
+    }
+
+    .title-copy p {
+      max-width: 720px;
+      margin: 10px auto 0;
+      color: var(--weapon-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .title-divider {
+      width: min(320px, 72vw);
+      height: 1px;
+      margin: 12px auto 2px;
+      border: 0;
+      background: rgba(236, 242, 237, 0.32);
+    }
+
+    .result-count {
+      color: var(--weapon-muted);
+      font-size: 0.95rem;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1.6fr) repeat(4, minmax(130px, 1fr)) auto;
+      gap: 10px;
+      align-items: end;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(236, 242, 237, 0.28);
+    }
+
+    .control {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .control label {
+      color: var(--weapon-muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    button {
+      min-height: 42px;
+      border: 1px solid var(--weapon-line);
+      border-radius: 6px;
+      background: var(--weapon-panel);
+      color: var(--weapon-ink);
+      font: inherit;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 0 11px;
+    }
+
+    input:focus,
+    select:focus,
+    button:focus-visible {
+      outline: 3px solid rgba(197, 139, 70, 0.3);
+      border-color: var(--weapon-focus);
+    }
+
+    button {
+      padding: 0 14px;
+      cursor: pointer;
+      font-weight: 700;
+      background: var(--weapon-accent);
+      color: #fffaf0;
+      border-color: var(--weapon-accent);
+    }
+
+    button:hover { background: var(--weapon-accent-dark); }
+
+    .rule-note {
+      margin: 16px 0;
+      padding: 12px 14px;
+      border-left: 4px solid var(--weapon-focus);
+      border-radius: 6px;
+      background: rgba(238, 243, 234, 0.92);
+      color: #30382f;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .rule-note strong { color: #17382f; }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--weapon-line);
+      border-radius: 8px;
+      background: var(--weapon-panel);
+      box-shadow: 0 18px 42px rgba(18, 29, 25, 0.24);
+    }
+
+    table {
+      width: 100%;
+      min-width: 1040px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      padding: 11px;
+      border-bottom: 1px solid var(--weapon-line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      vertical-align: middle;
+      background: var(--weapon-panel-strong);
+      color: #203b33;
+      font-size: 0.82rem;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    th button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      min-height: 28px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+    }
+
+    th button:hover {
+      background: transparent;
+      color: var(--weapon-accent-dark);
+    }
+
+    .static-heading {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+    }
+
+    tbody tr:nth-child(odd) { background: rgba(255, 255, 255, 0.22); }
+    tbody tr:hover { background: rgba(63, 125, 105, 0.16); }
+
+    .col-proficiency { width: 110px; }
+    .col-range { width: 100px; }
+    .col-name { width: 180px; }
+    .col-bonus { width: 150px; }
+    .col-damage { width: 120px; }
+    .col-type { width: 92px; }
+    .col-properties { width: 250px; }
+
+    .name-cell {
+      display: grid;
+      gap: 3px;
+    }
+
+    .name-zh {
+      color: #17382f;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .name-en {
+      color: var(--weapon-table-muted);
+      font-size: 0.82rem;
+      line-height: 1.25;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 7px;
+      border: 1px solid rgba(63, 125, 105, 0.16);
+      border-radius: 999px;
+      background: rgba(63, 125, 105, 0.14);
+      color: #25463c;
+      font-size: 0.8rem;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .empty-state {
+      padding: 28px;
+      color: var(--weapon-table-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 1080px) {
+      .toolbar { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .toolbar .control:first-child { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 680px) {
+      .weapons-shell { width: min(100vw - 20px, 1320px); }
+      .language-toggle { top: 8px; left: 8px; }
+      .language-toggle button { width: 58px; height: 58px; }
+      .toolbar { grid-template-columns: 1fr 1fr; }
+      .toolbar .control:first-child,
+      .toolbar button { grid-column: 1 / -1; }
+      .title-copy p { font-size: 0.92rem; }
+      .rule-note { font-size: 0.86rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
+  </div>
+
+  <div class="page">
+    <header class="banner" aria-label="Rugatha banner image">
+      <a href="../../index.html" class="banner-link" aria-label="Back to Rugatha home">
+        <img src="../../assets/rugatha-banner.png" alt="Rugatha banner" class="banner-logo" loading="lazy">
+      </a>
+    </header>
+
+    <main class="weapons-shell">
+      <section class="title-bar">
+        <div class="title-copy">
+          <h1 data-i18n="title">D&amp;D 武器表</h1>
+          <p><span data-i18n="subtitle">採用 D&amp;D 5e 玩家手冊（2014）武器資料</span><br><span data-i18n="notice">僅供遊玩使用，請勿外流</span></p>
+          <hr class="title-divider" aria-hidden="true">
+        </div>
+        <div class="result-count" id="resultCount" aria-live="polite"></div>
+      </section>
+
+      <section class="toolbar" aria-label="武器篩選工具" data-i18n-aria="filterAria">
+        <div class="control">
+          <label for="searchInput" data-i18n="search">搜尋</label>
+          <input id="searchInput" type="search" placeholder="中文、英文名稱或武器屬性" data-i18n-placeholder="searchPlaceholder">
+        </div>
+        <div class="control">
+          <label for="proficiencyFilter" data-i18n="weaponCategory">武器分類</label>
+          <select id="proficiencyFilter">
+            <option value="" data-i18n="all">全部</option>
+            <option value="簡易" data-i18n="simpleWeapons">簡易武器</option>
+            <option value="軍用" data-i18n="martialWeapons">軍用武器</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="rangeFilter" data-i18n="attackMode">攻擊方式</label>
+          <select id="rangeFilter">
+            <option value="" data-i18n="all">全部</option>
+            <option value="近戰" data-i18n="melee">近戰</option>
+            <option value="遠程" data-i18n="ranged">遠程</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="damageTypeFilter" data-i18n="damageType">傷害類型</label>
+          <select id="damageTypeFilter">
+            <option value="" data-i18n="all">全部</option>
+            <option value="鈍擊" data-i18n="bludgeoning">鈍擊</option>
+            <option value="穿刺" data-i18n="piercing">穿刺</option>
+            <option value="揮砍" data-i18n="slashing">揮砍</option>
+            <option value="無" data-i18n="none">無</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="abilityFilter" data-i18n="ability">使用屬性</label>
+          <select id="abilityFilter">
+            <option value="" data-i18n="all">全部</option>
+            <option value="力量" data-i18n="strength">力量</option>
+            <option value="敏捷" data-i18n="dexterity">敏捷</option>
+            <option value="力量或敏捷" data-i18n="strengthOrDexterity">力量或敏捷</option>
+          </select>
+        </div>
+        <button id="resetButton" type="button" data-i18n="reset">重設</button>
+      </section>
+
+      <aside class="rule-note">
+        <strong data-i18n="calculationTitle">計算方式：</strong><span data-i18n="calculation">命中加值＝使用屬性調整值＋熟練加值（須熟練該武器）；傷害加值＝使用屬性調整值。魔法武器加值、戰鬥風格及其他角色能力需另外計入。</span>
+      </aside>
+
+      <section class="table-wrap" aria-live="polite">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-proficiency"><button type="button" data-sort="proficiency"><span data-i18n="weaponCategory">武器分類</span> <span data-sort-icon aria-hidden="true"></span></button></th>
+              <th class="col-range"><button type="button" data-sort="rangeType"><span data-i18n="attackMode">攻擊方式</span> <span data-sort-icon aria-hidden="true"></span></button></th>
+              <th class="col-name"><button type="button" data-sort="nameZh"><span data-i18n="name">名稱</span> <span data-sort-icon aria-hidden="true"></span></button></th>
+              <th class="col-bonus"><button type="button" data-sort="hitBonus"><span data-i18n="hitBonus">命中加值</span> <span data-sort-icon aria-hidden="true"></span></button></th>
+              <th class="col-damage"><button type="button" data-sort="damage"><span data-i18n="baseDamage">基礎傷害</span> <span data-sort-icon aria-hidden="true"></span></button></th>
+              <th class="col-bonus"><button type="button" data-sort="damageBonus"><span data-i18n="damageBonus">傷害加值</span> <span data-sort-icon aria-hidden="true"></span></button></th>
+              <th class="col-type"><button type="button" data-sort="damageType"><span data-i18n="type">類型</span> <span data-sort-icon aria-hidden="true"></span></button></th>
+              <th class="col-properties"><span class="static-heading" data-i18n="properties">武器屬性</span></th>
+            </tr>
+          </thead>
+          <tbody id="weaponRows"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState" hidden data-i18n="empty">沒有符合條件的武器</div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const translations = {
+      zh: {
+        browserTitle: "D&D 武器表 | Rugatha",
+        title: "D&D 武器表",
+        subtitle: "採用 D&D 5e 玩家手冊（2014）武器資料",
+        notice: "僅供遊玩使用，請勿外流",
+        filterAria: "武器篩選工具",
+        search: "搜尋",
+        searchPlaceholder: "中文、英文名稱或武器屬性",
+        weaponCategory: "武器分類",
+        attackMode: "攻擊方式",
+        damageType: "傷害類型",
+        ability: "使用屬性",
+        all: "全部",
+        simpleWeapons: "簡易武器",
+        martialWeapons: "軍用武器",
+        melee: "近戰",
+        ranged: "遠程",
+        bludgeoning: "鈍擊",
+        piercing: "穿刺",
+        slashing: "揮砍",
+        none: "無",
+        strength: "力量",
+        dexterity: "敏捷",
+        strengthOrDexterity: "力量或敏捷",
+        reset: "重設",
+        calculationTitle: "計算方式：",
+        calculation: "命中加值＝使用屬性調整值＋熟練加值（須熟練該武器）；傷害加值＝使用屬性調整值。魔法武器加值、戰鬥風格及其他角色能力需另外計入。",
+        name: "名稱",
+        hitBonus: "命中加值",
+        baseDamage: "基礎傷害",
+        damageBonus: "傷害加值",
+        type: "類型",
+        properties: "武器屬性",
+        empty: "沒有符合條件的武器",
+        countUnit: "件武器",
+        aria: "目前語言：中文"
+      },
+      en: {
+        browserTitle: "D&D Weapons | Rugatha",
+        title: "D&D Weapons",
+        subtitle: "Weapon data from the D&D 5e Player's Handbook (2014)",
+        notice: "For gameplay use only. Please do not redistribute.",
+        filterAria: "Weapon filters",
+        search: "Search",
+        searchPlaceholder: "Name, damage type, or weapon property",
+        weaponCategory: "Category",
+        attackMode: "Attack Mode",
+        damageType: "Damage Type",
+        ability: "Ability",
+        all: "All",
+        simpleWeapons: "Simple Weapons",
+        martialWeapons: "Martial Weapons",
+        melee: "Melee",
+        ranged: "Ranged",
+        bludgeoning: "Bludgeoning",
+        piercing: "Piercing",
+        slashing: "Slashing",
+        none: "None",
+        strength: "STR",
+        dexterity: "DEX",
+        strengthOrDexterity: "STR or DEX",
+        reset: "Reset",
+        calculationTitle: "Calculation: ",
+        calculation: "Hit bonus = ability modifier + proficiency bonus (when proficient with the weapon); damage bonus = ability modifier. Add magic weapon bonuses, Fighting Styles, and other character features separately.",
+        name: "Name",
+        hitBonus: "Hit Bonus",
+        baseDamage: "Base Damage",
+        damageBonus: "Damage Bonus",
+        type: "Type",
+        properties: "Properties",
+        empty: "No weapons match the selected filters.",
+        countUnit: "weapons",
+        aria: "Current language: English"
+      }
+    };
+
+    const abilityKeys = {
+      "力量": "strength",
+      "敏捷": "dexterity",
+      "力量或敏捷": "strengthOrDexterity"
+    };
+
+    const abilityNamesEn = {
+      "力量": "Strength",
+      "敏捷": "Dexterity",
+      "力量或敏捷": "Strength or Dexterity"
+    };
+
+    const damageTypeKeys = {
+      "鈍擊": "bludgeoning",
+      "穿刺": "piercing",
+      "揮砍": "slashing",
+      "無": "none"
+    };
+
+    const damageTypeNamesEn = {
+      "鈍擊": "Bludgeoning",
+      "穿刺": "Piercing",
+      "揮砍": "Slashing",
+      "無": "None"
+    };
+
+    const propertyNamesEn = {
+      "輕型": "Light",
+      "靈巧": "Finesse",
+      "雙手": "Two-Handed",
+      "投擲": "Thrown",
+      "兩用": "Versatile",
+      "彈藥": "Ammunition",
+      "裝填": "Loading",
+      "重型": "Heavy",
+      "觸及": "Reach",
+      "特殊": "Special"
+    };
+
+    function propertyToEnglish(property) {
+      const [name, ...detail] = property.split(" ");
+      return `${propertyNamesEn[name] || name}${detail.length ? ` ${detail.join(" ")}` : ""}`;
+    }
+
+    const weapons = [
+      ["木棒", "Club", "簡易", "近戰", "力量", "1d4", "鈍擊", ["輕型"]],
+      ["匕首", "Dagger", "簡易", "近戰", "力量或敏捷", "1d4", "穿刺", ["靈巧", "輕型", "投擲 20/60"]],
+      ["巨棒", "Greatclub", "簡易", "近戰", "力量", "1d8", "鈍擊", ["雙手"]],
+      ["手斧", "Handaxe", "簡易", "近戰", "力量", "1d6", "揮砍", ["輕型", "投擲 20/60"]],
+      ["標槍", "Javelin", "簡易", "近戰", "力量", "1d6", "穿刺", ["投擲 30/120"]],
+      ["輕錘", "Light Hammer", "簡易", "近戰", "力量", "1d4", "鈍擊", ["輕型", "投擲 20/60"]],
+      ["硬頭錘", "Mace", "簡易", "近戰", "力量", "1d6", "鈍擊", []],
+      ["長棍", "Quarterstaff", "簡易", "近戰", "力量", "1d6／1d8", "鈍擊", ["兩用 1d8"]],
+      ["鐮刀", "Sickle", "簡易", "近戰", "力量", "1d4", "揮砍", ["輕型"]],
+      ["短矛", "Spear", "簡易", "近戰", "力量", "1d6／1d8", "穿刺", ["投擲 20/60", "兩用 1d8"]],
+      ["輕弩", "Light Crossbow", "簡易", "遠程", "敏捷", "1d8", "穿刺", ["彈藥 80/320", "裝填", "雙手"]],
+      ["飛鏢", "Dart", "簡易", "遠程", "力量或敏捷", "1d4", "穿刺", ["靈巧", "投擲 20/60"]],
+      ["短弓", "Shortbow", "簡易", "遠程", "敏捷", "1d6", "穿刺", ["彈藥 80/320", "雙手"]],
+      ["投石索", "Sling", "簡易", "遠程", "敏捷", "1d4", "鈍擊", ["彈藥 30/120"]],
+      ["戰斧", "Battleaxe", "軍用", "近戰", "力量", "1d8／1d10", "揮砍", ["兩用 1d10"]],
+      ["連枷", "Flail", "軍用", "近戰", "力量", "1d8", "鈍擊", []],
+      ["長柄刀", "Glaive", "軍用", "近戰", "力量", "1d10", "揮砍", ["重型", "觸及", "雙手"]],
+      ["巨斧", "Greataxe", "軍用", "近戰", "力量", "1d12", "揮砍", ["重型", "雙手"]],
+      ["巨劍", "Greatsword", "軍用", "近戰", "力量", "2d6", "揮砍", ["重型", "雙手"]],
+      ["戟", "Halberd", "軍用", "近戰", "力量", "1d10", "揮砍", ["重型", "觸及", "雙手"]],
+      ["騎槍", "Lance", "軍用", "近戰", "力量", "1d12", "穿刺", ["觸及", "特殊"]],
+      ["長劍", "Longsword", "軍用", "近戰", "力量", "1d8／1d10", "揮砍", ["兩用 1d10"]],
+      ["巨錘", "Maul", "軍用", "近戰", "力量", "2d6", "鈍擊", ["重型", "雙手"]],
+      ["晨星錘", "Morningstar", "軍用", "近戰", "力量", "1d8", "穿刺", []],
+      ["長槍", "Pike", "軍用", "近戰", "力量", "1d10", "穿刺", ["重型", "觸及", "雙手"]],
+      ["刺劍", "Rapier", "軍用", "近戰", "力量或敏捷", "1d8", "穿刺", ["靈巧"]],
+      ["彎刀", "Scimitar", "軍用", "近戰", "力量或敏捷", "1d6", "揮砍", ["靈巧", "輕型"]],
+      ["短劍", "Shortsword", "軍用", "近戰", "力量或敏捷", "1d6", "穿刺", ["靈巧", "輕型"]],
+      ["三叉戟", "Trident", "軍用", "近戰", "力量", "1d6／1d8", "穿刺", ["投擲 20/60", "兩用 1d8"]],
+      ["戰鎬", "War Pick", "軍用", "近戰", "力量", "1d8", "穿刺", []],
+      ["戰錘", "Warhammer", "軍用", "近戰", "力量", "1d8／1d10", "鈍擊", ["兩用 1d10"]],
+      ["長鞭", "Whip", "軍用", "近戰", "力量或敏捷", "1d4", "揮砍", ["靈巧", "觸及"]],
+      ["吹箭筒", "Blowgun", "軍用", "遠程", "敏捷", "1", "穿刺", ["彈藥 25/100", "裝填"]],
+      ["手弩", "Hand Crossbow", "軍用", "遠程", "敏捷", "1d6", "穿刺", ["彈藥 30/120", "輕型", "裝填"]],
+      ["重弩", "Heavy Crossbow", "軍用", "遠程", "敏捷", "1d10", "穿刺", ["彈藥 100/400", "重型", "裝填", "雙手"]],
+      ["長弓", "Longbow", "軍用", "遠程", "敏捷", "1d8", "穿刺", ["彈藥 150/600", "重型", "雙手"]],
+      ["捕網", "Net", "軍用", "遠程", "敏捷", "—", "無", ["特殊", "投擲 5/15"]]
+    ].map(([nameZh, nameEn, proficiency, rangeType, ability, damage, damageType, properties], index) => ({
+      nameZh,
+      nameEn,
+      proficiency,
+      rangeType,
+      ability,
+      damage,
+      damageType,
+      properties,
+      hitBonus: ability,
+      damageBonus: damageType === "無" ? "—" : ability,
+      order: index,
+      searchText: `${nameZh} ${nameEn} ${proficiency} ${rangeType} ${ability} ${abilityNamesEn[ability]} ${damageType} ${damageTypeNamesEn[damageType]} ${properties.join(" ")} ${properties.map(propertyToEnglish).join(" ")}`.toLocaleLowerCase("zh-Hant")
+    }));
+
+    const state = {
+      filtered: [...weapons],
+      sortKey: "order",
+      sortDirection: "asc",
+      language: "zh"
+    };
+
+    const elements = {
+      search: document.getElementById("searchInput"),
+      proficiency: document.getElementById("proficiencyFilter"),
+      range: document.getElementById("rangeFilter"),
+      damageType: document.getElementById("damageTypeFilter"),
+      ability: document.getElementById("abilityFilter"),
+      reset: document.getElementById("resetButton"),
+      rows: document.getElementById("weaponRows"),
+      empty: document.getElementById("emptyState"),
+      count: document.getElementById("resultCount"),
+      languageButton: document.querySelector("[data-lang-toggle]")
+    };
+
+    const collator = new Intl.Collator("zh-Hant", { numeric: true, sensitivity: "base" });
+    const storageKey = "rugatha-language";
+    const t = (key) => translations[state.language][key] || key;
+
+    function localizedAbility(ability) {
+      return t(abilityKeys[ability]);
+    }
+
+    function localizedDamageType(damageType) {
+      return t(damageTypeKeys[damageType]);
+    }
+
+    function getStoredLanguage() {
+      try {
+        return localStorage.getItem(storageKey);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function setLanguage(language) {
+      state.language = language === "en" ? "en" : "zh";
+      const dictionary = translations[state.language];
+      document.documentElement.lang = state.language === "zh" ? "zh-Hant" : "en";
+      document.body.dataset.lang = state.language;
+      document.title = dictionary.browserTitle;
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const value = dictionary[element.dataset.i18n];
+        if (value) element.textContent = value;
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        element.placeholder = dictionary[element.dataset.i18nPlaceholder] || element.placeholder;
+      });
+      document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+        element.setAttribute("aria-label", dictionary[element.dataset.i18nAria] || element.getAttribute("aria-label"));
+      });
+
+      elements.languageButton.dataset.lang = state.language;
+      elements.languageButton.setAttribute("aria-label", dictionary.aria);
+      elements.languageButton.setAttribute("aria-pressed", "true");
+      if (window.RugathaLanguageToggle) {
+        window.RugathaLanguageToggle.setButtonIcon(elements.languageButton, state.language);
+      }
+      try {
+        localStorage.setItem(storageKey, state.language);
+      } catch (error) {
+        // The page still works when storage is unavailable.
+      }
+      renderWeapons();
+    }
+
+    function filterWeapons() {
+      const query = elements.search.value.trim().toLocaleLowerCase("zh-Hant");
+      state.filtered = weapons.filter((weapon) =>
+        (!query || weapon.searchText.includes(query)) &&
+        (!elements.proficiency.value || weapon.proficiency === elements.proficiency.value) &&
+        (!elements.range.value || weapon.rangeType === elements.range.value) &&
+        (!elements.damageType.value || weapon.damageType === elements.damageType.value) &&
+        (!elements.ability.value || weapon.ability === elements.ability.value)
+      );
+      sortWeapons();
+    }
+
+    function sortWeapons() {
+      const direction = state.sortDirection === "asc" ? 1 : -1;
+      state.filtered.sort((a, b) => {
+        if (state.sortKey === "order") return (a.order - b.order) * direction;
+        return collator.compare(String(a[state.sortKey]), String(b[state.sortKey])) * direction || a.order - b.order;
+      });
+      renderWeapons();
+    }
+
+    function renderWeapons() {
+      elements.rows.replaceChildren(...state.filtered.map((weapon) => {
+        const row = document.createElement("tr");
+        const proficiency = document.createElement("td");
+        proficiency.textContent = state.language === "zh"
+          ? weapon.proficiency
+          : (weapon.proficiency === "簡易" ? "Simple" : "Martial");
+
+        const rangeType = document.createElement("td");
+        rangeType.textContent = state.language === "zh"
+          ? weapon.rangeType
+          : (weapon.rangeType === "近戰" ? "Melee" : "Ranged");
+
+        const name = document.createElement("td");
+        name.className = "name-zh";
+        name.textContent = state.language === "zh" ? weapon.nameZh : weapon.nameEn;
+
+        const hit = document.createElement("td");
+        hit.textContent = localizedAbility(weapon.ability);
+        const damage = document.createElement("td");
+        damage.textContent = weapon.damage;
+        const damageBonus = document.createElement("td");
+        damageBonus.textContent = weapon.damageType === "無" ? "—" : localizedAbility(weapon.ability);
+        const type = document.createElement("td");
+        type.textContent = localizedDamageType(weapon.damageType);
+
+        const properties = document.createElement("td");
+        if (weapon.properties.length) {
+          const list = document.createElement("div");
+          list.className = "tag-list";
+          weapon.properties.forEach((property) => {
+            const tag = document.createElement("span");
+            tag.className = "tag";
+            tag.textContent = state.language === "zh" ? property : propertyToEnglish(property);
+            list.append(tag);
+          });
+          properties.append(list);
+        } else {
+          properties.textContent = "—";
+        }
+
+        row.append(proficiency, rangeType, name, hit, damage, damageBonus, type, properties);
+        return row;
+      }));
+
+      elements.empty.hidden = state.filtered.length !== 0;
+      elements.count.textContent = `${state.filtered.length} / ${weapons.length} ${t("countUnit")}`;
+      updateSortIndicators();
+    }
+
+    function updateSortIndicators() {
+      document.querySelectorAll("[data-sort]").forEach((button) => {
+        const icon = button.querySelector("[data-sort-icon]");
+        icon.textContent = button.dataset.sort === state.sortKey
+          ? (state.sortDirection === "asc" ? "▲" : "▼")
+          : "";
+        button.setAttribute("aria-sort", button.dataset.sort === state.sortKey ? state.sortDirection : "none");
+      });
+    }
+
+    [elements.search, elements.proficiency, elements.range, elements.damageType, elements.ability].forEach((control) => {
+      control.addEventListener(control === elements.search ? "input" : "change", filterWeapons);
+    });
+
+    elements.reset.addEventListener("click", () => {
+      elements.search.value = "";
+      elements.proficiency.value = "";
+      elements.range.value = "";
+      elements.damageType.value = "";
+      elements.ability.value = "";
+      state.sortKey = "order";
+      state.sortDirection = "asc";
+      filterWeapons();
+    });
+
+    document.querySelectorAll("[data-sort]").forEach((button) => {
+      button.addEventListener("click", () => {
+        if (state.sortKey === button.dataset.sort) {
+          state.sortDirection = state.sortDirection === "asc" ? "desc" : "asc";
+        } else {
+          state.sortKey = button.dataset.sort;
+          state.sortDirection = "asc";
+        }
+        sortWeapons();
+      });
+    });
+
+    elements.languageButton.addEventListener("click", () => {
+      setLanguage(state.language === "en" ? "zh" : "en");
+    });
+
+    setLanguage(getStoredLanguage() || "zh");
+  </script>
+</body>
+</html>

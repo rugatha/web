@@ -76,8 +76,8 @@ GitHub Pages workflow 位於：
 - `characters/`
   角色總覽與相關入口頁。
 
-- `character_card/`
-  角色卡產生器工具。
+- `tools/`
+  工具入口，以及角色卡、法術、武器、種族與職業等工具頁。
 
 - `timeline/`
   世界時間線頁面、事件資料與渲染腳本。
@@ -93,9 +93,6 @@ GitHub Pages workflow 位於：
 
 - `relation-graph/`
   角色關係圖頁面、樣式與互動腳本。
-
-- `spells/`
-  咒語查詢頁與 `spells-phb.json` 資料。
 
 - `experience/`
   體驗 / 回饋展示頁與公開留言 CSV。
@@ -185,7 +182,7 @@ http://localhost:8000/npc/
 http://localhost:8000/pc/
 http://localhost:8000/timeline/
 http://localhost:8000/relation-graph/
-http://localhost:8000/spells/
+http://localhost:8000/tools/spells/
 ```
 
 其他可用的靜態 server：
@@ -311,7 +308,7 @@ python3 shared/scripts/normalize_site_html.py
 - 更新時間線時，檢查 `timeline/data/events.js` 的時間排序、中英標題與描述。
 - 更新地圖時，檢查 `map/assets/locations.json` 與地圖圖片座標是否一致。
 - 更新神祇時，檢查 `deities/data/deities.json`、`deities/pages/` 與 `deities/images/`。
-- 更新咒語時，檢查 `spells/spells-phb.json` 格式是否可被頁面讀取。
+- 更新咒語時，檢查 `tools/spells/spells-phb.json` 格式是否可被頁面讀取。
 - 更新會員成就時，檢查 `member/achievements.csv` 欄位格式。
 
 ## 驗證建議

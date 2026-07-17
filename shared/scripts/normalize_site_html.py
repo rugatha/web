@@ -293,7 +293,7 @@ def infer_description(relative_path: str, content: str, title: str) -> str:
         return f"Explore {page_name}, a Rugatha campaign page with chapter navigation, story context, and related records.{character_summary}"
     if relative_path == "characters/index.html":
         return "Browse Rugatha player characters and NPCs from across the campaigns and worldbuilding archive."
-    if relative_path == "character_card/index.html":
+    if relative_path == "tools/character_card/index.html":
         return "Create and export a Rugatha-style D&D character card with custom stats, portraits, and colors."
     if relative_path == "deities/index.html":
         return "Browse the gods, domains, and faiths of Rugatha across the main pantheon and hidden religions."
