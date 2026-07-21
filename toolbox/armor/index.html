@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&amp;D 護甲表 | Rugatha</title>
+  <link rel="icon" type="image/png" href="../../assets/rugatha-favicon.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <script src="../../shared/language-toggle.js"></script>
+  <style>
+    :root { --ink:#1f2a24; --muted:#d1ded6; --table-muted:#607066; --line:rgba(68,95,86,.24); --panel:#eef3ea; --panel-strong:#d3dfd2; --accent:#3f7d69; --accent-dark:#244f43; --focus:#c58b46; }
+    [hidden] { display:none!important; }
+    body { background:var(--bg); color:var(--ink); }
+    .page { min-height:100vh; }
+    .banner { margin:20px 0 10px; }
+    .language-toggle { position:fixed; top:16px; left:16px; z-index:10; display:inline-flex; }
+    .language-toggle button { width:72px; height:72px; display:grid; place-items:center; padding:0; border:0; border-radius:50%; background:transparent !important; box-shadow:none; cursor:pointer; }
+    .language-toggle button:hover,.language-toggle button:focus-visible { opacity:.86; transform:translateY(-1px); background:transparent !important; box-shadow:none; outline:none; }
+    .language-toggle__icon { width:100%; height:100%; object-fit:contain; }
+    .armor-shell { width:min(1320px,calc(100vw - 28px)); margin:0 auto 40px; }
+    .title-bar { display:grid; justify-items:center; gap:12px; padding:18px 0 14px; text-align:center; color:var(--text); border-bottom:1px solid rgba(236,242,237,.28); }
+    h1 { margin:0; font-size:clamp(2rem,4vw,3.8rem); line-height:.95; }
+    .title-copy p { max-width:720px; margin:10px auto 0; color:var(--muted); font-size:1rem; line-height:1.6; }
+    .title-divider { width:min(320px,72vw); height:1px; margin:12px auto 2px; border:0; background:rgba(236,242,237,.32); }
+    .result-count { color:var(--muted); font-size:.95rem; }
+    .toolbar { display:grid; grid-template-columns:minmax(220px,1.7fr) repeat(3,minmax(140px,1fr)) auto; gap:10px; align-items:end; padding:16px 0; border-bottom:1px solid rgba(236,242,237,.28); }
+    .control { display:grid; gap:6px; min-width:0; }
+    .control label { color:var(--muted); font-size:.78rem; font-weight:700; }
+    input,select,button { min-height:42px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink); font:inherit; }
+    input,select { width:100%; padding:0 11px; }
+    input:focus,select:focus,button:focus-visible { outline:3px solid rgba(197,139,70,.3); border-color:var(--focus); }
+    button { padding:0 14px; cursor:pointer; font-weight:700; background:var(--accent); color:#fffaf0; border-color:var(--accent); }
+    button:hover { background:var(--accent-dark); }
+    .rule-note { margin:16px 0; padding:12px 14px; border-left:4px solid var(--focus); border-radius:6px; background:rgba(238,243,234,.92); color:#30382f; font-size:.92rem; line-height:1.6; }
+    .rule-note strong { color:#17382f; }
+    .table-wrap { overflow:auto; border:1px solid var(--line); border-radius:8px; background:var(--panel); box-shadow:0 18px 42px rgba(18,29,25,.24); }
+    table { width:100%; min-width:1080px; border-collapse:collapse; table-layout:fixed; }
+    th,td { padding:11px; border-bottom:1px solid var(--line); vertical-align:top; text-align:left; }
+    th { position:sticky; top:0; z-index:1; vertical-align:middle; background:var(--panel-strong); color:#203b33; font-size:.82rem; line-height:1.2; white-space:nowrap; }
+    th button { display:inline-flex; align-items:center; gap:6px; width:100%; min-height:28px; padding:0; border:0; border-radius:0; background:transparent; color:inherit; text-align:left; }
+    th button:hover { background:transparent; color:var(--accent-dark); }
+    .static-heading { display:inline-flex; align-items:center; min-height:28px; }
+    tbody tr:nth-child(odd) { background:rgba(255,255,255,.22); } tbody tr:hover { background:rgba(63,125,105,.16); }
+    .col-category{width:120px}.col-name{width:190px}.col-ac{width:140px}.col-dex{width:130px}.col-str{width:130px}.col-stealth{width:130px}.col-cost{width:100px}.col-weight{width:90px}
+    .name-cell { display:grid; gap:3px; }.name-zh { color:#17382f; font-weight:800; line-height:1.25; }.name-en { color:var(--table-muted); font-size:.82rem; line-height:1.25; }
+    .tag { display:inline-flex; align-items:center; min-height:24px; padding:2px 7px; border:1px solid rgba(63,125,105,.16); border-radius:999px; background:rgba(63,125,105,.14); color:#25463c; font-size:.8rem; white-space:nowrap; }
+    .empty-state { padding:28px; color:var(--table-muted); text-align:center; }
+    .source-note { margin:18px 0; color:var(--muted); font-size:.82rem; text-align:center; }.source-note a{color:#fff3c8}
+    @media (max-width:1080px){.toolbar{grid-template-columns:repeat(3,minmax(0,1fr))}.toolbar .control:first-child{grid-column:1/-1}}
+    @media (max-width:680px){.armor-shell{width:min(100vw - 20px,1320px)}.language-toggle{top:8px;left:8px}.language-toggle button{width:58px;height:58px}.toolbar{grid-template-columns:1fr 1fr}.toolbar .control:first-child,.toolbar button{grid-column:1/-1}.title-copy p{font-size:.92rem}.rule-note{font-size:.86rem}}
+  </style>
+</head>
+<body>
+  <div class="language-toggle" role="group" aria-label="Language"><button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button></div>
+  <div class="page">
+    <header class="banner"><a href="../../index.html" class="banner-link" aria-label="Back to Rugatha home"><img src="../../assets/rugatha-banner.png" alt="Rugatha banner" class="banner-logo" loading="lazy"></a></header>
+    <main class="armor-shell">
+      <section class="title-bar"><div class="title-copy"><h1 data-i18n="title">D&amp;D 護甲表</h1><p><span data-i18n="subtitle">採用 D&amp;D 5e 玩家手冊（2014）護甲資料</span><br><span data-i18n="notice">僅供遊玩使用，請勿外流</span></p><hr class="title-divider"></div><div class="result-count" id="resultCount" aria-live="polite"></div></section>
+      <section class="toolbar" aria-label="護甲篩選工具" data-i18n-aria="filterAria">
+        <div class="control"><label for="searchInput" data-i18n="search">搜尋</label><input id="searchInput" type="search" placeholder="中文、英文名稱或護甲屬性" data-i18n-placeholder="searchPlaceholder"></div>
+        <div class="control"><label for="categoryFilter" data-i18n="category">分類</label><select id="categoryFilter"><option value="" data-i18n="all">全部</option><option value="輕甲" data-i18n="light">輕甲</option><option value="中甲" data-i18n="medium">中甲</option><option value="重甲" data-i18n="heavy">重甲</option><option value="盾牌" data-i18n="shield">盾牌</option></select></div>
+        <div class="control"><label for="stealthFilter" data-i18n="stealth">隱匿</label><select id="stealthFilter"><option value="" data-i18n="all">全部</option><option value="否" data-i18n="noDisadvantage">無劣勢</option><option value="是" data-i18n="disadvantage">劣勢</option></select></div>
+        <div class="control"><label for="strengthFilter" data-i18n="strengthRequirement">力量需求</label><select id="strengthFilter"><option value="" data-i18n="all">全部</option><option value="有" data-i18n="required">有</option><option value="無" data-i18n="notRequired">無</option></select></div>
+        <button id="resetButton" type="button" data-i18n="reset">重設</button>
+      </section>
+      <aside class="rule-note"><strong data-i18n="ruleTitle">AC 計算：</strong><span data-i18n="rule">輕甲＝基礎 AC＋全部敏捷調整值；中甲最多加入 +2 敏捷調整值；重甲不加入敏捷調整值。盾牌提供 +2 AC。未達力量需求時，速度降低 10 呎；穿著具有隱匿劣勢的護甲時，敏捷（隱匿）檢定具有劣勢。</span></aside>
+      <section class="table-wrap" aria-live="polite"><table><thead><tr>
+        <th class="col-category"><button type="button" data-sort="category"><span data-i18n="category">分類</span> <span data-sort-icon></span></button></th>
+        <th class="col-name"><button type="button" data-sort="nameZh"><span data-i18n="name">名稱</span> <span data-sort-icon></span></button></th>
+        <th class="col-ac"><button type="button" data-sort="ac"><span data-i18n="ac">AC</span> <span data-sort-icon></span></button></th>
+        <th class="col-dex"><button type="button" data-sort="dex"><span data-i18n="dexBonus">敏捷加值</span> <span data-sort-icon></span></button></th>
+        <th class="col-str"><button type="button" data-sort="strength"><span data-i18n="strengthRequirement">力量需求</span> <span data-sort-icon></span></button></th>
+        <th class="col-stealth"><button type="button" data-sort="stealth"><span data-i18n="stealth">隱匿</span> <span data-sort-icon></span></button></th>
+        <th class="col-cost"><button type="button" data-sort="cost"><span data-i18n="cost">價格</span> <span data-sort-icon></span></button></th>
+        <th class="col-weight"><button type="button" data-sort="weight"><span data-i18n="weight">重量</span> <span data-sort-icon></span></button></th>
+      </tr></thead><tbody id="armorRows"></tbody></table><div class="empty-state" id="emptyState" hidden data-i18n="empty">沒有符合條件的護甲</div></section>
+      <p class="source-note"><span data-i18n="sourceLabel">資料來源：</span><a href="https://www.dndbeyond.com/sources/dnd/basic-rules-2014/equipment#ArmorAndShields" target="_blank" rel="noopener noreferrer">D&amp;D Beyond 基本規則（2014）</a></p>
+    </main>
+  </div>
+  <script>
+    const translations={zh:{browserTitle:"D&D 護甲表 | Rugatha",title:"D&D 護甲表",subtitle:"採用 D&D 5e 玩家手冊（2014）護甲資料",notice:"僅供遊玩使用，請勿外流",filterAria:"護甲篩選工具",search:"搜尋",searchPlaceholder:"中文、英文名稱或護甲屬性",category:"分類",light:"輕甲",medium:"中甲",heavy:"重甲",shield:"盾牌",stealth:"隱匿",noDisadvantage:"無劣勢",disadvantage:"劣勢",strengthRequirement:"力量需求",required:"有",notRequired:"無",all:"全部",reset:"重設",ruleTitle:"AC 計算：",rule:"輕甲＝基礎 AC＋全部敏捷調整值；中甲最多加入 +2 敏捷調整值；重甲不加入敏捷調整值。盾牌提供 +2 AC。未達力量需求時，速度降低 10 呎；穿著具有隱匿劣勢的護甲時，敏捷（隱匿）檢定具有劣勢。",name:"名稱",ac:"AC",dexBonus:"敏捷加值",cost:"價格",weight:"重量",empty:"沒有符合條件的護甲",countUnit:"件護甲",sourceLabel:"資料來源：",aria:"目前語言：中文"},en:{browserTitle:"D&D Armor | Rugatha",title:"D&D Armor",subtitle:"Armor data from the D&D 5e Player's Handbook (2014)",notice:"For gameplay use only. Please do not redistribute.",filterAria:"Armor filters",search:"Search",searchPlaceholder:"Name, AC, or armor property",category:"Category",light:"Light",medium:"Medium",heavy:"Heavy",shield:"Shield",stealth:"Stealth",noDisadvantage:"No disadvantage",disadvantage:"Disadvantage",strengthRequirement:"STR requirement",required:"Required",notRequired:"Not required",all:"All",reset:"Reset",ruleTitle:"AC: ",rule:"Light armor adds your full Dexterity modifier; medium armor adds up to +2; heavy armor adds no Dexterity modifier. A shield grants +2 AC. If you do not meet the Strength requirement, your speed is reduced by 10 feet; armor with stealth disadvantage imposes disadvantage on Dexterity (Stealth) checks.",name:"Name",ac:"AC",dexBonus:"DEX bonus",cost:"Cost",weight:"Weight",empty:"No armor matches the selected filters.",countUnit:"items",sourceLabel:"Source: ",aria:"Current language: English"}};
+    const categoryEn={"輕甲":"Light","中甲":"Medium","重甲":"Heavy","盾牌":"Shield"};
+    const armor=[
+      ["襯墊甲","Padded", "輕甲",11,"全部",null,"是",5,8], ["皮甲","Leather", "輕甲",11,"全部",null,"否",10,10], ["鑲釘皮甲","Studded Leather", "輕甲",12,"全部",null,"否",45,13],
+      ["獸皮甲","Hide", "中甲",12,"最多 +2",null,"否",10,12], ["鏈甲衫","Chain Shirt", "中甲",13,"最多 +2",null,"否",50,20], ["鱗甲","Scale Mail", "中甲",14,"最多 +2",null,"是",50,45], ["胸甲","Breastplate", "中甲",14,"最多 +2",null,"否",400,20], ["半身甲","Half Plate", "中甲",15,"最多 +2",null,"是",750,40],
+      ["戒指甲","Ring Mail", "重甲",14,"無",null,"是",30,40], ["鏈甲","Chain Mail", "重甲",16,"無",13,"是",75,55], ["分段甲","Splint", "重甲",17,"無",15,"是",200,60], ["板甲","Plate", "重甲",18,"無",15,"是",1500,65], ["盾牌","Shield", "盾牌","+2","無",null,"否",10,6]
+    ].map(([nameZh,nameEn,category,ac,dex,strength,stealth,cost,weight],order)=>({nameZh,nameEn,category,ac,dex,strength,stealth,cost,weight,order,searchText:`${nameZh} ${nameEn} ${category} ${categoryEn[category]} ${ac} ${dex} ${strength||""} ${stealth} ${cost} ${weight}`.toLocaleLowerCase("zh-Hant")}));
+    const state={filtered:[...armor],sortKey:"order",sortDirection:"asc",language:"zh"};
+    const el={search:document.getElementById("searchInput"),category:document.getElementById("categoryFilter"),stealth:document.getElementById("stealthFilter"),strength:document.getElementById("strengthFilter"),reset:document.getElementById("resetButton"),rows:document.getElementById("armorRows"),empty:document.getElementById("emptyState"),count:document.getElementById("resultCount"),languageButton:document.querySelector("[data-lang-toggle]")};
+    const t=k=>translations[state.language][k]||k, collator=new Intl.Collator("zh-Hant",{numeric:true,sensitivity:"base"}), storageKey="rugatha-language";
+    function getStoredLanguage(){try{return localStorage.getItem(storageKey)}catch(error){return null}}
+    function localizedCategory(value){return state.language==="zh"?value:(categoryEn[value]||value)}
+    function localizedDex(value){if(value==="全部")return state.language==="zh"?value:"Full";if(value==="最多 +2")return state.language==="zh"?value:"Max +2";return value}
+    function setLanguage(language){state.language=language==="en"?"en":"zh";const d=translations[state.language];document.documentElement.lang=state.language==="zh"?"zh-Hant":"en";document.body.dataset.lang=state.language;document.title=d.browserTitle;document.querySelectorAll("[data-i18n]").forEach(x=>{if(d[x.dataset.i18n])x.textContent=d[x.dataset.i18n]});document.querySelectorAll("[data-i18n-placeholder]").forEach(x=>x.placeholder=d[x.dataset.i18nPlaceholder]||x.placeholder);document.querySelectorAll("[data-i18n-aria]").forEach(x=>x.setAttribute("aria-label",d[x.dataset.i18nAria]));el.languageButton.setAttribute("aria-label",d.aria);el.languageButton.setAttribute("aria-pressed","true");if(window.RugathaLanguageToggle)window.RugathaLanguageToggle.setButtonIcon(el.languageButton,state.language);try{localStorage.setItem(storageKey,state.language)}catch(error){}render()}
+    function filter(){const q=el.search.value.trim().toLocaleLowerCase("zh-Hant");state.filtered=armor.filter(a=>(!q||a.searchText.includes(q))&&(!el.category.value||a.category===el.category.value)&&(!el.stealth.value||a.stealth===el.stealth.value)&&(!el.strength.value||(el.strength.value==="有"?a.strength!==null:a.strength===null)));sort()}
+    function sort(){const dir=state.sortDirection==="asc"?1:-1;state.filtered.sort((a,b)=>state.sortKey==="order"?(a.order-b.order)*dir:(typeof a[state.sortKey]==="number"&&typeof b[state.sortKey]==="number"?(a[state.sortKey]-b[state.sortKey])*dir:collator.compare(String(a[state.sortKey]),String(b[state.sortKey]))*dir)||a.order-b.order);render()}
+    function render(){el.rows.replaceChildren(...state.filtered.map(a=>{const r=document.createElement("tr");const values=[localizedCategory(a.category),null,typeof a.ac==="number"?a.ac:a.ac,localizedDex(a.dex),a.strength===null?(state.language==="zh"?"無":"—"):(state.language==="zh"?a.strength+" 力":"STR "+a.strength),a.stealth==="是"?(state.language==="zh"?"劣勢":"Disadvantage"):(state.language==="zh"?"—":"—"),a.cost+" gp",a.weight+" lb."];values.forEach((v,i)=>{const td=document.createElement("td");if(i===1){td.className="name-zh";td.textContent=state.language==="zh"?a.nameZh:a.nameEn}else td.textContent=v;r.append(td)});return r}));el.empty.hidden=state.filtered.length!==0;el.count.textContent=`${state.filtered.length} ${t("countUnit")}`;document.querySelectorAll("[data-sort-icon]").forEach(x=>x.textContent="");const active=document.querySelector(`[data-sort="${state.sortKey}"] [data-sort-icon]`);if(active)active.textContent=state.sortDirection==="asc"?"▲":"▼"}
+    document.querySelectorAll("th button[data-sort]").forEach(b=>b.addEventListener("click",()=>{const key=b.dataset.sort;if(state.sortKey===key)state.sortDirection=state.sortDirection==="asc"?"desc":"asc";else{state.sortKey=key;state.sortDirection="asc"}sort()}));[el.search,el.category,el.stealth,el.strength].forEach(x=>x.addEventListener("input",filter));el.reset.addEventListener("click",()=>{el.search.value="";el.category.value="";el.stealth.value="";el.strength.value="";state.sortKey="order";state.sortDirection="asc";filter()});el.languageButton.addEventListener("click",()=>setLanguage(state.language==="zh"?"en":"zh"));setLanguage(getStoredLanguage()||"zh");
+  </script>
+</body>
+</html>
