@@ -11,17 +11,17 @@
     gtag('js', new Date());
 
     gtag('config', 'G-BZZFKMJ65Y', {
-      page_title: 'Tools | Rugatha',
+      page_title: 'Toolbox | Rugatha',
       page_path: window.location.pathname,
       page_location: window.location.href
     });
     gtag('event', 'tool_page_view', {
-      tool_name: 'tools_home',
+      tool_name: 'toolbox_home',
       page_path: window.location.pathname,
-      page_title: 'Tools | Rugatha'
+      page_title: 'Toolbox | Rugatha'
     });
   </script>
-  <title>Tools | Rugatha</title>
+  <title>Toolbox | Rugatha</title>
   <link rel="icon" type="image/png" href="../assets/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../shared/styles/theme.css">
@@ -246,7 +246,7 @@
 
     <main>
       <section class="title" aria-labelledby="tools-title">
-        <h1 id="tools-title" data-i18n="title">工具</h1>
+        <h1 id="tools-title" data-i18n="title">工具箱</h1>
       </section>
 
       <ul class="tool-list" aria-label="Tools">
@@ -290,27 +290,51 @@
             </span>
           </a>
         </li>
+        <li>
+          <a class="tool-link" href="packs/">
+            <span class="tool-mark" aria-hidden="true">
+              <img class="logo-dnd" src="../assets/D&amp;D_logo.png" alt="">
+            </span>
+            <span class="tool-copy">
+              <span class="tool-name" data-i18n="packs">D&amp;D 裝備包</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="tool-link" href="tools/">
+            <span class="tool-mark" aria-hidden="true">
+              <img class="logo-dnd" src="../assets/D&amp;D_logo.png" alt="">
+            </span>
+            <span class="tool-copy">
+              <span class="tool-name" data-i18n="dndTools">D&amp;D 工具</span>
+            </span>
+          </a>
+        </li>
       </ul>
     </main>
   </div>
   <script>
     const translations = {
       zh: {
-        browserTitle: "工具 | Rugatha",
-        title: "工具",
+        browserTitle: "工具箱 | Rugatha",
+        title: "工具箱",
         characterCard: "角色卡製作器",
         spells: "D&D 法術表",
         weapons: "D&D 武器表",
         raceClass: "D&D 種族與職業",
+        packs: "D&D 裝備包",
+        dndTools: "D&D 工具",
         aria: "目前語言：中文"
       },
       en: {
-        browserTitle: "Tools | Rugatha",
-        title: "Tools",
+        browserTitle: "Toolbox | Rugatha",
+        title: "Toolbox",
         characterCard: "Character Card",
         spells: "D&D Spells",
         weapons: "D&D Weapons",
         raceClass: "D&D Race & Class",
+        packs: "D&D Equipment Packs",
+        dndTools: "D&D Tools",
         aria: "Current language: English"
       }
     };

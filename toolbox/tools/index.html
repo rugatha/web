@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BZZFKMJ65Y', {
+      page_title: 'D&D 工具 | Rugatha',
+      page_path: window.location.pathname,
+      page_location: window.location.href
+    });
+    gtag('event', 'tool_page_view', {
+      tool_name: 'dnd_tools',
+      page_path: window.location.pathname,
+      page_title: 'D&D 工具 | Rugatha'
+    });
+  </script>
+  <title>D&amp;D 工具 | Rugatha</title>
+  <link rel="icon" type="image/png" href="../../assets/rugatha-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/rugatha-favicon-32.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../../assets/rugatha-icon-192.png">
+  <script defer src="../../shared/pwa.js"></script>
+  <script src="../../shared/language-toggle.js"></script>
+  <style>
+    :root {
+      --tool-paper: #eef3ea;
+      --tool-paper-deep: #d7e1d4;
+      --tool-ink: #223129;
+      --tool-muted: #607066;
+      --tool-line: rgba(68, 95, 86, 0.24);
+      --tool-gold: #c58b46;
+      --tool-green: #3f7d69;
+      --tool-green-dark: #244f43;
+    }
+
+    body { min-height: 100vh; background: var(--bg); color: var(--text); }
+
+    .page {
+      width: min(1120px, calc(100vw - 32px));
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .language-toggle {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      display: inline-flex;
+    }
+
+    .language-toggle button {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .language-toggle button:hover,
+    .language-toggle button:focus-visible {
+      opacity: 0.86;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .language-toggle__icon {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .hero {
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+      padding: 2px 0 28px;
+      border-bottom: 1px solid rgba(236, 242, 237, 0.28);
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .tool-card {
+      align-self: start;
+      overflow: hidden;
+      border: 1px solid var(--tool-line);
+      border-radius: 10px;
+      background: var(--tool-paper);
+      color: var(--tool-ink);
+      box-shadow: 0 18px 42px rgba(18, 29, 25, 0.24);
+    }
+
+    .tool-heading {
+      padding: 20px 22px 16px;
+      border-bottom: 1px solid var(--tool-line);
+      background:
+        linear-gradient(135deg, rgba(197, 139, 70, 0.2), transparent 46%),
+        var(--tool-paper-deep);
+    }
+
+    .tool-heading h2 {
+      margin: 0;
+      color: var(--tool-green-dark);
+      font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+      line-height: 1.15;
+    }
+
+    .column-headings,
+    .tool-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(84px, auto) minmax(68px, auto);
+      gap: 12px;
+      align-items: center;
+    }
+
+    .column-headings {
+      padding: 11px 22px;
+      background: rgba(63, 125, 105, 0.1);
+      color: var(--tool-muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .column-headings span:not(:first-child),
+    .tool-row span:not(:first-child) { text-align: right; }
+
+    .tool-list { margin: 0; padding: 0 22px 10px; list-style: none; }
+
+    .tool-row {
+      min-height: 46px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(68, 95, 86, 0.13);
+      line-height: 1.3;
+    }
+
+    .tool-row:last-child { border-bottom: 0; }
+    .tool-name { position: relative; padding-left: 18px; font-weight: 650; }
+    .tool-name::before {
+      position: absolute;
+      left: 0;
+      color: var(--tool-green);
+      content: "◆";
+      font-size: 0.55rem;
+    }
+
+    .tool-price {
+      color: #765022;
+      font-size: 0.86rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .tool-weight { color: var(--tool-muted); font-size: 0.86rem; white-space: nowrap; }
+
+    .source-note {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .source-note a {
+      color: #fff3c8;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 760px) {
+      .page { width: min(100% - 20px, 1120px); padding-top: 72px; }
+      .language-toggle { top: 8px; left: 8px; }
+      .language-toggle button { width: 58px; height: 58px; }
+      .tool-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 430px) {
+      .tool-heading { padding: 18px; }
+      .column-headings { padding-inline: 18px; }
+      .tool-list { padding-inline: 18px; }
+      .column-headings,
+      .tool-row { grid-template-columns: minmax(0, 1fr) 76px 56px; gap: 8px; }
+      .tool-name { padding-left: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
+  </div>
+
+  <div class="page">
+    <header class="banner">
+      <a class="banner-link" href="../../index.html" aria-label="Rugatha home">
+        <img src="../../assets/rugatha-banner.png" alt="Rugatha banner" class="banner-img">
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <h1 id="page-title" data-i18n="title">D&amp;D 工具</h1>
+        <p><span data-i18n="subtitle">D&amp;D 5e 玩家手冊（2014）工具、價格與重量</span><br><span data-i18n="notice">僅供遊玩使用，請勿外流</span></p>
+      </section>
+
+      <section class="tool-grid" id="toolGrid" aria-label="工具列表"></section>
+
+      <p class="source-note">
+        <span data-i18n="sourceLabel">資料來源：</span>
+        <a href="https://www.dndbeyond.com/sources/dnd/basic-rules-2014/equipment#Tools" target="_blank" rel="noopener noreferrer" data-i18n="sourceName">D&amp;D Beyond 基本規則（2014）</a>
+      </p>
+    </main>
+  </div>
+
+  <script>
+    const translations = {
+      zh: {
+        browserTitle: "D&D 工具 | Rugatha", title: "D&D 工具",
+        subtitle: "D&D 5e 玩家手冊（2014）工具、價格與重量", notice: "僅供遊玩使用，請勿外流",
+        name: "名稱", cost: "價格", weight: "重量", listAria: "工具列表",
+        sourceLabel: "資料來源：", sourceName: "D&D Beyond 基本規則（2014）", aria: "目前語言：中文"
+      },
+      en: {
+        browserTitle: "D&D Tools | Rugatha", title: "D&D Tools",
+        subtitle: "Tools, prices, and weights from the D&D 5e Player's Handbook (2014)", notice: "For gameplay use only. Please do not redistribute.",
+        name: "Name", cost: "Cost", weight: "Weight", listAria: "Tool list",
+        sourceLabel: "Source: ", sourceName: "D&D Beyond Basic Rules (2014)", aria: "Current language: English"
+      }
+    };
+
+    const categories = [
+      {
+        nameZh: "工匠工具", nameEn: "Artisan's Tools",
+        items: [
+          ["煉金術士用品", "Alchemist's Supplies", 50, "gp", "8"],
+          ["釀酒師用品", "Brewer's Supplies", 20, "gp", "9"],
+          ["書法家用品", "Calligrapher's Supplies", 10, "gp", "5"],
+          ["木匠工具", "Carpenter's Tools", 8, "gp", "6"],
+          ["製圖師工具", "Cartographer's Tools", 15, "gp", "6"],
+          ["鞋匠工具", "Cobbler's Tools", 5, "gp", "5"],
+          ["廚師用具", "Cook's Utensils", 1, "gp", "8"],
+          ["玻璃工匠工具", "Glassblower's Tools", 30, "gp", "5"],
+          ["珠寶匠工具", "Jeweler's Tools", 25, "gp", "2"],
+          ["皮革匠工具", "Leatherworker's Tools", 5, "gp", "5"],
+          ["石匠工具", "Mason's Tools", 10, "gp", "8"],
+          ["畫家用品", "Painter's Supplies", 10, "gp", "5"],
+          ["陶匠工具", "Potter's Tools", 10, "gp", "3"],
+          ["鐵匠工具", "Smith's Tools", 20, "gp", "8"],
+          ["修補匠工具", "Tinker's Tools", 50, "gp", "10"],
+          ["織工工具", "Weaver's Tools", 1, "gp", "5"],
+          ["木雕師工具", "Woodcarver's Tools", 1, "gp", "5"]
+        ]
+      },
+      {
+        nameZh: "遊戲套組", nameEn: "Gaming Sets",
+        items: [
+          ["骰子套組", "Dice Set", 1, "sp", "—"],
+          ["龍棋套組", "Dragonchess Set", 1, "gp", "½"],
+          ["紙牌套組", "Playing Card Set", 5, "sp", "—"],
+          ["三龍牌套組", "Three-Dragon Ante Set", 1, "gp", "—"]
+        ]
+      },
+      {
+        nameZh: "樂器", nameEn: "Musical Instruments",
+        items: [
+          ["風笛", "Bagpipes", 30, "gp", "6"], ["鼓", "Drum", 6, "gp", "3"],
+          ["揚琴", "Dulcimer", 25, "gp", "10"], ["長笛", "Flute", 2, "gp", "1"],
+          ["魯特琴", "Lute", 35, "gp", "2"], ["里拉琴", "Lyre", 30, "gp", "2"],
+          ["號角", "Horn", 3, "gp", "2"], ["排簫", "Pan Flute", 12, "gp", "2"],
+          ["嗩吶", "Shawm", 2, "gp", "1"], ["維奧爾琴", "Viol", 30, "gp", "1"]
+        ]
+      },
+      {
+        nameZh: "其他工具", nameEn: "Other Tools",
+        items: [
+          ["易容工具組", "Disguise Kit", 25, "gp", "3"],
+          ["偽造工具組", "Forgery Kit", 15, "gp", "5"],
+          ["草藥工具組", "Herbalism Kit", 5, "gp", "3"],
+          ["領航員工具", "Navigator's Tools", 25, "gp", "2"],
+          ["製毒工具組", "Poisoner's Kit", 50, "gp", "2"],
+          ["盜賊工具", "Thieves' Tools", 25, "gp", "1"],
+          ["載具（陸地或水上）", "Vehicles (Land or Water)", null, null, "*"]
+        ]
+      }
+    ];
+
+    const storageKey = "rugatha-language";
+    const languageButton = document.querySelector("[data-lang-toggle]");
+    const toolGrid = document.getElementById("toolGrid");
+    let currentLanguage = "zh";
+
+    function getStoredLanguage() {
+      try { return localStorage.getItem(storageKey); } catch (error) { return null; }
+    }
+
+    function formatPrice(value, unit) {
+      if (value === null) return currentLanguage === "zh" ? "依載具而定" : "Varies";
+      if (currentLanguage === "en") return `${value} ${unit.toUpperCase()}`;
+      return `${value} ${unit === "gp" ? "金幣" : "銀幣"}`;
+    }
+
+    function formatWeight(weight) {
+      if (weight === "—") return weight;
+      if (weight === "*") return currentLanguage === "zh" ? "依載具而定" : "Varies";
+      return currentLanguage === "zh" ? `${weight} 磅` : `${weight} lb.`;
+    }
+
+    function renderTools() {
+      const dictionary = translations[currentLanguage];
+      toolGrid.replaceChildren(...categories.map((category) => {
+        const article = document.createElement("article");
+        article.className = "tool-card";
+        const heading = document.createElement("header");
+        heading.className = "tool-heading";
+        const title = document.createElement("h2");
+        title.textContent = currentLanguage === "zh" ? category.nameZh : category.nameEn;
+        heading.append(title);
+
+        const columns = document.createElement("div");
+        columns.className = "column-headings";
+        [dictionary.name, dictionary.cost, dictionary.weight].forEach((label) => {
+          const span = document.createElement("span");
+          span.textContent = label;
+          columns.append(span);
+        });
+
+        const list = document.createElement("ul");
+        list.className = "tool-list";
+        category.items.forEach(([nameZh, nameEn, value, unit, weight]) => {
+          const row = document.createElement("li");
+          row.className = "tool-row";
+          const name = document.createElement("span");
+          name.className = "tool-name";
+          name.textContent = currentLanguage === "zh" ? nameZh : nameEn;
+          const price = document.createElement("span");
+          price.className = "tool-price";
+          price.textContent = formatPrice(value, unit);
+          const itemWeight = document.createElement("span");
+          itemWeight.className = "tool-weight";
+          itemWeight.textContent = formatWeight(weight);
+          row.append(name, price, itemWeight);
+          list.append(row);
+        });
+        article.append(heading, columns, list);
+        return article;
+      }));
+    }
+
+    function setLanguage(language) {
+      currentLanguage = language === "en" ? "en" : "zh";
+      const dictionary = translations[currentLanguage];
+      document.documentElement.lang = currentLanguage === "zh" ? "zh-Hant" : "en";
+      document.body.dataset.lang = currentLanguage;
+      document.title = dictionary.browserTitle;
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const value = dictionary[element.dataset.i18n];
+        if (value) element.textContent = value;
+      });
+      toolGrid.setAttribute("aria-label", dictionary.listAria);
+      languageButton.dataset.lang = currentLanguage;
+      languageButton.setAttribute("aria-label", dictionary.aria);
+      languageButton.setAttribute("aria-pressed", "true");
+      if (window.RugathaLanguageToggle) window.RugathaLanguageToggle.setButtonIcon(languageButton, currentLanguage);
+      try { localStorage.setItem(storageKey, currentLanguage); } catch (error) { /* Storage is optional. */ }
+      renderTools();
+    }
+
+    languageButton.addEventListener("click", () => setLanguage(currentLanguage === "en" ? "zh" : "en"));
+    setLanguage(getStoredLanguage() || "zh");
+  </script>
+</body>
+</html>

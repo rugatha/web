@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BZZFKMJ65Y', {
+      page_title: 'D&D 裝備包 | Rugatha',
+      page_path: window.location.pathname,
+      page_location: window.location.href
+    });
+    gtag('event', 'tool_page_view', {
+      tool_name: 'packs',
+      page_path: window.location.pathname,
+      page_title: 'D&D 裝備包 | Rugatha'
+    });
+  </script>
+  <title>D&amp;D 裝備包 | Rugatha</title>
+  <link rel="icon" type="image/png" href="../../assets/rugatha-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/rugatha-favicon-32.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../../assets/rugatha-icon-192.png">
+  <script defer src="../../shared/pwa.js"></script>
+  <script src="../../shared/language-toggle.js"></script>
+  <style>
+    :root {
+      --pack-paper: #eef3ea;
+      --pack-paper-deep: #d7e1d4;
+      --pack-ink: #223129;
+      --pack-muted: #607066;
+      --pack-line: rgba(68, 95, 86, 0.24);
+      --pack-gold: #c58b46;
+      --pack-green: #3f7d69;
+      --pack-green-dark: #244f43;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .page {
+      width: min(1120px, calc(100vw - 32px));
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .language-toggle {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      display: inline-flex;
+    }
+
+    .language-toggle button {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .language-toggle button:hover,
+    .language-toggle button:focus-visible {
+      opacity: 0.86;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .language-toggle__icon {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .hero {
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+      padding: 2px 0 28px;
+      border-bottom: 1px solid rgba(236, 242, 237, 0.28);
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .pack-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 24px 0 0;
+    }
+
+    .pack-card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      border: 1px solid var(--pack-line);
+      border-radius: 10px;
+      background: var(--pack-paper);
+      color: var(--pack-ink);
+      box-shadow: 0 18px 42px rgba(18, 29, 25, 0.24);
+    }
+
+    .pack-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      padding: 20px 22px 16px;
+      border-bottom: 1px solid var(--pack-line);
+      background:
+        linear-gradient(135deg, rgba(197, 139, 70, 0.2), transparent 46%),
+        var(--pack-paper-deep);
+    }
+
+    .pack-heading h2 {
+      margin: 0;
+      color: var(--pack-green-dark);
+      font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+      line-height: 1.15;
+    }
+
+    .pack-price {
+      min-width: 62px;
+      padding: 8px 10px;
+      border: 1px solid rgba(197, 139, 70, 0.45);
+      border-radius: 999px;
+      background: rgba(255, 250, 240, 0.72);
+      color: #765022;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .contents {
+      display: grid;
+      align-content: start;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      margin: 0;
+      padding: 8px 22px 14px;
+      list-style: none;
+    }
+
+    .contents li {
+      position: relative;
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      padding: 10px 10px 10px 18px;
+      border-bottom: 1px solid rgba(68, 95, 86, 0.13);
+      line-height: 1.35;
+    }
+
+    .contents li::before {
+      position: absolute;
+      left: 0;
+      color: var(--pack-green);
+      content: "◆";
+      font-size: 0.55rem;
+    }
+
+    .contents li:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .source-note {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .source-note a {
+      color: #fff3c8;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 20px, 1120px);
+        padding-top: 72px;
+      }
+
+      .language-toggle {
+        top: 8px;
+        left: 8px;
+      }
+
+      .language-toggle button {
+        width: 58px;
+        height: 58px;
+      }
+
+      .pack-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .pack-heading { padding: 18px; }
+      .contents {
+        grid-template-columns: 1fr;
+        padding-inline: 18px;
+      }
+      .contents li:nth-last-child(2) { border-bottom: 1px solid rgba(68, 95, 86, 0.13); }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
+  </div>
+
+  <div class="page">
+    <header class="banner">
+      <a class="banner-link" href="../../index.html" aria-label="Rugatha home">
+        <img src="../../assets/rugatha-banner.png" alt="Rugatha banner" class="banner-img">
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <h1 id="page-title" data-i18n="title">D&amp;D 裝備包</h1>
+        <p><span data-i18n="subtitle">D&amp;D 5e 玩家手冊（2014）裝備包內容與價格</span><br><span data-i18n="notice">僅供遊玩使用，請勿外流</span></p>
+      </section>
+
+      <section class="pack-grid" id="packGrid" aria-label="裝備包列表"></section>
+
+      <p class="source-note">
+        <span data-i18n="sourceLabel">資料來源：</span>
+        <a href="https://www.dndbeyond.com/sources/dnd/basic-rules-2014/equipment#EquipmentPacks" target="_blank" rel="noopener noreferrer" data-i18n="sourceName">D&amp;D Beyond 基本規則（2014）</a>
+      </p>
+    </main>
+  </div>
+
+  <script>
+    const translations = {
+      zh: {
+        browserTitle: "D&D 裝備包 | Rugatha",
+        title: "D&D 裝備包",
+        subtitle: "D&D 5e 玩家手冊（2014）裝備包內容與價格",
+        notice: "僅供遊玩使用，請勿外流",
+        sourceLabel: "資料來源：",
+        sourceName: "D&D Beyond 基本規則（2014）",
+        listAria: "裝備包列表",
+        aria: "目前語言：中文"
+      },
+      en: {
+        browserTitle: "D&D Equipment Packs | Rugatha",
+        title: "D&D Equipment Packs",
+        subtitle: "Equipment pack contents and prices from the D&D 5e Player's Handbook (2014)",
+        notice: "For gameplay use only. Please do not redistribute.",
+        sourceLabel: "Source: ",
+        sourceName: "D&D Beyond Basic Rules (2014)",
+        listAria: "Equipment pack list",
+        aria: "Current language: English"
+      }
+    };
+
+    const packs = [
+      {
+        nameZh: "竊賊套組", nameEn: "Burglar's Pack", price: 16,
+        itemsZh: ["背包", "一袋 1,000 顆滾珠", "10 呎細繩", "鈴鐺", "蠟燭 × 5", "撬棍", "鐵鎚", "岩釘 × 10", "附蓋提燈", "油（瓶）× 2", "口糧 × 5 日份", "火絨盒", "水袋", "50 呎麻繩（繫於背包側邊）"],
+        itemsEn: ["Backpack", "Bag of 1,000 ball bearings", "10 feet of string", "Bell", "5 candles", "Crowbar", "Hammer", "10 pitons", "Hooded lantern", "2 flasks of oil", "5 days of rations", "Tinderbox", "Waterskin", "50 feet of hempen rope (strapped to the side)"]
+      },
+      {
+        nameZh: "外交官套組", nameEn: "Diplomat's Pack", price: 39,
+        itemsZh: ["箱子", "地圖或卷軸筒 × 2", "高級服裝一套", "墨水一瓶", "墨水筆", "油燈", "油（瓶）× 2", "紙張 × 5", "香水一小瓶", "封蠟", "肥皂"],
+        itemsEn: ["Chest", "2 cases for maps or scrolls", "Set of fine clothes", "Bottle of ink", "Ink pen", "Lamp", "2 flasks of oil", "5 sheets of paper", "Vial of perfume", "Sealing wax", "Soap"]
+      },
+      {
+        nameZh: "地城探索套組", nameEn: "Dungeoneer's Pack", price: 12,
+        itemsZh: ["背包", "撬棍", "鐵鎚", "岩釘 × 10", "火把 × 10", "火絨盒", "口糧 × 10 日份", "水袋", "50 呎麻繩（繫於背包側邊）"],
+        itemsEn: ["Backpack", "Crowbar", "Hammer", "10 pitons", "10 torches", "Tinderbox", "10 days of rations", "Waterskin", "50 feet of hempen rope (strapped to the side)"]
+      },
+      {
+        nameZh: "藝人套組", nameEn: "Entertainer's Pack", price: 40,
+        itemsZh: ["背包", "睡袋", "戲服 × 2", "蠟燭 × 5", "口糧 × 5 日份", "水袋", "易容工具組"],
+        itemsEn: ["Backpack", "Bedroll", "2 costumes", "5 candles", "5 days of rations", "Waterskin", "Disguise kit"]
+      },
+      {
+        nameZh: "探險家套組", nameEn: "Explorer's Pack", price: 10,
+        itemsZh: ["背包", "睡袋", "餐具組", "火絨盒", "火把 × 10", "口糧 × 10 日份", "水袋", "50 呎麻繩（繫於背包側邊）"],
+        itemsEn: ["Backpack", "Bedroll", "Mess kit", "Tinderbox", "10 torches", "10 days of rations", "Waterskin", "50 feet of hempen rope (strapped to the side)"]
+      },
+      {
+        nameZh: "祭司套組", nameEn: "Priest's Pack", price: 19,
+        itemsZh: ["背包", "毯子", "蠟燭 × 10", "火絨盒", "捐獻箱", "薰香塊 × 2", "香爐", "祭服", "口糧 × 2 日份", "水袋"],
+        itemsEn: ["Backpack", "Blanket", "10 candles", "Tinderbox", "Alms box", "2 blocks of incense", "Censer", "Vestments", "2 days of rations", "Waterskin"]
+      },
+      {
+        nameZh: "學者套組", nameEn: "Scholar's Pack", price: 40,
+        itemsZh: ["背包", "知識典籍", "墨水一瓶", "墨水筆", "羊皮紙 × 10", "一小袋沙", "小刀"],
+        itemsEn: ["Backpack", "Book of lore", "Bottle of ink", "Ink pen", "10 sheets of parchment", "Little bag of sand", "Small knife"]
+      }
+    ];
+
+    const storageKey = "rugatha-language";
+    const languageButton = document.querySelector("[data-lang-toggle]");
+    const packGrid = document.getElementById("packGrid");
+    let currentLanguage = "zh";
+
+    function getStoredLanguage() {
+      try {
+        return localStorage.getItem(storageKey);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function renderPacks() {
+      packGrid.replaceChildren(...packs.map((pack) => {
+        const article = document.createElement("article");
+        article.className = "pack-card";
+
+        const heading = document.createElement("header");
+        heading.className = "pack-heading";
+        const title = document.createElement("h2");
+        title.textContent = currentLanguage === "zh" ? pack.nameZh : pack.nameEn;
+        const price = document.createElement("span");
+        price.className = "pack-price";
+        price.textContent = currentLanguage === "zh" ? `${pack.price} 金幣` : `${pack.price} GP`;
+        heading.append(title, price);
+
+        const list = document.createElement("ul");
+        list.className = "contents";
+        (currentLanguage === "zh" ? pack.itemsZh : pack.itemsEn).forEach((item) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = item;
+          list.append(listItem);
+        });
+
+        article.append(heading, list);
+        return article;
+      }));
+    }
+
+    function setLanguage(language) {
+      currentLanguage = language === "en" ? "en" : "zh";
+      const dictionary = translations[currentLanguage];
+      document.documentElement.lang = currentLanguage === "zh" ? "zh-Hant" : "en";
+      document.body.dataset.lang = currentLanguage;
+      document.title = dictionary.browserTitle;
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const value = dictionary[element.dataset.i18n];
+        if (value) element.textContent = value;
+      });
+      packGrid.setAttribute("aria-label", dictionary.listAria);
+      languageButton.dataset.lang = currentLanguage;
+      languageButton.setAttribute("aria-label", dictionary.aria);
+      languageButton.setAttribute("aria-pressed", "true");
+      if (window.RugathaLanguageToggle) {
+        window.RugathaLanguageToggle.setButtonIcon(languageButton, currentLanguage);
+      }
+      try {
+        localStorage.setItem(storageKey, currentLanguage);
+      } catch (error) {
+        // The page still works when storage is unavailable.
+      }
+      renderPacks();
+    }
+
+    languageButton.addEventListener("click", () => {
+      setLanguage(currentLanguage === "en" ? "zh" : "en");
+    });
+
+    setLanguage(getStoredLanguage() || "zh");
+  </script>
+</body>
+</html>

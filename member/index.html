@@ -147,11 +147,35 @@
     }
 
     .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
       font-size: 12px;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--member-muted);
       margin: 0;
+    }
+
+    .toolbox-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 150ms ease;
+    }
+
+    .toolbox-icon {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+    }
+
+    .toolbox-link:hover,
+    .toolbox-link:focus-visible {
+      color: var(--member-ink);
     }
 
     .hero-copy h1 {
@@ -799,7 +823,15 @@
     </a>
     <header class="member-hero">
       <div class="hero-copy">
-        <p class="eyebrow" data-i18n="heroEyebrow">Adventurer's Journal</p>
+        <p class="eyebrow">
+          <span data-i18n="heroEyebrow">Adventurer's Journal</span>
+          <a class="toolbox-link" href="/toolbox/">
+            <svg class="toolbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14.7 6.3a4.3 4.3 0 0 0-5.4 5.4L3.5 17.5a2.1 2.1 0 1 0 3 3l5.8-5.8a4.3 4.3 0 0 0 5.4-5.4l-2.5 2.5-2.6-.7-.7-2.6 2.8-2.2Z" />
+            </svg>
+            <span data-i18n="toolboxLink">Toolbox</span>
+          </a>
+        </p>
         <h1 data-i18n="heroTitle">Your member vault for Rugatha.</h1>
         <div class="hero-badges">
           <div class="profile-section-title centered" data-i18n="heroBadgesTitle">Adventurer's Badges</div>
@@ -1165,6 +1197,7 @@
       en: {
         documentTitle: "Adventurer's Journal | Rugatha",
         heroEyebrow: "Adventurer's Journal",
+        toolboxLink: "Toolbox",
         heroTitle: "Your legendary stories are to be told in taverns......",
         heroBadgesTitle: "Adventurer's Sheet",
         badgeSTR: "Strength", ///總點擊次數、點擊回到首頁次數
@@ -1221,6 +1254,7 @@
       zh: {
         documentTitle: "冒險者日誌 | Rugatha",
         heroEyebrow: "冒險者日誌",
+        toolboxLink: "工具箱",
         heroTitle: "你的傳奇冒險將在酒館被傳唱……",
         heroBadgesTitle: "冒險者角色卡",
         badgeSTR: "力量",
