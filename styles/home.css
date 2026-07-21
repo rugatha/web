@@ -24,8 +24,10 @@ body {
   right: max(20px, env(safe-area-inset-right));
   bottom: max(20px, env(safe-area-inset-bottom));
   z-index: 2147483647;
-  width: 5%;
+  width: clamp(48px, 5vw, 72px);
   height: auto;
+  max-width: calc(100vw - 40px);
+  aspect-ratio: 1;
   object-fit: contain;
   cursor: pointer;
   user-select: none;
@@ -1153,7 +1155,8 @@ body {
   .home-d20 {
     right: max(10px, env(safe-area-inset-right));
     bottom: max(10px, env(safe-area-inset-bottom));
-    width: 10%;
+    width: clamp(44px, 10vw, 64px);
+    max-width: calc(100vw - 20px);
   }
 
   .hub {
