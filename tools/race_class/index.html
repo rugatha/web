@@ -10,7 +10,16 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-BZZFKMJ65Y');
+    gtag('config', 'G-BZZFKMJ65Y', {
+      page_title: 'Race & Class | Rugatha',
+      page_path: window.location.pathname,
+      page_location: window.location.href
+    });
+    gtag('event', 'tool_page_view', {
+      tool_name: 'race_class',
+      page_path: window.location.pathname,
+      page_title: 'Race & Class | Rugatha'
+    });
   </script>
   <title>Race & Class | Rugatha</title>
   <link rel="icon" type="image/png" href="../../assets/rugatha-favicon.png">

@@ -8,7 +8,16 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-BZZFKMJ65Y');
+    gtag('config', 'G-BZZFKMJ65Y', {
+      page_title: 'Character Card Generator | 角色卡製作器',
+      page_path: window.location.pathname,
+      page_location: window.location.href
+    });
+    gtag('event', 'tool_page_view', {
+      tool_name: 'character_card',
+      page_path: window.location.pathname,
+      page_title: 'Character Card Generator | 角色卡製作器'
+    });
   </script>
 
   <meta charset="UTF-8">
