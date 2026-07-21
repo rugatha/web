@@ -17,7 +17,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  padding: 24px 18px 44px;
+  /* Reserve space for the fixed language control above the hero. */
+  padding: 120px 18px 44px;
   color: var(--text);
   font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
   background:
@@ -205,9 +206,20 @@ body {
 
 .meta-grid {
   margin-top: 18px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+.meta-grid::before,
+.meta-grid::after {
+  content: "";
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .section {
@@ -219,27 +231,43 @@ body {
 
 .meta-card {
   display: flex;
-  gap: 10px;
+  gap: 0.5em;
   align-items: baseline;
+  position: relative;
   padding: 0;
   background: transparent;
   border: none;
   box-shadow: none;
 }
 
+.meta-card + .meta-card::before {
+  content: "・";
+  position: absolute;
+  top: 50%;
+  left: -1em;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.meta-card + .meta-card {
+  margin-left: 1em;
+}
+
 .meta-label {
   margin: 0;
   color: #f5e6b8;
-  font-size: 0.82rem;
-  letter-spacing: 0.12em;
+  font-size: 1.2rem;
+  letter-spacing: 0;
   text-transform: uppercase;
-  min-width: 4.5em;
+  min-width: 0;
 }
 
 .meta-value {
   margin: 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -385,7 +413,7 @@ body {
   }
 
   body {
-    padding: 18px 12px 32px;
+    padding: 70px 12px 32px;
   }
 
   .hero {
@@ -399,7 +427,20 @@ body {
   }
 
   .meta-grid {
-    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .meta-card {
+    gap: 0.5em;
+  }
+
+  .meta-label,
+  .meta-value {
+    font-size: 1rem;
+  }
+
+  .meta-card + .meta-card::before {
+    font-size: 1rem;
   }
 
   .title {
