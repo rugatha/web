@@ -19,6 +19,18 @@ body {
   margin: 0;
 }
 
+.home-d20 {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 2147483647;
+  width: 5%;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  user-select: none;
+}
+
 .page {
   width: min(1220px, 100%);
 }
@@ -1136,6 +1148,12 @@ body {
 @media (max-width: 560px) {
   body {
     padding-inline: 10px;
+  }
+
+  .home-d20 {
+    right: max(10px, env(safe-area-inset-right));
+    bottom: max(10px, env(safe-area-inset-bottom));
+    width: 10%;
   }
 
   .hub {
