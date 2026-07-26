@@ -124,7 +124,7 @@
     // Rugatha Plus
     "plus-c06": "plus-c06.jpg",
     "plus-c07": "plus-c07.png",
-    // Rugatha lite
+    // Rugatha Lite
     "lite-c06": "lite-c06.jpg",
     "lite-c07": "lite-c07.jpg",
     "lite-c08": "lite-c08.png",
@@ -133,7 +133,7 @@
     "lite-c11": "lite-c11.png",
     "lite-c12": "lite-c12.png",
     "lite-c13": "lite-c13.png",
-    // Rugatha WILDS
+    // Rugatha Wilds
     "wilds-c01": "wilds-c01.jpg",
     "wilds-c01-chpt01": "wilds-c01-chpt01.png",
     "wilds-c01-chpt02": "wilds-c01-chpt02.png",

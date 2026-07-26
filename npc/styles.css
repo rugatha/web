@@ -33,6 +33,19 @@ h1 {
   letter-spacing: 0.02em;
 }
 
+.timeline-link {
+  color: #b7e3c8;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 120ms ease, transform 120ms ease;
+}
+
+.timeline-link:hover, .timeline-link:focus-visible {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
 p.lead {
   margin: 0;
   color: var(--muted);

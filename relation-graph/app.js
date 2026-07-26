@@ -234,8 +234,8 @@ function getCampaignLabel(id) {
   const manual = {
     "rugatha-main": "Rugatha",
     plus: "Rugatha Plus",
-    lite: "Rugatha lite",
-    wilds: "Rugatha WILDS",
+    lite: "Rugatha Lite",
+    wilds: "Rugatha Wilds",
     brown: "Rugatha Brown",
     legends: "Rugatha Legends"
   };

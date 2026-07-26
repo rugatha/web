@@ -69,7 +69,7 @@
       nextSession: "團務完結 Campaign Ended"
     },
     {
-      name: "RUGATHA Plus",
+      name: "Rugatha Plus",
       tagline_en: "Through Lost Roads, Truth Hunts Back",
       tagline_zh: "穿越迷失之路，真相反獵而來",
       dates: "2022/7/23 ~ 2026/6/27",
@@ -80,7 +80,7 @@
       nextSession: "團務完結 Campaign Ended"
     },
     {
-      name: "Rugatha lite",
+      name: "Rugatha Lite",
       tagline_en: "Small Lights Against an Endless Night",
       tagline_zh: "小小光芒，對抗無盡長夜",
       dates: "2022/8/6 ~",
@@ -91,7 +91,7 @@
       nextSession: "2026/9"
     },
     {
-      name: "Rugatha WILDS",
+      name: "Rugatha Wilds",
       tagline_en: "Blood, Legacy, and the Call Beyond the Walls",
       tagline_zh: "鮮血、傳承，與牆外的呼喚",
       dates: "2024/3/16 ~",
@@ -197,10 +197,10 @@
       parent: "plus"
     },
 
-    // ===== Rugatha lite =====
+    // ===== Rugatha Lite =====
     {
       id: "lite",
-      label: "Rugatha lite",
+      label: "Rugatha Lite",
       level: 2,
       parent: "rugatha",
       extraParents: ["rugatha-main"]
@@ -269,8 +269,8 @@
       noChapters: true
     },
 
-    // ===== Rugatha WILDS =====
-    { id: "wilds", label: "Rugatha WILDS", level: 2, parent: "rugatha" },
+    // ===== Rugatha Wilds =====
+    { id: "wilds", label: "Rugatha Wilds", level: 2, parent: "rugatha" },
     {
       id: "wilds-c01",
       label: "The Elite Bloodline",

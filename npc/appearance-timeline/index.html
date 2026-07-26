@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NPC Appearance Timeline | Rugatha</title>
+  <meta name="description" content="Browse NPC appearances across every Rugatha campaign by in-world date.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/rugatha-favicon-32.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <link rel="stylesheet" href="timeline.css">
+  <script src="../../shared/language-toggle.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-topline">
+      <a class="back-link" href="../index.html">← <span data-i18n data-zh="返回 NPC 資料庫" data-en="Back to NPC database">返回 NPC 資料庫</span></a>
+      <div class="language-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
+      </div>
+    </div>
+    <a class="banner" href="../../index.html" aria-label="Rugatha">
+      <img src="../../assets/rugatha-banner.png" alt="Rugatha">
+    </a>
+    <div class="header-content">
+      <p class="eyebrow" data-i18n data-zh="RUGATHA / NPC ARCHIVE" data-en="RUGATHA / NPC ARCHIVE">RUGATHA / NPC ARCHIVE</p>
+      <h1 data-i18n data-zh="NPC 出場時間線" data-en="NPC Appearance Timeline">NPC 出場時間線</h1>
+      <p class="intro" data-i18n data-zh="建議旋轉成橫向閱讀" data-en="Rotate your device for landscape viewing">建議旋轉成橫向閱讀</p>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="filter-panel" aria-labelledby="filter-title">
+      <div class="filter-heading">
+        <div>
+          <h2 id="filter-title" data-i18n data-zh="依團務篩選" data-en="Filter by campaign">依團務篩選</h2>
+        </div>
+        <span id="result-count" class="result-count" aria-live="polite"></span>
+      </div>
+      <div id="campaign-filters" class="campaign-filters" role="group" aria-label="Campaign filters"></div>
+      <div class="filter-tools">
+        <label class="search-field">
+          <span class="sr-only" data-i18n data-zh="搜尋 NPC" data-en="Search NPCs">搜尋 NPC</span>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="npc-search" type="search" data-i18n-placeholder data-zh="搜尋 NPC 名稱" data-en="Search NPC name" placeholder="搜尋 NPC 名稱">
+        </label>
+        <button id="clear-filters" class="clear-button" type="button" data-i18n data-zh="恢復預設" data-en="Restore default">恢復預設</button>
+      </div>
+    </section>
+
+    <div id="timeline" class="timeline" aria-live="polite">
+      <div class="loading" data-i18n data-zh="時間線載入中…" data-en="Loading timeline…">時間線載入中…</div>
+    </div>
+  </main>
+
+  <template id="timeline-template">
+    <section class="timeline-section">
+      <div class="chart-scroll" tabindex="0">
+        <div class="gantt-chart">
+          <div class="gantt-header"></div>
+          <div class="gantt-body"></div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <script>
+    const defaultCampaigns = new Set(['rugatha', 'plus', 'lite', 'wilds', 'brown']);
+    const state = { characters: [], appearances: [], selectedCampaigns: new Set(defaultCampaigns), query: '', language: 'zh' };
+    const campaignMeta = {
+      rugatha: { name: 'Rugatha', zh: '主線團務', en: 'Main Campaign', color: '#9fe0ba', order: 1 },
+      plus: { name: 'Rugatha Plus', zh: '延伸團務', en: 'Extended Campaign', color: '#c8f9ff', order: 2 },
+      lite: { name: 'Rugatha Lite', zh: '輕量團務', en: 'Lite Campaign', color: '#ffe7a3', order: 3 },
+      wilds: { name: 'Rugatha Wilds', zh: '荒野團務', en: 'Wilds Campaign', color: '#c1e27a', order: 4 },
+      brown: { name: 'Rugatha Brown', zh: 'Brown 團務', en: 'Brown Campaign', color: '#ffc09f', order: 5 },
+      legends: { name: 'Rugatha Legends', zh: '傳奇特別篇', en: 'Legends', color: '#f6d185', order: 6 }
+    };
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+    const parseDates = (value) => {
+      const matches = [...String(value || '').matchAll(/\b(\d{4,5})\.(\d{1,2})\.(\d{1,2})\b/g)];
+      const makeDate = (year, month, day, label = `${year}.${month}.${day}`) => {
+        const adjustedYear = month <= 2 ? year - 1 : year;
+        const adjustedMonth = month <= 2 ? month + 12 : month;
+        const ordinal = 365 * adjustedYear + Math.floor(adjustedYear / 4) - Math.floor(adjustedYear / 100) + Math.floor(adjustedYear / 400) + Math.floor((153 * (adjustedMonth - 3) + 2) / 5) + day;
+        return { year, month, day, ordinal, label };
+      };
+      if (matches.length) {
+        return matches.map((match) => makeDate(Number(match[1]), Number(match[2]), Number(match[3])));
+      }
+      const yearOnly = String(value || '').trim().match(/^(\d{4,5})$/);
+      return yearOnly ? [makeDate(Number(yearOnly[1]), 1, 1, yearOnly[1])] : [];
+    };
+    const parseCsv = (text) => {
+      const rows = [];
+      let row = [];
+      let value = '';
+      let quoted = false;
+      for (let index = 0; index < text.length; index += 1) {
+        const character = text[index];
+        if (quoted) {
+          if (character === '"' && text[index + 1] === '"') {
+            value += '"';
+            index += 1;
+          } else if (character === '"') {
+            quoted = false;
+          } else {
+            value += character;
+          }
+        } else if (character === '"') {
+          quoted = true;
+        } else if (character === ',') {
+          row.push(value);
+          value = '';
+        } else if (character === '\n') {
+          row.push(value.replace(/\r$/, ''));
+          if (row.some((cell) => cell !== '')) rows.push(row);
+          row = [];
+          value = '';
+        } else {
+          value += character;
+        }
+      }
+      if (value || row.length) {
+        row.push(value.replace(/\r$/, ''));
+        if (row.some((cell) => cell !== '')) rows.push(row);
+      }
+      const headers = rows.shift()?.map((header) => header.trim()) || [];
+      return rows.map((cells) => Object.fromEntries(headers.map((header, index) => [header, (cells[index] || '').trim()])));
+    };
+    const buildAppearanceRecord = (row, charactersById, index) => {
+      const campaign = row.campaign?.toLowerCase();
+      const npcId = row.npc;
+      const order = Number(row.order);
+      if (!campaignMeta[campaign]) throw new Error(`CSV row ${index + 2}: unknown campaign "${row.campaign}"`);
+      if (!npcId) throw new Error(`CSV row ${index + 2}: missing npc`);
+      if (!Number.isInteger(order) || order < 1) throw new Error(`CSV row ${index + 2}: invalid order`);
+      const appearUnknown = row.appear?.toLowerCase() === 'unknown';
+      const leaveUnknown = row.leave?.toLowerCase() === 'unknown';
+      if (appearUnknown !== leaveUnknown) throw new Error(`CSV row ${index + 2}: Unknown must be set in both appear and leave`);
+      const appearDate = appearUnknown ? null : parseDates(row.appear)[0];
+      const leaveDate = !row.leave || leaveUnknown ? null : parseDates(row.leave)[0];
+      if (!appearUnknown && !appearDate) throw new Error(`CSV row ${index + 2}: invalid appear date`);
+      if (row.leave && !leaveUnknown && !leaveDate) throw new Error(`CSV row ${index + 2}: invalid leave date`);
+      if (appearDate && leaveDate && leaveDate.ordinal < appearDate.ordinal) throw new Error(`CSV row ${index + 2}: leave precedes appear`);
+      const npc = charactersById.get(npcId.toLowerCase()) || {
+        id: npcId,
+        nameEn: npcId.replaceAll('_', ' '),
+        nameZh: npcId.replaceAll('_', ' '),
+        url: '',
+        image: ''
+      };
+      return { campaign, npc, order, appearDate, leaveDate, unknown: appearUnknown };
+    };
+    const createCompressedScale = (dates) => {
+      const sorted = [...new Map(dates.map((date) => [date.ordinal, date])).values()].sort((a, b) => a.ordinal - b.ordinal);
+      if (sorted.length <= 1) {
+        return { dates: sorted, position: () => 50, breaks: [], totalUnits: 1 };
+      }
+      const positions = new Map([[sorted[0].ordinal, 0]]);
+      const breaks = [];
+      let cursor = 0;
+      sorted.slice(1).forEach((date, index) => {
+        const previous = sorted[index];
+        const rawGap = date.ordinal - previous.ordinal;
+        const displayGap = Math.min(Math.max(rawGap, 1), 4);
+        const start = cursor;
+        cursor += displayGap;
+        positions.set(date.ordinal, cursor);
+        if (rawGap > 4) {
+          breaks.push({ rawGap, value: start + displayGap / 2 });
+        }
+      });
+      return {
+        dates: sorted,
+        totalUnits: cursor,
+        position: (ordinal) => {
+          if (positions.has(ordinal)) return (positions.get(ordinal) / cursor) * 100;
+          const nextIndex = sorted.findIndex((date) => date.ordinal > ordinal);
+          if (nextIndex <= 0) return nextIndex === 0 ? 0 : 100;
+          const previous = sorted[nextIndex - 1];
+          const next = sorted[nextIndex];
+          const start = positions.get(previous.ordinal);
+          const end = positions.get(next.ordinal);
+          const ratio = (ordinal - previous.ordinal) / (next.ordinal - previous.ordinal);
+          return ((start + (end - start) * ratio) / cursor) * 100;
+        },
+        breaks: breaks.map((gap) => ({ ...gap, position: (gap.value / cursor) * 100 }))
+      };
+    };
+    const ordinalBounds = (row) => {
+      const starts = [
+        ...row.knownDates.map((date) => date.ordinal),
+        ...row.unknownRanges.map((range) => range.start.ordinal),
+        ...row.appearanceSegments.map((segment) => segment.start.ordinal)
+      ];
+      const ends = [
+        ...row.knownDates.map((date) => date.ordinal),
+        ...row.unknownRanges.map((range) => range.end.ordinal),
+        ...row.appearanceSegments.map((segment) => segment.end.ordinal)
+      ];
+      return {
+        first: starts.length ? Math.min(...starts) : Number.POSITIVE_INFINITY,
+        last: ends.length ? Math.max(...ends) : Number.NEGATIVE_INFINITY
+      };
+    };
+    const sortNpcRows = (a, b) => {
+      const aBounds = ordinalBounds(a);
+      const bBounds = ordinalBounds(b);
+      return aBounds.first - bBounds.first
+        || bBounds.last - aBounds.last
+        || (a.npc.nameEn || a.npc.id).localeCompare(b.npc.nameEn || b.npc.id, 'en', { sensitivity: 'base' });
+    };
+    const enableDragScroll = (scroller) => {
+      let pointerId = null;
+      let startX = 0;
+      let startScrollLeft = 0;
+      scroller.addEventListener('pointerdown', (event) => {
+        if (event.button !== 0 || event.target.closest('a, button, input')) return;
+        pointerId = event.pointerId;
+        startX = event.clientX;
+        startScrollLeft = scroller.scrollLeft;
+        scroller.setPointerCapture(pointerId);
+        scroller.classList.add('is-dragging');
+      });
+      scroller.addEventListener('pointermove', (event) => {
+        if (event.pointerId !== pointerId) return;
+        scroller.scrollLeft = startScrollLeft - (event.clientX - startX);
+      });
+      const stopDragging = (event) => {
+        if (event.pointerId !== pointerId) return;
+        pointerId = null;
+        scroller.classList.remove('is-dragging');
+      };
+      scroller.addEventListener('pointerup', stopDragging);
+      scroller.addEventListener('pointercancel', stopDragging);
+    };
+
+    function textFor(zh, en) { return state.language === 'en' ? en : zh; }
+    function updateCount(dates, npcs) {
+      $('#result-count').textContent = state.language === 'en' ? `${npcs} NPCs · ${dates} dates` : `${npcs} 名 NPC · ${dates} 個日期`;
+    }
+    function updateLanguage(lang) {
+      state.language = lang === 'en' ? 'en' : 'zh';
+      document.documentElement.lang = state.language === 'en' ? 'en' : 'zh-Hant';
+      $$('.language-toggle button').forEach((button) => {
+        button.dataset.lang = state.language;
+        button.setAttribute('aria-label', state.language === 'en' ? 'Current language: English' : '目前語言：中文');
+        window.RugathaLanguageToggle?.setButtonIcon(button, state.language);
+      });
+      $$('[data-i18n]').forEach((el) => { el.textContent = el.dataset[state.language] || el.textContent; });
+      $$('[data-i18n-placeholder]').forEach((el) => { el.placeholder = el.dataset[state.language] || el.placeholder; });
+      document.title = state.language === 'en' ? 'NPC Appearance Timeline | Rugatha' : 'NPC 出場時間線 | Rugatha';
+      renderFilters();
+      renderTimeline();
+      try { localStorage.setItem('npc-timeline-lang', state.language); } catch (_) {}
+    }
+
+    function renderFilters() {
+      const campaigns = [...new Set(state.appearances.map((item) => item.campaign))]
+        .sort((a, b) => (campaignMeta[a]?.order || 99) - (campaignMeta[b]?.order || 99));
+      const container = $('#campaign-filters');
+      container.innerHTML = '';
+      const allSelected = campaigns.length > 0 && campaigns.every((campaign) => state.selectedCampaigns.has(campaign));
+      const allButton = document.createElement('button');
+      allButton.className = 'campaign-filter';
+      allButton.dataset.campaign = 'all';
+      allButton.setAttribute('aria-pressed', allSelected);
+      allButton.textContent = textFor('全部 Campaign', 'All campaigns');
+      container.append(allButton);
+      campaigns.forEach((id) => {
+        const meta = campaignMeta[id] || { name: id, color: '#b7c9c1', zh: id, en: id };
+        const button = document.createElement('button');
+        button.className = 'campaign-filter';
+        button.dataset.campaign = id;
+        button.style.setProperty('--campaign-color', meta.color);
+        button.setAttribute('aria-pressed', state.selectedCampaigns.has(id));
+        button.innerHTML = `<span class="filter-dot" aria-hidden="true"></span>${meta.name}`;
+        container.append(button);
+      });
+    }
+
+    function renderTimeline() {
+      const container = $('#timeline');
+      const query = state.query.trim().toLowerCase();
+      const filtered = state.appearances.filter((item) => state.selectedCampaigns.has(item.campaign));
+      container.innerHTML = '';
+      if (!filtered.length) {
+        container.innerHTML = `<div class="empty-state"><span>✦</span><h2>${textFor('找不到符合條件的出場紀錄', 'No appearances match your filters')}</h2><p>${textFor('試著選擇其他 Campaign 或清除搜尋。', 'Try another campaign or clear the search.')}</p></div>`;
+        updateCount(0, 0);
+        return;
+      }
+      const rows = new Map();
+      filtered.forEach((record) => {
+        const key = record.npc.id.toLowerCase();
+        if (!rows.has(key)) rows.set(key, { npc: record.npc, events: [] });
+        rows.get(key).events.push(record);
+      });
+      const allRowModels = [...rows.values()].map(({ npc, events }) => {
+        events.sort((a, b) => a.order - b.order);
+        const knownDates = [...new Map(events.flatMap((event) => [
+          event.appearDate ? [`${event.campaign}:${event.appearDate.ordinal}`, { ...event.appearDate, campaign: event.campaign }] : null,
+          event.leaveDate ? [`${event.campaign}:${event.leaveDate.ordinal}`, { ...event.leaveDate, campaign: event.campaign }] : null
+        ].filter(Boolean))).values()]
+          .sort((a, b) => a.ordinal - b.ordinal);
+        const appearanceSegments = events
+          .filter((event) => event.appearDate)
+          .map((event) => ({
+            start: event.appearDate,
+            end: event.leaveDate || event.appearDate,
+            campaign: event.campaign,
+            order: event.order,
+            singleDay: !event.leaveDate
+          }));
+        const unknownRecords = events.filter((event) => event.unknown);
+        const unknownOnly = unknownRecords.length > 0;
+        const campaigns = new Set(events.map((event) => event.campaign));
+        return { npc, knownDates, appearanceSegments, unknownRanges: [], unknownRecords, unknownOnly, campaigns };
+      });
+      const rowModels = allRowModels
+        .filter(({ npc }) => !query || `${npc.nameEn} ${npc.nameZh} ${npc.id}`.toLowerCase().includes(query))
+        .sort(sortNpcRows);
+      if (!rowModels.length) {
+        container.innerHTML = `<div class="empty-state"><span>✦</span><h2>${textFor('找不到符合條件的 NPC', 'No NPCs match your search')}</h2><p>${textFor('請清除搜尋或輸入其他名稱。', 'Clear the search or try another name.')}</p></div>`;
+        updateCount(0, 0);
+        return;
+      }
+      const visibleCampaigns = new Set(query
+        ? rowModels.flatMap((row) => [...row.campaigns])
+        : filtered.map((record) => record.campaign));
+      const timelineRecords = filtered.filter((record) => visibleCampaigns.has(record.campaign));
+      const campaignRanges = [...visibleCampaigns]
+        .map((campaign) => {
+          const dates = timelineRecords
+            .filter((record) => record.campaign === campaign)
+            .flatMap((record) => [record.appearDate, record.leaveDate].filter(Boolean));
+          const sorted = [...new Map(dates.map((date) => [date.ordinal, date])).values()].sort((a, b) => a.ordinal - b.ordinal);
+          return { campaign, start: sorted[0], end: sorted.at(-1) };
+        })
+        .filter((range) => range.start && range.end)
+        .sort((a, b) => (campaignMeta[a.campaign]?.order || 99) - (campaignMeta[b.campaign]?.order || 99));
+      const allKnownDates = timelineRecords.flatMap((record) => [record.appearDate, record.leaveDate].filter(Boolean));
+      const uniqueKnownDates = [...new Map(allKnownDates.map((date) => [date.ordinal, date])).values()].sort((a, b) => a.ordinal - b.ordinal);
+      const hasUnknownOnly = rowModels.some((row) => row.unknownOnly);
+      const scale = createCompressedScale(uniqueKnownDates);
+      const trackWidth = Math.max(1000, Math.ceil(scale.totalUnits * 34));
+      const template = $('#timeline-template');
+      const section = template.content.cloneNode(true);
+      const wrapper = $('.timeline-section', section);
+      wrapper.classList.toggle('has-unknown', hasUnknownOnly);
+      $('.gantt-chart', section).style.setProperty('--track-width', `${trackWidth}px`);
+      $('.chart-scroll', section).setAttribute('aria-label', textFor('NPC 出場時間軸，可左右拖曳瀏覽', 'NPC appearance timeline; drag horizontally to explore'));
+      const header = $('.gantt-header', section);
+      header.style.setProperty('--campaign-lanes', campaignRanges.length);
+      const campaignBars = campaignRanges.map(({ campaign, start, end }, index) => {
+        const meta = campaignMeta[campaign] || { name: campaign, color: '#b7c9c1' };
+        const left = scale.position(start.ordinal);
+        const right = scale.position(end.ordinal);
+        return `<span class="campaign-range" style="--campaign-color:${meta.color};left:${left}%;width:${Math.max(0, right - left)}%;top:${8 + index * 25}px" title="${meta.name} · ${start.label}–${end.label}"><b>${meta.name}</b><i></i></span>`;
+      }).join('');
+      header.innerHTML = `<div class="gantt-corner">${textFor('NPC', 'NPC')}</div><div class="continuous-axis"><div class="known-axis"><div class="campaign-overview">${campaignBars}</div><span class="axis-rule"></span>${scale.breaks.map((gap) => `<span class="axis-break" style="left:${gap.position}%" title="${textFor(`此處壓縮 ${gap.rawGap} 天空白時間`, `${gap.rawGap} inactive days compressed`)}">//</span>`).join('')}${scale.dates.map((date) => `<time class="axis-tick" style="left:${scale.position(date.ordinal)}%"><i></i><span>${date.label}</span></time>`).join('')}</div>${hasUnknownOnly ? `<div class="unknown-axis"><span>${textFor('日期未定', 'Date Unknown')}</span></div>` : ''}</div>`;
+      const body = $('.gantt-body', section);
+      rowModels.forEach(({ npc, knownDates, appearanceSegments, unknownRanges, unknownRecords, unknownOnly }) => {
+          const row = document.createElement('div');
+          row.className = 'gantt-row';
+          const name = state.language === 'en' ? npc.nameEn : npc.nameZh;
+          const avatar = npc.image ? `<img src="../${npc.image}" alt="" loading="lazy">` : '<span class="npc-initial" aria-hidden="true">?</span>';
+          const label = npc.url ? `<a href="${npc.url.startsWith('npc/') ? `../../${npc.url}` : `../${npc.url}`}" target="_blank" rel="noopener">${avatar}<span>${name}</span></a>` : `<span>${avatar}<span>${name}</span></span>`;
+          const segments = appearanceSegments.map((segment) => {
+            const left = scale.position(segment.start.ordinal);
+            const right = scale.position(segment.end.ordinal);
+            const meta = campaignMeta[segment.campaign] || { name: segment.campaign, color: '#b7c9c1' };
+            const dateLabel = segment.singleDay ? segment.start.label : `${segment.start.label}–${segment.end.label}`;
+            return `<span class="appearance-bar${segment.singleDay ? ' is-single-day' : ''}" style="--campaign-color:${meta.color};left:${left}%;width:${Math.max(0, right - left)}%" title="${name} · ${meta.name} · #${segment.order} · ${dateLabel}"></span>`;
+          }).join('');
+          const ranges = unknownRanges.map((range) => {
+            const left = scale.position(range.start.ordinal);
+            const right = scale.position(range.end.ordinal);
+            const meta = campaignMeta[range.campaign] || { name: range.campaign, color: '#b7c9c1' };
+            return `<span class="unknown-range" style="--campaign-color:${meta.color};left:${left}%;width:${Math.max(0, right - left)}%" title="${name} · ${meta.name} · ${textFor('日期未知區間', 'Unknown-date interval')}"></span>`;
+          }).join('');
+          const unknownMarkers = unknownRecords.map((record) => {
+            const meta = campaignMeta[record.campaign] || { name: record.campaign, color: '#b7c9c1' };
+            return `<span class="unknown-only-marker" style="--campaign-color:${meta.color}" title="${name} · ${meta.name} · #${record.order} · ${textFor('日期未定', 'Date Unknown')}"></span>`;
+          }).join('');
+          row.innerHTML = `<div class="gantt-label">${label}</div><div class="row-track"><div class="known-track">${segments}${ranges}</div>${unknownMarkers}</div>`;
+          body.append(row);
+      });
+      container.append(section);
+      enableDragScroll($('.chart-scroll', container));
+      updateCount(uniqueKnownDates.length, rowModels.length);
+    }
+
+    async function loadData() {
+      const [charactersResponse, appearanceCsvResponse] = await Promise.all([
+        fetch('../data/characters.json'),
+        fetch('appearance-data.csv', { cache: 'no-store' })
+      ]);
+      if (!charactersResponse.ok || !appearanceCsvResponse.ok) throw new Error('Unable to load timeline data');
+      const characters = await charactersResponse.json();
+      const appearanceRows = parseCsv(await appearanceCsvResponse.text());
+      const requiredHeaders = ['campaign', 'npc', 'order', 'appear', 'leave'];
+      if (!appearanceRows.length || requiredHeaders.some((header) => !(header in appearanceRows[0]))) {
+        throw new Error(`CSV must include: ${requiredHeaders.join(', ')}`);
+      }
+      const charactersById = new Map(characters.map((character) => [character.id.toLowerCase(), character]));
+      state.characters = characters;
+      state.appearances = appearanceRows
+        .map((row, index) => buildAppearanceRecord(row, charactersById, index))
+        .sort((a, b) => a.npc.id.localeCompare(b.npc.id, 'en', { sensitivity: 'base' }) || a.order - b.order);
+      renderFilters();
+      renderTimeline();
+    }
+
+    $('#campaign-filters').addEventListener('click', (event) => {
+      const button = event.target.closest('.campaign-filter');
+      if (!button) return;
+      const campaign = button.dataset.campaign;
+      if (campaign === 'all') {
+        const availableCampaigns = [...new Set(state.appearances.map((item) => item.campaign))];
+        const allSelected = availableCampaigns.every((id) => state.selectedCampaigns.has(id));
+        state.selectedCampaigns = allSelected ? new Set() : new Set(availableCampaigns);
+      } else if (state.selectedCampaigns.has(campaign)) {
+        state.selectedCampaigns.delete(campaign);
+      } else {
+        state.selectedCampaigns.add(campaign);
+      }
+      renderFilters(); renderTimeline();
+    });
+    $('#npc-search').addEventListener('input', (event) => { state.query = event.target.value; renderTimeline(); });
+    $('#clear-filters').addEventListener('click', () => {
+      state.selectedCampaigns = new Set(defaultCampaigns);
+      state.query = '';
+      $('#npc-search').value = '';
+      renderFilters();
+      renderTimeline();
+    });
+    $$('.language-toggle button').forEach((button) => button.addEventListener('click', () => updateLanguage(state.language === 'en' ? 'zh' : 'en')));
+    try { state.language = localStorage.getItem('npc-timeline-lang') === 'en' ? 'en' : 'zh'; } catch (_) {}
+    loadData().catch(() => { $('#timeline').innerHTML = `<div class="empty-state"><span>!</span><h2>${textFor('資料載入失敗', 'Unable to load timeline')}</h2><p>${textFor('請稍後再試。', 'Please try again later.')}</p></div>`; });
+  </script>
+</body>
+</html>
