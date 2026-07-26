@@ -242,6 +242,7 @@
     relatedGuestTitle: { zh: "客串玩家", en: "Guest Players" },
     relatedTitle: { zh: "登場NPC", en: "NPCs" },
     chaptersTitle: { zh: "章節", en: "Chapters" },
+    storyArcsTitle: { zh: "故事線", en: "Story Arcs" },
     storyArcBadge: { zh: "故事弧", en: "Story Arc" },
     pcMetaSeparator: { zh: "｜", en: " | " }
   };
@@ -424,6 +425,13 @@
     heading.textContent = i18n.chaptersTitle[languageState.value];
   };
 
+  const updateCampaignStoryArcsHeading = () => {
+    if (isArcPage || isChapterPage) return;
+    const heading = document.querySelector(".campaign-detail__chapters h2");
+    if (!heading) return;
+    heading.textContent = i18n.storyArcsTitle[languageState.value];
+  };
+
   const updateStoryArcBadge = () => {
     if (!isArcPage) return;
     const badge = document.querySelector(".campaign-detail.arc-detail .campaign-detail__badge");
@@ -458,7 +466,9 @@
             ? "./lite-c05/"
             : ch.url || `./${ch.id}/`;
       const fallbackTitle = ch.title || ch.label || ch.id;
-      const displayTitle = getLocalizedChapterTitle(ch.id, fallbackTitle);
+      const displayTitle = isLevel4
+        ? getLocalizedChapterTitle(ch.id, fallbackTitle)
+        : getLocalizedArcTitle(ch.id, fallbackTitle);
       const title = document.createElement("a");
       title.href = resolvePath(arcHref);
       title.target = "_self";
@@ -789,6 +799,7 @@
     updateChapterArcTagline();
     updateStoryArcBadge();
     updateArcChaptersHeading();
+    updateCampaignStoryArcsHeading();
     updateChapterContentLanguage();
     renderChapterList();
     renderRelatedPcSection();
@@ -803,7 +814,6 @@
   };
 
   const ensureLanguageToggle = () => {
-    if (!isChapterPage && !isArcPage) return;
     const container = document.querySelector(".detail-canvas") || document.querySelector(".page");
     if (!container) return;
 
@@ -1101,6 +1111,7 @@
   setupHeroDrift();
   updateStoryArcBadge();
   updateArcChaptersHeading();
+  updateCampaignStoryArcsHeading();
   renderRelatedPcs();
   renderRelatedGuests();
   renderRelatedNpcs();
@@ -1113,6 +1124,7 @@
     arcTitleState.map = map;
     updateArcTitle();
     updateChapterArcTagline();
+    renderChapterList();
   });
 
 })();

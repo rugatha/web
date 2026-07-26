@@ -60,6 +60,12 @@
     if (!container || !entry || !entry.content) return;
 
     const fragment = document.createDocumentFragment();
+    if (!container.dataset.hideEntryDate && typeof entry.date === "string" && entry.date.trim()) {
+      const date = document.createElement("p");
+      date.className = "chapter-date";
+      date.textContent = entry.date;
+      fragment.appendChild(date);
+    }
     const renderParagraphItem = (item, target) => {
       if (typeof item === "string") {
         const p = document.createElement("p");
