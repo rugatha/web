@@ -55,7 +55,18 @@ const randomDestinations = loadRandomDestinations().catch((error) => {
   return [];
 });
 
+const trackD20Click = () => {
+  if (typeof window.gtag !== "function") return;
+
+  window.gtag("event", "d20_click", {
+    button_location: "homepage",
+    button_asset: "d20.png"
+  });
+};
+
 const navigateToRandomLeafPage = async () => {
+  trackD20Click();
+
   const destinations = await randomDestinations;
   if (!destinations.length) return;
 

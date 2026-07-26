@@ -1,5 +1,24 @@
 const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
 const loginHidden = false;
+const LOGIN_PENDING_KEY = "rugatha-ga-login-pending";
+
+const markLoginPending = () => {
+  try {
+    sessionStorage.setItem(LOGIN_PENDING_KEY, "1");
+  } catch (error) {}
+};
+
+const trackSuccessfulLogin = (method = "google") => {
+  let pending = false;
+  try {
+    pending = sessionStorage.getItem(LOGIN_PENDING_KEY) === "1";
+    if (pending) sessionStorage.removeItem(LOGIN_PENDING_KEY);
+  } catch (error) {}
+  if (!pending || typeof window.gtag !== "function") return;
+
+  window.gtag("event", "login", { method });
+};
+
 const isLikelyInAppBrowser = () => {
   const ua = navigator.userAgent || "";
   return /(FBAN|FBAV|Instagram|Line|TikTok|Twitter|WeChat|QQ|Weibo|WebView|wv)/i.test(
@@ -233,6 +252,7 @@ const setupAuth = async () => {
     loginButton.disabled = false;
     loginButton.removeAttribute("aria-disabled");
     loginButton.addEventListener("click", () => {
+      markLoginPending();
       window.location.href = handlerUrl;
     });
     logoutButton.disabled = true;
@@ -257,6 +277,7 @@ const setupAuth = async () => {
     loginButton.disabled = false;
     loginButton.removeAttribute("aria-disabled");
     loginButton.addEventListener("click", () => {
+      markLoginPending();
       window.location.href = handlerUrl;
     });
     logoutButton.disabled = true;
@@ -628,6 +649,7 @@ const setupAuth = async () => {
   };
 
   loginButton.addEventListener("click", async () => {
+    markLoginPending();
     const fallbackToHandler = () => {
       window.location.href = buildGoogleHandlerUrl(firebaseConfig.apiKey);
     };
@@ -680,6 +702,7 @@ const setupAuth = async () => {
     if (user) {
       authResolved = true;
       signedIn = true;
+      trackSuccessfulLogin();
       showAuthStatus(`Auth: signed in (${user.uid})`);
       setSignedIn(user);
       resolveMemberId(user).then((resolved) => {
@@ -700,6 +723,7 @@ const setupAuth = async () => {
       if (result?.user) {
         authResolved = true;
         signedIn = true;
+        trackSuccessfulLogin();
         showAuthStatus(`Auth: redirect user (${result.user.uid})`);
         setSignedIn(result.user);
         resolveMemberId(result.user).then((resolved) => {
