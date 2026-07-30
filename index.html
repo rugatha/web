@@ -31,7 +31,7 @@
 <link rel="icon" type="image/png" href="assets/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/rugatha-favicon-32.png">
   <link rel="stylesheet" href="shared/styles/theme.css">
-  <link rel="stylesheet" href="styles/home.css?v=mobile-logo-150-20260721">
+  <link rel="stylesheet" href="styles/home.css?v=calendar-logo-scale-20260730">
   <style>
     .auth-entry {
       position: static;
@@ -369,6 +369,7 @@
                 note: event.note || "",
                 accent: resolveCategoryAccent(event.category || "Event"),
                 image: event.image || "",
+                isTransparent: event.isTransparent === true,
                 deadline: isDeadlineEvent(event.deadline)
               };
             })
@@ -415,6 +416,9 @@
           const tagStyle = item.accent ? ` style="--schedule-accent: ${item.accent};"` : "";
           const cardClasses = ["schedule-card"];
           if (item.image) cardClasses.push("schedule-card--with-image");
+          if (item.isTransparent) {
+            cardClasses.push("schedule-card--campaign-logo");
+          }
           if (item.deadline) cardClasses.push("schedule-card--deadline");
           const media = item.image
             ? `

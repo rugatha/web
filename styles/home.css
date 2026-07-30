@@ -329,6 +329,12 @@ body {
   mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 56%, rgba(0, 0, 0, 0) 100%);
 }
 
+.schedule-card--campaign-logo .schedule-card__image {
+  object-fit: contain;
+  object-position: center;
+  transform: translateY(-4%) scale(2.1);
+}
+
 .schedule-card__deadline-badge {
   display: inline-flex;
   align-items: center;
