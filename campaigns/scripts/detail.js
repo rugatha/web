@@ -56,6 +56,8 @@
   const isChapterPage = /^chpt/i.test(lastSegment);
   const isNestedPage = Boolean(slugSegment);
   const isArcPage = !isChapterPage && Boolean(arcSegment);
+  const isCampaignOverviewPage = !isChapterPage && !isArcPage && Boolean(slugSegment);
+  document.body.classList.toggle("campaign-overview-page", isCampaignOverviewPage);
   const imageBannerBase = isArcPage || isNestedPage ? campaignBannerBase : campaignBannerBase;
   const chapterImageMap = {
     // Rugatha main

@@ -90,9 +90,23 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
-  background: #0f1618;
+  border-radius: 0;
+  background: transparent;
   object-fit: contain;
+}
+
+.campaign-overview-page .campaign-detail__media {
+  align-items: center;
+  overflow: visible;
+}
+
+.campaign-overview-page .campaign-detail__media img {
+  transform: scale(2);
+  transform-origin: center;
+}
+
+.campaign-overview-page[data-campaign="rugatha"] .campaign-detail__media img {
+  transform: scale(0.92);
 }
 
 .campaign-detail__content,

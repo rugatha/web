@@ -7,7 +7,7 @@ const grid = document.querySelector("#campaign-grid");
 const filter = document.body.dataset.campaignFilter || "all";
 const languageToggleButtons = Array.from(document.querySelectorAll("[data-lang-option]"));
 const campaignGroups = {
-  active: new Set(["rugatha lite", "rugatha wilds", "rugatha legends"]),
+  active: new Set(["rugatha lite", "rugatha wilds", "rugatha veil", "rugatha prosper", "rugatha legends"]),
   closed: new Set(["rugatha", "rugatha plus", "rugatha brown"])
 };
 const i18n = {
@@ -93,9 +93,19 @@ const buildCard = (item) => {
     href.startsWith(window.RUGATHA_CAMPAIGNS_BASE);
   const card = document.createElement("a");
   card.className = "card";
+  if ((item.name || "").toLowerCase() === "rugatha") {
+    card.classList.add("card--rugatha");
+  }
   card.href = href || "#";
   card.target = isInternal ? "_self" : "_blank";
   card.rel = isInternal ? "" : "noreferrer noopener";
+  if (!href) {
+    card.classList.add("card--unlinked");
+    card.removeAttribute("target");
+    card.removeAttribute("rel");
+    card.setAttribute("aria-disabled", "true");
+    card.addEventListener("click", (event) => event.preventDefault());
+  }
   const accent = item.accent || "#7bdcb5";
   card.style.setProperty("--accent", accent);
   card.style.setProperty("--accent-soft", toRgba(accent, 0.22));
@@ -103,21 +113,20 @@ const buildCard = (item) => {
   const taglineEn = getTagline(item, "en");
 
   card.innerHTML = `
-    <span class="card__glow"></span>
-    <div class="card__media">
-      <img src="${item.image}" alt="${item.name} logo" loading="lazy" />
-    </div>
-    <div class="card__info">
-      <span class="card__title">${item.name}</span>
-    </div>
-    <div class="card__details">
-      <div class="card__session">
-        <div class="card__session-label" data-i18n="sessionLabel">${i18n[currentLanguage].sessionLabel}</div>
-        <div class="card__session-time">${item.nextSession || "TBD"}</div>
+    <div class="card__container">
+      <img class="card__logo" src="${item.image}" alt="${item.name} logo" loading="lazy" />
+      <div class="card__info">
+        <span class="card__title">${item.name}</span>
       </div>
-      <div class="card__details-text">
-        <p class="card__tagline" data-i18n="tagline" data-tagline-zh="${escapeAttr(taglineZh)}" data-tagline-en="${escapeAttr(taglineEn)}">${getTagline(item)}</p>
-        <p class="card__meta">${item.dates}</p>
+      <div class="card__details">
+        <div class="card__session">
+          <div class="card__session-label" data-i18n="sessionLabel">${i18n[currentLanguage].sessionLabel}</div>
+          <div class="card__session-time">${item.nextSession || "TBD"}</div>
+        </div>
+        <div class="card__details-text">
+          <p class="card__tagline" data-i18n="tagline" data-tagline-zh="${escapeAttr(taglineZh)}" data-tagline-en="${escapeAttr(taglineEn)}">${getTagline(item)}</p>
+          <p class="card__meta">${item.dates}</p>
+        </div>
       </div>
     </div>
   `;

@@ -54,7 +54,8 @@
   global.RUGATHA_CAMPAIGNS_BASE = campaignsBase;
   global.RUGATHA_RESOLVE = resolveInternalPath;
 
-  const campaignLogo = (fileName) => new URL(`campaign-logos/${fileName}`, campaignsBase).href;
+  const campaignPng = (fileName) => new URL(`../assets/campaign_logo/${fileName}`, campaignsBase).href;
+  const rugathaIcon = new URL("../assets/rugatha-icon.png", campaignsBase).href;
 
   const campaigns = [
     {
@@ -64,8 +65,8 @@
       dates: "2021/5/22 ~ 2022/7/16",
       link: "https://rugatha.com/campaigns/",
       page: "./pages/rugatha/index.html",
-      image: campaignLogo("rugatha-logo.jpg"),
-      accent: "#9fe0ba",
+      image: rugathaIcon,
+      accent: "#E3D0AB",
       nextSession: "團務完結 Campaign Ended"
     },
     {
@@ -75,8 +76,8 @@
       dates: "2022/7/23 ~ 2026/6/27",
       link: "https://rugatha.com/rugatha-plus/",
       page: "./pages/rugatha-plus/index.html",
-      image: campaignLogo("rugatha-plus-logo.jpg"),
-      accent: "#c8f9ff",
+      image: campaignPng("logo_RPlus.png"),
+      accent: "	#E3D8D3",
       nextSession: "團務完結 Campaign Ended"
     },
     {
@@ -86,9 +87,9 @@
       dates: "2022/8/6 ~",
       link: "https://rugatha.com/rugatha-lite/",
       page: "./pages/rugatha-lite/index.html",
-      image: campaignLogo("rugatha-light-logo.jpg"),
-      accent: "#ffe7a3",
-      nextSession: "2026/9"
+      image: campaignPng("logo_RLite.png"),
+      accent: "#DDDDD3",
+      nextSession: "2026/9/5"
     },
     {
       name: "Rugatha Wilds",
@@ -97,9 +98,31 @@
       dates: "2024/3/16 ~",
       link: "https://rugatha.com/rugatha-wilds/",
       page: "./pages/rugatha-wilds/index.html",
-      image: campaignLogo("rugatha-wilds-logo.jpg"),
-      accent: "#c1e27a",
-      nextSession: "2026/7/11"
+      image: campaignPng("logo_RWilds.png"),
+      accent: "#DCE3E7",
+      nextSession: "2026/8/22"
+    },
+    {
+      name: "Rugatha Veil",
+      tagline_en: "Rugatha Veil",
+      tagline_zh: "Rugatha Veil",
+      dates: "2027/1/1 ~",
+      link: "Beyond the Veil, Nothing Is What It Seems",
+      page: "揭開帷幕之後，一切皆非所見",
+      image: campaignPng("logo_RVeil.png"),
+      accent: "#E3D0AB",
+      nextSession: "2026/8/23"
+    },
+    {
+      name: "Rugatha Prosper",
+      tagline_en: "Rugatha Prosper",
+      tagline_zh: "Rugatha Prosper",
+      dates: "2027/1/1 ~",
+      link: "Gold, Choice, and the Roar of Dragons",
+      page: "黃金、抉擇，與巨龍的咆哮",
+      image: campaignPng("logo_RProsper.png"),
+      accent: "#E5BC48",
+      nextSession: "2026/8/30"
     },
     {
       name: "Rugatha Brown",
@@ -108,8 +131,8 @@
       dates: "2022/11/7 ~ 2023/3/14",
       link: "https://rugatha.com/rugatha-brown/",
       page: "./pages/rugatha-brown/index.html",
-      image: campaignLogo("rugatha-brown-logo.jpg"),
-      accent: "#ffc09f",
+      image: campaignPng("logo_RBrown.png"),
+      accent: "#C69C6D",
       nextSession: "團務完結 Campaign Ended"
     },
     {
@@ -119,8 +142,8 @@
       dates: "2022/2/7 ~",
       link: "https://rugatha.com/rugatha-legends/",
       page: "./pages/rugatha-legends/index.html",
-      image: campaignLogo("rugatha-legends-logo.jpg"),
-      accent: "#f6d185",
+      image: campaignPng("logo_RLegends.png"),
+      accent: "#A7A680",
       nextSession: "未訂 TBD"
     }
   ];
