@@ -51,6 +51,9 @@ const setLanguage = (language) => {
   document.querySelectorAll("[data-i18n='tagline']").forEach((el) => {
     el.textContent = language === "en" ? el.dataset.taglineEn || "" : el.dataset.taglineZh || "";
   });
+  document.querySelectorAll("[data-i18n='sessionValue']").forEach((el) => {
+    el.textContent = language === "en" ? el.dataset.sessionEn || "TBD" : el.dataset.sessionZh || "TBD";
+  });
   try {
     localStorage.setItem("rugathaCampaignLanguage", language);
   } catch (_) {}
@@ -72,6 +75,11 @@ const toRgba = (hex, alpha = 0.22) => {
 const getTagline = (item, language = currentLanguage) => {
   if (language === "en") return item.tagline_en || item.tagline || item.tagline_zh || "";
   return item.tagline_zh || item.tagline || item.tagline_en || "";
+};
+
+const getSession = (item, language = currentLanguage) => {
+  if (language === "en") return item.nextSession_en || item.nextSession || "TBD";
+  return item.nextSession_zh || item.nextSession || "TBD";
 };
 
 const escapeAttr = (value) =>
@@ -111,6 +119,8 @@ const buildCard = (item) => {
   card.style.setProperty("--accent-soft", toRgba(accent, 0.22));
   const taglineZh = getTagline(item, "zh");
   const taglineEn = getTagline(item, "en");
+  const sessionZh = getSession(item, "zh");
+  const sessionEn = getSession(item, "en");
 
   card.innerHTML = `
     <div class="card__container">
@@ -121,7 +131,7 @@ const buildCard = (item) => {
       <div class="card__details">
         <div class="card__session">
           <div class="card__session-label" data-i18n="sessionLabel">${i18n[currentLanguage].sessionLabel}</div>
-          <div class="card__session-time">${item.nextSession || "TBD"}</div>
+          <div class="card__session-time" data-i18n="sessionValue" data-session-zh="${escapeAttr(sessionZh)}" data-session-en="${escapeAttr(sessionEn)}">${escapeAttr(getSession(item))}</div>
         </div>
         <div class="card__details-text">
           <p class="card__tagline" data-i18n="tagline" data-tagline-zh="${escapeAttr(taglineZh)}" data-tagline-en="${escapeAttr(taglineEn)}">${getTagline(item)}</p>

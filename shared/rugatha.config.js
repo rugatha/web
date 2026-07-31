@@ -67,7 +67,8 @@
       page: "./pages/rugatha/index.html",
       image: rugathaIcon,
       accent: "#E3D0AB",
-      nextSession: "團務完結 Campaign Ended"
+      nextSession_zh: "團務完結",
+      nextSession_en: "Campaign Ended"
     },
     {
       name: "Rugatha Plus",
@@ -78,7 +79,8 @@
       page: "./pages/rugatha-plus/index.html",
       image: campaignPng("logo_RPlus.png"),
       accent: "	#E3D8D3",
-      nextSession: "團務完結 Campaign Ended"
+      nextSession_zh: "團務完結",
+      nextSession_en: "Campaign Ended"
     },
     {
       name: "Rugatha Lite",
@@ -133,7 +135,8 @@
       page: "./pages/rugatha-brown/index.html",
       image: campaignPng("logo_RBrown.png"),
       accent: "#C69C6D",
-      nextSession: "團務完結 Campaign Ended"
+      nextSession_zh: "團務完結",
+      nextSession_en: "Campaign Ended"
     },
     {
       name: "Rugatha Legends",
