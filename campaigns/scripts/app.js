@@ -78,8 +78,8 @@ const getTagline = (item, language = currentLanguage) => {
 };
 
 const getSession = (item, language = currentLanguage) => {
-  if (language === "en") return item.nextSession_en || item.nextSession || "TBD";
-  return item.nextSession_zh || item.nextSession || "TBD";
+  if (language === "en") return item.nextSession_en || "TBD";
+  return item.nextSession_zh || "TBD";
 };
 
 const escapeAttr = (value) =>

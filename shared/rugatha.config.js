@@ -63,7 +63,6 @@
       tagline_en: "When Heroes and Villains Wake, Gods Tremble",
       tagline_zh: "當英雄與反派甦醒，眾神震顫",
       dates: "2021/5/22 ~ 2022/7/16",
-      link: "https://rugatha.com/campaigns/",
       page: "./pages/rugatha/index.html",
       image: rugathaIcon,
       accent: "#E3D0AB",
@@ -75,7 +74,6 @@
       tagline_en: "Through Lost Roads, Truth Hunts Back",
       tagline_zh: "穿越迷失之路，真相反獵而來",
       dates: "2022/7/23 ~ 2026/6/27",
-      link: "https://rugatha.com/rugatha-plus/",
       page: "./pages/rugatha-plus/index.html",
       image: campaignPng("logo_RPlus.png"),
       accent: "	#E3D8D3",
@@ -87,51 +85,50 @@
       tagline_en: "Small Lights Against an Endless Night",
       tagline_zh: "小小光芒，對抗無盡長夜",
       dates: "2022/8/6 ~",
-      link: "https://rugatha.com/rugatha-lite/",
       page: "./pages/rugatha-lite/index.html",
       image: campaignPng("logo_RLite.png"),
       accent: "#DDDDD3",
-      nextSession: "2026/9/5"
+      nextSession_zh: "2026/9/5",
+      nextSession_en: "2026/9/5"
     },
     {
       name: "Rugatha Wilds",
       tagline_en: "Blood, Legacy, and the Call Beyond the Walls",
       tagline_zh: "鮮血、傳承，與牆外的呼喚",
       dates: "2024/3/16 ~",
-      link: "https://rugatha.com/rugatha-wilds/",
       page: "./pages/rugatha-wilds/index.html",
       image: campaignPng("logo_RWilds.png"),
       accent: "#DCE3E7",
-      nextSession: "2026/8/22"
+      nextSession_zh: "2026/8/22",
+      nextSession_en: "2026/8/22"
     },
     {
       name: "Rugatha Veil",
       tagline_en: "Beyond the Veil, Nothing Is What It Seems",
       tagline_zh: "揭開帷幕之後，一切皆非所見",
       dates: "2027/1/1 ~",
-      link: "",
-      page: "",
+      page: "./pages/rugatha-veil/index.html",
       image: campaignPng("logo_RVeil.png"),
       accent: "#E3D0AB",
-      nextSession: "2026/8/23"
+      nextSession_zh: "2026/8/23",
+      nextSession_en: "2026/8/23"
     },
     {
       name: "Rugatha Prosper",
       tagline_en: "Gold, Choice, and the Roar of Dragons",
       tagline_zh: "黃金、抉擇，與巨龍的咆哮",
       dates: "2027/1/1 ~",
-      link: "",
-      page: "",
+      page: "./pages/rugatha-prosper/index.html",
       image: campaignPng("logo_RProsper.png"),
       accent: "#E5BC48",
-      nextSession: "2026/8/30"
+      nextSession_zh: "2026/8/30",
+      nextSession_en: "2026/8/30"
     },
     {
       name: "Rugatha Brown",
       tagline_en: "In Every Bloom, Obedience Rots",
       tagline_zh: "每朵綻放之中，服從悄然腐朽",
       dates: "2022/11/7 ~ 2023/3/14",
-      link: "https://rugatha.com/rugatha-brown/",
       page: "./pages/rugatha-brown/index.html",
       image: campaignPng("logo_RBrown.png"),
       accent: "#C69C6D",
@@ -143,11 +140,11 @@
       tagline_en: "One Night, One Tale, One Legend",
       tagline_zh: "一夜，一則故事，一段傳奇",
       dates: "2022/2/7 ~",
-      link: "https://rugatha.com/rugatha-legends/",
       page: "./pages/rugatha-legends/index.html",
       image: campaignPng("logo_RLegends.png"),
       accent: "#A7A680",
-      nextSession: "未訂 TBD"
+      nextSession_zh: "未訂",
+      nextSession_en: "TBD"
     }
   ];
 

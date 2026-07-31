@@ -245,6 +245,7 @@
     relatedTitle: { zh: "登場NPC", en: "NPCs" },
     chaptersTitle: { zh: "章節", en: "Chapters" },
     storyArcsTitle: { zh: "故事線", en: "Story Arcs" },
+    storyArcsEmpty: { zh: "敬請期待", en: "Stay Tuned" },
     storyArcBadge: { zh: "故事弧", en: "Story Arc" },
     pcMetaSeparator: { zh: "｜", en: " | " }
   };
@@ -431,7 +432,8 @@
     if (isArcPage || isChapterPage) return;
     const heading = document.querySelector(".campaign-detail__chapters h2");
     if (!heading) return;
-    heading.textContent = i18n.storyArcsTitle[languageState.value];
+    const titleKey = document.body.dataset.emptyCampaignArcs === "true" ? "storyArcsEmpty" : "storyArcsTitle";
+    heading.textContent = i18n[titleKey][languageState.value];
   };
 
   const updateStoryArcBadge = () => {
@@ -447,6 +449,8 @@
 
     const chaptersToRender = Array.isArray(chapterListState.chapters) ? chapterListState.chapters : [];
     chapterList.innerHTML = "";
+
+    if (chapterList.dataset.emptyState === "blank") return;
 
     if (!chaptersToRender.length) {
       const li = document.createElement("li");
