@@ -5,6 +5,8 @@
   --campaign-panel: rgba(16, 31, 28, 0.72);
 }
 
+html { -webkit-text-size-adjust: 100%; }
+
 body {
   display: flex;
   justify-content: center;
@@ -127,7 +129,7 @@ body[data-campaign-filter="closed"] .card__session-time { color: #c7b79f; }
     align-items: start;
     gap: 8px 12px;
     height: auto;
-    min-height: 124px;
+    min-height: 154px;
     padding: 14px;
     border-radius: 18px;
   }
