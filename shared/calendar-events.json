@@ -4,8 +4,8 @@
     "date": "2026-08-08",
     "category": "體驗團",
     "link": "https://www.surveycake.com/s/eBLMm",
-    "note": "",
-    "image": "assets/survey-cake.png",
+    "note": "目前尚有名額，還請把握機會！",
+    "image": "assets/others/survey-cake.png",
     "isTransparent": false,
     "deadline": true
   },
@@ -15,7 +15,7 @@
     "category": "體驗團",
     "link": "/experience/index.html",
     "note": "報名截止 2026/8/8 23:59 (GMT+8)",
-    "image": "assets/rugatha-experience.jpeg",
+    "image": "assets/banner/rugatha-experience.jpeg",
     "isTransparent": false,
     "deadline": false
   },

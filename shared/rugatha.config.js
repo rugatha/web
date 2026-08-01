@@ -55,7 +55,7 @@
   global.RUGATHA_RESOLVE = resolveInternalPath;
 
   const campaignPng = (fileName) => new URL(`../assets/campaign_logo/${fileName}`, campaignsBase).href;
-  const rugathaIcon = new URL("../assets/rugatha-icon.png", campaignsBase).href;
+  const rugathaIcon = new URL("../assets/logo/rugatha-icon.png", campaignsBase).href;
 
   const campaigns = [
     {
@@ -142,7 +142,7 @@
       dates: "2022/2/7 ~",
       page: "./pages/rugatha-legends/index.html",
       image: campaignPng("logo_RLegends.png"),
-      accent: "#A7A680",
+      accent: "#F6E891",
       nextSession_zh: "未訂",
       nextSession_en: "TBD"
     }
@@ -866,7 +866,7 @@
       },
       {
         id: "wilds-c04-chpt04",
-        title: "Chapter 4: Eternal Lost of the Dragonborn Vein",
+        title: "Chapter 4: Eternal Loss of the Dragonborn Vein",
         url: "../wilds-c04/chpt04.html"
       }
     ],

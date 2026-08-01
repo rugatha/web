@@ -60,7 +60,7 @@ const trackD20Click = () => {
 
   window.gtag("event", "d20_click", {
     button_location: "homepage",
-    button_asset: "d20.png"
+    button_asset: "others/d20.png"
   });
 };
 

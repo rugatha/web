@@ -23,13 +23,13 @@
   <meta property="og:title" content="Adventurer&#x27;s Journal | 冒險者日誌">
   <meta property="og:description" content="Access the Adventurer&#x27;s Journal for member records, character references, and account-related tools.">
   <meta property="og:url" content="https://rugatha.com/member/">
-  <meta property="og:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
+  <meta property="og:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Adventurer&#x27;s Journal | 冒險者日誌">
   <meta name="twitter:description" content="Access the Adventurer&#x27;s Journal for member records, character references, and account-related tools.">
-  <meta name="twitter:image" content="https://rugatha.com/assets/rugatha-banner.jpg">
-<link rel="icon" type="image/png" href="../assets/rugatha-favicon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/rugatha-favicon-32.png">
+  <meta name="twitter:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+<link rel="icon" type="image/png" href="../assets/logo/rugatha-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../shared/styles/theme.css">
   <style>
     :root {
@@ -809,7 +809,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Rugatha">
-  <link rel="apple-touch-icon" href="../assets/rugatha-icon-192.png">
+  <link rel="apple-touch-icon" href="../assets/logo/rugatha-icon-192.png">
   <script defer src="../shared/pwa.js"></script>
   <script src="../shared/language-toggle.js"></script>
 </head>
@@ -819,7 +819,7 @@
       <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
     </div>
     <a class="corner-link" href="../index.html" aria-label="Rugatha Home">
-      <img src="../assets/rugatha-icon.png" alt="Rugatha home" width="100" height="100">
+      <img src="../assets/logo/rugatha-icon.png" alt="Rugatha home" width="100" height="100">
     </a>
     <header class="member-hero">
       <div class="hero-copy">
@@ -888,7 +888,7 @@
       <section class="profile-card" id="profile-card" aria-live="polite">
         <div class="profile-header">
           <button class="profile-photo-button" id="profile-photo-button" type="button" aria-label="Upload profile photo">
-            <img class="profile-photo" id="user-photo" src="../assets/rugatha-icon.png" alt="Profile photo">
+            <img class="profile-photo" id="user-photo" src="../assets/logo/rugatha-icon.png" alt="Profile photo">
           </button>
           <input type="file" id="profile-photo-input" accept="image/*" hidden>
           <div class="profile-identity">
@@ -2027,7 +2027,7 @@
 
     const setProfilePhoto = (url) => {
       profilePhotoUrl = url || null;
-      photoEl.src = profilePhotoUrl || "../assets/rugatha-icon.png";
+      photoEl.src = profilePhotoUrl || "../assets/logo/rugatha-icon.png";
     };
 
     const normalizeCharacterName = (value) =>

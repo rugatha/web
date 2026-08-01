@@ -1,5 +1,5 @@
 (() => {
-  const fallbackImage = "../assets/rugatha-banner.png";
+  const fallbackImage = "../assets/banner/rugatha-banner-trademark.png";
 
   const nameEl = document.querySelector("[data-deity='name']");
   const titleEl = document.querySelector("[data-deity='title']");

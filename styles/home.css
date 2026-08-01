@@ -332,7 +332,7 @@ body {
 .schedule-card--campaign-logo .schedule-card__image {
   object-fit: contain;
   object-position: center;
-  transform: translateY(-4%) scale(2.1);
+  transform: none;
 }
 
 .schedule-card__deadline-badge {
@@ -1018,6 +1018,10 @@ body {
   .portal {
     padding-top: clamp(18px, 8vh, 96px);
     padding-bottom: clamp(18px, 8vh, 96px);
+  }
+
+  .portal-copy {
+    transform: translateY(25px);
   }
 
   .portal:hover,

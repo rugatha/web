@@ -101,7 +101,7 @@
 }
 
 .campaign-overview-page .campaign-detail__media img {
-  transform: scale(2);
+  transform: scale(1);
   transform-origin: center;
 }
 

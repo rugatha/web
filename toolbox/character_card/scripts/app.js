@@ -931,7 +931,7 @@ drawCard();
     logoBitmap = await createImageBitmap(img);
     drawCard();
   };
-  img.src = "../../assets/rugatha-icon.png";
+  img.src = "../../assets/logo/rugatha-icon.png";
 })();
 
 if (dmOverlayImage && !dmOverlayImage.complete) {

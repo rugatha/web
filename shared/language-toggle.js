@@ -1,6 +1,6 @@
 (function () {
   const scriptUrl = document.currentScript ? document.currentScript.src : "";
-  const assetBase = scriptUrl ? new URL("../assets/", scriptUrl) : new URL("/assets/", window.location.origin);
+  const assetBase = scriptUrl ? new URL("../assets/others/", scriptUrl) : new URL("/assets/others/", window.location.origin);
   const iconSize = 44;
 
   const normalizeLanguage = (language) => language === "en" ? "en" : "zh";

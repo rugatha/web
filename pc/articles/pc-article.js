@@ -182,7 +182,7 @@
     front.appendChild(img);
 
     const logo = document.createElement("img");
-    logo.src = "../../assets/rugatha-icon.png";
+    logo.src = "../../assets/logo/rugatha-icon.png";
     logo.alt = "Rugatha";
     back.appendChild(logo);
 
