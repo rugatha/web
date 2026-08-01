@@ -27,9 +27,6 @@ const languageState = {
 const violentState = {
   enabled: false
 };
-const drawnPortraitExtensions = ["jpeg", "jpg", "png", "webp", "avif"];
-const drawnPortraitCache = new Map();
-let portraitRenderToken = 0;
 const violentOverrides = {
   Dr_Vaxon: {
     nameEn: "Vaxon the Lich",
@@ -680,115 +677,6 @@ function resolveImage(image) {
   return /^https?:|^\//.test(image) ? image : `../../${image}`;
 }
 
-function getImageStem(source) {
-  if (!source) return "";
-  try {
-    const pathname = new URL(source, window.location.href).pathname;
-    const filename = decodeURIComponent(pathname.split("/").pop() || "");
-    return filename.replace(/\.[^.]+$/, "");
-  } catch (_) {
-    return "";
-  }
-}
-
-function loadOptionalImage(url) {
-  return new Promise((resolve) => {
-    const probe = new Image();
-    probe.onload = () => resolve(url);
-    probe.onerror = () => resolve("");
-    probe.src = url;
-  });
-}
-
-function findDrawnPortrait(source) {
-  const stem = getImageStem(source);
-  if (!stem) return Promise.resolve("");
-  if (drawnPortraitCache.has(stem)) return drawnPortraitCache.get(stem);
-
-  const result = (async () => {
-    for (const extension of drawnPortraitExtensions) {
-      const relativePath = `npc/drawn_pics/${encodeURIComponent(stem)}.${extension}`;
-      const match = await loadOptionalImage(new URL(relativePath, rootBase).href);
-      if (match) return match;
-    }
-    return "";
-  })();
-  drawnPortraitCache.set(stem, result);
-  return result;
-}
-
-function ensurePortraitFlip() {
-  const portrait = elements.portrait;
-  const frame = portrait?.closest(".portrait");
-  if (!portrait || !frame) return null;
-
-  let inner = frame.querySelector(".portrait-flip__inner");
-  let back = frame.querySelector(".portrait-flip__face--back");
-  if (!inner) {
-    inner = document.createElement("span");
-    inner.className = "portrait-flip__inner";
-    portrait.classList.add("portrait-flip__face", "portrait-flip__face--front");
-    frame.replaceChildren(inner);
-    inner.appendChild(portrait);
-
-    back = document.createElement("img");
-    back.className = "portrait-flip__face portrait-flip__face--back";
-    back.alt = "";
-    back.setAttribute("aria-hidden", "true");
-    inner.appendChild(back);
-  }
-
-  if (!frame.dataset.flipWired) {
-    const toggleFlip = () => {
-      if (!frame.classList.contains("has-drawn-portrait")) return;
-      const isFlipped = frame.classList.toggle("is-flipped");
-      frame.setAttribute("aria-pressed", String(isFlipped));
-    };
-    frame.addEventListener("click", toggleFlip);
-    frame.addEventListener("keydown", (event) => {
-      if (event.key !== "Enter" && event.key !== " ") return;
-      event.preventDefault();
-      toggleFlip();
-    });
-    frame.dataset.flipWired = "true";
-  }
-
-  return { frame, back };
-}
-
-async function renderPortrait(npc) {
-  if (!elements.portrait) return;
-  const source = npc?.image || "";
-  elements.portrait.src = source;
-  elements.portrait.alt = getDisplayName(npc) || "NPC portrait";
-
-  const flip = ensurePortraitFlip();
-  if (!flip) return;
-  const { frame, back } = flip;
-  if (frame.dataset.portraitSource === source && frame.classList.contains("has-drawn-portrait")) {
-    return;
-  }
-
-  const token = ++portraitRenderToken;
-  frame.dataset.portraitSource = source;
-  frame.classList.remove("has-drawn-portrait", "is-flipped");
-  frame.removeAttribute("tabindex");
-  frame.removeAttribute("role");
-  frame.removeAttribute("aria-label");
-  frame.removeAttribute("aria-pressed");
-  back.removeAttribute("src");
-
-  const drawnSource = await findDrawnPortrait(source);
-  if (token !== portraitRenderToken || frame.dataset.portraitSource !== source || !drawnSource) return;
-
-  back.src = drawnSource;
-  frame.classList.add("has-drawn-portrait");
-  frame.tabIndex = 0;
-  frame.setAttribute("role", "button");
-  frame.setAttribute("aria-label", `${getDisplayName(npc) || "NPC"}：切換角色肖像`);
-  frame.setAttribute("aria-pressed", "false");
-}
-
 function findCharacter(chars, npc, slug) {
   const targets = new Set([normalize(slug)]);
   if (npc && npc.id) targets.add(normalize(npc.id));
@@ -876,7 +764,7 @@ function render(npc) {
   ensureContentSections();
   const effectiveNpc = applyViolentOverride(npc);
   updateTitle(effectiveNpc);
-  renderPortrait(effectiveNpc);
+  elements.portrait.src = effectiveNpc.image || "";
   setDescription(elements.zh, effectiveNpc.descZh, "（尚無中文介紹）");
   setDescription(elements.en, effectiveNpc.descEn, "(Description coming soon)");
   renderGender(effectiveNpc.gender);

@@ -95,7 +95,6 @@
   <template id="card-template">
     <a class="card" target="_blank" rel="noopener">
       <img alt="">
-      <span class="card__drawn-badge" role="img">🖌️</span>
       <div class="card__label">
         <span class="card__name"></span>
         <span class="card__race"></span>
@@ -184,7 +183,6 @@
     let charactersCache = [];
     let sortOrder = 'asc';
     let groupingMode = 'letter';
-    const drawnPortraitCache = new Map();
     const isAscii = (str) => /^[A-Za-z]/.test(str || '');
     const SKELETON_CARD_COUNT = 8;
 
@@ -490,41 +488,6 @@
       return url;
     }
 
-    function getImageStem(source) {
-      if (!source) return '';
-      try {
-        const pathname = new URL(source, window.location.href).pathname;
-        const filename = decodeURIComponent(pathname.split('/').pop() || '');
-        return filename.replace(/\.[^.]+$/, '');
-      } catch (_) {
-        return '';
-      }
-    }
-
-    function findDrawnPortrait(source) {
-      const stem = getImageStem(source);
-      if (!stem) return Promise.resolve(false);
-      if (drawnPortraitCache.has(stem)) return drawnPortraitCache.get(stem);
-
-      const result = new Promise((resolve) => {
-        const probe = new Image();
-        probe.onload = () => resolve(true);
-        probe.onerror = () => resolve(false);
-        probe.src = `drawn_pics/${encodeURIComponent(stem)}.jpeg`;
-      });
-      drawnPortraitCache.set(stem, result);
-      return result;
-    }
-
-    async function markDrawnPortraitCard(card, source) {
-      if (!await findDrawnPortrait(source) || !card.isConnected) return;
-      const badge = card.querySelector('.card__drawn-badge');
-      const label = languageState.value === 'en' ? 'Drawn portrait available' : '此角色有手繪版肖像';
-      card.classList.add('has-drawn-portrait');
-      badge.setAttribute('aria-label', label);
-      badge.title = label;
-    }
-
     function renderCard(character) {
       const node = template.content.firstElementChild.cloneNode(true);
       const img = node.querySelector('img');
@@ -538,7 +501,6 @@
       img.src = character.image;
       img.alt = displayName || 'NPC';
       wireImageLoad(img, node);
-      markDrawnPortraitCard(node, character.image);
       return node;
     }
 

@@ -1,4 +1,10 @@
-import { events } from "../data/events.js";
+const eventsResponse = await fetch(new URL("../data/events.json", import.meta.url));
+
+if (!eventsResponse.ok) {
+  throw new Error(`Failed to load timeline events: ${eventsResponse.status}`);
+}
+
+const events = await eventsResponse.json();
 
 const listEl = document.getElementById("timeline-list");
 const langButtons = document.querySelectorAll(".lang-toggle__button");

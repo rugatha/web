@@ -143,7 +143,7 @@ GitHub Pages workflow 位於：
 11. `pc/pc_lib`
     PC 資料來源。
 
-12. `timeline/data/events.js`
+12. `timeline/data/events.json`
     世界時間線事件資料。
 
 13. `deities/data/deities.json`
@@ -274,7 +274,7 @@ python3 shared/scripts/normalize_site_html.py
    - `campaigns/pages/pcs.json`
    - `campaigns/pages/guest.json`
    - `campaigns/pages/npcs.json`
-   - `timeline/data/events.js`
+   - `timeline/data/events.json`
 
 6. 若章節圖有新增或替換，請同步檢查：
    - `campaigns/chapter-banners/`
@@ -305,7 +305,7 @@ python3 shared/scripts/normalize_site_html.py
 ## 其他資料更新
 
 - 更新 PC 時，檢查 `pc/pc_lib`、`pc/articles/`、`pc/pics/`、`pc/three_views/` 與章節 PC 對照。
-- 更新時間線時，檢查 `timeline/data/events.js` 的時間排序、中英標題與描述。
+- 更新時間線時，檢查 `timeline/data/events.json` 的時間排序、中英標題與描述。
 - 更新地圖時，檢查 `map/assets/locations.json` 與地圖圖片座標是否一致。
 - 更新神祇時，檢查 `deities/data/deities.json`、`deities/pages/` 與 `deities/images/`。
 - 更新咒語時，檢查 `toolbox/spells/spells-phb.json` 格式是否可被頁面讀取。

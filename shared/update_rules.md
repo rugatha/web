@@ -84,8 +84,8 @@
    - `/campaigns/chapter-banners/`
    - `/shared/rugatha.config.js` 內的 chapter image mapping
 11. 若該章沒有獨立章節圖，可暫時沿用對應的 `/campaigns/campaign-banners/`，但請優先在 `/campaigns/chapter-banners/` 建立對應檔案，方便後續替換。
-12. 請從團錄判斷是否有足夠重要、且適合放入世界時間線的大事件；若有，更新 `/timeline/data/events.js`。
-13. 更新 `/timeline/data/events.js` 時，請維持時間排序為升冪，並補齊中英文標題與描述。
+12. 請從團錄判斷是否有足夠重要、且適合放入世界時間線的大事件；若有，更新 `/timeline/data/events.json`。
+13. 更新 `/timeline/data/events.json` 時，請維持時間排序為升冪，並補齊中英文標題與描述。
 
 ## 2. NPC 更新
 
@@ -125,7 +125,7 @@
    - `/campaigns/chapter-banners/`
    - 必要時 `/campaigns/campaign-logos/`
 10. 若新章節已有正文，是否已同步更新 `/campaigns/pages/pcs.json`、`/campaigns/pages/guest.json`、`/campaigns/pages/npcs.json`。
-11. 若新章節屬於時間線重要事件，是否已同步更新 `/timeline/data/events.js`。
+11. 若新章節屬於時間線重要事件，是否已同步更新 `/timeline/data/events.json`。
 
 ## 4. 一般內容驗證
 
@@ -158,7 +158,7 @@
    - `/campaigns/pages/guest.json`
    - `/campaigns/pages/npcs.json`
    - `/npc/data/characters.json`
-   - `/timeline/data/events.js`
+   - `/timeline/data/events.json`
 3. 最後檢查圖片、連結、雙語內容與 id 一致性。
 
 ## 6. 特別提醒
