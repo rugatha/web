@@ -451,5 +451,8 @@
     try { state.language = localStorage.getItem('npc-timeline-lang') === 'en' ? 'en' : 'zh'; } catch (_) {}
     loadData().catch(() => { $('#timeline').innerHTML = `<div class="empty-state"><span>!</span><h2>${textFor('資料載入失敗', 'Unable to load timeline')}</h2><p>${textFor('請稍後再試。', 'Please try again later.')}</p></div>`; });
   </script>
+
+  <script src="../../shared/firebase.config.js"></script>
+  <script type="module" src="../../shared/auth.js"></script>
 </body>
 </html>

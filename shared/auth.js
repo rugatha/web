@@ -167,11 +167,21 @@ const ensureAuthMarkup = () => {
     </button>
     <div class="auth-status" id="auth-status" aria-live="polite" hidden></div>
   `;
-  const host =
+  const preferredHost =
     document.querySelector(".page") ||
     document.querySelector("main") ||
     document.querySelector(".container") ||
     document.body;
+  let topLevelHost = preferredHost;
+  while (topLevelHost.parentElement && topLevelHost.parentElement !== document.body) {
+    topLevelHost = topLevelHost.parentElement;
+  }
+  const ignoredBottomElements = new Set(["SCRIPT", "STYLE", "TEMPLATE", "LINK"]);
+  let followingElement = topLevelHost.nextElementSibling;
+  while (followingElement && ignoredBottomElements.has(followingElement.tagName)) {
+    followingElement = followingElement.nextElementSibling;
+  }
+  const host = followingElement ? document.body : preferredHost;
   host.appendChild(container);
 };
 
