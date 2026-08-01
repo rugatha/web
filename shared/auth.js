@@ -1,3 +1,5 @@
+import { hidePageBookmark, setupPageBookmark } from "./bookmark.js";
+
 const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
 const loginHidden = false;
 const LOGIN_PENDING_KEY = "rugatha-ga-login-pending";
@@ -622,6 +624,7 @@ const setupAuth = async () => {
   };
 
   const setSignedOut = () => {
+    hidePageBookmark();
     if (labelEl) {
       labelEl.textContent = "Log In";
     }
@@ -705,9 +708,13 @@ const setupAuth = async () => {
       trackSuccessfulLogin();
       showAuthStatus(`Auth: signed in (${user.uid})`);
       setSignedIn(user);
+      setupPageBookmark({ memberId: user.uid, db, database: firebase.database });
       resolveMemberId(user).then((resolved) => {
         memberId = resolved;
         ensureMemberRecord(user, resolved);
+        if (resolved !== user.uid) {
+          setupPageBookmark({ memberId: resolved, db, database: firebase.database });
+        }
         maybeAwardVisitAchievement();
       });
       return;
@@ -726,9 +733,13 @@ const setupAuth = async () => {
         trackSuccessfulLogin();
         showAuthStatus(`Auth: redirect user (${result.user.uid})`);
         setSignedIn(result.user);
+        setupPageBookmark({ memberId: result.user.uid, db, database: firebase.database });
         resolveMemberId(result.user).then((resolved) => {
           memberId = resolved;
           ensureMemberRecord(result.user, resolved);
+          if (resolved !== result.user.uid) {
+            setupPageBookmark({ memberId: resolved, db, database: firebase.database });
+          }
           maybeAwardVisitAchievement();
         });
       } else if (!signedIn && !authResolved) {

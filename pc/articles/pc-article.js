@@ -1,4 +1,19 @@
 (() => {
+  const loadAccountFeatures = () => {
+    if (document.querySelector('script[src$="shared/auth.js"]')) return;
+    const config = document.createElement("script");
+    config.src = "../../shared/firebase.config.js";
+    config.addEventListener("load", () => {
+      const auth = document.createElement("script");
+      auth.type = "module";
+      auth.src = "../../shared/auth.js";
+      document.body.appendChild(auth);
+    });
+    document.head.appendChild(config);
+  };
+
+  loadAccountFeatures();
+
   const root = document.querySelector("[data-pc-name]");
   if (!root) return;
 

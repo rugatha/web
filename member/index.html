@@ -559,6 +559,103 @@
       display: none;
     }
 
+    .bookmark-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      width: 100%;
+      gap: 10px;
+    }
+
+    .bookmark-list[hidden] {
+      display: none !important;
+    }
+
+    .bookmark-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      min-height: 66px;
+      padding: 12px 14px;
+      border: 1px solid rgba(190, 200, 198, 0.34);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.24);
+      transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
+    }
+
+    .bookmark-card:hover,
+    .bookmark-card:focus-within {
+      transform: translateY(-2px);
+      border-color: rgba(210, 218, 216, 0.62);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .bookmark-card__link {
+      display: block;
+      min-width: 0;
+      color: var(--member-ink);
+      text-decoration: none;
+    }
+
+    .bookmark-card__title {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--member-ink);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .bookmark-card__link:hover .bookmark-card__title,
+    .bookmark-card__link:focus-visible .bookmark-card__title {
+      color: #f5c451;
+      text-decoration: underline;
+    }
+
+    .bookmark-card__link:focus-visible,
+    .bookmark-card__remove:focus-visible {
+      outline: 2px solid rgba(210, 218, 216, 0.78);
+      outline-offset: 3px;
+    }
+
+    .bookmark-card__remove {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      place-items: center;
+      border: 0;
+      border-radius: 10px;
+      color: rgba(145, 154, 152, 0.72);
+      background: transparent;
+      cursor: pointer;
+      transition: color 150ms ease, background 150ms ease, transform 150ms ease;
+    }
+
+    .bookmark-card__remove:hover {
+      color: rgba(190, 200, 198, 0.92);
+      background: rgba(255, 255, 255, 0.06);
+      transform: scale(1.05);
+    }
+
+    .bookmark-card__remove:disabled {
+      cursor: default;
+      opacity: 0.55;
+      transform: none;
+    }
+
+    .bookmark-card__remove svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .bookmark-empty {
+      margin: 0;
+      color: var(--member-muted);
+      font-size: 0.88rem;
+    }
+
     .detail {
       display: flex;
       flex-direction: column;
@@ -987,6 +1084,11 @@
           </div>
         </div>
         <div class="profile-section">
+          <h3 class="profile-section-title" data-i18n="bookmarksTitle">Saved</h3>
+          <p class="bookmark-empty" id="bookmark-empty" data-i18n="bookmarksEmpty">No bookmarked pages yet.</p>
+          <div class="bookmark-list" id="bookmark-list" hidden></div>
+        </div>
+        <div class="profile-section">
           <h3 class="profile-section-title" data-i18n="loginInfoTitle">Login Info</h3>
           <div class="profile-details">
             <div class="detail">
@@ -1044,6 +1146,8 @@
       ref,
       get,
       update,
+      remove,
+      onValue,
       runTransaction
     } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 
@@ -1102,6 +1206,8 @@
     const characterCardListEl = document.getElementById("character-card-list");
     const achievementListEl = document.getElementById("achievement-list");
     const achievementEmptyEl = document.getElementById("achievement-empty");
+    const bookmarkListEl = document.getElementById("bookmark-list");
+    const bookmarkEmptyEl = document.getElementById("bookmark-empty");
     const adminDirectoryEl = document.getElementById("admin-directory");
     const adminDirectoryListEl = document.getElementById("admin-directory-list");
     const adminDirectoryHintEl = document.getElementById("admin-directory-hint");
@@ -1112,6 +1218,8 @@
     let auth = null;
     let persistenceReady = Promise.resolve();
     let profilePhotoUrl = null;
+    let bookmarksUnsubscribe = null;
+    let bookmarksMemberId = null;
     const ACHIEVEMENTS_CSV_PATH = "./achievements.csv";
     const ACHIEVEMENT_BADGE_MAP = {
       STR: "BadgeSTR",
@@ -1222,6 +1330,11 @@
         achievementsTitle: "Achievements",
         achievementsEmptyLabel: "Status",
         achievementsEmptyValue: "No achievements yet.",
+        bookmarksTitle: "Saved",
+        bookmarksEmpty: "No bookmarked pages yet.",
+        bookmarkRemoveConfirm: "Remove this page from Saved?",
+        bookmarkRemoveLabel: "Remove saved page",
+        bookmarkReadOnly: "Read-only saved page",
         labelLastLogin: "Last Login",
         labelLoginTime: "Total Time",
         signIn: "Sign in",
@@ -1282,6 +1395,11 @@
         achievementsTitle: "成就",
         achievementsEmptyLabel: "狀態",
         achievementsEmptyValue: "尚未獲得成就。",
+        bookmarksTitle: "已儲存",
+        bookmarksEmpty: "尚未收藏任何頁面。",
+        bookmarkRemoveConfirm: "確定要取消儲存這個頁面嗎？",
+        bookmarkRemoveLabel: "取消儲存",
+        bookmarkReadOnly: "唯讀收藏",
         signOut: "登出",
         profileSignedOut: "請先登入才能查看此頁面。",
         profileMissingConfig: "缺少 Firebase 設定，請更新 shared/firebase.config.js。",
@@ -1567,6 +1685,88 @@
       }
     };
 
+    const isBookmarkPath = (path) =>
+      /^(campaigns\/pages\/.+\/chpt\d+\.html|deities\/pages\/[^/]+\.html|npc\/npc_page\/pages\/[^/]+\.html|pc\/articles\/[^/]+\.html)$/i.test(
+        String(path || "").replace(/^\/+/, "")
+      );
+
+    const getBookmarkUrl = (path) =>
+      new URL(`../${String(path || "").replace(/^\/+/, "")}`, window.location.href).href;
+
+    const renderBookmarks = () => {
+      if (!bookmarkListEl || !bookmarkEmptyEl) return;
+      const dictionary = translations[authState.language] || translations.en;
+      const bookmarks = Object.entries(authState.bookmarks || {})
+        .map(([key, bookmark]) => ({ key, ...bookmark }))
+        .filter((bookmark) => bookmark && isBookmarkPath(bookmark.path))
+        .sort((a, b) => String(b.savedAt || "").localeCompare(String(a.savedAt || "")));
+
+      bookmarkListEl.innerHTML = "";
+      bookmarkListEl.hidden = bookmarks.length === 0;
+      bookmarkEmptyEl.hidden = bookmarks.length > 0;
+
+      bookmarks.forEach((bookmark) => {
+        const path = String(bookmark.path || "").replace(/^\/+/, "");
+        const card = document.createElement("article");
+        card.className = "bookmark-card";
+
+        const link = document.createElement("a");
+        link.className = "bookmark-card__link";
+        link.href = getBookmarkUrl(path);
+        link.innerHTML = '<span class="bookmark-card__title"></span>';
+        link.querySelector(".bookmark-card__title").textContent = bookmark.title || path;
+        link.addEventListener("click", () => {
+          if (typeof window.gtag !== "function") return;
+          window.gtag("event", "bookmark_open", {
+            page_path: `/${path}`,
+            page_title: bookmark.title || path,
+            bookmark_source: "member_page"
+          });
+        });
+
+        const removeButton = document.createElement("button");
+        removeButton.className = "bookmark-card__remove";
+        removeButton.type = "button";
+        removeButton.disabled = !authState.user || isViewingOtherMember();
+        removeButton.setAttribute(
+          "aria-label",
+          `${dictionary.bookmarkRemoveLabel}：${bookmark.title || path}`
+        );
+        removeButton.title = removeButton.disabled
+          ? dictionary.bookmarkReadOnly
+          : dictionary.bookmarkRemoveLabel;
+        removeButton.innerHTML = `
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M7 7l10 10M17 7 7 17"/>
+          </svg>`;
+        removeButton.addEventListener("click", async () => {
+          if (!authState.user || !db || isViewingOtherMember()) return;
+          if (!window.confirm(dictionary.bookmarkRemoveConfirm)) return;
+          const memberId = authState.viewedMemberId || authState.memberId;
+          if (!memberId) return;
+          removeButton.disabled = true;
+          try {
+            await remove(ref(db, `${MEMBER_COLLECTION}/${memberId}/bookmarks/${bookmark.key}`));
+            delete authState.bookmarks[bookmark.key];
+            renderBookmarks();
+            if (typeof window.gtag === "function") {
+              window.gtag("event", "bookmark_remove", {
+                page_path: `/${path}`,
+                page_title: bookmark.title || path,
+                bookmark_source: "member_page"
+              });
+            }
+          } catch (error) {
+            console.error("Failed to remove bookmark", error);
+            removeButton.disabled = false;
+          }
+        });
+
+        card.append(link, removeButton);
+        bookmarkListEl.appendChild(card);
+      });
+    };
+
     const getStoredLanguage = () => {
       try {
         return localStorage.getItem("rugatha-member-lang");
@@ -1601,6 +1801,7 @@
       applyProfileCopy(lang);
       updateCharacterCard(authState.characterName);
       renderAchievements();
+      renderBookmarks();
     };
 
     let sessionStartMs = null;
@@ -2085,6 +2286,64 @@
       return ref(db, `${MEMBER_COLLECTION}/${uid}`);
     };
 
+    const getMemberBookmarksCacheKey = (memberId) => `rugatha-member-bookmarks:${memberId}`;
+
+    const readCachedMemberBookmarks = (memberId) => {
+      try {
+        return JSON.parse(localStorage.getItem(getMemberBookmarksCacheKey(memberId)) || "{}") || {};
+      } catch (error) {
+        return {};
+      }
+    };
+
+    const cacheMemberBookmarks = (memberId, bookmarks) => {
+      try {
+        localStorage.setItem(getMemberBookmarksCacheKey(memberId), JSON.stringify(bookmarks || {}));
+      } catch (error) {}
+    };
+
+    const cacheBookmarkState = (memberId, path, saved) => {
+      try {
+        localStorage.setItem(
+          `rugatha-bookmark:${memberId}:${String(path || "").replace(/^\/+/, "")}`,
+          saved ? "1" : "0"
+        );
+      } catch (error) {}
+    };
+
+    const watchMemberBookmarks = (memberId) => {
+      if (bookmarksUnsubscribe && bookmarksMemberId === memberId) return;
+      if (bookmarksUnsubscribe) {
+        bookmarksUnsubscribe();
+        bookmarksUnsubscribe = null;
+      }
+      bookmarksMemberId = null;
+      if (!db || !memberId) return;
+      const bookmarksRef = ref(db, `${MEMBER_COLLECTION}/${memberId}/bookmarks`);
+      bookmarksUnsubscribe = onValue(
+        bookmarksRef,
+        (snapshot) => {
+          const nextBookmarks = snapshot.val() || {};
+          const previousBookmarks = authState.bookmarks || {};
+          Object.values(previousBookmarks).forEach((bookmark) => {
+            if (!bookmark?.path) return;
+            const remainsSaved = Object.values(nextBookmarks).some(
+              (next) => next?.path === bookmark.path
+            );
+            if (!remainsSaved) cacheBookmarkState(memberId, bookmark.path, false);
+          });
+          Object.values(nextBookmarks).forEach((bookmark) => {
+            if (bookmark?.path) cacheBookmarkState(memberId, bookmark.path, true);
+          });
+          authState.bookmarks = nextBookmarks;
+          cacheMemberBookmarks(memberId, nextBookmarks);
+          renderBookmarks();
+        },
+        (error) => console.warn("Failed to sync bookmarks", error)
+      );
+      bookmarksMemberId = memberId;
+    };
+
     const resolveMemberId = (user, storedId) => {
       if (!user) return "—";
       if (storedId) return storedId;
@@ -2099,6 +2358,7 @@
 
       authState.readOnlyView = readOnly;
       authState.viewedMemberId = memberId;
+      watchMemberBookmarks(memberId);
       uidEl.textContent = memberId;
       nameEl.textContent = displayName;
       emailEl.textContent = displayEmail;
@@ -2126,6 +2386,7 @@
       authState.readOnlyView = true;
       authState.viewedMemberId = memberId || null;
       authState.achievements = {};
+      authState.bookmarks = {};
       nameEl.textContent = "—";
       emailEl.textContent = "—";
       uidEl.textContent = memberId || "—";
@@ -2142,6 +2403,7 @@
       syncHiddenAttributes();
       updateBadgeDisplay();
       renderAchievements();
+      renderBookmarks();
       hintEl.textContent = message;
       setProfileEditable(false);
       stopSessionTimer();
@@ -2200,6 +2462,7 @@
         authState.readOnlyView = false;
         authState.memberId = memberId;
         authState.viewedMemberId = memberId;
+        watchMemberBookmarks(memberId);
         uidEl.textContent = memberId;
         memberNoValue = data.memberNo ?? "";
         if (!memberNoValue && user.email === ADMIN_EMAIL) {
@@ -2352,6 +2615,7 @@
       memberNo: null,
       characterName: "",
       achievements: {},
+      bookmarks: {},
       isAdmin: false,
       readOnlyView: false
     };
@@ -2394,6 +2658,11 @@
       syncHiddenAttributes();
       updateBadgeDisplay();
       stopSessionTimer();
+      if (bookmarksUnsubscribe) {
+        bookmarksUnsubscribe();
+        bookmarksUnsubscribe = null;
+      }
+      bookmarksMemberId = null;
       authState.user = null;
       authState.message = message || dictionary.profileSignedOut;
       authState.memberId = null;
@@ -2402,10 +2671,12 @@
       authState.memberNo = null;
       authState.characterName = "";
       authState.achievements = {};
+      authState.bookmarks = {};
       authState.isAdmin = false;
       authState.readOnlyView = false;
       resetAdminDirectory();
       renderAchievements();
+      renderBookmarks();
     };
 
     const formatMemberId = (value) => {
@@ -2440,7 +2711,12 @@
       setProfileEditable(false);
       authState.message = dictionary.profileSignedIn;
       authState.achievements = {};
+      const bookmarkTargetId =
+        authState.isAdmin && requestedMemberId ? requestedMemberId : authState.memberId;
+      authState.bookmarks = readCachedMemberBookmarks(bookmarkTargetId);
       renderAchievements();
+      renderBookmarks();
+      watchMemberBookmarks(bookmarkTargetId);
       loadAdminDirectory();
       loadProfileFromDatabase(user);
     };
