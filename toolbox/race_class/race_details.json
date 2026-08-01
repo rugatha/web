@@ -1,0 +1,221 @@
+[
+  {
+    "id": "dragonborn",
+    "en": "Dragonborn",
+    "zh": "龍人",
+    "note": {
+      "basic_zh": "力量+2\n魅力+1",
+      "basic_en": "STR+2\nCHA+1",
+      "details_zh": "• 速度：30 呎\n• 選擇一種龍族祖先；祖先決定你的龍息傷害類型、範圍與豁免類型，也使你對該傷害類型具有抗性\n\n龍族血統\n\n| 龍種 | 傷害類型 | 龍息範圍 |\n| --- | --- | --- |\n| 黑龍 | 強酸 | 5 呎寬、30 呎長的直線（敏捷豁免） |\n| 藍龍 | 閃電 | 5 呎寬、30 呎長的直線（敏捷豁免） |\n| 黃銅龍 | 火焰 | 5 呎寬、30 呎長的直線（敏捷豁免） |\n| 青銅龍 | 閃電 | 5 呎寬、30 呎長的直線（敏捷豁免） |\n| 赤銅龍 | 強酸 | 5 呎寬、30 呎長的直線（敏捷豁免） |\n| 金龍 | 火焰 | 15 呎錐狀（敏捷豁免） |\n| 綠龍 | 毒素 | 15 呎錐狀（體魄豁免） |\n| 紅龍 | 火焰 | 15 呎錐狀（敏捷豁免） |\n| 銀龍 | 寒冷 | 15 呎錐狀（體魄豁免） |\n| 白龍 | 寒冷 | 15 呎錐狀（體魄豁免） |\n\n• 使用龍息時，範圍內生物必須進行指定豁免；成功時只承受一半傷害。每次短休或長休後可再次使用\n• 語言：通用語、龍語",
+      "details_en": "• Speed: 30 feet\n• Choose a draconic ancestry. It determines your breath weapon's damage type, area, and saving throw, and grants resistance to that damage type\n\nDraconic Ancestry\n\n| Dragon | Damage Type | Breath Weapon |\n| --- | --- | --- |\n| Black | Acid | 5 by 30 ft. line (Dex. save) |\n| Blue | Lightning | 5 by 30 ft. line (Dex. save) |\n| Brass | Fire | 5 by 30 ft. line (Dex. save) |\n| Bronze | Lightning | 5 by 30 ft. line (Dex. save) |\n| Copper | Acid | 5 by 30 ft. line (Dex. save) |\n| Gold | Fire | 15 ft. cone (Dex. save) |\n| Green | Poison | 15 ft. cone (Con. save) |\n| Red | Fire | 15 ft. cone (Dex. save) |\n| Silver | Cold | 15 ft. cone (Con. save) |\n| White | Cold | 15 ft. cone (Con. save) |\n\n• Creatures in the breath weapon's area make the specified saving throw, taking half damage on a success. You regain its use after a short or long rest\n• Languages: Common and Draconic"
+    }
+  },
+  {
+    "id": "dwarf",
+    "en": "Dwarf",
+    "zh": "矮人",
+    "note": {
+      "basic_zh": "體魄+2",
+      "basic_en": "CON+2",
+      "details_zh": "• 速度：25 呎\n• 黑暗視覺\n• 對抗中毒的豁免具有優勢，且對毒性傷害具有抗性\n• 熟練戰斧、手斧、輕錘與戰錘\n• 從鐵匠工具、釀酒工具與石匠工具中選擇一項熟練\n• 進行與石造物起源有關的智力（歷史）檢定時，視為具有歷史技能熟練，並加上雙倍熟練加值\n• 語言：通用語、矮人語",
+      "details_en": "• Speed: 25 feet\n• Darkvision\n• Advantage on saving throws against poison and resistance to poison damage\n• Proficiency with battleaxes, handaxes, light hammers, and warhammers\n• Choose proficiency with smith's tools, brewer's supplies, or mason's tools\n• On Intelligence (History) checks related to the origin of stonework, you are considered proficient in History and add twice your proficiency bonus\n• Languages: Common and Dwarvish"
+    },
+    "subraces": [
+      {
+        "id": "hill-dwarf",
+        "en": "Hill Dwarf",
+        "zh": "丘陵矮人",
+        "note": {
+          "basic_zh": "感知+1",
+          "basic_en": "WIS+1",
+          "details_zh": "• 生命值上限額外 +1；此後每升一級再額外增加 1",
+          "details_en": "• Your hit point maximum increases by 1 and increases by 1 again whenever you gain a level"
+        }
+      },
+      {
+        "id": "mountain-dwarf",
+        "en": "Mountain Dwarf",
+        "zh": "山矮人",
+        "note": {
+          "basic_zh": "力量+2",
+          "basic_en": "STR+2",
+          "details_zh": "• 你熟練輕甲與中甲",
+          "details_en": "• You are proficient with light and medium armor"
+        }
+      }
+    ]
+  },
+  {
+    "id": "elf",
+    "en": "Elf",
+    "zh": "妖精",
+    "note": {
+      "basic_zh": "敏捷+2",
+      "basic_en": "DEX+2",
+      "details_zh": "• 速度：30 呎\n• 黑暗視覺\n• 熟練感知（觀察）技能\n• 對抗魅惑的豁免具有優勢，且魔法無法使你入睡\n• 無須睡眠；每日冥想 4 小時即可獲得等同人類睡眠 8 小時的休息效果，此狀態稱為「出神」（Trance）\n• 語言：通用語、妖精語",
+      "details_en": "• Speed: 30 feet\n• Darkvision\n• Proficiency in Perception\n• Advantage on saving throws against being charmed; magic cannot put you to sleep\n• You do not need to sleep. Four hours of daily meditation, called a trance, grants the same benefit a human receives from eight hours of sleep\n• Languages: Common and Elvish"
+    },
+    "subraces": [
+      {
+        "id": "high-elf",
+        "en": "High Elf",
+        "zh": "高妖精",
+        "note": {
+          "basic_zh": "智力+1",
+          "basic_en": "INT+1",
+          "details_zh": "• 熟練長劍、短劍、短弓與長弓\n• 從法師法術表選擇一個戲法；施法能力為智力\n• 額外學會一種自選語言",
+          "details_en": "• Proficiency with longswords, shortswords, shortbows, and longbows\n• Choose one cantrip from the wizard spell list; Intelligence is your spellcasting ability for it\n• Learn one additional language of your choice"
+        }
+      },
+      {
+        "id": "wood-elf",
+        "en": "Wood Elf",
+        "zh": "木妖精",
+        "note": {
+          "basic_zh": "感知+1",
+          "basic_en": "WIS+1",
+          "details_zh": "• 熟練長劍、短劍、短弓與長弓\n• 速度：35 呎\n• 在僅受樹葉、大雨、降雪、霧氣或其他自然現象輕度遮蔽時，仍可嘗試躲藏",
+          "details_en": "• Proficiency with longswords, shortswords, shortbows, and longbows\n• Speed: 35 feet\n• You can attempt to hide when lightly obscured by foliage, heavy rain, falling snow, mist, or another natural phenomenon"
+        }
+      },
+      {
+        "id": "drow",
+        "en": "Drow",
+        "zh": "暗妖精",
+        "note": {
+          "basic_zh": "魅力+1",
+          "basic_en": "CHA+1",
+          "details_zh": "• 黑暗視覺範圍增加至 120 呎\n• 當你、攻擊目標或你試圖觀察的事物位於陽光直射下時，依賴視覺的攻擊檢定與感知（觀察）檢定具有劣勢\n• 會施放「舞光術」（Dancing Lights）戲法。3 級起，每次長休可施放一次「妖火術」（Faerie Fire）；5 級起，每次長休可施放一次「黑暗術」（Darkness）。這些法術的施法能力皆為魅力\n• 熟練細劍、短劍與手弩",
+          "details_en": "• Darkvision extends to 120 feet\n• You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, your target, or what you are trying to perceive is in direct sunlight\n• You know the Dancing Lights cantrip. At 3rd level, you can cast Faerie Fire once per long rest; at 5th level, you can cast Darkness once per long rest. Charisma is your spellcasting ability for these spells\n• Proficiency with rapiers, shortswords, and hand crossbows"
+        }
+      }
+    ]
+  },
+  {
+    "id": "gnome",
+    "en": "Gnome",
+    "zh": "地侏",
+    "note": {
+      "basic_zh": "智力+2",
+      "basic_en": "INT+2",
+      "details_zh": "• 速度：25 呎\n• 黑暗視覺\n• 地侏狡猾：對抗魔法的智力、感知與魅力豁免具有優勢\n• 語言：通用語、地侏語；地侏語使用矮人文字書寫",
+      "details_en": "• Speed: 25 feet\n• Darkvision\n• Gnome Cunning: Advantage on Intelligence, Wisdom, and Charisma saving throws against magic\n• Languages: Common and Gnomish; Gnomish uses Dwarvish script"
+    },
+    "subraces": [
+      {
+        "id": "forest-gnome",
+        "en": "Forest Gnome",
+        "zh": "森地侏",
+        "note": {
+          "basic_zh": "敏捷+1",
+          "basic_en": "DEX+1",
+          "details_zh": "• 可施放「小幻象」（Minor Illusion）戲法；施法能力為智力\n• 可透過聲音與姿勢，向小型或更小的野獸傳達簡單概念",
+          "details_en": "• You can cast the Minor Illusion cantrip; Intelligence is your spellcasting ability for it\n• Through sounds and gestures, you can communicate simple ideas to Small or smaller beasts"
+        }
+      },
+      {
+        "id": "rock-gnome",
+        "en": "Rock Gnome",
+        "zh": "岩地侏",
+        "note": {
+          "basic_zh": "體魄+1",
+          "basic_en": "CON+1",
+          "details_zh": "• 進行與魔法物品、煉金物品或科技裝置有關的智力（歷史）檢定時，加上雙倍熟練加值\n• 熟練工匠工具（修補匠工具）。可花費 1 小時與價值 10 gp 的材料，製作能運作 24 小時的微型發條裝置：發條玩具、點火器或音樂盒",
+          "details_en": "• Add twice your proficiency bonus to Intelligence (History) checks related to magic items, alchemical objects, or technological devices\n• Proficiency with artisan's tools (tinker's tools). By spending 1 hour and 10 gp in materials, you can create a Tiny clockwork device that functions for 24 hours: a clockwork toy, fire starter, or music box"
+        }
+      }
+    ]
+  },
+  {
+    "id": "half-elf",
+    "en": "Half-Elf",
+    "zh": "半妖精",
+    "note": {
+      "basic_zh": "魅力+2\n選二能力各+1",
+      "basic_en": "CHA+2\nChoose 2 Abilities Each +1",
+      "details_zh": "• 速度：30 呎\n• 黑暗視覺\n• 妖精血統：對抗魅惑的豁免具有優勢，且魔法無法使你入睡\n• 技能多才：熟練兩項自選技能\n• 語言：通用語、妖精語，以及一種自選語言",
+      "details_en": "• Speed: 30 feet\n• Darkvision\n• Fey Ancestry: Advantage on saving throws against being charmed; magic cannot put you to sleep\n• Skill Versatility: Gain proficiency in two skills of your choice\n• Languages: Common, Elvish, and one additional language of your choice"
+    }
+  },
+  {
+    "id": "half-orc",
+    "en": "Half-Orc",
+    "zh": "半獸人",
+    "note": {
+      "basic_zh": "力量+2\n體魄+1",
+      "basic_en": "STR+2\nCON+1",
+      "details_zh": "• 速度：30 呎\n• 黑暗視覺\n• 熟練魅力（威嚇）技能\n• 堅韌不屈：當生命值降至 0，但沒有立即死亡時，可改為剩下 1 點生命值；每次長休後可再次使用\n• 凶蠻攻擊：使用近戰武器造成重擊時，可額外擲一次該武器的一顆傷害骰，並加到重擊的額外傷害中\n• 語言：通用語、獸人語；獸人語使用矮人文字書寫",
+      "details_en": "• Speed: 30 feet\n• Darkvision\n• Proficiency in Intimidation\n• Relentless Endurance: When reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You regain this ability after a long rest\n• Savage Attacks: When you score a critical hit with a melee weapon, roll one additional weapon damage die and add it to the critical hit's extra damage\n• Languages: Common and Orc; Orc uses Dwarvish script"
+    }
+  },
+  {
+    "id": "halfling",
+    "en": "Halfling",
+    "zh": "半身人",
+    "note": {
+      "basic_zh": "敏捷+2",
+      "basic_en": "DEX+2",
+      "details_zh": "• 速度：25 呎\n• 半身人幸運：攻擊檢定、能力檢定或豁免骰擲出 1 時，可重擲該骰一次，並必須採用新的結果\n• 勇敢：對抗恐懼的豁免具有優勢\n• 半身人靈巧：可穿越體型比你大的生物所占據的空間\n• 語言：通用語、半身人語\n\n註：「半身人幸運」與「幸運」專長（Lucky feat）是不同能力。",
+      "details_en": "• Speed: 25 feet\n• Lucky: When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die once and must use the new result\n• Brave: Advantage on saving throws against being frightened\n• Halfling Nimbleness: You can move through the space of a creature larger than you\n• Languages: Common and Halfling\n\nNote: The halfling's Lucky trait is different from the Lucky feat."
+    },
+    "subraces": [
+      {
+        "id": "lightfoot",
+        "en": "Lightfoot",
+        "zh": "輕足半身人",
+        "note": {
+          "basic_zh": "魅力+1",
+          "basic_en": "CHA+1",
+          "details_zh": "• 可嘗試躲在體型比你大的生物後方",
+          "details_en": "• You can attempt to hide behind a creature larger than you"
+        }
+      },
+      {
+        "id": "stout",
+        "en": "Stout",
+        "zh": "強魄半身人",
+        "note": {
+          "basic_zh": "體魄+1",
+          "basic_en": "CON+1",
+          "details_zh": "• 對抗中毒的豁免具有優勢，且對毒性傷害具有抗性",
+          "details_en": "• Advantage on saving throws against poison and resistance to poison damage"
+        }
+      }
+    ]
+  },
+  {
+    "id": "human",
+    "en": "Human",
+    "zh": "人類",
+    "note": {
+      "basic_zh": "所有能力+1",
+      "basic_en": "All Abilities +1",
+      "details_zh": "• 速度：30 呎\n• 語言：通用語，以及一種自選語言",
+      "details_en": "• Speed: 30 feet\n• Languages: Common and one additional language of your choice"
+    },
+    "subraces": [
+      {
+        "id": "variant-human",
+        "en": "Variant Human",
+        "zh": "變體人類",
+        "note": {
+          "basic_zh": "自選兩項不同能力值各+1",
+          "basic_en": "Choose 2 Different Abilities, Each +1",
+          "details_zh": "變體人類以以下特性取代一般人類的能力值提升：\n\n• 熟練一項自選技能\n• 獲得一項自選專長（feat）",
+          "details_en": "The variant human replaces the standard human's ability score increase with the following traits:\n\n• Gain proficiency in one skill of your choice\n• Gain one feat of your choice"
+        }
+      }
+    ]
+  },
+  {
+    "id": "tiefling",
+    "en": "Tiefling",
+    "zh": "魔人",
+    "note": {
+      "basic_zh": "智力+1\n魅力+2",
+      "basic_en": "INT+1\nCHA+2",
+      "details_zh": "• 速度：30 呎\n• 黑暗視覺\n• 對火焰傷害具有抗性\n• 可施放「奇術」（Thaumaturgy）戲法。3 級起，每次長休可用 2 環施放一次「煉獄叱喝」（Hellish Rebuke）；5 級起，每次長休可施放一次「黑暗術」（Darkness）。這些法術的施法能力皆為魅力\n• 語言：通用語、煉獄語",
+      "details_en": "• Speed: 30 feet\n• Darkvision\n• Resistance to fire damage\n• You can cast the Thaumaturgy cantrip. At 3rd level, you can cast Hellish Rebuke as a 2nd-level spell once per long rest; at 5th level, you can cast Darkness once per long rest. Charisma is your spellcasting ability for these spells\n• Languages: Common and Infernal"
+    }
+  }
+]

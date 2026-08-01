@@ -189,9 +189,16 @@ const setupAuth = async () => {
   const firebaseConfig = getFirebaseConfig();
   const firebaseDisabled =
     window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
+  const publishAuthState = (signedIn) => {
+    window.RUGATHA_AUTH_SIGNED_IN = Boolean(signedIn);
+    window.dispatchEvent(new CustomEvent("rugatha:auth-state-changed", {
+      detail: { signedIn: Boolean(signedIn) }
+    }));
+  };
 
   ensureAuthStyles();
   ensureAuthMarkup();
+  publishAuthState(false);
 
   if (loginHidden) {
     const container = document.querySelector(".auth-entry");
@@ -634,6 +641,7 @@ const setupAuth = async () => {
   };
 
   const setSignedOut = () => {
+    publishAuthState(false);
     hidePageBookmark();
     if (labelEl) {
       labelEl.textContent = "Log In";
@@ -650,6 +658,7 @@ const setupAuth = async () => {
   };
 
   const setSignedIn = (user) => {
+    publishAuthState(true);
     const fallback = user?.displayName || user?.email || "friend";
     setVisibility(loginButton, false);
     setVisibility(logoutButton, true);

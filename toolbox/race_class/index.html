@@ -228,15 +228,37 @@
       line-height: 1.1;
     }
 
+    .subrace-section {
+      display: grid;
+      gap: 8px;
+      margin: 2px 0 0 116px;
+      padding-left: 18px;
+      border-left: 2px solid rgba(217, 182, 111, 0.42);
+    }
+
+    .subrace-section-title {
+      color: rgba(217, 182, 111, 0.9);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 1.3;
+    }
+
     .subrace-list {
       display: grid;
       gap: 8px;
-      margin: 0 0 0 92px;
+      margin: 0;
       padding: 0;
       list-style: none;
     }
 
+    .subrace-item {
+      display: grid;
+      gap: 8px;
+    }
+
     .subrace-card {
+      width: 100%;
       display: grid;
       grid-template-columns: auto minmax(140px, 0.55fr) minmax(220px, 1fr);
       align-items: center;
@@ -245,6 +267,24 @@
       border: 1px solid rgba(236, 242, 237, 0.16);
       border-radius: 8px;
       background: rgba(236, 242, 237, 0.06);
+      color: var(--text);
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+    }
+
+    .subrace-card:hover,
+    .subrace-card:focus-visible {
+      transform: translateX(4px);
+      border-color: var(--rc-line-strong);
+      background: rgba(236, 242, 237, 0.1);
+      outline: none;
+    }
+
+    .subrace-card[aria-expanded="true"] {
+      border-color: rgba(217, 182, 111, 0.48);
+      background: rgba(217, 182, 111, 0.1);
     }
 
     .subrace-mark {
@@ -285,6 +325,103 @@
       font-style: italic;
     }
 
+    .option-details {
+      display: block;
+      margin-left: 92px;
+      padding: 16px;
+      border: 1px solid rgba(236, 242, 237, 0.16);
+      border-radius: 8px;
+      background: rgba(236, 242, 237, 0.06);
+      text-align: left;
+    }
+
+    .details-heading {
+      margin: 1rem 0 0.2rem;
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .details-heading:first-child {
+      margin-top: 0;
+    }
+
+    .details-paragraph,
+    .details-list {
+      margin: 0.15rem 0 0.85rem;
+    }
+
+    .details-list {
+      padding-left: 1.25rem;
+    }
+
+    .details-list li + li {
+      margin-top: 0.1rem;
+    }
+
+    .details-table-wrap {
+      max-width: 100%;
+      margin: 0.15rem 0 0.85rem;
+      overflow-x: auto;
+      border: 1px solid rgba(236, 242, 237, 0.16);
+      border-radius: 6px;
+    }
+
+    .details-table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      color: inherit;
+      font: inherit;
+      white-space: nowrap;
+    }
+
+    .details-table th,
+    .details-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(236, 242, 237, 0.12);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .details-table th + th,
+    .details-table td + td {
+      border-left: 1px solid rgba(236, 242, 237, 0.16);
+    }
+
+    .details-table th {
+      background: rgba(217, 182, 111, 0.12);
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .details-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .details-indent-1 {
+      margin-left: 1.5rem;
+    }
+
+    .details-indent-2 {
+      margin-left: 3rem;
+    }
+
+    .option-details > :last-child,
+    .subrace-details > :last-child {
+      margin-bottom: 0;
+    }
+
+    .subrace-details {
+      display: block;
+      margin-left: 44px;
+      padding: 14px 16px;
+      border-left: 2px solid rgba(217, 182, 111, 0.42);
+      border-radius: 0 8px 8px 0;
+      background: rgba(236, 242, 237, 0.04);
+      text-align: left;
+    }
+
     @media (max-width: 640px) {
       .page {
         width: min(100% - 24px, 920px);
@@ -320,13 +457,30 @@
         height: 40px;
       }
 
-      .subrace-list {
+      .subrace-section {
+        margin-left: 66px;
+        padding-left: 14px;
+      }
+
+      .option-details {
         margin-left: 66px;
       }
 
       .subrace-card {
         grid-template-columns: auto minmax(0, 1fr);
         padding: 10px 12px;
+      }
+
+      .subrace-details {
+        margin-left: 32px;
+      }
+
+      .details-indent-1 {
+        margin-left: 1rem;
+      }
+
+      .details-indent-2 {
+        margin-left: 2rem;
       }
 
       .note-box {
@@ -368,6 +522,8 @@
         title: "種族與職業",
         raceToggle: "種族",
         classToggle: "職業",
+        subraceLabel: "子種族",
+        dataError: "無法載入種族與職業資料。",
         aria: "目前語言：中文"
       },
       en: {
@@ -375,75 +531,13 @@
         title: "Race & Class",
         raceToggle: "Race",
         classToggle: "Class",
+        subraceLabel: "Subraces",
+        dataError: "Unable to load race and class data.",
         aria: "Current language: English"
       }
     };
 
-    // Edit each race, class, and subrace note in the `note` fields below.
-    const data = {
-      race: [
-        { id: "dragonborn", en: "Dragonborn", zh: "龍人", note: { zh: "力量+2\n魅力+1", en: "STR+2\nCHA+1" } },
-        {
-          id: "dwarf",
-          en: "Dwarf",
-          zh: "矮人",
-          note: { zh: "體魄+2", en: "CON+2" },
-          subraces: [
-            { id: "hill-dwarf", en: "Hill Dwarf", zh: "丘陵矮人", note: { zh: "感知+1", en: "WIS+1" } },
-            { id: "mountain-dwarf", en: "Mountain Dwarf", zh: "山矮人", note: { zh: "力量+2", en: "STR+2" } }
-          ]
-        },
-        {
-          id: "elf",
-          en: "Elf",
-          zh: "妖精",
-          note: { zh: "敏捷+2", en: "DEX+2" },
-          subraces: [
-            { id: "high-elf", en: "High Elf", zh: "高妖精", note: { zh: "智力+1", en: "INT+1" } },
-            { id: "wood-elf", en: "Wood Elf", zh: "木妖精", note: { zh: "感知+1", en: "WIS+1" } },
-            { id: "drow", en: "Drow", zh: "暗妖精", note: { zh: "魅力+1", en: "CHA+1" } }
-          ]
-        },
-        {
-          id: "gnome",
-          en: "Gnome",
-          zh: "地侏",
-          note: { zh: "智力+2", en: "INT+2" },
-          subraces: [
-            { id: "forest-gnome", en: "Forest Gnome", zh: "森地侏", note: { zh: "敏捷+1", en: "DEX+1" } },
-            { id: "rock-gnome", en: "Rock Gnome", zh: "岩地侏", note: { zh: "體魄+1", en: "CON+1" } }
-          ]
-        },
-        { id: "half-elf", en: "Half-Elf", zh: "半妖精", note: { zh: "魅力+2\n選二能力各+1", en: "CHA+2\nChoose 2 Abilities Each +1" } },
-        { id: "half-orc", en: "Half-Orc", zh: "半獸人", note: { zh: "力量+2\n體魄+1", en: "STR+2\nCON+1" } },
-        {
-          id: "halfling",
-          en: "Halfling",
-          zh: "半身人",
-          note: { zh: "敏捷+2", en: "DEX+2" },
-          subraces: [
-            { id: "lightfoot", en: "Lightfoot", zh: "輕足半身人", note: { zh: "魅力+1", en: "CHA+1" } },
-            { id: "stout", en: "Stout", zh: "強魄半身人", note: { zh: "體魄+1", en: "CON+1" } }
-          ]
-        },
-        { id: "human", en: "Human", zh: "人類",note: { zh: "所有能力+1", en: "All Abilities +1" }},
-        { id: "tiefling", en: "Tiefling", zh: "魔人", note: { zh: "智力+1\n魅力+2", en: "INT+1\nCHA+2" } }
-      ],
-      class: [
-        { id: "barbarian", en: "Barbarian", zh: "野蠻人", note: { zh: "生命骰：1d12\n豁免：力量、體魄", en: "Hit Dice: 1d12\nSaving Throw: STR, CON" } },
-        { id: "bard", en: "Bard", zh: "吟遊詩人", note: { zh: "生命骰：1d8\n豁免：敏捷、魅力", en: "Hit Dice: 1d8\nSaving Throw: DEX, CHA" } },
-        { id: "cleric", en: "Cleric", zh: "牧師", note: { zh: "生命骰：1d8\n豁免：感知、魅力", en: "Hit Dice: 1d8\nSaving Throw: WIS, CHA" } },
-        { id: "druid", en: "Druid", zh: "德魯伊", note: { zh: "生命骰：1d8\n豁免：智力、感知", en: "Hit Dice: 1d8\nSaving Throw: INT, WIS" } },
-        { id: "fighter", en: "Fighter", zh: "戰士", note: { zh: "生命骰：1d10\n豁免：力量、體魄", en: "Hit Dice: 1d10\nSaving Throw: STR, CON" } },
-        { id: "monk", en: "Monk", zh: "武僧", note: { zh: "生命骰：1d8\n豁免：力量、敏捷", en: "Hit Dice: 1d8\nSaving Throw: STR, DEX" } },
-        { id: "paladin", en: "Paladin", zh: "聖騎士", note: { zh: "生命骰：1d10\n豁免：感知、魅力", en: "Hit Dice: 1d10\nSaving Throw: WIS, CHA" } },
-        { id: "ranger", en: "Ranger", zh: "遊俠", note: { zh: "生命骰：1d10\n豁免：力量、敏捷", en: "Hit Dice: 1d10\nSaving Throw: STR, DEX" } },
-        { id: "rogue", en: "Rogue", zh: "浪客", note: { zh: "生命骰：1d8\n豁免：敏捷、智力", en: "Hit Dice: 1d8\nSaving Throw: DEX, INT" } },
-        { id: "sorcerer", en: "Sorcerer", zh: "術師", note: { zh: "生命骰：1d6\n豁免：體魄、魅力", en: "Hit Dice: 1d6\nSaving Throw: CON, CHA" } },
-        { id: "warlock", en: "Warlock", zh: "契術師", note: { zh: "生命骰：1d8\n豁免：感知、魅力", en: "Hit Dice: 1d8\nSaving Throw: WIS, CHA" } },
-        { id: "wizard", en: "Wizard", zh: "法師", note: { zh: "生命骰：1d6\n豁免：智力、感知", en: "Hit Dice: 1d6\nSaving Throw:INT, WIS" } }
-      ]
-    };
+    const data = { race: [], class: [] };
 
     const buttons = Array.from(document.querySelectorAll("[data-mode]"));
     const list = document.getElementById("option-list");
@@ -452,7 +546,10 @@
     const storageKey = "rugatha-language";
     let currentMode = "race";
     let currentLanguage = "zh";
-    let expandedRaceId = null;
+    let isAuthenticated = window.RUGATHA_AUTH_SIGNED_IN === true;
+    const expandedOptionIds = { race: null, class: null };
+    let expandedSubraceId = null;
+    let dataLoadError = null;
 
     const normalizeLanguage = (language) => language === "en" ? "en" : "zh";
     const escapeHTML = (value) => String(value)
@@ -462,12 +559,132 @@
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
 
-    const getNote = (item) => {
-      const note = item.note && item.note[currentLanguage] ? item.note[currentLanguage].trim() : "";
+    const getNote = (item, type) => {
+      const key = `${type}_${currentLanguage}`;
+      const note = item.note && item.note[key] ? item.note[key].trim() : "";
       return {
         text: note,
         isEmpty: !note
       };
+    };
+
+    const detailsHeadingLevels = {
+      zh: new Map([
+        ["箭術", 1],
+        ["防禦", 1],
+        ["決鬥", 1],
+        ["巨武器戰鬥", 1],
+        ["守護", 1],
+        ["雙武器戰鬥", 1],
+        ["龍族血脈", 1],
+        ["狂野魔法", 1],
+        ["龍族祖先", 2],
+        ["龍族韌性", 2],
+        ["狂野魔法潮湧", 2],
+        ["混亂浪潮", 2],
+        ["至高妖精", 1],
+        ["邪魔", 1],
+        ["舊日支配者", 1],
+        ["龍族血統", 1]
+      ]),
+      en: new Map([
+        ["Archery", 1],
+        ["Defense", 1],
+        ["Dueling", 1],
+        ["Great Weapon Fighting", 1],
+        ["Protection", 1],
+        ["Two-Weapon Fighting", 1],
+        ["Draconic Bloodline", 1],
+        ["Wild Magic", 1],
+        ["Dragon Ancestor", 2],
+        ["Draconic Resilience", 2],
+        ["Wild Magic Surge", 2],
+        ["Tides of Chaos", 2],
+        ["The Archfey", 1],
+        ["The Fiend", 1],
+        ["The Great Old One", 1],
+        ["Draconic Ancestry", 1]
+      ])
+    };
+
+    const applyDetailsIndent = (element, level) => {
+      if (level > 0) element.classList.add(`details-indent-${level}`);
+    };
+
+    const renderDetailsContent = (container, text) => {
+      const blocks = text
+        .split(/\n\s*\n/)
+        .map((block) => block.trim())
+        .filter(Boolean);
+      let currentIndentLevel = 0;
+
+      blocks.forEach((block) => {
+        const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+        const isList = lines.length > 0 && lines.every((line) => line.startsWith("• "));
+        const isTable = lines.length >= 3
+          && lines.every((line) => line.startsWith("|") && line.endsWith("|"))
+          && /^\|(?:\s*:?-{3,}:?\s*\|)+$/.test(lines[1]);
+        const isHeading = lines.length === 1
+          && lines[0].length <= 48
+          && !/[。.!?：:]$/.test(lines[0]);
+
+        if (isTable) {
+          const parseRow = (line) => line.slice(1, -1).split("|").map((cell) => cell.trim());
+          const tableWrap = document.createElement("div");
+          tableWrap.className = "details-table-wrap";
+          const table = document.createElement("table");
+          table.className = "details-table";
+          const tableHead = document.createElement("thead");
+          const headRow = document.createElement("tr");
+          parseRow(lines[0]).forEach((cell) => {
+            const heading = document.createElement("th");
+            heading.scope = "col";
+            heading.textContent = cell;
+            headRow.appendChild(heading);
+          });
+          tableHead.appendChild(headRow);
+          table.appendChild(tableHead);
+
+          const tableBody = document.createElement("tbody");
+          lines.slice(2).forEach((line) => {
+            const row = document.createElement("tr");
+            parseRow(line).forEach((cell) => {
+              const dataCell = document.createElement("td");
+              dataCell.textContent = cell;
+              row.appendChild(dataCell);
+            });
+            tableBody.appendChild(row);
+          });
+          table.appendChild(tableBody);
+          tableWrap.appendChild(table);
+          applyDetailsIndent(tableWrap, currentIndentLevel);
+          container.appendChild(tableWrap);
+          currentIndentLevel = 0;
+          return;
+        }
+
+        if (isList) {
+          const listElement = document.createElement("ul");
+          listElement.className = "details-list";
+          lines.forEach((line) => {
+            const item = document.createElement("li");
+            item.textContent = line.slice(2);
+            listElement.appendChild(item);
+          });
+          applyDetailsIndent(listElement, currentIndentLevel);
+          container.appendChild(listElement);
+          return;
+        }
+
+        const element = document.createElement(isHeading ? "div" : "p");
+        element.className = isHeading ? "details-heading" : "details-paragraph";
+        element.textContent = block;
+        if (isHeading) {
+          currentIndentLevel = detailsHeadingLevels[currentLanguage].get(block) ?? 0;
+        }
+        applyDetailsIndent(element, currentIndentLevel);
+        container.appendChild(element);
+      });
     };
 
     const getStoredLanguage = () => {
@@ -486,22 +703,41 @@
       }
     };
 
+    const loadDetails = async (path) => {
+      const response = await fetch(path);
+      if (!response.ok) {
+        throw new Error(`Failed to load ${path}: ${response.status}`);
+      }
+      const details = await response.json();
+      if (!Array.isArray(details)) {
+        throw new Error(`${path} must contain a JSON array.`);
+      }
+      return details;
+    };
+
     const renderOptions = (mode) => {
       list.replaceChildren();
+      if (dataLoadError) {
+        const errorItem = document.createElement("li");
+        errorItem.className = "option-card";
+        errorItem.textContent = translations[currentLanguage].dataError;
+        list.appendChild(errorItem);
+        return;
+      }
       data[mode].forEach((item) => {
         const label = currentLanguage === "zh" ? item.zh : item.en;
-        const note = getNote(item);
+        const basicNote = getNote(item, "basic");
+        const detailsNote = getNote(item, "details");
         const hasSubraces = mode === "race" && Array.isArray(item.subraces) && item.subraces.length > 0;
-        const isExpanded = hasSubraces && expandedRaceId === item.id;
+        const isExpanded = expandedOptionIds[mode] === item.id;
         const li = document.createElement("li");
         li.className = "option-item";
 
-        const card = document.createElement(hasSubraces ? "button" : "div");
+        const card = document.createElement("button");
         card.className = "option-card";
-        if (hasSubraces) {
-          card.type = "button";
-          card.setAttribute("aria-expanded", String(isExpanded));
-        }
+        card.type = "button";
+        card.setAttribute("aria-expanded", String(isExpanded));
+        card.setAttribute("aria-disabled", String(!isAuthenticated));
         card.innerHTML = `
           <span class="option-mark" aria-hidden="true">
             <img src="../../assets/logo/D&D_logo.png" alt="">
@@ -509,34 +745,77 @@
           <span class="option-copy">
             <span class="option-name">${escapeHTML(label)}</span>
           </span>
-          <span class="note-box${note.isEmpty ? " is-empty" : ""}">${escapeHTML(note.text)}</span>
+          <span class="note-box${basicNote.isEmpty ? " is-empty" : ""}">${escapeHTML(basicNote.text)}</span>
         `;
-        if (hasSubraces) {
-          card.addEventListener("click", () => {
-            expandedRaceId = expandedRaceId === item.id ? null : item.id;
-            renderOptions("race");
-          });
-        }
+        card.addEventListener("click", () => {
+          if (!isAuthenticated) return;
+          expandedOptionIds[mode] = isExpanded ? null : item.id;
+          if (mode === "race") expandedSubraceId = null;
+          renderOptions(mode);
+        });
         li.appendChild(card);
 
-        if (isExpanded) {
+        if (isExpanded && !detailsNote.isEmpty) {
+          const details = document.createElement("div");
+          details.className = "option-details note-box";
+          renderDetailsContent(details, detailsNote.text);
+          li.appendChild(details);
+        }
+
+        if (isExpanded && hasSubraces) {
+          const subraceSection = document.createElement("div");
+          subraceSection.className = "subrace-section";
+          subraceSection.setAttribute("role", "group");
+          subraceSection.setAttribute("aria-label", translations[currentLanguage].subraceLabel);
+
+          const subraceSectionTitle = document.createElement("div");
+          subraceSectionTitle.className = "subrace-section-title";
+          subraceSectionTitle.textContent = translations[currentLanguage].subraceLabel;
+          subraceSection.appendChild(subraceSectionTitle);
+
           const subraceList = document.createElement("ul");
           subraceList.className = "subrace-list";
           item.subraces.forEach((subrace) => {
             const subraceLabel = currentLanguage === "zh" ? subrace.zh : subrace.en;
-            const subraceNote = getNote(subrace);
+            const subraceNote = getNote(subrace, "basic");
+            const subraceDetailsNote = getNote(subrace, "details");
+            const isSubraceExpanded = expandedSubraceId === subrace.id;
+            const subraceDetailsId = `subrace-details-${item.id}-${subrace.id}`;
             const subraceItem = document.createElement("li");
-            subraceItem.className = "subrace-card";
-            subraceItem.innerHTML = `
+            subraceItem.className = "subrace-item";
+
+            const subraceCard = document.createElement("button");
+            subraceCard.className = "subrace-card";
+            subraceCard.type = "button";
+            subraceCard.setAttribute("aria-expanded", String(isSubraceExpanded));
+            subraceCard.setAttribute("aria-disabled", String(subraceDetailsNote.isEmpty));
+            if (!subraceDetailsNote.isEmpty) subraceCard.setAttribute("aria-controls", subraceDetailsId);
+            subraceCard.innerHTML = `
               <span class="subrace-mark" aria-hidden="true">
                 <img src="../../assets/logo/D&D_logo.png" alt="">
               </span>
               <span class="subrace-name">${escapeHTML(subraceLabel)}</span>
               <span class="note-box${subraceNote.isEmpty ? " is-empty" : ""}">${escapeHTML(subraceNote.text)}</span>
             `;
+            subraceCard.addEventListener("click", () => {
+              if (!isAuthenticated || subraceDetailsNote.isEmpty) return;
+              expandedSubraceId = isSubraceExpanded ? null : subrace.id;
+              renderOptions("race");
+            });
+            subraceItem.appendChild(subraceCard);
+
+            if (isSubraceExpanded && !subraceDetailsNote.isEmpty) {
+              const subraceDetails = document.createElement("div");
+              subraceDetails.className = "subrace-details note-box";
+              subraceDetails.id = subraceDetailsId;
+              renderDetailsContent(subraceDetails, subraceDetailsNote.text);
+              subraceItem.appendChild(subraceDetails);
+            }
+
             subraceList.appendChild(subraceItem);
           });
-          li.appendChild(subraceList);
+          subraceSection.appendChild(subraceList);
+          li.appendChild(subraceSection);
         }
 
         list.appendChild(li);
@@ -572,9 +851,6 @@
       button.addEventListener("click", () => {
         const mode = button.dataset.mode;
         currentMode = mode;
-        if (mode !== "race") {
-          expandedRaceId = null;
-        }
         buttons.forEach((item) => {
           item.setAttribute("aria-pressed", String(item === button));
         });
@@ -586,7 +862,32 @@
       setLanguage(languageButton.dataset.lang === "en" ? "zh" : "en");
     });
 
-    setLanguage(getStoredLanguage() || "zh");
+    window.addEventListener("rugatha:auth-state-changed", (event) => {
+      isAuthenticated = event.detail?.signedIn === true;
+      if (!isAuthenticated) {
+        expandedOptionIds.race = null;
+        expandedOptionIds.class = null;
+        expandedSubraceId = null;
+      }
+      renderOptions(currentMode);
+    });
+
+    const initialize = async () => {
+      try {
+        const [races, classes] = await Promise.all([
+          loadDetails("race_details.json"),
+          loadDetails("class_details.json")
+        ]);
+        data.race = races;
+        data.class = classes;
+      } catch (error) {
+        dataLoadError = error;
+        console.error("Failed to load race and class details", error);
+      }
+      setLanguage(getStoredLanguage() || "zh");
+    };
+
+    initialize();
   </script>
   <script src="../../shared/rugatha.config.js"></script>
   <script src="../../shared/firebase.config.js"></script>

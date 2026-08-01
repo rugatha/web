@@ -1,0 +1,134 @@
+[
+  {
+    "id": "barbarian",
+    "en": "Barbarian",
+    "zh": "野蠻人",
+    "note": {
+      "basic_zh": "生命骰：1d12\n豁免：力量、體魄",
+      "basic_en": "Hit Dice: 1d12\nSaving Throw: STR, CON",
+      "details_zh": "熟練\n\n• 護甲：輕甲、中甲、盾牌\n• 武器：簡易武器、軍用武器\n• 技能：從動物馴養、運動、威嚇、自然、觀察、生存中選擇兩項\n\n起始裝備\n\n• 巨斧，或任一軍用近戰武器\n• 兩把手斧，或任一簡易武器\n• 探險者套組與四把標槍\n\n狂怒\n\n你可用附贈動作進入狂怒。未穿著重甲時，獲得以下效果：\n\n• 力量檢定與力量豁免具有優勢\n• 以力量進行近戰武器攻擊並命中時，傷害獲得狂怒加值\n• 對鈍擊、穿刺與揮砍傷害具有抗性\n\n狂怒持續 1 分鐘，也可用附贈動作提早結束。狂怒期間無法施法或專注於法術。1 級時，每次長休前可狂怒兩次；次數會隨等級提高。\n\n無甲防禦\n\n未穿著護甲時，護甲等級為 10 + 敏捷調整值 + 體魄調整值。使用盾牌不會失去此效果。",
+      "details_en": "Proficiencies\n\n• Armor: Light armor, medium armor, and shields\n• Weapons: Simple and martial weapons\n• Skills: Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival\n\nStarting Equipment\n\n• A greataxe or any martial melee weapon\n• Two handaxes or any simple weapon\n• An explorer's pack and four javelins\n\nRage\n\nYou can enter a rage as a bonus action. While not wearing heavy armor, you gain these benefits:\n\n• Advantage on Strength checks and Strength saving throws\n• A rage damage bonus when you hit with a melee weapon attack using Strength\n• Resistance to bludgeoning, piercing, and slashing damage\n\nRage lasts for 1 minute, and you can also end it early as a bonus action. You cannot cast or concentrate on spells while raging. At 1st level, you can rage twice per long rest; this number increases with level.\n\nUnarmored Defense\n\nWhile not wearing armor, your Armor Class equals 10 + Dexterity modifier + Constitution modifier. You can still use a shield and gain this benefit."
+    }
+  },
+  {
+    "id": "bard",
+    "en": "Bard",
+    "zh": "吟遊詩人",
+    "note": {
+      "basic_zh": "生命骰：1d8\n豁免：敏捷、魅力",
+      "basic_en": "Hit Dice: 1d8\nSaving Throw: DEX, CHA",
+      "details_zh": "熟練\n\n• 護甲：輕甲\n• 武器：簡易武器、手弩、長劍、細劍、短劍\n• 工具：任選三種樂器\n• 技能：任選三項\n\n起始裝備\n\n• 細劍、長劍或任一簡易武器\n• 外交官套組或藝人套組\n• 魯特琴或任一樂器\n• 皮甲與匕首\n\n施法\n\n• 施法能力：魅力\n• 法術豁免 DC：8 + 熟練加值 + 魅力調整值\n• 法術攻擊加值：熟練加值 + 魅力調整值\n• 戲法：從吟遊詩人法術表選擇兩個\n• 1 環法術：從吟遊詩人法術表選擇四個\n• 升級時，可將一個已知法術替換為另一個符合條件的吟遊詩人法術\n• 可使用樂器作為施法法器\n\n吟遊激勵\n\n吟遊激勵的使用次數等於魅力調整值，至少一次，完成長休後恢復。你可用附贈動作選擇 60 呎內一名能聽見你的其他生物；該生物在 10 分鐘內可將一顆吟遊激勵骰（1 級時為 d6）加到一次能力檢定、攻擊檢定或豁免結果中。",
+      "details_en": "Proficiencies\n\n• Armor: Light armor\n• Weapons: Simple weapons, hand crossbows, longswords, rapiers, and shortswords\n• Tools: Three musical instruments of your choice\n• Skills: Any three\n\nStarting Equipment\n\n• A rapier, longsword, or any simple weapon\n• A diplomat's pack or entertainer's pack\n• A lute or any other musical instrument\n• Leather armor and a dagger\n\nSpellcasting\n\n• Spellcasting Ability: Charisma\n• Spell Save DC: 8 + proficiency bonus + Charisma modifier\n• Spell Attack Modifier: proficiency bonus + Charisma modifier\n• Cantrips: Choose two from the bard spell list\n• 1st-Level Spells: Choose four from the bard spell list\n• When you gain a level, you can replace one known spell with another eligible bard spell\n• You can use a musical instrument as a spellcasting focus\n\nBardic Inspiration\n\nYou can use Bardic Inspiration a number of times equal to your Charisma modifier, with a minimum of once, and regain all uses after a long rest. As a bonus action, choose another creature within 60 feet that can hear you. Within 10 minutes, it can add one Bardic Inspiration die—a d6 at 1st level—to one ability check, attack roll, or saving throw."
+    }
+  },
+  {
+    "id": "cleric",
+    "en": "Cleric",
+    "zh": "牧師",
+    "note": {
+      "basic_zh": "生命骰：1d8\n豁免：感知、魅力",
+      "basic_en": "Hit Dice: 1d8\nSaving Throw: WIS, CHA",
+      "details_zh": "熟練\n\n• 護甲：輕甲、中甲、盾牌\n• 武器：簡易武器\n• 技能：從歷史、察言觀色、醫藥、遊說、宗教中選擇兩項\n\n起始裝備\n\n• 錘矛，或戰錘（若具有熟練）\n• 鱗甲、皮甲或鎖子甲（若具有熟練）\n• 輕弩與 20 支弩矢，或任一簡易武器\n• 祭司套組或探險者套組\n• 盾牌與聖徽\n\n施法\n\n• 施法能力：感知\n• 法術豁免 DC：8 + 熟練加值 + 感知調整值\n• 法術攻擊加值：熟練加值 + 感知調整值\n• 戲法：從牧師法術表選擇三個\n• 1 級時擁有兩個 1 環法術位\n• 每日準備的牧師法術數量為 感知調整值 + 牧師等級，至少一個；只能準備你擁有相應法術位環級的法術\n• 可使用聖徽作為施法法器\n\n神聖領域\n\n選擇一個與信奉神祇相關的領域：知識、生命、光明、自然、風暴、詭術或戰爭。領域法術會自動準備，且不計入每日準備法術數量；升級後還會取得該領域的其他能力。",
+      "details_en": "Proficiencies\n\n• Armor: Light armor, medium armor, and shields\n• Weapons: Simple weapons\n• Skills: Choose two from History, Insight, Medicine, Persuasion, and Religion\n\nStarting Equipment\n\n• A mace or a warhammer, if proficient\n• Scale mail, leather armor, or chain mail, if proficient\n• A light crossbow and 20 bolts, or any simple weapon\n• A priest's pack or explorer's pack\n• A shield and holy symbol\n\nSpellcasting\n\n• Spellcasting Ability: Wisdom\n• Spell Save DC: 8 + proficiency bonus + Wisdom modifier\n• Spell Attack Modifier: proficiency bonus + Wisdom modifier\n• Cantrips: Choose three from the cleric spell list\n• At 1st level, you have two 1st-level spell slots\n• You prepare Wisdom modifier + cleric level cleric spells each day, with a minimum of one. You can prepare only spells for which you have spell slots\n• You can use a holy symbol as a spellcasting focus\n\nDivine Domain\n\nChoose a domain associated with your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. Domain spells are always prepared and do not count against the number you prepare each day. Your domain also grants additional features as you gain levels."
+    }
+  },
+  {
+    "id": "druid",
+    "en": "Druid",
+    "zh": "德魯伊",
+    "note": {
+      "basic_zh": "生命骰：1d8\n豁免：智力、感知",
+      "basic_en": "Hit Dice: 1d8\nSaving Throw: INT, WIS",
+      "details_zh": "熟練\n\n• 護甲：輕甲、中甲、盾牌；德魯伊不會穿著金屬護甲或使用金屬盾牌\n• 武器：短棍、匕首、飛鏢、標槍、錘矛、長棍、彎刀、鐮刀、投石索、長矛\n• 工具：草藥工具組\n• 技能：從奧秘、動物馴養、察言觀色、醫藥、自然、觀察、宗教、生存中選擇兩項\n\n起始裝備\n\n• 木盾或任一簡易武器\n• 彎刀或任一簡易近戰武器\n• 皮甲、探險者套組與德魯伊法器\n\n德魯伊語\n\n你懂德魯伊語（Druidic），可用它交談或留下秘密訊息。懂德魯伊語的人會自動發現這類訊息；其他生物必須通過 DC 15 感知（觀察）檢定才能發現，但若無魔法協助仍無法解讀。\n\n施法\n\n• 施法能力：感知\n• 法術豁免 DC：8 + 熟練加值 + 感知調整值\n• 法術攻擊加值：熟練加值 + 感知調整值\n• 戲法：從德魯伊法術表選擇兩個\n• 1 級時擁有兩個 1 環法術位\n• 每日準備的德魯伊法術數量為 感知調整值 + 德魯伊等級，至少一個；只能準備你擁有相應法術位環級的法術\n• 可使用德魯伊法器作為施法法器",
+      "details_en": "Proficiencies\n\n• Armor: Light armor, medium armor, and shields; druids do not wear armor or use shields made of metal\n• Weapons: Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, and spears\n• Tools: Herbalism kit\n• Skills: Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival\n\nStarting Equipment\n\n• A wooden shield or any simple weapon\n• A scimitar or any simple melee weapon\n• Leather armor, an explorer's pack, and a druidic focus\n\nDruidic\n\nYou know Druidic and can use it to speak or leave secret messages. Creatures that know Druidic notice such messages automatically. Others must succeed on a DC 15 Wisdom (Perception) check to notice one and cannot decipher it without magic.\n\nSpellcasting\n\n• Spellcasting Ability: Wisdom\n• Spell Save DC: 8 + proficiency bonus + Wisdom modifier\n• Spell Attack Modifier: proficiency bonus + Wisdom modifier\n• Cantrips: Choose two from the druid spell list\n• At 1st level, you have two 1st-level spell slots\n• You prepare Wisdom modifier + druid level druid spells each day, with a minimum of one. You can prepare only spells for which you have spell slots\n• You can use a druidic focus as a spellcasting focus"
+    }
+  },
+  {
+    "id": "fighter",
+    "en": "Fighter",
+    "zh": "戰士",
+    "note": {
+      "basic_zh": "生命骰：1d10\n豁免：力量、體魄",
+      "basic_en": "Hit Dice: 1d10\nSaving Throw: STR, CON",
+      "details_zh": "熟練\n\n• 護甲：所有護甲、盾牌\n• 武器：簡易武器、軍用武器\n• 技能：從體操、動物馴養、運動、歷史、察言觀色、威嚇、觀察、生存中選擇兩項\n\n起始裝備\n\n• 鎖子甲，或皮甲、長弓與 20 支箭\n• 一把軍用武器與一面盾牌，或兩把軍用武器\n• 輕弩與 20 支弩矢，或兩把手斧\n• 地城探索者套組或探險者套組\n\n戰鬥風格\n\n選擇一種戰鬥風格；日後再次取得此特性時，不能重複選擇。\n\n箭術\n\n使用遠程武器進行攻擊檢定時獲得 +2 加值。\n\n防禦\n\n穿著護甲時，護甲等級 +1。\n\n決鬥\n\n單手持用一把近戰武器，且另一手未持武器時，該武器的傷害擲骰獲得 +2 加值。\n\n巨武器戰鬥\n\n雙手持用近戰武器進行攻擊，傷害骰擲出 1 或 2 時，可重擲一次並必須採用新結果。武器必須具有雙手或兩用屬性。\n\n守護\n\n持有盾牌時，若可見生物攻擊你 5 呎內的其他目標，可使用反應使該次攻擊檢定具有劣勢。\n\n雙武器戰鬥\n\n進行雙武器戰鬥時，可將能力調整值加到第二次攻擊的傷害。\n\n回氣\n\n可用附贈動作恢復 1d10 + 戰士等級 點生命值。完成短休或長休後可再次使用。",
+      "details_en": "Proficiencies\n\n• Armor: All armor and shields\n• Weapons: Simple and martial weapons\n• Skills: Choose two from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival\n\nStarting Equipment\n\n• Chain mail, or leather armor, a longbow, and 20 arrows\n• One martial weapon and a shield, or two martial weapons\n• A light crossbow and 20 bolts, or two handaxes\n• A dungeoneer's pack or explorer's pack\n\nFighting Style\n\nChoose one fighting style. If you gain this feature again, you cannot choose the same style twice.\n\nArchery\n\nGain a +2 bonus to attack rolls made with ranged weapons.\n\nDefense\n\nWhile wearing armor, gain a +1 bonus to Armor Class.\n\nDueling\n\nWhen holding one melee weapon in one hand and no other weapons, gain a +2 bonus to damage rolls with that weapon.\n\nGreat Weapon Fighting\n\nWhen you roll a 1 or 2 on a damage die for a melee weapon held in two hands, reroll that die once and use the new result. The weapon must have the two-handed or versatile property.\n\nProtection\n\nWhile wielding a shield, when a creature you can see attacks another target within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll.\n\nTwo-Weapon Fighting\n\nWhen fighting with two weapons, you can add your ability modifier to the damage of the second attack.\n\nSecond Wind\n\nAs a bonus action, regain 1d10 + fighter level hit points. You regain this ability after a short or long rest."
+    }
+  },
+  {
+    "id": "monk",
+    "en": "Monk",
+    "zh": "武僧",
+    "note": {
+      "basic_zh": "生命骰：1d8\n豁免：力量、敏捷",
+      "basic_en": "Hit Dice: 1d8\nSaving Throw: STR, DEX",
+      "details_zh": "熟練\n\n• 武器：簡易武器、短劍\n• 工具：任一工匠工具或樂器\n• 技能：從體操、運動、歷史、察言觀色、宗教、隱匿中選擇兩項\n\n起始裝備\n\n• 短劍，或任一簡易武器\n• 地城探索者套組或探險者套組\n• 10 枚飛鏢\n\n無甲防禦\n\n未穿著護甲且未持盾牌時，護甲等級為 10 + 敏捷調整值 + 感知調整值。\n\n武術\n\n未穿著護甲、未持盾牌，且僅空手或持用武僧武器時：\n\n• 可用敏捷取代力量進行空手與武僧武器的攻擊及傷害擲骰\n• 可用 d4 取代空手與武僧武器的原始傷害骰；此骰會隨等級提高\n• 在攻擊動作中使用空手或武僧武器後，可用附贈動作再進行一次空手攻擊\n\n武僧武器包括短劍，以及不具雙手或重型屬性的簡易近戰武器。",
+      "details_en": "Proficiencies\n\n• Weapons: Simple weapons and shortswords\n• Tools: One artisan's tool or musical instrument of your choice\n• Skills: Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth\n\nStarting Equipment\n\n• A shortsword or any simple weapon\n• A dungeoneer's pack or explorer's pack\n• 10 darts\n\nUnarmored Defense\n\nWhile not wearing armor or wielding a shield, your Armor Class equals 10 + Dexterity modifier + Wisdom modifier.\n\nMartial Arts\n\nWhile unarmored, not wielding a shield, and using only unarmed strikes or monk weapons:\n\n• You can use Dexterity instead of Strength for attack and damage rolls with unarmed strikes and monk weapons\n• You can use a d4 in place of the normal damage die for unarmed strikes and monk weapons; this die increases with level\n• After using an unarmed strike or monk weapon as part of the Attack action, you can make one unarmed strike as a bonus action\n\nMonk weapons are shortswords and simple melee weapons without the two-handed or heavy property."
+    }
+  },
+  {
+    "id": "paladin",
+    "en": "Paladin",
+    "zh": "聖騎士",
+    "note": {
+      "basic_zh": "生命骰：1d10\n豁免：感知、魅力",
+      "basic_en": "Hit Dice: 1d10\nSaving Throw: WIS, CHA",
+      "details_zh": "熟練\n\n• 護甲：所有護甲、盾牌\n• 武器：簡易武器、軍用武器\n• 技能：從運動、察言觀色、威嚇、醫藥、遊說、宗教中選擇兩項\n\n起始裝備\n\n• 一把軍用武器與一面盾牌，或兩把軍用武器\n• 五把標槍，或任一簡易近戰武器\n• 祭司套組或探險者套組\n• 鎖子甲與聖徽\n\n神聖感知\n\n使用動作後，直到下回合結束前，你會知道 60 呎內未受全身掩蔽的天界生物、邪魔與不死生物的位置及類型，但無法得知個體身分。你也能感知範圍內受聖化或褻瀆的地點或物品。每次長休前可使用 1 + 魅力調整值 次，至少一次。\n\n聖療\n\n你擁有等於 聖騎士等級 × 5 的治療池。可用動作觸碰生物並消耗池中點數，恢復等量生命值；也可消耗 5 點治癒一種疾病或中和一種毒素。此能力對不死生物與構裝生物無效，完成長休後恢復治療池。",
+      "details_en": "Proficiencies\n\n• Armor: All armor and shields\n• Weapons: Simple and martial weapons\n• Skills: Choose two from Athletics, Insight, Intimidation, Medicine, Persuasion, and Religion\n\nStarting Equipment\n\n• One martial weapon and a shield, or two martial weapons\n• Five javelins or any simple melee weapon\n• A priest's pack or explorer's pack\n• Chain mail and a holy symbol\n\nDivine Sense\n\nAs an action, until the end of your next turn, you know the location and type of any celestial, fiend, or undead within 60 feet that is not behind total cover, but not its identity. You also detect consecrated or desecrated places or objects in range. You can use this feature 1 + Charisma modifier times per long rest, with a minimum of once.\n\nLay on Hands\n\nYou have a healing pool equal to paladin level × 5. As an action, touch a creature and spend points from the pool to restore that many hit points. You can instead spend 5 points to cure one disease or neutralize one poison. This feature has no effect on undead or constructs, and the pool replenishes after a long rest."
+    }
+  },
+  {
+    "id": "ranger",
+    "en": "Ranger",
+    "zh": "遊俠",
+    "note": {
+      "basic_zh": "生命骰：1d10\n豁免：力量、敏捷",
+      "basic_en": "Hit Dice: 1d10\nSaving Throw: STR, DEX",
+      "details_zh": "熟練\n\n• 護甲：輕甲、中甲、盾牌\n• 武器：簡易武器、軍用武器\n• 技能：從動物馴養、運動、察言觀色、調查、自然、觀察、隱匿、生存中選擇三項\n\n起始裝備\n\n• 鱗甲或皮甲\n• 兩把短劍，或兩把簡易近戰武器\n• 地城探索者套組或探險者套組\n• 長弓與裝有 20 支箭的箭袋\n\n宿敵\n\n選擇一類宿敵：異怪、野獸、天界生物、構裝生物、龍、元素生物、精類、邪魔、巨人、怪獸、泥怪、植物或不死生物；也可改選兩類類人生物。\n\n追蹤宿敵的感知（生存）檢定，以及回想其相關資訊的智力檢定具有優勢。若宿敵會說話，還可學會其使用的一種語言。\n\n自然探索者\n\n選擇一種偏好地形：極地、海岸、沙漠、森林、草原、山地、沼澤或幽暗地域。進行與該地形有關的智力或感知檢定時，若使用熟練技能，熟練加值加倍。\n\n在偏好地形旅行一小時以上時：\n\n• 困難地形不會減緩團隊的旅行速度\n• 除非受到魔法影響，團隊不會迷路\n• 即使從事覓食、導航或追蹤等其他活動，仍會對危險保持警戒\n• 獨自行動時，可用正常速度隱匿移動\n• 覓食時可找到兩倍食物\n• 追蹤生物時，可得知其確切數量、體型，以及經過此處多久",
+      "details_en": "Proficiencies\n\n• Armor: Light armor, medium armor, and shields\n• Weapons: Simple and martial weapons\n• Skills: Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival\n\nStarting Equipment\n\n• Scale mail or leather armor\n• Two shortswords or two simple melee weapons\n• A dungeoneer's pack or explorer's pack\n• A longbow and a quiver of 20 arrows\n\nFavored Enemy\n\nChoose one favored enemy type: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, choose two types of humanoids.\n\nYou have advantage on Wisdom (Survival) checks to track favored enemies and on Intelligence checks to recall information about them. If your favored enemies speak a language, you also learn one language they use.\n\nNatural Explorer\n\nChoose one favored terrain: arctic, coast, desert, forest, grassland, mountain, swamp, or the Underdark. On Intelligence or Wisdom checks related to that terrain, double your proficiency bonus if you use a proficient skill.\n\nWhen traveling through favored terrain for at least 1 hour:\n\n• Difficult terrain does not slow your group's travel\n• Your group cannot become lost except by magical means\n• You remain alert to danger while performing another activity, such as foraging, navigating, or tracking\n• When traveling alone, you can move stealthily at a normal pace\n• You find twice as much food while foraging\n• While tracking, you learn the creatures' exact number, sizes, and how long ago they passed through the area"
+    }
+  },
+  {
+    "id": "rogue",
+    "en": "Rogue",
+    "zh": "浪客",
+    "note": {
+      "basic_zh": "生命骰：1d8\n豁免：敏捷、智力",
+      "basic_en": "Hit Dice: 1d8\nSaving Throw: DEX, INT",
+      "details_zh": "簡介\n\n浪客可能是盜賊、刺客，也可能有其他各式各樣的身分。他們擅長拆除陷阱與竊取財物，往往能在神不知鬼不覺間取走珠寶與錢幣。\n\n熟練\n\n• 護甲：輕甲\n• 武器：簡易武器、手弩、長劍、細劍、短劍\n• 工具：盜賊工具\n• 技能：從體操、運動、欺瞞、察言觀色、威嚇、調查、觀察、表演、遊說、巧手、隱匿中選擇四項\n\n起始裝備\n\n• 細劍或短劍\n• 短弓與裝有 20 支箭的箭袋，或短劍\n• 竊賊套組、地城探索者套組或探險者套組\n• 皮甲、兩把匕首與盜賊工具\n\n專精\n\n選擇兩項已熟練的技能，或一項已熟練的技能與盜賊工具。使用所選技能或工具進行檢定時，熟練加值加倍。\n\n偷襲\n\n每回合一次，當你使用靈巧武器或遠程武器命中，且該次攻擊檢定具有優勢時，可額外造成 1d6 傷害。如果目標 5 呎內有另一名未陷入失能狀態的敵人，且你的攻擊檢定不具有劣勢，則無須具有優勢也能使用偷襲。額外傷害會隨浪客等級提高。\n\n賊話\n\n你理解並能使用賊話。以賊話傳遞訊息所需的時間是一般對話的四倍；你也能理解用來傳達簡短訊息的秘密標記與符號。",
+      "details_en": "Overview\n\nRogues may be thieves, assassins, or known by any number of other names. They excel at disabling traps and stealing valuables, often making off with jewels and coins without anyone noticing.\n\nProficiencies\n\n• Armor: Light armor\n• Weapons: Simple weapons, hand crossbows, longswords, rapiers, and shortswords\n• Tools: Thieves' tools\n• Skills: Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth\n\nStarting Equipment\n\n• A rapier or shortsword\n• A shortbow and a quiver of 20 arrows, or a shortsword\n• A burglar's pack, dungeoneer's pack, or explorer's pack\n• Leather armor, two daggers, and thieves' tools\n\nExpertise\n\nChoose two proficient skills, or one proficient skill and your thieves' tools. Double your proficiency bonus for checks made with the chosen skills or tool.\n\nSneak Attack\n\nOnce per turn, when you hit with a finesse or ranged weapon and have advantage on the attack roll, you can deal an extra 1d6 damage. You do not need advantage if another enemy of the target is within 5 feet of it, that enemy is not incapacitated, and your attack roll does not have disadvantage. The extra damage increases with your rogue level.\n\nThieves' Cant\n\nYou understand and can use Thieves' Cant. Conveying a message in Thieves' Cant takes four times as long as ordinary speech. You also understand secret signs and symbols used to communicate short messages."
+    }
+  },
+  {
+    "id": "sorcerer",
+    "en": "Sorcerer",
+    "zh": "術師",
+    "note": {
+      "basic_zh": "生命骰：1d6\n豁免：體魄、魅力",
+      "basic_en": "Hit Dice: 1d6\nSaving Throw: CON, CHA",
+      "details_zh": "熟練\n\n• 武器：匕首、飛鏢、投石索、長棍、輕弩\n• 技能：從奧秘、欺瞞、察言觀色、威嚇、遊說、宗教中選擇兩項\n\n起始裝備\n\n• 輕弩與 20 支弩矢，或任一簡易武器\n• 法術材料包或秘法法器\n• 地城探索者套組或探險者套組\n• 兩把匕首\n\n施法\n\n• 施法能力：魅力\n• 法術豁免 DC：8 + 熟練加值 + 魅力調整值\n• 法術攻擊加值：熟練加值 + 魅力調整值\n• 戲法：從術師法術表選擇四個\n• 1 環法術：從術師法術表選擇兩個\n• 升級時，可將一個已知法術替換為另一個符合條件的術師法術\n• 可使用秘法法器作為施法法器\n\n術法起源\n\n選擇「龍族血脈」或「狂野魔法」作為術法起源；它們會在不同等級賦予不同能力。\n\n龍族血脈\n\n龍族祖先\n\n1 級時選擇一種龍族祖先及其傷害類型。你能讀寫並說龍語；與龍互動時，若進行魅力檢定，任何適用的熟練加值均加倍。\n\n龍族韌性\n\n1 級時生命值上限額外增加 1，此後每升一級再增加 1。未穿著護甲時，護甲等級為 13 + 敏捷調整值。\n\n狂野魔法\n\n狂野魔法潮湧\n\n1 級起，當你施放 1 環或更高環級的術師法術後，DM 可要求你擲 d20；若擲出 1，則擲 d100 並依狂野魔法潮湧表產生效果。每回合最多進行一次此判定。\n\n混亂浪潮\n\n每次長休間，可使自己的一次攻擊檢定、能力檢定或豁免具有優勢。使用後，DM 可在你施放 1 環或更高環級的術師法術時，直接要求你擲狂野魔法潮湧表；完成後便恢復此能力。",
+      "details_en": "Proficiencies\n\n• Weapons: Daggers, darts, slings, quarterstaffs, and light crossbows\n• Skills: Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion\n\nStarting Equipment\n\n• A light crossbow and 20 bolts, or any simple weapon\n• A component pouch or arcane focus\n• A dungeoneer's pack or explorer's pack\n• Two daggers\n\nSpellcasting\n\n• Spellcasting Ability: Charisma\n• Spell Save DC: 8 + proficiency bonus + Charisma modifier\n• Spell Attack Modifier: proficiency bonus + Charisma modifier\n• Cantrips: Choose four from the sorcerer spell list\n• 1st-Level Spells: Choose two from the sorcerer spell list\n• When you gain a level, you can replace one known spell with another eligible sorcerer spell\n• You can use an arcane focus as a spellcasting focus\n\nSorcerous Origin\n\nChoose Draconic Bloodline or Wild Magic as your sorcerous origin. Each grants features at different levels.\n\nDraconic Bloodline\n\nDragon Ancestor\n\nAt 1st level, choose a draconic ancestor and its associated damage type. You can speak, read, and write Draconic. When making a Charisma check while interacting with dragons, double any proficiency bonus that applies.\n\nDraconic Resilience\n\nAt 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level. While not wearing armor, your Armor Class equals 13 + Dexterity modifier.\n\nWild Magic\n\nWild Magic Surge\n\nStarting at 1st level, after you cast a sorcerer spell of 1st level or higher, the DM can have you roll a d20. On a 1, roll a d100 and apply the corresponding result from the Wild Magic Surge table. This check can occur at most once per turn.\n\nTides of Chaos\n\nOnce per long rest, you can gain advantage on one attack roll, ability check, or saving throw. After you use this feature, the DM can have you roll directly on the Wild Magic Surge table when you cast a sorcerer spell of 1st level or higher; after resolving the surge, you regain this feature."
+    }
+  },
+  {
+    "id": "warlock",
+    "en": "Warlock",
+    "zh": "契術師",
+    "note": {
+      "basic_zh": "生命骰：1d8\n豁免：感知、魅力",
+      "basic_en": "Hit Dice: 1d8\nSaving Throw: WIS, CHA",
+      "details_zh": "熟練\n\n• 護甲：輕甲\n• 武器：簡易武器\n• 技能：從奧秘、欺瞞、歷史、威嚇、調查、自然、宗教中選擇兩項\n\n起始裝備\n\n• 輕弩與 20 支弩矢，或任一簡易武器\n• 法術材料包或秘法法器\n• 學者套組或地城探索者套組\n• 皮甲、任一簡易武器與兩把匕首\n\n異界宗主\n\n你與一位異界宗主訂立契約，例如至高妖精、邪魔或舊日支配者；不同宗主會賦予不同能力。\n\n至高妖精\n\n• 1 級擴充法術：妖火術、睡眠術\n• 可用動作使以自己為源點、10 呎立方內的所有生物進行感知豁免；失敗者會被你魅惑或恐懼（由你選擇），直到你下回合結束。完成短休或長休後可再次使用\n\n邪魔\n\n• 1 級擴充法術：燃燒之手、命令術\n• 當你使敵對生物的生命值降至 0 時，獲得等於 魅力調整值 + 契術師等級 的暫時生命值，最低 1 點\n\n舊日支配者\n\n• 1 級擴充法術：不諧低語、塔莎狂笑術\n• 可用心靈感應對 30 呎內一名生物說話；無須共通語言，但該生物必須至少理解一種語言\n\n契約魔法\n\n• 施法能力：魅力\n• 法術豁免 DC：8 + 熟練加值 + 魅力調整值\n• 法術攻擊加值：熟練加值 + 魅力調整值\n• 戲法：從契術師法術表選擇兩個\n• 1 環法術：從契術師法術表選擇兩個\n• 升級時，可將一個已知法術替換為另一個符合條件的契術師法術\n• 可使用秘法法器作為施法法器",
+      "details_en": "Proficiencies\n\n• Armor: Light armor\n• Weapons: Simple weapons\n• Skills: Choose two from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion\n\nStarting Equipment\n\n• A light crossbow and 20 bolts, or any simple weapon\n• A component pouch or arcane focus\n• A scholar's pack or dungeoneer's pack\n• Leather armor, any simple weapon, and two daggers\n\nOtherworldly Patron\n\nYou form a pact with an otherworldly patron, such as the Archfey, the Fiend, or the Great Old One. Each patron grants different features.\n\nThe Archfey\n\n• 1st-Level Expanded Spells: Faerie Fire and Sleep\n• As an action, each creature in a 10-foot cube originating from you makes a Wisdom saving throw. On a failure, it is charmed or frightened by you—your choice—until the end of your next turn. You regain this feature after a short or long rest\n\nThe Fiend\n\n• 1st-Level Expanded Spells: Burning Hands and Command\n• When you reduce a hostile creature to 0 hit points, gain temporary hit points equal to Charisma modifier + warlock level, with a minimum of 1\n\nThe Great Old One\n\n• 1st-Level Expanded Spells: Dissonant Whispers and Tasha's Hideous Laughter\n• You can speak telepathically to one creature within 30 feet. You do not need a shared language, but the creature must understand at least one language\n\nPact Magic\n\n• Spellcasting Ability: Charisma\n• Spell Save DC: 8 + proficiency bonus + Charisma modifier\n• Spell Attack Modifier: proficiency bonus + Charisma modifier\n• Cantrips: Choose two from the warlock spell list\n• 1st-Level Spells: Choose two from the warlock spell list\n• When you gain a level, you can replace one known spell with another eligible warlock spell\n• You can use an arcane focus as a spellcasting focus"
+    }
+  },
+  {
+    "id": "wizard",
+    "en": "Wizard",
+    "zh": "法師",
+    "note": {
+      "basic_zh": "生命骰：1d6\n豁免：智力、感知",
+      "basic_en": "Hit Dice: 1d6\nSaving Throw: INT, WIS",
+      "details_zh": "熟練\n\n• 武器：匕首、飛鏢、投石索、長棍、輕弩\n• 技能：從奧秘、歷史、察言觀色、調查、醫藥、宗教中選擇兩項\n\n起始裝備\n\n• 長棍或匕首\n• 法術材料包或秘法法器\n• 學者套組或探險者套組\n• 法術書\n\n施法\n\n• 施法能力：智力\n• 法術豁免 DC：8 + 熟練加值 + 智力調整值\n• 法術攻擊加值：熟練加值 + 智力調整值\n• 戲法：從法師法術表選擇三個\n• 1 級時，法術書記錄六個 1 環法師法術\n• 每次長休後，可準備 智力調整值 + 法師等級 個法術，至少一個\n• 每升一級，可將兩個符合條件的法師法術加入法術書\n• 可使用秘法法器作為施法法器\n\n奧術恢復\n\n每日一次，完成短休後可恢復部分已消耗的法術位。恢復的法術位環級總和不得超過法師等級的一半（無條件進位），且不能恢復 6 環或更高環級的法術位。",
+      "details_en": "Proficiencies\n\n• Weapons: Daggers, darts, slings, quarterstaffs, and light crossbows\n• Skills: Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion\n\nStarting Equipment\n\n• A quarterstaff or dagger\n• A component pouch or arcane focus\n• A scholar's pack or explorer's pack\n• A spellbook\n\nSpellcasting\n\n• Spellcasting Ability: Intelligence\n• Spell Save DC: 8 + proficiency bonus + Intelligence modifier\n• Spell Attack Modifier: proficiency bonus + Intelligence modifier\n• Cantrips: Choose three from the wizard spell list\n• At 1st level, your spellbook contains six 1st-level wizard spells\n• After each long rest, you can prepare Intelligence modifier + wizard level spells, with a minimum of one\n• Whenever you gain a level, you can add two eligible wizard spells to your spellbook\n• You can use an arcane focus as a spellcasting focus\n\nArcane Recovery\n\nOnce per day, after completing a short rest, you can recover expended spell slots. Their combined level cannot exceed half your wizard level, rounded up, and none can be 6th level or higher."
+    }
+  }
+]
