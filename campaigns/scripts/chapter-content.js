@@ -60,7 +60,10 @@
     if (!container || !entry || !entry.content) return;
 
     const fragment = document.createDocumentFragment();
-    if (!container.dataset.hideEntryDate && typeof entry.date === "string" && entry.date.trim()) {
+    // The chapter header already presents the coverage date. Keep it out of the
+    // body unless a page explicitly opts in, while preserving section dates that
+    // mark individual scenes or in-world days.
+    if (container.hasAttribute("data-show-entry-date") && typeof entry.date === "string" && entry.date.trim()) {
       const date = document.createElement("p");
       date.className = "chapter-date";
       date.textContent = entry.date;
