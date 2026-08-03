@@ -249,6 +249,9 @@
     };
 
     function textFor(zh, en) { return state.language === 'en' ? en : zh; }
+    function imageUrl(image) {
+      return `../${image.split('/').map((segment) => encodeURIComponent(segment)).join('/')}`;
+    }
     function updateCount(dates, npcs) {
       $('#result-count').textContent = state.language === 'en' ? `${npcs} NPCs · ${dates} dates` : `${npcs} 名 NPC · ${dates} 個日期`;
     }
@@ -376,7 +379,7 @@
           const row = document.createElement('div');
           row.className = 'gantt-row';
           const name = state.language === 'en' ? npc.nameEn : npc.nameZh;
-          const avatar = npc.image ? `<img src="../${npc.image}" alt="" loading="lazy">` : '<span class="npc-initial" aria-hidden="true">?</span>';
+          const avatar = npc.image ? `<img src="${imageUrl(npc.image)}" alt="" loading="lazy">` : '<span class="npc-initial" aria-hidden="true">?</span>';
           const label = npc.url ? `<a href="${npc.url.startsWith('npc/') ? `../../${npc.url}` : `../${npc.url}`}" target="_blank" rel="noopener">${avatar}<span>${name}</span></a>` : `<span>${avatar}<span>${name}</span></span>`;
           const segments = appearanceSegments.map((segment) => {
             const left = scale.position(segment.start.ordinal);
