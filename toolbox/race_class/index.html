@@ -376,11 +376,12 @@
 
     .details-table {
       width: 100%;
-      min-width: 560px;
+      min-width: 0;
       border-collapse: collapse;
+      table-layout: fixed;
       color: inherit;
       font: inherit;
-      white-space: nowrap;
+      white-space: normal;
     }
 
     .details-table th,
@@ -402,8 +403,41 @@
       font-weight: 800;
     }
 
+    .details-table th:first-child,
+    .details-table td:first-child {
+      width: 72px;
+      white-space: nowrap;
+    }
+
+    .details-table th:last-child,
+    .details-table td:last-child {
+      overflow-wrap: anywhere;
+    }
+
     .details-table tbody tr:last-child td {
       border-bottom: 0;
+    }
+
+    .class-spell-table {
+      width: max-content;
+      min-width: 0;
+      table-layout: auto;
+    }
+
+    .class-spell-table th,
+    .class-spell-table td {
+      width: auto;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .class-spell-table th:first-child,
+    .class-spell-table td:first-child {
+      width: auto;
+    }
+
+    .class-spell-table-wrap {
+      width: fit-content;
     }
 
     .details-indent-1 {
@@ -548,7 +582,7 @@
       }
     };
 
-    const data = { race: [], class: [] };
+    const data = { race: [], class: [], tables: {}, classSpells: null };
 
     const buttons = Array.from(document.querySelectorAll("[data-mode]"));
     const list = document.getElementById("option-list");
@@ -593,6 +627,7 @@
         ["龍族祖先", 2],
         ["龍族韌性", 2],
         ["狂野魔法潮湧", 2],
+        ["狂野魔法潮湧表", 2],
         ["混亂浪潮", 2],
         ["至高妖精", 1],
         ["邪魔", 1],
@@ -611,6 +646,7 @@
         ["Dragon Ancestor", 2],
         ["Draconic Resilience", 2],
         ["Wild Magic Surge", 2],
+        ["Wild Magic Surge Table", 2],
         ["Tides of Chaos", 2],
         ["The Archfey", 1],
         ["The Fiend", 1],
@@ -623,6 +659,116 @@
       if (level > 0) element.classList.add(`details-indent-${level}`);
     };
 
+    const getLocalizedTableText = (value) => {
+      if (typeof value === "string") return value;
+      return value?.[currentLanguage] || value?.zh || value?.en || "";
+    };
+
+    const getClassSpellCell = (value, level, source) => {
+      if (typeof value === "number") return String(value);
+      if (typeof value === "string") return getLocalizedTableText(source.labels?.[value]) || value;
+      if (value?.template === "spellbook") {
+        const template = getLocalizedTableText(source.labels?.[value.template]);
+        return template.replace("{count}", value.values[level - 1]);
+      }
+      return getLocalizedTableText(value);
+    };
+
+    const renderClassSpellTable = (container, classId) => {
+      const source = data.classSpells;
+      const classSpells = source?.classes?.[classId];
+      const progression = source?.progressions?.[classSpells?.progression];
+      if (!classSpells || !Array.isArray(progression) || progression.length !== 20) return;
+
+      const heading = document.createElement("div");
+      heading.className = "details-heading";
+      heading.textContent = getLocalizedTableText(source.labels?.spell_progression);
+      container.appendChild(heading);
+
+      const preparation = document.createElement("p");
+      preparation.className = "details-paragraph class-spell-summary";
+      const preparationValue = classSpells.prepared === "not_applicable"
+        ? getLocalizedTableText(source.labels?.no_preparation)
+        : getClassSpellCell(classSpells.prepared, 1, source);
+      preparation.textContent = `${getLocalizedTableText(source.labels?.prepared)}：${preparationValue}`;
+      container.appendChild(preparation);
+
+      if (!Array.isArray(classSpells.known)) {
+        const known = document.createElement("p");
+        known.className = "details-paragraph class-spell-summary";
+        known.textContent = `${getLocalizedTableText(source.labels?.known)}：${getClassSpellCell(classSpells.known, 1, source)}`;
+        container.appendChild(known);
+      }
+
+      const tableWrap = document.createElement("div");
+      tableWrap.className = "details-table-wrap class-spell-table-wrap";
+      const table = document.createElement("table");
+      table.className = "details-table class-spell-table";
+      const columns = ["level", "max_spell_level"];
+      if (Array.isArray(classSpells.known) || classSpells.known?.template) columns.push("known");
+      const tableHead = document.createElement("thead");
+      const headRow = document.createElement("tr");
+      columns.forEach((column) => {
+        const headingCell = document.createElement("th");
+        headingCell.scope = "col";
+        headingCell.textContent = getLocalizedTableText(source.labels?.[column]);
+        headRow.appendChild(headingCell);
+      });
+      tableHead.appendChild(headRow);
+      table.appendChild(tableHead);
+
+      const tableBody = document.createElement("tbody");
+      progression.forEach((maxSpellLevel, index) => {
+        const level = index + 1;
+        const row = document.createElement("tr");
+        [level, maxSpellLevel || getClassSpellCell("not_applicable", level, source), ...(columns.includes("known") ? [Array.isArray(classSpells.known) ? classSpells.known[index] : classSpells.known] : [])]
+          .forEach((cell) => {
+            const dataCell = document.createElement("td");
+            dataCell.textContent = getClassSpellCell(cell, level, source);
+            row.appendChild(dataCell);
+          });
+        tableBody.appendChild(row);
+      });
+      table.appendChild(tableBody);
+      tableWrap.appendChild(table);
+      container.appendChild(tableWrap);
+    };
+
+    const renderReferencedTable = (container, tableId, indentLevel) => {
+      const source = data.tables[tableId];
+      if (!source) return;
+
+      const tableWrap = document.createElement("div");
+      tableWrap.className = "details-table-wrap";
+      const table = document.createElement("table");
+      table.className = "details-table";
+      const tableHead = document.createElement("thead");
+      const headRow = document.createElement("tr");
+      [source.columns?.roll || "d100", getLocalizedTableText(source.columns?.effect)].forEach((cell) => {
+        const heading = document.createElement("th");
+        heading.scope = "col";
+        heading.textContent = cell;
+        headRow.appendChild(heading);
+      });
+      tableHead.appendChild(headRow);
+      table.appendChild(tableHead);
+
+      const tableBody = document.createElement("tbody");
+      source.rows.forEach((entry) => {
+        const row = document.createElement("tr");
+        [entry.roll, getLocalizedTableText(entry.effect)].forEach((cell) => {
+          const dataCell = document.createElement("td");
+          dataCell.textContent = cell;
+          row.appendChild(dataCell);
+        });
+        tableBody.appendChild(row);
+      });
+      table.appendChild(tableBody);
+      tableWrap.appendChild(table);
+      applyDetailsIndent(tableWrap, indentLevel);
+      container.appendChild(tableWrap);
+    };
+
     const renderDetailsContent = (container, text) => {
       const blocks = text
         .split(/\n\s*\n/)
@@ -632,6 +778,7 @@
 
       blocks.forEach((block) => {
         const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+        const tableReference = lines.length === 1 && /^\{\{table:([a-z0-9_-]+)\}\}$/.exec(lines[0]);
         const isList = lines.length > 0 && lines.every((line) => line.startsWith("• "));
         const isTable = lines.length >= 3
           && lines.every((line) => line.startsWith("|") && line.endsWith("|"))
@@ -639,6 +786,12 @@
         const isHeading = lines.length === 1
           && lines[0].length <= 48
           && !/[。.!?：:]$/.test(lines[0]);
+
+        if (tableReference) {
+          renderReferencedTable(container, tableReference[1], currentIndentLevel);
+          currentIndentLevel = 0;
+          return;
+        }
 
         if (isTable) {
           const parseRow = (line) => line.slice(1, -1).split("|").map((cell) => cell.trim());
@@ -727,6 +880,28 @@
       return details;
     };
 
+    const loadTable = async (path) => {
+      const response = await fetch(path);
+      if (!response.ok) {
+        throw new Error(`Failed to load ${path}: ${response.status}`);
+      }
+      const table = await response.json();
+      if (!table || typeof table.id !== "string" || !Array.isArray(table.rows)) {
+        throw new Error(`${path} must contain a table id and rows.`);
+      }
+      return table;
+    };
+
+    const loadClassSpells = async () => {
+      const response = await fetch("class_spells.json");
+      if (!response.ok) throw new Error(`Failed to load class_spells.json: ${response.status}`);
+      const classSpells = await response.json();
+      if (!classSpells?.classes || !classSpells?.progressions || !classSpells?.labels) {
+        throw new Error("class_spells.json must contain labels, progressions, and classes.");
+      }
+      return classSpells;
+    };
+
     const renderOptions = (mode) => {
       lockedNote.hidden = isAuthenticated;
       list.replaceChildren();
@@ -772,6 +947,7 @@
           const details = document.createElement("div");
           details.className = "option-details note-box";
           renderDetailsContent(details, detailsNote.text);
+          if (mode === "class") renderClassSpellTable(details, item.id);
           li.appendChild(details);
         }
 
@@ -887,12 +1063,17 @@
 
     const initialize = async () => {
       try {
-        const [races, classes] = await Promise.all([
+        const [races, classes, classSpells] = await Promise.all([
           loadDetails("race_details.json"),
-          loadDetails("class_details.json")
+          loadDetails("class_details.json"),
+          loadClassSpells()
         ]);
+        const tablePaths = [...new Set(classes.flatMap((item) => Object.values(item.tables || {})))];
+        const tables = await Promise.all(tablePaths.map(loadTable));
         data.race = races;
         data.class = classes;
+        data.classSpells = classSpells;
+        data.tables = Object.fromEntries(tables.map((table) => [table.id, table]));
       } catch (error) {
         dataLoadError = error;
         console.error("Failed to load race and class details", error);

@@ -1,0 +1,60 @@
+{
+  "labels": {
+    "level": { "zh": "職業等級", "en": "Class Level" },
+    "max_spell_level": { "zh": "最高法術環數", "en": "Highest Spell Level" },
+    "prepared": { "zh": "每天準備數", "en": "Spells Prepared per Day" },
+    "known": { "zh": "懂得法術數", "en": "Spells Known" },
+    "no_preparation": { "zh": "無須準備法術", "en": "No spell preparation required" },
+    "spell_progression": { "zh": "施法進度", "en": "Spellcasting Progression" },
+    "not_applicable": { "zh": "—", "en": "—" },
+    "all_eligible": { "zh": "所有符合環級的職業法術", "en": "All eligible class spells" },
+    "spellbook": { "zh": "法術書：{count} 個", "en": "Spellbook: {count} spells" }
+  },
+  "progressions": {
+    "full": [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
+    "half": [0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5],
+    "warlock": [1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+  },
+  "classes": {
+    "bard": {
+      "progression": "full",
+      "prepared": "not_applicable",
+      "known": [4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 15, 16, 16, 17, 18, 19, 19, 20, 22]
+    },
+    "cleric": {
+      "progression": "full",
+      "prepared": { "zh": "感知調整值 + 牧師等級（至少 1）", "en": "Wisdom modifier + cleric level (minimum 1)" },
+      "known": "all_eligible"
+    },
+    "druid": {
+      "progression": "full",
+      "prepared": { "zh": "感知調整值 + 德魯伊等級（至少 1）", "en": "Wisdom modifier + druid level (minimum 1)" },
+      "known": "all_eligible"
+    },
+    "paladin": {
+      "progression": "half",
+      "prepared": { "zh": "魅力調整值 + 聖騎士等級（至少 1）", "en": "Charisma modifier + paladin level (minimum 1)" },
+      "known": "all_eligible"
+    },
+    "ranger": {
+      "progression": "half",
+      "prepared": "not_applicable",
+      "known": [0, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11]
+    },
+    "sorcerer": {
+      "progression": "full",
+      "prepared": "not_applicable",
+      "known": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 13, 14, 15, 15, 15, 15, 15]
+    },
+    "warlock": {
+      "progression": "warlock",
+      "prepared": "not_applicable",
+      "known": [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15]
+    },
+    "wizard": {
+      "progression": "full",
+      "prepared": { "zh": "智力調整值 + 法師等級（至少 1）", "en": "Intelligence modifier + wizard level (minimum 1)" },
+      "known": { "template": "spellbook", "values": [6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44] }
+    }
+  }
+}
