@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BZZFKMJ65Y', { page_title: 'D&D 背景 | Rugatha', page_path: window.location.pathname, page_location: window.location.href });
+    gtag('event', 'tool_page_view', { tool_name: 'background', page_path: window.location.pathname, page_title: 'D&D 背景 | Rugatha' });
+  </script>
+  <title>D&amp;D 背景 | Rugatha</title>
+  <link rel="icon" type="image/png" href="../../assets/logo/rugatha-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo/rugatha-favicon-32.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../../assets/logo/rugatha-icon-192.png">
+  <script defer src="../../shared/pwa.js"></script>
+  <script src="../../shared/language-toggle.js"></script>
+  <style>
+    :root { --bg-line: rgba(236,242,237,.2); --bg-line-strong: rgba(236,242,237,.42); --bg-panel: rgba(236,242,237,.08); --bg-panel-hover: rgba(236,242,237,.14); --bg-muted: rgba(236,242,237,.72); --bg-gold: #d9b66f; }
+    body { min-height: 100vh; background: var(--bg); color: var(--text); }
+    .page { width: min(920px, calc(100vw - 32px)); min-height: 100vh; margin: 0 auto; padding: 28px 0 64px; display: grid; align-content: start; gap: 34px; }
+    .language-toggle { position: fixed; top: 16px; left: 16px; z-index: 10; display: inline-flex; }
+    .language-toggle button { width: 72px; height: 72px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; transition: opacity 160ms ease, transform 160ms ease; }
+    .language-toggle button:hover, .language-toggle button:focus-visible { opacity: .86; transform: translateY(-1px); outline: none; }
+    .language-toggle__icon { width: 100%; height: 100%; display: block; object-fit: contain; }
+    .banner { display: flex; justify-content: center; }
+    .banner-link { display: inline-flex; }
+    .banner-img { width: min(360px, 78vw); height: auto; display: block; }
+    main { display: grid; gap: 28px; }
+    .hero { display: grid; justify-items: center; gap: 10px; text-align: center; }
+    .hero h1 { margin: 0; font-size: clamp(2rem, 6vw, 4rem); line-height: 1; }
+    .hero p { max-width: 660px; margin: 0; color: var(--bg-muted); line-height: 1.55; }
+    .background-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .background-card { width: 100%; min-height: 80px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 18px; padding: 18px 22px; border: 1px solid var(--bg-line); border-radius: 8px; background: linear-gradient(135deg, rgba(217,182,111,.12), transparent 34%), var(--bg-panel); color: var(--text); font: inherit; text-align: left; box-shadow: 0 14px 38px rgba(0,0,0,.16); transition: transform 160ms ease, border-color 160ms ease, background 160ms ease; }
+    .background-card:not([aria-disabled="true"]) { cursor: pointer; }
+    .background-card:not([aria-disabled="true"]):hover, .background-card:not([aria-disabled="true"]):focus-visible { transform: translateX(4px); border-color: var(--bg-line-strong); background: linear-gradient(135deg, rgba(217,182,111,.18), transparent 38%), var(--bg-panel-hover); outline: none; }
+    .background-card[aria-disabled="true"] { cursor: default; }
+    .background-mark { width: 48px; height: 48px; display: grid; place-items: center; }
+    .background-mark img { width: 42px; height: 42px; object-fit: contain; filter: brightness(.7); }
+    .background-name { font-size: clamp(1.2rem, 2vw, 1.55rem); font-weight: 800; line-height: 1.1; }
+    .expand-icon { color: var(--bg-gold); font-size: 1.25rem; transition: transform 160ms ease; }
+    .background-card[aria-expanded="true"] .expand-icon { transform: rotate(45deg); }
+    .background-details { display: grid; grid-template-columns: 1fr; gap: 18px; margin: 8px 0 2px 66px; padding: 16px 18px; border: 1px solid var(--bg-line); border-radius: 8px; background: rgba(236,242,237,.06); }
+    .detail { display: grid; gap: 6px; min-width: 0; }
+    .detail-label { color: var(--bg-gold); font-size: .82rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .detail-value { line-height: 1.5; }
+    .proficiency-detail { gap: 12px; }
+    .proficiency-items { display: grid; gap: 12px; }
+    .proficiency-group { display: grid; gap: 5px; padding-left: 10px; border-left: 2px solid rgba(217,182,111,.5); }
+    .proficiency-group-label { color: #c7d6ce; font-size: .95rem; font-weight: 800; letter-spacing: .04em; }
+    .locked-note { margin: 0; color: var(--bg-muted); font-size: .9rem; text-align: center; }
+    @media (max-width: 640px) { .page { width: min(100% - 24px, 920px); padding-top: 72px; } .language-toggle { top: 8px; left: 8px; } .language-toggle button { width: 58px; height: 58px; } .background-card { gap: 12px; padding: 16px; } .background-mark { width: 38px; height: 38px; } .background-mark img { width: 34px; height: 34px; } .background-details { grid-template-columns: 1fr; margin-left: 0; } }
+  </style>
+</head>
+<body>
+  <div class="language-toggle" role="group" aria-label="Language"><button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button></div>
+  <div class="page">
+    <header class="banner"><a class="banner-link" href="../../index.html" aria-label="Rugatha home"><img src="../../assets/banner/rugatha-banner-trademark.png" alt="Rugatha banner" class="banner-img"></a></header>
+    <main>
+      <section class="hero" aria-labelledby="page-title"><h1 id="page-title" data-i18n="title">D&amp;D 背景</h1></section>
+      <p class="locked-note" id="lockedNote" data-i18n="locked">登入後可點選背景查看詳細設定。</p>
+      <ul class="background-list" id="backgroundList" aria-live="polite"></ul>
+    </main>
+  </div>
+  <script>
+    const translations = {
+      zh: { browserTitle: 'D&D 背景 | Rugatha', title: 'D&D 背景', subtitle: 'D&D 5e 玩家手冊（2014）背景：名稱、熟練、裝備與技能。', locked: '登入後可點選背景查看詳細設定。', skills: '技能', proficiencies: '熟練', languages: '語言', tools: '工具', equipment: '裝備', feature: '技能', none: '無', loadError: '無法載入背景資料。', aria: '目前語言：中文' },
+      en: { browserTitle: 'D&D Backgrounds | Rugatha', title: 'D&D Backgrounds', subtitle: 'D&D 5e Player’s Handbook (2014) backgrounds: proficiencies, equipment, and Features.', locked: 'Sign in to select a background and view its details.', skills: 'Skills', proficiencies: 'Proficiencies', languages: 'Languages', tools: 'Tools', equipment: 'Equipment', feature: 'Feature', none: 'None', loadError: 'Unable to load background data.', aria: 'Current language: English' }
+    };
+    let backgrounds = [];
+    let dataLoadError = false;
+    const languageButton = document.querySelector('[data-lang-toggle]');
+    const list = document.getElementById('backgroundList');
+    const lockedNote = document.getElementById('lockedNote');
+    const storageKey = 'rugatha-language';
+    let currentLanguage = 'zh';
+    let isAuthenticated = window.RUGATHA_AUTH_SIGNED_IN === true;
+    let expandedId = null;
+    const storedLanguage = () => { try { return localStorage.getItem(storageKey); } catch (error) { return null; } };
+    const render = () => {
+      const copy = translations[currentLanguage];
+      lockedNote.hidden = isAuthenticated;
+      if (dataLoadError) {
+        const errorItem = document.createElement('li');
+        errorItem.className = 'locked-note';
+        errorItem.textContent = copy.loadError;
+        list.replaceChildren(errorItem);
+        return;
+      }
+      list.replaceChildren(...backgrounds.map((background, index) => {
+        const expanded = isAuthenticated && expandedId === index;
+        const item = document.createElement('li');
+        const button = document.createElement('button');
+        button.className = 'background-card'; button.type = 'button';
+        button.setAttribute('aria-expanded', String(expanded));
+        button.setAttribute('aria-disabled', String(!isAuthenticated));
+        button.innerHTML = `<span class="background-mark" aria-hidden="true"><img src="../../assets/logo/D&amp;D_logo.png" alt=""></span><span class="background-name">${background[`name_${currentLanguage}`]}</span>${isAuthenticated ? '<span class="expand-icon" aria-hidden="true">+</span>' : ''}`;
+        button.addEventListener('click', () => { if (!isAuthenticated) return; expandedId = expanded ? null : index; render(); });
+        item.append(button);
+        if (expanded) {
+          const details = document.createElement('div'); details.className = 'background-details';
+          const addDetail = (label, value) => {
+            const detail = document.createElement('div'); detail.className = 'detail';
+            const detailLabel = document.createElement('span'); detailLabel.className = 'detail-label'; detailLabel.textContent = label;
+            const detailValue = document.createElement('span'); detailValue.className = 'detail-value';
+            if (Array.isArray(value)) value.forEach((entry) => { const line = document.createElement('span'); line.textContent = entry; detailValue.append(line, document.createElement('br')); }); else detailValue.textContent = value;
+            detail.append(detailLabel, detailValue); details.append(detail);
+          };
+          const proficiencies = document.createElement('div'); proficiencies.className = 'detail proficiency-detail';
+          const proficienciesLabel = document.createElement('span'); proficienciesLabel.className = 'detail-label'; proficienciesLabel.textContent = copy.proficiencies;
+          const proficiencyItems = document.createElement('div'); proficiencyItems.className = 'proficiency-items';
+          [[copy.skills, background[`skills_${currentLanguage}`]], [copy.languages, background[`languages_${currentLanguage}`]], [copy.tools, background[`proficiencies_${currentLanguage}`]]].forEach(([label, values]) => {
+            const group = document.createElement('div'); group.className = 'proficiency-group';
+            const groupLabel = document.createElement('span'); groupLabel.className = 'proficiency-group-label'; groupLabel.textContent = label;
+            const groupValues = document.createElement('span'); groupValues.className = 'detail-value';
+            groupValues.textContent = values.length ? values.join(currentLanguage === 'zh' ? '、' : ', ') : copy.none;
+            group.append(groupLabel, groupValues); proficiencyItems.append(group);
+          });
+          proficiencies.append(proficienciesLabel, proficiencyItems); details.append(proficiencies);
+          addDetail(copy.equipment, background[`equipment_${currentLanguage}`]);
+          background[`features_${currentLanguage}`].forEach(({ name, description }) => addDetail(`${copy.feature} - ${name}`, description));
+          item.append(details);
+        }
+        return item;
+      }));
+    };
+    const loadBackgrounds = async () => {
+      try {
+        const response = await fetch('background-data.json');
+        if (!response.ok) throw new Error(`Failed to load background data: ${response.status}`);
+        const loadedData = await response.json();
+        if (!Array.isArray(loadedData)) throw new Error('Background data must be an array.');
+        backgrounds = loadedData;
+      } catch (error) {
+        dataLoadError = true;
+        console.error('Failed to load background data', error);
+      }
+      render();
+    };
+    const setLanguage = (language) => {
+      currentLanguage = language === 'en' ? 'en' : 'zh'; const copy = translations[currentLanguage];
+      document.documentElement.lang = currentLanguage === 'zh' ? 'zh-Hant' : 'en'; document.body.dataset.lang = currentLanguage; document.title = copy.browserTitle;
+      document.querySelectorAll('[data-i18n]').forEach((element) => { element.textContent = copy[element.dataset.i18n]; });
+      languageButton.dataset.lang = currentLanguage; languageButton.setAttribute('aria-label', copy.aria);
+      if (window.RugathaLanguageToggle) window.RugathaLanguageToggle.setButtonIcon(languageButton, currentLanguage);
+      try { localStorage.setItem(storageKey, currentLanguage); } catch (error) {}
+      render();
+    };
+    languageButton.addEventListener('click', () => setLanguage(currentLanguage === 'en' ? 'zh' : 'en'));
+    window.addEventListener('rugatha:auth-state-changed', (event) => { isAuthenticated = event.detail?.signedIn === true; if (!isAuthenticated) expandedId = null; render(); });
+    setLanguage(storedLanguage() || 'zh');
+    loadBackgrounds();
+  </script>
+  <script src="../../shared/rugatha.config.js"></script>
+  <script src="../../shared/firebase.config.js"></script>
+  <script type="module" src="../../shared/auth.js"></script>
+</body>
+</html>

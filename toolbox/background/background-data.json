@@ -1,0 +1,637 @@
+[
+  {
+    "id": "acolyte",
+    "name_zh": "侍僧",
+    "name_en": "Acolyte",
+    "skills_zh": [
+      "洞悉",
+      "宗教"
+    ],
+    "skills_en": [
+      "Insight",
+      "Religion"
+    ],
+    "proficiencies_zh": [],
+    "proficiencies_en": [],
+    "languages_zh": [
+      "任選兩種語言"
+    ],
+    "languages_en": [
+      "Two languages of your choice"
+    ],
+    "equipment_zh": [
+      "聖徽",
+      "祈禱書或祈禱輪",
+      "薰香 5 根",
+      "祭服",
+      "普通服裝",
+      "腰包（15 金幣）"
+    ],
+    "equipment_en": [
+      "Holy symbol",
+      "Prayer book or prayer wheel",
+      "5 sticks of incense",
+      "Vestments",
+      "Common clothes",
+      "Belt pouch (15 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "信仰庇護",
+        "description": "你與同伴可在同信仰的神殿獲得免費治療與照料；仍須自行提供法術所需的材料成分。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "Shelter of the Faithful",
+        "description": "You and your companions can receive free healing and care at temples of your faith; you still provide any material spell components."
+      }
+    ]
+  },
+  {
+    "id": "charlatan",
+    "name_zh": "騙徒",
+    "name_en": "Charlatan",
+    "skills_zh": [
+      "欺瞞",
+      "巧手"
+    ],
+    "skills_en": [
+      "Deception",
+      "Sleight of Hand"
+    ],
+    "proficiencies_zh": [
+      "易容工具",
+      "偽造工具"
+    ],
+    "proficiencies_en": [
+      "Disguise kit",
+      "Forgery kit"
+    ],
+    "languages_zh": [],
+    "languages_en": [],
+    "equipment_zh": [
+      "精美服裝",
+      "易容工具",
+      "一種騙術工具",
+      "腰包（15 金幣）"
+    ],
+    "equipment_en": [
+      "Fine clothes",
+      "Disguise kit",
+      "Tools of the con of your choice",
+      "Belt pouch (15 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "假身分",
+        "description": "你擁有一個可用的第二身分，並備有相應的文件、人脈與偽裝。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "False Identity",
+        "description": "You maintain a usable second identity with its supporting documents, contacts, and disguises."
+      }
+    ]
+  },
+  {
+    "id": "criminal",
+    "name_zh": "罪犯",
+    "name_en": "Criminal",
+    "skills_zh": [
+      "欺瞞",
+      "隱匿"
+    ],
+    "skills_en": [
+      "Deception",
+      "Stealth"
+    ],
+    "proficiencies_zh": [
+      "一種遊戲組",
+      "盜賊工具"
+    ],
+    "proficiencies_en": [
+      "One gaming set",
+      "Thieves' tools"
+    ],
+    "languages_zh": [],
+    "languages_en": [],
+    "equipment_zh": [
+      "撬棍",
+      "深色普通服裝（含兜帽）",
+      "腰包（15 金幣）"
+    ],
+    "equipment_en": [
+      "Crowbar",
+      "Dark common clothes including a hood",
+      "Belt pouch (15 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "犯罪聯絡人",
+        "description": "你有可靠的地下聯絡人，可協助在你與犯罪網絡之間傳遞訊息。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "Criminal Contact",
+        "description": "You have a reliable underworld contact who can pass messages between you and a criminal network."
+      }
+    ]
+  },
+  {
+    "id": "entertainer",
+    "name_zh": "藝人",
+    "name_en": "Entertainer",
+    "skills_zh": [
+      "雜技",
+      "表演"
+    ],
+    "skills_en": [
+      "Acrobatics",
+      "Performance"
+    ],
+    "proficiencies_zh": [
+      "易容工具",
+      "一種樂器"
+    ],
+    "proficiencies_en": [
+      "Disguise kit",
+      "One musical instrument"
+    ],
+    "languages_zh": [],
+    "languages_en": [],
+    "equipment_zh": [
+      "一種樂器",
+      "崇拜者贈禮",
+      "戲服",
+      "腰包（15 金幣）"
+    ],
+    "equipment_en": [
+      "One musical instrument",
+      "Favor from an admirer",
+      "Costume",
+      "Belt pouch (15 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "按需求待",
+        "description": "你可藉由表演換取免費食宿；熟識你的群眾通常也願意協助安排。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "By Popular Demand",
+        "description": "You can earn free food and lodging through performance, and appreciative audiences may help arrange it."
+      }
+    ]
+  },
+  {
+    "id": "folk-hero",
+    "name_zh": "民間英雄",
+    "name_en": "Folk Hero",
+    "skills_zh": [
+      "動物馴服",
+      "求生"
+    ],
+    "skills_en": [
+      "Animal Handling",
+      "Survival"
+    ],
+    "proficiencies_zh": [
+      "一種工匠工具",
+      "陸上載具"
+    ],
+    "proficiencies_en": [
+      "One type of artisan's tools",
+      "Land vehicles"
+    ],
+    "languages_zh": [],
+    "languages_en": [],
+    "equipment_zh": [
+      "一種工匠工具",
+      "鏟子",
+      "鐵鍋",
+      "普通服裝",
+      "腰包（10 金幣）"
+    ],
+    "equipment_en": [
+      "One set of artisan's tools",
+      "Shovel",
+      "Iron pot",
+      "Common clothes",
+      "Belt pouch (10 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "鄉野款待",
+        "description": "平民會將你視為自己人，願意提供住處、隱匿處或協助躲避追捕。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "Rustic Hospitality",
+        "description": "Common folk see you as one of their own and may offer shelter, concealment, or help evade pursuit."
+      }
+    ]
+  },
+  {
+    "id": "guild-artisan",
+    "name_zh": "工會工匠",
+    "name_en": "Guild Artisan",
+    "skills_zh": [
+      "洞悉",
+      "說服"
+    ],
+    "skills_en": [
+      "Insight",
+      "Persuasion"
+    ],
+    "proficiencies_zh": [
+      "一種工匠工具"
+    ],
+    "proficiencies_en": [
+      "One type of artisan's tools"
+    ],
+    "languages_zh": [
+      "任選一種語言"
+    ],
+    "languages_en": [
+      "One language of your choice"
+    ],
+    "equipment_zh": [
+      "一種工匠工具",
+      "工會介紹信",
+      "旅行者服裝",
+      "腰包（15 金幣）"
+    ],
+    "equipment_en": [
+      "One set of artisan's tools",
+      "Letter of introduction from your guild",
+      "Traveler's clothes",
+      "Belt pouch (15 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "工會會員",
+        "description": "你可向工會成員求助，並可使用工會設施；通常須維持會費與會員義務。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "Guild Membership",
+        "description": "You can seek aid from guild members and use guild facilities, normally while keeping up dues and obligations."
+      }
+    ]
+  },
+  {
+    "id": "hermit",
+    "name_zh": "隱士",
+    "name_en": "Hermit",
+    "skills_zh": [
+      "醫藥",
+      "宗教"
+    ],
+    "skills_en": [
+      "Medicine",
+      "Religion"
+    ],
+    "proficiencies_zh": [
+      "草藥工具"
+    ],
+    "proficiencies_en": [
+      "Herbalism kit"
+    ],
+    "languages_zh": [
+      "任選一種語言"
+    ],
+    "languages_en": [
+      "One language of your choice"
+    ],
+    "equipment_zh": [
+      "卷軸匣（裝有筆記）",
+      "冬季毛毯",
+      "普通服裝",
+      "草藥工具",
+      "5 金幣"
+    ],
+    "equipment_en": [
+      "Scroll case filled with notes",
+      "Winter blanket",
+      "Common clothes",
+      "Herbalism kit",
+      "5 gp"
+    ],
+    "features_zh": [
+      {
+        "name": "發現",
+        "description": "你的隱居生活帶來一項重要發現；其具體內容由你與 DM 決定。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "Discovery",
+        "description": "Your isolated life gave you an important discovery; its specific nature is decided with the DM."
+      }
+    ]
+  },
+  {
+    "id": "noble",
+    "name_zh": "貴族",
+    "name_en": "Noble",
+    "skills_zh": [
+      "歷史",
+      "說服"
+    ],
+    "skills_en": [
+      "History",
+      "Persuasion"
+    ],
+    "proficiencies_zh": [
+      "一種遊戲組"
+    ],
+    "proficiencies_en": [
+      "One gaming set"
+    ],
+    "languages_zh": [
+      "任選一種語言"
+    ],
+    "languages_en": [
+      "One language of your choice"
+    ],
+    "equipment_zh": [
+      "精美服裝",
+      "戒指印記",
+      "家譜卷軸",
+      "腰包（25 金幣）"
+    ],
+    "equipment_en": [
+      "Fine clothes",
+      "Signet ring",
+      "Scroll of pedigree",
+      "Belt pouch (25 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "特權地位",
+        "description": "上流社會承認你的身分：你能進入高階場所，並較容易獲得平民的接待與協助。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "Position of Privilege",
+        "description": "High society recognizes your status: you can access elevated circles and more readily receive commoners’ hospitality and aid."
+      }
+    ]
+  },
+  {
+    "id": "outlander",
+    "name_zh": "異鄉人",
+    "name_en": "Outlander",
+    "skills_zh": [
+      "運動",
+      "求生"
+    ],
+    "skills_en": [
+      "Athletics",
+      "Survival"
+    ],
+    "proficiencies_zh": [
+      "一種樂器"
+    ],
+    "proficiencies_en": [
+      "One musical instrument"
+    ],
+    "languages_zh": [
+      "任選一種語言"
+    ],
+    "languages_en": [
+      "One language of your choice"
+    ],
+    "equipment_zh": [
+      "長杖",
+      "捕獵陷阱",
+      "獵物戰利品",
+      "旅行者服裝",
+      "腰包（10 金幣）"
+    ],
+    "equipment_en": [
+      "Staff",
+      "Hunting trap",
+      "Trophy from an animal you killed",
+      "Traveler's clothes",
+      "Belt pouch (10 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "流浪者",
+        "description": "你能準確記住地形與地圖，並可為至多六人每天找到足夠的食物與飲水。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "Wanderer",
+        "description": "You accurately recall terrain and maps, and can find enough food and water for up to six people each day."
+      }
+    ]
+  },
+  {
+    "id": "sage",
+    "name_zh": "學者",
+    "name_en": "Sage",
+    "skills_zh": [
+      "秘法",
+      "歷史"
+    ],
+    "skills_en": [
+      "Arcana",
+      "History"
+    ],
+    "proficiencies_zh": [],
+    "proficiencies_en": [],
+    "languages_zh": [
+      "任選兩種語言"
+    ],
+    "languages_en": [
+      "Two languages of your choice"
+    ],
+    "equipment_zh": [
+      "黑色墨水瓶",
+      "羽毛筆",
+      "小刀",
+      "未解問題的信件",
+      "普通服裝",
+      "腰包（10 金幣）"
+    ],
+    "equipment_en": [
+      "Bottle of black ink",
+      "Quill",
+      "Small knife",
+      "Letter from a dead colleague posing an unanswered question",
+      "Common clothes",
+      "Belt pouch (10 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "研究員",
+        "description": "若你不知道某段知識，通常知道要去哪裡、向誰查找答案。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "Researcher",
+        "description": "When you do not know a piece of lore, you generally know where or from whom to seek the answer."
+      }
+    ]
+  },
+  {
+    "id": "sailor",
+    "name_zh": "水手",
+    "name_en": "Sailor",
+    "skills_zh": [
+      "運動",
+      "感知"
+    ],
+    "skills_en": [
+      "Athletics",
+      "Perception"
+    ],
+    "proficiencies_zh": [
+      "領航工具",
+      "水上載具"
+    ],
+    "proficiencies_en": [
+      "Navigator's tools",
+      "Water vehicles"
+    ],
+    "languages_zh": [],
+    "languages_en": [],
+    "equipment_zh": [
+      "繫纜栓",
+      "絲繩（50 呎）",
+      "幸運護符",
+      "普通服裝",
+      "腰包（10 金幣）"
+    ],
+    "equipment_en": [
+      "Belaying pin",
+      "50 feet of silk rope",
+      "Lucky charm",
+      "Common clothes",
+      "Belt pouch (10 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "航程通行",
+        "description": "你可為自己與同伴取得帆船上的免費乘船機會，但船隻航向與時間由船長決定。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "Ship’s Passage",
+        "description": "You can secure free passage for yourself and companions on a sailing vessel, subject to the captain’s route and schedule."
+      }
+    ]
+  },
+  {
+    "id": "soldier",
+    "name_zh": "士兵",
+    "name_en": "Soldier",
+    "skills_zh": [
+      "運動",
+      "威嚇"
+    ],
+    "skills_en": [
+      "Athletics",
+      "Intimidation"
+    ],
+    "proficiencies_zh": [
+      "一種遊戲組",
+      "陸上載具"
+    ],
+    "proficiencies_en": [
+      "One gaming set",
+      "Land vehicles"
+    ],
+    "languages_zh": [],
+    "languages_en": [],
+    "equipment_zh": [
+      "軍階徽記",
+      "擊殺敵人的戰利品",
+      "一種遊戲組",
+      "普通服裝",
+      "腰包（10 金幣）"
+    ],
+    "equipment_en": [
+      "Insignia of rank",
+      "Trophy from a fallen enemy",
+      "One gaming set",
+      "Common clothes",
+      "Belt pouch (10 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "軍階",
+        "description": "與你曾同屬的軍事組織會承認你的階級；你可在合理範圍內指揮低階人員與徵用基本支援。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "Military Rank",
+        "description": "Your former military organization recognizes your rank; within reason, you can direct lower-ranking personnel and requisition basic support."
+      }
+    ]
+  },
+  {
+    "id": "urchin",
+    "name_zh": "孤兒",
+    "name_en": "Urchin",
+    "skills_zh": [
+      "巧手",
+      "隱匿"
+    ],
+    "skills_en": [
+      "Sleight of Hand",
+      "Stealth"
+    ],
+    "proficiencies_zh": [
+      "易容工具",
+      "盜賊工具"
+    ],
+    "proficiencies_en": [
+      "Disguise kit",
+      "Thieves' tools"
+    ],
+    "languages_zh": [],
+    "languages_en": [],
+    "equipment_zh": [
+      "小刀",
+      "故鄉城市地圖",
+      "寵物鼠",
+      "父母紀念物",
+      "普通服裝",
+      "腰包（10 金幣）"
+    ],
+    "equipment_en": [
+      "Small knife",
+      "Map of your home city",
+      "Pet mouse",
+      "Token to remember your parents by",
+      "Common clothes",
+      "Belt pouch (10 gp)"
+    ],
+    "features_zh": [
+      {
+        "name": "城市祕密",
+        "description": "你熟悉城市的祕徑與暗巷；非戰鬥時，在城市中可比一般速度更快地往返兩地。"
+      }
+    ],
+    "features_en": [
+      {
+        "name": "City Secrets",
+        "description": "You know a city’s hidden routes and alleys; outside combat, you can move between its locations faster than usual."
+      }
+    ]
+  }
+]

@@ -152,6 +152,13 @@
       color: var(--text);
     }
 
+    .locked-note {
+      margin: -8px 0 0;
+      color: var(--rc-muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
     .option-list {
       display: grid;
       grid-template-columns: 1fr;
@@ -511,6 +518,8 @@
         <button type="button" data-mode="class" aria-pressed="false" data-i18n="classToggle">Class 職業</button>
       </div>
 
+      <p class="locked-note" id="lockedNote" data-i18n="locked">登入後可點選種族與職業查看詳細設定。</p>
+
       <ul class="option-list" id="option-list" aria-live="polite"></ul>
     </main>
   </div>
@@ -522,6 +531,7 @@
         title: "種族與職業",
         raceToggle: "種族",
         classToggle: "職業",
+        locked: "登入後可點選種族與職業查看詳細設定。",
         subraceLabel: "子種族",
         dataError: "無法載入種族與職業資料。",
         aria: "目前語言：中文"
@@ -531,6 +541,7 @@
         title: "Race & Class",
         raceToggle: "Race",
         classToggle: "Class",
+        locked: "Sign in to select a race or class and view its details.",
         subraceLabel: "Subraces",
         dataError: "Unable to load race and class data.",
         aria: "Current language: English"
@@ -541,6 +552,7 @@
 
     const buttons = Array.from(document.querySelectorAll("[data-mode]"));
     const list = document.getElementById("option-list");
+    const lockedNote = document.getElementById("lockedNote");
     const languageButton = document.querySelector("[data-lang-toggle]");
     const i18nElements = document.querySelectorAll("[data-i18n]");
     const storageKey = "rugatha-language";
@@ -716,6 +728,7 @@
     };
 
     const renderOptions = (mode) => {
+      lockedNote.hidden = isAuthenticated;
       list.replaceChildren();
       if (dataLoadError) {
         const errorItem = document.createElement("li");
