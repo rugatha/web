@@ -2,10 +2,13 @@
   "labels": {
     "level": { "zh": "職業等級", "en": "Class Level" },
     "max_spell_level": { "zh": "最高法術環數", "en": "Highest Spell Level" },
+    "spell_slots": { "zh": "法術位", "en": "Spell Slots" },
+    "spell_slots_per_level": { "zh": "各法術環位的法術位數", "en": "Spell Slots per Spell Level" },
     "prepared": { "zh": "每天準備數", "en": "Spells Prepared per Day" },
-    "known": { "zh": "懂得法術數", "en": "Spells Known" },
-    "no_preparation": { "zh": "無須準備法術", "en": "No spell preparation required" },
+    "known": { "zh": "已知法術數", "en": "Spells Known" },
+    "no_preparation": { "zh": "不需準備法術", "en": "No spell preparation required" },
     "spell_progression": { "zh": "施法進度", "en": "Spellcasting Progression" },
+    "casting_ability": { "zh": "主要施法能力", "en": "Primary Spellcasting Ability" },
     "not_applicable": { "zh": "—", "en": "—" },
     "all_eligible": { "zh": "所有符合環級的職業法術", "en": "All eligible class spells" },
     "spellbook": { "zh": "法術書：{count} 個", "en": "Spellbook: {count} spells" }
@@ -15,44 +18,65 @@
     "half": [0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5],
     "warlock": [1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
   },
+  "slot_progressions": {
+    "full": [[2,0,0,0,0,0,0,0,0],[3,0,0,0,0,0,0,0,0],[4,2,0,0,0,0,0,0,0],[4,3,0,0,0,0,0,0,0],[4,3,2,0,0,0,0,0,0],[4,3,3,0,0,0,0,0,0],[4,3,3,1,0,0,0,0,0],[4,3,3,2,0,0,0,0,0],[4,3,3,3,1,0,0,0,0],[4,3,3,3,2,0,0,0,0],[4,3,3,3,2,1,0,0,0],[4,3,3,3,2,1,0,0,0],[4,3,3,3,2,1,1,0,0],[4,3,3,3,2,1,1,0,0],[4,3,3,3,2,1,1,1,0],[4,3,3,3,2,1,1,1,0],[4,3,3,3,2,1,1,1,1],[4,3,3,3,3,1,1,1,1],[4,3,3,3,3,2,1,1,1],[4,3,3,3,3,2,1,1,1]],
+    "half": [[0,0,0,0,0,0,0,0,0],[2,0,0,0,0,0,0,0,0],[3,0,0,0,0,0,0,0,0],[3,0,0,0,0,0,0,0,0],[4,2,0,0,0,0,0,0,0],[4,2,0,0,0,0,0,0,0],[4,3,0,0,0,0,0,0,0],[4,3,0,0,0,0,0,0,0],[4,3,2,0,0,0,0,0,0],[4,3,2,0,0,0,0,0,0],[4,3,3,0,0,0,0,0,0],[4,3,3,0,0,0,0,0,0],[4,3,3,1,0,0,0,0,0],[4,3,3,1,0,0,0,0,0],[4,3,3,2,0,0,0,0,0],[4,3,3,2,0,0,0,0,0],[4,3,3,3,1,0,0,0,0],[4,3,3,3,1,0,0,0,0],[4,3,3,3,2,0,0,0,0],[4,3,3,3,2,0,0,0,0]],
+    "warlock": [[1,0,0,0,0,0,0,0,0],[2,0,0,0,0,0,0,0,0],[0,2,0,0,0,0,0,0,0],[0,2,0,0,0,0,0,0,0],[0,0,2,0,0,0,0,0,0],[0,0,2,0,0,0,0,0,0],[0,0,0,2,0,0,0,0,0],[0,0,0,2,0,0,0,0,0],[0,0,0,0,2,0,0,0,0],[0,0,0,0,2,0,0,0,0],[0,0,0,0,3,0,0,0,0],[0,0,0,0,3,0,0,0,0],[0,0,0,0,3,0,0,0,0],[0,0,0,0,3,0,0,0,0],[0,0,0,0,3,0,0,0,0],[0,0,0,0,3,0,0,0,0],[0,0,0,0,4,0,0,0,0],[0,0,0,0,4,0,0,0,0],[0,0,0,0,4,0,0,0,0],[0,0,0,0,4,0,0,0,0]]
+  },
   "classes": {
     "bard": {
       "progression": "full",
+      "slot_progression": "full",
+      "casting_ability": { "zh": "魅力", "en": "Charisma" },
       "prepared": "not_applicable",
       "known": [4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 15, 16, 16, 17, 18, 19, 19, 20, 22]
     },
     "cleric": {
       "progression": "full",
+      "slot_progression": "full",
+      "casting_ability": { "zh": "感知", "en": "Wisdom" },
       "prepared": { "zh": "感知調整值 + 牧師等級（至少 1）", "en": "Wisdom modifier + cleric level (minimum 1)" },
       "known": "all_eligible"
     },
     "druid": {
       "progression": "full",
+      "slot_progression": "full",
+      "casting_ability": { "zh": "感知", "en": "Wisdom" },
       "prepared": { "zh": "感知調整值 + 德魯伊等級（至少 1）", "en": "Wisdom modifier + druid level (minimum 1)" },
       "known": "all_eligible"
     },
     "paladin": {
       "progression": "half",
+      "slot_progression": "half",
+      "casting_ability": { "zh": "魅力", "en": "Charisma" },
       "prepared": { "zh": "魅力調整值 + 聖騎士等級（至少 1）", "en": "Charisma modifier + paladin level (minimum 1)" },
       "known": "all_eligible"
     },
     "ranger": {
       "progression": "half",
+      "slot_progression": "half",
+      "casting_ability": { "zh": "感知", "en": "Wisdom" },
       "prepared": "not_applicable",
       "known": [0, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11]
     },
     "sorcerer": {
       "progression": "full",
+      "slot_progression": "full",
+      "casting_ability": { "zh": "魅力", "en": "Charisma" },
       "prepared": "not_applicable",
       "known": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 13, 14, 15, 15, 15, 15, 15]
     },
     "warlock": {
       "progression": "warlock",
+      "slot_progression": "warlock",
+      "casting_ability": { "zh": "魅力", "en": "Charisma" },
       "prepared": "not_applicable",
       "known": [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15]
     },
     "wizard": {
       "progression": "full",
+      "slot_progression": "full",
+      "casting_ability": { "zh": "智力", "en": "Intelligence" },
       "prepared": { "zh": "智力調整值 + 法師等級（至少 1）", "en": "Intelligence modifier + wizard level (minimum 1)" },
       "known": { "template": "spellbook", "values": [6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44] }
     }

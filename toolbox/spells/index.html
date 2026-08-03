@@ -25,6 +25,7 @@
   <link rel="icon" type="image/png" href="../../assets/logo/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <script src="../../shared/language-toggle.js"></script>
   <style>
     :root {
       --spell-bg: var(--bg);
@@ -48,6 +49,38 @@
     body {
       background: var(--spell-bg);
       color: var(--spell-ink);
+    }
+
+    .language-toggle {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      display: inline-flex;
+    }
+
+    .language-toggle button {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+    }
+
+    .language-toggle button:hover,
+    .language-toggle button:focus-visible {
+      background: transparent;
+      opacity: 0.86;
+      transform: translateY(-1px);
+    }
+
+    .language-toggle__icon {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .page {
@@ -287,7 +320,7 @@
     }
 
     .col-school {
-      width: 96px;
+      width: 150px;
     }
 
     .col-name {
@@ -344,6 +377,19 @@
       color: var(--spell-table-muted);
       font-size: 0.82rem;
       line-height: 1.25;
+    }
+
+    body[data-lang="en"] .name-en {
+      order: -1;
+      color: #17382f;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    body[data-lang="en"] .name-zh {
+      color: var(--spell-table-muted);
+      font-size: 0.82rem;
+      font-weight: 400;
     }
 
     .tag-list {
@@ -591,6 +637,48 @@
       padding: 0 14px 14px;
     }
 
+    .class-spell-overview {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--spell-line);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.38);
+    }
+
+    .class-spell-overview h3 {
+      margin: 0;
+      color: #244f43;
+      font-size: 1rem;
+    }
+
+    .class-spell-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin: 0;
+    }
+
+    .class-spell-summary div {
+      min-width: 0;
+      padding: 8px;
+      border-radius: 5px;
+      background: rgba(63, 125, 105, 0.1);
+    }
+
+    .class-spell-summary dt {
+      color: var(--spell-table-muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .class-spell-summary dd {
+      margin: 3px 0 0;
+      color: #17382f;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
     .level-group {
       display: grid;
       gap: 6px;
@@ -654,6 +742,29 @@
 
     .class-spell-button:hover small,
     .class-spell-button[aria-expanded="true"] small {
+      color: rgba(238, 243, 234, 0.76);
+    }
+
+    body[data-lang="en"] .class-spell-button small {
+      order: -1;
+      color: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    body[data-lang="en"] .class-spell-button span {
+      color: var(--spell-table-muted);
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+
+    body[data-lang="en"] .class-spell-button:hover small,
+    body[data-lang="en"] .class-spell-button[aria-expanded="true"] small {
+      color: #eef3ea;
+    }
+
+    body[data-lang="en"] .class-spell-button:hover span,
+    body[data-lang="en"] .class-spell-button[aria-expanded="true"] span {
       color: rgba(238, 243, 234, 0.76);
     }
 
@@ -729,6 +840,8 @@
     }
 
     .book-card h2 {
+      display: grid;
+      gap: 2px;
       margin: 0;
       color: #17382f;
       font-size: 1.25rem;
@@ -739,6 +852,15 @@
       display: block;
       margin-top: 2px;
       color: var(--spell-table-muted);
+      font-size: 0.85rem;
+    }
+
+    body[data-lang="en"] .book-card h2 .name-en {
+      order: -1;
+      font-size: 1.25rem;
+    }
+
+    body[data-lang="en"] .book-card h2 .name-zh {
       font-size: 0.85rem;
     }
 
@@ -836,8 +958,8 @@
         display: none;
       }
 
-      .spell-row td[data-label="名稱"],
-      .spell-row td[data-label="內容"] {
+      .spell-row td.cell-name,
+      .spell-row td.cell-detail {
         display: grid;
         grid-template-columns: 5.5em minmax(0, 1fr);
         gap: 8px;
@@ -854,21 +976,21 @@
         line-height: 1.5;
       }
 
-      .spell-row td[data-label="內容"] {
+      .spell-row td.cell-detail {
         justify-self: end;
         grid-template-columns: 1fr;
       }
 
-      .spell-row td[data-label="內容"]::before {
+      .spell-row td.cell-detail::before {
         display: none;
       }
 
-      .spell-row td[data-label="名稱"] {
+      .spell-row td.cell-name {
         order: -1;
         grid-template-columns: 1fr;
       }
 
-      .spell-row td[data-label="名稱"]::before {
+      .spell-row td.cell-name::before {
         display: none;
       }
 
@@ -880,11 +1002,19 @@
         font-size: 0.92rem;
       }
 
-      .spell-row td[data-label="法術書"] {
+      body[data-lang="en"] .spell-row .name-en {
+        font-size: 1.25rem;
+      }
+
+      body[data-lang="en"] .spell-row .name-zh {
+        font-size: 0.92rem;
+      }
+
+      .spell-row td.cell-book {
         grid-template-columns: 1fr;
       }
 
-      .spell-row td[data-label="法術書"]::before {
+      .spell-row td.cell-book::before {
         display: none;
       }
 
@@ -978,6 +1108,10 @@
         grid-template-columns: 1fr;
       }
 
+      .class-spell-summary {
+        grid-template-columns: 1fr;
+      }
+
       .book-tools {
         grid-template-columns: 1fr;
         padding: 10px;
@@ -1002,6 +1136,9 @@
   </style>
 </head>
 <body>
+  <div class="language-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
+  </div>
   <div class="page">
     <header class="banner" aria-label="Rugatha banner image">
       <a href="../../index.html" class="banner-link" aria-label="Back to Rugatha home">
@@ -1012,14 +1149,14 @@
     <main class="spells-shell">
       <section class="title-bar">
         <div class="title-copy">
-          <h1>D&D 法術表</h1>
-          <p>採用D&amp;D 5e玩家手冊內容<br>僅供遊玩使用，請勿外流</p>
+          <h1 data-i18n="title">D&D 法術表</h1>
+          <p data-i18n="intro">採用D&amp;D 5e玩家手冊內容<br>僅供遊玩使用，請勿外流</p>
           <hr class="title-divider" aria-hidden="true">
-          <p>可將會使用到的法術按下「加入」<br>一併在「法術書」裡檢視</p>
+          <p data-i18n="bookIntro">可將會使用到的法術按下「加入」<br>一併在「法術書」裡檢視</p>
           <div class="view-toggle" aria-label="切換法術視圖">
-            <button type="button" data-view="list" aria-pressed="true">法術清單</button>
-            <button type="button" data-view="class" aria-pressed="false">職業法術</button>
-            <button type="button" data-view="book" aria-pressed="false">法術書</button>
+            <button type="button" data-view="list" aria-pressed="true" data-i18n="listView">法術清單</button>
+            <button type="button" data-view="class" aria-pressed="false" data-i18n="classView">職業法術</button>
+            <button type="button" data-view="book" aria-pressed="false" data-i18n="bookView">法術書</button>
           </div>
         </div>
         <div class="result-count" id="resultCount">載入中</div>
@@ -1027,88 +1164,88 @@
 
       <section class="toolbar" id="filterToolbar" aria-label="法術篩選工具">
         <div class="control">
-          <label for="searchInput">搜尋</label>
-          <input id="searchInput" type="search" placeholder="法術名稱、英文、內容、材料">
+          <label for="searchInput" data-i18n="search">搜尋</label>
+          <input id="searchInput" type="search" placeholder="法術名稱、英文、內容、材料" data-i18n-placeholder="searchPlaceholder">
         </div>
         <div class="control">
-          <label for="levelFilter">等級</label>
+          <label for="levelFilter" data-i18n="level">等級</label>
           <select id="levelFilter">
-            <option value="">全部</option>
+            <option value="" data-i18n="all">全部</option>
           </select>
         </div>
         <div class="control">
-          <label for="schoolFilter">學派</label>
+          <label for="schoolFilter" data-i18n="school">學派</label>
           <select id="schoolFilter">
-            <option value="">全部</option>
+            <option value="" data-i18n="all">全部</option>
           </select>
         </div>
         <div class="control">
-          <span class="control-label">成分</span>
+          <span class="control-label" data-i18n="components">成分</span>
           <div class="component-toggle" id="componentFilter" aria-label="成分篩選">
-            <button type="button" value="聲" aria-pressed="false">聲</button>
-            <button type="button" value="勢" aria-pressed="false">勢</button>
-            <button type="button" value="材" aria-pressed="false">材</button>
+            <button type="button" value="v" aria-pressed="false" data-i18n="verbal">聲</button>
+            <button type="button" value="s" aria-pressed="false" data-i18n="somatic">勢</button>
+            <button type="button" value="m" aria-pressed="false" data-i18n="material">材</button>
           </div>
         </div>
         <div class="control">
-          <label for="damageFilter">傷害</label>
+          <label for="damageFilter" data-i18n="damage">傷害</label>
           <select id="damageFilter">
-            <option value="">全部</option>
+            <option value="" data-i18n="all">全部</option>
           </select>
         </div>
         <div class="control">
-          <label for="saveFilter">豁免</label>
+          <label for="saveFilter" data-i18n="save">豁免</label>
           <select id="saveFilter">
-            <option value="">全部</option>
+            <option value="" data-i18n="all">全部</option>
           </select>
         </div>
         <div class="control">
-          <label for="concentrationFilter">專注</label>
+          <label for="concentrationFilter" data-i18n="concentration">專注</label>
           <select id="concentrationFilter">
-            <option value="">全部</option>
-            <option value="是">是</option>
-            <option value="否">否</option>
+            <option value="" data-i18n="all">全部</option>
+            <option value="yes" data-i18n="yes">是</option>
+            <option value="no" data-i18n="no">否</option>
           </select>
         </div>
         <div class="control">
-          <label for="attackFilter">攻擊</label>
+          <label for="attackFilter" data-i18n="attack">攻擊</label>
           <select id="attackFilter">
-            <option value="">全部</option>
-            <option value="法術命中">法術命中</option>
-            <option value="豁免攻擊">豁免攻擊</option>
-            <option value="非攻擊">非攻擊</option>
+            <option value="" data-i18n="all">全部</option>
+            <option value="spellAttack" data-i18n="spellAttack">法術命中</option>
+            <option value="savingAttack" data-i18n="savingAttack">豁免攻擊</option>
+            <option value="nonAttack" data-i18n="nonAttack">非攻擊</option>
           </select>
         </div>
         <div class="control">
-          <label for="ritualFilter">儀式</label>
+          <label for="ritualFilter" data-i18n="ritual">儀式</label>
           <select id="ritualFilter">
-            <option value="">全部</option>
-            <option value="是">是</option>
-            <option value="否">否</option>
+            <option value="" data-i18n="all">全部</option>
+            <option value="yes" data-i18n="yes">是</option>
+            <option value="no" data-i18n="no">否</option>
           </select>
         </div>
-        <button id="resetButton" type="button">重設</button>
+        <button id="resetButton" type="button" data-i18n="reset">重設</button>
       </section>
 
       <section class="table-wrap" id="spellListView" aria-live="polite">
-        <div class="load-state" id="loadState">讀取法術資料中</div>
+        <div class="load-state" id="loadState" data-i18n="loading">讀取法術資料中</div>
         <table id="spellTable" hidden>
           <thead>
             <tr>
-              <th class="col-level"><button type="button" data-sort="level">等級 <span aria-hidden="true"></span></button></th>
-              <th class="col-school"><button type="button" data-sort="schoolText">學派 <span aria-hidden="true"></span></button></th>
-              <th class="col-name"><button type="button" data-sort="name_zh">名稱 <span aria-hidden="true"></span></button></th>
-              <th class="col-time"><button type="button" data-sort="timeText">施法時間 <span aria-hidden="true"></span></button></th>
-              <th class="col-range"><button type="button" data-sort="rangeText">距離 <span aria-hidden="true"></span></button></th>
-              <th class="col-duration"><button type="button" data-sort="durationText">持續時間 <span aria-hidden="true"></span></button></th>
-              <th class="col-components"><button type="button" data-sort="componentSummaryText">成分 <span aria-hidden="true"></span></button></th>
-              <th class="col-concentration"><button type="button" data-sort="concentrationText">專注 <span aria-hidden="true"></span></button></th>
-              <th class="col-ritual"><button type="button" data-sort="ritualText">儀式 <span aria-hidden="true"></span></button></th>
-              <th class="col-attack"><button type="button" data-sort="attackText">攻擊 <span aria-hidden="true"></span></button></th>
-              <th class="col-save">豁免</th>
-              <th class="col-damage">傷害</th>
-              <th class="col-book">法術書</th>
-              <th class="col-detail">內容</th>
+              <th class="col-level"><button type="button" data-sort="level"><span data-i18n="level">等級</span> <span aria-hidden="true"></span></button></th>
+              <th class="col-school"><button type="button" data-sort="schoolText"><span data-i18n="school">學派</span> <span aria-hidden="true"></span></button></th>
+              <th class="col-name"><button type="button" data-sort="name_zh"><span data-i18n="name">名稱</span> <span aria-hidden="true"></span></button></th>
+              <th class="col-time"><button type="button" data-sort="timeText"><span data-i18n="castingTime">施法時間</span> <span aria-hidden="true"></span></button></th>
+              <th class="col-range"><button type="button" data-sort="rangeText"><span data-i18n="range">距離</span> <span aria-hidden="true"></span></button></th>
+              <th class="col-duration"><button type="button" data-sort="durationText"><span data-i18n="duration">持續時間</span> <span aria-hidden="true"></span></button></th>
+              <th class="col-components"><button type="button" data-sort="componentSummaryText"><span data-i18n="components">成分</span> <span aria-hidden="true"></span></button></th>
+              <th class="col-concentration"><button type="button" data-sort="concentrationText"><span data-i18n="concentration">專注</span> <span aria-hidden="true"></span></button></th>
+              <th class="col-ritual"><button type="button" data-sort="ritualText"><span data-i18n="ritual">儀式</span> <span aria-hidden="true"></span></button></th>
+              <th class="col-attack"><button type="button" data-sort="attackText"><span data-i18n="attack">攻擊</span> <span aria-hidden="true"></span></button></th>
+              <th class="col-save"><span data-i18n="save">豁免</span></th>
+              <th class="col-damage"><span data-i18n="damage">傷害</span></th>
+              <th class="col-book"><span data-i18n="bookView">法術書</span></th>
+              <th class="col-detail"><span data-i18n="details">內容</span></th>
             </tr>
           </thead>
           <tbody id="spellRows"></tbody>
@@ -1123,10 +1260,10 @@
       <section class="book-view" id="spellBookView" hidden>
         <div class="book-tools">
           <div class="control">
-            <label for="bookSearchInput">搜尋新增法術</label>
-            <input id="bookSearchInput" type="search" placeholder="輸入法術名稱、英文或內容">
+            <label for="bookSearchInput" data-i18n="searchAdd">搜尋新增法術</label>
+            <input id="bookSearchInput" type="search" placeholder="輸入法術名稱、英文或內容" data-i18n-placeholder="bookSearchPlaceholder">
           </div>
-          <button class="clear-button" id="clearBookButton" type="button">清空法術</button>
+          <button class="clear-button" id="clearBookButton" type="button" data-i18n="clearBook">清空法術</button>
         </div>
         <div class="book-search-results" id="bookSearchResults"></div>
         <div class="book-list" id="bookList"></div>
@@ -1145,21 +1282,74 @@
       classExpanded: null,
       collapsedClasses: new Set(),
       spellBook: new Set(),
+      classSpells: null,
     };
 
     const SPELLBOOK_STORAGE_KEY = "rugatha.phb.spellbook";
 
     const classOrder = ["吟遊詩人", "牧師", "德魯伊", "聖騎士", "遊俠", "術士", "契術師", "法師"];
 
+    const classSpellIds = {
+      "吟遊詩人": "bard",
+      "牧師": "cleric",
+      "德魯伊": "druid",
+      "聖騎士": "paladin",
+      "遊俠": "ranger",
+      "術士": "sorcerer",
+      "契術師": "warlock",
+      "法師": "wizard",
+    };
+
+    const classNames = {
+      "吟遊詩人": "Bard", "牧師": "Cleric", "德魯伊": "Druid", "聖騎士": "Paladin",
+      "遊俠": "Ranger", "術士": "Sorcerer", "契術師": "Warlock", "法師": "Wizard",
+    };
+
+    const translations = {
+      zh: {
+        title: "D&D 法術表", intro: "採用D&amp;D 5e玩家手冊內容<br>僅供遊玩使用，請勿外流",
+        bookIntro: "可將會使用到的法術按下「加入」<br>一併在「法術書」裡檢視",
+        listView: "法術清單", classView: "職業法術", bookView: "法術書", search: "搜尋",
+        searchPlaceholder: "法術名稱、英文、內容、材料", level: "等級", school: "學派", all: "全部",
+        components: "成分", verbal: "聲", somatic: "勢", material: "材", damage: "傷害", save: "豁免",
+        concentration: "專注", attack: "攻擊", ritual: "儀式", yes: "是", no: "否", reset: "重設",
+        spellAttack: "法術命中", savingAttack: "豁免攻擊", nonAttack: "非攻擊", source: "來源",
+        add: "加入", added: "已加入", remove: "移除法術", expand: "展開", collapse: "收合",
+        emptySpellbook: "法術書目前是空的", noSpellsToAdd: "沒有可新增的法術",
+        name: "名稱", castingTime: "施法時間", range: "距離", duration: "持續時間", details: "內容",
+        searchAdd: "搜尋新增法術", bookSearchPlaceholder: "輸入法術名稱、英文或內容", clearBook: "清空法術",
+        loading: "讀取法術資料中", spellInfo: "施法資訊", variesByLevel: "見職業資訊",
+        currentLanguage: "目前語言：中文", browserTitle: "D&D 法術表 | Rugatha"
+      },
+      en: {
+        title: "D&D Spell List", intro: "Based on the D&amp;D 5e Player's Handbook.<br>For play use only.",
+        bookIntro: "Use Add to save spells you use.<br>Review them together in Spellbook.",
+        listView: "Spell List", classView: "Class Spells", bookView: "Spellbook", search: "Search",
+        searchPlaceholder: "Spell name or details", level: "Level", school: "School", all: "All",
+        components: "Components", verbal: "V", somatic: "S", material: "M", damage: "Damage", save: "Saving Throw",
+        concentration: "Concentration", attack: "Attack", ritual: "Ritual", yes: "Yes", no: "No", reset: "Reset",
+        spellAttack: "Spell Attack", savingAttack: "Saving Throw", nonAttack: "None", source: "Source",
+        add: "Add", added: "Added", remove: "Remove spell", expand: "Expand", collapse: "Collapse",
+        emptySpellbook: "Your spellbook is empty", noSpellsToAdd: "No spells to add",
+        name: "Name", castingTime: "Casting Time", range: "Range", duration: "Duration", details: "Details",
+        searchAdd: "Add a spell", bookSearchPlaceholder: "Spell name or details", clearBook: "Clear Spellbook",
+        loading: "Loading spell data", spellInfo: "Spellcasting", variesByLevel: "See Class Info",
+        currentLanguage: "Current language: English", browserTitle: "D&D Spell List | Rugatha"
+      }
+    };
+
+    const LANGUAGE_STORAGE_KEY = "rugatha-language";
+    let currentLanguage = "zh";
+
     const schoolNames = {
-      A: "防護",
-      C: "咒法",
-      D: "預言",
-      E: "附魔",
-      I: "幻術",
-      N: "死靈",
-      T: "變化",
-      V: "塑能",
+      A: { zh: "防護", en: "Abjuration" },
+      C: { zh: "咒法", en: "Conjuration" },
+      D: { zh: "預言", en: "Divination" },
+      E: { zh: "附魔", en: "Enchantment" },
+      I: { zh: "幻術", en: "Illusion" },
+      N: { zh: "死靈", en: "Necromancy" },
+      T: { zh: "變化", en: "Transmutation" },
+      V: { zh: "塑能", en: "Evocation" },
     };
 
     const elements = {
@@ -1187,28 +1377,73 @@
       table: document.getElementById("spellTable"),
       rows: document.getElementById("spellRows"),
       empty: document.getElementById("emptyState"),
+      languageButton: document.querySelector("[data-lang-toggle]"),
     };
 
+    function t(key) {
+      return translations[currentLanguage][key] || key;
+    }
+
+    function classNameText(className) {
+      return currentLanguage === "en" ? (classNames[className] || className) : className;
+    }
+
+    function setLanguage(language) {
+      currentLanguage = language === "en" ? "en" : "zh";
+      const dictionary = translations[currentLanguage];
+      document.documentElement.lang = currentLanguage === "zh" ? "zh-Hant" : "en";
+      document.body.dataset.lang = currentLanguage;
+      document.title = dictionary.browserTitle;
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const value = dictionary[element.dataset.i18n];
+        if (value) element.innerHTML = value;
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        element.placeholder = dictionary[element.dataset.i18nPlaceholder] || "";
+      });
+      elements.languageButton.dataset.lang = currentLanguage;
+      elements.languageButton.setAttribute("aria-label", dictionary.currentLanguage);
+      window.RugathaLanguageToggle?.setButtonIcon(elements.languageButton, currentLanguage);
+      try {
+        localStorage.setItem(LANGUAGE_STORAGE_KEY, currentLanguage);
+      } catch (error) {
+        // Language preference is optional when storage is unavailable.
+      }
+      if (state.spells.length) {
+        populateFilters();
+        renderRows();
+        renderClassView();
+        renderBookSearchResults();
+        renderBookView();
+        updateCount();
+      }
+    }
+
     function levelText(level) {
+      if (currentLanguage === "en") {
+        const suffix = Number(level) === 1 ? "st" : Number(level) === 2 ? "nd" : Number(level) === 3 ? "rd" : "th";
+        return Number(level) === 0 ? "Cantrip" : `${level}${suffix}-level`;
+      }
       return Number(level) === 0 ? "戲法" : `${level} 環`;
     }
 
     function arrayText(value) {
-      return Array.isArray(value) && value.length ? value.join("、") : "—";
+      return Array.isArray(value) && value.length ? value.join(currentLanguage === "en" ? ", " : "、") : "—";
     }
 
     function formatTime(time) {
       if (!Array.isArray(time) || !time.length) return "—";
       return time.map((item) => {
         const amount = item.number && item.number !== 1 ? `${item.number} ` : "";
-        const condition = item.condition ? `（${item.condition}）` : "";
-        return `${amount}${item.unit || ""}${condition}`;
-      }).join("、");
+        const condition = item.condition ? (currentLanguage === "en" ? ` (${item.condition})` : `（${item.condition}）`) : "";
+        const value = `${amount}${item.unit || ""}${condition}`;
+        return currentLanguage === "en" ? value.replace(/^([a-z])/, (letter) => letter.toUpperCase()) : value;
+      }).join(currentLanguage === "en" ? ", " : "、");
     }
 
     function formatRange(range) {
       if (!range) return "—";
-      if (range.type === "自身") return "自身";
+      if (range.type === "自身" || range.type === "self") return range.type;
       if (!range.distance) return range.type || "—";
       const amount = range.distance.amount ? `${range.distance.amount} ` : "";
       const unit = range.distance.type || "";
@@ -1223,7 +1458,7 @@
           return `${amount}${item.duration.type || ""}`.trim();
         }
         return `${item.type || ""}`.trim();
-      }).join("、");
+      }).join(currentLanguage === "en" ? ", " : "、");
     }
 
     function hasConcentration(duration) {
@@ -1233,21 +1468,21 @@
     function componentText(components) {
       if (!components) return "—";
       const parts = [];
-      if (components.v) parts.push("聲");
-      if (components.s) parts.push("勢");
+      if (components.v) parts.push(currentLanguage === "en" ? "V" : "聲");
+      if (components.s) parts.push(currentLanguage === "en" ? "S" : "勢");
       if (components.m) {
         const material = typeof components.m === "string" ? components.m : components.m.text;
-        parts.push(`材：${material || ""}`);
+        parts.push(currentLanguage === "en" ? `M${material ? ` (${material})` : ""}` : `材：${material || ""}`);
       }
-      return parts.join("、") || "—";
+      return parts.join(currentLanguage === "en" ? ", " : "、") || "—";
     }
 
     function componentKinds(components) {
       if (!components) return [];
       const parts = [];
-      if (components.v) parts.push("聲");
-      if (components.s) parts.push("勢");
-      if (components.m) parts.push("材");
+      if (components.v) parts.push("v");
+      if (components.s) parts.push("s");
+      if (components.m) parts.push("m");
       return parts;
     }
 
@@ -1256,7 +1491,7 @@
       const normalized = {
         ...spell,
         index,
-        schoolText: schoolNames[spell.school] || spell.school || "—",
+        schoolText: schoolNames[spell.school]?.zh || spell.school || "—",
         timeText: formatTime(spell.time),
         rangeText: formatRange(spell.range),
         durationText: formatDuration(spell.duration),
@@ -1264,14 +1499,21 @@
         componentKinds: components,
         componentSummaryText: arrayText(components),
         concentrationText: hasConcentration(spell.duration) ? "是" : "否",
+        concentrationValue: hasConcentration(spell.duration),
+        attackType: attackType(spell),
         attackText: attackText(spell),
         savingText: arrayText(spell.savingThrow),
         damageText: arrayText(spell.damageInflict),
         ritualText: spell.meta && spell.meta.ritual ? "是" : "否",
+        ritualValue: Boolean(spell.meta && spell.meta.ritual),
       };
       normalized.contentText = [
         plainEntryText(normalized.entries),
         plainEntryText(normalized.entriesHigherLevel),
+      ].join(" ").toLowerCase();
+      normalized.contentTextEn = [
+        plainEntryText(normalized.entries_en),
+        plainEntryText(normalized.entriesHigherLevel_en),
       ].join(" ").toLowerCase();
       normalized.searchText = [
         normalized.name_zh,
@@ -1288,6 +1530,7 @@
         normalized.savingText,
         normalized.damageText,
         normalized.contentText,
+        normalized.contentTextEn,
       ].join(" ").toLowerCase();
       return normalized;
     }
@@ -1302,11 +1545,53 @@
       return "";
     }
 
+    function localizedSpellEntries(spell, field = "entries") {
+      const englishField = `${field}_en`;
+      return currentLanguage === "en" && spell[englishField] ? spell[englishField] : spell[field];
+    }
+
+    function localizedSpellValue(spell, field) {
+      const englishField = `${field}_en`;
+      return currentLanguage === "en" && spell[englishField] !== undefined ? spell[englishField] : spell[field];
+    }
+
+    function schoolText(spell) {
+      return schoolNames[spell.school]?.[currentLanguage] || spell.school || "—";
+    }
+
+    function timeText(spell) {
+      return formatTime(localizedSpellValue(spell, "time"));
+    }
+
+    function rangeText(spell) {
+      return formatRange(localizedSpellValue(spell, "range"));
+    }
+
+    function durationText(spell) {
+      return formatDuration(localizedSpellValue(spell, "duration"));
+    }
+
+    function componentTextForLanguage(spell) {
+      return componentText(localizedSpellValue(spell, "components"));
+    }
+
+    function componentSummaryText(spell) {
+      return arrayText(spell.componentKinds.map((kind) => t({ v: "verbal", s: "somatic", m: "material" }[kind])));
+    }
+
+    function yesNoText(value) {
+      return t(value ? "yes" : "no");
+    }
+
+    function attackType(spell) {
+      if (!hasDamageCalculation(spell)) return "nonAttack";
+      if (spell.spellAttack && spell.spellAttack.length) return "spellAttack";
+      if (spell.savingThrow && spell.savingThrow.length) return "savingAttack";
+      return "nonAttack";
+    }
+
     function attackText(spell) {
-      if (!hasDamageCalculation(spell)) return "非攻擊";
-      if (spell.spellAttack && spell.spellAttack.length) return "法術命中";
-      if (spell.savingThrow && spell.savingThrow.length) return "豁免攻擊";
-      return "非攻擊";
+      return t(attackType(spell));
     }
 
     function hasDamageCalculation(spell) {
@@ -1334,19 +1619,48 @@
 
     function renderTagList(text) {
       if (!text || text === "—") return "—";
-      return `<div class="tag-list">${text.split("、").map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("")}</div>`;
+      const separator = currentLanguage === "en" ? ", " : "、";
+      return `<div class="tag-list">${text.split(separator).map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("")}</div>`;
     }
 
     function populateFilters() {
+      const selected = {
+        level: elements.level.value,
+        school: elements.school.value,
+        damage: elements.damage.value,
+        save: elements.save.value,
+      };
       const levels = [...new Set(state.spells.map((spell) => spell.level))].sort((a, b) => a - b);
-      const schools = [...new Set(state.spells.map((spell) => spell.schoolText))].sort((a, b) => a.localeCompare(b, "zh-Hant"));
-      const damages = [...new Set(state.spells.flatMap((spell) => spell.damageInflict || []))].sort((a, b) => a.localeCompare(b, "zh-Hant"));
-      const saves = [...new Set(state.spells.flatMap((spell) => spell.savingThrow || []))].sort((a, b) => a.localeCompare(b, "zh-Hant"));
+      const schools = [...new Set(state.spells.map((spell) => spell.school))]
+        .sort((a, b) => schoolText({ school: a }).localeCompare(schoolText({ school: b }), currentLanguage === "en" ? "en" : "zh-Hant"));
 
-      levels.forEach((level) => elements.level.append(new Option(levelText(level), String(level))));
-      schools.forEach((school) => elements.school.append(new Option(school, school)));
-      damages.forEach((damage) => elements.damage.append(new Option(damage, damage)));
-      saves.forEach((save) => elements.save.append(new Option(save, save)));
+      populateSelect(elements.level, levels.map((level) => ({ value: String(level), label: levelText(level) })), selected.level);
+      populateSelect(elements.school, schools.map((school) => ({ value: school, label: schoolText({ school }) })), selected.school);
+      populateSelect(elements.damage, localizedFilterOptions("damageInflict"), selected.damage);
+      populateSelect(elements.save, localizedFilterOptions("savingThrow"), selected.save);
+    }
+
+    function populateSelect(element, options, selectedValue) {
+      element.replaceChildren(new Option(t("all"), ""));
+      options.forEach(({ value, label }) => element.append(new Option(label, value)));
+      element.value = selectedValue;
+    }
+
+    function localizedFilterOptions(field) {
+      const options = new Map();
+      state.spells.forEach((spell) => {
+        const values = spell[field] || [];
+        const englishValues = spell[`${field}_en`] || [];
+        values.forEach((value, index) => {
+          if (!options.has(value)) {
+            const label = currentLanguage === "en" ? (englishValues[index] || value) : value;
+            options.set(value, currentLanguage === "en" ? `${label.charAt(0).toUpperCase()}${label.slice(1)}` : label);
+          }
+        });
+      });
+      return [...options]
+        .map(([value, label]) => ({ value, label }))
+        .sort((a, b) => a.label.localeCompare(b.label, currentLanguage === "en" ? "en" : "zh-Hant"));
     }
 
     function applyFilters() {
@@ -1363,13 +1677,13 @@
       state.filtered = state.spells.filter((spell) => {
         if (query && !spell.searchText.includes(query)) return false;
         if (level !== "" && String(spell.level) !== level) return false;
-        if (school && spell.schoolText !== school) return false;
+        if (school && spell.school !== school) return false;
         if (components.length && !components.every((component) => spell.componentKinds.includes(component))) return false;
         if (damage && !(spell.damageInflict || []).includes(damage)) return false;
         if (save && !(spell.savingThrow || []).includes(save)) return false;
-        if (concentration && spell.concentrationText !== concentration) return false;
-        if (attack && spell.attackText !== attack) return false;
-        if (ritual && spell.ritualText !== ritual) return false;
+        if (concentration && String(spell.concentrationValue) !== String(concentration === "yes")) return false;
+        if (attack && spell.attackType !== attack) return false;
+        if (ritual && String(spell.ritualValue) !== String(ritual === "yes")) return false;
         return true;
       });
 
@@ -1417,31 +1731,31 @@
         const expanded = state.expanded.has(spell.index);
         rows.push(`
           <tr class="spell-row">
-            <td data-label="等級">${levelText(spell.level)}</td>
-            <td data-label="學派">${escapeHtml(spell.schoolText)}</td>
-            <td data-label="名稱">
+            <td data-label="${t("level")}">${levelText(spell.level)}</td>
+            <td data-label="${t("school")}">${escapeHtml(schoolText(spell))}</td>
+            <td class="cell-name" data-label="${t("name")}">
               <div class="name-cell">
                 <span class="name-zh">${escapeHtml(spell.name_zh)}</span>
                 <span class="name-en">${escapeHtml(spell.name_en)}</span>
               </div>
             </td>
-            <td data-label="施法">${escapeHtml(spell.timeText)}</td>
-            <td data-label="距離">${escapeHtml(spell.rangeText)}</td>
-            <td data-label="持續">${escapeHtml(spell.durationText)}</td>
-            <td data-label="成分">${renderTagList(spell.componentSummaryText)}</td>
-            <td data-label="專注">${escapeHtml(spell.concentrationText)}</td>
-            <td data-label="儀式">${escapeHtml(spell.ritualText)}</td>
-            <td data-label="攻擊">${renderTagList(spell.attackText)}</td>
-            <td data-label="豁免">${renderTagList(spell.savingText)}</td>
-            <td data-label="傷害">${renderTagList(spell.damageText)}</td>
-            <td data-label="法術書">${renderBookButton(spell)}</td>
-            <td data-label="內容"><button class="detail-button" type="button" data-toggle="${spell.index}" aria-expanded="${expanded}" aria-controls="${rowId}">${expanded ? "收合" : "展開"}</button></td>
+            <td data-label="${t("castingTime")}">${escapeHtml(timeText(spell))}</td>
+            <td data-label="${t("range")}">${escapeHtml(rangeText(spell))}</td>
+            <td data-label="${t("duration")}">${escapeHtml(durationText(spell))}</td>
+            <td data-label="${t("components")}">${renderTagList(componentSummaryText(spell))}</td>
+            <td data-label="${t("concentration")}">${escapeHtml(yesNoText(spell.concentrationValue))}</td>
+            <td data-label="${t("ritual")}">${escapeHtml(yesNoText(spell.ritualValue))}</td>
+            <td data-label="${t("attack")}">${renderTagList(attackText(spell))}</td>
+            <td data-label="${t("save")}">${renderTagList(arrayText(localizedSpellValue(spell, "savingThrow")))}</td>
+            <td data-label="${t("damage")}">${renderTagList(arrayText(localizedSpellValue(spell, "damageInflict")))}</td>
+            <td class="cell-book" data-label="${t("bookView")}">${renderBookButton(spell)}</td>
+            <td class="cell-detail" data-label="${t("details")}"><button class="detail-button" type="button" data-toggle="${spell.index}" aria-expanded="${expanded}" aria-controls="${rowId}">${expanded ? t("collapse") : t("expand")}</button></td>
           </tr>
           <tr class="detail-row" id="${rowId}" ${expanded ? "" : "hidden"}>
             <td colspan="14">
               <div class="detail-panel">
                 <div class="detail-meta desktop-detail-meta">
-                  <span class="tag">來源 ${escapeHtml(spell.source || "—")} p.${escapeHtml(spell.page || "—")}</span>
+                  <span class="tag">${t("source")} ${escapeHtml(spell.source || "—")} p.${escapeHtml(spell.page || "—")}</span>
                 </div>
                 <div class="detail-meta mobile-detail-meta">
                   ${renderSpellDetailMeta(spell)}
@@ -1450,8 +1764,8 @@
                   ${renderBookButton(spell)}
                 </div>
                 <div class="detail-text">
-                  ${renderEntries(spell.entries)}
-                  ${spell.entriesHigherLevel ? renderEntries(spell.entriesHigherLevel) : ""}
+                  ${renderEntries(localizedSpellEntries(spell))}
+                  ${spell.entriesHigherLevel ? renderEntries(localizedSpellEntries(spell, "entriesHigherLevel")) : ""}
                 </div>
               </div>
             </td>
@@ -1464,17 +1778,17 @@
     function renderSpellDetailMeta(spell) {
       const metaItems = [
         levelText(spell.level),
-        spell.schoolText,
-        `施法 ${spell.timeText}`,
-        `距離 ${spell.rangeText}`,
-        `持續 ${spell.durationText}`,
-        `成分 ${spell.componentText}`,
-        `專注 ${spell.concentrationText}`,
-        `儀式 ${spell.ritualText}`,
-        `攻擊 ${spell.attackText}`,
-        `豁免 ${spell.savingText}`,
-        `傷害 ${spell.damageText}`,
-        `來源 ${spell.source || "—"} p.${spell.page || "—"}`,
+        schoolText(spell),
+        `${t("castingTime")} ${timeText(spell)}`,
+        `${t("range")} ${rangeText(spell)}`,
+        `${t("duration")} ${durationText(spell)}`,
+        `${t("components")} ${componentTextForLanguage(spell)}`,
+        `${t("concentration")} ${yesNoText(spell.concentrationValue)}`,
+        `${t("ritual")} ${yesNoText(spell.ritualValue)}`,
+        `${t("attack")} ${attackText(spell)}`,
+        `${t("save")} ${arrayText(localizedSpellValue(spell, "savingThrow"))}`,
+        `${t("damage")} ${arrayText(localizedSpellValue(spell, "damageInflict"))}`,
+        `${t("source")} ${spell.source || "—"} p.${spell.page || "—"}`,
       ];
       return metaItems.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("");
     }
@@ -1511,12 +1825,15 @@
         return `
           <article class="class-card${classCollapsed ? " is-collapsed" : ""}">
             <h2>
-              <button class="class-toggle" type="button" data-class-toggle="${escapeHtml(className)}" aria-expanded="${!classCollapsed}" aria-controls="${escapeHtml(classPanelId)}" aria-label="${classCollapsed ? `展開${className}` : `收合${className}`}">
-                <span class="class-toggle-label">${escapeHtml(className)} <small>${spells.length}</small></span>
+              <button class="class-toggle" type="button" data-class-toggle="${escapeHtml(className)}" aria-expanded="${!classCollapsed}" aria-controls="${escapeHtml(classPanelId)}" aria-label="${escapeHtml(classCollapsed ? `${currentLanguage === "en" ? "Expand " : "展開"}${classNameText(className)}` : `${currentLanguage === "en" ? "Collapse " : "收合"}${classNameText(className)}`)}">
+                <span class="class-toggle-label">${escapeHtml(classNameText(className))} <small>${spells.length}</small></span>
                 <span class="class-toggle-state ${classCollapsed ? "is-expand" : "is-collapse"}" aria-hidden="true"></span>
               </button>
             </h2>
-            <div class="level-groups" id="${escapeHtml(classPanelId)}" ${classCollapsed ? "hidden" : ""}>${groups.join("")}</div>
+            <div class="level-groups" id="${escapeHtml(classPanelId)}" ${classCollapsed ? "hidden" : ""}>
+              ${renderClassSpellOverview(className)}
+              ${groups.join("")}
+            </div>
           </article>
         `;
       }).join("");
@@ -1524,6 +1841,47 @@
 
     function classSpellKey(className, level, index) {
       return `${className}::${level}::${index}`;
+    }
+
+    function localizedClassSpellText(value) {
+      if (typeof value === "string") return value;
+      return value?.[currentLanguage] || value?.zh || value?.en || "—";
+    }
+
+    function classSpellValue(value, level, source) {
+      if (Array.isArray(value)) return classSpellValue(value[level - 1], level, source);
+      if (typeof value === "number") return String(value);
+      if (typeof value === "string") return localizedClassSpellText(source.labels?.[value]) || value;
+      if (value?.template === "spellbook") {
+        const template = localizedClassSpellText(source.labels?.[value.template]);
+        return template.replace("{count}", value.values?.[level - 1] ?? "—");
+      }
+      return localizedClassSpellText(value);
+    }
+
+    function renderClassSpellOverview(className) {
+      const source = state.classSpells;
+      const classData = source?.classes?.[classSpellIds[className]];
+      if (!classData) return "";
+
+      const labels = source.labels || {};
+      const knownChangesByLevel = Array.isArray(classData.known) || classData.known?.template;
+      const prepared = classSpellValue(classData.prepared, 1, source);
+      const known = knownChangesByLevel
+        ? t("variesByLevel")
+        : classSpellValue(classData.known, 1, source);
+      const ability = localizedClassSpellText(classData.casting_ability);
+
+      return `
+        <section class="class-spell-overview" aria-label="${escapeHtml(classNameText(className))} ${escapeHtml(t("spellInfo"))}">
+          <h3>${escapeHtml(t("spellInfo"))}</h3>
+          <dl class="class-spell-summary">
+            <div><dt>${escapeHtml(localizedClassSpellText(labels.prepared))}</dt><dd>${escapeHtml(prepared)}</dd></div>
+            <div><dt>${escapeHtml(localizedClassSpellText(labels.known))}</dt><dd>${escapeHtml(known)}</dd></div>
+            <div><dt>${escapeHtml(localizedClassSpellText(labels.casting_ability))}</dt><dd>${escapeHtml(ability)}</dd></div>
+          </dl>
+        </section>
+      `;
     }
 
     function renderClassSpellDetail(className, level, levelSpells) {
@@ -1534,18 +1892,18 @@
           <h4>${escapeHtml(spell.name_zh)} <small>${escapeHtml(spell.name_en)}</small></h4>
           <div class="detail-meta">
             <span class="tag">${levelText(spell.level)}</span>
-            <span class="tag">${escapeHtml(spell.schoolText)}</span>
-            <span class="tag">施法 ${escapeHtml(spell.timeText)}</span>
-            <span class="tag">距離 ${escapeHtml(spell.rangeText)}</span>
-            <span class="tag">持續 ${escapeHtml(spell.durationText)}</span>
-            <span class="tag">專注 ${escapeHtml(spell.concentrationText)}</span>
-            <span class="tag">儀式 ${escapeHtml(spell.ritualText)}</span>
-            <span class="tag">成分 ${escapeHtml(spell.componentText)}</span>
+            <span class="tag">${escapeHtml(schoolText(spell))}</span>
+            <span class="tag">${escapeHtml(t("castingTime"))} ${escapeHtml(timeText(spell))}</span>
+            <span class="tag">${escapeHtml(t("range"))} ${escapeHtml(rangeText(spell))}</span>
+            <span class="tag">${escapeHtml(t("duration"))} ${escapeHtml(durationText(spell))}</span>
+            <span class="tag">${escapeHtml(t("concentration"))} ${escapeHtml(yesNoText(spell.concentrationValue))}</span>
+            <span class="tag">${escapeHtml(t("ritual"))} ${escapeHtml(yesNoText(spell.ritualValue))}</span>
+            <span class="tag">${escapeHtml(t("components"))} ${escapeHtml(componentTextForLanguage(spell))}</span>
           </div>
           <div>${renderBookButton(spell)}</div>
           <div class="detail-text">
-            ${renderEntries(spell.entries)}
-            ${spell.entriesHigherLevel ? renderEntries(spell.entriesHigherLevel) : ""}
+            ${renderEntries(localizedSpellEntries(spell))}
+            ${spell.entriesHigherLevel ? renderEntries(localizedSpellEntries(spell, "entriesHigherLevel")) : ""}
           </div>
         </article>
       `;
@@ -1561,7 +1919,7 @@
 
     function renderBookButton(spell) {
       const inBook = isInSpellBook(spell);
-      return `<button class="book-button" type="button" data-book-add="${spell.index}" ${inBook ? "disabled" : ""}>${inBook ? "已加入" : "加入"}</button>`;
+      return `<button class="book-button" type="button" data-book-add="${spell.index}" ${inBook ? "disabled" : ""}>${t(inBook ? "added" : "add")}</button>`;
     }
 
     function loadSpellBook() {
@@ -1614,7 +1972,7 @@
         .slice(0, 18);
       elements.bookSearchResults.innerHTML = matches.length
         ? matches.map((spell) => `<button class="book-button" type="button" data-book-add="${spell.index}">${escapeHtml(spell.name_zh)} <small>${escapeHtml(spell.name_en)}</small></button>`).join("")
-        : '<span class="tag">沒有可新增的法術</span>';
+        : `<span class="tag">${t("noSpellsToAdd")}</span>`;
     }
 
     function renderBookView() {
@@ -1623,31 +1981,33 @@
         .sort((a, b) => Number(a.level) - Number(b.level) || a.name_zh.localeCompare(b.name_zh, "zh-Hant"));
       elements.clearBook.disabled = spells.length === 0;
       if (!spells.length) {
-        elements.bookList.innerHTML = '<div class="empty-state">法術書目前是空的</div>';
+        elements.bookList.innerHTML = `<div class="empty-state">${t("emptySpellbook")}</div>`;
         return;
       }
       elements.bookList.innerHTML = spells.map((spell) => `
         <article class="book-card">
           <div class="book-card-header">
             <div>
-              <h2>${escapeHtml(spell.name_zh)}</h2>
-              <small>${escapeHtml(spell.name_en)}</small>
+              <h2>
+                <span class="name-zh">${escapeHtml(spell.name_zh)}</span>
+                <small class="name-en">${escapeHtml(spell.name_en)}</small>
+              </h2>
             </div>
-            <button class="remove-button" type="button" data-book-remove="${escapeHtml(spellBookKey(spell))}">移除法術</button>
+            <button class="remove-button" type="button" data-book-remove="${escapeHtml(spellBookKey(spell))}">${t("remove")}</button>
           </div>
           <div class="detail-meta">
             <span class="tag">${levelText(spell.level)}</span>
-            <span class="tag">${escapeHtml(spell.schoolText)}</span>
-            <span class="tag">施法 ${escapeHtml(spell.timeText)}</span>
-            <span class="tag">距離 ${escapeHtml(spell.rangeText)}</span>
-            <span class="tag">持續 ${escapeHtml(spell.durationText)}</span>
-            <span class="tag">專注 ${escapeHtml(spell.concentrationText)}</span>
-            <span class="tag">儀式 ${escapeHtml(spell.ritualText)}</span>
-            <span class="tag">成分 ${escapeHtml(spell.componentText)}</span>
+            <span class="tag">${escapeHtml(schoolText(spell))}</span>
+            <span class="tag">${escapeHtml(t("castingTime"))} ${escapeHtml(timeText(spell))}</span>
+            <span class="tag">${escapeHtml(t("range"))} ${escapeHtml(rangeText(spell))}</span>
+            <span class="tag">${escapeHtml(t("duration"))} ${escapeHtml(durationText(spell))}</span>
+            <span class="tag">${escapeHtml(t("concentration"))} ${escapeHtml(yesNoText(spell.concentrationValue))}</span>
+            <span class="tag">${escapeHtml(t("ritual"))} ${escapeHtml(yesNoText(spell.ritualValue))}</span>
+            <span class="tag">${escapeHtml(t("components"))} ${escapeHtml(componentTextForLanguage(spell))}</span>
           </div>
           <div class="detail-text">
-            ${renderEntries(spell.entries)}
-            ${spell.entriesHigherLevel ? renderEntries(spell.entriesHigherLevel) : ""}
+            ${renderEntries(localizedSpellEntries(spell))}
+            ${spell.entriesHigherLevel ? renderEntries(localizedSpellEntries(spell, "entriesHigherLevel")) : ""}
           </div>
         </article>
       `).join("");
@@ -1670,11 +2030,15 @@
     function updateCount() {
       if (state.view === "class") {
         const classCount = new Set(state.spells.flatMap((spell) => spell.classes || [])).size;
-        elements.count.textContent = `${classCount} 個職業 / ${state.spells.length} 個法術`;
+        elements.count.textContent = currentLanguage === "en"
+          ? `${classCount} classes / ${state.spells.length} spells`
+          : `${classCount} 個職業 / ${state.spells.length} 個法術`;
       } else if (state.view === "book") {
-        elements.count.textContent = `${state.spellBook.size} 個法術`;
+        elements.count.textContent = currentLanguage === "en" ? `${state.spellBook.size} spells` : `${state.spellBook.size} 個法術`;
       } else {
-        elements.count.textContent = `${state.filtered.length} / ${state.spells.length} 個法術`;
+        elements.count.textContent = currentLanguage === "en"
+          ? `${state.filtered.length} / ${state.spells.length} spells`
+          : `${state.filtered.length} / ${state.spells.length} 個法術`;
       }
     }
 
@@ -1705,7 +2069,7 @@
 
     function updateSortIndicators() {
       document.querySelectorAll("[data-sort]").forEach((button) => {
-        const icon = button.querySelector("span");
+        const icon = button.querySelector("span[aria-hidden]");
         icon.textContent = button.dataset.sort === state.sortKey ? (state.sortDirection === "asc" ? "▲" : "▼") : "";
       });
     }
@@ -1721,6 +2085,9 @@
     }
 
     elements.search.addEventListener("input", applyFilters);
+    elements.languageButton.addEventListener("click", () => {
+      setLanguage(currentLanguage === "en" ? "zh" : "en");
+    });
     elements.level.addEventListener("change", applyFilters);
     elements.school.addEventListener("change", applyFilters);
     elements.component.querySelectorAll("button").forEach((button) => {
@@ -1834,13 +2201,19 @@
       }
     });
 
-    fetch("spells-phb.json")
-      .then((response) => {
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    Promise.all([
+      fetch("spells-phb.json").then((response) => {
+        if (!response.ok) throw new Error(`spells-phb.json: HTTP ${response.status}`);
         return response.json();
-      })
-      .then((data) => {
-        state.spells = (data.spell || []).map(normalizeSpell);
+      }),
+      fetch("../race_class/class_spells.json").then((response) => {
+        if (!response.ok) throw new Error(`class_spells.json: HTTP ${response.status}`);
+        return response.json();
+      }),
+    ])
+      .then(([spellData, classSpellData]) => {
+        state.spells = (spellData.spell || []).map(normalizeSpell);
+        state.classSpells = classSpellData;
         state.collapsedClasses = new Set([...new Set(state.spells.flatMap((spell) => spell.classes || []))]);
         loadSpellBook();
         populateFilters();
@@ -1853,9 +2226,15 @@
       })
       .catch((error) => {
         elements.load.className = "error-state";
-        elements.load.textContent = `無法讀取 spells-phb.json：${error.message}`;
+        elements.load.textContent = `無法讀取法術資料：${error.message}`;
         elements.count.textContent = "讀取失敗";
       });
+
+    try {
+      setLanguage(localStorage.getItem(LANGUAGE_STORAGE_KEY));
+    } catch (error) {
+      setLanguage("zh");
+    }
   </script>
 
   <script src="../../shared/firebase.config.js"></script>

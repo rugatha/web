@@ -677,8 +677,8 @@
     const renderClassSpellTable = (container, classId) => {
       const source = data.classSpells;
       const classSpells = source?.classes?.[classId];
-      const progression = source?.progressions?.[classSpells?.progression];
-      if (!classSpells || !Array.isArray(progression) || progression.length !== 20) return;
+      const slotProgression = source?.slot_progressions?.[classSpells?.slot_progression];
+      if (!classSpells || !Array.isArray(slotProgression) || slotProgression.length !== 20) return;
 
       const heading = document.createElement("div");
       heading.className = "details-heading";
@@ -704,24 +704,41 @@
       tableWrap.className = "details-table-wrap class-spell-table-wrap";
       const table = document.createElement("table");
       table.className = "details-table class-spell-table";
-      const columns = ["level", "max_spell_level"];
-      if (Array.isArray(classSpells.known) || classSpells.known?.template) columns.push("known");
+      const showKnown = Array.isArray(classSpells.known) || classSpells.known?.template;
       const tableHead = document.createElement("thead");
-      const headRow = document.createElement("tr");
-      columns.forEach((column) => {
+      const topHeadRow = document.createElement("tr");
+      const levelHeading = document.createElement("th");
+      levelHeading.scope = "col";
+      levelHeading.rowSpan = 2;
+      levelHeading.textContent = getLocalizedTableText(source.labels?.level);
+      topHeadRow.appendChild(levelHeading);
+      if (showKnown) {
+        const knownHeading = document.createElement("th");
+        knownHeading.scope = "col";
+        knownHeading.rowSpan = 2;
+        knownHeading.textContent = getLocalizedTableText(source.labels?.known);
+        topHeadRow.appendChild(knownHeading);
+      }
+      const slotsHeading = document.createElement("th");
+      slotsHeading.scope = "colgroup";
+      slotsHeading.colSpan = 9;
+      slotsHeading.textContent = getLocalizedTableText(source.labels?.spell_slots_per_level);
+      topHeadRow.appendChild(slotsHeading);
+      const slotLevelHeadRow = document.createElement("tr");
+      for (let spellLevel = 1; spellLevel <= 9; spellLevel += 1) {
         const headingCell = document.createElement("th");
         headingCell.scope = "col";
-        headingCell.textContent = getLocalizedTableText(source.labels?.[column]);
-        headRow.appendChild(headingCell);
-      });
-      tableHead.appendChild(headRow);
+        headingCell.textContent = String(spellLevel);
+        slotLevelHeadRow.appendChild(headingCell);
+      }
+      tableHead.append(topHeadRow, slotLevelHeadRow);
       table.appendChild(tableHead);
 
       const tableBody = document.createElement("tbody");
-      progression.forEach((maxSpellLevel, index) => {
+      slotProgression.forEach((slots, index) => {
         const level = index + 1;
         const row = document.createElement("tr");
-        [level, maxSpellLevel || getClassSpellCell("not_applicable", level, source), ...(columns.includes("known") ? [Array.isArray(classSpells.known) ? classSpells.known[index] : classSpells.known] : [])]
+        [level, ...(showKnown ? [Array.isArray(classSpells.known) ? classSpells.known[index] : classSpells.known] : []), ...slots.map((slot) => slot === 0 ? "not_applicable" : slot)]
           .forEach((cell) => {
             const dataCell = document.createElement("td");
             dataCell.textContent = getClassSpellCell(cell, level, source);

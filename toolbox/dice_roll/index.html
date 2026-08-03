@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BZZFKMJ65Y', {
+      page_title: '擲骰子 | Rugatha',
+      page_path: window.location.pathname,
+      page_location: window.location.href
+    });
+  </script>
+  <title>擲骰子 | Rugatha</title>
+  <link rel="icon" type="image/png" href="../../assets/logo/rugatha-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo/rugatha-favicon-32.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <script defer src="../../shared/pwa.js"></script>
+  <script src="../../shared/language-toggle.js"></script>
+  <style>
+    :root { --dice-ink:#20342c; --dice-panel:#eef3ea; --dice-panel-strong:#d3dfd2; --dice-line:rgba(68,95,86,.28); --dice-accent:#3f7d69; --dice-accent-dark:#244f43; --dice-gold:#c58b46; }
+    body { background:var(--bg); color:var(--text); }
+    .page { width:min(900px, calc(100vw - 32px)); min-height:100vh; margin:0 auto; padding:20px 0 56px; }
+    .language-toggle { position:fixed; top:16px; left:16px; z-index:10; display:inline-flex; }
+    .language-toggle button { width:72px; height:72px; display:grid; place-items:center; padding:0; border:0; border-radius:50%; background:transparent !important; cursor:pointer; transition:opacity 160ms ease, transform 160ms ease; }
+    .language-toggle button:hover, .language-toggle button:focus-visible { opacity:.86; transform:translateY(-1px); background:transparent !important; outline:none; box-shadow:none; }
+    .language-toggle__icon { width:100%; height:100%; display:block; object-fit:contain; }
+    .banner { margin:0 0 16px; }
+    .banner-link { width:min(320px, 78vw); }
+    .back-link { display:inline-flex; align-items:center; gap:7px; margin-bottom:18px; color:var(--muted); font-size:.9rem; font-weight:700; }
+    .back-link:hover, .back-link:focus-visible { color:var(--accent); outline:none; }
+    .title { padding:4px 0 22px; text-align:center; border-bottom:1px solid rgba(236,242,237,.28); }
+    h1 { margin:0; font-size:clamp(2.2rem,5vw,3.8rem); line-height:1; }
+    .subtitle { max-width:570px; margin:12px auto 0; color:var(--muted); line-height:1.6; }
+    .roller { margin-top:24px; overflow:hidden; border:1px solid rgba(236,242,237,.32); border-radius:8px; background:var(--dice-panel); box-shadow:var(--shadow); }
+    .card-header { display:flex; align-items:center; gap:12px; padding:17px 24px; color:var(--text); background:linear-gradient(110deg, var(--dice-accent-dark), var(--dice-accent)); }
+    .die-icon { display:grid; place-items:center; width:32px; height:32px; border:1px solid rgba(255,255,255,.48); border-radius:6px; font-size:1.2rem; }
+    h2 { margin:0; font-size:1.05rem; }
+    .picker { padding:24px; }
+    .dice-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .die-control { display:flex; align-items:center; justify-content:space-between; gap:10px; min-width:0; padding:10px 11px 10px 13px; border:1px solid var(--dice-line); border-radius:6px; background:#f9fbf7; transition:border-color 160ms ease, box-shadow 160ms ease, background 160ms ease; }
+    .die-control:hover { background:#fffdf7; border-color:rgba(63,125,105,.56); }
+    .die-control.is-selected { border-color:var(--dice-gold); background:#fffdf7; box-shadow:0 0 0 2px rgba(197,139,70,.25); }
+    .die-control:focus-within { border-color:var(--dice-gold); box-shadow:0 0 0 3px rgba(197,139,70,.24); }
+    .die-label { color:var(--dice-accent-dark); font-size:1.2rem; font-weight:800; }
+    .constant-label { font-size:1rem; }
+    select { width:56px; min-height:34px; padding:0 5px; border:1px solid var(--dice-line); border-radius:5px; background:var(--dice-panel-strong); color:var(--dice-ink); font:inherit; cursor:pointer; }
+    .actions { display:grid; grid-template-columns:auto minmax(0, 1fr) auto auto auto; gap:10px; padding:0 24px 26px; }
+    .actions button { min-height:48px; padding:10px 18px; border:1px solid var(--dice-accent); border-radius:6px; color:#fffaf0; background:var(--dice-accent); font:700 1rem var(--font-body); cursor:pointer; transition:background 160ms ease, transform 160ms ease; }
+    .actions #roll-button { width:100%; }
+    .modifier-control { display:flex; align-items:center; gap:8px; padding:0 10px; border:1px solid var(--dice-line); border-radius:6px; color:var(--dice-accent-dark); background:#f9fbf7; font-size:1rem; font-weight:800; white-space:nowrap; }
+    .modifier-control select { width:58px; font-size:1rem; font-weight:400; }
+    .modifier-control.is-selected { border-color:var(--dice-gold); box-shadow:0 0 0 2px rgba(197,139,70,.25); }
+    .actions .mode-button { border-color:#5a917e; background:#dce9df; color:var(--dice-accent-dark); }
+    .actions .reset-button { color:var(--dice-accent-dark); border-color:var(--dice-line); background:var(--dice-panel-strong); }
+    .actions button:hover { background:var(--dice-accent-dark); transform:translateY(-1px); }
+    .actions .reset-button:hover { color:#fffaf0; border-color:var(--dice-accent-dark); }
+    .actions .mode-button:hover { color:#fffaf0; border-color:var(--dice-accent-dark); }
+    .actions button:focus-visible { outline:3px solid rgba(197,139,70,.45); outline-offset:2px; }
+    .result { min-height:184px; padding:24px; color:var(--dice-ink); border-top:1px solid var(--dice-line); background:#f9fbf7; }
+    .result.empty { display:grid; place-items:center; color:#607066; text-align:center; }
+    .idle-quote { display:grid; gap:5px; font-weight:700; }
+    .idle-quote small { color:#718178; font-size:.86rem; font-weight:600; }
+    .result-header { display:flex; align-items:baseline; justify-content:space-between; gap:18px; margin-bottom:19px; }
+    .result h2 { color:var(--dice-accent-dark); font-size:1.35rem; }
+    .total { color:#415047; font-weight:700; white-space:nowrap; }
+    .total strong { display:inline-grid; place-items:center; min-width:36px; height:36px; margin-left:6px; border-radius:50%; color:#fffaf0; background:var(--dice-gold); font-size:1.25rem; }
+    .roll-groups { display:grid; gap:12px; }
+    .roll-group { display:grid; grid-template-columns:48px 1fr; align-items:center; gap:12px; }
+    .roll-group > b { color:var(--dice-accent-dark); font-size:1.18rem; }
+    .values { display:flex; flex-wrap:wrap; gap:7px; }
+    .value-wrap { display:grid; justify-items:center; gap:4px; }
+    .value { display:grid; place-items:center; min-width:34px; height:34px; padding:0 7px; border:1px solid #aebfb2; border-radius:5px; color:#233b31; background:var(--dice-panel-strong); font-weight:800; animation:appear .26s both; }
+    .value.is-kept { border-color:var(--dice-gold); background:#fff3d3; box-shadow:0 0 0 2px rgba(197,139,70,.2); }
+    .value.is-critical.success { color:#fff; border-color:#244f43; background:#244f43; }
+    .value.is-critical.failure { color:#fff; border-color:#a94a43; background:#a94a43; }
+    .history { padding:20px 24px 24px; color:var(--dice-ink); border-top:1px solid var(--dice-line); background:var(--dice-panel-strong); }
+    .history h2 { color:var(--dice-accent-dark); font-size:1.05rem; }
+    .history-list { display:grid; gap:8px; margin:13px 0 0; padding:0; list-style:none; }
+    .history-item { padding:10px 12px; border:1px solid var(--dice-line); border-radius:5px; background:#f9fbf7; font-weight:700; }
+    @keyframes appear { from { opacity:0; transform:scale(.7); } to { opacity:1; transform:scale(1); } }
+    @media (max-width:620px) { .page { width:min(100vw - 24px,900px); padding-top:72px; } .language-toggle { top:8px; left:8px; } .language-toggle button { width:58px; height:58px; } .dice-grid { grid-template-columns:repeat(2,1fr); } .picker { padding-bottom:12px; } .actions { grid-template-columns:1fr 1fr; } .modifier-control { grid-column:1; width:100%; min-height:56px; } .actions #roll-button { grid-column:1 / -1; } .picker,.actions,.result,.history { padding-left:18px; padding-right:18px; } }
+  </style>
+</head>
+<body>
+  <div class="language-toggle" role="group" aria-label="Language"><button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button></div>
+  <div class="page">
+    <header class="banner">
+      <a class="banner-link" href="../../index.html" aria-label="Rugatha home"><img src="../../assets/banner/rugatha-banner-trademark.png" alt="Rugatha banner"></a>
+    </header>
+    <a class="back-link" href="../" data-i18n="back">← 回到工具箱</a>
+    <main>
+      <section class="title" aria-labelledby="page-title"><h1 id="page-title" data-i18n="title">擲骰子</h1><p class="subtitle" data-i18n="subtitle">選擇骰子數量，讓命運替你決定。</p></section>
+      <section class="roller" aria-labelledby="picker-title">
+        <div class="card-header"><span class="die-icon" aria-hidden="true">⚄</span><h2 id="picker-title" data-i18n="pickerTitle">選擇骰子</h2></div>
+        <div class="picker"><div class="dice-grid" id="dice-controls"></div></div>
+        <div class="actions"><label class="modifier-control" id="modifier-control"><span data-i18n="modifier">調整值</span><select aria-label="modifier" id="modifier"></select></label><button type="button" id="roll-button" data-i18n="rollButton">擲骰</button><button class="mode-button" type="button" id="advantage-button" data-i18n="advantage">優勢</button><button class="mode-button" type="button" id="disadvantage-button" data-i18n="disadvantage">劣勢</button><button class="reset-button" type="button" id="reset-button" data-i18n="resetButton">預設</button></div>
+        <section class="result empty" id="result" aria-live="polite"></section>
+        <section class="history" aria-labelledby="history-title"><h2 id="history-title" data-i18n="history">擲骰紀錄</h2><ol class="history-list" id="history-list"></ol></section>
+      </section>
+    </main>
+  </div>
+  <script>
+    const dice = [4, 6, 8, 10, 12, 20, 100];
+    const controls = document.getElementById('dice-controls');
+    const result = document.getElementById('result');
+    const historyList = document.getElementById('history-list');
+    const historyEntries = [];
+    const idleMessages = [
+      ['骰子之神即將降臨', 'The God of Dice is coming'],
+      ['骰子哥布林準備好了', 'The Dice Goblins are ready'],
+      ['不是大成功，就是大失敗', "It's either critical success, or critical failure"],
+      ['下不了決定？擲骰！', "Can't decide? Roll a dice!"],
+      ['骰先攻吧！', 'Roll for initiative!']
+    ];
+    const idleMessageIndex = Math.floor(Math.random() * idleMessages.length);
+    const languageButton = document.querySelector('[data-lang-toggle]');
+    const translations = {
+      zh: { browserTitle:'擲骰子 | Rugatha', back:'← 回到工具箱', title:'擲骰子', subtitle:'選擇骰子數量，讓命運替你決定。', pickerTitle:'選擇骰子', rollButton:'擲骰', resetButton:'預設', advantage:'優勢', disadvantage:'劣勢', coin:'硬幣', modifier:'調整值', advantageResult:'優勢擲骰', disadvantageResult:'劣勢擲骰', takeHigh:'取高', takeLow:'取低', heads:'正面', tails:'背面', criticalFailure:'大失敗 Critical Failure', criticalSuccess:'大成功 Critical Success', idle:'骰子正等待你的指令。', empty:'請至少選擇一顆骰子、硬幣或調整值。', result:'擲骰結果', total:'總和', history:'擲骰紀錄', language:'目前語言：中文' },
+      en: { browserTitle:'Dice Roller | Rugatha', back:'← Back to Toolbox', title:'Dice Roller', subtitle:'Choose your dice and let fate decide.', pickerTitle:'Choose Dice', rollButton:'Roll the Dice', resetButton:'Reset', advantage:'Advantage', disadvantage:'Disadvantage', coin:'Coin', modifier:'Modifier', advantageResult:'Advantage Roll', disadvantageResult:'Disadvantage Roll', takeHigh:'Take High', takeLow:'Take Low', heads:'Heads', tails:'Tails', criticalFailure:'Critical Failure', criticalSuccess:'Critical Success', idle:'The dice await your command.', empty:'Choose at least one die, coin, or modifier.', result:'Roll Results', total:'Total', history:'Roll History', language:'Current language: English' }
+    };
+    let language = localStorage.getItem('rugatha-language') === 'en' ? 'en' : 'zh';
+    const options = Array.from({ length: 21 }, (_, n) => `<option value="${n}">${n}</option>`).join('');
+    const constantOptions = Array.from({ length: 21 }, (_, n) => n - 10).map(n => `<option value="${n}">${n > 0 ? `+${n}` : n}</option>`).join('');
+    controls.innerHTML = dice.map(sides => `<label class="die-control"><span class="die-label">d${sides}</span><select aria-label="d${sides} dice quantity" data-sides="${sides}">${options}</select></label>`).join('') + `<label class="die-control" id="coin-control"><span class="die-label constant-label" data-i18n="coin">硬幣</span><select aria-label="coin quantity" id="coin" data-coin>${options}</select></label>`;
+    controls.querySelector('[data-sides="20"]').value = '1';
+    document.getElementById('modifier').innerHTML = constantOptions;
+    document.getElementById('modifier').value = '0';
+
+    function updateSelectedControls() {
+      controls.querySelectorAll('.die-control').forEach(control => {
+        control.classList.toggle('is-selected', Number(control.querySelector('select').value) !== 0);
+      });
+    }
+    function renderRollValue(roll, sides, delay, isKept = false) {
+      const critical = sides === 20 && (roll === 1 || roll === 20);
+      const criticalClass = roll === 1 ? 'failure' : 'success';
+      return `<span class="value-wrap"><span class="value${isKept ? ' is-kept' : ''}${critical ? ` is-critical ${criticalClass}` : ''}" style="animation-delay:${delay}ms">${roll}</span></span>`;
+    }
+    function formatHistory(entry) {
+      if (entry.type === 'mode') return `${translations[language][entry.mode]} 2d20 (${entry.rolls.join(', ')}): ${entry.total}`;
+      const diceFormula = entry.groups.map(({ sides, rolls }) => `${rolls.length}d${sides}`).join(' + ');
+      const modifierFormula = entry.modifier ? `${diceFormula}${diceFormula ? (entry.modifier > 0 ? ' + ' : ' - ') : entry.modifier > 0 ? '+' : '-'}${Math.abs(entry.modifier)}` : diceFormula;
+      const coinFormula = entry.coins.length ? `${modifierFormula ? ' + ' : ''}${entry.coins.length} ${translations[language].coin} (${entry.coins.map(coin => translations[language][coin]).join(', ')})` : '';
+      return `${modifierFormula}${coinFormula}: ${entry.total}`;
+    }
+    function renderHistory() {
+      historyList.innerHTML = historyEntries.map(entry => `<li class="history-item">${formatHistory(entry)}</li>`).join('');
+    }
+    function showIdleMessage() {
+      const [zh, en] = idleMessages[idleMessageIndex];
+      result.className = 'result empty';
+      result.dataset.state = 'idle';
+      result.innerHTML = `<span class="idle-quote"><span>${language === 'zh' ? zh : en}</span></span>`;
+    }
+    function setLanguage(nextLanguage) {
+      language = nextLanguage;
+      document.documentElement.lang = language === 'en' ? 'en' : 'zh-Hant';
+      document.title = translations[language].browserTitle;
+      document.querySelectorAll('[data-i18n]').forEach(element => { element.textContent = translations[language][element.dataset.i18n]; });
+      languageButton.dataset.lang = language;
+      languageButton.setAttribute('aria-pressed', String(language === 'zh'));
+      languageButton.setAttribute('aria-label', translations[language].language);
+      RugathaLanguageToggle.setButtonIcon(languageButton, language);
+      if (result.dataset.state === 'idle') showIdleMessage();
+      result.querySelectorAll('[data-coin-result]').forEach(coin => { coin.textContent = translations[language][coin.dataset.coinResult]; });
+      result.querySelectorAll('[data-coin-label]').forEach(label => { label.textContent = translations[language].coin; });
+      renderHistory();
+    }
+    controls.addEventListener('change', updateSelectedControls);
+    document.getElementById('modifier').addEventListener('change', event => document.getElementById('modifier-control').classList.toggle('is-selected', Number(event.target.value) !== 0));
+    languageButton.addEventListener('click', () => { const next = language === 'zh' ? 'en' : 'zh'; localStorage.setItem('rugatha-language', next); setLanguage(next); });
+    setLanguage(language);
+    updateSelectedControls();
+    showIdleMessage();
+
+    document.getElementById('reset-button').addEventListener('click', () => {
+      controls.querySelectorAll('select[data-sides]').forEach(select => { select.value = select.dataset.sides === '20' ? '1' : '0'; });
+      document.getElementById('coin').value = '0';
+      document.getElementById('modifier').value = '0';
+      document.getElementById('modifier-control').classList.remove('is-selected');
+      updateSelectedControls();
+    });
+
+    function rollD20Mode(mode) {
+      const rolls = [Math.floor(Math.random() * 20) + 1, Math.floor(Math.random() * 20) + 1];
+      const total = mode === 'advantage' ? Math.max(...rolls) : Math.min(...rolls);
+      const isAdvantage = mode === 'advantage';
+      const title = translations[language][isAdvantage ? 'advantageResult' : 'disadvantageResult'];
+      const takeLabel = translations[language][isAdvantage ? 'takeHigh' : 'takeLow'];
+      result.className = 'result';
+      result.dataset.state = 'result';
+      result.innerHTML = `<div class="result-header"><h2>${title}</h2><div class="total">${takeLabel} <strong>${total}</strong></div></div><div class="roll-groups"><div class="roll-group"><b>2d20</b><div class="values">${rolls.map((roll, i) => renderRollValue(roll, 20, i * 35, roll === total)).join('')}</div></div></div>`;
+      historyEntries.unshift({ type:'mode', mode, rolls, total });
+      renderHistory();
+      gtag('event', 'diceroll', { dice_configuration:'2d20', dice_count:2, roll_total:total, roll_mode:mode });
+    }
+    document.getElementById('advantage-button').addEventListener('click', () => rollD20Mode('advantage'));
+    document.getElementById('disadvantage-button').addEventListener('click', () => rollD20Mode('disadvantage'));
+    document.getElementById('roll-button').addEventListener('click', () => {
+      const groups = [];
+      let total = 0;
+      let diceCount = 0;
+      controls.querySelectorAll('select[data-sides]').forEach(select => {
+        const count = Number(select.value), sides = Number(select.dataset.sides);
+        if (!count) return;
+        const rolls = Array.from({ length: count }, () => Math.floor(Math.random() * sides) + 1);
+        total += rolls.reduce((sum, value) => sum + value, 0);
+        diceCount += count;
+        groups.push({ sides, rolls });
+      });
+      const modifier = Number(document.getElementById('modifier').value);
+      const coinCount = Number(document.getElementById('coin').value);
+      const coinResults = Array.from({ length:coinCount }, () => Math.random() < 0.5 ? 'heads' : 'tails');
+      total += modifier;
+      if (!groups.length && !modifier && !coinCount) { result.className = 'result empty'; result.dataset.state = 'error'; result.innerHTML = `<span>${translations[language].empty}</span>`; return; }
+      result.className = 'result';
+      result.dataset.state = 'result';
+      result.innerHTML = `<div class="result-header"><h2>${translations[language].result}</h2><div class="total">${translations[language].total} <strong>${total}</strong></div></div><div class="roll-groups">${groups.map(({ sides, rolls }) => `<div class="roll-group"><b>d${sides}</b><div class="values">${rolls.map((roll, i) => renderRollValue(roll, sides, i * 35)).join('')}</div></div>`).join('')}${coinCount ? `<div class="roll-group"><b data-coin-label>${translations[language].coin}</b><div class="values">${coinResults.map((coin, i) => `<span class="value" data-coin-result="${coin}" style="animation-delay:${i * 35}ms">${translations[language][coin]}</span>`).join('')}</div></div>` : ''}</div>`;
+      const diceFormula = groups.map(({ sides, rolls }) => `${rolls.length}d${sides}`).join(' + ');
+      const modifierFormula = modifier ? `${diceFormula}${diceFormula ? (modifier > 0 ? ' + ' : ' - ') : modifier > 0 ? '+' : '-'}${Math.abs(modifier)}` : diceFormula;
+      const formula = `${modifierFormula}${coinCount ? `${modifierFormula ? ' + ' : ''}${coinCount} ${translations[language].coin} (${coinResults.map(coin => translations[language][coin]).join(', ')})` : ''}`;
+      historyEntries.unshift({ type:'standard', groups, modifier, coins:coinResults, total });
+      renderHistory();
+      gtag('event', 'diceroll', {
+        dice_configuration: formula,
+        dice_count: diceCount,
+        coin_count: coinCount,
+        roll_total: total
+      });
+    });
+  </script>
+</body>
+</html>

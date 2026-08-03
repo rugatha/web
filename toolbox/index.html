@@ -125,7 +125,7 @@
 
     .tool-list {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       margin: 0;
       padding: 0;
@@ -215,6 +215,10 @@
         padding: 18px;
       }
 
+      .tool-list {
+        grid-template-columns: 1fr;
+      }
+
       .tool-mark {
         width: 56px;
         height: 56px;
@@ -257,6 +261,16 @@
             </span>
             <span class="tool-copy">
               <span class="tool-name" data-i18n="characterCard">角色卡製作器</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="tool-link" href="dice_roll/">
+            <span class="tool-mark" aria-hidden="true">
+              <img src="../assets/logo/rugatha-icon.png" alt="">
+            </span>
+            <span class="tool-copy">
+              <span class="tool-name" data-i18n="diceRoll">擲骰子</span>
             </span>
           </a>
         </li>
@@ -349,6 +363,7 @@
         browserTitle: "工具箱 | Rugatha",
         title: "工具箱",
         characterCard: "角色卡製作器",
+        diceRoll: "擲骰子",
         spells: "D&D 法術表",
         weapons: "D&D 武器表",
         armor: "D&D 護甲表",
@@ -363,6 +378,7 @@
         browserTitle: "Toolbox | Rugatha",
         title: "Toolbox",
         characterCard: "Character Card",
+        diceRoll: "Dice Roller",
         spells: "D&D Spells",
         weapons: "D&D Weapons",
         armor: "D&D Armor",
