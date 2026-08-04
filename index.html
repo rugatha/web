@@ -156,6 +156,43 @@
       padding-left: 1.25em;
     }
 
+    .auth-mobile-dialog {
+      width: min(460px, calc(100vw - 32px));
+      max-height: calc(100dvh - 64px);
+      box-sizing: border-box;
+      overflow-y: auto;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 18px;
+      background: #182a23;
+      color: #f0f5f2;
+      font: 14px/1.6 "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.46);
+    }
+
+    .auth-mobile-dialog::backdrop {
+      background: rgba(0, 0, 0, 0.58);
+    }
+
+    .auth-mobile-dialog p,
+    .auth-mobile-dialog ul {
+      margin: 0;
+    }
+
+    .auth-mobile-dialog p + p,
+    .auth-mobile-dialog ul {
+      margin-top: 8px;
+    }
+
+    .auth-mobile-dialog ul {
+      padding-left: 1.25em;
+    }
+
+    .auth-mobile-dialog__close {
+      display: block;
+      margin: 16px 0 0 auto;
+    }
+
     .google-signin {
       grid-column: 1 / -1;
       display: flex;
@@ -189,30 +226,7 @@
       }
 
       .auth-popover {
-        position: fixed;
-        top: 50%;
-        bottom: auto;
-        left: 50%;
-        width: min(460px, calc(100vw - 32px));
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
-        background: rgba(12, 22, 18, 0.96);
-        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
-        transform: translate(-50%, -48%);
-      }
-
-      .auth-disclosure:hover .auth-popover {
-        opacity: 0;
-        pointer-events: none;
-        transform: translate(-50%, -48%);
-        visibility: hidden;
-      }
-
-      .auth-disclosure.is-open .auth-popover {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translate(-50%, -50%);
-        visibility: visible;
+        display: none !important;
       }
     }
   </style>
@@ -321,7 +335,7 @@
       <section class="auth-entry" aria-label="Account">
         <div class="auth-controls">
           <div class="auth-disclosure">
-            <button class="auth-button auth-button--ghost" type="button" aria-expanded="false" aria-controls="auth-browser-note">
+            <button class="auth-button auth-button--ghost" type="button" aria-expanded="false" aria-controls="auth-browser-note" data-mobile-dialog="auth-browser-dialog">
               無法登入？
             </button>
             <div class="auth-popover auth-browser-note" id="auth-browser-note" role="dialog" aria-label="Browser sign-in notice">
@@ -346,7 +360,7 @@
           </button>
           <div class="auth-status" id="auth-status" aria-live="polite">Google login</div>
           <div class="auth-disclosure">
-            <button class="auth-button auth-button--ghost" type="button" aria-expanded="false" aria-controls="auth-benefits">
+            <button class="auth-button auth-button--ghost" type="button" aria-expanded="false" aria-controls="auth-benefits" data-mobile-dialog="auth-benefits-dialog">
               會員功能說明
             </button>
             <div class="auth-popover auth-benefits" id="auth-benefits" role="dialog" aria-label="Membership benefits">
@@ -387,6 +401,33 @@
 
     </main>
   </div>
+  <dialog class="auth-mobile-dialog" id="auth-browser-dialog" aria-labelledby="auth-browser-dialog-title">
+    <p id="auth-browser-dialog-title">若使用 Threads 或 LINE 內建瀏覽器，建議用手機預設瀏覽器開啟此網頁，以免無法登入 Google 帳號。</p>
+    <p>LINE 請點選右下角選單，點擊「使用預設瀏覽器開啟」。</p>
+    <p>Threads 請點選右上角選單，點擊「在 Chrome 開啟」。</p>
+    <button class="auth-button auth-button--ghost auth-mobile-dialog__close" type="button">關閉</button>
+  </dialog>
+  <dialog class="auth-mobile-dialog" id="auth-benefits-dialog" aria-labelledby="auth-benefits-dialog-title">
+    <div lang="zh-Hant">
+      <p id="auth-benefits-dialog-title">使用 Google 帳號免費加入會員，享受以下功能：</p>
+      <ul>
+        <li>儲存喜愛頁面</li>
+        <li>為 NPC 做出的命運選擇</li>
+        <li>探索 D&amp;D 5e 創角資源</li>
+        <li>以及更多開發中的未來功能</li>
+      </ul>
+    </div>
+    <div class="auth-benefits__language" lang="en">
+      <p>Join for free with your Google account and enjoy:</p>
+      <ul>
+        <li>Save your favorite pages</li>
+        <li>Make fate-changing choices for NPCs</li>
+        <li>Explore D&amp;D 5e character creation resources</li>
+        <li>And more future features in development</li>
+      </ul>
+    </div>
+    <button class="auth-button auth-button--ghost auth-mobile-dialog__close" type="button">關閉</button>
+  </dialog>
 
   <script src="shared/rugatha.config.js"></script>
   <script type="module" src="shared/random-page.js"></script>
@@ -407,8 +448,20 @@
       disclosures.forEach((disclosure) => {
         const toggle = disclosure.querySelector("button");
         toggle.addEventListener("click", () => {
+          const dialog = document.getElementById(toggle.dataset.mobileDialog);
+          if (window.matchMedia("(max-width: 900px)").matches && dialog) {
+            if (!dialog.open) dialog.showModal();
+            return;
+          }
           const isOpen = !disclosure.classList.contains("is-open");
           disclosures.forEach((item) => setOpen(item, item === disclosure && isOpen));
+        });
+      });
+
+      document.querySelectorAll(".auth-mobile-dialog").forEach((dialog) => {
+        dialog.querySelector(".auth-mobile-dialog__close").addEventListener("click", () => dialog.close());
+        dialog.addEventListener("click", (event) => {
+          if (event.target === dialog) dialog.close();
         });
       });
 
