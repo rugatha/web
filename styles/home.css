@@ -627,6 +627,15 @@ body {
     padding: 14px 12px 36px;
   }
 
+  .home-d20 {
+    position: absolute;
+    top: max(10px, calc(var(--mobile-portal-top) - clamp(48px, 5vw, 72px) - 8px));
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .hub {
     --mobile-title-height: clamp(252px, 36vh, 369px);
     --mobile-title-height: clamp(252px, 36svh, 369px);
@@ -1163,8 +1172,6 @@ body {
   }
 
   .home-d20 {
-    right: max(10px, env(safe-area-inset-right));
-    bottom: max(10px, env(safe-area-inset-bottom));
     width: clamp(44px, 10vw, 64px);
     max-width: calc(100vw - 20px);
   }

@@ -50,25 +50,6 @@
       font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
     }
 
-    .auth-browser-note {
-      flex-basis: 100%;
-      max-width: 680px;
-      margin: 0 auto 4px;
-      padding: 12px 14px;
-      border-radius: 18px;
-      background: rgba(12, 22, 18, 0.58);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: #f0f5f2;
-      font-size: 13px;
-      line-height: 1.6;
-      text-align: left;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
-    }
-
-    .auth-browser-note p {
-      margin: 0;
-    }
-
     .auth-button {
       display: inline-flex;
       align-items: center;
@@ -88,6 +69,15 @@
       border-color: rgba(255, 255, 255, 0.3);
     }
 
+    .auth-controls {
+      display: flex;
+      flex-basis: 100%;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
     .auth-icon {
       width: 24px;
       height: 24px;
@@ -105,6 +95,65 @@
       text-align: center;
       max-width: 240px;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .auth-disclosure {
+      position: relative;
+    }
+
+    .auth-popover {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      z-index: 30;
+      width: min(460px, calc(100vw - 32px));
+      box-sizing: border-box;
+      margin: 0;
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 14px;
+      background: rgba(12, 22, 18, 0.58);
+      color: #f0f5f2;
+      font-size: 14px;
+      line-height: 1.55;
+      text-align: left;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -6px);
+      visibility: hidden;
+      transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+    }
+
+    .auth-browser-note {
+      width: min(680px, calc(100vw - 32px));
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .auth-browser-note p {
+      margin: 0;
+    }
+
+    .auth-disclosure:hover .auth-popover,
+    .auth-disclosure.is-open .auth-popover {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0);
+      visibility: visible;
+    }
+
+    .auth-benefits p,
+    .auth-benefits ul {
+      margin: 0;
+    }
+
+    .auth-benefits__language + .auth-benefits__language {
+      margin-top: 10px;
+    }
+
+    .auth-benefits ul {
+      padding-left: 1.25em;
     }
 
     .google-signin {
@@ -133,6 +182,39 @@
         display: none;
       }
     }
+
+    @media (max-width: 900px) {
+      .auth-browser-note {
+        display: block;
+      }
+
+      .auth-popover {
+        position: fixed;
+        top: 50%;
+        bottom: auto;
+        left: 50%;
+        width: min(460px, calc(100vw - 32px));
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+        background: rgba(12, 22, 18, 0.96);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
+        transform: translate(-50%, -48%);
+      }
+
+      .auth-disclosure:hover .auth-popover {
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -48%);
+        visibility: hidden;
+      }
+
+      .auth-disclosure.is-open .auth-popover {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%);
+        visibility: visible;
+      }
+    }
   </style>
   <!-- Rugatha PWA -->
   <link rel="manifest" href="manifest.webmanifest">
@@ -147,6 +229,7 @@
 <body>
   <div class="page">
     <main class="hub" aria-label="Rugatha portals">
+      <img class="home-d20" src="assets/others/d20.png" width="72" height="72" alt="點擊隨機前往 Rugatha 頁面">
       <section class="banner-core" aria-label="Rugatha">
         <span class="banner-text banner-text--top">Your Path Begins in</span>
         <span class="banner-flip banner-flip--mobile" tabindex="0" role="button" aria-label="Rugatha" aria-pressed="false">
@@ -236,26 +319,58 @@
       </section>
 
       <section class="auth-entry" aria-label="Account">
-        <div class="auth-browser-note" role="note" aria-label="Browser sign-in notice">
-          <p>若使用Threads或LINE內建瀏覽器，建議用手機預設瀏覽器開啟此網頁，以免無法登入Google帳號</p>
-          <p>LINE請點選右下角選單，點擊「使用預設瀏覽器開啟」</p>
-          <p>Threads請點選右上角選單，點擊「在Chrome開啟」</p>
+        <div class="auth-controls">
+          <div class="auth-disclosure">
+            <button class="auth-button auth-button--ghost" type="button" aria-expanded="false" aria-controls="auth-browser-note">
+              無法登入？
+            </button>
+            <div class="auth-popover auth-browser-note" id="auth-browser-note" role="dialog" aria-label="Browser sign-in notice">
+              <p>若使用 Threads 或 LINE 內建瀏覽器，建議用手機預設瀏覽器開啟此網頁，以免無法登入 Google 帳號。</p>
+              <p>LINE 請點選右下角選單，點擊「使用預設瀏覽器開啟」。</p>
+              <p>Threads 請點選右上角選單，點擊「在 Chrome 開啟」。</p>
+            </div>
+          </div>
+          <button class="auth-button" id="google-login" type="button" aria-label="Sign in with Google">
+            <span class="auth-icon" aria-hidden="true">
+              <svg viewBox="0 0 256 262" width="18" height="18" role="presentation" focusable="false">
+                <path fill="#4285F4" d="M255.9 133.5c0-11.1-.9-22.5-2.9-33.5H130v63.4h70.3c-3 16.1-12.2 30.1-25.9 39.4v32.6h41.8c24.5-22.6 39.7-56.1 39.7-101.9z"/>
+                <path fill="#34A853" d="M130 261.1c35.1 0 64.6-11.6 86.2-31.5l-41.8-32.6c-11.6 7.8-26.5 12.4-44.4 12.4-34.1 0-63-23-73.3-53.8H13.6v33.8C35.4 230.6 79.9 261.1 130 261.1z"/>
+                <path fill="#FBBC05" d="M56.7 155.6c-2.7-8.1-4.2-16.8-4.2-25.6s1.6-17.5 4.2-25.6V70.6H13.6C4.9 88.2 0 108.1 0 130s4.9 41.8 13.6 59.4l43.1-33.8z"/>
+                <path fill="#EA4335" d="M130 51.9c19.1 0 36.3 6.6 49.8 19.6l37.3-37.3C194.5 12.7 165.1 0 130 0 79.9 0 35.4 30.5 13.6 70.6l43.1 33.8C67 74.9 95.9 51.9 130 51.9z"/>
+              </svg>
+            </span>
+            <span class="auth-label">Sign in</span>
+          </button>
+          <button class="auth-button auth-button--ghost" id="google-logout" type="button" aria-label="Sign out" disabled>
+            <span class="auth-label">Sign out</span>
+          </button>
+          <div class="auth-status" id="auth-status" aria-live="polite">Google login</div>
+          <div class="auth-disclosure">
+            <button class="auth-button auth-button--ghost" type="button" aria-expanded="false" aria-controls="auth-benefits">
+              會員功能說明
+            </button>
+            <div class="auth-popover auth-benefits" id="auth-benefits" role="dialog" aria-label="Membership benefits">
+              <div class="auth-benefits__language" lang="zh-Hant">
+                <p>使用 Google 帳號免費加入會員，享受以下功能：</p>
+                <ul>
+                  <li>儲存喜愛頁面</li>
+                  <li>為 NPC 做出的命運選擇</li>
+                  <li>探索 D&amp;D 5e 創角資源</li>
+                  <li>以及更多開發中的未來功能</li>
+                </ul>
+              </div>
+              <div class="auth-benefits__language" lang="en">
+                <p>Join for free with your Google account and enjoy:</p>
+                <ul>
+                  <li>Save your favorite pages</li>
+                  <li>Make fate-changing choices for NPCs</li>
+                  <li>Explore D&amp;D 5e character creation resources</li>
+                  <li>And more future features in development</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <button class="auth-button" id="google-login" type="button" aria-label="Sign in with Google">
-          <span class="auth-icon" aria-hidden="true">
-            <svg viewBox="0 0 256 262" width="18" height="18" role="presentation" focusable="false">
-              <path fill="#4285F4" d="M255.9 133.5c0-11.1-.9-22.5-2.9-33.5H130v63.4h70.3c-3 16.1-12.2 30.1-25.9 39.4v32.6h41.8c24.5-22.6 39.7-56.1 39.7-101.9z"/>
-              <path fill="#34A853" d="M130 261.1c35.1 0 64.6-11.6 86.2-31.5l-41.8-32.6c-11.6 7.8-26.5 12.4-44.4 12.4-34.1 0-63-23-73.3-53.8H13.6v33.8C35.4 230.6 79.9 261.1 130 261.1z"/>
-              <path fill="#FBBC05" d="M56.7 155.6c-2.7-8.1-4.2-16.8-4.2-25.6s1.6-17.5 4.2-25.6V70.6H13.6C4.9 88.2 0 108.1 0 130s4.9 41.8 13.6 59.4l43.1-33.8z"/>
-              <path fill="#EA4335" d="M130 51.9c19.1 0 36.3 6.6 49.8 19.6l37.3-37.3C194.5 12.7 165.1 0 130 0 79.9 0 35.4 30.5 13.6 70.6l43.1 33.8C67 74.9 95.9 51.9 130 51.9z"/>
-            </svg>
-          </span>
-          <span class="auth-label">Sign in</span>
-        </button>
-        <button class="auth-button auth-button--ghost" id="google-logout" type="button" aria-label="Sign out" disabled>
-          <span class="auth-label">Sign out</span>
-        </button>
-        <div class="auth-status" id="auth-status" aria-live="polite">Google login</div>
       </section>
 
       <section class="schedule-widget" aria-label="Important schedule">
@@ -272,7 +387,6 @@
 
     </main>
   </div>
-  <img class="home-d20" src="assets/others/d20.png" width="72" height="72" alt="點擊隨機前往 Rugatha 頁面">
 
   <script src="shared/rugatha.config.js"></script>
   <script type="module" src="shared/random-page.js"></script>
@@ -280,6 +394,39 @@
   <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-auth-compat.js"></script>
   <script type="module" src="shared/auth.js"></script>
+  <script>
+    (() => {
+      const disclosures = Array.from(document.querySelectorAll(".auth-disclosure"));
+      if (!disclosures.length) return;
+
+      const setOpen = (disclosure, isOpen) => {
+        disclosure.classList.toggle("is-open", isOpen);
+        disclosure.querySelector("button").setAttribute("aria-expanded", String(isOpen));
+      };
+
+      disclosures.forEach((disclosure) => {
+        const toggle = disclosure.querySelector("button");
+        toggle.addEventListener("click", () => {
+          const isOpen = !disclosure.classList.contains("is-open");
+          disclosures.forEach((item) => setOpen(item, item === disclosure && isOpen));
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!disclosures.some((disclosure) => disclosure.contains(event.target))) {
+          disclosures.forEach((disclosure) => setOpen(disclosure, false));
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          const openDisclosure = disclosures.find((disclosure) => disclosure.classList.contains("is-open"));
+          disclosures.forEach((disclosure) => setOpen(disclosure, false));
+          openDisclosure?.querySelector("button").focus();
+        }
+      });
+    })();
+  </script>
   <script type="module">
     import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
