@@ -1,60 +1,114 @@
 [
   {
-    "title": "Rugatha 8月體驗團 《洛林精神》報名",
+    "title": {
+      "zh": "8月體驗團 《洛林精神》報名",
+      "en": "\"The Spirit of Lorin\" Registration"
+    },
     "date": "2026-08-08",
-    "category": "體驗團",
+    "category": {
+      "zh": "體驗團",
+      "en": "Beginner-Friendly\nOne-Shot"
+    },
     "link": "https://www.surveycake.com/s/eBLMm",
-    "note": "目前尚有名額，還請把握機會！",
+    "note": {
+      "zh": "目前尚有名額，還請把握機會！",
+      "en": "Spots are still available, sign up while you can!"
+    },
     "image": "assets/others/survey-cake.png",
     "isTransparent": false,
     "deadline": true
   },
   {
-    "title": "Rugatha 8月體驗團 《洛林精神》",
+    "title": {
+      "zh": "8月體驗團 《洛林精神》",
+      "en": "August One-Shot \"The Spirit of Lorin\""
+    },
     "date": "2026-08-15",
-    "category": "體驗團",
+    "category": {
+      "zh": "體驗團",
+      "en": "Beginner-Friendly\nOne-Shot"
+    },
     "link": "/experience/index.html",
-    "note": "報名截止 2026/8/8 23:59 (GMT+8)",
+    "note": {
+      "zh": "報名截止 2026/8/8 23:59 (GMT+8)",
+      "en": "Registration closes on August 8, 2026, at 11:59 PM (GMT+8)"
+    },
     "image": "assets/banner/rugatha-experience.jpeg",
     "isTransparent": false,
     "deadline": false
   },
   {
-    "title": "Rugatha Wilds S20",
+    "title": {
+      "zh": "Rugatha Wilds S20",
+      "en": "Rugatha Wilds S20"
+    },
     "date": "2026-08-22",
-    "category": "長團",
+    "category": {
+      "zh": "長團",
+      "en": "Campaign"
+    },
     "link": "/campaigns/pages/rugatha-wilds/wilds-c05/",
-    "note": "《The Unacknowledged Child 不被承認的孩子》",
+    "note": {
+      "zh": "《不被承認的孩子》",
+      "en": "\"The Unacknowledged Child\""
+    },
     "image": "campaigns/campaign-banners/wilds-c05.png",
     "isTransparent": false,
     "deadline": false
   },
   {
-    "title": "Rugatha Veil S0",
+    "title": {
+      "zh": "Rugatha Veil S0",
+      "en": "Rugatha Veil S0"
+    },
     "date": "2026-08-23",
-    "category": "長團",
+    "category": {
+      "zh": "長團",
+      "en": "Campaign"
+    },
     "link": "",
-    "note": "第 0 次跑團",
+    "note": {
+      "zh": "第 0 次跑團",
+      "en": "Session 0"
+    },
     "image": "assets/campaign_logo/logo_RVeil.png",
     "isTransparent": true,
     "deadline": false
   },
   {
-    "title": "Rugatha Prosper S0",
+    "title": {
+      "zh": "Rugatha Prosper S0",
+      "en": "Rugatha Prosper S0"
+    },
     "date": "2026-08-30",
-    "category": "長團",
+    "category": {
+      "zh": "長團",
+      "en": "Campaign"
+    },
     "link": "",
-    "note": "第 0 次跑團",
+    "note": {
+      "zh": "第 0 次跑團",
+      "en": "Session 0"
+    },
     "image": "assets/campaign_logo/logo_RProsper.png",
     "isTransparent": true,
     "deadline": false
   },
   {
-    "title": "Rugatha Lite S45",
+    "title": {
+      "zh": "Rugatha Lite S45",
+      "en": "Rugatha Lite S45"
+    },
     "date": "2026-09-05",
-    "category": "長團",
+    "category": {
+      "zh": "長團",
+      "en": "Campaign"
+    },
     "link": "/campaigns/pages/rugatha-lite/lite-c13/",
-    "note": "《Before Stonefield 石原鎮之前》",
+    "note": {
+      "zh": "《石原鎮之前》",
+      "en": "\"Before Stonefield\""
+    },
     "image": "campaigns/campaign-banners/lite-c13.png",
     "isTransparent": false,
     "deadline": false

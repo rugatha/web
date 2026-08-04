@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant" data-home-lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,6 +48,54 @@
       align-self: center;
       grid-column: 1 / -1;
       font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    .home-language-toggle {
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      z-index: 100;
+    }
+
+    .home-language-toggle__button {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .home-language-toggle .language-toggle__icon {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    html[data-home-lang="zh"] .home-i18n-en,
+    html[data-home-lang="en"] .home-i18n-zh {
+      display: none !important;
+    }
+
+    html[data-home-lang="en"] .auth-benefits__language.home-i18n-en,
+    html[data-home-lang="en"] .auth-browser-note__language {
+      margin-top: 0;
+    }
+
+    html[data-home-lang="en"] .campaign-link-title.home-i18n-en {
+      font-size: clamp(34px, 3.7vw, 54px);
+      font-weight: 900;
+      line-height: 0.95;
+    }
+
+    html[data-home-lang="en"] .about-link-title.home-i18n-en {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      color: rgba(236, 242, 237, 0.94);
     }
 
     .auth-button {
@@ -149,7 +197,11 @@
     }
 
     .auth-benefits__language + .auth-benefits__language {
-      margin-top: 10px;
+      margin-top: 1em;
+    }
+
+    .auth-browser-note__language {
+      margin-top: 1em;
     }
 
     .auth-benefits ul {
@@ -214,9 +266,25 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
     }
 
+    @media (max-width: 900px) {
+      .home-language-toggle {
+        top: 12px;
+        bottom: auto;
+        left: 12px;
+      }
+    }
+
     @media (max-width: 720px) {
       .auth-status {
         display: none;
+      }
+
+      html[data-home-lang="en"] .campaign-link-title.home-i18n-en {
+        font-size: clamp(29px, 7.2vw, 40px);
+      }
+
+      html[data-home-lang="en"] .about-link-title.home-i18n-en {
+        font-size: clamp(12px, 2.75vw, 16px);
       }
     }
 
@@ -241,6 +309,9 @@
   <script src="shared/language-toggle.js"></script>
 </head>
 <body>
+  <div class="home-language-toggle" aria-label="Language">
+    <button class="home-language-toggle__button" type="button" data-lang-option="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
+  </div>
   <div class="page">
     <main class="hub" aria-label="Rugatha portals">
       <img class="home-d20" src="assets/others/d20.png" width="72" height="72" alt="點擊隨機前往 Rugatha 頁面">
@@ -266,36 +337,36 @@
           <a class="portal" href="deities/index.html">
             <span class="portal-glyph"><img src="assets/icons/deities-icon.png" alt="Deities icon" class="portal-icon"></span>
             <div class="portal-copy">
-              <span class="portal-title">Deities</span>
-              <span class="portal-title">信仰</span>
+              <span class="portal-title home-i18n-en">Deities</span>
+              <span class="portal-title home-i18n-zh">信仰</span>
             </div>
           </a>
           <a class="portal" href="emperors/index.html">
             <span class="portal-glyph"><img src="assets/icons/emperors-icon.png" alt="Emperors icon" class="portal-icon"></span>
             <div class="portal-copy">
-              <span class="portal-title">Emperors</span>
-              <span class="portal-title">皇帝</span>
+              <span class="portal-title home-i18n-en">Emperors</span>
+              <span class="portal-title home-i18n-zh">皇帝</span>
             </div>
           </a>
           <a class="portal" href="map/index.html">
             <span class="portal-glyph"><img src="assets/icons/map-icon.png" alt="Map icon" class="portal-icon"></span>
             <div class="portal-copy">
-              <span class="portal-title">Map</span>
-              <span class="portal-title">地圖</span>
+              <span class="portal-title home-i18n-en">Map</span>
+              <span class="portal-title home-i18n-zh">地圖</span>
             </div>
           </a>
           <a class="portal" href="timeline/index.html">
             <span class="portal-glyph"><img src="assets/icons/history-icon.png" alt="History icon" class="portal-icon"></span>
             <div class="portal-copy">
-              <span class="portal-title">History</span>
-              <span class="portal-title">歷史</span>
+              <span class="portal-title home-i18n-en">History</span>
+              <span class="portal-title home-i18n-zh">歷史</span>
             </div>
           </a>
           <a class="portal" href="characters/index.html">
             <span class="portal-glyph"><img src="assets/icons/characters-icon.png" alt="Characters icon" class="portal-icon"></span>
             <div class="portal-copy">
-              <span class="portal-title">Characters</span>
-              <span class="portal-title">角色</span>
+              <span class="portal-title home-i18n-en">Characters</span>
+              <span class="portal-title home-i18n-zh">角色</span>
             </div>
           </a>
         </div>
@@ -304,8 +375,8 @@
       <section class="campaign-link" aria-label="Campaign records">
         <a class="campaign-link-card" href="campaigns/index.html">
           <span class="campaign-link-copy">
-            <span class="campaign-link-title">Campaigns</span>
-            <span class="campaign-link-title campaign-link-title--zh">團錄</span>
+            <span class="campaign-link-title home-i18n-en">Campaigns</span>
+            <span class="campaign-link-title campaign-link-title--zh home-i18n-zh">團錄</span>
             <span class="campaign-link-cursor" aria-hidden="true">&#9757;</span>
           </span>
         </a>
@@ -314,20 +385,20 @@
       <section class="about-link" aria-label="About Rugatha">
         <a href="about-us/index.html" class="about-link-card">
           <div class="about-link-copy about-link-copy--centered">
-            <span class="about-link-title">All About<br>Rugatha</span>
-            <span class="about-link-title">關於我們</span>
+            <span class="about-link-title home-i18n-en">All About<br>Rugatha</span>
+            <span class="about-link-title home-i18n-zh">關於我們</span>
           </div>
         </a>
         <a href="experience/index.html" class="about-link-card">
           <div class="about-link-copy about-link-copy--centered">
-            <span class="about-link-title">Rugatha<br>Experience</span>
-            <span class="about-link-title">體驗團資訊</span>
+            <span class="about-link-title home-i18n-en">Rugatha<br>Experience</span>
+            <span class="about-link-title home-i18n-zh">體驗團資訊</span>
           </div>
         </a>
         <a href="member/index.html" class="about-link-card" id="adventurer-journal-link">
           <div class="about-link-copy about-link-copy--centered">
-            <span class="about-link-title">Adventurer's<br>Journal</span>
-            <span class="about-link-title">冒險者日誌</span>
+            <span class="about-link-title home-i18n-en">Adventurer's<br>Journal</span>
+            <span class="about-link-title home-i18n-zh">冒險者日誌</span>
           </div>
         </a>
       </section>
@@ -336,12 +407,19 @@
         <div class="auth-controls">
           <div class="auth-disclosure">
             <button class="auth-button auth-button--ghost" type="button" aria-expanded="false" aria-controls="auth-browser-note" data-mobile-dialog="auth-browser-dialog">
-              無法登入？
+              <span data-home-i18n data-zh="無法登入？" data-en="Can't sign in?">無法登入？</span>
             </button>
             <div class="auth-popover auth-browser-note" id="auth-browser-note" role="dialog" aria-label="Browser sign-in notice">
-              <p>若使用 Threads 或 LINE 內建瀏覽器，建議用手機預設瀏覽器開啟此網頁，以免無法登入 Google 帳號。</p>
-              <p>LINE 請點選右下角選單，點擊「使用預設瀏覽器開啟」。</p>
-              <p>Threads 請點選右上角選單，點擊「在 Chrome 開啟」。</p>
+              <div class="home-i18n-zh">
+                <p>若使用 Threads 或 LINE 內建瀏覽器，建議用手機預設瀏覽器開啟此網頁，以免無法登入 Google 帳號。</p>
+                <p>LINE 請點選右下角選單，點擊「使用預設瀏覽器開啟」。</p>
+                <p>Threads 請點選右上角選單，點擊「在 Chrome 開啟」。</p>
+              </div>
+              <div class="auth-browser-note__language home-i18n-en" lang="en">
+                <p>If you are using the built-in browser in Threads or LINE, open this page in your phone's default browser to sign in with Google.</p>
+                <p>For LINE, tap the menu in the bottom-right corner, then choose “Open in default browser.”</p>
+                <p>For Threads, tap the menu in the top-right corner, then choose “Open in Chrome.”</p>
+              </div>
             </div>
           </div>
           <button class="auth-button" id="google-login" type="button" aria-label="Sign in with Google">
@@ -353,18 +431,18 @@
                 <path fill="#EA4335" d="M130 51.9c19.1 0 36.3 6.6 49.8 19.6l37.3-37.3C194.5 12.7 165.1 0 130 0 79.9 0 35.4 30.5 13.6 70.6l43.1 33.8C67 74.9 95.9 51.9 130 51.9z"/>
               </svg>
             </span>
-            <span class="auth-label">Sign in</span>
+            <span class="auth-label" data-home-i18n data-zh="登入" data-en="Sign in">登入</span>
           </button>
           <button class="auth-button auth-button--ghost" id="google-logout" type="button" aria-label="Sign out" disabled>
-            <span class="auth-label">Sign out</span>
+            <span class="auth-label" data-home-i18n data-zh="登出" data-en="Sign out">登出</span>
           </button>
           <div class="auth-status" id="auth-status" aria-live="polite">Google login</div>
           <div class="auth-disclosure">
             <button class="auth-button auth-button--ghost" type="button" aria-expanded="false" aria-controls="auth-benefits" data-mobile-dialog="auth-benefits-dialog">
-              會員功能說明
+              <span data-home-i18n data-zh="會員功能說明" data-en="Benefits">會員功能說明</span>
             </button>
             <div class="auth-popover auth-benefits" id="auth-benefits" role="dialog" aria-label="Membership benefits">
-              <div class="auth-benefits__language" lang="zh-Hant">
+              <div class="auth-benefits__language home-i18n-zh" lang="zh-Hant">
                 <p>使用 Google 帳號免費加入會員，享受以下功能：</p>
                 <ul>
                   <li>儲存喜愛頁面</li>
@@ -373,7 +451,7 @@
                   <li>以及更多開發中的未來功能</li>
                 </ul>
               </div>
-              <div class="auth-benefits__language" lang="en">
+              <div class="auth-benefits__language home-i18n-en" lang="en">
                 <p>Join for free with your Google account and enjoy:</p>
                 <ul>
                   <li>Save your favorite pages</li>
@@ -391,8 +469,8 @@
         <div class="schedule-widget__inner">
           <div class="schedule-widget__header">
             <div>
-              <p class="schedule-widget__eyebrow">The Rugatha Calender</p>
-              <h2 class="schedule-widget__title">Rugatha 行事曆</h2>
+              <h2 class="schedule-widget__title home-i18n-en">The Rugatha Calendar</h2>
+              <h2 class="schedule-widget__title home-i18n-zh">Rugatha 行事曆</h2>
             </div>
           </div>
           <div class="schedule-widget__list" id="schedule-list"></div>
@@ -402,13 +480,20 @@
     </main>
   </div>
   <dialog class="auth-mobile-dialog" id="auth-browser-dialog" aria-labelledby="auth-browser-dialog-title">
-    <p id="auth-browser-dialog-title">若使用 Threads 或 LINE 內建瀏覽器，建議用手機預設瀏覽器開啟此網頁，以免無法登入 Google 帳號。</p>
-    <p>LINE 請點選右下角選單，點擊「使用預設瀏覽器開啟」。</p>
-    <p>Threads 請點選右上角選單，點擊「在 Chrome 開啟」。</p>
-    <button class="auth-button auth-button--ghost auth-mobile-dialog__close" type="button">關閉</button>
+    <div class="home-i18n-zh">
+      <p id="auth-browser-dialog-title">若使用 Threads 或 LINE 內建瀏覽器，建議用手機預設瀏覽器開啟此網頁，以免無法登入 Google 帳號。</p>
+      <p>LINE 請點選右下角選單，點擊「使用預設瀏覽器開啟」。</p>
+      <p>Threads 請點選右上角選單，點擊「在 Chrome 開啟」。</p>
+    </div>
+    <div class="auth-browser-note__language home-i18n-en" lang="en">
+      <p>If you are using the built-in browser in Threads or LINE, open this page in your phone's default browser to sign in with Google.</p>
+      <p>For LINE, tap the menu in the bottom-right corner, then choose “Open in default browser.”</p>
+      <p>For Threads, tap the menu in the top-right corner, then choose “Open in Chrome.”</p>
+    </div>
+    <button class="auth-button auth-button--ghost auth-mobile-dialog__close" type="button" data-home-i18n data-zh="關閉" data-en="Close">關閉</button>
   </dialog>
   <dialog class="auth-mobile-dialog" id="auth-benefits-dialog" aria-labelledby="auth-benefits-dialog-title">
-    <div lang="zh-Hant">
+    <div class="home-i18n-zh" lang="zh-Hant">
       <p id="auth-benefits-dialog-title">使用 Google 帳號免費加入會員，享受以下功能：</p>
       <ul>
         <li>儲存喜愛頁面</li>
@@ -417,7 +502,7 @@
         <li>以及更多開發中的未來功能</li>
       </ul>
     </div>
-    <div class="auth-benefits__language" lang="en">
+    <div class="auth-benefits__language home-i18n-en" lang="en">
       <p>Join for free with your Google account and enjoy:</p>
       <ul>
         <li>Save your favorite pages</li>
@@ -426,7 +511,7 @@
         <li>And more future features in development</li>
       </ul>
     </div>
-    <button class="auth-button auth-button--ghost auth-mobile-dialog__close" type="button">關閉</button>
+    <button class="auth-button auth-button--ghost auth-mobile-dialog__close" type="button" data-home-i18n data-zh="關閉" data-en="Close">關閉</button>
   </dialog>
 
   <script src="shared/rugatha.config.js"></script>
@@ -435,6 +520,45 @@
   <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-auth-compat.js"></script>
   <script type="module" src="shared/auth.js"></script>
+  <script>
+    (() => {
+      const languageButton = document.querySelector("[data-lang-option]");
+      if (!languageButton) return;
+
+      const applyLanguage = (lang) => {
+        const language = lang === "en" ? "en" : "zh";
+        document.documentElement.lang = language === "en" ? "en" : "zh-Hant";
+        document.documentElement.dataset.homeLang = language;
+        document.body.dataset.lang = language;
+        document.title = "Rugatha";
+        document.querySelectorAll("[data-home-i18n]").forEach((node) => {
+          node.textContent = node.dataset[language];
+        });
+        languageButton.dataset.langOption = language;
+        languageButton.setAttribute("aria-pressed", "true");
+        languageButton.setAttribute("aria-label", language === "en" ? "Current language: English" : "目前語言：中文");
+        window.RugathaLanguageToggle?.setButtonIcon(languageButton, language);
+        document.getElementById("google-login")?.setAttribute("aria-label", language === "en" ? "Sign in with Google" : "使用 Google 登入");
+        document.getElementById("google-logout")?.setAttribute("aria-label", language === "en" ? "Sign out" : "登出");
+        window.dispatchEvent(new CustomEvent("rugatha:language-changed", { detail: { language } }));
+        try {
+          localStorage.setItem("rugatha-home-lang", language);
+        } catch (_) {
+          // Storage may be unavailable in private browsing contexts.
+        }
+      };
+
+      languageButton.addEventListener("click", () => {
+        applyLanguage(languageButton.dataset.langOption === "en" ? "zh" : "en");
+      });
+
+      try {
+        applyLanguage(localStorage.getItem("rugatha-home-lang") || "zh");
+      } catch (_) {
+        applyLanguage("zh");
+      }
+    })();
+  </script>
   <script>
     (() => {
       const disclosures = Array.from(document.querySelectorAll(".auth-disclosure"));
@@ -514,6 +638,14 @@
     const journalLink = document.getElementById("adventurer-journal-link");
     const authBrowserNote = document.querySelector(".auth-browser-note");
     const scheduleList = document.getElementById("schedule-list");
+    const getHomeLanguage = () => document.documentElement.dataset.homeLang === "en" ? "en" : "zh";
+    const getCalendarLocale = () => getHomeLanguage() === "en" ? "en-US" : "zh-TW";
+    const getLocalizedValue = (value, fallback = "") => {
+      if (value && typeof value === "object") {
+        return value[getHomeLanguage()] || value.zh || value.en || fallback;
+      }
+      return value || fallback;
+    };
 
     const parseDateValue = (value) => {
       if (typeof value !== "string") return null;
@@ -526,7 +658,7 @@
     };
 
     const formatFullDate = (date) =>
-      new Intl.DateTimeFormat("zh-TW", {
+      new Intl.DateTimeFormat(getCalendarLocale(), {
         timeZone: CALENDAR_TIMEZONE,
         year: "numeric",
         month: "numeric",
@@ -534,20 +666,20 @@
       }).format(date);
 
     const formatDateYear = (date) =>
-      new Intl.DateTimeFormat("zh-TW", {
+      new Intl.DateTimeFormat(getCalendarLocale(), {
         timeZone: CALENDAR_TIMEZONE,
         year: "numeric"
       }).format(date);
 
     const formatDateMonthDay = (date) =>
-      new Intl.DateTimeFormat("zh-TW", {
+      new Intl.DateTimeFormat(getCalendarLocale(), {
         timeZone: CALENDAR_TIMEZONE,
         month: "numeric",
         day: "numeric"
       }).format(date);
 
     const formatDateWeekday = (date) =>
-      new Intl.DateTimeFormat("zh-TW", {
+      new Intl.DateTimeFormat(getCalendarLocale(), {
         timeZone: CALENDAR_TIMEZONE,
         weekday: "long"
       }).format(date);
@@ -561,13 +693,18 @@
             .map((event) => {
               const date = parseDateValue(event.date);
               if (!date) return null;
+              const category = getLocalizedValue(event.category, "Event");
+              const categoryZh = getLocalizedValue(
+                event.category && typeof event.category === "object" ? event.category.zh : event.category,
+                "Event"
+              );
               return {
-                title: event.title || "Untitled event",
-                category: event.category || "Event",
+                title: getLocalizedValue(event.title, "Untitled event"),
+                category,
                 date,
                 href: event.link || null,
-                note: event.note || "",
-                accent: resolveCategoryAccent(event.category || "Event"),
+                note: getLocalizedValue(event.note),
+                accent: resolveCategoryAccent(categoryZh),
                 image: event.image || "",
                 isTransparent: event.isTransparent === true,
                 deadline: isDeadlineEvent(event.deadline)
@@ -607,7 +744,7 @@
       const events = await loadScheduleEvents();
       const items = createScheduleItems(events);
       if (!items.length) {
-        scheduleList.innerHTML = '<p class="schedule-widget__empty">目前沒有可顯示的近期行程。</p>';
+        scheduleList.innerHTML = `<p class="schedule-widget__empty">${getHomeLanguage() === "en" ? "There are no upcoming events to display." : "目前沒有可顯示的近期行程。"}</p>`;
         return;
       }
 
@@ -628,7 +765,7 @@
           `
             : "";
           const deadlineBadge = item.deadline
-            ? '<span class="schedule-card__deadline-badge">Deadline</span>'
+            ? `<span class="schedule-card__deadline-badge">${getHomeLanguage() === "en" ? "Deadline" : "截止"}</span>`
             : "";
           const cardInner = `
             ${media}
@@ -651,6 +788,10 @@
         })
         .join("");
     };
+
+    window.addEventListener("rugatha:language-changed", () => {
+      renderScheduleWidget();
+    });
 
     const parseCsv = (text) => {
       const rows = [];

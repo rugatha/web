@@ -601,7 +601,7 @@ body {
 }
 
 .about-link-title:last-child {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   letter-spacing: 0.02em;
   color: rgba(236, 242, 237, 0.94);
@@ -625,6 +625,11 @@ body {
 @media (max-width: 900px) {
   body {
     padding: 14px 12px 36px;
+  }
+
+  .schedule-card__tag {
+    white-space: pre-line;
+    text-align: center;
   }
 
   .home-d20 {
@@ -852,7 +857,7 @@ body {
     align-items: center;
     text-align: center;
     gap: 1px;
-    margin-top: -4px;
+    margin-top: 6px;
   }
 
   .portal-title {
@@ -1114,7 +1119,7 @@ body {
   }
 
   .about-link-title:last-child {
-    font-size: clamp(10px, 2.45vw, 14px);
+    font-size: clamp(12px, 2.75vw, 16px);
     white-space: normal;
   }
 

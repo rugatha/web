@@ -4,6 +4,18 @@ const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
 const loginHidden = false;
 const LOGIN_PENDING_KEY = "rugatha-ga-login-pending";
 
+const getAuthLanguage = () =>
+  document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith("zh")
+    ? "zh"
+    : "en";
+
+const getAuthCopy = () => {
+  const language = getAuthLanguage();
+  return language === "zh"
+    ? { signIn: "登入", signOut: "登出", greeting: "你好，" }
+    : { signIn: "Sign in", signOut: "Sign out", greeting: "Hi, " };
+};
+
 const markLoginPending = () => {
   try {
     sessionStorage.setItem(LOGIN_PENDING_KEY, "1");
@@ -644,7 +656,7 @@ const setupAuth = async () => {
     publishAuthState(false);
     hidePageBookmark();
     if (labelEl) {
-      labelEl.textContent = "Log In";
+      labelEl.textContent = getAuthCopy().signIn;
     }
     setVisibility(loginButton, true);
     setVisibility(logoutButton, false);
@@ -663,12 +675,23 @@ const setupAuth = async () => {
     setVisibility(loginButton, false);
     setVisibility(logoutButton, true);
     setVisibility(statusEl, true);
-    statusEl.textContent = `Hi, ${fallback}`;
+    statusEl.textContent = `${getAuthCopy().greeting}${fallback}`;
     loginButton.disabled = true;
     loginButton.setAttribute("aria-disabled", "true");
     logoutButton.disabled = false;
     logoutButton.removeAttribute("aria-disabled");
   };
+
+  window.addEventListener("rugatha:language-changed", () => {
+    const copy = getAuthCopy();
+    const logoutLabel = logoutButton.querySelector(".auth-label");
+    if (logoutLabel) logoutLabel.textContent = copy.signOut;
+    if (!loginButton.hidden && labelEl) labelEl.textContent = copy.signIn;
+    if (!statusEl.hidden && statusEl.textContent) {
+      const name = statusEl.textContent.replace(/^(Hi, |你好，)/, "");
+      statusEl.textContent = `${copy.greeting}${name}`;
+    }
+  });
 
   loginButton.addEventListener("click", async () => {
     markLoginPending();
