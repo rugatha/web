@@ -1219,7 +1219,7 @@
       urlOverrides: graphUrlOverrides
     },
     dataFiles: {
-      calendarEvents: "shared/calendar-events.json",
+      calendarEvents: "./shared/calendar-events.json",
       npcCharacters: "npc/data/characters.json"
     }
   };
