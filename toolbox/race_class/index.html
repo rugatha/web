@@ -342,6 +342,74 @@
       text-align: left;
     }
 
+    .class-levels {
+      display: grid;
+      gap: 8px;
+      margin-left: 92px;
+    }
+
+    .class-level-item {
+      display: grid;
+      gap: 8px;
+    }
+
+    .class-level-card {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1px solid rgba(236, 242, 237, 0.16);
+      border-radius: 8px;
+      background: rgba(236, 242, 237, 0.06);
+      color: var(--text);
+      font: inherit;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+    }
+
+    .class-level-card:hover,
+    .class-level-card:focus-visible {
+      transform: translateX(4px);
+      border-color: var(--rc-line-strong);
+      background: rgba(236, 242, 237, 0.1);
+      outline: none;
+    }
+
+    .class-level-card[aria-expanded="true"] {
+      border-color: rgba(217, 182, 111, 0.48);
+      background: rgba(217, 182, 111, 0.1);
+    }
+
+    .class-level-card::after {
+      content: "▸";
+      color: var(--rc-gold);
+      font-size: 1.2rem;
+      line-height: 1;
+      transition: transform 160ms ease;
+    }
+
+    .class-level-card[aria-expanded="true"]::after {
+      content: "▾";
+    }
+
+    .class-level-details.option-details {
+      margin-left: 0;
+    }
+
+    .class-overview {
+      display: grid;
+      gap: 8px;
+      margin-left: 92px;
+    }
+
+    .class-overview-details.option-details {
+      margin-left: 0;
+    }
+
     .details-heading {
       margin: 1rem 0 0.2rem;
       color: var(--text);
@@ -507,6 +575,14 @@
         margin-left: 66px;
       }
 
+      .class-levels {
+        margin-left: 66px;
+      }
+
+      .class-overview {
+        margin-left: 66px;
+      }
+
       .subrace-card {
         grid-template-columns: auto minmax(0, 1fr);
         padding: 10px 12px;
@@ -567,6 +643,8 @@
         classToggle: "職業",
         locked: "登入後可點選種族與職業查看詳細設定。",
         subraceLabel: "子種族",
+        classLevelLabel: "職業等級",
+        classLevel: "{level} 等",
         dataError: "無法載入種族與職業資料。",
         aria: "目前語言：中文"
       },
@@ -577,6 +655,8 @@
         classToggle: "Class",
         locked: "Sign in to select a race or class and view its details.",
         subraceLabel: "Subraces",
+        classLevelLabel: "Class Levels",
+        classLevel: "Level {level}",
         dataError: "Unable to load race and class data.",
         aria: "Current language: English"
       }
@@ -594,6 +674,8 @@
     let currentLanguage = "zh";
     let isAuthenticated = window.RUGATHA_AUTH_SIGNED_IN === true;
     const expandedOptionIds = { race: null, class: null };
+    const expandedClassLevelIds = {};
+    const expandedClassOverviewIds = {};
     let expandedSubraceId = null;
     let dataLoadError = null;
 
@@ -607,6 +689,15 @@
 
     const getNote = (item, type) => {
       const key = `${type}_${currentLanguage}`;
+      const note = item.note && item.note[key] ? item.note[key].trim() : "";
+      return {
+        text: note,
+        isEmpty: !note
+      };
+    };
+
+    const getClassLevelNote = (item, level) => {
+      const key = `lvl${String(level).padStart(2, "0")}_details_${currentLanguage}`;
       const note = item.note && item.note[key] ? item.note[key].trim() : "";
       return {
         text: note,
@@ -919,6 +1010,88 @@
       return classSpells;
     };
 
+    const renderClassOverview = (container, item, detailsNote) => {
+      if (detailsNote.isEmpty) return;
+
+      const section = document.createElement("section");
+      section.className = "class-overview";
+      const isExpanded = expandedClassOverviewIds[item.id] === true;
+      const overviewId = `class-overview-${item.id}`;
+
+      const overviewButton = document.createElement("button");
+      overviewButton.className = "class-level-card class-overview-card";
+      overviewButton.type = "button";
+      overviewButton.setAttribute("aria-expanded", String(isExpanded));
+      overviewButton.setAttribute("aria-controls", overviewId);
+      overviewButton.textContent = currentLanguage === "zh" ? "職業" : "Class";
+      overviewButton.addEventListener("click", () => {
+        expandedClassOverviewIds[item.id] = !isExpanded;
+        renderOptions("class");
+      });
+      section.appendChild(overviewButton);
+
+      if (isExpanded) {
+        const overviewDetails = document.createElement("div");
+        overviewDetails.id = overviewId;
+        overviewDetails.className = "class-overview-details option-details note-box";
+        if (detailsNote.text === "{{class_spell_table}}") {
+          renderClassSpellTable(overviewDetails, item.id);
+        } else {
+          renderDetailsContent(overviewDetails, detailsNote.text);
+        }
+        section.appendChild(overviewDetails);
+      }
+
+      container.appendChild(section);
+    };
+
+    const renderClassLevels = (container, item) => {
+      const section = document.createElement("section");
+      section.className = "class-levels";
+      section.setAttribute("aria-label", translations[currentLanguage].classLevelLabel);
+
+      const heading = document.createElement("div");
+      heading.className = "subrace-section-title";
+      heading.textContent = translations[currentLanguage].classLevelLabel;
+      section.appendChild(heading);
+
+      const expandedLevel = expandedClassLevelIds[item.id] ?? null;
+      for (let level = 1; level <= 20; level += 1) {
+        const levelNote = getClassLevelNote(item, level);
+        if (levelNote.isEmpty) continue;
+        const isExpanded = expandedLevel === level;
+        const levelItem = document.createElement("div");
+        levelItem.className = "class-level-item";
+
+        const levelId = `class-level-${item.id}-${level}`;
+        const levelButton = document.createElement("button");
+        levelButton.className = "class-level-card";
+        levelButton.type = "button";
+        levelButton.setAttribute("aria-expanded", String(isExpanded));
+        levelButton.setAttribute("aria-controls", levelId);
+        levelButton.textContent = translations[currentLanguage].classLevel.replace("{level}", level);
+        levelButton.addEventListener("click", () => {
+          expandedClassLevelIds[item.id] = isExpanded ? null : level;
+          renderOptions("class");
+        });
+        levelItem.appendChild(levelButton);
+
+        if (isExpanded) {
+          const levelDetails = document.createElement("div");
+          levelDetails.id = levelId;
+          levelDetails.className = "class-level-details option-details note-box";
+
+          renderDetailsContent(levelDetails, levelNote.text);
+
+          levelItem.appendChild(levelDetails);
+        }
+
+        section.appendChild(levelItem);
+      }
+
+      container.appendChild(section);
+    };
+
     const renderOptions = (mode) => {
       lockedNote.hidden = isAuthenticated;
       list.replaceChildren();
@@ -960,11 +1133,13 @@
         });
         li.appendChild(card);
 
-        if (isExpanded && !detailsNote.isEmpty) {
+        if (isExpanded && mode === "class") {
+          renderClassOverview(li, item, detailsNote);
+          renderClassLevels(li, item);
+        } else if (isExpanded && !detailsNote.isEmpty) {
           const details = document.createElement("div");
           details.className = "option-details note-box";
           renderDetailsContent(details, detailsNote.text);
-          if (mode === "class") renderClassSpellTable(details, item.id);
           li.appendChild(details);
         }
 
