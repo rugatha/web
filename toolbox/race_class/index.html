@@ -482,6 +482,17 @@
       overflow-wrap: anywhere;
     }
 
+    .details-table--two-column {
+      min-width: 420px;
+    }
+
+    .details-table--two-column th:first-child,
+    .details-table--two-column td:first-child {
+      width: clamp(180px, 24%, 240px);
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
     .details-table tbody tr:last-child td {
       border-bottom: 0;
     }
@@ -907,9 +918,13 @@
           tableWrap.className = "details-table-wrap";
           const table = document.createElement("table");
           table.className = "details-table";
+          const headerCells = parseRow(lines[0]);
+          if (headerCells.length === 2) {
+            table.classList.add("details-table--two-column");
+          }
           const tableHead = document.createElement("thead");
           const headRow = document.createElement("tr");
-          parseRow(lines[0]).forEach((cell) => {
+          headerCells.forEach((cell) => {
             const heading = document.createElement("th");
             heading.scope = "col";
             heading.textContent = cell;
