@@ -3862,8 +3862,8 @@
     "image": "individual_pics/Captain Marin.jpeg",
     "status": "alive",
     "gender": "female",
-    "descZh": "方努爾市的一名船長。\n受羅賓遜主教委託，載冒險者們到南方的荒島，尋找雪の化身の目覚め的下落。\n多年後，聖拉雅米島成為他的封地。他也帶了新的冒險者來到島上調查中毒事件。",
-    "descEn": "A captain from Fanaur.\nCommissioned by Bishop Robinson to bring the adventurers to the southern island to find the book \"雪の化身の目覚め\".\nYears later, St. Rayami Island became her fiefdom. She also brings new adventurers to the island to investigate the poisoning incident.",
+    "descZh": "方努爾市的一名船長。\n受羅賓遜主教委託，載冒險者們到南方的荒島，尋找《雪の化身の目覚め》的下落。多年後，聖拉雅米島成為她的封地；她接獲島上居民失蹤與中毒的消息後，帶新的冒險者登島調查，並請他們將調查報告送往聖津菈大教堂。\n在金海岸礦坑事件後，她提供津菈教協助者勳章，讓冒險者前往方努爾回報拉索斯教與拉巴比石的線索。",
+    "descEn": "A captain from Fanaur.\nCommissioned by Bishop Robinson to bring adventurers to the southern island to find the book \"雪の化身の目覚め.\" Years later, St. Rayami Island became her fiefdom. After residents began disappearing and suffering unexplained poisonings, she brought new adventurers to investigate and asked them to deliver their report to Saint Keinra Cathedral.\nAfter the Gold Coast Mine incident, she gave the adventurers badges identifying them as Keinra's helpers so they could report the Laxthos and Lababi-stone clues in Fanaur.",
     "related": [
       "Bishop_Robinson",
       "Liliana",
@@ -5106,8 +5106,8 @@
     "image": "individual_pics/Bishop Robinson.png",
     "status": "alive",
     "gender": "male",
-    "descZh": "太陽教大主教。\n台北市議員過去曾護送他與人偶莫頓的頭返回拉森德教廷。\n在聖拉雅米事件中，羅賓遜主教來到波特娜塔莎協助調查，也努力尋找失蹤的米多莉；當米多莉在檔案室與眾人對峙並逃離後，他在混亂中負傷，之後由卡諾等人照料。",
-    "descEn": "An archbishop of the Church of the Sun.\nThe Councilors of Taipei once escorted him and the head of the Morton puppet back to the Church of Lathander.\nDuring the St. Rayami incident, Bishop Robinson came to Port Natasha to assist the investigation and search for the missing Midori. After Midori confronted the others in the archive room and fled, Robinson was injured in the chaos and was later cared for by Kano and others.",
+    "descZh": "津菈教大主教。\n在聖拉雅米事件中，羅賓遜主教接收瑪琳船長送來的調查報告，將島上的失蹤、中毒與方努爾尼姆孤兒院地下的拉巴比石互相比對，並命令裁判官調查孤兒院。米多莉從檔案室發現孤兒院販賣兒童的紀錄後，持文件質問主教並攻擊他，丟下聖徽越獄；羅賓遜因此受傷，但仍請冒險者先找到米多莉、安撫她並將聖徽歸還。",
+    "descEn": "An archbishop of the Church of the Keinra.\nDuring the St. Rayami incident, Robinson received Captain Marin's report in Fanaur and compared the island's disappearances and poisonings with the Lababi stones beneath Nimu Orphanage. He assigned inquisitors to investigate the orphanage. After Midori found records showing that the orphanage had sold children, she confronted and attacked Robinson, dropped her holy symbol, and escaped; Robinson was injured but still asked the adventurers to find Midori, calm her, and return the symbol.",
     "related": [
       "Captain_Marin",
       "Iochi_Mari",
