@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v18";
+const CACHE_VERSION = "rugatha-pwa-v19";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
@@ -78,6 +78,11 @@ const staleWhileRevalidate = async (request) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (!isSameOriginGet(request)) return;
+
+  if (["localhost", "127.0.0.1", "::1"].includes(self.location.hostname)) {
+    event.respondWith(fetch(request, { cache: "no-store" }));
+    return;
+  }
 
   if (request.mode === "navigate") {
     event.respondWith(networkFirst(request));

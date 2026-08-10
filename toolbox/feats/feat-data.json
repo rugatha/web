@@ -6,7 +6,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "魅力 +1（最高 20）；擅長模仿他人的聲音與姿態，並在偽裝成他人時更容易蒙混過關。",
-    "summary_en": "Increase Charisma by 1 (maximum 20); improve voice and mannerism mimicry and deception while impersonating someone."
+    "summary_en": "Increase Charisma by 1 (maximum 20); improve voice and mannerism mimicry and deception while impersonating someone.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "alert",
@@ -15,7 +21,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "先攻獲得 +5 加值；保持清醒時不會被突襲，且看不見的敵人不會因隱匿而取得對你的攻擊優勢。",
-    "summary_en": "Gain +5 initiative, cannot be surprised while conscious, and unseen attackers gain no advantage solely from being unseen."
+    "summary_en": "Gain +5 initiative, cannot be surprised while conscious, and unseen attackers gain no advantage solely from being unseen.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "athlete",
@@ -24,7 +36,13 @@
     "prerequisite_zh": "力量或敏捷 13 以上",
     "prerequisite_en": "Strength or Dexterity 13+",
     "summary_zh": "力量或敏捷 +1（最高 20）；起立消耗更少移動力，攀爬更快，並可在助跑後跳得更遠。",
-    "summary_en": "Increase Strength or Dexterity by 1 (maximum 20); stand faster, climb faster, and make longer running jumps."
+    "summary_en": "Increase Strength or Dexterity by 1 (maximum 20); stand faster, climb faster, and make longer running jumps.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "charger",
@@ -33,7 +51,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "以疾走動作直線移動至少 10 呎後，可用附贈動作近戰攻擊或推撞；命中時可強化傷害或推遠目標。",
-    "summary_en": "After dashing at least 10 feet straight toward a creature, use a bonus action to attack or shove it; an attack can gain extra damage or a shove can push farther."
+    "summary_en": "After dashing at least 10 feet straight toward a creature, use a bonus action to attack or shove it; an attack can gain extra damage or a shove can push farther.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "crossbow-expert",
@@ -42,7 +66,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "忽略弩的裝填限制；近戰敵人不會使你的遠程攻擊劣勢；以單手武器攻擊後可用附贈動作射擊手弩。",
-    "summary_en": "Ignore crossbow loading, avoid disadvantage on ranged attacks from nearby foes, and fire a hand crossbow as a bonus action after a one-handed-weapon attack."
+    "summary_en": "Ignore crossbow loading, avoid disadvantage on ranged attacks from nearby foes, and fire a hand crossbow as a bonus action after a one-handed-weapon attack.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "defensive-duelist",
@@ -51,7 +81,13 @@
     "prerequisite_zh": "敏捷 13 以上",
     "prerequisite_en": "Dexterity 13+",
     "summary_zh": "持用靈巧武器時，可用反應將熟練加值加到一次針對你的近戰攻擊 AC 上。",
-    "summary_en": "While wielding a finesse weapon, use a reaction to add your proficiency bonus to AC against one melee attack."
+    "summary_en": "While wielding a finesse weapon, use a reaction to add your proficiency bonus to AC against one melee attack.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "dual-wielder",
@@ -60,7 +96,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "雙持時 AC +1；可雙持非輕型單手近戰武器，並可在同一次互動中拔出或收起兩把單手武器。",
-    "summary_en": "Gain +1 AC while dual wielding, use two non-light one-handed melee weapons, and draw or stow two one-handed weapons together."
+    "summary_en": "Gain +1 AC while dual wielding, use two non-light one-handed melee weapons, and draw or stow two one-handed weapons together.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "dungeon-delver",
@@ -69,7 +111,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "更善於發現祕門與陷阱；對陷阱豁免有優勢、陷阱傷害減半，並可更快搜尋祕門。",
-    "summary_en": "Improve detection of secret doors and traps; gain advantage on saves against traps, resistance to their damage, and search for secret doors faster."
+    "summary_en": "Improve detection of secret doors and traps; gain advantage on saves against traps, resistance to their damage, and search for secret doors faster.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "durable",
@@ -78,7 +126,13 @@
     "prerequisite_zh": "體質 13 以上",
     "prerequisite_en": "Constitution 13+",
     "summary_zh": "體質 +1（最高 20）；花費生命骰恢復生命值時，每顆骰的最低恢復量為體質調整值的兩倍。",
-    "summary_en": "Increase Constitution by 1 (maximum 20); when spending Hit Dice, each die restores at least twice your Constitution modifier."
+    "summary_en": "Increase Constitution by 1 (maximum 20); when spending Hit Dice, each die restores at least twice your Constitution modifier.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "elemental-adept",
@@ -87,7 +141,13 @@
     "prerequisite_zh": "能施展至少一個法術",
     "prerequisite_en": "Ability to cast at least one spell",
     "summary_zh": "選擇一種傷害類型（酸、冷、火、閃電或雷鳴）；你的法術忽略該類型抗性，且傷害骰的 1 視為 2。",
-    "summary_en": "Choose acid, cold, fire, lightning, or thunder. Your spells ignore resistance to it, and damage die rolls of 1 count as 2."
+    "summary_en": "Choose acid, cold, fire, lightning, or thunder. Your spells ignore resistance to it, and damage die rolls of 1 count as 2.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "grappler",
@@ -96,7 +156,13 @@
     "prerequisite_zh": "力量 13 以上",
     "prerequisite_en": "Strength 13+",
     "summary_zh": "對被你擒抱的生物進行攻擊時具有優勢，並可嘗試讓自己與對方同時陷入束縛。",
-    "summary_en": "Gain advantage on attacks against creatures you grapple and can attempt to restrain both yourself and the grappled target."
+    "summary_en": "Gain advantage on attacks against creatures you grapple and can attempt to restrain both yourself and the grappled target.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "great-weapon-master",
@@ -105,7 +171,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "近戰重擊或將敵人生命值降至 0 時，可附贈動作再攻擊一次；重型武器攻擊可選擇承受命中減值以換取大幅傷害加值。",
-    "summary_en": "After a melee critical hit or reducing a creature to 0 hit points, make a bonus-action attack; take an attack-roll penalty with a heavy weapon for substantial bonus damage."
+    "summary_en": "After a melee critical hit or reducing a creature to 0 hit points, make a bonus-action attack; take an attack-roll penalty with a heavy weapon for substantial bonus damage.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "heavily-armored",
@@ -114,7 +186,13 @@
     "prerequisite_zh": "中甲熟練",
     "prerequisite_en": "Medium armor proficiency",
     "summary_zh": "力量 +1（最高 20），並獲得重甲熟練。",
-    "summary_en": "Increase Strength by 1 (maximum 20) and gain proficiency with heavy armor."
+    "summary_en": "Increase Strength by 1 (maximum 20) and gain proficiency with heavy armor.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "heavy-armor-master",
@@ -123,7 +201,13 @@
     "prerequisite_zh": "重甲熟練",
     "prerequisite_en": "Heavy armor proficiency",
     "summary_zh": "力量 +1（最高 20）；穿著重甲時，非魔法武器造成的鈍擊、穿刺、揮砍傷害會減少。",
-    "summary_en": "Increase Strength by 1 (maximum 20); while wearing heavy armor, reduce nonmagical bludgeoning, piercing, and slashing damage from weapons."
+    "summary_en": "Increase Strength by 1 (maximum 20); while wearing heavy armor, reduce nonmagical bludgeoning, piercing, and slashing damage from weapons.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "inspiring-leader",
@@ -132,7 +216,13 @@
     "prerequisite_zh": "魅力 13 以上",
     "prerequisite_en": "Charisma 13+",
     "summary_zh": "花 10 分鐘鼓舞同伴，讓最多六名生物獲得臨時生命值；休息後可再次使用。",
-    "summary_en": "Spend 10 minutes inspiring up to six creatures, granting temporary hit points; use again after a rest."
+    "summary_en": "Spend 10 minutes inspiring up to six creatures, granting temporary hit points; use again after a rest.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "keen-mind",
@@ -141,7 +231,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "智力 +1（最高 20）；能辨識方位、知道日出日落前的剩餘時間，並能精確回憶近期所見所聞。",
-    "summary_en": "Increase Intelligence by 1 (maximum 20); always know direction, time to sunrise or sunset, and accurately recall recent sights and sounds."
+    "summary_en": "Increase Intelligence by 1 (maximum 20); always know direction, time to sunrise or sunset, and accurately recall recent sights and sounds.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "lightly-armored",
@@ -150,7 +246,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "力量或敏捷 +1（最高 20），並獲得輕甲熟練。",
-    "summary_en": "Increase Strength or Dexterity by 1 (maximum 20) and gain proficiency with light armor."
+    "summary_en": "Increase Strength or Dexterity by 1 (maximum 20) and gain proficiency with light armor.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "linguist",
@@ -159,7 +261,17 @@
     "prerequisite_zh": "智力 13 以上",
     "prerequisite_en": "Intelligence 13+",
     "summary_zh": "智力 +1（最高 20）；學會三種語言，並可創造他人難以破譯的書寫密碼。",
-    "summary_en": "Increase Intelligence by 1 (maximum 20), learn three languages, and create written ciphers others struggle to decipher."
+    "summary_en": "Increase Intelligence by 1 (maximum 20), learn three languages, and create written ciphers others struggle to decipher.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [
+      "任選三種語言"
+    ],
+    "pro_lan_en": [
+      "Three languages of your choice"
+    ],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "lucky",
@@ -168,7 +280,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "獲得幸運點，可在攻擊、能力檢定、豁免或敵人攻擊你時擲額外 d20 並選擇結果；長休後恢復。",
-    "summary_en": "Gain luck points to roll an extra d20 for your attacks, checks, saves, or an attack against you and choose the result; regain them after a long rest."
+    "summary_en": "Gain luck points to roll an extra d20 for your attacks, checks, saves, or an attack against you and choose the result; regain them after a long rest.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "mage-slayer",
@@ -177,7 +295,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "附近敵人施法時可用反應近戰攻擊；可擾亂其專注，並對其法術豁免具有優勢。",
-    "summary_en": "React with a melee attack when a nearby creature casts a spell; disrupt its concentration and gain advantage on saves against its spells."
+    "summary_en": "React with a melee attack when a nearby creature casts a spell; disrupt its concentration and gain advantage on saves against its spells.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "magic-initiate",
@@ -186,7 +310,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "選擇一個職業的法術列表，學會兩個戲法及一個一環法術；該一環法術每次長休可免費施展一次。",
-    "summary_en": "Choose a class spell list, learn two cantrips and one 1st-level spell; cast that spell once for free per long rest."
+    "summary_en": "Choose a class spell list, learn two cantrips and one 1st-level spell; cast that spell once for free per long rest.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "martial-adept",
@@ -195,7 +325,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "學會兩個戰鬥大師戰技，並獲得一顆較小的卓越骰；短休或長休後恢復。",
-    "summary_en": "Learn two Battle Master maneuvers and gain one smaller superiority die, restored on a short or long rest."
+    "summary_en": "Learn two Battle Master maneuvers and gain one smaller superiority die, restored on a short or long rest.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "medium-armor-master",
@@ -204,7 +340,13 @@
     "prerequisite_zh": "中甲熟練",
     "prerequisite_en": "Medium armor proficiency",
     "summary_zh": "穿中甲不再有潛行劣勢，且可將更高的敏捷調整值加入 AC。",
-    "summary_en": "Medium armor no longer imposes Stealth disadvantage and permits a higher Dexterity contribution to AC."
+    "summary_en": "Medium armor no longer imposes Stealth disadvantage and permits a higher Dexterity contribution to AC.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "mobile",
@@ -213,7 +355,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "速度增加；疾走時可忽略困難地形；近戰攻擊過的生物當回合無法藉機會攻擊阻止你離開。",
-    "summary_en": "Increase speed, ignore difficult terrain while dashing, and avoid opportunity attacks from creatures you have made a melee attack against that turn."
+    "summary_en": "Increase speed, ignore difficult terrain while dashing, and avoid opportunity attacks from creatures you have made a melee attack against that turn.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "moderately-armored",
@@ -222,7 +370,13 @@
     "prerequisite_zh": "輕甲熟練",
     "prerequisite_en": "Light armor proficiency",
     "summary_zh": "力量或敏捷 +1（最高 20），並獲得中甲與盾牌熟練。",
-    "summary_en": "Increase Strength or Dexterity by 1 (maximum 20) and gain proficiency with medium armor and shields."
+    "summary_en": "Increase Strength or Dexterity by 1 (maximum 20) and gain proficiency with medium armor and shields.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "mounted-combatant",
@@ -231,7 +385,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "騎乘時可保護坐騎免受攻擊；對較小的未騎乘生物近戰攻擊有優勢，且坐騎敏捷豁免成功時可免受傷害。",
-    "summary_en": "While mounted, protect your mount from attacks, gain advantage on melee attacks against smaller unmounted creatures, and let your mount take no damage on successful Dexterity saves."
+    "summary_en": "While mounted, protect your mount from attacks, gain advantage on melee attacks against smaller unmounted creatures, and let your mount take no damage on successful Dexterity saves.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "observant",
@@ -240,7 +400,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "智力或感知 +1（最高 20）；能讀唇語，且被動感知與被動調查提高。",
-    "summary_en": "Increase Intelligence or Wisdom by 1 (maximum 20); read lips and improve passive Perception and Investigation."
+    "summary_en": "Increase Intelligence or Wisdom by 1 (maximum 20); read lips and improve passive Perception and Investigation.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "polearm-master",
@@ -249,7 +415,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "以長柄武器攻擊後可用附贈動作以武器另一端攻擊；生物進入你的觸及範圍時會引發機會攻擊。",
-    "summary_en": "After attacking with a qualifying polearm, make a bonus-action butt-end attack; creatures entering your reach provoke opportunity attacks."
+    "summary_en": "After attacking with a qualifying polearm, make a bonus-action butt-end attack; creatures entering your reach provoke opportunity attacks.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "resilient",
@@ -258,7 +430,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "一項屬性 +1（最高 20），並獲得該屬性的豁免熟練。",
-    "summary_en": "Increase one ability score by 1 (maximum 20) and gain proficiency in saving throws using that ability."
+    "summary_en": "Increase one ability score by 1 (maximum 20) and gain proficiency in saving throws using that ability.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "ritual-caster",
@@ -267,7 +445,13 @@
     "prerequisite_zh": "智力或感知 13 以上",
     "prerequisite_en": "Intelligence or Wisdom 13+",
     "summary_zh": "獲得儀式書，可選擇一個職業法術列表中的兩個一環儀式法術，並可持續把新的儀式加入書中。",
-    "summary_en": "Gain a ritual book with two 1st-level ritual spells from one class list and the ability to add additional ritual spells to it."
+    "summary_en": "Gain a ritual book with two 1st-level ritual spells from one class list and the ability to add additional ritual spells to it.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "savage-attacker",
@@ -276,7 +460,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "每回合一次，近戰武器攻擊造成傷害時可重擲傷害骰並選擇使用其中一個結果。",
-    "summary_en": "Once per turn when rolling melee-weapon damage, reroll the damage dice and use either total."
+    "summary_en": "Once per turn when rolling melee-weapon damage, reroll the damage dice and use either total.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "sentinel",
@@ -285,7 +475,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "機會攻擊命中會使目標速度歸零；敵人即使撤離也會引發你的機會攻擊，且可反應攻擊打向同伴的附近敵人。",
-    "summary_en": "Your opportunity-attack hits stop movement; foes provoke even when disengaging, and you can react to attack a nearby foe targeting an ally."
+    "summary_en": "Your opportunity-attack hits stop movement; foes provoke even when disengaging, and you can react to attack a nearby foe targeting an ally.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "sharpshooter",
@@ -294,7 +490,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "遠程攻擊忽略遠距離劣勢與大部分掩蔽；可選擇承受命中減值以換取大幅傷害加值。",
-    "summary_en": "Ranged attacks ignore long-range disadvantage and most cover; take an attack-roll penalty for substantial bonus damage."
+    "summary_en": "Ranged attacks ignore long-range disadvantage and most cover; take an attack-roll penalty for substantial bonus damage.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "shield-master",
@@ -303,7 +505,13 @@
     "prerequisite_zh": "盾牌熟練",
     "prerequisite_en": "Shield proficiency",
     "summary_zh": "攻擊動作中先以單手武器攻擊後，可附贈動作推撞；盾牌可協助敏捷豁免，並在部分成功豁免時避免傷害。",
-    "summary_en": "After a one-handed weapon attack in your Attack action, bonus-action shove; your shield helps on Dexterity saves and can prevent damage from certain successful saves."
+    "summary_en": "After a one-handed weapon attack in your Attack action, bonus-action shove; your shield helps on Dexterity saves and can prevent damage from certain successful saves.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "skilled",
@@ -312,7 +520,21 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "獲得任選三項技能或工具熟練。",
-    "summary_en": "Gain proficiency in any combination of three skills or tools."
+    "summary_en": "Gain proficiency in any combination of three skills or tools.",
+    "pro_skill_zh": [
+      "任選三項技能"
+    ],
+    "pro_skill_en": [
+      "Any three skills"
+    ],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [
+      "任選三項工具"
+    ],
+    "pro_tool_en": [
+      "Any three tools"
+    ]
   },
   {
     "id": "skulker",
@@ -321,7 +543,13 @@
     "prerequisite_zh": "敏捷 13 以上",
     "prerequisite_en": "Dexterity 13+",
     "summary_zh": "昏暗光線不會妨礙依靠視覺的感知；躲藏時未命中的遠程攻擊不會暴露你的位置，且可更容易躲在略被遮蔽處。",
-    "summary_en": "Dim light does not hinder sight-based Perception; missed ranged attacks while hidden do not reveal you, and you can hide more easily when lightly obscured."
+    "summary_en": "Dim light does not hinder sight-based Perception; missed ranged attacks while hidden do not reveal you, and you can hide more easily when lightly obscured.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "spell-sniper",
@@ -330,7 +558,13 @@
     "prerequisite_zh": "能施展至少一個法術",
     "prerequisite_en": "Ability to cast at least one spell",
     "summary_zh": "施放需要攻擊擲骰的法術時，射程加倍且忽略半掩蔽與四分之三掩蔽；另學會一個攻擊戲法。",
-    "summary_en": "Double range for spells requiring attack rolls, ignore half and three-quarters cover, and learn one attack cantrip."
+    "summary_en": "Double range for spells requiring attack rolls, ignore half and three-quarters cover, and learn one attack cantrip.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "tavern-brawler",
@@ -339,7 +573,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "力量或體質 +1（最高 20）；徒手打擊更強、獲得即興武器熟練，且攻擊命中後可附贈動作嘗試擒抱。",
-    "summary_en": "Increase Strength or Constitution by 1 (maximum 20); improve unarmed strikes, gain improvised-weapon proficiency, and bonus-action grapple after a hit."
+    "summary_en": "Increase Strength or Constitution by 1 (maximum 20); improve unarmed strikes, gain improvised-weapon proficiency, and bonus-action grapple after a hit.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "tough",
@@ -348,7 +588,13 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "你的生命值上限會隨等級獲得額外提升，並追溯計入已取得的等級。",
-    "summary_en": "Your hit point maximum increases with your level, including retroactively for levels already gained."
+    "summary_en": "Your hit point maximum increases with your level, including retroactively for levels already gained.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "war-caster",
@@ -357,7 +603,13 @@
     "prerequisite_zh": "能施展至少一個法術",
     "prerequisite_en": "Ability to cast at least one spell",
     "summary_zh": "進行專注豁免時具優勢；手持武器或盾牌也能施展姿勢成分法術；可用單一目標法術進行機會攻擊。",
-    "summary_en": "Gain advantage on concentration saves, cast somatic spells with weapons or a shield in hand, and use a single-target spell for opportunity attacks."
+    "summary_en": "Gain advantage on concentration saves, cast somatic spells with weapons or a shield in hand, and use a single-target spell for opportunity attacks.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   },
   {
     "id": "weapon-master",
@@ -366,6 +618,12 @@
     "prerequisite_zh": "無",
     "prerequisite_en": "None",
     "summary_zh": "力量或敏捷 +1（最高 20），並獲得任選四種簡易或軍用武器熟練。",
-    "summary_en": "Increase Strength or Dexterity by 1 (maximum 20) and gain proficiency with four simple or martial weapons of your choice."
+    "summary_en": "Increase Strength or Dexterity by 1 (maximum 20) and gain proficiency with four simple or martial weapons of your choice.",
+    "pro_skill_zh": [],
+    "pro_skill_en": [],
+    "pro_lan_zh": [],
+    "pro_lan_en": [],
+    "pro_tool_zh": [],
+    "pro_tool_en": []
   }
 ]

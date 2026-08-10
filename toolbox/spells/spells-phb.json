@@ -2287,7 +2287,7 @@
 					]
 				},
 				"此法術沒有考慮任何可能改變結果的情況，例如施展額外法術或失去或獲得同伴。",
-				"如果你在完成下一次長時間休息之前施展該法術兩次或多次，則在第一次施展之後，每次施展都有累積 {@chance 25|||Random reading!|Regular reading} 機會，你會獲得隨機讀數。 DM 秘密進行此擲骰。"
+				"如果你在完成下一次長時間休息之前施展該法術兩次或多次，則在第一次施展之後，每次施展都有累積 {@chance 25|||隨機讀數！|一般讀數} 機會，你會獲得隨機讀數。 DM 秘密進行此擲骰。"
 			],
 			"entries_en": [
 				"By casting gem-inlaid sticks, rolling dragon bones, laying out ornate cards, or employing some other divining tool, you receive an omen from an otherworldly entity about the results of a specific course of action that you plan to take within the next 30 minutes. The DM chooses from the following possible omens:",
@@ -6383,7 +6383,7 @@
 			"entries": [
 				"你聯繫你的神靈或神聖代理人，並提出最多三個問題，可以用“是”或“否”來回答。你必須在法術結束之前提出你的問題。你將收到每個問題的正確答案。",
 				"神靈不一定是無所不知的，因此，如果問題涉及神靈知識之外的信息，你可能會得到“不清楚”的答案。如果一個字的答案可能會產生誤導或違背神的利益，DM 可能會提供一個簡短的短語作為答案。",
-				"如果你在完成下一次長時間休息之前施展該法術兩次或多次，則在第一次施展之後，每次施展都有累積 {@chance 25|||No answer!|Answer} 的機會讓你得不到答案。 DM 秘密進行此擲骰。"
+				"如果你在完成下一次長時間休息之前施展該法術兩次或多次，則在第一次施展之後，每次施展都有累積 {@chance 25|||沒有答案！|答案} 的機會讓你得不到答案。 DM 秘密進行此擲骰。"
 			],
 			"entries_en": [
 				"You contact your deity or a divine proxy and ask up to three questions that can be answered with a yes or no. You must ask your questions before the spell ends. You receive a correct answer for each question.",
@@ -11991,7 +11991,7 @@
 			"entries": [
 				"你的魔法和奉獻讓你與神或神的僕人接觸。你提出一個關於 7 天內發生的特定目標、事件或活動的問題。 DM 提供瞭如實的答覆。回覆可能是一個簡短的短語、一段神秘的韻律或一個預兆。",
 				"此法術沒有考慮任何可能改變結果的情況，例如施展額外法術或失去或獲得同伴。",
-				"如果你在完成下一次長時間休息之前施展該法術兩次或多次，則在第一次施展之後，每次施展都有累積 {@chance 25|||Random reading!|Regular reading} 機會，你會獲得隨機讀數。 DM 秘密進行此擲骰。"
+				"如果你在完成下一次長時間休息之前施展該法術兩次或多次，則在第一次施展之後，每次施展都有累積 {@chance 25|||隨機讀數！|一般讀數} 機會，你會獲得隨機讀數。 DM 秘密進行此擲骰。"
 			],
 			"entries_en": [
 				"Your magic and an offering put you in contact with a god or a god's servants. You ask a single question concerning a specific goal, event, or activity to occur within 7 days. The DM offers a truthful reply. The reply might be a short phrase, a cryptic rhyme, or an omen.",
@@ -16890,7 +16890,7 @@
 				}
 			],
 			"entries": [
-				"你觸摸一個願意的生物並賦予其有限的預見不久的未來的能力。在此期間，目標不能是{@status surprised}，並且在攻擊檢定、能力檢定和豁免檢定上具有優勢。此外，在持續時間內，其他生物在針對目標的攻擊檢定上處於劣勢。",
+				"你觸摸一個願意的生物並賦予其有限的預見不久的未來的能力。在此期間，目標不能是措手不及，並且在攻擊檢定、能力檢定和豁免檢定上具有優勢。此外，在持續時間內，其他生物在針對目標的攻擊檢定上處於劣勢。",
 				"如果你在持續時間結束前再次施放該法術，該法術將立即結束。"
 			],
 			"miscTags": [
