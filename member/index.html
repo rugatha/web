@@ -1017,22 +1017,6 @@
               <span class="detail-value view-only" id="user-religion-display">—</span>
               <select class="detail-value edit-only" id="user-religion">
                 <option value="">—</option>
-                <option value="Trinix 崔尼斯">Trinix 崔尼斯</option>
-                <option value="Phyneal 芬尼爾">Phyneal 芬尼爾</option>
-                <option value="Phynoir 芬諾爾">Phynoir 芬諾爾</option>
-                <option value="Nessis 涅西斯">Nessis 涅西斯</option>
-                <option value="Keinra 津菈">Keinra 津菈</option>
-                <option value="Jeorisan 喬里森">Jeorisan 喬里森</option>
-                <option value="Ultisen 奧提森">Ultisen 奧提森</option>
-                <option value="Maxus 麥克瑟斯">Maxus 麥克瑟斯</option>
-                <option value="Laxthos 拉索斯">Laxthos 拉索斯</option>
-                <option value="Kalinius 凱里涅斯">Kalinius 凱里涅斯</option>
-                <option value="Daligon 達里崗">Daligon 達里崗</option>
-                <option value="Amoret 阿莫雷">Amoret 阿莫雷</option>
-                <option value="The Mother 母親大人">The Mother 母親大人</option>
-                <option value="Anna 安娜">Anna 安娜</option>
-                <option value="Alfenor 阿爾芬諾">Alfenor 阿爾芬諾</option>
-                <option value="King Knicol 神王尼可">King Knicol 神王尼可</option>
               </select>
             </div>
             <div class="detail">
@@ -1050,9 +1034,6 @@
               <span class="detail-value view-only" id="user-kingdom-display">—</span>
               <select class="detail-value edit-only" id="user-kingdom">
                 <option value="">—</option>
-                <option value="Mattington Kingdom 麥丁頓王國">Mattington Kingdom 麥丁頓王國</option>
-                <option value="Lothum Kingdom 洛森王國">Lothum Kingdom 洛森王國</option>
-                <option value="Chryomen Kingdom 克里歐門王國">Chryomen Kingdom 克里歐門王國</option>
               </select>
             </div>
             <div class="detail full-width is-hidden" id="campaign-divider">
@@ -1213,9 +1194,71 @@
     const adminDirectoryHintEl = document.getElementById("admin-directory-hint");
     const adminDirectoryStatusEl = document.getElementById("admin-directory-status");
 
+    let profileChoiceTranslations = { religion: {}, kingdom: {} };
+
+    const normalizeProfileChoice = (type, value) => {
+      const normalized = String(value || "").trim();
+      if (!normalized) return "";
+      const choices = profileChoiceTranslations[type] || {};
+      const match = Object.entries(choices).find(([key, labels]) =>
+        [key, labels.en, labels.zh, `${labels.en} ${labels.zh}`].includes(normalized)
+      );
+      return match?.[1]?.en || normalized;
+    };
+
+    const getProfileChoiceLabel = (type, value, lang) => {
+      const enValue = normalizeProfileChoice(type, value);
+      const choices = profileChoiceTranslations[type] || {};
+      const choice = Object.values(choices).find((labels) => labels.en === enValue);
+      return lang === "zh" ? choice?.zh || enValue : choice?.en || enValue;
+    };
+
+    const updateProfileChoiceOptions = (lang) => {
+      [
+        [religionEl, "religion"],
+        [kingdomEl, "kingdom"]
+      ].forEach(([select, type]) => {
+        const selectedValue = normalizeProfileChoice(type, select.value);
+        select.replaceChildren(new Option("—", ""));
+        Object.values(profileChoiceTranslations[type] || {}).forEach((labels) => {
+          const option = new Option(
+            lang === "zh" ? labels.zh || labels.en : labels.en,
+            labels.en
+          );
+          select.add(option);
+        });
+        select.value = selectedValue;
+      });
+    };
+
+    const loadProfileOptions = async () => {
+      try {
+        const response = await fetch("./member_options.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const source = await response.json();
+        const next = {};
+        Object.entries(source).forEach(([type, values]) => {
+          next[type] = {};
+          Object.entries(values || {}).forEach(([key, label]) => {
+            const language = key.endsWith("_zh") ? "zh" : key.endsWith("_en") ? "en" : null;
+            if (!language) return;
+            const baseKey = key.slice(0, -3);
+            next[type][baseKey] ||= {};
+            next[type][baseKey][language] = String(label);
+          });
+        });
+        profileChoiceTranslations = next;
+        updateProfileChoiceOptions(authState.language);
+        syncDisplayValues();
+      } catch (error) {
+        console.error("Failed to load member options", error);
+      }
+    };
+
     let app = null;
     let db = null;
     let auth = null;
+    let profileOptionsReady = Promise.resolve();
     let persistenceReady = Promise.resolve();
     let profilePhotoUrl = null;
     let bookmarksUnsubscribe = null;
@@ -2044,10 +2087,18 @@
 
     const syncDisplayValues = () => {
       titleDisplayEl.textContent = titleEl.value.trim() || "—";
-      religionDisplayEl.textContent = religionEl.value || "—";
+      religionDisplayEl.textContent = getProfileChoiceLabel(
+        "religion",
+        religionEl.value,
+        authState.language
+      ) || "—";
       speciesDisplayEl.textContent = speciesEl.value.trim() || "—";
       classDisplayEl.textContent = classEl.value.trim() || "—";
-      kingdomDisplayEl.textContent = kingdomEl.value || "—";
+      kingdomDisplayEl.textContent = getProfileChoiceLabel(
+        "kingdom",
+        kingdomEl.value,
+        authState.language
+      ) || "—";
     };
 
     const syncHiddenAttributes = (data = {}) => {
@@ -2364,10 +2415,10 @@
       emailEl.textContent = displayEmail;
       memberNoEl.textContent = formatMemberNo(data.memberNo);
       titleEl.value = data.title || "";
-      religionEl.value = data.religion || "";
+      religionEl.value = normalizeProfileChoice("religion", data.religion);
       speciesEl.value = data.species || "";
       classEl.value = data.className || "";
-      kingdomEl.value = data.kingdom || "";
+      kingdomEl.value = normalizeProfileChoice("kingdom", data.kingdom);
       setProfilePhoto(data.photoUrl || user?.photoURL || null);
       syncDisplayValues();
       syncHiddenAttributes(data);
@@ -2411,6 +2462,7 @@
 
     const loadProfileFromDatabase = async (user) => {
       if (!user?.uid || !db) return;
+      await profileOptionsReady;
       const defaultMemberId = resolveMemberId(user, null);
       const dictionary = translations[authState.language] || translations.en;
       const canViewRequestedMember = Boolean(requestedMemberId && isAdminUser(user));
@@ -2487,10 +2539,10 @@
         memberNoEl.textContent = formattedMemberNo;
         authState.memberNo = memberNoValue || null;
         titleEl.value = data.title || "";
-        religionEl.value = data.religion || "";
+        religionEl.value = normalizeProfileChoice("religion", data.religion);
         speciesEl.value = data.species || "";
         classEl.value = data.className || "";
-        kingdomEl.value = data.kingdom || "";
+        kingdomEl.value = normalizeProfileChoice("kingdom", data.kingdom);
         setProfilePhoto(data.photoUrl || null);
         syncDisplayValues();
         syncHiddenAttributes(data);
@@ -2579,6 +2631,7 @@
 
     const applyProfileCopy = (lang) => {
       const dictionary = translations[lang] || translations.en;
+      updateProfileChoiceOptions(lang);
       if (adminDirectoryHintEl) {
         adminDirectoryHintEl.textContent = dictionary.adminDirectoryHint;
       }
@@ -2603,6 +2656,7 @@
       hintEl.textContent = authState.readOnlyView
         ? dictionary.profileViewOnlyHint
         : dictionary.profileSignedIn;
+      syncDisplayValues();
     };
 
     const authState = {
@@ -2916,8 +2970,9 @@
       }
     });
 
+    profileOptionsReady = loadProfileOptions();
     loadAchievementsCatalog();
-    setLanguage(authState.language);
+    profileOptionsReady.finally(() => setLanguage(authState.language));
   </script>
 
   <script type="module" src="../shared/auth.js"></script>
