@@ -80,10 +80,10 @@
       "R2": "艾麗克斯皺著眉頭，把你趕了出去。他不喜歡有人打擾他研究。"
     },
     "qaEn": {
-      "Q": "Alex looks at the strange equipment on your body, asking if you're willing to ket her do some testing on it?",
+      "Q": "Alex looks at the strange equipment on your body, asking if you're willing to let her do some testing on it?",
       "C1": "You nod, permitting Alex to start researching.",
       "C2": "You shake your head. This is your precious, Alex can't just touch it.",
-      "R1": "After some research, Alex asks if she can buy your equipments for 50 gold pieces.",
+      "R1": "After some research, Alex asks if she can buy your equipment for 50 gold pieces.",
       "R2": "Alex frowns, and waves you out. She doesn't like to be interrupted in the middle of her research."
     }
   },
@@ -386,7 +386,8 @@
     "descZh": "麥克嵩當地的七歲小女孩。父母在比武大會中死去，因此成為孤兒。\n因為視台北市議員為偶像，要求加入一起冒險。在米多莉與喜利的認可下加入台北市議員，並視米多莉為媽媽，喜利為爸爸。\n說話十分衝動不忌言，才剛加入台北市議員，得罪了當中不少人。\n到妖精荒野後，以救世主的身份留在那裡，但最終除了波外，其他當地居民都在拉索斯教入侵後被消滅。回到物質世界時已年過40，便和冒險者們一起繼續以剿滅拉索斯教為目標冒險。",
     "descEn": "A seven-year-old girl from Macksohn whose parents died in the Macksohn Tournament, leaving her an orphan.\nBeau idolized the Councilors of Taipei and asked to join them. With Midori and Siri's approval, she joined the party and came to see Midori as her mother and Siri as her father.\nShe speaks recklessly and offended several party members soon after joining.\nAfter traveling to the Feywild, Beau stayed there as the Savior. When the Laxthos invasion destroyed the local civilization, she was the only survivor. Because of the Feywild's time distortion, she returned to the material world in her forties and continued traveling with the adventurers to fight Laxthos.",
     "related": [
-      "Elby__Dr_White"
+      "Elby__Dr_White",
+      "Zek"
     ],
     "nameEn": "Beau",
     "nameZh": "波",
@@ -653,7 +654,7 @@
       "C1": "Control BoBo-V. It's dangerous of it to run around like this.",
       "C2": "No need to care about BoBo-V. Praying over Zach's dead body is priority.",
       "R1": "BoBo-V struggles, but can't do a thing under your control.",
-      "R2": "BoBo-V is out of sight. The, your hear a dragon's roar from within the cave."
+      "R2": "BoBo-V is out of sight. Then, you hear a dragon's roar from within the cave."
     }
   },
   {
@@ -666,8 +667,7 @@
     "descEn": "A humanoid robot that accompanied the adventurers and BoBo-C to finalize the trade between the Lothum Kingdom and the Chryomen Kingdom, but was disassembled by itself due to the adventurers’ command. It was labeled BoBo-OMEGA.\nIt had a setting that due to its name close to the robot series BoBo, it disliked its name when it was young.\nThere seemed to be someone behind it other that Queen Uma of the Chryomen Kingdom, but it remained anonymous.\nBol-Bol is fully aware that it is actually a robot.",
     "related": [
       "BoBoCBoBoZ",
-      "BoBoVBoBoW",
-      "Queen_Uma"
+      "BoBoVBoBoW"
     ],
     "nameEn": "Bol-Bol/BoBo-OMEGA",
     "nameZh": "波波/啵啵OMEGA",
@@ -699,7 +699,7 @@
       "C1": "Join your companion, and learn the mechanism.",
       "C2": "Stop your companion. You still have a mission to complete.",
       "R1": "You find a mysterious device. This can definitely fetch a good price.",
-      "R2": "Your companion is not pleased with you. Your hear Bol-Bol saying thank you."
+      "R2": "Your companion is not pleased with you. You hear Bol-Bol saying thank you."
     }
   },
   {
@@ -1410,7 +1410,7 @@
     },
     "qaEn": {
       "Q": "\" Chant the spell after me.\" Dr. White smiles and says. But you have no idea what kind of language she uses in the spells.",
-      "C1": "Chant the spell with Dr. White. Even if you don't understand the language, it's alright if that sounds similiar, right?",
+      "C1": "Chant the spell with Dr. White. Even if you don't understand the language, it's alright if that sounds similar, right?",
       "C2": "Stay next to Dr. White without chanting the spell.",
       "R1": "Your body glows, aching, then you faint.",
       "R2": "You see the body of Dr. White fading, and disappears."
@@ -1426,8 +1426,7 @@
     "descEn": "The new king of the Mattington Kingdom.\nHe is about ten years old, and his mother is Lady Marian.\nWhen the adventurers met him, Elliot IV seemed young and lacking real power; Marianne also regarded him as a puppet. After his father Benevol II abdicated and disappeared, Benevol was later found dead, with his crown and royal seal being secretly transported.",
     "related": [
       "King_Benevol_II",
-      "Lady_Marian",
-      "Lord_Ishton"
+      "Lady_Marian"
     ],
     "nameEn": "King Elliot IV",
     "nameZh": "艾略特四世",
@@ -1473,7 +1472,7 @@
     "descZh": "阿龍的養母，十分溫柔慈祥。",
     "descEn": "Al-lon’s foster mother.\nElly is a warm and gentle lady.",
     "related": [
-      "leonard_old_pipe_riversend"
+      "Leonard_Old_Pipe_Riversend"
     ],
     "nameEn": "Elly Riversend",
     "nameZh": "河艾麗",
@@ -1741,7 +1740,7 @@
       "Q": "You see Penny inviting the Evil Be-4 as her Spring Knights, preparing to meet the bandits.",
       "C1": "You suspect Penny's taste. That's pretty bad.",
       "C2": "Penny wouldn't have any leverage over them, would she? You worry.",
-      "R1": "Although Penny is still the prettiest girl in Mudtown, her position in your heart have wavered.",
+      "R1": "Although Penny is still the prettiest girl in Mudtown, her position in you heart have wavered.",
       "R2": "You see a weird expression on Pibble's dirty face. You feel disgusted."
     }
   },
@@ -1805,7 +1804,6 @@
     "descEn": "The mentor of Paladin, ex-head of the knight in the Mattington Kingdom, now retired.\nWas a generous host, but seems to have some gap with his wife, as they slept separately.\nKnew a lot about the sex industry in Korringfield.\nFlaerry didn’t have any child, thus saw Paladin as his son.\nHe gave up his title to ask for the Violet of Macksohn to admit Paladin as her child.",
     "related": [
       "Rosa_Flaerry",
-      "Syr Magnus",
       "Syr_Magnus",
       "Xandria_the_Violet_of_Macksohn"
     ],
@@ -1837,7 +1835,7 @@
     "qaEn": {
       "Q": "You see Mr. Flaerry looking around, then sneaks into a tavern without a sign.",
       "C1": "Walk slowly pass the tavern, and look inside.",
-      "C2": "Act like you know knothing, and walk into the tavern.",
+      "C2": "Act like you know nothing, and walk into the tavern.",
       "R1": "You see dimness in the tavern. You can't see anything.",
       "R2": "You see Mr. Flaerry talks with a young man intimately. Their fingers crossing each others'."
     }
@@ -2958,7 +2956,7 @@
       "C1": "Carry Kojo on his back, and take him away.",
       "C2": "Listen to Kojo, and escape with your companions.",
       "R1": "Not after long, Kojo fall from your back. You check, and he's not breathing anymore.",
-      "R2": "You see the ritual engulfed by fire. Kojo will continue to live in your heart."
+      "R2": "You see the ritual engulfed by fire. Kojo will continue to live in you heart."
     }
   },
   {
@@ -4121,7 +4119,7 @@
       "R2": "米可時不時嘲諷你和夥伴的行為，試圖引起你的回覆。"
     },
     "qaEn": {
-      "Q": "Your hear a voice in your head, saying that he is Mikkel Drogskol. But none of your companions hear that.",
+      "Q": "You hear a voice in your head, saying that he is Mikkel Drogskol. But none of your companions hear that.",
       "C1": "Try to communicate with the voice.",
       "C2": "Act like the voice doesn't exist.",
       "R1": "Mikkel tells you that there is a huge cave under the manor.",
@@ -4798,7 +4796,8 @@
       "芬尼爾"
     ],
     "locationEn": [
-      "Phreit"
+      "Phreit",
+      "Yarros"
     ],
     "locationZh": [
       "弗萊特",
@@ -4816,7 +4815,7 @@
       "C1": "You give up communicating with Phola. Would he quit drinking if you talk to him?",
       "C2": "You talk to Phola deeply during your night shift. Maybe he'll think thoroughly.",
       "R1": "He has another hangover the next day. Your schedule is postponed, again.",
-      "R2": "Your words makes Phola think again. Although he doesn't stop drinking immediately, you think he looks different."
+      "R2": "Your words make Phola think again. Although he doesn't stop drinking immediately, you think he looks different."
     }
   },
   {
@@ -4856,7 +4855,7 @@
       "R2": "昆妮爽快地帶你從服務中心走出。"
     },
     "qaEn": {
-      "Q": "\" Welcome to Wescoe!\" Your hear Queenie's loud voice.",
+      "Q": "\" Welcome to Wescoe!\" You hear Queenie's loud voice.",
       "C1": "Buy a map from Queenie.",
       "C2": "Ask Queenie to tour you in Wescoe.",
       "R1": "Queenie hands you the map, and also gives you a postcard.",
@@ -6270,7 +6269,7 @@
     "status": "alive",
     "gender": "male",
     "descZh": "阿龍的堂弟。\n十分年輕，卻是艾瑞利斯家族內最聰明的存在。\n與姊姊奈梨紗感情很好。\n擅長各種魔法，甚至會竄改記憶的魔法。\n在姊姊奈梨紗被定罪後，利用魔法將自己的記憶洗去。",
-    "descEn": "Al-lon’s cousin.\nVery young, but already the smartest one in the whole Arylith family.\nVaelric is very close to his sister Nylessa.\nExpert in all kinds of magic, and can even perform magic that alter memories.\nWhen his sister Nylessa got convicted, Vaelric used magic to wipe his own memory.",
+    "descEn": "Al-lon’s cousin.\nVery young, but already the smartest one in the whole Arylith family.\nVaelric is very close to his sister Nylessa.\nExpert in all kinds of magic, and can even perform magic that altar memories.\nWhen his sister Nylessa got convicted, Vaelric used magic to wipe his own memory.",
     "related": [
       "Enelmor_Arylith",
       "Nylessa_Arylith",
@@ -7106,7 +7105,8 @@
     "descZh": "克萊芬「老樹盟」的領導者，利斯達上校。\n他由老兵、軍閥與大型企業支持，主張克萊芬回歸萊斯諾，必要時也接受以武力達成目標。\n他與彭薩公會長討論刺殺皮尼歐教授的密謀。",
     "descEn": "Colonel Lisdar leads the Ancient Tree League.\nBacked by veterans, warlords, and major businesses, he believes Clyphen should return to Lesnor and is willing to use force if necessary.\nHe discussed the secret assassination plot against Professor Peneo with President Bonza.",
     "related": [
-      "President_Bonza"
+      "President_Bonza",
+      "Captain_Reid"
     ],
     "nameEn": "Colonel Lisdar",
     "nameZh": "利斯達上校",

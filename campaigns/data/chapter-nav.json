@@ -685,7 +685,7 @@
     "prev-chapter": "brown-c01-chpt05",
     "next-chapter": null
   },
-  "legends-os01-chpt01": {
+  "legends-os01": {
     "story-arc": {
       "id": "legends-os01",
       "url": "/campaigns/pages/rugatha-legends/legends-os01/"
@@ -693,7 +693,7 @@
     "prev-chapter": null,
     "next-chapter": null
   },
-  "legends-os02-chpt01": {
+  "legends-os02": {
     "story-arc": {
       "id": "legends-os02",
       "url": "/campaigns/pages/rugatha-legends/legends-os02/"
@@ -701,7 +701,7 @@
     "prev-chapter": null,
     "next-chapter": null
   },
-  "legends-os03-chpt01": {
+  "legends-os03": {
     "story-arc": {
       "id": "legends-os03",
       "url": "/campaigns/pages/rugatha-legends/legends-os03/"
@@ -709,7 +709,7 @@
     "prev-chapter": null,
     "next-chapter": null
   },
-  "legends-os04-chpt01": {
+  "legends-os04": {
     "story-arc": {
       "id": "legends-os04",
       "url": "/campaigns/pages/rugatha-legends/legends-os04/"
@@ -717,7 +717,7 @@
     "prev-chapter": null,
     "next-chapter": null
   },
-  "legends-os06-chpt01": {
+  "legends-os06": {
     "story-arc": {
       "id": "legends-os06",
       "url": "/campaigns/pages/rugatha-legends/legends-os06/"
@@ -725,7 +725,7 @@
     "prev-chapter": null,
     "next-chapter": null
   },
-  "legends-os07-chpt01": {
+  "legends-os07": {
     "story-arc": {
       "id": "legends-os07",
       "url": "/campaigns/pages/rugatha-legends/legends-os07/"
@@ -733,7 +733,7 @@
     "prev-chapter": null,
     "next-chapter": null
   },
-  "legends-os08-chpt01": {
+  "legends-os08": {
     "story-arc": {
       "id": "legends-os08",
       "url": "/campaigns/pages/rugatha-legends/legends-os08/"
@@ -741,7 +741,7 @@
     "prev-chapter": null,
     "next-chapter": null
   },
-  "legends-os09-chpt01": {
+  "legends-os09": {
     "story-arc": {
       "id": "legends-os09",
       "url": "/campaigns/pages/rugatha-legends/legends-os09/"
@@ -749,7 +749,7 @@
     "prev-chapter": null,
     "next-chapter": null
   },
-  "legends-os10-chpt01": {
+  "legends-os10": {
     "story-arc": {
       "id": "legends-os10",
       "url": "/campaigns/pages/rugatha-legends/legends-os10/"

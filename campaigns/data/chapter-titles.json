@@ -23,19 +23,19 @@
     "en": "Chapter 1: Mesmerized",
     "zh": "第一章：催眠"
   },
-  "legends-os01-chpt01": {
+  "legends-os01": {
     "en": "The False Hydra of Moorland Haunt",
     "zh": "鬧鬼荒野的偽多頭龍"
   },
-  "legends-os02-chpt01": {
+  "legends-os02": {
     "en": "The Disappearance of Gustavo Norman",
     "zh": "古斯塔夫．諾曼的失蹤"
   },
-  "legends-os03-chpt01": {
+  "legends-os03": {
     "en": "The Lighthouse on the Deserted Island",
     "zh": "荒島上的燈塔"
   },
-  "legends-os04-chpt01": {
+  "legends-os04": {
     "en": "The Deadly Prison Break",
     "zh": "致命越獄"
   },
@@ -47,27 +47,28 @@
     "en": "Chapter 2: The Trade",
     "zh": "第二章：交易"
   },
-  "legends-os06-chpt01": {
+  "legends-os06": {
     "en": "The Malicious Rise of Alfenor",
     "zh": "阿爾芬諾的惡邪崛起"
   },
-  "legends-os07-chpt01": {
+  "legends-os07": {
     "en": "Mylstan Colossus",
     "zh": "邁爾斯坦巨像"
   },
-  "legends-os08-chpt01": {
+  "legends-os08": {
     "en": "Lord Octavian von Oderick’s Dungeon of Randomness",
     "zh": "屋大維．馮．歐德里克大人的隨機地城"
   },
-  "legends-os09-chpt01": {
+  "legends-os09": {
     "en": "To the Deep and Back",
     "zh": "往返深淵"
   },
-  "legends-os10-chpt01": {
+  "legends-os10": {
     "en": "The Invisible Spell",
     "zh": "隱形咒語"
   },
   "lite-c05-chpt01": {
+    "canonicalId": "rugatha-c05-chpt01",
     "en": "Chapter 1: The Aftermath",
     "zh": "第一章：餘波"
   },
@@ -192,6 +193,7 @@
     "zh": "第五章：涅西斯的神選者"
   },
   "plus-c05-chpt01": {
+    "canonicalId": "rugatha-c05-chpt01",
     "en": "Chapter 1: The Aftermath",
     "zh": "第一章：餘波"
   },

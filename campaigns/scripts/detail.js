@@ -169,15 +169,6 @@
     "legends-os08": "legends-os08.png",
     "legends-os09": "legends-os09.png",
     "legends-os10": "legends-os10.png",
-    "legends-os01-chpt01": "legends-os01-chpt01.jpg",
-    "legends-os02-chpt01": "legends-os02-chpt01.jpg",
-    "legends-os03-chpt01": "legends-os03-chpt01.jpg",
-    "legends-os04-chpt01": "legends-os04-chpt01.jpg",
-    "legends-os06-chpt01": "legends-os06-chpt01.jpg",
-    "legends-os07-chpt01": "legends-os07-chpt01.jpg",
-    "legends-os08-chpt01": "legends-os08.png",
-    "legends-os09-chpt01": "legends-os09.png",
-    "legends-os10-chpt01": "legends-os10.png",
     // Experience (optional, in case used)
     "exp-e01": "exp-e01.png",
     "exp-e02": "exp-e02.png"

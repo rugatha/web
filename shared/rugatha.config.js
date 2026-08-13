@@ -555,6 +555,7 @@
     "plus-c05": [
       {
         id: "plus-c05-chpt01",
+        canonicalId: "rugatha-c05-chpt01",
         title: "Chapter 1: The Aftermath",
         url: "../../rugatha/rugatha-c05/chpt01.html"
       },
@@ -627,6 +628,7 @@
     "lite-c05": [
       {
         id: "lite-c05-chpt01",
+        canonicalId: "rugatha-c05-chpt01",
         title: "Chapter 1: The Aftermath",
         url: "../../rugatha/rugatha-c05/chpt01.html"
       },
@@ -930,63 +932,63 @@
 
     "legends-os01": [
       {
-        id: "legends-os01-chpt01",
+        id: "legends-os01",
         title: "The False Hydra of Moorland Haunt",
         url: "../rugatha-legends/legends-os01/"
       }
     ],
     "legends-os02": [
       {
-        id: "legends-os02-chpt01",
+        id: "legends-os02",
         title: "The Disappearance of Gustavo Norman",
         url: "../rugatha-legends/legends-os02/"
       }
     ],
     "legends-os03": [
       {
-        id: "legends-os03-chpt01",
+        id: "legends-os03",
         title: "The Lighthouse on the Deserted Island",
         url: "../rugatha-legends/legends-os03/"
       }
     ],
     "legends-os04": [
       {
-        id: "legends-os04-chpt01",
+        id: "legends-os04",
         title: "The Deadly Prison Break",
         url: "../rugatha-legends/legends-os04/"
       }
     ],
     "legends-os06": [
       {
-        id: "legends-os06-chpt01",
+        id: "legends-os06",
         title: "The Malicious Rise of Alfenor",
         url: "../rugatha-legends/legends-os06/"
       }
     ],
     "legends-os07": [
       {
-        id: "legends-os07-chpt01",
+        id: "legends-os07",
         title: "Mylstan Colossus",
         url: "../rugatha-legends/legends-os07/"
       }
     ],
     "legends-os08": [
       {
-        id: "legends-os08-chpt01",
+        id: "legends-os08",
         title: "Lord Octavian von Oderick’s Dungeon of Randomness",
         url: "../rugatha-legends/legends-os08/"
       }
     ],
     "legends-os09": [
       {
-        id: "legends-os09-chpt01",
+        id: "legends-os09",
         title: "To the Deep and Back 往返深淵",
         url: "../rugatha-legends/legends-os09/"
       }
     ],
     "legends-os10": [
       {
-        id: "legends-os10-chpt01",
+        id: "legends-os10",
         title: "The Invisible Spell 隱形咒語",
         url: "../rugatha-legends/legends-os10/"
       }
@@ -1096,15 +1098,15 @@
     "brown-c01-chpt04": "../chapter-banners/brown-c01-chpt04.png",
     "brown-c01-chpt05": "../chapter-banners/brown-c01-chpt05.png",
     "brown-c02-chpt01": "../chapter-banners/brown-c02-chpt01.png",
-    "legends-os01-chpt01": "../chapter-banners/legends-os01-chpt01.jpg",
-    "legends-os02-chpt01": "../campaign-banners/legends-os02.jpg",
-    "legends-os03-chpt01": "../campaign-banners/legends-os03.jpg",
-    "legends-os04-chpt01": "../campaign-banners/legends-os04.jpg",
-    "legends-os06-chpt01": "../campaign-banners/legends-os06.jpg",
-    "legends-os07-chpt01": "../campaign-banners/legends-os07.jpg",
-    "legends-os08-chpt01": "../campaign-banners/legends-os08.png",
-    "legends-os09-chpt01": "../campaign-banners/legends-os09.png",
-    "legends-os10-chpt01": "../campaign-banners/legends-os10.png",
+    "legends-os01": "../campaign-banners/legends-os01.jpg",
+    "legends-os02": "../campaign-banners/legends-os02.jpg",
+    "legends-os03": "../campaign-banners/legends-os03.jpg",
+    "legends-os04": "../campaign-banners/legends-os04.jpg",
+    "legends-os06": "../campaign-banners/legends-os06.jpg",
+    "legends-os07": "../campaign-banners/legends-os07.jpg",
+    "legends-os08": "../campaign-banners/legends-os08.png",
+    "legends-os09": "../campaign-banners/legends-os09.png",
+    "legends-os10": "../campaign-banners/legends-os10.png",
     "legends-os05-chpt01": "../chapter-banners/legends-os05-chpt01.png",
     "legends-os05-chpt02": "../chapter-banners/legends-os05-chpt02.png"
   };
