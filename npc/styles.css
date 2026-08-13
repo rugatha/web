@@ -6,7 +6,7 @@
   --muted: #94a3b8;
   --shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   --radius: 18px;
-  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Space Grotesk", "Noto Sans TC", system-ui, sans-serif;
 }
 
 * {
@@ -453,8 +453,8 @@ main {
   background: linear-gradient(145deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.05));
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--text);
-  font-weight: 800;
-  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-family: var(--font-title);
   font-size: clamp(28px, 5vw, 48px);
   letter-spacing: 2px;
   box-shadow: var(--shadow);

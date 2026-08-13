@@ -32,10 +32,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/rugatha-favicon-32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../campaigns/styles/campaign-detail.css">
   <style>
     :root {
+      --font-body: "Space Grotesk", "Noto Sans TC", system-ui, sans-serif;
       --bg: #445f56;
       --panel: rgba(19, 28, 32, 0.72);
       --card: rgba(255, 255, 255, 0.06);
@@ -55,7 +56,7 @@
       padding: 28px 18px 40px;
       background: #445f56;
       color: var(--text);
-      font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
     }
 
     .page {

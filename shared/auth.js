@@ -71,7 +71,7 @@ const ensureAuthStyles = () => {
       justify-self: center;
       align-self: center;
       grid-column: 1 / -1;
-      font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
     }
 
     .auth-entry [hidden] {

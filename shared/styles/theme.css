@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Noto+Serif+TC:wght@700;900&family=Playfair+Display:wght@600;700&family=Fraunces:wght@600;700&display=swap");
 
 /* Shared palette and base typography used across Rugatha tools */
 :root {
@@ -11,7 +11,10 @@
   --accent-soft: rgba(123, 220, 181, 0.18);
   --radius: 18px;
   --shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
-  --font-body: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  --font-body: "Space Grotesk", "Noto Sans TC", system-ui, sans-serif;
+  --font-title: "Noto Serif TC", serif;
+  --font-display: "Playfair Display", "Noto Serif TC", serif;
+  --font-fate: "Fraunces", "Noto Serif TC", serif;
   --skeleton-base: rgba(255, 255, 255, 0.08);
   --skeleton-highlight: rgba(255, 255, 255, 0.2);
 }

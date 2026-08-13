@@ -149,7 +149,7 @@ body {
 
 .deity-image.fallback span {
   position: relative;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 42px;
   color: var(--text);
   z-index: 1;

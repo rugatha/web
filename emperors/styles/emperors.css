@@ -233,7 +233,7 @@ body {
   font-size: 18px;
   letter-spacing: 0.02em;
   color: #f6e6b2;
-  font-family: "Playfair Display", "Times New Roman", serif;
+  font-family: var(--font-display);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
@@ -242,7 +242,7 @@ body {
   color: #e8dcc0;
   font-size: 14px;
   font-weight: 700;
-  font-family: "Playfair Display", "Times New Roman", serif;
+  font-family: var(--font-display);
 }
 
 .card-divider {

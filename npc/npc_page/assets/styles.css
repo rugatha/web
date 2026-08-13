@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Noto+Serif+TC:wght@700;900&family=Fraunces:wght@600;700&display=swap");
+
 :root {
   --bg: #445f56;
   --panel: rgba(19, 28, 32, 0.7);
@@ -6,10 +8,10 @@
   --accent: #7bdcb5;
   --radius: 18px;
   --shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
-  --fate-title-font: "Fraunces", "Times New Roman", serif;
+  --font-body: "Space Grotesk", "Noto Sans TC", system-ui, sans-serif;
+  --font-title: "Noto Serif TC", serif;
+  --font-fate: "Fraunces", "Noto Serif TC", serif;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&display=swap");
 
 * { box-sizing: border-box; }
 
@@ -18,7 +20,7 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
-  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   font-size: 18px;
 }
 
@@ -86,7 +88,7 @@ body {
   border-radius: 999px;
   cursor: pointer;
   transition: background 150ms ease, box-shadow 150ms ease, opacity 150ms ease, transform 150ms ease;
-  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
 }
 
 .language-toggle button[aria-pressed="true"] {
@@ -534,7 +536,7 @@ code {
 }
 
 .qa--fate .section-title--center {
-  font-family: var(--fate-title-font);
+  font-family: var(--font-fate);
   font-size: clamp(30px, 4vw, 44px);
   letter-spacing: 0.06em;
   text-transform: uppercase;

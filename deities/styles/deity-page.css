@@ -6,7 +6,7 @@ body {
     radial-gradient(circle at 80% 10%, rgba(98, 140, 255, 0.14), transparent 32%),
     radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.06), transparent 30%),
     #0b1216;
-  font-family: var(--font-body, "Inter", system-ui, -apple-system, "Segoe UI", sans-serif);
+  font-family: var(--font-body);
   overflow-x: hidden;
   text-align: center;
 }
@@ -209,7 +209,7 @@ body {
   background: linear-gradient(135deg, #1f2b30, #2f3a42);
   color: #e8f7ef;
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .deity-meta {
@@ -309,7 +309,7 @@ body {
 .deity-saying::before,
 .deity-saying::after {
   position: absolute;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 20px;
   color: rgba(159, 232, 196, 0.9);
   opacity: 0.95;
