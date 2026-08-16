@@ -1,10 +1,10 @@
 [
   {
     "title": {
-      "zh": "8月體驗團 《洛林精神》報名",
+      "zh": "9月體驗團 《洛林精神》報名",
       "en": "\"The Spirit of Lorin\" Registration"
     },
-    "date": "2026-08-0X",
+    "date": "2026-09-0XX",
     "category": {
       "zh": "體驗團",
       "en": "Beginner-Friendly\nOne-Shot"
@@ -20,18 +20,18 @@
   },
   {
     "title": {
-      "zh": "8月體驗團 《洛林精神》",
-      "en": "August One-Shot \"The Spirit of Lorin\""
+      "zh": "9月體驗團 《洛林精神》",
+      "en": "September One-Shot \"The Spirit of Lorin\""
     },
-    "date": "2026-08-15",
+    "date": "2026-09-XX",
     "category": {
       "zh": "體驗團",
       "en": "Beginner-Friendly\nOne-Shot"
     },
     "link": "/experience/index.html",
     "note": {
-      "zh": "報名截止 2026/8/8 23:59 (GMT+8)",
-      "en": "Registration closes on August 8, 2026, at 11:59 PM (GMT+8)"
+      "zh": "報名截止 2026/9/X 23:59 (GMT+8)",
+      "en": "Registration closes on September X, 2026, at 11:59 PM (GMT+8)"
     },
     "image": "assets/banner/rugatha-experience.jpeg",
     "isTransparent": false,
