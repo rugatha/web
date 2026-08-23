@@ -563,6 +563,16 @@
   {
     "type": "event",
     "era": "new-dranison",
+    "titleZh": "混血之子現身",
+    "titleEn": "The Mixed Child Revealed",
+    "tag": "rugatha-wilds",
+    "date": "15049.05.21",
+    "descZh": "老樹盟公開宣傳雷亞是萊斯諾龍人與克萊芬蜥蜴人的混血之子，試圖迫使他公開支持利斯達上校；雷亞拒絕了老樹盟的提議。\n雷亞與冒險者們回到新書院尋求協助，卻見證瓦羅恩領導下的新書院驅逐並虐待質疑理念的學生。",
+    "descEn": "The Old Tree League publicly revealed Leah as the mixed child of a Leisnor dragonborn and a Clyphen lizardfolk, trying to pressure her into supporting Colonel Lisdar; Leah rejected the league's offer.\nLeah and the adventurers returned to the New Academy for help, only to witness the academy under Varoen expel and abuse a student who questioned its ideals."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
     "titleZh": "往返深淵",
     "titleEn": "To the Deep and Back",
     "tag": "rugatha-legends",

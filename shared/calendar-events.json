@@ -39,10 +39,10 @@
   },
   {
     "title": {
-      "zh": "Rugatha Wilds S20",
-      "en": "Rugatha Wilds S20"
+      "zh": "Rugatha Wilds S21",
+      "en": "Rugatha Wilds S21"
     },
-    "date": "2026-08-22",
+    "date": "2026-09-19",
     "category": {
       "zh": "長團",
       "en": "Campaign"
@@ -58,18 +58,18 @@
   },
   {
     "title": {
-      "zh": "Rugatha Veil S0",
-      "en": "Rugatha Veil S0"
+      "zh": "Rugatha Veil S0.5",
+      "en": "Rugatha Veil S0.5"
     },
-    "date": "2026-08-23",
+    "date": "2026-09-??",
     "category": {
       "zh": "長團",
       "en": "Campaign"
     },
     "link": "",
     "note": {
-      "zh": "第 0 次跑團",
-      "en": "Session 0"
+      "zh": "第 0.5 次跑團",
+      "en": "Session 0.5"
     },
     "image": "assets/campaign_logo/logo_RVeil.png",
     "isTransparent": true,
