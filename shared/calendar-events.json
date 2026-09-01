@@ -4,12 +4,12 @@
       "zh": "9月體驗團 《洛林精神》報名",
       "en": "\"The Spirit of Lorin\" Registration"
     },
-    "date": "2026-09-0XX",
+    "date": "2026-09-19",
     "category": {
       "zh": "體驗團",
       "en": "Beginner-Friendly\nOne-Shot"
     },
-    "link": "https://www.surveycake.com/s/eBLMm",
+    "link": "https://www.surveycake.com/s/r9yyB",
     "note": {
       "zh": "目前尚有名額，還請把握機會！",
       "en": "Spots are still available, sign up while you can!"
@@ -23,14 +23,14 @@
       "zh": "9月體驗團 《洛林精神》",
       "en": "September One-Shot \"The Spirit of Lorin\""
     },
-    "date": "2026-09-XX",
+    "date": "2026-09-25",
     "category": {
       "zh": "體驗團",
       "en": "Beginner-Friendly\nOne-Shot"
     },
     "link": "/experience/index.html",
     "note": {
-      "zh": "報名截止 2026/9/X 23:59 (GMT+8)",
+      "zh": "報名截止 2026/9/19 23:59 (GMT+8)",
       "en": "Registration closes on September X, 2026, at 11:59 PM (GMT+8)"
     },
     "image": "assets/banner/rugatha-experience.jpeg",
@@ -61,7 +61,7 @@
       "zh": "Rugatha Veil S0.5",
       "en": "Rugatha Veil S0.5"
     },
-    "date": "2026-09-??",
+    "date": "2026-10-03",
     "category": {
       "zh": "長團",
       "en": "Campaign"
@@ -77,18 +77,18 @@
   },
   {
     "title": {
-      "zh": "Rugatha Prosper S0",
-      "en": "Rugatha Prosper S0"
+      "zh": "Rugatha Prosper S0.5",
+      "en": "Rugatha Prosper S0.5"
     },
-    "date": "2026-08-30",
+    "date": "2026-11-22",
     "category": {
       "zh": "長團",
       "en": "Campaign"
     },
     "link": "",
     "note": {
-      "zh": "第 0 次跑團",
-      "en": "Session 0"
+      "zh": "第 0.5 次跑團",
+      "en": "Session 0.5"
     },
     "image": "assets/campaign_logo/logo_RProsper.png",
     "isTransparent": true,
