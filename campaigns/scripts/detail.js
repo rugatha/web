@@ -607,7 +607,7 @@
       imageWrap.className = "related-pcs__portrait";
       body.appendChild(imageWrap);
 
-      const imageCandidates = resolvePcImageCandidates(id);
+      const imageCandidates = resolvePcImageCandidates(meta?.image || id);
       if (imageCandidates.length) {
         const imgEl = document.createElement("img");
         imgEl.className = "related-pcs__portrait-image";

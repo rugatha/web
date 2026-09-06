@@ -180,7 +180,7 @@
     back.className = "portrait__face portrait__face--back";
     inner.appendChild(back);
 
-    const candidates = resolvePortraitCandidates(pc.name_en);
+    const candidates = resolvePortraitCandidates(pc.image || pc.name_en);
     const img = document.createElement("img");
     img.alt = pc.name_en;
     let index = 0;

@@ -671,5 +671,25 @@
     ],
     "record_zh": "拉比在 WILDS 的不被承認的孩子篇登場，陪同隊伍進入雷亞陌生的血脈家鄉克萊芬與萊斯諾。他加入時，老樹盟、市民連線、新書院與軍方之間的衝突升高；他向冒險者介紹藍色頭帶、紅色軍裝與土色服飾代表的政治派系，並帶他們接觸新書院的皮尼歐教授。\n\n皮尼歐教授遇刺前夕，拉比在酒館包廂外試圖觀察市民連線的彭薩公會長，胸口中槍，被送往診所。他透過鑰的傳訊得知教授死亡與城市動亂，撐著虛弱身體離開診所，朝酒館返回。傳訊術耗盡後，他呼叫自己的梟，捎口信給斷訊的鑰。回到酒館後，他與冒險者會合，主張調查城市局勢，並提出先到隔壁包廂討論的折衷方案。之後拉比發現自己的梟疑似遭藥劑放倒，並在立德上尉企圖拉攏雷亞時憤而將他丟出窗外；當雷亞表明立場後，拉比帶領眾人循著氣味與記憶中的方向，夜間追查老樹盟活動據點。",
     "record_en": "Ravi appeared in WILDS during the Unacknowledged Child arc, accompanying the party into Clyphen and Leisnor, the unfamiliar homelands tied to Leah's bloodline. When he joined, conflict among the Old Tree League, Citizens' Line, New Academy, and the military was escalating. He explained the political factions represented by blue headbands, red uniforms, and earth-colored clothing, and brought the adventurers into contact with Professor Peneo of the New Academy.\n\nOn the eve of Professor Peneo's assassination, Ravi tried to observe President Bonza of the Citizens' Line outside a tavern private room, was shot in the chest, and was sent to a clinic. Through Kaname's Sending, he learned of the professor's death and the city's unrest, then left the clinic despite his weakened body and headed back toward the tavern. After Sending was exhausted, he called his owl and sent a verbal message to Kaname, whose communication had been cut off. After returning to the tavern, he regrouped with the adventurers, argued for investigating the city situation, and proposed the compromise of first discussing matters in the private room next door. Later, Ravi found that his owl seemed to have been drugged, and when Captain Reid tried to recruit Leah, he angrily threw Captain Reid out the window. After Leah declared her stance, Ravi led the group by scent and by the direction he remembered, investigating an Old Tree League activity base at night."
+  },
+  {
+    "name_en": "Cold Ham",
+    "name_zh": "冷火腿",
+    "image": "Cold-Ham",
+    "race_en": "Human",
+    "race_zh": "人類",
+    "class_en": [
+      "Druid"
+    ],
+    "class_zh": [
+      "德魯伊"
+    ],
+    "player": "",
+    "guest": "1",
+    "campaign": [
+      "Rugatha Lite"
+    ],
+    "record_zh": "Cold Ham 是 Rugatha Lite 的客串玩家角色；冒險紀錄將隨登場章節補上。",
+    "record_en": "Cold Ham is a guest player character in Rugatha Lite. Adventure notes will be added with the character's chapter appearance."
   }
 ]

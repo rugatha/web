@@ -288,8 +288,7 @@
       label: "Before Stonefield",
       title: "Before Stonefield 石原鎮之前",
       level: 3,
-      parent: "lite",
-      noChapters: true
+      parent: "lite"
     },
 
     // ===== Rugatha Wilds =====
@@ -797,7 +796,13 @@
         url: "../lite-c12/chpt05.html"
       }
     ],
-    "lite-c13": [],
+    "lite-c13": [
+      {
+        id: "lite-c13-chpt01",
+        title: "Chapter 1: Goodbye, Lott",
+        url: "../lite-c13/chpt01.html"
+      }
+    ],
 
     "wilds-c01": [
       {
@@ -1080,6 +1085,7 @@
     "lite-c12-chpt03": "../chapter-banners/lite-c12-chpt03.jpeg",
     "lite-c12-chpt04": "../chapter-banners/lite-c12-chpt04.jpeg",
     "lite-c12-chpt05": "../chapter-banners/lite-c12-chpt05.jpeg",
+    "lite-c13-chpt01": "../chapter-banners/lite-c13-chpt01.jpeg",
     "wilds-c01-chpt01": "../chapter-banners/wilds-c01-chpt01.jpeg",
     "wilds-c01-chpt02": "../chapter-banners/wilds-c01-chpt02.jpeg",
     "wilds-c01-chpt03": "../chapter-banners/wilds-c01-chpt03.jpeg",

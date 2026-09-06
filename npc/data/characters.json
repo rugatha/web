@@ -4772,8 +4772,8 @@
     "image": "individual_pics/Phola.jpeg",
     "status": "alive",
     "gender": "male",
-    "descZh": "弗萊特境內的嚮導之一，相對年輕而較無經驗，但根據師父的說法「很有潛力」。事後冒險者們發現他是師父的孫子。\n嗜酒。\n在與冒險者們的旅行過程中，受到圖伊特感化，戒了酒，並信奉了芬尼爾。\n在母親大人異變事件後，與洛特和芒果成為僅存的三人。\n多年後，身為芬尼爾教團一員，戴著面具的他在雅洛斯和洛特的團隊狹路相逢，雙方發生激烈的戰鬥。\n在他垂死之際，洛特剝下他的面具，才發現他的身份。之後洛特將重傷疲憊的佛拉帶在身邊，跟著派琶前往常翠林的中繼站。抵達常翠林總部後，佛拉在芒果襲擊時支援冒險者與派琶，於危急時刻為眾人治療。",
-    "descEn": "One of the guides in Phreit. He was younger and less experienced than the others, but Shifu described him as promising. The adventurers later learned that he was Shifu's grandson.\nPhola was addicted to alcohol.\nDuring his travels with the adventurers, Tweeter influenced him to quit drinking and become a follower of Phynoir.\nAfter the mutated Mother's massacre, Phola, Lott, and Mango were the only survivors.\nYears later, as a masked member of Phynoir's order, he clashed with Lott's team in Yalos. As he lay dying, Lott removed his mask and discovered who he was. Lott then kept the badly wounded, exhausted Phola with him as the group followed Py'Par toward an Evergreen relay station. After reaching the Evergreen headquarters, Phola supported the adventurers and Py'Par during Mango's attack, healing them at critical moments.",
+    "descZh": "弗萊特境內的嚮導之一，相對年輕而較無經驗，但根據師父的說法「很有潛力」。事後冒險者們發現他是師父的孫子。\n嗜酒；在與冒險者們的旅行過程中，受到圖伊特感化而戒酒，並信奉芬尼爾。\n在母親大人異變事件後，佛拉與羅特、芒果成為僅存的三人。\n多年後，他身為戴著白色面具的芬尼爾信徒，與羅特的隊伍交戰；重傷昏迷前喊出羅特的名字，身分才被認出。羅特不願再失去這名舊夥伴，治療並一路照料他，帶著他跟隨派琶前往常翠林。\n即使仍未完全康復、行走跛腳，佛拉仍主動分擔物資，並在芒果與蛇妖襲擊常翠林總部時支援冒險者，於危急時刻治療眾人。\n他認為身為芬尼爾信徒，不適合久留在涅西斯的領地；與羅特談過母親大人事件留下的傷痛後，兩人一同悄悄離開常翠林，尋找尚未決定的未來。",
+    "descEn": "One of the guides in Phreit, Phola was younger and less experienced than the others, but Shifu described him as promising. The adventurers later learned that he was Shifu's grandson.\nOnce addicted to alcohol, he was influenced by Tweeter during his travels with the adventurers to quit drinking and become a follower of Phynoir.\nAfter the mutated Mother's massacre, Phola, Lott, and Mango were the only survivors.\nYears later, Phola fought Lott's party as a white-masked follower of Phynoir. He called Lott's name before collapsing from his wounds, revealing his identity. Unwilling to lose another old companion, Lott healed and cared for him while the group followed Py'Par to the Evergreen.\nThough still limping and not fully recovered, Phola helped carry supplies and supported the adventurers during Mango and the Lamiae's attack on the Evergreen headquarters, healing others at critical moments.\nBelieving that a follower of Phynoir could not remain long in Nessis's domain, Phola spoke with Lott about the pain left by the Mother's massacre. The two then quietly left the Evergreen together to seek an as-yet undecided future.",
     "related": [
       "Shifu",
       "Mango",
@@ -7189,5 +7189,40 @@
       "R1": "\"Thank you.\" Py'Par smiles. \"May Nessis bless you.\" She puts her hand on your shoulder, and you feel a breeze of magic.",
       "R2": "When you come back to your senses, you see Py'Par walking far away, still talking non-stop"
     }
+  },
+  {
+    "id": "Fre'Do",
+    "url": "npc/npc_page/pages/Fre_Do.html",
+    "image": "individual_pics/Fre'Do.png",
+    "status": "alive",
+    "gender": "male",
+    "descZh": "常翠林的信使，出身於世代侍奉巴斯家族的家系。\n約五十年前，弗雷多離開故鄉來到常翠林；他的父親支持巴斯的父親，並深入研究死靈術，而十分照顧他的哥哥因為做了更多研究，轉而反對父親。弗雷多也因此選擇了自己的道路。\n在常翠林總部，弗雷多曾帶巴斯探視休養中的賽柏；芒果襲擊後，他向巴斯透露派翠克的遺體遭人挖走，並提議帶冒險者前往石原鎮。\n前往石原鎮的路上，弗雷多帶著巴斯與烏波徒步避人耳目，提醒眾人提防狼人蹤跡，並以乾糧與守夜安排照料隊伍。他也協助調停烏波與冷火腿的緊張對峙，之後帶著一行人穿過雅洛斯，繼續朝石原鎮前進。",
+    "descEn": "A courier of the Evergreen, Fre'Do comes from a family that has served Buzz's family for generations.\nAbout fifty years ago, Fre'Do left his homeland and came to the Evergreen. His father supported Buzz's father and pursued deep research into necromancy, while Fre'Do's elder brother, who had cared for him greatly, opposed their father after conducting further research. Fre'Do chose his own path as a result.\nAt the Evergreen headquarters, Fre'Do led Buzz to visit the recuperating Psyber. After Mango's attack, he told Buzz that Patrick's body had been dug up and offered to guide the adventurers to Stonefield.\nOn the road to Stonefield, Fre'Do led Buzz and Ubbo on foot to avoid notice, warned the group about signs of werewolves, and saw to their rations and night watches. He also helped defuse the tense confrontation between Ubbo and Cold Ham, then led the group through Yalos as they continued toward Stonefield.",
+    "related": [
+      "Py_Par",
+      "Phola"
+    ],
+    "nameEn": "Fre'Do",
+    "nameZh": "弗雷多",
+    "raceEn": [
+      "Elf"
+    ],
+    "raceZh": [
+      "妖精"
+    ],
+    "religionEn": [
+      "Nessis"
+    ],
+    "religionZh": [
+      "涅西斯"
+    ],
+    "locationEn": [
+      "Evergreen",
+      "Yarros"
+    ],
+    "locationZh": [
+      "常翠林",
+      "雅洛斯"
+    ]
   }
 ]

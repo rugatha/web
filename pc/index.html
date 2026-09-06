@@ -429,7 +429,7 @@
       portrait.className = "related-pcs__portrait";
       body.appendChild(portrait);
 
-      const candidates = resolvePcImageCandidates(pc.name_en);
+      const candidates = resolvePcImageCandidates(pc.image || pc.name_en);
       const img = document.createElement("img");
       img.className = "related-pcs__portrait-image";
       img.alt = pc.name_en;

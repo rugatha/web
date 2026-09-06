@@ -499,6 +499,14 @@
       "url": "/campaigns/pages/rugatha-lite/lite-c12/"
     },
     "prev-chapter": "lite-c12-chpt04",
+    "next-chapter": "lite-c13-chpt01"
+  },
+  "lite-c13-chpt01": {
+    "story-arc": {
+      "id": "lite-c13",
+      "url": "/campaigns/pages/rugatha-lite/lite-c13/"
+    },
+    "prev-chapter": "lite-c12-chpt05",
     "next-chapter": null
   },
   "wilds-c01-chpt01": {
