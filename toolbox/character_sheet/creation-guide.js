@@ -26,7 +26,7 @@ const renderDragonAncestry = () => {
 const dragonBreathData = () => {
   if (document.getElementById('race').value !== 'dragonborn') return null;
   const ancestry = dragonAncestries.find(row => row[0] === document.getElementById('dragonAncestry').value); if (!ancestry) return null;
-  const level = Number(document.getElementById('level1').value || 1) + (multiclass ? Number(document.getElementById('level2').value || 0) : 0);
+  const level = characterLevel();
   const dice = level >= 16 ? 5 : level >= 11 ? 4 : level >= 6 ? 3 : 2;
   const proficiency = Number(String(fieldValue('proficiency')).replace('+', '')) || 2;
   return { ancestry, damage: `${dice}d6`, dc: 8 + proficiency + modifier(getAbilityScore('con')) };
@@ -98,6 +98,9 @@ const startingEquipmentGroups = () => {
     return { zh: zh[index] || line, en: line, options: splitEn.map((en, option) => ({ en, zh: splitZh.length === splitEn.length ? splitZh[option] : en })) };
   });
 };
+// New characters explicitly choose every item. Legacy applied bundles may
+// omit their single fixed option; retain that fallback only when repairing them.
+const startingEquipmentChoice = (state, index, group) => state.equipment?.[index] ?? (state.applied && group.options.length === 1 ? '0' : '');
 const equipmentWeaponChoices = text => (window.sheetOptions?.weapons || []).filter(weapon => {
   if (/martial/i.test(text) && weapon.proficiency !== '軍用') return false;
   if (/simple/i.test(text) && weapon.proficiency !== '簡易') return false;
@@ -116,12 +119,13 @@ const renderCreationGuide = () => {
   }).join('');
   const groups = startingEquipmentGroups();
   const equipment = groups.map((group, index) => {
-    const choice = state.equipment?.[index] ?? (group.options.length === 1 ? '0' : ''); const option = group.options[choice];
-    const generic = option && /(?:any|one|two) (?:simple|martial).*weapon/i.test(option.en);
-    const weaponCount = generic && /two .*weapons/i.test(option.en) ? 2 : 1;
-    return `<div class="field"><label for="starterChoice${index}">${index + 1}. ${escapeHTML(group[currentLanguage])}</label><select id="starterChoice${index}" data-starter-choice="${index}"><option value="">${escapeHTML(t().choose)}</option>${group.options.map((entry, i) => `<option value="${i}"${String(choice) === String(i) ? ' selected' : ''}>${escapeHTML(entry[currentLanguage])}</option>`).join('')}</select>${generic ? Array.from({ length: weaponCount }, (_, slot) => `<label class="starter-specific" for="starterWeapon${index}-${slot}">${guideText('選擇武器', 'Choose weapon')} ${slot + 1}<select id="starterWeapon${index}-${slot}" data-starter-weapon="${index}" data-weapon-slot="${slot}"><option value="">${escapeHTML(t().choose)}</option>${equipmentWeaponChoices(option.en).map(weapon => `<option value="${escapeHTML(weapon.id)}"${state.weapons?.[`${index}-${slot}`] === weapon.id ? ' selected' : ''}>${escapeHTML(currentLanguage === 'zh' ? weapon.nameZh : weapon.nameEn)}</option>`).join('')}</select></label>`).join('') : ''}${option && /instrument|artisan|focus/i.test(option.en) ? `<label class="starter-specific" for="starterDetail${index}">${guideText('具體物品／法器名稱', 'Specific item / focus')}<input id="starterDetail${index}" data-starter-detail="${index}" value="${escapeHTML(state.details?.[index] || '')}"></label>` : ''}</div>`;
+    const choice = startingEquipmentChoice(state, index, group); const option = group.options[choice];
+    const generic = option && starterGeneric(option.en);
+    const weaponCount = generic && generic[1].toLowerCase() === 'two' ? 2 : 1;
+    return `<div class="field"><label for="starterChoice${index}">${index + 1}. ${escapeHTML(group[currentLanguage])}</label><select id="starterChoice${index}" data-starter-choice="${index}"><option value="">${escapeHTML(t().choose)}</option>${group.options.map((entry, i) => `<option value="${i}"${String(choice) === String(i) ? ' selected' : ''}>${escapeHTML(entry[currentLanguage])}</option>`).join('')}</select>${generic ? Array.from({ length: weaponCount }, (_, slot) => `<label class="starter-specific" for="starterWeapon${index}-${slot}">${guideText('選擇武器', 'Choose weapon')} ${slot + 1}<select id="starterWeapon${index}-${slot}" data-starter-weapon="${index}" data-weapon-slot="${slot}"><option value="">${escapeHTML(t().choose)}</option>${equipmentWeaponChoices(generic[0]).map(weapon => `<option value="${escapeHTML(weapon.id)}"${state.weapons?.[`${index}-${slot}`] === weapon.id ? ' selected' : ''}>${escapeHTML(currentLanguage === 'zh' ? weapon.nameZh : weapon.nameEn)}</option>`).join('')}</select></label>`).join('') : ''}${option && starterDetailNeeded(option) ? `<label class="starter-specific" for="starterDetail${index}">${guideText('具體物品／法器名稱', 'Specific item / focus')}<input id="starterDetail${index}" data-starter-detail="${index}" value="${escapeHTML(state.details?.[index] || '')}"></label>` : ''}</div>`;
   }).join('');
-  container.innerHTML = `<div class="panel-box"><h3 class="subsection-title">${guideText('接著選擇職業技能', 'Choose your class skills')}</h3><p class="subtle" role="status">${guideText(`已選 ${count}／${rule.count} 項。背景提供的技能不占職業名額；請完成背景後確認有無重複。`, `${count} of ${rule.count} selected. Background skills do not use class choices; check for overlap after choosing a background.`)}</p><div class="guided-skills">${skillChoices}</div></div><details class="panel-box" open><summary>${guideText('選擇起始護甲、武器與套裝', 'Choose starting armor, weapons & packs')}</summary><p class="subtle">${guideText('依第一個職業選擇起始裝備；兼職不會再給一套。每一列選一項，再加入角色卡。', 'Starting equipment comes from your first class, not multiclassing. Choose one option per row, then add it to the sheet.')}</p><div class="starter-options">${equipment}</div><button class="button" type="button" id="applyStarterEquipment"${state.applied ? ' disabled' : ''}>${state.applied ? guideText('已加入角色卡', 'Added to sheet') : guideText('加入起始裝備', 'Add starting equipment')}</button><p id="starterStatus" class="subtle" role="status"></p></details>`;
+  container.innerHTML = `<div class="panel-box"><h3 class="subsection-title">${guideText('接著選擇職業技能', 'Choose your class skills')}</h3><p class="subtle" role="status">${guideText(`已選 ${count}／${rule.count} 項。背景提供的技能不占職業名額；請完成背景後確認有無重複。`, `${count} of ${rule.count} selected. Background skills do not use class choices; check for overlap after choosing a background.`)}</p><div class="guided-skills">${skillChoices}</div></div><details class="panel-box" open><summary>${guideText('選擇起始護甲、武器與套裝', 'Choose starting armor, weapons & packs')}</summary><p class="subtle">${guideText('依第一個職業選擇起始裝備；兼職不會再給一套。每一列選一項，再加入角色卡。', 'Starting equipment comes from your first class, not multiclassing. Choose one option per row, then add it to the sheet.')}</p><div class="starter-options">${equipment}</div><button class="button" type="button" id="applyStarterEquipment">${state.applied ? guideText('補齊起始裝備與攻擊', 'Repair starting equipment & attacks') : guideText('加入起始裝備', 'Add starting equipment')}</button><p id="starterStatus" class="subtle" role="status"></p></details>`;
+  if (state.appliedVersion === 2) container.querySelectorAll('[data-starter-choice], [data-starter-weapon], [data-starter-detail]').forEach(field => field.disabled = true);
   renderStarterPreviews();
   renderSkillConflict();
   if (window.sheetOptions && !equipmentOptionsPromise) loadEquipmentOptions().then(() => renderCreationGuide());
@@ -165,34 +169,118 @@ const renderEquipmentSelectionPreview = () => {
   preview.innerHTML = pack ? `<strong>${escapeHTML(currentLanguage === 'zh' ? pack.nameZh : pack.nameEn)}</strong><ul>${pack.contents.map(item => `<li>${escapeHTML(currentLanguage === 'zh' ? item.nameZh : item.nameEn)} × ${item.quantity}</li>`).join('')}</ul>` : '';
 };
 
+// Resolve bundles into real inventory entries before mutating the sheet.
+const starterNormalize = text => String(text).toLowerCase().replace(/[’‘]/g, "'").replace(/\s+/g, ' ').trim();
+const starterQuantity = text => {
+  const token = starterNormalize(text).match(/^(\d+|a|an|one|two|four|five|ten|twenty)\b/)?.[1];
+  return { a: 1, an: 1, one: 1, two: 2, four: 4, five: 5, ten: 10, twenty: 20 }[token] || Number(token) || 1;
+};
+const starterGeneric = text => /\b(any|one|two) (simple|martial)( melee)? weapons?\b/i.exec(text);
+const starterDetailNeeded = option => /(?:any other musical instrument|artisan|focus)/i.test(option.en);
+const starterCatalogMatch = (text, catalog, armor = false) => {
+  const normalized = starterNormalize(text).replace(/^(?:\d+|a|an|one|two|four|five|ten|twenty)\s+/, '');
+  return [...catalog].sort((a, b) => b.nameEn.length - a.nameEn.length).find(item => {
+    const name = starterNormalize(item.nameEn);
+    return normalized === name || normalized === name + 's' || (armor && normalized === name + ' armor');
+  });
+};
+const resolveStarterEquipment = (cls, state) => {
+  const items = []; const weaponIds = new Set(); const armorIds = new Set(); let shield = false;
+  const add = (key, nameZh, nameEn, quantity = 1) => {
+    const existing = items.find(item => item.key === key);
+    if (existing) existing.quantity += quantity;
+    else items.push({ key, id: `starter:${cls.id}:item:${key}`, nameZh, nameEn, quantity });
+  };
+  const weapon = (item, quantity) => { if (!item) throw new Error('weapon'); weaponIds.add(item.id); add(`weapon:${item.id}`, item.nameZh, item.nameEn, quantity); };
+  const otherNames = { 'component pouch': '材料包', 'arcane focus': '奧術法器', 'druidic focus': '德魯伊法器', 'holy symbol': '聖徽', spellbook: '法術書' };
+  startingEquipmentGroups().forEach((group, index) => {
+    const option = group.options[startingEquipmentChoice(state, index, group)];
+    if (!option || (starterDetailNeeded(option) && !state.details?.[index]?.trim())) throw new Error('choice');
+    const segments = option.en.replace(/, if proficient$/, '').split(/,?\s+and\s+|,\s*/).filter(Boolean);
+    segments.forEach(segment => {
+      const generic = starterGeneric(segment);
+      if (generic) {
+        for (let slot = 0; slot < (generic[1].toLowerCase() === 'two' ? 2 : 1); slot++) {
+          const item = equipmentWeaponChoices(generic[0]).find(item => item.id === state.weapons?.[`${index}-${slot}`]);
+          weapon(item, 1);
+        }
+        return;
+      }
+      const quantity = starterQuantity(segment);
+      const pack = starterCatalogMatch(segment, (window.sheetOptions.equipment || []).filter(item => item.type === 'pack'));
+      if (pack) {
+        if (!pack.contents?.length) throw new Error('catalog');
+        pack.contents.forEach(item => add(item.id, item.nameZh, item.nameEn, Number(item.quantity || 1) * quantity)); return;
+      }
+      const fixedWeapon = starterCatalogMatch(segment, window.sheetOptions.weapons);
+      if (fixedWeapon) { weapon(fixedWeapon, quantity); return; }
+      const armor = starterCatalogMatch(segment, window.sheetOptions.armors, true);
+      if (armor) { armorIds.add(armor.id); add(`armor:${armor.id}`, armor.nameZh, armor.nameEn, quantity); return; }
+      if (/\bshield\b/i.test(segment)) { shield = true; add('shield', '盾牌', 'Shield', quantity); return; }
+      const tool = starterCatalogMatch(segment, (window.sheetOptions.equipment || []).filter(item => item.type === 'tool'));
+      if (tool) { add(tool.id, tool.nameZh, tool.nameEn, quantity); return; }
+      const ammo = segment.match(/(\d+) (arrows|bolts)/i);
+      if (ammo) {
+        add(ammo[2].toLowerCase(), /arrows/i.test(ammo[2]) ? '箭' : '弩矢', /arrows/i.test(ammo[2]) ? 'Arrows' : 'Bolts', Number(ammo[1]));
+        if (/quiver/i.test(segment)) add('quiver', '箭袋', 'Quiver');
+        return;
+      }
+      const normalized = starterNormalize(segment).replace(/^(?:a|an|one)\s+/, '');
+      if (/pack|weapon|armor|mail/i.test(normalized)) throw new Error('catalog');
+      const detail = /instrument|artisan|focus/i.test(segment) ? state.details?.[index]?.trim() : '';
+      add(`other:${normalized}`, (otherNames[normalized] || detail || segment) + (detail && otherNames[normalized] ? `（${detail}）` : ''), detail ? `${segment} (${detail})` : segment, quantity);
+    });
+  });
+  return { items, weaponIds, armorIds, shield };
+};
 let starterApplying = false;
 const applyStarterEquipment = async () => {
-  const cls = primaryCreationClass(); if (!cls) return;
-  const all = readCreationChoices(); const state = all[cls.id] || {}; if (state.applied || starterApplying) return;
-  const groups = startingEquipmentGroups(); const picked = groups.map((group, index) => ({ group, index, option: group.options[state.equipment?.[index] ?? (group.options.length === 1 ? '0' : '')] }));
-  const missing = picked.some(({ option, index }) => !option || (/(?:any|one|two) (?:simple|martial).*weapon/i.test(option.en) && Array.from({ length: /two .*weapons/i.test(option.en) ? 2 : 1 }, (_, slot) => state.weapons?.[`${index}-${slot}`]).some(value => !value)) || (/instrument|artisan|focus/i.test(option.en) && !state.details?.[index]?.trim()));
-  if (missing) { document.getElementById('starterStatus').textContent = guideText('請完成每列選擇，並填寫具體武器／物品。', 'Complete every choice and specify each weapon / item.'); return; }
+  const cls = primaryCreationClass(); if (!cls || starterApplying) return;
+  const state = readCreationChoices()[cls.id] || {};
+  const selection = JSON.stringify([state.equipment, state.weapons, state.details]);
   starterApplying = true;
+  const status = message => { const node = document.getElementById('starterStatus'); if (node) node.textContent = message; };
   try {
-  await loadEquipmentOptions();
-  // Abort if the user changed class while the catalog was loading.
-  if (primaryCreationClass()?.id !== cls.id) return;
-  const weaponIds = new Set();
-  picked.forEach(({ option, index }) => {
-    const generic = /(?:any|one|two) (?:simple|martial).*weapon/i.test(option.en);
-    const weapons = generic ? Array.from({ length: /two .*weapons/i.test(option.en) ? 2 : 1 }, (_, slot) => window.sheetOptions.weapons.find(item => item.id === state.weapons?.[`${index}-${slot}`])).filter(Boolean) : [];
-    const suffix = weapons.map(item => currentLanguage === 'zh' ? item.nameZh : item.nameEn);
-    equipmentItems.push({ id: `starter:${cls.id}:${index}`, nameZh: option.zh + (weapons.length ? `（${weapons.map(item => item.nameZh).join('、')}）` : '') + (state.details?.[index] ? `（${state.details[index]}）` : ''), nameEn: option.en + (suffix.length ? ` (${weapons.map(item => item.nameEn).join(', ')})` : '') + (state.details?.[index] ? ` (${state.details[index]})` : ''), quantity: 1 });
-    weapons.forEach(item => weaponIds.add(item.id));
-    const en = option.en.toLowerCase();
-    window.sheetOptions.weapons.forEach(item => { if (en.includes(item.nameEn.toLowerCase())) weaponIds.add(item.id); });
-    window.sheetOptions.armors.forEach(item => { if (en.includes(item.nameEn.toLowerCase()) && !armorRows.some(row => row.choice === item.id)) armorRows.push({ choice: item.id, worn: !armorRows.some(row => row.worn), custom: '', customAC: '10' }); });
-    if (/shield/i.test(en) && !shieldRows.some(row => row.choice === 'shield')) shieldRows.push({ choice: 'shield', worn: true, custom: '', customAC: '0' });
-  });
-  const attacks = captureAttackValues();
-  weaponIds.forEach(id => { if (Object.entries(attacks).some(([key, value]) => /^attackWeapon\d+$/.test(key) && value === id)) return; const empty = Array.from({ length: attackRowCount }, (_, i) => i + 1).find(row => !attacks[`attackWeapon${row}`] && !attackCustomRows[row] && !attacks[`attackWeaponCustom${row}`]); const row = empty || ++attackRowCount; attacks[`attackWeapon${row}`] = id; });
-  renderAttackRows(); restoreAttackValues(attacks); updateAllAttacks(); renderArmorLoadout(); updateArmorClass(); renderEquipmentItems();
-  state.applied = true; const latest = readCreationChoices(); latest[cls.id] = state; writeCreationChoices(latest); renderCreationGuide(); save();
+    await loadEquipmentOptions();
+    const latest = readCreationChoices()[cls.id] || {};
+    if (primaryCreationClass()?.id !== cls.id || selection !== JSON.stringify([latest.equipment, latest.weapons, latest.details])) return;
+    if (!window.sheetOptions.weapons.length || !window.sheetOptions.armors.length || !window.sheetOptions.equipment.length) throw new Error('catalog');
+    const resolved = resolveStarterEquipment(cls, state);
+    // Remove legacy bundle-only rows. Preserve unrelated inventory and custom attacks.
+    equipmentItems = equipmentItems.filter(item => !new RegExp(`^starter:${cls.id}:\\d+$`).test(item.id));
+    resolved.items.forEach(item => {
+      const existing = equipmentItems.find(entry => entry.id === item.id);
+      if (existing) existing.quantity = Math.max(Number(existing.quantity) || 0, item.quantity);
+      else equipmentItems.push(item);
+    });
+    syncLoadoutState();
+    resolved.armorIds.forEach(id => {
+      if (armorRows.some(row => row.choice === id)) return;
+      const entry = { choice: id, worn: !armorRows.some(row => row.worn && row.choice), custom: '', customAC: '10' };
+      const blank = armorRows.findIndex(row => !row.choice && !row.custom);
+      if (blank >= 0) armorRows[blank] = entry; else armorRows.push(entry);
+    });
+    if (resolved.shield && !shieldRows.some(row => row.choice === 'shield')) {
+      const entry = { choice: 'shield', worn: !shieldRows.some(row => row.worn && row.choice !== 'none'), custom: '', customAC: '0' };
+      const blank = shieldRows.findIndex(row => row.choice === 'none' && !row.custom);
+      if (blank >= 0) shieldRows[blank] = entry; else shieldRows.push(entry);
+    }
+    if (armorRows.some(row => row.choice)) armorRows = armorRows.filter(row => row.choice || row.custom);
+    if (shieldRows.some(row => row.choice !== 'none')) shieldRows = shieldRows.filter(row => row.choice !== 'none' || row.custom);
+    const attacks = captureAttackValues();
+    resolved.weaponIds.forEach(id => {
+      if (Object.entries(attacks).some(([key, value]) => /^attackWeapon\d+$/.test(key) && value === id && !attackCustomRows[key.replace('attackWeapon', '')])) return;
+      const empty = Array.from({ length: attackRowCount }, (_, i) => i + 1).find(row => !attacks[`attackWeapon${row}`] && !attackCustomRows[row] && !attacks[`attackWeaponCustom${row}`] && !attacks[`attackNotes${row}`]);
+      const row = empty || ++attackRowCount; attacks[`attackWeapon${row}`] = id;
+    });
+    renderAttackRows(); restoreAttackValues(attacks); updateAllAttacks();
+    renderArmorLoadout(); updateArmorClass(); renderEquipmentItems();
+    const all = readCreationChoices(); all[cls.id] = { ...latest, applied: true, appliedVersion: 2 }; writeCreationChoices(all);
+    renderCreationGuide(); const saved = save();
+    if (typeof renderFullSheet === 'function') renderFullSheet();
+    status(saved ? guideText('已同步到裝備、護甲／盾牌與攻擊；套裝內容已逐項加入。', 'Synced inventory, armor/shields and attacks; pack contents have been added individually.') : guideText('已套用，但儲存失敗，請匯出設定檔保存。', 'Applied, but saving failed. Export the sheet to keep your changes.'));
+  } catch (error) {
+    status(error.message === 'catalog' ? guideText('裝備目錄尚未完整載入，請重新整理後再試；尚未套用。', 'Equipment catalog is incomplete. Reload and retry; nothing was applied.') : guideText('請完成每列選擇，並填寫具體武器／物品；尚未套用。', 'Complete every selection and specify each weapon/item; nothing was applied.'));
   } finally { starterApplying = false; }
 };
 
@@ -222,7 +310,7 @@ const renderBackstoryPreview = () => {
 };
 const racialSpellGrants = () => {
   const race = document.getElementById('race').value; const subrace = document.getElementById('subrace').value;
-  const level = Number(document.getElementById('level1').value || 0) + (multiclass ? Number(document.getElementById('level2').value || 0) : 0);
+  const level = characterLevel();
   const grants = race === 'tiefling' ? [['Thaumaturgy', 1], ['Hellish Rebuke', 3], ['Darkness', 5]] : race === 'elf' && subrace === 'drow' ? [['Dancing Lights', 1], ['Faerie Fire', 3], ['Darkness', 5]] : race === 'gnome' && subrace === 'forest-gnome' ? [['Minor Illusion', 1]] : [];
   return grants.filter(([, min]) => level >= min).map(([name]) => window.sheetOptions?.spells?.find(spell => spell.name_en?.toLowerCase() === name.toLowerCase())).filter(Boolean);
 };
@@ -254,5 +342,12 @@ document.addEventListener('click', event => {
   if (event.target.closest('#languageButton')) { renderCreationGuide(); renderBackstoryPreview(); renderRacialSpells(); renderEquipmentSelectionPreview(); }
   if (event.target.closest('#backstoryEdit, #backstoryView')) { const preview = Boolean(event.target.closest('#backstoryView')); renderBackstoryPreview(); document.getElementById('backstoryPreview').hidden = !preview; document.getElementById('backstoryMarkdown').hidden = preview; document.getElementById('backstoryEdit').setAttribute('aria-pressed', String(!preview)); document.getElementById('backstoryView').setAttribute('aria-pressed', String(preview)); }
 });
-document.getElementById('characterSheet').addEventListener('reset', () => window.setTimeout(() => { renderCreationGuide(); renderBackstoryPreview(); renderRacialSpells(); }, 0));
+document.getElementById('characterSheet').addEventListener('reset', () => {
+  // Hidden inputs retain their latest value as the native reset default.
+  // Clear every class's choices before the reset handler saves the new sheet.
+  writeCreationChoices({});
+  window.setTimeout(() => {
+    renderCreationGuide(); renderBackstoryPreview(); renderRacialSpells(); save();
+  }, 0);
+});
 renderDragonAncestry();

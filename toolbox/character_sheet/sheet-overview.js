@@ -41,6 +41,11 @@ const readonlySection = source => {
     const original = document.getElementById(field.id) || originals[index];
     if (original.type === 'hidden' || original.type === 'file') { field.remove(); return; }
     if (preserveControls) {
+      // cloneNode does not preserve a select's live selectedness. Copy the
+      // current controls, not just their initial HTML attributes.
+      if (original.matches('select')) [...field.options].forEach((option, i) => { option.selected = Boolean(original.options[i]?.selected); });
+      else if (original.type === 'checkbox') field.checked = original.checked;
+      else field.value = original.value;
       if (source.id === 'abilityScoreSection' && original.classList.contains('ability-select')) {
         field.hidden = true;
         return;
