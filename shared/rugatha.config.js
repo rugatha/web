@@ -88,8 +88,8 @@
       page: "./pages/rugatha-lite/index.html",
       image: campaignPng("logo_RLite.png"),
       accent: "#DDDDD3",
-      nextSession_zh: "2026/9/5",
-      nextSession_en: "2026/9/5"
+      nextSession_zh: "2026/10/24",
+      nextSession_en: "2026/10/24"
     },
     {
       name: "Rugatha Wilds",
@@ -99,8 +99,8 @@
       page: "./pages/rugatha-wilds/index.html",
       image: campaignPng("logo_RWilds.png"),
       accent: "#DCE3E7",
-      nextSession_zh: "2026/8/22",
-      nextSession_en: "2026/8/22"
+      nextSession_zh: "2026/11/21",
+      nextSession_en: "2026/11/21"
     },
     {
       name: "Rugatha Veil",
@@ -110,8 +110,8 @@
       page: "./pages/rugatha-veil/index.html",
       image: campaignPng("logo_RVeil.png"),
       accent: "#E3D0AB",
-      nextSession_zh: "2026/8/23",
-      nextSession_en: "2026/8/23"
+      nextSession_zh: "2026/10/3",
+      nextSession_en: "2026/10/3"
     },
     {
       name: "Rugatha Prosper",
@@ -121,8 +121,8 @@
       page: "./pages/rugatha-prosper/index.html",
       image: campaignPng("logo_RProsper.png"),
       accent: "#E5BC48",
-      nextSession_zh: "2026/8/30",
-      nextSession_en: "2026/8/30"
+      nextSession_zh: "2026/11/22",
+      nextSession_en: "2026/11/22"
     },
     {
       name: "Rugatha Brown",
@@ -327,6 +327,14 @@
       title: "The Unacknowledged Child 不被承認的孩子",
       level: 3,
       parent: "wilds"
+    },
+    {
+      id: "wilds-c06",
+      label: "Where the Willow Drifts",
+      title: "Where the Willow Drifts 柳絮因風起",
+      level: 3,
+      parent: "wilds",
+      noLink: true
     },
 
     // ===== Rugatha Brown =====
@@ -1206,6 +1214,7 @@
     "wilds-c03": "../rugatha-wilds/wilds-c03/",
     "wilds-c04": "../rugatha-wilds/wilds-c04/",
     "wilds-c05": "../rugatha-wilds/wilds-c05/",
+    "wilds-c06": null,
     "brown-c01": "../rugatha-brown/brown-c01/",
     "brown-c02": "../rugatha-brown/brown-c02/",
     "legends-os01": "../rugatha-legends/legends-os01/",

@@ -154,6 +154,7 @@
     "wilds-c04-chpt03": "wilds-c04-chpt03.jpeg",
     "wilds-c04-chpt04": "wilds-c04-chpt04.jpeg",
     "wilds-c05": "wilds-c05.png",
+    "wilds-c06": "wilds-c06.png",
     "wilds-c04-chpt01": "wilds-c04-chpt01.jpeg",
     // Rugatha Brown
     "brown-c01": "brown-c01.jpg",
@@ -466,18 +467,17 @@
       const displayTitle = isLevel4
         ? getLocalizedChapterTitle(ch.id, fallbackTitle)
         : getLocalizedArcTitle(ch.id, fallbackTitle);
-      const title = document.createElement("a");
-      title.href = resolvePath(arcHref);
-      title.target = "_self";
+      const title = document.createElement(ch.noLink ? "span" : "a");
+      if (!ch.noLink) {
+        title.href = resolvePath(arcHref);
+        title.target = "_self";
+      }
       title.textContent = displayTitle;
       meta.appendChild(title);
 
       const imageName = isLevel4 ? ch.image : chapterImageMap[ch.id];
       li.appendChild(meta);
       if (imageName) {
-        const imageLink = document.createElement("a");
-        imageLink.href = resolvePath(arcHref);
-        imageLink.target = "_self";
         const img = document.createElement("img");
         img.className = "chapter-list__image";
         const base = isLevel4 ? chapterBannerBase : imageBannerBase;
@@ -487,8 +487,15 @@
             : resolvePath(`${base}${imageName}`);
         img.src = useSrc;
         img.alt = `${displayTitle} banner`;
-        imageLink.appendChild(img);
-        li.appendChild(imageLink);
+        if (ch.noLink) {
+          li.appendChild(img);
+        } else {
+          const imageLink = document.createElement("a");
+          imageLink.href = resolvePath(arcHref);
+          imageLink.target = "_self";
+          imageLink.appendChild(img);
+          li.appendChild(imageLink);
+        }
       }
       chapterList.appendChild(li);
     });
