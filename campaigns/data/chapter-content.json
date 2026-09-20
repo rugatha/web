@@ -8524,7 +8524,7 @@
             "Looking around, they saw tavern patrons dressed in bright, colorful clothes, all in high spirits. Roughly eighty percent of the customers were lizardfolk, while the remaining twenty percent were of various other races, but there were no dragonborn. With Ravi's guidance, they noticed three clothing styles that appeared again and again: blue headbands, red shirts or coats, and earth-toned trousers. According to Ravi, the politics of Clyphen were mainly divided into three factions.",
             "The New Academy, whose primary color was blue, was a faction made up mostly of young intellectuals and scholars, devoted to democracy, knowledge, and ideals. They believed Clyphen should decide its own future, and they were led by the scholar Professor Peneo.",
             "The Ancient Tree League used red. Its main members were veterans, warlords, and major businesses. They believed Clyphen should return to Leisnor, since the two places shared a common history and origin. And if force was necessary to achieve that goal, then force was acceptable. Colonel Lisdar was their current leader.",
-            "Last came the Citizen's Connection, marked by earth tones, made up mainly of merchants, guilds, and ordinary civilians. Compared with the more extreme positions of the first two factions, they wanted no rash action and believed that maintaining the status quo was the safest and most suitable option. If war broke out, there might be no future left to talk about. President Bonza was the leader of the Citizen's Connection.",
+            "Last came the Citizen's Connection, marked by brown, made up mainly of merchants, guilds, and ordinary civilians. Compared with the more extreme positions of the first two factions, they wanted no rash action and believed that maintaining the status quo was the safest and most suitable option. If war broke out, there might be no future left to talk about. President Bonza was the leader of the Citizen's Connection.",
             "Fur noticed a fairly large coatroom near the tavern entrance and curiously stepped inside. Rows of hanging clothes blocked his view, but he could clearly hear hushed voices coming from the back corner of the room. Roel, curious from outside, followed him in, only to be immediately signaled by Fur to stay quiet. Roel created an illusion of the door opening and footsteps walking away, then joined Fur in eavesdropping.",
             "In the corner of the coatroom, two people were talking. There was going to be a mayoral debate in Clyphen tomorrow. These two were discussing an assassination plan, and the target was Professor Peneo, the leader of the New Academy and a candidate in the mayoral election. Hearing this, Fur and Roel both felt that regardless of which faction they might eventually support, Professor Peneo needed to be warned.",
             "After slipping quietly out of the coatroom, the adventurers also confirmed that Ravi supported the New Academy. Fur softly told the others what he and Roel had overheard. They had also noticed the two people who left: one wore a red coat, while the other wore earth-toned trousers. Clearly, the Ancient Tree League and the Citizen's Connection were colluding.",
@@ -8782,6 +8782,102 @@
           ]
         }
       ]
+    }
+  },
+  "wilds-c05-chpt06": {
+    "source": "campaigns/pages/rugatha-wilds/wilds-c05/chpt06.html",
+    "title": "Chapter 6: Dear Leah",
+    "tagline": "The Unacknowledged Child",
+    "date": "15049.05.22",
+    "image": {
+      "src": "../../../campaign-banners/wilds-c05.png",
+      "alt": "Dear Leah chapter art"
+    },
+    "content": {
+      "zh": [
+        {
+          "date": "15049.05.22",
+          "paragraphs": [
+            "拉比看了看身邊的夥伴，也看見樓梯頂端探出頭的瑪莉貝爾，她告訴拉比鑰被卡在樓梯上，睡眠法術他支撐不了太久，要趕快把鑰架下來。在瑪莉貝爾的幫助下，拉比扛下了鑰，並把她放進她停在一樓的小車上，準備離開酒館。桓托催著大家趕快往外跑，他會幫忙擋住後方來的追兵。",
+            "離開酒館後，拉比熟絡地往克萊芬的城門口跑。途中，他要化身成蟑螂的雷亞仔細記好路，畢竟這裡是他的家鄉。克萊芬城門口的衛兵看見匆忙的冒險者們，有些吃驚，原本想告誡他們在這種混亂的時刻應該在城內好好躲避，但看見熟識的拉比後，一句「路上小心」便帶過了。",
+            "城門外，雷亞回頭望向她的「家鄉」，城門越來越小、越來越遠。上一次走這段路時，阿龍剛走，中途之家也還不認識拉比，大家也才剛接到瑪萊雅將軍的指令，要他們作為臥底，潛入克萊芬。那不過是幾天前的時間，卻恍如隔世。",
+            "城外，左方是他們來的路，而右方是一片森林。拉比帶著大家繞進森林內。確認周圍沒有人後，雷亞便解除變身，變回蜥蜴人的模樣。拉比這也才想起，除了雷亞外，他還沒有告訴其他人他們到底要去哪。森林內，有座白色的小教堂，那裡是當年他與雷亞的師父「柳俠馬許」為雷亞父母證婚的地方，也是雷亞父母死去的地方。",
+            "樹林間，雷亞看見了那白色的小房子若隱若現。大家放慢腳步，喘了口氣。小教堂內外沒有藍色、紅色，或土色，只有樸實無華，甚至有點斑駁的白。冒險者們小心走入這座聖殿，似乎有人不時來這裡打理，陳舊，但是乾淨。拉比領著雷亞，走入禮拜堂後的辦公室，先把門關了起來。抽屜內，一封收得好好的信正等著雷亞打開。",
+            {
+              "html": "<p style=\"text-align: center;\"><img src=\"../../../../campaigns/chapter-banners/wilds-c05-chpt06_1.jpg\" alt=\"A letter to Leah, page 1\" loading=\"lazy\" style=\"width: 66%; max-width: 100%; height: auto;\" /></p>"
+            },
+            {
+              "html": "<p style=\"text-align: center;\"><img src=\"../../../../campaigns/chapter-banners/wilds-c05-chpt06_2.jpg\" alt=\"A letter to Leah, page 2\" loading=\"lazy\" style=\"width: 66%; max-width: 100%; height: auto;\" /></p>"
+            },
+            "等雷亞理好情緒，拉比才打開辦公室的門，讓其他冒險者們進來。瑪莉貝爾站在門框旁，似乎有點不知所措，雷亞則拭著眼淚，將信的內容唸了一遍給大家聽。唸完後，拉比推開小教堂的後門，告訴雷亞她父母的小墓碑在後面的草地間，他想帶雷亞去致意。小墓碑很簡單，上面只有兩行字：「阿哈努・席弗斯頓」、「克萊芬的蕾絲塔」，那是雷亞父母的名字。雷亞跪了下來，她請大家留給他一些空間獨處。",
+            "回到小教堂內，大家除了等待，也不太知道該做什麼。這座教堂太小，沒幾分鐘就看完了。大家也不知道雷亞需要多少時間。一眨眼，毛毛就不見了。拉比起身尋找，但羅羅早他一步找到毛毛。看起來毛毛正東翻西找，口中還念著「雞腿」。而在拉比靠近前，他早已收拾乾淨，不留痕跡。除了毛毛外，拉比覺得瑪莉貝爾對現在的情境似乎有點漫不經心、嘻皮笑臉，他對此十分不滿，但也不特別表現出來，只開了窗，讓他的梟飛出去巡邏。",
+            "同一時間，雷亞在樹林間撿了些白色的花。他也不知道那是什麼花，只知道他們不是藍色、紅色或土色就好。他將撿來的幾束花輕輕放在父母的墓前，然後坐了下來，輕輕倚著墓碑。他心中想著涅西斯，卻也不感覺到祂的存在，彷彿涅西斯也留了空間給他。",
+            "羅羅從小教堂內走出，想看看雷亞在外面做什麼事，只看見雷亞龐大的身軀，墓碑在她身邊顯得那麼的小。回頭往小教堂走回去，他的步伐被雷亞聽見了。雷亞循聲問「是誰？」但沒得到回應，不久後她決定起身回到教堂內了。",
+            "看見雷亞回來後，瑪莉貝爾也想去致意，鑰也跟了上去。拉比不放心地多看了幾眼，確保那小傢伙沒有暗地搞些有的沒的。瑪莉貝爾輕輕唸了幾句，手中湧現大把的白色花束。她輕輕放在方才雷亞放的花束旁，闔手致意。然後流了點淚。鑰心疼地抱了抱瑪莉貝爾。",
+            "突然間，瑪莉貝爾聽見了梟的叫聲。她警覺地站了起身，拉著鑰回小教堂去。瑪莉貝爾趕緊將消息傳達給拉比。拉比也當機立斷帶著大家朝小教堂的正門口跑。才剛踏出門口，箭簇飛過髮尾，左右兩側的樹林間都有埋伏。拉比拉著大家往前衝，雷亞跑在最前面。穿過了前方的樹林，出現在雷亞眼前的，卻是一個令她感到畏懼的巨大紅色身影。",
+            "那是萊斯諾的瑪萊雅將軍。",
+            "瑪萊雅將軍將她的巨劍撐在地上，氣勢威嚴。在他身邊不遠處，先前囂張跋扈的利斯達上校，竟像哈巴狗一般，露出諂媚的眼神，毫無尊嚴。對此，拉比看了一眼，悶哼了一聲「紅色的狗」。而在將軍身後，數以百計的萊斯諾軍隊堵住了前方。軍隊當中也混雜了老樹盟與市民連線的部隊，至於新書院，或者該說「新曙光」⋯⋯只能從遠方聽見他們的漫天咆哮，卻始終見不到人影。",
+            "「雷亞，混血之子啊。」瑪萊雅將軍的沉著帶著威嚇。「那座教堂對妳來說很重要，對吧？士兵們，把它給毀了。」士兵們隨即拿起武器破壞教堂，甚至有人朝著雷亞父母的墓碑走去。",
+            "「究竟要怎麼樣，妳才會停止？」雷亞看著瑪萊雅將軍，憤恨地說。此刻在她面前，比起軍隊玷汙她的父母，瑪萊雅將軍的氣勢根本不算什麼。",
+            "「如果克萊芬併入萊斯諾，從此沒有克萊芬，好像不錯。」瑪萊雅將軍略帶玩味地說。",
+            "「隨你們的便。」雷亞冷冷地說，但她的武器已經握好了。憤怒的拉比朝著將軍攻擊，卻沒有打中。將軍冷笑一聲，戰鬥一觸即發。",
+            "樹林間的箭簇齊發，冒險者們試圖閃躲，但身邊除了夥伴外，也站滿了敵人。面對數以千計的敵軍，這不是一場能打得贏的仗，甚至連逃出去都很難，但也不能就此投降。至少不能在雷亞那炙熱的眼神前屈服。",
+            "將軍的巨劍大砍，拉比與他的梟也一同朝將軍打擊。寡言的羅羅施放了法術，令將軍無法移動。他以前所未見的聲量喊著，要軍隊們不要輕舉妄動，除非他們連瑪萊雅將軍的命都不要了。士兵們停了下來，但下一秒，羅羅便感到腰際傳了一陣熾熱感，那是鮮血。瑪萊雅將軍恢復神智，繼續砍向冒險者們。毛毛從一旁突然竄出，朝著將軍的腰部偷襲，令將軍倒吸了一口氣。",
+            "瑪莉貝爾在戰場中穿梭，賣力地保護她的夥伴們。此刻她真心感受到她在乎這些戰友們⋯⋯還有那隻傻傻跑回拉撒拿的大塊頭。大笨蛋。瑪莉貝爾的臉色逐漸蒼白。她緊緊握住鑰的手，一陣源源不絕的精力從瑪莉貝爾手中傳向鑰。鑰似乎意識到了這是什麼意思，她慌張的要瑪莉貝爾停下來，但瑪莉貝爾只是淺淺地微笑。",
+            "那聲音又在羅羅腦中竄出。「用我的力量吧，你知道，用我的力量，這些敵人就只是雜魚而已。」羅羅努力壓制住這討人厭的聲音。他一直在強迫自己不要用祂的力量。直到他屈服。",
+            "黑紫色的黏液，如煙般從他的指尖竄出，一把刺劍閃了出來，黏液則往回爬向他的身軀，快速覆蓋他的全身。羅羅揮舞著刺劍，朝著將軍刺去。",
+            "教堂後方的樹林一震，一股異樣的感覺襲來。雷亞一直覺得那裡有股說不出來的怪異感，那不是涅西斯的力量。樹與樹之間突然撕裂出一道裂痕，裡頭盡是黑暗。然後一個人從中踏了出來。",
+            "是柳俠馬許。",
+            "「喂，」馬許用那慵懶又有點煩躁的眼神，盯著他的徒弟雷亞看。「你們也太弱了吧。跟我回去修煉。」轉瞬間，所有人，就連瑪萊雅將軍都屏息。在馬許面前，瑪萊雅將軍連呼吸都變得謹慎。一名士兵朝著馬許衝了過去，瑪萊雅將軍大吼了一聲「停下來！」",
+            "「好啦，你們都給我進去。雷亞，還有你身邊的這些傢伙。」對瑪萊雅將軍、利斯達上校，或任何士兵，馬許都懶得看一眼。接著馬許看了一眼拉比，並對他點頭致意，拉比也對他回禮。眼看一名士兵也朝著裂縫衝，馬許拿起手杖朝那人頂了一下，士兵便似噴了出去，跌在遠方的地上。",
+            "裂縫關起。萊斯諾、克萊芬都像上輩子的事一樣，消失了。",
+            "雷亞踏出裂縫時，眼前是比家鄉還熟悉的地方：風拂山丘。這裡是她從小受柳俠馬許訓練的地方。比起萊斯諾或克萊芬，這裡，更像家。",
+            "當羅羅感受到風吹來的涼意，他才意識到自己已經將那鬼東西覆在他身上的噁心黏液褪去了。這裡，是和剛才完全不一樣的地方。然後，是熟悉的味道。",
+            "是土的味道，是翻土才有的那種潮濕氣味，是⋯⋯銀蓮花的味道。羅羅慌忙地東張西望，只看見眼前一片花海。",
+            "但，不對。那不是銀蓮花的味道。因為銀蓮花沒有味道。",
+            "那是回憶的味道。"
+          ]
+        }
+      ],
+    "en": [
+      {
+        "date": "15049.05.22",
+        "paragraphs": [
+          "Ravi looked over at his companions and spotted Maribel peeking down from the top of the stairs. She told him that Kaname was stuck on the staircase and that she could not hold the sleep spell for much longer, so they had to get Kaname down quickly. With Maribel's help, Ravi carried Kaname downstairs and placed her in the cart she had left on the ground floor, ready to leave the tavern. Juanto urged everyone to hurry outside, promising to hold off anyone who came after them.",
+          "After leaving the tavern, Ravi ran toward the gates of Clyphen with practiced ease. Along the way, he told Leah, still transformed into a cockroach, to remember the route carefully; this was her hometown, after all. The guards at the city gate were startled to see the adventurers rushing toward them. They had been about to warn the group to shelter inside during such a chaotic time, but when they recognized Ravi, they merely called, \"Be careful out there.\"",
+          "Outside the gates, Leah looked back at her \"hometown\" as the city entrance grew smaller and more distant. The last time they had traveled this road, Al-lon had only just left, the Halfway Home had not yet met Ravi, and General Maliya had only just ordered them to infiltrate Clyphen as spies. It had been only a few days, yet it felt like another lifetime.",
+          "Beyond the city, the road they had arrived by lay to the left, while a forest stretched out to the right. Ravi led everyone into the woods. Once they were certain no one was nearby, Leah ended her transformation and returned to her lizardfolk form. Only then did Ravi remember that, aside from Leah, he had never told the others where they were going. Deep in the forest stood a small white chapel. It was where Ravi and Leah's master, Marsh the Willow, had officiated the wedding of Leah's parents, and it was also where her parents had died.",
+          "Through the trees, Leah caught glimpses of the little white building. Everyone slowed down and took a moment to catch their breath. There was no blue, red, or brown inside or outside the chapel—only plain, even weathered white. The adventurers entered the sanctuary carefully. Someone seemed to visit from time to time to tend the place; it was old, but clean. Ravi led Leah into the office behind the chapel and closed the door. Inside a drawer, a carefully preserved letter waited for Leah to open it.",
+          "Once Leah had gathered herself, Ravi opened the office door and allowed the other adventurers inside. Maribel stood by the doorframe, looking somewhat unsure of what to do, while Leah wiped away her tears and read the letter aloud to everyone. When she finished, Ravi pushed open the chapel's back door and told Leah that her parents' small gravestone stood in the grass behind the building. He wanted to take her there to pay her respects. The marker was simple, bearing only two lines: \"Ahanu Shiverston\" and \"Lesta von Clyphen.\" Those were the names of Leah's parents. Leah knelt and asked the others to give her some time alone.",
+          "Back inside the chapel, no one knew what to do except wait. The building was so small that they had seen all of it within minutes, and no one knew how much time Leah would need. In the blink of an eye, Fur disappeared. Ravi got up to search, but Roel found him first. Fur appeared to be rummaging through everything while muttering, \"Chicken leg.\" By the time Ravi approached, however, Fur had already put everything back without leaving a trace. Ravi also felt that Maribel was acting rather carefree and flippant given the circumstances. It displeased him, but he kept it to himself and merely opened a window so his owl could fly out and patrol.",
+          "At the same time, Leah gathered a few white flowers from the woods. She did not know what kind they were; she only knew that they were neither blue, red, nor brown. She gently laid the small bouquets before her parents' grave, then sat down and leaned lightly against the stone. Her thoughts turned to Nessis, yet she could not sense the god's presence. It was as though Nessis, too, had chosen to give her space.",
+          "Roel stepped out of the chapel to see what Leah was doing. All he saw was Leah's massive figure, with the gravestone looking so very small beside her. As he turned back toward the chapel, Leah heard his footsteps. \"Who's there?\" she called, but received no answer. Not long afterward, she decided to get up and return to the chapel.",
+          "When Maribel saw Leah return, she decided to pay her respects as well, and Kaname followed. Ravi watched them carefully to make sure the little one was not secretly up to anything. Maribel murmured a few words, and great handfuls of white flowers blossomed in her hands. She placed them gently beside the flowers Leah had left, clasped her hands in respect, and shed a few tears. Kaname embraced Maribel sympathetically.",
+          "Suddenly, Maribel heard the owl's cry. She sprang to her feet, alert, and pulled Kaname back toward the chapel. Maribel hurriedly passed the warning to Ravi, who immediately led everyone toward the chapel's front entrance. The moment they stepped outside, an arrowhead sliced past the ends of their hair. Ambushers waited in the woods on both sides. Ravi pulled everyone forward, with Leah running at the front. When they broke through the trees ahead, however, a vast red figure that filled Leah with dread stood before her.",
+          "It was General Maliya of Leisnor.",
+          "General Maliya rested her enormous sword against the ground, radiating authority. Not far from her stood Colonel Lisdar, who had once been so arrogant and overbearing. Now he gazed at her with the fawning eyes of a lapdog, all dignity gone. Ravi took one look and snorted, \"Red dog.\" Hundreds of Leisnor soldiers blocked the way behind the general. Forces of the Old Tree League and the Citizen's Connection were mixed among them. As for the New Academy—or rather, \"New Dawn\"—their furious cries could be heard rolling in from afar, though not one of them could be seen.",
+          "\"Leah, child of mixed blood,\" General Maliya said, her composure edged with menace. \"That chapel is important to you, isn't it? Soldiers, destroy it.\" The troops immediately raised their weapons and began tearing the chapel apart. Some even headed toward the grave of Leah's parents.",
+          "\"What will it take for you to stop?\" Leah demanded, glaring at General Maliya with hatred. With the army desecrating her parents before her eyes, the general's imposing presence meant nothing.",
+          "\"Perhaps it would be nice if Clyphen were absorbed into Leisnor and ceased to exist,\" General Maliya replied with faint amusement.",
+          "\"Do whatever you want,\" Leah said coldly, though her weapon was already in hand. Enraged, Ravi attacked the general but missed. She gave a cold laugh, and the battle erupted.",
+          "Arrows poured from the trees. The adventurers tried to evade them, but enemies stood everywhere around them alongside their companions. Against an army numbering in the thousands, this was not a battle they could win. Even escape seemed nearly impossible, yet surrender was no option—not beneath the blaze in Leah's eyes.",
+          "The general brought her greatsword down in a brutal sweep while Ravi and his owl struck at her together. The usually quiet Roel cast a spell that locked the general in place. In a voice louder than anyone had ever heard from him, he ordered the troops not to move unless they were willing to sacrifice General Maliya's life. The soldiers halted, but an instant later a burning sensation spread across Roel's waist: blood. General Maliya recovered and continued hacking at the adventurers. Fur suddenly darted in from the side and drove a sneak attack into the general's waist, making her suck in a sharp breath.",
+          "Maribel wove through the battlefield, fighting desperately to protect her companions. In that moment, she truly understood how deeply she cared for these comrades—and for that great fool who had run back to Rathanad. What an idiot. Maribel's face gradually went pale. She gripped Kaname's hand, and an unending current of vitality flowed from Maribel into her. Kaname seemed to realize what this meant and frantically begged Maribel to stop, but Maribel only gave her a faint smile.",
+          "That voice surged into Roel's mind again. \"Use my power. You know that with my power, these enemies are nothing but small fry.\" Roel fought to suppress the hateful voice. He had been forcing himself not to draw upon His power—until he finally yielded.",
+          "Black-purple slime streamed like smoke from his fingertips, and a rapier flashed into being. The slime crawled back over his body, swiftly coating him from head to toe. Roel swept the rapier forward and lunged at the general.",
+          "The woods behind the chapel shuddered, and an uncanny sensation rolled through the air. Leah had felt something indescribably strange there all along, something that was not the power of Nessis. A fissure suddenly tore open between the trees, revealing nothing but darkness within. Then someone stepped out.",
+          "It was Marsh the Willow.",
+          "\"Hey,\" Marsh said, fixing his apprentice Leah with his lazy, faintly irritated gaze. \"You lot are way too weak. Come back with me and train.\" In an instant, everyone—even General Maliya—held their breath. Before Marsh, the general herself breathed with caution. One soldier charged at him, and General Maliya roared, \"Stop!\"",
+          "\"All right, all of you, get inside. Leah—and those people with you.\" Marsh could not be bothered to spare General Maliya, Colonel Lisdar, or any of the soldiers a glance. He looked toward Ravi and gave him a nod; Ravi returned the gesture. When another soldier rushed toward the fissure, Marsh lifted his staff and gave the man a single jab, sending him flying before he crashed to the ground far away.",
+          "The fissure closed. Leisnor and Clyphen vanished as though they belonged to a previous life.",
+          "When Leah stepped out of the fissure, she found herself somewhere even more familiar than either of her homelands: the Windblown Hills. This was where she had trained under Marsh the Willow since childhood. More than Leisnor or Clyphen, this place felt like home.",
+          "Only when Roel felt the cool wind against him did he realize that he had already shed the vile slime that had covered his body. This place was utterly different from where they had just been. Then came a familiar scent.",
+          "It was the smell of soil—the damp scent released when earth is freshly turned. It was... the scent of anemones. Roel looked around in a panic and saw nothing before him but a sea of flowers.",
+          "But no. That was not the scent of anemones, because anemones had no scent.",
+          "It was the scent of memory."
+        ]
+      }
+    ]
     }
   }
 }

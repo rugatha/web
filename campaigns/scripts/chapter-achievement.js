@@ -47,6 +47,7 @@ let currentUser = null;
 let achievementData = null;
 let achievementLoadPromise = null;
 let pendingAward = false;
+let awardInProgress = false;
 
 const normalizeAchievementMap = (value) => {
   if (value && typeof value === "object" && !Array.isArray(value)) {
@@ -251,25 +252,36 @@ const resolveMemberId = async (user) => {
 };
 
 const awardAchievement = async () => {
-  if (!currentUser || !db) return;
-  const achievement = await loadAchievementData();
-  if (!achievement) return;
-  const memberId = await resolveMemberId(currentUser);
-  if (!memberId) return;
-  const memberRef = ref(db, `members/${memberId}`);
-  let awarded = false;
+  if (!currentUser || !db || awardInProgress) return;
+  awardInProgress = true;
   try {
+    const achievement = await loadAchievementData();
+    if (!achievement) return;
+    const memberId = await resolveMemberId(currentUser);
+    if (!memberId) return;
+    const memberRef = ref(db, `members/${memberId}`);
     const result = await runTransaction(memberRef, (current) => {
       const existing = current || {};
       const existingAchievements = normalizeAchievementMap(existing.achievements);
-      if (existingAchievements[achievement.achievement]) {
-        return existing;
+      const rewardedAchievements = normalizeAchievementMap(existing.rewardedAchievements);
+      if (
+        existingAchievements[achievement.achievement] ||
+        rewardedAchievements[achievement.achievement]
+      ) {
+        // Returning undefined aborts the transaction. This makes `committed`
+        // an authoritative signal that this account unlocked the achievement
+        // for the first time, even when Firebase retries the updater.
+        return;
       }
-      awarded = true;
       const nextAchievements = { ...existingAchievements, [achievement.achievement]: true };
+      const nextRewardedAchievements = {
+        ...rewardedAchievements,
+        [achievement.achievement]: true
+      };
       const next = {
         ...existing,
-        achievements: nextAchievements
+        achievements: nextAchievements,
+        rewardedAchievements: nextRewardedAchievements
       };
       Object.entries(achievement.rewards || {}).forEach(([key, value]) => {
         const baseValue = Number(existing[key]);
@@ -279,10 +291,12 @@ const awardAchievement = async () => {
       });
       return next;
     });
-    if (result.committed && awarded) {
-      try {
-        localStorage.removeItem(PENDING_KEY);
-      } catch (error) {}
+    // Whether newly awarded or already owned, this navigation event has now
+    // been handled for the signed-in account.
+    try {
+      localStorage.removeItem(PENDING_KEY);
+    } catch (error) {}
+    if (result.committed) {
       showAchievementToast(
         achievement.achievementZh,
         achievement.achievementEn,
@@ -292,12 +306,15 @@ const awardAchievement = async () => {
     }
   } catch (error) {
     console.error("Failed to award achievement", error);
+  } finally {
+    awardInProgress = false;
+    tryAward();
   }
 };
 
 const tryAward = () => {
   if (!pendingAward) return;
-  if (!currentUser || !db) return;
+  if (!currentUser || !db || awardInProgress) return;
   pendingAward = false;
   awardAchievement();
 };
@@ -308,7 +325,8 @@ const requestAward = () => {
 };
 
 const setupChapterNavTracking = () => {
-  const selector = ".chapter-nav__item--prev, .chapter-nav__item--next, .chapter-nav__link";
+  const selector =
+    "a.chapter-nav__item--prev, a.chapter-nav__item--next, .chapter-nav__link";
   document.addEventListener(
     "click",
     (event) => {

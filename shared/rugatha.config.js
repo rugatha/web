@@ -902,6 +902,11 @@
         id: "wilds-c05-chpt05",
         title: "Chapter 5: La Vie de Leah",
         url: "../wilds-c05/chpt05.html"
+      },
+      {
+        id: "wilds-c05-chpt06",
+        title: "Chapter 6: Dear Leah",
+        url: "../wilds-c05/chpt06.html"
       }
     ],
 
@@ -1104,6 +1109,7 @@
     "wilds-c05-chpt03": "../chapter-banners/wilds-c05-chpt03.jpeg",
     "wilds-c05-chpt04": "../chapter-banners/wilds-c05-chpt04.jpeg",
     "wilds-c05-chpt05": "../chapter-banners/wilds-c05-chpt05.jpeg",
+    "wilds-c05-chpt06": "../campaign-banners/wilds-c05.png",
     "brown-c01-chpt01": "../chapter-banners/brown-c01-chpt01.png",
     "brown-c01-chpt02": "../chapter-banners/brown-c01-chpt02.png",
     "brown-c01-chpt03": "../chapter-banners/brown-c01-chpt03.png",

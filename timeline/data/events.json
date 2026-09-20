@@ -573,6 +573,16 @@
   {
     "type": "event",
     "era": "new-dranison",
+    "titleZh": "親愛的雷亞",
+    "titleEn": "Dear Leah",
+    "tag": "rugatha-wilds",
+    "date": "15049.05.22",
+    "descZh": "雷亞在林中的白色小教堂讀到父母留下的信，並第一次到兩人的墓前致意。\n瑪萊雅將軍率軍包圍並摧毀教堂，柳俠馬許現身救走中途之家，將眾人帶往風拂山丘。",
+    "descEn": "At a small white chapel in the woods, Leah read the letter left by her parents and visited their grave for the first time.\nGeneral Maliya surrounded and destroyed the chapel with her army, but Marsh the Willow appeared, rescued the Halfway Home, and brought them to the Windblown Hills."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
     "titleZh": "往返深淵",
     "titleEn": "To the Deep and Back",
     "tag": "rugatha-legends",
