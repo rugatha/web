@@ -1117,7 +1117,7 @@
     "wilds-c05-chpt03": "../chapter-banners/wilds-c05-chpt03.jpeg",
     "wilds-c05-chpt04": "../chapter-banners/wilds-c05-chpt04.jpeg",
     "wilds-c05-chpt05": "../chapter-banners/wilds-c05-chpt05.jpeg",
-    "wilds-c05-chpt06": "../campaign-banners/wilds-c05.png",
+    "wilds-c05-chpt06": "../chapter-banners/wilds-c05-chpt06.jpeg",
     "brown-c01-chpt01": "../chapter-banners/brown-c01-chpt01.png",
     "brown-c01-chpt02": "../chapter-banners/brown-c01-chpt02.png",
     "brown-c01-chpt03": "../chapter-banners/brown-c01-chpt03.png",
