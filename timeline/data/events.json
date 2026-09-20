@@ -14,7 +14,7 @@
     "tag": "rugatha-plus",
     "date": "746.04.22 E.M.",
     "descZh": "生病的索拉被父母以儀式「除魔」。\n他的狗「嘟嘟」被作為獻祭。\n儀式失敗。\n不久後，索拉死去，他的母親逐漸走向創立拉索斯教之路，成為拉索斯之母。",
-    "descEn": "Ill Sora was put through the 'exorcism' ritual by his parents.\nHis dog, Dudu, was offered as a sacrifice.\nThe ritual failed.\nSoon after, Sora died, and his mother gradually set out on the path to founding the Laxthos faith, becoming the Mother of Laxthos."
+    "descEn": "Ill Sora was put through the 'exorcism' ritual by his parents.\nHis dog, Dudu, was offered as a sacrifice.\nThe ritual failed.\nSoon after, Sora died, and his mother gradually set out on the path to founding the Laxthos faith, becoming The Mother of Laxthos."
   },
   {
     "type": "era",
@@ -98,7 +98,7 @@
     "tag": "rugatha-legends",
     "date": "10836.04.02",
     "descZh": "在征服者洛林統一帝國78年（10836）紀念日的隔日，由妖精王國首都佛萊特境的艾蒙醫生、前涅西斯主教法倫，和洛林的左右手諾威爾（的屍體粉塵），透過儀式進行融合，成為一名被稱為阿爾芬諾的孽物，逃離佛萊特境。\n在那之後，蜘蛛神教便開始發展，逐漸從妖精王國的境內向外延伸。",
-    "descEn": "The day after the 78th anniversary of Conqueror Lorin's unification of the empire (10836), Dr. Elmond of the elven capital Phreit Realm, former Nessis bishop Fallon, and Lorin's right hand, Norvelle (his corpse dust), were fused through a ritual into a creature called Alfenor, which escaped Phreit Realm.\nAfter that, the Spider religion began to grow, gradually spreading from within the elven kingdom."
+    "descEn": "The day after the 78th anniversary of Conqueror Lorin's unification of the empire (10836), Dr. Elmond of the elven capital Phreit Realm, former Nessis bishop Fallon, and Lorin's right hand, Norvelle (his corpse dust), were fused through a ritual into a creature called Alfenor, which escaped Phreit Realm.\nAfter that, The Spider Religion began to grow, gradually spreading from within the elven kingdom."
   },
 
   {
@@ -398,7 +398,7 @@
     "tag": "rugatha-lite",
     "date": "15048.12.02",
     "descZh": "冒險者們見證蜘蛛神教的「母親大人」。\n挺王派的貴族伯納德疑似遭反王派的潘蜜拉殺死。",
-    "descEn": "The adventurers witnessed the Mother of the Spider religion.\nBernard, a pro-king noble, was suspected of being killed by the anti-king noble Pamela."
+    "descEn": "The adventurers witnessed The Mother of The Spider Religion.\nBernard, a pro-king noble, was suspected of being killed by the anti-king noble Pamela."
   },
   {
     "type": "event",
@@ -418,7 +418,7 @@
     "tag": "rugatha-lite",
     "date": "15048.12.04",
     "descZh": "冒險者們潛入麥克嵩王宮監獄，拯救被關押在此的蜘蛛神教代表瑪莉安・詹斯。",
-    "descEn": "The adventurers infiltrated the Macksohn royal prison to rescue Marianne Jens, the Spider religion's representative held there."
+    "descEn": "The adventurers infiltrated the Macksohn royal prison to rescue Marianne Jens, The Spider Religion's representative held there."
   },
   {
     "type": "event",
@@ -428,7 +428,7 @@
     "tag": "rugatha-lite",
     "date": "15048.12.04",
     "descZh": "蜘蛛神教母親大人遭安娜奪舍。\n母親大人的靈魂鑽入帕拉丁的身體將其取代。",
-    "descEn": "The Mother of the Spider religion was possessed by Anna.\nThe Mother's soul entered Paladin's body and replaced him."
+    "descEn": "The Mother of The Spider Religion was possessed by Anna.\nThe Mother's soul entered Paladin's body and replaced him."
   },
   {
     "type": "event",
@@ -588,7 +588,7 @@
     "tag": "rugatha-lite",
     "date": "15049.09.03",
     "descZh": "冒險者們與馬可斯・詹斯、拉黎爾與他的狼蓋瑞一同來到洛森王國，試圖尋找母親大人的下落。",
-    "descEn": "The adventurers, together with Marcus Jens, Ra'Leer, and her wolf Gary, arrived in the Lothum Kingdom to search for the Mother's whereabouts."
+    "descEn": "The adventurers, together with Marcus Jens, Ra'Leer, and her wolf Gary, arrived in the Lothum Kingdom to search for The Mother's whereabouts."
   },
   {
     "type": "event",
@@ -614,11 +614,11 @@
     "type": "event",
     "era": "new-dranison",
     "titleZh": "母親大人的屠殺",
-    "titleEn": "The Massacre of the Mother",
+    "titleEn": "The Massacre of The Mother",
     "tag": "rugatha-lite",
     "date": "15049.09.07",
     "descZh": "冒險者們來到母親大人的洞穴。\n拉黎爾、蓋瑞和羅特以外的冒險者們慘遭異變的母親大人攻擊。\n只有在洞外守候的佛拉存活、羅特和芒果被圖伊特以其存在的所有證據作為交易，得以存活。",
-    "descEn": "The adventurers came to the Mother's cave.\nRa'Leer, Gary, and all adventurers except Lott were attacked by the mutated Mother.\nOnly Phola, who waited outside, survived; Lott and Mango survived because Tweeter traded away all evidence of his existence."
+    "descEn": "The adventurers came to The Mother's cave.\nRa'Leer, Gary, and all adventurers except Lott were attacked by The Mother in her mutated form.\nOnly Phola, who waited outside, survived; Lott and Mango survived because Tweeter traded away all evidence of his existence."
   },
   {
     "type": "event",
@@ -698,7 +698,7 @@
     "tag": "rugatha-lite",
     "date": "15051.05.10",
     "descZh": "羅特與新的夥伴們一起來到卓茲蘭，尋覓一頂王冠。\n冒險者們踏入卓茲蘭宅邸的洞穴，成功擊退孽物，也見證了芬諾爾的傳道士。",
-    "descEn": "Lott and new companions arrived in Drogsland to seek a crown.\nThe adventurers entered the caverns beneath the Drogsland manor, successfully repelled the abominations, and witnessed an evangalist of Phyneal."
+    "descEn": "Lott and new companions arrived in Drogsland to seek a crown.\nThe adventurers entered the caverns beneath the Drogsland manor, successfully repelled the abominations, and witnessed an evangalist of Phynoir."
   },
   {
     "type": "event",
