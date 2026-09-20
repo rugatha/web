@@ -631,7 +631,8 @@
       const term = searchInput ? (searchInput.value || '').trim().toLowerCase() : '';
       const filtered = term
         ? charactersCache.filter((c) => {
-            const nameMatch = getDisplayName(c).toLowerCase().includes(term);
+            const nameMatch = [c.id, c.name, c.nameEn, c.nameZh]
+              .some((name) => `${name || ''}`.toLowerCase().includes(term));
             const raceMatch = getRaceKeysAll(c).some((r) => r.toLowerCase().includes(term));
             const genderMatch = genderMatches(term, c.gender);
             const religionMatch = getReligionKeysAll(c).some((r) =>

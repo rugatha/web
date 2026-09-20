@@ -1,10 +1,10 @@
 [
   {
     "title": {
-      "zh": "9月體驗團 《洛林精神》報名",
+      "zh": "10月體驗團 《洛林精神》報名",
       "en": "\"The Spirit of Lorin\" Registration"
     },
-    "date": "2026-09-19",
+    "date": "2026-10-XX",
     "category": {
       "zh": "體驗團",
       "en": "Beginner-Friendly\nOne-Shot"
@@ -39,20 +39,20 @@
   },
   {
     "title": {
-      "zh": "Rugatha Wilds S21",
-      "en": "Rugatha Wilds S21"
+      "zh": "Rugatha Wilds S22",
+      "en": "Rugatha Wilds S22"
     },
-    "date": "2026-09-19",
+    "date": "2026-11-21",
     "category": {
       "zh": "長團",
       "en": "Campaign"
     },
     "link": "/campaigns/pages/rugatha-wilds/wilds-c05/",
     "note": {
-      "zh": "《不被承認的孩子》",
-      "en": "\"The Unacknowledged Child\""
+      "zh": "《未命名新章節》",
+      "en": "\"New Chapter\""
     },
-    "image": "campaigns/campaign-banners/wilds-c05.png",
+    "image": "campaigns/campaign-banners/wilds-c06.png",
     "isTransparent": false,
     "deadline": false
   },
