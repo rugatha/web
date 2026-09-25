@@ -15,6 +15,7 @@ import {
   ref as storageRef,
   uploadBytes
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-storage.js";
+import { optimizeCharacterPortrait } from "./portrait-image.js?v=20260925-portrait-thumb-1";
 
 export const MAX_CHARACTER_NAME_LENGTH = 120;
 export const MAX_CHARACTER_PORTRAIT_BYTES = 5 * 1024 * 1024;
@@ -80,6 +81,7 @@ export const listCharacterSheets = async (appOrDb, uid) => {
       const data = item.data() || {};
       return {
         key: item.id,
+        memberId: uid,
         characterName: normalizeCharacterName(data.characterName) || characterNameFromKey(item.id),
         className: String(data.className || ""),
         race: String(data.race || ""),
@@ -88,6 +90,33 @@ export const listCharacterSheets = async (appOrDb, uid) => {
       };
     })
     .sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")));
+};
+
+export const listAllCharacterSheets = async (appOrDb) => {
+  const db = typeof appOrDb?.type === "string" ? appOrDb : getFirestore(appOrDb);
+  const memberSnapshot = await getDocs(collection(db, "members"));
+  const members = memberSnapshot.docs.map((item) => {
+    const data = item.data() || {};
+    return {
+      memberId: item.id,
+      memberNo: String(data.memberNo || ""),
+      email: String(data.email || ""),
+      displayName: String(data.profile?.title || data.displayName || data.email || item.id)
+    };
+  }).sort((a, b) => {
+    const memberNo = (a.memberNo || "9999-9999").localeCompare(b.memberNo || "9999-9999");
+    return memberNo || a.displayName.localeCompare(b.displayName, "zh-Hant");
+  });
+  const lists = await Promise.all(members.map(async (member) => {
+    const characters = await listCharacterSheets(db, member.memberId);
+    return characters.map((character) => ({
+      ...character,
+      memberNo: member.memberNo,
+      memberEmail: member.email,
+      memberDisplayName: member.displayName
+    }));
+  }));
+  return lists.flat();
 };
 
 export const loadCharacterSheet = async (appOrDb, uid, characterKey) => {
@@ -158,20 +187,27 @@ export const saveCharacterSheet = async ({
   const destinationSnapshot = await getDoc(destination);
   let portrait = existingPortrait || null;
   let uploadedPath = "";
+  let uploadedPortraitUrl = "";
 
   if (portraitAction === "upload") {
-    const blob = await blobFromSource(portraitSource);
+    const sourceBlob = await blobFromSource(portraitSource);
+    validatePortrait(sourceBlob);
+    const blob = await optimizeCharacterPortrait(sourceBlob);
     validatePortrait(blob);
     const extension = SUPPORTED_PORTRAIT_TYPES.get(blob.type);
     const portraitKey = storageKeyForCharacterName(name);
-    uploadedPath = `character-portraits/${uid}/${portraitKey}/portrait.${extension}`;
-    await uploadBytes(storageRef(storage, uploadedPath), blob, { contentType: blob.type });
+    uploadedPath = `character-portraits/${uid}/${portraitKey}/portrait-${Date.now()}.${extension}`;
+    await uploadBytes(storageRef(storage, uploadedPath), blob, {
+      contentType: blob.type,
+      cacheControl: "private,max-age=31536000,immutable"
+    });
     portrait = {
       path: uploadedPath,
       contentType: blob.type,
       size: blob.size,
       updatedAt: serverTimestamp()
     };
+    uploadedPortraitUrl = URL.createObjectURL(blob);
   } else if (portraitAction === "remove") {
     portrait = null;
   }
@@ -220,6 +256,7 @@ export const saveCharacterSheet = async ({
   return {
     key: characterKey,
     characterName: name,
-    portrait: portrait ? { ...portrait, updatedAt: new Date() } : null
+    portrait: portrait ? { ...portrait, updatedAt: new Date() } : null,
+    portraitUrl: uploadedPortraitUrl
   };
 };

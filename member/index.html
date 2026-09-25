@@ -2884,9 +2884,12 @@
       if (isFirestoreBackend()) {
         try {
           const token = await user.getIdTokenResult();
-          authState.isAdmin = token.claims.admin === true;
+          authState.isAdmin = token.claims.admin === true
+            || Boolean(user.emailVerified && user.email?.toLowerCase() === ADMIN_EMAIL);
         } catch (error) {
-          authState.isAdmin = false;
+          authState.isAdmin = Boolean(
+            user.emailVerified && user.email?.toLowerCase() === ADMIN_EMAIL
+          );
           console.warn("Failed to load administrator claim", error);
         }
       } else {

@@ -12,8 +12,15 @@ service firebase.storage {
 
     function isAdmin() {
       return signedIn()
-        && 'admin' in request.auth.token
-        && request.auth.token.admin == true;
+        && (
+          ('admin' in request.auth.token && request.auth.token.admin == true)
+          || (
+            'email' in request.auth.token
+            && 'email_verified' in request.auth.token
+            && request.auth.token.email_verified == true
+            && request.auth.token.email == 'rugathadnd@gmail.com'
+          )
+        );
     }
 
     function validAvatar(fileName) {
@@ -34,7 +41,7 @@ service firebase.storage {
       allow get: if isOwner(uid) || isAdmin();
       allow list: if false;
       allow create, update: if isOwner(uid)
-        && fileName.matches('portrait\\.(webp|jpg|jpeg|png)')
+        && fileName.matches('portrait(-[0-9]+)?\\.(webp|jpg|jpeg|png)')
         && request.resource.size > 0
         && request.resource.size <= 5 * 1024 * 1024
         && request.resource.contentType.matches('image/(webp|jpeg|png)');

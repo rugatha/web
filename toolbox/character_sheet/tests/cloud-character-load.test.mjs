@@ -40,10 +40,12 @@ vm.runInContext(`
   let characterStore = mockStore;
   let characterUser = { uid: 'admin' };
   let characterMemberId = 'member';
+  let characterReadOnly = false;
   let currentCharacterKey = '';
   let existingPortrait = null;
   let portraitDirty = false;
   let portraitSource = null;
+  const characterOptionValue = (memberId, characterKey) => memberId + '::' + characterKey;
   ${loadSource}
 `, context);
 
@@ -58,6 +60,7 @@ assert.equal(calls.restored.class1, 'wizard');
 assert.equal(calls.restored.portraitSrc, '');
 assert.equal(calls.statuses.at(-1), 'Loaded Ian Test');
 assert.equal(calls.portrait, null, 'Portrait loading remains independent from text restoration');
+assert.equal(selector.value, 'member::Ian%20Test');
 
 resolvePortrait('blob:portrait');
 await new Promise((resolve) => setImmediate(resolve));

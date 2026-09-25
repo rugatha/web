@@ -126,6 +126,21 @@ test("member documents are private to their owner and admin", async () => {
   assert.equal(snapshot.size, 2);
 });
 
+test("the verified Rugatha admin email may browse member documents without a custom claim", async () => {
+  const adminDb = environment.authenticatedContext("rugatha-admin", {
+    email: "rugathadnd@gmail.com",
+    email_verified: true
+  }).firestore();
+  const unverifiedDb = environment.authenticatedContext("unverified-admin", {
+    email: "rugathadnd@gmail.com",
+    email_verified: false
+  }).firestore();
+
+  const snapshot = await assertSucceeds(getDocs(query(collection(adminDb, "members"))));
+  assert.equal(snapshot.size, 2);
+  await assertFails(getDocs(query(collection(unverifiedDb, "members"))));
+});
+
 test("owner may edit profile but cannot change member number", async () => {
   const db = environment.authenticatedContext("owner", {
     email: "owner@example.test"
@@ -235,6 +250,15 @@ test("character sheets are private, owner-writable records", async () => {
   }));
   await assertSucceeds(updateDoc(doc(ownerDb, characterPath), {
     data: { ...character.data, notes: "Updated notes" },
+    updatedAt: serverTimestamp()
+  }));
+  await assertSucceeds(updateDoc(doc(ownerDb, characterPath), {
+    portrait: {
+      path: "character-portraits/owner/QWRhIFN0b25l/portrait-1780000000000.webp",
+      contentType: "image/webp",
+      size: 12345,
+      updatedAt: serverTimestamp()
+    },
     updatedAt: serverTimestamp()
   }));
   await assertSucceeds(deleteDoc(doc(ownerDb, characterPath)));
@@ -347,4 +371,15 @@ test("character portraits are owner-writable and private", async () => {
     "raw",
     { contentType: "text/plain" }
   ));
+  await assertSucceeds(uploadString(
+    storageRef(ownerStorage, "character-portraits/owner/QWRhIFN0b25l/portrait-1780000000000.webp"),
+    "optimized image",
+    "raw",
+    { contentType: "image/webp" }
+  ));
+  const emailAdminStorage = environment.authenticatedContext("rugatha-admin", {
+    email: "rugathadnd@gmail.com",
+    email_verified: true
+  }).storage();
+  await assertSucceeds(getBytes(storageRef(emailAdminStorage, portraitPath)));
 });

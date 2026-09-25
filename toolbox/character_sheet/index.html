@@ -535,7 +535,7 @@
     };
     const abilityData = [{ id: 'str', code: 'STR', zh: '力量', en: 'Strength' }, { id: 'dex', code: 'DEX', zh: '敏捷', en: 'Dexterity' }, { id: 'con', code: 'CON', zh: '體質', en: 'Constitution' }, { id: 'int', code: 'INT', zh: '智力', en: 'Intelligence' }, { id: 'wis', code: 'WIS', zh: '感知', en: 'Wisdom' }, { id: 'cha', code: 'CHA', zh: '魅力', en: 'Charisma' }];
     const skillData = [{ zh: '運動', en: 'Athletics', ability: 'str', storageIndex: 3 }, { zh: '扒手', en: 'Sleight of Hand', ability: 'dex', storageIndex: 15 }, { zh: '隱藏', en: 'Stealth', ability: 'dex', storageIndex: 16 }, { zh: '特技動作', en: 'Acrobatics', ability: 'dex', storageIndex: 0 }, { zh: '調查', en: 'Investigation', ability: 'int', storageIndex: 8 }, { zh: '歷史', en: 'History', ability: 'int', storageIndex: 5 }, { zh: '奧術', en: 'Arcana', ability: 'int', storageIndex: 2 }, { zh: '自然', en: 'Nature', ability: 'int', storageIndex: 10 }, { zh: '宗教', en: 'Religion', ability: 'int', storageIndex: 14 }, { zh: '馴服動物', en: 'Animal Handling', ability: 'wis', storageIndex: 1 }, { zh: '察言觀色', en: 'Insight', ability: 'wis', storageIndex: 6 }, { zh: '醫術', en: 'Medicine', ability: 'wis', storageIndex: 9 }, { zh: '觀察', en: 'Perception', ability: 'wis', storageIndex: 11 }, { zh: '求生', en: 'Survival', ability: 'wis', storageIndex: 17 }, { zh: '欺瞞', en: 'Deception', ability: 'cha', storageIndex: 4 }, { zh: '威嚇', en: 'Intimidation', ability: 'cha', storageIndex: 7 }, { zh: '表演', en: 'Performance', ability: 'cha', storageIndex: 12 }, { zh: '說服', en: 'Persuasion', ability: 'cha', storageIndex: 13 }];
-    let currentLanguage = 'zh'; const authenticated = true; let initialized = false; let multiclass = false; let portraitSrc = ''; let portraitPosition = { x: 50, y: 50 }; let portraitZoom = 1; let portraitFlip = false; let portraitDirty = false; let portraitSource = null; let existingPortrait = null; let attackRowCount = 1; let attackCustomRows = {}; let spellRowCount = 1; let customProficiencies = { skill: [], lan: [], tool: [] }; let removedProficiencies = { skill: [], lan: [], tool: [], save: [] }; let abilityProficiencies = { skill: [], lan: [], tool: [] }; let customAbilities = []; let removedAbilities = []; let abilityNotes = {}; let classGrantedSaves = []; let equipmentItems = []; let calculationOverrides = {}; let armorRows = [{ choice: '', worn: false, custom: '', customAC: '10' }]; let shieldRows = [{ choice: 'none', worn: false, custom: '', customAC: '0' }]; let optionsPromise = null; let spellOptionsPromise = null; let subclassOptionsPromise = null; let equipmentOptionsPromise = null; let saveTimer = null; let characterStore = null; let characterUser = null; let characterMemberId = ''; let characterReadOnly = false; let currentCharacterKey = ''; let characterItems = []; let isRestoringCharacter = false; let cloudSavePromise = Promise.resolve(); const configFormat = 'rugatha-character-sheet'; const configVersion = 1;
+    let currentLanguage = 'zh'; const authenticated = true; let initialized = false; let multiclass = false; let portraitSrc = ''; let portraitPosition = { x: 50, y: 50 }; let portraitZoom = 1; let portraitFlip = false; let portraitDirty = false; let portraitSource = null; let existingPortrait = null; let attackRowCount = 1; let attackCustomRows = {}; let spellRowCount = 1; let customProficiencies = { skill: [], lan: [], tool: [] }; let removedProficiencies = { skill: [], lan: [], tool: [], save: [] }; let abilityProficiencies = { skill: [], lan: [], tool: [] }; let customAbilities = []; let removedAbilities = []; let abilityNotes = {}; let classGrantedSaves = []; let equipmentItems = []; let calculationOverrides = {}; let armorRows = [{ choice: '', worn: false, custom: '', customAC: '10' }]; let shieldRows = [{ choice: 'none', worn: false, custom: '', customAC: '0' }]; let optionsPromise = null; let spellOptionsPromise = null; let subclassOptionsPromise = null; let equipmentOptionsPromise = null; let saveTimer = null; let characterStore = null; let characterUser = null; let characterMemberId = ''; let characterReadOnly = false; let characterIsAdmin = false; let currentCharacterKey = ''; let characterItems = []; let isRestoringCharacter = false; let cloudSavePromise = Promise.resolve(); const configFormat = 'rugatha-character-sheet'; const configVersion = 1;
     const t = () => translations[currentLanguage];
     let abilityCatalog = []; let abilityCatalogPromise = null; let selectedAbilityIndexes = []; let abilityGrantedSaves = []; let abilityGrantedSkills = []; const abilityFilters = { category: '', sub_category: '', level: '', title: '' };
     let adventureEntryCount = 1;
@@ -808,20 +808,42 @@
     document.querySelectorAll('.death-track input[type="checkbox"]').forEach((input) => input.addEventListener('change', () => syncDeathSaveTrack(input)));
     const updateCombatAuto = () => { const total = characterLevel(); const bonus = total ? Math.min(6, 2 + Math.floor((total - 1) / 4)) : 2; setCalculatedValue('proficiency', `+${bonus}`); const featBonus = Array.from(document.getElementById('feat')?.selectedOptions || []).map((option) => window.sheetOptions?.feats?.find((item) => item.id === option.value)).filter(Boolean).reduce((sum, feat) => { const text = `${feat.summary_zh || ''} ${feat.summary_en || ''}`; const match = text.match(/(?:先攻|initiative)[^+\d]{0,12}\+\s*(\d+)/i); return sum + (match ? Number(match[1]) : 0); }, 0); const initiative = modifier(getAbilityScore('dex')) + featBonus; setCalculatedValue('initiative', initiative >= 0 ? `+${initiative}` : initiative); };
     const updateLevels = () => { const total = characterLevel(); const valid = total >= 1 && total <= 20; const message = document.getElementById('levelMessage'); message.textContent = valid ? `${t().levelTotal}${total}` : t().levelInvalid; message.style.color = valid ? 'var(--sheet-muted)' : '#eaa5a5'; message.dataset.valid = String(valid); updateCombatAuto(); updateHitDice(); updateSpellRows(); };
-    const updateGate = () => { document.querySelectorAll('#characterSheet input, #characterSheet select, #characterSheet textarea').forEach((el) => { el.disabled = characterReadOnly; }); document.getElementById('saveDraftButton').disabled = characterReadOnly; document.getElementById('newCharacterButton').disabled = characterReadOnly; document.getElementById('saveCharacterButton').disabled = characterReadOnly; };
+    const updateGate = () => { document.querySelectorAll('#characterSheet input, #characterSheet select, #characterSheet textarea').forEach((el) => { el.disabled = characterReadOnly; }); document.getElementById('saveDraftButton').disabled = characterReadOnly; document.getElementById('newCharacterButton').disabled = !characterUser; document.getElementById('saveCharacterButton').disabled = characterReadOnly; };
     const setLanguage = (language) => { const languageSnapshot = initialized ? collectSheetData(true) : null; if (initialized) save(); currentLanguage = language === 'en' ? 'en' : 'zh'; document.documentElement.lang = currentLanguage === 'zh' ? 'zh-Hant' : 'en'; document.title = `${t().title} | Rugatha`; document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = t()[el.dataset.i18n]; }); document.querySelectorAll('[data-placeholder-zh]').forEach((el) => { el.placeholder = currentLanguage === 'zh' ? el.dataset.placeholderZh : el.dataset.placeholderEn; }); document.getElementById('languageButton').setAttribute('aria-label', t().aria); renderAbilities(); renderChecks(); renderTables(); renderOptions(); renderEquipmentOptions(); renderArmorOptions(); renderShieldACOptions(); if (initialized) restore(languageSnapshot); renderArmorLoadout(); renderFeatPicker(); renderCharacterAbilities(); renderEquipmentItems(); restoreSpellSelections(languageSnapshot); syncInspiration(); updateAllAttacks(); updateArmorClass(); updateLevels(); updateSpeed(); updateSpellSummary(); if (characterItems.length || characterStore) renderCharacterSelector(); try { localStorage.setItem('rugatha-language', currentLanguage); } catch (_) {} };
     const collectSheetData = (includeFullPortrait = false) => { const data = {}; syncLoadoutState(); document.querySelectorAll('#characterSheet input, #characterSheet select, #characterSheet textarea').forEach((el) => { if (!el.id || el.type === 'file' || el.classList.contains('ability-note')) return; data[el.id] = el.type === 'checkbox' ? el.checked : (el.multiple ? Array.from(el.selectedOptions).map((option) => option.value) : el.value); }); data.multiclass = multiclass; data.classRowIds = getClassRowIds(); data.customProficiencies = customProficiencies; data.removedProficiencies = removedProficiencies; data.customAbilities = customAbilities; data.removedAbilities = removedAbilities; data.selectedAbilityIndexes = selectedAbilityIndexes; data.abilityNotes = abilityNotes; data.calculationOverrides = calculationOverrides; data.armorRows = armorRows; data.shieldRows = shieldRows; data.equipmentItems = equipmentItems; data.portraitSrc = includeFullPortrait ? portraitSrc : ''; data.portraitX = portraitPosition.x; data.portraitY = portraitPosition.y; data.portraitZoom = portraitZoom; data.portraitFlip = portraitFlip; data.attackRowCount = attackRowCount; data.attackCustomRows = attackCustomRows; data.spellRowCount = spellRowCount; return data; };
     const setCharacterManagerStatus = (message = '', isError = false) => { const status = document.getElementById('characterManagerStatus'); status.textContent = message; status.classList.toggle('is-error', isError); };
-    const updateCharacterUrl = (characterKey = '', newMode = false) => { const url = new URL(window.location.href); if (characterKey) url.searchParams.set('character', characterKey); else url.searchParams.delete('character'); if (newMode) url.searchParams.set('new', '1'); else url.searchParams.delete('new'); window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`); };
-    const renderCharacterSelector = () => { const selector = document.getElementById('characterSelector'); selector.replaceChildren(new Option(characterItems.length ? t().characterSelectPrompt : t().characterEmpty, '')); characterItems.forEach((item) => selector.add(new Option(item.characterName, item.key))); selector.value = currentCharacterKey; };
-    const refreshCharacterList = async () => { if (!characterStore || !characterUser || !characterMemberId) return []; characterItems = await characterStore.list(characterMemberId); renderCharacterSelector(); return characterItems; };
+    const updateCharacterUrl = (characterKey = '', newMode = false, memberId = characterMemberId) => { const url = new URL(window.location.href); if (characterKey) url.searchParams.set('character', characterKey); else url.searchParams.delete('character'); if (characterIsAdmin && memberId && memberId !== characterUser?.uid) url.searchParams.set('memberId', memberId); else url.searchParams.delete('memberId'); if (newMode) url.searchParams.set('new', '1'); else url.searchParams.delete('new'); window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`); };
+    const characterOptionValue = (memberId, characterKey) => `${memberId}::${characterKey}`;
+    const renderCharacterSelector = () => {
+      const selector = document.getElementById('characterSelector');
+      selector.replaceChildren(new Option(characterItems.length ? t().characterSelectPrompt : t().characterEmpty, ''));
+      if (characterIsAdmin) {
+        const groups = new Map();
+        characterItems.forEach((item) => {
+          let group = groups.get(item.memberId);
+          if (!group) {
+            group = document.createElement('optgroup');
+            const memberName = item.memberDisplayName || item.memberEmail || item.memberId;
+            const memberIdentity = item.memberEmail && item.memberEmail !== memberName ? ` | ${item.memberEmail}` : '';
+            group.label = `${item.memberNo || '—'} | ${memberName}${memberIdentity}`;
+            groups.set(item.memberId, group);
+            selector.appendChild(group);
+          }
+          group.appendChild(new Option(item.characterName, characterOptionValue(item.memberId, item.key)));
+        });
+      } else {
+        characterItems.forEach((item) => selector.add(new Option(item.characterName, characterOptionValue(item.memberId, item.key))));
+      }
+      selector.value = currentCharacterKey ? characterOptionValue(characterMemberId, currentCharacterKey) : '';
+    };
+    const refreshCharacterList = async () => { if (!characterStore || !characterUser || !characterMemberId) return []; characterItems = characterIsAdmin ? await characterStore.listAll() : await characterStore.list(characterUser.uid); renderCharacterSelector(); return characterItems; };
     const saveToCloud = async ({ silent = false } = {}) => {
       if (!characterStore || !characterUser || characterReadOnly || isRestoringCharacter) return false;
       const nameInput = document.getElementById('characterName');
       const name = characterStore.normalizeName(nameInput.value) || characterStore.defaultName(new Date(), currentLanguage);
       nameInput.value = name;
       const nextKey = characterStore.keyForName(name);
-      if (nextKey !== currentCharacterKey && characterItems.some((item) => item.key === nextKey)) {
+      if (nextKey !== currentCharacterKey && characterItems.some((item) => item.memberId === characterUser.uid && item.key === nextKey)) {
         setCharacterManagerStatus(t().duplicateCharacterName, true);
         return false;
       }
@@ -840,7 +862,9 @@
         existingPortrait = result.portrait;
         portraitDirty = false;
         portraitSource = null;
-        updateCharacterUrl(currentCharacterKey);
+        if (result.portraitUrl) setPortrait(result.portraitUrl, { dirty: false });
+        characterMemberId = characterUser.uid;
+        updateCharacterUrl(currentCharacterKey, false, characterMemberId);
         await refreshCharacterList();
         setCharacterManagerStatus(t().cloudSaved);
         return true;
@@ -1052,30 +1076,33 @@
       renderAdventureLog([{}]);
       renderEquipmentItems();
     };
-    const loadCharacterByKey = async (characterKey) => {
+    const loadCharacterByKey = async (characterKey, memberId = characterMemberId) => {
       if (!characterKey || !characterStore || !characterUser) return false;
+      const targetMemberId = memberId || characterUser.uid;
       window.clearTimeout(saveTimer);
       setCharacterManagerStatus(currentLanguage === 'zh' ? '正在載入角色…' : 'Loading character…');
       isRestoringCharacter = true;
       try {
-        const record = await characterStore.load(characterMemberId, characterKey);
+        const record = await characterStore.load(targetMemberId, characterKey);
         if (!record) throw new Error('Character not found');
         resetSheetForCloudLoad();
+        characterMemberId = targetMemberId;
+        characterReadOnly = characterMemberId !== characterUser.uid;
         currentCharacterKey = record.key;
         existingPortrait = record.portrait || null;
         const data = { ...(record.data || {}), characterName: record.characterName, portraitSrc: '' };
         restore(data);
         portraitDirty = false;
         portraitSource = null;
-        document.getElementById('characterSelector').value = currentCharacterKey;
-        updateCharacterUrl(currentCharacterKey);
+        document.getElementById('characterSelector').value = characterOptionValue(characterMemberId, currentCharacterKey);
+        updateCharacterUrl(currentCharacterKey, false, characterMemberId);
         setCharacterManagerStatus(t().characterLoaded.replace('{name}', record.characterName));
         if (typeof renderFullSheet === 'function') renderFullSheet();
         updateGate();
         if (typeof record.loadPortrait === 'function') {
           record.loadPortrait().then((url) => {
             if (!url) return;
-            if (currentCharacterKey !== record.key) {
+            if (currentCharacterKey !== record.key || characterMemberId !== targetMemberId) {
               if (url.startsWith('blob:')) URL.revokeObjectURL(url);
               return;
             }
@@ -1095,6 +1122,8 @@
       window.clearTimeout(saveTimer);
       isRestoringCharacter = true;
       resetSheetForCloudLoad();
+      characterMemberId = characterUser?.uid || characterMemberId;
+      characterReadOnly = false;
       currentCharacterKey = '';
       existingPortrait = null;
       document.getElementById('characterSelector').value = '';
@@ -1110,17 +1139,18 @@
       characterUser = detail.user || null;
       characterMemberId = detail.memberId || characterUser?.uid || '';
       characterReadOnly = Boolean(detail.readOnly);
+      characterIsAdmin = Boolean(detail.isAdmin);
       updateGate();
       if (!characterStore || !characterUser || !characterMemberId) return;
       try {
         await refreshCharacterList();
         const params = new URLSearchParams(window.location.search);
-        if (params.get('new') === '1' && !characterReadOnly) { startNewCharacter(); return; }
+        if (params.get('new') === '1') { startNewCharacter(); return; }
         const requestedKey = params.get('character') || '';
-        const initialKey = characterItems.some((item) => item.key === requestedKey)
-          ? requestedKey
-          : characterItems[0]?.key || '';
-        if (initialKey) await loadCharacterByKey(initialKey);
+        const initialItem = characterItems.find((item) => item.memberId === characterMemberId && item.key === requestedKey)
+          || characterItems.find((item) => item.memberId === characterUser.uid)
+          || characterItems[0];
+        if (initialItem) await loadCharacterByKey(initialItem.key, initialItem.memberId);
         else startNewCharacter();
       } catch (error) {
         console.error('Failed to initialize cloud character sheets', error);
@@ -1194,7 +1224,7 @@
     document.getElementById('exportConfigButton').addEventListener('click', exportConfig);
     document.getElementById('importConfigButton').addEventListener('click', () => { const input = document.getElementById('configFile'); input.value = ''; input.click(); });
     document.getElementById('configFile').addEventListener('change', (event) => importConfig(event.target.files?.[0]));
-    document.getElementById('characterSelector').addEventListener('change', (event) => { if (event.target.value) loadCharacterByKey(event.target.value); else startNewCharacter(); });
+    document.getElementById('characterSelector').addEventListener('change', (event) => { const item = characterItems.find((candidate) => characterOptionValue(candidate.memberId, candidate.key) === event.target.value); if (item) loadCharacterByKey(item.key, item.memberId); else startNewCharacter(); });
     document.getElementById('newCharacterButton').addEventListener('click', startNewCharacter);
     document.getElementById('saveCharacterButton').addEventListener('click', () => { window.clearTimeout(saveTimer); queueCloudSave(); });
     document.getElementById('multiclassButton').addEventListener('click', () => { addClassRow(); updateLevels(); save(); });
@@ -1260,11 +1290,12 @@
     import {
       characterKeyForName,
       defaultCharacterName,
+      listAllCharacterSheets,
       listCharacterSheets,
       loadCharacterSheet,
       normalizeCharacterName,
       saveCharacterSheet
-    } from "../../shared/character-sheets.js?v=20260925-character-load-2";
+    } from "../../shared/character-sheets.js?v=20260925-character-admin-thumbs-1";
 
     const config = window.RUGATHA_FIREBASE_CONFIG;
     if (config && !(window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false)) {
@@ -1274,13 +1305,17 @@
         const params = new URLSearchParams(window.location.search);
         const requestedMemberId = (params.get('memberId') || '').trim();
         let memberId = user.uid;
+        let isAdmin = false;
+        try {
+          const token = await user.getIdTokenResult();
+          isAdmin = token.claims.admin === true
+            || Boolean(user.emailVerified && user.email?.toLowerCase() === 'rugathadnd@gmail.com');
+        } catch (error) {
+          isAdmin = Boolean(user.emailVerified && user.email?.toLowerCase() === 'rugathadnd@gmail.com');
+          console.warn('Could not verify administrator access', error);
+        }
         if (requestedMemberId && requestedMemberId !== user.uid) {
-          try {
-            const token = await user.getIdTokenResult();
-            if (token.claims.admin === true) memberId = requestedMemberId;
-          } catch (error) {
-            console.warn('Could not verify administrator access', error);
-          }
+          if (isAdmin) memberId = requestedMemberId;
         }
         const readOnly = memberId !== user.uid;
         const characterStore = {
@@ -1288,13 +1323,11 @@
           keyForName: characterKeyForName,
           defaultName: defaultCharacterName,
           list: (uid) => listCharacterSheets(app, uid),
+          listAll: () => listAllCharacterSheets(app),
           load: (uid, key) => loadCharacterSheet(app, uid, key),
-          save: (options) => {
-            if (readOnly) throw new Error('Administrator member view is read-only');
-            return saveCharacterSheet({ app, ...options });
-          }
+          save: (options) => saveCharacterSheet({ app, ...options })
         };
-        window.dispatchEvent(new CustomEvent('rugatha-character-sheet-authorized', { detail: { user, memberId, readOnly, characterStore } }));
+        window.dispatchEvent(new CustomEvent('rugatha-character-sheet-authorized', { detail: { user, memberId, readOnly, isAdmin, characterStore } }));
       });
     }
   </script>
