@@ -1,0 +1,21 @@
+{
+  "rules": {
+    "members": {
+      "$memberId": {
+        ".read": "auth != null && ($memberId == auth.uid || data.child('memberId').val() == auth.uid || auth.token.email == 'rugathadnd@gmail.com')",
+        ".write": false
+      },
+      ".read": "auth != null && auth.token.email == 'rugathadnd@gmail.com'"
+    },
+    "members_meta": {
+      "memberNoCounter": {
+        ".read": "auth != null",
+        ".write": false
+      }
+    },
+    "qa_choices": {
+      ".read": true,
+      ".write": false
+    }
+  }
+}

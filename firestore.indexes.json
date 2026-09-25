@@ -1,0 +1,45 @@
+{
+  "indexes": [],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "members",
+      "fieldPath": "achievements",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "members",
+      "fieldPath": "rewardedAchievements",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "members",
+      "fieldPath": "migration",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "members",
+      "fieldPath": "profile.photo",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "members",
+      "fieldPath": "email",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "members",
+      "fieldPath": "campaign",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "members",
+      "fieldPath": "character",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "members",
+      "fieldPath": "totalTimeSeconds",
+      "indexes": []
+    }
+  ]
+}

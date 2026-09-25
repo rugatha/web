@@ -1,6 +1,15 @@
 import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
-import { getDatabase, ref, get, set, runTransaction } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+import {
+  getDatabase,
+  get,
+  getQaStats,
+  isFirestoreBackend,
+  ref,
+  runTransaction,
+  set,
+  submitQaChoice
+} from "../../../shared/firebase-data.js";
 
 const qaRoot = document.querySelector("[data-qa]");
 if (qaRoot) window.qaRoot = qaRoot;
@@ -291,7 +300,7 @@ if (qaRoot && !qaDisabled) {
     if (isViolentQa) {
       await awardAchievementByCode(ACHIEVEMENT_CODES.drVaxon);
     }
-    const memberKey = memberNo || authUid;
+    const memberKey = isFirestoreBackend() ? authUid : memberNo || authUid;
     if (!memberKey) return;
     try {
       const snapshot = await get(ref(db, `qa_choices/${memberKey}`));
@@ -454,6 +463,13 @@ if (qaRoot && !qaDisabled) {
   const loadChoiceStats = async () => {
     if (!db || !questionPage) return;
     try {
+      if (isFirestoreBackend()) {
+        const stats = await getQaStats(db, questionPage);
+        const total = Number(stats?.total || 0);
+        updatePercentText("1", total ? Math.round((Number(stats.c1 || 0) / total) * 100) : 0);
+        updatePercentText("2", total ? Math.round((Number(stats.c2 || 0) / total) * 100) : 0);
+        return;
+      }
       const snapshot = await get(ref(db, "qa_choices"));
       let count1 = 0;
       let count2 = 0;
@@ -506,7 +522,7 @@ if (qaRoot && !qaDisabled) {
 
   const loadSavedChoice = async () => {
     if (!db || !questionPage) return;
-    const memberKey = memberNo || authUid;
+    const memberKey = isFirestoreBackend() ? authUid : memberNo || authUid;
     if (!memberKey) return;
     try {
       const pageKey = encodeKey(questionPage);
@@ -531,7 +547,7 @@ if (qaRoot && !qaDisabled) {
 
   const logChoice = async (choice) => {
     if (!db || !choice) return;
-    const memberKey = memberNo || authUid;
+    const memberKey = isFirestoreBackend() ? authUid : memberNo || authUid;
     if (!memberKey) {
       console.warn("Missing member key; QA choice not recorded.");
       return;
@@ -546,8 +562,12 @@ if (qaRoot && !qaDisabled) {
     };
     try {
       const pageKey = encodeKey(payload.questionPage);
-      const entryRef = ref(db, `qa_choices/${memberKey}/${pageKey}`);
-      await set(entryRef, payload);
+      if (isFirestoreBackend()) {
+        await submitQaChoice(db, authUid, payload.questionPage, choiceValue);
+      } else {
+        const entryRef = ref(db, `qa_choices/${memberKey}/${pageKey}`);
+        await set(entryRef, payload);
+      }
       loadChoiceStats();
       evaluateChoiceAchievements();
     } catch (error) {

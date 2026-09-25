@@ -1129,8 +1129,12 @@
       update,
       remove,
       onValue,
-      runTransaction
-    } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+      runTransaction,
+      ensureMemberDocument,
+      isFirestoreBackend,
+      loadProfilePhoto,
+      uploadProfilePhoto
+    } from "../shared/firebase-data.js";
 
     const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
     const loginHidden = false;
@@ -1895,7 +1899,10 @@
       return `${window.location.pathname}?${params.toString()}`;
     };
 
-    const isAdminUser = (user) => Boolean(user?.email && user.email === ADMIN_EMAIL);
+    const isAdminUser = (user) =>
+      isFirestoreBackend()
+        ? authState.isAdmin
+        : Boolean(user?.email && user.email === ADMIN_EMAIL);
 
     const allocateMemberNo = async () => {
       if (!db) return null;
@@ -2039,7 +2046,7 @@
       sessionTimerId = window.setInterval(updateTimeDisplay, 1000);
       sessionSaveId = window.setInterval(() => {
         persistSessionTime(false);
-      }, 30000);
+      }, 5 * 60 * 1000);
     };
 
     const stopSessionTimer = () => {
@@ -2229,11 +2236,9 @@
 
     const loadMemberChoices = async () => {
       if (!db || !authState.user) return null;
-      const keys = [
-        authState.memberNo,
-        authState.user.uid,
-        authState.memberId
-      ]
+      const keys = (isFirestoreBackend()
+        ? [authState.user.uid]
+        : [authState.memberNo, authState.user.uid, authState.memberId])
         .map((value) => (value || "").trim())
         .filter(Boolean);
       if (!keys.length) return null;
@@ -2280,6 +2285,19 @@
     const setProfilePhoto = (url) => {
       profilePhotoUrl = url || null;
       photoEl.src = profilePhotoUrl || "../assets/logo/rugatha-icon.png";
+    };
+
+    const applyStoredProfilePhoto = (data, fallback = null) => {
+      if (!isFirestoreBackend() || !data?.profile?.photo) {
+        setProfilePhoto(data?.photoUrl || fallback);
+        return;
+      }
+      setProfilePhoto(fallback);
+      loadProfilePhoto(app, data.profile.photo)
+        .then((url) => {
+          if (url) setProfilePhoto(url);
+        })
+        .catch((error) => console.warn("Failed to load profile photo", error));
     };
 
     const normalizeCharacterName = (value) =>
@@ -2419,7 +2437,7 @@
       speciesEl.value = data.species || "";
       classEl.value = data.className || "";
       kingdomEl.value = normalizeProfileChoice("kingdom", data.kingdom);
-      setProfilePhoto(data.photoUrl || user?.photoURL || null);
+      applyStoredProfilePhoto(data, user?.photoURL || null);
       syncDisplayValues();
       syncHiddenAttributes(data);
       authState.achievements = data.achievements || {};
@@ -2480,6 +2498,9 @@
       let memberNoValue = "";
       if (!memberRef) return;
       try {
+        if (!readOnly && isFirestoreBackend()) {
+          await ensureMemberDocument(db, user);
+        }
         let snapshot = await get(memberRef);
         if (!snapshot.exists() && readOnly) {
           showReadOnlyMessage(memberId, dictionary.profileMemberNotFound);
@@ -2543,7 +2564,7 @@
         speciesEl.value = data.species || "";
         classEl.value = data.className || "";
         kingdomEl.value = normalizeProfileChoice("kingdom", data.kingdom);
-        setProfilePhoto(data.photoUrl || null);
+        applyStoredProfilePhoto(data);
         syncDisplayValues();
         syncHiddenAttributes(data);
         authState.achievements = data.achievements || {};
@@ -2738,13 +2759,23 @@
       return String(value);
     };
 
-    const setSignedIn = (user) => {
+    const setSignedIn = async (user) => {
       nameEl.textContent = user.displayName || "Member";
       emailEl.textContent = user.email || "Google account";
       authState.memberId = resolveMemberId(user, null);
       authState.ownMemberId = authState.memberId;
       authState.viewedMemberId = authState.memberId;
-      authState.isAdmin = isAdminUser(user);
+      if (isFirestoreBackend()) {
+        try {
+          const token = await user.getIdTokenResult();
+          authState.isAdmin = token.claims.admin === true;
+        } catch (error) {
+          authState.isAdmin = false;
+          console.warn("Failed to load administrator claim", error);
+        }
+      } else {
+        authState.isAdmin = Boolean(user?.email && user.email === ADMIN_EMAIL);
+      }
       authState.readOnlyView = false;
       uidEl.textContent = authState.memberId;
       memberNoEl.textContent = "—";
@@ -2862,10 +2893,10 @@
       })();
 
       getRedirectResult(auth)
-        .then((result) => {
+        .then(async (result) => {
           if (result?.user) {
             sessionStorage.removeItem(MEMBER_SIGNIN_KEY);
-            setSignedIn(result.user);
+            await setSignedIn(result.user);
           }
         })
         .catch((error) => {
@@ -2904,7 +2935,7 @@
       onAuthStateChanged(auth, async (user) => {
         if (user) {
           sessionStorage.removeItem(MEMBER_SIGNIN_KEY);
-          setSignedIn(user);
+          await setSignedIn(user);
           return;
         }
         setSignedOut();
@@ -2939,6 +2970,15 @@
       if (!authState.user || !db || isViewingOtherMember()) return;
       const file = event.target.files?.[0];
       if (!file) return;
+      if (isFirestoreBackend()) {
+        uploadProfilePhoto(app, db, authState.memberId, file)
+          .then((url) => {
+            setProfilePhoto(url);
+            evaluatePhotoAchievement();
+          })
+          .catch((error) => console.error("Failed to save profile photo", error));
+        return;
+      }
       const reader = new FileReader();
       reader.onload = async () => {
         const result = typeof reader.result === "string" ? reader.result : null;
@@ -2967,6 +3007,12 @@
     window.addEventListener("beforeunload", () => {
       if (authState.user) {
         persistSessionTime(true);
+      }
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden" && authState.user) {
+        persistSessionTime(false);
       }
     });
 

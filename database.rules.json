@@ -1,0 +1,32 @@
+{
+  "rules": {
+    "members": {
+      "$memberId": {
+        ".read": "auth != null && ($memberId == auth.uid || data.child('memberId').val() == auth.uid || auth.token.email == 'rugathadnd@gmail.com')",
+        ".write": "auth != null && ($memberId == auth.uid || data.child('memberId').val() == auth.uid || auth.token.email == 'rugathadnd@gmail.com')",
+        "bookmarks": {
+          "$bookmarkId": {
+            ".validate": "!newData.exists() || (newData.hasChildren(['path', 'title', 'savedAt']) && newData.child('path').isString() && newData.child('path').val().matches(/^(campaigns\\/pages\\/.+\\/chpt[0-9]+\\.html|deities\\/pages\\/[^/]+\\.html|npc\\/npc_page\\/pages\\/[^/]+\\.html|pc\\/articles\\/[^/]+\\.html)$/) && newData.child('title').isString() && newData.child('title').val().length <= 300 && newData.child('savedAt').isString() && newData.child('savedAt').val().length <= 40 && newData.getPriority() == null)"
+          },
+          ".indexOn": ["savedAt"]
+        }
+      },
+      ".read": "auth != null && auth.token.email == 'rugathadnd@gmail.com'"
+    },
+    "members_meta": {
+      "memberNoCounter": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+      }
+    },
+    "qa_choices": {
+      "$memberKey": {
+        "$pageKey": {
+          ".validate": "newData.hasChildren(['memberNo','questionPage','choice']) && newData.child('memberNo').isString() && newData.child('questionPage').isString() && (newData.child('choice').val() === 'C1' || newData.child('choice').val() === 'C2')"
+        },
+        ".write": "auth != null"
+      },
+      ".read": true
+    }
+  }
+}

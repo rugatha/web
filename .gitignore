@@ -1,3 +1,17 @@
 .DS_Store
 campaigns/.DS_Store
-shared/firebase.config.js
+# Firebase migration inputs, credentials, and generated reports contain private data.
+*.service-account.json
+service-account*.json
+firebase-debug.log
+firestore-debug.log
+database-debug.log
+ui-debug.log
+.firebase/
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+migration-private/
+rtdb-export*.json
+*rtdb-export*.json

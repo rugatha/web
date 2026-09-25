@@ -144,7 +144,7 @@ const loadFirebaseImports = () => {
     import("https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js"),
     import("https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js"),
     import("https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js"),
-    import("https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js")
+    import("./firebase-data.js")
   ]).then(([app, analytics, auth, database]) => ({
     app,
     analytics,
@@ -413,6 +413,15 @@ const setupAuth = async () => {
 
   const ensureMemberRecord = async (user, resolvedId) => {
     if (!user || !db || !resolvedId) return;
+    if (firebase.database.isFirestoreBackend()) {
+      try {
+        await firebase.database.ensureMemberDocument(db, user);
+      } catch (error) {
+        console.warn("Failed to ensure Firestore member record", error);
+        showAuthError(error);
+      }
+      return;
+    }
     const memberRef = ref(db, `members/${resolvedId}`);
     try {
       await runTransaction(memberRef, (current) => {

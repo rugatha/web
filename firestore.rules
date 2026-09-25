@@ -1,0 +1,248 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && 'admin' in request.auth.token
+        && request.auth.token.admin == true;
+    }
+
+    function memberPath(uid) {
+      return /databases/$(database)/documents/members/$(uid);
+    }
+
+    function counterPath() {
+      return /databases/$(database)/documents/system/memberNumbers;
+    }
+
+    function qaStatsPath(pageKey) {
+      return /databases/$(database)/documents/qaStats/$(pageKey);
+    }
+
+    function qaChoicePath(uid, pageKey) {
+      return /databases/$(database)/documents/members/$(uid)/qaChoices/$(pageKey);
+    }
+
+    function validProfile(profile, uid) {
+      return profile is map
+        && profile.keys().hasOnly([
+          'title', 'religion', 'species', 'className', 'kingdom', 'photo'
+        ])
+        && (!('title' in profile) || (profile.title is string && profile.title.size() <= 80))
+        && (!('religion' in profile) || (profile.religion is string && profile.religion.size() <= 120))
+        && (!('species' in profile) || (profile.species is string && profile.species.size() <= 80))
+        && (!('className' in profile) || (profile.className is string && profile.className.size() <= 80))
+        && (!('kingdom' in profile) || (profile.kingdom is string && profile.kingdom.size() <= 120))
+        && (!('photo' in profile) || profile.photo == null || (
+          profile.photo is map
+          && profile.photo.keys().hasOnly(['path', 'contentType', 'size', 'updatedAt'])
+          && profile.photo.path is string
+          && profile.photo.path.matches('profile-photos/' + uid + '/avatar\\.(webp|jpg|jpeg|png)')
+          && profile.photo.contentType is string
+          && profile.photo.contentType.matches('image/(webp|jpeg|png)')
+          && profile.photo.size is int
+          && profile.photo.size > 0
+          && profile.photo.size <= 2 * 1024 * 1024
+          && profile.photo.updatedAt is timestamp
+        ));
+    }
+
+    function validBadges(badges) {
+      return badges is map
+        && badges.keys().hasOnly(['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'])
+        && (!('STR' in badges) || (badges.STR is int && badges.STR >= 0 && badges.STR <= 20))
+        && (!('DEX' in badges) || (badges.DEX is int && badges.DEX >= 0 && badges.DEX <= 20))
+        && (!('CON' in badges) || (badges.CON is int && badges.CON >= 0 && badges.CON <= 20))
+        && (!('INT' in badges) || (badges.INT is int && badges.INT >= 0 && badges.INT <= 20))
+        && (!('WIS' in badges) || (badges.WIS is int && badges.WIS >= 0 && badges.WIS <= 20))
+        && (!('CHA' in badges) || (badges.CHA is int && badges.CHA >= 0 && badges.CHA <= 20));
+    }
+
+    function counterAdvancesTo(number) {
+      return exists(counterPath())
+        && get(counterPath()).data.lastAllocated is int
+        && getAfter(counterPath()).data.lastAllocated == number
+        && number == get(counterPath()).data.lastAllocated + 1;
+    }
+
+    function validMemberCreate(uid) {
+      return request.resource.data.keys().hasOnly([
+          'schemaVersion', 'memberId', 'memberNo', 'memberNoNumber', 'displayName', 'email',
+          'profile', 'badges', 'achievements', 'rewardedAchievements',
+          'qaChoiceCount', 'totalTimeSeconds', 'campaign', 'character',
+          'createdAt', 'lastLoginAt', 'updatedAt'
+        ])
+        && request.resource.data.keys().hasAll([
+          'schemaVersion', 'memberId', 'memberNo', 'memberNoNumber', 'displayName', 'email',
+          'profile', 'badges', 'achievements', 'rewardedAchievements',
+          'qaChoiceCount', 'totalTimeSeconds', 'campaign', 'character',
+          'createdAt', 'lastLoginAt', 'updatedAt'
+        ])
+        && request.resource.data.schemaVersion == 1
+        && request.resource.data.memberId == uid
+        && request.resource.data.memberNo is string
+        && request.resource.data.memberNo.matches('[0-9]{4}-[0-9]{4}')
+        && request.resource.data.memberNoNumber is int
+        && request.resource.data.memberNoNumber > 0
+        && counterAdvancesTo(request.resource.data.memberNoNumber)
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() <= 120
+        && request.resource.data.email is string
+        && request.resource.data.email == request.auth.token.email
+        && validProfile(request.resource.data.profile, uid)
+        && validBadges(request.resource.data.badges)
+        && request.resource.data.achievements is map
+        && request.resource.data.rewardedAchievements is map
+        && request.resource.data.qaChoiceCount == 0
+        && request.resource.data.totalTimeSeconds == 0
+        && request.resource.data.campaign is string
+        && request.resource.data.character is string
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.lastLoginAt == request.time
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    function validMemberUpdate(uid) {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'displayName', 'email', 'profile', 'badges', 'achievements',
+          'rewardedAchievements', 'qaChoiceCount', 'totalTimeSeconds',
+          'campaign', 'character', 'lastLoginAt', 'updatedAt'
+        ])
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() <= 120
+        && request.resource.data.email is string
+        && request.resource.data.email == request.auth.token.email
+        && validProfile(request.resource.data.profile, uid)
+        && validBadges(request.resource.data.badges)
+        && request.resource.data.achievements is map
+        && request.resource.data.rewardedAchievements is map
+        && request.resource.data.qaChoiceCount is int
+        && request.resource.data.qaChoiceCount >= 0
+        && request.resource.data.totalTimeSeconds is int
+        && request.resource.data.totalTimeSeconds >= 0
+        && request.resource.data.campaign is string
+        && request.resource.data.character is string
+        && (request.resource.data.lastLoginAt == null
+          || request.resource.data.lastLoginAt is timestamp)
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    function validBookmark() {
+      return request.resource.data.keys().hasOnly(['path', 'title', 'savedAt'])
+        && request.resource.data.keys().hasAll(['path', 'title', 'savedAt'])
+        && request.resource.data.path is string
+        && request.resource.data.path.size() > 0
+        && request.resource.data.path.size() <= 1500
+        && request.resource.data.title is string
+        && request.resource.data.title.size() <= 300
+        && request.resource.data.savedAt is timestamp;
+    }
+
+    function validChoiceData(data) {
+      return data.keys().hasOnly(['questionPage', 'choice', 'createdAt'])
+        && data.keys().hasAll(['questionPage', 'choice', 'createdAt'])
+        && data.questionPage is string
+        && data.questionPage.size() > 0
+        && data.questionPage.size() <= 1500
+        && (data.choice == 'C1' || data.choice == 'C2')
+        && data.createdAt is timestamp;
+    }
+
+    function validExistingStatsIncrement(pageKey, uid, choice) {
+      let before = get(qaStatsPath(pageKey)).data;
+      let after = getAfter(qaStatsPath(pageKey)).data;
+      return after.keys().hasOnly(['questionPage', 'c1', 'c2', 'total', 'updatedAt'])
+        && after.questionPage == before.questionPage
+        && after.questionPage == getAfter(qaChoicePath(uid, pageKey)).data.questionPage
+        && after.c1 == before.c1 + (choice == 'C1' ? 1 : 0)
+        && after.c2 == before.c2 + (choice == 'C2' ? 1 : 0)
+        && after.total == before.total + 1
+        && after.total == after.c1 + after.c2
+        && after.updatedAt == request.time;
+    }
+
+    function validNewStats(pageKey, uid, choice) {
+      let after = getAfter(qaStatsPath(pageKey)).data;
+      return after.keys().hasOnly(['questionPage', 'c1', 'c2', 'total', 'updatedAt'])
+        && after.questionPage == getAfter(qaChoicePath(uid, pageKey)).data.questionPage
+        && after.c1 == (choice == 'C1' ? 1 : 0)
+        && after.c2 == (choice == 'C2' ? 1 : 0)
+        && after.total == 1
+        && after.updatedAt == request.time;
+    }
+
+    function validStatsWrite(pageKey, uid, choice) {
+      return exists(qaStatsPath(pageKey))
+        ? validExistingStatsIncrement(pageKey, uid, choice)
+        : validNewStats(pageKey, uid, choice);
+    }
+
+    match /members/{uid} {
+      allow get: if isOwner(uid) || isAdmin();
+      allow list: if isAdmin();
+      allow create: if isOwner(uid) && validMemberCreate(uid);
+      allow update: if isOwner(uid) && validMemberUpdate(uid);
+      allow delete: if false;
+
+      match /bookmarks/{pageKey} {
+        allow read: if isOwner(uid) || isAdmin();
+        allow create, update: if isOwner(uid) && validBookmark();
+        allow delete: if isOwner(uid);
+      }
+
+      match /qaChoices/{pageKey} {
+        allow read: if isOwner(uid) || isAdmin();
+        allow create: if isOwner(uid)
+          && validChoiceData(request.resource.data)
+          && validStatsWrite(pageKey, uid, request.resource.data.choice);
+        allow update, delete: if false;
+      }
+    }
+
+    match /qaStats/{pageKey} {
+      allow get: if true;
+      allow list: if false;
+      allow delete: if false;
+      allow create, update: if signedIn()
+        && !exists(qaChoicePath(request.auth.uid, pageKey))
+        && validChoiceData(getAfter(qaChoicePath(request.auth.uid, pageKey)).data)
+        && validStatsWrite(
+          pageKey,
+          request.auth.uid,
+          getAfter(qaChoicePath(request.auth.uid, pageKey)).data.choice
+        );
+    }
+
+    match /system/memberNumbers {
+      allow get: if signedIn();
+      allow list, create, delete: if false;
+      allow update: if signedIn()
+        && request.resource.data.keys().hasOnly(['lastAllocated', 'updatedAt'])
+        && request.resource.data.lastAllocated is int
+        && request.resource.data.lastAllocated == resource.data.lastAllocated + 1
+        && request.resource.data.updatedAt == request.time
+        && (!exists(memberPath(request.auth.uid))
+          || !('memberNoNumber' in get(memberPath(request.auth.uid)).data))
+        && getAfter(memberPath(request.auth.uid)).data.memberNoNumber
+          == request.resource.data.lastAllocated;
+    }
+
+    match /migrationRuns/{runId} {
+      allow get, list: if isAdmin();
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
