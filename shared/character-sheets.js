@@ -10,7 +10,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
 import {
   deleteObject,
-  getBytes,
+  getBlob,
   getStorage,
   ref as storageRef,
   uploadBytes
@@ -121,23 +121,17 @@ export const listAllCharacterSheets = async (appOrDb) => {
 
 export const loadCharacterSheet = async (appOrDb, uid, characterKey) => {
   const db = typeof appOrDb?.type === "string" ? appOrDb : getFirestore(appOrDb);
+  const storage = getStorage(typeof appOrDb?.type === "string" ? undefined : appOrDb);
   const snapshot = await getDoc(characterDocRef(db, uid, characterKey));
   if (!snapshot.exists()) return null;
   const record = snapshot.data() || {};
   const loadPortrait = async () => {
     if (!record.portrait?.path) return "";
-    try {
-      const bytes = await getBytes(
-        storageRef(getStorage(), record.portrait.path),
-        MAX_CHARACTER_PORTRAIT_BYTES
-      );
-      return URL.createObjectURL(new Blob([bytes], {
-        type: record.portrait.contentType || "image/webp"
-      }));
-    } catch (error) {
-      console.warn("Failed to load character portrait", error);
-      return "";
-    }
+    const blob = await getBlob(
+      storageRef(storage, record.portrait.path),
+      MAX_CHARACTER_PORTRAIT_BYTES
+    );
+    return URL.createObjectURL(blob);
   };
   return {
     key: snapshot.id,
@@ -147,6 +141,31 @@ export const loadCharacterSheet = async (appOrDb, uid, characterKey) => {
     portraitUrl: "",
     loadPortrait
   };
+};
+
+export const deleteCharacterSheet = async ({ app, user, characterKey }) => {
+  assertSignedIn(user);
+  const key = String(characterKey || "").trim();
+  if (!key) throw new Error("Character key is required");
+
+  const db = getFirestore(app);
+  const storage = getStorage(app);
+  const destination = characterDocRef(db, user.uid, key);
+  const snapshot = await getDoc(destination);
+  if (!snapshot.exists()) return false;
+
+  const portraitPath = String(snapshot.data()?.portrait?.path || "");
+  await deleteDoc(destination);
+  if (portraitPath) {
+    try {
+      await deleteObject(storageRef(storage, portraitPath));
+    } catch (error) {
+      if (error?.code !== "storage/object-not-found") {
+        console.warn("Failed to remove the deleted character portrait", error);
+      }
+    }
+  }
+  return true;
 };
 
 const blobFromSource = async (source) => {

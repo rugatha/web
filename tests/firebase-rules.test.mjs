@@ -21,6 +21,7 @@ import {
   updateDoc
 } from "firebase/firestore";
 import {
+  deleteObject,
   getBytes,
   ref as storageRef,
   uploadString
@@ -382,4 +383,7 @@ test("character portraits are owner-writable and private", async () => {
     email_verified: true
   }).storage();
   await assertSucceeds(getBytes(storageRef(emailAdminStorage, portraitPath)));
+  await assertFails(deleteObject(storageRef(otherStorage, portraitPath)));
+  await assertFails(deleteObject(storageRef(adminStorage, portraitPath)));
+  await assertSucceeds(deleteObject(portrait));
 });

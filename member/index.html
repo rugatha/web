@@ -661,6 +661,13 @@
       gap: 10px;
     }
 
+    .member-character-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: stretch;
+    }
+
     .member-character-link {
       display: flex;
       align-items: center;
@@ -693,6 +700,36 @@
     .member-character-new {
       border-style: dashed;
       color: var(--member-accent);
+    }
+
+    .member-character-delete {
+      display: grid;
+      width: 58px;
+      min-height: 58px;
+      place-items: center;
+      padding: 0;
+      border: 1px solid rgba(255, 111, 111, 0.72);
+      border-radius: 12px;
+      background: rgba(125, 24, 24, 0.32);
+      color: #ff9c9c;
+      font: inherit;
+      font-size: 1.35rem;
+      cursor: pointer;
+      transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
+    }
+
+    .member-character-delete:hover,
+    .member-character-delete:focus-visible {
+      transform: translateY(-2px);
+      border-color: #ff8a8a;
+      background: rgba(158, 32, 32, 0.5);
+      outline: none;
+    }
+
+    .member-character-delete:disabled {
+      cursor: wait;
+      opacity: 0.55;
+      transform: none;
     }
 
     .detail {
@@ -1179,7 +1216,10 @@
       loadProfilePhoto,
       uploadProfilePhoto
     } from "../shared/firebase-data.js";
-    import { listCharacterSheets } from "../shared/character-sheets.js?v=20260925-character-load-2";
+    import {
+      deleteCharacterSheet,
+      listCharacterSheets
+    } from "../shared/character-sheets.js?v=20260925-character-delete-portrait-1";
 
     const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
     const loginHidden = false;
@@ -1431,6 +1471,9 @@
         charactersTitle: "Characters",
         charactersEmpty: "No character sheets yet.",
         characterNew: "Create Character Sheet",
+        characterDeleteConfirm: "Delete “{name}”? This cannot be undone.",
+        characterDeleteLabel: "Delete character sheet {name}",
+        characterDeleteFailed: "Could not delete this character sheet. Please try again.",
         bookmarkRemoveConfirm: "Remove this page from Saved?",
         bookmarkRemoveLabel: "Remove saved page",
         bookmarkReadOnly: "Read-only saved page",
@@ -1499,6 +1542,9 @@
         charactersTitle: "角色卡",
         charactersEmpty: "尚未建立角色卡。",
         characterNew: "角色卡建立",
+        characterDeleteConfirm: "確定要刪除角色卡「{name}」嗎？此動作無法復原。",
+        characterDeleteLabel: "刪除角色卡 {name}",
+        characterDeleteFailed: "無法刪除角色卡，請稍後再試。",
         bookmarkRemoveConfirm: "確定要取消儲存這個頁面嗎？",
         bookmarkRemoveLabel: "取消儲存",
         bookmarkReadOnly: "唯讀收藏",
@@ -1890,11 +1936,45 @@
 
       memberCharactersEmptyEl.hidden = memberCharacterSheets.length > 0;
       memberCharacterSheets.forEach((character) => {
+        const item = document.createElement("div");
+        item.className = "member-character-item";
         const link = document.createElement("a");
         link.className = "member-character-link";
         link.href = `../toolbox/character_sheet/?${targetQuery}character=${encodeURIComponent(character.key)}`;
         link.textContent = character.characterName;
-        memberCharacterListEl.appendChild(link);
+        item.appendChild(link);
+
+        if (targetMemberId === authState.user.uid) {
+          const deleteButton = document.createElement("button");
+          deleteButton.className = "member-character-delete";
+          deleteButton.type = "button";
+          deleteButton.textContent = "×";
+          deleteButton.setAttribute(
+            "aria-label",
+            dictionary.characterDeleteLabel.replace("{name}", character.characterName)
+          );
+          deleteButton.addEventListener("click", async () => {
+            const confirmed = window.confirm(
+              dictionary.characterDeleteConfirm.replace("{name}", character.characterName)
+            );
+            if (!confirmed) return;
+            deleteButton.disabled = true;
+            try {
+              await deleteCharacterSheet({
+                app,
+                user: authState.user,
+                characterKey: character.key
+              });
+              await loadMemberCharacterSheets(authState.user);
+            } catch (error) {
+              console.error("Failed to delete character sheet", error);
+              window.alert(dictionary.characterDeleteFailed);
+              deleteButton.disabled = false;
+            }
+          });
+          item.appendChild(deleteButton);
+        }
+        memberCharacterListEl.appendChild(item);
       });
 
       const createLink = document.createElement("a");
