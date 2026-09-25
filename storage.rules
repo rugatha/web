@@ -30,6 +30,17 @@ service firebase.storage {
       allow delete: if isOwner(uid);
     }
 
+    match /character-portraits/{uid}/{characterKey}/{fileName} {
+      allow get: if isOwner(uid) || isAdmin();
+      allow list: if false;
+      allow create, update: if isOwner(uid)
+        && fileName.matches('portrait\\.(webp|jpg|jpeg|png)')
+        && request.resource.size > 0
+        && request.resource.size <= 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/(webp|jpeg|png)');
+      allow delete: if isOwner(uid);
+    }
+
     match /{allPaths=**} {
       allow read, write: if false;
     }

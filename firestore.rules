@@ -147,6 +147,47 @@ service cloud.firestore {
         && request.resource.data.savedAt is timestamp;
     }
 
+    function validCharacterPortrait(portrait, uid) {
+      return portrait == null || (
+        portrait is map
+        && portrait.keys().hasOnly(['path', 'contentType', 'size', 'updatedAt'])
+        && portrait.keys().hasAll(['path', 'contentType', 'size', 'updatedAt'])
+        && portrait.path is string
+        && portrait.path.matches(
+          'character-portraits/' + uid + '/[^/]+/portrait\\.(webp|jpg|jpeg|png)'
+        )
+        && portrait.contentType is string
+        && portrait.contentType.matches('image/(webp|jpeg|png)')
+        && portrait.size is int
+        && portrait.size > 0
+        && portrait.size <= 5 * 1024 * 1024
+        && portrait.updatedAt is timestamp
+      );
+    }
+
+    function validCharacterSheet(uid) {
+      return request.resource.data.keys().hasOnly([
+          'schemaVersion', 'memberId', 'characterName', 'className', 'race',
+          'data', 'portrait', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.keys().hasAll([
+          'schemaVersion', 'memberId', 'characterName', 'className', 'race',
+          'data', 'portrait', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.schemaVersion == 1
+        && request.resource.data.memberId == uid
+        && request.resource.data.characterName is string
+        && request.resource.data.characterName.size() > 0
+        && request.resource.data.characterName.size() <= 120
+        && request.resource.data.className is string
+        && request.resource.data.className.size() <= 120
+        && request.resource.data.race is string
+        && request.resource.data.race.size() <= 120
+        && request.resource.data.data is map
+        && validCharacterPortrait(request.resource.data.portrait, uid)
+        && request.resource.data.updatedAt == request.time;
+    }
+
     function validChoiceData(data) {
       return data.keys().hasOnly(['questionPage', 'choice', 'createdAt'])
         && data.keys().hasAll(['questionPage', 'choice', 'createdAt'])
@@ -205,6 +246,17 @@ service cloud.firestore {
           && validChoiceData(request.resource.data)
           && validStatsWrite(pageKey, uid, request.resource.data.choice);
         allow update, delete: if false;
+      }
+
+      match /characters/{characterKey} {
+        allow read: if isOwner(uid) || isAdmin();
+        allow create: if isOwner(uid)
+          && validCharacterSheet(uid)
+          && request.resource.data.createdAt == request.time;
+        allow update: if isOwner(uid)
+          && validCharacterSheet(uid)
+          && request.resource.data.createdAt == resource.data.createdAt;
+        allow delete: if isOwner(uid);
       }
     }
 

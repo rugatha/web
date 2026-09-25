@@ -656,6 +656,45 @@
       font-size: 0.88rem;
     }
 
+    .member-character-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .member-character-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 58px;
+      padding: 12px 14px;
+      border: 1px solid rgba(159, 224, 186, 0.35);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.24);
+      color: var(--member-ink);
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
+    }
+
+    .member-character-link:hover,
+    .member-character-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--member-accent);
+      background: rgba(255, 255, 255, 0.08);
+      outline: none;
+    }
+
+    .member-character-link::after {
+      content: "→";
+      color: var(--member-accent-strong);
+    }
+
+    .member-character-new {
+      border-style: dashed;
+      color: var(--member-accent);
+    }
+
     .detail {
       display: flex;
       flex-direction: column;
@@ -1069,6 +1108,11 @@
           <p class="bookmark-empty" id="bookmark-empty" data-i18n="bookmarksEmpty">No bookmarked pages yet.</p>
           <div class="bookmark-list" id="bookmark-list" hidden></div>
         </div>
+        <div class="profile-section" id="member-characters-section" hidden>
+          <h3 class="profile-section-title" data-i18n="charactersTitle">Characters</h3>
+          <p class="bookmark-empty" id="member-characters-empty" data-i18n="charactersEmpty">No character sheets yet.</p>
+          <div class="member-character-list" id="member-character-list"></div>
+        </div>
         <div class="profile-section">
           <h3 class="profile-section-title" data-i18n="loginInfoTitle">Login Info</h3>
           <div class="profile-details">
@@ -1135,6 +1179,7 @@
       loadProfilePhoto,
       uploadProfilePhoto
     } from "../shared/firebase-data.js";
+    import { listCharacterSheets } from "../shared/character-sheets.js";
 
     const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
     const loginHidden = false;
@@ -1193,6 +1238,9 @@
     const achievementEmptyEl = document.getElementById("achievement-empty");
     const bookmarkListEl = document.getElementById("bookmark-list");
     const bookmarkEmptyEl = document.getElementById("bookmark-empty");
+    const memberCharactersSectionEl = document.getElementById("member-characters-section");
+    const memberCharacterListEl = document.getElementById("member-character-list");
+    const memberCharactersEmptyEl = document.getElementById("member-characters-empty");
     const adminDirectoryEl = document.getElementById("admin-directory");
     const adminDirectoryListEl = document.getElementById("admin-directory-list");
     const adminDirectoryHintEl = document.getElementById("admin-directory-hint");
@@ -1267,6 +1315,7 @@
     let profilePhotoUrl = null;
     let bookmarksUnsubscribe = null;
     let bookmarksMemberId = null;
+    let memberCharacterSheets = [];
     const ACHIEVEMENTS_CSV_PATH = "./achievements.csv";
     const ACHIEVEMENT_BADGE_MAP = {
       STR: "BadgeSTR",
@@ -1379,6 +1428,9 @@
         achievementsEmptyValue: "No achievements yet.",
         bookmarksTitle: "Saved",
         bookmarksEmpty: "No bookmarked pages yet.",
+        charactersTitle: "Characters",
+        charactersEmpty: "No character sheets yet.",
+        characterNew: "Create Character Sheet",
         bookmarkRemoveConfirm: "Remove this page from Saved?",
         bookmarkRemoveLabel: "Remove saved page",
         bookmarkReadOnly: "Read-only saved page",
@@ -1444,6 +1496,9 @@
         achievementsEmptyValue: "尚未獲得成就。",
         bookmarksTitle: "已儲存",
         bookmarksEmpty: "尚未收藏任何頁面。",
+        charactersTitle: "角色卡",
+        charactersEmpty: "尚未建立角色卡。",
+        characterNew: "角色卡建立",
         bookmarkRemoveConfirm: "確定要取消儲存這個頁面嗎？",
         bookmarkRemoveLabel: "取消儲存",
         bookmarkReadOnly: "唯讀收藏",
@@ -1814,6 +1869,64 @@
       });
     };
 
+    const renderMemberCharacterSheets = () => {
+      if (!memberCharactersSectionEl || !memberCharacterListEl || !memberCharactersEmptyEl) return;
+      const dictionary = translations[authState.language] || translations.en;
+      const targetMemberId = authState.isAdmin && requestedMemberId
+        ? requestedMemberId
+        : authState.user?.uid || "";
+      const canOpenCharacters = Boolean(
+        authState.user &&
+        targetMemberId &&
+        (targetMemberId === authState.user.uid || authState.isAdmin)
+      );
+      memberCharactersSectionEl.hidden = !canOpenCharacters;
+      memberCharacterListEl.replaceChildren();
+      if (!canOpenCharacters) return;
+
+      const targetQuery = targetMemberId === authState.user.uid
+        ? ""
+        : `memberId=${encodeURIComponent(targetMemberId)}&`;
+
+      memberCharactersEmptyEl.hidden = memberCharacterSheets.length > 0;
+      memberCharacterSheets.forEach((character) => {
+        const link = document.createElement("a");
+        link.className = "member-character-link";
+        link.href = `../toolbox/character_sheet/?${targetQuery}character=${encodeURIComponent(character.key)}`;
+        link.textContent = character.characterName;
+        memberCharacterListEl.appendChild(link);
+      });
+
+      const createLink = document.createElement("a");
+      createLink.className = "member-character-link member-character-new";
+      createLink.href = "../toolbox/character_sheet/?new=1";
+      createLink.textContent = dictionary.characterNew;
+      memberCharacterListEl.appendChild(createLink);
+    };
+
+    const loadMemberCharacterSheets = async (user) => {
+      const targetMemberId = authState.isAdmin && requestedMemberId
+        ? requestedMemberId
+        : user?.uid || "";
+      if (
+        !app ||
+        !user?.uid ||
+        !targetMemberId ||
+        (targetMemberId !== user.uid && !authState.isAdmin)
+      ) {
+        memberCharacterSheets = [];
+        renderMemberCharacterSheets();
+        return;
+      }
+      try {
+        memberCharacterSheets = await listCharacterSheets(app, targetMemberId);
+      } catch (error) {
+        console.warn("Failed to load member character sheets", error);
+        memberCharacterSheets = [];
+      }
+      renderMemberCharacterSheets();
+    };
+
     const getStoredLanguage = () => {
       try {
         return localStorage.getItem("rugatha-member-lang");
@@ -1849,6 +1962,7 @@
       updateCharacterCard(authState.characterName);
       renderAchievements();
       renderBookmarks();
+      renderMemberCharacterSheets();
     };
 
     let sessionStartMs = null;
@@ -2749,9 +2863,11 @@
       authState.bookmarks = {};
       authState.isAdmin = false;
       authState.readOnlyView = false;
+      memberCharacterSheets = [];
       resetAdminDirectory();
       renderAchievements();
       renderBookmarks();
+      renderMemberCharacterSheets();
     };
 
     const formatMemberId = (value) => {
@@ -2802,6 +2918,7 @@
       renderAchievements();
       renderBookmarks();
       watchMemberBookmarks(bookmarkTargetId);
+      loadMemberCharacterSheets(user);
       loadAdminDirectory();
       loadProfileFromDatabase(user);
     };

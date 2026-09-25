@@ -9,6 +9,7 @@ import {
 } from "@firebase/rules-unit-testing";
 import {
   collection,
+  deleteDoc,
   doc,
   getDoc,
   getDocs,
@@ -195,6 +196,50 @@ test("bookmarks are owner-only", async () => {
   await assertFails(getDoc(doc(otherDb, path)));
 });
 
+test("character sheets are private, owner-writable records", async () => {
+  const ownerDb = environment.authenticatedContext("owner", {
+    email: "owner@example.test"
+  }).firestore();
+  const otherDb = environment.authenticatedContext("other", {
+    email: "other@example.test"
+  }).firestore();
+  const adminDb = environment.authenticatedContext("admin", {
+    email: "admin@example.test",
+    admin: true
+  }).firestore();
+  const characterPath = "members/owner/characters/Ada%20Stone";
+  const character = {
+    schemaVersion: 1,
+    memberId: "owner",
+    characterName: "Ada Stone",
+    className: "wizard",
+    race: "human",
+    data: { characterName: "Ada Stone", class1: "wizard", notes: "Private notes" },
+    portrait: null,
+    createdAt: serverTimestamp(),
+    updatedAt: serverTimestamp()
+  };
+
+  await assertSucceeds(setDoc(doc(ownerDb, characterPath), character));
+  await assertSucceeds(getDoc(doc(ownerDb, characterPath)));
+  await assertSucceeds(getDoc(doc(adminDb, characterPath)));
+  await assertFails(getDoc(doc(otherDb, characterPath)));
+  await assertFails(setDoc(doc(otherDb, "members/owner/characters/Forged"), {
+    ...character,
+    characterName: "Forged"
+  }));
+  await assertFails(setDoc(doc(adminDb, "members/other/characters/Admin%20Made"), {
+    ...character,
+    memberId: "other",
+    characterName: "Admin Made"
+  }));
+  await assertSucceeds(updateDoc(doc(ownerDb, characterPath), {
+    data: { ...character.data, notes: "Updated notes" },
+    updatedAt: serverTimestamp()
+  }));
+  await assertSucceeds(deleteDoc(doc(ownerDb, characterPath)));
+});
+
 test("QA choice and anonymous stats must be updated together once", async () => {
   const db = environment.authenticatedContext("owner", {
     email: "owner@example.test"
@@ -268,6 +313,36 @@ test("profile photos are owner-readable, admin-readable, and image-only", async 
   await assertSucceeds(getBytes(storageRef(adminStorage, "profile-photos/owner/avatar.webp")));
   await assertFails(uploadString(
     storageRef(ownerStorage, "profile-photos/owner/avatar.png"),
+    "not an image",
+    "raw",
+    { contentType: "text/plain" }
+  ));
+});
+
+test("character portraits are owner-writable and private", async () => {
+  const ownerStorage = environment.authenticatedContext("owner", {
+    email: "owner@example.test"
+  }).storage();
+  const otherStorage = environment.authenticatedContext("other", {
+    email: "other@example.test"
+  }).storage();
+  const adminStorage = environment.authenticatedContext("admin", {
+    admin: true
+  }).storage();
+  const portraitPath = "character-portraits/owner/QWRhIFN0b25l/portrait.webp";
+  const portrait = storageRef(ownerStorage, portraitPath);
+
+  await assertSucceeds(uploadString(portrait, "image", "raw", { contentType: "image/webp" }));
+  await assertSucceeds(getBytes(portrait));
+  await assertSucceeds(getBytes(storageRef(adminStorage, portraitPath)));
+  await assertFails(getBytes(storageRef(otherStorage, portraitPath)));
+  const adminPortrait = storageRef(
+    adminStorage,
+    "character-portraits/other/QWRtaW4/portrait.webp"
+  );
+  await assertFails(uploadString(adminPortrait, "image", "raw", { contentType: "image/webp" }));
+  await assertFails(uploadString(
+    storageRef(ownerStorage, "character-portraits/owner/QWRhIFN0b25l/portrait.png"),
     "not an image",
     "raw",
     { contentType: "text/plain" }

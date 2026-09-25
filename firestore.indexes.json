@@ -40,6 +40,11 @@
       "collectionGroup": "members",
       "fieldPath": "totalTimeSeconds",
       "indexes": []
+    },
+    {
+      "collectionGroup": "characters",
+      "fieldPath": "data",
+      "indexes": []
     }
   ]
 }

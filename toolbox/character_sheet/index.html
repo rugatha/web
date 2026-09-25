@@ -50,6 +50,14 @@
     .config-file { display: none; }
     .config-status { min-height: 1.3em; margin: -3px 0 0; color: var(--sheet-muted); font-size: .78rem; text-align: center; }
     .config-status.is-error { color: #eaa5a5; }
+    .character-manager { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: end; padding: 16px; border: 1px solid var(--sheet-line); border-radius: 8px; background: var(--sheet-panel); }
+    .character-manager .field { margin: 0; }
+    .character-manager-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .character-manager-actions .button { min-height: 40px; }
+    .character-manager-status { grid-column: 1 / -1; min-height: 1.3em; margin: 0; color: var(--sheet-muted); font-size: .82rem; }
+    .character-manager-status.is-error { color: #eaa5a5; }
+    .backup-details { padding: 0 16px 14px; border: 1px solid var(--sheet-line); border-top: 0; border-radius: 0 0 8px 8px; }
+    .backup-details summary { padding-top: 12px; color: var(--sheet-muted); font-size: .82rem; cursor: pointer; }
     .portrait-grid { display: grid; grid-template-columns: 180px minmax(220px, 1fr); gap: 18px; align-items: center; }
     .portrait-tools { min-width: 0; display: grid; grid-template-columns: minmax(120px, 1fr) minmax(170px, 1.15fr); gap: 12px; align-items: start; }
     .portrait-preview { position: relative; width: 180px; aspect-ratio: 3 / 4; display: grid; place-items: center; overflow: hidden; border: 1px dashed var(--sheet-line-strong); border-radius: 8px; background: rgba(236,242,237,.05); color: var(--sheet-muted); text-align: center; }
@@ -352,7 +360,7 @@
     .locked h2 { margin: 0 0 10px; color: var(--sheet-gold); }
     .locked p { margin: 0; color: var(--sheet-muted); line-height: 1.6; }
     .auth-entry { position: relative; z-index: 21; margin: 0 0 14px !important; }
-    @media (max-width: 760px) { body { font-size: .92rem; } .page { width: calc(100% - 16px); padding: 76px 0 32px; gap: 20px; } .banner-img { width: min(260px, 72vw); } main { gap: 18px; } .hero { gap: 7px; } .hero h1 { font-size: clamp(1.7rem, 9vw, 2.6rem); } .sheet { gap: 14px; } .sheet-section { gap: 10px; padding: 12px; border-radius: 10px; } .section-title { font-size: 1.1rem; } .identity, .combat, .three, .adventure-grid, .wealth-grid, .alignment-grid { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(2, 1fr); } .class-grid { grid-template-columns: 1fr; } .class-row { display: grid; grid-template-columns: 1fr; gap: 10px; } .class-actions { grid-column: auto; } .expertise-grid { grid-template-columns: 1fr; } .portrait-grid { grid-template-columns: 120px minmax(0, 1fr); gap: 10px; } .portrait-preview { width: 120px; } .portrait-tools { grid-template-columns: 1fr; gap: 8px; } .portrait-controls { gap: 7px; } .portrait-controls .button { max-width: 100%; min-height: 30px; padding: 5px 7px; font-size: .7rem; } .portrait-controls input[type="url"] { width: 100%; min-height: 28px; } .portrait-crop { padding: 9px; } .skill-list { grid-template-columns: 1fr; gap: 16px; } .ability-filters { grid-template-columns: 1fr 1fr; } .custom-ability-form { grid-template-columns: 1fr; } .custom-ability-form .custom-ability-description, .custom-ability-form .button { grid-column: 1; } .check-field { font-size: .8rem; } .death-track { font-size: .78rem; } .bottom-actions { position: sticky; bottom: 8px; z-index: 5; margin: 0 -4px; padding: 8px; border: 1px solid var(--sheet-line); border-radius: 10px; background: rgba(23,52,41,.94); } .bottom-actions .button { min-width: 130px; min-height: 40px; } .table-wrap { margin: 0; padding: 0; overflow: visible; } .sheet-table, .spell-table { min-width: 0; width: 100%; } .sheet-table thead { display: none; } .sheet-table tbody, .sheet-table tr, .sheet-table td { display: block; width: 100%; } .sheet-table tr { margin-bottom: 12px; padding: 7px; border: 1px solid var(--sheet-line); border-radius: 8px; background: rgba(236,242,237,.04); } .sheet-table td { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 8px; align-items: center; padding: 5px 2px; border-top: 0; } .sheet-table td:first-child, .sheet-table th:first-child { width: 100%; } .sheet-table td::before { content: attr(data-label); color: var(--sheet-muted); font-size: .72rem; font-weight: 700; } .sheet-table td.attack-action-cell { display: flex; justify-content: flex-end; min-height: 30px; } .sheet-table td.attack-action-cell::before { display: none; } .weapon-cell { grid-template-columns: 58px minmax(0, 1fr); } .spell-table td:first-child, .spell-table th:first-child, .spell-table td:nth-child(2), .spell-table th:nth-child(2) { width: 100%; } }
+    @media (max-width: 760px) { body { font-size: .92rem; } .page { width: calc(100% - 16px); padding: 76px 0 32px; gap: 20px; } .banner-img { width: min(260px, 72vw); } main { gap: 18px; } .hero { gap: 7px; } .hero h1 { font-size: clamp(1.7rem, 9vw, 2.6rem); } .character-manager { grid-template-columns: 1fr; } .character-manager-status { grid-column: 1; } .character-manager-actions .button { flex: 1 1 130px; } .sheet { gap: 14px; } .sheet-section { gap: 10px; padding: 12px; border-radius: 10px; } .section-title { font-size: 1.1rem; } .identity, .combat, .three, .adventure-grid, .wealth-grid, .alignment-grid { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(2, 1fr); } .class-grid { grid-template-columns: 1fr; } .class-row { display: grid; grid-template-columns: 1fr; gap: 10px; } .class-actions { grid-column: auto; } .expertise-grid { grid-template-columns: 1fr; } .portrait-grid { grid-template-columns: 120px minmax(0, 1fr); gap: 10px; } .portrait-preview { width: 120px; } .portrait-tools { grid-template-columns: 1fr; gap: 8px; } .portrait-controls { gap: 7px; } .portrait-controls .button { max-width: 100%; min-height: 30px; padding: 5px 7px; font-size: .7rem; } .portrait-controls input[type="url"] { width: 100%; min-height: 28px; } .portrait-crop { padding: 9px; } .skill-list { grid-template-columns: 1fr; gap: 16px; } .ability-filters { grid-template-columns: 1fr 1fr; } .custom-ability-form { grid-template-columns: 1fr; } .custom-ability-form .custom-ability-description, .custom-ability-form .button { grid-column: 1; } .check-field { font-size: .8rem; } .death-track { font-size: .78rem; } .bottom-actions { position: sticky; bottom: 8px; z-index: 5; margin: 0 -4px; padding: 8px; border: 1px solid var(--sheet-line); border-radius: 10px; background: rgba(23,52,41,.94); } .bottom-actions .button { min-width: 130px; min-height: 40px; } .table-wrap { margin: 0; padding: 0; overflow: visible; } .sheet-table, .spell-table { min-width: 0; width: 100%; } .sheet-table thead { display: none; } .sheet-table tbody, .sheet-table tr, .sheet-table td { display: block; width: 100%; } .sheet-table tr { margin-bottom: 12px; padding: 7px; border: 1px solid var(--sheet-line); border-radius: 8px; background: rgba(236,242,237,.04); } .sheet-table td { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 8px; align-items: center; padding: 5px 2px; border-top: 0; } .sheet-table td:first-child, .sheet-table th:first-child { width: 100%; } .sheet-table td::before { content: attr(data-label); color: var(--sheet-muted); font-size: .72rem; font-weight: 700; } .sheet-table td.attack-action-cell { display: flex; justify-content: flex-end; min-height: 30px; } .sheet-table td.attack-action-cell::before { display: none; } .weapon-cell { grid-template-columns: 58px minmax(0, 1fr); } .spell-table td:first-child, .spell-table th:first-child, .spell-table td:nth-child(2), .spell-table th:nth-child(2) { width: 100%; } }
     @media print { body { background: #fff; color: #17251f; } .page { width: 100%; padding: 0; } .language-toggle, .bottom-actions, .locked, .auth-entry, .hero p, .config-area, .portrait-controls, .portrait-crop, .portrait-edit, .attack-table-actions, .attack-action-cell { display: none !important; } .banner-img { width: 260px; } .sheet-section { border-color: #b7c5bb; background: #fff; box-shadow: none; break-inside: avoid; } .section-title, .ability .label { color: #6b431d; } label, .label, .ability-name, .subtle, .save-line { color: #53645a; } input, select, textarea { border-color: #b7c5bb; background: #fff; color: #17251f; } select { color-scheme: light; } }
 
     .level-up-bar { margin: 20px 0; }
@@ -377,9 +385,23 @@
     <main>
       <section class="hero" aria-labelledby="pageTitle"><h1 id="pageTitle" data-i18n="title">D&amp;D 5e 角色卡</h1><p data-i18n="subtitle">建立並保存你的玩家角色資料。</p></section>
       <div class="config-area">
-        <div class="config-actions"><button id="exportConfigButton" class="button" type="button" data-i18n="exportConfig">輸出設定檔</button><button id="importConfigButton" class="button" type="button" data-i18n="importConfig">上傳設定檔</button></div>
-        <input id="configFile" class="config-file" type="file" accept="application/json,.json">
-        <p id="configStatus" class="config-status" role="status" aria-live="polite"></p>
+        <section class="character-manager" aria-labelledby="characterManagerLabel">
+          <div class="field">
+            <label id="characterManagerLabel" for="characterSelector" data-i18n="characterSelector">我的角色</label>
+            <select id="characterSelector"><option value="" data-i18n="characterSelectPrompt">選擇已儲存的角色卡</option></select>
+          </div>
+          <div class="character-manager-actions">
+            <button id="newCharacterButton" class="button" type="button" data-i18n="newCharacter">建立新角色</button>
+            <button id="saveCharacterButton" class="button" type="button" data-i18n="saveCharacter">儲存到雲端</button>
+          </div>
+          <p id="characterManagerStatus" class="character-manager-status" role="status" aria-live="polite" data-i18n="characterLoading">載入角色中…</p>
+        </section>
+        <details class="backup-details" hidden aria-hidden="true">
+          <summary data-i18n="backupTools">JSON 備份與移轉</summary>
+          <div class="config-actions"><button id="exportConfigButton" class="button" type="button" data-i18n="exportConfig">輸出備份</button><button id="importConfigButton" class="button" type="button" data-i18n="importConfig">匯入備份</button></div>
+          <input id="configFile" class="config-file" type="file" accept="application/json,.json">
+          <p id="configStatus" class="config-status" role="status" aria-live="polite"></p>
+        </details>
       </div>
       <form class="sheet" id="characterSheet">
       <input type="hidden" id="levelUpHistory" value="[]">
@@ -513,7 +535,7 @@
     };
     const abilityData = [{ id: 'str', code: 'STR', zh: '力量', en: 'Strength' }, { id: 'dex', code: 'DEX', zh: '敏捷', en: 'Dexterity' }, { id: 'con', code: 'CON', zh: '體質', en: 'Constitution' }, { id: 'int', code: 'INT', zh: '智力', en: 'Intelligence' }, { id: 'wis', code: 'WIS', zh: '感知', en: 'Wisdom' }, { id: 'cha', code: 'CHA', zh: '魅力', en: 'Charisma' }];
     const skillData = [{ zh: '運動', en: 'Athletics', ability: 'str', storageIndex: 3 }, { zh: '扒手', en: 'Sleight of Hand', ability: 'dex', storageIndex: 15 }, { zh: '隱藏', en: 'Stealth', ability: 'dex', storageIndex: 16 }, { zh: '特技動作', en: 'Acrobatics', ability: 'dex', storageIndex: 0 }, { zh: '調查', en: 'Investigation', ability: 'int', storageIndex: 8 }, { zh: '歷史', en: 'History', ability: 'int', storageIndex: 5 }, { zh: '奧術', en: 'Arcana', ability: 'int', storageIndex: 2 }, { zh: '自然', en: 'Nature', ability: 'int', storageIndex: 10 }, { zh: '宗教', en: 'Religion', ability: 'int', storageIndex: 14 }, { zh: '馴服動物', en: 'Animal Handling', ability: 'wis', storageIndex: 1 }, { zh: '察言觀色', en: 'Insight', ability: 'wis', storageIndex: 6 }, { zh: '醫術', en: 'Medicine', ability: 'wis', storageIndex: 9 }, { zh: '觀察', en: 'Perception', ability: 'wis', storageIndex: 11 }, { zh: '求生', en: 'Survival', ability: 'wis', storageIndex: 17 }, { zh: '欺瞞', en: 'Deception', ability: 'cha', storageIndex: 4 }, { zh: '威嚇', en: 'Intimidation', ability: 'cha', storageIndex: 7 }, { zh: '表演', en: 'Performance', ability: 'cha', storageIndex: 12 }, { zh: '說服', en: 'Persuasion', ability: 'cha', storageIndex: 13 }];
-    let currentLanguage = 'zh'; const authenticated = true; let initialized = false; let multiclass = false; let portraitSrc = ''; let portraitPosition = { x: 50, y: 50 }; let portraitZoom = 1; let portraitFlip = false; let attackRowCount = 1; let attackCustomRows = {}; let spellRowCount = 1; let customProficiencies = { skill: [], lan: [], tool: [] }; let removedProficiencies = { skill: [], lan: [], tool: [], save: [] }; let abilityProficiencies = { skill: [], lan: [], tool: [] }; let customAbilities = []; let removedAbilities = []; let abilityNotes = {}; let classGrantedSaves = []; let equipmentItems = []; let calculationOverrides = {}; let armorRows = [{ choice: '', worn: false, custom: '', customAC: '10' }]; let shieldRows = [{ choice: 'none', worn: false, custom: '', customAC: '0' }]; let optionsPromise = null; let spellOptionsPromise = null; let subclassOptionsPromise = null; let equipmentOptionsPromise = null; let saveTimer = null; const storageKey = 'rugatha-dnd-character-sheet'; const configFormat = 'rugatha-character-sheet'; const configVersion = 1;
+    let currentLanguage = 'zh'; const authenticated = true; let initialized = false; let multiclass = false; let portraitSrc = ''; let portraitPosition = { x: 50, y: 50 }; let portraitZoom = 1; let portraitFlip = false; let portraitDirty = false; let portraitSource = null; let existingPortrait = null; let attackRowCount = 1; let attackCustomRows = {}; let spellRowCount = 1; let customProficiencies = { skill: [], lan: [], tool: [] }; let removedProficiencies = { skill: [], lan: [], tool: [], save: [] }; let abilityProficiencies = { skill: [], lan: [], tool: [] }; let customAbilities = []; let removedAbilities = []; let abilityNotes = {}; let classGrantedSaves = []; let equipmentItems = []; let calculationOverrides = {}; let armorRows = [{ choice: '', worn: false, custom: '', customAC: '10' }]; let shieldRows = [{ choice: 'none', worn: false, custom: '', customAC: '0' }]; let optionsPromise = null; let spellOptionsPromise = null; let subclassOptionsPromise = null; let equipmentOptionsPromise = null; let saveTimer = null; let characterStore = null; let characterUser = null; let characterMemberId = ''; let characterReadOnly = false; let currentCharacterKey = ''; let characterItems = []; let isRestoringCharacter = false; let cloudSavePromise = Promise.resolve(); const configFormat = 'rugatha-character-sheet'; const configVersion = 1;
     const t = () => translations[currentLanguage];
     let abilityCatalog = []; let abilityCatalogPromise = null; let selectedAbilityIndexes = []; let abilityGrantedSaves = []; let abilityGrantedSkills = []; const abilityFilters = { category: '', sub_category: '', level: '', title: '' };
     let adventureEntryCount = 1;
@@ -568,10 +590,12 @@
       title.value = ''; category.value = abilityFilters.category; subCategory.value = abilityFilters.sub_category; level.value = abilityFilters.level;
     };
     const loadAbilityCatalog = () => { if (abilityCatalogPromise) return abilityCatalogPromise; abilityCatalogPromise = fetchJSON('../shared/abilities.json', { abilities: [] }).then((data) => { abilityCatalog = Array.isArray(data.abilities) ? data.abilities : []; renderCharacterAbilities(); renderProficiencyPills(); updateSaves(); }); return abilityCatalogPromise; };
-    const readSavedSheet = () => { try { const raw = localStorage.getItem(storageKey) || '{}'; return JSON.parse(raw); } catch (_) { return {}; } };
+    const readSavedSheet = () => ({});
     translations.zh.crop = '裁切圖片'; translations.zh.cropZoom = '縮放'; translations.zh.cropX = '水平'; translations.zh.cropY = '垂直'; translations.zh.cropFlip = '水平翻轉'; translations.zh.languages = '語言'; translations.zh.tools = '工具'; translations.zh.proficiencySection = '熟練'; translations.zh.addProficiency = '+ 新增熟練'; translations.zh.chooseFeat = '選擇專長'; translations.zh.armor = '護甲'; translations.zh.shield = '盾牌'; translations.zh.noShield = '無'; translations.zh.equippedShield = '有盾牌'; translations.zh.customShield = '自訂盾牌'; translations.zh.worn = '佩戴'; translations.zh.loginButton = '使用 Google 登入'; translations.en.crop = 'Crop Image'; translations.en.cropZoom = 'Zoom'; translations.en.cropX = 'Horizontal'; translations.en.cropY = 'Vertical'; translations.en.cropFlip = 'Flip Horizontal'; translations.en.languages = 'Languages'; translations.en.tools = 'Tools'; translations.en.proficiencySection = 'Proficiency'; translations.en.addProficiency = '+ Add Proficiency'; translations.en.chooseFeat = 'Choose feats'; translations.en.armor = 'Armor'; translations.en.shield = 'Shield'; translations.en.noShield = 'None'; translations.en.equippedShield = 'Equipped shield'; translations.en.customShield = 'Custom shield'; translations.en.worn = 'Worn'; translations.en.loginButton = 'Sign in with Google'; translations.zh.abilityCategoryFilter = '類型'; translations.zh.abilitySubCategoryFilter = '子類型'; translations.zh.abilityLevelFilter = '等級'; translations.zh.abilityTitleFilter = '名稱'; translations.zh.abilityPickerChoose = '請選擇要加入的能力'; translations.zh.abilityPickerFilterFirst = '請先選擇其他篩選條件'; translations.zh.removeAbility = '移除能力'; translations.zh.abilityAll = '全部'; translations.zh.abilityAllSubCategories = '全部子類型'; translations.zh.abilityAllLevels = '全部等級'; translations.zh.abilityResultCount = '可選擇 {count} 項能力'; translations.zh.abilitySelectedCount = '已加入 {count} 項能力'; translations.zh.abilityNoResults = '找不到符合條件的能力。'; translations.zh.abilityCategoryRace = '種族'; translations.zh.abilityCategoryClass = '職業'; translations.zh.abilityCategoryFeat = '專長'; translations.zh.abilityCategoryBackground = '背景'; translations.zh.abilityLevelNone = '不適用'; translations.en.abilityCategoryFilter = 'Category'; translations.en.abilitySubCategoryFilter = 'Sub-category'; translations.en.abilityLevelFilter = 'Level'; translations.en.abilityTitleFilter = 'Title'; translations.en.abilityPickerChoose = 'Choose an ability to add'; translations.en.abilityPickerFilterFirst = 'Choose another filter first'; translations.en.removeAbility = 'Remove ability'; translations.en.abilityAll = 'All'; translations.en.abilityAllSubCategories = 'All sub-categories'; translations.en.abilityAllLevels = 'All levels'; translations.en.abilityResultCount = 'Choose from {count} abilities'; translations.en.abilitySelectedCount = '{count} abilities added'; translations.en.abilityNoResults = 'No abilities match the current filters.'; translations.en.abilityCategoryRace = 'Race'; translations.en.abilityCategoryClass = 'Class'; translations.en.abilityCategoryFeat = 'Feat'; translations.en.abilityCategoryBackground = 'Background'; translations.en.abilityLevelNone = 'N/A';
     translations.zh.resetCalculated = '恢復系統計算'; translations.en.resetCalculated = 'Restore system calculations'; translations.zh.manualAbilityNote = '系統未自動調整數值，可能需手動調整角色卡'; translations.en.manualAbilityNote = 'The system can not automatically adjust the value. Might require editing the character card manually'; translations.zh.backgroundAbilityHint = '請至能力區塊選擇背景'; translations.en.backgroundAbilityHint = 'Please choose a background in the Abilities section'; translations.zh.expertiseNote = '：精通'; translations.en.expertiseNote = ': Expertise'; translations.zh.jackOfAllTrades = '萬事通'; translations.en.jackOfAllTrades = 'Jack of All Trades';
-    translations.zh.exportConfig = '輸出設定檔'; translations.en.exportConfig = 'Export Config File'; translations.zh.importConfig = '上傳設定檔'; translations.en.importConfig = 'Import Config File'; translations.zh.configImported = '角色卡設定檔已載入。'; translations.en.configImported = 'Character sheet config loaded.'; translations.zh.configImportedUnsaved = '角色卡已載入，但瀏覽器儲存空間不足；請再次輸出設定檔備份。'; translations.en.configImportedUnsaved = 'Character sheet loaded, but this browser could not save it. Export another backup before leaving.'; translations.zh.configInvalid = '無法讀取設定檔，請選擇由此頁面輸出的 JSON 檔案。'; translations.en.configInvalid = 'Could not read this config. Choose a JSON file exported from this page.'; translations.zh.configTooLarge = '設定檔大小不可超過 50 MB。'; translations.en.configTooLarge = 'The config file must be 50 MB or smaller.';
+    translations.zh.exportConfig = '輸出備份'; translations.en.exportConfig = 'Export Backup'; translations.zh.importConfig = '匯入備份'; translations.en.importConfig = 'Import Backup'; translations.zh.configImported = '備份已載入，請確認角色名稱後儲存到雲端。'; translations.en.configImported = 'Backup loaded. Confirm the character name, then save it to the cloud.'; translations.zh.configImportedUnsaved = '備份已載入，但尚未儲存到雲端。'; translations.en.configImportedUnsaved = 'Backup loaded but has not been saved to the cloud.'; translations.zh.configInvalid = '無法讀取設定檔，請選擇由此頁面輸出的 JSON 檔案。'; translations.en.configInvalid = 'Could not read this config. Choose a JSON file exported from this page.'; translations.zh.configTooLarge = '設定檔大小不可超過 50 MB。'; translations.en.configTooLarge = 'The config file must be 50 MB or smaller.';
+    Object.assign(translations.zh, { characterSelector: '我的角色', characterSelectPrompt: '選擇已儲存的角色卡', characterLoading: '正在載入雲端角色…', characterLoadFailed: '無法載入雲端角色卡，請重新整理後再試。', characterEmpty: '尚未建立角色', newCharacter: '建立新角色', saveCharacter: '儲存到雲端', backupTools: 'JSON 備份與移轉', cloudSaved: '已儲存到雲端。', cloudSaveFailed: '雲端儲存失敗，內容仍保留在頁面上，請稍後再試。', characterLoaded: '已載入「{name}」。', newCharacterReady: '已建立空白角色卡；未命名時會以目前日期時間命名。', duplicateCharacterName: '已有同名角色，請使用其他名稱。', portraitUploadFailed: '角色圖片無法上傳；請使用 5 MB 以內的 PNG、JPEG 或 WebP。' });
+    Object.assign(translations.en, { characterSelector: 'My Characters', characterSelectPrompt: 'Choose a saved character sheet', characterLoading: 'Loading cloud characters…', characterLoadFailed: 'Could not load cloud character sheets. Refresh the page and try again.', characterEmpty: 'No characters yet', newCharacter: 'New Character', saveCharacter: 'Save to Cloud', backupTools: 'JSON Backup & Transfer', cloudSaved: 'Saved to the cloud.', cloudSaveFailed: 'Cloud save failed. Your edits remain on this page; please try again.', characterLoaded: 'Loaded “{name}”.', newCharacterReady: 'A blank sheet is ready. An unnamed character will use the current date and time.', duplicateCharacterName: 'A character with this name already exists. Use a different name.', portraitUploadFailed: 'Could not upload the portrait. Use a PNG, JPEG, or WebP image up to 5 MB.' });
     Object.assign(translations.zh, { stepIdentity: '1. 核心設定', stepScores: '2. 能力值', stepFeatures: '3. 熟練/技能/能力', stepAdventure: '4. 角色資料', stepRecords: '5. 背景設定', subrace: '亞種族', chooseBackground: '選擇背景', backgroundGuidance: '背景會帶入對應的技能、語言、工具與背景能力。', backgroundEmpty: '選擇背景後，這裡會顯示它提供的熟練與能力。', abilityGuidance: '依照上方選擇，自動加入種族、職業、等級與背景提供的能力。', advancedAbilityPicker: '進階：新增專長或其他能力', autoAdded: '依設定自動加入', sourceRace: '種族能力', sourceClass: '職業能力', sourceBackground: '背景能力', sourcePending: '尚未選擇', sourceCount: '已帶入 {count} 項' });
     Object.assign(translations.en, { stepIdentity: '1. Core Choices', stepScores: '2. Ability Scores', stepFeatures: '3. Proficiencies/Skills/Features', stepAdventure: '4. Character Data', stepRecords: '5. Background Settings', subrace: 'Subrace', chooseBackground: 'Choose Background', backgroundGuidance: 'Your background adds its skills, languages, tools, and background feature.', backgroundEmpty: 'Choose a background to preview its proficiencies and feature.', abilityGuidance: 'Features from your race, class, level, and background are added automatically from the choices above.', advancedAbilityPicker: 'Advanced: Add a feat or another feature', autoAdded: 'Added from your choices', sourceRace: 'Race Features', sourceClass: 'Class Features', sourceBackground: 'Background Feature', sourcePending: 'Not selected yet', sourceCount: '{count} added' });
     Object.assign(translations.zh, { customAbilityCategory: '自訂能力來源', customAbilityTitle: '能力名稱', customAbilityDescription: '能力說明', addCustomAbility: '＋建立自訂能力', customAbilityRequired: '請輸入能力名稱。', customAbilityAdded: '自訂能力' });
@@ -694,8 +718,8 @@
     const resizeSpellRows = (nextCount) => { const values = captureSpellValues(); spellRowCount = Math.max(1, nextCount); renderSpellRows(); restoreSpellValues(values); updateSpellRows(); save(); };
     const removeSpellRow = (removeIndex) => { if (spellRowCount <= 1) return; const values = captureSpellValues(); const nextValues = {}; let nextIndex = 1; for (let oldIndex = 1; oldIndex <= spellRowCount; oldIndex += 1) { if (oldIndex === removeIndex) continue; nextValues[`spellName${nextIndex}`] = values[`spellName${oldIndex}`] || ''; nextValues[`spellLevel${nextIndex}`] = values[`spellLevel${oldIndex}`] || ''; nextIndex += 1; } spellRowCount -= 1; renderSpellRows(); restoreSpellValues(nextValues); updateSpellRows(); save(); };
     const applyPortraitPosition = () => { const image = document.getElementById('portraitImage'); image.style.objectPosition = `${portraitPosition.x}% ${portraitPosition.y}%`; image.style.transform = `${portraitFlip ? 'scaleX(-1) ' : ''}scale(${portraitZoom})`; const panel = document.getElementById('portraitCropPanel'); panel.hidden = !portraitSrc; document.getElementById('portraitZoom').value = portraitZoom; document.getElementById('portraitCropX').value = portraitPosition.x; document.getElementById('portraitCropY').value = portraitPosition.y; document.getElementById('portraitFlipButton').setAttribute('aria-pressed', String(portraitFlip)); };
-    const setPortrait = (src) => { if (!src) return; const image = document.getElementById('portraitImage'); image.onload = () => { image.hidden = false; document.getElementById('portraitPlaceholder').hidden = true; applyPortraitPosition(); portraitSrc = src; save(); }; image.onerror = () => { image.hidden = true; document.getElementById('portraitPlaceholder').hidden = false; document.getElementById('portraitCropPanel').hidden = true; }; image.src = src; };
-    const removePortrait = () => { portraitSrc = ''; portraitPosition = { x: 50, y: 50 }; portraitZoom = 1; portraitFlip = false; document.getElementById('portraitImage').src = ''; document.getElementById('portraitImage').hidden = true; document.getElementById('portraitPlaceholder').hidden = false; document.getElementById('portraitUrl').value = ''; document.getElementById('portraitFile').value = ''; applyPortraitPosition(); save(); };
+    const setPortrait = (src, options = {}) => { if (!src) return; const { dirty = true, source = src } = options; const image = document.getElementById('portraitImage'); const previousSrc = portraitSrc; image.onload = () => { image.hidden = false; document.getElementById('portraitPlaceholder').hidden = true; portraitSrc = src; if (previousSrc.startsWith('blob:') && previousSrc !== src) URL.revokeObjectURL(previousSrc); if (dirty) { portraitDirty = true; portraitSource = source; } applyPortraitPosition(); if (dirty) save(); }; image.onerror = () => { image.hidden = true; document.getElementById('portraitPlaceholder').hidden = false; document.getElementById('portraitCropPanel').hidden = true; }; image.src = src; };
+    const removePortrait = (options = {}) => { const { dirty = true } = options; if (portraitSrc.startsWith('blob:')) URL.revokeObjectURL(portraitSrc); portraitSrc = ''; portraitPosition = { x: 50, y: 50 }; portraitZoom = 1; portraitFlip = false; if (dirty) { portraitDirty = true; portraitSource = null; } document.getElementById('portraitImage').src = ''; document.getElementById('portraitImage').hidden = true; document.getElementById('portraitPlaceholder').hidden = false; document.getElementById('portraitUrl').value = ''; document.getElementById('portraitFile').value = ''; applyPortraitPosition(); if (dirty) save(); };
     const classLabel = (id) => { const select = document.getElementById(`class${id}`); return select.selectedOptions[0]?.textContent || ''; };
     const spellValue = (value, level, abilityId, classLevel) => { if (value === 'not_applicable') return t().no; if (value === 'all_eligible') return t().spellAll; if (Array.isArray(value)) return value[Math.max(0, classLevel - 1)] ?? '—'; if (value && typeof value === 'object' && value.template === 'spellbook') return value.values[Math.max(0, classLevel - 1)] ?? '—'; if (value && typeof value === 'object' && value[currentLanguage]) { const abilityModifier = modifier(getAbilityScore(abilityId)); return Math.max(1, abilityModifier + classLevel); } return value || '—'; };
     const updateSpellSummary = () => { const summary = document.getElementById('spellSummary'); const spellData = window.sheetOptions?.spellData; if (!spellData) { summary.textContent = t().spellSummaryEmpty; return; } const rows = getCharacterClasses().map(row => ({ select: document.getElementById(`class${row.row}`), level: row.level })).filter((row) => row.select.value && row.level); if (!rows.length) { summary.textContent = t().spellSummaryEmpty; return; } const summaries = rows.map(({ select, level }) => { const className = select.selectedOptions[0]?.textContent || ''; const data = spellData.classes?.[select.value]; if (!data) return `${t().spellClass} ${className} · ${t().spellPrepared}: ${t().no} · ${t().spellKnown}: ${t().no} · ${t().spellAbility}: —`; const abilityName = data.casting_ability?.[currentLanguage] || '—'; const ability = abilityData.find((item) => item[currentLanguage] === abilityName); return `${t().spellClass} ${className} · ${t().spellPrepared}: ${spellValue(data.prepared, level, ability?.id, level)} · ${t().spellKnown}: ${spellValue(data.known, level, ability?.id, level)} · ${t().spellAbility}: ${abilityName}`; }); summary.textContent = summaries.join('；'); };
@@ -784,12 +808,53 @@
     document.querySelectorAll('.death-track input[type="checkbox"]').forEach((input) => input.addEventListener('change', () => syncDeathSaveTrack(input)));
     const updateCombatAuto = () => { const total = characterLevel(); const bonus = total ? Math.min(6, 2 + Math.floor((total - 1) / 4)) : 2; setCalculatedValue('proficiency', `+${bonus}`); const featBonus = Array.from(document.getElementById('feat')?.selectedOptions || []).map((option) => window.sheetOptions?.feats?.find((item) => item.id === option.value)).filter(Boolean).reduce((sum, feat) => { const text = `${feat.summary_zh || ''} ${feat.summary_en || ''}`; const match = text.match(/(?:先攻|initiative)[^+\d]{0,12}\+\s*(\d+)/i); return sum + (match ? Number(match[1]) : 0); }, 0); const initiative = modifier(getAbilityScore('dex')) + featBonus; setCalculatedValue('initiative', initiative >= 0 ? `+${initiative}` : initiative); };
     const updateLevels = () => { const total = characterLevel(); const valid = total >= 1 && total <= 20; const message = document.getElementById('levelMessage'); message.textContent = valid ? `${t().levelTotal}${total}` : t().levelInvalid; message.style.color = valid ? 'var(--sheet-muted)' : '#eaa5a5'; message.dataset.valid = String(valid); updateCombatAuto(); updateHitDice(); updateSpellRows(); };
-    const updateGate = () => { document.querySelectorAll('#characterSheet input, #characterSheet select, #characterSheet textarea').forEach((el) => { el.disabled = false; }); document.getElementById('saveDraftButton').disabled = false; };
-    const setLanguage = (language) => { if (initialized) save(); currentLanguage = language === 'en' ? 'en' : 'zh'; document.documentElement.lang = currentLanguage === 'zh' ? 'zh-Hant' : 'en'; document.title = `${t().title} | Rugatha`; document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = t()[el.dataset.i18n]; }); document.querySelectorAll('[data-placeholder-zh]').forEach((el) => { el.placeholder = currentLanguage === 'zh' ? el.dataset.placeholderZh : el.dataset.placeholderEn; }); document.getElementById('languageButton').setAttribute('aria-label', t().aria); renderAbilities(); renderChecks(); renderTables(); renderOptions(); renderEquipmentOptions(); renderArmorOptions(); renderShieldACOptions(); if (initialized) restore(); renderArmorLoadout(); renderFeatPicker(); renderCharacterAbilities(); renderEquipmentItems(); restoreSpellSelections(); syncInspiration(); updateAllAttacks(); updateArmorClass(); updateLevels(); updateSpeed(); updateSpellSummary(); try { localStorage.setItem('rugatha-language', currentLanguage); } catch (_) {} };
-    const collectSheetData = (includeFullPortrait = false) => { const data = {}; syncLoadoutState(); document.querySelectorAll('#characterSheet input, #characterSheet select, #characterSheet textarea').forEach((el) => { if (!el.id || el.type === 'file' || el.classList.contains('ability-note')) return; data[el.id] = el.type === 'checkbox' ? el.checked : (el.multiple ? Array.from(el.selectedOptions).map((option) => option.value) : el.value); }); data.multiclass = multiclass; data.classRowIds = getClassRowIds(); data.customProficiencies = customProficiencies; data.removedProficiencies = removedProficiencies; data.customAbilities = customAbilities; data.removedAbilities = removedAbilities; data.selectedAbilityIndexes = selectedAbilityIndexes; data.abilityNotes = abilityNotes; data.calculationOverrides = calculationOverrides; data.armorRows = armorRows; data.shieldRows = shieldRows; data.equipmentItems = equipmentItems; data.portraitSrc = includeFullPortrait || !portraitSrc.startsWith('data:') || portraitSrc.length <= 200000 ? portraitSrc : ''; data.portraitX = portraitPosition.x; data.portraitY = portraitPosition.y; data.portraitZoom = portraitZoom; data.portraitFlip = portraitFlip; data.attackRowCount = attackRowCount; data.attackCustomRows = attackCustomRows; data.spellRowCount = spellRowCount; return data; };
-    const save = () => { try { localStorage.setItem(storageKey, JSON.stringify(collectSheetData())); return true; } catch (_) { return false; } };
-    Object.assign(translations.zh, { saveDraft: '暫存', draftSaved: '已暫存至此瀏覽器（包含全部角色資料）。', draftFailed: '暫存失敗，請檢查瀏覽器儲存空間或匯出備份。' });
-    Object.assign(translations.en, { saveDraft: 'Save Draft', draftSaved: 'All character data saved in this browser.', draftFailed: 'Save failed. Check browser storage or export a backup.' });
+    const updateGate = () => { document.querySelectorAll('#characterSheet input, #characterSheet select, #characterSheet textarea').forEach((el) => { el.disabled = characterReadOnly; }); document.getElementById('saveDraftButton').disabled = characterReadOnly; document.getElementById('newCharacterButton').disabled = characterReadOnly; document.getElementById('saveCharacterButton').disabled = characterReadOnly; };
+    const setLanguage = (language) => { const languageSnapshot = initialized ? collectSheetData(true) : null; if (initialized) save(); currentLanguage = language === 'en' ? 'en' : 'zh'; document.documentElement.lang = currentLanguage === 'zh' ? 'zh-Hant' : 'en'; document.title = `${t().title} | Rugatha`; document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = t()[el.dataset.i18n]; }); document.querySelectorAll('[data-placeholder-zh]').forEach((el) => { el.placeholder = currentLanguage === 'zh' ? el.dataset.placeholderZh : el.dataset.placeholderEn; }); document.getElementById('languageButton').setAttribute('aria-label', t().aria); renderAbilities(); renderChecks(); renderTables(); renderOptions(); renderEquipmentOptions(); renderArmorOptions(); renderShieldACOptions(); if (initialized) restore(languageSnapshot); renderArmorLoadout(); renderFeatPicker(); renderCharacterAbilities(); renderEquipmentItems(); restoreSpellSelections(languageSnapshot); syncInspiration(); updateAllAttacks(); updateArmorClass(); updateLevels(); updateSpeed(); updateSpellSummary(); if (characterItems.length || characterStore) renderCharacterSelector(); try { localStorage.setItem('rugatha-language', currentLanguage); } catch (_) {} };
+    const collectSheetData = (includeFullPortrait = false) => { const data = {}; syncLoadoutState(); document.querySelectorAll('#characterSheet input, #characterSheet select, #characterSheet textarea').forEach((el) => { if (!el.id || el.type === 'file' || el.classList.contains('ability-note')) return; data[el.id] = el.type === 'checkbox' ? el.checked : (el.multiple ? Array.from(el.selectedOptions).map((option) => option.value) : el.value); }); data.multiclass = multiclass; data.classRowIds = getClassRowIds(); data.customProficiencies = customProficiencies; data.removedProficiencies = removedProficiencies; data.customAbilities = customAbilities; data.removedAbilities = removedAbilities; data.selectedAbilityIndexes = selectedAbilityIndexes; data.abilityNotes = abilityNotes; data.calculationOverrides = calculationOverrides; data.armorRows = armorRows; data.shieldRows = shieldRows; data.equipmentItems = equipmentItems; data.portraitSrc = includeFullPortrait ? portraitSrc : ''; data.portraitX = portraitPosition.x; data.portraitY = portraitPosition.y; data.portraitZoom = portraitZoom; data.portraitFlip = portraitFlip; data.attackRowCount = attackRowCount; data.attackCustomRows = attackCustomRows; data.spellRowCount = spellRowCount; return data; };
+    const setCharacterManagerStatus = (message = '', isError = false) => { const status = document.getElementById('characterManagerStatus'); status.textContent = message; status.classList.toggle('is-error', isError); };
+    const updateCharacterUrl = (characterKey = '', newMode = false) => { const url = new URL(window.location.href); if (characterKey) url.searchParams.set('character', characterKey); else url.searchParams.delete('character'); if (newMode) url.searchParams.set('new', '1'); else url.searchParams.delete('new'); window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`); };
+    const renderCharacterSelector = () => { const selector = document.getElementById('characterSelector'); selector.replaceChildren(new Option(characterItems.length ? t().characterSelectPrompt : t().characterEmpty, '')); characterItems.forEach((item) => selector.add(new Option(item.characterName, item.key))); selector.value = currentCharacterKey; };
+    const refreshCharacterList = async () => { if (!characterStore || !characterUser || !characterMemberId) return []; characterItems = await characterStore.list(characterMemberId); renderCharacterSelector(); return characterItems; };
+    const saveToCloud = async ({ silent = false } = {}) => {
+      if (!characterStore || !characterUser || characterReadOnly || isRestoringCharacter) return false;
+      const nameInput = document.getElementById('characterName');
+      const name = characterStore.normalizeName(nameInput.value) || characterStore.defaultName(new Date(), currentLanguage);
+      nameInput.value = name;
+      const nextKey = characterStore.keyForName(name);
+      if (nextKey !== currentCharacterKey && characterItems.some((item) => item.key === nextKey)) {
+        setCharacterManagerStatus(t().duplicateCharacterName, true);
+        return false;
+      }
+      if (!silent) setCharacterManagerStatus(currentLanguage === 'zh' ? '正在儲存到雲端…' : 'Saving to the cloud…');
+      try {
+        const result = await characterStore.save({
+          user: characterUser,
+          currentKey: currentCharacterKey,
+          characterName: name,
+          sheetData: collectSheetData(false),
+          existingPortrait,
+          portraitAction: portraitDirty ? (portraitSrc ? 'upload' : 'remove') : 'keep',
+          portraitSource: portraitSource || portraitSrc
+        });
+        currentCharacterKey = result.key;
+        existingPortrait = result.portrait;
+        portraitDirty = false;
+        portraitSource = null;
+        updateCharacterUrl(currentCharacterKey);
+        await refreshCharacterList();
+        setCharacterManagerStatus(t().cloudSaved);
+        return true;
+      } catch (error) {
+        console.error('Failed to save character sheet', error);
+        const portraitError = /portrait|image|PNG|JPEG|WebP|5 MB/i.test(String(error?.message || ''));
+        setCharacterManagerStatus(portraitError ? t().portraitUploadFailed : t().cloudSaveFailed, true);
+        return false;
+      }
+    };
+    const queueCloudSave = (options) => { cloudSavePromise = cloudSavePromise.catch(() => false).then(() => saveToCloud(options)); return cloudSavePromise; };
+    const save = () => { if (!initialized || characterReadOnly || isRestoringCharacter || !characterStore || !characterUser) return false; scheduleSave(); return true; };
+    Object.assign(translations.zh, { saveDraft: '儲存', draftSaved: '已儲存到雲端。', draftFailed: '雲端儲存失敗，請稍後再試或輸出 JSON 備份。' });
+    Object.assign(translations.en, { saveDraft: 'Save', draftSaved: 'Saved to the cloud.', draftFailed: 'Cloud save failed. Try again later or export a JSON backup.' });
     const switchWorkflowView = (headingId) => {
       const target = document.getElementById(headingId)?.closest('.workflow-view');
       if (!target) return;
@@ -881,7 +946,7 @@
       });
       switchWorkflowView('workflowOverview');
     };
-    const scheduleSave = () => { window.clearTimeout(saveTimer); saveTimer = window.setTimeout(save, 250); };
+    const scheduleSave = () => { window.clearTimeout(saveTimer); saveTimer = window.setTimeout(() => queueCloudSave({ silent: true }), 900); };
     const captureAdventureEntries = () => Array.from({ length: adventureEntryCount }, (_, index) => ({ date: document.getElementById(`adventureDate${index + 1}`)?.value || '', session: document.getElementById(`adventureSession${index + 1}`)?.value || '', notes: document.getElementById(`adventureNotes${index + 1}`)?.value || '' }));
     const renderAdventureLog = (entries = captureAdventureEntries()) => { const container = document.getElementById('adventureLog'); if (!container) return; container.innerHTML = Array.from({ length: adventureEntryCount }, (_, index) => { const row = index + 1; const entry = entries[index] || {}; return `<div class="adventure-entry"><div class="field"><label for="adventureDate${row}">${escapeHTML(t().adventureDate)}</label><input id="adventureDate${row}" type="date" value="${escapeHTML(entry.date || '')}"></div><div class="field"><label for="adventureSession${row}">${escapeHTML(t().sessionNumber)}</label><select id="adventureSession${row}"><option value="">${escapeHTML(t().choose)}</option>${Array.from({ length: 99 }, (_, n) => `<option value="${n + 1}"${String(entry.session || '').replace(/^#/, '') === String(n + 1) ? ' selected' : ''}>${n + 1}</option>`).join('')}</select></div><div class="field adventure-entry-notes"><label for="adventureNotes${row}">${escapeHTML(t().sessionNotes)} <small class="markdown-support">${escapeHTML(t().markdownSupported)}</small></label><div class="backstory-toolbar"><button type="button" class="button" data-log-mode="edit" data-log-row="${row}" aria-pressed="true">${escapeHTML(t().editMarkdown)}</button><button type="button" class="button" data-log-mode="view" data-log-row="${row}" aria-pressed="false">${escapeHTML(t().viewMarkdown)}</button></div><textarea class="markdown-story" id="adventureNotes${row}">${escapeHTML(entry.notes || '')}</textarea><div id="adventurePreview${row}" class="markdown-preview" hidden></div></div><button class="icon-button adventure-entry-remove" type="button" data-adventure-remove="${index}" aria-label="${escapeHTML(t().removeEntry)}"${adventureEntryCount === 1 ? ' hidden' : ''}>−</button></div>`; }).join(''); };
     const setupCollapsibleSections = () => { document.querySelectorAll('.sheet-section').forEach((section) => { if (section.closest('#fullSheetContent')) return; const title = section.querySelector(':scope > .section-title, :scope > .spell-heading > .section-title'); if (!title || title.querySelector('.section-collapse')) return; const collapsed = section.classList.contains('is-collapsed'); const button = document.createElement('button'); button.type = 'button'; button.className = 'section-collapse'; button.setAttribute('aria-expanded', String(!collapsed)); button.setAttribute('aria-label', collapsed ? t().expandSection : t().collapseSection); button.textContent = collapsed ? '+' : '−'; title.append(button); }); };
@@ -942,7 +1007,7 @@
       showCustom(document.getElementById('race'), document.getElementById('raceOther'));
       getClassRowIds().forEach(row => showCustom(document.getElementById(`class${row}`), document.getElementById(`class${row}Other`)));
       classGrantedSaves = window.sheetOptions?.classes?.find((item) => item.id === document.getElementById('class1').value)?.savingThrowIds || [];
-      if (portraitSrc) setPortrait(portraitSrc);
+      if (portraitSrc) setPortrait(portraitSrc, { dirty: false });
       else { const image = document.getElementById('portraitImage'); image.src = ''; image.hidden = true; document.getElementById('portraitPlaceholder').hidden = false; document.getElementById('portraitCropPanel').hidden = true; }
       syncInspiration();
       normalizeDeathSaves();
@@ -957,6 +1022,102 @@
       restoreSpellSelections(sheetData);
       renderCreationGuide(); renderBackstoryPreview(); renderRacialSpells(); renderDiceHistory();
     };
+    const resetSheetForCloudLoad = () => {
+      document.getElementById('characterSheet').reset();
+      multiclass = false;
+      attackRowCount = 1;
+      attackCustomRows = {};
+      spellRowCount = 1;
+      customProficiencies = { skill: [], lan: [], tool: [] };
+      removedProficiencies = { skill: [], lan: [], tool: [], save: [] };
+      customAbilities = [];
+      removedAbilities = [];
+      selectedAbilityIndexes = [];
+      abilityNotes = {};
+      classGrantedSaves = [];
+      abilityGrantedSaves = [];
+      abilityGrantedSkills = [];
+      calculationOverrides = {};
+      armorRows = [{ choice: '', worn: false, custom: '', customAC: '10' }];
+      shieldRows = [{ choice: 'none', worn: false, custom: '', customAC: '0' }];
+      equipmentItems = [];
+      adventureEntryCount = 1;
+      portraitDirty = false;
+      portraitSource = null;
+      removePortrait({ dirty: false });
+      renderAttackRows();
+      renderSpellRows();
+      renderArmorLoadout();
+      resetClassRows();
+      renderAdventureLog([{}]);
+      renderEquipmentItems();
+    };
+    const loadCharacterByKey = async (characterKey) => {
+      if (!characterKey || !characterStore || !characterUser) return false;
+      window.clearTimeout(saveTimer);
+      setCharacterManagerStatus(currentLanguage === 'zh' ? '正在載入角色…' : 'Loading character…');
+      isRestoringCharacter = true;
+      try {
+        const record = await characterStore.load(characterMemberId, characterKey);
+        if (!record) throw new Error('Character not found');
+        resetSheetForCloudLoad();
+        currentCharacterKey = record.key;
+        existingPortrait = record.portrait || null;
+        const data = { ...(record.data || {}), characterName: record.characterName, portraitSrc: record.portraitUrl || '' };
+        restore(data);
+        portraitDirty = false;
+        portraitSource = null;
+        document.getElementById('characterSelector').value = currentCharacterKey;
+        updateCharacterUrl(currentCharacterKey);
+        setCharacterManagerStatus(t().characterLoaded.replace('{name}', record.characterName));
+        if (typeof renderFullSheet === 'function') renderFullSheet();
+        updateGate();
+        return true;
+      } catch (error) {
+        console.error('Failed to load character sheet', error);
+        setCharacterManagerStatus(t().cloudSaveFailed, true);
+        return false;
+      } finally {
+        isRestoringCharacter = false;
+      }
+    };
+    const startNewCharacter = () => {
+      window.clearTimeout(saveTimer);
+      isRestoringCharacter = true;
+      resetSheetForCloudLoad();
+      currentCharacterKey = '';
+      existingPortrait = null;
+      document.getElementById('characterSelector').value = '';
+      updateCharacterUrl('', true);
+      restore({});
+      isRestoringCharacter = false;
+      setCharacterManagerStatus(t().newCharacterReady);
+      switchWorkflowView('workflowIdentity');
+      updateGate();
+    };
+    const initializeCharacterCloud = async (detail = {}) => {
+      characterStore = detail.characterStore || null;
+      characterUser = detail.user || null;
+      characterMemberId = detail.memberId || characterUser?.uid || '';
+      characterReadOnly = Boolean(detail.readOnly);
+      updateGate();
+      if (!characterStore || !characterUser || !characterMemberId) return;
+      try {
+        await refreshCharacterList();
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('new') === '1' && !characterReadOnly) { startNewCharacter(); return; }
+        const requestedKey = params.get('character') || '';
+        const initialKey = characterItems.some((item) => item.key === requestedKey)
+          ? requestedKey
+          : characterItems[0]?.key || '';
+        if (initialKey) await loadCharacterByKey(initialKey);
+        else startNewCharacter();
+      } catch (error) {
+        console.error('Failed to initialize cloud character sheets', error);
+        startNewCharacter();
+        setCharacterManagerStatus(t().characterLoadFailed, true);
+      }
+    };
     const setConfigStatus = (message = '', isError = false) => { const status = document.getElementById('configStatus'); status.textContent = message; status.classList.toggle('is-error', isError); };
     const parseCharacterSheetConfig = (text) => {
       const config = JSON.parse(String(text || '').replace(/^\uFEFF/, ''));
@@ -970,8 +1131,14 @@
       return data;
     };
     const readConfigFile = (file) => typeof file.text === 'function' ? file.text() : new Promise((resolve, reject) => { const reader = new FileReader(); reader.addEventListener('load', () => resolve(String(reader.result || ''))); reader.addEventListener('error', () => reject(reader.error || new Error('Could not read config file'))); reader.readAsText(file); });
-    const exportConfig = () => {
-      const config = { format: configFormat, version: configVersion, exportedAt: new Date().toISOString(), data: collectSheetData(true) };
+    const blobToDataUrl = (blob) => new Promise((resolve, reject) => { const reader = new FileReader(); reader.addEventListener('load', () => resolve(String(reader.result || ''))); reader.addEventListener('error', () => reject(reader.error || new Error('Could not encode portrait'))); reader.readAsDataURL(blob); });
+    const exportConfig = async () => {
+      const data = collectSheetData(true);
+      if (data.portraitSrc.startsWith('blob:')) {
+        try { data.portraitSrc = await blobToDataUrl(await fetch(data.portraitSrc).then((response) => response.blob())); }
+        catch (error) { console.warn('Could not include the portrait in the JSON backup', error); data.portraitSrc = ''; }
+      }
+      const config = { format: configFormat, version: configVersion, exportedAt: new Date().toISOString(), data };
       const characterName = document.getElementById('characterName').value.trim().replace(/[<>:"/\\|?*\u0000-\u001f]/g, '-');
       const fallbackName = new Date().toISOString().slice(0, 10);
       const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json;charset=utf-8' });
@@ -993,11 +1160,21 @@
         const data = parseCharacterSheetConfig(await readConfigFile(file));
         await loadOptions();
         await Promise.all([loadAbilityCatalog(), loadSubclassOptions(), loadSpellOptions(), loadEquipmentOptions()]);
+        isRestoringCharacter = true;
+        resetSheetForCloudLoad();
+        currentCharacterKey = '';
+        existingPortrait = null;
         restore(data);
-        const stored = save();
+        portraitDirty = Boolean(data.portraitSrc);
+        portraitSource = data.portraitSrc || null;
+        isRestoringCharacter = false;
+        document.getElementById('characterSelector').value = '';
+        updateCharacterUrl('', true);
+        const stored = await queueCloudSave();
         if (typeof renderFullSheet === 'function') renderFullSheet();
         setConfigStatus(stored ? t().configImported : t().configImportedUnsaved, !stored);
       } catch (error) {
+        isRestoringCharacter = false;
         console.error('Failed to import character sheet config', error);
         setConfigStatus(t().configInvalid, true);
       }
@@ -1007,6 +1184,9 @@
     document.getElementById('exportConfigButton').addEventListener('click', exportConfig);
     document.getElementById('importConfigButton').addEventListener('click', () => { const input = document.getElementById('configFile'); input.value = ''; input.click(); });
     document.getElementById('configFile').addEventListener('change', (event) => importConfig(event.target.files?.[0]));
+    document.getElementById('characterSelector').addEventListener('change', (event) => { if (event.target.value) loadCharacterByKey(event.target.value); else startNewCharacter(); });
+    document.getElementById('newCharacterButton').addEventListener('click', startNewCharacter);
+    document.getElementById('saveCharacterButton').addEventListener('click', () => { window.clearTimeout(saveTimer); queueCloudSave(); });
     document.getElementById('multiclassButton').addEventListener('click', () => { addClassRow(); updateLevels(); save(); });
     document.getElementById('removeMulticlassButton').addEventListener('click', () => removeClassRow(2));
     document.addEventListener('change', (event) => { if (event.target.matches('.class-select')) { delete pendingSubclassSelections[event.target.id.replace('class', '')]; renderOptions(); showCustom(event.target, document.getElementById(`${event.target.id}Other`)); renderSubclassOptions(event.target.id.replace('class', '')); if (event.target.value && event.target.value !== 'other') loadSubclassOptions(); renderCharacterAbilities(); if (event.target.id === 'class1') syncClassSavingThrows(); updateHitDice(); updateSpellRows(); updateSpellSummary(); renderProficiencyPills(); updateAllAttacks(); } if (event.target.matches('[id^="subclass"]')) { delete pendingSubclassSelections[event.target.id.replace('subclass', '')]; renderCharacterAbilities(); } if (event.target.id === 'race' || event.target.id === 'background' || event.target.id === 'feat') { if (event.target.id === 'background') showCustom(event.target, document.getElementById('backgroundOther')); if (event.target.id === 'race') { showCustom(event.target, document.getElementById('raceOther')); delete calculationOverrides.speed; } renderCharacterAbilities(); renderProficiencyPills(); updateSpellRows(); updateSaves(); updateCombatAuto(); } if (event.target.matches('.level-select')) { renderSubclassOptions(event.target.id.replace('level', '')); if (document.getElementById(`class${event.target.id.replace('level', '')}`).value) loadSubclassOptions(); renderCharacterAbilities(); updateLevels(); updateSpellSummary(); } if (event.target.id === 'proficiency') { updateSaves(); updateAllAttacks(); } if (event.target.id === 'equipmentSelect') renderEquipmentOptions(); if (event.target.matches('.loadout-select, .loadout-custom, .loadout-custom-ac, .loadout-worn')) { syncLoadoutState(); if (event.target.classList.contains('loadout-worn') && event.target.checked) { const type = event.target.dataset.loadoutType; const index = Number(event.target.dataset.loadoutIndex); const rows = type === 'armor' ? armorRows : shieldRows; rows.forEach((row, rowIndex) => { row.worn = rowIndex === index; }); } renderArmorLoadout(); updateArmorClass(); } save(); });
@@ -1023,11 +1203,11 @@
       title.value = ''; description.value = ''; renderCharacterAbilities(); save();
     });
     document.getElementById('customAbilityTitle').addEventListener('input', (event) => event.target.setCustomValidity(''));
-    document.getElementById('characterSheet').addEventListener('reset', () => { adventureEntryCount = 1; window.setTimeout(() => { renderAdventureLog([{}]); save(); }, 0); });
+    document.getElementById('characterSheet').addEventListener('reset', () => { adventureEntryCount = 1; const shouldSave = !isRestoringCharacter; window.setTimeout(() => { renderAdventureLog([{}]); if (shouldSave) save(); }, 0); });
     document.addEventListener('input', (event) => { if (event.target.matches('.ability-note')) abilityNotes[event.target.dataset.abilityIndex] = event.target.value; if (event.target.matches('.calculated-editable') && event.target.id) { calculationOverrides[event.target.id] = event.target.value; if (/^(str|dex|con|int|wis|cha)Total$/.test(event.target.id) || event.target.id === 'proficiency') { updateSaves(); updateAllAttacks(); } } scheduleSave(); });
     document.getElementById('inspirationButton').addEventListener('click', () => { const input = document.getElementById('inspiration'); input.value = input.value === 'yes' ? 'no' : 'yes'; syncInspiration(); save(); });
-    document.getElementById('portraitFile').addEventListener('change', (event) => { const file = event.target.files?.[0]; if (!file) return; const reader = new FileReader(); reader.addEventListener('load', () => setPortrait(reader.result)); reader.readAsDataURL(file); });
-    document.getElementById('portraitUrlButton').addEventListener('click', () => { const url = document.getElementById('portraitUrl').value.trim(); if (url) setPortrait(url); });
+    document.getElementById('portraitFile').addEventListener('change', (event) => { const file = event.target.files?.[0]; if (!file) return; const reader = new FileReader(); reader.addEventListener('load', () => setPortrait(reader.result, { dirty: true, source: file })); reader.readAsDataURL(file); });
+    document.getElementById('portraitUrlButton').addEventListener('click', () => { const url = document.getElementById('portraitUrl').value.trim(); if (url) setPortrait(url, { dirty: true, source: url }); });
     document.getElementById('portraitRemoveButton').addEventListener('click', removePortrait);
     let portraitDrag = null;
     document.getElementById('portraitImage').addEventListener('pointerdown', (event) => { if (!portraitSrc) return; portraitDrag = { x: event.clientX, y: event.clientY, startX: portraitPosition.x, startY: portraitPosition.y }; event.currentTarget.setPointerCapture(event.pointerId); event.currentTarget.classList.add('is-dragging'); });
@@ -1049,13 +1229,13 @@
     document.getElementById('resetCalculatedButton').addEventListener('click', () => { calculationOverrides = {}; updateSaves(); updateSpeed(); updateAllAttacks(); save(); });
     const clearSheet = () => { if (!authenticated || !window.confirm(currentLanguage === 'zh' ? '確定要清除全部內容嗎？' : 'Clear all entries?')) return; document.getElementById('characterSheet').reset(); attackRowCount = 1; attackCustomRows = {}; spellRowCount = 1; customProficiencies = { skill: [], lan: [], tool: [] }; removedProficiencies = { skill: [], lan: [], tool: [], save: [] }; customAbilities = []; removedAbilities = []; selectedAbilityIndexes = []; abilityNotes = {}; classGrantedSaves = []; abilityGrantedSaves = []; abilityGrantedSkills = []; calculationOverrides = {}; armorRows = [{ choice: '', worn: false, custom: '', customAC: '10' }]; shieldRows = [{ choice: 'none', worn: false, custom: '', customAC: '0' }]; equipmentItems = []; renderAttackRows(); renderSpellRows(); renderArmorLoadout(); resetClassRows(); removePortrait(); document.querySelector('[data-class-row="2"]').classList.add('hidden'); document.getElementById('multiclassButton').setAttribute('aria-pressed', 'false'); document.querySelectorAll('.custom-input').forEach((input) => { input.value = ''; input.hidden = true; }); getClassRowIds().forEach(renderSubclassOptions); renderEquipmentItems(); syncInspiration(); updateSaves(); renderProficiencyPills(); renderCharacterAbilities(); updateLevels(); updateSpellSummary(); save(); };
     document.addEventListener('click', (event) => { if (event.target.closest('[data-reset-sheet]')) clearSheet(); });
-    document.getElementById('saveDraftButton').addEventListener('click', () => {
+    document.getElementById('saveDraftButton').addEventListener('click', async () => {
       window.clearTimeout(saveTimer);
       const status = document.getElementById('draftStatus');
-      status.dataset.i18n = save() ? 'draftSaved' : 'draftFailed';
+      status.dataset.i18n = await queueCloudSave() ? 'draftSaved' : 'draftFailed';
       status.textContent = t()[status.dataset.i18n];
     });
-    const initializeSheet = () => { const form = document.getElementById('characterSheet'); const portrait = document.getElementById('portraitSection'); document.getElementById('identitySection').append(document.getElementById('classSection'));  ['workflowIdentity', 'identitySection', 'backgroundSection', 'workflowScores', 'abilityScoreSection', 'workflowFeatures', 'proficiencySection', 'skillsSection', 'characterAbilitySection', 'workflowAdventure', 'adventureSection', 'equipmentSection', 'attackSection', 'spellSection', 'workflowRecords', 'storySection', 'backstorySection', 'adventureLogSection'].forEach((id) => form.append(document.getElementById(id))); setupWorkflowViews(); renderAdventureLog(); setLanguage(localStorage.getItem('rugatha-language') || 'zh'); setupCollapsibleSections(); initialized = true; updateGate(); document.getElementById('characterSheetPage').classList.add('is-authorized'); Promise.all([loadOptions(), loadAbilityCatalog()]).then(() => { renderSubraceOptions(); restore(); renderBackgroundPreview(); renderCharacterAbilities(); renderCreationGuide(); updateSaves(); loadSubclassOptions(); loadSpellOptions(); }); };
+    const initializeSheet = async (event) => { characterReadOnly = Boolean(event.detail?.readOnly); const form = document.getElementById('characterSheet'); document.getElementById('identitySection').append(document.getElementById('classSection'));  ['workflowIdentity', 'identitySection', 'backgroundSection', 'workflowScores', 'abilityScoreSection', 'workflowFeatures', 'proficiencySection', 'skillsSection', 'characterAbilitySection', 'workflowAdventure', 'adventureSection', 'equipmentSection', 'attackSection', 'spellSection', 'workflowRecords', 'storySection', 'backstorySection', 'adventureLogSection'].forEach((id) => form.append(document.getElementById(id))); setupWorkflowViews(); renderAdventureLog(); setLanguage(localStorage.getItem('rugatha-language') || 'zh'); setupCollapsibleSections(); initialized = true; updateGate(); document.getElementById('characterSheetPage').classList.add('is-authorized'); await Promise.all([loadOptions(), loadAbilityCatalog(), loadSubclassOptions(), loadSpellOptions(), loadEquipmentOptions()]); renderSubraceOptions(); renderBackgroundPreview(); renderCharacterAbilities(); renderCreationGuide(); updateSaves(); await initializeCharacterCloud(event.detail); };
     window.addEventListener('rugatha-character-sheet-authorized', initializeSheet, { once: true });
   </script>
   <script src="./multiclass.js?v=20260909-multiclass-2"></script>
@@ -1067,12 +1247,44 @@
   <script type="module">
     import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+    import {
+      characterKeyForName,
+      defaultCharacterName,
+      listCharacterSheets,
+      loadCharacterSheet,
+      normalizeCharacterName,
+      saveCharacterSheet
+    } from "../../shared/character-sheets.js";
 
     const config = window.RUGATHA_FIREBASE_CONFIG;
     if (config && !(window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false)) {
       const app = getApps().length ? getApps()[0] : initializeApp(config);
-      onAuthStateChanged(getAuth(app), (user) => {
-        if (user) window.dispatchEvent(new Event('rugatha-character-sheet-authorized'));
+      onAuthStateChanged(getAuth(app), async (user) => {
+        if (!user) return;
+        const params = new URLSearchParams(window.location.search);
+        const requestedMemberId = (params.get('memberId') || '').trim();
+        let memberId = user.uid;
+        if (requestedMemberId && requestedMemberId !== user.uid) {
+          try {
+            const token = await user.getIdTokenResult();
+            if (token.claims.admin === true) memberId = requestedMemberId;
+          } catch (error) {
+            console.warn('Could not verify administrator access', error);
+          }
+        }
+        const readOnly = memberId !== user.uid;
+        const characterStore = {
+          normalizeName: normalizeCharacterName,
+          keyForName: characterKeyForName,
+          defaultName: defaultCharacterName,
+          list: (uid) => listCharacterSheets(app, uid),
+          load: (uid, key) => loadCharacterSheet(app, uid, key),
+          save: (options) => {
+            if (readOnly) throw new Error('Administrator member view is read-only');
+            return saveCharacterSheet({ app, ...options });
+          }
+        };
+        window.dispatchEvent(new CustomEvent('rugatha-character-sheet-authorized', { detail: { user, memberId, readOnly, characterStore } }));
       });
     }
   </script>
