@@ -2,12 +2,12 @@
 
 更新：2026-09-25
 
-狀態：ADC、Storage 建立與新後端 Rules 部署已完成；網站相容資料層仍以 RTDB 模式運作，尚未凍結、匯入或切換正式流量
+狀態：正式資料已匯入並驗證，網站已切換 Firestore；2026-09-25 起進入 7 天觀察期，RTDB 保留且維持唯讀
 已確認：保留未來會員頭像（改用 Cloud Storage）；現有 Rugatha 大型 JPEG 不遷移；成就不要求防作弊；接受短暫唯讀窗口與 7 天觀察期
 
-目前實作驗證：來源 SHA-256 `66e4e58cdf4512b035902bdd7feeedcb610e29d244a85f158420c03d822305a1`；dry-run 規劃 89 writes；4 個轉換測試、7 個 Firestore／Storage Rules 測試與 1 個 RTDB 維護規則測試通過。Firestore `(default)` 已確認位於 `asia-east1`，Storage bucket 位於免付費位置 `US-WEST1`，網站旗標仍為 `rtdb`，尚未切換正式流量。
+最終凍結來源 SHA-256 為 `cc2a88b37dfc1297f8171b6a59b0bb7b713ef7dc00f9c3ff8eea5cf9c4871ff3`；migration run `rtdb-2026-09-25-final` 已套用並逐文件驗證。實際結果為 57 members、1 bookmark、17 QA choices、12 QA stats、1 system counter，略過 1 張既有大型 JPEG。5 個轉換測試、7 個 Firestore／Storage Rules 測試與 1 個 RTDB 維護規則測試通過。Firestore `(default)` 位於 `asia-east1`，Storage bucket 位於免付費位置 `US-WEST1`。
 
-2026-09-25 線上檢查：Auth UID 57/57 存在；Firestore 頂層 collection 為 0；Storage bucket `rugatha-87e15.firebasestorage.app` 已建立於 `US-WEST1`。現行 Rules 已備份到 Git 忽略目錄，管理員 custom claim 與新版 Firestore／Storage Rules 也已部署。切換前仍需先上線 RTDB 相容版本、取得最終線上 export、匯入並完成唯讀驗證。
+2026-09-25 線上結果：Auth UID 57/57 存在；Storage bucket `rugatha-87e15.firebasestorage.app` 位於 `US-WEST1`；管理員 custom claim 與新版 Firestore／Storage Rules 已部署。最終 RTDB export、Rules 備份與 Firestore→RTDB rollback 基準快照都存放於 Git 忽略目錄。RTDB 維持唯讀直到觀察期完成。
 
 ## 1. 結論
 

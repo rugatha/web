@@ -9,8 +9,18 @@
 - Firestore location：`asia-east1`
 - Storage bucket：`rugatha-87e15.firebasestorage.app`
 - 初始來源 SHA-256：`66e4e58cdf4512b035902bdd7feeedcb610e29d244a85f158420c03d822305a1`
-- 現行網站 backend flag：`rtdb`
-- 預計觀察期：7 天
+- 最終凍結來源 SHA-256：`cc2a88b37dfc1297f8171b6a59b0bb7b713ef7dc00f9c3ff8eea5cf9c4871ff3`
+- Migration run：`rtdb-2026-09-25-final`
+- 現行網站 backend flag：`firestore`
+- 觀察期：2026-09-25 至 2026-10-02（7 天）
+
+## 已完成結果
+
+- 最終 RTDB 寫入已由 maintenance Rules 凍結，原資料未刪除。
+- Firestore 已匯入並逐文件驗證：57 members、1 bookmark、17 QA choices、12 QA stats、1 system counter。
+- 現有 1 張 6,588,439-byte data URL 大型 JPEG 已按決策略過；日後頭像改存 Storage。
+- 回退基準快照已產生於 Git 忽略的 `migration-private/`，重新分析的資料數量一致。
+- Firestore／Storage Rules 已部署；管理員 custom claim 已設定。管理員需重新登入以刷新 ID token。
 
 ## 匯入前
 
