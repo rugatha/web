@@ -1063,7 +1063,7 @@
         resetSheetForCloudLoad();
         currentCharacterKey = record.key;
         existingPortrait = record.portrait || null;
-        const data = { ...(record.data || {}), characterName: record.characterName, portraitSrc: record.portraitUrl || '' };
+        const data = { ...(record.data || {}), characterName: record.characterName, portraitSrc: '' };
         restore(data);
         portraitDirty = false;
         portraitSource = null;
@@ -1072,6 +1072,16 @@
         setCharacterManagerStatus(t().characterLoaded.replace('{name}', record.characterName));
         if (typeof renderFullSheet === 'function') renderFullSheet();
         updateGate();
+        if (typeof record.loadPortrait === 'function') {
+          record.loadPortrait().then((url) => {
+            if (!url) return;
+            if (currentCharacterKey !== record.key) {
+              if (url.startsWith('blob:')) URL.revokeObjectURL(url);
+              return;
+            }
+            setPortrait(url, { dirty: false });
+          });
+        }
         return true;
       } catch (error) {
         console.error('Failed to load character sheet', error);

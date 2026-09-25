@@ -95,26 +95,28 @@ export const loadCharacterSheet = async (appOrDb, uid, characterKey) => {
   const snapshot = await getDoc(characterDocRef(db, uid, characterKey));
   if (!snapshot.exists()) return null;
   const record = snapshot.data() || {};
-  let portraitUrl = "";
-  if (record.portrait?.path) {
+  const loadPortrait = async () => {
+    if (!record.portrait?.path) return "";
     try {
       const bytes = await getBytes(
         storageRef(getStorage(), record.portrait.path),
         MAX_CHARACTER_PORTRAIT_BYTES
       );
-      portraitUrl = URL.createObjectURL(new Blob([bytes], {
+      return URL.createObjectURL(new Blob([bytes], {
         type: record.portrait.contentType || "image/webp"
       }));
     } catch (error) {
       console.warn("Failed to load character portrait", error);
+      return "";
     }
-  }
+  };
   return {
     key: snapshot.id,
     ...record,
     createdAt: timestampToIso(record.createdAt),
     updatedAt: timestampToIso(record.updatedAt),
-    portraitUrl
+    portraitUrl: "",
+    loadPortrait
   };
 };
 
