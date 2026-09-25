@@ -2,7 +2,7 @@ window.RUGATHA_FEATURE_FLAGS = Object.assign({}, window.RUGATHA_FEATURE_FLAGS, {
   firebaseEnabled: true,
   qaFateEnabled: true,
   dataBackend: "rtdb",
-  dataWritesEnabled: true
+  dataWritesEnabled: false
 });
 
 window.RUGATHA_DATA_BACKEND = window.RUGATHA_FEATURE_FLAGS.dataBackend;

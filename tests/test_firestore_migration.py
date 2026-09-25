@@ -90,6 +90,28 @@ class MigrationPlanTest(unittest.TestCase):
         with self.assertRaises(MIGRATION.MigrationError):
             MIGRATION.build_plan(source, "a" * 64, "test-run")
 
+    def test_firestore_member_converts_back_to_legacy_shape(self):
+        member = {
+            "memberNo": "0000-0001",
+            "displayName": "One",
+            "email": "one@example.test",
+            "profile": {"title": "Knight", "photo": None},
+            "badges": {"STR": 12},
+            "achievements": {"ach_one": True},
+            "rewardedAchievements": {"ach_one": True},
+            "totalTimeSeconds": 120,
+            "campaign": "Alpha",
+            "character": "Hero",
+            "createdAt": dt.datetime(2026, 1, 2, tzinfo=dt.timezone.utc),
+        }
+        legacy = MIGRATION._member_document_to_rtdb("uid-one", member)
+        self.assertEqual(legacy["memberId"], "uid-one")
+        self.assertEqual(legacy["BadgeSTR"], 12)
+        self.assertEqual(legacy["Campaign"], "Alpha")
+        self.assertEqual(legacy["Character"], "Hero")
+        self.assertEqual(legacy["createdAt"], "2026-01-02T00:00:00.000Z")
+        self.assertEqual(legacy["photoUrl"], "")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -50,6 +50,15 @@
 
 ## 回退
 
-若出現資料錯誤或權限異常：先停止寫入並保留兩邊資料。若 Firestore 已接受新寫入，不能只切回舊 RTDB，否則會遺失切換後的會員變更；必須先匯出、核對並回補差異，或維持唯讀等待修復。回補工具目前尚未完成，因此恢復寫入前必須完成回退演練。僅在確認 Firestore 沒有新增寫入時，才可直接切回 RTDB。
+若出現資料錯誤或權限異常：先停止寫入並保留兩邊資料。若 Firestore 已接受新寫入，不能只切回舊 RTDB，否則會遺失切換後的會員變更；先用下列唯讀指令匯出 Firestore 的 RTDB 相容快照，再核對與回補。工具會把觀察期內上傳到 Storage 的新頭像嵌入私有 rollback JSON，但不會修改線上 RTDB。
+
+```sh
+.venv/bin/python scripts/firestore_migration.py export-rollback \
+  migration-private/rollback-rtdb.json \
+  --project rugatha-87e15 \
+  --confirm-project rugatha-87e15
+```
+
+僅在確認 Firestore 沒有新增寫入時，才可直接切回凍結前 RTDB。若已有新寫入，需先檢查 rollback export 的計數與 hash，再把資料回補到 RTDB；不可直接覆蓋。
 
 新 run ID 的 apply 目前要求 members 集合為空；並不支援用新 run ID 覆蓋既有匯入。初次匯入應使用唯讀窗口內的最終來源，不先做 production 預匯入。前端維護旗標不能阻止已開啟的舊頁面，最終凍結還需 RTDB Rules 配合，並備妥可還原的原始 Rules。

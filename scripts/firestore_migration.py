@@ -450,6 +450,145 @@ def verify_plan(plan: MigrationPlan, project_id: str) -> None:
     _print_summary({**plan.summary, "status": "verified"})
 
 
+def _timestamp_to_iso(value: Any) -> str | None:
+    if value is None:
+        return None
+    if not isinstance(value, dt.datetime):
+        raise MigrationError("Firestore timestamp has an unexpected type")
+    if value.tzinfo is None:
+        value = value.replace(tzinfo=dt.timezone.utc)
+    return value.astimezone(dt.timezone.utc).isoformat(timespec="milliseconds").replace(
+        "+00:00", "Z"
+    )
+
+
+def _member_document_to_rtdb(uid: str, data: Mapping[str, Any]) -> dict[str, Any]:
+    profile = data.get("profile") if isinstance(data.get("profile"), Mapping) else {}
+    badges = data.get("badges") if isinstance(data.get("badges"), Mapping) else {}
+    legacy: dict[str, Any] = {
+        "memberId": uid,
+        "memberNo": data.get("memberNo", ""),
+        "displayName": data.get("displayName", ""),
+        "email": data.get("email", ""),
+        "photoUrl": "",
+    }
+    for source, target in (("createdAt", "createdAt"), ("lastLoginAt", "lastLoginAt")):
+        converted = _timestamp_to_iso(data.get(source))
+        if converted is not None:
+            legacy[target] = converted
+    for field in PROFILE_FIELDS:
+        if field in profile:
+            legacy[field] = profile[field]
+    for field in BADGE_FIELDS:
+        if field in badges:
+            legacy[f"Badge{field}"] = badges[field]
+    for field in ("achievements", "rewardedAchievements", "totalTimeSeconds"):
+        if field in data:
+            legacy[field] = data[field]
+    if "campaign" in data:
+        legacy["Campaign"] = data["campaign"]
+    if "character" in data:
+        legacy["Character"] = data["character"]
+    return legacy
+
+
+def export_rollback(
+    project_id: str,
+    confirm_project: str,
+    output_path: Path,
+    include_profile_photos: bool,
+    overwrite: bool,
+) -> None:
+    """Export Firestore back to the legacy RTDB tree without modifying production."""
+    if confirm_project != PROJECT_ID or project_id != PROJECT_ID:
+        raise MigrationError("--confirm-project must exactly match the configured project")
+    if output_path.exists() and not overwrite:
+        raise MigrationError("rollback export already exists; pass --overwrite to replace it")
+
+    _, _, client = _load_admin(project_id)
+    bucket = None
+    if include_profile_photos:
+        from firebase_admin import storage
+
+        bucket = storage.bucket(STORAGE_BUCKET)
+
+    members: dict[str, Any] = {}
+    qa_choices: dict[str, Any] = {}
+    bookmark_count = 0
+    qa_choice_count = 0
+    photo_count = 0
+
+    for member_snapshot in client.collection("members").stream():
+        uid = member_snapshot.id
+        data = member_snapshot.to_dict() or {}
+        legacy = _member_document_to_rtdb(uid, data)
+
+        bookmarks: dict[str, Any] = {}
+        for bookmark_snapshot in member_snapshot.reference.collection("bookmarks").stream():
+            bookmark = bookmark_snapshot.to_dict() or {}
+            saved_at = _timestamp_to_iso(bookmark.get("savedAt"))
+            bookmarks[bookmark_snapshot.id] = {
+                "path": bookmark.get("path", ""),
+                "title": bookmark.get("title", ""),
+                **({"savedAt": saved_at} if saved_at is not None else {}),
+            }
+            bookmark_count += 1
+        if bookmarks:
+            legacy["bookmarks"] = bookmarks
+
+        photo = data.get("profile", {}).get("photo") if isinstance(data.get("profile"), Mapping) else None
+        if include_profile_photos and isinstance(photo, Mapping) and photo.get("path"):
+            assert bucket is not None
+            photo_bytes = bucket.blob(str(photo["path"])).download_as_bytes()
+            content_type = str(photo.get("contentType") or "image/webp")
+            legacy["photoUrl"] = (
+                f"data:{content_type};base64,"
+                + base64.b64encode(photo_bytes).decode("ascii")
+            )
+            photo_count += 1
+
+        member_key = str(data.get("memberNo") or uid)
+        member_choices: dict[str, Any] = {}
+        for choice_snapshot in member_snapshot.reference.collection("qaChoices").stream():
+            choice = choice_snapshot.to_dict() or {}
+            member_choices[choice_snapshot.id] = {
+                "memberNo": data.get("memberNo", ""),
+                "questionPage": choice.get("questionPage", ""),
+                "choice": choice.get("choice", ""),
+            }
+            qa_choice_count += 1
+        if member_choices:
+            qa_choices[member_key] = member_choices
+
+        members[uid] = legacy
+
+    counter_snapshot = client.document("system/memberNumbers").get()
+    if not counter_snapshot.exists:
+        raise MigrationError("member number counter is missing from Firestore")
+    counter = (counter_snapshot.to_dict() or {}).get("lastAllocated")
+    if not isinstance(counter, int) or isinstance(counter, bool) or counter < 0:
+        raise MigrationError("member number counter is invalid")
+
+    export = {
+        "members": members,
+        "members_meta": {"memberNoCounter": counter},
+        "qa_choices": qa_choices,
+    }
+    raw = (json.dumps(export, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_bytes(raw)
+    _print_summary({
+        "status": "rollback-exported",
+        "projectId": project_id,
+        "memberDocuments": len(members),
+        "bookmarkDocuments": bookmark_count,
+        "qaChoiceDocuments": qa_choice_count,
+        "profilePhotosEmbedded": photo_count,
+        "outputBytes": len(raw),
+        "outputSha256": _sha256_bytes(raw),
+    })
+
+
 def set_admin_claim(project_id: str, confirm_project: str, email: str) -> None:
     if confirm_project != PROJECT_ID or project_id != PROJECT_ID:
         raise MigrationError("--confirm-project must exactly match the configured project")
@@ -476,6 +615,12 @@ def make_parser() -> argparse.ArgumentParser:
     claim.add_argument("--project", default=PROJECT_ID)
     claim.add_argument("--confirm-project", required=True)
     claim.add_argument("--email", required=True)
+    rollback = subparsers.add_parser("export-rollback")
+    rollback.add_argument("output", type=Path)
+    rollback.add_argument("--project", default=PROJECT_ID)
+    rollback.add_argument("--confirm-project", required=True)
+    rollback.add_argument("--omit-profile-photos", action="store_true")
+    rollback.add_argument("--overwrite", action="store_true")
     return parser
 
 
@@ -484,6 +629,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     try:
         if args.command == "set-admin-claim":
             set_admin_claim(args.project, args.confirm_project, args.email)
+            return 0
+        if args.command == "export-rollback":
+            export_rollback(
+                args.project,
+                args.confirm_project,
+                args.output,
+                not args.omit_profile_photos,
+                args.overwrite,
+            )
             return 0
         source, source_sha256 = load_source(args.source)
         plan = build_plan(source, source_sha256, args.run_id)
