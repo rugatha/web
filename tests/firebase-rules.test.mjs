@@ -139,6 +139,26 @@ test("owner may edit profile but cannot change member number", async () => {
   }));
 });
 
+test("migrated admin may record first Firestore login timestamp", async () => {
+  await environment.withSecurityRulesDisabled(async (context) => {
+    const db = context.firestore();
+    const admin = migratedMember("admin", 0);
+    admin.memberNo = "0000-0000";
+    admin.email = "rugathadnd@gmail.com";
+    delete admin.updatedAt;
+    await setDoc(doc(db, "members/admin"), admin);
+  });
+  const db = environment.authenticatedContext("admin", {
+    email: "rugathadnd@gmail.com",
+    admin: true
+  }).firestore();
+  await assertSucceeds(getDoc(doc(db, "members/admin")));
+  await assertSucceeds(updateDoc(doc(db, "members/admin"), {
+    lastLoginAt: serverTimestamp(),
+    updatedAt: serverTimestamp()
+  }));
+});
+
 test("new member allocation must atomically advance the counter", async () => {
   const uid = "new-user";
   const db = environment.authenticatedContext(uid, {

@@ -798,6 +798,13 @@ const setupAuth = async () => {
       }
     })
     .catch((error) => {
+      if (auth.currentUser) {
+        console.warn("Ignoring redirect-result error because the user is already signed in", error);
+        authResolved = true;
+        signedIn = true;
+        setSignedIn(auth.currentUser);
+        return;
+      }
       if (error) {
         console.error("Redirect result error", error);
         showAuthError(error);

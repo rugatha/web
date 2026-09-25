@@ -2901,6 +2901,10 @@
         })
         .catch((error) => {
           console.error("Failed to resolve redirect sign-in", error);
+          if (auth.currentUser) {
+            sessionStorage.removeItem(MEMBER_SIGNIN_KEY);
+            return;
+          }
           const dictionary = translations[authState.language] || translations.en;
           setSignedOut(dictionary.profileSignInFailed);
         });
@@ -3021,6 +3025,5 @@
     profileOptionsReady.finally(() => setLanguage(authState.language));
   </script>
 
-  <script type="module" src="../shared/auth.js"></script>
 </body>
 </html>
