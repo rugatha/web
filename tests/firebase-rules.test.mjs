@@ -77,8 +77,8 @@ const newMember = (uid, number) => ({
 before(async () => {
   environment = await initializeTestEnvironment({
     projectId: PROJECT_ID,
-    firestore: { rules: readFileSync("firestore.rules", "utf8") },
-    storage: { rules: readFileSync("storage.rules", "utf8") }
+    firestore: { rules: readFileSync("config/firebase/firestore.rules", "utf8") },
+    storage: { rules: readFileSync("config/firebase/storage.rules", "utf8") }
   });
 });
 

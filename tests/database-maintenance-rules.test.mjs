@@ -14,7 +14,7 @@ let environment;
 before(async () => {
   environment = await initializeTestEnvironment({
     projectId: PROJECT_ID,
-    database: { rules: readFileSync("database.maintenance.rules.json", "utf8") }
+    database: { rules: readFileSync("config/firebase/database.maintenance.rules.json", "utf8") }
   });
   await environment.withSecurityRulesDisabled(async (context) => {
     const db = context.database();

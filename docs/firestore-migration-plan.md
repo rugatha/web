@@ -36,7 +36,7 @@
 
 尚無法核對：
 
-- Firebase Console 目前實際部署的 RTDB Rules、Firestore Rules、Storage Rules 與索引；repository 沒有 `firebase.json`、`.firebaserc`、rules 或 indexes 檔。
+- Firebase Console 目前實際部署的 RTDB Rules、Firestore Rules、Storage Rules 與索引，是否與 repository 的 `firebase.json`、`.firebaserc` 和 `config/firebase/` 內容完全一致。
 - Firebase Authentication 是否仍存在全部 57 個 UID；這需要 Firebase Admin 權限或 Auth 匯出。
 - 最近 30 天的 RTDB downloads、連線數、Firestore 用量和專案的 Spark/Blaze 方案；因此目前只能做公式與量級評估，不能宣稱精確月費。
 - 匯出後至正式遷移日之間新增或變更的線上資料。

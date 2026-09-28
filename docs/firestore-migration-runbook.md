@@ -51,7 +51,7 @@
 
 ## 切換
 
-1. 部署 `firestore.rules`、`firestore.indexes.json` 與 `storage.rules`。
+1. 部署 `config/firebase/firestore.rules`、`config/firebase/firestore.indexes.json` 與 `config/firebase/storage.rules`。
 2. 設定管理員 Auth custom claim，重新登入後確認會員目錄可讀。
 3. 將 `shared/firebase.config.js` 的 `dataBackend` 改為 `firestore`；先維持 `dataWritesEnabled: false` 做唯讀 smoke test。
 4. 驗證登入、會員資料、管理員目錄、成就、書籤、QA 統計與頭像權限。

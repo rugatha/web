@@ -355,7 +355,7 @@ def _load_admin(project_id: str):
         from firebase_admin import auth, firestore
     except ImportError as exc:
         raise MigrationError(
-            "firebase-admin is required; install requirements-migration.txt in a local venv"
+            "firebase-admin is required; install config/python/requirements-migration.txt in a local venv"
         ) from exc
     if project_id != PROJECT_ID:
         raise MigrationError("refusing to initialize an unexpected Firebase project")

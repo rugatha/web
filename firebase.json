@@ -2,14 +2,14 @@
   "firestore": {
     "database": "(default)",
     "location": "asia-east1",
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
+    "rules": "config/firebase/firestore.rules",
+    "indexes": "config/firebase/firestore.indexes.json"
   },
   "storage": {
-    "rules": "storage.rules"
+    "rules": "config/firebase/storage.rules"
   },
   "database": {
-    "rules": "database.rules.json"
+    "rules": "config/firebase/database.rules.json"
   },
   "emulators": {
     "auth": {
