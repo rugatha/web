@@ -24,7 +24,17 @@ service cloud.firestore {
     }
 
     function memberPath(uid) {
-      return /databases/$(database)/documents/members/$(uid);
+      return /databases/$(database)/documents/members/$(memberKey(uid));
+    }
+
+    function memberKey(uid) {
+      return exists(/databases/$(database)/documents/memberKeys/$(uid))
+        ? get(/databases/$(database)/documents/memberKeys/$(uid)).data.memberNo : uid;
+    }
+
+    function newMemberPath(uid) {
+      let key = getAfter(/databases/$(database)/documents/memberKeys/$(uid)).data.memberNo;
+      return /databases/$(database)/documents/members/$(key);
     }
 
     function counterPath() {
@@ -36,7 +46,7 @@ service cloud.firestore {
     }
 
     function qaChoicePath(uid, pageKey) {
-      return /databases/$(database)/documents/members/$(uid)/qaChoices/$(pageKey);
+      return /databases/$(database)/documents/members/$(memberKey(uid))/qaChoices/$(pageKey);
     }
 
     function validProfile(profile, uid) {
@@ -99,6 +109,7 @@ service cloud.firestore {
         && request.resource.data.memberNo is string
         && request.resource.data.memberNo.matches('[0-9]{4}-[0-9]{4}')
         && request.resource.data.memberNoNumber is int
+        && request.resource.data.memberNoNumber == int(request.resource.data.memberNo.replace('-', ''))
         && request.resource.data.memberNoNumber > 0
         && counterAdvancesTo(request.resource.data.memberNoNumber)
         && request.resource.data.displayName is string
@@ -234,36 +245,55 @@ service cloud.firestore {
         : validNewStats(pageKey, uid, choice);
     }
 
-    match /members/{uid} {
+    match /memberKeys/{uid} {
       allow get: if isOwner(uid) || isAdmin();
       allow list: if isAdmin();
-      allow create: if isOwner(uid) && validMemberCreate(uid);
-      allow update: if isOwner(uid) && validMemberUpdate(uid);
+      allow create: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['memberNo'])
+        && request.resource.data.memberNo.matches('[0-9]{4}-[0-9]{4}')
+        && !exists(/databases/$(database)/documents/members/$(request.resource.data.memberNo))
+        && getAfter(newMemberPath(uid)).data.memberId == uid
+        && getAfter(newMemberPath(uid)).data.memberNo == request.resource.data.memberNo
+        && counterAdvancesTo(getAfter(newMemberPath(uid)).data.memberNoNumber);
+      allow update, delete: if false;
+    }
+
+    match /members/{key} {
+      function ownsMember() {
+        return signedIn() && memberKey(request.auth.uid) == key;
+      }
+      allow get: if ownsMember() || isAdmin()
+        || (signedIn() && !exists(/databases/$(database)/documents/members/$(key)));
+      allow list: if isAdmin();
+      allow create: if signedIn() && key == request.resource.data.memberNo
+        && getAfter(/databases/$(database)/documents/memberKeys/$(request.auth.uid)).data.memberNo == key
+        && validMemberCreate(request.auth.uid);
+      allow update: if ownsMember() && validMemberUpdate(request.auth.uid);
       allow delete: if false;
 
       match /bookmarks/{pageKey} {
-        allow read: if isOwner(uid) || isAdmin();
-        allow create, update: if isOwner(uid) && validBookmark();
-        allow delete: if isOwner(uid);
+        allow read: if ownsMember() || isAdmin();
+        allow create, update: if ownsMember() && validBookmark();
+        allow delete: if ownsMember();
       }
 
       match /qaChoices/{pageKey} {
-        allow read: if isOwner(uid) || isAdmin();
-        allow create: if isOwner(uid)
+        allow read: if ownsMember() || isAdmin();
+        allow create: if ownsMember()
           && validChoiceData(request.resource.data)
-          && validStatsWrite(pageKey, uid, request.resource.data.choice);
+          && validStatsWrite(pageKey, request.auth.uid, request.resource.data.choice);
         allow update, delete: if false;
       }
 
       match /characters/{characterKey} {
-        allow read: if isOwner(uid) || isAdmin();
-        allow create: if isOwner(uid)
-          && validCharacterSheet(uid)
+        allow read: if ownsMember() || isAdmin();
+        allow create: if ownsMember()
+          && validCharacterSheet(request.auth.uid)
           && request.resource.data.createdAt == request.time;
-        allow update: if isOwner(uid)
-          && validCharacterSheet(uid)
+        allow update: if ownsMember()
+          && validCharacterSheet(request.auth.uid)
           && request.resource.data.createdAt == resource.data.createdAt;
-        allow delete: if isOwner(uid);
+        allow delete: if ownsMember();
       }
     }
 
@@ -291,7 +321,7 @@ service cloud.firestore {
         && request.resource.data.updatedAt == request.time
         && (!exists(memberPath(request.auth.uid))
           || !('memberNoNumber' in get(memberPath(request.auth.uid)).data))
-        && getAfter(memberPath(request.auth.uid)).data.memberNoNumber
+        && getAfter(newMemberPath(request.auth.uid)).data.memberNoNumber
           == request.resource.data.lastAllocated;
     }
 

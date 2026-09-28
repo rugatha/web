@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+from member_paths import member_path
+
 import argparse
 import base64
 import json
@@ -76,11 +78,11 @@ def resolve_targets(entries: list[list[str]], auth_module: Any, client: Any) -> 
             raise MigrationError(f"{source_path} must be between 1 byte and 1 MiB")
 
         user = auth_module.get_user_by_email(normalized_email)
-        member = client.document(f"members/{user.uid}").get()
+        member = client.document(member_path(client, user.uid)).get()
         if not member.exists or str((member.to_dict() or {}).get("email") or "").lower() != normalized_email:
             raise MigrationError(f"member record mismatch for {normalized_email}")
 
-        document_path = f"members/{user.uid}/characters/{_character_key(normalized_name)}"
+        document_path = f"{member_path(client, user.uid)}/characters/{_character_key(normalized_name)}"
         character = client.document(document_path).get()
         if not character.exists:
             raise MigrationError(f"character is missing: {normalized_name}")

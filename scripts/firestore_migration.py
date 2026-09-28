@@ -519,8 +519,8 @@ def export_rollback(
     photo_count = 0
 
     for member_snapshot in client.collection("members").stream():
-        uid = member_snapshot.id
         data = member_snapshot.to_dict() or {}
+        uid = data.get('memberId') or member_snapshot.id
         legacy = _member_document_to_rtdb(uid, data)
 
         bookmarks: dict[str, Any] = {}

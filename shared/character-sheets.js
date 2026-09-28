@@ -16,6 +16,7 @@ import {
   uploadBytes
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-storage.js";
 import { optimizeCharacterPortrait } from "./portrait-image.js?v=20260925-portrait-thumb-1";
+import { resolveMemberKey } from "./member-path.js";
 
 export const MAX_CHARACTER_NAME_LENGTH = 120;
 export const MAX_CHARACTER_PORTRAIT_BYTES = 5 * 1024 * 1024;
@@ -70,12 +71,12 @@ const assertSignedIn = (user) => {
   if (!user?.uid) throw new Error("Sign in before saving a character sheet");
 };
 
-const characterDocRef = (db, uid, characterKey) =>
-  doc(db, "members", uid, "characters", characterKey);
+const characterDocRef = async (db, uid, characterKey) =>
+  doc(db, "members", await resolveMemberKey(db, uid), "characters", characterKey);
 
 export const listCharacterSheets = async (appOrDb, uid) => {
   const db = typeof appOrDb?.type === "string" ? appOrDb : getFirestore(appOrDb);
-  const snapshot = await getDocs(collection(db, "members", uid, "characters"));
+  const snapshot = await getDocs(collection(db, "members", await resolveMemberKey(db, uid), "characters"));
   return snapshot.docs
     .map((item) => {
       const data = item.data() || {};
@@ -98,7 +99,7 @@ export const listAllCharacterSheets = async (appOrDb) => {
   const members = memberSnapshot.docs.map((item) => {
     const data = item.data() || {};
     return {
-      memberId: item.id,
+      memberId: data.memberId || item.id,
       memberNo: String(data.memberNo || ""),
       email: String(data.email || ""),
       displayName: String(data.profile?.title || data.displayName || data.email || item.id)
@@ -122,7 +123,7 @@ export const listAllCharacterSheets = async (appOrDb) => {
 export const loadCharacterSheet = async (appOrDb, uid, characterKey) => {
   const db = typeof appOrDb?.type === "string" ? appOrDb : getFirestore(appOrDb);
   const storage = getStorage(typeof appOrDb?.type === "string" ? undefined : appOrDb);
-  const snapshot = await getDoc(characterDocRef(db, uid, characterKey));
+  const snapshot = await getDoc(await characterDocRef(db, uid, characterKey));
   if (!snapshot.exists()) return null;
   const record = snapshot.data() || {};
   const loadPortrait = async () => {
@@ -150,7 +151,7 @@ export const deleteCharacterSheet = async ({ app, user, characterKey }) => {
 
   const db = getFirestore(app);
   const storage = getStorage(app);
-  const destination = characterDocRef(db, user.uid, key);
+  const destination = await characterDocRef(db, user.uid, key);
   const snapshot = await getDoc(destination);
   if (!snapshot.exists()) return false;
 
@@ -202,7 +203,7 @@ export const saveCharacterSheet = async ({
   const characterKey = characterKeyForName(name);
   const db = getFirestore(app);
   const storage = getStorage(app);
-  const destination = characterDocRef(db, uid, characterKey);
+  const destination = await characterDocRef(db, uid, characterKey);
   const destinationSnapshot = await getDoc(destination);
   let portrait = existingPortrait || null;
   let uploadedPath = "";
@@ -257,7 +258,7 @@ export const saveCharacterSheet = async ({
   }
 
   if (currentKey && currentKey !== characterKey) {
-    await deleteDoc(characterDocRef(db, uid, currentKey));
+    await deleteDoc(await characterDocRef(db, uid, currentKey));
   }
 
   if (

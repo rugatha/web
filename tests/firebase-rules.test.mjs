@@ -87,8 +87,10 @@ beforeEach(async () => {
   await environment.clearStorage();
   await environment.withSecurityRulesDisabled(async (context) => {
     const db = context.firestore();
-    await setDoc(doc(db, "members/owner"), migratedMember("owner", 1));
-    await setDoc(doc(db, "members/other"), migratedMember("other", 2));
+    await setDoc(doc(db, "memberKeys/owner"), { memberNo: "0000-0001" });
+    await setDoc(doc(db, "memberKeys/other"), { memberNo: "0000-0002" });
+    await setDoc(doc(db, "members/0000-0001"), migratedMember("owner", 1));
+    await setDoc(doc(db, "members/0000-0002"), migratedMember("other", 2));
     await setDoc(doc(db, "system/memberNumbers"), {
       lastAllocated: 2,
       updatedAt: new Date("2026-01-01T00:00:00Z")
@@ -120,9 +122,9 @@ test("member documents are private to their owner and admin", async () => {
   }).firestore();
   const publicDb = environment.unauthenticatedContext().firestore();
 
-  await assertSucceeds(getDoc(doc(ownerDb, "members/owner")));
-  await assertFails(getDoc(doc(otherDb, "members/owner")));
-  await assertFails(getDoc(doc(publicDb, "members/owner")));
+  await assertSucceeds(getDoc(doc(ownerDb, "members/0000-0001")));
+  await assertFails(getDoc(doc(otherDb, "members/0000-0001")));
+  await assertFails(getDoc(doc(publicDb, "members/0000-0001")));
   const snapshot = await assertSucceeds(getDocs(query(collection(adminDb, "members"))));
   assert.equal(snapshot.size, 2);
 });
@@ -146,11 +148,11 @@ test("owner may edit profile but cannot change member number", async () => {
   const db = environment.authenticatedContext("owner", {
     email: "owner@example.test"
   }).firestore();
-  await assertSucceeds(updateDoc(doc(db, "members/owner"), {
+  await assertSucceeds(updateDoc(doc(db, "members/0000-0001"), {
     "profile.title": "Updated",
     updatedAt: serverTimestamp()
   }));
-  await assertFails(updateDoc(doc(db, "members/owner"), {
+  await assertFails(updateDoc(doc(db, "members/0000-0001"), {
     memberNoNumber: 999,
     updatedAt: serverTimestamp()
   }));
@@ -163,14 +165,15 @@ test("migrated admin may record first Firestore login timestamp", async () => {
     admin.memberNo = "0000-0000";
     admin.email = "rugathadnd@gmail.com";
     delete admin.updatedAt;
-    await setDoc(doc(db, "members/admin"), admin);
+    await setDoc(doc(db, "memberKeys/admin"), { memberNo: "0000-0000" });
+    await setDoc(doc(db, "members/0000-0000"), admin);
   });
   const db = environment.authenticatedContext("admin", {
     email: "rugathadnd@gmail.com",
     admin: true
   }).firestore();
-  await assertSucceeds(getDoc(doc(db, "members/admin")));
-  await assertSucceeds(updateDoc(doc(db, "members/admin"), {
+  await assertSucceeds(getDoc(doc(db, "members/0000-0000")));
+  await assertSucceeds(updateDoc(doc(db, "members/0000-0000"), {
     lastLoginAt: serverTimestamp(),
     updatedAt: serverTimestamp()
   }));
@@ -183,10 +186,11 @@ test("new member allocation must atomically advance the counter", async () => {
   }).firestore();
   await assertSucceeds(runTransaction(db, async (transaction) => {
     const counterRef = doc(db, "system/memberNumbers");
-    const memberRef = doc(db, `members/${uid}`);
+    const memberRef = doc(db, "members/0000-0003");
     const snapshot = await transaction.get(counterRef);
     const next = snapshot.data().lastAllocated + 1;
     transaction.update(counterRef, { lastAllocated: next, updatedAt: serverTimestamp() });
+    transaction.set(doc(db, "memberKeys", uid), { memberNo: "0000-0003" });
     transaction.set(memberRef, newMember(uid, next));
   }));
 
@@ -196,6 +200,17 @@ test("new member allocation must atomically advance the counter", async () => {
   await assertFails(setDoc(doc(attackerDb, "members/attacker"), newMember("attacker", 50)));
 });
 
+test("member key mappings cannot be forged or reassigned", async () => {
+  const db = environment.authenticatedContext('owner', { email: 'owner@example.test' }).firestore();
+  await assertSucceeds(getDoc(doc(db, 'memberKeys/owner')));
+  await assertFails(getDoc(doc(db, 'memberKeys/other')));
+  await assertFails(updateDoc(doc(db, 'memberKeys/owner'), { memberNo: '0000-0002' }));
+  await assertFails(deleteDoc(doc(db, 'memberKeys/owner')));
+  await assertFails(setDoc(doc(db, 'members/owner'), newMember('owner', 3)));
+  const attacker = environment.authenticatedContext('attacker', { email: 'attacker@example.test' }).firestore();
+  await assertFails(setDoc(doc(attacker, 'memberKeys/attacker'), { memberNo: '0000-0001' }));
+});
+
 test("bookmarks are owner-only", async () => {
   const ownerDb = environment.authenticatedContext("owner", {
     email: "owner@example.test"
@@ -203,7 +218,7 @@ test("bookmarks are owner-only", async () => {
   const otherDb = environment.authenticatedContext("other", {
     email: "other@example.test"
   }).firestore();
-  const path = "members/owner/bookmarks/cGFnZQ";
+  const path = "members/0000-0001/bookmarks/cGFnZQ";
   await assertSucceeds(setDoc(doc(ownerDb, path), {
     path: "page",
     title: "Page",
@@ -223,7 +238,7 @@ test("character sheets are private, owner-writable records", async () => {
     email: "admin@example.test",
     admin: true
   }).firestore();
-  const characterPath = "members/owner/characters/Ada%20Stone";
+  const characterPath = "members/0000-0001/characters/Ada%20Stone";
   const character = {
     schemaVersion: 1,
     memberId: "owner",
@@ -240,11 +255,11 @@ test("character sheets are private, owner-writable records", async () => {
   await assertSucceeds(getDoc(doc(ownerDb, characterPath)));
   await assertSucceeds(getDoc(doc(adminDb, characterPath)));
   await assertFails(getDoc(doc(otherDb, characterPath)));
-  await assertFails(setDoc(doc(otherDb, "members/owner/characters/Forged"), {
+  await assertFails(setDoc(doc(otherDb, "members/0000-0001/characters/Forged"), {
     ...character,
     characterName: "Forged"
   }));
-  await assertFails(setDoc(doc(adminDb, "members/other/characters/Admin%20Made"), {
+  await assertFails(setDoc(doc(adminDb, "members/0000-0002/characters/Admin%20Made"), {
     ...character,
     memberId: "other",
     characterName: "Admin Made"
@@ -270,7 +285,7 @@ test("QA choice and anonymous stats must be updated together once", async () => 
     email: "owner@example.test"
   }).firestore();
   const pageKey = "npc%2Fone%2Ehtml";
-  const choiceRef = doc(db, `members/owner/qaChoices/${pageKey}`);
+  const choiceRef = doc(db, `members/0000-0001/qaChoices/${pageKey}`);
   const statsRef = doc(db, `qaStats/${pageKey}`);
 
   await assertSucceeds(runTransaction(db, async (transaction) => {
@@ -302,7 +317,7 @@ test("first QA choice may atomically create its anonymous stats", async () => {
     email: "owner@example.test"
   }).firestore();
   const pageKey = "npc%2Fnew%2Ehtml";
-  const choiceRef = doc(db, `members/owner/qaChoices/${pageKey}`);
+  const choiceRef = doc(db, `members/0000-0001/qaChoices/${pageKey}`);
   const statsRef = doc(db, `qaStats/${pageKey}`);
 
   await assertSucceeds(runTransaction(db, async (transaction) => {

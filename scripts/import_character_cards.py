@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+from member_paths import member_path
+
 import argparse
 import base64
 import binascii
@@ -139,7 +141,7 @@ def resolve_targets(sources: list[CharacterSource], auth_module: Any, client: An
     targets = []
     for source in sources:
         user = auth_module.get_user_by_email(source.email)
-        member_ref = client.document(f"members/{user.uid}")
+        member_ref = client.document(member_path(client, user.uid))
         member_snapshot = member_ref.get()
         if not member_snapshot.exists:
             raise ImportError(f"member document is missing for {source.email}")
@@ -147,7 +149,7 @@ def resolve_targets(sources: list[CharacterSource], auth_module: Any, client: An
         if member_email != source.email:
             raise ImportError(f"member email mismatch for {source.email}")
 
-        document_path = f"members/{user.uid}/characters/{source.character_key}"
+        document_path = f"{member_path(client, user.uid)}/characters/{source.character_key}"
         storage_path = (
             f"character-portraits/{user.uid}/{source.storage_key}/portrait.{source.extension}"
         )
@@ -224,7 +226,7 @@ def verify_targets(sources: list[CharacterSource], auth_module: Any, client: Any
     targets = []
     for source in sources:
         user = auth_module.get_user_by_email(source.email)
-        document_path = f"members/{user.uid}/characters/{source.character_key}"
+        document_path = f"{member_path(client, user.uid)}/characters/{source.character_key}"
         storage_path = (
             f"character-portraits/{user.uid}/{source.storage_key}/portrait.{source.extension}"
         )

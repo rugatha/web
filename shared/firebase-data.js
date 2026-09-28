@@ -1,4 +1,5 @@
 import * as realtime from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+import { resolveMemberKey, memberDocument } from "./member-path.js";
 import {
   collection,
   deleteDoc,
@@ -106,9 +107,12 @@ class CompatSnapshot {
 
 const splitPath = (path) => String(path || "").split("/").filter(Boolean);
 
-const resolveFirestoreTarget = (compatRef) => {
+const resolveFirestoreTarget = async (compatRef) => {
   const parts = splitPath(compatRef.path);
   const db = compatRef.db;
+  if (['members', 'qa_choices'].includes(parts[0]) && parts.length > 1) {
+    parts[1] = await resolveMemberKey(db, parts[1]);
+  }
   if (parts[0] === "members" && parts.length === 1) {
     return { kind: "members", target: collection(db, "members") };
   }
@@ -186,7 +190,7 @@ const snapshotFromQuery = (snapshot, kind) => {
 
 export const get = async (targetRef) => {
   if (!isFirestoreRef(targetRef)) return realtime.get(targetRef);
-  const target = resolveFirestoreTarget(targetRef);
+  const target = await resolveFirestoreTarget(targetRef);
   if (["members", "bookmarks", "qaChoices"].includes(target.kind)) {
     return snapshotFromQuery(await getDocs(target.target), target.kind);
   }
@@ -261,7 +265,7 @@ const bookmarkToFirestore = (value = {}) => ({
 export const update = async (targetRef, value) => {
   assertWritesEnabled();
   if (!isFirestoreRef(targetRef)) return realtime.update(targetRef, value);
-  const target = resolveFirestoreTarget(targetRef);
+  const target = await resolveFirestoreTarget(targetRef);
   if (target.kind === "member") {
     return updateDoc(target.target, memberPatchToFirestore(value));
   }
@@ -274,7 +278,7 @@ export const update = async (targetRef, value) => {
 export const set = async (targetRef, value) => {
   assertWritesEnabled();
   if (!isFirestoreRef(targetRef)) return realtime.set(targetRef, value);
-  const target = resolveFirestoreTarget(targetRef);
+  const target = await resolveFirestoreTarget(targetRef);
   if (target.kind === "bookmark") return setDoc(target.target, bookmarkToFirestore(value));
   if (target.kind === "member") return setDoc(target.target, memberPatchToFirestore(value), { merge: true });
   throw new Error(`Use submitQaChoice for Firestore path: ${targetRef.path}`);
@@ -283,28 +287,29 @@ export const set = async (targetRef, value) => {
 export const remove = async (targetRef) => {
   assertWritesEnabled();
   if (!isFirestoreRef(targetRef)) return realtime.remove(targetRef);
-  const target = resolveFirestoreTarget(targetRef);
+  const target = await resolveFirestoreTarget(targetRef);
   if (["bookmark", "qaChoice"].includes(target.kind)) return deleteDoc(target.target);
   throw new Error(`Unsupported Firestore delete path: ${targetRef.path}`);
 };
 
 export const onValue = (targetRef, onNext, onError) => {
   if (!isFirestoreRef(targetRef)) return realtime.onValue(targetRef, onNext, onError);
-  const target = resolveFirestoreTarget(targetRef);
-  return onSnapshot(
-    target.target,
-    (snapshot) => {
+  let cancelled = false;
+  let unsubscribe = () => {};
+  resolveFirestoreTarget(targetRef).then((target) => {
+    if (cancelled) return;
+    unsubscribe = onSnapshot(target.target, (snapshot) => {
       if ("docs" in snapshot) onNext(snapshotFromQuery(snapshot, target.kind));
       else onNext(snapshotFromDocument(snapshot, target.kind, target.field));
-    },
-    onError
-  );
+    }, onError);
+  }).catch(error => { if (!cancelled) (onError || console.error)(error); });
+  return () => { cancelled = true; unsubscribe(); };
 };
 
 export const runTransaction = async (targetRef, updater) => {
   assertWritesEnabled();
   if (!isFirestoreRef(targetRef)) return realtime.runTransaction(targetRef, updater);
-  const target = resolveFirestoreTarget(targetRef);
+  const target = await resolveFirestoreTarget(targetRef);
   let resultValue = null;
   let committed = false;
   await runFirestoreTransaction(targetRef.db, async (transaction) => {
@@ -348,16 +353,23 @@ const formatMemberNo = (number) => {
 export const ensureMemberDocument = async (db, user) => {
   if (!isFirestoreBackend() || !db || !user?.uid) return null;
   assertWritesEnabled();
-  const memberRef = doc(db, "members", user.uid);
+  const mappingRef = doc(db, "memberKeys", user.uid);
   const counterRef = doc(db, "system", "memberNumbers");
   await runFirestoreTransaction(db, async (transaction) => {
-    const existing = await transaction.get(memberRef);
-    if (existing.exists()) return;
+    const mapping = await transaction.get(mappingRef);
+    if (mapping.exists()) return;
+    const legacy = await transaction.get(doc(db, "members", user.uid));
+    if (legacy.exists()) return;
     const counter = await transaction.get(counterRef);
     if (!counter.exists()) throw new Error("Member number counter is missing");
     const next = Number(counter.data()?.lastAllocated) + 1;
     if (!Number.isSafeInteger(next) || next <= 0) throw new Error("Invalid member number counter");
+    const memberNo = formatMemberNo(next);
+    const memberRef = doc(db, "members", memberNo);
+    const destination = await transaction.get(memberRef);
+    if (destination.exists()) throw new Error("Member number is already allocated");
     transaction.update(counterRef, { lastAllocated: next, updatedAt: serverTimestamp() });
+    transaction.set(mappingRef, { memberNo });
     transaction.set(memberRef, {
       schemaVersion: 1,
       memberId: user.uid,
@@ -378,7 +390,7 @@ export const ensureMemberDocument = async (db, user) => {
       updatedAt: serverTimestamp()
     });
   });
-  const snapshot = await getDoc(memberRef);
+  const snapshot = await getDoc(await memberDocument(db, user.uid));
   return snapshot.exists() ? memberToLegacy(snapshot.data()) : null;
 };
 
@@ -392,7 +404,7 @@ export const submitQaChoice = async (db, uid, questionPage, choice) => {
     throw new Error("Invalid QA choice");
   }
   const pageKey = encodeQaKey(questionPage);
-  const choiceRef = doc(db, "members", uid, "qaChoices", pageKey);
+  const choiceRef = doc(db, "members", await resolveMemberKey(db, uid), "qaChoices", pageKey);
   const statsRef = doc(db, "qaStats", pageKey);
   let created = false;
   await runFirestoreTransaction(db, async (transaction) => {
@@ -464,7 +476,7 @@ export const uploadProfilePhoto = async (app, db, uid, file) => {
     contentType: "image/webp",
     cacheControl: "private,max-age=3600"
   });
-  await updateDoc(doc(db, "members", uid), {
+  await updateDoc(await memberDocument(db, uid), {
     "profile.photo": {
       path,
       contentType: "image/webp",
