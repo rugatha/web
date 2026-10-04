@@ -58,18 +58,18 @@
   },
   {
     "title": {
-      "zh": "Rugatha Veil S0.5",
-      "en": "Rugatha Veil S0.5"
+      "zh": "Rugatha Veil S1",
+      "en": "Rugatha Veil S1"
     },
-    "date": "2026-10-03",
+    "date": "2027-01-23",
     "category": {
       "zh": "長團",
       "en": "Campaign"
     },
     "link": "",
     "note": {
-      "zh": "第 0.5 次跑團",
-      "en": "Session 0.5"
+      "zh": "第 1 次跑團",
+      "en": "Session 1"
     },
     "image": "assets/campaign_logo/logo_RVeil.png",
     "isTransparent": true,
