@@ -1212,7 +1212,6 @@
       onValue,
       runTransaction,
       ensureMemberDocument,
-      isFirestoreBackend,
       loadProfilePhoto,
       uploadProfilePhoto
     } from "../shared/firebase-data.js";
@@ -2093,10 +2092,7 @@
       return `${window.location.pathname}?${params.toString()}`;
     };
 
-    const isAdminUser = (user) =>
-      isFirestoreBackend()
-        ? authState.isAdmin
-        : Boolean(user?.email && user.email === ADMIN_EMAIL);
+    const isAdminUser = () => authState.isAdmin;
 
     const allocateMemberNo = async () => {
       if (!db) return null;
@@ -2430,9 +2426,7 @@
 
     const loadMemberChoices = async () => {
       if (!db || !authState.user) return null;
-      const keys = (isFirestoreBackend()
-        ? [authState.user.uid]
-        : [authState.memberNo, authState.user.uid, authState.memberId])
+      const keys = [authState.user.uid]
         .map((value) => (value || "").trim())
         .filter(Boolean);
       if (!keys.length) return null;
@@ -2482,7 +2476,7 @@
     };
 
     const applyStoredProfilePhoto = (data, fallback = null) => {
-      if (!isFirestoreBackend() || !data?.profile?.photo) {
+      if (!data?.profile?.photo) {
         setProfilePhoto(data?.photoUrl || fallback);
         return;
       }
@@ -2692,7 +2686,7 @@
       let memberNoValue = "";
       if (!memberRef) return;
       try {
-        if (!readOnly && isFirestoreBackend()) {
+        if (!readOnly) {
           await ensureMemberDocument(db, user);
         }
         let snapshot = await get(memberRef);
@@ -2961,19 +2955,15 @@
       authState.memberId = resolveMemberId(user, null);
       authState.ownMemberId = authState.memberId;
       authState.viewedMemberId = authState.memberId;
-      if (isFirestoreBackend()) {
-        try {
-          const token = await user.getIdTokenResult();
-          authState.isAdmin = token.claims.admin === true
-            || Boolean(user.emailVerified && user.email?.toLowerCase() === ADMIN_EMAIL);
-        } catch (error) {
-          authState.isAdmin = Boolean(
-            user.emailVerified && user.email?.toLowerCase() === ADMIN_EMAIL
-          );
-          console.warn("Failed to load administrator claim", error);
-        }
-      } else {
-        authState.isAdmin = Boolean(user?.email && user.email === ADMIN_EMAIL);
+      try {
+        const token = await user.getIdTokenResult();
+        authState.isAdmin = token.claims.admin === true
+          || Boolean(user.emailVerified && user.email?.toLowerCase() === ADMIN_EMAIL);
+      } catch (error) {
+        authState.isAdmin = Boolean(
+          user.emailVerified && user.email?.toLowerCase() === ADMIN_EMAIL
+        );
+        console.warn("Failed to load administrator claim", error);
       }
       authState.readOnlyView = false;
       uidEl.textContent = authState.memberId;
@@ -3174,30 +3164,12 @@
       if (!authState.user || !db || isViewingOtherMember()) return;
       const file = event.target.files?.[0];
       if (!file) return;
-      if (isFirestoreBackend()) {
-        uploadProfilePhoto(app, db, authState.memberId, file)
-          .then((url) => {
-            setProfilePhoto(url);
-            evaluatePhotoAchievement();
-          })
-          .catch((error) => console.error("Failed to save profile photo", error));
-        return;
-      }
-      const reader = new FileReader();
-      reader.onload = async () => {
-        const result = typeof reader.result === "string" ? reader.result : null;
-        if (!result) return;
-        setProfilePhoto(result);
-        evaluatePhotoAchievement();
-        const ref = getMemberDocRef(authState.memberId);
-        if (!ref) return;
-        try {
-          await update(ref, { photoUrl: result });
-        } catch (error) {
-          console.error("Failed to save profile photo", error);
-        }
-      };
-      reader.readAsDataURL(file);
+      uploadProfilePhoto(app, db, authState.memberId, file)
+        .then((url) => {
+          setProfilePhoto(url);
+          evaluatePhotoAchievement();
+        })
+        .catch((error) => console.error("Failed to save profile photo", error));
     });
 
     saveButton.addEventListener("click", () => {

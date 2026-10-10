@@ -1,4 +1,3 @@
-import * as realtime from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
 import { resolveMemberKey, memberDocument } from "./member-path.js";
 import {
   collection,
@@ -20,19 +19,10 @@ import {
   uploadBytes
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-storage.js";
 
-const FIRESTORE = "firestore";
 const PROFILE_FIELDS = ["title", "religion", "species", "className", "kingdom"];
 const BADGE_FIELDS = ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
 const MAX_AVATAR_BYTES = 2 * 1024 * 1024;
 const MAX_AVATAR_EDGE = 512;
-
-export const getDataBackend = () => {
-  const configured =
-    window.RUGATHA_DATA_BACKEND || window.RUGATHA_FEATURE_FLAGS?.dataBackend || "rtdb";
-  return configured === FIRESTORE ? FIRESTORE : "rtdb";
-};
-
-export const isFirestoreBackend = () => getDataBackend() === FIRESTORE;
 
 export const areDataWritesEnabled = () =>
   window.RUGATHA_FEATURE_FLAGS?.dataWritesEnabled !== false;
@@ -41,8 +31,7 @@ const assertWritesEnabled = () => {
   if (!areDataWritesEnabled()) throw new Error("Data writes are temporarily paused for maintenance");
 };
 
-export const getDatabase = (app) =>
-  isFirestoreBackend() ? getFirestore(app) : realtime.getDatabase(app);
+export const getDatabase = (app) => getFirestore(app);
 
 const firestoreRef = (db, path) => ({
   __rugathaFirestoreRef: true,
@@ -50,10 +39,7 @@ const firestoreRef = (db, path) => ({
   path: String(path || "").replace(/^\/+|\/+$/g, "")
 });
 
-const isFirestoreRef = (value) => Boolean(value?.__rugathaFirestoreRef);
-
-export const ref = (db, path) =>
-  isFirestoreBackend() ? firestoreRef(db, path) : realtime.ref(db, path);
+export const ref = (db, path) => firestoreRef(db, path);
 
 const toIsoString = (value) => {
   if (!value) return value ?? null;
@@ -189,7 +175,6 @@ const snapshotFromQuery = (snapshot, kind) => {
 };
 
 export const get = async (targetRef) => {
-  if (!isFirestoreRef(targetRef)) return realtime.get(targetRef);
   const target = await resolveFirestoreTarget(targetRef);
   if (["members", "bookmarks", "qaChoices"].includes(target.kind)) {
     return snapshotFromQuery(await getDocs(target.target), target.kind);
@@ -264,7 +249,6 @@ const bookmarkToFirestore = (value = {}) => ({
 
 export const update = async (targetRef, value) => {
   assertWritesEnabled();
-  if (!isFirestoreRef(targetRef)) return realtime.update(targetRef, value);
   const target = await resolveFirestoreTarget(targetRef);
   if (target.kind === "member") {
     return updateDoc(target.target, memberPatchToFirestore(value));
@@ -277,7 +261,6 @@ export const update = async (targetRef, value) => {
 
 export const set = async (targetRef, value) => {
   assertWritesEnabled();
-  if (!isFirestoreRef(targetRef)) return realtime.set(targetRef, value);
   const target = await resolveFirestoreTarget(targetRef);
   if (target.kind === "bookmark") return setDoc(target.target, bookmarkToFirestore(value));
   if (target.kind === "member") return setDoc(target.target, memberPatchToFirestore(value), { merge: true });
@@ -286,14 +269,12 @@ export const set = async (targetRef, value) => {
 
 export const remove = async (targetRef) => {
   assertWritesEnabled();
-  if (!isFirestoreRef(targetRef)) return realtime.remove(targetRef);
   const target = await resolveFirestoreTarget(targetRef);
   if (["bookmark", "qaChoice"].includes(target.kind)) return deleteDoc(target.target);
   throw new Error(`Unsupported Firestore delete path: ${targetRef.path}`);
 };
 
 export const onValue = (targetRef, onNext, onError) => {
-  if (!isFirestoreRef(targetRef)) return realtime.onValue(targetRef, onNext, onError);
   let cancelled = false;
   let unsubscribe = () => {};
   resolveFirestoreTarget(targetRef).then((target) => {
@@ -308,7 +289,6 @@ export const onValue = (targetRef, onNext, onError) => {
 
 export const runTransaction = async (targetRef, updater) => {
   assertWritesEnabled();
-  if (!isFirestoreRef(targetRef)) return realtime.runTransaction(targetRef, updater);
   const target = await resolveFirestoreTarget(targetRef);
   let resultValue = null;
   let committed = false;
@@ -351,7 +331,7 @@ const formatMemberNo = (number) => {
 };
 
 export const ensureMemberDocument = async (db, user) => {
-  if (!isFirestoreBackend() || !db || !user?.uid) return null;
+  if (!db || !user?.uid) return null;
   assertWritesEnabled();
   const mappingRef = doc(db, "memberKeys", user.uid);
   const counterRef = doc(db, "system", "memberNumbers");
@@ -398,7 +378,6 @@ const encodeQaKey = (value) =>
   String(value || "").replace(/%/g, "%25").replace(/\//g, "%2F").replace(/\./g, "%2E");
 
 export const submitQaChoice = async (db, uid, questionPage, choice) => {
-  if (!isFirestoreBackend()) throw new Error("submitQaChoice is Firestore-only");
   assertWritesEnabled();
   if (!uid || !questionPage || !["C1", "C2"].includes(choice)) {
     throw new Error("Invalid QA choice");
@@ -432,7 +411,6 @@ export const submitQaChoice = async (db, uid, questionPage, choice) => {
 };
 
 export const getQaStats = async (db, questionPage) => {
-  if (!isFirestoreBackend()) return null;
   const pageKey = encodeQaKey(questionPage);
   const snapshot = await getDoc(doc(db, "qaStats", pageKey));
   return snapshot.exists() ? snapshot.data() : { c1: 0, c2: 0, total: 0 };
@@ -468,7 +446,6 @@ const prepareAvatar = async (file) => {
 };
 
 export const uploadProfilePhoto = async (app, db, uid, file) => {
-  if (!isFirestoreBackend()) throw new Error("uploadProfilePhoto is Firestore-only");
   assertWritesEnabled();
   const blob = await prepareAvatar(file);
   const path = `profile-photos/${uid}/avatar.webp`;
@@ -489,7 +466,7 @@ export const uploadProfilePhoto = async (app, db, uid, file) => {
 };
 
 export const loadProfilePhoto = async (app, photo) => {
-  if (!isFirestoreBackend() || !photo?.path) return null;
+  if (!photo?.path) return null;
   const bytes = await getBytes(storageRef(getStorage(app), photo.path), MAX_AVATAR_BYTES);
   return URL.createObjectURL(new Blob([bytes], { type: photo.contentType || "image/webp" }));
 };

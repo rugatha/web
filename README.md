@@ -40,7 +40,7 @@ Rugatha Web 是 Rugatha 世界觀、團錄與社群工具的官方網站。前�
 - 身分驗證：Firebase Authentication
 - 主要資料庫：Cloud Firestore
 - 圖片儲存：Cloud Storage
-- 遷移保留：Realtime Database 維持規則與回退支援
+- 資料後端：Cloud Firestore（Realtime Database 已停用）
 - Firebase Web SDK：頁面直接載入官方 ESM modules
 - PWA：`manifest.webmanifest`、`sw.js`、`shared/pwa.js`
 - 工具與測試：Node.js 24、Python 3、Firebase Emulator Suite
@@ -110,23 +110,20 @@ GitHub Pages workflow 位於：
 - `member/`
   會員頁、個人資料、收藏、角色卡清單與成就 CSV。
 
-- `src/`
-  舊版 RTDB 初始化模組；目前沒有頁面引用，不是正式前端入口。
-
 - `config/firebase/`
-  Firebase Rules、Firestore indexes、Storage CORS 與維護模式設定。
+  Firestore / Storage Rules、Firestore indexes 與 Storage CORS。
 
 - `config/python/`
-  Firestore migration 工具的 Python 依賴清單。
+  Firebase 管理工具的 Python 依賴清單。
 
 - `scripts/`
-  Firebase migration、資料重鍵、角色卡匯入與圖片維護等管理工具。
+  資料重鍵、角色卡匯入與圖片維護等管理工具。
 
 - `tests/`
-  Firestore migration、Firestore / Storage Rules 與 RTDB maintenance Rules 測試。
+  Firestore / Storage Rules 測試。
 
 - `docs/`
-  Firestore migration 方案與執行 / 回退手冊。
+  Firestore 遷移結案報告與角色卡問題紀錄。
 
 ## 核心資料檔
 
@@ -249,18 +246,14 @@ npm ci
 測試指令：
 
 ```bash
-npm run test:migration
 npm run test:rules
-npm run test:maintenance-rules
 npm test
 ```
 
-- `test:migration`：測試 RTDB → Firestore 轉換、資料驗證與 rollback shape。
 - `test:rules`：測試正式 Firestore / Storage Rules，包括會員資料、member key、收藏、QA、角色卡與圖片權限。
-- `test:maintenance-rules`：測試 RTDB maintenance Rules 保持可讀且封鎖寫入。
-- `npm test`：依序執行以上全部測試。
+- `npm test`：執行 Firestore / Storage Rules 與角色卡功能測試。
 
-Rules 測試會啟動本機 Firebase emulators；若 Java 無法執行，migration tests 仍可獨立運行，但 Rules 測試不算完成。
+Rules 測試會啟動本機 Firebase emulators，需要 Java 21 以上。
 
 ## Firebase 設定
 
@@ -269,8 +262,6 @@ Rules 測試會啟動本機 Firebase emulators；若 Java 無法執行，migrati
 - `config/firebase/firestore.rules`：Firestore Security Rules。
 - `config/firebase/firestore.indexes.json`：Firestore indexes。
 - `config/firebase/storage.rules`：Cloud Storage Security Rules。
-- `config/firebase/database.rules.json`：Realtime Database Rules。
-- `config/firebase/firebase.maintenance.json` 與 `config/firebase/database.maintenance.rules.json`：RTDB 唯讀維護模式。
 - `config/firebase/storage.cors.json`：Storage CORS 設定。
 
 前端功能旗標集中在 `shared/firebase.config.js`。目前設定為：
@@ -290,13 +281,11 @@ Service account、RTDB export、migration report 與 rollback 檔案屬於私密
 
 ```bash
 python3 -m venv .venv
-.venv/bin/pip install -r config/python/requirements-migration.txt
+.venv/bin/pip install -r config/python/requirements-admin.txt
 ```
 
 主要工具：
 
-- `scripts/firebase_preflight.py`：唯讀檢查正式 Firebase migration 前置條件。
-- `scripts/firestore_migration.py`：分析、dry-run、匯入、驗證、管理員 claim 與 rollback export。
 - `scripts/migrate_member_keys.py`：將會員文件與子集合改以會員編號作為路徑。
 - `scripts/import_character_cards.py`：匯入角色卡與角色圖片。
 - `scripts/replace_character_portraits.py`：替換並驗證角色圖片。
@@ -304,10 +293,7 @@ python3 -m venv .venv
 
 這些工具可能讀寫正式資料。執行前應先確認 project、備份、dry-run 與工具要求的 `--confirm-project` / `--apply` 參數。
 
-目前 RTDB → Firestore migration 已完成匯入與切換，觀察期為 2026-09-25 至 2026-10-02。觀察期結束前保留 migration、rollback 與 RTDB maintenance 相關檔案；詳細流程見：
-
-- `docs/firestore-migration-plan.md`
-- `docs/firestore-migration-runbook.md`
+RTDB → Firestore 遷移已於 2026-10-10 完成結案；前端僅使用 Firestore，遷移工具、測試與本機私有快照已移除。評估與線上停用結果見 `docs/firestore-migration-review.md`。
 
 ## 全站 HTML 正規化
 

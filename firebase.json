@@ -8,9 +8,6 @@
   "storage": {
     "rules": "config/firebase/storage.rules"
   },
-  "database": {
-    "rules": "config/firebase/database.rules.json"
-  },
   "emulators": {
     "auth": {
       "port": 9099
@@ -20,9 +17,6 @@
     },
     "storage": {
       "port": 9199
-    },
-    "database": {
-      "port": 9000
     },
     "ui": {
       "enabled": true,
