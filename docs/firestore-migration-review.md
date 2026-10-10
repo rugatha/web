@@ -54,3 +54,11 @@ Cloud Monitoring 查詢區間自 `2026-09-25T10:15:00Z` 至本次檢查時間，
 - 清理後：`npm test` 通過（12 項 Rules、11 項角色卡）；最後前端清理後重新執行角色卡測試，11 項通過。
 - 修改的 JS 與會員頁內嵌腳本均通過 Node 語法檢查；`git diff --check` 通過。
 - 線上 RTDB 停用已生效。本次 repository 修改未提交、未推送，網站尚未發布本次程式清理與 PWA v21。已部署網站設定原本即使用 Firestore。
+
+## 2026-10-10 後續：清空 RTDB 舊資料
+
+使用者另行明確要求清空 RTDB 舊資料。清除前再次確認 Firestore 仍有 60 位會員與 12 份 QA 統計。
+
+因 DISABLED 狀態禁止資料操作，短暫重新啟用 RTDB，將 Rules 設為根節點 `.read: false`、`.write: false`，驗證 Rules 後刪除 RTDB 根節點。DELETE 成功回傳 JSON `null`，再 GET 驗證根節點為 `null`，最後恢復停用並重新 GET 確認狀態 `DISABLED`。
+
+因此，前述初次結案時保留的雲端 RTDB 舊資料現已清空。預設 RTDB instance 保留且停用；本次未修改 Firestore、Auth 或 Storage 資料。
