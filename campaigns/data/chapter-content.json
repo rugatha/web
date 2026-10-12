@@ -9144,5 +9144,26 @@
       }
     ]
     }
+  },
+  "plus-c08-temp": {
+    "lock": 0,
+    "source": "campaigns/pages/rugatha-plus/plus-c08/temp.html",
+    "title": "冒險的岔路（Temp）",
+    "tagline": "Rugatha Plus · Chapter 08",
+    "date": "測試章節",
+    "image": {
+      "src": "../../../../campaigns/chapter-banners/plus-c07-chpt04.png",
+      "alt": "冒險的岔路示意圖"
+    },
+    "content": {
+      "default": [
+        {
+          "paragraphs": [
+            "夜色降臨，冒險者們來到一處被霧氣包圍的岔路。遠方旅店的燈火忽明忽暗，石塔的鐘聲卻在無風的夜裡響起。",
+            "路旁的石碑刻著一句話：「每條道路都有代價，每個選擇都會留下足跡。」眾人停下腳步，準備決定接下來的方向。"
+          ]
+        }
+      ]
+    }
   }
 }

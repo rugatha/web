@@ -1,0 +1,25 @@
+{
+  "chapterKey": "plus-c08/temp",
+  "groups": {
+    "ron": [{ "id": "ron", "name": "龍恩", "icon": "pc/pics/Ron.png" }],
+    "party": [
+      { "id": "midori", "name": "米多莉", "icon": "pc/pics/Midori.png" },
+      { "id": "samael", "name": "薩梅爾", "icon": "pc/pics/Samael.jpg" },
+      { "id": "siri", "name": "喜利", "icon": "pc/pics/Siri Oslee.png" },
+      { "id": "yhwh", "name": "YHWH", "icon": "pc/pics/YHWH.png" },
+      { "id": "beau", "name": "波", "icon": "npc/individual_pics/Beau.jpeg" }
+    ]
+  },
+  "questions": [
+    {
+      "id": "crossroads",
+      "group": "party",
+      "question": "霧中的岔路通往四個地方，你決定往哪裡走？",
+      "options": ["走向亮著燈的旅店",
+        "調查古老的石塔",
+        "沿著河岸尋找線索",
+        "留在原地等待天亮"],
+      "customLabel": "自行輸入"
+    }
+  ]
+}

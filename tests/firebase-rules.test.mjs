@@ -402,3 +402,94 @@ test("character portraits are owner-writable and private", async () => {
   await assertFails(deleteObject(storageRef(adminStorage, portraitPath)));
   await assertSucceeds(deleteObject(portrait));
 });
+
+const chapterPath = 'chapterAccess/plus-c08/pages/temp';
+const credentialHash = 'a'.repeat(64);
+const credentialGrant = (characterId = 'midori', passwordHash = credentialHash) => ({
+  characterId, passwordHash, verifiedAt: serverTimestamp()
+});
+async function seedAdventureAccess(lock = 1) {
+  await environment.withSecurityRulesDisabled(async context => {
+    await setDoc(doc(context.firestore(), chapterPath), {
+      chapterKey: 'plus-c08/temp',
+      lock,
+      passwordHashes: { midori: credentialHash, ron: 'b'.repeat(64) },
+      questions: { crossroads: { allowedCharacters: ['midori', 'samael'] } }
+    });
+  });
+}
+const adventureAnswer = (uid, characterId = 'midori', option = 1, customText = '') => ({
+  uid, characterId, option, customText, createdAt: serverTimestamp(), updatedAt: serverTimestamp()
+});
+
+test('chapter passwords remain private; only a matching role credential creates a grant', async () => {
+  await seedAdventureAccess();
+  const db = environment.authenticatedContext('player').firestore();
+  await assertFails(getDoc(doc(db, chapterPath)));
+  await assertFails(setDoc(doc(db, `${chapterPath}/grants/player`), credentialGrant('midori', 'wrong')));
+  await assertFails(setDoc(doc(db, `${chapterPath}/grants/other`), credentialGrant()));
+  await assertSucceeds(setDoc(doc(db, `${chapterPath}/grants/player`), credentialGrant()));
+  await assertFails(setDoc(doc(environment.unauthenticatedContext().firestore(), `${chapterPath}/grants/player`), credentialGrant()));
+});
+
+test('role credentials constrain answers, option validation and group membership', async () => {
+  await seedAdventureAccess();
+  const db = environment.authenticatedContext('player').firestore();
+  const path = `${chapterPath}/questions/crossroads/answers`;
+  await assertFails(setDoc(doc(db, path, 'midori'), adventureAnswer('player')));
+  await setDoc(doc(db, `${chapterPath}/grants/player`), credentialGrant());
+  await assertFails(setDoc(doc(db, path, 'samael'), adventureAnswer('player', 'samael')));
+  await assertFails(setDoc(doc(db, path, 'midori'), adventureAnswer('player', 'midori', 6)));
+  await assertFails(setDoc(doc(db, path, 'midori'), adventureAnswer('player', 'midori', 5)));
+  await assertSucceeds(setDoc(doc(db, path, 'midori'), adventureAnswer('player', 'midori', 5, '第一行\n <script>文字</script>\n 第二行')));
+  await assertSucceeds(updateDoc(doc(db, path, 'midori'), { option: 2, customText: '', updatedAt: serverTimestamp() }));
+  await assertFails(updateDoc(doc(db, path, 'midori'), { createdAt: new Date(0), updatedAt: serverTimestamp() }));
+  await setDoc(doc(db, `${chapterPath}/grants/player`), credentialGrant('ron', 'b'.repeat(64)));
+  await assertFails(setDoc(doc(db, path, 'ron'), adventureAnswer('player', 'ron')));
+});
+
+test('lock controls publication; locked chapters hide other roles even after password verification', async () => {
+  await seedAdventureAccess(1);
+  const db = environment.authenticatedContext('player').firestore();
+  const guest = environment.unauthenticatedContext().firestore();
+  const path = `${chapterPath}/questions/crossroads/answers`;
+  await setDoc(doc(db, `${chapterPath}/grants/player`), credentialGrant());
+  await setDoc(doc(db, path, 'midori'), adventureAnswer('player'));
+  await assertSucceeds(getDoc(doc(db, path, 'midori')));
+  await assertFails(getDoc(doc(db, path, 'samael')));
+  await assertFails(getDocs(collection(db, path)));
+  await assertFails(getDocs(collection(guest, path)));
+  await seedAdventureAccess(0);
+  await assertSucceeds(getDocs(collection(db, path)));
+  await assertSucceeds(getDocs(collection(guest, path)));
+  await assertSucceeds(getDoc(doc(guest, path, 'midori')));
+  await environment.withSecurityRulesDisabled(async context => {
+    await updateDoc(doc(context.firestore(), chapterPath), { lock: 1, 'passwordHashes.midori': 'c'.repeat(64) });
+  });
+  await assertFails(getDoc(doc(db, path, 'midori')));
+  await assertFails(updateDoc(doc(db, path, 'midori'), { option: 3, updatedAt: serverTimestamp() }));
+});
+
+test('roles can revise published answers; lock changes visibility without blocking credentialed voting', async () => {
+  await seedAdventureAccess(1);
+  const path = `${chapterPath}/questions/crossroads/answers`;
+  const guest = environment.unauthenticatedContext().firestore();
+  const anonymous = environment.authenticatedContext('anonymous', { firebase: { sign_in_provider: 'anonymous' } }).firestore();
+  await assertFails(setDoc(doc(anonymous, path, 'midori'), adventureAnswer('anonymous')));
+  await setDoc(doc(anonymous, `${chapterPath}/grants/anonymous`), credentialGrant());
+  await assertSucceeds(setDoc(doc(anonymous, path, 'midori'), adventureAnswer('anonymous')));
+  await environment.withSecurityRulesDisabled(async context => {
+    await updateDoc(doc(context.firestore(), chapterPath), { lock: 0 });
+  });
+  await assertSucceeds(getDocs(collection(guest, path)));
+  await assertSucceeds(updateDoc(doc(anonymous, path, 'midori'), { option: 2, updatedAt: serverTimestamp() }));
+  await assertSucceeds(updateDoc(doc(anonymous, path, 'midori'), { option: 5, customText: '新的答案\n保留換行', updatedAt: serverTimestamp() }));
+  await assertFails(setDoc(doc(guest, path, 'samael'), adventureAnswer('guest', 'samael')));
+  await assertFails(setDoc(doc(anonymous, path, 'samael'), adventureAnswer('anonymous', 'samael')));
+  await environment.withSecurityRulesDisabled(async context => {
+    await updateDoc(doc(context.firestore(), chapterPath), { lock: 1 });
+  });
+  await assertFails(getDocs(collection(guest, path)));
+  await assertFails(getDocs(collection(anonymous, path)));
+  await assertSucceeds(updateDoc(doc(anonymous, path, 'midori'), { option: 2, customText: '', updatedAt: serverTimestamp() }));
+});
