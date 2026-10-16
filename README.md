@@ -117,13 +117,13 @@ GitHub Pages workflow 位於：
   Firebase 管理工具的 Python 依賴清單。
 
 - `scripts/`
-  資料重鍵、角色卡匯入與圖片維護等管理工具。
+  Plus 08 章節角色授權與作答設定的管理工具。
 
 - `tests/`
   Firestore / Storage Rules 測試。
 
 - `docs/`
-  Firestore 遷移結案報告與角色卡問題紀錄。
+  Plus 08 測試頁的設定與維護說明。
 
 ## 核心資料檔
 
@@ -284,16 +284,11 @@ python3 -m venv .venv
 .venv/bin/pip install -r config/python/requirements-admin.txt
 ```
 
-主要工具：
+目前保留 `scripts/setup_adventurer_choices.py`，用於同步 Plus 08 章節角色密碼、題目組別與 `lock` 設定。操作方式見 `docs/adventurer-choices-temp.md`。
 
-- `scripts/migrate_member_keys.py`：將會員文件與子集合改以會員編號作為路徑。
-- `scripts/import_character_cards.py`：匯入角色卡與角色圖片。
-- `scripts/replace_character_portraits.py`：替換並驗證角色圖片。
-- `scripts/member_paths.py`：管理工具共用的會員路徑解析。
+此工具可能讀寫正式資料。執行前應先確認 project，先以 dry-run 檢查，再使用 `--apply` 寫入。
 
-這些工具可能讀寫正式資料。執行前應先確認 project、備份、dry-run 與工具要求的 `--confirm-project` / `--apply` 參數。
-
-RTDB → Firestore 遷移已於 2026-10-10 完成結案；前端僅使用 Firestore，遷移工具、測試與本機私有快照已移除。評估與線上停用結果見 `docs/firestore-migration-review.md`。
+RTDB → Firestore 遷移已於 2026-10-10 完成結案；前端僅使用 Firestore。已移除一次性會員重鍵、角色卡匯入與圖片替換工具，以及歷史結案與問題紀錄；需要查閱時可從 Git 歷史取得。現行 Firestore / Storage 權限與角色卡回歸測試仍保留。
 
 ## 全站 HTML 正規化
 
