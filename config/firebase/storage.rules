@@ -30,6 +30,13 @@ service firebase.storage {
         && request.resource.contentType.matches('image/(webp|jpeg|png)');
     }
 
+    // Public reference data. Releases are uploaded with IAM-admin credentials;
+    // even signed-in clients and app admins cannot modify or list these assets.
+    match /catalogs/spells/{version}/{fileName} {
+      allow get: if fileName in ['spells-phb.json', 'class_spells.json'];
+      allow list, write: if false;
+    }
+
     match /profile-photos/{uid}/{fileName} {
       allow get: if isOwner(uid) || isAdmin();
       allow list: if false;

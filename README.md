@@ -246,6 +246,7 @@ npm ci
 測試指令：
 
 ```bash
+npm run test:catalog:setup # 首次／新版本：下載 checksum 驗證過的公開 catalog 到系統暫存
 npm run test:rules
 npm run test:spellbooks
 npm test
@@ -288,7 +289,7 @@ Service account、RTDB export、migration report 與 rollback 檔案屬於私密
 
 法術頁 `toolbox/spells/index.html` 使用 `shared/spellbooks.js`，每個會員一本法術書，路徑為 `members/{memberNo}/spellbooks/default`。會員編號沿用 `shared/member-path.js` 的 UID 對照。文件欄位固定為 `schemaVersion: 1`、`spellIds`、`createdAt` 與 `updatedAt`，時間由伺服器產生；只允許本人 get/create/update，不允許管理員讀取、列出或刪除文件。清空保留空文件。
 
-第一版識別碼固定為 PHB 英文名稱，內容仍由網站 JSON 提供。Rules 驗證清單最多 500 筆、不重複，且全部位於 PHB 白名單；新增來源或改名時，先擴充 Rules 與識別碼對照，再部署新資料。既有識別碼不可直接刪除或改名；移除顯示資料時仍需保留 Rules 白名單，待明確資料遷移後才能清理。新增法術時需通過 catalog／Rules 一致性測試。
+第一版識別碼固定為 PHB 英文名稱，完整內容改由 Firebase Storage 的版本化公開 JSON 提供，repo 不保存完整來源。Rules 驗證清單最多 500 筆、不重複，且全部位於 PHB 白名單；新增來源或改名時，先擴充 Rules 與識別碼對照，再部署新資料。既有識別碼不可直接刪除或改名；移除顯示資料時仍需保留 Rules 白名單，待明確資料遷移後才能清理。新增法術時需通過 catalog／Rules 一致性測試。
 
 即時訂閱只讀取指定文件，不需要新增索引。先等待共用會員初始化完成，再解析會員編號，避免新會員 UID fallback 的競態。第一次寫入使用 transaction 判斷文件是否存在；後續新增／移除使用 transaction 搭配 `arrayUnion`／`arrayRemove`，避免覆寫其他裝置清單。對同一法術的增刪依伺服器提交順序收斂；清空會清除在它提交之前的所有新增，之後的新增保留。讀取失敗不會初始化文件。
 
@@ -298,9 +299,15 @@ Service account、RTDB export、migration report 與 rollback 檔案屬於私密
 
 離線版僅保留頁面內的待同步操作與 Firebase 記憶體快取，不啟用跨重新啟動的持久化佇列。畫面區分載入、快取、尚未同步、已同步與錯誤；失敗後可手動重試，恢復連線時也會重試。離開有待同步操作的頁面會要求確認；關閉／重新整理後未提交操作可能遺失。登出／切換帳號會解除訂閱並取消舊佇列；已送出的交易可能仍完成於原帳號文件，不會改寫新帳號。
 
-`spellbookSyncEnabled` 已在正式環境開啟，白名單為空代表所有會員可用；若改為 `false`，會員畫面會明確顯示同步停用且不展示訪客備份為雲端資料。已依序部署 Rules／前端，完成專用帳號跨瀏覽器驗收及正式停用演練。`dataWritesEnabled: false` 會暫停所有法術書寫入並保留當頁待同步操作；重新啟用後可按重試。停用同步時保留雲端與本機來源；回退應保留此停用提示，不應直接回退到僅使用舊 key 的前端。PWA cache 版本已升級，但既有開啟頁籤仍需重新整理；已完成本機 Chromium／手機模擬與 worker 驗收；正式網域已驗證 PWA v22 與版本化設定載入。Cloudflare 對 JavaScript 的快取可達 4 小時，因此每次變更開關都必須同步更新法術頁 `firebase.config.js?v=…` 的版本參數。
+`spellbookSyncEnabled` 已在正式環境開啟，白名單為空代表所有會員可用；若改為 `false`，會員畫面會明確顯示同步停用且不展示訪客備份為雲端資料。已依序部署 Rules／前端，完成專用帳號跨瀏覽器驗收及正式停用演練。`dataWritesEnabled: false` 會暫停所有法術書寫入並保留當頁待同步操作；重新啟用後可按重試。停用同步時保留雲端與本機來源；回退應保留此停用提示，不應直接回退到僅使用舊 key 的前端。PWA cache 版本已升級，但既有開啟頁籤仍需重新整理；已完成本機 Chromium／手機模擬與 worker 驗收；正式網域已驗證 PWA v22 與版本化設定載入；資料來源轉移後 worker 升為 v23，僅額外快取兩個公開 catalog URL，不快取私人 Firebase 請求。Cloudflare 對 JavaScript 的快取可達 4 小時，因此每次變更開關都必須同步更新法術頁 `firebase.config.js?v=…` 的版本參數。
 
 玩家匯入方式：請使用原本儲存法術的瀏覽器與網站登入，按「確認合併匯入」，看到「已同步」後再離開。本機原始來源持續保留，相容期沒有截止日期。完整進度見本機 `spellbook-migration-plan.md`；正式版本、驗收、觀察及復原程序見 [法術書上線與回退](docs/spellbook-release.md)。
+
+## 法術參考資料來源
+
+法術主檔 `spells-phb.json` 與職業施法進度 `class_spells.json` 存放於 Firebase Storage 的 `catalogs/spells/2026-10-18-v1/`。`shared/spell-catalog.js` 只保留網址、版本及 checksum，法術頁、角色卡和種族／職業頁共用同一設定。公開訪客可 get 這兩個檔案；所有客戶端（含 app 管理員）不能 list／修改／刪除，發布透過具 IAM 權限的管理工具。既有私人圖片權限不變。
+
+測試前執行 `npm run test:catalog:setup`；來源下載到系統暫存並驗證 SHA-256，可用 `RUGATHA_SPELL_CATALOG_TEST_DIR` 指定 repo 外目錄。瀏覽器測試只讀暫存資料並連本機 Emulator。完整資料維護與回退程序見 [法術資料來源](docs/spell-catalog-storage.md)。
 
 ## Firebase 管理工具
 
@@ -424,7 +431,7 @@ python3 shared/scripts/normalize_site_html.py
 - 更新時間線時，檢查 `timeline/data/events.json` 的時間排序、中英標題與描述。
 - 更新地圖時，檢查 `map/assets/locations.json` 與地圖圖片座標是否一致。
 - 更新神祇時，檢查 `deities/data/deities.json`、`deities/pages/` 與 `deities/images/`。
-- 更新咒語時，檢查 `toolbox/spells/spells-phb.json` 格式是否可被頁面讀取。
+- 更新法術來源時，在 repo 外準備 JSON，發布新的 Firebase Storage 版本；維護方式與識別碼／順序限制見 [法術資料來源](docs/spell-catalog-storage.md)。
 - 更新會員成就時，檢查 `member/achievements.csv` 欄位格式。
 - 更新首頁行事曆時，檢查 `shared/calendar-events.json`。
 - 更新 NPC 登場資料時，同步檢查 `npc/appearance-timeline/` 所使用的團錄與 NPC 對照資料。

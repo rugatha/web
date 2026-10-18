@@ -12,7 +12,7 @@ npm run test:browser:setup
 npm run test:all
 ```
 
-`test:browser:setup` downloads the existing Firebase browser SDK from Google's official CDN to the OS temp directory and installs Playwright Chromium. Set `RUGATHA_FIREBASE_TEST_SDK_DIR` to override the SDK directory, and `PLAYWRIGHT_BROWSERS_PATH` to override Playwright's browser cache. These are test assets only; production continues using its existing CDN imports.
+`test:browser:setup` first downloads the pinned public spell catalog from Firebase Storage into the OS temp directory and verifies SHA-256; the full payload is never committed to Git. Set `RUGATHA_SPELL_CATALOG_TEST_DIR` to override this external cache. It then downloads the existing Firebase browser SDK from Google's official CDN to the OS temp directory and installs Playwright Chromium. Set `RUGATHA_FIREBASE_TEST_SDK_DIR` to override the SDK directory, and `PLAYWRIGHT_BROWSERS_PATH` to override Playwright's browser cache. These are test assets only; production continues using its existing CDN imports.
 
 `npm run test:browser` starts its own Emulators and loopback HTTP server on port 8765. Run it separately from other Emulator commands. Each test resets only demo Emulator data. The server injects a test toolbar and demo config; it never edits the production config to enable sync. Do not run this server publicly. To interact manually, run:
 
@@ -24,7 +24,7 @@ Then open `http://127.0.0.1:8765/toolbox/spells/`. `localhost:8765` provides ind
 
 ## Coverage and limits
 
-The suite covers guest persistence, first-time member mapping, real-time sync between tabs and independent contexts, import receipts / unknown names / interrupted imports, simultaneous edits, account isolation, offline recovery, permission denial, token expiration, staged rollout, phone viewport, PWA cache activation and shared-module regression. Pure service-worker tests additionally exercise the production-host cache behavior, including fresh feature flags and offline navigation.
+The suite covers guest persistence, first-time member mapping, real-time sync between tabs and independent contexts, import receipts / unknown names / interrupted imports, simultaneous edits, account isolation, offline recovery, permission denial, token expiration, staged rollout, phone viewport, PWA cache activation and shared-module regression. Pure service-worker tests additionally exercise the production-host cache behavior, including fresh feature flags, offline navigation and only the two pinned public Storage catalog responses. The catalog failure case displays HTTP errors without a repository fallback; the shared-source case checks character sheet and class-reference consumers.
 
 Independent contexts simulate separate devices; the phone test emulates a 390 × 844 touch viewport. This does not claim physical iOS / Android testing, real production permissions, production read/write usage or live rollout observation. The legacy writer case simulates the exact old key write in another tab. The PWA browser test uses the real worker's localhost branch; production-host caching is covered separately by the worker tests.
 

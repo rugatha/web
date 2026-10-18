@@ -1,3 +1,4 @@
+import { readCatalog, catalog } from '../../../tests/helpers/spell-catalog.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
@@ -5,7 +6,7 @@ import test from 'node:test';
 
 const source = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const loader = source.split('\n').find(line => line.includes('const loadSpellOptions ='));
-const spellbook = JSON.parse(readFileSync(new URL('../../spells/spells-phb.json', import.meta.url), 'utf8'));
+const spellbook = readCatalog('spells');
 
 for (const first of ['spells', 'options']) {
   test(`Spell choices survive when ${first} finish first`, async () => {
@@ -13,7 +14,7 @@ for (const first of ['spells', 'options']) {
     const options = new Promise(resolve => { resolveOptions = resolve; });
     const spells = new Promise(resolve => { resolveSpells = resolve; });
     let renders = 0;
-    const window = {};
+    const window = { RUGATHA_SPELL_CATALOG: catalog };
     const context = vm.createContext({
       window,
       loadOptions: () => options,

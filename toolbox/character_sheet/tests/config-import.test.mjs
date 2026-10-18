@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
+import { catalog } from '../../../tests/helpers/spell-catalog.mjs';
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const between = (start, end) => html.slice(html.indexOf(start), html.indexOf(end));
@@ -20,9 +21,10 @@ assert.throws(() => parse('{}'), /Invalid/);
 
 const loadOptionsSource = between('const loadOptions =', 'const loadSubclassOptions =');
 let resourceRequests = 0;
+const requestedPaths = [];
 const optionsContext = vm.createContext({
-  window: {},
-  fetchJSON: (_path, fallback) => { resourceRequests += 1; return Promise.resolve(fallback); },
+  window: { RUGATHA_SPELL_CATALOG: catalog },
+  fetchJSON: (path, fallback) => { resourceRequests += 1; requestedPaths.push(path); return Promise.resolve(fallback); },
   fetchTEXT: (_path, fallback = '') => { resourceRequests += 1; return Promise.resolve(fallback); },
   normalizeClass: item => item,
   normalizeRace: item => item,
@@ -35,5 +37,6 @@ const optionsContext = vm.createContext({
 const shared = vm.runInContext(`let optionsPromise = null; ${loadOptionsSource}; const first = loadOptions(); const second = loadOptions(); first === second`, optionsContext);
 assert.equal(shared, true, 'Concurrent startup and import share one catalog-loading promise');
 assert.equal(resourceRequests, 7, 'Catalog resources are requested only once during concurrent loading');
+assert.ok(requestedPaths.includes(catalog.classesUrl), 'Class spell progression is fetched from Firebase Storage');
 
 console.log('Passed character-sheet config parsing, compatibility, and concurrent-load assertions.');

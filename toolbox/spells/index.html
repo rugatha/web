@@ -1302,7 +1302,9 @@
     </main>
   </div>
 
+  <script defer src="../../shared/pwa.js?v=20261018-spell-catalog"></script>
   <script src="../../shared/firebase.config.js?v=spellbook-20261018-public"></script>
+  <script src="../../shared/spell-catalog.js?v=20261018-storage-1"></script>
   <script type="module">
     import { spellSearchRank } from "../../shared/spellbook-state.js";
     import { mountSpellbook } from "../../shared/spellbook-page.js";
@@ -2226,11 +2228,11 @@
     });
 
     Promise.all([
-      fetch("spells-phb.json").then((response) => {
+      fetch(window.RUGATHA_SPELL_CATALOG.spellsUrl).then((response) => {
         if (!response.ok) throw new Error(`spells-phb.json: HTTP ${response.status}`);
         return response.json();
       }),
-      fetch("../race_class/class_spells.json").then((response) => {
+      fetch(window.RUGATHA_SPELL_CATALOG.classesUrl).then((response) => {
         if (!response.ok) throw new Error(`class_spells.json: HTTP ${response.status}`);
         return response.json();
       }),

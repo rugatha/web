@@ -1,3 +1,4 @@
+import { readCatalog, catalog } from './helpers/spell-catalog.mjs';
 import { writeSpellbookOperation } from '../shared/spellbook-transport.js';
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -26,6 +27,7 @@ import {
 import {
   deleteObject,
   getBytes,
+  listAll,
   ref as storageRef,
   uploadString
 } from "firebase/storage";
@@ -549,9 +551,27 @@ test('spellbooks: reject extra/missing fields, invalid lists, IDs, versions and 
   await assertFails(updateDoc(ref, { spellIds: ['not-a-spell'], updatedAt: serverTimestamp() }));
 });
 
+test('public spell catalog: guest reads only reference files; all clients cannot list or write', async () => {
+  const paths = Object.values(catalog.files).map(file => file.path);
+  await environment.withSecurityRulesDisabled(async context => {
+    for (const path of paths) await uploadString(storageRef(context.storage(), path), '{"fixture":true}', 'raw', { contentType: 'application/json' });
+  });
+  const guest = environment.unauthenticatedContext().storage();
+  for (const path of paths) await assertSucceeds(getBytes(storageRef(guest, path)));
+  for (const storage of [guest, environment.authenticatedContext('owner').storage(),
+    environment.authenticatedContext('admin', { admin: true }).storage()]) {
+    await assertFails(listAll(storageRef(storage, `catalogs/spells/${catalog.version}`)));
+    await assertFails(uploadString(storageRef(storage, paths[0]), '{}'));
+    await assertFails(uploadString(storageRef(storage, 'catalogs/spells/next/spells-phb.json'), '{}'));
+    await assertFails(deleteObject(storageRef(storage, paths[0])));
+  }
+  await assertFails(getBytes(storageRef(guest, `catalogs/spells/${catalog.version}/private.json`)));
+  await assertFails(getBytes(storageRef(guest, 'profile-photos/owner/avatar.webp')));
+});
+
 test('spellbooks: catalog and Rules whitelist stay aligned', async () => {
   const db = environment.authenticatedContext('owner').firestore();
-  const ids = JSON.parse(readFileSync('toolbox/spells/spells-phb.json', 'utf8')).spell.map(spell => spell.name_en);
+  const ids = readCatalog('spells').spell.map(spell => spell.name_en);
   assert.equal(new Set(ids).size, ids.length);
   await assertSucceeds(setDoc(doc(db, spellbookPath), spellbook(ids)));
 });

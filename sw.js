@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v22";
+const CACHE_VERSION = "rugatha-pwa-v23";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
@@ -15,6 +15,7 @@ const PRECACHE_URLS = [
   "/assets/logo/rugatha-icon-maskable-512.png",
   "/shared/pwa.js",
   "/shared/firebase.config.js",
+  "/shared/spell-catalog.js?v=20261018-storage-1",
   "/shared/spellbook-page.js",
   "/shared/spellbook-state.js",
   "/shared/spellbook-transport.js",
@@ -53,6 +54,13 @@ self.addEventListener("activate", (event) => {
 const isSameOriginGet = (request) =>
   request.method === "GET" && new URL(request.url).origin === self.location.origin;
 
+// Only these public, immutable reference files may enter the cross-origin cache.
+// Auth, Firestore and private Storage requests must never enter this cache.
+const SPELL_CATALOG_URLS = [
+  "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/catalogs%2Fspells%2F2026-10-18-v1%2Fspells-phb.json?alt=media",
+  "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/catalogs%2Fspells%2F2026-10-18-v1%2Fclass_spells.json?alt=media"
+];
+
 const networkFirst = async (request) => {
   const cache = await caches.open(RUNTIME_CACHE);
   try {
@@ -68,24 +76,25 @@ const networkFirst = async (request) => {
   }
 };
 
-const staleWhileRevalidate = async (request) => {
+const staleWhileRevalidate = async (request, event) => {
   const cache = await caches.open(RUNTIME_CACHE);
   const cached = await cache.match(request);
   const fetched = fetch(request)
-    .then((response) => {
+    .then(async (response) => {
       if (response && response.ok) {
-        cache.put(request, response.clone());
+        await cache.put(request, response.clone());
       }
       return response;
     })
     .catch(() => null);
 
-  return cached || fetched || caches.match(request);
+  event.waitUntil(fetched);
+  return cached || await fetched || await caches.match(request) || Response.error();
 };
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;
-  if (!isSameOriginGet(request)) return;
+  if (!isSameOriginGet(request) && !(request.method === "GET" && SPELL_CATALOG_URLS.includes(request.url))) return;
 
   if (["localhost", "127.0.0.1", "::1"].includes(self.location.hostname)) {
     event.respondWith(fetch(request, { cache: "no-store" }));
@@ -97,5 +106,5 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  event.respondWith(staleWhileRevalidate(request));
+  event.respondWith(staleWhileRevalidate(request, event));
 });

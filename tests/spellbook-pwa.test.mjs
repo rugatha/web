@@ -1,3 +1,4 @@
+import { catalog } from './helpers/spell-catalog.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -37,7 +38,7 @@ function worker() {
     async lifecycle(name) { let task; listeners[name]({ waitUntil: promise => task = promise }); await task; },
     async fetch(path, mode = 'cors') {
       let result;
-      listeners.fetch({ request: { method: 'GET', url: `https://rugatha.test${path}`, mode }, respondWith: promise => result = promise });
+      listeners.fetch({ request: { method: 'GET', url: path.startsWith('https://') ? path : `https://rugatha.test${path}`, mode }, waitUntil: () => {}, respondWith: promise => result = promise });
       return await result;
     }
   };
@@ -50,7 +51,7 @@ test('PWA upgrade removes old Rugatha caches, preserves unrelated caches, and pr
   assert.equal(w.stores.has('rugatha-pwa-v21-runtime'), false);
   assert.equal(w.stores.has('other-app'), true);
   assert.equal(w.claimed, 1);
-  const staticCache = w.stores.get('rugatha-pwa-v22-static');
+  const staticCache = w.stores.get('rugatha-pwa-v23-static');
   for (const name of ['page', 'state', 'transport']) assert(staticCache.has(`/shared/spellbook-${name}.js`));
   assert(staticCache.has('/shared/spellbooks.js'));
 });
@@ -70,4 +71,19 @@ test('uncached offline JavaScript is not replaced with homepage HTML; cached nav
   await w.fetch('/toolbox/spells/', 'navigate'); w.offline(true);
   assert.equal(await (await w.fetch('/toolbox/spells/', 'navigate')).text(), 'version-1');
   assert.equal((await w.fetch('/shared/firebase.config.js')).type, 'error');
+});
+
+test('only pinned public Firebase catalogs can use offline caches; private Firebase requests bypass the worker', async () => {
+  const w = worker();
+  for (const file of Object.values(catalog.files)) {
+    assert.equal(await (await w.fetch(file.url)).text(), 'version-1');
+  }
+  w.offline(true);
+  for (const file of Object.values(catalog.files)) {
+    assert.equal(await (await w.fetch(file.url)).text(), 'version-1');
+  }
+  assert.equal(await w.fetch('https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/profile-photos%2Fowner%2Favatar.webp?alt=media'), undefined);
+  assert.equal(await w.fetch('https://firestore.googleapis.com/v1/projects/rugatha-87e15/databases/(default)/documents/members/owner'), undefined);
+  const cold = worker(); cold.offline(true);
+  assert.equal((await cold.fetch(catalog.spellsUrl)).type, 'error');
 });

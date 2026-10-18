@@ -7,6 +7,30 @@ const panel = page => page.locator('#spellbookSync');
 const book = page => page.locator('#bookList');
 const cards = page => book(page).locator('.book-card');
 
+test('catalog download failure is visible and never falls back to a repository data file', async ({ page, context }) => {
+  const paths = [];
+  page.on('request', request => paths.push(new URL(request.url()).pathname));
+  await context.route('**/__catalog__/spells-phb.json*', route => route.fulfill({ status: 503, body: 'Unavailable' }));
+  await page.goto(`${base}/toolbox/spells/`);
+  await expect(page.locator('#loadState')).toContainText('HTTP 503');
+  await expect(page.locator('#spellTable')).toBeHidden();
+  expect(paths).not.toContain('/toolbox/spells/spells-phb.json');
+});
+
+test('catalog references are shared by spells, character sheet and class reference pages', async ({ page }) => {
+  const paths = [];
+  page.on('request', request => paths.push(new URL(request.url()).pathname));
+  await page.goto(`${base}/toolbox/character_sheet/`);
+  const count = await page.evaluate(async () => { await loadSpellOptions(); return window.sheetOptions.spells.length; });
+  expect(count).toBe(361);
+  await page.goto(`${base}/toolbox/race_class/`);
+  await expect.poll(() => page.evaluate(() => Object.keys(data.classSpells?.classes || {}).length)).toBeGreaterThan(0);
+  expect(paths).toContain('/__catalog__/spells-phb.json');
+  expect(paths).toContain('/__catalog__/class_spells.json');
+  expect(paths).not.toContain('/toolbox/spells/spells-phb.json');
+  expect(paths).not.toContain('/toolbox/race_class/class_spells.json');
+});
+
 async function open(page, origin = base) {
   await page.addInitScript(() => localStorage.setItem('rugatha-language', 'en'));
   page.on('dialog', dialog => dialog.accept());

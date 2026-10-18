@@ -5,6 +5,7 @@ import json
 import re
 import os
 import tempfile
+import hashlib
 import urllib.request
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -12,6 +13,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 VENDOR = Path(os.environ.get('RUGATHA_FIREBASE_TEST_SDK_DIR', str(Path(tempfile.gettempdir()) / 'rugatha-firebase-12.7.0')))
 PREFIX = 'https://www.gstatic.com/firebasejs/12.7.0/'
+CATALOG_SOURCE = ROOT.joinpath('shared/spell-catalog.js').read_text()
+CATALOG_VERSION = re.search(r"const version = '([^']+)'", CATALOG_SOURCE).group(1)
+CATALOG = Path(os.environ.get('RUGATHA_SPELL_CATALOG_TEST_DIR', str(Path(tempfile.gettempdir()) / 'rugatha-spell-catalog' / CATALOG_VERSION)))
+CATALOG_FILES = dict(re.findall(r"name: '([^']+)', sha256: '([^']+)'", CATALOG_SOURCE))
 
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -25,6 +30,11 @@ class Handler(SimpleHTTPRequestHandler):
             return self.send_text('<!doctype html><title>Legacy local source test</title><p>Test-only localStorage writer</p>', 'text/html')
         if path == '/__test__/health':
             return self.send_text('ok', 'text/plain')
+        if path.startswith('/__catalog__/'):
+            name = path.removeprefix('/__catalog__/')
+            if name not in CATALOG_FILES:
+                return self.send_error(404)
+            return self.send_text((CATALOG / name).read_text(), 'application/json')
         if path.startswith('/__firebase__/'):
             name = path.removeprefix('/__firebase__/')
             if name == 'firebase-analytics.js':
@@ -48,6 +58,8 @@ window.RUGATHA_FIREBASE_CONFIG = {apiKey:'demo-key',authDomain:'demo-rugatha.fir
             return self.send_error(404)
         if target.suffix in ['.html', '.js'] and target.exists():
             source = target.read_text().replace(PREFIX, '/__firebase__/')
+            if path == '/shared/spell-catalog.js':
+                source = re.sub(r'file.url = `[^`]+`;', 'file.url = `/__catalog__/${file.name}`;', source)
             if path == '/shared/auth.js':
                 source = "import '/tests/browser/spellbook-boot.js';\n" + source
             if path.rstrip('/') in ['/toolbox/spells', '/toolbox/spells/index.html']:
@@ -84,6 +96,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, default=8765)
     args = parser.parse_args()
+    for name, digest in CATALOG_FILES.items():
+        if not CATALOG.joinpath(name).exists() or hashlib.sha256(CATALOG.joinpath(name).read_bytes()).hexdigest() != digest:
+            parser.error('Catalog cache missing or changed; run npm run test:catalog:setup')
     for name in ['firebase-app.js', 'firebase-auth.js', 'firebase-firestore.js', 'firebase-storage.js']:
         if not VENDOR.joinpath(name).exists():
             parser.error(f'Missing {VENDOR / name}; see tests/browser/README.md')
