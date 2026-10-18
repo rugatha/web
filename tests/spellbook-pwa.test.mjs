@@ -57,11 +57,12 @@ test('PWA upgrade removes old Rugatha caches, preserves unrelated caches, and pr
 
 test('feature flags use fresh network configuration instead of one-navigation-old cached values', async () => {
   const w = worker();
-  assert.equal(await (await w.fetch('/shared/firebase.config.js')).text(), 'version-1');
+  const paths = ['/shared/firebase.config.js', '/shared/firebase.config.js?v=spellbook-release'];
+  for (const path of paths) assert.equal(await (await w.fetch(path)).text(), 'version-1');
   w.version(2);
-  assert.equal(await (await w.fetch('/shared/firebase.config.js')).text(), 'version-2');
+  for (const path of paths) assert.equal(await (await w.fetch(path)).text(), 'version-2');
   w.offline(true);
-  assert.equal(await (await w.fetch('/shared/firebase.config.js')).text(), 'version-2');
+  for (const path of paths) assert.equal(await (await w.fetch(path)).text(), 'version-2');
 });
 
 test('uncached offline JavaScript is not replaced with homepage HTML; cached navigation still works', async () => {
