@@ -90,6 +90,9 @@ test('character card shares book, preserves legacy source, exports current book 
   expect(await page.evaluate(() => { try { window.characterSpellbookUI.backup(); return 'unexpected'; } catch { return 'blocked'; } })).toBe('blocked');
   await page.getByRole('button', { name: '恢復網路', exact: true }).click();
   await expect(cardPanel(page)).toContainText('Character spellbook synced');
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.locator('#mobileAddSpellButton')).toBeHidden();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   await page.goto(`${base}/toolbox/spells/?character=${encodeURIComponent(key)}`);
   await expect(panel(page)).toContainText('Synced'); await page.locator('[data-view="book"]').click();
   await expect(page.locator('#bookList')).toContainText('Fireball'); await expect(page.locator('#bookList')).toContainText('Aid');

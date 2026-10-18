@@ -48,3 +48,9 @@
 - 相容 Rules 已發布：`5a226416-3eea-4638-b807-e71d816bb411`。
 - 固定 ID 前端 `b16c88b` 已發布，角色入口仍關閉；[Pages workflow](https://github.com/rugatha/web/actions/runs/39147179973) 成功。兩個 HTML、版本化設定與九個共用模組內容比對一致。
 - 最終 Rules 已發布：`a6e03b71-f65c-4f9b-8776-b6e64058ee85`；正式內容比對一致。只以兩個專用 UID 開啟角色書驗收。
+
+
+- 專用 UID 驗收版 `f1fcd91` 已發布：[Pages workflow](https://github.com/rugatha/web/actions/runs/39147391124)。
+- 正式驗收於 2026-10-19 01:08（台北）通過：個人／角色／會員隔離、明確複製、固定 ID 改名、角色卡與法術頁雙向即時同步、離線待同步匯出阻擋與重試、清空後重載、管理員唯讀且無個人書權限、390px 角色卡。六個非法操作皆為 permission-denied：schema 1 新建、schema 2 降版、單獨刪父／書、任意 bookId、無父文件建立。
+- 管理員驗收僅暫設專用 B 帳號的 admin claim，驗收後已移除並刷新 token。沒有修改玩家權限。
+- 手機截圖檢視另發現原有 CSS 會覆寫 hidden 屬性，露出舊法術區新增按鈕；已用法術區限定 CSS 修正，補測後一併發布停用演練版。
