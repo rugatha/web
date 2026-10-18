@@ -1,6 +1,6 @@
 # 法術資料來源：Firebase Storage
 
-完整法術與職業施法進度 JSON 改存 Firebase Storage，repo 只保留載入設定、checksum 與程式碼。每個版本使用新的物件路徑；不覆寫既有版本，也不改動會員法術書。
+完整法術與職業施法進度 JSON 改存 Firebase Storage，repo 只保留載入設定、checksum 與程式碼。本次移除目前版本的來源檔，沒有重寫既有 Git 歷史。每個版本使用新的物件路徑；不覆寫既有版本，也不改動會員法術書。
 
 ## 目前資料
 
@@ -37,4 +37,9 @@ PWA v23 只額外攔截兩個完全相符的公開 catalog URL；不攔截 Auth�
 - Storage Rules 部署前已比對正式版本與原 HEAD 一致並保留備份；新增版本為 `de330c90-8ea5-40c6-b4ce-d494c2b88a87`。
 - 兩檔已上傳；從正式 Firebase 下載至全新暫存，SHA-256 與原始來源一致。GET 回傳 `application/json`、跨來源 `Access-Control-Allow-Origin: *`，不使用下載 token。
 - 重複發布已讀回兩個物件並驗證一致，未覆寫。
-- 本機與正式頁面驗收結果、前端發布及 repo 舊檔移除紀錄於完成驗收後填入。
+- 前端第一階段 `cac744d` 已於 2026-10-19 00:05（台北）發布：[Pages 成功](https://github.com/rugatha/web/actions/runs/39143217443)。三個正式 HTML、版本化 descriptor 與 worker 均已比對。
+- 無登入的隔離 Chromium 實際渲染 361 個法術，兩個下載 checksum 一致，未向 repo 舊 JSON 路徑發出請求；角色卡與種族／職業頁共用來源通過。
+- 實際 PWA v23 將兩個跨來源公開檔案放入 runtime cache，完全斷網後重新載入仍可看到 361 個法術並搜尋 Fireball；未讀寫任何玩家文件。
+- 確認正式新來源可用後，移除 `toolbox/spells/spells-phb.json`、`toolbox/race_class/class_spells.json`，並用 `.gitignore` 防止重新加入舊路徑。完整來源與測試快取留在 repo 外。
+- 移除兩個資料檔後，`npm run test:all` exit code 0：Rules 24、法術書狀態／PWA 25、角色卡 11、Chromium 27，合計 **87 項通過、0 項失敗**。瀏覽器案例包含下載 503 提示及三頁共用來源，沒有 repo 資料 fallback。
+- 完成驗收後發布舊檔刪除與本紀錄；資料版本維持 `2026-10-18-v1`，不重新上傳、不變動法術順序。

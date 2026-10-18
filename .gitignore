@@ -19,3 +19,7 @@ spellbook-migration-plan.md
 # Browser acceptance artifacts
 playwright-report/
 test-results/
+
+# Full spell catalogs live in Firebase Storage; test caches must stay outside Git.
+/toolbox/spells/spells-phb.json
+/toolbox/race_class/class_spells.json
