@@ -4,6 +4,7 @@ import {
   deleteDoc,
   doc,
   getDoc,
+  getDocFromServer,
   getDocs,
   getFirestore,
   onSnapshot,
@@ -330,46 +331,79 @@ const formatMemberNo = (number) => {
   return `${digits.slice(0, 4)}-${digits.slice(4)}`;
 };
 
-export const ensureMemberDocument = async (db, user) => {
+// Coalesce Auth and feature initialization for the same account on this page.
+const pendingMemberInitializations = new WeakMap();
+export const ensureMemberDocument = (db, user) => {
+  if (!db || !user?.uid) return Promise.resolve(null);
+  let pending = pendingMemberInitializations.get(db);
+  if (!pending) { pending = new Map(); pendingMemberInitializations.set(db, pending); }
+  if (!pending.has(user.uid)) {
+    pending.set(user.uid, initializeMemberDocument(db, user).finally(() => pending.delete(user.uid)));
+  }
+  return pending.get(user.uid);
+};
+
+const initializeMemberDocument = async (db, user) => {
   if (!db || !user?.uid) return null;
   assertWritesEnabled();
   const mappingRef = doc(db, "memberKeys", user.uid);
   const counterRef = doc(db, "system", "memberNumbers");
-  await runFirestoreTransaction(db, async (transaction) => {
-    const mapping = await transaction.get(mappingRef);
-    if (mapping.exists()) return;
-    const legacy = await transaction.get(doc(db, "members", user.uid));
-    if (legacy.exists()) return;
-    const counter = await transaction.get(counterRef);
-    if (!counter.exists()) throw new Error("Member number counter is missing");
-    const next = Number(counter.data()?.lastAllocated) + 1;
-    if (!Number.isSafeInteger(next) || next <= 0) throw new Error("Invalid member number counter");
-    const memberNo = formatMemberNo(next);
-    const memberRef = doc(db, "members", memberNo);
-    const destination = await transaction.get(memberRef);
-    if (destination.exists()) throw new Error("Member number is already allocated");
-    transaction.update(counterRef, { lastAllocated: next, updatedAt: serverTimestamp() });
-    transaction.set(mappingRef, { memberNo });
-    transaction.set(memberRef, {
-      schemaVersion: 1,
-      memberId: user.uid,
-      memberNo: formatMemberNo(next),
-      memberNoNumber: next,
-      displayName: user.displayName || "",
-      email: user.email || "",
-      profile: { photo: null },
-      badges: Object.fromEntries(BADGE_FIELDS.map((field) => [field, 10])),
-      achievements: {},
-      rewardedAchievements: {},
-      qaChoiceCount: 0,
-      totalTimeSeconds: 0,
-      campaign: "",
-      character: "",
-      createdAt: serverTimestamp(),
-      lastLoginAt: serverTimestamp(),
-      updatedAt: serverTimestamp()
-    });
-  });
+  // Rules can reject a stale first-registration transaction before the SDK's
+  // conflict retry runs. Re-read only our mapping/counter and retry only when
+  // another initializer actually advanced the allocation.
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    let observedCounter = null;
+    try {
+      await runFirestoreTransaction(db, async (transaction) => {
+        const mapping = await transaction.get(mappingRef);
+        if (mapping.exists()) return;
+        const legacy = await transaction.get(doc(db, "members", user.uid));
+        if (legacy.exists()) return;
+        const counter = await transaction.get(counterRef);
+        if (!counter.exists()) throw new Error("Member number counter is missing");
+        observedCounter = Number(counter.data()?.lastAllocated);
+        const next = observedCounter + 1;
+        if (!Number.isSafeInteger(next) || next <= 0) throw new Error("Invalid member number counter");
+        const memberNo = formatMemberNo(next);
+        const memberRef = doc(db, "members", memberNo);
+        const destination = await transaction.get(memberRef);
+        if (destination.exists()) throw new Error("Member number is already allocated");
+        assertWritesEnabled();
+        transaction.update(counterRef, { lastAllocated: next, updatedAt: serverTimestamp() });
+        transaction.set(mappingRef, { memberNo });
+        transaction.set(memberRef, {
+          schemaVersion: 1,
+          memberId: user.uid,
+          memberNo: formatMemberNo(next),
+          memberNoNumber: next,
+          displayName: user.displayName || "",
+          email: user.email || "",
+          profile: { photo: null },
+          badges: Object.fromEntries(BADGE_FIELDS.map((field) => [field, 10])),
+          achievements: {},
+          rewardedAchievements: {},
+          qaChoiceCount: 0,
+          totalTimeSeconds: 0,
+          campaign: "",
+          character: "",
+          createdAt: serverTimestamp(),
+          lastLoginAt: serverTimestamp(),
+          updatedAt: serverTimestamp()
+        });
+      });
+      break;
+    } catch (error) {
+      let mapping, counter;
+      try {
+        mapping = await getDocFromServer(mappingRef);
+        if (mapping.exists()) break; // Another tab completed this same member.
+        if (observedCounter === null || attempt === 4) throw error;
+        counter = await getDocFromServer(counterRef);
+      } catch { throw error; }
+      if (!counter.exists() || !(Number(counter.data().lastAllocated) > observedCounter)) throw error;
+      assertWritesEnabled();
+    }
+  }
   const snapshot = await getDoc(await memberDocument(db, user.uid));
   return snapshot.exists() ? memberToLegacy(snapshot.data()) : null;
 };

@@ -1,3 +1,4 @@
+import { writeSpellbookOperation } from '../shared/spellbook-transport.js';
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test, { after, before, beforeEach } from "node:test";
@@ -8,6 +9,8 @@ import {
   initializeTestEnvironment
 } from "@firebase/rules-unit-testing";
 import {
+  arrayUnion,
+  arrayRemove,
   collection,
   deleteDoc,
   doc,
@@ -492,4 +495,106 @@ test('roles can revise published answers; lock changes visibility without blocki
   await assertFails(getDocs(collection(guest, path)));
   await assertFails(getDocs(collection(anonymous, path)));
   await assertSucceeds(updateDoc(doc(anonymous, path, 'midori'), { option: 2, customText: '', updatedAt: serverTimestamp() }));
+});
+
+const spellbook = (spellIds = ['Aid']) => ({ schemaVersion: 1, spellIds,
+  createdAt: serverTimestamp(), updatedAt: serverTimestamp() });
+const spellbookPath = 'members/0000-0001/spellbooks/default';
+
+test('spellbooks: owner can create, read, update and clear but never delete', async () => {
+  const db = environment.authenticatedContext('owner').firestore();
+  const ref = doc(db, spellbookPath);
+  await assertSucceeds(getDoc(ref));
+  await assertSucceeds(setDoc(ref, spellbook()));
+  await assertSucceeds(getDoc(ref));
+  await assertSucceeds(updateDoc(ref, { spellIds: ['Fireball'], updatedAt: serverTimestamp() }));
+  await assertSucceeds(updateDoc(ref, { spellIds: [], updatedAt: serverTimestamp() }));
+  assert.deepEqual((await getDoc(ref)).data().spellIds, []);
+  await assertFails(deleteDoc(ref));
+});
+
+test('spellbooks: deny anonymous, other members, admins, listing and UID path bypass', async () => {
+  const owner = environment.authenticatedContext('owner').firestore();
+  await setDoc(doc(owner, spellbookPath), spellbook());
+  for (const context of [environment.unauthenticatedContext(),
+    environment.authenticatedContext('other'), environment.authenticatedContext('admin', { admin: true }),
+    environment.authenticatedContext('email-admin', { email: 'rugathadnd@gmail.com', email_verified: true })]) {
+    const db = context.firestore();
+    await assertFails(getDoc(doc(db, spellbookPath)));
+    await assertFails(setDoc(doc(db, spellbookPath), spellbook()));
+    await assertFails(updateDoc(doc(db, spellbookPath), { spellIds: [], updatedAt: serverTimestamp() }));
+    await assertFails(deleteDoc(doc(db, spellbookPath)));
+    await assertFails(getDocs(collection(db, 'members/0000-0001/spellbooks')));
+  }
+  await assertFails(getDocs(collection(owner, 'members/0000-0001/spellbooks')));
+  await assertFails(setDoc(doc(owner, 'members/owner/spellbooks/default'), spellbook()));
+  await assertFails(setDoc(doc(owner, 'members/0000-0002/spellbooks/default'), spellbook()));
+  await assertFails(setDoc(doc(owner, 'members/0000-0001/spellbooks/second'), spellbook()));
+});
+
+test('spellbooks: reject extra/missing fields, invalid lists, IDs, versions and timestamps', async () => {
+  const db = environment.authenticatedContext('owner').firestore();
+  const ref = doc(db, spellbookPath);
+  const missing = spellbook(); delete missing.schemaVersion;
+  for (const value of [missing, { ...spellbook(), extra: true },
+    { ...spellbook(), schemaVersion: 2 }, { ...spellbook(), schemaVersion: '1' },
+    spellbook('Aid'), spellbook([42]), spellbook(['Unknown Spell']), spellbook(['Aid', 'Aid']),
+    spellbook(Array(501).fill('Aid')), { ...spellbook(), createdAt: new Date(0) },
+    { ...spellbook(), updatedAt: new Date(0) }]) {
+    await assertFails(setDoc(ref, value));
+  }
+  await setDoc(ref, spellbook());
+  await assertFails(updateDoc(ref, { createdAt: serverTimestamp(), updatedAt: serverTimestamp() }));
+  await assertFails(updateDoc(ref, { updatedAt: new Date(0) }));
+  await assertFails(updateDoc(ref, { spellIds: ['not-a-spell'], updatedAt: serverTimestamp() }));
+});
+
+test('spellbooks: catalog and Rules whitelist stay aligned', async () => {
+  const db = environment.authenticatedContext('owner').firestore();
+  const ids = JSON.parse(readFileSync('toolbox/spells/spells-phb.json', 'utf8')).spell.map(spell => spell.name_en);
+  assert.equal(new Set(ids).size, ids.length);
+  await assertSucceeds(setDoc(doc(db, spellbookPath), spellbook(ids)));
+});
+
+const mutateBook = (db, operation, isActive = () => true) => writeSpellbookOperation({
+  db, reference: doc(db, spellbookPath), operation, isActive
+}, { runTransaction, serverTimestamp, arrayUnion, arrayRemove });
+
+test('spellbooks: concurrent first writes and imports merge without overwriting', async () => {
+  const a = environment.authenticatedContext('owner').firestore();
+  const b = environment.authenticatedContext('owner').firestore();
+  await Promise.all([mutateBook(a, { type: 'add', ids: ['Aid'] }),
+    mutateBook(b, { type: 'add', ids: ['Fireball'] })]);
+  assert.deepEqual(new Set((await getDoc(doc(a, spellbookPath))).data().spellIds), new Set(['Aid', 'Fireball']));
+  await Promise.all([mutateBook(a, { type: 'add', ids: ['Aid', 'Light'] }),
+    mutateBook(b, { type: 'add', ids: ['Fireball', 'Light'] })]);
+  assert.deepEqual(new Set((await getDoc(doc(a, spellbookPath))).data().spellIds), new Set(['Aid', 'Fireball', 'Light']));
+  // Retrying an import does not create duplicates; an empty document stays present.
+  await mutateBook(a, { type: 'clear' });
+  assert.equal((await getDoc(doc(a, spellbookPath))).exists(), true);
+  await mutateBook(a, { type: 'add', ids: ['Aid'] });
+  await mutateBook(b, { type: 'add', ids: ['Aid'] });
+  assert.deepEqual((await getDoc(doc(a, spellbookPath))).data().spellIds, ['Aid']);
+});
+
+test('spellbooks: ordered add/remove and clear/add follow server commit order', async () => {
+  const db = environment.authenticatedContext('owner').firestore();
+  await mutateBook(db, { type: 'add', ids: ['Aid'] });
+  await mutateBook(db, { type: 'remove', ids: ['Aid'] });
+  assert.deepEqual((await getDoc(doc(db, spellbookPath))).data().spellIds, []);
+  await mutateBook(db, { type: 'add', ids: ['Aid'] });
+  await mutateBook(db, { type: 'clear' });
+  await mutateBook(db, { type: 'add', ids: ['Light'] });
+  assert.deepEqual((await getDoc(doc(db, spellbookPath))).data().spellIds, ['Light']);
+});
+
+test('spellbooks: denied reads and cancelled sessions cannot initialize documents', async () => {
+  const other = environment.authenticatedContext('other').firestore();
+  await assertFails(mutateBook(other, { type: 'add', ids: ['Aid'] }));
+  const db = environment.authenticatedContext('owner').firestore();
+  await assert.rejects(mutateBook(db, { type: 'add', ids: ['Aid'] }, () => false));
+  assert.equal((await getDoc(doc(db, spellbookPath))).exists(), false);
+  let checks = 0;
+  await assert.rejects(mutateBook(db, { type: 'add', ids: ['Aid'] }, () => ++checks === 1));
+  assert.equal((await getDoc(doc(db, spellbookPath))).exists(), false);
 });

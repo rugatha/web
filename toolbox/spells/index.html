@@ -449,6 +449,9 @@
       color: #fffaf0;
     }
 
+    .remove-button:disabled,
+    .clear-button:disabled { opacity: 0.55; cursor: not-allowed; }
+
     .remove-button:hover,
     .clear-button:hover {
       background: #683728;
@@ -527,6 +530,24 @@
       color: var(--spell-muted);
       text-align: center;
     }
+
+    #spellbookHelp { margin: 12px 0; color: var(--spell-muted); line-height: 1.6; }
+    #spellbookHelp summary { cursor: pointer; }
+    #spellbookHelp p { margin: 8px 0; }
+
+    #spellbookSync {
+      margin: 14px 0;
+      padding: 12px 16px;
+      border: 1px solid var(--spell-line);
+      border-radius: 8px;
+      background: var(--spell-panel);
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    #spellbookSync:empty { display: none; }
+    #spellbookSync p { margin: 4px 0; }
+    #spellbookSync button { margin: 4px 8px 4px 0; min-height: 44px; white-space: normal; }
 
     .error-state {
       padding: 18px;
@@ -807,6 +828,8 @@
       border-radius: 8px;
       background: var(--spell-panel);
     }
+
+    .book-tools .control label { color: var(--spell-table-muted); }
 
     .book-search-results {
       display: flex;
@@ -1162,6 +1185,14 @@
         <div class="result-count" id="resultCount">載入中</div>
       </section>
 
+      <aside id="spellbookSync" aria-label="法術書同步狀態"></aside>
+
+      <details id="spellbookHelp">
+        <summary data-i18n="syncHelpTitle">法術書同步與匯入說明</summary>
+        <p data-i18n="syncHelpImport">請在原本儲存法術的瀏覽器與網站登入，再按「確認合併匯入」。你也可以稍後處理；匯入會保留本機備份。</p>
+        <p data-i18n="syncHelpOffline">只有「已同步」表示伺服器已確認。尚未同步的變更只保留在目前頁面，關閉或重新整理前請先等待同步完成。</p>
+      </details>
+
       <section class="toolbar" id="filterToolbar" aria-label="法術篩選工具">
         <div class="control">
           <label for="searchInput" data-i18n="search">搜尋</label>
@@ -1271,7 +1302,12 @@
     </main>
   </div>
 
-  <script>
+  <script src="../../shared/firebase.config.js"></script>
+  <script type="module">
+    import { spellSearchRank } from "../../shared/spellbook-state.js";
+    import { mountSpellbook } from "../../shared/spellbook-page.js";
+    let bookController = null;
+    let bookWritable = false;
     const state = {
       spells: [],
       filtered: [],
@@ -1285,7 +1321,6 @@
       classSpells: null,
     };
 
-    const SPELLBOOK_STORAGE_KEY = "rugatha.phb.spellbook";
 
     const classOrder = ["吟遊詩人", "牧師", "德魯伊", "聖騎士", "遊俠", "術士", "契術師", "法師"];
 
@@ -1314,6 +1349,9 @@
         components: "成分", verbal: "聲", somatic: "勢", material: "材", damage: "傷害", save: "豁免",
         concentration: "專注", attack: "攻擊", ritual: "儀式", yes: "是", no: "否", reset: "重設",
         spellAttack: "法術命中", savingAttack: "豁免攻擊", nonAttack: "非攻擊", source: "來源",
+        syncHelpTitle: "法術書同步與匯入說明",
+        syncHelpImport: "請在原本儲存法術的瀏覽器與網站登入，再按「確認合併匯入」。你也可以稍後處理；匯入會保留本機備份。",
+        syncHelpOffline: "只有「已同步」表示伺服器已確認。尚未同步的變更只保留在目前頁面，關閉或重新整理前請先等待同步完成。",
         add: "加入", added: "已加入", remove: "移除法術", expand: "展開", collapse: "收合",
         emptySpellbook: "法術書目前是空的", noSpellsToAdd: "沒有可新增的法術",
         name: "名稱", castingTime: "施法時間", range: "距離", duration: "持續時間", details: "內容",
@@ -1329,6 +1367,9 @@
         components: "Components", verbal: "V", somatic: "S", material: "M", damage: "Damage", save: "Saving Throw",
         concentration: "Concentration", attack: "Attack", ritual: "Ritual", yes: "Yes", no: "No", reset: "Reset",
         spellAttack: "Spell Attack", savingAttack: "Saving Throw", nonAttack: "None", source: "Source",
+        syncHelpTitle: "Spellbook sync and import help",
+        syncHelpImport: "Sign in on the browser and website where your spells were saved, then choose Confirm import. You can import later; local backups are preserved.",
+        syncHelpOffline: "Synced means the server has confirmed your changes. Pending changes stay on this open page. Wait for sync before closing or reloading it.",
         add: "Add", added: "Added", remove: "Remove spell", expand: "Expand", collapse: "Collapse",
         emptySpellbook: "Your spellbook is empty", noSpellsToAdd: "No spells to add",
         name: "Name", castingTime: "Casting Time", range: "Range", duration: "Duration", details: "Details",
@@ -1390,6 +1431,7 @@
 
     function setLanguage(language) {
       currentLanguage = language === "en" ? "en" : "zh";
+      bookController?.render();
       const dictionary = translations[currentLanguage];
       document.documentElement.lang = currentLanguage === "zh" ? "zh-Hant" : "en";
       document.body.dataset.lang = currentLanguage;
@@ -1919,38 +1961,19 @@
 
     function renderBookButton(spell) {
       const inBook = isInSpellBook(spell);
-      return `<button class="book-button" type="button" data-book-add="${spell.index}" ${inBook ? "disabled" : ""}>${t(inBook ? "added" : "add")}</button>`;
-    }
-
-    function loadSpellBook() {
-      try {
-        const stored = JSON.parse(localStorage.getItem(SPELLBOOK_STORAGE_KEY) || "[]");
-        state.spellBook = new Set(Array.isArray(stored) ? stored : []);
-      } catch {
-        state.spellBook = new Set();
-      }
-    }
-
-    function saveSpellBook() {
-      localStorage.setItem(SPELLBOOK_STORAGE_KEY, JSON.stringify([...state.spellBook]));
+      return `<button class="book-button" type="button" data-book-add="${spell.index}" ${inBook || !bookWritable ? "disabled" : ""}>${t(inBook ? "added" : "add")}</button>`;
     }
 
     function addToSpellBook(spell) {
-      state.spellBook.add(spellBookKey(spell));
-      saveSpellBook();
-      refreshSpellBookDisplays();
+      bookController?.add(spellBookKey(spell));
     }
 
     function removeFromSpellBook(key) {
-      state.spellBook.delete(key);
-      saveSpellBook();
-      refreshSpellBookDisplays();
+      bookController?.remove(key);
     }
 
     function clearSpellBook() {
-      state.spellBook.clear();
-      saveSpellBook();
-      refreshSpellBookDisplays();
+      bookController?.clear();
     }
 
     function refreshSpellBookDisplays() {
@@ -1969,9 +1992,10 @@
       }
       const matches = state.spells
         .filter((spell) => !isInSpellBook(spell) && spell.searchText.includes(query))
+        .sort((a, b) => spellSearchRank(a, query) - spellSearchRank(b, query))
         .slice(0, 18);
       elements.bookSearchResults.innerHTML = matches.length
-        ? matches.map((spell) => `<button class="book-button" type="button" data-book-add="${spell.index}">${escapeHtml(spell.name_zh)} <small>${escapeHtml(spell.name_en)}</small></button>`).join("")
+        ? matches.map((spell) => `<button class="book-button" type="button" data-book-add="${spell.index}" ${!bookWritable ? "disabled" : ""}>${escapeHtml(spell.name_zh)} <small>${escapeHtml(spell.name_en)}</small></button>`).join("")
         : `<span class="tag">${t("noSpellsToAdd")}</span>`;
     }
 
@@ -1979,7 +2003,7 @@
       const spells = state.spells
         .filter((spell) => state.spellBook.has(spellBookKey(spell)))
         .sort((a, b) => Number(a.level) - Number(b.level) || a.name_zh.localeCompare(b.name_zh, "zh-Hant"));
-      elements.clearBook.disabled = spells.length === 0;
+      elements.clearBook.disabled = state.spellBook.size === 0 || !bookWritable;
       if (!spells.length) {
         elements.bookList.innerHTML = `<div class="empty-state">${t("emptySpellbook")}</div>`;
         return;
@@ -1993,7 +2017,7 @@
                 <small class="name-en">${escapeHtml(spell.name_en)}</small>
               </h2>
             </div>
-            <button class="remove-button" type="button" data-book-remove="${escapeHtml(spellBookKey(spell))}">${t("remove")}</button>
+            <button class="remove-button" type="button" data-book-remove="${escapeHtml(spellBookKey(spell))}" ${!bookWritable ? "disabled" : ""}>${t("remove")}</button>
           </div>
           <div class="detail-meta">
             <span class="tag">${levelText(spell.level)}</span>
@@ -2215,7 +2239,16 @@
         state.spells = (spellData.spell || []).map(normalizeSpell);
         state.classSpells = classSpellData;
         state.collapsedClasses = new Set([...new Set(state.spells.flatMap((spell) => spell.classes || []))]);
-        loadSpellBook();
+        bookController = mountSpellbook({
+          knownIds: new Set(state.spells.map(spellBookKey)),
+          language: () => currentLanguage,
+          panel: document.getElementById("spellbookSync"),
+          onChange: ({ ids, canEdit }) => {
+            state.spellBook = new Set(ids);
+            bookWritable = canEdit;
+            refreshSpellBookDisplays();
+          }
+        });
         populateFilters();
         renderClassView();
         renderBookView();
@@ -2237,7 +2270,6 @@
     }
   </script>
 
-  <script src="../../shared/firebase.config.js"></script>
   <script type="module" src="../../shared/auth.js"></script>
 </body>
 </html>

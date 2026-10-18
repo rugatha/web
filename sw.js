@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v21";
+const CACHE_VERSION = "rugatha-pwa-v22";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
@@ -14,6 +14,13 @@ const PRECACHE_URLS = [
   "/assets/logo/rugatha-icon-512.png",
   "/assets/logo/rugatha-icon-maskable-512.png",
   "/shared/pwa.js",
+  "/shared/firebase.config.js",
+  "/shared/spellbook-page.js",
+  "/shared/spellbook-state.js",
+  "/shared/spellbook-transport.js",
+  "/shared/spellbooks.js",
+  "/shared/member-path.js",
+  "/shared/firebase-data.js",
   "/shared/language-toggle.js",
   "/shared/styles/theme.css",
   "/styles/home.css?v=mobile-logo-150-20260703"
@@ -56,7 +63,8 @@ const networkFirst = async (request) => {
     return response;
   } catch (_) {
     const cached = await cache.match(request);
-    return cached || caches.match("/index.html");
+    if (cached) return cached;
+    return request.mode === "navigate" ? caches.match("/index.html") : Response.error();
   }
 };
 
@@ -84,7 +92,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  if (request.mode === "navigate") {
+  if (request.mode === "navigate" || new URL(request.url).pathname === "/shared/firebase.config.js") {
     event.respondWith(networkFirst(request));
     return;
   }

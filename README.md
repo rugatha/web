@@ -247,11 +247,18 @@ npm ci
 
 ```bash
 npm run test:rules
+npm run test:spellbooks
 npm test
+# 首次瀏覽器驗收先準備 SDK 與 Chromium
+npm run test:browser:setup
+npm run test:all
 ```
 
-- `test:rules`：測試正式 Firestore / Storage Rules，包括會員資料、member key、收藏、QA、角色卡與圖片權限。
-- `npm test`：執行 Firestore / Storage Rules 與角色卡功能測試。
+- `test:rules`：測試正式 Firestore / Storage Rules，包括會員資料、member key、收藏、QA、角色卡、法術書與圖片權限。
+- `test:spellbooks`：法術書狀態、帳號隔離、本機資料解析、匯入與頁面控制邏輯測試。
+- `test:browser`：以 Chromium 與 Auth／Firestore／Storage Emulator 執行實際頁面驗收。
+- `npm test`：執行 Firestore / Storage Rules、法術書、PWA 與角色卡功能測試。
+- `test:all`：執行以上全部測試；詳見 [瀏覽器驗收說明](tests/browser/README.md)。
 
 Rules 測試會啟動本機 Firebase emulators，需要 Java 21 以上。
 
@@ -270,10 +277,30 @@ Rules 測試會啟動本機 Firebase emulators，需要 Java 21 以上。
 firebaseEnabled: true
 qaFateEnabled: true
 dataBackend: firestore
+spellbookSyncEnabled: false
+spellbookSyncMemberUids: []
 dataWritesEnabled: true
 ```
 
 Service account、RTDB export、migration report 與 rollback 檔案屬於私密資料，已由 `.gitignore` 排除，不可提交到 repository。
+
+## 個人法術書同步
+
+法術頁 `toolbox/spells/index.html` 使用 `shared/spellbooks.js`，每個會員一本法術書，路徑為 `members/{memberNo}/spellbooks/default`。會員編號沿用 `shared/member-path.js` 的 UID 對照。文件欄位固定為 `schemaVersion: 1`、`spellIds`、`createdAt` 與 `updatedAt`，時間由伺服器產生；只允許本人 get/create/update，不允許管理員讀取、列出或刪除文件。清空保留空文件。
+
+第一版識別碼固定為 PHB 英文名稱，內容仍由網站 JSON 提供。Rules 驗證清單最多 500 筆、不重複，且全部位於 PHB 白名單；新增來源或改名時，先擴充 Rules 與識別碼對照，再部署新資料。既有識別碼不可直接刪除或改名；移除顯示資料時仍需保留 Rules 白名單，待明確資料遷移後才能清理。新增法術時需通過 catalog／Rules 一致性測試。
+
+即時訂閱只讀取指定文件，不需要新增索引。先等待共用會員初始化完成，再解析會員編號，避免新會員 UID fallback 的競態。第一次寫入使用 transaction 判斷文件是否存在；後續新增／移除使用 transaction 搭配 `arrayUnion`／`arrayRemove`，避免覆寫其他裝置清單。對同一法術的增刪依伺服器提交順序收斂；清空會清除在它提交之前的所有新增，之後的新增保留。讀取失敗不會初始化文件。
+
+未登入使用 `rugatha.phb.spellbook.guest.v1`。首次開啟訪客頁面時可讀取舊 `rugatha.phb.spellbook`，但後續訪客編輯只寫新 key，舊 key 保留作為復原來源。登入後會提示本機可匯入數量與目前帳號；玩家確認才合併，稍後處理不會刪除來源。未知名稱與損壞資料會提示，原始資料保留，僅可識別名稱送到雲端。損壞的訪客來源在修復前暫停編輯，避免覆蓋復原資料。
+
+匯入紀錄儲存在 `rugatha.phb.spellbook.import.v1.{uid}`，值為舊資料與訪客資料的完整來源指紋。伺服器確認成功才記錄；相同來源之後不再提示或自動匯入，避免刪除的法術復活。另一台裝置有自己的來源與紀錄；舊頁面或訪客資料改變後會再次提示，仍須玩家確認。原始 key 在相容期內不刪除；結束相容期須先完成跨裝置、舊版 PWA 與復原驗收，再另訂清理流程。
+
+離線版僅保留頁面內的待同步操作與 Firebase 記憶體快取，不啟用跨重新啟動的持久化佇列。畫面區分載入、快取、尚未同步、已同步與錯誤；失敗後可手動重試，恢復連線時也會重試。離開有待同步操作的頁面會要求確認；關閉／重新整理後未提交操作可能遺失。登出／切換帳號會解除訂閱並取消舊佇列；已送出的交易可能仍完成於原帳號文件，不會改寫新帳號。
+
+`spellbookSyncEnabled` 預設為 `false`，會員畫面會明確顯示同步停用且不展示訪客備份為雲端資料。上線順序為先部署新增的 Rules，再部署前端，完成測試帳號與跨裝置驗收後啟用旗標。`dataWritesEnabled: false` 會暫停所有法術書寫入並保留當頁待同步操作；重新啟用後可按重試。停用同步時保留雲端與本機來源；回退應保留此停用提示，不應直接回退到僅使用舊 key 的前端。PWA cache 版本已升級，但既有開啟頁籤仍需重新整理；已完成本機 Chromium／手機模擬與 worker 驗收；正式網域快取更新、部署與觀察尚待執行。
+
+尚未部署本次 Rules／前端或開放同步。完整進度與驗收紀錄見本機 `spellbook-migration-plan.md`；正式操作順序、白名單小範圍啟用與復原程序見 [法術書上線與回退](docs/spellbook-release.md)。
 
 ## Firebase 管理工具
 
@@ -440,3 +467,5 @@ python3 shared/scripts/normalize_site_html.py
 - SEO / share metadata
 
 只改頁面而不補資料檔，通常就是最常見的錯誤來源。
+
+法術書本次開發與測試結果見 [2026-10-18 驗收紀錄](docs/spellbook-acceptance-2026-10-18.md)。

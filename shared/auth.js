@@ -380,10 +380,12 @@ const setupAuth = async () => {
   };
 
   const ensureMemberRecord = async (user, resolvedId) => {
-    if (!user || !db || !resolvedId) return;
+    if (!user || !db || !resolvedId || auth.currentUser?.uid !== user.uid
+      || firebase.database.areDataWritesEnabled?.() === false) return;
     try {
       await firebase.database.ensureMemberDocument(db, user);
     } catch (error) {
+      if (auth.currentUser?.uid !== user.uid || firebase.database.areDataWritesEnabled?.() === false) return;
       console.warn("Failed to ensure Firestore member record", error);
       showAuthError(error);
     }
@@ -668,6 +670,7 @@ const setupAuth = async () => {
       setSignedIn(user);
       setupPageBookmark({ memberId: user.uid, db, database: firebase.database });
       resolveMemberId(user).then((resolved) => {
+        if (auth.currentUser?.uid !== user.uid) return;
         memberId = resolved;
         ensureMemberRecord(user, resolved);
         if (resolved !== user.uid) {

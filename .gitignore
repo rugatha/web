@@ -16,3 +16,6 @@ rtdb-export*.json
 *rtdb-export*.json
 campaigns/pages/rugatha-plus/plus-c08/
 spellbook-migration-plan.md
+# Browser acceptance artifacts
+playwright-report/
+test-results/
