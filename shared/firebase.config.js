@@ -2,8 +2,8 @@ window.RUGATHA_FEATURE_FLAGS = Object.assign({}, window.RUGATHA_FEATURE_FLAGS, {
   firebaseEnabled: true,
   qaFateEnabled: true,
   dataBackend: "firestore",
-  spellbookSyncMemberUids: ["LTCR4SQOQOQEI1c1rQa35cjAZUG2", "SAkRUHuuXJdjlHGzCt2bykbSbht1"], // Nonempty list limits rollout to these Authentication UIDs.
-  spellbookSyncEnabled: false, // Production rollback drill; preserve cloud and local sources.
+  spellbookSyncMemberUids: [], // Nonempty list limits rollout to these Authentication UIDs.
+  spellbookSyncEnabled: true, // Rules, production acceptance and rollback drill verified.
   dataWritesEnabled: true
 });
 

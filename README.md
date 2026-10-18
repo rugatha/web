@@ -277,7 +277,7 @@ Rules 測試會啟動本機 Firebase emulators，需要 Java 21 以上。
 firebaseEnabled: true
 qaFateEnabled: true
 dataBackend: firestore
-spellbookSyncEnabled: false
+spellbookSyncEnabled: true
 spellbookSyncMemberUids: []
 dataWritesEnabled: true
 ```
@@ -298,9 +298,9 @@ Service account、RTDB export、migration report 與 rollback 檔案屬於私密
 
 離線版僅保留頁面內的待同步操作與 Firebase 記憶體快取，不啟用跨重新啟動的持久化佇列。畫面區分載入、快取、尚未同步、已同步與錯誤；失敗後可手動重試，恢復連線時也會重試。離開有待同步操作的頁面會要求確認；關閉／重新整理後未提交操作可能遺失。登出／切換帳號會解除訂閱並取消舊佇列；已送出的交易可能仍完成於原帳號文件，不會改寫新帳號。
 
-`spellbookSyncEnabled` 預設為 `false`，會員畫面會明確顯示同步停用且不展示訪客備份為雲端資料。上線順序為先部署新增的 Rules，再部署前端，完成測試帳號與跨裝置驗收後啟用旗標。`dataWritesEnabled: false` 會暫停所有法術書寫入並保留當頁待同步操作；重新啟用後可按重試。停用同步時保留雲端與本機來源；回退應保留此停用提示，不應直接回退到僅使用舊 key 的前端。PWA cache 版本已升級，但既有開啟頁籤仍需重新整理；已完成本機 Chromium／手機模擬與 worker 驗收；正式網域快取更新、部署與觀察尚待執行。
+`spellbookSyncEnabled` 已在正式環境開啟，白名單為空代表所有會員可用；若改為 `false`，會員畫面會明確顯示同步停用且不展示訪客備份為雲端資料。已依序部署 Rules／前端，完成專用帳號跨瀏覽器驗收及正式停用演練。`dataWritesEnabled: false` 會暫停所有法術書寫入並保留當頁待同步操作；重新啟用後可按重試。停用同步時保留雲端與本機來源；回退應保留此停用提示，不應直接回退到僅使用舊 key 的前端。PWA cache 版本已升級，但既有開啟頁籤仍需重新整理；已完成本機 Chromium／手機模擬與 worker 驗收；正式網域已驗證 PWA v22 與版本化設定載入。Cloudflare 對 JavaScript 的快取可達 4 小時，因此每次變更開關都必須同步更新法術頁 `firebase.config.js?v=…` 的版本參數。
 
-尚未部署本次 Rules／前端或開放同步。完整進度與驗收紀錄見本機 `spellbook-migration-plan.md`；正式操作順序、白名單小範圍啟用與復原程序見 [法術書上線與回退](docs/spellbook-release.md)。
+玩家匯入方式：請使用原本儲存法術的瀏覽器與網站登入，按「確認合併匯入」，看到「已同步」後再離開。本機原始來源持續保留，相容期沒有截止日期。完整進度見本機 `spellbook-migration-plan.md`；正式版本、驗收、觀察及復原程序見 [法術書上線與回退](docs/spellbook-release.md)。
 
 ## Firebase 管理工具
 
