@@ -1,6 +1,6 @@
 # 個人法術書驗收紀錄 — 2026-10-18
 
-程式開發與本機驗收完成；正式同步仍停用，未部署 Rules／Pages，未操作正式玩家資料。
+程式開發與本機驗收完成；2026-10-18 已完成正式 Rules／Pages 分階段上線、回退演練與全面開放，僅使用專用測試帳號，未操作玩家資料。正式結果見 [上線紀錄](spellbook-release.md)。
 
 ## 最終結果
 
@@ -55,12 +55,12 @@
 - 新增白名單上線開關、中英玩家說明、手機標籤對比與停用樣式。
 - 預快取新模組，設定檔使用 network-first；沒有快取的離線 JavaScript 不回傳首頁 HTML。
 
-## 限制與待正式操作
+## 驗收限制與正式結果
 
-獨立 context／頁籤模擬裝置隔離；手機為 Chromium 模擬，未宣稱實體 iOS／Android 已測。PWA 瀏覽器案例驗證 localhost 分支的實際安裝／啟用／清除舊 cache；正式 hostname 的 fetch 策略由 worker 測試另外驗證，正式網域部署後仍需冒煙測試。
+獨立 context／頁籤模擬裝置隔離；手機為 Chromium 模擬，未宣稱實體 iOS／Android 已測。PWA 瀏覽器案例驗證 localhost 分支的實際安裝／啟用／清除舊 cache；正式 hostname 的 fetch 策略由 worker 測試另外驗證，正式網域已用專用測試帳號完成冒煙測試，實際 worker 為 v22；部署開關仍需搭配版本參數避開 CDN 舊設定。
 
 第一版保留頁面內離線佇列，沒有持久化未提交操作。關頁會警告，未提交修改可能遺失；本機匯入來源與 receipt 可安全重新確認／重試。未新增後台監控或蒐集玩家的原始本機資料。
 
-尚待正式 Rules／前端依序部署、白名單小範圍正式驗收、正式開放、讀寫與錯誤觀察，及相容期／正式復原確認。這些項目保留未完成，操作程序見 [spellbook-release.md](spellbook-release.md)。
+正式 Rules／前端已依序部署，白名單驗收通過，包含兩個獨立 context 同步、匯入與稍後、未知來源保留、帳號切換、越權拒絕、離線重試、旗標及 PWA v22。驗收發現並修正 Cloudflare 4 小時 JavaScript 快取：法術頁以發布版本參數載入設定，且已擴充 worker 測試。修正後重跑 24 項狀態／PWA 與 25 項瀏覽器測試皆通過。正式停用／恢復、全面開放、訪客與手機冒煙測試均通過；兩個測試帳號與資料已清理，臨時 IAM 綁定已還原。初期觀察後決定保留相容期，沒有清理玩家來源。完整結果見 [spellbook-release.md](spellbook-release.md)。
 
 重跑方法見 [瀏覽器測試說明](../tests/browser/README.md)。Playwright HTML report 與截圖／trace 由測試產生且不提交 Git；手機截圖位於 `test-results/spellbook-mobile.png`。
