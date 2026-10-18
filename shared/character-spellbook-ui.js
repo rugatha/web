@@ -137,6 +137,9 @@ export function createCharacterSpellbookUI({ app, auth, language, catalog, refre
       }
     },
     backup() {
+      const legacyPending = !record ? Object.entries(legacyDraft).some(([key, value]) => /^spellName\d+$/.test(key) && value !== '')
+        : state?.loaded && !state.exists && (preview?.ids.length || preview?.unknown.length);
+      if (legacyPending) throw new Error(text('舊法術尚未確認轉移，請先處理轉移或明確清空角色書，再輸出備份。原始資料仍保留。', 'Legacy spells need review. Migrate them or explicitly clear the character spellbook before exporting. Original data is preserved.'));
       if (!record) return draftBook;
       if (draftBook || !enabled() || !state?.loaded || !state.confirmed || state.pending || state.error) throw new Error(text('角色法術書尚未確認同步，無法匯出。請先重試。', 'Character spellbook is not confirmed synced. Retry before exporting.'));
       return { schemaVersion: 1, spellIds: [...state.ids] };

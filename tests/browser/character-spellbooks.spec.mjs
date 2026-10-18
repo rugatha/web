@@ -111,6 +111,7 @@ test('legacy index migration previews exact pinned source; clear never resurrect
   });
   await page.goto(`${base}/toolbox/character_sheet/?character=${encodeURIComponent(key)}`);
   await expect(cardPanel(page)).toContainText('Legacy migration preview: Fireball');
+  expect(await page.evaluate(() => { try { window.characterSpellbookUI.backup(); return 'unexpected'; } catch (error) { return error.message; } })).toContain('Legacy spells need review');
   await page.locator('.creation-progress a[href="#workflowAdventure"]').click();
   await cardPanel(page).getByRole('button', { name: 'Confirm legacy migration' }).click();
   await expect(cardPanel(page).locator('li')).toContainText('Fireball');
@@ -162,6 +163,7 @@ test('new unsaved draft has no book; backup import creates an independent charac
   await page.goto(`${base}/toolbox/character_sheet/?new=1`);
   await expect(cardPanel(page)).toContainText('Save this character to enable its spellbook');
   await expect(cardPanel(page).getByRole('combobox')).toHaveCount(0);
+  expect(await page.evaluate(() => { window.characterSpellbookUI.importBackup(undefined, { spellName1: '', spellLevel1: '', spellRowCount: 1 }); return window.characterSpellbookUI.backup(); })).toBeNull();
   await page.evaluate(async () => {
     const data = { format: 'rugatha-character-sheet', version: 2, data: { characterName: 'Imported', characterSpellbook: { schemaVersion: 1, spellIds: ['Fireball'] } } };
     await importConfig(new File([JSON.stringify(data)], 'backup.json', { type: 'application/json' }));
