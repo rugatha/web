@@ -3,8 +3,8 @@ window.RUGATHA_FEATURE_FLAGS = Object.assign({}, window.RUGATHA_FEATURE_FLAGS, {
   qaFateEnabled: true,
   dataBackend: "firestore",
   spellbookSyncMemberUids: [], // Nonempty list limits rollout to these Authentication UIDs.
-  characterSpellbookMemberUids: [], // Nonempty list limits character-book acceptance to test UIDs.
-  characterSpellbooksEnabled: false, // Enable only after schema/rules rollout and production acceptance.
+  characterSpellbookMemberUids: ["U7mw2fMY4oh6zqkhDQOcWXEdRyI2", "sS1pP9cfBCOm3eG8tqksA2E4oWr2"], // Nonempty list limits character-book acceptance to test UIDs.
+  characterSpellbooksEnabled: true, // Restricted to acceptance UIDs until public rollout.
   spellbookSyncEnabled: true, // Rules, production acceptance and rollback drill verified.
   dataWritesEnabled: true
 });
