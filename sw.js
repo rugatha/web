@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v23";
+const CACHE_VERSION = "rugatha-pwa-v24";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
@@ -14,12 +14,16 @@ const PRECACHE_URLS = [
   "/assets/logo/rugatha-icon-512.png",
   "/assets/logo/rugatha-icon-maskable-512.png",
   "/shared/pwa.js",
+  "/shared/auth-session.js?v=20261019-character-books-1",
   "/shared/firebase.config.js",
   "/shared/spell-catalog.js?v=20261018-storage-1",
-  "/shared/spellbook-page.js",
-  "/shared/spellbook-state.js",
-  "/shared/spellbook-transport.js",
-  "/shared/spellbooks.js",
+  "/shared/spellbook-page.js?v=20261019-character-books-1",
+  "/shared/spellbook-state.js?v=20261019-character-books-1",
+  "/shared/spellbook-transport.js?v=20261019-character-books-1",
+  "/shared/spellbooks.js?v=20261019-character-books-1",
+  "/shared/character-spellbook.js?v=20261019-character-books-1",
+  "/shared/character-spellbook-ui.js?v=20261019-character-books-1",
+  "/shared/character-sheets.js?v=20261019-character-books-1",
   "/shared/member-path.js",
   "/shared/firebase-data.js",
   "/shared/language-toggle.js",

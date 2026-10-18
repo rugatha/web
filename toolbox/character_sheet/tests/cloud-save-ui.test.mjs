@@ -25,7 +25,7 @@ const context = vm.createContext({
   portraitDirty: false, portraitSrc: '', portraitSource: null,
   document: { getElementById: () => nameInput }, collectSheetData: () => ({}),
   setCharacterManagerStatus() {}, updateCharacterUrl() {}, refreshCharacterList: async () => {},
-  t: () => ({}), console,
+  t: () => ({}), console, window: {},
 });
 vm.runInContext(sheetHtml.slice(sheetHtml.indexOf('const saveToCloud ='), sheetHtml.indexOf('const queueCloudSave =')), context);
 const save = options => vm.runInContext(`saveToCloud(${JSON.stringify(options)})`, context);
@@ -59,3 +59,13 @@ assert.match(memberHtml, /window\.confirm\([\s\S]+deleteCharacterSheet\(\{/);
 assert.match(memberHtml, /targetMemberId === authState\.user\.uid/);
 
 console.log('Passed cloud-save consolidation and member character deletion UI assertions.');
+
+// A save started on an old role/account must not overwrite the current UI.
+const previousKey = vm.runInContext('currentCharacterKey', context);
+let finishOldSave;
+context.characterStore.save = () => new Promise(resolve => { finishOldSave = resolve; });
+const oldSave = save({ assignDefaultName: true });
+context.window.characterContextGeneration = 1;
+finishOldSave({ key: 'late-old-role', portrait: null });
+assert.equal(await oldSave, false);
+assert.equal(vm.runInContext('currentCharacterKey', context), previousKey);

@@ -1303,11 +1303,11 @@
   </div>
 
   <script defer src="../../shared/pwa.js?v=20261018-spell-catalog"></script>
-  <script src="../../shared/firebase.config.js?v=spellbook-20261018-public"></script>
+  <script src="../../shared/firebase.config.js?v=character-books-20261019-staged"></script>
   <script src="../../shared/spell-catalog.js?v=20261018-storage-1"></script>
   <script type="module">
-    import { spellSearchRank } from "../../shared/spellbook-state.js";
-    import { mountSpellbook } from "../../shared/spellbook-page.js";
+    import { spellSearchRank } from "../../shared/spellbook-state.js?v=20261019-character-books-1";
+    import { mountSpellbook } from "../../shared/spellbook-page.js?v=20261019-character-books-1";
     let bookController = null;
     let bookWritable = false;
     const state = {
@@ -2272,6 +2272,6 @@
     }
   </script>
 
-  <script type="module" src="../../shared/auth.js"></script>
+  <script type="module" src="../../shared/auth.js?v=20261019-character-books-1"></script>
 </body>
 </html>

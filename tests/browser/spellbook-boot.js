@@ -1,3 +1,5 @@
+import { getSiteAuth } from '/shared/auth-session.js?v=20261019-character-books-1';
+import * as authSdk from '/__firebase__/firebase-auth.js';
 // Injected only by scripts/spellbook-browser-server.py; not imported by production HTML.
 import { getApps, initializeApp } from '/__firebase__/firebase-app.js';
 import { getAuth, connectAuthEmulator, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from '/__firebase__/firebase-auth.js';
@@ -7,7 +9,7 @@ if (!['127.0.0.1', 'localhost'].includes(location.hostname) || window.RUGATHA_FI
   throw new Error('Browser tests require the loopback demo Emulator.');
 }
 const app = getApps()[0] || initializeApp(window.RUGATHA_FIREBASE_CONFIG);
-const auth = getAuth(app), db = getFirestore(app);
+const auth = getSiteAuth(app, authSdk), db = getFirestore(app);
 connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
 connectFirestoreEmulator(db, '127.0.0.1', 8080);
 const tools = document.createElement('section');

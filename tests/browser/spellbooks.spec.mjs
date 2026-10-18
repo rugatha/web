@@ -182,7 +182,11 @@ test('account changes never display or submit the previous account queue', async
   await expect(panel(page)).not.toContainText('Synced');
   await context.setOffline(false);
   // Switch while the previous write may still be retrying; its path must remain A's.
-  await login(page, 'B'); await expect(cards(page)).toHaveCount(0);
+  await page.getByRole('button', { name: '登入測試 B', exact: true }).click();
+  await expect(panel(page)).toContainText(/Pending changes are retained|Synced.*spellbook-b/);
+  const discard = panel(page).getByRole('button', { name: 'Discard pending changes and switch account', exact: true });
+  if (await discard.isVisible()) await discard.click();
+  await synced(page); await expect(cards(page)).toHaveCount(0);
   await add(page, 'Aid'); await synced(page);
   await login(page, 'A'); await expect(book(page)).toContainText('Fireball');
   await expect(book(page)).not.toContainText('援助術');
@@ -391,6 +395,8 @@ test('offline import account change cancels A receipt and never imports into B',
     const { updateCurrentUser } = await import('/__firebase__/firebase-auth.js');
     await updateCurrentUser(window.spellbookTest.auth, window.spellbookTest.savedB);
   });
+  await expect(panel(page)).toContainText('Pending changes are retained');
+  await panel(page).getByRole('button', { name: 'Discard pending changes and switch account', exact: true }).click();
   await expect(panel(page)).toContainText('spellbook-b@example.test'); await expect(cards(page)).toHaveCount(0);
   await context.setOffline(false); await page.evaluate(() => window.dispatchEvent(new Event('online'))); await synced(page);
   expect(await receipt(page)).toBeNull();

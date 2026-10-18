@@ -18,6 +18,12 @@ CATALOG_VERSION = re.search(r"const version = '([^']+)'", CATALOG_SOURCE).group(
 CATALOG = Path(os.environ.get('RUGATHA_SPELL_CATALOG_TEST_DIR', str(Path(tempfile.gettempdir()) / 'rugatha-spell-catalog' / CATALOG_VERSION)))
 CATALOG_FILES = dict(re.findall(r"name: '([^']+)', sha256: '([^']+)'", CATALOG_SOURCE))
 
+class LocalTestServer(ThreadingHTTPServer):
+    # Character sheets request many reference assets and modules concurrently.
+    # The default backlog of 5 resets legitimate loopback requests on macOS.
+    request_queue_size = 128
+    daemon_threads = True
+
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT), **kwargs)
@@ -43,7 +49,7 @@ class Handler(SimpleHTTPRequestHandler):
                 return self.send_error(404)
             return self.send_text((VENDOR / name).read_text().replace(PREFIX, '/__firebase__/'))
         if path == '/shared/firebase.config.js':
-            return self.send_text('''window.RUGATHA_FEATURE_FLAGS = {firebaseEnabled:true, dataBackend:'firestore', dataWritesEnabled:true, spellbookSyncEnabled:true};
+            return self.send_text('''window.RUGATHA_FEATURE_FLAGS = {firebaseEnabled:true, dataBackend:'firestore', dataWritesEnabled:true, spellbookSyncEnabled:true, characterSpellbooksEnabled:true};
 window.RUGATHA_FIREBASE_CONFIG = {apiKey:'demo-key',authDomain:'demo-rugatha.firebaseapp.com',projectId:'demo-rugatha',appId:'demo-app',storageBucket:'demo-rugatha.appspot.com'};''')
         target = (ROOT / path.lstrip('/')).resolve()
         if target.is_dir():
@@ -62,6 +68,8 @@ window.RUGATHA_FIREBASE_CONFIG = {apiKey:'demo-key',authDomain:'demo-rugatha.fir
                 source = re.sub(r'file.url = `[^`]+`;', 'file.url = `/__catalog__/${file.name}`;', source)
             if path == '/shared/auth.js':
                 source = "import '/tests/browser/spellbook-boot.js';\n" + source
+            if path.rstrip('/') in ['/toolbox/character_sheet', '/toolbox/character_sheet/index.html']:
+                source = source.replace('import { createCharacterSpellbookUI }', "import '/tests/browser/spellbook-boot.js';\n    import { createCharacterSpellbookUI }")
             if path.rstrip('/') in ['/toolbox/spells', '/toolbox/spells/index.html']:
                 source = re.sub(r'<script async src="https://www.googletagmanager.com/[^>]+></script>', '', source)
                 source = source.replace('import { mountSpellbook }', "import '/tests/browser/spellbook-boot.js';\n    import { mountSpellbook }")
@@ -112,4 +120,4 @@ if __name__ == '__main__':
         body = json.dumps({'fields': {'lastAllocated': {'integerValue': '0'}, 'updatedAt': {'timestampValue': '2026-10-18T00:00:00Z'}}}).encode()
         urllib.request.urlopen(urllib.request.Request(counter_url, data=body, method='PATCH', headers={'Authorization': 'Bearer owner', 'Content-Type': 'application/json'}), timeout=10).close()
     print(f'Browser acceptance: http://127.0.0.1:{args.port}/toolbox/spells/', flush=True)
-    ThreadingHTTPServer(('127.0.0.1', args.port), Handler).serve_forever()
+    LocalTestServer(('127.0.0.1', args.port), Handler).serve_forever()

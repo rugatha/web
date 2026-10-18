@@ -22,7 +22,8 @@ import {
   runTransaction,
   serverTimestamp,
   setDoc,
-  updateDoc
+  updateDoc,
+  writeBatch
 } from "firebase/firestore";
 import {
   deleteObject,
@@ -245,7 +246,7 @@ test("character sheets are private, owner-writable records", async () => {
   }).firestore();
   const characterPath = "members/0000-0001/characters/Ada%20Stone";
   const character = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     memberId: "owner",
     characterName: "Ada Stone",
     className: "wizard",
@@ -617,4 +618,89 @@ test('spellbooks: denied reads and cancelled sessions cannot initialize document
   let checks = 0;
   await assert.rejects(mutateBook(db, { type: 'add', ids: ['Aid'] }, () => ++checks === 1));
   assert.equal((await getDoc(doc(db, spellbookPath))).exists(), false);
+});
+
+const characterRecord = (schemaVersion = 2) => ({ schemaVersion, memberId: 'owner',
+  characterName: 'Ada', className: 'wizard', race: 'human', data: {}, portrait: null,
+  createdAt: serverTimestamp(), updatedAt: serverTimestamp() });
+
+test('legacy characters upgrade in place; stale clients cannot create v1 or downgrade v2', async () => {
+  const db = environment.authenticatedContext('owner').firestore();
+  const path = 'members/0000-0001/characters/legacy%20id';
+  await environment.withSecurityRulesDisabled(async context => {
+    await setDoc(doc(context.firestore(), path), { ...characterRecord(1), createdAt: new Date(), updatedAt: new Date() });
+  });
+  await assertSucceeds(updateDoc(doc(db, path), { characterName: 'Legacy rename', updatedAt: serverTimestamp() }));
+  await assertFails(setDoc(doc(db, 'members/0000-0001/characters/renamed'), characterRecord(1)));
+  await assertSucceeds(updateDoc(doc(db, path), { schemaVersion: 2, updatedAt: serverTimestamp() }));
+  await assertFails(updateDoc(doc(db, path), { schemaVersion: 1, updatedAt: serverTimestamp() }));
+});
+
+test('character spellbooks enforce owner writes, admin read, parent existence, exact ID and atomic deletion', async () => {
+  const db = environment.authenticatedContext('owner').firestore();
+  const admin = environment.authenticatedContext('admin', { admin: true }).firestore();
+  const other = environment.authenticatedContext('other').firestore();
+  const path = 'members/0000-0001/characters/fixed';
+  const book = `${path}/spellbooks/default`;
+  await assertFails(setDoc(doc(db, book), spellbook()));
+  await assertSucceeds(setDoc(doc(db, path), characterRecord()));
+  await assertSucceeds(setDoc(doc(db, book), spellbook()));
+  await assertSucceeds(getDoc(doc(admin, book)));
+  await assertFails(setDoc(doc(admin, book), spellbook()));
+  await assertFails(getDoc(doc(other, book)));
+  await assertFails(setDoc(doc(other, book), spellbook()));
+  await assertFails(getDocs(collection(db, `${path}/spellbooks`)));
+  await assertFails(setDoc(doc(db, `${path}/spellbooks/other`), spellbook()));
+  await assertFails(setDoc(doc(db, book), { ...spellbook(), extra: true }));
+  await assertFails(updateDoc(doc(db, book), { spellIds: ['Not a PHB spell'], updatedAt: serverTimestamp() }));
+  await assertFails(deleteDoc(doc(db, path)));
+  await assertFails(deleteDoc(doc(db, book)));
+  await assertSucceeds(updateDoc(doc(db, book), { spellIds: [], updatedAt: serverTimestamp() }));
+  const batch = writeBatch(db); batch.delete(doc(db, book)); batch.delete(doc(db, path));
+  await assertSucceeds(batch.commit());
+  await assertFails(setDoc(doc(db, book), spellbook()));
+  await assertFails(getDoc(doc(admin, book)));
+});
+
+test('character deletion racing a scoped spellbook transaction leaves no orphan book', async () => {
+  const db = environment.authenticatedContext('owner').firestore();
+  for (let index = 0; index < 3; index++) {
+    const parentReference = doc(db, 'members/0000-0001/characters/race-' + index);
+    const reference = doc(parentReference, 'spellbooks', 'default');
+    await setDoc(parentReference, characterRecord()); await setDoc(reference, spellbook());
+    const batch = writeBatch(db); batch.delete(reference); batch.delete(parentReference);
+    const results = await Promise.allSettled([
+      writeSpellbookOperation({ db, reference, parentReference, operation: { type: 'add', ids: ['Fireball'] }, isActive: () => true },
+        { runTransaction, serverTimestamp, arrayUnion, arrayRemove }), batch.commit()
+    ]);
+    assert.equal(results[1].status, 'fulfilled');
+    await environment.withSecurityRulesDisabled(async context => {
+      const admin = context.firestore();
+      assert.equal((await getDoc(doc(admin, parentReference.path))).exists(), false);
+      assert.equal((await getDoc(doc(admin, reference.path))).exists(), false);
+    });
+  }
+});
+
+test('compatibility rollout accepts v1/v2 creates before the final gate while preserving book constraints', async () => {
+  const finalRules = readFileSync('config/firebase/firestore.rules', 'utf8');
+  const needle = '&& request.resource.data.schemaVersion == 2\n          && request.resource.data.createdAt == request.time;';
+  assert.equal(finalRules.split(needle).length, 2);
+  const compatible = finalRules.replace(needle, '&& request.resource.data.schemaVersion in [1, 2]\n          && request.resource.data.createdAt == request.time;');
+  const installRules = async rules => {
+    const response = await fetch('http://127.0.0.1:8080/emulator/v1/projects/demo-rugatha:securityRules', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ rules: { files: [{ name: 'firestore.rules', content: rules }] } }) });
+    assert.equal(response.ok, true);
+  };
+  await installRules(compatible);
+  try {
+    const db = environment.authenticatedContext('owner').firestore();
+    const legacy = doc(db, 'members/0000-0001/characters/compat-v1');
+    const modern = doc(db, 'members/0000-0001/characters/compat-v2');
+    await assertSucceeds(setDoc(legacy, characterRecord(1)));
+    await assertSucceeds(setDoc(modern, characterRecord(2)));
+    await assertFails(setDoc(doc(legacy, 'spellbooks', 'default'), spellbook()));
+    await assertSucceeds(setDoc(doc(modern, 'spellbooks', 'default'), spellbook()));
+    await assertFails(deleteDoc(modern));
+    await assertFails(updateDoc(modern, { schemaVersion: 1, updatedAt: serverTimestamp() }));
+  } finally { await installRules(finalRules); }
 });

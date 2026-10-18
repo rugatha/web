@@ -8,7 +8,7 @@ const readonlySection = source => {
   if (source.id === 'spellSection') {
     const hasSpell = [...source.querySelectorAll('.spell-name-select')].some(select => Boolean(select.value));
     const hasRacialSpell = Boolean(source.querySelector('#racialSpells')?.textContent.trim());
-    if (!hasSpell && !hasRacialSpell) return null;
+    if (!hasSpell && !hasRacialSpell && !source.querySelector('#characterSpellbook')?.textContent.trim()) return null;
   }
   const copy = source.cloneNode(true);
   const preserveControls = new Set(['skillsSection', 'abilityScoreSection', 'adventureSection', 'equipmentSection', 'attackSection']).has(source.id);

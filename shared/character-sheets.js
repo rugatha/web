@@ -1,12 +1,12 @@
 import {
   collection,
-  deleteDoc,
   doc,
   getDoc,
   getDocs,
   getFirestore,
   serverTimestamp,
-  setDoc
+  runTransaction,
+  writeBatch
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
 import {
   deleteObject,
@@ -156,7 +156,10 @@ export const deleteCharacterSheet = async ({ app, user, characterKey }) => {
   if (!snapshot.exists()) return false;
 
   const portraitPath = String(snapshot.data()?.portrait?.path || "");
-  await deleteDoc(destination);
+  const batch = writeBatch(db);
+  batch.delete(doc(destination, "spellbooks", "default"));
+  batch.delete(destination);
+  await batch.commit();
   if (portraitPath) {
     try {
       await deleteObject(storageRef(storage, portraitPath));
@@ -200,11 +203,13 @@ export const saveCharacterSheet = async ({
   const uid = user.uid;
   const name = normalizeCharacterName(characterName);
   if (!name) throw new Error("Character name is required");
-  const characterKey = characterKeyForName(name);
   const db = getFirestore(app);
   const storage = getStorage(app);
-  const destination = await characterDocRef(db, uid, characterKey);
-  const destinationSnapshot = await getDoc(destination);
+  const memberKey = await resolveMemberKey(db, uid);
+  const destination = currentKey
+    ? doc(db, "members", memberKey, "characters", currentKey)
+    : doc(collection(db, "members", memberKey, "characters"));
+  const characterKey = destination.id;
   let portrait = existingPortrait || null;
   let uploadedPath = "";
   let uploadedPortraitUrl = "";
@@ -237,8 +242,22 @@ export const saveCharacterSheet = async ({
   delete cleanData.portraitUrl;
 
   try {
-    await setDoc(destination, {
-      schemaVersion: 1,
+    await runTransaction(db, async (transaction) => {
+      const destinationSnapshot = await transaction.get(destination);
+      if (currentKey && !destinationSnapshot.exists()) {
+        throw new Error("角色已不存在，請重新載入。 / Character no longer exists. Reload the page.");
+      }
+      // Spell rows are legacy backup only. Preserve the stored source verbatim;
+      // live spell selection is persisted by the scoped spellbook session.
+      Object.keys(cleanData).filter(key => /^(spellName\d+|spellLevel\d+|spellRowCount|characterSpellbook)$/.test(key)).forEach(key => delete cleanData[key]);
+      if (destinationSnapshot.exists()) {
+        Object.entries(destinationSnapshot.data().data || {}).filter(([key]) => /^(spellName\d+|spellLevel\d+|spellRowCount)$/.test(key)).forEach(([key, value]) => { cleanData[key] = value; });
+      } else {
+        // Imported old backups remain available for explicit migration.
+        Object.entries(sheetData || {}).filter(([key]) => /^(spellName\d+|spellLevel\d+|spellRowCount)$/.test(key)).forEach(([key, value]) => { cleanData[key] = value; });
+      }
+      transaction.set(destination, {
+      schemaVersion: 2,
       memberId: uid,
       characterName: name,
       className: String(cleanData.class1Other || cleanData.class1 || "").slice(0, 120),
@@ -249,16 +268,13 @@ export const saveCharacterSheet = async ({
         ? destinationSnapshot.data().createdAt
         : serverTimestamp(),
       updatedAt: serverTimestamp()
+      });
     });
   } catch (error) {
     if (uploadedPath && uploadedPath !== existingPortrait?.path) {
       deleteObject(storageRef(storage, uploadedPath)).catch(() => {});
     }
     throw error;
-  }
-
-  if (currentKey && currentKey !== characterKey) {
-    await deleteDoc(await characterDocRef(db, uid, currentKey));
   }
 
   if (
@@ -275,6 +291,7 @@ export const saveCharacterSheet = async ({
 
   return {
     key: characterKey,
+    data: cleanData,
     characterName: name,
     portrait: portrait ? { ...portrait, updatedAt: new Date() } : null,
     portraitUrl: uploadedPortraitUrl

@@ -568,7 +568,7 @@ service cloud.firestore {
           'schemaVersion', 'memberId', 'characterName', 'className', 'race',
           'data', 'portrait', 'createdAt', 'updatedAt'
         ])
-        && request.resource.data.schemaVersion == 1
+        && request.resource.data.schemaVersion in [1, 2]
         && request.resource.data.memberId == uid
         && request.resource.data.characterName is string
         && request.resource.data.characterName.size() > 0
@@ -672,14 +672,36 @@ service cloud.firestore {
       }
 
       match /characters/{characterKey} {
+        function parentPath() {
+          return /databases/$(database)/documents/members/$(key)/characters/$(characterKey);
+        }
+        function bookPath() {
+          return /databases/$(database)/documents/members/$(key)/characters/$(characterKey)/spellbooks/default;
+        }
         allow read: if ownsMember() || isAdmin();
         allow create: if ownsMember()
           && validCharacterSheet(request.auth.uid)
+          && request.resource.data.schemaVersion == 2
           && request.resource.data.createdAt == request.time;
         allow update: if ownsMember()
           && validCharacterSheet(request.auth.uid)
+          && request.resource.data.schemaVersion >= resource.data.schemaVersion
           && request.resource.data.createdAt == resource.data.createdAt;
-        allow delete: if ownsMember();
+        allow delete: if ownsMember() && !existsAfter(bookPath());
+
+        match /spellbooks/{bookId} {
+          function upgradedParent() {
+            return exists(parentPath()) && existsAfter(parentPath())
+              && getAfter(parentPath()).data.schemaVersion == 2;
+          }
+          allow get: if bookId == 'default' && (ownsMember() || isAdmin()) && exists(parentPath());
+          allow list: if false;
+          allow create: if ownsMember() && bookId == 'default' && upgradedParent()
+            && validSpellbook() && request.resource.data.createdAt == request.time;
+          allow update: if ownsMember() && bookId == 'default' && upgradedParent()
+            && validSpellbook() && request.resource.data.createdAt == resource.data.createdAt;
+          allow delete: if ownsMember() && bookId == 'default' && !existsAfter(parentPath());
+        }
       }
     }
 

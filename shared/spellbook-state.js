@@ -50,13 +50,13 @@ export function applyOperation(ids, operation) {
 
 // Each instance belongs to exactly one auth session. Never reuse it for another UID.
 export function createSpellbookSession({ connect, write, onChange, enabled = () => true }) {
-  let active = true, loaded = false, confirmed = false, base = [], queue = [];
+  let active = true, loaded = false, confirmed = false, exists = false, base = [], queue = [];
   let running = false, error = null, unsubscribe = () => {}, connection = 0, revision = 0;
   const emit = () => {
     if (!active) return;
     let ids = base;
     for (const item of queue) ids = applyOperation(ids, item.operation);
-    onChange({ ids, loaded, pending: queue.length, error,
+    onChange({ ids, loaded, exists, confirmed, pending: queue.length, error,
       status: !enabled() ? 'paused' : error ? 'error' : !loaded ? 'loading'
         : queue.length ? 'pending' : confirmed ? 'synced' : 'cached' });
   };
@@ -90,6 +90,7 @@ export function createSpellbookSession({ connect, write, onChange, enabled = () 
         if (!active || version !== connection) return;
         revision++;
         base = snapshot.ids;
+        exists = snapshot.exists ?? true;
         loaded = true;
         confirmed = snapshot.confirmed;
         error = null;

@@ -377,6 +377,9 @@
     #levelUpDialog li { margin-bottom: 10px; }
     .level-up-rules { white-space: pre-wrap; line-height: 1.7; margin: 16px 0; }
     #upgradeError { color: #ffb3a8; }
+    #characterSpellbook { overflow-wrap: anywhere; }
+    #characterSpellbook li { margin: 12px 0; }
+    #characterSpellbook select { max-width: 100%; }
     @media print { .level-up-bar, #levelUpDialog { display: none; } }
   </style>
   <style>@media (max-width: 760px) { .proficiency-groups { grid-template-columns: 1fr; } .mobile-table-add { display: flex; } .armor-loadout { grid-template-columns: 1fr; } .armor-loadout-row { grid-template-columns: 1fr; gap: 5px; } .loadout-controls > .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; } .creation-progress { top: 6px; margin: 8px 0 20px; padding: 7px; } .creation-progress a { padding: 9px 12px; font-size: .82rem; } .workflow-heading { justify-content: center; margin-top: 18px; font-size: 1.35rem; scroll-margin-top: 86px; } .workflow-heading::before { content: ""; height: 1px; flex: 1; background: var(--sheet-line-strong); } .background-grid, .ability-source-summary { grid-template-columns: 1fr; } .adventure-entry { grid-template-columns: 1fr 1fr; align-items: start; } .adventure-entry .adventure-entry-notes, .adventure-entry .adventure-entry-remove { grid-column: 1 / -1; } .adventure-entry .adventure-entry-remove { justify-self: end; } }</style>
@@ -485,6 +488,7 @@
           <div class="spell-heading"><h2 class="section-title" data-i18n="spellcasting">法術</h2><a class="spell-list-link" href="../spells/index.html" data-i18n="spellList">法術表</a></div>
           <p class="subtle" id="spellSummary" aria-live="polite"></p>
           <div id="racialSpells" class="racial-spells"></div>
+          <div id="characterSpellbook" aria-live="polite"></div>
           <div class="table-wrap"><table class="sheet-table spell-table"><thead><tr><th data-i18n="spellLevel">環數</th><th data-i18n="spell">法術</th><th class="attack-action-cell"><button id="addSpellButton" class="icon-button" type="button" aria-label="Add spell">＋</button></th></tr></thead><tbody id="spellRows"></tbody></table></div><div class="mobile-table-add"><button id="mobileAddSpellButton" class="icon-button" type="button" aria-label="Add spell">＋</button></div>
         </section>
 
@@ -543,7 +547,7 @@
     };
     const abilityData = [{ id: 'str', code: 'STR', zh: '力量', en: 'Strength' }, { id: 'dex', code: 'DEX', zh: '敏捷', en: 'Dexterity' }, { id: 'con', code: 'CON', zh: '體質', en: 'Constitution' }, { id: 'int', code: 'INT', zh: '智力', en: 'Intelligence' }, { id: 'wis', code: 'WIS', zh: '感知', en: 'Wisdom' }, { id: 'cha', code: 'CHA', zh: '魅力', en: 'Charisma' }];
     const skillData = [{ zh: '運動', en: 'Athletics', ability: 'str', storageIndex: 3 }, { zh: '扒手', en: 'Sleight of Hand', ability: 'dex', storageIndex: 15 }, { zh: '隱藏', en: 'Stealth', ability: 'dex', storageIndex: 16 }, { zh: '特技動作', en: 'Acrobatics', ability: 'dex', storageIndex: 0 }, { zh: '調查', en: 'Investigation', ability: 'int', storageIndex: 8 }, { zh: '歷史', en: 'History', ability: 'int', storageIndex: 5 }, { zh: '奧術', en: 'Arcana', ability: 'int', storageIndex: 2 }, { zh: '自然', en: 'Nature', ability: 'int', storageIndex: 10 }, { zh: '宗教', en: 'Religion', ability: 'int', storageIndex: 14 }, { zh: '馴服動物', en: 'Animal Handling', ability: 'wis', storageIndex: 1 }, { zh: '察言觀色', en: 'Insight', ability: 'wis', storageIndex: 6 }, { zh: '醫術', en: 'Medicine', ability: 'wis', storageIndex: 9 }, { zh: '觀察', en: 'Perception', ability: 'wis', storageIndex: 11 }, { zh: '求生', en: 'Survival', ability: 'wis', storageIndex: 17 }, { zh: '欺瞞', en: 'Deception', ability: 'cha', storageIndex: 4 }, { zh: '威嚇', en: 'Intimidation', ability: 'cha', storageIndex: 7 }, { zh: '表演', en: 'Performance', ability: 'cha', storageIndex: 12 }, { zh: '說服', en: 'Persuasion', ability: 'cha', storageIndex: 13 }];
-    let currentLanguage = 'zh'; const authenticated = true; let initialized = false; let multiclass = false; let portraitSrc = ''; let portraitPosition = { x: 50, y: 50 }; let portraitZoom = 1; let portraitFlip = false; let portraitDirty = false; let portraitSource = null; let existingPortrait = null; let attackRowCount = 1; let attackCustomRows = {}; let spellRowCount = 1; let customProficiencies = { skill: [], lan: [], tool: [] }; let removedProficiencies = { skill: [], lan: [], tool: [], save: [] }; let abilityProficiencies = { skill: [], lan: [], tool: [] }; let customAbilities = []; let removedAbilities = []; let abilityNotes = {}; let classGrantedSaves = []; let equipmentItems = []; let calculationOverrides = {}; let armorRows = [{ choice: '', worn: false, custom: '', customAC: '10' }]; let shieldRows = [{ choice: 'none', worn: false, custom: '', customAC: '0' }]; let optionsPromise = null; let spellOptionsPromise = null; let subclassOptionsPromise = null; let equipmentOptionsPromise = null; let saveTimer = null; let characterStore = null; let characterUser = null; let characterMemberId = ''; let characterReadOnly = false; let characterIsAdmin = false; let currentCharacterKey = ''; let characterItems = []; let isRestoringCharacter = false; let cloudSavePromise = Promise.resolve(); const configFormat = 'rugatha-character-sheet'; const configVersion = 1;
+    let currentLanguage = 'zh'; const authenticated = true; let initialized = false; let multiclass = false; let portraitSrc = ''; let portraitPosition = { x: 50, y: 50 }; let portraitZoom = 1; let portraitFlip = false; let portraitDirty = false; let portraitSource = null; let existingPortrait = null; let attackRowCount = 1; let attackCustomRows = {}; let spellRowCount = 1; let customProficiencies = { skill: [], lan: [], tool: [] }; let removedProficiencies = { skill: [], lan: [], tool: [], save: [] }; let abilityProficiencies = { skill: [], lan: [], tool: [] }; let customAbilities = []; let removedAbilities = []; let abilityNotes = {}; let classGrantedSaves = []; let equipmentItems = []; let calculationOverrides = {}; let armorRows = [{ choice: '', worn: false, custom: '', customAC: '10' }]; let shieldRows = [{ choice: 'none', worn: false, custom: '', customAC: '0' }]; let optionsPromise = null; let spellOptionsPromise = null; let subclassOptionsPromise = null; let equipmentOptionsPromise = null; let saveTimer = null; let characterStore = null; let characterUser = null; let characterMemberId = ''; let characterReadOnly = false; let characterIsAdmin = false; let currentCharacterKey = ''; let characterItems = []; let isRestoringCharacter = false; let cloudSavePromise = Promise.resolve(); const configFormat = 'rugatha-character-sheet'; const configVersion = 2;
     const t = () => translations[currentLanguage];
     let abilityCatalog = []; let abilityCatalogPromise = null; let selectedAbilityIndexes = []; let abilityGrantedSaves = []; let abilityGrantedSkills = []; const abilityFilters = { category: '', sub_category: '', level: '', title: '' };
     let adventureEntryCount = 1;
@@ -858,22 +862,23 @@
       if (!enteredName && !assignDefaultName) return false;
       const name = enteredName || characterStore.defaultName(new Date(), currentLanguage);
       nameInput.value = name;
-      const nextKey = characterStore.keyForName(name);
-      if (nextKey !== currentCharacterKey && characterItems.some((item) => item.memberId === characterUser.uid && item.key === nextKey)) {
+      if (characterItems.some((item) => item.memberId === characterUser.uid && item.key !== currentCharacterKey && characterStore.normalizeName(item.characterName) === name)) {
         setCharacterManagerStatus(t().duplicateCharacterName, true);
         return false;
       }
+      const saveGeneration = window.characterContextGeneration || 0;
       if (!silent) setCharacterManagerStatus(currentLanguage === 'zh' ? '正在儲存到雲端…' : 'Saving to the cloud…');
       try {
         const result = await characterStore.save({
           user: characterUser,
           currentKey: currentCharacterKey,
           characterName: name,
-          sheetData: collectSheetData(false),
+          sheetData: { ...collectSheetData(false), ...window.characterSpellbookUI?.legacyDraftSource() },
           existingPortrait,
           portraitAction: portraitDirty ? (portraitSrc ? 'upload' : 'remove') : 'keep',
           portraitSource: portraitSource || portraitSrc
         });
+        if (saveGeneration !== (window.characterContextGeneration || 0)) return false;
         currentCharacterKey = result.key;
         existingPortrait = result.portrait;
         portraitDirty = false;
@@ -882,16 +887,18 @@
         characterMemberId = characterUser.uid;
         updateCharacterUrl(currentCharacterKey, false, characterMemberId);
         await refreshCharacterList();
+        await window.characterSpellbookUI?.saved(result, characterUser);
         setCharacterManagerStatus(t().cloudSaved);
         return true;
       } catch (error) {
+        if (saveGeneration !== (window.characterContextGeneration || 0)) return false;
         console.error('Failed to save character sheet', error);
         const portraitError = /portrait|image|PNG|JPEG|WebP|5 MB/i.test(String(error?.message || ''));
         setCharacterManagerStatus(portraitError ? t().portraitUploadFailed : t().cloudSaveFailed, true);
         return false;
       }
     };
-    const queueCloudSave = (options) => { cloudSavePromise = cloudSavePromise.catch(() => false).then(() => saveToCloud(options)); return cloudSavePromise; };
+    const queueCloudSave = (options) => { const generation = window.characterContextGeneration || 0; cloudSavePromise = cloudSavePromise.catch(() => false).then(() => generation === (window.characterContextGeneration || 0) ? saveToCloud(options) : false); return cloudSavePromise; };
     const save = () => { if (!initialized || characterReadOnly || isRestoringCharacter || !characterStore || !characterUser) return false; scheduleSave(); return true; };
     Object.assign(translations.zh, { saveAction: '儲存', saveSuccess: '已儲存到雲端。', saveFailed: '雲端儲存失敗，請稍後再試。' });
     Object.assign(translations.en, { saveAction: 'Save', saveSuccess: 'Saved to the cloud.', saveFailed: 'Cloud save failed. Please try again later.' });
@@ -1096,12 +1103,16 @@
     };
     const loadCharacterByKey = async (characterKey, memberId = characterMemberId) => {
       if (!characterKey || !characterStore || !characterUser) return false;
+      if (window.characterSpellbookUI && !window.characterSpellbookUI.guard()) { renderCharacterSelector(); return false; }
+      window.characterContextGeneration = (window.characterContextGeneration || 0) + 1;
+      const loadGeneration = window.characterContextGeneration;
       const targetMemberId = memberId || characterUser.uid;
       window.clearTimeout(saveTimer);
       setCharacterManagerStatus(currentLanguage === 'zh' ? '正在載入角色…' : 'Loading character…');
       isRestoringCharacter = true;
       try {
         const record = await characterStore.load(targetMemberId, characterKey);
+        if (loadGeneration !== window.characterContextGeneration) return false;
         if (!record) throw new Error('Character not found');
         resetSheetForCloudLoad();
         characterMemberId = targetMemberId;
@@ -1117,6 +1128,7 @@
         setCharacterManagerStatus(t().characterLoaded.replace('{name}', record.characterName));
         if (typeof renderFullSheet === 'function') renderFullSheet();
         updateGate();
+        window.characterSpellbookUI?.load(record, targetMemberId, characterUser);
         if (typeof record.loadPortrait === 'function') {
           record.loadPortrait().then((url) => {
             if (!url) return;
@@ -1142,6 +1154,9 @@
       }
     };
     const startNewCharacter = () => {
+      if (window.characterSpellbookUI && !window.characterSpellbookUI.guard()) { renderCharacterSelector(); return; }
+      window.characterSpellbookUI?.reset();
+      window.characterContextGeneration = (window.characterContextGeneration || 0) + 1;
       window.clearTimeout(saveTimer);
       isRestoringCharacter = true;
       resetSheetForCloudLoad();
@@ -1170,6 +1185,7 @@
         const params = new URLSearchParams(window.location.search);
         if (params.get('new') === '1') { startNewCharacter(); return; }
         const requestedKey = params.get('character') || '';
+        if (requestedKey) { await loadCharacterByKey(requestedKey, characterMemberId); return; }
         const initialItem = characterItems.find((item) => item.memberId === characterMemberId && item.key === requestedKey)
           || characterItems.find((item) => item.memberId === characterUser.uid)
           || characterItems[0];
@@ -1198,7 +1214,14 @@
     const readConfigFile = (file) => typeof file.text === 'function' ? file.text() : new Promise((resolve, reject) => { const reader = new FileReader(); reader.addEventListener('load', () => resolve(String(reader.result || ''))); reader.addEventListener('error', () => reject(reader.error || new Error('Could not read config file'))); reader.readAsText(file); });
     const blobToDataUrl = (blob) => new Promise((resolve, reject) => { const reader = new FileReader(); reader.addEventListener('load', () => resolve(String(reader.result || ''))); reader.addEventListener('error', () => reject(reader.error || new Error('Could not encode portrait'))); reader.readAsDataURL(blob); });
     const exportConfig = async () => {
+      let book;
+      try { book = window.characterSpellbookUI?.backup(); }
+      catch (error) { setConfigStatus(error.message, true); return; }
       const data = collectSheetData(true);
+      if (book) {
+        Object.keys(data).filter(key => /^(spellName\d+|spellLevel\d+|spellRowCount)$/.test(key)).forEach(key => delete data[key]);
+        data.characterSpellbook = book;
+      }
       if (data.portraitSrc.startsWith('blob:')) {
         try { data.portraitSrc = await blobToDataUrl(await fetch(data.portraitSrc).then((response) => response.blob())); }
         catch (error) { console.warn('Could not include the portrait in the JSON backup', error); data.portraitSrc = ''; }
@@ -1219,13 +1242,20 @@
     };
     const importConfig = async (file) => {
       if (!file) return;
+      const importGeneration = window.characterContextGeneration || 0, importOwner = characterUser?.uid;
       if (file.size > 50 * 1024 * 1024) { setConfigStatus(t().configTooLarge, true); return; }
       try {
+        if (window.characterSpellbookUI && !window.characterSpellbookUI.guard()) return;
         window.clearTimeout(saveTimer);
         const data = parseCharacterSheetConfig(await readConfigFile(file));
         await loadOptions();
         await Promise.all([loadAbilityCatalog(), loadSubclassOptions(), loadSpellOptions(), loadEquipmentOptions()]);
+        if (importGeneration !== (window.characterContextGeneration || 0) || importOwner !== characterUser?.uid) return;
+        window.characterSpellbookUI?.validateBackup(data.characterSpellbook);
+        window.characterContextGeneration = (window.characterContextGeneration || 0) + 1;
         isRestoringCharacter = true;
+        window.characterSpellbookUI?.reset();
+        window.characterSpellbookUI?.importBackup(data.characterSpellbook, data);
         resetSheetForCloudLoad();
         currentCharacterKey = '';
         existingPortrait = null;
@@ -1244,7 +1274,7 @@
         setConfigStatus(t().configInvalid, true);
       }
     };
-    document.getElementById('languageButton').addEventListener('click', () => setLanguage(currentLanguage === 'zh' ? 'en' : 'zh'));
+    document.getElementById('languageButton').addEventListener('click', () => { setLanguage(currentLanguage === 'zh' ? 'en' : 'zh'); window.characterSpellbookUI?.render(); });
     document.getElementById('languageButton').addEventListener('click', () => { renderSubraceOptions(); renderBackgroundPreview(); renderAbilitySourceSummary(); renderAdventureLog(); setupCollapsibleSections(); document.querySelectorAll('.section-collapse').forEach((button) => button.setAttribute('aria-label', button.getAttribute('aria-expanded') === 'true' ? t().collapseSection : t().expandSection)); });
     document.getElementById('exportConfigButton').addEventListener('click', exportConfig);
     document.getElementById('importConfigButton').addEventListener('click', () => { const input = document.getElementById('configFile'); input.value = ''; input.click(); });
@@ -1305,27 +1335,36 @@
   <script src="./multiclass.js?v=20260909-multiclass-2"></script>
   <script src="./creation-guide.js?v=20260909-new-character"></script>
   <script src="./dice-tools.js"></script>
-  <script src="./sheet-overview.js?v=20260909-multiclass-2"></script>
+  <script src="./sheet-overview.js?v=20261019-character-books-1"></script>
   <script src="./level-up.js?v=20260909-history-clear"></script>
-  <script src="../../shared/firebase.config.js"></script>
+  <script src="../../shared/firebase.config.js?v=character-books-20261019-staged"></script>
   <script type="module">
+    import { getSiteAuth } from "../../shared/auth-session.js?v=20261019-character-books-1";
+    import * as firebaseAuth from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+    import { createCharacterSpellbookUI } from "../../shared/character-spellbook-ui.js?v=20261019-character-books-1";
     import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
     import {
-      characterKeyForName,
       defaultCharacterName,
       listAllCharacterSheets,
       listCharacterSheets,
       loadCharacterSheet,
       normalizeCharacterName,
       saveCharacterSheet
-    } from "../../shared/character-sheets.js?v=20260925-character-delete-portrait-1";
+    } from "../../shared/character-sheets.js?v=20261019-character-books-1";
 
     const config = window.RUGATHA_FIREBASE_CONFIG;
     if (config && !(window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false)) {
       const app = getApps().length ? getApps()[0] : initializeApp(config);
-      onAuthStateChanged(getAuth(app), async (user) => {
-        if (!user) return;
+      const siteAuth = getSiteAuth(app, firebaseAuth);
+      const bookUI = createCharacterSpellbookUI({ app, auth: siteAuth, language: () => currentLanguage,
+        catalog: () => ({ spells: window.sheetOptions?.spells || [], version: window.RUGATHA_SPELL_CATALOG.version }),
+        refresh: () => { if (initialized && typeof renderFullSheet === 'function') renderFullSheet(); } });
+      window.characterSpellbookUI = bookUI;
+      onAuthStateChanged(siteAuth, async (user) => {
+        if (!user) { window.characterContextGeneration = (window.characterContextGeneration || 0) + 1; bookUI.authChanged(null); characterReadOnly = true; updateGate(); return; }
+        if (initialized && characterUser?.uid === user.uid) { bookUI.authChanged(user); characterReadOnly = characterMemberId !== user.uid; updateGate(); }
+        if (initialized && characterUser?.uid !== user.uid) { window.characterContextGeneration = (window.characterContextGeneration || 0) + 1; bookUI.authChanged(user); characterReadOnly = true; updateGate(); }
         const params = new URLSearchParams(window.location.search);
         const requestedMemberId = (params.get('memberId') || '').trim();
         let memberId = user.uid;
@@ -1344,14 +1383,19 @@
         const readOnly = memberId !== user.uid;
         const characterStore = {
           normalizeName: normalizeCharacterName,
-          keyForName: characterKeyForName,
           defaultName: defaultCharacterName,
           list: (uid) => listCharacterSheets(app, uid),
           listAll: () => listAllCharacterSheets(app),
           load: (uid, key) => loadCharacterSheet(app, uid, key),
           save: (options) => saveCharacterSheet({ app, ...options })
         };
-        window.dispatchEvent(new CustomEvent('rugatha-character-sheet-authorized', { detail: { user, memberId, readOnly, isAdmin, characterStore } }));
+        const detail = { user, memberId, readOnly, isAdmin, characterStore };
+        if (initialized) {
+          if (characterUser?.uid !== user.uid) {
+            if (!bookUI.guard()) return;
+            await initializeCharacterCloud(detail);
+          }
+        } else window.dispatchEvent(new CustomEvent('rugatha-character-sheet-authorized', { detail }));
       });
     }
   </script>

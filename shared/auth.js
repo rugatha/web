@@ -1,3 +1,4 @@
+import { getSiteAuth } from './auth-session.js?v=20261019-character-books-1';
 import { hidePageBookmark, setupPageBookmark } from "./bookmark.js";
 
 const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
@@ -349,22 +350,10 @@ const setupAuth = async () => {
     })
     .catch(() => {});
 
-  const auth = getAuth(app);
+  const auth = getSiteAuth(app, firebase.auth);
   let authResolved = false;
   let signedIn = false;
-  const persistenceReady = (async () => {
-    try {
-      await setPersistence(auth, browserLocalPersistence);
-    } catch (localError) {
-      console.warn("Failed to set local auth persistence, falling back to session", localError);
-      try {
-        await setPersistence(auth, browserSessionPersistence);
-      } catch (sessionError) {
-        console.error("Failed to set auth persistence", sessionError);
-        showAuthError(sessionError);
-      }
-    }
-  })();
+  const persistenceReady = auth.authStateReady();
   const provider = new GoogleAuthProvider();
   let memberId = null;
   const VISIT_KEY_PREFIX = "rugatha-visit:";

@@ -1,14 +1,22 @@
-import { LEGACY_BOOK_KEY, GUEST_BOOK_KEY, parseLocalBook, importSource, applyOperation } from './spellbook-state.js';
+import { getSiteAuth } from './auth-session.js?v=20261019-character-books-1';
+import { normalizeSpellbookScope } from './character-spellbook.js?v=20261019-character-books-1';
+import { LEGACY_BOOK_KEY, GUEST_BOOK_KEY, parseLocalBook, importSource, applyOperation } from './spellbook-state.js?v=20261019-character-books-1';
 
 const loadFirebaseModules = () => Promise.all([
   import('https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js'),
   import('https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js'),
-  import('./spellbooks.js')
+  import('./spellbooks.js?v=20261019-character-books-1')
 ]);
 
 export function mountSpellbook({ knownIds, onChange, language, panel, loadFirebase = loadFirebaseModules }) {
   let user = null, mode = 'loading', session = null, snapshot = null, generation = 0;
   let ids = [], warning = '', storageError = false, storageReadError = false, source = null, deferred = false, importing = false;
+  let scope = normalizeSpellbookScope(new URL(window.location?.href || 'https://rugatha.com/toolbox/spells/').searchParams.has('character')
+    ? { type: 'character', characterId: new URL(window.location?.href || 'https://rugatha.com/toolbox/spells/').searchParams.get('character') } : undefined);
+  let characters = [], selectedName = '', charactersError = '', deferredUser;
+  let awaitingAccountDecision = false;
+  const personal = () => scope.type === 'personal';
+  const characterEnabled = () => backend?.characterSpellbookSyncEnabled?.(user) === true;
   let auth, app, backend, stopAuth = () => {}, destroyed = false;
   const text = (zh, en) => language() === 'en' ? en : zh;
   const read = key => {
@@ -21,7 +29,7 @@ export function mountSpellbook({ knownIds, onChange, language, panel, loadFireba
   };
   const recordKey = () => `rugatha.phb.spellbook.import.v1.${user.uid}`;
   const writesEnabled = () => window.RUGATHA_FEATURE_FLAGS?.dataWritesEnabled !== false;
-  const canEdit = () => mode === 'guest' || (mode === 'member' && snapshot?.loaded && backend.spellbookWritesEnabled(user));
+  const canEdit = () => mode === 'guest' || (mode === 'member' && snapshot?.loaded && (personal() || characterEnabled()) && backend.spellbookWritesEnabled(user));
   const publish = () => { if (destroyed) return; onChange({ ids, canEdit: canEdit() }); render(); };
   const inspectSource = () => {
     source = importSource(read(LEGACY_BOOK_KEY), read(GUEST_BOOK_KEY), knownIds);
@@ -29,6 +37,35 @@ export function mountSpellbook({ knownIds, onChange, language, panel, loadFireba
   function render() {
     if (destroyed) return;
     panel.replaceChildren();
+    if (user && characterEnabled()) {
+      const label = document.createElement('label');
+      label.textContent = text('選擇法術書：', 'Spellbook: ');
+      const selector = document.createElement('select'); selector.id = 'spellbookSelector';
+      selector.append(new Option(text('我的個人法術書', 'My personal spellbook'), ''));
+      characters.forEach(item => selector.append(new Option(item.characterName, item.key)));
+      if (!personal() && !characters.some(item => item.key === scope.characterId)) {
+        selector.append(new Option(text('指定角色（無法載入）', 'Requested character (unavailable)'), scope.characterId));
+      }
+      selector.value = personal() ? '' : scope.characterId;
+      selector.addEventListener('change', () => {
+        if (snapshot?.pending && !confirm(text('此書尚有待同步操作。確定放棄並切換？取消可留在此頁重試。', 'Discard pending changes and switch books? Cancel to stay and retry.'))) { render(); return; }
+        scope = normalizeSpellbookScope(selector.value ? { type: 'character', characterId: selector.value } : undefined);
+        const url = new URL(window.location?.href || 'https://rugatha.com/toolbox/spells/');
+        if (personal()) url.searchParams.delete('character'); else url.searchParams.set('character', scope.characterId);
+        window.history.replaceState({}, '', url);
+        switchUser(user);
+      });
+      label.append(selector); panel.append(label);
+      if (!personal()) {
+        const heading = document.createElement('h3');
+        selectedName = characters.find(item => item.key === scope.characterId)?.characterName || scope.characterId;
+        heading.textContent = text('角色法術書：', 'Character spellbook: ') + selectedName; panel.append(heading);
+        const link = document.createElement('a'), url = new URL('/toolbox/character_sheet/', window.location.href);
+        url.searchParams.set('character', scope.characterId); link.href = url.href;
+        link.textContent = text('開啟此角色卡', 'Open character sheet'); panel.append(link);
+      }
+      if (charactersError) { const error = document.createElement('p'); error.textContent = charactersError; panel.append(error); }
+    }
     const status = document.createElement('p');
     status.setAttribute('role', 'status');
     const statuses = {
@@ -61,10 +98,15 @@ export function mountSpellbook({ knownIds, onChange, language, panel, loadFireba
       element.textContent = label; element.disabled = disabled;
       element.addEventListener('click', action); panel.append(element);
     };
+    if (awaitingAccountDecision) {
+      button(text('放棄原帳號待同步操作，切換帳號', 'Discard pending changes and switch account'), () => {
+        awaitingAccountDecision = false; switchUser(deferredUser, true);
+      });
+    }
     if (mode === 'member' && ['error', 'cached', 'paused'].includes(snapshot?.status)) {
       button(text('重試同步', 'Retry sync'), () => session.retry(), !writesEnabled());
     }
-    if (mode === 'member' && source?.ids.length && !deferred && read(recordKey()) !== source.fingerprint) {
+    if (personal() && mode === 'member' && source?.ids.length && !deferred && read(recordKey()) !== source.fingerprint) {
       const message = document.createElement('p');
       message.textContent = text(`此瀏覽器有 ${source.ids.length} 個可匯入的本機法術，將合併到以上帳號。`,
         `${source.ids.length} local spells can be merged into the account above.`);
@@ -74,6 +116,18 @@ export function mountSpellbook({ knownIds, onChange, language, panel, loadFireba
           importing || !canEdit());
       }
       button(text('稍後處理', 'Later'), () => { deferred = true; render(); }, importing);
+    }
+    if (!personal() && mode === 'member') {
+      button(text(`從個人書合併複製到「${selectedName}」`, `Copy personal spells into “${selectedName}”`), async () => {
+        const token = generation, target = session;
+        try {
+          const copied = await backend.readPersonalSpellbook({ app, auth, user });
+          if (token !== generation) return;
+          if (confirm(text(`將 ${copied.length} 個法術合併複製到「${selectedName}」？兩本書之後各自獨立。`, `Merge ${copied.length} personal spells into “${selectedName}”? The books remain independent.`))) {
+            await target.enqueue({ type: 'add', ids: copied });
+          }
+        } catch (error) { if (token === generation) { warning = String(error.message); render(); } }
+      }, !canEdit());
     }
     const unknown = ids.filter(id => !knownIds.has(id));
     if (source?.unknown.length || source?.invalid || unknown.length) {
@@ -96,7 +150,7 @@ export function mountSpellbook({ knownIds, onChange, language, panel, loadFireba
     importing = true; warning = ''; render();
     try {
       await session.enqueue({ type: 'add', ids: capturedSource.ids });
-      if (token !== generation || user?.uid !== owner) return;
+      if (token !== generation || user?.uid !== owner || auth.currentUser?.uid !== owner || awaitingAccountDecision) return;
       // This promise resolves only after the server transaction commits.
       save(recordKey(), capturedSource.fingerprint);
       importing = false; render();
@@ -106,11 +160,21 @@ export function mountSpellbook({ knownIds, onChange, language, panel, loadFireba
       warning = text('匯入尚未完成，請重試。', 'Import is incomplete. Please retry.'); render();
     }
   }
-  function switchUser(nextUser) {
+  function switchUser(nextUser, discard = false) {
     if (destroyed) return;
+    if (!discard && snapshot?.pending && nextUser?.uid !== user?.uid) {
+      deferredUser = nextUser; awaitingAccountDecision = true; mode = 'unavailable'; ids = [];
+      warning = text('帳號已變更，原帳號待同步操作仍保留；可登入原帳號重試，或明確放棄後切換。', 'Account changed. Pending changes are retained. Sign in to the original account to retry, or discard them to switch.');
+      publish(); return;
+    }
+    if (awaitingAccountDecision && nextUser?.uid === user?.uid) {
+      awaitingAccountDecision = false; mode = 'member'; warning = ''; ids = snapshot?.ids || []; session.retry(); publish(); return;
+    }
+    awaitingAccountDecision = false;
     generation++; session?.close(); session = null; user = nextUser;
     snapshot = null; ids = []; deferred = false; importing = false; warning = ''; source = null;
-    if (!user) {
+    if (!user && !personal()) { mode = 'unavailable'; }
+    else if (!user) {
       mode = 'guest';
       const guest = read(GUEST_BOOK_KEY), legacy = read(LEGACY_BOOK_KEY);
       const parsed = parseLocalBook(guest === null ? legacy : guest);
@@ -119,13 +183,20 @@ export function mountSpellbook({ knownIds, onChange, language, panel, loadFireba
         'Local data is invalid and preserved. Repair it before editing.');
       if (parsed.invalid) mode = 'local-error';
       if (storageReadError) { mode = 'local-error'; ids = []; }
-    } else if (!backend.spellbookSyncEnabled(user)) mode = 'disabled';
+    } else if ((!personal() && !characterEnabled()) || !backend.spellbookSyncEnabled(user)) mode = 'disabled';
     else {
-      mode = 'member'; inspectSource();
-      session = backend.subscribeSpellbook({ app, auth, user, onChange: value => {
-        snapshot = value; ids = mode === 'disabled' ? [] : value.ids; publish();
+      mode = 'member'; if (personal()) inspectSource();
+      session = backend.subscribeSpellbook({ app, auth, user, scope, onChange: value => {
+        snapshot = value; ids = mode === 'disabled' || awaitingAccountDecision ? [] : value.ids; publish();
       } });
     }
+    if (user && characterEnabled()) {
+      const token = generation, owner = user.uid;
+      import('./character-sheets.js?v=20261019-character-books-1').then(module => module.listCharacterSheets(app, owner)).then(items => {
+        if (token !== generation) return;
+        characters = items; charactersError = ''; render();
+      }).catch(() => { if (token === generation) { charactersError = text('角色列表載入失敗，請重新整理。', 'Could not load characters. Reload to retry.'); render(); } });
+    } else characters = [];
     publish();
   }
   const change = operation => {
@@ -155,7 +226,7 @@ export function mountSpellbook({ knownIds, onChange, language, panel, loadFireba
   const onStorage = event => {
     if (![LEGACY_BOOK_KEY, GUEST_BOOK_KEY].includes(event.key)) return;
     if (mode === 'guest') switchUser(null);
-    else if (mode === 'member') { inspectSource(); deferred = false; render(); }
+    else if (mode === 'member' && personal()) { inspectSource(); deferred = false; render(); }
   };
   window.addEventListener('online', onOnline);
   window.addEventListener('storage', onStorage);
@@ -165,7 +236,7 @@ export function mountSpellbook({ knownIds, onChange, language, panel, loadFireba
   };
   const onFlags = () => {
     if (!user || !backend) return;
-    if (!backend.spellbookSyncEnabled(user)) {
+    if ((!personal() && !characterEnabled()) || !backend.spellbookSyncEnabled(user)) {
       mode = 'disabled'; ids = [];
     } else if (!session) {
       switchUser(user); return;
@@ -179,13 +250,14 @@ export function mountSpellbook({ knownIds, onChange, language, panel, loadFireba
   window.addEventListener('rugatha:feature-flags-changed', onFlags);
   read(LEGACY_BOOK_KEY); // Surface blocked storage even when Auth initialization cannot finish.
   publish();
-  Promise.resolve().then(loadFirebase).then(([firebaseApp, firebaseAuth, cloud]) => {
+  Promise.resolve().then(loadFirebase).then(async ([firebaseApp, firebaseAuth, cloud]) => {
     if (destroyed) return;
     backend = cloud;
     if (!window.RUGATHA_FIREBASE_CONFIG) { switchUser(null); return; }
     app = firebaseApp.getApps().length ? firebaseApp.getApps()[0]
       : firebaseApp.initializeApp(window.RUGATHA_FIREBASE_CONFIG);
-    auth = firebaseAuth.getAuth(app);
+    auth = getSiteAuth(app, firebaseAuth);
+    if (destroyed) return;
     stopAuth = firebaseAuth.onAuthStateChanged(auth, switchUser, () => {
       generation++; session?.close(); session = null; user = null; ids = []; snapshot = null;
       mode = 'unavailable'; publish();
