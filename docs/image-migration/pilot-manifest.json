@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 1,
+  "batch": "rugatha-c01",
+  "baselineCommit": "76dc518e051d6048d0b375c845f8115e117e9e62",
+  "bucket": "rugatha-87e15.firebasestorage.app",
+  "encoder": "1.6.0\nlibsharpyuv: 0.4.2",
+  "variants": {
+    "thumb": {
+      "maxEdge": 480,
+      "quality": 82
+    },
+    "reading": {
+      "maxEdge": 1600,
+      "quality": 85
+    }
+  },
+  "images": [
+    {
+      "source": "campaigns/campaign-banners/rugatha-c01.jpg",
+      "id": "rugatha-c01-c600135691",
+      "category": "arcs",
+      "original": {
+        "bytes": 615394,
+        "sha256": "810e9006ffb5f2692447d7c728884638911d1877208b734acfa75a8aa2a4d9af",
+        "width": 1640,
+        "height": 856
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/arcs/rugatha-c01-c600135691/89e07b5df302b62a10a64d64d901df03206eff0a0385d6d4a3c65ec2f320ebc8/thumb.webp",
+          "sha256": "89e07b5df302b62a10a64d64d901df03206eff0a0385d6d4a3c65ec2f320ebc8",
+          "bytes": 31386,
+          "width": 480,
+          "height": 251,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Farcs%2Frugatha-c01-c600135691%2F89e07b5df302b62a10a64d64d901df03206eff0a0385d6d4a3c65ec2f320ebc8%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/arcs/rugatha-c01-c600135691/e139d57487c7c674de7e7aa1b76849fb2be05322b9a15ca3312407f52b6f0daa/reading.webp",
+          "sha256": "e139d57487c7c674de7e7aa1b76849fb2be05322b9a15ca3312407f52b6f0daa",
+          "bytes": 191150,
+          "width": 1600,
+          "height": 835,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Farcs%2Frugatha-c01-c600135691%2Fe139d57487c7c674de7e7aa1b76849fb2be05322b9a15ca3312407f52b6f0daa%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "rugatha-c01"
+      ]
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c01-chpt01.png",
+      "id": "rugatha-c01-chpt01-f1a687c9bb",
+      "category": "chapters",
+      "original": {
+        "bytes": 2943617,
+        "sha256": "05aa85ef5cc5af791e16fbaf03f00d4ab33fa3d4a6c000884f0ca1e7036c72d1",
+        "width": 1536,
+        "height": 1024
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/chapters/rugatha-c01-chpt01-f1a687c9bb/cd2af9c39719c1aaadfb239da5cd2c5e73aefce9ec0f7c5b8f33909fc18ec703/thumb.webp",
+          "sha256": "cd2af9c39719c1aaadfb239da5cd2c5e73aefce9ec0f7c5b8f33909fc18ec703",
+          "bytes": 30618,
+          "width": 480,
+          "height": 320,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt01-f1a687c9bb%2Fcd2af9c39719c1aaadfb239da5cd2c5e73aefce9ec0f7c5b8f33909fc18ec703%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/chapters/rugatha-c01-chpt01-f1a687c9bb/0d984886837d7f176fc1e3cee26ddc0a50cfda3f7678dc3bce74103044bd5091/reading.webp",
+          "sha256": "0d984886837d7f176fc1e3cee26ddc0a50cfda3f7678dc3bce74103044bd5091",
+          "bytes": 310108,
+          "width": 1536,
+          "height": 1024,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt01-f1a687c9bb%2F0d984886837d7f176fc1e3cee26ddc0a50cfda3f7678dc3bce74103044bd5091%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "rugatha-c01-chpt01"
+      ]
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c01-chpt02.png",
+      "id": "rugatha-c01-chpt02-d29dec8c50",
+      "category": "chapters",
+      "original": {
+        "bytes": 2902051,
+        "sha256": "59559949fa5d073ce630b3b0467ed0e5de2c3983d1c0bbfeda52ae6e25c4a820",
+        "width": 1536,
+        "height": 1024
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/chapters/rugatha-c01-chpt02-d29dec8c50/ecf376a53c5e2920d754550ccf950a79954da3d1135148b8eb2416c15dd8138f/thumb.webp",
+          "sha256": "ecf376a53c5e2920d754550ccf950a79954da3d1135148b8eb2416c15dd8138f",
+          "bytes": 26544,
+          "width": 480,
+          "height": 320,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt02-d29dec8c50%2Fecf376a53c5e2920d754550ccf950a79954da3d1135148b8eb2416c15dd8138f%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/chapters/rugatha-c01-chpt02-d29dec8c50/9123db23f1f9d4fd0eff82057b92edb80693079fc8f7655785ffaa684e80227a/reading.webp",
+          "sha256": "9123db23f1f9d4fd0eff82057b92edb80693079fc8f7655785ffaa684e80227a",
+          "bytes": 293962,
+          "width": 1536,
+          "height": 1024,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt02-d29dec8c50%2F9123db23f1f9d4fd0eff82057b92edb80693079fc8f7655785ffaa684e80227a%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "rugatha-c01-chpt02"
+      ]
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c01-chpt03.png",
+      "id": "rugatha-c01-chpt03-23f4606de3",
+      "category": "chapters",
+      "original": {
+        "bytes": 2860728,
+        "sha256": "439b1f6bf0ac1093a20572663534fa134b10d2c8f4345367e4be5cb0520b917d",
+        "width": 1536,
+        "height": 1024
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/chapters/rugatha-c01-chpt03-23f4606de3/7095633eb7bd2bf76f1b2887b149fb1c2cea7d8cfddee4dfc028ecaf26a25f20/thumb.webp",
+          "sha256": "7095633eb7bd2bf76f1b2887b149fb1c2cea7d8cfddee4dfc028ecaf26a25f20",
+          "bytes": 29898,
+          "width": 480,
+          "height": 320,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt03-23f4606de3%2F7095633eb7bd2bf76f1b2887b149fb1c2cea7d8cfddee4dfc028ecaf26a25f20%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/chapters/rugatha-c01-chpt03-23f4606de3/ac7de53c537aeb49f1e799e0bbbd84f18fba13fb1e1a04a0d5d537150e310292/reading.webp",
+          "sha256": "ac7de53c537aeb49f1e799e0bbbd84f18fba13fb1e1a04a0d5d537150e310292",
+          "bytes": 288340,
+          "width": 1536,
+          "height": 1024,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt03-23f4606de3%2Fac7de53c537aeb49f1e799e0bbbd84f18fba13fb1e1a04a0d5d537150e310292%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "rugatha-c01-chpt03"
+      ]
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c01-chpt04.png",
+      "id": "rugatha-c01-chpt04-71192e2aa7",
+      "category": "chapters",
+      "original": {
+        "bytes": 2774173,
+        "sha256": "88114799fbe04adb1cd76b515860f10dbb6d3c8a1129d7967289082419cd9df5",
+        "width": 1536,
+        "height": 1024
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/chapters/rugatha-c01-chpt04-71192e2aa7/8052872a46b3f5f10c007af9776b76ed0e6b1f39fc48f67a2eb6453bc979aa2f/thumb.webp",
+          "sha256": "8052872a46b3f5f10c007af9776b76ed0e6b1f39fc48f67a2eb6453bc979aa2f",
+          "bytes": 25352,
+          "width": 480,
+          "height": 320,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt04-71192e2aa7%2F8052872a46b3f5f10c007af9776b76ed0e6b1f39fc48f67a2eb6453bc979aa2f%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/chapters/rugatha-c01-chpt04-71192e2aa7/a78669d3f3871fe22b65237d39b156d71b25e2b7fb0e26360f8caaa6de690490/reading.webp",
+          "sha256": "a78669d3f3871fe22b65237d39b156d71b25e2b7fb0e26360f8caaa6de690490",
+          "bytes": 270504,
+          "width": 1536,
+          "height": 1024,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt04-71192e2aa7%2Fa78669d3f3871fe22b65237d39b156d71b25e2b7fb0e26360f8caaa6de690490%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "rugatha-c01-chpt04"
+      ]
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c01-chpt05.png",
+      "id": "rugatha-c01-chpt05-cce15dafcb",
+      "category": "chapters",
+      "original": {
+        "bytes": 2895843,
+        "sha256": "64e4478f36ba5d6dd8c5009f4fcd8afbc8ad2200a7b4b181b9883f993324c0e5",
+        "width": 1536,
+        "height": 1024
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/chapters/rugatha-c01-chpt05-cce15dafcb/b27076a421b3cab62f0aef3481b1c89be1c52e432b30deb178842577e4e87976/thumb.webp",
+          "sha256": "b27076a421b3cab62f0aef3481b1c89be1c52e432b30deb178842577e4e87976",
+          "bytes": 25310,
+          "width": 480,
+          "height": 320,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt05-cce15dafcb%2Fb27076a421b3cab62f0aef3481b1c89be1c52e432b30deb178842577e4e87976%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/chapters/rugatha-c01-chpt05-cce15dafcb/d06441042184a77fdcebbbf85362dd49e689d7572ead14ea1ad535df8ff2aebb/reading.webp",
+          "sha256": "d06441042184a77fdcebbbf85362dd49e689d7572ead14ea1ad535df8ff2aebb",
+          "bytes": 259178,
+          "width": 1536,
+          "height": 1024,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt05-cce15dafcb%2Fd06441042184a77fdcebbbf85362dd49e689d7572ead14ea1ad535df8ff2aebb%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "rugatha-c01-chpt05"
+      ]
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c01-chpt06.png",
+      "id": "rugatha-c01-chpt06-978efdb829",
+      "category": "chapters",
+      "original": {
+        "bytes": 2993044,
+        "sha256": "b00260e77f952c5313695f09e3db3349efc9faedc68f7adcf4d5826493a375f1",
+        "width": 1536,
+        "height": 1024
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/chapters/rugatha-c01-chpt06-978efdb829/435be384c6078d455df1330aae6ddee9806368fec60c712cf9a0d6d0eb8b30ec/thumb.webp",
+          "sha256": "435be384c6078d455df1330aae6ddee9806368fec60c712cf9a0d6d0eb8b30ec",
+          "bytes": 27946,
+          "width": 480,
+          "height": 320,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt06-978efdb829%2F435be384c6078d455df1330aae6ddee9806368fec60c712cf9a0d6d0eb8b30ec%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/chapters/rugatha-c01-chpt06-978efdb829/a07355920fbbbae286f7a6186a922ebb7242cd93a65dfcf6156e1855740f59bc/reading.webp",
+          "sha256": "a07355920fbbbae286f7a6186a922ebb7242cd93a65dfcf6156e1855740f59bc",
+          "bytes": 340206,
+          "width": 1536,
+          "height": 1024,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt06-978efdb829%2Fa07355920fbbbae286f7a6186a922ebb7242cd93a65dfcf6156e1855740f59bc%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "rugatha-c01-chpt06"
+      ]
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c01-chpt07.png",
+      "id": "rugatha-c01-chpt07-1275d7a54e",
+      "category": "chapters",
+      "original": {
+        "bytes": 2996212,
+        "sha256": "086c1be7f44397304349647275c107743cd52e979e8e6565c0d9ab4b5f02cd99",
+        "width": 1536,
+        "height": 1024
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/chapters/rugatha-c01-chpt07-1275d7a54e/4468fd86ccdeea6a60e5a153207e29dec84200d5cea4edbf93f9a5230baf6bad/thumb.webp",
+          "sha256": "4468fd86ccdeea6a60e5a153207e29dec84200d5cea4edbf93f9a5230baf6bad",
+          "bytes": 24324,
+          "width": 480,
+          "height": 320,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt07-1275d7a54e%2F4468fd86ccdeea6a60e5a153207e29dec84200d5cea4edbf93f9a5230baf6bad%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/chapters/rugatha-c01-chpt07-1275d7a54e/d47d7733b2b7dc2c8a3a860e4f0582ad14942260d32fd2a4145b9ad1f64e6aa4/reading.webp",
+          "sha256": "d47d7733b2b7dc2c8a3a860e4f0582ad14942260d32fd2a4145b9ad1f64e6aa4",
+          "bytes": 287322,
+          "width": 1536,
+          "height": 1024,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt07-1275d7a54e%2Fd47d7733b2b7dc2c8a3a860e4f0582ad14942260d32fd2a4145b9ad1f64e6aa4%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "rugatha-c01-chpt07"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Alfie Fuller.jpeg",
+      "id": "alfie-fuller-10bbaf3f2f",
+      "category": "npcs",
+      "original": {
+        "bytes": 175513,
+        "sha256": "fc2be075cd496d7b47b2933031f33615e9a6df1386c9605bcfa0999d1c277a2f",
+        "width": 512,
+        "height": 512
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/alfie-fuller-10bbaf3f2f/1ff103d8f5010c4bfce1065f92a4b05642891ed714e4c37715b0f7107c4cc745/thumb.webp",
+          "sha256": "1ff103d8f5010c4bfce1065f92a4b05642891ed714e4c37715b0f7107c4cc745",
+          "bytes": 21358,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfie-fuller-10bbaf3f2f%2F1ff103d8f5010c4bfce1065f92a4b05642891ed714e4c37715b0f7107c4cc745%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/alfie-fuller-10bbaf3f2f/185aa8b9c9ec0918136f658db8c5ed31e8915715b630486141c46472dacec7a7/reading.webp",
+          "sha256": "185aa8b9c9ec0918136f658db8c5ed31e8915715b630486141c46472dacec7a7",
+          "bytes": 34962,
+          "width": 512,
+          "height": 512,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfie-fuller-10bbaf3f2f%2F185aa8b9c9ec0918136f658db8c5ed31e8915715b630486141c46472dacec7a7%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "Alfie_Fuller"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Benny Cozlothramuda.jpeg",
+      "id": "benny-cozlothramuda-825e865065",
+      "category": "npcs",
+      "original": {
+        "bytes": 183402,
+        "sha256": "d8145238996401a30554c34d01c5c1291247151191155a86108331209c5a874f",
+        "width": 512,
+        "height": 512
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/benny-cozlothramuda-825e865065/a5b276d3ec028c51c15df73660613ed840c4bb46424c8cd497226b9e791113f2/thumb.webp",
+          "sha256": "a5b276d3ec028c51c15df73660613ed840c4bb46424c8cd497226b9e791113f2",
+          "bytes": 27074,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbenny-cozlothramuda-825e865065%2Fa5b276d3ec028c51c15df73660613ed840c4bb46424c8cd497226b9e791113f2%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/benny-cozlothramuda-825e865065/47294c25febf0fd8113cb559e711ae482146b3554d4075771b63914f5101e49b/reading.webp",
+          "sha256": "47294c25febf0fd8113cb559e711ae482146b3554d4075771b63914f5101e49b",
+          "bytes": 39766,
+          "width": 512,
+          "height": 512,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbenny-cozlothramuda-825e865065%2F47294c25febf0fd8113cb559e711ae482146b3554d4075771b63914f5101e49b%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "Benny_Cozlothramuda"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Bruce Dunham.jpeg",
+      "id": "bruce-dunham-4e338965f6",
+      "category": "npcs",
+      "original": {
+        "bytes": 173536,
+        "sha256": "fb725da312ca4618974de2fd423e644806a7160aff97f9e413cde0e83e6a084b",
+        "width": 512,
+        "height": 512
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/bruce-dunham-4e338965f6/6e26e139e5c124844c5d223d57b003e625a7994dbe2f4036f1a8d08b5d15137d/thumb.webp",
+          "sha256": "6e26e139e5c124844c5d223d57b003e625a7994dbe2f4036f1a8d08b5d15137d",
+          "bytes": 19702,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbruce-dunham-4e338965f6%2F6e26e139e5c124844c5d223d57b003e625a7994dbe2f4036f1a8d08b5d15137d%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/bruce-dunham-4e338965f6/713ae455e797a689c9f90c0fa1350b1a1b097563045e82456e9690d5d4945783/reading.webp",
+          "sha256": "713ae455e797a689c9f90c0fa1350b1a1b097563045e82456e9690d5d4945783",
+          "bytes": 28990,
+          "width": 512,
+          "height": 512,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbruce-dunham-4e338965f6%2F713ae455e797a689c9f90c0fa1350b1a1b097563045e82456e9690d5d4945783%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "Bruce_Dunham"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Daryl Warren.png",
+      "id": "daryl-warren-93124e8ff3",
+      "category": "npcs",
+      "original": {
+        "bytes": 2170854,
+        "sha256": "c9f95174496afb254a8f52ad6b52cebf13e8cbe4dbd26d18f45c27cae23c4e8e",
+        "width": 1024,
+        "height": 1536
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/daryl-warren-93124e8ff3/1b52b12e0b1331d508efca04ecc0f7f407775260bbb05dd3fde13d13291cd887/thumb.webp",
+          "sha256": "1b52b12e0b1331d508efca04ecc0f7f407775260bbb05dd3fde13d13291cd887",
+          "bytes": 9524,
+          "width": 320,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdaryl-warren-93124e8ff3%2F1b52b12e0b1331d508efca04ecc0f7f407775260bbb05dd3fde13d13291cd887%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/daryl-warren-93124e8ff3/5ced7e28eedfe9b067edb7f4ec13b0149c8263c9bef3b106bfc33237c44b8c93/reading.webp",
+          "sha256": "5ced7e28eedfe9b067edb7f4ec13b0149c8263c9bef3b106bfc33237c44b8c93",
+          "bytes": 88700,
+          "width": 1024,
+          "height": 1536,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdaryl-warren-93124e8ff3%2F5ced7e28eedfe9b067edb7f4ec13b0149c8263c9bef3b106bfc33237c44b8c93%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "Daryl_Warren"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Father Kaulton.jpeg",
+      "id": "father-kaulton-e7f55d7428",
+      "category": "npcs",
+      "original": {
+        "bytes": 145258,
+        "sha256": "e8bf6945a47a1692e6086302ff7b3470dbde8a429f926986162ef7104fbca5cf",
+        "width": 512,
+        "height": 512
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/father-kaulton-e7f55d7428/4148f482c8bf09c44a2e4782c92207160d3c75ce9ba32cefa2f533c540361ba2/thumb.webp",
+          "sha256": "4148f482c8bf09c44a2e4782c92207160d3c75ce9ba32cefa2f533c540361ba2",
+          "bytes": 11458,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffather-kaulton-e7f55d7428%2F4148f482c8bf09c44a2e4782c92207160d3c75ce9ba32cefa2f533c540361ba2%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/father-kaulton-e7f55d7428/4b7a26d2587e1356bcbecb0ecad02d9bd32839c09a3dcc914907d96cfb99b347/reading.webp",
+          "sha256": "4b7a26d2587e1356bcbecb0ecad02d9bd32839c09a3dcc914907d96cfb99b347",
+          "bytes": 20838,
+          "width": 512,
+          "height": 512,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffather-kaulton-e7f55d7428%2F4b7a26d2587e1356bcbecb0ecad02d9bd32839c09a3dcc914907d96cfb99b347%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "Father_Kaulton"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Gary.png",
+      "id": "gary-9e4164f6ea",
+      "category": "npcs",
+      "original": {
+        "bytes": 2174427,
+        "sha256": "12abda43a246ed88d9aa48923a962fd8226bdaa983bec865fab3f7da6ef06fb7",
+        "width": 1024,
+        "height": 1024
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/gary-9e4164f6ea/050e51f944f3356704a60f85b0a7e99c44def17cfbdeef9687a6b94cac427971/thumb.webp",
+          "sha256": "050e51f944f3356704a60f85b0a7e99c44def17cfbdeef9687a6b94cac427971",
+          "bytes": 40824,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgary-9e4164f6ea%2F050e51f944f3356704a60f85b0a7e99c44def17cfbdeef9687a6b94cac427971%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/gary-9e4164f6ea/04915077a7219101179a597ffb0f1ff9ae6b929a639b5d1c56028aace7670b68/reading.webp",
+          "sha256": "04915077a7219101179a597ffb0f1ff9ae6b929a639b5d1c56028aace7670b68",
+          "bytes": 212070,
+          "width": 1024,
+          "height": 1024,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgary-9e4164f6ea%2F04915077a7219101179a597ffb0f1ff9ae6b929a639b5d1c56028aace7670b68%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "Gary"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Grenland Folsen.png",
+      "id": "grenland-folsen-667527a3c2",
+      "category": "npcs",
+      "original": {
+        "bytes": 1504035,
+        "sha256": "dab121789b7424c868497002518086b449f75eab65efca7207e8b94ceed569a7",
+        "width": 1024,
+        "height": 1024
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/grenland-folsen-667527a3c2/75c388b285ccffff4dbb29473dc80eb3197eb9d44412b9543586b33ca013bebc/thumb.webp",
+          "sha256": "75c388b285ccffff4dbb29473dc80eb3197eb9d44412b9543586b33ca013bebc",
+          "bytes": 12482,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgrenland-folsen-667527a3c2%2F75c388b285ccffff4dbb29473dc80eb3197eb9d44412b9543586b33ca013bebc%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/grenland-folsen-667527a3c2/49b83f971be6c77a9716a110abdaabe8e497368f17eddebd14448fbd6f364d3e/reading.webp",
+          "sha256": "49b83f971be6c77a9716a110abdaabe8e497368f17eddebd14448fbd6f364d3e",
+          "bytes": 56494,
+          "width": 1024,
+          "height": 1024,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgrenland-folsen-667527a3c2%2F49b83f971be6c77a9716a110abdaabe8e497368f17eddebd14448fbd6f364d3e%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "Grenland_Folsen"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Jasmine Warren.jpeg",
+      "id": "jasmine-warren-fc1bfb0097",
+      "category": "npcs",
+      "original": {
+        "bytes": 163017,
+        "sha256": "76e14858b8e689fc5080bd2d6c5a6d79c560ae1e41e90dc023a14e18e511f464",
+        "width": 512,
+        "height": 512
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/jasmine-warren-fc1bfb0097/a8b97cbaf5ef56c2f74d4db6be51af04f2f0d66c59b0c9a649f8bf536f4b7c00/thumb.webp",
+          "sha256": "a8b97cbaf5ef56c2f74d4db6be51af04f2f0d66c59b0c9a649f8bf536f4b7c00",
+          "bytes": 20568,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjasmine-warren-fc1bfb0097%2Fa8b97cbaf5ef56c2f74d4db6be51af04f2f0d66c59b0c9a649f8bf536f4b7c00%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/jasmine-warren-fc1bfb0097/94bde417aab2cb44238f0143bcc3c9dc1791a580afc20505b0f1b0560704e1d7/reading.webp",
+          "sha256": "94bde417aab2cb44238f0143bcc3c9dc1791a580afc20505b0f1b0560704e1d7",
+          "bytes": 29912,
+          "width": 512,
+          "height": 512,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjasmine-warren-fc1bfb0097%2F94bde417aab2cb44238f0143bcc3c9dc1791a580afc20505b0f1b0560704e1d7%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "Jasmine_Warren"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Kubao.jpeg",
+      "id": "kubao-ce650d5940",
+      "category": "npcs",
+      "original": {
+        "bytes": 165346,
+        "sha256": "6b81ea6e9828a49fb45964eadc9f1e031c926d8cb2cf5702bf30350a1ebaf588",
+        "width": 512,
+        "height": 512
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/kubao-ce650d5940/213f5ba739e6583a56d9d76cb261037ff62537c8848b5b8046f2c45d0a4fa581/thumb.webp",
+          "sha256": "213f5ba739e6583a56d9d76cb261037ff62537c8848b5b8046f2c45d0a4fa581",
+          "bytes": 19366,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkubao-ce650d5940%2F213f5ba739e6583a56d9d76cb261037ff62537c8848b5b8046f2c45d0a4fa581%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/kubao-ce650d5940/89f9f0459eab194bc99ce6caf7d207beaf8c9d3e0b32d656eb93e16ed2b77aba/reading.webp",
+          "sha256": "89f9f0459eab194bc99ce6caf7d207beaf8c9d3e0b32d656eb93e16ed2b77aba",
+          "bytes": 27780,
+          "width": 512,
+          "height": 512,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkubao-ce650d5940%2F89f9f0459eab194bc99ce6caf7d207beaf8c9d3e0b32d656eb93e16ed2b77aba%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "Kubao"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Ra'Leer the Herder.jpeg",
+      "id": "ra-leer-the-herder-267e086c63",
+      "category": "npcs",
+      "original": {
+        "bytes": 192225,
+        "sha256": "ebc724a213526a4ebe22530d63a5a89f667380f6d037210c03fd7d5b138a73a3",
+        "width": 512,
+        "height": 512
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/ra-leer-the-herder-267e086c63/f961a035fb1bf193876573de2d3bd00d5680b00eb58983c3c770d7d6e6e4d3ff/thumb.webp",
+          "sha256": "f961a035fb1bf193876573de2d3bd00d5680b00eb58983c3c770d7d6e6e4d3ff",
+          "bytes": 26010,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fra-leer-the-herder-267e086c63%2Ff961a035fb1bf193876573de2d3bd00d5680b00eb58983c3c770d7d6e6e4d3ff%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/ra-leer-the-herder-267e086c63/880520ad3e6987c6ff0e0fa8aa4b43dd7879b0a5b63f574f1a1261ef90c8f673/reading.webp",
+          "sha256": "880520ad3e6987c6ff0e0fa8aa4b43dd7879b0a5b63f574f1a1261ef90c8f673",
+          "bytes": 37536,
+          "width": 512,
+          "height": 512,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fra-leer-the-herder-267e086c63%2F880520ad3e6987c6ff0e0fa8aa4b43dd7879b0a5b63f574f1a1261ef90c8f673%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "RaLeer_the_Herder"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/Sammick Warren.png",
+      "id": "sammick-warren-531b4afbcc",
+      "category": "npcs",
+      "original": {
+        "bytes": 2628361,
+        "sha256": "0bf5ada372610133221cf711bc9513bcfeee17e3cec078f10c7a1d936f267c74",
+        "width": 1024,
+        "height": 1536
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/sammick-warren-531b4afbcc/876a4ccc065f8af439eb90fe38d4c31adc90691af3587a3515995c2abd9cfc08/thumb.webp",
+          "sha256": "876a4ccc065f8af439eb90fe38d4c31adc90691af3587a3515995c2abd9cfc08",
+          "bytes": 10864,
+          "width": 320,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsammick-warren-531b4afbcc%2F876a4ccc065f8af439eb90fe38d4c31adc90691af3587a3515995c2abd9cfc08%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/sammick-warren-531b4afbcc/b5907839efdf4d325b225ee967397b5bd99587b2d9c91e11aeaaa4cfdc4933ae/reading.webp",
+          "sha256": "b5907839efdf4d325b225ee967397b5bd99587b2d9c91e11aeaaa4cfdc4933ae",
+          "bytes": 163488,
+          "width": 1024,
+          "height": 1536,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsammick-warren-531b4afbcc%2Fb5907839efdf4d325b225ee967397b5bd99587b2d9c91e11aeaaa4cfdc4933ae%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "sammick_warren"
+      ]
+    },
+    {
+      "source": "npc/individual_pics/The Hooded-Figure.jpeg",
+      "id": "the-hooded-figure-4f5fd01f3c",
+      "category": "npcs",
+      "original": {
+        "bytes": 125683,
+        "sha256": "5fa6a9d0485472ded6b942f41d9ee07ed89bd7e919fdd60e5c02c015aed264c9",
+        "width": 512,
+        "height": 512
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/the-hooded-figure-4f5fd01f3c/6d069034a9e7c91823cf29897175a75e47fc6fb7a1c4f7693d679322314dd312/thumb.webp",
+          "sha256": "6d069034a9e7c91823cf29897175a75e47fc6fb7a1c4f7693d679322314dd312",
+          "bytes": 10128,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-hooded-figure-4f5fd01f3c%2F6d069034a9e7c91823cf29897175a75e47fc6fb7a1c4f7693d679322314dd312%2Fthumb.webp?alt=media"
+        },
+        "reading": {
+          "object": "public-images/npcs/the-hooded-figure-4f5fd01f3c/d5153425b2adf57449efbf5504e76cf0c0ddc4ec871dfda3582c663568895c14/reading.webp",
+          "sha256": "d5153425b2adf57449efbf5504e76cf0c0ddc4ec871dfda3582c663568895c14",
+          "bytes": 18368,
+          "width": 512,
+          "height": 512,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-hooded-figure-4f5fd01f3c%2Fd5153425b2adf57449efbf5504e76cf0c0ddc4ec871dfda3582c663568895c14%2Freading.webp?alt=media"
+        }
+      },
+      "entityIds": [
+        "The_Hooded_Figure"
+      ]
+    }
+  ]
+}

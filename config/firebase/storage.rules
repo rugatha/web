@@ -37,6 +37,16 @@ service firebase.storage {
       allow list, write: if false;
     }
 
+    // Public editorial images only. Content-addressed variants are published
+    // through IAM; no client (including app admins) may list or modify them.
+    match /public-images/{category}/{assetId}/{hash}/{fileName} {
+      allow get: if category in ['arcs', 'chapters', 'npcs']
+        && assetId.matches('[a-z0-9_-]+')
+        && hash.matches('[a-f0-9]{64}')
+        && fileName in ['thumb.webp', 'reading.webp'];
+      allow list, write: if false;
+    }
+
     match /profile-photos/{uid}/{fileName} {
       allow get: if isOwner(uid) || isAdmin();
       allow list: if false;

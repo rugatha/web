@@ -85,7 +85,7 @@
     "tagline": "Curse of Vowalon",
     "date": "15048.07.18",
     "image": {
-      "src": "../../../../campaigns/chapter-banners/rugatha-c01-chpt01.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt01-f1a687c9bb%2F0d984886837d7f176fc1e3cee26ddc0a50cfda3f7678dc3bce74103044bd5091%2Freading.webp?alt=media",
       "alt": "Curse of Vowalon chapter art"
     },
     "content": {
@@ -139,7 +139,7 @@
     "tagline": "Curse of Vowalon",
     "date": "15048.07.19",
     "image": {
-      "src": "../../../../campaigns/chapter-banners/rugatha-c01-chpt02.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt02-d29dec8c50%2F9123db23f1f9d4fd0eff82057b92edb80693079fc8f7655785ffaa684e80227a%2Freading.webp?alt=media",
       "alt": "Curse of Vowalon chapter 2 art"
     },
     "content": {
@@ -183,7 +183,7 @@
     "tagline": "Curse of Vowalon",
     "date": "15048.07.19 – 15048.07.20",
     "image": {
-      "src": "../../../../campaigns/chapter-banners/rugatha-c01-chpt03.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt03-23f4606de3%2Fac7de53c537aeb49f1e799e0bbbd84f18fba13fb1e1a04a0d5d537150e310292%2Freading.webp?alt=media",
       "alt": "Curse of Vowalon chapter 3 art"
     },
     "content": {
@@ -239,7 +239,7 @@
     "tagline": "Curse of Vowalon",
     "date": "15048.07.21",
     "image": {
-      "src": "../../../../campaigns/chapter-banners/rugatha-c01-chpt04.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt04-71192e2aa7%2Fa78669d3f3871fe22b65237d39b156d71b25e2b7fb0e26360f8caaa6de690490%2Freading.webp?alt=media",
       "alt": "Curse of Vowalon chapter 4 art"
     },
     "content": {
@@ -275,7 +275,7 @@
     "tagline": "Curse of Vowalon",
     "date": "15048.07.21 – 15048.07.22",
     "image": {
-      "src": "../../../../campaigns/chapter-banners/rugatha-c01-chpt05.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt05-cce15dafcb%2Fd06441042184a77fdcebbbf85362dd49e689d7572ead14ea1ad535df8ff2aebb%2Freading.webp?alt=media",
       "alt": "Curse of Vowalon chapter 5 art"
     },
     "content": {
@@ -329,7 +329,7 @@
     "tagline": "Curse of Vowalon",
     "date": "15048.07.22",
     "image": {
-      "src": "../../../../campaigns/chapter-banners/rugatha-c01-chpt06.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt06-978efdb829%2Fa07355920fbbbae286f7a6186a922ebb7242cd93a65dfcf6156e1855740f59bc%2Freading.webp?alt=media",
       "alt": "Curse of Vowalon chapter 6 art"
     },
     "content": {
@@ -399,7 +399,7 @@
     "tagline": "Curse of Vowalon",
     "date": "15048.07.23",
     "image": {
-      "src": "../../../../campaigns/chapter-banners/rugatha-c01-chpt07.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt07-1275d7a54e%2Fd47d7733b2b7dc2c8a3a860e4f0582ad14942260d32fd2a4145b9ad1f64e6aa4%2Freading.webp?alt=media",
       "alt": "Curse of Vowalon chapter 7 art"
     },
     "content": {
@@ -6831,7 +6831,7 @@
     "tagline": "Before the Next Full Moon",
     "date": "15051.05.06 – 15051.05.07",
     "image": {
-      "src": "../../../../campaigns/chapter-banners/plus-c07-chpt01.jpeg",
+      "src": "../../../../campaigns/chapter-banners/plus-c07-chpt01.png",
       "alt": "The Ritual of Rage chapter art"
     },
     "content": {
@@ -6899,7 +6899,7 @@
     "tagline": "Before the Next Full Moon",
     "date": "15051.05.07 – 15051.05.08",
     "image": {
-      "src": "../../../../campaigns/chapter-banners/plus-c07-chpt02.jpeg",
+      "src": "../../../../campaigns/chapter-banners/plus-c07-chpt02.png",
       "alt": "El Oro de los Ratones chapter art"
     },
     "content": {
@@ -7159,7 +7159,7 @@
     "tagline": "Before the Next Full Moon",
     "date": "15051.05.11 - 15051.05.14",
     "image": {
-      "src": "../../../../campaigns/chapter-banners/plus-c07-chpt04.jpg",
+      "src": "../../../../campaigns/chapter-banners/plus-c07-chpt04.png",
       "alt": "Before the Next Full Moon chapter art"
     },
     "content": {

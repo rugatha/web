@@ -1,6 +1,7 @@
-const CACHE_VERSION = "rugatha-pwa-v25";
+const CACHE_VERSION = "rugatha-pwa-v26";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
+const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;
 
 const PRECACHE_URLS = [
   "/",
@@ -65,6 +66,61 @@ const SPELL_CATALOG_URLS = [
   "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/catalogs%2Fspells%2F2026-10-18-v1%2Fclass_spells.json?alt=media"
 ];
 
+// Only immutable editorial WebP variants from the reviewed bucket may enter this
+// cache. Download tokens, other buckets, private objects and other endpoints bypass it.
+const isPublicImage = (request) => {
+  if (request.method !== "GET") return false;
+  const url = new URL(request.url);
+  if (url.origin !== "https://firebasestorage.googleapis.com" || url.search !== "?alt=media") return false;
+  try {
+    return /^\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images\/(arcs|chapters|npcs)\/[a-z0-9_-]+\/[a-f0-9]{64}\/(thumb|reading)\.webp$/.test(decodeURIComponent(url.pathname));
+  } catch (_) { return false; }
+};
+
+const IMAGE_MAX_ENTRIES = 120;
+const IMAGE_MAX_BYTES = 32 * 1024 * 1024;
+const IMAGE_MAX_AGE = 30 * 24 * 60 * 60 * 1000;
+let imageCacheWrite = Promise.resolve();
+const imageCacheFirst = async (request, event) => {
+  const cache = await caches.open(IMAGE_CACHE);
+  const cached = await cache.match(request);
+  if (cached && Date.now() - Number(cached.headers.get("X-Rugatha-Cached-At") || 0) < IMAGE_MAX_AGE) return cached;
+  if (cached) await cache.delete(request);
+  try {
+    // An img without crossorigin starts as no-cors. Explicit CORS fetch gives a
+    // readable response; never store opaque responses with unknown size/status.
+    const response = await fetch(new Request(request, { mode: "cors", credentials: "omit" }));
+    if (!response.ok || !response.headers.get("Content-Type")?.startsWith("image/webp")) return response;
+    const body = await response.clone().arrayBuffer();
+    if (body.byteLength > 1024 * 1024) return response;
+    const headers = new Headers(response.headers);
+    headers.set("X-Rugatha-Cached-At", String(Date.now()));
+    headers.set("Content-Length", String(body.byteLength));
+    const stored = new Response(body, { status: response.status, headers });
+    imageCacheWrite = imageCacheWrite.catch(() => {}).then(async () => {
+      await cache.put(request, stored);
+      const keys = await cache.keys();
+      let total = 0;
+      const entries = [];
+      for (const key of keys) {
+        const item = await cache.match(key);
+        const at = Number(item?.headers.get("X-Rugatha-Cached-At") || 0);
+        if (Date.now() - at >= IMAGE_MAX_AGE) { await cache.delete(key); continue; }
+        const size = Number(item?.headers.get("Content-Length") || 0);
+        total += size; entries.push({ key, size });
+      }
+      while (entries.length > IMAGE_MAX_ENTRIES || total > IMAGE_MAX_BYTES) {
+        const oldest = entries.shift(); total -= oldest.size;
+        await cache.delete(oldest.key);
+      }
+    });
+    event.waitUntil(imageCacheWrite.catch(() => {}));
+    return response;
+  } catch (_) {
+    return await caches.match?.("/assets/logo/rugatha-icon-192.png") || Response.error();
+  }
+};
+
 const networkFirst = async (request) => {
   const cache = await caches.open(RUNTIME_CACHE);
   try {
@@ -98,6 +154,10 @@ const staleWhileRevalidate = async (request, event) => {
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;
+  if (isPublicImage(request)) {
+    event.respondWith(imageCacheFirst(request, event));
+    return;
+  }
   if (!isSameOriginGet(request) && !(request.method === "GET" && SPELL_CATALOG_URLS.includes(request.url))) return;
 
   if (["localhost", "127.0.0.1", "::1"].includes(self.location.hostname)) {

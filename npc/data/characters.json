@@ -143,7 +143,8 @@
   {
     "id": "Alfie_Fuller",
     "url": "npc/npc_page/pages/Alfie_Fuller.html",
-    "image": "individual_pics/Alfie Fuller.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfie-fuller-10bbaf3f2f%2F185aa8b9c9ec0918136f658db8c5ed31e8915715b630486141c46472dacec7a7%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfie-fuller-10bbaf3f2f%2F1ff103d8f5010c4bfce1065f92a4b05642891ed714e4c37715b0f7107c4cc745%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "沃瓦倫鎮的酒鬼，年約50，看起來在鎮上沒有家人，似乎總是醉醺醺地遊蕩在街上。\n時常酒醉後闖入勞迪俱樂部嚇唬來訪的外地人，住在布魯斯家隔壁的破舊房屋內。\n解除詛咒儀式前，艾菲驚慌地衝進勞迪俱樂部，預感自己再也見不到明天的太陽。沃瓦倫滅鎮後，艾菲也成為死者之一。",
@@ -480,7 +481,8 @@
   {
     "id": "Benny_Cozlothramuda",
     "url": "npc/npc_page/pages/Benny_Cozlothramuda.html",
-    "image": "individual_pics/Benny Cozlothramuda.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbenny-cozlothramuda-825e865065%2F47294c25febf0fd8113cb559e711ae482146b3554d4075771b63914f5101e49b%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbenny-cozlothramuda-825e865065%2Fa5b276d3ec028c51c15df73660613ed840c4bb46424c8cd497226b9e791113f2%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "本名班傑明，出身於歷史悠久的矮人家族。\n沃瓦倫長年的腕力冠軍，個性爽朗。曾作為潔絲敏失蹤事件的搜救隊一員，雖然對於沒能找到潔絲敏感到懊惱，但沒有過度責怪自己。\n慶祝葛蘭倫回到沃瓦倫的派對上，班尼與烏西歐尼比腕力，輸後大方把刻有家族姓氏的金戒指送給他。沃瓦倫滅鎮事件中，班尼死亡並被化為殭屍，最後由冒險者們讓他安息。",
@@ -748,7 +750,8 @@
   {
     "id": "Bruce_Dunham",
     "url": "npc/npc_page/pages/Bruce_Dunham.html",
-    "image": "individual_pics/Bruce Dunham.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbruce-dunham-4e338965f6%2F713ae455e797a689c9f90c0fa1350b1a1b097563045e82456e9690d5d4945783%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbruce-dunham-4e338965f6%2F6e26e139e5c124844c5d223d57b003e625a7994dbe2f4036f1a8d08b5d15137d%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "勞迪俱樂部的老闆，年約50，壯碩但溫和，對冒險者有求必應。\n台北市議員帶回葛蘭倫大法師後，布魯斯在勞迪俱樂部舉辦派對，請全鎮享用餐點慶祝詛咒即將解除。\n沃瓦倫滅鎮事件中，布魯斯死亡並被化為殭屍；冒險者們在黑暗與寂靜消散後，忍痛將包含布魯斯在內的熟識鎮民真正殺死，讓他們安息。",
@@ -1096,7 +1099,8 @@
   {
     "id": "Daryl_Warren",
     "url": "npc/npc_page/pages/Daryl_Warren.html",
-    "image": "individual_pics/Daryl Warren.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdaryl-warren-93124e8ff3%2F5ced7e28eedfe9b067edb7f4ec13b0149c8263c9bef3b106bfc33237c44b8c93%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdaryl-warren-93124e8ff3%2F1b52b12e0b1331d508efca04ecc0f7f407775260bbb05dd3fde13d13291cd887%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "沃瓦倫鎮的鎮長。\n潔絲敏的丈夫，山米克的父親；在山米克死後便變得鬱鬱寡歡。潔絲敏失蹤後，戴洛向冒險者說明她前往寂靜殿後便再也沒有回來，並先支付賞金，希望他們能找回潔絲敏。\n沃瓦倫滅鎮事件中，戴洛死亡並被化為殭屍；冒險者們最後將他與其他熟識鎮民一同安息。",
@@ -1990,7 +1994,8 @@
   {
     "id": "Gary",
     "url": "npc/npc_page/pages/Gary.html",
-    "image": "individual_pics/Gary.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgary-9e4164f6ea%2F04915077a7219101179a597ffb0f1ff9ae6b929a639b5d1c56028aace7670b68%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgary-9e4164f6ea%2F050e51f944f3356704a60f85b0a7e99c44def17cfbdeef9687a6b94cac427971%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "拉黎爾的狼夥伴，有比一般狼更高的智慧與力量。\n異色瞳，左眼藍色，右眼橘色，與拉黎爾形影不離，甚至願意為了保護拉黎爾而死。\n後來蓋瑞跟隨拉黎爾與羅特等人前往洛森王國。在母親大人的巢穴中，異變的母親大人以「治療」為名用觸手纏住蓋瑞，硬生生折斷他的脊椎，使他死亡。",
@@ -2180,7 +2185,8 @@
   {
     "id": "Grenland_Folsen",
     "url": "npc/npc_page/pages/Grenland_Folsen.html",
-    "image": "individual_pics/Grenland Folsen.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgrenland-folsen-667527a3c2%2F49b83f971be6c77a9716a110abdaabe8e497368f17eddebd14448fbd6f364d3e%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgrenland-folsen-667527a3c2%2F75c388b285ccffff4dbb29473dc80eb3197eb9d44412b9543586b33ca013bebc%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "隱居於魏斯科鎮的大法師。\n寂靜神拉索斯的追隨者。\n在台北市議員們的陪同下，穿越嚎叫森林，前往沃瓦倫鎮。\n協助寇頓神父主持解除詛咒的祈禱儀式，卻也造成了沃瓦倫滅鎮事件，而後被台北市議員殺死。",
@@ -2405,7 +2411,8 @@
   {
     "id": "The_Hooded_Figure",
     "url": "npc/npc_page/pages/The_Hooded_Figure.html",
-    "image": "individual_pics/The Hooded-Figure.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-hooded-figure-4f5fd01f3c%2Fd5153425b2adf57449efbf5504e76cf0c0ddc4ec871dfda3582c663568895c14%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-hooded-figure-4f5fd01f3c%2F6d069034a9e7c91823cf29897175a75e47fc6fb7a1c4f7693d679322314dd312%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
     "descZh": "沃瓦倫鎮出現的神秘存在。\n只有在深夜時，會披著黑色斗篷，出現在鎮上的街道上，露出他橘紅色閃閃發光的雙眼，有人還曾聽過他發出惡魔般的狂笑聲。\n他的身份至今無人知曉。\n在沃瓦倫滅鎮事件後，被冒險者目擊逃入寂靜殿內，疑似躲進了神父辦公室後掩藏通往地下的密室。\n在麥克嵩曾被帕拉丁和薩梅爾分別目擊到。\n依照法朗茲的說明，他是拉索斯教的傳訊者，會出現在不同的城市。",
@@ -2590,7 +2597,8 @@
   {
     "id": "Jasmine_Warren",
     "url": "npc/npc_page/pages/Jasmine_Warren.html",
-    "image": "individual_pics/Jasmine Warren.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjasmine-warren-fc1bfb0097%2F94bde417aab2cb44238f0143bcc3c9dc1791a580afc20505b0f1b0560704e1d7%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjasmine-warren-fc1bfb0097%2Fa8b97cbaf5ef56c2f74d4db6be51af04f2f0d66c59b0c9a649f8bf536f4b7c00%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "female",
     "descZh": "沃瓦倫鎮長戴洛的妻子。\n聘請冒險者至魏斯科帶回葛蘭倫大法師，以進行儀式來解除沃瓦倫的詛咒，卻在冒險者們回到沃瓦倫前失蹤了。\n冒險者們在地下城發現潔絲敏被獻祭的屍體，冰冷而毫無血色，胸口插的匕首上面寫著拉索斯語的「犧牲」與「血脈」。而他的全名也被昭告為潔絲敏・卓尼森・沃倫。",
@@ -2740,7 +2748,8 @@
   {
     "id": "Father_Kaulton",
     "url": "npc/npc_page/pages/Father_Kaulton.html",
-    "image": "individual_pics/Father Kaulton.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffather-kaulton-e7f55d7428%2F4b7a26d2587e1356bcbecb0ecad02d9bd32839c09a3dcc914907d96cfb99b347%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffather-kaulton-e7f55d7428%2F4148f482c8bf09c44a2e4782c92207160d3c75ce9ba32cefa2f533c540361ba2%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "沃瓦倫鎮的神父，負責管理寂靜殿，並帶領鎮上民眾禱告。\n於一年前來到沃瓦倫鎮擔任神父。\n主持解除詛咒的祈禱儀式，卻也造成了沃瓦倫滅鎮事件，而後被台北市議員殺死。",
@@ -4952,7 +4961,8 @@
   {
     "id": "RaLeer_the_Herder",
     "url": "npc/npc_page/pages/RaLeer_the_Herder.html",
-    "image": "individual_pics/Ra'Leer the Herder.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fra-leer-the-herder-267e086c63%2F880520ad3e6987c6ff0e0fa8aa4b43dd7879b0a5b63f574f1a1261ef90c8f673%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fra-leer-the-herder-267e086c63%2Ff961a035fb1bf193876573de2d3bd00d5680b00eb58983c3c770d7d6e6e4d3ff%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "female",
     "descZh": "居住於嚎叫森林內的妖精德魯伊。\n有一隻隨行的狼夥伴蓋瑞，對嚎叫森林內的野生動物都十分親近且熟悉，是森林之神涅西斯的忠實信奉者。\n後來拉黎爾作為馬可斯在妖精王國的線人，帶領羅特等人前往洛森王國，教羅特與華生妖精語，也協助羅特理解一支封有妖精靈魂的笛子。\n在母親大人的巢穴中，異變的母親大人先折斷蓋瑞的脊椎，再將觸手灌入拉黎爾體內，使他的身體破裂而死。",
@@ -5324,7 +5334,8 @@
   {
     "id": "sammick_warren",
     "url": "npc/npc_page/pages/Sammick_Warren.html",
-    "image": "individual_pics/Sammick Warren.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsammick-warren-531b4afbcc%2Fb5907839efdf4d325b225ee967397b5bd99587b2d9c91e11aeaaa4cfdc4933ae%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsammick-warren-531b4afbcc%2F876a4ccc065f8af439eb90fe38d4c31adc90691af3587a3515995c2abd9cfc08%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "沃瓦倫鎮長戴洛與潔絲敏之子。\n大約半年前，25歲的山米克被發現死於寂靜殿前，沃瓦倫的詛咒因此被鎮民廣為討論。",
@@ -6775,7 +6786,8 @@
   {
     "id": "Kubao",
     "url": "npc/npc_page/pages/Kubao.html",
-    "image": "individual_pics/Kubao.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkubao-ce650d5940%2F89f9f0459eab194bc99ce6caf7d207beaf8c9d3e0b32d656eb93e16ed2b77aba%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkubao-ce650d5940%2F213f5ba739e6583a56d9d76cb261037ff62537c8848b5b8046f2c45d0a4fa581%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
     "descZh": "薩梅爾於嚎叫森林守夜時撿起的幼狼，隨著台北市議員們一起行動。\n在地下城時，透過烏柯告知大家他的本名為戴倫，不過願意接受酷爆為他的名字。\n雷米在多侖維爾爆炸身亡後，酷爆曾啃食地上的肉塊，被薩梅爾趕緊抱起制止。",

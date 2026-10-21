@@ -1031,13 +1031,13 @@
     ]
   };
   const chapterImages = {
-    "rugatha-c01-chpt01": "../chapter-banners/rugatha-c01-chpt01.png",
-    "rugatha-c01-chpt02": "../chapter-banners/rugatha-c01-chpt02.png",
-    "rugatha-c01-chpt03": "../chapter-banners/rugatha-c01-chpt03.png",
-    "rugatha-c01-chpt04": "../chapter-banners/rugatha-c01-chpt04.png",
-    "rugatha-c01-chpt05": "../chapter-banners/rugatha-c01-chpt05.png",
-    "rugatha-c01-chpt06": "../chapter-banners/rugatha-c01-chpt06.png",
-    "rugatha-c01-chpt07": "../chapter-banners/rugatha-c01-chpt07.png",
+    "rugatha-c01-chpt01": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt01-f1a687c9bb%2Fcd2af9c39719c1aaadfb239da5cd2c5e73aefce9ec0f7c5b8f33909fc18ec703%2Fthumb.webp?alt=media",
+    "rugatha-c01-chpt02": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt02-d29dec8c50%2Fecf376a53c5e2920d754550ccf950a79954da3d1135148b8eb2416c15dd8138f%2Fthumb.webp?alt=media",
+    "rugatha-c01-chpt03": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt03-23f4606de3%2F7095633eb7bd2bf76f1b2887b149fb1c2cea7d8cfddee4dfc028ecaf26a25f20%2Fthumb.webp?alt=media",
+    "rugatha-c01-chpt04": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt04-71192e2aa7%2F8052872a46b3f5f10c007af9776b76ed0e6b1f39fc48f67a2eb6453bc979aa2f%2Fthumb.webp?alt=media",
+    "rugatha-c01-chpt05": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt05-cce15dafcb%2Fb27076a421b3cab62f0aef3481b1c89be1c52e432b30deb178842577e4e87976%2Fthumb.webp?alt=media",
+    "rugatha-c01-chpt06": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt06-978efdb829%2F435be384c6078d455df1330aae6ddee9806368fec60c712cf9a0d6d0eb8b30ec%2Fthumb.webp?alt=media",
+    "rugatha-c01-chpt07": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Frugatha-c01-chpt07-1275d7a54e%2F4468fd86ccdeea6a60e5a153207e29dec84200d5cea4edbf93f9a5230baf6bad%2Fthumb.webp?alt=media",
     "rugatha-c02-chpt01": "../chapter-banners/rugatha-c02-chpt01.png",
     "rugatha-c02-chpt02": "../chapter-banners/rugatha-c02-chpt02.png",
     "rugatha-c02-chpt03": "../chapter-banners/rugatha-c02-chpt03.png",

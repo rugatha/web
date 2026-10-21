@@ -476,3 +476,7 @@ python3 shared/scripts/normalize_site_html.py
 只改頁面而不補資料檔，通常就是最常見的錯誤來源。
 
 法術書本次開發與測試結果見 [2026-10-18 驗收紀錄](docs/spellbook-acceptance-2026-10-18.md)。
+
+## 公開內容圖片遷移
+
+圖片搬移計畫與 checkbox 進度見 [to-do.md](to-do.md)，試搬範圍、發布工具、驗收及回退紀錄見 [圖片遷移文件](docs/image-migration/README.md)。本階段保留原圖，優先試搬 `rugatha-c01`；請依紀錄確認正式發布狀態。

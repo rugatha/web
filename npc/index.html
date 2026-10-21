@@ -40,7 +40,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Rugatha">
   <link rel="apple-touch-icon" href="../assets/logo/rugatha-icon-192.png">
-  <script defer src="../shared/pwa.js"></script>
+  <script defer src="../shared/pwa.js?v=20261021-public-images-1"></script>
   <script src="../shared/language-toggle.js"></script>
 </head>
 <body>
@@ -498,7 +498,10 @@
       node.href = resolveUrl(character.url);
       nameEl.textContent = displayName || 'NPC';
       raceEl.textContent = getRaceKeysDisplay(character).join(', ');
-      img.src = character.image;
+      img.crossOrigin = 'anonymous';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.src = character.imageThumb || character.image;
       img.alt = displayName || 'NPC';
       wireImageLoad(img, node);
       return node;

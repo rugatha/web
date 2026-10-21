@@ -61,7 +61,7 @@
   const imageBannerBase = isArcPage || isNestedPage ? campaignBannerBase : campaignBannerBase;
   const chapterImageMap = {
     // Rugatha main
-    "rugatha-c01": "rugatha-c01.jpg",
+    "rugatha-c01": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Farcs%2Frugatha-c01-c600135691%2F89e07b5df302b62a10a64d64d901df03206eff0a0385d6d4a3c65ec2f320ebc8%2Fthumb.webp?alt=media",
     "rugatha-c02": "rugatha-c02.jpg",
     "rugatha-c03": "rugatha-c03.jpg",
     "rugatha-c03-chpt01": "rugatha-c03-chpt01.png",
@@ -95,7 +95,7 @@
     "brown-c01-chpt03": "brown-c01-chpt03.png",
     "brown-c01-chpt04": "brown-c01-chpt04.png",
     "brown-c01-chpt05": "brown-c01-chpt05.png",
-    "brown-c02": "brown-c02.png",
+    "brown-c02": "brown-c02.jpg",
     "brown-c02-chpt01": "brown-c02-chpt01.png",
     "lite-c05": "lite-c05.jpg",
     "lite-c05-chpt02": "lite-c05-chpt02.png",
@@ -485,6 +485,7 @@
           typeof imageName === "string" && (imageName.startsWith("/") || imageName.startsWith("http"))
             ? resolvePath(imageName)
             : resolvePath(`${base}${imageName}`);
+        if (useSrc.startsWith("https://firebasestorage.googleapis.com/")) img.crossOrigin = "anonymous";
         img.src = useSrc;
         img.alt = `${displayTitle} banner`;
         if (ch.noLink) {
@@ -775,7 +776,9 @@
       } else if (meta.image) {
         const imgEl = document.createElement("img");
         imgEl.className = "related-npcs__image";
-        imgEl.src = resolveNpcUrl(meta.image);
+        imgEl.crossOrigin = "anonymous";
+        imgEl.loading = "lazy";
+        imgEl.src = resolveNpcUrl(meta.imageThumb || meta.image);
         imgEl.alt = displayName || "NPC portrait";
         card.appendChild(imgEl);
       }

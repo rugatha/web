@@ -734,7 +734,7 @@ function resolveRelated(chars, relatedIds = []) {
         nameEn: match.nameEn,
         nameZh: match.nameZh,
         url: normalizeRelatedUrl(match.url),
-        image: resolveImage(match.image)
+        image: resolveImage(match.imageThumb || match.image)
       });
     } else {
       result.push({ name: rid, nameEn: rid, nameZh: rid, url: "#" });
@@ -764,6 +764,7 @@ function render(npc) {
   ensureContentSections();
   const effectiveNpc = applyViolentOverride(npc);
   updateTitle(effectiveNpc);
+  if ((effectiveNpc.image || "").startsWith("https://firebasestorage.googleapis.com/")) elements.portrait.crossOrigin = "anonymous";
   elements.portrait.src = effectiveNpc.image || "";
   setDescription(elements.zh, effectiveNpc.descZh, "（尚無中文介紹）");
   setDescription(elements.en, effectiveNpc.descEn, "(Description coming soon)");
@@ -1040,6 +1041,8 @@ function insertRelated(items) {
       if (item.image) {
         const img = document.createElement("img");
         img.className = "related-card__img";
+        if (item.image.startsWith("https://firebasestorage.googleapis.com/")) img.crossOrigin = "anonymous";
+        img.loading = "lazy";
         img.src = item.image;
         img.alt = displayName || "NPC portrait";
         card.appendChild(img);

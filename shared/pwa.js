@@ -33,7 +33,7 @@
   if (window.location.protocol !== "https:") return;
 
   window.addEventListener("load", function () {
-    navigator.serviceWorker.register("/sw.js?v=20261018-spell-catalog", { scope: "/", updateViaCache: "none" }).catch(function (error) {
+    navigator.serviceWorker.register("/sw.js?v=20261021-public-images", { scope: "/", updateViaCache: "none" }).catch(function (error) {
       console.warn("Rugatha PWA registration failed.", error);
     });
   });
