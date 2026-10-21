@@ -16,5 +16,25 @@
     "variants": 40,
     "checksumsIdentical": true,
     "originalsRestoredInsideRepository": false
+  },
+  "production": {
+    "checkedAt": "2026-10-21T12:40:08.787Z",
+    "images": 20,
+    "coldNetworkRequests": 20,
+    "warmNetworkRequests": 0,
+    "metadataRequests": 0,
+    "coldMs": 6254,
+    "warmMs": 12,
+    "originalBytesFromManifest": 30782719,
+    "readingBytesFromManifest": 2999674,
+    "note": "Bytes are exact manifest payload totals; timings measure this controlled browser run, not a before/after site-wide speed benchmark."
+  },
+  "productionAcceptance": {
+    "commit": "a15e2402ba093da282899d01dff3079bd02a2bcd",
+    "deployment": "https://github.com/rugatha/web/actions/runs/39600771345",
+    "casesPassed": 7,
+    "retiredUrls": 20,
+    "serviceWorker": "v27",
+    "note": "Six cases initially passed; the HTTP retry harness was corrected to intercept worker navigation at context scope, then HTTP recovery and true offline document reload were both rerun successfully. No app change was required for this fixture correction."
   }
 }

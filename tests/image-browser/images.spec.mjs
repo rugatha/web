@@ -9,7 +9,7 @@ const manifest = JSON.parse(readFileSync('docs/image-migration/pilot-manifest.js
 const oldPaths = new Set(manifest.images.map(image => '/' + image.source));
 const production = process.env.RUGATHA_IMAGE_TEST_BASE_URL;
 async function startImageWorker(page) {
-  if (production) await page.route('**/__image-test__/', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Image cache acceptance</title>' }));
+  if (production) await page.context().route('**/__image-test__/', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Image cache acceptance</title>' }));
   await page.goto('/__image-test__/');
   await page.evaluate(async () => {
     await navigator.serviceWorker.register('/sw.js');
@@ -75,8 +75,16 @@ test('real worker caches a CORS image for offline rendering', async ({ page, con
   await expect.poll(() => page.evaluate(async () => {
     const cache = await caches.open('rugatha-pwa-v27-public-images'); return (await cache.keys()).length;
   })).toBeGreaterThan(0);
+  if (production) {
+    // Cache a controlled document through the real network-first navigation
+    // handler, then stop fulfilling it. Offline reload must use Cache Storage.
+    await page.reload();
+    await expect.poll(() => page.evaluate(async () => !!(await (await caches.open('rugatha-pwa-v27-runtime')).match(location.href)))).toBe(true);
+    await context.unroute('**/__image-test__/');
+  }
   await context.setOffline(true);
-  expect(await render(alfie.image)).toBeGreaterThan(0);
+  if (production) await page.reload({ waitUntil: 'domcontentloaded' });
+  expect(await render(alfie.image)).toBe(manifest.images.find(image => image.entityIds.includes('Alfie_Fuller')).variants.reading.width);
   // This variant was never fetched by the blank test page; offline it uses
   // the small precached site icon instead of a broken image.
   expect(await render(alfie.imageThumb)).toBe(192);

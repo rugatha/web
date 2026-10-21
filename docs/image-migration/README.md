@@ -131,7 +131,7 @@ npm run images:retire -- /path/to/reviewed-manifest.json --apply
 - 冷熱載入測量採隔離瀏覽器中的 20 張閱讀版：冷載 20 次網路請求、熱載 0 次、metadata 請求 0 次。payload 大小來自精確 manifest；耗時僅表示本次受控測量，不是全站前後測速比較。
 - 私人照片登出：真實會員頁／Web SDK 搭配 Auth、Firestore、Storage Emulator，完成上傳、登入可讀、登出導回首頁、重開會員頁不顯示、匿名讀取拒絕；登出前後所有 Rugatha Cache Storage 均無私人照片，私人請求未由 Service Worker 回應。只使用 demo 帳號與測試圖片。
 - 既有瀏覽器回歸共 36 個案例逐項通過：初跑 35 項通過，1 項因圖片與既有測試同時清理輸出 trace 而失敗；隔離輸出後重跑通過。新增會員照片隱私案例另行通過。測試介面缺少會員頁啟動程式、計數器初始化與登出導頁等待的問題已修正；未因此改動會員頁正式流程。
-- 清理版本及正式舊路徑狀態於發布完成後補記。
+- 正式站七項圖片案例逐項通過：桌面、手機、真正離線重載、HTTP 失敗後重載恢復、20 圖冷熱載入、十二個 NPC 中英文及分享 metadata，以及 20 個原圖舊網址退役。結果見 [傳輸與正式驗收紀錄](transfer-verification.json)。
 - 更新後的 `npm run test:all` 包含既有功能、圖片 Rules 與圖片瀏覽器驗收。現有 Chrome 可用 `RUGATHA_TEST_BROWSER_CHANNEL=chrome`（既有套件）、`RUGATHA_IMAGE_BROWSER_CHANNEL=chrome`（圖片套件）；兩組測試已使用獨立輸出目錄，避免互相清理 trace。
 
 ## 正式發布紀錄
@@ -141,6 +141,8 @@ npm run images:retire -- /path/to/reviewed-manifest.json --apply
 - 正式驗收指令：`RUGATHA_IMAGE_TEST_BASE_URL=https://rugatha.com RUGATHA_IMAGE_BROWSER_CHANNEL=chrome npm run test:image-browser`；只允許 GET，阻擋正式 Auth、Firestore 等外部端點。
 - 團務週期觀察：依使用者決定，觀察一個月，於 **2026-11-21 後**檢查用量與費用，再決定是否擴大批次；目前保留其他 repo 圖片；試搬原圖以私人 Storage 保存。此處是待辦日期，未建立背景排程。
 - 第一個完整計費月：2026 年 11 月，待月結資料可用後核對。
-- 原圖清理發布版本：待最終驗收後補記。
+- 原圖清理 commit：`a15e2402ba093da282899d01dff3079bd02a2bcd`。
+- [清理版 Deploy Pages 成功](https://github.com/rugatha/web/actions/runs/39600771345)。正式 worker v27 與本機 SHA-256 相同；七項圖片案例已逐項通過，20 個舊圖片網址均回傳 404／410，新公開圖片正常顯示。
+- 正式 HTTP 重試案例初次遇到測試用空白頁重載落入 GitHub 404 的路由問題；改由 context 攔截 worker 的測試頁請求後重跑通過。並補強離線驗收，先透過真實 navigation handler 快取測試頁、移除測試路由，再離線整頁重載及顯示原圖片，避免只驗到同一頁的已解碼圖片。正式網站流程未因此變更。
 
 最新用量快照：66 個現存物件、35,708,371 bytes（約 34.1 MiB），包含 20 個私人完整原圖；不含 soft-deleted 物件，仍需依 11/21 觀察計畫核對實際帳單。

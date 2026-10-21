@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-21T12:26:06.294Z",
+  "checkedAt": "2026-10-21T12:43:22.537Z",
   "bucket": "rugatha-87e15.firebasestorage.app",
   "location": "US-WEST1",
   "storageClass": "REGIONAL",
@@ -12,11 +12,11 @@
   "metricsWindowDays": 30,
   "metrics": {
     "api/request_count": {
-      "total": 1051,
+      "total": 1148,
       "truncated": false
     },
     "network/sent_bytes_count": {
-      "total": 263613078,
+      "total": 271388050,
       "truncated": false
     }
   },
