@@ -3,12 +3,17 @@ import { readFileSync } from 'node:fs';
 
 const characters = JSON.parse(readFileSync('npc/data/characters.json', 'utf8'));
 const alfie = characters.find(npc => npc.id === 'Alfie_Fuller');
+const manifest = JSON.parse(readFileSync('docs/image-migration/pilot-manifest.json', 'utf8'));
+const oldPaths = new Set(manifest.images.map(image => '/' + image.source));
+const production = process.env.RUGATHA_IMAGE_TEST_BASE_URL;
 test.beforeEach(async ({ context }) => {
   // Browsers may read the public image endpoint only. Auth, analytics and all
   // production databases are blocked, regardless of current user login state.
   await context.route('**/*', route => {
     const url = new URL(route.request().url());
+    if (route.request().method() !== 'GET') return route.abort();
     if (url.hostname === '127.0.0.1') return route.continue();
+    if (production && url.origin === new URL(production).origin) return route.continue();
     if (url.origin === 'https://firebasestorage.googleapis.com' && decodeURIComponent(url.pathname).includes('/o/public-images/') && url.search === '?alt=media') return route.continue();
     return route.abort();
   });
@@ -18,6 +23,8 @@ for (const mobile of [false, true]) {
   test(`pilot pages load public images and list thumbnails (${mobile ? 'mobile' : 'desktop'})`, async ({ page }) => {
     if (mobile) await page.setViewportSize({ width: 390, height: 844 });
     const failed = [];
+    const oldRequests = [];
+    page.on('request', request => { if (oldPaths.has(decodeURIComponent(new URL(request.url()).pathname))) oldRequests.push(request.url()); });
     page.on('response', response => { if (response.url().includes('/o/public-images') && !response.ok()) failed.push(response.url()); });
     await page.goto('/campaigns/pages/rugatha/rugatha-c01/');
     const cover = page.locator('[data-role="arc-image"]');
@@ -40,12 +47,14 @@ for (const mobile of [false, true]) {
     await expect(card).toHaveAttribute('src', alfie.imageThumb);
     await card.scrollIntoViewIfNeeded();
     await expect.poll(() => card.evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
-    await page.screenshot({ path: `test-results/image-pilot-${mobile ? 'mobile' : 'desktop'}.png` });
+    await page.screenshot({ path: `test-results/image-pilot-${production ? 'production-' : ''}${mobile ? 'mobile' : 'desktop'}.png` });
     expect(failed).toEqual([]);
+    expect(oldRequests).toEqual([]);
   });
 }
 
 test('real worker caches a CORS image for offline rendering', async ({ page, context }) => {
+  if (production) await page.route('**/__image-test__/', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Image cache acceptance</title>' }));
   await page.goto('/__image-test__/');
   await page.evaluate(async () => {
     await navigator.serviceWorker.register('/sw.js');

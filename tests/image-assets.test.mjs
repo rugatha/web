@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, symlink, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { assetId, referenceCandidates, outsideDirectory, root } from '../scripts/image-assets.mjs';
+import { assetId, referenceCandidates, outsideDirectory, root, npcSourceFor, imageBucket, publicImageUrl } from '../scripts/image-assets.mjs';
 
 test('resolve image references including encoded names, nested paths and shared runtime bases', () => {
   assert.deepEqual(referenceCandidates('https://rugatha.com/npc/individual_pics/Alfie%20Fuller.jpeg', 'npc/index.html'), ['npc/individual_pics/Alfie Fuller.jpeg']);
@@ -15,6 +15,14 @@ test('resolve image references including encoded names, nested paths and shared 
 test('stable asset IDs distinguish names that normalize to the same slug', () => {
   assert.notEqual(assetId('npc/individual_pics/A B.png'), assetId('npc/individual_pics/A-B.png'));
   assert.equal(assetId('npc/individual_pics/A B.png'), assetId('npc/individual_pics/A B.png'));
+});
+
+test('pilot preparation retains NPC scope and entity IDs after front-end migration', () => {
+  const source = 'npc/individual_pics/Alfie Fuller.jpeg';
+  const image = { source, id: assetId(source), category: 'npcs' };
+  assert.equal(npcSourceFor({ image: 'individual_pics/Alfie Fuller.jpeg' }, [image]), source);
+  assert.equal(npcSourceFor({ image: publicImageUrl(imageBucket, `public-images/npcs/${image.id}/${'a'.repeat(64)}/reading.webp`) }, [image]), source);
+  assert.equal(npcSourceFor({ image: 'https://example.com/portrait.jpg' }, [image]), null);
 });
 
 test('generated originals cannot be written into repo, including through a symlink', async () => {

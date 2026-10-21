@@ -72,8 +72,9 @@ npm run test:image-browser
 
 ## 已完成驗證與限制
 
+- 前端切換後重新輸出同一批，20 張原圖的 entity ID 與 40 個變體 checksum 均完全一致；再次 dry-run 驗證通過。
 - 本機來源切換／回退演練：24 檔恢復後只剩原有 Rules 變更，再重新套用。工具會拒絕覆蓋後續編輯。
-- 圖片工具與 PWA 單元測試：6 項通過，涵蓋引用解析、slug 碰撞、禁止 repo 內輸出、私有 URL 隔離、快取筆數及容量。
+- 圖片工具與 PWA 單元測試：7 項通過，涵蓋引用解析、slug 碰撞、禁止 repo 內輸出、私有 URL 隔離、快取筆數及容量。
 - 圖片 Rules Emulator：2 項通過，包含匿名讀取、禁止列出／寫入／刪除、私人照片隔離與既有法術檔讀取。
 - 圖片 Chrome 驗收：3 項通過，桌面／390px 手機驗證故事弧及七章、NPC 主肖像及列表縮圖；真實 Service Worker 驗證暖快取離線與冷圖片預設圖。
 - 既有 `npm test` 回歸通過，另已驗證更新後的既有 PWA 四項測試。
@@ -90,6 +91,8 @@ npm run test:image-browser
 
 ## 正式發布紀錄
 
-- 前端：待發布與正式網址驗證。
-- 團務週期觀察：待正式發布後開始；觀察完成前不擴大批次。
-- 第一個完整計費月：待核對。
+- 前端 commit：`91b9510015805a0fdf9844cb9e2f2c0708752b31`，已推送 main。
+- [Deploy Pages 成功](https://github.com/rugatha/web/actions/runs/39594860522)。正式故事弧、七章與 NPC 頁面已通過隔離 Chrome 桌面／手機驗收，確認不請求這批舊圖；正式 Service Worker v26 已驗證暖快取離線顯示與冷圖片預設圖。驗收時間：2026-10-21 晚間（台北）。
+- 正式驗收指令：`RUGATHA_IMAGE_TEST_BASE_URL=https://rugatha.com RUGATHA_IMAGE_BROWSER_CHANNEL=chrome npm run test:image-browser`；只允許 GET，阻擋正式 Auth、Firestore 等外部端點。
+- 團務週期觀察：依使用者決定，觀察一個月，於 **2026-11-21 後**檢查用量與費用，再決定是否擴大批次；目前保留其他圖片與所有原圖。此處是待辦日期，未建立背景排程。
+- 第一個完整計費月：2026 年 11 月，待月結資料可用後核對。

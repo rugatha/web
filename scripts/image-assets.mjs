@@ -29,6 +29,19 @@ export function assetId(path) {
   return `${slug}-${sha256(Buffer.from(path)).slice(0, 10)}`;
 }
 
+export function npcSourceFor(npc, images) {
+  if (npc.image?.startsWith('individual_pics/')) return `npc/${npc.image}`;
+  try {
+    const url = new URL(npc.image);
+    if (url.origin !== 'https://firebasestorage.googleapis.com') return null;
+    const prefix = `/v0/b/${imageBucket}/o/public-images/npcs/`;
+    const path = decodeURIComponent(url.pathname);
+    if (!path.startsWith(prefix)) return null;
+    const id = path.slice(prefix.length).split('/')[0];
+    return images.find(image => image.category === 'npcs' && image.id === id)?.source || null;
+  } catch (_) { return null; }
+}
+
 export function imageInfo(path) {
   if (extname(path).toLowerCase() === '.svg') return { width: null, height: null, format: 'svg' };
   const result = execFileSync('sips', ['-g', 'pixelWidth', '-g', 'pixelHeight', '-g', 'format', path], { encoding: 'utf8' });
@@ -128,7 +141,7 @@ export async function prepare(inventoryPath, output, batch = 'rugatha-c01') {
   const inventory = JSON.parse(await readFile(inventoryPath, 'utf8'));
   const npcIds = new Set(Object.entries(JSON.parse(await readFile(join(root, 'campaigns/pages/npcs.json'), 'utf8')).npcs).filter(([id]) => id.startsWith('rugatha-c01-')).flatMap(([, ids]) => ids));
   const npcRecords = JSON.parse(await readFile(join(root, 'npc/data/characters.json'), 'utf8'));
-  const pilotNpcs = new Set(npcRecords.filter(npc => npcIds.has(npc.id)).map(npc => `npc/${npc.image}`));
+  const pilotNpcs = new Set(npcRecords.filter(npc => npcIds.has(npc.id)).map(npc => npcSourceFor(npc, inventory.images)).filter(Boolean));
   const selected = inventory.images.filter(image => image.category && (batch === 'all' || /^campaigns\/(campaign-banners|chapter-banners)\/rugatha-c01(?:[.-])/.test(image.source) || pilotNpcs.has(image.source)));
   if (!selected.length) throw new Error('No images selected');
   const manifest = { schemaVersion: 1, batch, baselineCommit: inventory.baselineCommit, bucket: imageBucket, encoder: execFileSync('cwebp', ['-version'], { encoding: 'utf8' }).trim(), variants: { thumb: { maxEdge: 480, quality: 82 }, reading: { maxEdge: 1600, quality: 85 } }, images: [] };
@@ -143,7 +156,7 @@ export async function prepare(inventoryPath, output, batch = 'rugatha-c01') {
     try { if (sha256(await readFile(backup)) !== image.sha256) throw new Error(`Backup mismatch: ${backup}`); }
     catch (error) { if (error.code !== 'ENOENT') throw error; await copyFile(source, backup); }
     if (sha256(await readFile(backup)) !== image.sha256) throw new Error(`Backup verification failed: ${image.source}`);
-    const entityIds = image.category === 'npcs' ? npcRecords.filter(npc => `npc/${npc.image}` === image.source).map(npc => npc.id) : [basename(image.source, extname(image.source))];
+    const entityIds = image.category === 'npcs' ? npcRecords.filter(npc => npcSourceFor(npc, inventory.images) === image.source).map(npc => npc.id) : [basename(image.source, extname(image.source))];
     const record = { source: image.source, id: image.id, category: image.category, entityIds, original: { bytes: image.bytes, sha256: image.sha256, width: image.width, height: image.height }, variants: {} };
     for (const [name, spec] of Object.entries(manifest.variants)) {
       const scale = Math.min(1, spec.maxEdge / Math.max(image.width, image.height));
