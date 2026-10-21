@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v26";
+const CACHE_VERSION = "rugatha-pwa-v27";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;
@@ -81,6 +81,14 @@ const IMAGE_MAX_ENTRIES = 120;
 const IMAGE_MAX_BYTES = 32 * 1024 * 1024;
 const IMAGE_MAX_AGE = 30 * 24 * 60 * 60 * 1000;
 let imageCacheWrite = Promise.resolve();
+const imageFallback = async (otherwise = Response.error()) => {
+  const fallback = await caches.match?.("/assets/logo/rugatha-icon-192.png");
+  if (!fallback) return otherwise;
+  // Never let the browser retain a temporary placeholder under an image URL.
+  const headers = new Headers(fallback.headers);
+  headers.set("Cache-Control", "no-store");
+  return new Response(await fallback.arrayBuffer(), { status: 200, headers });
+};
 const imageCacheFirst = async (request, event) => {
   const cache = await caches.open(IMAGE_CACHE);
   const cached = await cache.match(request);
@@ -90,7 +98,7 @@ const imageCacheFirst = async (request, event) => {
     // An img without crossorigin starts as no-cors. Explicit CORS fetch gives a
     // readable response; never store opaque responses with unknown size/status.
     const response = await fetch(new Request(request, { mode: "cors", credentials: "omit" }));
-    if (!response.ok || !response.headers.get("Content-Type")?.startsWith("image/webp")) return response;
+    if (!response.ok || !response.headers.get("Content-Type")?.startsWith("image/webp")) return imageFallback(response);
     const body = await response.clone().arrayBuffer();
     if (body.byteLength > 1024 * 1024) return response;
     const headers = new Headers(response.headers);
@@ -117,7 +125,7 @@ const imageCacheFirst = async (request, event) => {
     event.waitUntil(imageCacheWrite.catch(() => {}));
     return response;
   } catch (_) {
-    return await caches.match?.("/assets/logo/rugatha-icon-192.png") || Response.error();
+    return imageFallback();
   }
 };
 

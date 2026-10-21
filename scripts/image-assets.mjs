@@ -1,9 +1,11 @@
 // Local image inventory and deterministic migration preparation. No cloud writes.
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { readFile, writeFile, mkdir, copyFile, realpath } from 'node:fs/promises';
 import { resolve, relative, dirname, basename, extname, join, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { tmpdir } from 'node:os';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const imageBucket = 'rugatha-87e15.firebasestorage.app';
@@ -17,7 +19,7 @@ export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const slash = path => path.split(sep).join('/');
 const imagePattern = /\.(png|jpe?g|webp|gif|svg|avif)$/i;
 const textPattern = /\.(html|css|js|mjs|json|webmanifest)$/i;
-const files = () => execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], { cwd: root, maxBuffer: 32 * 1024 * 1024 }).toString().split('\0').filter(Boolean);
+const files = () => execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], { cwd: root, maxBuffer: 32 * 1024 * 1024 }).toString().split('\0').filter(path => path && existsSync(join(root, path)));
 
 export function categoryFor(path) {
   return Object.entries(categories).find(([prefix]) => path.startsWith(prefix))?.[1] || null;
@@ -74,11 +76,16 @@ export function referenceCandidates(value, source) {
   return [...new Set(candidates)];
 }
 
-export async function audit(output) {
+export async function audit(output = join(tmpdir(), 'rugatha-image-current-inventory.json')) {
   const paths = files().filter(path => !path.startsWith('docs/image-migration/'));
   let previous = new Map();
   try { previous = new Map(JSON.parse(await readFile(output, 'utf8')).images.map(image => [image.source, image])); }
-  catch (error) { if (error.code !== 'ENOENT') throw error; }
+  catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+    // The committed inventory is the immutable pre-migration baseline. A fresh
+    // current scan may reuse dimensions, but never replaces that evidence.
+    previous = new Map(JSON.parse(await readFile(join(root, 'docs/image-migration/inventory.json'), 'utf8')).images.map(image => [image.source, image]));
+  }
   const images = [];
   for (const path of paths.filter(p => imagePattern.test(p))) {
     const bytes = await readFile(join(root, path));
@@ -135,9 +142,10 @@ export async function outsideDirectory(output) {
   return actual;
 }
 
-export async function prepare(inventoryPath, output, batch = 'rugatha-c01') {
+export async function prepare(inventoryPath, output, batch = 'rugatha-c01', originalsDirectory = process.env.RUGATHA_IMAGE_ORIGINALS_DIR) {
   if (batch !== 'rugatha-c01' && batch !== 'all') throw new Error('Supported batches: rugatha-c01, all');
   const directory = await outsideDirectory(output);
+  const restored = originalsDirectory ? await outsideDirectory(originalsDirectory) : null;
   const inventory = JSON.parse(await readFile(inventoryPath, 'utf8'));
   const npcIds = new Set(Object.entries(JSON.parse(await readFile(join(root, 'campaigns/pages/npcs.json'), 'utf8')).npcs).filter(([id]) => id.startsWith('rugatha-c01-')).flatMap(([, ids]) => ids));
   const npcRecords = JSON.parse(await readFile(join(root, 'npc/data/characters.json'), 'utf8'));
@@ -146,8 +154,14 @@ export async function prepare(inventoryPath, output, batch = 'rugatha-c01') {
   if (!selected.length) throw new Error('No images selected');
   const manifest = { schemaVersion: 1, batch, baselineCommit: inventory.baselineCommit, bucket: imageBucket, encoder: execFileSync('cwebp', ['-version'], { encoding: 'utf8' }).trim(), variants: { thumb: { maxEdge: 480, quality: 82 }, reading: { maxEdge: 1600, quality: 85 } }, images: [] };
   for (const image of selected) {
-    const source = join(root, image.source);
-    const original = await readFile(source);
+    let source = join(root, image.source);
+    let original;
+    try { original = await readFile(source); }
+    catch (error) {
+      if (error.code !== 'ENOENT' || !restored) throw new Error(`Original unavailable: ${image.source}. Restore the private archive outside Git and set RUGATHA_IMAGE_ORIGINALS_DIR.`, { cause: error });
+      source = join(restored, image.source);
+      original = await readFile(source);
+    }
     if (sha256(original) !== image.sha256) throw new Error(`Source changed since inventory: ${image.source}`);
     if (!image.width || !image.height) throw new Error(`Missing dimensions: ${image.source}`);
     const backup = join(directory, 'originals', image.source);
@@ -182,7 +196,7 @@ export async function prepare(inventoryPath, output, batch = 'rugatha-c01') {
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const [command, ...args] = process.argv.slice(2);
-  if (command === 'audit' && args.length === 1) await audit(args[0]);
+  if (command === 'audit' && args.length <= 1) await audit(args[0]);
   else if (command === 'prepare' && args.length >= 2) await prepare(args[0], args[1], args[2]);
   else throw new Error('Usage: node scripts/image-assets.mjs audit output.json | prepare inventory.json /outside/output [rugatha-c01|all]');
 }

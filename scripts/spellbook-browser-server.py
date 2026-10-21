@@ -68,6 +68,8 @@ window.RUGATHA_FIREBASE_CONFIG = {apiKey:'demo-key',authDomain:'demo-rugatha.fir
                 source = re.sub(r'file.url = `[^`]+`;', 'file.url = `/__catalog__/${file.name}`;', source)
             if path == '/shared/auth.js':
                 source = "import '/tests/browser/spellbook-boot.js';\n" + source
+            if path.rstrip('/') in ['/member', '/member/index.html']:
+                source = source.replace('import { getSiteAuth }', "import '/tests/browser/spellbook-boot.js';\n    import { getSiteAuth }")
             if path.rstrip('/') in ['/toolbox/character_sheet', '/toolbox/character_sheet/index.html']:
                 source = source.replace('import { createCharacterSpellbookUI }', "import '/tests/browser/spellbook-boot.js';\n    import { createCharacterSpellbookUI }")
             if path.rstrip('/') in ['/toolbox/spells', '/toolbox/spells/index.html']:

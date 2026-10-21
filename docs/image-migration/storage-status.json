@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-21T11:45:18.015Z",
+  "checkedAt": "2026-10-21T12:26:06.294Z",
   "bucket": "rugatha-87e15.firebasestorage.app",
   "location": "US-WEST1",
   "storageClass": "REGIONAL",
@@ -7,16 +7,16 @@
     "retentionDurationSeconds": "604800",
     "effectiveTime": "2026-09-25T09:58:08.639Z"
   },
-  "liveObjects": 46,
-  "liveBytes": 4925652,
+  "liveObjects": 66,
+  "liveBytes": 35708371,
   "metricsWindowDays": 30,
   "metrics": {
     "api/request_count": {
-      "total": 585,
+      "total": 1051,
       "truncated": false
     },
     "network/sent_bytes_count": {
-      "total": 149482804,
+      "total": 263613078,
       "truncated": false
     }
   },

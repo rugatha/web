@@ -6,13 +6,24 @@ import { ref, uploadString, getBytes, deleteObject, listAll } from 'firebase/sto
 let environment;
 const hash = 'a'.repeat(64);
 const path = `public-images/arcs/rugatha-c01-test/${hash}/reading.webp`;
+const original = `image-originals/arcs/rugatha-c01-test/${hash}/original.png`;
 before(async () => {
   environment = await initializeTestEnvironment({ projectId: 'demo-rugatha-images', storage: { rules: readFileSync('config/firebase/storage.rules', 'utf8') } });
   await environment.withSecurityRulesDisabled(async context => {
-    for (const object of [path, path.replace('/arcs/', '/private/'), path.replace(hash, 'invalid'), 'profile-photos/owner/avatar.png', 'catalogs/spells/test/spells-phb.json']) {
+    for (const object of [path, original, path.replace('/arcs/', '/private/'), path.replace(hash, 'invalid'), 'profile-photos/owner/avatar.png', 'catalogs/spells/test/spells-phb.json']) {
       await uploadString(ref(context.storage(), object), 'test bytes', 'raw', { contentType: 'image/webp' });
     }
   });
+});
+
+test('full-resolution original archives are IAM-only, including for signed-in app admins', async () => {
+  for (const context of [environment.unauthenticatedContext(), environment.authenticatedContext('owner'), environment.authenticatedContext('admin', { admin: true })]) {
+    const storage = context.storage();
+    await assertFails(getBytes(ref(storage, original)));
+    await assertFails(listAll(ref(storage, 'image-originals')));
+    await assertFails(uploadString(ref(storage, original), 'replacement'));
+    await assertFails(deleteObject(ref(storage, original)));
+  }
 });
 after(async () => { if (environment) await environment.cleanup(); });
 

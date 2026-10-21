@@ -5,10 +5,13 @@ import vm from 'node:vm';
 
 const base = 'https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/';
 const url = n => `${base}${encodeURIComponent(`public-images/npcs/npc-${n}/${'a'.repeat(64)}/thumb.webp`)}?alt=media`;
-function worker({ bytes = 20 } = {}) {
+function worker({ bytes = 20, fallback = false } = {}) {
   const listeners = {}, stores = new Map();
-  let calls = 0, offline = false;
+  let calls = 0, offline = false, status = 200, now = Date.now();
   const caches = {
+    async match(request) {
+      if (fallback && request === '/assets/logo/rugatha-icon-192.png') return new Response('site-icon', { headers: { 'Content-Type': 'image/png' } });
+    },
     async open(name) {
       if (!stores.has(name)) stores.set(name, new Map());
       const store = stores.get(name);
@@ -23,16 +26,17 @@ function worker({ bytes = 20 } = {}) {
   };
   vm.runInNewContext(readFileSync('sw.js', 'utf8'), {
     self: { location: { origin: 'https://rugatha.test', hostname: 'rugatha.test' }, addEventListener: (name, callback) => listeners[name] = callback },
-    caches, URL, Request, Response, Headers, Date,
+    caches, URL, Request, Response, Headers, Date: { now: () => now },
     fetch: async request => {
       calls++;
       assert.equal(request.mode, 'cors'); assert.equal(request.credentials, 'omit');
       if (offline) throw new Error('offline');
-      return new Response(new Uint8Array(bytes), { headers: { 'Content-Type': 'image/webp' } });
+      return new Response(new Uint8Array(bytes), { status, headers: { 'Content-Type': 'image/webp' } });
     }
   });
   return {
     stores, get calls() { return calls; }, offline: value => offline = value,
+    status: value => status = value, advance: duration => now += duration,
     async fetch(value) {
       let response;
       const tasks = [];
@@ -55,8 +59,34 @@ test('public images are cache-first and available offline; private or token URLs
   const calls = w.calls;
   assert.equal(await w.fetch(url(1) + '&token=secret'), undefined);
   assert.equal(await w.fetch(`${base}profile-photos%2Fowner%2Favatar.webp?alt=media`), undefined);
+  assert.equal(await w.fetch(`${base}image-originals%2Farcs%2Fone%2F${'a'.repeat(64)}%2Foriginal.png?alt=media`), undefined);
   assert.equal(await w.fetch(url(1).replace('/b/rugatha-87e15.', '/b/other.')), undefined);
   assert.equal(w.calls, calls);
+});
+
+test('HTTP failure shows a placeholder without caching it or issuing automatic retries', async () => {
+  const w = worker({ fallback: true });
+  w.status(503);
+  const fallback = await w.fetch(url(1));
+  assert.equal(fallback.headers.get('Content-Type'), 'image/png');
+  assert.equal(fallback.headers.get('Cache-Control'), 'no-store');
+  assert.equal(w.calls, 1);
+  assert.equal([...w.stores.values()][0].size, 0);
+  w.status(200);
+  assert.equal((await w.fetch(url(1))).headers.get('Content-Type'), 'image/webp');
+  assert.equal(w.calls, 2);
+});
+
+test('expired images are refreshed and removed from cache when offline', async () => {
+  const w = worker({ fallback: true });
+  await w.fetch(url(1));
+  w.advance(30 * 24 * 60 * 60 * 1000 + 1);
+  await w.fetch(url(1));
+  assert.equal(w.calls, 2);
+  w.advance(30 * 24 * 60 * 60 * 1000 + 1);
+  w.offline(true);
+  assert.equal((await w.fetch(url(1))).headers.get('Content-Type'), 'image/png');
+  assert.equal([...w.stores.values()][0].size, 0);
 });
 
 test('image cache evicts oldest entries above its count limit', async () => {

@@ -479,4 +479,4 @@ python3 shared/scripts/normalize_site_html.py
 
 ## 公開內容圖片遷移
 
-圖片搬移計畫與 checkbox 進度見 [to-do.md](to-do.md)，試搬範圍、發布工具、驗收及回退紀錄見 [圖片遷移文件](docs/image-migration/README.md)。本階段保留原圖，優先試搬 `rugatha-c01`；請依紀錄確認正式發布狀態。
+圖片搬移計畫與 checkbox 進度見 [to-do.md](to-do.md)，試搬範圍、發布工具、驗收及回退紀錄見 [圖片遷移文件](docs/image-migration/README.md)。`rugatha-c01` 的 20 張試搬原圖已備份至私人 Storage 並移除 repo 副本；其餘圖片保留，於 11/21 後檢查用量再決定是否擴大。

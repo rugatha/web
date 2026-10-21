@@ -23,3 +23,25 @@ test-results/
 # Full spell catalogs live in Firebase Storage; test caches must stay outside Git.
 /toolbox/spells/spells-phb.json
 /toolbox/race_class/class_spells.json
+
+# Retired public originals are archived privately in Storage; see pilot-manifest.json.
+/campaigns/campaign-banners/rugatha-c01.jpg
+/campaigns/chapter-banners/rugatha-c01-chpt01.png
+/campaigns/chapter-banners/rugatha-c01-chpt02.png
+/campaigns/chapter-banners/rugatha-c01-chpt03.png
+/campaigns/chapter-banners/rugatha-c01-chpt04.png
+/campaigns/chapter-banners/rugatha-c01-chpt05.png
+/campaigns/chapter-banners/rugatha-c01-chpt06.png
+/campaigns/chapter-banners/rugatha-c01-chpt07.png
+/npc/individual_pics/Alfie Fuller.jpeg
+/npc/individual_pics/Benny Cozlothramuda.jpeg
+/npc/individual_pics/Bruce Dunham.jpeg
+/npc/individual_pics/Daryl Warren.png
+/npc/individual_pics/Father Kaulton.jpeg
+/npc/individual_pics/Gary.png
+/npc/individual_pics/Grenland Folsen.png
+/npc/individual_pics/Jasmine Warren.jpeg
+/npc/individual_pics/Kubao.jpeg
+/npc/individual_pics/Ra'Leer the Herder.jpeg
+/npc/individual_pics/Sammick Warren.png
+/npc/individual_pics/The Hooded-Figure.jpeg

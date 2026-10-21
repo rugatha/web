@@ -1,6 +1,7 @@
 import { defineConfig } from '@playwright/test';
 const production = process.env.RUGATHA_IMAGE_TEST_BASE_URL;
 export default defineConfig({
+  outputDir: './test-results/image-browser',
   testDir: './tests/image-browser', workers: 1, timeout: 45000,
   reporter: 'list',
   use: { baseURL: production || 'http://127.0.0.1:8766', channel: process.env.RUGATHA_IMAGE_BROWSER_CHANNEL || undefined, viewport: { width: 1280, height: 900 }, screenshot: 'only-on-failure' },

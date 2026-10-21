@@ -13,7 +13,7 @@
 
 新增或替換這批圖片時，先產生縮圖與閱讀版、更新 manifest，再以新 hash 路徑發布。先驗證正式匿名讀取、checksum 與快取標頭，再更新引用及社群預覽。不要在 Console 覆寫 immutable URL，也不要將原圖或輸出暫存重新加入 repository。
 
-NPC `image` 用於閱讀版，`imageThumb` 用於列表／相關角色卡。未搬移圖片維持原路徑；不要在未驗收前擴大搬移或刪除舊檔。私人會員圖片維持原權限與流程。
+NPC `image` 用於閱讀版，`imageThumb` 用於列表／相關角色卡。這批 20 張原圖已從 repo 移除，完整來源透過私人 `image-originals/` 路徑及 manifest generation 保存。需重建時先用 `images:originals --restore` 還原到 repo 外，再設定 `RUGATHA_IMAGE_ORIGINALS_DIR` 產生變體；不要移除 `.gitignore` 的舊圖路徑以重新加入原圖。未搬移圖片維持原路徑；其餘批次於 11/21 後檢查用量再決定是否擴大。私人會員圖片維持原權限與流程。
 
 ## 1. 團錄 / 章節內容更新
 

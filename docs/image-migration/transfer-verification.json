@@ -1,0 +1,20 @@
+{
+  "local": {
+    "checkedAt": "2026-10-21T12:20:06.148Z",
+    "images": 20,
+    "coldNetworkRequests": 20,
+    "warmNetworkRequests": 0,
+    "metadataRequests": 0,
+    "coldMs": 3409,
+    "warmMs": 26,
+    "originalBytesFromManifest": 30782719,
+    "readingBytesFromManifest": 2999674,
+    "note": "Bytes are exact manifest payload totals; timings measure this controlled browser run, not a before/after site-wide speed benchmark."
+  },
+  "rebuildFromCloudArchive": {
+    "originals": 20,
+    "variants": 40,
+    "checksumsIdentical": true,
+    "originalsRestoredInsideRepository": false
+  }
+}
