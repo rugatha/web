@@ -51,7 +51,7 @@ test('PWA upgrade removes old Rugatha caches, preserves unrelated caches, and pr
   assert.equal(w.stores.has('rugatha-pwa-v21-runtime'), false);
   assert.equal(w.stores.has('other-app'), true);
   assert.equal(w.claimed, 1);
-  const staticCache = w.stores.get('rugatha-pwa-v27-static');
+  const staticCache = w.stores.get('rugatha-pwa-v28-static');
   for (const name of ['page', 'state', 'transport']) assert(staticCache.has(`/shared/spellbook-${name}.js?v=20261019-character-books-1`));
   assert(staticCache.has('/shared/spellbooks.js?v=20261019-character-books-1'));
 });
@@ -64,6 +64,16 @@ test('feature flags use fresh network configuration instead of one-navigation-ol
   for (const path of paths) assert.equal(await (await w.fetch(path)).text(), 'version-2');
   w.offline(true);
   for (const path of paths) assert.equal(await (await w.fetch(path)).text(), 'version-2');
+});
+
+test('chapter bodies use fresh network JSON and retain the last successful version offline', async () => {
+  const w = worker();
+  const path = '/campaigns/data/chapter-content.json';
+  assert.equal(await (await w.fetch(path)).text(), 'version-1');
+  w.version(2);
+  assert.equal(await (await w.fetch(path)).text(), 'version-2');
+  w.offline(true);
+  assert.equal(await (await w.fetch(path)).text(), 'version-2');
 });
 
 test('uncached offline JavaScript is not replaced with homepage HTML; cached navigation still works', async () => {

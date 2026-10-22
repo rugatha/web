@@ -1,0 +1,2918 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "static": {
+    "checkedAt": "2026-10-22T13:53:05.873480+00:00",
+    "head": "a6e4caf8144665ee917dfae3e68a4d90450c603a",
+    "baseline": "602cd33bca3ab2ce1278f2cb5a8c2a5189298559",
+    "migration": "91843200fc5ed526df96f9ecfd6a47a453a20e3c",
+    "summary": {
+      "chapters": 100,
+      "baselineHtmlPages": 128,
+      "currentHtmlPages": 135,
+      "chaptersWithBaseline": 96,
+      "historicalOccurrences": 39,
+      "currentOccurrences": 45,
+      "chaptersWithInlineImages": 10
+    },
+    "missingAtMigration": [
+      {
+        "chapter": "lite-c12-chpt04",
+        "src": "../../../../campaigns/chapter-banners/lite-c12-chpt04-01.png",
+        "alt": "The Evergreen Grove Relay Station",
+        "language": "en",
+        "targetLanguage": "en",
+        "source": "campaigns/chapter-banners/lite-c12-chpt04-01.png"
+      },
+      {
+        "chapter": "lite-c12-chpt04",
+        "src": "../../../../campaigns/chapter-banners/lite-c12-chpt04-01.png",
+        "alt": "The Evergreen Grove Relay Station",
+        "language": "zh",
+        "targetLanguage": "zh",
+        "source": "campaigns/chapter-banners/lite-c12-chpt04-01.png"
+      }
+    ],
+    "unresolved": [],
+    "missingLocalFiles": [],
+    "unmappedHistoricalBodyImages": [],
+    "unmappedCurrentBodyImages": [],
+    "pages": [
+      {
+        "chapter": "lite-c13-chpt01",
+        "page": "campaigns/pages/rugatha-lite/lite-c13/chpt01.html",
+        "hasBaseline": false,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c01-chpt01",
+        "page": "campaigns/pages/rugatha/rugatha-c01/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c01-chpt02",
+        "page": "campaigns/pages/rugatha/rugatha-c01/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c01-chpt03",
+        "page": "campaigns/pages/rugatha/rugatha-c01/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c01-chpt04",
+        "page": "campaigns/pages/rugatha/rugatha-c01/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c01-chpt05",
+        "page": "campaigns/pages/rugatha/rugatha-c01/chpt05.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c01-chpt06",
+        "page": "campaigns/pages/rugatha/rugatha-c01/chpt06.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c01-chpt07",
+        "page": "campaigns/pages/rugatha/rugatha-c01/chpt07.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c02-chpt01",
+        "page": "campaigns/pages/rugatha/rugatha-c02/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c02-chpt02",
+        "page": "campaigns/pages/rugatha/rugatha-c02/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c02-chpt03",
+        "page": "campaigns/pages/rugatha/rugatha-c02/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c03-chpt01",
+        "page": "campaigns/pages/rugatha/rugatha-c03/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c03-chpt02",
+        "page": "campaigns/pages/rugatha/rugatha-c03/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c03-chpt03",
+        "page": "campaigns/pages/rugatha/rugatha-c03/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c03-chpt04",
+        "page": "campaigns/pages/rugatha/rugatha-c03/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c04-chpt01",
+        "page": "campaigns/pages/rugatha/rugatha-c04/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c04-chpt02",
+        "page": "campaigns/pages/rugatha/rugatha-c04/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c04-chpt03",
+        "page": "campaigns/pages/rugatha/rugatha-c04/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c04-chpt04",
+        "page": "campaigns/pages/rugatha/rugatha-c04/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c04-chpt05",
+        "page": "campaigns/pages/rugatha/rugatha-c04/chpt05.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "rugatha-c05-chpt01",
+        "page": "campaigns/pages/rugatha/rugatha-c05/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "brown-c01-chpt01",
+        "page": "campaigns/pages/rugatha-brown/brown-c01/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "brown-c01-chpt02",
+        "page": "campaigns/pages/rugatha-brown/brown-c01/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "brown-c01-chpt03",
+        "page": "campaigns/pages/rugatha-brown/brown-c01/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "brown-c01-chpt04",
+        "page": "campaigns/pages/rugatha-brown/brown-c01/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "brown-c01-chpt05",
+        "page": "campaigns/pages/rugatha-brown/brown-c01/chpt05.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "brown-c02-chpt01",
+        "page": "campaigns/pages/rugatha-brown/brown-c02/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os01",
+        "page": "campaigns/pages/rugatha-legends/legends-os01/index.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os02",
+        "page": "campaigns/pages/rugatha-legends/legends-os02/index.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os03",
+        "page": "campaigns/pages/rugatha-legends/legends-os03/index.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os04",
+        "page": "campaigns/pages/rugatha-legends/legends-os04/index.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os05-chpt01",
+        "page": "campaigns/pages/rugatha-legends/legends-os05/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os05-chpt02",
+        "page": "campaigns/pages/rugatha-legends/legends-os05/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os06",
+        "page": "campaigns/pages/rugatha-legends/legends-os06/index.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os07",
+        "page": "campaigns/pages/rugatha-legends/legends-os07/index.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os08",
+        "page": "campaigns/pages/rugatha-legends/legends-os08/index.html",
+        "hasBaseline": true,
+        "historicalImages": [
+          {
+            "src": "../../../../campaigns/campaign-banners/legends-os08-2.png",
+            "alt": "",
+            "language": "default"
+          }
+        ],
+        "currentImages": {
+          "zh": [
+            {
+              "src": "../../../../campaigns/campaign-banners/legends-os08-2.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/campaign-banners/legends-os08-2.png"
+            }
+          ],
+          "en": [
+            {
+              "src": "../../../../campaigns/campaign-banners/legends-os08-2.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/campaign-banners/legends-os08-2.png"
+            }
+          ]
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os09",
+        "page": "campaigns/pages/rugatha-legends/legends-os09/index.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "legends-os10",
+        "page": "campaigns/pages/rugatha-legends/legends-os10/index.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c05-chpt02",
+        "page": "campaigns/pages/rugatha-lite/lite-c05/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c05-chpt03",
+        "page": "campaigns/pages/rugatha-lite/lite-c05/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c05-chpt04",
+        "page": "campaigns/pages/rugatha-lite/lite-c05/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c06-chpt01",
+        "page": "campaigns/pages/rugatha-lite/lite-c06/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c06-chpt02",
+        "page": "campaigns/pages/rugatha-lite/lite-c06/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c06-chpt03",
+        "page": "campaigns/pages/rugatha-lite/lite-c06/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c06-chpt04",
+        "page": "campaigns/pages/rugatha-lite/lite-c06/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c06-chpt05",
+        "page": "campaigns/pages/rugatha-lite/lite-c06/chpt05.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c07-chpt01",
+        "page": "campaigns/pages/rugatha-lite/lite-c07/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c07-chpt02",
+        "page": "campaigns/pages/rugatha-lite/lite-c07/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c07-chpt03",
+        "page": "campaigns/pages/rugatha-lite/lite-c07/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c08-chpt01",
+        "page": "campaigns/pages/rugatha-lite/lite-c08/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c08-chpt02",
+        "page": "campaigns/pages/rugatha-lite/lite-c08/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c08-chpt03",
+        "page": "campaigns/pages/rugatha-lite/lite-c08/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c09-chpt01",
+        "page": "campaigns/pages/rugatha-lite/lite-c09/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c09-chpt02",
+        "page": "campaigns/pages/rugatha-lite/lite-c09/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c09-chpt03",
+        "page": "campaigns/pages/rugatha-lite/lite-c09/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+            "alt": "Letter from the Lord of Feathers",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+            "alt": "Letter from the Lord of Feathers",
+            "language": "en"
+          }
+        ],
+        "currentImages": {
+          "zh": [
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+              "alt": "Letter from the Lord of Feathers",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c09-chpt03-2.jpeg"
+            }
+          ],
+          "en": [
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+              "alt": "Letter from the Lord of Feathers",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c09-chpt03-2.jpeg"
+            }
+          ]
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c10-chpt01",
+        "page": "campaigns/pages/rugatha-lite/lite-c10/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c10-chpt02",
+        "page": "campaigns/pages/rugatha-lite/lite-c10/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-2.png",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-3.png",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-4.png",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-5.png",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-6.png",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-7.png",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-8.png",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-2.png",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-3.png",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-4.png",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-5.png",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-6.png",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-7.png",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-8.png",
+            "alt": "",
+            "language": "en"
+          }
+        ],
+        "currentImages": {
+          "zh": [
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-2.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-2.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-3.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-3.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-4.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-4.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-5.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-5.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-6.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-6.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-7.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-7.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-8.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-8.png"
+            }
+          ],
+          "en": [
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-2.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-2.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-3.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-3.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-4.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-4.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-5.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-5.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-6.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-6.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-7.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-7.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt02-8.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt02-8.png"
+            }
+          ]
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c10-chpt03",
+        "page": "campaigns/pages/rugatha-lite/lite-c10/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-2.png",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-3.png",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-4.png",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-2.png",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-3.png",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-4.png",
+            "alt": "",
+            "language": "en"
+          }
+        ],
+        "currentImages": {
+          "zh": [
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-2.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt03-2.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-3.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt03-3.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-4.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt03-4.png"
+            }
+          ],
+          "en": [
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-2.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt03-2.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-3.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt03-3.png"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c10-chpt03-4.png",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c10-chpt03-4.png"
+            }
+          ]
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c10-chpt04",
+        "page": "campaigns/pages/rugatha-lite/lite-c10/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c11-chpt01",
+        "page": "campaigns/pages/rugatha-lite/lite-c11/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c11-chpt02",
+        "page": "campaigns/pages/rugatha-lite/lite-c11/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c11-chpt03",
+        "page": "campaigns/pages/rugatha-lite/lite-c11/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c11-chpt04",
+        "page": "campaigns/pages/rugatha-lite/lite-c11/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c12-chpt01",
+        "page": "campaigns/pages/rugatha-lite/lite-c12/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c12-chpt02",
+        "page": "campaigns/pages/rugatha-lite/lite-c12/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c12-chpt03",
+        "page": "campaigns/pages/rugatha-lite/lite-c12/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c12-chpt04",
+        "page": "campaigns/pages/rugatha-lite/lite-c12/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c12-chpt04-01.png",
+            "alt": "The Evergreen Grove Relay Station",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/lite-c12-chpt04-01.png",
+            "alt": "The Evergreen Grove Relay Station",
+            "language": "en"
+          }
+        ],
+        "currentImages": {
+          "zh": [
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c12-chpt04-01.png",
+              "alt": "長青林驛站的七名妖精",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c12-chpt04-01.png"
+            }
+          ],
+          "en": [
+            {
+              "src": "../../../../campaigns/chapter-banners/lite-c12-chpt04-01.png",
+              "alt": "The Evergreen Grove Relay Station",
+              "language": "default",
+              "source": "campaigns/chapter-banners/lite-c12-chpt04-01.png"
+            }
+          ]
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "lite-c12-chpt05",
+        "page": "campaigns/pages/rugatha-lite/lite-c12/chpt05.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c05-chpt02",
+        "page": "campaigns/pages/rugatha-plus/plus-c05/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c05-chpt03",
+        "page": "campaigns/pages/rugatha-plus/plus-c05/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c05-chpt04",
+        "page": "campaigns/pages/rugatha-plus/plus-c05/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c05-chpt05",
+        "page": "campaigns/pages/rugatha-plus/plus-c05/chpt05.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c06-chpt01",
+        "page": "campaigns/pages/rugatha-plus/plus-c06/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c06-chpt02",
+        "page": "campaigns/pages/rugatha-plus/plus-c06/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c06-chpt03",
+        "page": "campaigns/pages/rugatha-plus/plus-c06/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c06-chpt04",
+        "page": "campaigns/pages/rugatha-plus/plus-c06/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c07-chpt01",
+        "page": "campaigns/pages/rugatha-plus/plus-c07/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c07-chpt02",
+        "page": "campaigns/pages/rugatha-plus/plus-c07/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c07-chpt03",
+        "page": "campaigns/pages/rugatha-plus/plus-c07/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c07-chpt04",
+        "page": "campaigns/pages/rugatha-plus/plus-c07/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c01-chpt01",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c01/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+            "alt": "",
+            "language": "en"
+          }
+        ],
+        "currentImages": {
+          "zh": [
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg"
+            }
+          ],
+          "en": [
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg"
+            }
+          ]
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c01-chpt02",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c01/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+            "alt": "",
+            "language": "en"
+          }
+        ],
+        "currentImages": {
+          "zh": [
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c01-chpt02-2.webp"
+            }
+          ],
+          "en": [
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c01-chpt02-2.webp"
+            }
+          ]
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c01-chpt03",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c01/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c02-chpt01",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c02/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c02-chpt02",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c02/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c02-chpt03",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c02/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c03-chpt01",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c03/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c03-chpt02",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c03/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c03-chpt03",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c03/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+            "alt": "",
+            "language": "en"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+            "alt": "",
+            "language": "en"
+          }
+        ],
+        "currentImages": {
+          "zh": [
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg"
+            }
+          ],
+          "en": [
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg"
+            }
+          ]
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c04-chpt01",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c04/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+            "alt": "",
+            "language": "zh"
+          },
+          {
+            "src": "../../../../campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+            "alt": "",
+            "language": "en"
+          }
+        ],
+        "currentImages": {
+          "zh": [
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg"
+            }
+          ],
+          "en": [
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+              "alt": "",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg"
+            }
+          ]
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c04-chpt02",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c04/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c04-chpt03",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c04/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c04-chpt04",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c04/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c05-chpt01",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c05/chpt01.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c05-chpt02",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c05/chpt02.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c05-chpt03",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c05/chpt03.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c05-chpt04",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c05/chpt04.html",
+        "hasBaseline": true,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c05-chpt05",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c05/chpt05.html",
+        "hasBaseline": false,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [],
+          "en": []
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "wilds-c05-chpt06",
+        "page": "campaigns/pages/rugatha-wilds/wilds-c05/chpt06.html",
+        "hasBaseline": false,
+        "historicalImages": [],
+        "currentImages": {
+          "zh": [
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+              "alt": "A letter to Leah, page 1",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c05-chpt06_1.jpg"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+              "alt": "A letter to Leah, page 2",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c05-chpt06_2.jpg"
+            }
+          ],
+          "en": [
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+              "alt": "A letter to Leah, page 1",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+              "alt": "A letter to Leah, page 2",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg"
+            },
+            {
+              "src": "../../../../campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+              "alt": "A letter to Leah, page 3",
+              "language": "default",
+              "source": "campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg"
+            }
+          ]
+        },
+        "unresolved": []
+      },
+      {
+        "chapter": "plus-c08-temp",
+        "page": "campaigns/pages/rugatha-plus/plus-c08/temp.html",
+        "hasBaseline": false,
+        "historicalImages": [],
+        "currentImages": {
+          "default": []
+        },
+        "unresolved": []
+      }
+    ],
+    "limitations": "Checks img src in chapter body HTML and renderer-supported JSON content; excludes hero banners, navigation, CSS backgrounds, srcset, external availability and image quality. No HTML baseline is claimed for chapters added after the migration. Browser verification is separate."
+  },
+  "browser": {
+    "checkedAt": "2026-10-22T13:51:59.058Z",
+    "cases": [
+      {
+        "chapter": "legends-os08",
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/campaign-banners/legends-os08-2.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 933.578125,
+            "naturalWidth": 1184,
+            "naturalHeight": 1464,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "legends-os08",
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/campaign-banners/legends-os08-2.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 933.578125,
+            "naturalWidth": 1184,
+            "naturalHeight": 1464,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c09-chpt03",
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+            "alt": "Letter from the Lord of Feathers",
+            "width": 755.03125,
+            "height": 1067.828125,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c09-chpt03",
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+            "alt": "Letter from the Lord of Feathers",
+            "width": 755.03125,
+            "height": 1067.828125,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c10-chpt02",
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-2.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-3.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-4.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-5.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-6.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-7.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-8.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c10-chpt02",
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-2.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-3.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-4.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-5.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-6.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-7.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-8.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c10-chpt03",
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-2.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-3.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-4.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c10-chpt03",
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-2.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-3.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-4.png",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1132.546875,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c12-chpt04",
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c12-chpt04-01.png",
+            "alt": "長青林驛站的七名妖精",
+            "width": 720,
+            "height": 405.203125,
+            "naturalWidth": 1672,
+            "naturalHeight": 941,
+            "left": 280,
+            "right": 1000,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c12-chpt04",
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c12-chpt04-01.png",
+            "alt": "The Evergreen Grove Relay Station",
+            "width": 720,
+            "height": 405.203125,
+            "naturalWidth": 1672,
+            "naturalHeight": 941,
+            "left": 280,
+            "right": 1000,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c01-chpt01",
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1067.828125,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1065.625,
+            "naturalWidth": 1230,
+            "naturalHeight": 1736,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 534.4375,
+            "naturalWidth": 842,
+            "naturalHeight": 596,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c01-chpt01",
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1067.828125,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1065.625,
+            "naturalWidth": 1230,
+            "naturalHeight": 1736,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 534.4375,
+            "naturalWidth": 842,
+            "naturalHeight": 596,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c01-chpt02",
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1067.359375,
+            "naturalWidth": 1448,
+            "naturalHeight": 2047,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c01-chpt02",
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1067.359375,
+            "naturalWidth": 1448,
+            "naturalHeight": 2047,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c03-chpt03",
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 755.03125,
+            "naturalWidth": 1024,
+            "naturalHeight": 1024,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1067.828125,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c03-chpt03",
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 755.03125,
+            "naturalWidth": 1024,
+            "naturalHeight": 1024,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 1067.828125,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c04-chpt01",
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 176.546875,
+            "naturalWidth": 2010,
+            "naturalHeight": 470,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c04-chpt01",
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+            "alt": "",
+            "width": 755.03125,
+            "height": 176.546875,
+            "naturalWidth": 2010,
+            "naturalHeight": 470,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c05-chpt06",
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+            "alt": "A letter to Leah, page 1",
+            "width": 755.03125,
+            "height": 1067.1875,
+            "naturalWidth": 595,
+            "naturalHeight": 841,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+            "alt": "A letter to Leah, page 2",
+            "width": 755.03125,
+            "height": 1067.1875,
+            "naturalWidth": 595,
+            "naturalHeight": 841,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c05-chpt06",
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+            "alt": "A letter to Leah, page 1",
+            "width": 755.03125,
+            "height": 1067.828125,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+            "alt": "A letter to Leah, page 2",
+            "width": 755.03125,
+            "height": 1067.828125,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+            "alt": "A letter to Leah, page 3",
+            "width": 755.03125,
+            "height": 1067.828125,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 262.484375,
+            "right": 1017.515625,
+            "viewport": 1280
+          }
+        ]
+      },
+      {
+        "chapter": "legends-os08",
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/campaign-banners/legends-os08-2.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 275.828125,
+            "naturalWidth": 1184,
+            "naturalHeight": 1464,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "legends-os08",
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/campaign-banners/legends-os08-2.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 275.828125,
+            "naturalWidth": 1184,
+            "naturalHeight": 1464,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c09-chpt03",
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+            "alt": "Letter from the Lord of Feathers",
+            "width": 223.078125,
+            "height": 315.484375,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c09-chpt03",
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+            "alt": "Letter from the Lord of Feathers",
+            "width": 223.078125,
+            "height": 315.484375,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c10-chpt02",
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-2.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-3.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-4.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-5.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-6.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-7.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-8.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c10-chpt02",
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-2.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-3.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-4.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-5.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-6.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-7.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt02-8.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c10-chpt03",
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-2.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-3.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-4.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c10-chpt03",
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-2.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-3.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/lite-c10-chpt03-4.png",
+            "alt": "",
+            "width": 223.078125,
+            "height": 334.609375,
+            "naturalWidth": 1024,
+            "naturalHeight": 1536,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c12-chpt04",
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c12-chpt04-01.png",
+            "alt": "長青林驛站的七名妖精",
+            "width": 225.34375,
+            "height": 126.8125,
+            "naturalWidth": 1672,
+            "naturalHeight": 941,
+            "left": 82.328125,
+            "right": 307.671875,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "lite-c12-chpt04",
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/lite-c12-chpt04-01.png",
+            "alt": "The Evergreen Grove Relay Station",
+            "width": 225.34375,
+            "height": 126.8125,
+            "naturalWidth": 1672,
+            "naturalHeight": 941,
+            "left": 82.328125,
+            "right": 307.671875,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c01-chpt01",
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 315.484375,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 314.84375,
+            "naturalWidth": 1230,
+            "naturalHeight": 1736,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 157.890625,
+            "naturalWidth": 842,
+            "naturalHeight": 596,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c01-chpt01",
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 315.484375,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 314.84375,
+            "naturalWidth": 1230,
+            "naturalHeight": 1736,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 157.890625,
+            "naturalWidth": 842,
+            "naturalHeight": 596,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c01-chpt02",
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+            "alt": "",
+            "width": 223.078125,
+            "height": 315.359375,
+            "naturalWidth": 1448,
+            "naturalHeight": 2047,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c01-chpt02",
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+            "alt": "",
+            "width": 223.078125,
+            "height": 315.359375,
+            "naturalWidth": 1448,
+            "naturalHeight": 2047,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c03-chpt03",
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 223.078125,
+            "naturalWidth": 1024,
+            "naturalHeight": 1024,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 315.484375,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c03-chpt03",
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 223.078125,
+            "naturalWidth": 1024,
+            "naturalHeight": 1024,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 315.484375,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c04-chpt01",
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 52.15625,
+            "naturalWidth": 2010,
+            "naturalHeight": 470,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c04-chpt01",
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+            "alt": "",
+            "width": 223.078125,
+            "height": 52.15625,
+            "naturalWidth": 2010,
+            "naturalHeight": 470,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c05-chpt06",
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+            "alt": "A letter to Leah, page 1",
+            "width": 223.078125,
+            "height": 315.296875,
+            "naturalWidth": 595,
+            "naturalHeight": 841,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+            "alt": "A letter to Leah, page 2",
+            "width": 223.078125,
+            "height": 315.296875,
+            "naturalWidth": 595,
+            "naturalHeight": 841,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      },
+      {
+        "chapter": "wilds-c05-chpt06",
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+            "alt": "A letter to Leah, page 1",
+            "width": 223.078125,
+            "height": 315.484375,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+            "alt": "A letter to Leah, page 2",
+            "width": 223.078125,
+            "height": 315.484375,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          },
+          {
+            "source": "campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+            "alt": "A letter to Leah, page 3",
+            "width": 223.078125,
+            "height": 315.484375,
+            "naturalWidth": 1190,
+            "naturalHeight": 1683,
+            "left": 83.453125,
+            "right": 306.53125,
+            "viewport": 390
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "chapters": 10,
+      "cases": 40,
+      "imageOccurrences": 90
+    },
+    "limitations": "Local Chrome desktop/mobile viewports; external requests and Service Workers blocked. Verifies body image count/order, paths, decode, alt preservation, aspect ratio and viewport bounds. Not production, physical devices, image quality or historical paragraph placement."
+  }
+}

@@ -15,6 +15,8 @@
 
 NPC `image` 用於閱讀版，`imageThumb` 用於列表／相關角色卡。這批 20 張原圖已從 repo 移除，完整來源透過私人 `image-originals/` 路徑及 manifest generation 保存。需重建時先用 `images:originals --restore` 還原到 repo 外，再設定 `RUGATHA_IMAGE_ORIGINALS_DIR` 產生變體；不要移除 `.gitignore` 的舊圖路徑以重新加入原圖。未搬移圖片維持原路徑；其餘批次於 11/21 後檢查用量再決定是否擴大。私人會員圖片維持原權限與流程。
 
+後續批次可用 `scripts/prepare-image-batches.mjs` 依當期 inventory 離線準備封面、章節、NPC，參考 `docs/image-migration/quality-and-offline-preparation-2026-10-22.md`。五張莉亞信件的閱讀版保留原尺寸且無損，不能只看 manifest 頂層的 q85 預設值；逐張的 `readingPolicy` 為覆寫規格。CMYK JPEG 先在 repo 外依原 profile 轉 sRGB，不改原檔。切換工具優先讀批次內的 `inventory.json`；正式發布前應重盤引用、驗證雲端物件及特殊 NPC 覆寫狀態，暫存 manifest 的 URL 不代表物件已上傳。
+
 ## 1. 團錄 / 章節內容更新
 
 常見位置：

@@ -1,5 +1,6 @@
 // Rewrites only the reviewed batch; cloud uploads and verification must precede --apply.
 import { readFile, writeFile, mkdir, copyFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { root, sha256, outsideDirectory, imageBucket, publicImageUrl } from './image-assets.mjs';
 
@@ -20,7 +21,10 @@ if (flags.includes('--rollback')) {
 }
 const manifest = JSON.parse(await readFile(join(directory, 'manifest.json'), 'utf8'));
 if (manifest.bucket !== imageBucket) throw new Error('Unreviewed bucket');
-const inventory = JSON.parse(await readFile(join(root, 'docs/image-migration/inventory.json'), 'utf8'));
+// Prepared follow-up batches carry a fresh reference snapshot. Keep the frozen
+// pre-pilot inventory only as the fallback for existing pilot/rollback folders.
+const batchInventory = join(directory, 'inventory.json');
+const inventory = JSON.parse(await readFile(existsSync(batchInventory) ? batchInventory : join(root, 'docs/image-migration/inventory.json'), 'utf8'));
 const url = variant => publicImageUrl(manifest.bucket, variant.object);
 const replacements = new Map();
 for (const image of manifest.images) {

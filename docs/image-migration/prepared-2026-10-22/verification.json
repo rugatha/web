@@ -1,0 +1,1593 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "mode": "offline-preparation",
+  "stagingDirectory": "/private/tmp/rugatha-image-next-batches-2026-10-22",
+  "qualityDirectory": "/private/tmp/rugatha-image-quality-2026-10-22",
+  "batches": [
+    {
+      "category": "arcs",
+      "images": 38,
+      "objects": 76,
+      "originalBytes": 93422153,
+      "thumbBytes": 949082,
+      "readingBytes": 7342324,
+      "fullResolutionText": [],
+      "missingEntityIds": [],
+      "validation": {
+        "mode": "dry-run",
+        "bucket": "rugatha-87e15.firebasestorage.app",
+        "objects": 76,
+        "bytes": 8291406
+      }
+    },
+    {
+      "category": "chapters",
+      "images": 107,
+      "objects": 214,
+      "originalBytes": 202332344,
+      "thumbBytes": 2214690,
+      "readingBytes": 20695190,
+      "fullResolutionText": [
+        "campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+        "campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+        "campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+        "campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+        "campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg"
+      ],
+      "missingEntityIds": [],
+      "validation": {
+        "mode": "dry-run",
+        "bucket": "rugatha-87e15.firebasestorage.app",
+        "objects": 214,
+        "bytes": 22909880
+      }
+    },
+    {
+      "category": "npcs",
+      "images": 147,
+      "objects": 294,
+      "originalBytes": 181973675,
+      "thumbBytes": 2803404,
+      "readingBytes": 14332634,
+      "fullResolutionText": [],
+      "missingEntityIds": [
+        "npc/individual_pics/Dr. Vaxon Lich.png"
+      ],
+      "validation": {
+        "mode": "dry-run",
+        "bucket": "rugatha-87e15.firebasestorage.app",
+        "objects": 294,
+        "bytes": 17136038
+      }
+    }
+  ],
+  "validation": {
+    "checkedAt": "2026-10-22T14:13:33.464Z",
+    "results": [
+      {
+        "category": "arcs",
+        "originalsVerified": 38,
+        "objectsDecoded": 76,
+        "dryRun": {
+          "mode": "dry-run",
+          "bucket": "rugatha-87e15.firebasestorage.app",
+          "objects": 76,
+          "bytes": 8291406
+        },
+        "conversions": [
+          {
+            "source": "campaigns/campaign-banners/lite-c09.jpg",
+            "from": "CMYK",
+            "to": "sRGB",
+            "tool": "macOS ColorSync/sips",
+            "sourceProfile": "Japan Color 2001 Coated",
+            "targetProfileSha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e"
+          }
+        ]
+      },
+      {
+        "category": "chapters",
+        "originalsVerified": 107,
+        "objectsDecoded": 214,
+        "dryRun": {
+          "mode": "dry-run",
+          "bucket": "rugatha-87e15.firebasestorage.app",
+          "objects": 214,
+          "bytes": 22909880
+        },
+        "conversions": [
+          {
+            "source": "campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+            "from": "CMYK",
+            "to": "sRGB",
+            "tool": "macOS ColorSync/sips",
+            "sourceProfile": "Japan Color 2001 Coated",
+            "targetProfileSha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e"
+          }
+        ]
+      },
+      {
+        "category": "npcs",
+        "originalsVerified": 147,
+        "objectsDecoded": 294,
+        "dryRun": {
+          "mode": "dry-run",
+          "bucket": "rugatha-87e15.firebasestorage.app",
+          "objects": 294,
+          "bytes": 17136038
+        },
+        "conversions": []
+      }
+    ],
+    "note": "Offline only. Both current source originals and staging backups matched hashes; all variants decoded and matched manifest dimensions. No network or cloud mutations."
+  },
+  "sourceSwitchDryRun": {
+    "checkedAt": "2026-10-22T14:18:30.849Z",
+    "workspaceUnchanged": true,
+    "results": [
+      {
+        "category": "arcs",
+        "mode": "dry-run",
+        "files": [
+          "campaigns/pages/rugatha-brown/brown-c01/index.html",
+          "campaigns/scripts/detail.js",
+          "campaigns/pages/rugatha-brown/brown-c02/index.html",
+          "experience/index.html",
+          "campaigns/data/chapter-content.json",
+          "campaigns/pages/rugatha-legends/legends-os01/index.html",
+          "shared/rugatha.config.js",
+          "campaigns/pages/rugatha-legends/legends-os02/index.html",
+          "campaigns/pages/rugatha-legends/legends-os03/index.html",
+          "campaigns/pages/rugatha-legends/legends-os04/index.html",
+          "campaigns/pages/rugatha-legends/legends-os05/index.html",
+          "campaigns/pages/rugatha-legends/legends-os06/index.html",
+          "campaigns/pages/rugatha-legends/legends-os07/index.html",
+          "campaigns/pages/rugatha-legends/legends-os08/index.html",
+          "campaigns/pages/rugatha-legends/legends-os09/index.html",
+          "campaigns/pages/rugatha-legends/legends-os10/index.html",
+          "campaigns/pages/rugatha-lite/lite-c06/index.html",
+          "campaigns/pages/rugatha-lite/lite-c07/index.html",
+          "campaigns/pages/rugatha-lite/lite-c08/index.html",
+          "campaigns/pages/rugatha-lite/lite-c09/index.html",
+          "campaigns/pages/rugatha-lite/lite-c10/index.html",
+          "campaigns/pages/rugatha-lite/lite-c11/index.html",
+          "campaigns/pages/rugatha-lite/lite-c12/index.html",
+          "campaigns/pages/rugatha-lite/lite-c13/index.html",
+          "shared/calendar-events.json",
+          "campaigns/pages/rugatha-plus/plus-c06/index.html",
+          "campaigns/pages/rugatha-plus/plus-c07/index.html",
+          "campaigns/pages/rugatha/rugatha-c02/index.html",
+          "campaigns/pages/rugatha/rugatha-c03/index.html",
+          "campaigns/pages/rugatha/rugatha-c04/index.html",
+          "campaigns/pages/rugatha-lite/lite-c05/index.html",
+          "campaigns/pages/rugatha-plus/plus-c05/index.html",
+          "campaigns/pages/rugatha/rugatha-c05/index.html",
+          "campaigns/pages/rugatha-wilds/wilds-c01/index.html",
+          "campaigns/pages/rugatha-wilds/wilds-c02/index.html",
+          "campaigns/pages/rugatha-wilds/wilds-c03/index.html",
+          "campaigns/pages/rugatha-wilds/wilds-c04/index.html",
+          "campaigns/pages/rugatha-wilds/wilds-c05/index.html"
+        ]
+      },
+      {
+        "category": "chapters",
+        "mode": "dry-run",
+        "files": [
+          "campaigns/data/chapter-content.json",
+          "campaigns/pages/rugatha-brown/brown-c01/chpt01.html",
+          "campaigns/scripts/detail.js",
+          "shared/rugatha.config.js",
+          "campaigns/pages/rugatha-brown/brown-c01/chpt02.html",
+          "campaigns/pages/rugatha-brown/brown-c01/chpt03.html",
+          "campaigns/pages/rugatha-brown/brown-c01/chpt04.html",
+          "campaigns/pages/rugatha-brown/brown-c01/chpt05.html",
+          "campaigns/pages/rugatha-brown/brown-c02/chpt01.html",
+          "campaigns/pages/rugatha-legends/legends-os05/chpt01.html",
+          "campaigns/pages/rugatha-legends/legends-os05/chpt02.html",
+          "campaigns/pages/rugatha-lite/lite-c05/chpt02.html",
+          "campaigns/pages/rugatha-lite/lite-c05/chpt03.html",
+          "campaigns/pages/rugatha-lite/lite-c05/chpt04.html",
+          "campaigns/pages/rugatha-lite/lite-c06/chpt01.html",
+          "campaigns/pages/rugatha-lite/lite-c06/chpt02.html",
+          "campaigns/pages/rugatha-lite/lite-c06/chpt03.html",
+          "campaigns/pages/rugatha-lite/lite-c06/chpt04.html",
+          "campaigns/pages/rugatha-lite/lite-c06/chpt05.html",
+          "campaigns/pages/rugatha-lite/lite-c07/chpt01.html",
+          "campaigns/pages/rugatha-lite/lite-c07/chpt02.html",
+          "campaigns/pages/rugatha-lite/lite-c07/chpt03.html",
+          "campaigns/pages/rugatha-lite/lite-c08/chpt01.html",
+          "campaigns/pages/rugatha-lite/lite-c08/chpt02.html",
+          "campaigns/pages/rugatha-lite/lite-c08/chpt03.html",
+          "campaigns/pages/rugatha-lite/lite-c09/chpt01.html",
+          "campaigns/pages/rugatha-lite/lite-c09/chpt02.html",
+          "campaigns/pages/rugatha-lite/lite-c09/chpt03.html",
+          "campaigns/pages/rugatha-lite/lite-c10/chpt01.html",
+          "campaigns/pages/rugatha-lite/lite-c10/chpt02.html",
+          "campaigns/pages/rugatha-lite/lite-c10/chpt03.html",
+          "campaigns/pages/rugatha-lite/lite-c10/chpt04.html",
+          "campaigns/pages/rugatha-lite/lite-c11/chpt01.html",
+          "campaigns/pages/rugatha-lite/lite-c11/chpt02.html",
+          "campaigns/pages/rugatha-lite/lite-c11/chpt03.html",
+          "campaigns/pages/rugatha-lite/lite-c11/chpt04.html",
+          "campaigns/pages/rugatha-lite/lite-c12/chpt01.html",
+          "campaigns/pages/rugatha-lite/lite-c12/chpt02.html",
+          "campaigns/pages/rugatha-lite/lite-c12/chpt03.html",
+          "campaigns/pages/rugatha-lite/lite-c12/chpt04.html",
+          "campaigns/pages/rugatha-lite/lite-c12/chpt05.html",
+          "campaigns/pages/rugatha-lite/lite-c13/chpt01.html",
+          "campaigns/pages/rugatha-plus/plus-c05/chpt02.html",
+          "campaigns/pages/rugatha-plus/plus-c05/chpt03.html",
+          "campaigns/pages/rugatha-plus/plus-c05/chpt04.html",
+          "campaigns/pages/rugatha-plus/plus-c05/chpt05.html",
+          "campaigns/pages/rugatha-plus/plus-c06/chpt01.html",
+          "campaigns/pages/rugatha-plus/plus-c06/chpt02.html",
+          "campaigns/pages/rugatha-plus/plus-c06/chpt03.html",
+          "campaigns/pages/rugatha-plus/plus-c06/chpt04.html",
+          "campaigns/pages/rugatha-plus/plus-c07/chpt01.html",
+          "campaigns/pages/rugatha-plus/plus-c07/chpt02.html",
+          "campaigns/pages/rugatha-plus/plus-c07/chpt03.html",
+          "campaigns/pages/rugatha-plus/plus-c07/chpt04.html",
+          "campaigns/pages/rugatha/rugatha-c02/chpt01.html",
+          "campaigns/pages/rugatha/rugatha-c02/chpt02.html",
+          "campaigns/pages/rugatha/rugatha-c02/chpt03.html",
+          "campaigns/pages/rugatha/rugatha-c03/chpt01.html",
+          "campaigns/pages/rugatha/rugatha-c03/chpt02.html",
+          "campaigns/pages/rugatha/rugatha-c03/chpt03.html",
+          "campaigns/pages/rugatha/rugatha-c03/chpt04.html",
+          "campaigns/pages/rugatha/rugatha-c04/chpt01.html",
+          "campaigns/pages/rugatha/rugatha-c04/chpt02.html",
+          "campaigns/pages/rugatha/rugatha-c04/chpt03.html",
+          "campaigns/pages/rugatha/rugatha-c04/chpt04.html",
+          "campaigns/pages/rugatha/rugatha-c04/chpt05.html",
+          "campaigns/pages/rugatha/rugatha-c05/chpt01.html",
+          "campaigns/pages/rugatha-wilds/wilds-c01/chpt01.html",
+          "campaigns/pages/rugatha-wilds/wilds-c01/chpt02.html",
+          "campaigns/pages/rugatha-wilds/wilds-c01/chpt03.html",
+          "campaigns/pages/rugatha-wilds/wilds-c02/chpt01.html",
+          "campaigns/pages/rugatha-wilds/wilds-c02/chpt02.html",
+          "campaigns/pages/rugatha-wilds/wilds-c02/chpt03.html",
+          "campaigns/pages/rugatha-wilds/wilds-c03/chpt01.html",
+          "campaigns/pages/rugatha-wilds/wilds-c03/chpt02.html",
+          "campaigns/pages/rugatha-wilds/wilds-c03/chpt03.html",
+          "campaigns/pages/rugatha-wilds/wilds-c04/chpt01.html",
+          "campaigns/pages/rugatha-wilds/wilds-c04/chpt02.html",
+          "campaigns/pages/rugatha-wilds/wilds-c04/chpt03.html",
+          "campaigns/pages/rugatha-wilds/wilds-c04/chpt04.html",
+          "campaigns/pages/rugatha-wilds/wilds-c05/chpt01.html",
+          "campaigns/pages/rugatha-wilds/wilds-c05/chpt02.html",
+          "campaigns/pages/rugatha-wilds/wilds-c05/chpt03.html",
+          "campaigns/pages/rugatha-wilds/wilds-c05/chpt04.html",
+          "campaigns/pages/rugatha-wilds/wilds-c05/chpt05.html",
+          "campaigns/pages/rugatha-wilds/wilds-c05/chpt06.html"
+        ]
+      },
+      {
+        "category": "npcs",
+        "mode": "dry-run",
+        "files": [
+          "npc/data/characters.json",
+          "npc/npc_page/pages/Addie_Applewood.html",
+          "npc/npc_page/pages/Alex.html",
+          "deities/data/deities.json",
+          "npc/npc_page/pages/Alfenor.html",
+          "npc/npc_page/pages/Andrea_Day.html",
+          "npc/npc_page/pages/Anna.html",
+          "npc/npc_page/pages/Bartosz_Richmond.html",
+          "npc/npc_page/pages/Basuu.html",
+          "campaigns/data/plus-08-multiple-choices.json",
+          "npc/npc_page/pages/Beau.html",
+          "npc/npc_page/pages/Bernard_Norm.html",
+          "npc/npc_page/pages/Bishop_Robinson.html",
+          "npc/npc_page/pages/BoBoCBoBoZ.html",
+          "npc/npc_page/pages/BoBoVBoBoW.html",
+          "npc/npc_page/pages/BolBolBoBoOMEGA.html",
+          "npc/npc_page/pages/Brock.html",
+          "npc/npc_page/pages/Bruce_Tallis.html",
+          "npc/npc_page/pages/Captain_Marin.html",
+          "npc/npc_page/pages/Captain_Reid.html",
+          "npc/npc_page/pages/Cash_Applewood.html",
+          "npc/npc_page/pages/Cena.html",
+          "npc/npc_page/pages/ChiChi.html",
+          "npc/npc_page/pages/Colonel_Lisdar.html",
+          "npc/npc_page/pages/Connie_Cornell.html",
+          "npc/npc_page/pages/Dennis.html",
+          "npc/npc_page/pages/Domneil.html",
+          "npc/npc_page/pages/Dosuu.html",
+          "npc/npc_page/pages/Dr_Chandra_Pyresong.html",
+          "characters/index.html",
+          "npc/npc_page/pages/Dr_Crow.html",
+          "npc/npc_page/pages/Dr_David.html",
+          "npc/npc_page/assets/qa.js",
+          "npc/npc_page/assets/scripts.js",
+          "npc/npc_page/pages/Dr_Vaxon.html",
+          "npc/npc_page/pages/Dudu.html",
+          "npc/npc_page/pages/Edmond.html",
+          "npc/npc_page/pages/Elby__Dr_White.html",
+          "npc/npc_page/pages/Elly_Riversend.html",
+          "npc/npc_page/pages/Elmond.html",
+          "npc/npc_page/pages/Enelmor_Arylith.html",
+          "npc/npc_page/pages/Essis.html",
+          "npc/npc_page/pages/Eva.html",
+          "npc/npc_page/pages/Evil_Be4.html",
+          "npc/npc_page/pages/Fallon.html",
+          "npc/npc_page/pages/Frankie.html",
+          "npc/npc_page/pages/Franz.html",
+          "npc/npc_page/pages/Fre_Do.html",
+          "npc/npc_page/pages/Frederick_Norman.html",
+          "npc/npc_page/pages/Gareth_Berners.html",
+          "npc/npc_page/pages/General_Maliya_Kaeyal.html",
+          "npc/npc_page/pages/Glen.html",
+          "npc/npc_page/pages/Gustavo_Norman.html",
+          "npc/npc_page/pages/GuuGuu.html",
+          "npc/npc_page/pages/Harrel_Mizel.html",
+          "npc/npc_page/pages/Hobb.html",
+          "npc/npc_page/pages/Indigo.html",
+          "npc/npc_page/pages/Iochi_Mari.html",
+          "npc/npc_page/pages/Jacob.html",
+          "npc/npc_page/pages/Jefferey_Berners.html",
+          "npc/npc_page/pages/Jonathan.html",
+          "npc/npc_page/pages/Kahn.html",
+          "npc/npc_page/pages/Kevin_Bolden.html",
+          "npc/npc_page/pages/King_Benevol_II.html",
+          "npc/npc_page/pages/King_Elliot_IV.html",
+          "npc/npc_page/pages/King_Knicol.html",
+          "npc/npc_page/pages/Kojo.html",
+          "npc/npc_page/pages/Lady_Marian.html",
+          "npc/npc_page/pages/Lance_Berners.html",
+          "npc/npc_page/pages/Laura_Fishburne.html",
+          "npc/npc_page/pages/Leonard_Old_Pipe_Riversend.html",
+          "npc/npc_page/pages/Leslie_Grunfeld.html",
+          "npc/npc_page/pages/Lewis.html",
+          "npc/npc_page/pages/LilLily.html",
+          "npc/npc_page/pages/Liliana.html",
+          "npc/npc_page/pages/Lord_Octavian_von_Oderick.html",
+          "npc/npc_page/pages/Lord_Wind.html",
+          "npc/npc_page/pages/Lumio.html",
+          "npc/npc_page/pages/Luny.html",
+          "npc/npc_page/pages/Lysien_Amoret.html",
+          "npc/npc_page/pages/Mafa.html",
+          "npc/npc_page/pages/Manbao.html",
+          "npc/npc_page/pages/Mango.html",
+          "npc/npc_page/pages/Marco.html",
+          "npc/npc_page/pages/Marcus_Jens.html",
+          "npc/npc_page/pages/Marianne_Jens.html",
+          "npc/npc_page/pages/Maribel_Muddlewick.html",
+          "npc/npc_page/pages/Marsh_the_Willow.html",
+          "npc/npc_page/pages/Matilda.html",
+          "npc/npc_page/pages/Maylee.html",
+          "npc/npc_page/pages/Mayor_Saerus_Pharyon.html",
+          "npc/npc_page/pages/Mayor_Thorne.html",
+          "npc/npc_page/pages/Melvin.html",
+          "npc/npc_page/pages/Mikkel_Drogskol.html",
+          "npc/npc_page/pages/Moore.html",
+          "npc/npc_page/pages/Mr_Flaerry.html",
+          "npc/npc_page/pages/Mr_Moon.html",
+          "npc/npc_page/pages/Mr_Muffins.html",
+          "npc/npc_page/pages/Norvelle.html",
+          "npc/npc_page/pages/Nylessa_Arylith.html",
+          "npc/npc_page/pages/Ona_Berners.html",
+          "npc/npc_page/pages/Oswald_Creighton.html",
+          "npc/npc_page/pages/Pamela_Yaso.html",
+          "npc/npc_page/pages/Pattie_Sylverome.html",
+          "npc/npc_page/pages/Penny_Applewood.html",
+          "npc/npc_page/pages/Pete_Madison.html",
+          "npc/npc_page/pages/Peter.html",
+          "npc/npc_page/pages/Petra.html",
+          "npc/npc_page/pages/Phola.html",
+          "npc/npc_page/pages/President_Bonza.html",
+          "npc/npc_page/pages/Professor_Peneo.html",
+          "npc/npc_page/pages/Py_Par.html",
+          "npc/npc_page/pages/Queenie.html",
+          "npc/npc_page/pages/Ralf.html",
+          "npc/npc_page/pages/Rashim.html",
+          "npc/npc_page/pages/Reese_Tig.html",
+          "npc/npc_page/pages/Riley_Richmond.html",
+          "npc/npc_page/pages/Roline_Hughes.html",
+          "npc/npc_page/pages/Ronald_the_Magician.html",
+          "npc/npc_page/pages/Ronfello.html",
+          "npc/npc_page/pages/Rosa_Flaerry.html",
+          "npc/npc_page/pages/ScarFace.html",
+          "npc/npc_page/pages/Sean.html",
+          "npc/npc_page/pages/Selene_Berners.html",
+          "npc/npc_page/pages/Selyra_Arylith.html",
+          "npc/npc_page/pages/Serathe_Arylith.html",
+          "npc/npc_page/pages/ShaDoom.html",
+          "npc/npc_page/pages/Shalan_Hartlow.html",
+          "npc/npc_page/pages/Sham.html",
+          "npc/npc_page/pages/Shifu.html",
+          "npc/npc_page/pages/Sigom_III.html",
+          "npc/npc_page/pages/Sora.html",
+          "npc/npc_page/pages/Speedy.html",
+          "npc/npc_page/pages/Syr_Galaestrel_Freyeman.html",
+          "npc/npc_page/pages/Syr_Magnus.html",
+          "npc/npc_page/pages/Tam_Quorr.html",
+          "npc/npc_page/pages/The_Mother.html",
+          "npc/npc_page/pages/Theramond_Arylith.html",
+          "npc/npc_page/pages/Thompson.html",
+          "npc/npc_page/pages/Tina.html",
+          "npc/npc_page/pages/Trisha_of_Baylon.html",
+          "npc/npc_page/pages/Twiggle.html",
+          "npc/npc_page/pages/Vaelric_Arylith.html",
+          "npc/npc_page/pages/Vaerodan_Arylith.html",
+          "npc/npc_page/pages/Valero_Berners.html",
+          "npc/npc_page/pages/Varoen.html",
+          "npc/npc_page/pages/Xandria_the_Violet_of_Macksohn.html",
+          "npc/npc_page/pages/Yi.html",
+          "npc/npc_page/pages/Yuki.html",
+          "npc/npc_page/pages/Yung.html",
+          "npc/npc_page/pages/Zach.html",
+          "npc/npc_page/pages/Zek.html"
+        ]
+      }
+    ]
+  },
+  "qualityCandidates": [
+    {
+      "source": "campaigns/campaign-banners/legends-os08.png",
+      "id": "legends-os08-cf83519df7",
+      "original": {
+        "file": "legends-os08-cf83519df7-original.png",
+        "bytes": 9585757,
+        "width": 4326,
+        "height": 2180,
+        "sha256": "ffc9df3b54d830ca6663f8d1a77fc7202886ff9573b3f447b060a402ebf8ebea"
+      },
+      "variants": {
+        "q85": {
+          "file": "legends-os08-cf83519df7-q85.webp",
+          "bytes": 232090,
+          "sha256": "0dfa3f1a48f8bbe1976721d4a3178729b6934eabe9b19f024acd4fa0bd290244",
+          "width": 1600,
+          "height": 806
+        }
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c12-chpt04-01.png",
+      "id": "lite-c12-chpt04-01-7a3594a4c0",
+      "original": {
+        "file": "lite-c12-chpt04-01-7a3594a4c0-original.png",
+        "bytes": 2393504,
+        "width": 1672,
+        "height": 941,
+        "sha256": "6b46a10d4e8e2801229c55510ef3b938b19fe4c5bdd5ef46a6cca2afdc561079"
+      },
+      "variants": {
+        "q85": {
+          "file": "lite-c12-chpt04-01-7a3594a4c0-q85.webp",
+          "bytes": 183332,
+          "sha256": "26c824df1838db912fbc6fe411e1e65a90730d014d0171c443fd01b6c8a35c7e",
+          "width": 1600,
+          "height": 900
+        }
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+      "id": "wilds-c05-chpt06_1-54e6079aef",
+      "original": {
+        "file": "wilds-c05-chpt06_1-54e6079aef-original.jpg",
+        "bytes": 94211,
+        "width": 595,
+        "height": 841,
+        "sha256": "5ce4734d77161deea68444d7b0daedf9477c9c04223ac2f4e47657f8f60efbf4"
+      },
+      "variants": {
+        "q85": {
+          "file": "wilds-c05-chpt06_1-54e6079aef-q85.webp",
+          "bytes": 48804,
+          "sha256": "e70d942a3cfa81e6175a6f6addef7c38420cf5963d26ee4255242cf5db26255d",
+          "width": 595,
+          "height": 841
+        },
+        "lossless": {
+          "file": "wilds-c05-chpt06_1-54e6079aef-lossless.webp",
+          "bytes": 74266,
+          "sha256": "7ac7416be892955946b576494b0b29236d2c95d66366551a284954dde177c830",
+          "width": 595,
+          "height": 841
+        }
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+      "id": "wilds-c05-chpt06_2-9ab0f849cb",
+      "original": {
+        "file": "wilds-c05-chpt06_2-9ab0f849cb-original.jpg",
+        "bytes": 80205,
+        "width": 595,
+        "height": 841,
+        "sha256": "f44190536854df886633004c1cf32f9a182d9b4d3ab0b41e0e676c73114e1fae"
+      },
+      "variants": {
+        "q85": {
+          "file": "wilds-c05-chpt06_2-9ab0f849cb-q85.webp",
+          "bytes": 40400,
+          "sha256": "be74da734fd1bab05d2366e6afd7896f43c723944ea4d9c65b83c10e6369b2ea",
+          "width": 595,
+          "height": 841
+        },
+        "lossless": {
+          "file": "wilds-c05-chpt06_2-9ab0f849cb-lossless.webp",
+          "bytes": 61586,
+          "sha256": "55ad9f0ce6f89f53046cdaec2ccbd2e441bda1883770de67ba1e353dbbcb9bc8",
+          "width": 595,
+          "height": 841
+        }
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+      "id": "wilds-c05-chpt06_3-71f6f58fbf",
+      "original": {
+        "file": "wilds-c05-chpt06_3-71f6f58fbf-original.jpeg",
+        "bytes": 406683,
+        "width": 1190,
+        "height": 1683,
+        "sha256": "45484616e963b70c657dadf1609e38e78b76619e73f43f5b0e505ebad8d79d82"
+      },
+      "variants": {
+        "q85": {
+          "file": "wilds-c05-chpt06_3-71f6f58fbf-q85.webp",
+          "bytes": 91498,
+          "sha256": "53176065f081da315427722ca2c2d72a659b426a73b6646c1cb5e2f3c297728f",
+          "width": 1131,
+          "height": 1600
+        },
+        "lossless": {
+          "file": "wilds-c05-chpt06_3-71f6f58fbf-lossless.webp",
+          "bytes": 84334,
+          "sha256": "8a669c5dfe586af576d49338fb74fad4faadf69ee3901704cc73fcf1d4f84da6",
+          "width": 1190,
+          "height": 1683
+        }
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+      "id": "wilds-c05-chpt06_4-cbe8857986",
+      "original": {
+        "file": "wilds-c05-chpt06_4-cbe8857986-original.jpeg",
+        "bytes": 390268,
+        "width": 1190,
+        "height": 1683,
+        "sha256": "2cdbdb63b2007cf0824693b4af1618589bf15f1f0eb87c0a3868f26b131410f6"
+      },
+      "variants": {
+        "q85": {
+          "file": "wilds-c05-chpt06_4-cbe8857986-q85.webp",
+          "bytes": 86552,
+          "sha256": "92ef86a5da3a6313c094200af9e0984004dd541f2275acab2b277effebd09165",
+          "width": 1131,
+          "height": 1600
+        },
+        "lossless": {
+          "file": "wilds-c05-chpt06_4-cbe8857986-lossless.webp",
+          "bytes": 80338,
+          "sha256": "f80033ff74bf79edca9d8333ef88976809520754e6e9ec896ccc8c9060606cf0",
+          "width": 1190,
+          "height": 1683
+        }
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+      "id": "wilds-c05-chpt06_5-74f8a573b5",
+      "original": {
+        "file": "wilds-c05-chpt06_5-74f8a573b5-original.jpeg",
+        "bytes": 306610,
+        "width": 1190,
+        "height": 1683,
+        "sha256": "ae560134fe5f89b03efff96b13a56b65fa7afa73e61b54d8ece284fcbd574b74"
+      },
+      "variants": {
+        "q85": {
+          "file": "wilds-c05-chpt06_5-74f8a573b5-q85.webp",
+          "bytes": 66264,
+          "sha256": "9624b7be0a7a7aa6781b99a02d21ba1070cb2708b8ce05eb6d83e55c491fe37d",
+          "width": 1131,
+          "height": 1600
+        },
+        "lossless": {
+          "file": "wilds-c05-chpt06_5-74f8a573b5-lossless.webp",
+          "bytes": 65100,
+          "sha256": "791f9a6c95438595ed62a31797c11aa9a5f1e80b5b47751019790d4947ad9c76",
+          "width": 1190,
+          "height": 1683
+        }
+      }
+    },
+    {
+      "source": "npc/individual_pics/Dr. Vaxon Lich.png",
+      "id": "dr-vaxon-lich-963493ecfe",
+      "original": {
+        "file": "dr-vaxon-lich-963493ecfe-original.png",
+        "bytes": 1407447,
+        "width": 1024,
+        "height": 1024,
+        "sha256": "13af49c8f517fe7b04823b84cecc09273b8241dd5a8512a6531686e615e26fee"
+      },
+      "variants": {
+        "q85": {
+          "file": "dr-vaxon-lich-963493ecfe-q85.webp",
+          "bytes": 64164,
+          "sha256": "e527fc8c181e46a8c69eadb935be94fa0be75da64d2e56774539bd97d0395e5e",
+          "width": 1024,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "npc/individual_pics/Roline Hughes.png",
+      "id": "roline-hughes-04a607e095",
+      "original": {
+        "file": "roline-hughes-04a607e095-original.png",
+        "bytes": 1744502,
+        "width": 1024,
+        "height": 1024,
+        "sha256": "59a3dde4cff76f5fe3a564fd5e161f8ac4954dbc29544fb11330d3212451c6d2"
+      },
+      "variants": {
+        "q85": {
+          "file": "roline-hughes-04a607e095-q85.webp",
+          "bytes": 105802,
+          "sha256": "90b5a598b8cf155c5d59995b5dd57a8373f0037d5b28417a8773d7b8ac206b17",
+          "width": 1024,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Al-lon.png",
+      "id": "al-lon-dae11ffff6",
+      "original": {
+        "file": "al-lon-dae11ffff6-original.png",
+        "bytes": 3155493,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "0464fddfe29fc7239fb9eb4100345df1c3956e674d8f51793011e74fc6901d3e"
+      },
+      "variants": {
+        "q85": {
+          "file": "al-lon-dae11ffff6-q85.webp",
+          "bytes": 309286,
+          "sha256": "cc1eedf272d2b35b4d622e7e2ca3e64cdfd5be9a3d3cc52f4f3240a3017ab888",
+          "width": 1536,
+          "height": 1024
+        },
+        "q92": {
+          "file": "al-lon-dae11ffff6-q92.webp",
+          "bytes": 511600,
+          "sha256": "3aa5ecefe5db4537d8e3f8cdf608be390ddf3cf9c8a3c1be172dd67aab20f9bd",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Anedak.png",
+      "id": "anedak-77e511e5c8",
+      "original": {
+        "file": "anedak-77e511e5c8-original.png",
+        "bytes": 3314704,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "98019022e241a90e19bd37cef35a6ff5c476404c0708a3b85392df18d85d9b2a"
+      },
+      "variants": {
+        "q85": {
+          "file": "anedak-77e511e5c8-q85.webp",
+          "bytes": 359966,
+          "sha256": "874df2a227c08ae52bb6a3ac8a7d3b734c5bcea41d60c307560f07280cc451fd",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Beau_Artificial_Hand.png",
+      "id": "beau_artificial_hand-f3b0ead9ed",
+      "original": {
+        "file": "beau_artificial_hand-f3b0ead9ed-original.png",
+        "bytes": 3217876,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "b96b088d93f6edf868e12343e9804b3c1bc64689e1238a9afd34181ce16d09ee"
+      },
+      "variants": {
+        "q85": {
+          "file": "beau_artificial_hand-f3b0ead9ed-q85.webp",
+          "bytes": 314626,
+          "sha256": "d7fefbc455f4c3d9197d0761e2fd788dc9343b548eb90ea1bca7568c00bd133e",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Beau_Young.png",
+      "id": "beau_young-4652b53279",
+      "original": {
+        "file": "beau_young-4652b53279-original.png",
+        "bytes": 3176714,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "f7f49828443946915c03a95d7d1e81dbd3da42e2d12ab86cc07fb0b899f16563"
+      },
+      "variants": {
+        "q85": {
+          "file": "beau_young-4652b53279-q85.webp",
+          "bytes": 310322,
+          "sha256": "365949300be7d2bc9c7d9a8c4395b8e9f0c8577203bf6c75453fa70ba7ac6b6e",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Beau_Young_Artificial_Hand.png",
+      "id": "beau_young_artificial_hand-09321cd107",
+      "original": {
+        "file": "beau_young_artificial_hand-09321cd107-original.png",
+        "bytes": 3171138,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "80d6555f6456b1ce3d79274e5bb13a6768092d4153d8be2f446abca181d03c89"
+      },
+      "variants": {
+        "q85": {
+          "file": "beau_young_artificial_hand-09321cd107-q85.webp",
+          "bytes": 304456,
+          "sha256": "9009e879c8e97996dc867bd9577d02bb5fd7f3980e8e3f165a305851ca4c6ca7",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Brown.png",
+      "id": "brown-6c178b7aa7",
+      "original": {
+        "file": "brown-6c178b7aa7-original.png",
+        "bytes": 3069956,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "3dbd51eaefc1c590e435e8d9c4638e6d39c8e73128d0f18af13f1258c63bdc9d"
+      },
+      "variants": {
+        "q85": {
+          "file": "brown-6c178b7aa7-q85.webp",
+          "bytes": 293010,
+          "sha256": "94a36005026ee39419c5842d0147e209f995960f2765a21b155749768b2fd12c",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Buzz.png",
+      "id": "buzz-c5a5847fbd",
+      "original": {
+        "file": "buzz-c5a5847fbd-original.png",
+        "bytes": 3015006,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "0da0dfefa59cd8863ea1e7cb1894b9ec2dad971500069be3b01f54fec25df38d"
+      },
+      "variants": {
+        "q85": {
+          "file": "buzz-c5a5847fbd-q85.webp",
+          "bytes": 269924,
+          "sha256": "6de3e5df58bfde99cb63f77f3e7fa77292b2796770a5f81a16ee7ace6d92729b",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Cecil.png",
+      "id": "cecil-4c2caf344f",
+      "original": {
+        "file": "cecil-4c2caf344f-original.png",
+        "bytes": 2900745,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "616ed4e675be54982151806fac61b3878c726db99e23e195aaddab81e6f6fd33"
+      },
+      "variants": {
+        "q85": {
+          "file": "cecil-4c2caf344f-q85.webp",
+          "bytes": 235692,
+          "sha256": "2d6d305a30c7a50ebb581ade57aa491a840ee36edf00d80c247127dc45e20077",
+          "width": 1536,
+          "height": 1024
+        },
+        "q92": {
+          "file": "cecil-4c2caf344f-q92.webp",
+          "bytes": 403736,
+          "sha256": "f255f0966ce330dfce83f976a452304a6eef00abd8c08ff06931c782edc7ce69",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Cold-Ham.png",
+      "id": "cold-ham-9bfb2aeb00",
+      "original": {
+        "file": "cold-ham-9bfb2aeb00-original.png",
+        "bytes": 3024792,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "fdac6fb9d3f5e3f759ce278e35be61c61ceed237f3ec8d71ce9b61bf91ce26e4"
+      },
+      "variants": {
+        "q85": {
+          "file": "cold-ham-9bfb2aeb00-q85.webp",
+          "bytes": 284814,
+          "sha256": "0d8ae51779b2576024367fbc91c1ccd3c0de06975aa2f479ebd8112de52104b0",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Dawn Light Fur.png",
+      "id": "dawn-light-fur-5cb517b877",
+      "original": {
+        "file": "dawn-light-fur-5cb517b877-original.png",
+        "bytes": 3019113,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "6a5c61a81680aec1c4b64de9285be65f375f235a67f498f63fac9f18310895c1"
+      },
+      "variants": {
+        "q85": {
+          "file": "dawn-light-fur-5cb517b877-q85.webp",
+          "bytes": 267400,
+          "sha256": "2dadaad5b74c11a3da535f4677125a9d867730cffa5ed49ca0347a72172ba42f",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Drayer.png",
+      "id": "drayer-9218f37e02",
+      "original": {
+        "file": "drayer-9218f37e02-original.png",
+        "bytes": 3034691,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "33d02d5235cb7d3aff85de2dcb02527f9dc5365d11117a593baeb19f1b52d4da"
+      },
+      "variants": {
+        "q85": {
+          "file": "drayer-9218f37e02-q85.webp",
+          "bytes": 264136,
+          "sha256": "91f29a6a057c0482e504186d45adcbdba9a65f0af780d1a9ca30eb54f722f3cb",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/GoR.png",
+      "id": "gor-e251fe1e25",
+      "original": {
+        "file": "gor-e251fe1e25-original.png",
+        "bytes": 3103664,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "5b815d8b986315317528c25f13142d2da186b31ccc601a4b5080361afac57e9a"
+      },
+      "variants": {
+        "q85": {
+          "file": "gor-e251fe1e25-q85.webp",
+          "bytes": 293640,
+          "sha256": "17949f96a1530a5ec1ef8bb07577ae6f28a06d38b53a172ac63bdbb983a79033",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Inu.png",
+      "id": "inu-bee782bd98",
+      "original": {
+        "file": "inu-bee782bd98-original.png",
+        "bytes": 3059858,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "fa1f74c8cea66c55346135f235b87b4d4a46baec4bce15a56730e3e15967648f"
+      },
+      "variants": {
+        "q85": {
+          "file": "inu-bee782bd98-q85.webp",
+          "bytes": 274352,
+          "sha256": "86e10780228e2f354ee12d920eba13b40597f8ad9698632f339af323f4dc3b74",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Jiaheng.png",
+      "id": "jiaheng-f233b1c442",
+      "original": {
+        "file": "jiaheng-f233b1c442-original.png",
+        "bytes": 3097128,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "51e72216a515d4f6d5081da37fd3cb99064656fc9eba615867fc68d2435e9c8c"
+      },
+      "variants": {
+        "q85": {
+          "file": "jiaheng-f233b1c442-q85.webp",
+          "bytes": 276860,
+          "sha256": "31e6ab9a24142fe40ccea2a55d2fbc7ff07d8a67ed1b93a86413e414c9388d21",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Kaname.png",
+      "id": "kaname-cf3aeaf08d",
+      "original": {
+        "file": "kaname-cf3aeaf08d-original.png",
+        "bytes": 3084337,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "cbc23c42d7a2e552d18c874cb2446f166f69e2874a6ae3cf6b997b5089bf1799"
+      },
+      "variants": {
+        "q85": {
+          "file": "kaname-cf3aeaf08d-q85.webp",
+          "bytes": 277498,
+          "sha256": "1da690d71363e799be3707b377106d6817fbb7a710233816a629fed43ab8c82c",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Kudan.png",
+      "id": "kudan-693eb3788d",
+      "original": {
+        "file": "kudan-693eb3788d-original.png",
+        "bytes": 3018855,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "ff66c1326abb9b7c0dcf1faae512e19c201023c8bb0c496a57328ce3d3de12e5"
+      },
+      "variants": {
+        "q85": {
+          "file": "kudan-693eb3788d-q85.webp",
+          "bytes": 276606,
+          "sha256": "66e924f22aa9f5b120065dc335f794fc5cef17db0759d39d678acc24a9fb2095",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Leah.png",
+      "id": "leah-8b24dba6ed",
+      "original": {
+        "file": "leah-8b24dba6ed-original.png",
+        "bytes": 3212450,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "f84bbbffed466df27b43c763414a66274e64681059ed042dfc4c0f29d596bcd7"
+      },
+      "variants": {
+        "q85": {
+          "file": "leah-8b24dba6ed-q85.webp",
+          "bytes": 327016,
+          "sha256": "02f7fd704749beaf237cf41577112aa1594fb6dabffa419878c4787a4c33d224",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Lemmy.png",
+      "id": "lemmy-96f331a65b",
+      "original": {
+        "file": "lemmy-96f331a65b-original.png",
+        "bytes": 3092293,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "78155819564940d43a5059c43a3ebecae10b7557fffe2cb2a33653699f94df6c"
+      },
+      "variants": {
+        "q85": {
+          "file": "lemmy-96f331a65b-q85.webp",
+          "bytes": 281368,
+          "sha256": "9185e3cdd1539c67e8dcac7270525ae7d58b233046903d36ec2a3349edfe0dc9",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Lott.png",
+      "id": "lott-0d4014c1ea",
+      "original": {
+        "file": "lott-0d4014c1ea-original.png",
+        "bytes": 3066577,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "5f29a3ddc36cc43f6f1dcdcf1c3e46b7979e375b2b28e2b1374c82acd49783fa"
+      },
+      "variants": {
+        "q85": {
+          "file": "lott-0d4014c1ea-q85.webp",
+          "bytes": 284636,
+          "sha256": "e648fcee092a3ed62641a082521d00e013c955bd7685657db9e6883e60be6fb6",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Midori.png",
+      "id": "midori-e6f4adb7b9",
+      "original": {
+        "file": "midori-e6f4adb7b9-original.png",
+        "bytes": 3023511,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "d9e753dbe13ce6768a8931b6e8bf2d3f14af9cdc9283c5fa35bb5d55b7098819"
+      },
+      "variants": {
+        "q85": {
+          "file": "midori-e6f4adb7b9-q85.webp",
+          "bytes": 262380,
+          "sha256": "2f7d73bc11cd86a76a675ce70661f0de370e7480744e9df011a52e19a4ee3d7a",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Midori_Artificial_Hand.png",
+      "id": "midori_artificial_hand-98b8da358c",
+      "original": {
+        "file": "midori_artificial_hand-98b8da358c-original.png",
+        "bytes": 3085339,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "471a8d9e50103f5713199b8ac43cb0561d4b5bfd27404239184b8c0761837a48"
+      },
+      "variants": {
+        "q85": {
+          "file": "midori_artificial_hand-98b8da358c-q85.webp",
+          "bytes": 288728,
+          "sha256": "82ea74025b08bd4d09defd46af3ca6797c079bc9a078b68aade76a0f285b4654",
+          "width": 1536,
+          "height": 1024
+        },
+        "q92": {
+          "file": "midori_artificial_hand-98b8da358c-q92.webp",
+          "bytes": 487022,
+          "sha256": "18c130e1c7b05cf8d3e40fc013c132e0b13d2d3bd9ef7afc872898807e9f7566",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Mr. Green.png",
+      "id": "mr-green-541a9e8688",
+      "original": {
+        "file": "mr-green-541a9e8688-original.png",
+        "bytes": 3144993,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "3bb347b62ae234a68192694dc568b038448b630ea69967668e0fc498e87b8ecf"
+      },
+      "variants": {
+        "q85": {
+          "file": "mr-green-541a9e8688-q85.webp",
+          "bytes": 299618,
+          "sha256": "000bc263bae0042fac751f1e0f7e0737a8028e41db65f5987db43d29bde749c3",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Paladin.png",
+      "id": "paladin-08ad07fb83",
+      "original": {
+        "file": "paladin-08ad07fb83-original.png",
+        "bytes": 2951813,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "2a15afcf0ed8599920efae153c79de183f58772658547ecf0ce4b249aca237b7"
+      },
+      "variants": {
+        "q85": {
+          "file": "paladin-08ad07fb83-q85.webp",
+          "bytes": 250288,
+          "sha256": "bde4514c22f96ab2b2ca8db32f4236f514578011cb795428c61aee3418de61b4",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Pascal.png",
+      "id": "pascal-3c733433bc",
+      "original": {
+        "file": "pascal-3c733433bc-original.png",
+        "bytes": 3188192,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "5d4c7aea45a9521dd580c5cd8a2cc8482d67519d94248566f45d07d56bbf3af8"
+      },
+      "variants": {
+        "q85": {
+          "file": "pascal-3c733433bc-q85.webp",
+          "bytes": 319974,
+          "sha256": "8bc6146b339d7f07302d2a48d5894700eb98a1a85dc5444c3854bf42c077daff",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Psyber.png",
+      "id": "psyber-5dcd8b6605",
+      "original": {
+        "file": "psyber-5dcd8b6605-original.png",
+        "bytes": 3164493,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "e10955499aa9629e4367e1b4ff9cacc359aef345e60150e65be801c8aeb261a5"
+      },
+      "variants": {
+        "q85": {
+          "file": "psyber-5dcd8b6605-q85.webp",
+          "bytes": 320796,
+          "sha256": "f80f72a1f4ddc817cab209e6bc331fcc127b94ea28d4f850d4e4eb27d82fec49",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Ravi.png",
+      "id": "ravi-7b729f73cd",
+      "original": {
+        "file": "ravi-7b729f73cd-original.png",
+        "bytes": 3213980,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "5ccad5371f7190343395a22e5aa64c165e39ad344f803bd45fc7d662b1952430"
+      },
+      "variants": {
+        "q85": {
+          "file": "ravi-7b729f73cd-q85.webp",
+          "bytes": 335934,
+          "sha256": "0bae4c204e91c2d345b4427941d8732f3e390e4eae2f891d929026c6cd7317a2",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Roel.png",
+      "id": "roel-8daf2eeb6a",
+      "original": {
+        "file": "roel-8daf2eeb6a-original.png",
+        "bytes": 3110250,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "7a0849172bcf4fbf6d947e4a4463ff79489390dd650dd5b6ab306c3cc44e3373"
+      },
+      "variants": {
+        "q85": {
+          "file": "roel-8daf2eeb6a-q85.webp",
+          "bytes": 280858,
+          "sha256": "3976051a62939d0412a9a074cfd512a327334eac293cdacd72c93ef3c9a471d6",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Ron.png",
+      "id": "ron-5511835842",
+      "original": {
+        "file": "ron-5511835842-original.png",
+        "bytes": 3041287,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "e4740009fc911a4d6f8d42dde0e7b7eab6e8a4eac86faf6e8c1c8b352963ea5c"
+      },
+      "variants": {
+        "q85": {
+          "file": "ron-5511835842-q85.webp",
+          "bytes": 266194,
+          "sha256": "1cb43e061b0c1b9b95914c945bc569f49cd062ebc0d80d742fd746f40966056b",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Samael.png",
+      "id": "samael-0de5f72644",
+      "original": {
+        "file": "samael-0de5f72644-original.png",
+        "bytes": 2972154,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "4ff0ad99cfc79ddf7ad969ce5415127d8a8125c3cf0b55cd81569d898d0c5539"
+      },
+      "variants": {
+        "q85": {
+          "file": "samael-0de5f72644-q85.webp",
+          "bytes": 257682,
+          "sha256": "fb530d283aa90a065838d562793784845ed38cc834dce6ab006d5e4c2d6d8e12",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Siri Oslee.png",
+      "id": "siri-oslee-993418df96",
+      "original": {
+        "file": "siri-oslee-993418df96-original.png",
+        "bytes": 3139338,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "fe25ae9d88c900ea7334cfd237bbffa853b28d5fcff6184774a279de57fcccce"
+      },
+      "variants": {
+        "q85": {
+          "file": "siri-oslee-993418df96-q85.webp",
+          "bytes": 297106,
+          "sha256": "034e667763996a68f0f137397fec9d21b0982c1268b74f73a0bbedee2f943c30",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Sugalu.png",
+      "id": "sugalu-0d2f942101",
+      "original": {
+        "file": "sugalu-0d2f942101-original.png",
+        "bytes": 3107454,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "152a11d15cd25ec32fea501fa0545d1f040f1416ffb50c37614bab78d06be2f0"
+      },
+      "variants": {
+        "q85": {
+          "file": "sugalu-0d2f942101-q85.webp",
+          "bytes": 289176,
+          "sha256": "bab316514ebafa14d39f0c82e066db4302f77e4f62c088c312f6d052efce922d",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Tai Tai Wo Hai Yao.png",
+      "id": "tai-tai-wo-hai-yao-1eaf970188",
+      "original": {
+        "file": "tai-tai-wo-hai-yao-1eaf970188-original.png",
+        "bytes": 2978823,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "6b8e0fa2a3fac4fc3586c7d3b9f7e4656458f21182658d2d51a72d9eb8837709"
+      },
+      "variants": {
+        "q85": {
+          "file": "tai-tai-wo-hai-yao-1eaf970188-q85.webp",
+          "bytes": 257438,
+          "sha256": "0ee90529a9c4dd9e1ef075cc19efcf600ea559124c90612bd3e820b990f91d9b",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Tweeter.png",
+      "id": "tweeter-30d791200f",
+      "original": {
+        "file": "tweeter-30d791200f-original.png",
+        "bytes": 3041567,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "5ce3c3f69509b9558a5652abbdd43bea9c0acafba036e85be30eef6591dd52fb"
+      },
+      "variants": {
+        "q85": {
+          "file": "tweeter-30d791200f-q85.webp",
+          "bytes": 274162,
+          "sha256": "41c1f802d79d36aee6c54f3e8763cd0fa27e8699f0934419e52592312cc3b32a",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Ubbo.png",
+      "id": "ubbo-9b5c282389",
+      "original": {
+        "file": "ubbo-9b5c282389-original.png",
+        "bytes": 3275530,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "c9a899c8e24fd327e68fb3588e30b8432fab91d823e34dadcefd8b98578ecf70"
+      },
+      "variants": {
+        "q85": {
+          "file": "ubbo-9b5c282389-q85.webp",
+          "bytes": 351794,
+          "sha256": "fbbffa3645613b6d8952f3bb5bf0d092a574035bd879f4d820a0fafc0a7da25f",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Uko.png",
+      "id": "uko-2ba06baa43",
+      "original": {
+        "file": "uko-2ba06baa43-original.png",
+        "bytes": 3162152,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "c25accc9c5f41b2b4588e141ceba40b3b0ea1081bd48ad6d2387bffde06a2bfd"
+      },
+      "variants": {
+        "q85": {
+          "file": "uko-2ba06baa43-q85.webp",
+          "bytes": 316048,
+          "sha256": "a79f3f556e4cd73cc16416888e578b7fc5e8b08503524b7b3a3ede304aa27ad6",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Usioni.png",
+      "id": "usioni-22afdfbaee",
+      "original": {
+        "file": "usioni-22afdfbaee-original.png",
+        "bytes": 3123013,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "a288b7b16d6b70205c71ab598cf61f3d7c060b98d84bbad5ac9c84f0ffcfbf00"
+      },
+      "variants": {
+        "q85": {
+          "file": "usioni-22afdfbaee-q85.webp",
+          "bytes": 289834,
+          "sha256": "0faab3650a765e5a3bbbe18afd7b4fddd01212634402d2ade370a58199ebfb42",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Watson.png",
+      "id": "watson-9eb8ab6d4e",
+      "original": {
+        "file": "watson-9eb8ab6d4e-original.png",
+        "bytes": 3028650,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "fc6c910698d4146011dd5e31463323b1c61f29ba3e7e92e758a38e795ee891b5"
+      },
+      "variants": {
+        "q85": {
+          "file": "watson-9eb8ab6d4e-q85.webp",
+          "bytes": 264508,
+          "sha256": "613bfadd0db144fb9cfbf31bd96f1d2dcae9af259891b1ac57d79da5cbad0724",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/YHWH.png",
+      "id": "yhwh-f598a706fa",
+      "original": {
+        "file": "yhwh-f598a706fa-original.png",
+        "bytes": 2972377,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "08fd7936b66cbe4fd288e3eefe1f2f49742ddab1788896c1b8eba27aecebf64c"
+      },
+      "variants": {
+        "q85": {
+          "file": "yhwh-f598a706fa-q85.webp",
+          "bytes": 264906,
+          "sha256": "f99cea150af52df0740ef409b921dcebe2a8b8416100bf45734488f8e95cb37b",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "pc/three_views/Yi.png",
+      "id": "yi-f3390bd1b4",
+      "original": {
+        "file": "yi-f3390bd1b4-original.png",
+        "bytes": 3128576,
+        "width": 1536,
+        "height": 1024,
+        "sha256": "73b2c14ce5515aa67f370c8894a04421535a5a3e379d87482980d3e8178090a0"
+      },
+      "variants": {
+        "q85": {
+          "file": "yi-f3390bd1b4-q85.webp",
+          "bytes": 286294,
+          "sha256": "e4c7e605923120bccc33e03bfde0f0d5964cc0d52ca59a507bf24a8fb040c6fd",
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/lite-c09.jpg",
+      "id": "lite-c09-59ec5e66c3",
+      "original": {
+        "file": "lite-c09-59ec5e66c3-original.jpg",
+        "bytes": 12426492,
+        "width": 6834,
+        "height": 3568,
+        "sha256": "1921e000575f8b45997698c304adcc305c12fcab2f632632f3d9654277ce0660"
+      },
+      "variants": {
+        "q85": {
+          "file": "lite-c09-59ec5e66c3-q85.webp",
+          "bytes": 163244,
+          "sha256": "350a0a8428b6302857d1af6251206d6f53bb4dd8e9ed5dc93c013c3576a2ce07",
+          "width": 1600,
+          "height": 835
+        }
+      }
+    }
+  ],
+  "letterBrowser": {
+    "checkedAt": "2026-10-22T14:10:57.684Z",
+    "cases": [
+      {
+        "viewport": 1280,
+        "language": "zh",
+        "images": [
+          {
+            "href": "http://127.0.0.1:8766/campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+            "width": 595,
+            "height": 841,
+            "keyboardOpenedOriginal": true
+          },
+          {
+            "href": "http://127.0.0.1:8766/campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+            "width": 595,
+            "height": 841,
+            "keyboardOpenedOriginal": true
+          }
+        ]
+      },
+      {
+        "viewport": 1280,
+        "language": "en",
+        "images": [
+          {
+            "href": "http://127.0.0.1:8766/campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+            "width": 1190,
+            "height": 1683,
+            "keyboardOpenedOriginal": true
+          },
+          {
+            "href": "http://127.0.0.1:8766/campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+            "width": 1190,
+            "height": 1683,
+            "keyboardOpenedOriginal": true
+          },
+          {
+            "href": "http://127.0.0.1:8766/campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+            "width": 1190,
+            "height": 1683,
+            "keyboardOpenedOriginal": true
+          }
+        ]
+      },
+      {
+        "viewport": 390,
+        "language": "zh",
+        "images": [
+          {
+            "href": "http://127.0.0.1:8766/campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+            "width": 595,
+            "height": 841,
+            "keyboardOpenedOriginal": true
+          },
+          {
+            "href": "http://127.0.0.1:8766/campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+            "width": 595,
+            "height": 841,
+            "keyboardOpenedOriginal": true
+          }
+        ]
+      },
+      {
+        "viewport": 390,
+        "language": "en",
+        "images": [
+          {
+            "href": "http://127.0.0.1:8766/campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+            "width": 1190,
+            "height": 1683,
+            "keyboardOpenedOriginal": true
+          },
+          {
+            "href": "http://127.0.0.1:8766/campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+            "width": 1190,
+            "height": 1683,
+            "keyboardOpenedOriginal": true
+          },
+          {
+            "href": "http://127.0.0.1:8766/campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+            "width": 1190,
+            "height": 1683,
+            "keyboardOpenedOriginal": true
+          }
+        ]
+      }
+    ],
+    "originalOpenChecks": 10,
+    "contactSheets": 3,
+    "note": "Local Chrome, network restricted to loopback; contact sheets rendered offline. Checks native image document opened by keyboard, not physical mobile pinch gestures."
+  },
+  "unitTests": {
+    "command": "npm run test:images",
+    "passed": 15,
+    "failed": 0
+  },
+  "inlineAudit": {
+    "summary": {
+      "chapters": 100,
+      "baselineHtmlPages": 128,
+      "currentHtmlPages": 135,
+      "chaptersWithBaseline": 96,
+      "historicalOccurrences": 39,
+      "currentOccurrences": 45,
+      "chaptersWithInlineImages": 10
+    },
+    "unresolved": [],
+    "missingLocalFiles": []
+  },
+  "total": {
+    "images": 292,
+    "objects": 584,
+    "originalBytes": 477728172,
+    "thumbBytes": 5967176,
+    "readingBytes": 42370148,
+    "variantBytes": 48337324
+  },
+  "manifestSha256": {
+    "arcs": "9aaf2e48995da62c224bf63179ec3cb8646acb19f446c4df49c30061d8fb3406",
+    "chapters": "807e217ba41b5348dbab97baec8ba9d043f9b601650a21420817de527b0be362",
+    "npcs": "15e8dd9f0d5f6ce19b1173ad1e983691658ec5ee6a832a085fbe43e84ee4088c"
+  },
+  "limits": [
+    "No cloud upload, original deletion, production source switch or deployment.",
+    "Staging originals are temporary working copies, not durable private Storage archives.",
+    "PC three-view candidates are quality evaluation only and excluded from the upload manifests.",
+    "Visual assessment uses contact sheets for all 39 three views and native-resolution crops/full images for selected details; not every image has been inspected at every magnification.",
+    "Mobile testing uses a 390px Chrome viewport, not physical device pinch gestures."
+  ]
+}

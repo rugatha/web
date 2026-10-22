@@ -172,12 +172,29 @@ export async function prepare(inventoryPath, output, batch = 'rugatha-c01', orig
     if (sha256(await readFile(backup)) !== image.sha256) throw new Error(`Backup verification failed: ${image.source}`);
     const entityIds = image.category === 'npcs' ? npcRecords.filter(npc => npcSourceFor(npc, inventory.images) === image.source).map(npc => npc.id) : [basename(image.source, extname(image.source))];
     const record = { source: image.source, id: image.id, category: image.category, entityIds, original: { bytes: image.bytes, sha256: image.sha256, width: image.width, height: image.height }, variants: {} };
+    let encoderSource = source;
+    if (/\.jpe?g$/i.test(source)) {
+      const color = execFileSync('sips', ['-g', 'space', '-g', 'profile', source], { encoding: 'utf8' });
+      if (/space:\s*CMYK\b/.test(color)) {
+        const profile = '/System/Library/ColorSync/Profiles/sRGB Profile.icc';
+        encoderSource = join(directory, 'normalized', `${image.id}.png`);
+        await mkdir(dirname(encoderSource), { recursive: true });
+        // cwebp cannot decode CMYK JPEG. ColorSync uses the embedded print
+        // profile for the conversion; immutable original backups stay untouched.
+        execFileSync('sips', ['--matchTo', profile, '-s', 'format', 'png', source, '--out', encoderSource], { stdio: 'pipe' });
+        const converted = execFileSync('sips', ['-g', 'space', encoderSource], { encoding: 'utf8' });
+        if (!/space:\s*RGB\b/.test(converted)) throw new Error(`CMYK normalization failed: ${image.source}`);
+        record.preprocessing = { from: 'CMYK', to: 'sRGB', tool: 'macOS ColorSync/sips',
+          sourceProfile: color.match(/profile:\s*(.+)/)?.[1]?.trim() || null,
+          targetProfileSha256: sha256(await readFile(profile)) };
+      }
+    }
     for (const [name, spec] of Object.entries(manifest.variants)) {
       const scale = Math.min(1, spec.maxEdge / Math.max(image.width, image.height));
       const width = Math.max(1, Math.round(image.width * scale));
       const height = Math.max(1, Math.round(image.height * scale));
       const temporary = join(directory, `${image.id}-${name}.webp`);
-      execFileSync('cwebp', ['-quiet', '-q', String(spec.quality), '-m', '6', '-metadata', 'icc', '-resize', String(width), String(height), source, '-o', temporary]);
+      execFileSync('cwebp', ['-quiet', '-q', String(spec.quality), '-m', '6', '-metadata', 'icc', '-resize', String(width), String(height), encoderSource, '-o', temporary]);
       const bytes = await readFile(temporary);
       const hash = sha256(bytes);
       const object = `public-images/${image.category}/${image.id}/${hash}/${name}.webp`;

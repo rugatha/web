@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v27";
+const CACHE_VERSION = "rugatha-pwa-v28";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;
@@ -15,6 +15,7 @@ const PRECACHE_URLS = [
   "/assets/logo/rugatha-icon-512.png",
   "/assets/logo/rugatha-icon-maskable-512.png",
   "/shared/pwa.js",
+  "/shared/pwa.js?v=20261022-letter-reading",
   "/shared/auth-session.js?v=20261019-character-books-1",
   "/shared/firebase.config.js",
   "/shared/spell-catalog.js?v=20261018-storage-1",
@@ -173,7 +174,10 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  if (request.mode === "navigate" || new URL(request.url).pathname === "/shared/firebase.config.js") {
+  const pathname = new URL(request.url).pathname;
+  // Fresh chapter JSON exposes new reading links immediately while retaining
+  // the last successful body for a previously visited chapter offline.
+  if (request.mode === "navigate" || pathname === "/shared/firebase.config.js" || pathname === "/campaigns/data/chapter-content.json") {
     event.respondWith(networkFirst(request));
     return;
   }

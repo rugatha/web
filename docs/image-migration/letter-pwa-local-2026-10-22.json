@@ -1,0 +1,220 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "phase": "pre-deployment acceptance",
+  "worker": "rugatha-pwa-v28",
+  "reports": [
+    {
+      "checkedAt": "2026-10-22T14:37:46.147Z",
+      "workerVersion": "rugatha-pwa-v28",
+      "viewport": 1280,
+      "origin": "https://rugatha.test:8767",
+      "activeOldWorkerTested": true,
+      "staleV27CacheRemoved": true,
+      "unrelatedCachePreserved": true,
+      "staleCurrentJsonRefreshedOnNextNavigation": true,
+      "offlineFullReload": true,
+      "opened": [
+        {
+          "language": "en",
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+          "width": 1190
+        },
+        {
+          "language": "en",
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+          "width": 1190
+        },
+        {
+          "language": "en",
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+          "width": 1190
+        },
+        {
+          "language": "zh",
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+          "width": 595
+        },
+        {
+          "language": "zh",
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+          "width": 595
+        }
+      ],
+      "offlineResponses": [
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        }
+      ],
+      "reconnect": true
+    },
+    {
+      "checkedAt": "2026-10-22T14:37:50.471Z",
+      "workerVersion": "rugatha-pwa-v28",
+      "viewport": 390,
+      "origin": "https://rugatha.test:8767",
+      "activeOldWorkerTested": true,
+      "staleV27CacheRemoved": true,
+      "unrelatedCachePreserved": true,
+      "staleCurrentJsonRefreshedOnNextNavigation": true,
+      "offlineFullReload": true,
+      "opened": [
+        {
+          "language": "en",
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+          "width": 1190
+        },
+        {
+          "language": "en",
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+          "width": 1190
+        },
+        {
+          "language": "en",
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+          "width": 1190
+        },
+        {
+          "language": "zh",
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+          "width": 595
+        },
+        {
+          "language": "zh",
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+          "width": 595
+        }
+      ],
+      "offlineResponses": [
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        },
+        {
+          "url": "https://rugatha.test:8767/campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+          "status": 200,
+          "fromServiceWorker": true
+        }
+      ],
+      "reconnect": true
+    }
+  ],
+  "unitTests": {
+    "imageTests": 15,
+    "spellbookPwaTests": 5,
+    "failed": 0
+  },
+  "existingImageBrowser": {
+    "passed": 7,
+    "failed": 0
+  },
+  "scope": "Local HTTPS with the actual v27 worker upgraded by shared/pwa.js to v28. Desktop and 390px Chrome, genuine offline reload and ten native image documents opened from Cache Storage. External origins blocked; no Storage uploads or source switches. Production acceptance follows deployment."
+}
