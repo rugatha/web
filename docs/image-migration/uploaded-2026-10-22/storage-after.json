@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-22T15:31:25.388Z",
+  "bucket": "rugatha-87e15.firebasestorage.app",
+  "location": "US-WEST1",
+  "storageClass": "REGIONAL",
+  "softDeletePolicy": {
+    "retentionDurationSeconds": "604800",
+    "effectiveTime": "2026-09-25T09:58:08.639Z"
+  },
+  "liveObjects": 942,
+  "liveBytes": 561773867,
+  "metricsWindowDays": 30,
+  "metrics": {
+    "api/request_count": {
+      "total": 5093,
+      "truncated": false
+    },
+    "network/sent_bytes_count": {
+      "total": 864702317,
+      "truncated": false
+    }
+  },
+  "limitations": "Live size excludes noncurrent and soft-deleted objects. Monitoring includes this migration and is delayed; request_count is not a Class B billing total. Not a billing invoice or guaranteed remaining free allowance.",
+  "billingEnabled": true,
+  "linkedProjects": {
+    "count": 1,
+    "truncated": false
+  },
+  "budgets": [
+    {
+      "displayName": "Rugatha Storage 月費通知（NT$30）",
+      "amount": {
+        "specifiedAmount": {
+          "currencyCode": "TWD",
+          "units": "30"
+        }
+      },
+      "thresholdRules": [
+        {
+          "thresholdPercent": 0.5,
+          "spendBasis": "CURRENT_SPEND"
+        },
+        {
+          "thresholdPercent": 0.9,
+          "spendBasis": "CURRENT_SPEND"
+        },
+        {
+          "thresholdPercent": 1,
+          "spendBasis": "CURRENT_SPEND"
+        }
+      ],
+      "defaultRecipientsEnabled": true
+    }
+  ],
+  "budgetsTruncated": false
+}

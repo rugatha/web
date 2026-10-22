@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-10-22T15:31:31.766Z",
+  "mode": "uploaded-not-switched",
+  "bucket": "rugatha-87e15.firebasestorage.app",
+  "location": "US-WEST1",
+  "baselineCommit": "f7905f09fc382b4e2da7b54157427e09d160b6cf",
+  "batches": [
+    {
+      "category": "arcs",
+      "images": 38,
+      "publicVariants": 76,
+      "publicBytes": 8291406,
+      "privateOriginals": 38,
+      "privateOriginalBytes": 93422153,
+      "manifest": "arcs-manifest.json",
+      "manifestSha256": "a0cd73c08f695daaade2f9d5005479184c71e590ab45b2d0167a88cfd82fa12e",
+      "publicVerifiedAt": "2026-10-22T15:24:50.688Z",
+      "originalsVerifiedAt": "2026-10-22T15:25:29.464Z",
+      "publicLogSha256": "d1e97915251fc0124b84f6a0aea91b4c89c0281bc6fa700d828258afbcfc33f8",
+      "archiveLogSha256": "1cd9183fac6393a863f2cf75a481aa985b4a6a3d9aff079e7a13c7769398eabb"
+    },
+    {
+      "category": "chapters",
+      "images": 107,
+      "publicVariants": 214,
+      "publicBytes": 22909880,
+      "privateOriginals": 107,
+      "privateOriginalBytes": 202332344,
+      "manifest": "chapters-manifest.json",
+      "manifestSha256": "bf0ab54076096c072c624739988878661d52e9312be487abdddcdf855fa8a746",
+      "publicVerifiedAt": "2026-10-22T15:29:49.409Z",
+      "originalsVerifiedAt": "2026-10-22T15:28:34.485Z",
+      "publicLogSha256": "1e4471d5e448ed0f45c2c599530031bb80739d74c7165cc50cccb8d81b4ef2b7",
+      "archiveLogSha256": "c53309ad3a51f64b292c8bd292d8082a12064e99cfaec08f6e8f987ca07955a4"
+    },
+    {
+      "category": "npcs",
+      "images": 147,
+      "publicVariants": 294,
+      "publicBytes": 17136038,
+      "privateOriginals": 147,
+      "privateOriginalBytes": 181973675,
+      "manifest": "npcs-manifest.json",
+      "manifestSha256": "34157340b99bf950cda7ad20444fee3809a7a1b52f0550d74ab8ac18fd4ba03d",
+      "publicVerifiedAt": "2026-10-22T15:31:10.019Z",
+      "originalsVerifiedAt": "2026-10-22T15:29:24.990Z",
+      "publicLogSha256": "7ce052529188b66ea61902ea35ef18916c134eea10daa448f9994e8f0aedb6b9",
+      "archiveLogSha256": "c975938ee7d648a9087b3fe648fe396470c57ce3d995fc4013712ee8ad69d1ac"
+    }
+  ],
+  "addedObjects": 876,
+  "addedBytes": 526065496,
+  "browser": {
+    "images": 13,
+    "variants": 26,
+    "viewports": [
+      {
+        "viewport": 1280,
+        "rendered": 26,
+        "overflow": false
+      },
+      {
+        "viewport": 390,
+        "rendered": 26,
+        "overflow": false
+      }
+    ]
+  },
+  "storage": {
+    "beforeObjects": 66,
+    "afterObjects": 942,
+    "beforeBytes": 35708371,
+    "afterBytes": 561773867,
+    "deltaMatchesUploadedObjects": true
+  },
+  "verification": {
+    "publicAdminReadbackSha256": true,
+    "publicAnonymousReadbackSha256": true,
+    "publicContentTypeCacheControlCors": true,
+    "privateOriginalReadbackSha256AndGeneration": true,
+    "privateOriginalAnonymousDenied": true,
+    "frontendSourcesChanged": false,
+    "repositoryOriginalsDeleted": false
+  },
+  "limitations": "Monitoring includes upload/readback/QA traffic and may lag. No source switch, full next-batch page acceptance, original cleanup, or site deployment. Existing exact hashes can be reused; changed source content needs a new version."
+}
