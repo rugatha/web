@@ -53,11 +53,14 @@ for (const width of [1280, 390]) {
       const block = page.locator(`.campaign-detail__content_${language}`);
       await expect(block).toBeVisible();
       const links = block.locator('a:has(img[src*="wilds-c05-chpt06_"])');
-      await expect(links).toHaveCount(language === 'zh' ? 2 : 3);
-      for (const link of await links.all()) {
-        await link.scrollIntoViewIfNeeded();
-        await expect.poll(() => link.locator('img').evaluate(i => i.complete && i.naturalWidth > 0)).toBe(true);
-        imageUrls.push(await link.evaluate(a => a.href));
+      await expect(links).toHaveCount(language === 'zh' ? 0 : 3);
+      const images = block.locator('img[src*="wilds-c05-chpt06_"]');
+      await expect(images).toHaveCount(language === 'zh' ? 2 : 3);
+      if (language === 'zh') await expect(block).not.toContainText('查看大圖');
+      for (const image of await images.all()) {
+        await image.scrollIntoViewIfNeeded();
+        await expect.poll(() => image.evaluate(i => i.complete && i.naturalWidth > 0)).toBe(true);
+        imageUrls.push(await image.evaluate(i => i.src));
       }
       if (language === 'zh') await page.locator('[data-lang-toggle]').click();
     }
@@ -78,7 +81,14 @@ for (const width of [1280, 390]) {
       const block = page.locator(`.campaign-detail__content_${language}`);
       await expect(block).toBeVisible();
       const links = block.locator('a:has(img[src*="wilds-c05-chpt06_"])');
-      await expect(links).toHaveCount(language === 'zh' ? 2 : 3);
+      await expect(links).toHaveCount(language === 'zh' ? 0 : 3);
+      const images = block.locator('img[src*="wilds-c05-chpt06_"]');
+      await expect(images).toHaveCount(language === 'zh' ? 2 : 3);
+      if (language === 'zh') await expect(block).not.toContainText('查看大圖');
+      for (const image of await images.all()) {
+        await image.scrollIntoViewIfNeeded();
+        await expect.poll(() => image.evaluate(i => i.complete && i.naturalWidth > 0)).toBe(true);
+      }
       for (const link of await links.all()) {
         await link.scrollIntoViewIfNeeded();
         await expect.poll(() => link.locator('img').evaluate(i => i.complete && i.naturalWidth > 0)).toBe(true);
@@ -96,13 +106,13 @@ for (const width of [1280, 390]) {
       }
       if (language === 'en') await page.locator('[data-lang-toggle]').click();
     }
-    expect(opened).toHaveLength(5);
+    expect(opened).toHaveLength(3);
     for (const url of imageUrls) expect(offlineResponses.some(r => r.url === url && r.status === 200 && r.fromServiceWorker)).toBe(true);
     expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
     await page.screenshot({ path: testInfo.outputPath('offline-letter.png') });
     await context.setOffline(false);
     await page.reload();
-    await expect(page.locator('.campaign-detail__content_zh a:has(img[src*="wilds-c05-chpt06_"])')).toHaveCount(2);
+    await expect(page.locator('.campaign-detail__content_zh a:has(img[src*="wilds-c05-chpt06_"])')).toHaveCount(0);
     const directory = process.env.RUGATHA_LETTER_REPORT_DIR || join(tmpdir(), 'rugatha-letter-pwa');
     mkdirSync(directory, { recursive: true });
     writeFileSync(join(directory, `${production ? 'production' : 'local'}-${width}.json`), JSON.stringify({ checkedAt: new Date().toISOString(), workerVersion, viewport: width, origin, activeOldWorkerTested: !production, staleV27CacheRemoved: true, unrelatedCachePreserved: true, staleCurrentJsonRefreshedOnNextNavigation: true, offlineFullReload: true, opened, offlineResponses, reconnect: true }, null, 2) + '\n');
