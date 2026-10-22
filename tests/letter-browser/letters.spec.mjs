@@ -39,7 +39,7 @@ for (const width of [1280, 390]) {
     await expect.poll(() => page.evaluate(() => caches.keys())).toContain(`${workerVersion}-static`);
     await expect.poll(() => page.evaluate(() => caches.keys())).not.toContain('rugatha-pwa-v27-runtime');
     expect(await page.evaluate(() => caches.keys())).toContain('letter-test-unrelated');
-    await expect.poll(() => page.evaluate(() => navigator.serviceWorker.controller?.scriptURL)).toContain('20261022-letter-reading');
+    await expect.poll(() => page.evaluate(() => navigator.serviceWorker.controller?.scriptURL)).toContain('20261022-letter-reading-r2');
     await page.reload();
 
     // Seed stale JSON in the new runtime too. The next online navigation must

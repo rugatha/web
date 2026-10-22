@@ -15,7 +15,7 @@ const PRECACHE_URLS = [
   "/assets/logo/rugatha-icon-512.png",
   "/assets/logo/rugatha-icon-maskable-512.png",
   "/shared/pwa.js",
-  "/shared/pwa.js?v=20261022-letter-reading",
+  "/shared/pwa.js?v=20261022-letter-reading-r2",
   "/shared/auth-session.js?v=20261019-character-books-1",
   "/shared/firebase.config.js",
   "/shared/spell-catalog.js?v=20261018-storage-1",

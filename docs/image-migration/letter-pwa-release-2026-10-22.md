@@ -5,7 +5,7 @@
 ## 行為
 
 - Wilds c05 第六章的中英文五張信件提供完整圖片連結，可用滑鼠或鍵盤開啟既有原圖。
-- worker 升為 `rugatha-pwa-v28`，註冊 URL 與該章載入的 `shared/pwa.js` 均加上 `20261022-letter-reading` 版本，避免新閱讀流程沿用舊腳本。
+- worker 升為 `rugatha-pwa-v28`，註冊 URL 與該章載入的 `shared/pwa.js` 均加上 `20261022-letter-reading-r2` 版本，避免新閱讀流程沿用舊腳本。
 - 章節 JSON 改為 network-first：連網時取得當前正文，網路失敗時使用最後成功的快取。連網請求次數不增加，原本 stale-while-revalidate 也會在背景抓取。
 - 升級會清除舊 Rugatha cache，保留其他應用程式的 cache。既有開啟頁籤不強制重新整理，以免中斷會員編輯；更新後連網重新開啟／載入章節，建立新版本離線快取，再進行離線閱讀。
 
@@ -33,3 +33,5 @@ RUGATHA_IMAGE_BROWSER_CHANNEL=chrome RUGATHA_LETTER_TEST_BASE_URL=https://rugath
 正式模式使用原站與實際 v28 worker；在新的隔離瀏覽器 context 放入舊 cache，驗證清除、連網資料更新與離線閱讀，不將舊 worker fixture 發布到網站。真正的 v27→v28 安裝升級由本機 HTTPS 測試覆蓋。正式報告預設輸出至系統暫存 `rugatha-letter-pwa/production-{1280,390}.json`。
 
 發布後另核對正式 JSON、worker 與版本化 PWA 腳本是否與提交相符，並重跑既有公開圖片快取驗收。正式複驗結果保留在系統暫存，避免只為追加驗收結果再觸發一輪網站發布。
+
+發布複驗發現，發布前探測的新 worker 網址曾被 CDN 快取為 v27；因此發布修訂將腳本及 worker URL 一併改為 `20261022-letter-reading-r2`。正式發布完成前不再請求這組新 URL，發布後核對實際位元組與離線行為。
