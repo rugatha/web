@@ -15,7 +15,6 @@ let currentNpc = null;
 let locationDataPromise = null;
 let locationRenderToken = 0;
 const i18n = {
-  introTitle: { zh: "介紹", en: "Introduction" },
   relatedTitle: { zh: "相關NPC", en: "Related NPCs" },
   appearancesTitle: { zh: "出現章節", en: "Appeared Chapters" },
   relatedEmpty: { zh: "無相關 NPC", en: "No related NPCs" },
@@ -70,6 +69,7 @@ function getDisplayName(record) {
 function updateTitle(npc) {
   const displayName = getDisplayName(npc) || "NPC";
   if (elements.name) elements.name.textContent = displayName;
+  fitProfileName();
   if (elements.portrait) elements.portrait.alt = displayName || "NPC portrait";
   const suffix = languageState.value === "en" ? "NPC | Rugatha" : "非玩家角色 | Rugatha";
   document.title = displayName ? `${displayName} | ${suffix}` : suffix;
@@ -97,18 +97,18 @@ function applyViolentOverride(npc) {
 
 function updateSectionTitles() {
   const lang = languageState.value === "en" ? "en" : "zh";
-
-  const intro = document.querySelector(".intro-title");
-  if (intro) intro.textContent = i18n.introTitle[lang];
+  const setTitle = (heading, text) => {
+    (heading.querySelector(".npc-section-label") || heading).textContent = text;
+  };
 
   const relatedTitle = document.querySelector(".related .section-title");
   if (relatedTitle) {
-    relatedTitle.textContent = i18n.relatedTitle[lang];
+    setTitle(relatedTitle, i18n.relatedTitle[lang]);
   }
 
   const appearanceTitle = document.querySelector(".appearances .section-title");
   if (appearanceTitle) {
-    appearanceTitle.textContent = i18n.appearancesTitle[lang];
+    setTitle(appearanceTitle, i18n.appearancesTitle[lang]);
   }
 
   const appearanceEmpty = document.querySelector(".appearances .location-empty");
@@ -266,6 +266,66 @@ const appearanceCache = {
   storyArcTitlePromise: null
 };
 let appearanceRenderToken = 0;
+const sectionOpenState = new Map();
+let appearanceImagesPromise;
+
+function makeCollapsible(section, key) {
+  const heading = section.querySelector("h2");
+  const header = document.createElement("div");
+  header.className = "npc-section-header";
+  heading.id = `npc-${key}-title`;
+  const body = document.createElement("div");
+  body.className = "npc-section-body";
+  body.id = `npc-${key}-body`;
+  Array.from(section.children).filter((node) => node !== heading).forEach((node) => body.appendChild(node));
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "npc-section-toggle";
+  button.setAttribute("aria-controls", body.id);
+  const label = document.createElement("span");
+  label.className = "npc-section-label";
+  label.textContent = heading.textContent;
+  const icon = document.createElement("span");
+  icon.className = "npc-section-icon";
+  icon.setAttribute("aria-hidden", "true");
+  button.append(label, icon);
+  const update = () => {
+    const open = sectionOpenState.get(key) === true;
+    body.hidden = !open;
+    button.setAttribute("aria-expanded", String(open));
+    icon.textContent = open ? "−" : "+";
+    const action = languageState.value === "en" ? (open ? "Collapse" : "Expand") : (open ? "收合" : "展開");
+    button.setAttribute("aria-label", `${action} ${label.textContent}`);
+  };
+  button.addEventListener("click", () => {
+    sectionOpenState.set(key, body.hidden);
+    update();
+  });
+  heading.replaceChildren(button);
+  header.append(heading);
+  section.append(header, body);
+  update();
+  return section;
+}
+
+function createAppearanceCard(title, href, image, className) {
+  const card = document.createElement(href ? "a" : "div");
+  card.className = className;
+  if (href) card.href = href;
+  if (image) {
+    const art = document.createElement("img");
+    art.src = image;
+    art.alt = "";
+    art.loading = "lazy";
+    art.decoding = "async";
+    art.addEventListener("error", () => art.remove(), { once: true });
+    card.appendChild(art);
+  }
+  const label = document.createElement("span");
+  label.textContent = title;
+  card.appendChild(label);
+  return card;
+}
 
 async function loadNpcAppearanceMap() {
   if (appearanceCache.npcMap) return appearanceCache.npcMap;
@@ -393,7 +453,10 @@ function buildAppearances(mapping, graphData, npc) {
   const chapterOrder = new Map();
   graphData.forEach((node, idx) => {
     if (!node || !node.id) return;
-    graphById.set(node.id, node);
+    // Legends one-shots reuse the arc ID for their chapter; keep the arc's parent.
+    if (!graphById.has(node.id) || node.level < graphById.get(node.id).level) {
+      graphById.set(node.id, node);
+    }
     if (node.level === 3 && !arcOrder.has(node.id)) arcOrder.set(node.id, idx);
     if (node.level === 4) {
       chapterOrder.set(node.id, idx);
@@ -492,8 +555,9 @@ async function renderAppearances(npc) {
   let graphData = [];
   let chapterTitles = {};
   let storyArcTitles = {};
+  let arcImages = {};
   try {
-    [mapping, graphData, chapterTitles, storyArcTitles] = await Promise.all([
+    [mapping, graphData, chapterTitles, storyArcTitles, arcImages] = await Promise.all([
       loadNpcAppearanceMap(),
       loadGraphData(),
       loadLocalizedTitleMap(
@@ -507,7 +571,10 @@ async function renderAppearances(npc) {
         "storyArcTitlePromise",
         npcAppearanceUrls.storyArcTitles,
         "Story arc title map"
-      )
+      ),
+      appearanceImagesPromise ||= fetch(new URL("./appearance-images.json", import.meta.url))
+        .then((response) => { if (!response.ok) throw new Error("Appearance images unavailable"); return response.json(); })
+        .catch(() => ({}))
     ]);
   } catch (err) {
     console.warn("Unable to load appearance data:", err && err.message ? err.message : err);
@@ -528,7 +595,7 @@ async function renderAppearances(npc) {
     empty.className = "location-empty";
     empty.textContent = i18n.appearancesEmpty[lang];
     section.appendChild(empty);
-    elements.details.prepend(section);
+    elements.details.prepend(makeCollapsible(section, "appearances"));
     return;
   }
 
@@ -546,24 +613,46 @@ async function renderAppearances(npc) {
       const arcWrap = document.createElement("div");
       arcWrap.className = "appearance-arc";
 
-      const arcTitle = document.createElement("div");
-      arcTitle.className = "appearance-arc__title";
       const arcFallback = arcEntry.arc.title || arcEntry.arc.label || arcEntry.arc.id || "Story Arc";
-      arcTitle.textContent = getLocalizedTitle(arcEntry.arc, storyArcTitles, arcFallback, lang);
-      arcWrap.appendChild(arcTitle);
+      const arcImage = arcImages[arcEntry.arc.id];
+      const imageUrl = (image) => image ? new URL(image, new URL("campaigns/pages/", rootBase)).href : "";
+      arcWrap.appendChild(createAppearanceCard(
+        getLocalizedTitle(arcEntry.arc, storyArcTitles, arcFallback, lang),
+        resolveChapterUrl(arcEntry.arc, arcEntry.arc), imageUrl(arcImage), "appearance-arc-card"
+      ));
+
+      // Legends one-shots stop at the story arc; Dragon's Orb has chapters.
+      if (campaignEntry.campaign.id === "legends" && arcEntry.arc.id !== "legends-os05") {
+        arcWrap.classList.add("appearance-arc--standalone");
+        campaignBlock.appendChild(arcWrap);
+        return;
+      }
 
       const chapterList = document.createElement("div");
       chapterList.className = "appearance-chapters";
       arcEntry.chapters.forEach((ch) => {
         const href = resolveChapterUrl(ch, arcEntry.arc);
-        const node = document.createElement(href ? "a" : "div");
-        node.className = "appearance-chip";
-        if (href) {
-          node.href = href;
-          node.target = "_self";
-        }
         const chapterFallback = ch.title || ch.label || ch.id || "Chapter";
-        node.textContent = getLocalizedTitle(ch, chapterTitles, chapterFallback, lang);
+        const node = createAppearanceCard(
+          getLocalizedTitle(ch, chapterTitles, chapterFallback, lang), href,
+          imageUrl(ch.image || arcImage), "appearance-chapter-card"
+        );
+        const title = getLocalizedTitle(ch, chapterTitles, chapterFallback, lang);
+        const parts = title.match(/^((?:第.*?章)|(?:Chapter\s+[^:：]+))\s*[:：]\s*(.*)$/i);
+        const number = ch.id?.match(/-(?:chpt|ch)(\d+)$/i)?.[1];
+        const label = node.lastElementChild;
+        label.className = "appearance-chapter-label";
+        label.textContent = "";
+        if (parts || number) {
+          const chapterNumber = document.createElement("span");
+          chapterNumber.className = "appearance-chapter-number";
+          chapterNumber.textContent = parts ? parts[1] : (lang === "en" ? `Chapter ${Number(number)}` : `第${Number(number)}章`);
+          label.appendChild(chapterNumber);
+        }
+        const chapterName = document.createElement("strong");
+        chapterName.className = "appearance-chapter-name";
+        chapterName.textContent = parts ? parts[2] : title;
+        label.appendChild(chapterName);
         chapterList.appendChild(node);
       });
 
@@ -574,7 +663,7 @@ async function renderAppearances(npc) {
     section.appendChild(campaignBlock);
   });
 
-  elements.details.prepend(section);
+  elements.details.prepend(makeCollapsible(section, "appearances"));
 }
 
 const deityList = [
@@ -791,6 +880,15 @@ async function renderLocationCards(npc) {
           const pois = (city.pois || []).filter((poi) => poi.draft !== true && matches(poi));
           if (!matches(city) && !pois.length) continue;
           const base = new URL(`map/location/${realm.slug}/${kingdom.slug}/${city.slug}/`, rootBase);
+          if (city.slug === "unassigned-locations" || city.name_zh === "無對應城鎮") {
+            const displayedPois = matches(city) ? (city.pois || []).filter((poi) => poi.draft !== true) : pois;
+            for (const poi of displayedPois) {
+              // Promote matched POIs into the same standalone card presentation as cities.
+              locations.push({ node: poi, depth: 3, ancestors: [realm, kingdom, city],
+                href: new URL(`${poi.slug}/`, base).href, image: poi.image || city.image || data.image });
+            }
+            continue;
+          }
           locations.push({ node: city, depth: 3, ancestors: [realm, kingdom],
             href: base.href, image: city.image || data.image });
         }
@@ -800,6 +898,7 @@ async function renderLocationCards(npc) {
     if (!locations.length) return;
     const section = createLocationCards(locations, languageState.value);
     section.classList.add("related-locations--cities");
+    makeCollapsible(section, "locations");
     // Keep locations between related NPCs and fate, even after a language change.
     const related = elements.details.querySelector(".related");
     if (related) related.after(section);
@@ -891,16 +990,11 @@ function setDescription(el, text, fallback) {
     const lines = block.split(/\n+/);
     lines.forEach((line, lIdx) => {
       const span = document.createElement("span");
+      span.className = "description-line";
+      if (bIdx > 0 && lIdx === 0) span.classList.add("description-paragraph");
       span.textContent = line;
       el.appendChild(span);
-      if (lIdx !== lines.length - 1) {
-        el.appendChild(document.createElement("br"));
-      }
     });
-    if (bIdx !== blocks.length - 1) {
-      el.appendChild(document.createElement("br"));
-      el.appendChild(document.createElement("br"));
-    }
   });
 }
 
@@ -990,15 +1084,57 @@ function getMetaContainer() {
   return meta;
 }
 
+function fitProfileName() {
+  const name = elements.name;
+  if (!name || !name.closest(".npc-profile")) return;
+  name.style.fontSize = "32px";
+  if (name.scrollWidth > name.clientWidth && name.clientWidth > 0) {
+    name.style.fontSize = `${Math.floor(32 * name.clientWidth / name.scrollWidth * 10) / 10}px`;
+  }
+}
+
+function ensureProfileLayout() {
+  const portrait = elements.portrait?.closest(".portrait");
+  const title = document.querySelector(".title-row");
+  if (!portrait || !title || portrait.closest(".npc-profile")) return;
+  const profile = document.createElement("div");
+  profile.className = "npc-profile";
+  portrait.before(profile);
+  profile.append(portrait, title);
+  // Keep long translated names on one line within the portrait width.
+  let previousWidth = 0;
+  new ResizeObserver(() => {
+    const width = profile.getBoundingClientRect().width;
+    if (width !== previousWidth) {
+      previousWidth = width;
+      fitProfileName();
+    }
+  }).observe(profile);
+  document.fonts.ready.then(fitProfileName);
+}
+
 function ensureContentSections() {
   const content = elements.content;
   if (!content) return;
 
-  if (elements.zh && !content.querySelector(".intro-title")) {
-    const intro = document.createElement("h2");
-    intro.className = "section-title intro-title";
-    intro.textContent = i18n.introTitle[languageState.value];
-    content.insertBefore(intro, elements.zh);
+  ensureProfileLayout();
+
+  if (!content.querySelector(".intro-seal")) {
+    const seal = document.createElement("img");
+    seal.className = "intro-seal";
+    seal.src = new URL("../../../assets/logo/rugatha-icon.png", import.meta.url).href;
+    seal.alt = "";
+    content.appendChild(seal);
+
+    // Track the actual portrait size, including image loads and mobile resizing.
+    const portrait = elements.portrait?.closest(".portrait");
+    if (portrait) {
+      const syncHeight = () => {
+        content.style.setProperty("--portrait-height", `${portrait.getBoundingClientRect().height}px`);
+      };
+      new ResizeObserver(syncHeight).observe(portrait);
+      syncHeight();
+    }
   }
 
   if (!elements.details) {
@@ -1049,6 +1185,8 @@ function insertRelated(items) {
       const name = document.createElement("div");
       name.className = "related-card__name";
       name.textContent = displayName;
+      if (displayName.length > 28) card.classList.add("related-card--long-name");
+      card.title = displayName;
       card.appendChild(name);
 
       list.appendChild(card);
@@ -1061,7 +1199,7 @@ function insertRelated(items) {
     wrap.appendChild(empty);
   }
 
-  elements.details.insertBefore(wrap, elements.details.querySelector(".related-locations, .qa"));
+  elements.details.insertBefore(makeCollapsible(wrap, "related"), elements.details.querySelector(".related-locations, .qa"));
 }
 
 function renderStatus(status) {

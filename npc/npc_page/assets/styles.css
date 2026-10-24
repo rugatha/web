@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Noto+Serif+TC:wght@700;900&family=Fraunces:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Noto+Serif+TC:wght@700;900&family=Fraunces:wght@600;700&family=Iansui&family=Fondamento&display=swap");
 @import url("../../../shared/location-cards.css");
 
 :root {
@@ -56,12 +56,30 @@ body {
 
 .title-row {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin: 16px 0 0;
   text-align: center;
-  flex-wrap: wrap;
+  width: 100%;
+}
+
+.npc-profile {
+  width: 100%;
+  min-width: 0;
+}
+
+.npc-profile h1 {
+  width: 100%;
+  white-space: nowrap;
+  font-size: 32px;
+  line-height: 1.3;
+}
+
+.npc-profile .title-meta {
+  width: 100%;
+  justify-content: center;
 }
 
 .language-toggle {
@@ -268,8 +286,6 @@ h2 {
 
 .portrait {
   width: 100%;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   overflow: hidden;
 }
@@ -281,9 +297,59 @@ h2 {
 }
 
 .content {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-self: stretch;
+  min-height: var(--portrait-height, 0px);
+  padding: 44px 48px 112px;
+  color: var(--text);
+  background-color: #646253;
+  background-image: linear-gradient(rgba(35, 51, 44, 0.66), rgba(35, 51, 44, 0.66)), url("./kraft-paper-v2.jpg");
+  background-blend-mode: multiply, soft-light;
+  background-size: 720px 720px;
+  border: none;
+  border-radius: 3px 6px 4px 2px;
+  box-shadow: inset 0 0 28px rgba(27, 42, 34, 0.14), 0 5px 14px rgba(10, 24, 20, 0.18);
+}
+
+.content > .body {
+  color: var(--text);
+  font-family: "Iansui", "BiauKai", "DFKai-SB", "KaiTi", cursive;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.95;
+  letter-spacing: 0.03em;
+  overflow-wrap: anywhere;
+}
+
+.content > #npc-desc-en {
+  font-family: "Fondamento", "Palatino Linotype", "Book Antiqua", serif;
+  letter-spacing: 0.015em;
+}
+
+.description-line {
+  display: block;
+}
+
+.description-line + .description-line {
+  margin-top: 0.5lh;
+}
+
+.description-line + .description-paragraph {
+  margin-top: 1.5lh;
+}
+
+.intro-seal {
+  position: absolute;
+  right: 32px;
+  bottom: 28px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  opacity: 0.72;
+  pointer-events: none;
 }
 
 .religion {
@@ -393,105 +459,192 @@ html[data-lang="en"] #npc-desc-zh {
 
 .related-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
+  gap: 16px;
+  align-items: start;
 }
 
 .related-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  padding: 16px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--detail-card);
   color: var(--text);
   text-decoration: none;
-  gap: 8px;
-  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+  text-align: center;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.related-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(22, 35, 29, 0.56);
+  pointer-events: none;
 }
 
 .related-card:hover,
 .related-card:focus-visible {
-  transform: translateY(-1px);
-  border-color: rgba(255, 255, 255, 0.32);
-  background: rgba(255, 255, 255, 0.14);
-  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.18);
 }
 
 .related-card__img {
-  width: 110px;
-  height: 110px;
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  object-position: center 25%;
 }
 
 .related-card__name {
-  font-weight: 700;
-  font-size: 15px;
+  min-width: 0;
+  max-width: 100%;
+  font-weight: 800;
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 1.4;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+.related-card--long-name .related-card__name {
+  font-size: 16px;
+  line-height: 1.45;
 }
 
 .appearances {
   margin-top: 8px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
 .appearance-campaign {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.18);
-  border-radius: 12px;
+  border: none;
+  background: var(--detail-card);
+  border-radius: 16px;
   padding: 12px;
 }
 
 .appearance-campaign__title {
-  margin: 0 0 6px;
+  margin: 0 0 12px;
   font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
   letter-spacing: -0.01em;
 }
 
+/* Wide story-arc artwork followed by a horizontal rail of chapter cards. */
 .appearance-arc {
-  margin: 6px 0 0;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+  gap: 16px;
+  margin-top: 16px;
+  min-width: 0;
 }
 
-.appearance-arc__title {
-  margin: 0 0 6px;
-  color: var(--muted);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+.appearance-arc-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #293d34;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.appearance-arc-card img {
+  display: block;
+  width: 100%;
+  height: 132px;
+  object-fit: cover;
+}
+
+.appearance-arc-card span {
+  display: grid;
+  place-items: center;
+  flex: 1;
+  min-height: 48px;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .appearance-chapters {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  align-items: flex-start;
+  gap: 16px;
+  align-items: stretch;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 0;
+  scrollbar-width: thin;
 }
 
-.appearance-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.08);
+.appearance-chapter-card {
+  display: flex;
+  flex: 0 0 166px;
+  flex-direction: column;
+  gap: 10px;
+  width: 166px;
+  min-width: 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: #293d34;
   color: var(--text);
   text-decoration: none;
-  font-weight: 600;
-  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
-.appearance-chip:hover,
-.appearance-chip:focus-visible {
-  transform: translateY(-1px);
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.14);
-  outline: none;
+.appearance-chapter-card img {
+  flex: 1 1 100px;
+  width: 100%;
+  height: 100px;
+  min-height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.appearance-chapter-card > .appearance-chapter-label {
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+.appearance-chapter-number {
+  font-weight: 400;
+}
+
+.appearance-chapter-name {
+  font-weight: 700;
+}
+
+:is(.appearance-arc-card, .appearance-chapter-card):hover {
+  box-shadow: inset 0 0 0 1px var(--detail-border);
+}
+
+.appearance-arc-card:hover span {
+  text-decoration: underline;
 }
 
 code {
@@ -787,19 +940,28 @@ code {
     max-width: 360px;
     margin: 0 auto;
   }
+  .npc-profile {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .content {
+    padding: 36px 30px 104px;
+  }
+  .content > .body {
+    font-size: 19px;
+  }
 }
 
-/* Match the chapter location cards while inheriting the NPC page's panel color. */
+/* The location cards define the shared palette for the supplementary sections. */
 .npc-details > .related-locations {
-  --card: #60695e;
-  font-size: 16px;
+  --card: var(--detail-card);
 }
 
 .content {
   min-width: 0;
 }
 
-.related-locations--cities {
+.related-locations--cities > .npc-section-body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
   gap: 16px;
@@ -810,14 +972,15 @@ code {
   margin: 0;
 }
 
-.related-locations--cities > .related-locations__group {
+.related-locations--cities > .npc-section-body > .related-locations__group {
   display: block;
   margin: 0;
   padding: 12px;
+  background: var(--detail-card);
   overflow: visible;
 }
 
-.related-locations--cities > .related-locations__group + .related-locations__group {
+.related-locations--cities > .npc-section-body > .related-locations__group + .related-locations__group {
   margin-top: 0;
 }
 
@@ -832,6 +995,8 @@ code {
 
 /* The supplementary sections share the full width of the profile and fate panel. */
 .npc-details {
+  --detail-card: #60695e;
+  --detail-border: rgba(236, 242, 237, 0.32);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -846,8 +1011,130 @@ code {
   margin: 0;
 }
 
+.npc-details > :is(.appearances, .related, .related-locations) {
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--panel);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.npc-details .npc-section-header > .section-title,
+.npc-details .related-locations__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
 .npc-details > .appearances > .section-title,
-.npc-details > .related > .section-title,
-.content > .intro-title {
-  margin-top: 0;
+.npc-details .related-locations__title {
+  margin-bottom: 0;
+}
+
+.npc-details :is(.related-card, .appearance-arc-card, .appearance-chapter-card, .related-locations__city):focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.npc-details .location-empty {
+  font-size: 0.95rem;
+}
+
+/* Each section opens independently; hidden content stays out of the tab order. */
+.npc-details > :is(.appearances, .related, .related-locations) {
+  display: block;
+}
+
+.npc-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.npc-details .npc-section-header > h2 {
+  margin: 0;
+  min-width: 0;
+}
+
+.npc-section-header > h2 {
+  width: 100%;
+}
+
+.npc-section-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: calc(100% + 40px);
+  margin: -20px;
+  min-height: 84px;
+  padding: 20px;
+  border: none;
+  border-radius: 16px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.npc-section-label {
+  min-width: 0;
+}
+
+.npc-section-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(236, 242, 237, 0.18);
+  border-radius: 50%;
+  background: rgba(236, 242, 237, 0.05);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.npc-section-toggle:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.npc-section-body {
+  margin-top: 16px;
+  min-width: 0;
+}
+
+.appearances > .npc-section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.npc-section-body[hidden] {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .appearance-arc {
+    display: flex;
+    overflow-x: auto;
+    align-items: stretch;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+  }
+  .appearance-arc-card {
+    flex: 0 0 80%;
+  }
+  .appearance-chapters {
+    display: contents;
+  }
+  .appearance-chapter-card {
+    min-height: 180px;
+  }
 }
