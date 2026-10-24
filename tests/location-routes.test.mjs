@@ -13,6 +13,7 @@ function visit(node, segments = [], depth = 0) {
   assert.ok(!routes.has(route), `Duplicate route: ${route}`);
   routes.set(route, node);
   for (const child of node[['realms', 'kingdoms', 'cities', 'pois'][depth]] ?? []) {
+    if (child.draft === true) continue;
     visit(child, [...segments, child.slug], depth + 1);
   }
 }

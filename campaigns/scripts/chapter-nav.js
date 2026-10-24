@@ -49,7 +49,7 @@
       );
     if (alreadyLoaded) return;
     const script = document.createElement("script");
-    script.src = new URL("../../../scripts/detail.js", window.location.href).href;
+    script.src = new URL("../../../scripts/detail.js?v=20261025-site-update-1", window.location.href).href;
     script.defer = true;
     script.dataset.name = "campaign-detail-loader";
     document.head.appendChild(script);
@@ -398,7 +398,7 @@
     nav.appendChild(buildItem("next", nextChapter, targetArc, campaign));
 
     const placeNav = () => {
-      const related = document.querySelector(".related-npcs");
+      const related = document.querySelector(".related-locations") || document.querySelector(".related-npcs") || document.querySelector(".related-guests") || document.querySelector(".related-pcs--main");
       if (related && related.parentNode) {
         related.parentNode.insertBefore(nav, related.nextSibling);
         return true;

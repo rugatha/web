@@ -1,4 +1,25 @@
-import { createLocationRenderer } from './location-render.js';
+import { createLocationRenderer } from './location-render.js?v=20261025-site-update-1';
+
+// Recover from transient remote-image failures rather than leaving a broken
+// image until the reader reloads the entire page.
+function retryLocationArt(image) {
+  if (!(image instanceof HTMLImageElement) || !image.matches('[data-location-art]')) return;
+  const source = image.src;
+  const url = new URL(source, window.location.href);
+  if (url.hostname !== 'firebasestorage.googleapis.com') return;
+  const attempt = Number(image.dataset.artRetry || 0) + 1;
+  if (attempt > 2) return;
+  image.dataset.artRetry = String(attempt);
+  setTimeout(() => {
+    if (!image.isConnected || image.src !== source) return;
+    url.searchParams.set('rugatha_retry', String(attempt));
+    image.src = url.href;
+  }, attempt * 1000);
+}
+document.addEventListener('error', event => retryLocationArt(event.target), true);
+document.querySelectorAll('img[data-location-art]').forEach(image => {
+  if (image.complete && !image.naturalWidth) retryLocationArt(image);
+});
 
 // Read the latest content on every visit, just like NPC and deity pages.
 const base = '/map/location/';

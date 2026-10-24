@@ -15,7 +15,13 @@ const childKeys = ['realms', 'kingdoms', 'cities', 'pois'];
 const childLabels = en ? ['Explore realms', 'Explore kingdoms', 'Explore cities', 'Explore local places'] : ['探索時空', '探索國家', '探索城鎮', '探索城內與周邊地點'];
 const units = en ? ['realms', 'kingdom groups', 'cities', 'locations'] : ['個時空', '個國家分組', '座城鎮', '處地點'];
 
-function children(node, depth) { return node[childKeys[depth]] ?? []; }
+// Incomplete descriptions and artwork can be prepared in the source JSON
+// without publishing links to pages that have not been generated yet.
+function children(node, depth) {
+  return (node[childKeys[depth]] ?? [])
+    .filter(child => child.draft !== true)
+    .sort((a, b) => Number(a.sort_last === true) - Number(b.sort_last === true));
+}
 function image(node) { return node.image || data.image; }
 function url(segments) { return `${base}${segments.length ? `${segments.join('/')}/` : ''}`; }
 function totals(node, depth) {
@@ -88,7 +94,7 @@ function render(node, depth, segments, ancestors) {
         : `<p class="location-empty">${t('此城鎮尚未收錄個別地點。', 'No individual locations have been added to this city yet.')}</p>`}
     </section>`;
   } else {
-    const siblings = parent.node.pois;
+    const siblings = children(parent.node, 3);
     const index = siblings.findIndex(item => item.slug === node.slug);
     const neighbors = [siblings[index - 1], siblings[index + 1]].filter(Boolean);
     section = `<section class="location-section" aria-labelledby="children-heading">
@@ -115,7 +121,7 @@ ${marker}
   <link rel="stylesheet" href="/shared/styles/theme.css">
   <link rel="stylesheet" href="/map/styles/locations.css">
   <script src="/shared/language-toggle.js"></script>
-  <script type="module" src="/map/scripts/location-page.js"></script>
+  <script type="module" src="/map/scripts/location-page.js?v=20261025-site-update-1"></script>
   <script src="/shared/firebase.config.js"></script>
   <script type="module" src="/shared/auth.js"></script>
 </head>

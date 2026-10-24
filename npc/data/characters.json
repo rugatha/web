@@ -1635,11 +1635,11 @@
     ],
     "locationEn": [
       "St. Rayami Island",
-      "Lark"
+      "Lark Ferry"
     ],
     "locationZh": [
       "聖拉雅米島",
-      "拉克"
+      "拉克渡口"
     ],
     "qaZh": {
       "Q": "「這把劍，『異教徒殺手』，就交給你了。」艾希斯將他的寶劍遞給你。",
@@ -2298,11 +2298,13 @@
     "religionZh": [],
     "locationEn": [
       "Vowalon",
-      "Korringfield"
+      "Korringfield",
+      "Dungeon Beneath Temple of Silencio"
     ],
     "locationZh": [
       "沃瓦倫",
-      "寇林菲爾德"
+      "寇林菲爾德",
+      "寂靜殿地下城"
     ],
     "qaZh": {
       "Q": "你看見古古，擋在地下城的入口。他的背影對著你。",
@@ -3274,12 +3276,12 @@
       "津菈"
     ],
     "locationEn": [
-      "Lark",
+      "Lark Ferry",
       "St. Rayami Island",
       "Fanaur"
     ],
     "locationZh": [
-      "拉克",
+      "拉克渡口",
       "聖拉雅米島",
       "方努爾"
     ],
@@ -4894,12 +4896,12 @@
     "religionEn": [],
     "religionZh": [],
     "locationEn": [
-      "Lark",
+      "Lark Ferry",
       "St. Rayami Island",
       "Fanaur"
     ],
     "locationZh": [
-      "拉克",
+      "拉克渡口",
       "聖拉雅米島",
       "方努爾"
     ],
@@ -5812,10 +5814,10 @@
     "religionEn": [],
     "religionZh": [],
     "locationEn": [
-      "Lark"
+      "Lark Ferry"
     ],
     "locationZh": [
-      "拉克"
+      "拉克渡口"
     ],
     "qaZh": {
       "Q": "你看著瘦小的希崗三世，威風凜凜。",
@@ -6202,11 +6204,13 @@
     "religionZh": [],
     "locationEn": [
       "Vowalon",
-      "Korringfield"
+      "Korringfield",
+      "Dungeon Beneath Temple of Silencio"
     ],
     "locationZh": [
       "沃瓦倫",
-      "寇林菲爾德"
+      "寇林菲爾德",
+      "寂靜殿地下城"
     ],
     "qaZh": {
       "Q": "你看見崔夏從口袋掏出一串絕對不屬於他的項鍊。",
@@ -6670,10 +6674,10 @@
       "津菈"
     ],
     "locationEn": [
-      "Lark"
+      "Lark Ferry"
     ],
     "locationZh": [
-      "拉克"
+      "拉克渡口"
     ],
     "qaZh": {
       "Q": "「關於狂暴戰士幫，還有什麼問題嗎？」澤克看著大家。",
@@ -6714,14 +6718,14 @@
     "locationEn": [
       "Macksohn",
       "Great Citadel",
-      "Lark",
+      "Lark Ferry",
       "St. Rayami Island",
       "Fanaur"
     ],
     "locationZh": [
       "麥克嵩",
       "大學城",
-      "拉克",
+      "拉克渡口",
       "聖拉雅米島",
       "方努爾"
     ],
@@ -6813,7 +6817,7 @@
       "Dorrenville",
       "the Feywild",
       "Great Citadel",
-      "Lark",
+      "Lark Ferry",
       "St. Rayami Island",
       "Fanaur"
     ],
@@ -6825,7 +6829,7 @@
       "多侖維爾",
       "妖精荒野",
       "大學城",
-      "拉克",
+      "拉克渡口",
       "聖拉雅米島",
       "方努爾"
     ],

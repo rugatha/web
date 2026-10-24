@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "dungeon-beneath-temple-of-silencio",
+    "name_zh": "寂靜殿地下城",
+    "location_key": "material-realm/mattington/korringfield/dungeon-beneath-temple-of-silencio",
+    "file": "dungeon-beneath-temple-of-silencio-v2.png",
+    "source": "/Users/chernalbert/.codex/generated_images/01a16e3c-d9a2-7442-8d54-fc69beee965e/exec-922ff022-31b9-4831-8353-193cfd51abf9.png",
+    "original_file": "dungeon-beneath-temple-of-silencio-v1.png",
+    "original_source": "/Users/chernalbert/.codex/generated_images/01a16e3c-d9a2-7442-8d54-fc69beee965e/exec-4202c5b0-1c5f-4d0b-b3ff-c0db0789fce5.png"
+  },
+  {
+    "slug": "dungeon-beneath-temple-of-silencio",
+    "name_zh": "寂靜殿地下城",
+    "location_key": "material-realm/mattington/vowalon/dungeon-beneath-temple-of-silencio",
+    "file": "dungeon-beneath-temple-of-silencio-v2.png",
+    "source": "/Users/chernalbert/.codex/generated_images/01a16e3c-d9a2-7442-8d54-fc69beee965e/exec-922ff022-31b9-4831-8353-193cfd51abf9.png",
+    "original_file": "dungeon-beneath-temple-of-silencio-v1.png",
+    "original_source": "/Users/chernalbert/.codex/generated_images/01a16e3c-d9a2-7442-8d54-fc69beee965e/exec-4202c5b0-1c5f-4d0b-b3ff-c0db0789fce5.png"
+  }
+]

@@ -1811,11 +1811,77 @@
                       "url": "/campaigns/pages/rugatha/rugatha-c03/chpt02.html"
                     }
                   ]
+                },
+                {
+                  "name_en": "Dungeon Beneath Temple of Silencio",
+                  "name_zh": "寂靜殿地下城",
+                  "slug": "dungeon-beneath-temple-of-silencio",
+                  "desc_zh": "橫跨沃瓦倫與寇林菲爾德的地下城。\n冒險團隊台北市議員從沃瓦倫的寂靜殿向下走入地下城，最終從寇林菲爾德踏出。\n裡面有不少拉索斯教的怪物與敵人，甚至藏有傳送的魔法。",
+                  "desc_en": "A dungeon stretching between Vowalon and Korringfield.\nThe adventuring party known as the Taipei City Councilors entered it beneath Vowalon's Temple of Silencio and eventually emerged in Korringfield.\nIt is inhabited by numerous monsters and other foes aligned with the Laxthos cult, and also conceals teleportation magic.",
+                  "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--mattington--korringfield--dungeon-beneath-temple-of-silencio%2F7727b889215fa5074fa8804aa49f917a759992b5b5e5d3dc3e0bb022ec843854%2Freading.png?alt=media",
+                  "chapters": [
+                    {
+                      "id": "rugatha-c01-chpt07",
+                      "title_zh": "第七章：沃瓦倫的惡魔",
+                      "title_en": "Chapter 7: Demons of Vowalon",
+                      "series": "Rugatha",
+                      "date": "15048.07.23",
+                      "url": "/campaigns/pages/rugatha/rugatha-c01/chpt07.html"
+                    },
+                    {
+                      "id": "rugatha-c02-chpt01",
+                      "title_zh": "第一章：變異的心智",
+                      "title_en": "Chapter 1: Altered Mindsets",
+                      "series": "Rugatha",
+                      "date": "15048.07.23",
+                      "url": "/campaigns/pages/rugatha/rugatha-c02/chpt01.html"
+                    },
+                    {
+                      "id": "rugatha-c02-chpt02",
+                      "title_zh": "第二章：遁入黑暗",
+                      "title_en": "Chapter 2: Venture into Darkness",
+                      "series": "Rugatha",
+                      "date": "15048 Date Unknown",
+                      "url": "/campaigns/pages/rugatha/rugatha-c02/chpt02.html"
+                    },
+                    {
+                      "id": "rugatha-c02-chpt03",
+                      "title_zh": "第三章：洛林精神",
+                      "title_en": "Chapter 3: The Spirit of Lorin",
+                      "series": "Rugatha",
+                      "date": "15048 Date Unknown",
+                      "url": "/campaigns/pages/rugatha/rugatha-c02/chpt03.html"
+                    }
+                  ]
                 }
               ],
               "slug": "korringfield",
               "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--mattington--korringfield-review-v2%2Fe19d9fa0e9eafdba51b0fd158f7134f33d271d8d9bf15aaf9af975b690fbb726%2Freading.png?alt=media",
               "chapters": [
+                {
+                  "id": "rugatha-c01-chpt07",
+                  "title_zh": "第七章：沃瓦倫的惡魔",
+                  "title_en": "Chapter 7: Demons of Vowalon",
+                  "series": "Rugatha",
+                  "date": "15048.07.23",
+                  "url": "/campaigns/pages/rugatha/rugatha-c01/chpt07.html"
+                },
+                {
+                  "id": "rugatha-c02-chpt01",
+                  "title_zh": "第一章：變異的心智",
+                  "title_en": "Chapter 1: Altered Mindsets",
+                  "series": "Rugatha",
+                  "date": "15048.07.23",
+                  "url": "/campaigns/pages/rugatha/rugatha-c02/chpt01.html"
+                },
+                {
+                  "id": "rugatha-c02-chpt02",
+                  "title_zh": "第二章：遁入黑暗",
+                  "title_en": "Chapter 2: Venture into Darkness",
+                  "series": "Rugatha",
+                  "date": "15048 Date Unknown",
+                  "url": "/campaigns/pages/rugatha/rugatha-c02/chpt02.html"
+                },
                 {
                   "id": "rugatha-c02-chpt03",
                   "title_zh": "第三章：洛林精神",
@@ -3543,7 +3609,7 @@
                   "chapters": [
                     {
                       "id": "wilds-c04-chpt01",
-                      "title_zh": "第一章：與艾瑞里斯一家的午餐",
+                      "title_zh": "第一章：與艾瑞利斯一家的午餐",
                       "title_en": "Chapter 1: Lunch with the Aryliths",
                       "series": "Rugatha Wilds",
                       "date": "15049.05.01 – 15049.05.02",
@@ -3585,7 +3651,7 @@
                   "chapters": [
                     {
                       "id": "wilds-c04-chpt01",
-                      "title_zh": "第一章：與艾瑞里斯一家的午餐",
+                      "title_zh": "第一章：與艾瑞利斯一家的午餐",
                       "title_en": "Chapter 1: Lunch with the Aryliths",
                       "series": "Rugatha Wilds",
                       "date": "15049.05.01 – 15049.05.02",
@@ -3603,7 +3669,7 @@
                   "chapters": [
                     {
                       "id": "wilds-c04-chpt01",
-                      "title_zh": "第一章：與艾瑞里斯一家的午餐",
+                      "title_zh": "第一章：與艾瑞利斯一家的午餐",
                       "title_en": "Chapter 1: Lunch with the Aryliths",
                       "series": "Rugatha Wilds",
                       "date": "15049.05.01 – 15049.05.02",
@@ -3629,7 +3695,7 @@
                   "chapters": [
                     {
                       "id": "wilds-c04-chpt01",
-                      "title_zh": "第一章：與艾瑞里斯一家的午餐",
+                      "title_zh": "第一章：與艾瑞利斯一家的午餐",
                       "title_en": "Chapter 1: Lunch with the Aryliths",
                       "series": "Rugatha Wilds",
                       "date": "15049.05.01 – 15049.05.02",
@@ -3667,7 +3733,7 @@
               "chapters": [
                 {
                   "id": "wilds-c04-chpt01",
-                  "title_zh": "第一章：與艾瑞里斯一家的午餐",
+                  "title_zh": "第一章：與艾瑞利斯一家的午餐",
                   "title_en": "Chapter 1: Lunch with the Aryliths",
                   "series": "Rugatha Wilds",
                   "date": "15049.05.01 – 15049.05.02",
@@ -4296,6 +4362,48 @@
                       "url": "/campaigns/pages/rugatha/rugatha-c01/chpt07.html"
                     }
                   ]
+                },
+                {
+                  "name_en": "Dungeon Beneath Temple of Silencio",
+                  "name_zh": "寂靜殿地下城",
+                  "slug": "dungeon-beneath-temple-of-silencio",
+                  "desc_zh": "橫跨沃瓦倫與寇林菲爾德的地下城。\n冒險團隊台北市議員從沃瓦倫的寂靜殿向下走入地下城，最終從寇林菲爾德踏出。\n裡面有不少拉索斯教的怪物與敵人，甚至藏有傳送的魔法。",
+                  "desc_en": "A dungeon stretching between Vowalon and Korringfield.\nThe adventuring party known as the Taipei City Councilors entered it beneath Vowalon's Temple of Silencio and eventually emerged in Korringfield.\nIt is inhabited by numerous monsters and other foes aligned with the Laxthos cult, and also conceals teleportation magic.",
+                  "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--mattington--vowalon--dungeon-beneath-temple-of-silencio%2F7727b889215fa5074fa8804aa49f917a759992b5b5e5d3dc3e0bb022ec843854%2Freading.png?alt=media",
+                  "chapters": [
+                    {
+                      "id": "rugatha-c01-chpt07",
+                      "title_zh": "第七章：沃瓦倫的惡魔",
+                      "title_en": "Chapter 7: Demons of Vowalon",
+                      "series": "Rugatha",
+                      "date": "15048.07.23",
+                      "url": "/campaigns/pages/rugatha/rugatha-c01/chpt07.html"
+                    },
+                    {
+                      "id": "rugatha-c02-chpt01",
+                      "title_zh": "第一章：變異的心智",
+                      "title_en": "Chapter 1: Altered Mindsets",
+                      "series": "Rugatha",
+                      "date": "15048.07.23",
+                      "url": "/campaigns/pages/rugatha/rugatha-c02/chpt01.html"
+                    },
+                    {
+                      "id": "rugatha-c02-chpt02",
+                      "title_zh": "第二章：遁入黑暗",
+                      "title_en": "Chapter 2: Venture into Darkness",
+                      "series": "Rugatha",
+                      "date": "15048 Date Unknown",
+                      "url": "/campaigns/pages/rugatha/rugatha-c02/chpt02.html"
+                    },
+                    {
+                      "id": "rugatha-c02-chpt03",
+                      "title_zh": "第三章：洛林精神",
+                      "title_en": "Chapter 3: The Spirit of Lorin",
+                      "series": "Rugatha",
+                      "date": "15048 Date Unknown",
+                      "url": "/campaigns/pages/rugatha/rugatha-c02/chpt03.html"
+                    }
+                  ]
                 }
               ],
               "slug": "vowalon",
@@ -4348,6 +4456,30 @@
                   "series": "Rugatha",
                   "date": "15048.07.23",
                   "url": "/campaigns/pages/rugatha/rugatha-c01/chpt07.html"
+                },
+                {
+                  "id": "rugatha-c02-chpt01",
+                  "title_zh": "第一章：變異的心智",
+                  "title_en": "Chapter 1: Altered Mindsets",
+                  "series": "Rugatha",
+                  "date": "15048.07.23",
+                  "url": "/campaigns/pages/rugatha/rugatha-c02/chpt01.html"
+                },
+                {
+                  "id": "rugatha-c02-chpt02",
+                  "title_zh": "第二章：遁入黑暗",
+                  "title_en": "Chapter 2: Venture into Darkness",
+                  "series": "Rugatha",
+                  "date": "15048 Date Unknown",
+                  "url": "/campaigns/pages/rugatha/rugatha-c02/chpt02.html"
+                },
+                {
+                  "id": "rugatha-c02-chpt03",
+                  "title_zh": "第三章：洛林精神",
+                  "title_en": "Chapter 3: The Spirit of Lorin",
+                  "series": "Rugatha",
+                  "date": "15048 Date Unknown",
+                  "url": "/campaigns/pages/rugatha/rugatha-c02/chpt03.html"
                 },
                 {
                   "id": "brown-c01-chpt02",
@@ -4744,6 +4876,78 @@
                   "url": "/campaigns/pages/rugatha-brown/brown-c02/chpt01.html"
                 }
               ]
+            },
+            {
+              "name_en": "Yarros",
+              "name_zh": "雅洛斯",
+              "slug": "yarros",
+              "desc_zh": "大部分是樹林的地區，位於麥丁頓王國與洛森王國的交界處。\n斐納札位於此處的地底。\n邊境有稀疏的妖精部落，常翠林的總部也坐落於此。\n主要受到樹林與生命之神涅西斯眷顧，但月神芬尼爾對此也有些影響力。",
+              "desc_en": "A mostly forested region on the border between the kingdoms of Mattington and Lothum.\nFenadra lies beneath it, underground.\nScattered elven tribes inhabit the borderlands, and Evergreen's headquarters is also located here.\nThe region is primarily blessed by Nessis, the deity of forests and life, though the moon deity Fenrir also holds some influence here.",
+              "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--mattington--yarros%2Fc8b87147bb5c420e4beace9ba52b2b2f9ac2da08a7c31d79adcc19d90a5aea60%2Freading.png?alt=media",
+              "chapters": [],
+              "kingdom": "Mattington",
+              "realm": "Material Realm",
+              "pois": [
+                {
+                  "name_en": "Evergreen",
+                  "name_zh": "常翠林",
+                  "slug": "evergreen",
+                  "desc_zh": "位於雅洛斯地區，接近洛森王國的地點。\n是樹林與生命之神涅西斯的一支分支。\n常翠林有不少臨時的據點，總部則蓋在圓拱形的山丘底下。",
+                  "desc_en": "A site in the Yarros region, close to the Kingdom of Lothum.\nEvergreen is a branch of the faith of Nessis, the deity of forests and life.\nIt maintains several temporary outposts, while its headquarters is built beneath a rounded hill.",
+                  "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--mattington--yarros--evergreen%2F62bf6a2f67c59df3f82ce0776e4ca2f6ba8ef54cd8e46f5db66a132ec16bdc0d%2Freading.png?alt=media",
+                  "chapters": []
+                }
+              ]
+            },
+            {
+              "name_en": "Unassigned Locations",
+              "name_zh": "無對應城鎮",
+              "slug": "unassigned-locations",
+              "desc_zh": "麥丁頓王國有些地方因地處偏僻，或有特別的政治因素，導致未有管轄的城鎮。",
+              "desc_en": "Some places in the Kingdom of Mattington fall outside the jurisdiction of any town or city, either because of their remote locations or for particular political reasons.",
+              "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--mattington%2Fed0445372104a7e30f0dd51efa8023e1ed795c7b491225057098c37966be38be%2Freading.png?alt=media",
+              "chapters": [],
+              "kingdom": "Mattington",
+              "realm": "Material Realm",
+              "pois": [
+                {
+                  "name_en": "Norman's Estate",
+                  "name_zh": "諾曼宅邸",
+                  "slug": "normans-estate",
+                  "desc_zh": "諾曼宅邸是弗列德里克・諾曼爵士的私人宅邸。\n這裡也同時作為 T.I.D.E.S. 組織的總部，每年會於此舉辦一次年度集會。\n為保持此地的隱秘性，周圍設有結界，且來這裡的馬車上，除馬伕外，所有乘客皆會被魔法導致睡眠。\n分為主建築、客房棟，與僕人房。主建築一樓為大廳，地下室為宴會廳；客房棟有兩層樓，一樓有部分客房與酒吧，二樓則全為客房。",
+                  "desc_en": "Norman's Estate is the private residence of Syr Frederick Norman.\nIt also serves as the headquarters of T.I.D.E.S., which holds its annual gathering here.\nTo keep its location secret, the estate is protected by magical wards, and everyone arriving by carriage, except the driver, is magically put to sleep.\nThe estate consists of a main building, a guesthouse, and servants' quarters. The main building has a hall on the ground floor and a banquet hall in the basement. The two-story guesthouse has some guest rooms and a bar on the ground floor, while the upper floor contains only guest rooms.",
+                  "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--mattington--unassigned-locations--normans-estate%2F9618e9d189e71846a6681aaf06df84477970d4ad6b10e776e1ed62660f8fff1a%2Freading.png?alt=media",
+                  "chapters": []
+                },
+                {
+                  "name_en": "Oderick's Dungeon",
+                  "name_zh": "歐德里克地窖",
+                  "slug": "odericks-dungeon",
+                  "desc_zh": "屋大維・馮。歐德里克大人新設的遊樂設施。\n此處用來作為歐德里克大人經營的「密室脫逃」遊戲空間，但那是距今幾千年前的事了。",
+                  "desc_en": "A recreational attraction created by Lord Octavian von Oderick.\nIt served as the venue for the escape-room games he operated, though that was several thousand years ago.",
+                  "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--mattington--unassigned-locations--odericks-dungeon%2Fbb3abbd6fb074ce112a075348fd1b965ddf1939a8c9c08dc869512b281805bc7%2Freading.png?alt=media",
+                  "chapters": []
+                },
+                {
+                  "name_en": "Feathered Estate",
+                  "name_zh": "覆羽莊園",
+                  "slug": "feathered-estate",
+                  "desc_zh": "位處荒野中，「羽王」利希恩・阿莫雷的神秘宅邸。\n宅邸內有戴著鳥類面具的「羽僕」作為傭人，賓客則似遺忘時間的永遠待在大宅內狂歡，不曾停下。\n在阿莫雷晉升為愛與永恆之神後，此處崩塌消失，後方則出現了一座愛神的殿堂。",
+                  "desc_en": "The mysterious residence of Lysien Amoret, the Feather King, set in the wilderness.\nServants known as Feather Servants wear bird masks, while guests remain in the mansion in an endless revel, seemingly oblivious to the passage of time.\nAfter Amoret ascended as the god of love and eternity, the estate collapsed and vanished, and a temple to the god of love appeared behind it.",
+                  "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--mattington--unassigned-locations--feathered-estate%2Fda9eadf7c12d7d83fa83337a3133923887a507d7f572e50595b7abcb73bcb8c2%2Freading.png?alt=media",
+                  "chapters": []
+                },
+                {
+                  "name_en": "Peak Temple",
+                  "name_zh": "尖頂寺",
+                  "slug": "peak-temple",
+                  "desc_zh": "Rugatha Plus 冒險者龍恩長大的寺廟。\n高聳的寺廟內有大量僧人，極度講求打坐與修行。\n寺外有武僧定時守衛。",
+                  "desc_en": "The temple where Ron, an adventurer in Rugatha Plus, grew up.\nThe towering temple houses many monks and places great emphasis on seated meditation and spiritual training.\nWarrior monks regularly stand guard outside.",
+                  "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--mattington--unassigned-locations--peak-temple%2F619fff998c3d2ee91c32d7564d0ef1050bc2b476622410f7a89b4ce3636ce998%2Freading.png?alt=media",
+                  "chapters": []
+                }
+              ],
+              "sort_last": true
             }
           ],
           "chapters": [
@@ -4802,6 +5006,22 @@
               "series": "Rugatha",
               "date": "15048.07.23",
               "url": "/campaigns/pages/rugatha/rugatha-c01/chpt07.html"
+            },
+            {
+              "id": "rugatha-c02-chpt01",
+              "title_zh": "第一章：變異的心智",
+              "title_en": "Chapter 1: Altered Mindsets",
+              "series": "Rugatha",
+              "date": "15048.07.23",
+              "url": "/campaigns/pages/rugatha/rugatha-c02/chpt01.html"
+            },
+            {
+              "id": "rugatha-c02-chpt02",
+              "title_zh": "第二章：遁入黑暗",
+              "title_en": "Chapter 2: Venture into Darkness",
+              "series": "Rugatha",
+              "date": "15048 Date Unknown",
+              "url": "/campaigns/pages/rugatha/rugatha-c02/chpt02.html"
             },
             {
               "id": "rugatha-c02-chpt03",
@@ -5173,7 +5393,7 @@
             },
             {
               "id": "wilds-c04-chpt01",
-              "title_zh": "第一章：與艾瑞里斯一家的午餐",
+              "title_zh": "第一章：與艾瑞利斯一家的午餐",
               "title_en": "Chapter 1: Lunch with the Aryliths",
               "series": "Rugatha Wilds",
               "date": "15049.05.01 – 15049.05.02",
@@ -5616,6 +5836,29 @@
                   "url": "/campaigns/pages/rugatha-legends/legends-os05/chpt02.html"
                 }
               ]
+            },
+            {
+              "name_en": "Unassigned Locations",
+              "name_zh": "無對應城鎮",
+              "slug": "unassigned-locations",
+              "desc_zh": "克里歐門王國有些地方因地處偏僻，或有特別的政治因素，導致未有管轄的城鎮。",
+              "desc_en": "Some places in the Kingdom of Chryomen fall outside the jurisdiction of any town or city, either because of their remote locations or for particular political reasons.",
+              "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--chryomen-review-round4-final%2Ffabe1282a493027803926facf493d52e971cd9d2204894340eaa72282c2fe6f3%2Freading.png?alt=media",
+              "chapters": [],
+              "kingdom": "Chryomen",
+              "realm": "Material Realm",
+              "pois": [
+                {
+                  "name_en": "Windblown Hills",
+                  "name_zh": "風拂山丘",
+                  "slug": "windblown-hills",
+                  "desc_zh": "克里歐門境內的一座山丘，人煙稀少。\n中途之家冒險者雷亞的師父柳俠馬許定居於此，過著以大自然為家的修行生活。",
+                  "desc_en": "A sparsely inhabited hill in the Kingdom of Chryomen.\nMarsh the Willow, mentor to Leah of the Halfway House adventuring party, lives here, pursuing a life of spiritual training with nature as his home.",
+                  "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm--chryomen--unassigned-locations--windblown-hills%2Fcf2c89a950069a296e7b88bf2ca46378bc3f32e89e2fe490f9c1cd1d8af7b9a1%2Freading.png?alt=media",
+                  "chapters": []
+                }
+              ],
+              "sort_last": true
             }
           ],
           "chapters": [
@@ -6209,7 +6452,7 @@
         },
         {
           "id": "wilds-c04-chpt01",
-          "title_zh": "第一章：與艾瑞里斯一家的午餐",
+          "title_zh": "第一章：與艾瑞利斯一家的午餐",
           "title_en": "Chapter 1: Lunch with the Aryliths",
           "series": "Rugatha Wilds",
           "date": "15049.05.01 – 15049.05.02",
@@ -7280,7 +7523,7 @@
     },
     {
       "id": "wilds-c04-chpt01",
-      "title_zh": "第一章：與艾瑞里斯一家的午餐",
+      "title_zh": "第一章：與艾瑞利斯一家的午餐",
       "title_en": "Chapter 1: Lunch with the Aryliths",
       "series": "Rugatha Wilds",
       "date": "15049.05.01 – 15049.05.02",

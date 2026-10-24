@@ -261,6 +261,7 @@
     charById: null,
     siteBase: null
   };
+  let relatedLocations = [];
   const currentChapterId = isChapterPage && arcSegment ? `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}` : null;
   const currentArcId = (isArcPage && targetArc && targetArc.id) || bodyArc || arcSegment || null;
   const chapterTitleState = {
@@ -667,7 +668,7 @@
 
     const guestSection = container.querySelector(".related-guests");
     const npcSection = container.querySelector(".related-npcs");
-    const anchor = guestSection || npcSection;
+    const anchor = guestSection || npcSection || container.querySelector(".related-locations, .chapter-nav");
     if (anchor && anchor.parentNode === container) {
       container.insertBefore(section, anchor);
       return;
@@ -698,7 +699,7 @@
       "related-guests"
     );
 
-    const npcSection = container.querySelector(".related-npcs");
+    const npcSection = container.querySelector(".related-npcs, .related-locations, .chapter-nav");
     if (npcSection && npcSection.parentNode === container) {
       container.insertBefore(section, npcSection);
       return;
@@ -791,7 +792,48 @@
       grid.appendChild(card);
     });
 
+    container.insertBefore(section, container.querySelector(":scope > .related-locations, :scope > .chapter-nav"));
+  };
+
+  const renderRelatedLocationSection = () => {
+    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
+    container.querySelector(".related-locations")?.remove();
+    if (!relatedLocations.length) return;
+    const section = window.RugathaLocationCards.createLocationCards(relatedLocations, languageState.value);
+    const nav = container.querySelector(".chapter-nav");
     container.appendChild(section);
+    if (nav) container.appendChild(nav);
+  };
+
+  const loadRelatedLocations = async () => {
+    // Standalone stories use the arc ID as their chapter-content ID.
+    const chapterId = document.body.dataset.chapterContentId || currentChapterId ||
+      (document.querySelector(".campaign-detail:not(.arc-detail)") ? currentArcId : null);
+    if (!chapterId) return;
+    const siteBase = new URL("../", campaignsBase);
+    try {
+      window.RugathaLocationCards = await import(new URL("shared/location-cards.js", siteBase).href);
+      const response = await fetch(new URL("map/location/assets/location.json", siteBase), { cache: "no-cache" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      const matches = [];
+      const visit = (node, depth = 0, segments = [], ancestors = []) => {
+        if (node.draft === true) return;
+        const hasChapter = (entry) => entry.chapters?.some((chapter) => chapter.id === chapterId);
+        if (depth >= 3 && (hasChapter(node) || (depth === 3 && node.pois?.some(hasChapter)))) {
+          matches.push({ node, depth, ancestors, image: node.image || data.image,
+            href: new URL(`map/location/${segments.join("/")}/`, siteBase).href });
+        }
+        for (const child of node[["realms", "kingdoms", "cities", "pois"][depth]] || []) {
+          visit(child, depth + 1, [...segments, child.slug], depth ? [...ancestors, node] : []);
+        }
+      };
+      visit(data);
+      relatedLocations = matches;
+      renderRelatedLocationSection();
+    } catch (error) {
+      console.warn("Chapter locations unavailable:", error);
+    }
   };
 
   const applyLanguage = (lang) => {
@@ -812,6 +854,7 @@
     renderRelatedPcSection();
     renderRelatedGuestSection();
     renderRelatedNpcSection();
+    renderRelatedLocationSection();
     window.dispatchEvent(new CustomEvent("rugatha:chapter-language-change", { detail: { lang: next } }));
     try {
       localStorage.setItem("npc-lang", next);
@@ -975,8 +1018,8 @@
   };
 
   const renderRelatedPcs = async () => {
-    if (!isChapterPage || !arcSegment) return;
-    const chapterId = `${arcSegment}-${lastSegment.replace(/\.html?$/i, "").toLowerCase()}`;
+    const chapterId = document.body.dataset.chapterContentId || currentChapterId;
+    if (!chapterId) return;
     const campaignsPagesBase = campaignsBase
       ? new URL("pages/", campaignsBase).href
       : new URL("../../npcs.json", window.location.href).href;
@@ -998,6 +1041,12 @@
 
     const siteBase = campaignsBase ? new URL("../", campaignsBase).href : window.location.href;
     const pcDataUrl = new URL("pc/pc_lib", siteBase).href;
+
+    // Show the known party immediately; metadata only enriches their cards.
+    relatedPcState.pcIds = pcIds;
+    relatedPcState.charById = {};
+    relatedPcState.siteBase = siteBase;
+    renderRelatedPcSection();
 
     let charById;
     try {
@@ -1122,6 +1171,7 @@
   renderRelatedPcs();
   renderRelatedGuests();
   renderRelatedNpcs();
+  loadRelatedLocations();
   loadChapterTitleMap().then((map) => {
     chapterTitleState.map = map;
     updateChapterTitle();
