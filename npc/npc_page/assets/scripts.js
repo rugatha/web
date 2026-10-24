@@ -1,3 +1,5 @@
+import { createLocationCards } from "../../../shared/location-cards.js";
+
 const npcId = getRequestedNpc();
 
 const elements = {
@@ -10,12 +12,12 @@ const elements = {
 
 let charactersCache = null;
 let currentNpc = null;
+let locationDataPromise = null;
+let locationRenderToken = 0;
 const i18n = {
   introTitle: { zh: "介紹", en: "Introduction" },
-  locationsTitle: { zh: "地點", en: "Locations" },
   relatedTitle: { zh: "相關NPC", en: "Related NPCs" },
   appearancesTitle: { zh: "出現章節", en: "Appeared Chapters" },
-  locationEmpty: { zh: "尚未提供地點", en: "Location unavailable" },
   relatedEmpty: { zh: "無相關 NPC", en: "No related NPCs" },
   appearancesEmpty: { zh: "尚未記錄出現章節", en: "No appearances logged" },
   fateTitle: { zh: "命運的抉擇", en: "A Choice of Fate" }
@@ -99,9 +101,6 @@ function updateSectionTitles() {
   const intro = document.querySelector(".intro-title");
   if (intro) intro.textContent = i18n.introTitle[lang];
 
-  const locTitle = document.querySelector(".location-title");
-  if (locTitle) locTitle.textContent = i18n.locationsTitle[lang];
-
   const relatedTitle = document.querySelector(".related .section-title");
   if (relatedTitle) {
     relatedTitle.textContent = i18n.relatedTitle[lang];
@@ -115,11 +114,6 @@ function updateSectionTitles() {
   const appearanceEmpty = document.querySelector(".appearances .location-empty");
   if (appearanceEmpty) {
     appearanceEmpty.textContent = i18n.appearancesEmpty[lang];
-  }
-
-  const locationEmpty = elements.locations?.querySelector(".location-empty");
-  if (locationEmpty) {
-    locationEmpty.textContent = i18n.locationEmpty[lang];
   }
 
   const relatedEmpty = document.querySelector(".related .location-empty");
@@ -489,9 +483,9 @@ function buildAppearances(mapping, graphData, npc) {
 }
 
 async function renderAppearances(npc) {
-  if (!elements.content || !npc) return;
+  if (!elements.details || !npc) return;
   const renderToken = ++appearanceRenderToken;
-  const existing = elements.content.querySelector(".appearances");
+  const existing = elements.details.querySelector(".appearances");
   if (existing) existing.remove();
 
   let mapping = {};
@@ -534,7 +528,7 @@ async function renderAppearances(npc) {
     empty.className = "location-empty";
     empty.textContent = i18n.appearancesEmpty[lang];
     section.appendChild(empty);
-    elements.content.appendChild(section);
+    elements.details.prepend(section);
     return;
   }
 
@@ -580,14 +574,7 @@ async function renderAppearances(npc) {
     section.appendChild(campaignBlock);
   });
 
-  const locationTitle = elements.content.querySelector(".location-title");
-  const relatedSection = elements.content.querySelector(".related");
-  const anchor = locationTitle || relatedSection || null;
-  if (anchor && anchor.parentNode === elements.content) {
-    elements.content.insertBefore(section, anchor);
-  } else {
-    elements.content.appendChild(section);
-  }
+  elements.details.prepend(section);
 }
 
 const deityList = [
@@ -770,9 +757,56 @@ function render(npc) {
   setDescription(elements.en, effectiveNpc.descEn, "(Description coming soon)");
   renderGender(effectiveNpc.gender);
   renderStatus(effectiveNpc.status);
-  renderLocationList(effectiveNpc);
   renderReligion(effectiveNpc.religion);
   insertRelated(effectiveNpc.related || []);
+  renderLocationCards(effectiveNpc);
+}
+
+async function renderLocationCards(npc) {
+  const token = ++locationRenderToken;
+  if (!elements.details) return;
+  try {
+    if (!locationDataPromise) {
+      locationDataPromise = fetch(new URL("map/location/assets/location.json", rootBase), { cache: "no-cache" })
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        }).catch((error) => {
+          locationDataPromise = null;
+          throw error;
+        });
+    }
+    const data = await locationDataPromise;
+    if (token !== locationRenderToken) return;
+    const key = (value) => String(value || "").trim().normalize("NFKC").toLowerCase().replace(/[’‘]/g, "'");
+    const names = new Set([
+      ...toList(npc.location), ...toList(npc.locationEn), ...toList(npc.locationZh)
+    ].map(key).filter(Boolean));
+    const matches = (node) => [node.name_en, node.name_zh, node.slug].some((name) => name && names.has(key(name)));
+    const locations = [];
+    for (const realm of data.realms || []) {
+      for (const kingdom of realm.kingdoms || []) {
+        for (const city of kingdom.cities || []) {
+          if (city.draft === true) continue;
+          const pois = (city.pois || []).filter((poi) => poi.draft !== true && matches(poi));
+          if (!matches(city) && !pois.length) continue;
+          const base = new URL(`map/location/${realm.slug}/${kingdom.slug}/${city.slug}/`, rootBase);
+          locations.push({ node: city, depth: 3, ancestors: [realm, kingdom],
+            href: base.href, image: city.image || data.image });
+        }
+      }
+    }
+    elements.details.querySelector(".related-locations")?.remove();
+    if (!locations.length) return;
+    const section = createLocationCards(locations, languageState.value);
+    section.classList.add("related-locations--cities");
+    // Keep locations between related NPCs and fate, even after a language change.
+    const related = elements.details.querySelector(".related");
+    if (related) related.after(section);
+    else elements.details.insertBefore(section, elements.details.querySelector(".qa"));
+  } catch (error) {
+    console.warn("NPC locations unavailable:", error);
+  }
 }
 
 (async function init() {
@@ -956,28 +990,6 @@ function getMetaContainer() {
   return meta;
 }
 
-function renderLocationList(locations) {
-  if (!elements.locations) return;
-  elements.locations.innerHTML = "";
-  const lang = languageState.value;
-  const list = lang === "zh" ? toList(locations?.locationZh) : toList(locations?.locationEn);
-  const fallback = list.length ? list : toList(locations?.location);
-  const items = fallback.filter(Boolean);
-  if (!items.length) {
-    const empty = document.createElement("span");
-    empty.className = "location-empty";
-    empty.textContent = i18n.locationEmpty[languageState.value];
-    elements.locations.appendChild(empty);
-    return;
-  }
-  items.forEach((loc) => {
-    const pill = document.createElement("span");
-    pill.className = "tag location-pill";
-    pill.textContent = loc;
-    elements.locations.appendChild(pill);
-  });
-}
-
 function ensureContentSections() {
   const content = elements.content;
   if (!content) return;
@@ -989,35 +1001,21 @@ function ensureContentSections() {
     content.insertBefore(intro, elements.zh);
   }
 
-  if (!elements.locations) {
-    const locTitle = document.createElement("h2");
-    locTitle.className = "section-title location-title";
-    locTitle.textContent = i18n.locationsTitle[languageState.value];
-
-    const locWrap = document.createElement("div");
-    locWrap.id = "npc-locations";
-    locWrap.className = "location-list";
-
-    if (elements.en && elements.en.parentNode === content) {
-      const afterEn = elements.en.nextSibling;
-      if (afterEn) {
-        content.insertBefore(locTitle, afterEn);
-      } else {
-        content.appendChild(locTitle);
-      }
-      content.insertBefore(locWrap, locTitle.nextSibling);
-    } else {
-      content.appendChild(locTitle);
-      content.appendChild(locWrap);
-    }
-
-    elements.locations = locWrap;
+  if (!elements.details) {
+    const layout = document.querySelector(".layout");
+    if (!layout) return;
+    const details = document.createElement("div");
+    details.className = "npc-details";
+    layout.after(details);
+    const fate = document.querySelector(".qa");
+    if (fate) details.appendChild(fate);
+    elements.details = details;
   }
 }
 
 function insertRelated(items) {
-  if (!elements.content) return;
-  const existing = elements.content.querySelector(".related");
+  if (!elements.details) return;
+  const existing = elements.details.querySelector(".related");
   if (existing) existing.remove();
   const wrap = document.createElement("div");
   wrap.className = "related";
@@ -1063,7 +1061,7 @@ function insertRelated(items) {
     wrap.appendChild(empty);
   }
 
-  elements.content.appendChild(wrap);
+  elements.details.insertBefore(wrap, elements.details.querySelector(".related-locations, .qa"));
 }
 
 function renderStatus(status) {

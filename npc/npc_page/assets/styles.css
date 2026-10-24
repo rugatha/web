@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Noto+Serif+TC:wght@700;900&family=Fraunces:wght@600;700&display=swap");
+@import url("../../../shared/location-cards.css");
 
 :root {
   --bg: #445f56;
@@ -260,7 +261,7 @@ h2 {
 
 .layout {
   display: grid;
-  grid-template-columns: 380px 1fr;
+  grid-template-columns: 380px minmax(0, 1fr);
   gap: 20px;
   align-items: start; /* prevent portrait from stretching to match content height */
 }
@@ -765,11 +766,6 @@ code {
     padding-top: 96px;
   }
 
-  .title-row {
-    justify-content: flex-start;
-    text-align: left;
-  }
-
   .language-toggle {
     top: 12px;
     left: 12px;
@@ -791,4 +787,67 @@ code {
     max-width: 360px;
     margin: 0 auto;
   }
+}
+
+/* Match the chapter location cards while inheriting the NPC page's panel color. */
+.npc-details > .related-locations {
+  --card: #60695e;
+  font-size: 16px;
+}
+
+.content {
+  min-width: 0;
+}
+
+.related-locations--cities {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: 16px;
+}
+
+.related-locations--cities > .related-locations__title {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.related-locations--cities > .related-locations__group {
+  display: block;
+  margin: 0;
+  padding: 12px;
+  overflow: visible;
+}
+
+.related-locations--cities > .related-locations__group + .related-locations__group {
+  margin-top: 0;
+}
+
+.related-locations--cities .related-locations__city {
+  min-height: 0;
+}
+
+.related-locations--cities .related-locations__city-image {
+  position: static;
+  height: auto;
+}
+
+/* The supplementary sections share the full width of the profile and fate panel. */
+.npc-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  margin-top: 24px;
+}
+
+.npc-details > * {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+}
+
+.npc-details > .appearances > .section-title,
+.npc-details > .related > .section-title,
+.content > .intro-title {
+  margin-top: 0;
 }
