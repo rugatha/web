@@ -1,121 +1,58 @@
-body {
-  display: flex;
-  justify-content: center;
-  padding: 28px 18px 54px;
-  font-size: 16px;
-}
-
-.page {
-  width: 100%;
-}
-
-.page-shell {
-  width: min(1400px, 100%);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.hero {
-  padding: 18px 18px 16px;
-  border-radius: var(--radius);
-  background: var(--panel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-
-.hero h1 {
-  margin: 6px 0 4px;
-  font-size: 30px;
-  letter-spacing: -0.01em;
-}
-
-.cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 42px;
-  padding: 0 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
-}
-
-.cta.ghost {
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.cta:hover,
-.cta:focus-visible {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
-  outline: none;
-}
-
+/* Map-specific layout; shared atlas chrome comes from locations.css. */
+.map-portal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.map-portal-grid h2 { margin: 0 0 16px; font-size: 22px; line-height: 1.4; overflow-wrap: anywhere; }
 .map-panel {
-  padding: 14px;
   width: 100%;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,.12);
   border-radius: var(--radius);
   background: var(--panel);
-  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow);
 }
-
-.map-frame {
-  margin: 0;
-}
-
+.map-frame { margin: 0; }
 .map-image {
-  display: block;
   width: 100%;
+  min-height: 280px;
   height: min(80vh, 820px);
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #1c2623;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius);
+  background: #263c34;
+  font-family: var(--font-body);
 }
-
-.map-caption {
-  margin: 10px 0 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.5;
+.map-image .leaflet-bar {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.22);
 }
-
-.leaflet-control-home {
+.map-image .leaflet-bar a,
+.map-image .leaflet-bar a:hover {
   display: block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 16px;
-  color: #101010;
-  background: #fff;
-  text-decoration: none;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  color: var(--text);
+  background: #263c34;
+  border-bottom: 1px solid rgba(255,255,255,.16);
 }
-
-.leaflet-control-home:hover,
-.leaflet-control-home:focus-visible {
-  background: #f4f4f4;
-  outline: none;
-}
-
-@media (max-width: 720px) {
-  body {
-    padding: 22px 14px 40px;
-  }
-
-  .hero h1 {
-    font-size: 26px;
-  }
+.map-image .leaflet-bar a:last-child { border-bottom: 0; }
+.map-image .leaflet-bar a:hover { color: var(--accent); background: #344e42; }
+.map-image .leaflet-bar a:focus-visible { outline-offset: -3px; }
+.map-image .leaflet-bar a.leaflet-disabled { color: #93a69b; background: #263c34; }
+.map-image .leaflet-control-home { font-size: 24px; text-align: center; }
+.map-image .leaflet-popup-content-wrapper,
+.map-image .leaflet-popup-tip { background: #263c34; color: var(--text); }
+.map-image .leaflet-popup-content-wrapper { border: 1px solid rgba(255,255,255,.16); border-radius: 12px; box-shadow: var(--shadow); }
+.map-image .leaflet-popup-content { font: 600 15px/1.6 var(--font-body); }
+.map-image .leaflet-popup-close-button { color: var(--muted); }
+.map-image .leaflet-popup-close-button:hover { color: var(--accent); }
+.map-image .leaflet-control-attribution { background: #263c34; color: var(--muted); }
+.map-image .leaflet-control-attribution a { color: var(--accent); }
+@media (max-width: 640px) {
+  .map-portal-grid { grid-template-columns: 1fr; }
+  .map-panel { padding: 12px; }
+  .map-image { border-radius: 12px; }
+  .section-heading { flex-wrap: wrap; gap: 8px; }
+  .section-heading > span { font-size: 12px; }
 }

@@ -2,7 +2,8 @@ const DATA_SOURCES = {
   chapters: "campaigns/data/chapter-content.json",
   deities: "deities/data/deities.json",
   npcs: "npc/data/characters.json",
-  pcs: "campaigns/pages/pcs.json"
+  pcs: "campaigns/pages/pcs.json",
+  locations: "map/location/assets/location.json"
 };
 
 // These PC pages are not currently referenced by the campaign roster data.
@@ -25,7 +26,7 @@ const fetchJson = async (url) => {
 };
 
 const loadRandomDestinations = async () => {
-  const [chapterContent, deities, npcs, pcRoster] = await Promise.all(
+  const [chapterContent, deities, npcs, pcRoster, locations] = await Promise.all(
     Object.values(DATA_SOURCES).map(fetchJson)
   );
 
@@ -47,7 +48,17 @@ const loadRandomDestinations = async () => {
     (name) => `pc/articles/${slugify(name)}.html`
   );
 
-  return [...new Set([...chapterPages, ...deityPages, ...npcPages, ...pcPages, ...EXTRA_PC_PAGES])];
+  const locationPages = ["map/"];
+  const childKeys = ["realms", "kingdoms", "cities", "pois"];
+  const visitLocation = (node, route = "map/location/", depth = 0) => {
+    locationPages.push(route);
+    for (const child of node[childKeys[depth]] || []) {
+      visitLocation(child, `${route}${child.slug}/`, depth + 1);
+    }
+  };
+  visitLocation(locations);
+
+  return [...new Set([...chapterPages, ...deityPages, ...npcPages, ...pcPages, ...EXTRA_PC_PAGES, ...locationPages])];
 };
 
 const randomDestinations = loadRandomDestinations().catch((error) => {

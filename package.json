@@ -6,6 +6,9 @@
     "node": ">=24 <25"
   },
   "scripts": {
+    "locations:build": "node scripts/generate-location-pages.mjs",
+    "locations:check": "node scripts/generate-location-pages.mjs --check",
+    "locations:chapters": "python3 scripts/sync-location-chapters.py",
     "images:audit": "node scripts/image-assets.mjs audit",
     "images:status": "node scripts/image-storage-status.mjs",
     "images:prepare": "node scripts/image-assets.mjs prepare docs/image-migration/inventory.json",

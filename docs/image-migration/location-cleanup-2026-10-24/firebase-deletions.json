@@ -1,0 +1,1208 @@
+{
+  "started_at": "2026-10-24T12:19:50.642Z",
+  "plan_sha256": "8972694d3fe6a474a4e9cb02b9f764e2ca78593beb20e7b09249b95c40bc6fa3",
+  "kept_images_verified": 186,
+  "deleted": [
+    {
+      "name": "public-images/locations/feywild--unaffiliated--the-great-tent--elbys-clinic/25c7ede77f2e0b8b98ef7d5f99995e9234a005cf15b36c34680ce5c8f3905deb/reading.png",
+      "generation": "1792767930878579",
+      "size": "2924047",
+      "metadata": {
+        "sha256": "25c7ede77f2e0b8b98ef7d5f99995e9234a005cf15b36c34680ce5c8f3905deb"
+      },
+      "deleted_at": "2026-10-24T12:19:51.870Z"
+    },
+    {
+      "name": "public-images/locations/feywild--unaffiliated--the-great-tent--elbys-operating-room/ff35bc898fe6c475813ea49c9f17e4a56981e671ae1b5ab7343d59c449f55555/reading.png",
+      "generation": "1792767932523292",
+      "size": "2869769",
+      "metadata": {
+        "sha256": "ff35bc898fe6c475813ea49c9f17e4a56981e671ae1b5ab7343d59c449f55555"
+      },
+      "deleted_at": "2026-10-24T12:19:52.793Z"
+    },
+    {
+      "name": "public-images/locations/feywild--unaffiliated--the-great-tent--musical-instrument-stall/6a82ab8e9a88653fc53a156a756cd9385dd82e3df70369ea2870fd4cc875bc16/reading.png",
+      "generation": "1792767934282507",
+      "size": "2799518",
+      "metadata": {
+        "sha256": "6a82ab8e9a88653fc53a156a756cd9385dd82e3df70369ea2870fd4cc875bc16"
+      },
+      "deleted_at": "2026-10-24T12:19:54.020Z"
+    },
+    {
+      "name": "public-images/locations/feywild--unaffiliated--the-great-tent--shared-sleeping-tent/2bf96ee207ead862000b68bb4261b6dfa003b10f1b3599639a610a337dca0bcc/reading.png",
+      "generation": "1792767935828099",
+      "size": "3006386",
+      "metadata": {
+        "sha256": "2bf96ee207ead862000b68bb4261b6dfa003b10f1b3599639a610a337dca0bcc"
+      },
+      "deleted_at": "2026-10-24T12:19:55.261Z"
+    },
+    {
+      "name": "public-images/locations/feywild--unaffiliated--the-great-tent--underground-trial-square/779296fe5fec22eadb19dcbb956b40755d5cf227c542ad7a56ddfcc75fbeed1b/reading.png",
+      "generation": "1792767938862842",
+      "size": "3157835",
+      "metadata": {
+        "sha256": "779296fe5fec22eadb19dcbb956b40755d5cf227c542ad7a56ddfcc75fbeed1b"
+      },
+      "deleted_at": "2026-10-24T12:19:56.517Z"
+    },
+    {
+      "name": "public-images/locations/feywild--unaffiliated--the-great-tent/1670d32a7bf69d7ea59cabf363ef44236183feff1ac73d031dc0ccbd5edc1b48/reading.png",
+      "generation": "1792767929097011",
+      "size": "3171298",
+      "metadata": {
+        "sha256": "1670d32a7bf69d7ea59cabf363ef44236183feff1ac73d031dc0ccbd5edc1b48"
+      },
+      "deleted_at": "2026-10-24T12:19:57.667Z"
+    },
+    {
+      "name": "public-images/locations/feywild--unaffiliated/7e53bec95db3eb850fb5de604878b30ab47af451294d3fac7ce3d4215cca317f/reading.png",
+      "generation": "1792767925960868",
+      "size": "3460259",
+      "metadata": {
+        "sha256": "7e53bec95db3eb850fb5de604878b30ab47af451294d3fac7ce3d4215cca317f"
+      },
+      "deleted_at": "2026-10-24T12:19:58.762Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--chryomen--orun--mine-dragons-orb-retrieval-mission/f6464db59d7f6727cc4d49e2cf17a963081d4ba49c93e335d341d42c3940a930/reading.png",
+      "generation": "1792767945941154",
+      "size": "2789728",
+      "metadata": {
+        "sha256": "f6464db59d7f6727cc4d49e2cf17a963081d4ba49c93e335d341d42c3940a930"
+      },
+      "deleted_at": "2026-10-24T12:19:59.653Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--chryomen--orun--royal-museum/d6e50bbe68b99051a41cbcc011f8ece20a3fb624681eeb450e2acffbfcbd213e/reading.png",
+      "generation": "1792767947461834",
+      "size": "2886253",
+      "metadata": {
+        "sha256": "d6e50bbe68b99051a41cbcc011f8ece20a3fb624681eeb450e2acffbfcbd213e"
+      },
+      "deleted_at": "2026-10-24T12:20:00.530Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--chryomen--orun--royal-palace/601c355efd62ae43bc71d48e37a2d84042ca9ee82eee0d26643c301aa031c561/reading.png",
+      "generation": "1792767948801770",
+      "size": "2512495",
+      "metadata": {
+        "sha256": "601c355efd62ae43bc71d48e37a2d84042ca9ee82eee0d26643c301aa031c561"
+      },
+      "deleted_at": "2026-10-24T12:20:01.640Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--chryomen--orun-v2/cdb492788016074a0ea762e5247288aa29f366413e17c631a9152343d82bf407/reading.png",
+      "generation": "1792767942938846",
+      "size": "3010052",
+      "metadata": {
+        "sha256": "cdb492788016074a0ea762e5247288aa29f366413e17c631a9152343d82bf407"
+      },
+      "deleted_at": "2026-10-24T12:20:02.823Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--chryomen--orun/4bb71a2bf07b0beca3903493865d864b0f4f2c5ae77b9c78a3ded5b696f1e838/reading.png",
+      "generation": "1792767944606657",
+      "size": "3114490",
+      "metadata": {
+        "sha256": "4bb71a2bf07b0beca3903493865d864b0f4f2c5ae77b9c78a3ded5b696f1e838"
+      },
+      "deleted_at": "2026-10-24T12:20:04.016Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--chryomen/2d2193429b988aa5e43ade2e5cb836074eb599f821107b52389840664cb1ec51/reading.png",
+      "generation": "1792767941540171",
+      "size": "3256185",
+      "metadata": {
+        "sha256": "2d2193429b988aa5e43ade2e5cb836074eb599f821107b52389840664cb1ec51"
+      },
+      "deleted_at": "2026-10-24T12:20:05.096Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--lothum--phreit--grocery-tent-monu-and-minas-family/2922addd2463d8da07706220e99008dd7058eedd6189b22664f0fa7c2c89c2f2/reading.png",
+      "generation": "1792767961051429",
+      "size": "3408339",
+      "metadata": {
+        "sha256": "2922addd2463d8da07706220e99008dd7058eedd6189b22664f0fa7c2c89c2f2"
+      },
+      "deleted_at": "2026-10-24T12:20:06.256Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--lothum--phreit--wine-shop-unnamed/e97755296792cbe9e69d1006262ef1df33d1e3cdacd52a37c366e56f76e0fb77/reading.png",
+      "generation": "1792767963722802",
+      "size": "3145390",
+      "metadata": {
+        "sha256": "e97755296792cbe9e69d1006262ef1df33d1e3cdacd52a37c366e56f76e0fb77"
+      },
+      "deleted_at": "2026-10-24T12:20:07.418Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--lothum--phreit/f9193d797789e6766139300808efde9535ed5255103e31f0fc6a7932c3c2661b/reading.png",
+      "generation": "1792767959560184",
+      "size": "3148102",
+      "metadata": {
+        "sha256": "f9193d797789e6766139300808efde9535ed5255103e31f0fc6a7932c3c2661b"
+      },
+      "deleted_at": "2026-10-24T12:20:08.339Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--lothum--stonefield/075b6d17c50067012d0e8139374e910735290610720f7db5b19bb05c35120a65/reading.png",
+      "generation": "1792767965129641",
+      "size": "3442497",
+      "metadata": {
+        "sha256": "075b6d17c50067012d0e8139374e910735290610720f7db5b19bb05c35120a65"
+      },
+      "deleted_at": "2026-10-24T12:20:09.471Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--batherdon--blacksmith-shop-unnamed/1988d015601584f4303cca4397219b98f87e6149e16d752d23ce9849c91041ac/reading.png",
+      "generation": "1792767969198154",
+      "size": "2954684",
+      "metadata": {
+        "sha256": "1988d015601584f4303cca4397219b98f87e6149e16d752d23ce9849c91041ac"
+      },
+      "deleted_at": "2026-10-24T12:20:10.436Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--batherdon--general-store-unnamed/7bae5a36759f45e0ab6bf7887e27f38b6c85d5eba894841a0c2913d8e1b1dbf7/reading.png",
+      "generation": "1792767972353768",
+      "size": "2896310",
+      "metadata": {
+        "sha256": "7bae5a36759f45e0ab6bf7887e27f38b6c85d5eba894841a0c2913d8e1b1dbf7"
+      },
+      "deleted_at": "2026-10-24T12:20:11.356Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--batherdon--third-candy-shop-unnamed/509c7f6cbd678f1ab88f607872bd2094eed771fdd5e99c1f1b5d8eeec7e6964f/reading.png",
+      "generation": "1792767984795639",
+      "size": "3290790",
+      "metadata": {
+        "sha256": "509c7f6cbd678f1ab88f607872bd2094eed771fdd5e99c1f1b5d8eeec7e6964f"
+      },
+      "deleted_at": "2026-10-24T12:20:12.464Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--bomozan--wind-residence/f7d9415dc88b543d6653c3bd3a966ef3dc4665aea77b61b46e1cc8267d2fa166/reading.png",
+      "generation": "1792767991252698",
+      "size": "3359538",
+      "metadata": {
+        "sha256": "f7d9415dc88b543d6653c3bd3a966ef3dc4665aea77b61b46e1cc8267d2fa166"
+      },
+      "deleted_at": "2026-10-24T12:20:13.545Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--clyphen--clinic-unnamed/055e8ab3867f07d73389edd4410d74238b942ac3a2b1d0b913d5138cd4f5827f/reading.png",
+      "generation": "1792767993483996",
+      "size": "2858732",
+      "metadata": {
+        "sha256": "055e8ab3867f07d73389edd4410d74238b942ac3a2b1d0b913d5138cd4f5827f"
+      },
+      "deleted_at": "2026-10-24T12:20:14.492Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--clyphen--grave-of-leahs-parents/185edf7de12774daf0c85ccec3aa20efd5a32f3438c25139be4ce887b25c2b91/reading.png",
+      "generation": "1792767997000905",
+      "size": "3357278",
+      "metadata": {
+        "sha256": "185edf7de12774daf0c85ccec3aa20efd5a32f3438c25139be4ce887b25c2b91"
+      },
+      "deleted_at": "2026-10-24T12:20:15.578Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--clyphen--white-chapel-outside-clyphen/e163e3f99c6e8537f3f593a6a353a8570055636fa455978b8b678964091c686a/reading.png",
+      "generation": "1792768003197321",
+      "size": "3333722",
+      "metadata": {
+        "sha256": "e163e3f99c6e8537f3f593a6a353a8570055636fa455978b8b678964091c686a"
+      },
+      "deleted_at": "2026-10-24T12:20:16.479Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--dorrenville--circus/7bd31058447a902048bbfe956c6f4c5982e97171dd6f5bc8f8e9446ae9de634a/reading.png",
+      "generation": "1792768006402258",
+      "size": "2921189",
+      "metadata": {
+        "sha256": "7bd31058447a902048bbfe956c6f4c5982e97171dd6f5bc8f8e9446ae9de634a"
+      },
+      "deleted_at": "2026-10-24T12:20:17.637Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--drogsland--abandoned-church/c5ec9f3f0bda407e81370ce6fe7a8d37ce2c9a6fc02996b0d4d56dcc50c1400d/reading.png",
+      "generation": "1792768011418090",
+      "size": "2683853",
+      "metadata": {
+        "sha256": "c5ec9f3f0bda407e81370ce6fe7a8d37ce2c9a6fc02996b0d4d56dcc50c1400d"
+      },
+      "deleted_at": "2026-10-24T12:20:18.813Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--drogsland--general-store-unnamed/0a44a262fc97564cd17afd6d19d4b31318f88b1f8a14236ac70d4b08fc5b8d84/reading.png",
+      "generation": "1792768016434012",
+      "size": "3043539",
+      "metadata": {
+        "sha256": "0a44a262fc97564cd17afd6d19d4b31318f88b1f8a14236ac70d4b08fc5b8d84"
+      },
+      "deleted_at": "2026-10-24T12:20:19.941Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--fanaur--jewelers-guild/36aff4fe4e4bcca110b2b6ea04227ee67136031d4ff05b516653bdce84cde5bc/reading.png",
+      "generation": "1792768027388511",
+      "size": "3118732",
+      "metadata": {
+        "sha256": "36aff4fe4e4bcca110b2b6ea04227ee67136031d4ff05b516653bdce84cde5bc"
+      },
+      "deleted_at": "2026-10-24T12:20:20.876Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--fanaur--st-keinra-cathedral/927e1c4ff43ff060a5f6d96426f606aae2b85e861869235116262b75eed3703e/reading.png",
+      "generation": "1792768031602927",
+      "size": "3150978",
+      "metadata": {
+        "sha256": "927e1c4ff43ff060a5f6d96426f606aae2b85e861869235116262b75eed3703e"
+      },
+      "deleted_at": "2026-10-24T12:20:22.043Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--fanaur--well-and-underground-ritual-site-near-nimu-orphanage/4e8ad33ec071d6b82c499e87b064c53e6853874d88aaa1ea1ce9af8acf337dc5/reading.png",
+      "generation": "1792768032367126",
+      "size": "2641438",
+      "metadata": {
+        "sha256": "4e8ad33ec071d6b82c499e87b064c53e6853874d88aaa1ea1ce9af8acf337dc5"
+      },
+      "deleted_at": "2026-10-24T12:20:23.018Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--fenadra--greenhouse-dining-hall/3b11621d191d187a217d6ab062c041e6b3ac41e77396f52009a70a4dbd2fd065/reading.png",
+      "generation": "1792768036408516",
+      "size": "2890293",
+      "metadata": {
+        "sha256": "3b11621d191d187a217d6ab062c041e6b3ac41e77396f52009a70a4dbd2fd065"
+      },
+      "deleted_at": "2026-10-24T12:20:23.965Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--fenadra--heart-space-domain-v2/45ee175fdab12d07f110faaffccc49d57f4bbdb848693a67979d89221253927e/reading.png",
+      "generation": "1792768038104927",
+      "size": "2819827",
+      "metadata": {
+        "sha256": "45ee175fdab12d07f110faaffccc49d57f4bbdb848693a67979d89221253927e"
+      },
+      "deleted_at": "2026-10-24T12:20:25.050Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--fenadra--immovable-domain/b90f2a30eabcf26213f9dba425681a9fcfce05551f7a9ff305cd4695f9045a8d/reading.png",
+      "generation": "1792768042463353",
+      "size": "2985539",
+      "metadata": {
+        "sha256": "b90f2a30eabcf26213f9dba425681a9fcfce05551f7a9ff305cd4695f9045a8d"
+      },
+      "deleted_at": "2026-10-24T12:20:26.228Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--great-citadel--alexs-workshop/1841ab3b90159eb4ccbef54f15ecd69cf74054ca45b9a1183e3837aedf5544a8/reading.png",
+      "generation": "1792768049181864",
+      "size": "3077816",
+      "metadata": {
+        "sha256": "1841ab3b90159eb4ccbef54f15ecd69cf74054ca45b9a1183e3837aedf5544a8"
+      },
+      "deleted_at": "2026-10-24T12:20:27.323Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--great-citadel--central-tower/bd20e0cee18099fc785c0469ebc2154080c3d436fc104c225550ccb4d6c0f577/reading.png",
+      "generation": "1792768054617328",
+      "size": "3051272",
+      "metadata": {
+        "sha256": "bd20e0cee18099fc785c0469ebc2154080c3d436fc104c225550ccb4d6c0f577"
+      },
+      "deleted_at": "2026-10-24T12:20:28.403Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--great-citadel--chandras-house/fe53089fadd6c727fad698b6934502ded0890d4e107e392e355ba771b1e6a4d4/reading.png",
+      "generation": "1792768056596227",
+      "size": "3051098",
+      "metadata": {
+        "sha256": "fe53089fadd6c727fad698b6934502ded0890d4e107e392e355ba771b1e6a4d4"
+      },
+      "deleted_at": "2026-10-24T12:20:29.574Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--great-citadel--historical-district/ddfb4d833f9e936e0a1a6ac1ef8cac9323362af541762b87f22a9cc5d8568063/reading.png",
+      "generation": "1792768057589975",
+      "size": "2917052",
+      "metadata": {
+        "sha256": "ddfb4d833f9e936e0a1a6ac1ef8cac9323362af541762b87f22a9cc5d8568063"
+      },
+      "deleted_at": "2026-10-24T12:20:30.858Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--great-citadel--mage-magic-district/95b1e05ae8d6513a55f5f126b9fbbd409cc229ea957d331c5774d94d5c87f919/reading.png",
+      "generation": "1792768059138348",
+      "size": "2943448",
+      "metadata": {
+        "sha256": "95b1e05ae8d6513a55f5f126b9fbbd409cc229ea957d331c5774d94d5c87f919"
+      },
+      "deleted_at": "2026-10-24T12:20:31.808Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--great-citadel--natural-magic-district/8a13c46ef6b6ff0db7fb5d691212dc0e6782a377498dbe26066a6b4ac81bc91c/reading.png",
+      "generation": "1792768060862349",
+      "size": "3204081",
+      "metadata": {
+        "sha256": "8a13c46ef6b6ff0db7fb5d691212dc0e6782a377498dbe26066a6b4ac81bc91c"
+      },
+      "deleted_at": "2026-10-24T12:20:32.708Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--great-citadel--technology-district/fe236be534c19b4d5cd2746c1e20781b15f88a29d8da8e1450e5e9ade2bd90c5/reading.png",
+      "generation": "1792768062158667",
+      "size": "2850650",
+      "metadata": {
+        "sha256": "fe236be534c19b4d5cd2746c1e20781b15f88a29d8da8e1450e5e9ade2bd90c5"
+      },
+      "deleted_at": "2026-10-24T12:20:33.852Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--kashla--church-cemetery-v2/69e61df80649bf5d3eb39e28c9f3ac1e821f9c500c876d74a287154b296473c5/reading.png",
+      "generation": "1792768065501994",
+      "size": "2907816",
+      "metadata": {
+        "sha256": "69e61df80649bf5d3eb39e28c9f3ac1e821f9c500c876d74a287154b296473c5"
+      },
+      "deleted_at": "2026-10-24T12:20:34.914Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--kashla--church-cemetery/4442fae71d52b776b914ca0c7505a048d6ed0dd3e21c6025d878047f81f55d70/reading.png",
+      "generation": "1792768066590982",
+      "size": "3030785",
+      "metadata": {
+        "sha256": "4442fae71d52b776b914ca0c7505a048d6ed0dd3e21c6025d878047f81f55d70"
+      },
+      "deleted_at": "2026-10-24T12:20:36.325Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--kashla--dr-vaxons-clinic/6086dc8ff0d0f9cd091b277c0bbbd3af351537bd6cd29d77ce21a49f62724533/reading.png",
+      "generation": "1792768067928075",
+      "size": "3211606",
+      "metadata": {
+        "sha256": "6086dc8ff0d0f9cd091b277c0bbbd3af351537bd6cd29d77ce21a49f62724533"
+      },
+      "deleted_at": "2026-10-24T12:20:37.407Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--kashla--voice-of-anonymous-church/05d753494c3465008df6cb95de9493265853618376ca5db77b27f5b130a25418/reading.png",
+      "generation": "1792768071240960",
+      "size": "2702653",
+      "metadata": {
+        "sha256": "05d753494c3465008df6cb95de9493265853618376ca5db77b27f5b130a25418"
+      },
+      "deleted_at": "2026-10-24T12:20:39.485Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield--blacksmith-shop-unnamed/2c804c4078a11c3ec1eea7378c75f603dd44f8d084d89a2bf55466a3cd0ee7c3/reading.png",
+      "generation": "1792768072802740",
+      "size": "3034060",
+      "metadata": {
+        "sha256": "2c804c4078a11c3ec1eea7378c75f603dd44f8d084d89a2bf55466a3cd0ee7c3"
+      },
+      "deleted_at": "2026-10-24T12:20:40.609Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield--flaerry-house/e16d41a31b05011e33bbefd115a47a6c5cc05113cff368f030eb570600738845/reading.png",
+      "generation": "1792768075569594",
+      "size": "3262063",
+      "metadata": {
+        "sha256": "e16d41a31b05011e33bbefd115a47a6c5cc05113cff368f030eb570600738845"
+      },
+      "deleted_at": "2026-10-24T12:20:41.640Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield--gay-bar-syr-flaerrys-regular-haunt/701fb2f90b00c91b379719bbad77777f4d7881f0d0b615f123698126ef7d5bff/reading.png",
+      "generation": "1792768077091478",
+      "size": "2575290",
+      "metadata": {
+        "sha256": "701fb2f90b00c91b379719bbad77777f4d7881f0d0b615f123698126ef7d5bff"
+      },
+      "deleted_at": "2026-10-24T12:20:42.699Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield--keinra-church/d2ed4ca9744c738ccc46becad7a955ff2098238704ed4654fdcbd543a70f3d5c/reading.png",
+      "generation": "1792768078109324",
+      "size": "2871502",
+      "metadata": {
+        "sha256": "d2ed4ca9744c738ccc46becad7a955ff2098238704ed4654fdcbd543a70f3d5c"
+      },
+      "deleted_at": "2026-10-24T12:20:43.675Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield--korringfield-stadium/4c8587a038fe1913625773063e649e29507e7dbd80f83137732adb196969329e/reading.png",
+      "generation": "1792768079110833",
+      "size": "2704846",
+      "metadata": {
+        "sha256": "4c8587a038fe1913625773063e649e29507e7dbd80f83137732adb196969329e"
+      },
+      "deleted_at": "2026-10-24T12:20:44.736Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield--private-room-restaurant-unnamed/a6ffc4a8bafc23b6cea3de539a8c547184a4bd0e646b843b83be40becb31fc6a/reading.png",
+      "generation": "1792768080564261",
+      "size": "2941575",
+      "metadata": {
+        "sha256": "a6ffc4a8bafc23b6cea3de539a8c547184a4bd0e646b843b83be40becb31fc6a"
+      },
+      "deleted_at": "2026-10-24T12:20:45.834Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield--rainbow-paradise/929f347b4ee786199426a0213f0f01a914c41012ad3ef8426d97a1f29157058f/reading.png",
+      "generation": "1792768081502109",
+      "size": "2813772",
+      "metadata": {
+        "sha256": "929f347b4ee786199426a0213f0f01a914c41012ad3ef8426d97a1f29157058f"
+      },
+      "deleted_at": "2026-10-24T12:20:46.702Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield--syr-magnuss-house/cabdc3dc6076511c72f9a0527e6d697ddf4dbae3e23cea4092e9c85b072afd6e/reading.png",
+      "generation": "1792768082410513",
+      "size": "3138759",
+      "metadata": {
+        "sha256": "cabdc3dc6076511c72f9a0527e6d697ddf4dbae3e23cea4092e9c85b072afd6e"
+      },
+      "deleted_at": "2026-10-24T12:20:47.786Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield--the-magicians-groceries/3ce86a77ba9f5f094babd1808f1f967ffd2b11fa4b636842066bfd7c27df6472/reading.png",
+      "generation": "1792768083489772",
+      "size": "3064104",
+      "metadata": {
+        "sha256": "3ce86a77ba9f5f094babd1808f1f967ffd2b11fa4b636842066bfd7c27df6472"
+      },
+      "deleted_at": "2026-10-24T12:20:48.916Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield--thieves-guild/8815e7ff3a225d85766fc91db9ece4fa35a0e00f612927fbdb0a7e799d4b7fe5/reading.png",
+      "generation": "1792768084464603",
+      "size": "2793367",
+      "metadata": {
+        "sha256": "8815e7ff3a225d85766fc91db9ece4fa35a0e00f612927fbdb0a7e799d4b7fe5"
+      },
+      "deleted_at": "2026-10-24T12:20:49.827Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--korringfield/56b562d176cee0a4adc3b7f8fe3d1e0dcb206cb0c05bfbf62c9898ae22c0e1f9/reading.png",
+      "generation": "1792768071918011",
+      "size": "3089284",
+      "metadata": {
+        "sha256": "56b562d176cee0a4adc3b7f8fe3d1e0dcb206cb0c05bfbf62c9898ae22c0e1f9"
+      },
+      "deleted_at": "2026-10-24T12:20:50.704Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--leisnor--inn-unnamed/ef439950c3a1cb4b8ab1d0876ab73872c83039d2c830bf3ca8a7d8ac9ca34a65/reading.png",
+      "generation": "1792768092364329",
+      "size": "3120864",
+      "metadata": {
+        "sha256": "ef439950c3a1cb4b8ab1d0876ab73872c83039d2c830bf3ca8a7d8ac9ca34a65"
+      },
+      "deleted_at": "2026-10-24T12:20:51.634Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--leisnor/1208c66a85527b1fa1759cfc42ea215f870be6985615ee32de390ccbeede2632/reading.png",
+      "generation": "1792768090139633",
+      "size": "2989102",
+      "metadata": {
+        "sha256": "1208c66a85527b1fa1759cfc42ea215f870be6985615ee32de390ccbeede2632"
+      },
+      "deleted_at": "2026-10-24T12:20:52.596Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--berners-estate/12ff1fbf0655792fb62b8ca1c692bcf45b6f965c8a2abf1de8d8ea5d382389f2/reading.png",
+      "generation": "1792768095816759",
+      "size": "3039204",
+      "metadata": {
+        "sha256": "12ff1fbf0655792fb62b8ca1c692bcf45b6f965c8a2abf1de8d8ea5d382389f2"
+      },
+      "deleted_at": "2026-10-24T12:20:53.723Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--berners-hill/f5045d347811be3585ed8803747e7dfc6ea8454f3dfde371d839284f83821007/reading.png",
+      "generation": "1792768096516466",
+      "size": "3007284",
+      "metadata": {
+        "sha256": "f5045d347811be3585ed8803747e7dfc6ea8454f3dfde371d839284f83821007"
+      },
+      "deleted_at": "2026-10-24T12:20:54.781Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--dark-side/a5367493b0b0ba84b6dcb7350697a19507d77b997e10e39659975cd13f1f7ba7/reading.png",
+      "generation": "1792768099217254",
+      "size": "2505462",
+      "metadata": {
+        "sha256": "a5367493b0b0ba84b6dcb7350697a19507d77b997e10e39659975cd13f1f7ba7"
+      },
+      "deleted_at": "2026-10-24T12:20:55.878Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--dr-davids-clinic/b92b8e3e2df5b7d1728a28a169d3d86ce8e90fb6ee93833c08cdc7313a49ac94/reading.png",
+      "generation": "1792768101204609",
+      "size": "2998350",
+      "metadata": {
+        "sha256": "b92b8e3e2df5b7d1728a28a169d3d86ce8e90fb6ee93833c08cdc7313a49ac94"
+      },
+      "deleted_at": "2026-10-24T12:20:56.756Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--edmonds-diner/458a039b8d0c388dbafea36b437a895e1a96af3d2aca2c8ef850a3bc8dc89894/reading.png",
+      "generation": "1792768104037425",
+      "size": "3184839",
+      "metadata": {
+        "sha256": "458a039b8d0c388dbafea36b437a895e1a96af3d2aca2c8ef850a3bc8dc89894"
+      },
+      "deleted_at": "2026-10-24T12:20:57.845Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--gates-inn/90a97af1f66f128708bdb3d884d4633685d2305c42b4d7a4889c05d3e6b7c008/reading.png",
+      "generation": "1792768105184128",
+      "size": "3002252",
+      "metadata": {
+        "sha256": "90a97af1f66f128708bdb3d884d4633685d2305c42b4d7a4889c05d3e6b7c008"
+      },
+      "deleted_at": "2026-10-24T12:20:58.943Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--goldstone-street/9a740bac34562907e611c5764a3c7a6cbe81eeeda9bf8d5e3db72e43b4260570/reading.png",
+      "generation": "1792768106001642",
+      "size": "2768162",
+      "metadata": {
+        "sha256": "9a740bac34562907e611c5764a3c7a6cbe81eeeda9bf8d5e3db72e43b4260570"
+      },
+      "deleted_at": "2026-10-24T12:21:00.025Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--kerrys/5cbea0202682e150de4627129e31a0614da5bc44f6f18b739fc844fb0aa52010/reading.png",
+      "generation": "1792768106792694",
+      "size": "2800706",
+      "metadata": {
+        "sha256": "5cbea0202682e150de4627129e31a0614da5bc44f6f18b739fc844fb0aa52010"
+      },
+      "deleted_at": "2026-10-24T12:21:01.129Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--laxthos-assembly-hall-beneath-trinix-theatre/531cbf22262ff014314c00ad74868a31c54af5bfafd3a5c4142c2ee511e9d64a/reading.png",
+      "generation": "1792768107734571",
+      "size": "2478250",
+      "metadata": {
+        "sha256": "531cbf22262ff014314c00ad74868a31c54af5bfafd3a5c4142c2ee511e9d64a"
+      },
+      "deleted_at": "2026-10-24T12:21:02.013Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--lemmys-home/36bb67104b025fe88e70ca0f81f9b2205b917cb3b60dc5c4565c12a37c5a6e0b/reading.png",
+      "generation": "1792768108705881",
+      "size": "2802040",
+      "metadata": {
+        "sha256": "36bb67104b025fe88e70ca0f81f9b2205b917cb3b60dc5c4565c12a37c5a6e0b"
+      },
+      "deleted_at": "2026-10-24T12:21:03.143Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--marcus-jenss-mansion/cf68bc7d3606acd49c84dd9b2428c0fa6a73e75eb000625efeec97ccb4234c0d/reading.png",
+      "generation": "1792768109893355",
+      "size": "3230924",
+      "metadata": {
+        "sha256": "cf68bc7d3606acd49c84dd9b2428c0fa6a73e75eb000625efeec97ccb4234c0d"
+      },
+      "deleted_at": "2026-10-24T12:21:04.182Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--nightfall/a48435a2ccc22b7e4a4338fedc79b8ba91e8412712002a14bf1f6aa2aa5c2508/reading.png",
+      "generation": "1792768110917630",
+      "size": "2342414",
+      "metadata": {
+        "sha256": "a48435a2ccc22b7e4a4338fedc79b8ba91e8412712002a14bf1f6aa2aa5c2508"
+      },
+      "deleted_at": "2026-10-24T12:21:05.313Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--old-city-district/16129c0f149803158b6e0d1bae58734ce29b9d1d9d4c4c441dba3fbb83e62cac/reading.png",
+      "generation": "1792768111852059",
+      "size": "2970129",
+      "metadata": {
+        "sha256": "16129c0f149803158b6e0d1bae58734ce29b9d1d9d4c4c441dba3fbb83e62cac"
+      },
+      "deleted_at": "2026-10-24T12:21:06.417Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--pamelas-mansion/9827e1d1bc85d26c721a5deb30b05fa2898140a92dcb893c50b8ae9f3dca7d86/reading.png",
+      "generation": "1792768114865585",
+      "size": "2582989",
+      "metadata": {
+        "sha256": "9827e1d1bc85d26c721a5deb30b05fa2898140a92dcb893c50b8ae9f3dca7d86"
+      },
+      "deleted_at": "2026-10-24T12:21:07.362Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--pattons/ad04d532d487feef0728300f5481d0dc7de511c67ea3489c58d6d0f91fec3e39/reading.png",
+      "generation": "1792768116283399",
+      "size": "2538838",
+      "metadata": {
+        "sha256": "ad04d532d487feef0728300f5481d0dc7de511c67ea3489c58d6d0f91fec3e39"
+      },
+      "deleted_at": "2026-10-24T12:21:08.572Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--royal-garden/cc0317cd941715794c17f2ecec4cd83b5330405ae6e20ceba302f1316c149147/reading.png",
+      "generation": "1792768117213566",
+      "size": "3287377",
+      "metadata": {
+        "sha256": "cc0317cd941715794c17f2ecec4cd83b5330405ae6e20ceba302f1316c149147"
+      },
+      "deleted_at": "2026-10-24T12:21:09.608Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--royal-palace/3e8803e8136232cd21caf25dfb711e741f5be48b1edc5a47df9dd479e69fd9d5/reading.png",
+      "generation": "1792768118226221",
+      "size": "2992181",
+      "metadata": {
+        "sha256": "3e8803e8136232cd21caf25dfb711e741f5be48b1edc5a47df9dd479e69fd9d5"
+      },
+      "deleted_at": "2026-10-24T12:21:10.716Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--royal-prison/1819fb8c41bbf5ccab2380f13b87f2667f055f2fae49788b65e92fe1c815c7bf/reading.png",
+      "generation": "1792768119130849",
+      "size": "2637021",
+      "metadata": {
+        "sha256": "1819fb8c41bbf5ccab2380f13b87f2667f055f2fae49788b65e92fe1c815c7bf"
+      },
+      "deleted_at": "2026-10-24T12:21:11.691Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--secondhand-bookstore-unnamed/da356ac0debdea4166ebbfe009d247648a1b1ef5fe6e937cd6620b9d6c77d9ad/reading.png",
+      "generation": "1792768120143707",
+      "size": "3114107",
+      "metadata": {
+        "sha256": "da356ac0debdea4166ebbfe009d247648a1b1ef5fe6e937cd6620b9d6c77d9ad"
+      },
+      "deleted_at": "2026-10-24T12:21:12.586Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--sunrise/18f1f8453635f9a94d40825ecea4947b7a587df83a5a1e083e359fc8fba8173b/reading.png",
+      "generation": "1792768121266930",
+      "size": "2737806",
+      "metadata": {
+        "sha256": "18f1f8453635f9a94d40825ecea4947b7a587df83a5a1e083e359fc8fba8173b"
+      },
+      "deleted_at": "2026-10-24T12:21:13.449Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--the-mothers-temple/0978a667087e2f5161dcd875a435cd932ad35d94972cae333cce601aaf7bc021/reading.png",
+      "generation": "1792768122314585",
+      "size": "3128753",
+      "metadata": {
+        "sha256": "0978a667087e2f5161dcd875a435cd932ad35d94972cae333cce601aaf7bc021"
+      },
+      "deleted_at": "2026-10-24T12:21:14.504Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--thieves-guild/cf884a0337ccf29b67190b52692e739abd854f8ce4a28cc99bf6f0583f6da464/reading.png",
+      "generation": "1792768123984206",
+      "size": "2809162",
+      "metadata": {
+        "sha256": "cf884a0337ccf29b67190b52692e739abd854f8ce4a28cc99bf6f0583f6da464"
+      },
+      "deleted_at": "2026-10-24T12:21:15.539Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--tournament-arena/a85f6ebc70f956fe4f33ac2166d67f8b50c8a7e688fb4a62fd11bae6bd2cb6fe/reading.png",
+      "generation": "1792768125025716",
+      "size": "2736588",
+      "metadata": {
+        "sha256": "a85f6ebc70f956fe4f33ac2166d67f8b50c8a7e688fb4a62fd11bae6bd2cb6fe"
+      },
+      "deleted_at": "2026-10-24T12:21:15.905Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--macksohn--white-brick/c01b1f3b38b181446367b59d426390803d56ecc6971a4d3caef7465de50be21a/reading.png",
+      "generation": "1792768128234781",
+      "size": "2980554",
+      "metadata": {
+        "sha256": "c01b1f3b38b181446367b59d426390803d56ecc6971a4d3caef7465de50be21a"
+      },
+      "deleted_at": "2026-10-24T12:21:17.016Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--al-lons-family-home/ba7a9a874226fee05f21ece4d8f070a583302988b2fc9c2f72b0db733111330a/reading.png",
+      "generation": "1792768131468747",
+      "size": "3069693",
+      "metadata": {
+        "sha256": "ba7a9a874226fee05f21ece4d8f070a583302988b2fc9c2f72b0db733111330a"
+      },
+      "deleted_at": "2026-10-24T12:21:17.888Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--apothecary-unnamed/80f2a460c0741cffdf548335d059525aa78f002858ada1106ebe96a6331ea2f4/reading.png",
+      "generation": "1792768132684748",
+      "size": "3195488",
+      "metadata": {
+        "sha256": "80f2a460c0741cffdf548335d059525aa78f002858ada1106ebe96a6331ea2f4"
+      },
+      "deleted_at": "2026-10-24T12:21:18.994Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--council-of-sols/5e96f63e995672eb253656d3389add4e3b5248c15c9038485848822b28435d85/reading.png",
+      "generation": "1792768136083603",
+      "size": "3116995",
+      "metadata": {
+        "sha256": "5e96f63e995672eb253656d3389add4e3b5248c15c9038485848822b28435d85"
+      },
+      "deleted_at": "2026-10-24T12:21:20.147Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--general-store-unnamed/c08d0ceb8bf2114841999468195e90c800cbbf21d42b41e316a7d8ec56fa25cd/reading.png",
+      "generation": "1792768137498303",
+      "size": "3206445",
+      "metadata": {
+        "sha256": "c08d0ceb8bf2114841999468195e90c800cbbf21d42b41e316a7d8ec56fa25cd"
+      },
+      "deleted_at": "2026-10-24T12:21:21.170Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--heloden-falls/067d482162a283cccae29bfcb059c59680e1c457b672a9aca162f4ebbb548fd2/reading.png",
+      "generation": "1792768138294083",
+      "size": "2916648",
+      "metadata": {
+        "sha256": "067d482162a283cccae29bfcb059c59680e1c457b672a9aca162f4ebbb548fd2"
+      },
+      "deleted_at": "2026-10-24T12:21:22.292Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--maribels-home/d7ef9111d73bace48d11be3cd793528b04714e13cbf88e31b2cb692a2313400a/reading.png",
+      "generation": "1792768139095921",
+      "size": "3272956",
+      "metadata": {
+        "sha256": "d7ef9111d73bace48d11be3cd793528b04714e13cbf88e31b2cb692a2313400a"
+      },
+      "deleted_at": "2026-10-24T12:21:23.472Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--mount-hyatt/5604c5d5115a54669fd8bc82e01d31647e3e2af193b0b54077898b05a957cf3f/reading.png",
+      "generation": "1792768140621460",
+      "size": "3026193",
+      "metadata": {
+        "sha256": "5604c5d5115a54669fd8bc82e01d31647e3e2af193b0b54077898b05a957cf3f"
+      },
+      "deleted_at": "2026-10-24T12:21:24.607Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--raven-nexus/1358f5b0282c27418bafee68226bad8f3d7f0fb7bde005ad6e76807ad16e7877/reading.png",
+      "generation": "1792768142674947",
+      "size": "3009995",
+      "metadata": {
+        "sha256": "1358f5b0282c27418bafee68226bad8f3d7f0fb7bde005ad6e76807ad16e7877"
+      },
+      "deleted_at": "2026-10-24T12:21:25.773Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--vay-el-river/167b094e243d018129d28f2bffcb50a4038c326fcf9c0c99d810a9ac60c30c77/reading.png",
+      "generation": "1792768144775309",
+      "size": "3132944",
+      "metadata": {
+        "sha256": "167b094e243d018129d28f2bffcb50a4038c326fcf9c0c99d810a9ac60c30c77"
+      },
+      "deleted_at": "2026-10-24T12:21:26.189Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--weapons-shop-unnamed/e23b393780e1a04a31477267ad68215efe96f7ae3f9dbffee4d4e9f85392d01d/reading.png",
+      "generation": "1792768145878315",
+      "size": "3026725",
+      "metadata": {
+        "sha256": "e23b393780e1a04a31477267ad68215efe96f7ae3f9dbffee4d4e9f85392d01d"
+      },
+      "deleted_at": "2026-10-24T12:21:27.352Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown--zoan-plaza/8025773b50381ec6aff0b50a58069ac7d0703dfee4c15deab2780a35d4d94d41/reading.png",
+      "generation": "1792768146999246",
+      "size": "2992091",
+      "metadata": {
+        "sha256": "8025773b50381ec6aff0b50a58069ac7d0703dfee4c15deab2780a35d4d94d41"
+      },
+      "deleted_at": "2026-10-24T12:21:28.337Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--mudtown/1de721249cf6a1f8190ddbe5e03f4364c11599c84b4fb842839f37fe0f3faada/reading.png",
+      "generation": "1792768130431266",
+      "size": "3391531",
+      "metadata": {
+        "sha256": "1de721249cf6a1f8190ddbe5e03f4364c11599c84b4fb842839f37fe0f3faada"
+      },
+      "deleted_at": "2026-10-24T12:21:29.460Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--natasha-harbor--new-keinra-church/c983a2c766f40a58393ac3c55ef2b074659a22feae248c56ebe65b4e0bcac348/reading.png",
+      "generation": "1792768148999660",
+      "size": "2759786",
+      "metadata": {
+        "sha256": "c983a2c766f40a58393ac3c55ef2b074659a22feae248c56ebe65b4e0bcac348"
+      },
+      "deleted_at": "2026-10-24T12:21:30.580Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--natasha-harbor--old-keinra-church/163b94edd36f9dd5a3253938679a2be59e06583028803a42bb3fabc590d7ad17/reading.png",
+      "generation": "1792768150035715",
+      "size": "2917692",
+      "metadata": {
+        "sha256": "163b94edd36f9dd5a3253938679a2be59e06583028803a42bb3fabc590d7ad17"
+      },
+      "deleted_at": "2026-10-24T12:21:31.509Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--new-morris/54ca94c7c6304443a11dd1f839288a1481923d0e1bcc32e3b3fffd620e8f7aad/reading.png",
+      "generation": "1792768152429866",
+      "size": "2905153",
+      "metadata": {
+        "sha256": "54ca94c7c6304443a11dd1f839288a1481923d0e1bcc32e3b3fffd620e8f7aad"
+      },
+      "deleted_at": "2026-10-24T12:21:32.715Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--rathanad--arylith-estate/5c645a62cab944971f3d19f5962ca3268afcbaa1a6d2e7bdc4180d05ea8c41c7/reading.png",
+      "generation": "1792768155200027",
+      "size": "2917451",
+      "metadata": {
+        "sha256": "5c645a62cab944971f3d19f5962ca3268afcbaa1a6d2e7bdc4180d05ea8c41c7"
+      },
+      "deleted_at": "2026-10-24T12:21:33.116Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--rathanad--crowns-council-hall/092036c5e6b9cf69d6e458ac2ac8118efa29b9e8e7b50609c8b7ade436806ce8/reading.png",
+      "generation": "1792768155853063",
+      "size": "2894461",
+      "metadata": {
+        "sha256": "092036c5e6b9cf69d6e458ac2ac8118efa29b9e8e7b50609c8b7ade436806ce8"
+      },
+      "deleted_at": "2026-10-24T12:21:34.275Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--rathanad--middle-district-market/05cdbbac1cbc336de6e977f1a7a0e8ec416fff8752e8196b7115aa12dba24247/reading.png",
+      "generation": "1792768158300041",
+      "size": "3164558",
+      "metadata": {
+        "sha256": "05cdbbac1cbc336de6e977f1a7a0e8ec416fff8752e8196b7115aa12dba24247"
+      },
+      "deleted_at": "2026-10-24T12:21:34.612Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--rathanad--middle-district/4c1f4836424e9bb831268062de619bc6512b45d0e486efe08c0c9d8de23b2dfc/reading.png",
+      "generation": "1792768159326577",
+      "size": "3143529",
+      "metadata": {
+        "sha256": "4c1f4836424e9bb831268062de619bc6512b45d0e486efe08c0c9d8de23b2dfc"
+      },
+      "deleted_at": "2026-10-24T12:21:35.774Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--rathanad--myzharils-cave/ab179bfbee9f9698c58793e41c8c4c9df3dcc16d98df8ffb6b1b456df31ed62e/reading.png",
+      "generation": "1792768160371043",
+      "size": "3127072",
+      "metadata": {
+        "sha256": "ab179bfbee9f9698c58793e41c8c4c9df3dcc16d98df8ffb6b1b456df31ed62e"
+      },
+      "deleted_at": "2026-10-24T12:21:36.971Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--rathanad--tavern-and-lodgings-unnamed/17d2d14c78cc9f3e99aceb8bc6deeccb1b9606bc8eac49cdc429cb925831a5e0/reading.png",
+      "generation": "1792768161351229",
+      "size": "2840095",
+      "metadata": {
+        "sha256": "17d2d14c78cc9f3e99aceb8bc6deeccb1b9606bc8eac49cdc429cb925831a5e0"
+      },
+      "deleted_at": "2026-10-24T12:21:38.150Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--rathanad--upper-district/29ba81a0f565f341766a4d28e7e60cf49380ec5f71b0e3b9b878e9b7ab1da31e/reading.png",
+      "generation": "1792768162391127",
+      "size": "2929594",
+      "metadata": {
+        "sha256": "29ba81a0f565f341766a4d28e7e60cf49380ec5f71b0e3b9b878e9b7ab1da31e"
+      },
+      "deleted_at": "2026-10-24T12:21:39.215Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--rathanad/18c318a7cface58c98cc71b9d805aab4018d70a4d6b57b4ae181c6187a2b54f3/reading.png",
+      "generation": "1792768153948749",
+      "size": "3126593",
+      "metadata": {
+        "sha256": "18c318a7cface58c98cc71b9d805aab4018d70a4d6b57b4ae181c6187a2b54f3"
+      },
+      "deleted_at": "2026-10-24T12:21:40.333Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--rumphton--tavern-unnamed/d7280f2f6acd6af2f61ee81746657e316040253aa6e273f074d9a53d92b8c6fc/reading.png",
+      "generation": "1792768165368665",
+      "size": "2786799",
+      "metadata": {
+        "sha256": "d7280f2f6acd6af2f61ee81746657e316040253aa6e273f074d9a53d92b8c6fc"
+      },
+      "deleted_at": "2026-10-24T12:21:41.510Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--samptano--imperial-palace/6ac6dbf005ca701d2ca3bb7ca6b6ebabc537c3b7175358c376c8a595f4ae86ba/reading.png",
+      "generation": "1792768168529377",
+      "size": "2916326",
+      "metadata": {
+        "sha256": "6ac6dbf005ca701d2ca3bb7ca6b6ebabc537c3b7175358c376c8a595f4ae86ba"
+      },
+      "deleted_at": "2026-10-24T12:21:42.586Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--samptano/96b4bdb8e285227b0a9ed57a21760bd8a0af2e9d88ff3a95cedefc1de7438c80/reading.png",
+      "generation": "1792768167755023",
+      "size": "2815266",
+      "metadata": {
+        "sha256": "96b4bdb8e285227b0a9ed57a21760bd8a0af2e9d88ff3a95cedefc1de7438c80"
+      },
+      "deleted_at": "2026-10-24T12:21:43.701Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--sebano--hobbs-construction-site/51950dcfbdbf84b6025038639dc8640f0b01f3c94d1a3406b9e9693ed2e10e00/reading.png",
+      "generation": "1792768170743100",
+      "size": "2874711",
+      "metadata": {
+        "sha256": "51950dcfbdbf84b6025038639dc8640f0b01f3c94d1a3406b9e9693ed2e10e00"
+      },
+      "deleted_at": "2026-10-24T12:21:44.888Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--sebano--mayors-house/c0520fb632b01f04e0ecd238c9d0d01c3a8cf83debb47d2c0c2e6f5ce14b99e9/reading.png",
+      "generation": "1792768173067767",
+      "size": "3067395",
+      "metadata": {
+        "sha256": "c0520fb632b01f04e0ecd238c9d0d01c3a8cf83debb47d2c0c2e6f5ce14b99e9"
+      },
+      "deleted_at": "2026-10-24T12:21:45.946Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--shartingson--second-tavern-unnamed/31d73a0ede02e7ea2c0a1f0b7f78cceff910464a80d1590eee0c5e72e8de0e35/reading.png",
+      "generation": "1792768176156056",
+      "size": "2740526",
+      "metadata": {
+        "sha256": "31d73a0ede02e7ea2c0a1f0b7f78cceff910464a80d1590eee0c5e72e8de0e35"
+      },
+      "deleted_at": "2026-10-24T12:21:47.057Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--shartingson--tavern-and-lodgings-brown-and-ronalds-stay/6852a8737b201c85692e7ba9ff41f58802a0873ab47978129d6cbbc57f7a5a65/reading.png",
+      "generation": "1792768177130087",
+      "size": "2904889",
+      "metadata": {
+        "sha256": "6852a8737b201c85692e7ba9ff41f58802a0873ab47978129d6cbbc57f7a5a65"
+      },
+      "deleted_at": "2026-10-24T12:21:47.499Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--shartingson/111983feae017c5596fa40717d822db149f4c4f375c0aa9cababc686ab6b589a/reading.png",
+      "generation": "1792768174166317",
+      "size": "2886108",
+      "metadata": {
+        "sha256": "111983feae017c5596fa40717d822db149f4c4f375c0aa9cababc686ab6b589a"
+      },
+      "deleted_at": "2026-10-24T12:21:48.708Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--st-rayami-island--lighthouse/96e26f787b6d2533bd3cb14bdaac2cdf0caf77afbe4d35ea580eec36f17fa1f2/reading.png",
+      "generation": "1792768182223102",
+      "size": "3003103",
+      "metadata": {
+        "sha256": "96e26f787b6d2533bd3cb14bdaac2cdf0caf77afbe4d35ea580eec36f17fa1f2"
+      },
+      "deleted_at": "2026-10-24T12:21:49.833Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--st-rayami-island--park-near-gold-coast-mine/1a8f24abd3af0d3601dea12e4f949091cc5f495897cf63d59667c42844389aef/reading.png",
+      "generation": "1792768183219653",
+      "size": "3097856",
+      "metadata": {
+        "sha256": "1a8f24abd3af0d3601dea12e4f949091cc5f495897cf63d59667c42844389aef"
+      },
+      "deleted_at": "2026-10-24T12:21:50.459Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--st-rayami-island--souvenir-shop-unnamed/73d6c6e83a64232bd831de36bb62259bcf3df5eb5e17618352d250c505d93db5/reading.png",
+      "generation": "1792768186397550",
+      "size": "3044011",
+      "metadata": {
+        "sha256": "73d6c6e83a64232bd831de36bb62259bcf3df5eb5e17618352d250c505d93db5"
+      },
+      "deleted_at": "2026-10-24T12:21:51.502Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--st-rayami-island/766dcbb9cf2da530906c834966b4386a0af94ad7fc62cecefb029ec928b9355f/reading.png",
+      "generation": "1792768178095316",
+      "size": "2705671",
+      "metadata": {
+        "sha256": "766dcbb9cf2da530906c834966b4386a0af94ad7fc62cecefb029ec928b9355f"
+      },
+      "deleted_at": "2026-10-24T12:21:52.606Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--vowalon--bamus-groceries/90a076444bf6f3639a56fb34327d5e41c30f71a63737d2deff71a15207b3ab5d/reading.png",
+      "generation": "1792768189231402",
+      "size": "3159602",
+      "metadata": {
+        "sha256": "90a076444bf6f3639a56fb34327d5e41c30f71a63737d2deff71a15207b3ab5d"
+      },
+      "deleted_at": "2026-10-24T12:21:53.727Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--vowalon--dawkins-shop/5cad0e4f627c34930e7b2ce9c3272eb80b0f7ebe225c8b138a2f8bee575e4bff/reading.png",
+      "generation": "1792768190284065",
+      "size": "3152471",
+      "metadata": {
+        "sha256": "5cad0e4f627c34930e7b2ce9c3272eb80b0f7ebe225c8b138a2f8bee575e4bff"
+      },
+      "deleted_at": "2026-10-24T12:21:54.779Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--vowalon--howling-forest/5c3294c65e7bcfba914d95425eb1c4bb35b6a5aa2b7a9ea42f89aed73058a848/reading.png",
+      "generation": "1792768191330340",
+      "size": "3000189",
+      "metadata": {
+        "sha256": "5c3294c65e7bcfba914d95425eb1c4bb35b6a5aa2b7a9ea42f89aed73058a848"
+      },
+      "deleted_at": "2026-10-24T12:21:55.878Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--vowalon--sammick-warrens-grave/08d456be1ff3eedc1193a9c478c6d1e38c3624efd9a953c2f32fc17aaa2ce4b3/reading.png",
+      "generation": "1792768195927337",
+      "size": "2959788",
+      "metadata": {
+        "sha256": "08d456be1ff3eedc1193a9c478c6d1e38c3624efd9a953c2f32fc17aaa2ce4b3"
+      },
+      "deleted_at": "2026-10-24T12:21:56.939Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--vowalon--temple-of-silencio/284f370c822aeac30d8fe9ad50e296e1110474420010dd16d88e82e46718fefa/reading.png",
+      "generation": "1792768196918734",
+      "size": "3096548",
+      "metadata": {
+        "sha256": "284f370c822aeac30d8fe9ad50e296e1110474420010dd16d88e82e46718fefa"
+      },
+      "deleted_at": "2026-10-24T12:21:58.003Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--vowalon--temple-plaza/3f854d65c394b6f0c74f28ca45151d62b8bcb24a05ff362c7b68618e95e0ce8d/reading.png",
+      "generation": "1792768197964295",
+      "size": "3089661",
+      "metadata": {
+        "sha256": "3f854d65c394b6f0c74f28ca45151d62b8bcb24a05ff362c7b68618e95e0ce8d"
+      },
+      "deleted_at": "2026-10-24T12:21:59.024Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--vowalon/a0b258fbd9a2084da27790f031779990fe0c7cb7faa5a481ef3f34e4626c7229/reading.png",
+      "generation": "1792768188114336",
+      "size": "2985973",
+      "metadata": {
+        "sha256": "a0b258fbd9a2084da27790f031779990fe0c7cb7faa5a481ef3f34e4626c7229"
+      },
+      "deleted_at": "2026-10-24T12:22:00.041Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--wescoe--caleb-brothers-pawnshop/36d22b7f8715a72d0c396a48992842122596678fab927177819def40afa0314b/reading.png",
+      "generation": "1792768202214175",
+      "size": "3079476",
+      "metadata": {
+        "sha256": "36d22b7f8715a72d0c396a48992842122596678fab927177819def40afa0314b"
+      },
+      "deleted_at": "2026-10-24T12:22:01.116Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--wescoe--grenlands-residence/c1f1243b502f9bc4a1182662eb57a9c0a74428ac64e7b06574583747cfa27b84/reading.png",
+      "generation": "1792768204373529",
+      "size": "3277532",
+      "metadata": {
+        "sha256": "c1f1243b502f9bc4a1182662eb57a9c0a74428ac64e7b06574583747cfa27b84"
+      },
+      "deleted_at": "2026-10-24T12:22:02.226Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--wescoe--howling-forest/936d095e7439a6b59855783efc60e0038912f5ae6fa73e6119799d66305a0a06/reading.png",
+      "generation": "1792768205679029",
+      "size": "3206067",
+      "metadata": {
+        "sha256": "936d095e7439a6b59855783efc60e0038912f5ae6fa73e6119799d66305a0a06"
+      },
+      "deleted_at": "2026-10-24T12:22:03.349Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--wescoe--shrine-of-obedience/2f38837a3ba14daa082fe89a83d1b092d90d1723db72dbb10366c5794e61c562/reading.png",
+      "generation": "1792768208787897",
+      "size": "2898561",
+      "metadata": {
+        "sha256": "2f38837a3ba14daa082fe89a83d1b092d90d1723db72dbb10366c5794e61c562"
+      },
+      "deleted_at": "2026-10-24T12:22:04.478Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--wescoe--the-haven/2c45c95c1ae2d8316e39bb3fc368b22e787a90b38343f949dc213c78059e389a/reading.png",
+      "generation": "1792768209837957",
+      "size": "3113720",
+      "metadata": {
+        "sha256": "2c45c95c1ae2d8316e39bb3fc368b22e787a90b38343f949dc213c78059e389a"
+      },
+      "deleted_at": "2026-10-24T12:22:05.610Z"
+    },
+    {
+      "name": "public-images/locations/material-realm--mattington--wescoe/bcb04f07210a93f189ee841ce7a8292d0a44bdd6ad6eeecd77a8647fb0aa824c/reading.png",
+      "generation": "1792768199027054",
+      "size": "2798266",
+      "metadata": {
+        "sha256": "bcb04f07210a93f189ee841ce7a8292d0a44bdd6ad6eeecd77a8647fb0aa824c"
+      },
+      "deleted_at": "2026-10-24T12:22:06.632Z"
+    },
+    {
+      "name": "public-images/locations/the-deep--unaffiliated--klaucingtton/bc077a420abfaa79ca14accf6b29964f721f5bd213c2c9ea7add0bf6c61d2d68/reading.png",
+      "generation": "1792768215102235",
+      "size": "2740747",
+      "metadata": {
+        "sha256": "bc077a420abfaa79ca14accf6b29964f721f5bd213c2c9ea7add0bf6c61d2d68"
+      },
+      "deleted_at": "2026-10-24T12:22:07.756Z"
+    },
+    {
+      "name": "public-images/locations/the-deep--unaffiliated--umaniton--maester-nethers-lab/ee2239a1d4fc21e8ff52df47a87c56cf7ca0d0c8ee102e3e51f9b0828edb0386/reading.png",
+      "generation": "1792768217169322",
+      "size": "2605839",
+      "metadata": {
+        "sha256": "ee2239a1d4fc21e8ff52df47a87c56cf7ca0d0c8ee102e3e51f9b0828edb0386"
+      },
+      "deleted_at": "2026-10-24T12:22:08.847Z"
+    },
+    {
+      "name": "public-images/locations/the-deep--unaffiliated--umaniton/90b6df3648f0bdf608a0312c6bde68d396178b368222b94e2b02ada4f901f67d/reading.png",
+      "generation": "1792768216534017",
+      "size": "2859787",
+      "metadata": {
+        "sha256": "90b6df3648f0bdf608a0312c6bde68d396178b368222b94e2b02ada4f901f67d"
+      },
+      "deleted_at": "2026-10-24T12:22:10.493Z"
+    },
+    {
+      "name": "public-images/locations/the-deep--unaffiliated/70acf1dcee3a473277e93d0ac51ca04fb656041ee9ff1a2083febce1c4acc6f0/reading.png",
+      "generation": "1792768213995840",
+      "size": "2945756",
+      "metadata": {
+        "sha256": "70acf1dcee3a473277e93d0ac51ca04fb656041ee9ff1a2083febce1c4acc6f0"
+      },
+      "deleted_at": "2026-10-24T12:22:11.747Z"
+    }
+  ],
+  "mode": "completed",
+  "completed_at": "2026-10-24T12:22:13.099Z",
+  "remaining_live_objects": 186,
+  "deleted_bytes": 396327674
+}

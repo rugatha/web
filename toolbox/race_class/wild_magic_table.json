@@ -20,7 +20,7 @@
     { "roll": "25–26", "effect": { "zh": "你的額頭長出第三隻眼；接下來 1 分鐘，所有依賴視覺的感知（觀察）檢定具有優勢。", "en": "A third eye appears on your forehead. For the next minute, you have advantage on Wisdom (Perception) checks that rely on sight." } },
     { "roll": "27–28", "effect": { "zh": "接下來 1 分鐘，你施放時間為 1 動作的法術可改為附贈動作施放。", "en": "For the next minute, spells with a casting time of 1 action can be cast as a bonus action." } },
     { "roll": "29–30", "effect": { "zh": "你傳送至 60 呎內可見的未佔據空間。", "en": "Teleport up to 60 feet to an unoccupied space you can see." } },
-    { "roll": "31–32", "effect": { "zh": "直到你下個回合結束前，你被傳送至星界位面；之後回到原本空間，或最近的未佔據空間。", "en": "You are transported to the Astral Plane until the end of your next turn, then return to your former space or the nearest unoccupied space." } },
+    { "roll": "31–32", "effect": { "zh": "直到你下個回合結束前，你被傳送至星界時空；之後回到原本空間，或最近的未佔據空間。", "en": "You are transported to the Astral Plane until the end of your next turn, then return to your former space or the nearest unoccupied space." } },
     { "roll": "33–34", "effect": { "zh": "使一個隨機生物在接下來 1 小時內陷入恐慌。", "en": "A random creature is frightened for the next hour." } },
     { "roll": "35–36", "effect": { "zh": "你的年齡增加或減少 1d10 年（由 DM 決定）。", "en": "Your age changes by 1d10 years, as determined by the DM." } },
     { "roll": "37–38", "effect": { "zh": "你附近 60 呎內出現 1d6 隻由 DM 控制的飄浮水母；牠們受驚並盡快逃離。", "en": "1d6 DM-controlled flumphs appear within 60 feet of you, frightened and fleeing as quickly as possible." } },

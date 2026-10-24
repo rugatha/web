@@ -9,13 +9,15 @@ const isBookmarkablePage = () => {
     /\/campaigns\/pages\/.+\/chpt\d+\.html$/i.test(path) ||
     /\/deities\/pages\/[^/]+\.html$/i.test(path) ||
     /\/npc\/npc_page\/pages\/[^/]+\.html$/i.test(path) ||
-    /\/pc\/articles\/[^/]+\.html$/i.test(path)
+    /\/pc\/articles\/[^/]+\.html$/i.test(path) ||
+    /\/map\/(?:index\.html|location\/(?:[a-z0-9]+(?:-[a-z0-9]+)*\/){1,4}(?:index\.html)?)?$/i.test(path)
   );
 };
 
 const getPagePath = () => {
   const path = (window.location.pathname || "/").replace(/^\/web(?=\/)/, "");
-  return path.startsWith("/") ? path.slice(1) : path;
+  const canonicalPath = path.replace(/^(\/map\/(?:location\/(?:[a-z0-9-]+\/){0,4})?)index\.html$/i, "$1");
+  return canonicalPath.startsWith("/") ? canonicalPath.slice(1) : canonicalPath;
 };
 
 const encodeKey = (value) => {

@@ -304,6 +304,8 @@ def infer_description(relative_path: str, content: str, title: str) -> str:
     if relative_path == "experience/index.html":
         return "Explore Rugatha Experience beginner-friendly D&D adventures, current scenarios, and public player feedback."
     if relative_path == "map/index.html":
+        return "Explore Rugatha through the interactive Dranison map or browse the Location Atlas."
+    if relative_path == "map/map/index.html":
         return "Explore the map of Dranison and its notable locations in the world of Rugatha."
     if relative_path == "member/index.html":
         return "Access the Adventurer's Journal for member records, character references, and account-related tools."

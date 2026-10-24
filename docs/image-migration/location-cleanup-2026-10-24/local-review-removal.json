@@ -1,0 +1,18 @@
+{
+  "removed_directories": [
+    "docs/location-art-fix-review-2026-10-24",
+    "docs/location-image-history",
+    "docs/location-review-2026-10-23"
+  ],
+  "removed_files": 253,
+  "removed_pngs": 157,
+  "removed_bytes": 469674432,
+  "current_location_json_sha256": "8b06196da2ea7484cdb7f167b1d03cdb5ff42c4ed2f06b7dd9d420db287613c2",
+  "firebase_backed_nodes": 188,
+  "preserved_records": [
+    "firebase-cleanup-plan.json",
+    "firebase-deletions.json",
+    "retired-route-aliases.json"
+  ],
+  "firebase_objects_modified": 0
+}

@@ -47,6 +47,13 @@ service firebase.storage {
       allow list, write: if false;
     }
 
+    // Generated location artwork, preserved at its original PNG resolution.
+    match /public-images/locations/{assetId}/{hash}/reading.png {
+      allow get: if assetId.matches('[a-z0-9_-]+')
+        && hash.matches('[a-f0-9]{64}');
+      allow list, write: if false;
+    }
+
     match /profile-photos/{uid}/{fileName} {
       allow get: if isOwner(uid) || isAdmin();
       allow list: if false;

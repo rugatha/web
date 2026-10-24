@@ -1835,7 +1835,7 @@
     };
 
     const isBookmarkPath = (path) =>
-      /^(campaigns\/pages\/.+\/chpt\d+\.html|deities\/pages\/[^/]+\.html|npc\/npc_page\/pages\/[^/]+\.html|pc\/articles\/[^/]+\.html)$/i.test(
+      /^(campaigns\/pages\/.+\/chpt\d+\.html|deities\/pages\/[^/]+\.html|npc\/npc_page\/pages\/[^/]+\.html|pc\/articles\/[^/]+\.html|map\/(?:index\.html|location\/(?:[a-z0-9]+(?:-[a-z0-9]+)*\/){1,4}(?:index\.html)?)?)$/i.test(
         String(path || "").replace(/^\/+/, "")
       );
 
