@@ -20,7 +20,7 @@ const handler = async (request, response) => {
     let file = resolve(root, '.' + path);
     if (!file.startsWith(base + sep) && file !== base) throw new Error('Invalid path');
     if ((await stat(file)).isDirectory()) file = resolve(file, 'index.html');
-    const type = types[extname(file).toLowerCase()]; if (!type) throw new Error('Unsupported file');
+    const type = extname(file).toLowerCase() === '.csv' ? 'text/csv' : types[extname(file).toLowerCase()]; if (!type) throw new Error('Unsupported file');
     response.writeHead(200, { 'Content-Type': type, 'Cache-Control': 'no-store' });
     response.end(await readFile(file));
   } catch (_) { response.writeHead(404); response.end('Not found'); }

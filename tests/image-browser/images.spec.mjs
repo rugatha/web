@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
+import { signatureFiles } from '../../npc/npc_page/assets/signature-files.js';
 
 const characters = JSON.parse(readFileSync('npc/data/characters.json', 'utf8'));
 const alfie = characters.find(npc => npc.id === 'Alfie_Fuller');
@@ -32,6 +33,58 @@ test.beforeEach(async ({ context }) => {
     if (url.origin === 'https://firebasestorage.googleapis.com' && decodeURIComponent(url.pathname).includes('/o/public-images/') && url.search === '?alt=media') return route.continue();
     return route.abort();
   });
+});
+
+test('all published signatures decode and NPC profiles use their cloud URLs', async ({ page }) => {
+  test.setTimeout(120000);
+  await page.goto('/__image-test__/');
+  const urls = Object.values(signatureFiles);
+  expect(urls).toHaveLength(140);
+  expect(urls.every(url => url.startsWith('https://firebasestorage.googleapis.com/') && decodeURIComponent(url).includes('/public-images/signatures/'))).toBe(true);
+  const failed = await page.evaluate(async urls => {
+    const failed = [];
+    let next = 0;
+    await Promise.all(Array.from({ length: 4 }, async () => {
+      while (next < urls.length) {
+        const url = urls[next++];
+        const image = new Image();
+        image.src = url;
+        try { await image.decode(); if (!image.naturalWidth) failed.push(url); }
+        catch { failed.push(url); }
+      }
+    }));
+    return failed;
+  }, urls);
+  expect(failed).toEqual([]);
+  for (const id of ['Sora', "Fre'Do"]) {
+    const npc = characters.find(npc => npc.id === id);
+    await page.goto('/' + npc.url);
+    const signature = page.locator('.npc-signature');
+    await expect(signature).toBeVisible();
+    await expect(signature).toHaveAttribute('src', signatureFiles[id]);
+    await expect.poll(() => signature.evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+    await page.screenshot({ path: `test-results/image-browser/signature-${id.replace(/[^a-z0-9]/gi, '-')}.png` });
+  }
+});
+
+test('appearance timeline loads every portrait from cloud thumbnails', async ({ page }) => {
+  await page.goto('/npc/appearance-timeline/index.html');
+  await expect(page.locator('.gantt-label img').first()).toBeVisible();
+  const portraits = await page.locator('.gantt-label a:has(img)').evaluateAll(links => links.map(link => ({
+    path: decodeURIComponent(new URL(link.href).pathname),
+    src: link.querySelector('img').getAttribute('src')
+  })));
+  expect(portraits.length).toBeGreaterThan(0);
+  for (const { path, src } of portraits) {
+    const character = characters.find(npc => decodeURIComponent(new URL(npc.url, 'http://localhost/').pathname) === path);
+    const image = character.imageThumb || character.image;
+    expect(image).toMatch(/^https:\/\/firebasestorage\.googleapis\.com\//);
+    expect(src).toBe(image);
+  }
+  await page.locator('.gantt-label img').evaluateAll(images => images.forEach(img => { img.loading = 'eager'; }));
+  await expect.poll(() => page.locator('.gantt-label img').evaluateAll(images =>
+    images.filter(img => !img.complete || img.naturalWidth === 0).map(img => img.src)
+  ), { timeout: 30000 }).toEqual([]);
 });
 
 for (const mobile of [false, true]) {

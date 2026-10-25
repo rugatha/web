@@ -654,13 +654,14 @@
       const { term, filtered } = getFilteredCharacters();
       const sorted = sortCharacters(filtered);
       renderCharacters(sorted, { showGroupLabels: term === '' });
-      const statusText = term
-        ? `顯示 ${filtered.length} 名角色\nShowing ${filtered.length} characters`
-        : '角色列表載入完成\nCharacter list loaded';
-      setLines(statusEl, statusText);
+      const countText = languageState.value === 'en'
+        ? `${filtered.length} ${filtered.length <= 1 ? 'character' : 'characters'}`
+        : `${filtered.length} 名角色`;
+      statusEl.textContent = term
+        ? (languageState.value === 'en' ? `Showing ${countText}` : `顯示 ${countText}`)
+        : (languageState.value === 'en' ? 'Character list loaded' : '角色列表載入完成');
       if (searchCount) {
-        const countText = term ? `${filtered.length} 名角色\n${filtered.length} characters` : '';
-        setLines(searchCount, countText);
+        searchCount.textContent = term ? countText : '';
       }
       grid.classList.remove('single-random');
     }

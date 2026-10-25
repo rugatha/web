@@ -54,6 +54,13 @@ service firebase.storage {
       allow list, write: if false;
     }
 
+    // NPC autographs retain transparent PNGs, published immutably through IAM.
+    match /public-images/signatures/{assetId}/{hash}/signature.png {
+      allow get: if assetId.matches('[a-z0-9_-]+')
+        && hash.matches('[a-f0-9]{64}');
+      allow list, write: if false;
+    }
+
     match /profile-photos/{uid}/{fileName} {
       allow get: if isOwner(uid) || isAdmin();
       allow list: if false;

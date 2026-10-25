@@ -1,0 +1,1122 @@
+[
+  {
+    "id": "Addie_Applewood",
+    "file": "Addie_Applewood.png",
+    "sha256": "b0df576052348d194529b7e729eec5d16e37efccbae7b055d88c339b3c74bb1a",
+    "object": "public-images/signatures/addie_applewood/b0df576052348d194529b7e729eec5d16e37efccbae7b055d88c339b3c74bb1a/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Faddie_applewood%2Fb0df576052348d194529b7e729eec5d16e37efccbae7b055d88c339b3c74bb1a%2Fsignature.png?alt=media",
+    "bytes": 384613
+  },
+  {
+    "id": "Alex",
+    "file": "Alex.png",
+    "sha256": "870250b1bec020cbe953407ee65273f11996264332dc75e9bb9cef0600a8f84c",
+    "object": "public-images/signatures/alex/870250b1bec020cbe953407ee65273f11996264332dc75e9bb9cef0600a8f84c/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Falex%2F870250b1bec020cbe953407ee65273f11996264332dc75e9bb9cef0600a8f84c%2Fsignature.png?alt=media",
+    "bytes": 215509
+  },
+  {
+    "id": "Alfenor",
+    "file": "Alfenor.png",
+    "sha256": "fa694c6a2e1cb013ab2a7a2a9f549851d5f2bf71e20c88b6ddaa3365f8edbb19",
+    "object": "public-images/signatures/alfenor/fa694c6a2e1cb013ab2a7a2a9f549851d5f2bf71e20c88b6ddaa3365f8edbb19/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Falfenor%2Ffa694c6a2e1cb013ab2a7a2a9f549851d5f2bf71e20c88b6ddaa3365f8edbb19%2Fsignature.png?alt=media",
+    "bytes": 336701
+  },
+  {
+    "id": "Alfie_Fuller",
+    "file": "Alfie_Fuller.png",
+    "sha256": "f650fde6f6890812b86fce54ac33e7dfee104fb545608e8227a71aec35e9e3c3",
+    "object": "public-images/signatures/alfie_fuller/f650fde6f6890812b86fce54ac33e7dfee104fb545608e8227a71aec35e9e3c3/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Falfie_fuller%2Ff650fde6f6890812b86fce54ac33e7dfee104fb545608e8227a71aec35e9e3c3%2Fsignature.png?alt=media",
+    "bytes": 360078
+  },
+  {
+    "id": "Andrea_Day",
+    "file": "Andrea_Day.png",
+    "sha256": "5b70759897753bfedde7d5c790ec1c4a40300b60666f68f6906b6dcfa136ffbe",
+    "object": "public-images/signatures/andrea_day/5b70759897753bfedde7d5c790ec1c4a40300b60666f68f6906b6dcfa136ffbe/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fandrea_day%2F5b70759897753bfedde7d5c790ec1c4a40300b60666f68f6906b6dcfa136ffbe%2Fsignature.png?alt=media",
+    "bytes": 449310
+  },
+  {
+    "id": "Anna",
+    "file": "Anna.png",
+    "sha256": "96111c5df00a30c38c314972e7d5611a633c8a3d46340e9e47e85034a97082b0",
+    "object": "public-images/signatures/anna/96111c5df00a30c38c314972e7d5611a633c8a3d46340e9e47e85034a97082b0/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fanna%2F96111c5df00a30c38c314972e7d5611a633c8a3d46340e9e47e85034a97082b0%2Fsignature.png?alt=media",
+    "bytes": 295961
+  },
+  {
+    "id": "Bartosz_Richmond",
+    "file": "Bartosz_Richmond.png",
+    "sha256": "cf3bf67226fda34b737f8328af8cc45dcb188c46b25ad192220d0fb181e62db8",
+    "object": "public-images/signatures/bartosz_richmond/cf3bf67226fda34b737f8328af8cc45dcb188c46b25ad192220d0fb181e62db8/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fbartosz_richmond%2Fcf3bf67226fda34b737f8328af8cc45dcb188c46b25ad192220d0fb181e62db8%2Fsignature.png?alt=media",
+    "bytes": 292605
+  },
+  {
+    "id": "Basuu",
+    "file": "Basuu.png",
+    "sha256": "9ab0a2eb942fe0aab77fd524c62f86608573d7f6d4babe74fcdbec86122e15e4",
+    "object": "public-images/signatures/basuu/9ab0a2eb942fe0aab77fd524c62f86608573d7f6d4babe74fcdbec86122e15e4/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fbasuu%2F9ab0a2eb942fe0aab77fd524c62f86608573d7f6d4babe74fcdbec86122e15e4%2Fsignature.png?alt=media",
+    "bytes": 150948
+  },
+  {
+    "id": "Beau",
+    "file": "Beau.png",
+    "sha256": "9f8cce807499ab5ed0fc83e6ae337cd729ca1faf4afaff3af8e2f004f9286531",
+    "object": "public-images/signatures/beau/9f8cce807499ab5ed0fc83e6ae337cd729ca1faf4afaff3af8e2f004f9286531/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fbeau%2F9f8cce807499ab5ed0fc83e6ae337cd729ca1faf4afaff3af8e2f004f9286531%2Fsignature.png?alt=media",
+    "bytes": 359898
+  },
+  {
+    "id": "King_Benevol_II",
+    "file": "King_Benevol_II.png",
+    "sha256": "cb6bfe379f488fefbcf16faecd1a6110ea44bc48c60b702a28459ba0b562f988",
+    "object": "public-images/signatures/king_benevol_ii/cb6bfe379f488fefbcf16faecd1a6110ea44bc48c60b702a28459ba0b562f988/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fking_benevol_ii%2Fcb6bfe379f488fefbcf16faecd1a6110ea44bc48c60b702a28459ba0b562f988%2Fsignature.png?alt=media",
+    "bytes": 424783
+  },
+  {
+    "id": "Benny_Cozlothramuda",
+    "file": "Benny_Cozlothramuda.png",
+    "sha256": "f7ece1590fbdff0fd2161be4e0960dd7977cdb93d42a947b732d414862dd05e7",
+    "object": "public-images/signatures/benny_cozlothramuda/f7ece1590fbdff0fd2161be4e0960dd7977cdb93d42a947b732d414862dd05e7/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fbenny_cozlothramuda%2Ff7ece1590fbdff0fd2161be4e0960dd7977cdb93d42a947b732d414862dd05e7%2Fsignature.png?alt=media",
+    "bytes": 488593
+  },
+  {
+    "id": "Bernard_Norm",
+    "file": "Bernard_Norm.png",
+    "sha256": "58b71dcb813d83c27d6672899687e2974077d3ab1c3642b973b2f81c8162acfa",
+    "object": "public-images/signatures/bernard_norm/58b71dcb813d83c27d6672899687e2974077d3ab1c3642b973b2f81c8162acfa/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fbernard_norm%2F58b71dcb813d83c27d6672899687e2974077d3ab1c3642b973b2f81c8162acfa%2Fsignature.png?alt=media",
+    "bytes": 309735
+  },
+  {
+    "id": "BolBolBoBoOMEGA",
+    "file": "BolBolBoBoOMEGA.png",
+    "sha256": "e9eddd7e9f7b188f5793120f81ff62baba4bbb05664d83bb2f736777f3013223",
+    "object": "public-images/signatures/bolbolboboomega/e9eddd7e9f7b188f5793120f81ff62baba4bbb05664d83bb2f736777f3013223/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fbolbolboboomega%2Fe9eddd7e9f7b188f5793120f81ff62baba4bbb05664d83bb2f736777f3013223%2Fsignature.png?alt=media",
+    "bytes": 289573
+  },
+  {
+    "id": "Brock",
+    "file": "Brock.png",
+    "sha256": "2cc95aba22a57d51deabbfbe594e6415438d054159ae9f308fbb2d0cab2b5eff",
+    "object": "public-images/signatures/brock/2cc95aba22a57d51deabbfbe594e6415438d054159ae9f308fbb2d0cab2b5eff/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fbrock%2F2cc95aba22a57d51deabbfbe594e6415438d054159ae9f308fbb2d0cab2b5eff%2Fsignature.png?alt=media",
+    "bytes": 405747
+  },
+  {
+    "id": "Bruce_Dunham",
+    "file": "Bruce_Dunham.png",
+    "sha256": "c7af8c63a08958c7dcb9f4b3b8c8975c18e03636f831702eceb157108581e5a6",
+    "object": "public-images/signatures/bruce_dunham/c7af8c63a08958c7dcb9f4b3b8c8975c18e03636f831702eceb157108581e5a6/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fbruce_dunham%2Fc7af8c63a08958c7dcb9f4b3b8c8975c18e03636f831702eceb157108581e5a6%2Fsignature.png?alt=media",
+    "bytes": 335978
+  },
+  {
+    "id": "Bruce_Tallis",
+    "file": "Bruce_Tallis.png",
+    "sha256": "4dceccec24841aa1e15824133eccb0125be2d6fda70e52144304c8a6fdc70fd1",
+    "object": "public-images/signatures/bruce_tallis/4dceccec24841aa1e15824133eccb0125be2d6fda70e52144304c8a6fdc70fd1/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fbruce_tallis%2F4dceccec24841aa1e15824133eccb0125be2d6fda70e52144304c8a6fdc70fd1%2Fsignature.png?alt=media",
+    "bytes": 636673
+  },
+  {
+    "id": "Cash_Applewood",
+    "file": "Cash_Applewood.png",
+    "sha256": "9d5ef4080cd3f0f3a6a1ee67bdfc940ac17b82a1de0e68451f189441ee63d3dc",
+    "object": "public-images/signatures/cash_applewood/9d5ef4080cd3f0f3a6a1ee67bdfc940ac17b82a1de0e68451f189441ee63d3dc/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fcash_applewood%2F9d5ef4080cd3f0f3a6a1ee67bdfc940ac17b82a1de0e68451f189441ee63d3dc%2Fsignature.png?alt=media",
+    "bytes": 330549
+  },
+  {
+    "id": "Cena",
+    "file": "Cena.png",
+    "sha256": "f2379ac51d6a0badb2ad50a6ba80df21ed11f8d3dfaf0faa011fd0fe71e47e1b",
+    "object": "public-images/signatures/cena/f2379ac51d6a0badb2ad50a6ba80df21ed11f8d3dfaf0faa011fd0fe71e47e1b/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fcena%2Ff2379ac51d6a0badb2ad50a6ba80df21ed11f8d3dfaf0faa011fd0fe71e47e1b%2Fsignature.png?alt=media",
+    "bytes": 286996
+  },
+  {
+    "id": "Dr_Chandra_Pyresong",
+    "file": "Dr_Chandra_Pyresong.png",
+    "sha256": "0c3e0de951aa0e496d1fc40af6e3cc6152f02f4ae6ca26268e087d06ff92ac5c",
+    "object": "public-images/signatures/dr_chandra_pyresong/0c3e0de951aa0e496d1fc40af6e3cc6152f02f4ae6ca26268e087d06ff92ac5c/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fdr_chandra_pyresong%2F0c3e0de951aa0e496d1fc40af6e3cc6152f02f4ae6ca26268e087d06ff92ac5c%2Fsignature.png?alt=media",
+    "bytes": 497398
+  },
+  {
+    "id": "ChiChi",
+    "file": "ChiChi.png",
+    "sha256": "ddecc6ba84a9c6bff3bcfdc2baba891107f7a04ee0ab6d45c5e9bb122bba2bd0",
+    "object": "public-images/signatures/chichi/ddecc6ba84a9c6bff3bcfdc2baba891107f7a04ee0ab6d45c5e9bb122bba2bd0/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fchichi%2Fddecc6ba84a9c6bff3bcfdc2baba891107f7a04ee0ab6d45c5e9bb122bba2bd0%2Fsignature.png?alt=media",
+    "bytes": 283969
+  },
+  {
+    "id": "Connie_Cornell",
+    "file": "Connie_Cornell.png",
+    "sha256": "5d95999decb90924f8d8b15f1030beffda5b30a84e2ec63e34288ca410c6ac97",
+    "object": "public-images/signatures/connie_cornell/5d95999decb90924f8d8b15f1030beffda5b30a84e2ec63e34288ca410c6ac97/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fconnie_cornell%2F5d95999decb90924f8d8b15f1030beffda5b30a84e2ec63e34288ca410c6ac97%2Fsignature.png?alt=media",
+    "bytes": 401806
+  },
+  {
+    "id": "Dr_Crow",
+    "file": "Dr_Crow.png",
+    "sha256": "1bccbc3ba5ea6c0d26eef4a4bcaf2835bd81899bcd7b8416cfa42093df1893e4",
+    "object": "public-images/signatures/dr_crow/1bccbc3ba5ea6c0d26eef4a4bcaf2835bd81899bcd7b8416cfa42093df1893e4/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fdr_crow%2F1bccbc3ba5ea6c0d26eef4a4bcaf2835bd81899bcd7b8416cfa42093df1893e4%2Fsignature.png?alt=media",
+    "bytes": 254110
+  },
+  {
+    "id": "Daryl_Warren",
+    "file": "Daryl_Warren.png",
+    "sha256": "92ec54b1aec1a381d00b686068480141b46f29101358736f1cd9d156ba823676",
+    "object": "public-images/signatures/daryl_warren/92ec54b1aec1a381d00b686068480141b46f29101358736f1cd9d156ba823676/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fdaryl_warren%2F92ec54b1aec1a381d00b686068480141b46f29101358736f1cd9d156ba823676%2Fsignature.png?alt=media",
+    "bytes": 284791
+  },
+  {
+    "id": "Dr_David",
+    "file": "Dr_David.png",
+    "sha256": "c10e7d34c7871b31542226001195c6247a6deb271f8363cf80ea2ddcbdff8a93",
+    "object": "public-images/signatures/dr_david/c10e7d34c7871b31542226001195c6247a6deb271f8363cf80ea2ddcbdff8a93/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fdr_david%2Fc10e7d34c7871b31542226001195c6247a6deb271f8363cf80ea2ddcbdff8a93%2Fsignature.png?alt=media",
+    "bytes": 218034
+  },
+  {
+    "id": "Dennis",
+    "file": "Dennis.png",
+    "sha256": "543d9544faa855842f9ff51113319c39380e67151d9033deb87eb0f62d7cb34d",
+    "object": "public-images/signatures/dennis/543d9544faa855842f9ff51113319c39380e67151d9033deb87eb0f62d7cb34d/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fdennis%2F543d9544faa855842f9ff51113319c39380e67151d9033deb87eb0f62d7cb34d%2Fsignature.png?alt=media",
+    "bytes": 336279
+  },
+  {
+    "id": "Domneil",
+    "file": "Domneil.png",
+    "sha256": "90bd32a2be9844d902d5c26829f6a1ea606fd9e26c1a45db981edb2c44f9eba0",
+    "object": "public-images/signatures/domneil/90bd32a2be9844d902d5c26829f6a1ea606fd9e26c1a45db981edb2c44f9eba0/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fdomneil%2F90bd32a2be9844d902d5c26829f6a1ea606fd9e26c1a45db981edb2c44f9eba0%2Fsignature.png?alt=media",
+    "bytes": 354199
+  },
+  {
+    "id": "Dosuu",
+    "file": "Dosuu.png",
+    "sha256": "5a049001bfe06f0a94ee247f61bcdba42446a4305649df6e80bedef8c696a9ad",
+    "object": "public-images/signatures/dosuu/5a049001bfe06f0a94ee247f61bcdba42446a4305649df6e80bedef8c696a9ad/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fdosuu%2F5a049001bfe06f0a94ee247f61bcdba42446a4305649df6e80bedef8c696a9ad%2Fsignature.png?alt=media",
+    "bytes": 240364
+  },
+  {
+    "id": "Edmond",
+    "file": "Edmond.png",
+    "sha256": "fb87b3e4bcfa274db78cf2c49f0a4e72476b65fb99f420fad36ed6ec4b57f522",
+    "object": "public-images/signatures/edmond/fb87b3e4bcfa274db78cf2c49f0a4e72476b65fb99f420fad36ed6ec4b57f522/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fedmond%2Ffb87b3e4bcfa274db78cf2c49f0a4e72476b65fb99f420fad36ed6ec4b57f522%2Fsignature.png?alt=media",
+    "bytes": 303875
+  },
+  {
+    "id": "Elby__Dr_White",
+    "file": "Elby__Dr_White.png",
+    "sha256": "1ecafaac3514c601a3343d3896a8c1228f04899a01ac897714ea51116fcbd869",
+    "object": "public-images/signatures/elby__dr_white/1ecafaac3514c601a3343d3896a8c1228f04899a01ac897714ea51116fcbd869/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Felby__dr_white%2F1ecafaac3514c601a3343d3896a8c1228f04899a01ac897714ea51116fcbd869%2Fsignature.png?alt=media",
+    "bytes": 223692
+  },
+  {
+    "id": "King_Elliot_IV",
+    "file": "King_Elliot_IV.png",
+    "sha256": "587f693774f04086912fabf4ef13ca87d354c8e863478c9577568ede19b775c3",
+    "object": "public-images/signatures/king_elliot_iv/587f693774f04086912fabf4ef13ca87d354c8e863478c9577568ede19b775c3/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fking_elliot_iv%2F587f693774f04086912fabf4ef13ca87d354c8e863478c9577568ede19b775c3%2Fsignature.png?alt=media",
+    "bytes": 251263
+  },
+  {
+    "id": "Elly_Riversend",
+    "file": "Elly_Riversend.png",
+    "sha256": "239ca00badc10abed5684c30473f9fd133d4bcfd1b8a251b41c844a7653720a9",
+    "object": "public-images/signatures/elly_riversend/239ca00badc10abed5684c30473f9fd133d4bcfd1b8a251b41c844a7653720a9/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Felly_riversend%2F239ca00badc10abed5684c30473f9fd133d4bcfd1b8a251b41c844a7653720a9%2Fsignature.png?alt=media",
+    "bytes": 349855
+  },
+  {
+    "id": "Elmond",
+    "file": "Elmond.png",
+    "sha256": "d3a69e373eb1592946fbf737dffcc2cf76f66a4fafaaef38ca64ffe7739df7ce",
+    "object": "public-images/signatures/elmond/d3a69e373eb1592946fbf737dffcc2cf76f66a4fafaaef38ca64ffe7739df7ce/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Felmond%2Fd3a69e373eb1592946fbf737dffcc2cf76f66a4fafaaef38ca64ffe7739df7ce%2Fsignature.png?alt=media",
+    "bytes": 333493
+  },
+  {
+    "id": "Enelmor_Arylith",
+    "file": "Enelmor_Arylith.png",
+    "sha256": "f92604c2864a9a2cfa427e90f962f338e5062979362079856ad7544eaa4addcf",
+    "object": "public-images/signatures/enelmor_arylith/f92604c2864a9a2cfa427e90f962f338e5062979362079856ad7544eaa4addcf/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fenelmor_arylith%2Ff92604c2864a9a2cfa427e90f962f338e5062979362079856ad7544eaa4addcf%2Fsignature.png?alt=media",
+    "bytes": 247507
+  },
+  {
+    "id": "Essis",
+    "file": "Essis.png",
+    "sha256": "272c9a968551584f7d80912154572cbb977d328872b93750c304377b789847a7",
+    "object": "public-images/signatures/essis/272c9a968551584f7d80912154572cbb977d328872b93750c304377b789847a7/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fessis%2F272c9a968551584f7d80912154572cbb977d328872b93750c304377b789847a7%2Fsignature.png?alt=media",
+    "bytes": 297158
+  },
+  {
+    "id": "Eva",
+    "file": "Eva.png",
+    "sha256": "e999382350b2106719f4badc7776ba14a37a52eb2999f6012b46dfbd4c8e286d",
+    "object": "public-images/signatures/eva/e999382350b2106719f4badc7776ba14a37a52eb2999f6012b46dfbd4c8e286d/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Feva%2Fe999382350b2106719f4badc7776ba14a37a52eb2999f6012b46dfbd4c8e286d%2Fsignature.png?alt=media",
+    "bytes": 115721
+  },
+  {
+    "id": "Fallon",
+    "file": "Fallon.png",
+    "sha256": "94370538680303fbd94d1e9000ff5e2d3fbdda72712850350171434a24d7e4e5",
+    "object": "public-images/signatures/fallon/94370538680303fbd94d1e9000ff5e2d3fbdda72712850350171434a24d7e4e5/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ffallon%2F94370538680303fbd94d1e9000ff5e2d3fbdda72712850350171434a24d7e4e5%2Fsignature.png?alt=media",
+    "bytes": 326094
+  },
+  {
+    "id": "Mr_Flaerry",
+    "file": "Mr_Flaerry.png",
+    "sha256": "64213a3d2738a4d936db9b7c7fde0e29e9f490a559f25eadc9a3384515d61ae3",
+    "object": "public-images/signatures/mr_flaerry/64213a3d2738a4d936db9b7c7fde0e29e9f490a559f25eadc9a3384515d61ae3/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmr_flaerry%2F64213a3d2738a4d936db9b7c7fde0e29e9f490a559f25eadc9a3384515d61ae3%2Fsignature.png?alt=media",
+    "bytes": 343267
+  },
+  {
+    "id": "Frankie",
+    "file": "Frankie.png",
+    "sha256": "e593e63d68a3de833a59d3b868a581a6ebd1ab0cb0ee9eb7726fd913214e9a4b",
+    "object": "public-images/signatures/frankie/e593e63d68a3de833a59d3b868a581a6ebd1ab0cb0ee9eb7726fd913214e9a4b/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ffrankie%2Fe593e63d68a3de833a59d3b868a581a6ebd1ab0cb0ee9eb7726fd913214e9a4b%2Fsignature.png?alt=media",
+    "bytes": 373521
+  },
+  {
+    "id": "Franz",
+    "file": "Franz.png",
+    "sha256": "5949be87841a97e9b0c503ff79c4832b8a4e0bb7c354f311254e78d914c80a14",
+    "object": "public-images/signatures/franz/5949be87841a97e9b0c503ff79c4832b8a4e0bb7c354f311254e78d914c80a14/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ffranz%2F5949be87841a97e9b0c503ff79c4832b8a4e0bb7c354f311254e78d914c80a14%2Fsignature.png?alt=media",
+    "bytes": 314685
+  },
+  {
+    "id": "Frederick_Norman",
+    "file": "Frederick_Norman.png",
+    "sha256": "4e656a12e5ce2f484cd1e28d680fa881d0a7b3ea55ca3f24a6f16caf65636087",
+    "object": "public-images/signatures/frederick_norman/4e656a12e5ce2f484cd1e28d680fa881d0a7b3ea55ca3f24a6f16caf65636087/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ffrederick_norman%2F4e656a12e5ce2f484cd1e28d680fa881d0a7b3ea55ca3f24a6f16caf65636087%2Fsignature.png?alt=media",
+    "bytes": 394787
+  },
+  {
+    "id": "Gareth_Berners",
+    "file": "Gareth_Berners.png",
+    "sha256": "84822606ccd5f65b6c08da81314a66a0599bd873fbf92227bbf0a0acc388ea06",
+    "object": "public-images/signatures/gareth_berners/84822606ccd5f65b6c08da81314a66a0599bd873fbf92227bbf0a0acc388ea06/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fgareth_berners%2F84822606ccd5f65b6c08da81314a66a0599bd873fbf92227bbf0a0acc388ea06%2Fsignature.png?alt=media",
+    "bytes": 471981
+  },
+  {
+    "id": "General_Maliya_Kaeyal",
+    "file": "General_Maliya_Kaeyal.png",
+    "sha256": "18a0e83c963525920ea11946e1858361cd28f7e87369c8a23969095e49c36dd5",
+    "object": "public-images/signatures/general_maliya_kaeyal/18a0e83c963525920ea11946e1858361cd28f7e87369c8a23969095e49c36dd5/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fgeneral_maliya_kaeyal%2F18a0e83c963525920ea11946e1858361cd28f7e87369c8a23969095e49c36dd5%2Fsignature.png?alt=media",
+    "bytes": 419879
+  },
+  {
+    "id": "Glen",
+    "file": "Glen.png",
+    "sha256": "da8c4a41b9ff601a7f82365057e0fd43fe52bdb3bb84edc6dcd166d6649d4052",
+    "object": "public-images/signatures/glen/da8c4a41b9ff601a7f82365057e0fd43fe52bdb3bb84edc6dcd166d6649d4052/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fglen%2Fda8c4a41b9ff601a7f82365057e0fd43fe52bdb3bb84edc6dcd166d6649d4052%2Fsignature.png?alt=media",
+    "bytes": 207506
+  },
+  {
+    "id": "Grenland_Folsen",
+    "file": "Grenland_Folsen.png",
+    "sha256": "168914a34074f11bf260a1f606db405f5220443a4fa55eb7a81ff5aa3a632505",
+    "object": "public-images/signatures/grenland_folsen/168914a34074f11bf260a1f606db405f5220443a4fa55eb7a81ff5aa3a632505/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fgrenland_folsen%2F168914a34074f11bf260a1f606db405f5220443a4fa55eb7a81ff5aa3a632505%2Fsignature.png?alt=media",
+    "bytes": 410056
+  },
+  {
+    "id": "Gustavo_Norman",
+    "file": "Gustavo_Norman.png",
+    "sha256": "fdc61e165ec927bfdded862c548a80fabca61e819a3acee5b22f0d0d3fdd82a4",
+    "object": "public-images/signatures/gustavo_norman/fdc61e165ec927bfdded862c548a80fabca61e819a3acee5b22f0d0d3fdd82a4/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fgustavo_norman%2Ffdc61e165ec927bfdded862c548a80fabca61e819a3acee5b22f0d0d3fdd82a4%2Fsignature.png?alt=media",
+    "bytes": 299025
+  },
+  {
+    "id": "GuuGuu",
+    "file": "GuuGuu.png",
+    "sha256": "2c50e936085bb521f7bde3ddf7eb01d6b99b71a7e76a4f7a035dae12582d49f6",
+    "object": "public-images/signatures/guuguu/2c50e936085bb521f7bde3ddf7eb01d6b99b71a7e76a4f7a035dae12582d49f6/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fguuguu%2F2c50e936085bb521f7bde3ddf7eb01d6b99b71a7e76a4f7a035dae12582d49f6%2Fsignature.png?alt=media",
+    "bytes": 410390
+  },
+  {
+    "id": "Harrel_Mizel",
+    "file": "Harrel_Mizel.png",
+    "sha256": "f846b60b1df913a4273c47d76d50e8bc12e316e2515121a968a02a9d0200fbfc",
+    "object": "public-images/signatures/harrel_mizel/f846b60b1df913a4273c47d76d50e8bc12e316e2515121a968a02a9d0200fbfc/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fharrel_mizel%2Ff846b60b1df913a4273c47d76d50e8bc12e316e2515121a968a02a9d0200fbfc%2Fsignature.png?alt=media",
+    "bytes": 480935
+  },
+  {
+    "id": "Hobb",
+    "file": "Hobb.png",
+    "sha256": "05896754984569f70085faa5e5880ca9342aea7b4001d502162a2cfc9c7de382",
+    "object": "public-images/signatures/hobb/05896754984569f70085faa5e5880ca9342aea7b4001d502162a2cfc9c7de382/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fhobb%2F05896754984569f70085faa5e5880ca9342aea7b4001d502162a2cfc9c7de382%2Fsignature.png?alt=media",
+    "bytes": 688660
+  },
+  {
+    "id": "Indigo",
+    "file": "Indigo.png",
+    "sha256": "bd424af96f6861a87b8575789f21b70bc2357ba8643dba69ad1ab274977c0dca",
+    "object": "public-images/signatures/indigo/bd424af96f6861a87b8575789f21b70bc2357ba8643dba69ad1ab274977c0dca/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Findigo%2Fbd424af96f6861a87b8575789f21b70bc2357ba8643dba69ad1ab274977c0dca%2Fsignature.png?alt=media",
+    "bytes": 318439
+  },
+  {
+    "id": "Iochi_Mari",
+    "file": "Iochi_Mari.png",
+    "sha256": "b6eda7e43d8fd2927dfdd454027a5b99384e56153fa16ccc9622456345cd1295",
+    "object": "public-images/signatures/iochi_mari/b6eda7e43d8fd2927dfdd454027a5b99384e56153fa16ccc9622456345cd1295/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fiochi_mari%2Fb6eda7e43d8fd2927dfdd454027a5b99384e56153fa16ccc9622456345cd1295%2Fsignature.png?alt=media",
+    "bytes": 238976
+  },
+  {
+    "id": "Jacob",
+    "file": "Jacob.png",
+    "sha256": "9bb289edc3865bd8c1bcba37b5bbefd1bda190694dedaf31a44c37118270ebb5",
+    "object": "public-images/signatures/jacob/9bb289edc3865bd8c1bcba37b5bbefd1bda190694dedaf31a44c37118270ebb5/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fjacob%2F9bb289edc3865bd8c1bcba37b5bbefd1bda190694dedaf31a44c37118270ebb5%2Fsignature.png?alt=media",
+    "bytes": 332767
+  },
+  {
+    "id": "Jasmine_Warren",
+    "file": "Jasmine_Warren.png",
+    "sha256": "3f99522afb7f6acb4e20bbe7f429546a837dc23c5c1cc2f092c1b760c6381b2f",
+    "object": "public-images/signatures/jasmine_warren/3f99522afb7f6acb4e20bbe7f429546a837dc23c5c1cc2f092c1b760c6381b2f/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fjasmine_warren%2F3f99522afb7f6acb4e20bbe7f429546a837dc23c5c1cc2f092c1b760c6381b2f%2Fsignature.png?alt=media",
+    "bytes": 308128
+  },
+  {
+    "id": "Jefferey_Berners",
+    "file": "Jefferey_Berners.png",
+    "sha256": "9886227c1f67ec4136ffede566a5ffc606803e6e8ef3a518dc14d19fe108d120",
+    "object": "public-images/signatures/jefferey_berners/9886227c1f67ec4136ffede566a5ffc606803e6e8ef3a518dc14d19fe108d120/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fjefferey_berners%2F9886227c1f67ec4136ffede566a5ffc606803e6e8ef3a518dc14d19fe108d120%2Fsignature.png?alt=media",
+    "bytes": 421659
+  },
+  {
+    "id": "Jonathan",
+    "file": "Jonathan.png",
+    "sha256": "83dbdd96edbff0c9afa5175138d4277dd58478a3c678e2646eeee67565d40d97",
+    "object": "public-images/signatures/jonathan/83dbdd96edbff0c9afa5175138d4277dd58478a3c678e2646eeee67565d40d97/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fjonathan%2F83dbdd96edbff0c9afa5175138d4277dd58478a3c678e2646eeee67565d40d97%2Fsignature.png?alt=media",
+    "bytes": 267920
+  },
+  {
+    "id": "Father_Kaulton",
+    "file": "Father_Kaulton.png",
+    "sha256": "30db3f39f9c2e9fa08f18a0d46770100b2c3c24736fd7b4e2556b5589029b0a6",
+    "object": "public-images/signatures/father_kaulton/30db3f39f9c2e9fa08f18a0d46770100b2c3c24736fd7b4e2556b5589029b0a6/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ffather_kaulton%2F30db3f39f9c2e9fa08f18a0d46770100b2c3c24736fd7b4e2556b5589029b0a6%2Fsignature.png?alt=media",
+    "bytes": 175465
+  },
+  {
+    "id": "Kahn",
+    "file": "Kahn.png",
+    "sha256": "10b9952af27f06f9b48da057c67063cd9209a0b61f406b9ebe3cff1105985adc",
+    "object": "public-images/signatures/kahn/10b9952af27f06f9b48da057c67063cd9209a0b61f406b9ebe3cff1105985adc/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fkahn%2F10b9952af27f06f9b48da057c67063cd9209a0b61f406b9ebe3cff1105985adc%2Fsignature.png?alt=media",
+    "bytes": 186493
+  },
+  {
+    "id": "Kevin_Bolden",
+    "file": "Kevin_Bolden.png",
+    "sha256": "7263dfbbd568894eb8ce44542d18d4e581ce1d78aa1839c0bd27883746d8e266",
+    "object": "public-images/signatures/kevin_bolden/7263dfbbd568894eb8ce44542d18d4e581ce1d78aa1839c0bd27883746d8e266/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fkevin_bolden%2F7263dfbbd568894eb8ce44542d18d4e581ce1d78aa1839c0bd27883746d8e266%2Fsignature.png?alt=media",
+    "bytes": 388208
+  },
+  {
+    "id": "Kojo",
+    "file": "Kojo.png",
+    "sha256": "ffe474b8832ea3004234660d569e7e99227ad46ffafb47208721da740bb4a9e4",
+    "object": "public-images/signatures/kojo/ffe474b8832ea3004234660d569e7e99227ad46ffafb47208721da740bb4a9e4/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fkojo%2Fffe474b8832ea3004234660d569e7e99227ad46ffafb47208721da740bb4a9e4%2Fsignature.png?alt=media",
+    "bytes": 219175
+  },
+  {
+    "id": "Lance_Berners",
+    "file": "Lance_Berners.png",
+    "sha256": "f2f9c7bc3b39803543c9ab11e786c0859501677a8593cc99b3e74fc6dfb8fad7",
+    "object": "public-images/signatures/lance_berners/f2f9c7bc3b39803543c9ab11e786c0859501677a8593cc99b3e74fc6dfb8fad7/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Flance_berners%2Ff2f9c7bc3b39803543c9ab11e786c0859501677a8593cc99b3e74fc6dfb8fad7%2Fsignature.png?alt=media",
+    "bytes": 365850
+  },
+  {
+    "id": "Laura_Fishburne",
+    "file": "Laura_Fishburne.png",
+    "sha256": "78037d72c33402d7df590e494a849c3f0ce53abb52e2294ff5ea867967de52fa",
+    "object": "public-images/signatures/laura_fishburne/78037d72c33402d7df590e494a849c3f0ce53abb52e2294ff5ea867967de52fa/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Flaura_fishburne%2F78037d72c33402d7df590e494a849c3f0ce53abb52e2294ff5ea867967de52fa%2Fsignature.png?alt=media",
+    "bytes": 383684
+  },
+  {
+    "id": "Leonard_Old_Pipe_Riversend",
+    "file": "Leonard_Old_Pipe_Riversend.png",
+    "sha256": "ce495ec6fcfe434f0011dc2c73b87c118ae5c6ff0d61f75060fd77b7c0087e9f",
+    "object": "public-images/signatures/leonard_old_pipe_riversend/ce495ec6fcfe434f0011dc2c73b87c118ae5c6ff0d61f75060fd77b7c0087e9f/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fleonard_old_pipe_riversend%2Fce495ec6fcfe434f0011dc2c73b87c118ae5c6ff0d61f75060fd77b7c0087e9f%2Fsignature.png?alt=media",
+    "bytes": 322236
+  },
+  {
+    "id": "Leslie_Grunfeld",
+    "file": "Leslie_Grunfeld.png",
+    "sha256": "005468ff971e12b902b0c94121a2a318c2851d6d4498114cac649c3fee5c6f54",
+    "object": "public-images/signatures/leslie_grunfeld/005468ff971e12b902b0c94121a2a318c2851d6d4498114cac649c3fee5c6f54/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fleslie_grunfeld%2F005468ff971e12b902b0c94121a2a318c2851d6d4498114cac649c3fee5c6f54%2Fsignature.png?alt=media",
+    "bytes": 501939
+  },
+  {
+    "id": "Lewis",
+    "file": "Lewis.png",
+    "sha256": "55e3743c2c79febde30a582da884b1e2d97ba20b9f2a805c9c0156edb060e773",
+    "object": "public-images/signatures/lewis/55e3743c2c79febde30a582da884b1e2d97ba20b9f2a805c9c0156edb060e773/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Flewis%2F55e3743c2c79febde30a582da884b1e2d97ba20b9f2a805c9c0156edb060e773%2Fsignature.png?alt=media",
+    "bytes": 211998
+  },
+  {
+    "id": "lil_lily",
+    "file": "lil_lily.png",
+    "sha256": "ac4dc0ad5266c6c64ede1cfcb1158300b5fe3b9a401bf220e7d5d749e538a834",
+    "object": "public-images/signatures/lil_lily/ac4dc0ad5266c6c64ede1cfcb1158300b5fe3b9a401bf220e7d5d749e538a834/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Flil_lily%2Fac4dc0ad5266c6c64ede1cfcb1158300b5fe3b9a401bf220e7d5d749e538a834%2Fsignature.png?alt=media",
+    "bytes": 209446
+  },
+  {
+    "id": "Liliana",
+    "file": "Liliana.png",
+    "sha256": "c32ccf2b94a76c7b1b27d6a33b9ceba0feb2ac37646bbdc2bc08d948e8787f3c",
+    "object": "public-images/signatures/liliana/c32ccf2b94a76c7b1b27d6a33b9ceba0feb2ac37646bbdc2bc08d948e8787f3c/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fliliana%2Fc32ccf2b94a76c7b1b27d6a33b9ceba0feb2ac37646bbdc2bc08d948e8787f3c%2Fsignature.png?alt=media",
+    "bytes": 303982
+  },
+  {
+    "id": "Lumio",
+    "file": "Lumio.png",
+    "sha256": "9df9913c43d54599b9ec8b26cf049348c5741ec7db91c83d34d7b8e726e1715f",
+    "object": "public-images/signatures/lumio/9df9913c43d54599b9ec8b26cf049348c5741ec7db91c83d34d7b8e726e1715f/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Flumio%2F9df9913c43d54599b9ec8b26cf049348c5741ec7db91c83d34d7b8e726e1715f%2Fsignature.png?alt=media",
+    "bytes": 354734
+  },
+  {
+    "id": "Luny",
+    "file": "Luny.png",
+    "sha256": "baf08c392093be189bd87ed65200b39309dffdbdbe69cb473b3f6a67a805fd07",
+    "object": "public-images/signatures/luny/baf08c392093be189bd87ed65200b39309dffdbdbe69cb473b3f6a67a805fd07/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fluny%2Fbaf08c392093be189bd87ed65200b39309dffdbdbe69cb473b3f6a67a805fd07%2Fsignature.png?alt=media",
+    "bytes": 233534
+  },
+  {
+    "id": "Lysien_Amoret",
+    "file": "Lysien_Amoret.png",
+    "sha256": "f05e5ef7de976420d9e1bc29c3cb6f9f42d62104af320ef95854ae407f200ddd",
+    "object": "public-images/signatures/lysien_amoret/f05e5ef7de976420d9e1bc29c3cb6f9f42d62104af320ef95854ae407f200ddd/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Flysien_amoret%2Ff05e5ef7de976420d9e1bc29c3cb6f9f42d62104af320ef95854ae407f200ddd%2Fsignature.png?alt=media",
+    "bytes": 513380
+  },
+  {
+    "id": "Mafa",
+    "file": "Mafa.png",
+    "sha256": "fe1160ee1ed5fa4b25539ee765e936870d5d11bab6c180ebf4d1ea32c55621ed",
+    "object": "public-images/signatures/mafa/fe1160ee1ed5fa4b25539ee765e936870d5d11bab6c180ebf4d1ea32c55621ed/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmafa%2Ffe1160ee1ed5fa4b25539ee765e936870d5d11bab6c180ebf4d1ea32c55621ed%2Fsignature.png?alt=media",
+    "bytes": 261504
+  },
+  {
+    "id": "Syr_Magnus",
+    "file": "Syr_Magnus.png",
+    "sha256": "5a4299ebafb0f01317b5426d0db04273ba4a16b43de4f1a632aef4259ac17a26",
+    "object": "public-images/signatures/syr_magnus/5a4299ebafb0f01317b5426d0db04273ba4a16b43de4f1a632aef4259ac17a26/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fsyr_magnus%2F5a4299ebafb0f01317b5426d0db04273ba4a16b43de4f1a632aef4259ac17a26%2Fsignature.png?alt=media",
+    "bytes": 319858
+  },
+  {
+    "id": "Syr_Galaestrel_Freyeman",
+    "file": "Syr_Galaestrel_Freyeman.png",
+    "sha256": "1b6c031f366802f51462146e2eb624d8773f0a45570c944fddfea5f668e63128",
+    "object": "public-images/signatures/syr_galaestrel_freyeman/1b6c031f366802f51462146e2eb624d8773f0a45570c944fddfea5f668e63128/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fsyr_galaestrel_freyeman%2F1b6c031f366802f51462146e2eb624d8773f0a45570c944fddfea5f668e63128%2Fsignature.png?alt=media",
+    "bytes": 330460
+  },
+  {
+    "id": "Marcus_Jens",
+    "file": "Marcus_Jens.png",
+    "sha256": "1ea13391ecd538e3b5273fca323b3510d499b2039429a30caf83b7f1537c605e",
+    "object": "public-images/signatures/marcus_jens/1ea13391ecd538e3b5273fca323b3510d499b2039429a30caf83b7f1537c605e/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmarcus_jens%2F1ea13391ecd538e3b5273fca323b3510d499b2039429a30caf83b7f1537c605e%2Fsignature.png?alt=media",
+    "bytes": 284714
+  },
+  {
+    "id": "Lady_Marian",
+    "file": "Lady_Marian.png",
+    "sha256": "cc406803c43e05ed76777a2fc2f74a6dbb89e40b91d18d32a4b78dfa8b3c3e76",
+    "object": "public-images/signatures/lady_marian/cc406803c43e05ed76777a2fc2f74a6dbb89e40b91d18d32a4b78dfa8b3c3e76/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Flady_marian%2Fcc406803c43e05ed76777a2fc2f74a6dbb89e40b91d18d32a4b78dfa8b3c3e76%2Fsignature.png?alt=media",
+    "bytes": 298017
+  },
+  {
+    "id": "Marianne_Jens",
+    "file": "Marianne_Jens.png",
+    "sha256": "5e73780b27472351ce4225eac1383d14ab804c56e274786abb9f5ef09551c4b3",
+    "object": "public-images/signatures/marianne_jens/5e73780b27472351ce4225eac1383d14ab804c56e274786abb9f5ef09551c4b3/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmarianne_jens%2F5e73780b27472351ce4225eac1383d14ab804c56e274786abb9f5ef09551c4b3%2Fsignature.png?alt=media",
+    "bytes": 309277
+  },
+  {
+    "id": "Maribel_Muddlewick",
+    "file": "Maribel_Muddlewick.png",
+    "sha256": "8efdab113e1fe3a70d1b8777ae41dcf4e7843f293981071ee6fe345165177578",
+    "object": "public-images/signatures/maribel_muddlewick/8efdab113e1fe3a70d1b8777ae41dcf4e7843f293981071ee6fe345165177578/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmaribel_muddlewick%2F8efdab113e1fe3a70d1b8777ae41dcf4e7843f293981071ee6fe345165177578%2Fsignature.png?alt=media",
+    "bytes": 319229
+  },
+  {
+    "id": "Captain_Marin",
+    "file": "Captain_Marin.png",
+    "sha256": "a2eba78143b9979b48762e5e22717bbaaac49d6aeca61ef2013aeff426a6ed6e",
+    "object": "public-images/signatures/captain_marin/a2eba78143b9979b48762e5e22717bbaaac49d6aeca61ef2013aeff426a6ed6e/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fcaptain_marin%2Fa2eba78143b9979b48762e5e22717bbaaac49d6aeca61ef2013aeff426a6ed6e%2Fsignature.png?alt=media",
+    "bytes": 376927
+  },
+  {
+    "id": "Captain_Reid",
+    "file": "Captain_Reid.png",
+    "sha256": "1113e1233bfc393fa7f67098572dcdb8411afc3d295187e879325e5be3139866",
+    "object": "public-images/signatures/captain_reid/1113e1233bfc393fa7f67098572dcdb8411afc3d295187e879325e5be3139866/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fcaptain_reid%2F1113e1233bfc393fa7f67098572dcdb8411afc3d295187e879325e5be3139866%2Fsignature.png?alt=media",
+    "bytes": 295446
+  },
+  {
+    "id": "Matilda",
+    "file": "Matilda.png",
+    "sha256": "ed0cfdf8000f21a3cd3d6bfaa0c2baa28a000509ce232da62b6ee1ccfd5bf945",
+    "object": "public-images/signatures/matilda/ed0cfdf8000f21a3cd3d6bfaa0c2baa28a000509ce232da62b6ee1ccfd5bf945/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmatilda%2Fed0cfdf8000f21a3cd3d6bfaa0c2baa28a000509ce232da62b6ee1ccfd5bf945%2Fsignature.png?alt=media",
+    "bytes": 212879
+  },
+  {
+    "id": "Maylee",
+    "file": "Maylee.png",
+    "sha256": "7fc9f04868334837aaddbfd831ee9952ff8cfc46a60e912143a191d2a5274b41",
+    "object": "public-images/signatures/maylee/7fc9f04868334837aaddbfd831ee9952ff8cfc46a60e912143a191d2a5274b41/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmaylee%2F7fc9f04868334837aaddbfd831ee9952ff8cfc46a60e912143a191d2a5274b41%2Fsignature.png?alt=media",
+    "bytes": 325060
+  },
+  {
+    "id": "Melvin",
+    "file": "Melvin.png",
+    "sha256": "2beb09ef640ae6d7b00328e1afcca26dad5a0d72e5df287ac92a8cddf7fe5231",
+    "object": "public-images/signatures/melvin/2beb09ef640ae6d7b00328e1afcca26dad5a0d72e5df287ac92a8cddf7fe5231/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmelvin%2F2beb09ef640ae6d7b00328e1afcca26dad5a0d72e5df287ac92a8cddf7fe5231%2Fsignature.png?alt=media",
+    "bytes": 133746
+  },
+  {
+    "id": "Mikkel_Drogskol",
+    "file": "Mikkel_Drogskol.png",
+    "sha256": "76a863983673e3983103a5f6de356551883563e4495f9eecf1770f439745742a",
+    "object": "public-images/signatures/mikkel_drogskol/76a863983673e3983103a5f6de356551883563e4495f9eecf1770f439745742a/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmikkel_drogskol%2F76a863983673e3983103a5f6de356551883563e4495f9eecf1770f439745742a%2Fsignature.png?alt=media",
+    "bytes": 403289
+  },
+  {
+    "id": "Moore",
+    "file": "Moore.png",
+    "sha256": "50a241cdf408b7393ddb93dc889da41e1763558348e1128bbf6140c605352a9f",
+    "object": "public-images/signatures/moore/50a241cdf408b7393ddb93dc889da41e1763558348e1128bbf6140c605352a9f/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmoore%2F50a241cdf408b7393ddb93dc889da41e1763558348e1128bbf6140c605352a9f%2Fsignature.png?alt=media",
+    "bytes": 222363
+  },
+  {
+    "id": "The_Mother",
+    "file": "The_Mother.png",
+    "sha256": "4acd1175ebf3207c6c163596410468a253896d747882e78ba51cd38ae4ef4d7c",
+    "object": "public-images/signatures/the_mother/4acd1175ebf3207c6c163596410468a253896d747882e78ba51cd38ae4ef4d7c/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fthe_mother%2F4acd1175ebf3207c6c163596410468a253896d747882e78ba51cd38ae4ef4d7c%2Fsignature.png?alt=media",
+    "bytes": 606664
+  },
+  {
+    "id": "Mr_Moon",
+    "file": "Mr_Moon.png",
+    "sha256": "afb3ddf947b139b0f398befffe51da1cf93c7776f37fef985a1c65b9e885ea06",
+    "object": "public-images/signatures/mr_moon/afb3ddf947b139b0f398befffe51da1cf93c7776f37fef985a1c65b9e885ea06/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmr_moon%2Fafb3ddf947b139b0f398befffe51da1cf93c7776f37fef985a1c65b9e885ea06%2Fsignature.png?alt=media",
+    "bytes": 261758
+  },
+  {
+    "id": "Norvelle",
+    "file": "Norvelle.png",
+    "sha256": "1b37f10b38f68f4534c70093816bb90eb2e2fe0231845efc5548fa4cb3a85164",
+    "object": "public-images/signatures/norvelle/1b37f10b38f68f4534c70093816bb90eb2e2fe0231845efc5548fa4cb3a85164/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fnorvelle%2F1b37f10b38f68f4534c70093816bb90eb2e2fe0231845efc5548fa4cb3a85164%2Fsignature.png?alt=media",
+    "bytes": 261553
+  },
+  {
+    "id": "Nylessa_Arylith",
+    "file": "Nylessa_Arylith.png",
+    "sha256": "c8bd29c539ffb7ac8d1ae72e4a6d965e13d8dde8c91d79e67b01e8bc3b277fd0",
+    "object": "public-images/signatures/nylessa_arylith/c8bd29c539ffb7ac8d1ae72e4a6d965e13d8dde8c91d79e67b01e8bc3b277fd0/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fnylessa_arylith%2Fc8bd29c539ffb7ac8d1ae72e4a6d965e13d8dde8c91d79e67b01e8bc3b277fd0%2Fsignature.png?alt=media",
+    "bytes": 412339
+  },
+  {
+    "id": "Lord_Octavian_von_Oderick",
+    "file": "Lord_Octavian_von_Oderick.png",
+    "sha256": "a588bd52f2d99ba25fd2270da3b4db9c4fba47dd002affc67ca6ce5a277c9a7a",
+    "object": "public-images/signatures/lord_octavian_von_oderick/a588bd52f2d99ba25fd2270da3b4db9c4fba47dd002affc67ca6ce5a277c9a7a/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Flord_octavian_von_oderick%2Fa588bd52f2d99ba25fd2270da3b4db9c4fba47dd002affc67ca6ce5a277c9a7a%2Fsignature.png?alt=media",
+    "bytes": 1358814
+  },
+  {
+    "id": "Ona_Berners",
+    "file": "Ona_Berners.png",
+    "sha256": "ab7de4bc16facf25d870cbc126713970b945c7612042a3c8aa1fee5baa12fcb7",
+    "object": "public-images/signatures/ona_berners/ab7de4bc16facf25d870cbc126713970b945c7612042a3c8aa1fee5baa12fcb7/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fona_berners%2Fab7de4bc16facf25d870cbc126713970b945c7612042a3c8aa1fee5baa12fcb7%2Fsignature.png?alt=media",
+    "bytes": 355450
+  },
+  {
+    "id": "Oswald_Creighton",
+    "file": "Oswald_Creighton.png",
+    "sha256": "237605829dff2ccd27b452679857c7beaa2d312e387eae31ff9e16504838100e",
+    "object": "public-images/signatures/oswald_creighton/237605829dff2ccd27b452679857c7beaa2d312e387eae31ff9e16504838100e/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Foswald_creighton%2F237605829dff2ccd27b452679857c7beaa2d312e387eae31ff9e16504838100e%2Fsignature.png?alt=media",
+    "bytes": 421044
+  },
+  {
+    "id": "Pamela_Yaso",
+    "file": "Pamela_Yaso.png",
+    "sha256": "3d6d467982f4821a64ad82646ce525fa710751a4b90419d074cd1146bb26946d",
+    "object": "public-images/signatures/pamela_yaso/3d6d467982f4821a64ad82646ce525fa710751a4b90419d074cd1146bb26946d/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fpamela_yaso%2F3d6d467982f4821a64ad82646ce525fa710751a4b90419d074cd1146bb26946d%2Fsignature.png?alt=media",
+    "bytes": 394939
+  },
+  {
+    "id": "Pattie_Sylverome",
+    "file": "Pattie_Sylverome.png",
+    "sha256": "c8ed47ea9fcf4458332df9a5cc8c1ca77f60437a2d045e8e05314c884807780b",
+    "object": "public-images/signatures/pattie_sylverome/c8ed47ea9fcf4458332df9a5cc8c1ca77f60437a2d045e8e05314c884807780b/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fpattie_sylverome%2Fc8ed47ea9fcf4458332df9a5cc8c1ca77f60437a2d045e8e05314c884807780b%2Fsignature.png?alt=media",
+    "bytes": 394726
+  },
+  {
+    "id": "Penny_Applewood",
+    "file": "Penny_Applewood.png",
+    "sha256": "15ff056ba93b7c62352a6a6f01812ab5e700ea182c5e75fc0c54e3a0b84e8cf4",
+    "object": "public-images/signatures/penny_applewood/15ff056ba93b7c62352a6a6f01812ab5e700ea182c5e75fc0c54e3a0b84e8cf4/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fpenny_applewood%2F15ff056ba93b7c62352a6a6f01812ab5e700ea182c5e75fc0c54e3a0b84e8cf4%2Fsignature.png?alt=media",
+    "bytes": 457967
+  },
+  {
+    "id": "Pete_Madison",
+    "file": "Pete_Madison.png",
+    "sha256": "f67ee24184d8f11da97073010b9adce5d671208a283608edbf4f3c9a95ffe8f0",
+    "object": "public-images/signatures/pete_madison/f67ee24184d8f11da97073010b9adce5d671208a283608edbf4f3c9a95ffe8f0/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fpete_madison%2Ff67ee24184d8f11da97073010b9adce5d671208a283608edbf4f3c9a95ffe8f0%2Fsignature.png?alt=media",
+    "bytes": 312486
+  },
+  {
+    "id": "Peter",
+    "file": "Peter.png",
+    "sha256": "20034b737776e66ecfdcd4ffc43255d21b6e8e699194f5a5d286d1fec060a659",
+    "object": "public-images/signatures/peter/20034b737776e66ecfdcd4ffc43255d21b6e8e699194f5a5d286d1fec060a659/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fpeter%2F20034b737776e66ecfdcd4ffc43255d21b6e8e699194f5a5d286d1fec060a659%2Fsignature.png?alt=media",
+    "bytes": 305217
+  },
+  {
+    "id": "Phola",
+    "file": "Phola.png",
+    "sha256": "75b963ecba958f319df4b1713002ba15e2c505ad0b4dd9ac2e5940e42f50581a",
+    "object": "public-images/signatures/phola/75b963ecba958f319df4b1713002ba15e2c505ad0b4dd9ac2e5940e42f50581a/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fphola%2F75b963ecba958f319df4b1713002ba15e2c505ad0b4dd9ac2e5940e42f50581a%2Fsignature.png?alt=media",
+    "bytes": 231234
+  },
+  {
+    "id": "Queenie",
+    "file": "Queenie.png",
+    "sha256": "72987b07ee653d9fb7302cc29a0b0ca028503779428cb0a61ef25956c0154498",
+    "object": "public-images/signatures/queenie/72987b07ee653d9fb7302cc29a0b0ca028503779428cb0a61ef25956c0154498/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fqueenie%2F72987b07ee653d9fb7302cc29a0b0ca028503779428cb0a61ef25956c0154498%2Fsignature.png?alt=media",
+    "bytes": 269567
+  },
+  {
+    "id": "Ralf",
+    "file": "Ralf.png",
+    "sha256": "8f749586ed5c0f5a23ce910c69319f672a0ff1923683c5b7ef87adc5673f11d4",
+    "object": "public-images/signatures/ralf/8f749586ed5c0f5a23ce910c69319f672a0ff1923683c5b7ef87adc5673f11d4/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fralf%2F8f749586ed5c0f5a23ce910c69319f672a0ff1923683c5b7ef87adc5673f11d4%2Fsignature.png?alt=media",
+    "bytes": 306105
+  },
+  {
+    "id": "Rashim",
+    "file": "Rashim.png",
+    "sha256": "38082969b41254ecd8741658445d060ee86f4817c3e40d9df49550345899d3a1",
+    "object": "public-images/signatures/rashim/38082969b41254ecd8741658445d060ee86f4817c3e40d9df49550345899d3a1/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Frashim%2F38082969b41254ecd8741658445d060ee86f4817c3e40d9df49550345899d3a1%2Fsignature.png?alt=media",
+    "bytes": 323939
+  },
+  {
+    "id": "RaLeer_the_Herder",
+    "file": "RaLeer_the_Herder.png",
+    "sha256": "8c86c2d2ac9c4bd53ae43e34d5a2f47a294421ab94fc1cd6b166928d3bfd3891",
+    "object": "public-images/signatures/raleer_the_herder/8c86c2d2ac9c4bd53ae43e34d5a2f47a294421ab94fc1cd6b166928d3bfd3891/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fraleer_the_herder%2F8c86c2d2ac9c4bd53ae43e34d5a2f47a294421ab94fc1cd6b166928d3bfd3891%2Fsignature.png?alt=media",
+    "bytes": 378351
+  },
+  {
+    "id": "Reese_Tig",
+    "file": "Reese_Tig.png",
+    "sha256": "0e887708fd4d69bb45771b1147c67fc73df857875725bfc45f58590c757ca726",
+    "object": "public-images/signatures/reese_tig/0e887708fd4d69bb45771b1147c67fc73df857875725bfc45f58590c757ca726/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Freese_tig%2F0e887708fd4d69bb45771b1147c67fc73df857875725bfc45f58590c757ca726%2Fsignature.png?alt=media",
+    "bytes": 433078
+  },
+  {
+    "id": "Riley_Richmond",
+    "file": "Riley_Richmond.png",
+    "sha256": "df30d99a0def70e6d5b3344e34826b5c20498e8913af06dabd9baf5bef4496f2",
+    "object": "public-images/signatures/riley_richmond/df30d99a0def70e6d5b3344e34826b5c20498e8913af06dabd9baf5bef4496f2/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Friley_richmond%2Fdf30d99a0def70e6d5b3344e34826b5c20498e8913af06dabd9baf5bef4496f2%2Fsignature.png?alt=media",
+    "bytes": 503551
+  },
+  {
+    "id": "Bishop_Robinson",
+    "file": "Bishop_Robinson.png",
+    "sha256": "ba3beeceead6d6dc37c5d26a218569a7ecb21b774d07ac1d127582515e4641f7",
+    "object": "public-images/signatures/bishop_robinson/ba3beeceead6d6dc37c5d26a218569a7ecb21b774d07ac1d127582515e4641f7/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fbishop_robinson%2Fba3beeceead6d6dc37c5d26a218569a7ecb21b774d07ac1d127582515e4641f7%2Fsignature.png?alt=media",
+    "bytes": 258085
+  },
+  {
+    "id": "Roline_Hughes",
+    "file": "Roline_Hughes.png",
+    "sha256": "a5f564462937e0398f9b54ea323bf48dd748d15464001f048fe6b65f0873e65a",
+    "object": "public-images/signatures/roline_hughes/a5f564462937e0398f9b54ea323bf48dd748d15464001f048fe6b65f0873e65a/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Froline_hughes%2Fa5f564462937e0398f9b54ea323bf48dd748d15464001f048fe6b65f0873e65a%2Fsignature.png?alt=media",
+    "bytes": 398321
+  },
+  {
+    "id": "Ronald_the_Magician",
+    "file": "Ronald_the_Magician.png",
+    "sha256": "5f915d7237830573a5b3e573245076ba173152155dd02db25c533b0ba14b222b",
+    "object": "public-images/signatures/ronald_the_magician/5f915d7237830573a5b3e573245076ba173152155dd02db25c533b0ba14b222b/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fronald_the_magician%2F5f915d7237830573a5b3e573245076ba173152155dd02db25c533b0ba14b222b%2Fsignature.png?alt=media",
+    "bytes": 335585
+  },
+  {
+    "id": "Ronfello",
+    "file": "Ronfello.png",
+    "sha256": "19d21bf698c4866f66d3710c6cf685956e396fa0bfeb8a043147970ec7c828e0",
+    "object": "public-images/signatures/ronfello/19d21bf698c4866f66d3710c6cf685956e396fa0bfeb8a043147970ec7c828e0/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fronfello%2F19d21bf698c4866f66d3710c6cf685956e396fa0bfeb8a043147970ec7c828e0%2Fsignature.png?alt=media",
+    "bytes": 307063
+  },
+  {
+    "id": "Rosa_Flaerry",
+    "file": "Rosa_Flaerry.png",
+    "sha256": "eab270daf546b76c4609c25fc35dd271eb00b1cbcfcb4e2f5b1bde1cb794d57e",
+    "object": "public-images/signatures/rosa_flaerry/eab270daf546b76c4609c25fc35dd271eb00b1cbcfcb4e2f5b1bde1cb794d57e/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Frosa_flaerry%2Feab270daf546b76c4609c25fc35dd271eb00b1cbcfcb4e2f5b1bde1cb794d57e%2Fsignature.png?alt=media",
+    "bytes": 299112
+  },
+  {
+    "id": "sammick_warren",
+    "file": "sammick_warren.png",
+    "sha256": "e13317345e688c44eceaba1f57f3dd326fd238b4c948d22bf6808d308b3e3745",
+    "object": "public-images/signatures/sammick_warren/e13317345e688c44eceaba1f57f3dd326fd238b4c948d22bf6808d308b3e3745/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fsammick_warren%2Fe13317345e688c44eceaba1f57f3dd326fd238b4c948d22bf6808d308b3e3745%2Fsignature.png?alt=media",
+    "bytes": 1196819
+  },
+  {
+    "id": "Sean",
+    "file": "Sean.png",
+    "sha256": "d6da4c70b13c42745d87d971e3db3ab5c0fe94d4fea38ed99c13c8165d709305",
+    "object": "public-images/signatures/sean/d6da4c70b13c42745d87d971e3db3ab5c0fe94d4fea38ed99c13c8165d709305/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fsean%2Fd6da4c70b13c42745d87d971e3db3ab5c0fe94d4fea38ed99c13c8165d709305%2Fsignature.png?alt=media",
+    "bytes": 324801
+  },
+  {
+    "id": "Selene_Berners",
+    "file": "Selene_Berners.png",
+    "sha256": "a5344298e4c9e9e8db193d64aaafab76268c399f58cd8e48257eb1faf5ea225b",
+    "object": "public-images/signatures/selene_berners/a5344298e4c9e9e8db193d64aaafab76268c399f58cd8e48257eb1faf5ea225b/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fselene_berners%2Fa5344298e4c9e9e8db193d64aaafab76268c399f58cd8e48257eb1faf5ea225b%2Fsignature.png?alt=media",
+    "bytes": 278739
+  },
+  {
+    "id": "Selyra_Arylith",
+    "file": "Selyra_Arylith.png",
+    "sha256": "9e25690ae58a412ae5063b8d8b1e5411b6aebe5efa263fe01634825121f4c494",
+    "object": "public-images/signatures/selyra_arylith/9e25690ae58a412ae5063b8d8b1e5411b6aebe5efa263fe01634825121f4c494/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fselyra_arylith%2F9e25690ae58a412ae5063b8d8b1e5411b6aebe5efa263fe01634825121f4c494%2Fsignature.png?alt=media",
+    "bytes": 400267
+  },
+  {
+    "id": "Serathe_Arylith",
+    "file": "Serathe_Arylith.png",
+    "sha256": "40877b59933e193a312e255cdc79de221ec1284c6ec3221a95a1ce7554e7c3b0",
+    "object": "public-images/signatures/serathe_arylith/40877b59933e193a312e255cdc79de221ec1284c6ec3221a95a1ce7554e7c3b0/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fserathe_arylith%2F40877b59933e193a312e255cdc79de221ec1284c6ec3221a95a1ce7554e7c3b0%2Fsignature.png?alt=media",
+    "bytes": 290032
+  },
+  {
+    "id": "Shalan_Hartlow",
+    "file": "Shalan_Hartlow.png",
+    "sha256": "edc6d441dbbd5c9503e5d9aef05e3707ab71478041d4095ca0dbb72a445f9bd3",
+    "object": "public-images/signatures/shalan_hartlow/edc6d441dbbd5c9503e5d9aef05e3707ab71478041d4095ca0dbb72a445f9bd3/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fshalan_hartlow%2Fedc6d441dbbd5c9503e5d9aef05e3707ab71478041d4095ca0dbb72a445f9bd3%2Fsignature.png?alt=media",
+    "bytes": 327270
+  },
+  {
+    "id": "Sham",
+    "file": "Sham.png",
+    "sha256": "69fb3b11219ac92e2d20aff3113848c1a4c9b70a765bdeac15410b49b14389d2",
+    "object": "public-images/signatures/sham/69fb3b11219ac92e2d20aff3113848c1a4c9b70a765bdeac15410b49b14389d2/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fsham%2F69fb3b11219ac92e2d20aff3113848c1a4c9b70a765bdeac15410b49b14389d2%2Fsignature.png?alt=media",
+    "bytes": 287762
+  },
+  {
+    "id": "Sigom_III",
+    "file": "Sigom_III.png",
+    "sha256": "e2066b7d65f18b3c6856709e3d9f28921450efb7f1835e5cf399355cd2f61aea",
+    "object": "public-images/signatures/sigom_iii/e2066b7d65f18b3c6856709e3d9f28921450efb7f1835e5cf399355cd2f61aea/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fsigom_iii%2Fe2066b7d65f18b3c6856709e3d9f28921450efb7f1835e5cf399355cd2f61aea%2Fsignature.png?alt=media",
+    "bytes": 276915
+  },
+  {
+    "id": "Sora",
+    "file": "Sora.png",
+    "sha256": "9bad62b821206a2bdf13ceb9110e2a429383c4e8d1dddf6632c072ae3d99332c",
+    "object": "public-images/signatures/sora/9bad62b821206a2bdf13ceb9110e2a429383c4e8d1dddf6632c072ae3d99332c/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fsora%2F9bad62b821206a2bdf13ceb9110e2a429383c4e8d1dddf6632c072ae3d99332c%2Fsignature.png?alt=media",
+    "bytes": 211531
+  },
+  {
+    "id": "Tam_Quorr",
+    "file": "Tam_Quorr.png",
+    "sha256": "c8524f66b2466ad8eaf6c12b39152ea790f1f221f32c0f047c4498d98edd4001",
+    "object": "public-images/signatures/tam_quorr/c8524f66b2466ad8eaf6c12b39152ea790f1f221f32c0f047c4498d98edd4001/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ftam_quorr%2Fc8524f66b2466ad8eaf6c12b39152ea790f1f221f32c0f047c4498d98edd4001%2Fsignature.png?alt=media",
+    "bytes": 207438
+  },
+  {
+    "id": "Theramond_Arylith",
+    "file": "Theramond_Arylith.png",
+    "sha256": "399caaec9ce809ff57a390e5f6025d44f8fcab7ac14bfe10d41a7bde8eddf7bb",
+    "object": "public-images/signatures/theramond_arylith/399caaec9ce809ff57a390e5f6025d44f8fcab7ac14bfe10d41a7bde8eddf7bb/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ftheramond_arylith%2F399caaec9ce809ff57a390e5f6025d44f8fcab7ac14bfe10d41a7bde8eddf7bb%2Fsignature.png?alt=media",
+    "bytes": 409220
+  },
+  {
+    "id": "Thompson",
+    "file": "Thompson.png",
+    "sha256": "1957d8a239ec04dab93f5b69ee8aaed7904d7c77ed6326855a0d19c7b4b1a507",
+    "object": "public-images/signatures/thompson/1957d8a239ec04dab93f5b69ee8aaed7904d7c77ed6326855a0d19c7b4b1a507/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fthompson%2F1957d8a239ec04dab93f5b69ee8aaed7904d7c77ed6326855a0d19c7b4b1a507%2Fsignature.png?alt=media",
+    "bytes": 230571
+  },
+  {
+    "id": "Mayor_Thorne",
+    "file": "Mayor_Thorne.png",
+    "sha256": "68575a7b51c023a9d465839ea95856c8052a596dac3a4e9820d921bbb4217294",
+    "object": "public-images/signatures/mayor_thorne/68575a7b51c023a9d465839ea95856c8052a596dac3a4e9820d921bbb4217294/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmayor_thorne%2F68575a7b51c023a9d465839ea95856c8052a596dac3a4e9820d921bbb4217294%2Fsignature.png?alt=media",
+    "bytes": 299353
+  },
+  {
+    "id": "Mayor_Saerus_Pharyon",
+    "file": "Mayor_Saerus_Pharyon.png",
+    "sha256": "83ff244b4ca8a513bed9021a46c2fc0cab49029ef7c0ebc7775d5fab9a17388b",
+    "object": "public-images/signatures/mayor_saerus_pharyon/83ff244b4ca8a513bed9021a46c2fc0cab49029ef7c0ebc7775d5fab9a17388b/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmayor_saerus_pharyon%2F83ff244b4ca8a513bed9021a46c2fc0cab49029ef7c0ebc7775d5fab9a17388b%2Fsignature.png?alt=media",
+    "bytes": 278536
+  },
+  {
+    "id": "Tina",
+    "file": "Tina.png",
+    "sha256": "d4e89bf9735b33fe137ddbe8f649527b41d7cdd409f94abbd119ded620351108",
+    "object": "public-images/signatures/tina/d4e89bf9735b33fe137ddbe8f649527b41d7cdd409f94abbd119ded620351108/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ftina%2Fd4e89bf9735b33fe137ddbe8f649527b41d7cdd409f94abbd119ded620351108%2Fsignature.png?alt=media",
+    "bytes": 212398
+  },
+  {
+    "id": "Trisha_of_Baylon",
+    "file": "Trisha_of_Baylon.png",
+    "sha256": "d140f17fdca9f24b735702e0acb52b3b3d5235760a7cb72cdc7b9a5d75713127",
+    "object": "public-images/signatures/trisha_of_baylon/d140f17fdca9f24b735702e0acb52b3b3d5235760a7cb72cdc7b9a5d75713127/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ftrisha_of_baylon%2Fd140f17fdca9f24b735702e0acb52b3b3d5235760a7cb72cdc7b9a5d75713127%2Fsignature.png?alt=media",
+    "bytes": 284623
+  },
+  {
+    "id": "Vaelric_Arylith",
+    "file": "Vaelric_Arylith.png",
+    "sha256": "9600852c0c2a85d48aecaf57b4e77e1dab377f5ec7393fa1b817a3c5e55b3213",
+    "object": "public-images/signatures/vaelric_arylith/9600852c0c2a85d48aecaf57b4e77e1dab377f5ec7393fa1b817a3c5e55b3213/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fvaelric_arylith%2F9600852c0c2a85d48aecaf57b4e77e1dab377f5ec7393fa1b817a3c5e55b3213%2Fsignature.png?alt=media",
+    "bytes": 466433
+  },
+  {
+    "id": "Vaerodan_Arylith",
+    "file": "Vaerodan_Arylith.png",
+    "sha256": "33367accbf2f3fb331858e8f8bd4d8b7d26df5388cb96e08c8a1d4e04ef4f9da",
+    "object": "public-images/signatures/vaerodan_arylith/33367accbf2f3fb331858e8f8bd4d8b7d26df5388cb96e08c8a1d4e04ef4f9da/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fvaerodan_arylith%2F33367accbf2f3fb331858e8f8bd4d8b7d26df5388cb96e08c8a1d4e04ef4f9da%2Fsignature.png?alt=media",
+    "bytes": 469078
+  },
+  {
+    "id": "Dr_Vaxon",
+    "file": "Dr_Vaxon.png",
+    "sha256": "dbd51794fd1a43c37a8db699e80f6c081d27f54cfcfcb925b135516433dfc64f",
+    "object": "public-images/signatures/dr_vaxon/dbd51794fd1a43c37a8db699e80f6c081d27f54cfcfcb925b135516433dfc64f/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fdr_vaxon%2Fdbd51794fd1a43c37a8db699e80f6c081d27f54cfcfcb925b135516433dfc64f%2Fsignature.png?alt=media",
+    "bytes": 311604
+  },
+  {
+    "id": "Valero_Berners",
+    "file": "Valero_Berners.png",
+    "sha256": "0a8240313403d4ce5e280c4cfaf3fc21198bb44f6cbc1c37d0a65ec32f25fadb",
+    "object": "public-images/signatures/valero_berners/0a8240313403d4ce5e280c4cfaf3fc21198bb44f6cbc1c37d0a65ec32f25fadb/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fvalero_berners%2F0a8240313403d4ce5e280c4cfaf3fc21198bb44f6cbc1c37d0a65ec32f25fadb%2Fsignature.png?alt=media",
+    "bytes": 252106
+  },
+  {
+    "id": "Lord_Wind",
+    "file": "Lord_Wind.png",
+    "sha256": "a93cce0238fa146b340a4b5e71b1211ff5647a29b9260062bc0b4bf211387ea4",
+    "object": "public-images/signatures/lord_wind/a93cce0238fa146b340a4b5e71b1211ff5647a29b9260062bc0b4bf211387ea4/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Flord_wind%2Fa93cce0238fa146b340a4b5e71b1211ff5647a29b9260062bc0b4bf211387ea4%2Fsignature.png?alt=media",
+    "bytes": 353319
+  },
+  {
+    "id": "Xandria_the_Violet_of_Macksohn",
+    "file": "Xandria_the_Violet_of_Macksohn.png",
+    "sha256": "ca37ae7d533b4dcb0c8bbf5cc454f6be0ca69270483260cc38f69caf2d180f0d",
+    "object": "public-images/signatures/xandria_the_violet_of_macksohn/ca37ae7d533b4dcb0c8bbf5cc454f6be0ca69270483260cc38f69caf2d180f0d/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fxandria_the_violet_of_macksohn%2Fca37ae7d533b4dcb0c8bbf5cc454f6be0ca69270483260cc38f69caf2d180f0d%2Fsignature.png?alt=media",
+    "bytes": 430190
+  },
+  {
+    "id": "Yuki",
+    "file": "Yuki.png",
+    "sha256": "df7b14a4ab569d48fb6414534c001044c503ed9b94e4c63818c603647bd7778a",
+    "object": "public-images/signatures/yuki/df7b14a4ab569d48fb6414534c001044c503ed9b94e4c63818c603647bd7778a/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fyuki%2Fdf7b14a4ab569d48fb6414534c001044c503ed9b94e4c63818c603647bd7778a%2Fsignature.png?alt=media",
+    "bytes": 200257
+  },
+  {
+    "id": "Zach",
+    "file": "Zach.png",
+    "sha256": "f4cbdb098a092b5cfa1bde96bcef7c306fec1a12bc7d4c98593e5b908a5a2de6",
+    "object": "public-images/signatures/zach/f4cbdb098a092b5cfa1bde96bcef7c306fec1a12bc7d4c98593e5b908a5a2de6/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fzach%2Ff4cbdb098a092b5cfa1bde96bcef7c306fec1a12bc7d4c98593e5b908a5a2de6%2Fsignature.png?alt=media",
+    "bytes": 443327
+  },
+  {
+    "id": "Zek",
+    "file": "Zek.png",
+    "sha256": "d4ca34837aeec6316d9223d7dbc4b06d9617aacabbdb089d7634a1e632111e0d",
+    "object": "public-images/signatures/zek/d4ca34837aeec6316d9223d7dbc4b06d9617aacabbdb089d7634a1e632111e0d/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fzek%2Fd4ca34837aeec6316d9223d7dbc4b06d9617aacabbdb089d7634a1e632111e0d%2Fsignature.png?alt=media",
+    "bytes": 714344
+  },
+  {
+    "id": "Petra",
+    "file": "Petra.png",
+    "sha256": "5a0c6abd87aa0bf17bf2f1b1ad398aebf2d747509e01e69daf2d8348e25fe20c",
+    "object": "public-images/signatures/petra/5a0c6abd87aa0bf17bf2f1b1ad398aebf2d747509e01e69daf2d8348e25fe20c/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fpetra%2F5a0c6abd87aa0bf17bf2f1b1ad398aebf2d747509e01e69daf2d8348e25fe20c%2Fsignature.png?alt=media",
+    "bytes": 202169
+  },
+  {
+    "id": "Varoen",
+    "file": "Varoen.png",
+    "sha256": "fb625f7ff909256663a302491a8e8be359954edda710f347f2641f8017f93e37",
+    "object": "public-images/signatures/varoen/fb625f7ff909256663a302491a8e8be359954edda710f347f2641f8017f93e37/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fvaroen%2Ffb625f7ff909256663a302491a8e8be359954edda710f347f2641f8017f93e37%2Fsignature.png?alt=media",
+    "bytes": 214012
+  },
+  {
+    "id": "Yi",
+    "file": "Yi.png",
+    "sha256": "27444b7c34b0a12c191dcf6514c8630a40ac553b2daa5353151c0d7e2977ccb3",
+    "object": "public-images/signatures/yi/27444b7c34b0a12c191dcf6514c8630a40ac553b2daa5353151c0d7e2977ccb3/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fyi%2F27444b7c34b0a12c191dcf6514c8630a40ac553b2daa5353151c0d7e2977ccb3%2Fsignature.png?alt=media",
+    "bytes": 128270
+  },
+  {
+    "id": "President_Bonza",
+    "file": "President_Bonza.png",
+    "sha256": "32fa0bd6a770a3560664886ee8f163c722c2bed96ebecb12bd22bb5e6805dfbc",
+    "object": "public-images/signatures/president_bonza/32fa0bd6a770a3560664886ee8f163c722c2bed96ebecb12bd22bb5e6805dfbc/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fpresident_bonza%2F32fa0bd6a770a3560664886ee8f163c722c2bed96ebecb12bd22bb5e6805dfbc%2Fsignature.png?alt=media",
+    "bytes": 391794
+  },
+  {
+    "id": "Professor_Peneo",
+    "file": "Professor_Peneo.png",
+    "sha256": "1c87be6d8b8cdaad8b31ef736f8ab1b552d899fbed16372f2af11d138bc180ac",
+    "object": "public-images/signatures/professor_peneo/1c87be6d8b8cdaad8b31ef736f8ab1b552d899fbed16372f2af11d138bc180ac/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fprofessor_peneo%2F1c87be6d8b8cdaad8b31ef736f8ab1b552d899fbed16372f2af11d138bc180ac%2Fsignature.png?alt=media",
+    "bytes": 260593
+  },
+  {
+    "id": "Colonel_Lisdar",
+    "file": "Colonel_Lisdar.png",
+    "sha256": "c30834c34aae54da2df6de40c1795ea0097eb5782d550be3532fd2a9daa99878",
+    "object": "public-images/signatures/colonel_lisdar/c30834c34aae54da2df6de40c1795ea0097eb5782d550be3532fd2a9daa99878/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fcolonel_lisdar%2Fc30834c34aae54da2df6de40c1795ea0097eb5782d550be3532fd2a9daa99878%2Fsignature.png?alt=media",
+    "bytes": 303999
+  },
+  {
+    "id": "Py_Par",
+    "file": "Py_Par.png",
+    "sha256": "0aa16dc39b39f90088f0d2ec1b76038c6dd5f4761e8e5b0d7875a6403ec434e0",
+    "object": "public-images/signatures/py_par/0aa16dc39b39f90088f0d2ec1b76038c6dd5f4761e8e5b0d7875a6403ec434e0/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fpy_par%2F0aa16dc39b39f90088f0d2ec1b76038c6dd5f4761e8e5b0d7875a6403ec434e0%2Fsignature.png?alt=media",
+    "bytes": 278882
+  },
+  {
+    "id": "Fre'Do",
+    "file": "Fre'Do.png",
+    "sha256": "087fdf55bb6231674bb51017ec50eba2f2c303b793344544e2aff5821607bfa4",
+    "object": "public-images/signatures/fre-do/087fdf55bb6231674bb51017ec50eba2f2c303b793344544e2aff5821607bfa4/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ffre-do%2F087fdf55bb6231674bb51017ec50eba2f2c303b793344544e2aff5821607bfa4%2Fsignature.png?alt=media",
+    "bytes": 342035
+  },
+  {
+    "id": "Marsh_the_Willow",
+    "file": "Marsh_the_Willow.png",
+    "sha256": "c5d9c11d7858d8f5710997d1e4d31ca82545e20072b6ad896d2a195a4a2c0631",
+    "object": "public-images/signatures/marsh_the_willow/c5d9c11d7858d8f5710997d1e4d31ca82545e20072b6ad896d2a195a4a2c0631/signature.png",
+    "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Fmarsh_the_willow%2Fc5d9c11d7858d8f5710997d1e4d31ca82545e20072b6ad896d2a195a4a2c0631%2Fsignature.png?alt=media",
+    "bytes": 201699
+  }
+]

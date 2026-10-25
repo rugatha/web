@@ -2,7 +2,8 @@
   {
     "id": "Addie_Applewood",
     "url": "npc/npc_page/pages/Addie_Applewood.html",
-    "image": "individual_pics/Addie Applewood.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Faddie-applewood-b221a87625%2Feb5e6318bc8141b0715749fd497caf83fe0b0344dea890781a77b4303df05768%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Faddie-applewood-b221a87625%2F6aea201543bf850cda5dd2e20d9d147bfa08e8b9f92b78b36db302f348eca0a1%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "土城太陽議會蘋果席的代表，負責土城的外交。\n有兩個孩子：佩妮・蘋果木和凱許・蘋果木。\n在「海雅特終章」襲擊後，佩妮與山賊首領奧斯華私奔。艾迪以議員身份將阿龍逐出土城，隨後上吊自殺。",
@@ -50,7 +51,8 @@
   {
     "id": "Alex",
     "url": "npc/npc_page/pages/Alex.html",
-    "image": "individual_pics/Alex.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falex-ea19063a8e%2Fd3832569fd395e8fb9835b26e4990c28fe51c3c1bc970fbc8e5ff7aac236cfb2%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falex-ea19063a8e%2F42afa0a9e7c9bdc9fe9228dfff473df93576846486fc86a100be4c392b659fca%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "流浪商人兼研究者，常販賣或研究奇特魔法物品。在方努爾，他檢查米多莉的手臂，辨識出其中罕見的「滑銀」材質，判斷那很可能與妖精荒野的生態有關，並替手臂加裝可收納小物的腕部管槽。",
@@ -90,7 +92,8 @@
   {
     "id": "Alfenor",
     "url": "npc/npc_page/pages/Alfenor.html",
-    "image": "individual_pics/Alfenor.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfenor-dc46da5917%2F63c0b55d5443b76c51dd7121bd3e22ede33f1f90c30fefa5d179f691179acecd%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfenor-dc46da5917%2F48c10ba6ed7edf0108f469ee7cb6c3f2e8a9ee81806a75c1b178a64f97a71964%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "neutral",
     "descZh": "被稱為蜘蛛王。\n是多數人認定蜘蛛神教的主神，但其實地位低於母親大人。\n10836年，由妖精王國的艾蒙醫生、法倫主教，和諾威爾的屍體粉塵，透過儀式融合而成。\n冒險者在麥克嵩王宮圖書館地下特殊館藏中得知，阿爾芬諾並非單一妖精化身，而是由一群妖精對人類的恨意灌入單一妖精軀體後形成的集體意志。\n阿爾芬諾曾透過圖書館員與圖伊特、伊努進行心靈對話，展現強大的力量；對話結束時，圖書館員也被吸成乾屍。",
@@ -190,7 +193,8 @@
   {
     "id": "Andrea_Day",
     "url": "npc/npc_page/pages/Andrea_Day.html",
-    "image": "individual_pics/Andrea Day.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fandrea-day-7f45fa29c3%2F6ece86a60be35acbe2081aee9a6ac12ce473e5c8868fa671125010d109066430%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fandrea-day-7f45fa29c3%2Fe85c4b759f9fcdfdc57dffb3886687187f91c9f0f119d031994ac74e5a0c91d6%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "大學城歷史區區長，外表年輕但資歷很深的學者。\n研究月神教與靈魂相關魔法，曾囚禁蘿琳的靈魂，也長期壓迫助手麥爾文。\n冒險者與他交涉後，安德烈亞示範了月神教的靈魂轉移儀式，犧牲作為「無辜靈魂」的麥爾文，讓蘿琳的靈魂回到身體。",
@@ -233,7 +237,8 @@
   {
     "id": "Anna",
     "url": "npc/npc_page/pages/Anna.html",
-    "image": "individual_pics/Anna.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fanna-6ca9353e12%2F686de1626fd53aafe5c0261619f6c3ad9e99bceee547b365b9c5ea1e1e94f24a%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fanna-6ca9353e12%2F1fd48a504f0a50ec9e18c2c6f938a12b4410207bfe4e08474f770f8a3a16b504%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "瑟巴諾鎮長索恩的妻子，視覺年齡約二十初頭，是個妖精。在索恩當上鎮長一段時間後來到瑟巴諾，與索恩相識並結婚。\n在瑟巴諾被離奇屠村後，出現在帕拉丁面前，並透過自己的技術，將溶成泥的冒險者們重新培育出來。\n似乎是蜘蛛王阿爾芬諾的後裔以及信徒。\n在鎮長家的地底有座自己的實驗室。\n將冒險者們重新培育出來後，安娜便消失了，但冒險者們卻發現自己身上出現了蜘蛛網型的印記，似乎是個詛咒。\n再次出現時，安娜與母親大人一同威脅帕拉丁，後來又偽裝成蘿琳試著將帕拉丁帶走，實際是想對帕拉丁逼婚，以藉由他的貴族身份拿點好處。\n透過帕拉丁的身體，將母親大人奪舍後，成為新的蜘蛛神。",
@@ -287,7 +292,8 @@
   {
     "id": "Bartosz_Richmond",
     "url": "npc/npc_page/pages/Bartosz_Richmond.html",
-    "image": "individual_pics/Bartosz Richmond.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbartosz-richmond-6be50ab88e%2F55a31878758b4b9b8cb1632fb3698345f8f8f44ed5841e6837794b415c36d3c3%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbartosz-richmond-6be50ab88e%2F6fc1ebc144e4639c818e8a053fb4ba56ea2655eeb4cd3fe8eddd7b858461fb71%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "貝瑟頓的里奇蒙爵士。\n里奇蒙家族似乎過去十分興旺，如今卻風華不再，且淪為城內人的笑話。\n爵士於60歲左右時便開始失智，只能靠宅邸內的傭人用輪椅推著行動。他時不時會呼喊「艾格妮絲」這個名字，但從家譜無法確定他喊的是老婆，還是同名的祖母。\n他有個女兒叫萊里，也對「T.I.D.E.S.」等詞語有所反應。\n冒險者帶回箱子後，巴托斯短暫恢復神智，透露自己曾是T.I.D.E.S.高層，且高層能與智慧之神喬里森溝通；他將五枚不同顏色的戒指作為報酬交給冒險者後，坐回輪椅並石化。",
@@ -334,7 +340,8 @@
   {
     "id": "Basuu",
     "url": "npc/npc_page/pages/Basuu.html",
-    "image": "individual_pics/Basuu.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbasuu-56745f9357%2F0f3eb1f6703d313cf3c6fe2ad63132d7da24873cb87b299fcd95c090f2b9b7ac%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbasuu-56745f9357%2F05d89eef030aaaf6a71a3828b1f607b2a00b1e78799f13d4b568063525c3d184%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "在《古斯塔夫諾曼失蹤事件》中艾爾諾新任的長老。有一名弟弟叫多蘇。\n中年半妖精男性。\n與來訪的古斯塔夫有激烈的爭執。\n對來訪的冒險者們不予理睬，但在冒險者們離開營帳後，似乎表現出對於有人在調查古斯塔夫的死因很警惕。",
@@ -381,7 +388,8 @@
   {
     "id": "Beau",
     "url": "npc/npc_page/pages/Beau.html",
-    "image": "individual_pics/Beau.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbeau-feadf51c9f%2F57c7d5223ec7bcf2d8880b1a616f366cfcc7fea2e8fee5d6f99ef4cabfaf8a23%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbeau-feadf51c9f%2F32ff9cedff35c78623ed7ed8abd4a72765a82d7109203b9f021e5af3952f9b81%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "麥克嵩當地的七歲小女孩。父母在比武大會中死去，因此成為孤兒。\n因為視台北市議員為偶像，要求加入一起冒險。在米多莉與喜利的認可下加入台北市議員，並視米多莉為媽媽，喜利為爸爸。\n說話十分衝動不忌言，才剛加入台北市議員，得罪了當中不少人。\n到妖精荒野後，以救世主的身份留在那裡，但最終除了波外，其他當地居民都在拉索斯教入侵後被消滅。回到物質世界時已年過40，便和冒險者們一起繼續以剿滅拉索斯教為目標冒險。",
@@ -432,7 +440,8 @@
   {
     "id": "King_Benevol_II",
     "url": "npc/npc_page/pages/King_Benevol_II.html",
-    "image": "individual_pics/King Benevol II.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-benevol-ii-0e7a6f2374%2Fd16e66d6d542d606fed6c3728ced584c4024726c06d2601b2a3c412ad99d6b92%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-benevol-ii-0e7a6f2374%2F8667d70a3df472e83ca4205cc1659e1ca8aed220dafd3de933ceeb143835f42a%2Fthumb.webp?alt=media",
     "status": "unknown",
     "gender": "male",
     "descZh": "麥丁頓的前任統治者。\n在麥克嵩比武大會時遭到法蘭奇吸乾精力，卻在法蘭奇消失後彷彿完全恢復元氣，悄悄逃離包廂。\n在那之後，據說他傳位給兒子艾略特四世，並自此失蹤。後來冒險者在瑟巴諾附近發現，一對不知情的夫妻正奉麥克嵩拉索斯主教之命運送巴納沃二世的皇冠、玉璽與屍體；夫妻隨後遭疑似瑪莉恩派出的刺客射殺。",
@@ -528,7 +537,8 @@
   {
     "id": "Bernard_Norm",
     "url": "npc/npc_page/pages/Bernard_Norm.html",
-    "image": "individual_pics/Bernard Norm.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbernard-norm-a578360024%2F92838f61c6e5978c3f239d95d8e0af3c985f6689e6e83bd85831618feaa92713%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbernard-norm-a578360024%2F1861d56cc59999afa3a150eb11ae910a510f3caef61d26b9ccda6be0aafd314f%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "麥克嵩的年輕貴族，家族似是經營牲畜的。\n似乎對貴族間的雜交派對頗為熟悉。\n與華生和蘇加魯在王宮花園相談甚歡，而且對蘇加魯十分在意。\n在潘蜜拉家的晚宴後，伯納德帶蘇加魯到母親大人所在的三樓房間請安，展現出明顯畏懼。當晚冒險者們逃離伯納德宅邸時，發現伯納德的屍體倒在門口，身體像被吸乾般毫無血色；外頭則是潘蜜拉與暴民縱火。後續拷問刺客得知，伯納德宅邸事件與潘蜜拉的勢力有關。",
@@ -575,7 +585,8 @@
   {
     "id": "BoBoCBoBoZ",
     "url": "npc/npc_page/pages/BoBoCBoBoZ.html",
-    "image": "individual_pics/BoBo-C:BoBo-Z.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbobo-c-bobo-z-df7439e497%2Ff3c872043a78ae9a4c79ad81ee967754d66ece4f226cf6bb026879c5bd9f52cb%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbobo-c-bobo-z-df7439e497%2Fed8c33aa6522bd498dfa6f1a6e65f5ea107caf3099ab403349b3df503d174ffb%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
     "descZh": "與冒險者前往完成和洛森王國交易的機器人。\n擔任馬車駕駛。\n在呼喚了前輩啵啵W後，與龍蛋結合，進化成啵啵Z。",
@@ -618,7 +629,8 @@
   {
     "id": "BoBoVBoBoW",
     "url": "npc/npc_page/pages/BoBoVBoBoW.html",
-    "image": "individual_pics/BoBo-V:BoBo-W.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbobo-v-bobo-w-1b029f1b16%2F98e3422486d1be8e62b909cadede24a6b7b4fcdeceda27deb6f02d50a5021a0a%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbobo-v-bobo-w-1b029f1b16%2Fd5d08b344a927fc37c023f30618e752ff0c1031ac4d1e08036cca20efdb256fa%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
     "descZh": "札克的機器人夥伴，跟隨冒險者前往礦脈，取得龍蛋。\n自行取得龍蛋後將它融入身體，進化成啵啵W。\n二十多年後，以啵啵W的身份，協助啵啵C進化成啵啵Z，完成克里歐門王國與洛森王國的交易。",
@@ -662,7 +674,8 @@
   {
     "id": "BolBolBoBoOMEGA",
     "url": "npc/npc_page/pages/BolBolBoBoOMEGA.html",
-    "image": "individual_pics/Bol-Bol:BoBo-OMEGA.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbol-bol-bobo-omega-b9214ec017%2Ffd5cb81efc35d1a3cc008b58a84c6c9dfb9f6a315430fd128899fac6c7e3b430%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbol-bol-bobo-omega-b9214ec017%2Faeb043ebe1a6778d11ac3dfdc1c7a8eeff5d485cbb59b55a90b0ac71f4775b74%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "neutral",
     "descZh": "擬人形機器人，帶領冒險者們與啵啵C前往完成與洛森王國的交易，但在半途中被冒險者要求拆解成零件。零件中顯示他的型號為啵啵OMEGA。\n被設定為幼時因名字波波與機器人型號啵啵相似，而不喜歡自己的名字。\n背後有烏瑪女王以外的勢力，但是沒有成功被冒險者們套出身份。\n清楚知道自己是機器人的身份。",
@@ -707,7 +720,8 @@
   {
     "id": "Brock",
     "url": "npc/npc_page/pages/Brock.html",
-    "image": "individual_pics/Brock.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbrock-efb206b766%2Fadf4725017620a7b6582fd29057e289c00df8c39665f6bcdff6da872f96db371%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbrock-efb206b766%2Fc3c0f735f4c5f09c660f326696136a3bd6aad5382fad42c7ed01cbfd5b333ae8%2Fthumb.webp?alt=media",
     "status": "other",
     "gender": "male",
     "descZh": "麥克嵩當地人，年約30的半獸人，舉止溫文有禮，有他自己的幽默感。對麥克嵩與崔尼斯教有些不信任。\n在月先生的推薦下，加入冒險者們組成的樂團「荒野旋律」，擔任打擊手。他從小在麥克嵩長大，父母曾經營武器打鐵鋪，卻因經營不善而倒閉，也曾在黃昏酒館演出。\n被斗篷人攻擊後陷入昏迷，身體逐漸變黑、長出毛皮，越來越不像人型生物。冒險者探望時，他已像拉茲特獸一樣低鳴，父母的認知也受到影響。\n後來布拉克從床下沉入地底並消失，房間地板下出現通往麥克嵩舊城區地下通道的洞穴，冒險者在其中遇見多隻拉茲特獸。",
@@ -797,7 +811,8 @@
   {
     "id": "Bruce_Tallis",
     "url": "npc/npc_page/pages/Bruce_Tallis.html",
-    "image": "individual_pics/Bruce Tallis.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbruce-tallis-bf10590fca%2Fe07283eaeda3e673ef2409a73c5c477331b8076a9c156b860adb2408141381a7%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbruce-tallis-bf10590fca%2F43e6981799be1f1bcb4c135147483fe6b421cc5a98b3b575b801979f6d6d3074%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "T.I.D.E.S.的成員之一，身形孔武有力，因此和阿龍在組織集會時，建立了交情。\n但因一連串的誤會，導致自己陷入萬劫不復的深淵……",
@@ -841,7 +856,8 @@
   {
     "id": "Cash_Applewood",
     "url": "npc/npc_page/pages/Cash_Applewood.html",
-    "image": "individual_pics/Cash Applewood.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcash-applewood-e0f54d3788%2F806a8a43e9e7740aabd34de282e285ed468af75c7deac7d85363dcc97f410c88%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcash-applewood-e0f54d3788%2Fa67d793d2ea946c1b341de8a470b8b69f2542c8476969db02ed6822689431bad%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "本名凱希斯。\n佩妮的弟弟，長相清秀，十分崇拜阿龍。\n為了讓連任三年的姊姊佩妮卸下「春天精靈」的重擔，同時保住蘋果木家因春天精靈得到的利益，曾想女裝參選。\n後來議會確認翠綠印記只適用於女性，凱許無法真正履行春天精靈的義務。海雅特終章襲擊後，艾迪辭去議員席位並將身份交給凱許；凱許曾想撤銷父親驅逐阿龍的決定，卻得知無法更改。",
@@ -888,7 +904,8 @@
   {
     "id": "Cena",
     "url": "npc/npc_page/pages/Cena.html",
-    "image": "individual_pics/Cena.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcena-92ae996b1b%2F08667ee38eb880c2bbd1e4f3de0552529852bef632896eb9d4549287d6dba37c%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcena-92ae996b1b%2F29cb65c0a4dbc5dc71115bc0f8775438e4dddcdfa68e9073f87a1322fd6d55a1%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "馬格努斯爵士聘請的馬伕，本名約翰，被帕拉丁稱為希納。\n在駕馬車前往麥克嵩前，才剛被馬格努斯爵士聘用一個月不到，薪水都還沒領。\n協助帕拉丁將拷問他的衛兵擊暈，假扮成衛兵押解帕拉丁走在麥克嵩城內。\n與帕拉丁一同在日出酒館鬥毆，帶著帕拉丁的魅力頭帶與大部分的武器消失在麥克嵩。\n在比武大會說明會前，與一名女子，碧翠絲，出現在王宮前市集。",
@@ -931,7 +948,8 @@
   {
     "id": "Dr_Chandra_Pyresong",
     "url": "npc/npc_page/pages/Dr_Chandra_Pyresong.html",
-    "image": "individual_pics/Dr. Chandra Pyresong.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-chandra-pyresong-2f1b6a9ae2%2F251e1a1a96c3383943c4620c60fe60cd7be1ff2437b747ff5521108672648967%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-chandra-pyresong-2f1b6a9ae2%2F45898bda3842bdac9332b891e94762ff17535c68652cceb17706a9a044d4d3e1%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "female",
     "descZh": "龍恩在大學城追捕的一名方努爾研究者，擅長火焰與機械，身旁有一隻疑似鳳凰企鵝的奇特鳥類。\n冒險者抵達方努爾時，他的住處因事件而被燒毀，後來只留下皮革般的殘餘物；他最終在與龍恩的戰鬥中引爆裝置自毀，試圖炸死龍恩但失敗。\n茜卓・派松博士死後，沙蘭將他的方努爾房產轉給YHWH。",
@@ -971,7 +989,8 @@
   {
     "id": "ChiChi",
     "url": "npc/npc_page/pages/ChiChi.html",
-    "image": "individual_pics/Chi-Chi.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fchi-chi-517afa8322%2F25676110aea370a3583772e02cc1f762ff39348af572b594122db8890d5b7a9b%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fchi-chi-517afa8322%2Fab59d94bd3d78409721a09381c3508b8f66bb08ce699f65546d5fd15b15a20b5%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "住在「下沉回音」沼澤深處小木屋內的一名老太太，自稱從出生至此都住在這。\n行動非常緩慢，外貌有些醜惡，但對冒險者們非常溫暖。\n屋子內有異常多的巴坦腳，且似乎獵殺了不少青蛙人。",
@@ -1011,7 +1030,8 @@
   {
     "id": "Connie_Cornell",
     "url": "npc/npc_page/pages/Connie_Cornell.html",
-    "image": "individual_pics/Connie Cornell.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fconnie-cornell-8b1a0bffae%2F36a320f2aa2e4f3bfaf67dab640e47e45aa8ef766f335292981555db59ef00b4%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fconnie-cornell-8b1a0bffae%2F45d9e36520eaa62febd88d63458080c668137e6df6673a68773b6a62a116b4fd%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "土城太陽議會的議員之一，玉米席的康妮・康乃爾，被阿龍稱為玉米小姐。\n負責掌管土城的娛樂相關事項，包含春天精靈的投票。\n疑似與山賊團體「海雅特山交響樂」有所勾結，但以他所述，春天精靈語山賊之間的契約早在他擔任議員之前就已經存在了。",
@@ -1057,7 +1077,8 @@
   {
     "id": "Dr_Crow",
     "url": "npc/npc_page/pages/Dr_Crow.html",
-    "image": "individual_pics/Dr. Crow.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-crow-1f51d332ce%2F0794e2b20990fc484d7f7d2ed7090b23f952e013687dc0f85760a4fdab47c032%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-crow-1f51d332ce%2F917435d76707abe46363bcdb682a66730e4575c263d29dfcef4f8872661d06ce%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "在《鬧鬼荒野的偽多頭龍》中鬧鬼荒野當地醫生，似乎是個德魯伊。\n養了一隻狗狗，叫馬可。\n15051年在冒險者們來訪時，已經沒了狗狗，甚至不記得自己是否有養過狗。\n烏鴉醫生在診所的牆壁上凌亂的以德魯伊語寫下自己記得關於兩年前被怪獸襲擊的隻字片語，但卻無法將內容完整拼湊。",
@@ -1147,7 +1168,8 @@
   {
     "id": "Dr_David",
     "url": "npc/npc_page/pages/Dr_David.html",
-    "image": "individual_pics/Dr. David.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-david-473406f42c%2F20e1905e3197c2c1af41b807d94c532a7f0b7285f1cf9f58fdc391406728ec35%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-david-473406f42c%2F566329dbaa6c122b7be75fd9896a2f66282fc90ac2e42d67fb9ae1c8ea9d557e%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "麥克嵩當地醫生。\n在日出酒館目睹殺人事件後被雷米威脅。\n在米多莉博得他的信任後，從他身上得到不少關於這座城市的情報，也引薦龍恩去艾德蒙餐酒館（麥克嵩分店）擔任廚師。\n為人十分理性與冷靜。\n與日出酒館前老闆喬納森、衛兵刀疤臉以及艾德蒙餐酒館的店長路易斯都是舊識。\n非常照顧他的弟弟，丹尼斯。",
@@ -1193,7 +1215,8 @@
   {
     "id": "Dennis",
     "url": "npc/npc_page/pages/Dennis.html",
-    "image": "individual_pics/Dennis.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdennis-d5dbaff640%2F766bd33f599dc587e9950546e6e763a9431f494df81073b434dc2c836b53dcff%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdennis-d5dbaff640%2F539918b3e1581f023b1bb30ad78a08e66c66ea7149d5a728593c4f69ef8fb094%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "自稱半神丹尼斯，是麥克嵩大衛醫師的雙胞胎弟弟，與大衛醫師長得可以說是一模一樣，不過打扮較為陰沈。\n似乎對於蜘蛛王阿爾芬諾在冒險者們身上下的詛咒有些看法。\n其實丹尼斯是個不學無術的失業者，只是想證明給自己的哥哥自己也是有能力的，但卻沒有辦法拯救被詛咒的冒險者們。不過，丹尼斯的確曾去過深淵，但那是在他年幼時生病陷入昏迷時發生的事。",
@@ -1238,7 +1261,8 @@
   {
     "id": "Domneil",
     "url": "npc/npc_page/pages/Domneil.html",
-    "image": "individual_pics/Domneil.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdomneil-8ad87f02e3%2F1cc8f2e873414562b0da1dee4f6105b7cc70b3435b3806db2e7765316362a494%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdomneil-8ad87f02e3%2F5663341e0f3a737a83926f2182e17c7bcfd4ee43bb0d1c8745fca99a1aa61e5a%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
     "descZh": "自稱是詐欺之神奧提森的兒子。\n透過項鍊與太太我還要以及米多莉對話，並簽下契約。\n曾將家亨、烏柯與烏西歐尼從死亡救起，而與他們訂下契約，要他們比賽惡作劇，讓勝者成為他在人世間的代理人。",
@@ -1282,7 +1306,8 @@
   {
     "id": "Dosuu",
     "url": "npc/npc_page/pages/Dosuu.html",
-    "image": "individual_pics/Dosuu.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdosuu-939a4c093b%2F5a1dfd6c7edfaac5835987b6eee450f8544704d50161a5e9ac298775b61a6c1a%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdosuu-939a4c093b%2F184776214e45b3a754e6cb2e073a420becd988ba24b878b6cf19c76b4ef49561%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "在《古斯塔服諾曼失蹤事件》中艾爾諾當地半妖精男子，長老巴蘇的弟弟。\n因為懂普通語，被人請來帶領冒險者們見艾爾諾的長老與教主。",
@@ -1329,7 +1354,8 @@
   {
     "id": "Edmond",
     "url": "npc/npc_page/pages/Edmond.html",
-    "image": "individual_pics/Edmond.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fedmond-3f8b12ef8d%2Ff2208469cae90f00268cdb6f1f4a2456c217e90578bf8afd056588717db6f7b0%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fedmond-3f8b12ef8d%2F8194338ed323f2f1a6660bcc8ec2f40b0b88014137b856e0df4671d47b90b4f0%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "艾德蒙餐酒館的老闆兼大廚，不過現在不太親自下廚了。\n戴著特殊設計的廚師帽，似乎很刻意地把自己的耳朵塞在帽子底下。\n在麥克嵩分店中，艾德蒙曾親自邀請龍恩試做牛排，並肯定他的廚藝，希望龍恩能留在餐酒館工作。",
@@ -1374,7 +1400,8 @@
   {
     "id": "Elby__Dr_White",
     "url": "npc/npc_page/pages/Elby__Dr_White.html",
-    "image": "individual_pics/Elby : Dr. White.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Felby-dr-white-cd999c8c17%2F1c066355549faf01ad88477e1d0061ad8297e2e68b2d240395f1ad7746b81b49%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Felby-dr-white-cd999c8c17%2F342d533e7c05da8998839c62eb1a168b23708dfb276a7d355e4a788f857b62f0%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "female",
     "descZh": "出現在多侖維爾的「醫生」。\n外觀年齡約二十初頭，皮膚蒼白，髮色銀白，穿著也是全白，只有雙眼是碧藍色的。身形非常纖瘦到看起來不健康的程度，給人一種妖精的感覺，卻沒有尖耳朵。\n可以在一般時空和妖精荒野間穿越。\n他的群體似乎有著一般時空沒有的醫療技術。\n在一般世界被稱為白醫師，而在妖精荒野則被稱為艾爾比。\n在主持米多莉和波的救世主試煉的最後，被發現是拉索斯在妖精荒野的間諜，善於使用魔法，且手上刺滿拉索斯教的經文。在將米多莉拖往另一個時空時，被米多莉殺死。",
@@ -1423,7 +1450,8 @@
   {
     "id": "King_Elliot_IV",
     "url": "npc/npc_page/pages/King_Elliot_IV.html",
-    "image": "individual_pics/King Elliot IV.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-elliot-iv-6229d0a5bd%2F55ecfeeb82ec959ce0a2d5d263d176950e156ae9cc591804fcaf4593e376db02%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-elliot-iv-6229d0a5bd%2Fda4ca06d7468404dfa1dc303b8bb2b2a93290809914e585c9839e571e579e566%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "麥丁頓王國的新任國王。\n年約10歲，母后為瑪莉恩女士。\n在冒險者謁見時，艾略特四世看起來年幼而缺乏實權；瑪莉安也認為他只是魁儡。其父巴納沃二世退位失蹤後，後來被發現已成屍體，且其皇冠與玉璽被人秘密運送。",
@@ -1470,7 +1498,8 @@
   {
     "id": "Elly_Riversend",
     "url": "npc/npc_page/pages/Elly_Riversend.html",
-    "image": "individual_pics/Elly Riversend.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Felly-riversend-4e0c6898d9%2Ffdbe88d1e964a581727cbdb83e7a659692370e04946694379fcde75f5693784f%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Felly-riversend-4e0c6898d9%2Fddd2d0f969328491ea9b453b26b231f685b15dca1834fc6eb0276cc4ec67da6b%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "阿龍的養母，十分溫柔慈祥。",
@@ -1516,7 +1545,8 @@
   {
     "id": "Elmond",
     "url": "npc/npc_page/pages/Elmond.html",
-    "image": "individual_pics/Elmond.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Felmond-7cb81314d5%2Ff437b6c96af959a85381ed13dab2574761bee7c3b893af8fe7f1ee4a3391d406%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Felmond-7cb81314d5%2Fc9165c2ba8da9e315c4d66a8946c42e254e4490f14dd2a1cd6a1f4cd6800a313%2Fthumb.webp?alt=media",
     "status": "other",
     "gender": "male",
     "descZh": "妖精王國的醫生，擁有由蜘蛛絲製作而成的紗布。\n透過儀式，與法倫和諾威爾的粉塵融合為阿爾芬諾。",
@@ -1564,7 +1594,8 @@
   {
     "id": "Enelmor_Arylith",
     "url": "npc/npc_page/pages/Enelmor_Arylith.html",
-    "image": "individual_pics/Enelmor Arylith.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fenelmor-arylith-1792f7e2f5%2Fdfaa21a62419eee3a1c8cd87255fbe83d830e87b1623a9528dfa2ddfffdbee1d%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fenelmor-arylith-1792f7e2f5%2F0a3fe66f235a97e39416ee876aabfc07e1c7ce2a682acbf322311b2f514554b1%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "阿龍的嬸嬸。\n與瑟拉蒙為夫妻，有三名孩子：瑟拉斯、奈梨紗和維瑞克。\n有嚴重的失眠，因此自己磨製安眠藥，存放在廚房內。費洛登與瑟萊拉死後，艾內莫在艾瑞利斯家的繼承與審判風波中多半保持低調旁觀。",
@@ -1611,7 +1642,8 @@
   {
     "id": "Essis",
     "url": "npc/npc_page/pages/Essis.html",
-    "image": "individual_pics/Essis.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fessis-68345c1864%2Fbba78d48bf87efcd8b51ea3ef1d427979c49d6f22e191df5af914916114150d4%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fessis-68345c1864%2F934b292c27be6a5ee512e45251ab1e979f826f6f577c96586023982740a92aff%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "狂暴戰士幫成員之一，鬥名為「巫妖剋星」。\n前往聖拉雅米島調查後下落不明。冒險者在金海岸礦坑下方的廢墟中找到了精神不穩、幾乎倒下的艾希斯，並得知拉索斯教徒一直在礦坑中擄人與實驗。\n礦坑戰鬥結束後，艾希斯將「異教徒剋星」插入傳送法陣，使其釋出寶石與拉索斯的訊息。之後他將武器交給波，並返回狂暴戰士幫向澤克回報。",
@@ -1659,7 +1691,8 @@
   {
     "id": "Eva",
     "url": "npc/npc_page/pages/Eva.html",
-    "image": "individual_pics/Eva.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Feva-18a7cc9949%2Fbaca4cdb72f8e5b09feee9fbe49bcafc3ef12dbb6350573ffa5b2ed7d8b75390%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Feva-18a7cc9949%2Fc1c50b1bafedaabfae3c2bc635f2198f5fa60193df5aada634788ffb9b0e1975%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "卓茲蘭的寧靜酒館老闆雅各的新婚妻子，年紀十分年輕。\n看起來十分靦腆害羞，穿著也很樸素。\n冒險者們在卓茲克別莊洞穴深處的診間發現昏迷的伊娃，頭上戴著他們受託尋找的月神王冠，頭皮也留下像被牙齒咬過的血痕。眾人取下王冠並替他包紮後，被迫暫時離開。之後伊娃重新站起，但眼神呆滯、身上滿是觸肢，口中以月神語讚美，已被改造成恐怖的怪物。",
@@ -1705,7 +1738,8 @@
   {
     "id": "Evil_Be4",
     "url": "npc/npc_page/pages/Evil_Be4.html",
-    "image": "individual_pics/Evil Be-4.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fevil-be-4-7ed2bcddae%2F1fc4f6bf54e6ae499239ea315d6dc43fd8702193f9f7b6a98355fe2def239eb2%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fevil-be-4-7ed2bcddae%2Fbcc8d6f30eaac884e57e244fe43b63a8a45adb0c41cabc8b766b576596c2cf08%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "土城的「壞蛋四人幫」，但阿龍總是稱他們為「壞四人」。成員包含：\n喜愛勒索的格林道爾，骯髒惡臭的皮伯，脾氣暴躁的湯伯，以及破壞公務的賽菲。\n時常霸凌土城的孩子們。",
@@ -1751,7 +1785,8 @@
   {
     "id": "Fallon",
     "url": "npc/npc_page/pages/Fallon.html",
-    "image": "individual_pics/Fallon.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffallon-3dc7f335be%2Face5f94a58622485e278a72e3b591ecde44de100ea680c29fae7ce50bd9940a6%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffallon-3dc7f335be%2Fa4cfed628602b681fa8ee5b7b453561eb9caaa37d3012fa027d2123b0f3498a5%2Fthumb.webp?alt=media",
     "status": "other",
     "gender": "male",
     "descZh": "妖精王國中樹林之神涅西斯的主教，後來成為蜘蛛神教的創始者之一。\n與艾蒙醫生共同執行儀式，兩人與諾威爾的粉塵融合為阿爾芬諾。",
@@ -1801,7 +1836,8 @@
   {
     "id": "Mr_Flaerry",
     "url": "npc/npc_page/pages/Mr_Flaerry.html",
-    "image": "individual_pics/Mr. Flaerry.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-flaerry-4d583607f8%2F60f4606246c1b50247b5be25fb4cb0b22d672ef286ab10b0716f89cf81512ada%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-flaerry-4d583607f8%2Fa6bfa549ab690806e0384e21c224346f2ab47160329b1f1c71ebd34d3ece2ea7%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "帕拉丁的老師，前邁丁頓王國騎士團團長，現已退休。\n待客十分大方，不過似乎和太太羅莎之間有些相處上的狀況，分房睡。\n對於寇林菲爾德一代的性產業似乎暸若指掌。\n膝下無子，視帕拉丁為己出。\n為了讓麥克嵩的紫羅蘭承認帕拉丁是她的兒子，放棄了自己的爵位。",
@@ -1847,7 +1883,8 @@
   {
     "id": "Frankie",
     "url": "npc/npc_page/pages/Frankie.html",
-    "image": "individual_pics/Frankie.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrankie-de0ef3aca6%2F1556511cc6687cc2f4d6eb3a7ca4bb464524e0b0e773dff813412cbc7df98b1d%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrankie-de0ef3aca6%2F2f7837eeb2901032dbf0ec5cc6e2dec6538dcf783df6ff3a8ccf0169a2c34696%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "麥克嵩日出酒館的店小二。\n在荒野旋律組成時，搶先擔任樂團的贊助人，被薩梅爾敬稱為老闆。\n在日出老闆喬納森失蹤時，與龍恩一同前往老闆家，但沒有找到人。法蘭奇前後言詞不一的行為讓龍恩感到非常可疑。之後暫時擔任日出的老闆，但與老闆失蹤似乎有什麼關聯。\n在台北市議員重返日出酒館時，因為態度惡劣且敲詐他們，法蘭奇被切斷右手臂，且放入百寶袋內，慘遭滅口。在他被放入袋子前的最後一刻，口中吐出了瑟巴諾的地名。\n台北市議員們將法蘭奇棄屍於地下道內一處開口的底下。\n在麥克嵩比武大會授獎儀式後，悄悄出現在國王巴納沃二世身後。在吸乾了國王的精力後，化身為名為「暗影之父」的惡魔，飛向台北市議員們所處的觀眾席，對他們出擊。在被台北市議員們擊敗時，留下了「我會回來的。」一句話，便消失不見。\n後來法朗茲判斷，暗影之父可能會附身或幻化成不同的人，法蘭奇只是其顯現之一。",
@@ -1899,7 +1936,8 @@
   {
     "id": "Franz",
     "url": "npc/npc_page/pages/Franz.html",
-    "image": "individual_pics/Franz.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffranz-8c2521238c%2Ff53e9e9983d99ac722267b61bb89a0db74d80125027b28365cd88ced0a9fc90e%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffranz-8c2521238c%2Fb55c07aed8c3c2dd1ce718c79a9fa49b78ad2bef1d34bf94c71b5f2a4c689bf3%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "荒野旋律在柏納斯家晚宴認識的吟遊詩人，年輕人類男性。\n他表示自己也曾和冒險者們到處遊歷、搜集故事，對《沃瓦倫之歌》很感興趣，邀請荒野旋律談談這首歌背後的故事。\n在麥克嵩期間，居住於柏納斯家附近旅店。冒險者在他的客房發現法蘭茲真實身份是暗影追蹤者的前成員：年輕時，被稱為「湛藍法朗茲」的他曾與尼巴隆、史瓦茲、達里歐一起調查暗影之父，之後也學會拉索斯語。\n法蘭茲曾引發暗影之父現身襲擊，但也在之後加入冒險者，跟隨眾人穿越妖精荒野。回到物質世界後，他沒有與隊伍繼續同行。",
@@ -1946,7 +1984,8 @@
   {
     "id": "Frederick_Norman",
     "url": "npc/npc_page/pages/Frederick_Norman.html",
-    "image": "individual_pics/Frederick Norman.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrederick-norman-89c9e0cd46%2F0648ecf5aa9b5799edf48ab636db64ce37040ae59d87d5cd2822f7cf27be6b36%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrederick-norman-89c9e0cd46%2F7ee1e795f99d7ee35eb0f1530d760613e6d35a0865e6287ef97fd96e74963c2f%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "T.I.D.E.S.組織的現任領導者，人稱諾曼爵士。\n在《古斯塔夫諾曼的神秘失蹤》中，出錢聘請冒險者們尋找其失蹤兒子古斯塔夫。雖然愛護兒子，但不想太過介入其生活。\n有非常多眼線，以及不小的影響力；冒險者逃離艾爾諾後，也曾讓他們在諾曼宅邸待了好一段日子。\n在T.I.D.E.S.集會中，弗雷德里克介紹組織階級與規則，主持方尖碑挑戰制度，並在蘿拉・費許朋成功挑戰萊里後，正式宣布萊里不再是方尖碑、也不再是T.I.D.E.S.成員。",
@@ -2043,7 +2082,8 @@
   {
     "id": "Gareth_Berners",
     "url": "npc/npc_page/pages/Gareth_Berners.html",
-    "image": "individual_pics/Gareth Berners.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgareth-berners-f7f3331bcb%2Fcfe9c98c3da1efa2b1f2ffbcba5a917d07afd2795c482555f71af58dadecd6f6%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgareth-berners-f7f3331bcb%2Fe3ff527811dc407272649cc25ec7a5551cce3fcfd30ce1bc9991266d1d3df501%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "麥克嵩當地貴族柏納斯的成員之一。傑弗瑞的兒子，瑟琳的丈夫，蘭斯的父親。\n現任麥丁頓王國禁衛軍的將軍，也是弗列里爵士的繼位者。\n在柏納斯家晚宴時隨時護衛著紫羅蘭。\n對於蛋糕類的甜點似乎有著難以抗拒的心理。",
@@ -2094,7 +2134,8 @@
   {
     "id": "General_Maliya_Kaeyal",
     "url": "npc/npc_page/pages/General_Maliya_Kaeyal.html",
-    "image": "individual_pics/General Maliya Kaeyal.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgeneral-maliya-kaeyal-3b95c35386%2Fcfbaceeec512bbd28b158dfd5c13a7c048093627c8862c927ae382cc985d30a0%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgeneral-maliya-kaeyal-3b95c35386%2Fda3e36b7236401a966f914f0df204372ea763244d92460eb05ecc1b9bbabfbb9%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "萊斯諾的將軍，中年紅龍人女性。\n個性強硬且難以溝通，連市長與大臣都對他敬畏三分。\n強烈主張要「收復」對面的蜥蜴人城鎮克萊芬。\n中途之家抵達萊斯諾後，被瑪萊雅安排的衛兵圍捕。瑪萊雅將他們押到市長與大臣面前，並強迫他們前往克萊芬當一週的間諜，承諾任務完成後給予報酬。\n瑪萊雅後來率領數以千計的萊斯諾軍隊，聯同老樹盟與市民連線包圍林中的白色小教堂，下令摧毀教堂與雷亞父母的墓碑。戰鬥中，他親自以巨劍攻擊中途之家；柳俠馬許現身後，瑪萊雅顯得極為忌憚，只能眼看馬許開啟裂縫帶走眾人。",
@@ -2137,7 +2178,8 @@
   {
     "id": "Glen",
     "url": "npc/npc_page/pages/Glen.html",
-    "image": "individual_pics/Glen.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fglen-2cf1e83086%2F758aa6fd2479ef4daac95f656587ceaa8456aea2e724a2896c1287b973a665d6%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fglen-2cf1e83086%2F7508c34902939a1fff749834fee9432e1cf1242c452c90ee8869952964c42efd%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "麥克嵩衛兵，是紅髮有雀斑的年輕人類男子。\n刀疤臉承諾龍恩將派遣葛蘭至日出酒館配合調查喬納森失蹤的事件。葛蘭偽裝成客人到日出酒館觀察，並告訴龍恩所謂喬納森的家其實只是廢棄房屋。\n後來龍恩在王宮花園再次遇見葛蘭，從他口中得知衛兵隊正在清查可能的滲透者，沙度也列在名單內；葛蘭也向龍恩保證自己和刀疤臉可信。",
@@ -2234,7 +2276,8 @@
   {
     "id": "Gustavo_Norman",
     "url": "npc/npc_page/pages/Gustavo_Norman.html",
-    "image": "individual_pics/Gustavo Norman.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgustavo-norman-273f5e4cd3%2F4f63b5be1f4d041c38e6dccac5e5a4bc4f36ac8d87de797eb1a473c84732b95f%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgustavo-norman-273f5e4cd3%2F13531447e15d39d472ce2e0c1f0628486fe2196f4ff6c177b44a3b692a74761d%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "在《古斯塔夫諾曼失蹤事件》中失蹤的年輕男子，是貴族諾曼爵士的兒子。\n經冒險者調查後，發現他在妖精部落艾爾諾中意外殺死當地長老，被當地居民打死。",
@@ -2280,7 +2323,8 @@
   {
     "id": "GuuGuu",
     "url": "npc/npc_page/pages/GuuGuu.html",
-    "image": "individual_pics/Guu-Guu.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fguu-guu-592ea1cb0e%2F6c2734f509b62629df28d137b8e65870464f2e09d5c83e6031fc1a9210f3963f%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fguu-guu-592ea1cb0e%2F16e9d36958d86ed82360094ff0181060b4ba3a1aeaf5d6bcfa9ac4aec9bd5b71%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "駐守於地下城一處入口的巨大食人魔，戴著一個黑色的面具，手持一根巨大棍棒。似乎看不見。\n喜歡用疊字說話，最愛的東西是糖糖。\n心理單純，像個孩子一樣。",
@@ -2324,7 +2368,8 @@
   {
     "id": "Harrel_Mizel",
     "url": "npc/npc_page/pages/Harrel_Mizel.html",
-    "image": "individual_pics/Harrel Mizel.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fharrel-mizel-9bc535e300%2F75d68a46e8feb4bfcd77e2db06d1da06bd0f9a2ae6e8aa7a4f0ce8ccc7735942%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fharrel-mizel-9bc535e300%2F97c395f1f4d5c7199da07b4e5a45b5aa44da925777537fbba24b816bb7d7918a%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "拉撒拿魔法商店的老闆，眼神看起來十分有智慧。\n老尼克索的好友與酒友。\n與艾瑞利斯家的奈梨紗似乎有不錯的交情。\n後來哈洛現身為銀龍米札瑞爾，而且是阿龍父母之死的背後真兇。\n在冒險者離開土城前，告訴了雷亞他家鄉的事。",
@@ -2368,7 +2413,8 @@
   {
     "id": "Hobb",
     "url": "npc/npc_page/pages/Hobb.html",
-    "image": "individual_pics/Hobb.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fhobb-670506ea3a%2Fad7d723e26bfedbacf13637ae71e5ce2ad439d0cc0a69aa63e13edb93dca7d55%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fhobb-670506ea3a%2F60a9f82744d8e37798345df0be6ad4ce0fb4217fef9858932e1940355d85c481%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "瑟巴諾當地的黑幫老大之一，身材十分壯碩，但是手下似乎都不太擅長打架。\n鎮上的一間酒館「霍布的派對屋」似乎是他的黑幫集散地。\n似乎是拉索斯教的信奉者，手下的身上有刺拉索斯語的祝禱文，與德雷爾過去就認識。\n和冒險者們談了交易，只要他們將鎮長家的魔法盒交給他，就能贖回被他綁走的喬納森。\n真身是來自深淵的一頭綁匪怪蛙，其手下為魚人，與拉索斯教簽訂了契約。他計劃在瑟巴諾建造某種偉大的裝置，卻被冒險者們打斷，也失去大多數手下。\n在搶到魔法盒子後，霍布利用盒子與黏液製造出冒險者們的複製體，將多名冒險者溶成泥後消失。",
@@ -2463,7 +2509,8 @@
   {
     "id": "Indigo",
     "url": "npc/npc_page/pages/Indigo.html",
-    "image": "individual_pics/Indigo.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Findigo-5515394cd3%2F51632997eacedf3192c8daf7e1db275b057770c428221a2bb80b8eeff9ef2233%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Findigo-5515394cd3%2Fcf5c9ae66b749a7c04260f7d3ba6a09f5887d3dabcb6ed5e2a783e2dd7e2c557%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "薩梅爾的阿嬤。\n原本以為在十多年前已經病死，卻離奇地出現在妖精荒野。\n懂一般語、妖精語，以及仙靈語，而且有穿越一般世界與妖精荒野的能力。\n在妖精荒野作為冒險者們的嚮導之一。\n喜歡挖苦薩梅爾，但其實對薩梅爾也很照顧與看好。\n身邊時常跟著不同的男伴。",
@@ -2509,7 +2556,8 @@
   {
     "id": "Iochi_Mari",
     "url": "npc/npc_page/pages/Iochi_Mari.html",
-    "image": "individual_pics/Iochi Mari.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fiochi-mari-e0155d1857%2F9c53a62ed059a170aedc3de935068396c4e6ec270d0f9d58ee735d0380f01148%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fiochi-mari-e0155d1857%2Fc30e3b3b43332e2280877e5e09bd8113f15210735dd82bf694d18a79808ab010%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "一名有著銀白毛色的狐狸人修女，目前在方努爾市的聖津菈大教堂服務。\n小時候和米多莉、小雪一起在尼姆孤兒院長大。\n米多莉等人回到方努爾市後，伊洛協助接待他們，也陪同處理聖拉雅米島事件後續與小雪相關的狀況。",
@@ -2557,7 +2605,8 @@
   {
     "id": "Jacob",
     "url": "npc/npc_page/pages/Jacob.html",
-    "image": "individual_pics/Jacob.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjacob-977106c9a2%2Fa8aa71c1732ce25873fdee109dc01d6969b257ee9504c0e714bfb8fab9e21652%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjacob-977106c9a2%2F2941b824fbe8781116345f60065760db5ecc2b9e669a803096766fe038e1776d%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "在鬧鬼荒野卓茲蘭當地寧靜酒館的店小二。\n然而在冒險者隔天起床後，卻成了寧靜酒館的老闆。15051年時，與伊娃結婚。\n洛特等人抵達卓茲蘭時，雅各熱情招呼他們，並為慶祝與伊娃新婚，宣布當週酒館啤酒免費。他也向冒險者說明前往卓茲克別莊的路線。",
@@ -2648,7 +2697,8 @@
   {
     "id": "Jefferey_Berners",
     "url": "npc/npc_page/pages/Jefferey_Berners.html",
-    "image": "individual_pics/Jefferey Berners.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjefferey-berners-531501b341%2F98432a170165c18d8e028365dd8f43f47aa1a3dee2bdde2b99273007a0b0a933%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjefferey-berners-531501b341%2F17d7c46ef8cf20e2c1adb53874cea1a830cb078efc0795853fb9ed1053361099%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "麥克嵩貴族柏納斯家現任的代表人。\n老婆為歐娜，孫子為蘭斯。\n在月先生安排下接待荒野旋律，邀請冒險者們用餐，並讓他們為柏納斯家的晚宴表演。後來雷米等人闖入柏納斯宅邸時，傑弗瑞露出詭異笑容，讓三人陷入昏迷。",
@@ -2697,7 +2747,8 @@
   {
     "id": "Jonathan",
     "url": "npc/npc_page/pages/Jonathan.html",
-    "image": "individual_pics/Jonathan.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjonathan-9cdb98de27%2F2dfb0a2a83f4d8d891143c17c3a2ba44eec472420d8ca5a5a87e83be8b9d44c1%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjonathan-9cdb98de27%2Fcd04e128797b7099e9c2b84c87c05bcccecdc16633083db51547b51ef61b8f11%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "麥克嵩日出酒館的老闆與主廚。\n因為小時候曾被龍人欺凌，而在酒館鬥毆事件中對龍恩出手。鬥毆後為表歉意，聘用龍恩在日出酒館作為廚師，並讓龍恩住在日出酒館後台的員工休息室。\n然而因龍恩住宿的第一晚就遇到雷米造成的突發事件，讓喬納森決定出錢給龍恩在外面找地方住。\n隔天喬納森卻失蹤了。\n隨著法蘭奇給予的線索，帕拉丁與他的新夥伴們在瑟巴諾發現了化名為喬納斯的喬納森，但他似乎被捲入了什麼事件，被霍布五花大綁。\n最後，在帕拉丁面前被安娜殺死。",
@@ -2797,7 +2848,8 @@
   {
     "id": "Kahn",
     "url": "npc/npc_page/pages/Kahn.html",
-    "image": "individual_pics/Kahn.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkahn-e8220e852b%2F1f705fd17f96637edce64c41beaf22850da8062fa413b85645b27687b1626751%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkahn-e8220e852b%2Fe5fad09f7ee5cef1d22e7789f7851f79f6ec5173c1234dcf48a092178de33c02%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "麥克嵩的衛兵。\n奉命在小木屋內看守帕拉丁，卻被帕拉丁的馬伕希納襲擊而被反綁在椅子上並換成馬伕裝。\n被米多莉和YHWH拯救，卻在帶兩人到日出酒館後被雷米劃破喉嚨而死。\n手上刺有十道光芒的太陽。",
@@ -2843,7 +2895,8 @@
   {
     "id": "Kevin_Bolden",
     "url": "npc/npc_page/pages/Kevin_Bolden.html",
-    "image": "individual_pics/Kevin Bolden.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkevin-bolden-3f70f5bb52%2Fc897dddf2a87444655439997972466261d442cb6ef2862e8721c93c5bffa51fb%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkevin-bolden-3f70f5bb52%2F55e7a73a094c751f8d7bb6e0c8f3d035344ef506bdec4d6f14d2bcc7b79ee524%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "麥克嵩城門旅店的老闆。是貴族家庭的後代，但為了證明自己可以自力更生，開了城門旅店。\n個性十分單純，容易相信人。對米多莉有所迷戀，為了向米多莉賠罪，曾送他一條家中的珍珠項鍊。\n兩年後台北市議員重返麥克嵩時，凱文仍經營城門旅店；他見到米多莉後反應強烈，又因聽見波稱米多莉為媽媽而心碎。當冒險者調查空洞的蘿琳時，凱文表示自己幾個月前仍見過蘿琳，但已快兩年沒和他說話。",
@@ -2885,7 +2938,8 @@
   {
     "id": "King_Knicol",
     "url": "npc/npc_page/pages/King_Knicol.html",
-    "image": "individual_pics/King Knicol.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-knicol-a42e196148%2F4727060910acd92dcea3edecffa36cdbd781edcb183ee404d5c25b5bdf9db75d%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-knicol-a42e196148%2F39036e30d8555bae35cf70d944e68e9f3499a9c8b4b225662b7ec3ab46281c1f%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "地底王尼可大人。\n冒險者於地下城與哥布林激戰後俘虜的一隻哥布林。在哥布林王戰死後，被冒險者加冕為地底王，並賜名尼可；本名呱啦。\n尼可大多數時間被烏犧奧泥五花大綁掛在背後，作為防身工具。後來在占卜老太太施法後，他變得乖順，像活生生的魁儡國王。\n安納戴克加入冒險時自稱受神王尼可與烏犧奧泥大法師指派。後來安納戴克身上掛著「神王的指引」，也就是神王尼可的手指項鍊；米多莉曾以定位魔法追蹤它到麥克嵩西北方的朗甫頓。",
@@ -2933,7 +2987,8 @@
   {
     "id": "Kojo",
     "url": "npc/npc_page/pages/Kojo.html",
-    "image": "individual_pics/Kojo.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkojo-e8aff6cdae%2F1dcc32122bdd8052c1175a180aa2460e2b31b6474df699bf7d10c043a9a77797%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkojo-e8aff6cdae%2F0b62419a612b0d5a6b8341bb4abd1ca85c9c13ab375287704a6d3d2c978fdb3b%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "在《古斯塔夫諾曼失蹤事件》中，住在艾爾諾的中年男性人類。經營著一間小店，裡面有不少材料與雜貨。\n向冒險者們揭露艾爾諾當地妖精的陰謀。\n在儀式當晚，協助安納戴克拯救遭到綁架的其他冒險者們。\n似乎有強大的魔法能力。\n最後在儀式現場倒地，沒能逃離。",
@@ -2973,7 +3028,8 @@
   {
     "id": "Lance_Berners",
     "url": "npc/npc_page/pages/Lance_Berners.html",
-    "image": "individual_pics/Lance Berners.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flance-berners-d265924a83%2F5a2d26f32e9da252f9f141c644a63e469a16ef0970fa167f2782b31cee3772e8%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flance-berners-d265924a83%2F6f964063e82a1dcaf879e74bedcee5fbfe9d6427cbc2b06d013f20e01030cf29%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "麥克嵩當地貴族柏納斯家成員之一，祖父為傑弗瑞，祖母為歐娜，母親為瑟琳，父親為蓋瑞斯。\n對於冒險者們與冒險故事十分有興趣。\n在雷米等人闖入其宅邸後，將雷米綁住並拷問他，最後將一枚黑色寶石沒入雷米胸前以進行追蹤。",
@@ -3022,7 +3078,8 @@
   {
     "id": "Laura_Fishburne",
     "url": "npc/npc_page/pages/Laura_Fishburne.html",
-    "image": "individual_pics/Laura Fishburne.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flaura-fishburne-7b1118b5c5%2F87a8605443c07b0a31ecf7110419593caa2b7f00ab50cd58d4c7408acc2872ce%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flaura-fishburne-7b1118b5c5%2Fd5c4f70370060933e9964e690b0560373531d697f0d807fc8c9fdaa0b928cdf2%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "T.I.D.E.S.的成員之一。\n在T.I.D.E.S.集會中，蘿拉以「天賦者」身份向方尖碑萊里・里奇蒙發起挑戰。經萊里同意使用魔法後，蘿拉隔空挖出萊里的右眼，將其作為信物，挑戰成功並晉升為方尖碑的一員。",
@@ -3069,7 +3126,8 @@
   {
     "id": "Leonard_Old_Pipe_Riversend",
     "url": "npc/npc_page/pages/Leonard_Old_Pipe_Riversend.html",
-    "image": "individual_pics/Leonard \"Old Pipe\" Riversend.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fleonard-old-pipe-riversend-3da5f1f306%2Ff8f850fe24da3f3eba94b82a12589e5395f9ac134a6940a54e83fb5d223bca5e%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fleonard-old-pipe-riversend-3da5f1f306%2F0113b76460b65e8a44b6199de1389b6f3d38aeb9a92fbc1f5ffcd615f5c6b3b5%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "阿龍的養父。\n數年前，阿龍因控制不了情緒，誤傷他的養父，而逃離土城。\n阿龍回來後，發現萊納拄著拐杖，卻稱自己是因為爬山受傷才需要拐杖。",
@@ -3115,7 +3173,8 @@
   {
     "id": "Leslie_Grunfeld",
     "url": "npc/npc_page/pages/Leslie_Grunfeld.html",
-    "image": "individual_pics/Leslie Grunfeld.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fleslie-grunfeld-987f47e1b2%2Fc6ffce951f2a57f517b7a0ec97878139d8d1d98af255b309453abd973956cb41%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fleslie-grunfeld-987f47e1b2%2F504444dcb2b49549280a7a49be5d399af62f52534c7d53210201d0ab8c8945fd%2Fthumb.webp?alt=media",
     "status": "historical figure",
     "gender": "female",
     "descZh": "卡什拉鎮匿名之聲的領袖，父親曾帶領信眾崇拜暗影之父。索拉死後，她集結匿名之聲追隨者，並成為拉索斯夫人，將卡什拉推向更深的獻祭與災難。冒險者在麥迪遜家閣樓發現始祖拉茲特獸，也確認萊斯麗與匿名之聲是卡什拉異變的核心之一。",
@@ -3163,7 +3222,8 @@
   {
     "id": "Lewis",
     "url": "npc/npc_page/pages/Lewis.html",
-    "image": "individual_pics/Lewis.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flewis-4e3ce069e9%2F9858a229950c89dfd918852a95a6680045a077cbc6dd513616164e65ef1d217b%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flewis-4e3ce069e9%2F87c1f4b8cfe97a4c3e8b9038ba81dea2b4d6da76d1bde244b78b645e7c17ed04%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "艾德蒙餐酒館的店長。\n與大衛醫師熟識，考慮聘用龍恩為廚師。\n在龍恩因不祥預感打算放棄工作機會後，路易斯仍邀請他協助將餐點送往柏納斯宅邸，並在晚宴上擔任服務生。",
@@ -3210,7 +3270,8 @@
   {
     "id": "lil_lily",
     "url": "npc/npc_page/pages/LilLily.html",
-    "image": "individual_pics/Lil'Lily.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flil-lily-a19750a936%2Fe08086c35cabeb8def1ec6472954ab8d9a6ced42f05c1d4da82159fbf1df6e56%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flil-lily-a19750a936%2F7309b0c9a0dd000d0d76a6cbd43e7abde82f91c81ef97e52431b2288ffc211f4%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "本名莉莉絲，是歐德里克聘來當地城的嚮導。\n雖然工作時臉色不好看，但還是十分盡責，備受歐德里克信任。",
@@ -3252,7 +3313,8 @@
   {
     "id": "Liliana",
     "url": "npc/npc_page/pages/Liliana.html",
-    "image": "individual_pics/Liliana.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fliliana-55cfc300ec%2F320f41093cdde185f538f92a180a62bb1a1af82e4b13d3c0a2176039ca9820d3%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fliliana-55cfc300ec%2F0f61bc97534b3e275f58e9947550c37c1f3aba35a5bbe30c54f4ed54f5627370%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "有著一頭銀白色短髮的津菈教聖騎士，和半妖精拉芙是冒險夥伴。\n兩人受瑪琳船長之邀來到聖拉雅米島協助調查島上的失蹤以及中毒事件。拉芙在調查中失蹤後，莉蓮娜向冒險者求援，並協助將調查推向金海岸礦坑。",
@@ -3303,7 +3365,8 @@
   {
     "id": "Lumio",
     "url": "npc/npc_page/pages/Lumio.html",
-    "image": "individual_pics/Lumio.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flumio-42c199cfb0%2F6cb66213e9c3109f5bb7a697509ae3e93eb843dac2fd5fcf3d0d057a431a4c29%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flumio-42c199cfb0%2F504ce2a2ca4d50170a4558e1c676e08005d712601aea99899cceaf8a6c0df1d9%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "neutral",
     "descZh": "斐納札的機器人衛兵，十分有群眾魅力。\n與烏波一同爭取心空席的席次，並順利晉級到決選。\n在決賽中，魯米歐多次重創烏波，幾乎殺死他；最後在冒險夥伴們介入下被擊敗，被賽博的釘頭錘擊飛，在空中化為火球後墜地爆炸。冒險者回到靈魂議會後，魯米歐沒有再出現。",
@@ -3349,7 +3412,8 @@
   {
     "id": "Luny",
     "url": "npc/npc_page/pages/Luny.html",
-    "image": "individual_pics/Luny.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fluny-d4ff3dcd59%2Fda0f2f627f88d5b071124c685a74d9e12b6e60862a21c3964335c37d53240643%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fluny-d4ff3dcd59%2Fb90fe19e17efb2c05541e635fc0e34771799de99f94de6068edf46676ab0a31d%2Fthumb.webp?alt=media",
     "status": "other",
     "gender": "male",
     "descZh": "在《古斯塔夫諾曼失蹤事件》中艾爾諾當地宗教，月之神信仰支派的宗教領袖，被當地居民敬稱為教主大人。\n邀請冒險者們參加當地的宗教儀式。",
@@ -3395,7 +3459,8 @@
   {
     "id": "Lysien_Amoret",
     "url": "npc/npc_page/pages/Lysien_Amoret.html",
-    "image": "individual_pics/Lysien Amoret.webp",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flysien-amoret-9ce27f95b2%2F4f47f544e4c7915d756fb2702ca7ca74fdd4319124831a5d20a60e20596d1fa4%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flysien-amoret-9ce27f95b2%2F151f1bc30d4e3a2159b6ef17877ec57e0efe6250f6d4649179fe3fe5559bf212%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "覆羽莊園的主人，周遭時間流動異常，與羽毛、天使和岡斯身上的詛咒有關。他曾視岡斯為實驗失敗品，並稱他的變化與芬尼爾王冠有關。冒險者介入後，利希恩透過儀式被推向芬尼爾的神性，最終成為「永恆與愛之神阿莫雷」；覆羽莊園消失，原址留下供奉他的新神殿。",
@@ -3439,7 +3504,8 @@
   {
     "id": "Mafa",
     "url": "npc/npc_page/pages/Mafa.html",
-    "image": "individual_pics/Mafa.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmafa-2108977b77%2Fb5a39f5727a3ee00e7877c3654547131de4882d51a7d8ec4e0e18c35ce674064%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmafa-2108977b77%2F093bb3f35b3c901f39bc2b90b098e9ded4f8ec46a8d9cee53bd92108d5fc8b23%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "在《古斯塔夫諾曼失蹤事件》中艾爾諾當地的營帳主人。\n對冒險者十分友善，提供不少關於古斯塔夫失蹤的資訊。帶領冒險者們前往祭拜古斯塔夫與前任村長的墳墓，也帶冒險者們前往案發的儀式現場。\n租給冒險者們一座營帳供他們休息。",
@@ -3485,7 +3551,8 @@
   {
     "id": "Syr_Magnus",
     "url": "npc/npc_page/pages/Syr_Magnus.html",
-    "image": "individual_pics/Syr Magnus.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsyr-magnus-85d847da4c%2Facc24a6f3dab9e691ad079554702bf3704e5f3487482b578c8fd7e44dcc109ff%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsyr-magnus-85d847da4c%2F9382d7a9e9eec477a70adc1980d3781b304e2ec2bf8c8fe828261ca19daf68ef%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "帕拉丁的父親。\n麥丁頓王國騎士團的副團長，因在王都麥克嵩遭到匪徒攻擊，未及時治療傷勢，導致傷口感染，被迫退休，回到寇林菲爾德養傷，卻因重傷，很有可能喪命。\n在帕拉丁犧牲了自己的左耳，透過神秘的月神教儀式後，產出了一罐粉紅色的液體。馬格努斯爵士喝下後，竟然神奇的完全康復了。\n向帕拉丁透露他的生母並不是他長期以來稱為母親的那位女人，而是他在麥克嵩遇見的另一個女子，珊吉雅，又被稱為麥克嵩的紫羅蘭。",
@@ -3532,7 +3599,8 @@
   {
     "id": "Syr_Galaestrel_Freyeman",
     "url": "npc/npc_page/pages/Syr_Galaestrel_Freyeman.html",
-    "image": "individual_pics/Syr Galaestrel Freyeman.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsyr-galaestrel-freyeman-b0d8e04142%2Fe93edf2e8438d571578865c698356ab2988b30b1bfa3d71fd86f7d6b66dd64d4%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsyr-galaestrel-freyeman-b0d8e04142%2F6db8585c2f72f6a51fbd58d0f8e57f1b6be13421aaf0c88cd125d147607ada2b%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "萊斯諾的大臣，中年藍龍人男性。\n個性溫和且堅定，但在將軍面前毫無插嘴的餘地。\n認為萊斯諾與克萊芬兩地應該分治，而非強硬地靠武力收復。\n在中途之家被押到萊斯諾高層面前時，格雷斯卓認出了阿龍是拉撒拿的新任龍冠，也提到來自拉撒拿的信使正在尋找他。當格雷斯卓試圖反對瑪萊雅將軍的武力路線時，立刻被將軍打斷。",
@@ -3575,7 +3643,8 @@
   {
     "id": "Mango",
     "url": "npc/npc_page/pages/Mango.html",
-    "image": "individual_pics/Mango.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmango-a8232c47bf%2F3c02ca420c4e693f308d58137beb354e7e1ffad90714b668282feb365925d5bb%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmango-a8232c47bf%2F18dcedf1223327f912f0937ba50123452a46b7b3ab56c500d9dc8db2b861e7c2%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "neutral",
     "descZh": "由妖精王國的能量產出的蛋，孵出的魔法生物。\n其外型由照養他的洛特的意識所塑型。\n擁有超出想像的知識，但有時候會突然說出讓人恐懼又無法理解的話語。\n與洛特一起在母親大人的屠殺中生存。\n與洛特一起來到斐納札後消失了一段時間，最終在烏波成為心空席後，以巨蛇的型態現身，且有著痛苦人臉的花紋與殘肢長在身上。\n芒果將賽柏咬傷，將他拖入傳送門消失。後來派琶告知冒險者，常翠林已擊退芒果並救出賽柏。\n芒果最終帶著四隻蛇妖襲擊常翠林總部，被涅西斯藉由派琶喚出的樹木困住，並在賽柏的致命一擊下死去。",
@@ -3630,7 +3699,8 @@
   {
     "id": "Marco",
     "url": "npc/npc_page/pages/Marco.html",
-    "image": "individual_pics/Marco.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarco-b431f244d4%2Fda5689db3f9521da59ea87db831821be381e16d2885fc1bd39dbe86f6c72014c%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarco-b431f244d4%2F56a2ee1fb55ede8da8ac824946e97ec6b3f6fa93c58a4f01f008c12298bf2ff3%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "在《鬧鬼荒野的偽多頭龍》中鬧鬼荒野當地醫生烏鴉醫師養的狗。\n帶領冒險者們尋找腐臭味發出的源頭，並會對看不見的偽多頭龍所在之處狂吠。",
@@ -3672,7 +3742,8 @@
   {
     "id": "Marcus_Jens",
     "url": "npc/npc_page/pages/Marcus_Jens.html",
-    "image": "individual_pics/Marcus Jens.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarcus-jens-30b0218529%2Feae6f91773e37f7e1094e00adf5e641802d88fae70c42e82defc7e3c04172f66%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarcus-jens-30b0218529%2F6520ec5a4f5dd27c637130c840a23a4cbb1ad04fd3005c0314d098868f86db3d%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "麥克嵩的貴族，家族從事情報搜集。\n雇用了一名叫伊的貧民窟少年（伊稱呼他為M伯爵），似乎在調查和蜘蛛神教相關的事。\n有一名叫瑪莉安的妹妹被關在王宮監獄內，冒險者受他委託，將瑪莉安從監獄救出來。\n多年前曾購買了大量的魔法球，魔法球的功能似乎非常多元，而且不是只有他自己能使用。\n馬可斯是月神教的信徒。\n在麥克嵩的擁王派失利後，與冒險者們一同逃往洛森王國，前往尋找母親大人的旅途。然而，在一次與月光狩獵會的戰鬥中，被敵人的詛咒殺死。冒險者將他安葬，並立了一個木製的墓碑。",
@@ -3719,7 +3790,8 @@
   {
     "id": "Lady_Marian",
     "url": "npc/npc_page/pages/Lady_Marian.html",
-    "image": "individual_pics/Lady Marian.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flady-marian-406a46661c%2F8a390805940dd18db443255b424f320433b8564b1b4e463d6935e71eb4f19203%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flady-marian-406a46661c%2F217bda71d73eefd38873f66d2c0cb6687c5ca940ce61a2bf1bd3b4e481de148f%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "麥丁頓現任國王艾略特四世的母親，在前國王時期似乎沒有人知道他的存在。\n被智者奧利佛暗示不是人類，似乎有一定程度的魔法能力，能主動進行心靈溝通。\n根據瑪莉安的說法，本名為瑪麗蓮，過去是他蜘蛛神教的夥伴，但後來信奉拉索斯教，改名為瑪莉恩，並揭發瑪莉安臥底的身份，使他被關入地牢，因此瑪莉安對他恨之入骨。\n瑪莉安也認為艾略特四世只是魁儡。後來冒險者發現運送巴納沃二世屍體、皇冠與玉璽的夫妻被刺客射殺，而線索指向瑪莉恩。",
@@ -3768,7 +3840,8 @@
   {
     "id": "Marianne_Jens",
     "url": "npc/npc_page/pages/Marianne_Jens.html",
-    "image": "individual_pics/Marianne Jens.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarianne-jens-85edeb6a2b%2F9bea81f1feb0833ed533cef76d642e9eb64f3a80b890bb3cc89b0c430464fb37%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarianne-jens-85edeb6a2b%2F3ce7c58de3b358fed161c26586159617b2ab6a8756b4dd9c2e64ae51cd4330cd%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "麥克嵩貴族馬可斯・詹斯的妹妹。\n年輕時曾經離家出走過一段時間。\n被關在麥克嵩王宮監獄，是蜘蛛神教在麥克嵩的間諜。\n過去曾和當時名為瑪麗蓮的瑪莉恩為同夥，但因為被背判而被送入地牢。\n安娜過去是他的下屬。",
@@ -3816,7 +3889,8 @@
   {
     "id": "Maribel_Muddlewick",
     "url": "npc/npc_page/pages/Maribel_Muddlewick.html",
-    "image": "individual_pics/Maribel Muddlewick.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmaribel-muddlewick-e9ddbf97d2%2Ff2f6c9c201d2a03b4e0c509301c410901ed3e55c98b3230133be0ca96a3b3962%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmaribel-muddlewick-e9ddbf97d2%2F5a520ec725d3e70383a065fb7b94dd75e42037b3fbb1f52ae383c35793618120%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "本年度競爭土城「春天精靈」的女孩之一，但輸給了佩妮・蘋果木。他原本想透過擔任春天精靈，來和「聽說存在」的山賊進行談判，為土城謀取較為公平的利益。\n父母外出旅行兩年以上都還沒回到土城來。\n在與瑪莉貝爾相處後，冒險者們發現他廚藝精湛、飽讀詩書，且有足夠的獨立生活能力。\n後來瑪莉貝爾離開土城，加入阿龍等人組成的冒險團「中途之家」。他在萊斯諾被瑪萊雅將軍脅迫前往克萊芬當間諜，並在克萊芬市長辯論會中目睹皮尼歐教授遭槍殺。\n教授之死讓瑪莉貝爾受到極大衝擊。他偷走行兇的槍械，緊抓著它不放，並開始研究槍械與立德上尉留下的通訊裝置。\n在白色小教堂，他為雷亞父母獻上以魔法召出的白花。瑪萊雅將軍的軍隊襲擊時，瑪莉貝爾全力保護同伴，並握住鑰的手，將自己的精力不斷傳給他。",
@@ -3868,7 +3942,8 @@
   {
     "id": "Captain_Marin",
     "url": "npc/npc_page/pages/Captain_Marin.html",
-    "image": "individual_pics/Captain Marin.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcaptain-marin-5268d61857%2F0bbec19a5560c9401eeacdff10c8a6bbf4e7c665224db834e8ce2c0975329499%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcaptain-marin-5268d61857%2Fb009ffc0e4df295f1983ee63ab95d2befb9f5df9d75f8b1f6c6848aa37fd0a21%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "方努爾市的一名船長。\n受羅賓遜主教委託，載冒險者們到南方的荒島，尋找《雪の化身の目覚め》的下落。多年後，聖拉雅米島成為她的封地；她接獲島上居民失蹤與中毒的消息後，帶新的冒險者登島調查，並請他們將調查報告送往聖津菈大教堂。\n在金海岸礦坑事件後，她提供津菈教協助者勳章，讓冒險者前往方努爾回報拉索斯教與拉巴比石的線索。",
@@ -3918,7 +3993,8 @@
   {
     "id": "Captain_Reid",
     "url": "npc/npc_page/pages/Captain_Reid.html",
-    "image": "individual_pics/Captain Reid.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcaptain-reid-b52b1fa45b%2F1bd1ad9f8e61df94cf036df041eee2997af3c750071a67ceec3fc18496740cb7%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcaptain-reid-b52b1fa45b%2Fa1ef90df2d93dea8bf64dd11e28d0fe8d70e19a945859ed9ed63db97b02f13ff%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "利斯達上校手下的軍官，身穿紅色軍裝，身材精瘦。\n在皮尼歐教授遇刺後，立德上尉安排替身潛入酒館，私下向雷亞提出條件，希望雷亞公開支持老樹盟與利斯達上校。\n他拿出兩枚白金幣，並以雷亞父母的情報作為籌碼，試圖說服雷亞倒向老樹盟。拉比憤而將他從包廂窗戶丟了出去，但立德上尉留下通訊裝置，表示會給雷亞一天時間決定。",
@@ -3960,7 +4036,8 @@
   {
     "id": "Matilda",
     "url": "npc/npc_page/pages/Matilda.html",
-    "image": "individual_pics/Matilda.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmatilda-52091fe277%2F6a87620e74d03429d39753b2f2678178fdd37358a2d0d1a727e4458e0f6ec307%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmatilda-52091fe277%2F8c6ac8cf03825fa77df85cc230b309514d9ef86b0379c867fc910431de12c8f7%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "魏斯科的一名女子。\n話不多，但與他的夥伴梅莉之間似乎頗有默契。\n在酒食樂酒館與梅莉向布朗說明拉索斯教，後來兩人將瑪芬先生關在梅莉家中。布朗在羅傑家門口看見瑪蒂達鬼鬼祟祟地溜進服從神社。",
@@ -4006,7 +4083,8 @@
   {
     "id": "Maylee",
     "url": "npc/npc_page/pages/Maylee.html",
-    "image": "individual_pics/Maylee.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmaylee-a2637aa455%2Fa38d96163331f66ff77b9f688ec8f8c2b883e7954befcdc4dce6e5c6c3b42a0b%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmaylee-a2637aa455%2Fbd0f63515595f257e62e8a4ac5f60f359ce9ad8cc5862ae8985bd8b694d79422%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "魏斯科的一名女子，年輕且十分漂亮。\n在酒食樂酒館與瑪蒂達和布朗說明了關於拉索斯教的事，並請布朗喝了一杯似乎被下了藥的啤酒。\n他很喜歡瑪芬先生，後來將牠關在自己家中的鐵籠裡。布朗威脅並審問梅莉後，從盆栽旁找到線索，救出了瑪芬先生。",
@@ -4052,7 +4130,8 @@
   {
     "id": "Melvin",
     "url": "npc/npc_page/pages/Melvin.html",
-    "image": "individual_pics/Melvin.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin-6fc2057850%2F1e359f72c7a3554e36b6f35892b9ac14ab0ca63e6a194a47dc96e93272c9be59%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin-6fc2057850%2F9a73a49383e882e58b64834115b2ca36dd875a9de88a12591531b952fe4b4a63%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "大學城歷史區區長安德烈亞・戴依的助理。\n自稱沒有什麼學術能力，只能幫安德烈亞打雜，且似乎十分懼怕安德烈亞。\n最終在安德烈亞示範給冒險者們看的月神教靈魂轉移儀式中，麥爾文被當作「無辜的靈魂」犧牲，使蘿琳的靈魂得以回到身體。",
@@ -4094,7 +4173,8 @@
   {
     "id": "Mikkel_Drogskol",
     "url": "npc/npc_page/pages/Mikkel_Drogskol.html",
-    "image": "individual_pics/Mikkel Drogskol.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmikkel-drogskol-87fbac6d94%2Fc53ad19920712fbf6755b4c1e821096a00e6299423d9b0bea0e29d46ae52f5d2%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmikkel-drogskol-87fbac6d94%2Fed25cbb03eed8703289fb8ab4e2daf83d5e05b3413a50e4d3ac7faee8512bd56%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "卓茲克家族的最後一名成員，年約二十多。\n在睡夢中被殺死，如今成為幽魂，徘徊在卓茲克別莊，有時會與來訪的客人攀談，但對方不一定聽得到他的聲音。\n冒險者探索卓茲克別莊時，米可與庫登交談，透露卓茲克家族是在睡夢中被滅門，也提到烏西歐尼其實是卓茲克家族的一員。後來他讓所有冒險者逐漸看見並聽見自己，卻阻止他們直接離開宅邸。戰鬥後，米可化為玻璃般的碎片；庫登拾起碎片時，看見了烏西歐尼在此活動的片段。",
@@ -4140,7 +4220,8 @@
   {
     "id": "Moore",
     "url": "npc/npc_page/pages/Moore.html",
-    "image": "individual_pics/Moore.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmoore-dc31880f0f%2F8da7c392b1ea31cf7d1024bd89598b40c4e2277d5fbf6b9a0dcf5f9957e5ee5a%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmoore-dc31880f0f%2F9db0cc0ed6c2fcb1101d4757c5690deba1b67244f67117ee46cd8dca79727575%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "卡什拉鎮無名書店的店主。書店中的書其實都是卡什拉居民的傳記，冒險者也在店內找到自己名字微弱浮現、內容仍空白的傳記。摩爾默許眾人取走那些書，也因此讓他們更接近卡什拉鎮被重複保存的真相。",
@@ -4180,7 +4261,8 @@
   {
     "id": "The_Mother",
     "url": "npc/npc_page/pages/The_Mother.html",
-    "image": "individual_pics/The Mother.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-mother-38e5d09326%2F9be3cf81f7954343c5759b0d73e9fda1d9c2db29df87e373a5711ec4301a522e%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-mother-38e5d09326%2F528c6cc2abb0a332a6d6fcf347fb8f3c86623fd1cc31f9a7f31fb45af0e8ba3d%2Fthumb.webp?alt=media",
     "status": "unknown",
     "gender": "neutral",
     "descZh": "麥克嵩舊城區蜘蛛神教的宗教領袖。\n出現在舊城區的一座隱密神殿（被稱為母親大人的寺廟）內，接見來訪者時，會從牆壁內的洞穴出現，現身於床上。\n冒險者們也發現在貴族伯納德・諾姆家的三樓，有個房間，和寺廟格局相似，母親大人也會在這裡出現。\n有一張佈滿皺紋的臉，表情難以解讀。會發出各種奇異的聲響來進行溝通，也會以普通語說話。\n實際上，早在阿爾芬諾誕生前就已存在於妖精王國境內，但其起源未知。\n被安娜奪舍後，鑽入帕拉丁的體內逃走。\n之後在洛森王國的一座洞穴內，異變的母親大人殺死了拉黎爾、蓋瑞，以及洛特以外的多數冒險者；佛拉因在洞外等待而倖存，洛特與芒果則因圖伊特以自身存在的所有證據作為交易才得以活下來。",
@@ -4234,7 +4316,8 @@
   {
     "id": "Mr_Moon",
     "url": "npc/npc_page/pages/Mr_Moon.html",
-    "image": "individual_pics/Mr. Moon.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-moon-7ee1118150%2F8a4702ab88ce35e2d1d587b725e2bbe513b7d4e506c5c45f838bb9fd1d177f10%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-moon-7ee1118150%2Ffbaa29550967cb8ae296eb985b56194f38b87268eda0e202b606e8fda6ff7020%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "麥克嵩當地的音樂經紀人，有個辦公室名叫「派頓」。\n給人一種精明狡黠的感覺。\n在崔尼斯劇院挖掘到薩梅爾，邀請薩梅爾與他簽約，並給了薩梅爾一個有🎵符號的名片。\n帶冒險者們組成的樂團「荒野旋律」來到柏納斯家的宅邸演奏。\n與柏納斯家族似乎有長期穩地的合作。\n月之神芬尼爾的信徒。\n在麥克嵩似乎有些許影響力，曾告訴薩梅爾與帕拉丁遇到衛兵找麻煩時，可以報上他的名號。\n在（部分）台北市議員離開麥克嵩前，透露自己過去和月神的交易，讓他已與死亡距離不遠。\n在冒險者們回到麥克嵩時，月先生已經死去了。",
@@ -4281,7 +4364,8 @@
   {
     "id": "Mr_Muffins",
     "url": "npc/npc_page/pages/Mr_Muffins.html",
-    "image": "individual_pics/Mr. Muffins.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-muffins-92112484ca%2F272bfbdb0ddf0656ed1403dfe2b458322c68170b6360610023fbafed6dd7a6bb%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-muffins-92112484ca%2F764b7806362849a894b0c8ea520327c485465a1de19d2fb741614512416ec047%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "過去由溫德家飼養的巴哥犬，現在與布朗一起冒險。\n似乎能透過心靈感應的方式與人溝通，甚至可以化成似人的生物或野狼。\n對溫德大人似乎懷有很深的敵意，但對彼得則是非常保護。\n在布朗離開波馬贊後跟隨他前往魏斯科與夏庭森。途中，瑪芬先生曾變成野狼撲倒馬匹，證實布朗先前在波馬贊見到的野狼正是他。\n之後，瑪芬先生似乎失去與布朗溝通的能力，只剩下普通犬隻般的反應；即使戴著羅納德給他的魔術師帽，也只會吠叫與抗拒布朗修剪指甲。",
@@ -4324,7 +4408,8 @@
   {
     "id": "Norvelle",
     "url": "npc/npc_page/pages/Norvelle.html",
-    "image": "individual_pics/Norvelle.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fnorvelle-0d67164304%2F6e117b39e5dd768e6e7bc1759f8bcfd14f70e512bd8b77920126b54d8f3aebd5%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fnorvelle-0d67164304%2F88f09171ee31cf077cfa319974a1c22330a50e8b9530a68bbaa411a25419369d%2Fthumb.webp?alt=media",
     "status": "historical figure",
     "gender": "male",
     "descZh": "征服者洛林的左右手。\n個性殘暴，死於其他妖精之手。\n蜘蛛神教的創立者之一，屍體的粉塵被艾蒙醫生撿走，拿來作為儀式的材料。",
@@ -4372,7 +4457,8 @@
   {
     "id": "Nylessa_Arylith",
     "url": "npc/npc_page/pages/Nylessa_Arylith.html",
-    "image": "individual_pics/Nylessa Arylith.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fnylessa-arylith-cd3dce7c63%2F3499dfd4a7b6bbdba2a98df00101497267a3e52de63a78c7f2ece20690c15ab5%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fnylessa-arylith-cd3dce7c63%2Fece10377f9d9e4fa33e06542d8c9125a610d5b6ad3f7be02ce61c889023651cf%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "阿龍的堂妹。\n身材嬌小，和顏悅色，熱愛藝術。\n與弟弟維瑞克感情很好，並對魔法商店老闆哈洛・米佐有很強烈的愛意。\n受到哈洛的煽動，在畫室內殺害其伯伯費洛登與伯母瑟萊拉，並擺放成其在夢中所見的「雙龍登仙」姿勢。\n案發前請維瑞克為他竄改記憶，消除他的意圖；案發後請維瑞克為他竄改記憶，消除他行兇的記憶。\n在確認其為兇手後，受到新任龍冠阿龍的審判，砍去其手，流放拉撒拿。",
@@ -4420,7 +4506,8 @@
   {
     "id": "Lord_Octavian_von_Oderick",
     "url": "npc/npc_page/pages/Lord_Octavian_von_Oderick.html",
-    "image": "individual_pics/Lord Octavian von Oderick.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flord-octavian-von-oderick-885a6172e8%2F5f8383becac1b30cddff9b56aaeb1c7baa68c3b916d6a6cf085927fab1ca5b51%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flord-octavian-von-oderick-885a6172e8%2F9311a5c89adf0c8623350809c9738b6d92eb3ff447ce9671310cdd0e3217107f%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "啤酒商起家的商人，靠著低價且劣質的啤酒賺了很多錢。\n近期開始涉足娛樂產業，「隨機地城」試營運中！\n歐德里克啤酒，歐歐歐歐歐......五告讚！\n本名為馬克・丹尼爾斯。",
@@ -4462,7 +4549,8 @@
   {
     "id": "Ona_Berners",
     "url": "npc/npc_page/pages/Ona_Berners.html",
-    "image": "individual_pics/Ona Berners.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fona-berners-dbbc43a888%2F1a287a870cd578d9f6b10a511805cb6f85d627c74513635c9618d3713c11b84d%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fona-berners-dbbc43a888%2Fea50a806cd97031835566cc7e4ca278e64f554af1eefee1c55d8f7f8c9c91d9b%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "麥克嵩貴族柏納斯家的成員之一，老公是傑弗瑞，孫子是蘭斯。\n似乎與麥克嵩的紫羅蘭有些交情，曾表示可以在柏納斯家的大型晚宴上將冒險者介紹給紫羅蘭。",
@@ -4512,7 +4600,8 @@
   {
     "id": "Oswald_Creighton",
     "url": "npc/npc_page/pages/Oswald_Creighton.html",
-    "image": "individual_pics/Oswald Creighton.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Foswald-creighton-17d5210d12%2F20f7cb1c64458b0bb318cedd0077170ce5471ea13fc01e2d5a515d82ebe8d5fb%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Foswald-creighton-17d5210d12%2Fdf84e9e14637ce5681a6caf24a94853e888b87120386c67f15c7624d03770be4%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "土城附近海雅特山上的山賊首領。\n被佩妮・蘋果木暱稱為「大奧斯」。\n為了控制手下的山賊，需每個月利用土城春天精靈身上的翠綠印記執行儀式，卻反而因為長時間相處，而讓佩妮愛上他。\n在佩妮的口中「強壯、可靠，且善良」、「人不壞」。\n在「斬殺交響樂」襲擊時，為了讓佩妮不受傷害，帶著佩妮私奔。\n一段時間後，失去雙手的奧斯華跑到拉撒拿尋找阿龍，表示佩妮的狀況不太妙，並請求協助。",
@@ -4556,7 +4645,8 @@
   {
     "id": "Pamela_Yaso",
     "url": "npc/npc_page/pages/Pamela_Yaso.html",
-    "image": "individual_pics/Pamela Yaso.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpamela-yaso-9a1f64a925%2Fb30363d7b4166e1eebdf9dd860c4f8daf5974c86e6cb82a94ba100a7d188eb12%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpamela-yaso-9a1f64a925%2F970dd95379c37d9738142a91af343fca50176d2cf99e816654242f8c1c4310e8%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "麥克嵩的貴族，家裡似乎是經營農作物的，幾個世代前才搬遷到麥克嵩。\n與華生和蘇加魯在王宮花園相談甚歡，並邀請他們前來家裡作客。\n在家中的晚宴，潘蜜拉要求貴族們表態是否支持新任國王；他實際上是反對國王派，也被認為在鬥爭中策劃將支持國王派的人馬幾乎都殺光，其中包含他的朋友伯納德。\n伯納德宅邸被燒時，潘蜜拉出現在外頭率領暴民高喊「異教徒」。後來冒險者拷問刺客，得知潘蜜拉至少掌握近百名傭兵，並計畫結合奴隸與傭兵攻入王宮、發動政變。",
@@ -4602,7 +4692,8 @@
   {
     "id": "Pattie_Sylverome",
     "url": "npc/npc_page/pages/Pattie_Sylverome.html",
-    "image": "individual_pics/Pattie Sylverome.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpattie-sylverome-f1e29a5c08%2Fdec295afe969a5949137e3df7fcc1bc8dbf450d2adc5a61d55ab4374ae05655a%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpattie-sylverome-f1e29a5c08%2Fc3103f58aff4071ecc3d85c17f9bb37c34cae8323e0b16d7701ab747813c9699%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "female",
     "descZh": "希爾維羅姆家族被費內羅・懷雅特抄家後唯一倖存的後代。\n因家族與深淵的交易，被當作在深淵的俘虜，但也因此習得深淵魔法，且可以穿梭於物質世界和深淵。\n將冒險者們復活，希望冒險者們能為他的家族復仇。",
@@ -4644,7 +4735,8 @@
   {
     "id": "Penny_Applewood",
     "url": "npc/npc_page/pages/Penny_Applewood.html",
-    "image": "individual_pics/Penny Applewood.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpenny-applewood-f1a6ca8992%2F095d12914959b73bb10c62caf3023fcb3176ef68a1d3119177e3ff675acd47a2%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpenny-applewood-f1a6ca8992%2F01c2895a908516b9341ac4abed0d3b97d95ccb2255d87faf54a7badbf664a4ec%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "本名佩妮洛普。\n蘋果木家的長女，是土城最漂亮的女孩之一，也是阿龍的初戀。\n已蟬聯土城連續三年的「春日精靈」。\n愛上山賊首領奧斯華・克雷頓，暱稱他為大奧斯。\n在斬殺交響樂襲擊時，與大奧斯私奔；後來失去雙手的奧斯華前往拉撒拿尋找阿龍，表示佩妮陷入危機並需要援助。",
@@ -4694,7 +4786,8 @@
   {
     "id": "Pete_Madison",
     "url": "npc/npc_page/pages/Pete_Madison.html",
-    "image": "individual_pics/Pete Madison.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpete-madison-8911468b96%2F781827bd98785f99faf5be4a7bf0c9aaa004514d81c75efe40057a152c0bb5a4%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpete-madison-8911468b96%2F2d8cc62882fca51e6bc750d33554883d12165911f98bb9ef2950ec99aeef35f7%2Fthumb.webp?alt=media",
     "status": "historical figure",
     "gender": "male",
     "descZh": "卡什拉鎮長，原本與兒子索拉同住。索拉被匿名之聲與瓦克松醫師的儀式奪走生命後，彼特無法接受事實，將索拉與嘟嘟的屍體藏在床底，自己也逐漸失去照顧自己的能力並死去。冒險者在三樓找到他的屍體與遺書，後來將他安葬在教堂花園。",
@@ -4737,7 +4830,8 @@
   {
     "id": "Peter",
     "url": "npc/npc_page/pages/Peter.html",
-    "image": "individual_pics/Peter.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpeter-26659dfc36%2Fa5eb3a29c208ce1161556fa536a9675c015350d3aac8abb0396bab4379f86ce4%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpeter-26659dfc36%2Fdce9a1ae4ba7920ecfa5753f024c614eab8b8a9a4de3b371d0448c01fbc3fbf6%2Fthumb.webp?alt=media",
     "status": "unknown",
     "gender": "male",
     "descZh": "溫德家的公子，年約7歲，個性十分單純。\n有隻叫瑪芬先生的巴哥犬，並把牠視為自己唯一的朋友。\n布朗護送溫德家前，彼得告訴他村人和溫德家並不親近，也提到一家人準備前往魏斯科。後來彼得聞了布朗摘下的黑蓮花後昏倒，導致溫德大人解除委託。",
@@ -4780,7 +4874,8 @@
   {
     "id": "Phola",
     "url": "npc/npc_page/pages/Phola.html",
-    "image": "individual_pics/Phola.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fphola-fb5351d157%2F39471c14200e2c27f08bfbe1fffb0d254361dc916a0b7e293c9615c4f38eb445%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fphola-fb5351d157%2F9d6ebad2f76c1df9c4015431a74d8540d2ce2be86fd73a7f90968edafcd7104b%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "弗萊特境內的嚮導之一，相對年輕而較無經驗，但根據師父的說法「很有潛力」。事後冒險者們發現他是師父的孫子。\n嗜酒；在與冒險者們的旅行過程中，受到圖伊特感化而戒酒，並信奉芬尼爾。\n在母親大人異變事件後，佛拉與羅特、芒果成為僅存的三人。\n多年後，他身為戴著白色面具的芬尼爾信徒，與羅特的隊伍交戰；重傷昏迷前喊出羅特的名字，身分才被認出。羅特不願再失去這名舊夥伴，治療並一路照料他，帶著他跟隨派琶前往常翠林。\n即使仍未完全康復、行走跛腳，佛拉仍主動分擔物資，並在芒果與蛇妖襲擊常翠林總部時支援冒險者，於危急時刻治療眾人。\n他認為身為芬尼爾信徒，不適合久留在涅西斯的領地；與羅特談過母親大人事件留下的傷痛後，兩人一同悄悄離開常翠林，尋找尚未決定的未來。",
@@ -4832,7 +4927,8 @@
   {
     "id": "Queenie",
     "url": "npc/npc_page/pages/Queenie.html",
-    "image": "individual_pics/Queenie.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fqueenie-8b77e6bb71%2F05710f2d15245209418639996b2def28c5240a5d78a9344e46ac386a7195e83c%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fqueenie-8b77e6bb71%2F469e78cf5a76fbd8aeb87bfe21e2ab9d0b094efffc046faa50045cf8b772ec0a%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "在魏斯科服務中心工作的半身人女子。\n對顧客非常熱情，講話有點急切。\n布朗曾邀請昆妮下班後共進晚餐，兩人一起去了艾德蒙餐酒館與恬靜花園。後來布朗在教堂醒來後，昆妮已不記得前一晚與他同行的經歷，只把他當作精神狀況不佳的客人。",
@@ -4876,7 +4972,8 @@
   {
     "id": "Ralf",
     "url": "npc/npc_page/pages/Ralf.html",
-    "image": "individual_pics/Ralf.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fralf-037f280ec4%2F64b2c229b1ccb71d2b5e101ab3cf93720b1a442d49690df170f8e8dc978b04ab%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fralf-037f280ec4%2Ffa8d1f0b7d7711e7691f90831cd3063c5140185d760dbafa4e0700bac651e22b%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "有著一頭金色長髮的半妖精遊俠，和聖騎士莉蓮娜是旅行的夥伴。\n兩人受瑪琳船長之邀前往聖拉雅米島協助調查島上的失蹤以及中毒事件。\n拉芙在調查中被綁架到金海岸礦坑內，身體虛弱但仍保有意識；冒險者救出他後，得知他曾看見有人操控巨大的拉茲特獸。",
@@ -4923,7 +5020,8 @@
   {
     "id": "Rashim",
     "url": "npc/npc_page/pages/Rashim.html",
-    "image": "individual_pics/Rashim.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Frashim-a8cd50fb64%2F7a9c085a2edba9b5924f4dfd5fbeaa38b5e0f0f51eeaf58585b126f47c58649d%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Frashim-a8cd50fb64%2F8da9358ddc271df49746fcaf461962f0a3d20a51bd6375d24df8a5332a91edd9%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "住在麥克嵩舊城區（貧民窟）的年輕男子。\n雖然自稱不信蜘蛛神教，但是對貧民窟的蜘蛛神教宗教領袖母親大人似乎十分熟悉。\n帶領華生前往母親大人的神殿。",
@@ -5016,7 +5114,8 @@
   {
     "id": "Reese_Tig",
     "url": "npc/npc_page/pages/Reese_Tig.html",
-    "image": "individual_pics/Reese Tig.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Freese-tig-58d583321c%2F4e265698a613bf40ec7ea4babf405edd677e5a075aedc8b8438794164d70748f%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Freese-tig-58d583321c%2Fb5998351ea9ca4632448e78971f6ef0ff3fecfb9ba4fabc767b2366fb9123ca3%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "居住在方努爾市的人類冒險家，又被稱為「鐵鎚」瑞斯。\n協助津菈教調查城市中發生的中毒以及失蹤事件，並與瑪莉、龍恩一同追查尼姆孤兒院前方水井下的異狀。\n在龍恩昏迷時，他曾將龍恩的巫妖手臂用神秘的鍊子鍊住以抑制巫妖的法術。\n在水井下的戰鬥中，瑞斯被怪物咬斷頭部而死；龍恩事後安排將他的遺體送回教會。",
@@ -5063,7 +5162,8 @@
   {
     "id": "Riley_Richmond",
     "url": "npc/npc_page/pages/Riley_Richmond.html",
-    "image": "individual_pics/Riley Richmond.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Friley-richmond-936d7108b9%2F1572543ac4a6399bf101d3db83368a0115ef51e3bf4bbb8640546ec450f1a7cc%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Friley-richmond-936d7108b9%2Fddadf572fc7dd1e86f83fc777b6d45fb6180265c89ff61bc72f75d64d2428161%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "里奇蒙家族的當家掌門人，巴托斯的女兒，喬里森的信奉者。\n過去為T.I.D.E.S.方尖碑的成員。冒險者受邀參與T.I.D.E.S.集會時，蘿拉・費許朋向他發起挑戰，直接奪走他的右眼作為信物；萊里因此失去方尖碑席位並被逐出T.I.D.E.S.，連他邀請的冒險者們也被迫離場。\n被逐出後，萊里帶冒險者前往土城，使用自己在赫洛登瀑布後方的研究中心「渡鴉中樞」，並委託他們取得受喬里森祝福河水漂流的蘋果木枝幹，用來製作讓自己重返T.I.D.E.S.的神秘器具。",
@@ -5114,7 +5214,8 @@
   {
     "id": "Bishop_Robinson",
     "url": "npc/npc_page/pages/Bishop_Robinson.html",
-    "image": "individual_pics/Bishop Robinson.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbishop-robinson-5d53c44fe0%2Fd228f1feb3fd60b59d2e4763b894e8ced7758df8d30e4151de196b683d012578%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbishop-robinson-5d53c44fe0%2F185b1eb56c1f2f631fcfa9a136f8fa7a64fb7fe9a2a1d033162172e0730fd9fc%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "津菈教大主教。\n在聖拉雅米事件中，羅賓遜主教接收瑪琳船長送來的調查報告，將島上的失蹤、中毒與方努爾尼姆孤兒院地下的拉巴比石互相比對，並命令裁判官調查孤兒院。米多莉從檔案室發現孤兒院販賣兒童的紀錄後，持文件質問主教並攻擊他，丟下聖徽越獄；羅賓遜因此受傷，但仍請冒險者先找到米多莉、安撫她並將聖徽歸還。",
@@ -5162,7 +5263,8 @@
   {
     "id": "Roline_Hughes",
     "url": "npc/npc_page/pages/Roline_Hughes.html",
-    "image": "individual_pics/Roline Hughes.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Froline-hughes-04a607e095%2F90b5a598b8cf155c5d59995b5dd57a8373f0037d5b28417a8773d7b8ac206b17%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Froline-hughes-04a607e095%2F5e169ae1668a561537abd67f1e4242bbc2263a48a9b1a9a3525143e246c14223%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "麥克嵩貴族休斯家族的新任掌門人。\n從小就展現出極好的社交天賦，因此父親努力培養他作為家族的接班人。\n與米多莉和龍恩在麥克嵩王宮花園初見。\n在比武大會事件後對龍恩產生了極深的情愫。\n在認識龍恩前，似乎常常出入貴族的秘密雜交派對，但如今亟欲隱藏這段過去。\n在帕拉丁等人於15048年再次回到麥克嵩時，用心幫助他們，甚至作為掩護讓他們逃出王宮。不久後被安娜冒用身份，襲擊帕拉丁。後來再次見到帕拉丁時，協助落魄的他買東西。\n在圖伊特打開第三隻眼時，他的靈魂成了與交易之神芬諾爾交易時，被犧牲的祭品，身體化成了陶瓷。\n15048年的蘿琳在小黑屋掛著斗篷，作為交易之神的代言人。\n15050年在YHWH等人回到麥克嵩時，與YHWH在文創區巧遇，但看起來眼神空洞，似乎還沒有恢復成原本的樣貌。\n龍恩等人到了大學城，透過歷史區區長安德烈亞・戴依的儀式，犧牲靈魂乾淨的麥爾文，成功將蘿琳的靈魂送回他的體內。",
@@ -5208,7 +5310,8 @@
   {
     "id": "Ronald_the_Magician",
     "url": "npc/npc_page/pages/Ronald_the_Magician.html",
-    "image": "individual_pics/Ronald, the Magician.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fronald-the-magician-8127f00a7d%2F176ac21583ec94b0295ec7f44bdd9d23bd774d22000d01cf31d967cf2f3edd61%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fronald-the-magician-8127f00a7d%2F1efc8d33406a020cbca330a7a067e46ba484d7f573d91235c1cb1b390ae22224%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "被稱為魔術師，看起來會使用魔法。\n在嚎叫森林出現，種植一種藍色的小顆果實，吃下後會有強烈飽足感。\n他似乎是個喜歡追求樂趣的人，對植物與奇異事物很感興趣。\n布朗在前往夏庭森途中遇見羅納德。羅納德替瑪芬先生戴上魔術師帽，帶布朗前往夏庭森，並對傳說中的黑蓮花和紀念巴納沃二世的小雕像展現出強烈興趣。",
@@ -5250,7 +5353,8 @@
   {
     "id": "Ronfello",
     "url": "npc/npc_page/pages/Ronfello.html",
-    "image": "individual_pics/Ronfello.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fronfello-c2c9331e30%2F7206643c96e9c6f4d7ae515bf5913a8b14c0d52d8c9e72b098f5189765cb2ccb%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fronfello-c2c9331e30%2F8d61433d261aca1eddfe51063851fdd1705b5f390087ab715536d8d6397fff30%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "住在聖拉雅米島舊燈塔附近的老礦工，是金海岸礦坑坍塌事件的唯一倖存者。\n冒險者遇見他時，他近期遭到毒害，臉色發黑、步伐不穩，行動時很容易疲憊。\n他向冒險者提供煤油燈與金絲雀籠，協助他們進入金海岸礦坑調查。",
@@ -5290,7 +5394,8 @@
   {
     "id": "Rosa_Flaerry",
     "url": "npc/npc_page/pages/Rosa_Flaerry.html",
-    "image": "individual_pics/Rosa Flaerry.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Frosa-flaerry-9267b51697%2Fcd18c027209ed3bef0fc5b77618109329bb5544ee9ccf511a084d9ae8ed4338f%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Frosa-flaerry-9267b51697%2Fd943f2702058a6d6cce8af1235d2e86b08d7376cdf353444a6edc959e5a1f859%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "帕拉丁的導師，前麥丁頓王國騎士團團長弗列里爵士的夫人。\n在冒險者們踏離地下城，來到寇林菲爾德時承諾要保護他們。\n麥克嵩比武大會時，在混亂中受傷而下肢殘廢。先前在柏納斯家的晚宴中，曾與弗列里爵士一同出面，協助帕拉丁面對紫羅蘭。",
@@ -5384,7 +5489,8 @@
   {
     "id": "ScarFace",
     "url": "npc/npc_page/pages/ScarFace.html",
-    "image": "individual_pics/Scar-Face.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fscar-face-99c8944985%2F6632a66bf663d254b6c58e8f189eedfdd7a08426201bab5d11afb973f23df475%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fscar-face-99c8944985%2F60f56ccad5bdb001b57078be9afdb90b88e0a0d0631bd653c3e6d532505f1a17%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "麥克嵩當地衛兵，因臉上有不少刀疤，而自稱刀疤臉。\n在龍恩的請求下協助調查日出酒館老闆喬納森的失蹤案件。\n對法蘭奇的閃爍說詞也有些起疑。\n承認自己是崔尼斯教的信徒，但也向龍恩表示不是所有崔尼斯教的人都是有問題的。\n在麥克嵩比武大會上為了保護國王巴納沃二世，遭到法蘭奇擊斃。",
@@ -5434,7 +5540,8 @@
   {
     "id": "Sean",
     "url": "npc/npc_page/pages/Sean.html",
-    "image": "individual_pics/Sean.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsean-5ad98178e2%2Fb12744b8a573fc4c86fb852561269bbb88a586d62eedab9331e0c19ba0fca0e3%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsean-5ad98178e2%2Fea05f4fe4dfb239bd4817ba3f11c22fe87cb475ae6139ef6cd1073a2501c5401%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "龍恩在尖頂寺的師兄，武藝十分高強。\n來到麥克嵩參加比武大會。",
@@ -5476,7 +5583,8 @@
   {
     "id": "Selene_Berners",
     "url": "npc/npc_page/pages/Selene_Berners.html",
-    "image": "individual_pics/Selene Berners.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fselene-berners-d4390e4854%2F73e50e45f2f715222346dca513eb7412843ae340590ab1515588c42ae9004a87%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fselene-berners-d4390e4854%2Fbc6801c710e6070edec718a0034ba68d6c684daa79e3e72e7d9017587229a3ae%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "麥克嵩當地貴族柏納斯家成員之一。\n蘭斯的母親，丈夫為蓋瑞斯。\n在柏納斯家接待荒野旋律時，瑟琳曾現身與冒險者們見面；他在家族中的互動顯得有些不自然，像個局外人。",
@@ -5525,7 +5633,8 @@
   {
     "id": "Selyra_Arylith",
     "url": "npc/npc_page/pages/Selyra_Arylith.html",
-    "image": "individual_pics/Selyra Arylith.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fselyra-arylith-6ece59afdb%2F506abd8041d6d28462323c57a55c1a4bc683eec0abbc23319a23f0c606fafe3d%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fselyra-arylith-6ece59afdb%2F8a8dbf02731995018914d3e3d01d95054842fca0fca24824df5d6856ffc444f8%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "female",
     "descZh": "阿龍的親生母親，拉撒拿龍冠費洛登的妻子。\n舉止端莊優雅，初次見到阿龍時認出了他的艾瑞利斯名「賽勒涅爾」，並邀請冒險者們共進午餐。\n在阿龍去見銀龍後的隔天，瑟萊拉與老公費洛登被發現死於艾瑞利斯家的畫室。",
@@ -5572,7 +5681,8 @@
   {
     "id": "Serathe_Arylith",
     "url": "npc/npc_page/pages/Serathe_Arylith.html",
-    "image": "individual_pics/Serathe Arylith.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fserathe-arylith-9f6167464f%2F7d44910b468eecd1c582b756e3c68e65ef069592a8901613e1f521dee96d2bc6%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fserathe-arylith-9f6167464f%2Fd229fbecdf594944180522052c8462245827120077ec7a537ee24a6cd009aad5%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "阿龍的堂姐。\n身材魁武，表情兇狠，看起來對阿龍有些不滿的情緒。後來向阿龍表明自己並非針對他，只是表達方式很直接而已。\n擔任拉撒拿的守衛，負責每天的巡邏。\n在自己房間內存放各種不同武器。",
@@ -5619,7 +5729,8 @@
   {
     "id": "Shalan_Hartlow",
     "url": "npc/npc_page/pages/Shalan_Hartlow.html",
-    "image": "individual_pics/Shalan Hartlow.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fshalan-hartlow-8f1098c415%2F0f9509904d8c4b6be6795b376d51de3d28e845f87abca905d84b5f79b190aaa1%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fshalan-hartlow-8f1098c415%2Ff6749f48f4d38ffa7b6b7c2c7adac77713c248b8cddbb4c9611a496859848393%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "方努爾學術界的重要人物，也是茜卓・派松博士的熟人。他輕鬆准許冒險者進入限制書庫，知道茜卓・派松博士的脾氣很快會冷靜下來，並透露方努爾傳送門與代號「狐狸」的滲透者相關。茜卓・派松博士身亡後，他將茜卓・派松博士在方努爾的房產轉到YHWH名下。",
@@ -5659,7 +5770,8 @@
   {
     "id": "Sham",
     "url": "npc/npc_page/pages/Sham.html",
-    "image": "individual_pics/Sham.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsham-ef0cf8aa0b%2F93110affc89dd0b0a4614383039efba994a9048a6841440c5214b88725d607c9%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsham-ef0cf8aa0b%2F5ee5f4e83f68f12c00bca2a18421024a912d6ccb56bb3c110834f7bceb289bd5%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "有著伊許頓大人身體的人，自稱是月神給予他的。\n離開小黑屋時，看見圖伊特的第三隻眼，表示無條件聽從他的命令。",
@@ -5707,7 +5819,8 @@
   {
     "id": "ShaDoom",
     "url": "npc/npc_page/pages/ShaDoom.html",
-    "image": "individual_pics/Sha'Doom.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsha-doom-cb8db5dee4%2F1a2a93e02ad762b5b6063a057c4fe630bc548cae6a909a47873fe454ff40e239%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsha-doom-cb8db5dee4%2F7707d2a30d50a34d6d9869f3ba998760d3161e7a43a04fb5b697595129321c10%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
     "descZh": "身份未名的麥克嵩人。\n似乎與當地衛兵有很多關聯。\n手上刺有十道光芒的太陽。\n曾偽裝成雷米、拉芬奇以及安雅・拉芬奇。\n由玩家義揚操控。",
@@ -5751,7 +5864,8 @@
   {
     "id": "Shifu",
     "url": "npc/npc_page/pages/Shifu.html",
-    "image": "individual_pics/Shifu.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fshifu-c0ccb29d1a%2F243bb3c743b4c68c6a2b1871acc8fd88013c59f78090908c1e3e6e6f1895f682%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fshifu-c0ccb29d1a%2F5c4f740c7a020bccc3eb4cf9729d02dc6836c135270ef7e136884b0f724cc65a%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "弗萊特境內拉黎爾的一名舊識，真名未知，被尊稱為「師父」。不會一般語，需要由身邊的莉娜和莉塔擔任翻譯與服侍。\n似乎擁有一定程度的魔法能力，能將地圖投影至空中。\n住在一個看起來蠻漂亮的帳篷內，在冒險者到訪時請他們喝下似乎可以看見一些幻象的茶。",
@@ -5795,7 +5909,8 @@
   {
     "id": "Sigom_III",
     "url": "npc/npc_page/pages/Sigom_III.html",
-    "image": "individual_pics/Sigom III.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsigom-iii-25517c6884%2F5145adab293c114a72e6a2f7bdab5a3d86fa4ad85f49462d6f9edf7b8340d311%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsigom-iii-25517c6884%2F69c56732a15e3e721affd7c4e42b6a50b5d989c14805f748dcdbbb8dc1217af4%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "狂暴之儀中的評議委員長，是一名瘦小的狗頭人。\n鬥名為狂暴之聲。\n武器是一把中型的釘頭槌。",
@@ -5837,7 +5952,8 @@
   {
     "id": "Sora",
     "url": "npc/npc_page/pages/Sora.html",
-    "image": "individual_pics/Sora.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsora-9ef8557e28%2F2c2751e5c71571755d1cf8fca10b6d74e260e31f515d746e8cc308b7b061d1ad%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsora-9ef8557e28%2Fadc338c793537c9a49e0c9149c0400ea539d11e28a84f1a3a415c30027ba1faf%2Fthumb.webp?alt=media",
     "status": "historical figure",
     "gender": "male",
     "descZh": "卡什拉鎮居民，被匿名之聲的領袖萊斯麗與瓦克松醫師利用作為儀式材料而死亡；他的父親彼特之後一直與他的屍體同住。\n在746年的卡什拉幻象或記憶中，索拉依照瓦克松醫師的預言等待冒險者，介紹嘟嘟與瓦萊羅給眾人認識，也逐漸想起自己早已死去；真相揭露後，他在眾人面前化為塵土。\n冒險者後來在彼特家床底找到他與嘟嘟的屍體，並得知始祖拉茲特獸曾抽乾他的靈魂。",
@@ -5883,7 +5999,8 @@
   {
     "id": "Speedy",
     "url": "npc/npc_page/pages/Speedy.html",
-    "image": "individual_pics/Speedy.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fspeedy-6b844e3687%2F366f7d8a0ee4a3a295c6245429c436d586555927d3718b4a6a727e4f8d627ec0%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fspeedy-6b844e3687%2Fa414af1738dc7531ec8365de677f4a0954bd98e04ab1d1e241084cfa3b8ee0ab%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
     "descZh": "台北市議員等人在麥克嵩買的馬。\n十分年輕健壯，適合拉馬車或快速奔跑。\n在多侖維爾時曾被竊馬賊騎走，後來被冒險者們攔下牽回。雷米爆炸身亡後，斯比迪一度受驚想往前衝，嚇到了正在啃食肉塊的酷爆。後來薩梅爾短暫回到一般世界時，發現斯比迪和馬車都不見了。",
@@ -5925,11 +6042,12 @@
   {
     "id": "Tam_Quorr",
     "url": "npc/npc_page/pages/Tam_Quorr.html",
-    "image": "individual_pics/Tam Quorr.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftam-quorr-19655d3826%2F4fbc2cc8ac43887fe610aec52d89d78fbcb2e4e7e076b659beb9e846700ca36f%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftam-quorr-19655d3826%2F2d1e4fb4db64c7d312620a820f5380ba20b6a3a381f4425c65df4c0e738ad964%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "female",
-    "descZh": "斐納札的機器人，受到冒險者們推舉，成為心空席候選人之一。\n因為缺乏夥伴與支持者，在選拔後段未能晉級決賽。烏波成為心空席並回到靈魂議會後，譚與其支持者都沒有再出現。",
-    "descEn": "A warforged from Fenadra who was nominated by the adventurers as one of the candidates for the Seat of Hollow Heart.\nBecause Tam lacked companions and supporters, she failed to reach the final round of the selection. After Ubbo became the Seat of Hollow Heart and returned to the Soul Parliament, Tam and her supporters did not appear again.",
+    "descZh": "為進行研究，進入斐納札的人類，自薦成為心空席候選人之一。\n因為缺乏夥伴與支持者，在選拔後段未能晉級決賽。",
+    "descEn": "A human who entered Fenadra for her studies. She self-nominated as one of the candidates for the Seat of Hollow Heart.\nBecause Tam lacked companions and supporters, she failed to reach the final round of the selection.",
     "related": [
       "Lumio"
     ],
@@ -5971,7 +6089,8 @@
   {
     "id": "Theramond_Arylith",
     "url": "npc/npc_page/pages/Theramond_Arylith.html",
-    "image": "individual_pics/Theramond Arylith.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftheramond-arylith-02cbaf8189%2F78899dfceee64602dba7449af1811e0ce0708c712b2a4104ee0af5bd0a100773%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftheramond-arylith-02cbaf8189%2F57568097223543c8f6b8df942e608fb040b17df7176374aa500a1f5ebf1ba21a%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "阿龍的叔叔，費洛登的弟弟。\n與艾內莫為夫妻，有三名孩子：瑟拉斯、奈梨紗和維瑞克。\n在費洛登死後，成為代理龍冠。\n預計在完成審判後，將龍冠交給正式成為艾瑞利斯一族的賽勒涅爾（即阿龍）。",
@@ -6018,7 +6137,8 @@
   {
     "id": "Thompson",
     "url": "npc/npc_page/pages/Thompson.html",
-    "image": "individual_pics/Thompson.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthompson-458d16a1d1%2F5c89bf80bdafa1e81a6af71c5d0af51188f64ebbe415dacf8eec9d3341eace57%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthompson-458d16a1d1%2Fc137aa31782c17b91a1881d2f27683d3337875bba9c16ed23356c0ea04c0dd71%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "於貝瑟頓經營許久的小型書店「第1410頁」內工作的店員。\n與毛毛熟識，會提供雞腿給毛毛吃，似乎與領養他的貴族家庭也有不少交流。\n自稱是T.I.D.E.S.組織的相關人員，但並非內部成員。冒險者依照紙條來到第1410頁書店時，湯普生告訴他們當晚搭上T.I.D.E.S.馬車後會得到更多答案，也向鑰分享了與喬里森和T.I.D.E.S.相關的線索。",
@@ -6058,7 +6178,8 @@
   {
     "id": "Mayor_Thorne",
     "url": "npc/npc_page/pages/Mayor_Thorne.html",
-    "image": "individual_pics/Mayor Thorne.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmayor-thorne-c22d6e8d0b%2F0a22ecc6753f8bb4a97a34695688425553443ac2d0d22ca296acda5858c31d15%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmayor-thorne-c22d6e8d0b%2F9029b7ba1ca976ba9f1ae93e98a58e546d5077886b46acfbe550031fb1860544%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "瑟巴諾的鎮長，住在一個華麗的房子內，長期拄著一根拐杖。\n因為房子被伊努放火，而對伊努十分厭惡。\n招待冒險者們在他家夜宿。\n家裡似乎有個神秘的魔法盒子。\n死亡時，身上被發現有蜘蛛的咬痕。",
@@ -6100,7 +6221,8 @@
   {
     "id": "Mayor_Saerus_Pharyon",
     "url": "npc/npc_page/pages/Mayor_Saerus_Pharyon.html",
-    "image": "individual_pics/Mayor Saerus Pharyon.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmayor-saerus-pharyon-d0305d3088%2F432d4e1c46eca0b08411a20c5da0b00e1f11af1de8c44122d1d704d20b0d89b1%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmayor-saerus-pharyon-d0305d3088%2Fbc858ff3eca6ba4d2255fc3472bb8dcc92c0e0976c4da3e2e7b1e979250b02b7%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "萊斯諾的市長，即「龍冠」，中年金龍人男性。\n個性軟弱而優柔寡斷，對於萊斯諾和克萊芬的立場模糊。\n中途之家被萊斯諾衛兵逮捕後，賽爾斯與瑪萊雅將軍、格雷斯卓大臣一同接見他們，但幾乎沒有說話的餘地。真正主導局勢的是強硬主戰的瑪萊雅將軍。",
@@ -6143,7 +6265,8 @@
   {
     "id": "Tina",
     "url": "npc/npc_page/pages/Tina.html",
-    "image": "individual_pics/Tina.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftina-8e49399cd6%2F49fdddc3f6d9d0229afc32cd653424204ca43a02a9228ea7cee47b9deff112b1%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftina-8e49399cd6%2F23057d468bf765d28bb546bcfab64c121391f2effd3a3804778d720e4b95d6d9%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "貝瑟頓的貴族里奇蒙家中負責照顧失智的巴托斯爵士的僕人，已經在爵士宅邸工作10年了。\n據他所說，這份工作是由巴托斯爵士的女兒萊里付他薪水，且薪資十分不錯。\n看見巴托斯爵士從失去神智，變成正常，又化作石頭。央求冒險者們別把真相告訴其他人。",
@@ -6186,7 +6309,8 @@
   {
     "id": "Trisha_of_Baylon",
     "url": "npc/npc_page/pages/Trisha_of_Baylon.html",
-    "image": "individual_pics/Trisha of Baylon.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftrisha-of-baylon-a9431aa39c%2Fcf4ff946e1f0bcb00a39bf0f9ff8833dcae0b5fe0ce4da1588159176ef819cc9%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftrisha-of-baylon-a9431aa39c%2F49170686a634de7938e28f6783a98a739c5ba3db3067a2570d69c16d363996a0%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "冒險者們在地下城發現困在牢籠內的半妖精年輕女子。\n崔夏自稱來自洛森王國的貝倫部落。他的父母是拉索斯教的忠誠信徒，卻遭到背叛，而導致崔夏被綁至地下城。同時，崔夏也因為父母的關係，對拉索斯教十分了解，進而對該宗教極度厭惡。\n幼年時雙手手臂被刺上拉索斯經文的刺青。\n隨身攜帶一個裝有開鎖工具的黑色小盒子，以及兩把匕首。\n在與冒險者走在地下城的過程中，因為烏柯將一顆神祕石放在他的掌心，而將神祕石吸收進了身體裡。\n崔夏曾向米多莉透露自己會聽到聲音叫他做不好的事情，在石頭融入他身體後，如果他反抗，便會感到極度的頭痛。\n在與台北市議員們逃出地城後，與烏柯一同從寇林菲爾德逃亡，去尋找他的父母。",
@@ -6230,7 +6354,8 @@
   {
     "id": "Twiggle",
     "url": "npc/npc_page/pages/Twiggle.html",
-    "image": "individual_pics/Twiggle.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftwiggle-4bff143914%2F67cee69f493472a172018a400cdc59bfba43be8e0ec4ff69ece7a7217e4584f2%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftwiggle-4bff143914%2Ff4cf23a70a505a65e8d712c41c1182a65bc9d223e2161d8b709495d737ce3131%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
     "descZh": "雷雅在貝瑟頓設下陷阱，抓到的松鼠。\n目前團隊中僅有雷亞可以透過動物溝通術和他對話，從對話中得知他是個滿口髒話、神經質的牆頭草。\n目前頹哥與鑰一起坐在鑰的推車上，和中途之家的冒險者們一起行動，也被迫捲入萊斯諾與克萊芬之間的間諜任務。\n被鑰封為「嘎吱爵士」。",
@@ -6280,7 +6405,8 @@
   {
     "id": "Vaelric_Arylith",
     "url": "npc/npc_page/pages/Vaelric_Arylith.html",
-    "image": "individual_pics/Vaelric Arylith.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaelric-arylith-778c801d23%2F27dcb7b70e9697d111c927837a8f44ce69df9842597928c9f791eee5c77b0c01%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaelric-arylith-778c801d23%2Fb473e1f3179fd655857e513d14f5835b1268753e29fe84d68b578d277e8edf04%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "阿龍的堂弟。\n十分年輕，卻是艾瑞利斯家族內最聰明的存在。\n與姊姊奈梨紗感情很好。\n擅長各種魔法，甚至會竄改記憶的魔法。\n在姊姊奈梨紗被定罪後，利用魔法將自己的記憶洗去。",
@@ -6327,7 +6453,8 @@
   {
     "id": "Vaerodan_Arylith",
     "url": "npc/npc_page/pages/Vaerodan_Arylith.html",
-    "image": "individual_pics/Vaerodan Arylith.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaerodan-arylith-bc8cc13afc%2Fbcd5be139be98adf0473e7d32d9dbcf8cb76b5557ca120bc5b5e9f5566c4b35b%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaerodan-arylith-bc8cc13afc%2F315a568e56e36cdae5d0a97185c749cb599f1f8d803b07b15b3b5f369c18881d%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "阿龍的親生父親，拉撒拿龍冠。\n當年曾下令老尼克索將阿龍的蛋拋棄。\n舉止嚴肅但不嚴厲，重新見到阿龍後讓他得知自己作為艾瑞利斯繼承人的身份，並涉及銀龍相關的秘密。\n在阿龍去見銀龍後的隔天，費洛登與老婆瑟萊拉被發現死於艾瑞利斯家的畫室。",
@@ -6374,7 +6501,8 @@
   {
     "id": "Dr_Vaxon",
     "url": "npc/npc_page/pages/Dr_Vaxon.html",
-    "image": "individual_pics/Dr. Vaxon.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-vaxon-c5ad6bead6%2Fdaa078c5c0230cae809f1dd058875b600e2bd0cbf8284b33bedd1e70a2c43a0b%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-vaxon-c5ad6bead6%2Fccb6345073832dfdc7b05cba2d1cc855a3c9bc0c25b69b79b4f8771505006f30%2Fthumb.webp?alt=media",
     "status": "historical figure",
     "gender": "male",
     "descZh": "卡什拉鎮中最早與始祖拉茲特獸接觸的醫師之一。他從匿名之聲教堂的預言得知冒險者會來到卡什拉，並在746年的記憶中讓索拉等待他們。瓦克松的手部異變與龍恩相似，也顯示他早已深受拉索斯力量影響。",
@@ -6418,7 +6546,8 @@
   {
     "id": "Valero_Berners",
     "url": "npc/npc_page/pages/Valero_Berners.html",
-    "image": "individual_pics/Valero Berners.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvalero-berners-1053c704af%2F0a5f3db3f875bdc9610e57a2a6fe7a9d2a1296ed8151bf63bcb53d9cbe73f027%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvalero-berners-1053c704af%2Fc5075c338b3959e3eaf4fac0b97fb3ace1dfed20f3c30492272ab1f18e0056a7%2Fthumb.webp?alt=media",
     "status": "historical figure",
     "gender": "female",
     "descZh": "卡什拉鎮居民，索拉年幼時的女友。她大約十歲時與索拉有了孩子塔里・柏納斯，孩子仍使用柏納斯姓氏；她的父母是懷亞特與露西，家中也曾為麥迪遜家工作。她的身世補上了索拉、麥迪遜家與柏納斯家之間被卡什拉記憶掩蓋的關係。",
@@ -6464,7 +6593,8 @@
   {
     "id": "Lord_Wind",
     "url": "npc/npc_page/pages/Lord_Wind.html",
-    "image": "individual_pics/Lord Wind.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flord-wind-f6b34fe0a1%2Fe6d8fa2ac978bf38d98d519858c2a7278715f513414e22b1d02a6d3751ec3524%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flord-wind-f6b34fe0a1%2F7d4a40753f0424a1b5ba41f8f3bd37c88268050f65e927a4aea7d43e4e590ae1%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "溫德家中的父親。\n似乎是拉索斯教的人員，或是從事相關的貿易工作。\n曾聘請布朗護送溫德一家穿越森林前往魏斯科，承諾支付五十枚金幣。彼得聞到黑蓮花昏倒後，溫德大人憤怒地解除委託並將彼得抱回屋內求醫。",
@@ -6511,7 +6641,8 @@
   {
     "id": "Xandria_the_Violet_of_Macksohn",
     "url": "npc/npc_page/pages/Xandria_the_Violet_of_Macksohn.html",
-    "image": "individual_pics/Xandria, the Violet of Macksohn.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fxandria-the-violet-of-macksohn-f3ac8de770%2F9aa9737466b5a40b408854adc690a952c9b73e35b73dae23ad266219c1df7be5%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fxandria-the-violet-of-macksohn-f3ac8de770%2F9a51d23e3cc5f31add21317f23818f24cfc8fc4ea29738a967b60c32820bdb02%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "帕拉丁的生母，居住在麥克嵩的半身人。\n大家對她的形容是「傾國傾城」。\n在柏納斯家的晚宴上，和帕拉丁相認，但是似乎是靠著弗列里爵士的交涉才願意認帕拉丁。\n在比武大會的災難後，決定和弗列里夫婦一同回到寇林菲爾德居住。\n曾將胸前的別針和髮簪分別遞給帕拉丁和YHWH作為信物。",
@@ -6559,7 +6690,8 @@
   {
     "id": "Yuki",
     "url": "npc/npc_page/pages/Yuki.html",
-    "image": "individual_pics/Yuki.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyuki-97b8a89d36%2F6f018a062cfed53633be4782391f116a1db56ace6ed642471b895332a1ee4a97%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyuki-97b8a89d36%2F21100a3f7ec056b25d41535b3cd8512f71e3176b86bd83feed3be7f3942a96fe%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "對米多莉而言非常重要的人，多次以幻影出現在米多莉的腦中，也曾在妖精荒野時被艾爾比以幻象呈現在大家面前。\n過去似乎曾被關押在一個伸手不見五指的地方。\n在聖拉雅米島的洞穴，被發現操控著拉茲特獸攻擊老鼠人；在金海岸礦坑事件中，冒險者取得的紀錄顯示他與拉索斯教的實驗與滿月儀式有關，且與米多莉可能站在對立面。",
@@ -6607,7 +6739,8 @@
   {
     "id": "Zach",
     "url": "npc/npc_page/pages/Zach.html",
-    "image": "individual_pics/Zach.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fzach-1a88d663b3%2Fac33281e2eb78458fd9183b84ff398ac8eea8892d746d48f9efab7e9af03e436%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fzach-1a88d663b3%2F3808d1ea0d87b979efa0b3af476ab747f835d9e73a24975fcb92f122c108d997%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "帶領冒險者前往礦脈的矮人，愛喝啤酒。\n有一隻名為啵啵V的機器人夥伴。\n在礦脈因掉入陷阱而死亡。",
@@ -6649,7 +6782,8 @@
   {
     "id": "Zek",
     "url": "npc/npc_page/pages/Zek.html",
-    "image": "individual_pics/Zek.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fzek-e3f7e30dc4%2Fe4bafe0adf2f6b1e054784156e539210d50acfc7f3ec7dfbe621cb92a3d9f459%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fzek-e3f7e30dc4%2F77c19f5ba7619153c9e16e0826a807905704643b9c6ac9126f61d7886f89a484%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "狂暴戰士幫的領袖，鬥名為「鬥破蒼穹」。\n在狂怒儀式中帶領戰士們以戰鬥與吶喊祭拜津菈，並將波與YHWH分別取名為「撓撓耳朵」與「舔舔地板」。\n艾希斯前往聖拉雅米島後失蹤，澤克請冒險者尋找他的下落，並交給他們艾希斯的劍「異教徒剋星」與一封要轉交給艾希斯的信。",
@@ -6697,7 +6831,8 @@
   {
     "id": "Manbao",
     "url": "npc/npc_page/pages/Manbao.html",
-    "image": "individual_pics/Manbao.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmanbao-8157ce4fc0%2F9051cccb7160773f92c406216d01cc57c36191704da89168dfe4faae29f8431f%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmanbao-8157ce4fc0%2F0a62a65dbf3d7e6273038bc16529bbb1d53dcb6b72bd4870b49cdbe79097df42%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
     "descZh": "薩梅爾於麥克嵩地下城撿到的拉茲特獸幼獸，行動緩慢，聲音低沉。\n被薩梅爾當成酷爆的弟弟養。\n在前往聖拉雅米島和金海岸礦坑的旅途中，慢爆依然跟著隊伍行動。\n食性未知。",
@@ -6747,7 +6882,8 @@
   {
     "id": "Dudu",
     "url": "npc/npc_page/pages/Dudu.html",
-    "image": "individual_pics/Dudu.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdudu-0bf3a41c3f%2F44f39e28565fface1f0a2039d6eb2f635d2aa5df84b3a4dae61ba9ffaba56835%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdudu-0bf3a41c3f%2Fefbdcbd6f1c2d43f61a971ebf1368397bb5ffccc37eff2f88b0459b50f8c631b%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "neutral",
     "descZh": "索拉最親近的狗，被卡什拉鎮民視為索拉的玩伴。在746年的卡什拉幻象或記憶中，嘟嘟仍陪在索拉身邊；真相揭露後，冒險者在彼特家的床底發現牠與索拉的屍體。牠早在瓦克松醫師與匿名之聲相關的儀式中被犧牲。",
@@ -6851,7 +6987,8 @@
   {
     "id": "Petra",
     "url": "npc/npc_page/pages/Petra.html",
-    "image": "individual_pics/Petra.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpetra-bf5c031c8e%2F8fb30d39a07ceb2c5b365979bb9b9e640094573fc9352ccbf0d8eb790bba9243%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpetra-bf5c031c8e%2F65df7c7045428a4237bee6a64033641d73d744d95c8d35c42a0c74fc688c5e04%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "居住在金海岸礦坑中的老鼠人。\n受到拉索斯教徒的脅迫，在島上綁架居民。\n冒險者們在礦坑中救下驚魂未定的佩特拉，得知他的夥伴臭皮已被殺死；他也向冒險者說明礦坑中有人類拉索斯教徒和長爪黑毛怪物出沒。\n在金海岸礦坑的戰鬥中展現了驚人的求生意志。",
@@ -6891,7 +7028,8 @@
   {
     "id": "Varoen",
     "url": "npc/npc_page/pages/Varoen.html",
-    "image": "individual_pics/Varoen.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaroen-0ebf136f2e%2Fb7429c0d8c2c2f9ec1c99dece01c7b69a51b03526abfa2ef1fce68891f602510%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaroen-0ebf136f2e%2F20d60f9f4241770751de7b1e96eff74c7a0b4889d899ac8be9afe0acc88131a2%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "克萊芬「新書院」的參謀與秘書長，頭上繫著藍色頭巾。\n在皮尼歐教授於辯論會上遭到刺殺後，瓦羅恩走上舞台，宣稱新書院不會有新的主席，而自己仍會作為秘書長帶領派系前進。\n他冷靜得近乎冷酷的反應，以及輕輕一指便讓雷亞雙腿發麻跪下的手段，都讓冒險者們感到不寒而慄。\n教授死後，瓦羅恩順理成章地接掌新書院，使雷亞與中途之家開始懷疑他與「新曙光」和刺殺事件之間可能有所牽連。",
@@ -6933,7 +7071,8 @@
   {
     "id": "Yi",
     "url": "npc/npc_page/pages/Yi.html",
-    "image": "individual_pics/Yi.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyi-877a3a98b1%2F4e5cee7e616575b710985584d08ef8b61a76eb8063be0d0badcf3d021d91358c%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyi-877a3a98b1%2Fb8da478b560db1af8ed75013c395f40df9e7504bcac54bba70055563845391f2%2Fthumb.webp?alt=media",
     "status": "unknown",
     "gender": "male",
     "descZh": "神祕盜賊，洛特的師父，常以假名和地下交易活動。\n龍恩、烏柯與伊努在王都祕密基地買下推特出版的伊寫真書時，伊正因先前事件受傷，躺在馬可斯莊園中恢復，並與徒弟洛特短暫重逢。\n在大學城安德烈亞儀式後，龍恩將被綁住且昏迷的伊丟進後院坑洞，再把逐漸陶瓷化的麥爾文壓在上面一同埋下；之後龍恩曾想確認伊與麥爾文是否還在洞裡，卻找不到安德烈亞的房子。",
@@ -6977,7 +7116,8 @@
   {
     "id": "Yung",
     "url": "npc/npc_page/pages/Yung.html",
-    "image": "individual_pics/Yung.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyung-ed8ddf2ea8%2F364f1f66942904d80c46230cc3b7ca91131cc159922aa605beb372106e7f563c%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyung-ed8ddf2ea8%2Fb2b900d92c90185ade66d133c98b970ab141e06230f593927a257da3107a1d1a%2Fthumb.webp?alt=media",
     "status": "unknown",
     "gender": "male",
     "descZh": "馬格努斯爵士給雷米騎去麥克嵩的馬。\n年紀較大，跑的速度比較慢，但是依舊穩健且可靠。\n在多侖維爾時一度因缺水而十分虛弱；眾人遷就勇哥的狀態放慢馬車速度。後來薩梅爾短暫回到一般世界時，發現斯比迪和馬車不見了，勇哥仍在原處但更加虛弱；之後勇哥也從酒館旁消失。",
@@ -7023,7 +7163,8 @@
   {
     "id": "President_Bonza",
     "url": "npc/npc_page/pages/President_Bonza.html",
-    "image": "individual_pics/President Bonza.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpresident-bonza-cbe6d966d9%2Fc54d4e280853d353d4d5715ab06b383962346e9f62957bfce1922046ec065945%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpresident-bonza-cbe6d966d9%2Fae4a3f75a6e3daa6f14f516f2148ea15f78ef6acc8122fec2777680aaa626a65%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "克萊芬「市民連線」的首領，被稱為彭薩公會長。\n他代表商人、公會與一般平民的利益，主張維持現狀，避免讓城市被戰火拖垮。\n他與利斯達上校一同密談刺殺皮尼歐教授的計畫，並親手槍擊了拉比。",
@@ -7069,7 +7210,8 @@
   {
     "id": "Professor_Peneo",
     "url": "npc/npc_page/pages/Professor_Peneo.html",
-    "image": "individual_pics/Professor Peneo.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fprofessor-peneo-f79e5dfe6f%2Fe6b6f8ed85e9aef0d956802e1279c95e3ff5a6d68a8d943da557871457fb5be2%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fprofessor-peneo-f79e5dfe6f%2Fd21ee67455c8e498494516022c5f9e7c55e4027e99b2dcdc9bd64e8a007c224d%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "female",
     "descZh": "克萊芬學者，也是「新書院」的領袖與市長候選人。\n他崇尚民主、知識與理想，主張由克萊芬自行決定未來。\n在辯論會上遭一名高喊「新曙光」的學生槍擊身亡，他的死也讓克萊芬陷入混亂。",
@@ -7115,7 +7257,8 @@
   {
     "id": "Colonel_Lisdar",
     "url": "npc/npc_page/pages/Colonel_Lisdar.html",
-    "image": "individual_pics/Colonel Lisdar.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcolonel-lisdar-55c3bf535e%2F3d2d67c756876e9692bc6a501c89df57940c8f5d4f46804526de9af9591c36ec%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcolonel-lisdar-55c3bf535e%2F6449a83b04bb4a15a4627b9295cc147727df720c7e4f041a87948902b2364e4b%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "克萊芬「老樹盟」的領導者，利斯達上校。\n他由老兵、軍閥與大型企業支持，主張克萊芬回歸萊斯諾，必要時也接受以武力達成目標。\n他與彭薩公會長討論刺殺皮尼歐教授的密謀。\n瑪萊雅將軍率軍包圍林中的白色小教堂時，利斯達站在將軍身旁，態度極為諂媚，與過去囂張跋扈的模樣判若兩人。",
@@ -7162,7 +7305,8 @@
   {
     "id": "Py_Par",
     "url": "npc/npc_page/pages/Py_Par.html",
-    "image": "individual_pics/Py'Par.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpy-par-3bf06d700e%2Fea6be02c8638f804f594dbc28f5509f4234b56942ce75863b97ec1e613e06864%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpy-par-3bf06d700e%2Ff6dc7678fc0d89fcf4bd047f3f4073bc19a5605bdbd4a478045cfed35055afeb%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "female",
     "descZh": "涅西斯教團「常翠林」成員之一，在冒險者們追尋芒果的行跡時發現他。\n派琶告知冒險者們教團已將巨蛇（芒果）擊退，並拯救了被巨蛇綑綁的男人，即冒險者的夥伴賽柏。\n雖然他踏上的草地都會化為花田，但人似乎有點迷糊，對距離、時間等都沒有很精確的概念。\n在護送冒險者前往常翠林中繼站時，派琶遭到芬尼爾信徒與蛇身女妖襲擊。雖然受傷，他仍催促眾人趕路，並警告金髮的佛拉可能有危險。\n抵達常翠林總部後，派琶在芒果與四隻蛇妖的襲擊中保護冒險者與佛拉，數度倒下仍繼續戰鬥。關鍵時刻，涅西斯藉由派琶的身體發聲並召出樹木困住芒果，最終讓賽柏得以給予芒果致命一擊。",
@@ -7209,7 +7353,8 @@
   {
     "id": "Fre'Do",
     "url": "npc/npc_page/pages/Fre_Do.html",
-    "image": "individual_pics/Fre'Do.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffre-do-d5b5c6462f%2F525812d5cd42ef090bf0a5d4f6a91e6ed58a8f0045b15760c2172b629f246151%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffre-do-d5b5c6462f%2F264fce721f600a1a6a8ba52ff80bf2ea099427395aaf9439bbda12a9ba81a25f%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "常翠林的信使，出身於世代侍奉巴斯家族的家系。\n約五十年前，弗雷多離開故鄉來到常翠林；他的父親支持巴斯的父親，並深入研究死靈術，而十分照顧他的哥哥因為做了更多研究，轉而反對父親。弗雷多也因此選擇了自己的道路。\n在常翠林總部，弗雷多曾帶巴斯探視休養中的賽柏；芒果襲擊後，他向巴斯透露派翠克的遺體遭人挖走，並提議帶冒險者前往石原鎮。\n前往石原鎮的路上，弗雷多帶著巴斯與烏波徒步避人耳目，提醒眾人提防狼人蹤跡，並以乾糧與守夜安排照料隊伍。他也協助調停烏波與冷火腿的緊張對峙，之後帶著一行人穿過雅洛斯，繼續朝石原鎮前進。",
@@ -7258,7 +7403,8 @@
   {
     "id": "Marsh_the_Willow",
     "url": "npc/npc_page/pages/Marsh_the_Willow.html",
-    "image": "individual_pics/Marsh the Willow.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarsh-the-willow-ba0ec7cd6b%2F1ad16a70eb99c90418b049046d7390fa79d9d21befe17ef9ec22cf6f9d3c7c16%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarsh-the-willow-ba0ec7cd6b%2Fb48d6538adcc3b65272ebe5be9803e197df7656f37c04c90897080e5898ec913%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "雷亞的師父，居住在風拂山丘。馬許神情慵懶、略顯不耐，卻擁有連瑪萊雅將軍都十分忌憚的強大力量。\n多年前，馬許與拉比曾在林中的白色小教堂為雷亞的父母阿哈努・席弗斯頓與克萊芬的蕾絲塔證婚，也為他們埋葬；雷亞也自小在他的指導下於風拂山丘修煉。\n瑪萊雅將軍率軍摧毀小教堂並包圍中途之家時，馬許撕開一道通往風拂山丘的黑暗裂縫現身。他輕易擊飛試圖追趕的士兵，將雷亞與同伴們帶離戰場，並要他們回去繼續修煉。",

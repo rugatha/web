@@ -1,4 +1,5 @@
 import { createLocationCards } from "../../../shared/location-cards.js";
+import { signatureFiles } from "./signature-files.js";
 
 const npcId = getRequestedNpc();
 
@@ -38,17 +39,17 @@ const violentOverrides = {
 };
 
 const genderMap = {
-  male: { icon: "♂", label: "Male" },
-  female: { icon: "♀", label: "Female" },
-  neutral: { icon: "⚪", label: "Neutral" },
-  other: { icon: "✦", label: "Other" }
+  male: { zh: "男性", en: "Male" },
+  female: { zh: "女性", en: "Female" },
+  neutral: { zh: "中性", en: "Neutral" },
+  other: { zh: "性別未知", en: "Gender unknown" }
 };
 
 const statusMap = {
-  alive: { icon: "❤", label: "Alive" },
-  dead: { icon: "☠", label: "Dead" },
-  "historical figure": { icon: "⌛", label: "Historical figure" },
-  other: { icon: "?", label: "Unknown" }
+  alive: { zh: "生存", en: "Alive" },
+  dead: { zh: "死亡", en: "Dead" },
+  "historical figure": { zh: "歷史人物", en: "Historical figure" },
+  other: { zh: "狀態未知", en: "Status unknown" }
 };
 
 function getNameCandidates(record) {
@@ -69,7 +70,6 @@ function getDisplayName(record) {
 function updateTitle(npc) {
   const displayName = getDisplayName(npc) || "NPC";
   if (elements.name) elements.name.textContent = displayName;
-  fitProfileName();
   if (elements.portrait) elements.portrait.alt = displayName || "NPC portrait";
   const suffix = languageState.value === "en" ? "NPC | Rugatha" : "非玩家角色 | Rugatha";
   document.title = displayName ? `${displayName} | ${suffix}` : suffix;
@@ -688,10 +688,9 @@ const deityList = [
   { en: "The Spider Religion", zh: "蜘蛛神教" }
 ];
 
-const spiderKeys = ["The Mother", "Mother", "Anna", "Alfenor"].map((n) => normalize(n));
-
 const religionMap = deityList.reduce((acc, entry) => {
-  acc[normalize(entry.en)] = { en: entry.en, zh: entry.zh };
+  acc[normalize(entry.en)] = entry;
+  acc[normalize(entry.zh)] = entry;
   return acc;
 }, {});
 
@@ -842,11 +841,12 @@ function render(npc) {
   updateTitle(effectiveNpc);
   if ((effectiveNpc.image || "").startsWith("https://firebasestorage.googleapis.com/")) elements.portrait.crossOrigin = "anonymous";
   elements.portrait.src = effectiveNpc.image || "";
+  renderSignature(effectiveNpc);
   setDescription(elements.zh, effectiveNpc.descZh, "（尚無中文介紹）");
   setDescription(elements.en, effectiveNpc.descEn, "(Description coming soon)");
   renderGender(effectiveNpc.gender);
   renderStatus(effectiveNpc.status);
-  renderReligion(effectiveNpc.religion);
+  renderReligion(effectiveNpc);
   insertRelated(effectiveNpc.related || []);
   renderLocationCards(effectiveNpc);
 }
@@ -935,7 +935,7 @@ async function renderLocationCards(npc) {
     descEn: "NPC not found."
   };
 
-  const chars = await loadCharacters();
+  const [chars] = await Promise.all([loadCharacters(), loadDeityTitles()]);
   const record = findCharacter(chars, baseNpc, getSlugId());
   const mergedNpc = { ...baseNpc };
   if (record) {
@@ -998,99 +998,88 @@ function setDescription(el, text, fallback) {
   });
 }
 
-function renderGender(gender) {
+function setProfileInfo(className, text, labels) {
   const meta = getMetaContainer();
   if (!meta) return;
-
-  let badge = meta.querySelector(".gender-pill");
-  if (!badge) {
-    badge = document.createElement("span");
-    badge.className = "tag gender-pill";
-    meta.appendChild(badge);
+  let line = meta.querySelector(`.${className}`);
+  if (!line) {
+    line = document.createElement("div");
+    line.className = `profile-info ${className}`;
+    const label = document.createElement("dt");
+    label.className = "profile-info__label";
+    const value = document.createElement("dd");
+    value.className = "profile-info__value";
+    line.append(label, value);
+    meta.appendChild(line);
   }
-
-  const key = (gender || "").toLowerCase();
-  const info = genderMap[key] || genderMap.other;
-  badge.dataset.gender = info.label.toLowerCase();
-  badge.textContent = info.icon;
-  badge.setAttribute("aria-label", `Gender: ${info.label}`);
+  line.querySelector("dt").textContent = labels[languageState.value];
+  line.querySelector("dd").textContent = text;
 }
 
-function parseReligionEntriesFromLists(religionZh, religionEn, religionLegacy) {
-  const lang = languageState.value;
-  const list = lang === "zh" ? toList(religionZh) : toList(religionEn);
-  const entries = list.length ? list : toList(religionLegacy);
-  if (!entries.length) return [];
-  return entries
-    .map((label) => {
-      const key = normalize(label);
-      if (!key) return null;
-      if (key === "notsure") {
-        return { en: "Not sure", zh: "不確定" };
-      }
-      const mapped = religionMap[key];
-      if (mapped) {
-        const family = spiderKeys.includes(key) ? "蜘蛛神教 / The Spider Religion" : null;
-        return { ...mapped, family };
-      }
-      return { en: label, zh: "未知", unknown: true };
-    })
-    .filter(Boolean);
+function renderGender(gender) {
+  const info = genderMap[(gender || "").toLowerCase()] || genderMap.other;
+  setProfileInfo("gender-text", info[languageState.value], { zh: "性別", en: "Gender" });
+}
+
+async function loadDeityTitles() {
+  try {
+    const response = await fetch(new URL("deities/data/deities.json", rootBase));
+    if (!response.ok) return;
+    const deities = await response.json();
+    deities.forEach(({ name, title }) => {
+      const entry = {
+        zh: `${title?.zh || ""}${name.zh}`,
+        en: title?.en ? `${name.en}, ${title.en}` : name.en
+      };
+      religionMap[normalize(name.zh)] = entry;
+      religionMap[normalize(name.en)] = entry;
+    });
+  } catch (error) {
+    console.warn("Unable to load deity titles", error);
+  }
 }
 
 function renderReligion(npc) {
-  const meta = getMetaContainer();
-  if (!meta) return;
-  const entries = parseReligionEntriesFromLists(
-    npc?.religionZh,
-    npc?.religionEn,
-    npc?.religion
-  );
-  if (!entries.length) return;
-
-  entries.forEach((entry) => {
-    const pill = document.createElement("span");
-    pill.className = "tag religion-pill";
-    pill.innerHTML = `${entry.zh}<span class="en-label">${entry.en}</span>`;
-
-    if (entry.family) {
-      const fam = document.createElement("span");
-      fam.className = "religion-family";
-      fam.textContent = entry.family;
-      pill.appendChild(fam);
-    }
-
-    if (entry.unknown) {
-      const hint = document.createElement("span");
-      hint.className = "religion-family";
-      hint.textContent = "未能匹配到神祇";
-      pill.appendChild(hint);
-      console.warn(`Unknown religion mapping: ${entry.en}`);
-    }
-
-    meta.appendChild(pill);
-  });
+  const lang = languageState.value;
+  const preferred = lang === "zh" ? toList(npc.religionZh) : toList(npc.religionEn);
+  const fallback = lang === "zh" ? toList(npc.religionEn) : toList(npc.religionZh);
+  const entries = preferred.length ? preferred : fallback.length ? fallback : toList(npc.religion);
+  const labels = entries.map(label => religionMap[normalize(label)]?.[lang] || label);
+  const text = labels.length
+    ? labels.join(lang === "zh" ? "、" : "; ")
+    : (lang === "zh" ? "信仰未知" : "Faith unknown");
+  setProfileInfo("religion-text", text, { zh: "信仰", en: "Faith" });
 }
 
 function getMetaContainer() {
-  const row = document.querySelector(".title-row");
+  const row = document.querySelector(".npc-profile");
   if (!row) return null;
   let meta = row.querySelector(".title-meta");
   if (!meta) {
-    meta = document.createElement("div");
+    meta = document.createElement("dl");
     meta.className = "title-meta";
     row.appendChild(meta);
   }
   return meta;
 }
 
-function fitProfileName() {
-  const name = elements.name;
-  if (!name || !name.closest(".npc-profile")) return;
-  name.style.fontSize = "32px";
-  if (name.scrollWidth > name.clientWidth && name.clientWidth > 0) {
-    name.style.fontSize = `${Math.floor(32 * name.clientWidth / name.scrollWidth * 10) / 10}px`;
+function renderSignature(npc) {
+  const profile = document.querySelector(".npc-profile");
+  if (!profile) return;
+  const src = signatureFiles[npc.id];
+  const existing = profile.querySelector(".npc-signature");
+  if (!src) {
+    existing?.remove();
+    return;
   }
+  if (existing?.src === src) return;
+  existing?.remove();
+  const signature = document.createElement("img");
+  signature.className = "npc-signature";
+  signature.alt = `${npc.nameEn || npc.name || npc.id} signature`;
+  signature.addEventListener("error", () => signature.remove(), { once: true });
+  signature.src = src;
+  profile.querySelector(".portrait").after(signature);
 }
 
 function ensureProfileLayout() {
@@ -1100,17 +1089,7 @@ function ensureProfileLayout() {
   const profile = document.createElement("div");
   profile.className = "npc-profile";
   portrait.before(profile);
-  profile.append(portrait, title);
-  // Keep long translated names on one line within the portrait width.
-  let previousWidth = 0;
-  new ResizeObserver(() => {
-    const width = profile.getBoundingClientRect().width;
-    if (width !== previousWidth) {
-      previousWidth = width;
-      fitProfileName();
-    }
-  }).observe(profile);
-  document.fonts.ready.then(fitProfileName);
+  profile.append(portrait);
 }
 
 function ensureContentSections() {
@@ -1203,19 +1182,6 @@ function insertRelated(items) {
 }
 
 function renderStatus(status) {
-  const meta = getMetaContainer();
-  if (!meta) return;
-
-  let badge = meta.querySelector(".status-pill");
-  if (!badge) {
-    badge = document.createElement("span");
-    badge.className = "tag status-pill";
-    meta.appendChild(badge);
-  }
-
-  const key = (status || "").toLowerCase();
-  const info = statusMap[key] || statusMap.other;
-  badge.dataset.status = info.label.toLowerCase().replace(/\s+/g, "-");
-  badge.textContent = info.icon;
-  badge.setAttribute("aria-label", `Status: ${info.label}`);
+  const info = statusMap[(status || "").toLowerCase()] || statusMap.other;
+  setProfileInfo("status-text", info[languageState.value], { zh: "狀態", en: "Status" });
 }
