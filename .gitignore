@@ -47,3 +47,6 @@ test-results/
 
 # Private historical registration answers.
 /experience/experience_his.csv
+
+# Private historical feedback answers.
+/experience/feedback_his.csv

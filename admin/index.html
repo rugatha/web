@@ -8,7 +8,7 @@
   <title>管理總覽 | Rugatha</title>
   <link rel="icon" href="/assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="/shared/styles/theme.css">
-  <link rel="stylesheet" href="./dashboard.css?v=20261026-experience-5">
+  <link rel="stylesheet" href="./dashboard.css?v=20261026-forms-8">
 </head>
 <body>
   <div id="gate" role="status" class="gate"><img src="/assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha"><p>正在驗證管理員身分…</p></div>
@@ -19,7 +19,13 @@
       <nav aria-label="管理分類">
         <a href="#overview" data-nav="overview"><span>▦</span>管理總覽</a>
         <a href="#campaigns" data-nav="campaigns"><span>▤</span>團務與章節</a>
-        <a href="#experience" data-nav="experience"><span>✧</span>體驗團報名</a>
+        <details class="nav-group" id="forms-navigation" open>
+          <summary><span>✧</span>報名與表單</summary>
+          <div class="nav-submenu">
+            <a href="#experience" data-nav="experience">體驗團報名</a>
+            <a href="#feedback" data-nav="feedback">跑團回饋</a>
+          </div>
+        </details>
         <a href="#members" data-nav="members"><span>♙</span>會員管理</a>
         <a href="#characters" data-nav="characters"><span>▧</span>角色卡</a>
         <a href="#npcs" data-nav="npcs"><span>◈</span>NPC 統計</a>
@@ -75,6 +81,18 @@
         <section data-screen="fate" id="screen-fate" hidden aria-labelledby="screen-title">
           <div class="metrics four"><article class="metric"><span>篩選後答題筆數</span><strong id="fate-answers">—</strong></article><article class="metric"><span>答題會員數</span><strong id="fate-members">—</strong></article><article class="metric"><span>已有作答的題目</span><strong id="fate-answered">—</strong></article><article class="metric"><span>篩選後題目數</span><strong id="fate-questions">—</strong></article></div>
           <div class="panel"><div class="panel-heading"><h2>NPC 題目與作答分布</h2><span class="tag">每筆回答計一次</span></div><div class="toolbar"><label class="search">搜尋題目或 NPC<input id="fate-search" type="search" placeholder="NPC 名稱、題目或選項文字"></label><label class="checkbox-control"><input id="fate-include-undated" type="checkbox" checked>納入日期未記錄的歷史作答</label><label class="checkbox-control"><input id="fate-show-unanswered" type="checkbox">顯示此期間無人作答的題目</label></div><p id="fate-date-quality" class="date-quality-note" role="status"></p><p id="fate-summary" class="result-summary"></p><div id="fate-table" class="table-scroll fate-scroll"></div><p class="hint">每題比例＝該選項答題數 ÷ 該題兩選項答題總數。零回答顯示「—」，不以 0% 表示。僅含 NPC 命運二選一題，不含團務章節問答。</p></div>
+        </section>
+        <section data-screen="feedback" id="screen-feedback" hidden aria-labelledby="screen-title">
+          <div class="toolbar"><label>劇本<select id="feedback-script"><option value="all">全部劇本</option></select></label><label>場次<select id="feedback-event"><option value="all">全部場次</option></select></label><label class="search">搜尋回饋資料<input id="feedback-search" type="search" placeholder="暱稱、劇本或回覆內容"></label><button class="button" id="feedback-refresh" type="button">重新整理回饋資料</button></div>
+          <p id="feedback-status" role="status"></p>
+          <section id="feedback-current" class="panel" aria-label="篩選回饋平均分"></section>
+          <section id="feedback-written" class="panel" hidden aria-labelledby="feedback-written-title">
+            <h2 id="feedback-written-title">文字回饋</h2>
+            <section class="feedback-text-section" aria-labelledby="feedback-public-title"><h3 id="feedback-public-title">公開回饋</h3><div id="feedback-public-text" class="feedback-text-table"></div></section>
+            <section class="feedback-text-section" aria-labelledby="feedback-private-title"><h3 id="feedback-private-title">非公開回饋</h3><div id="feedback-private-text" class="feedback-text-table"></div></section>
+          </section>
+          <p id="feedback-summary" class="experience-seats"></p>
+          <div class="panel"><h2>跑團回饋回覆</h2><p class="hint">保留各期完整回覆；此頁不套用全站日期篩選。上方平均分會隨劇本、場次、搜尋與欄位條件同步更新，計算包含所有分頁的符合資料。私下回饋僅供管理員閱讀，公開回饋不會自動發布。</p><div id="feedback-table" class="table-scroll"></div></div>
         </section>
         <section data-screen="experience" id="screen-experience" hidden aria-labelledby="screen-title">
           <div class="toolbar"><label>場次<select id="experience-event"><option value="all">全部場次</option></select></label><label class="search">搜尋報名資料<input id="experience-search" type="search" placeholder="稱呼、聯絡方式或回覆內容"></label><button class="button" id="experience-refresh" type="button">重新整理報名資料</button></div>
@@ -138,7 +156,7 @@
       const config = document.createElement('script');
       config.src = '/shared/firebase.config.js';
       config.onerror = window.RUGATHA_ADMIN_BOOT.fail;
-      config.onload = () => import('./dashboard.js?v=20261026-experience-5').catch(window.RUGATHA_ADMIN_BOOT.fail);
+      config.onload = () => import('./dashboard.js?v=20261026-forms-8').catch(window.RUGATHA_ADMIN_BOOT.fail);
       document.head.append(config);
     })();
   </script>

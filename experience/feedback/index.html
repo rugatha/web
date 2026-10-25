@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跑團回饋 | Rugatha</title>
+  <meta name="description" content="感謝參與 Rugatha D&D 團務，分享你的冒險體驗，讓下一場冒險更精彩。">
+  <link rel="canonical" href="https://rugatha.com/experience/feedback/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="跑團回饋 | Rugatha">
+  <meta property="og:description" content="你的回饋，是我們進步的動力。">
+  <meta property="og:url" content="https://rugatha.com/experience/feedback/">
+  <meta property="og:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+  <meta name="theme-color" content="#445f56">
+  <link rel="icon" href="../../assets/logo/rugatha-favicon.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <link rel="stylesheet" href="../register/styles.css?v=20261025-registration-5">
+  <link rel="stylesheet" href="styles.css?v=20261026-feedback-7">
+  <script src="../../shared/firebase.config.js"></script>
+  <script defer src="feedback.js?v=20261026-feedback-7"></script>
+</head>
+<body>
+  <a class="skip-link" href="#feedback">跳至回饋問卷</a>
+  <header class="site-header">
+    <a href="../../" aria-label="Rugatha 首頁"><img src="../../assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha" width="320"></a>
+    <a class="back-link back-link--desktop" href="../">← 體驗團介紹</a>
+  </header>
+  <main>
+    <section class="hero feedback-hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">RUGATHA EXPERIENCE <span>／ 跑團回饋</span></p>
+        <a class="back-link back-link--mobile" href="../">← 體驗團介紹</a>
+        <h1 id="page-title"><span class="title-line">Rugatha D&D</span><span class="title-line">跑團回饋問卷</span></h1>
+        <p class="hero-description">感謝你參與 Rugatha D&D 的團務。<br>請撥冗分享這次的體驗，讓我們知道可以改進的地方。</p>
+        <div class="tags"><span>冒險者的聲音</span><span>D&D</span><span>一起讓團務更好</span></div>
+      </div>
+      <img class="hero-art" src="../../about-us/assets/rugatha-photo.png" alt="Rugatha 團隊照片">
+      <aside class="event-panel feedback-note" aria-labelledby="note-title">
+        <p class="eyebrow">EVERY ADVENTURE MATTERS</p>
+        <h2 id="note-title">你的回饋，是我們進步的動力。</h2>
+        <p>從劇本、角色到桌上的每一件道具，我們都期待聽見你的真實感受。</p>
+        <p>私下回饋不會公開；公開回饋為選填，文字可匿名分享於社群。</p>
+      </aside>
+      <div class="hero-actions"><a class="primary hero-cta" href="#feedback">填寫跑團回饋 <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <div class="registration-layout">
+      <div class="form-column" id="feedback">
+        <div class="form-intro"><p class="eyebrow">TELL US YOUR STORY</p><h2>Rugatha D&D 跑團回饋</h2><p><span class="required">*</span> 為必填欄位，文字回饋可自由選填。</p></div>
+        <p class="notice" id="frontend-notice">填寫後可先確認內容，再正式送出。私下回饋僅供主辦方閱讀；公開回饋可匿名分享於社群。</p>
+        <noscript><p class="notice">請啟用 JavaScript 以填寫與送出回饋。</p></noscript>
+        <form id="feedback-form" aria-describedby="frontend-notice" hidden>
+<section class="form-section" aria-labelledby="section-01"><div class="section-heading"><span class="section-number">01</span><div><h3 id="section-01">基本資訊</h3><p>先回想一下，我們一起踏上的那場冒險。</p></div></div><div class="field" data-question="nickname"><label for="nickname"><span class="question-number">1.</span> 您的暱稱 <span class="required">*</span></label><input id="nickname" name="nickname" type="text" autocomplete="nickname" maxlength="80" placeholder="你的名字或暱稱" required></div>
+<fieldset class="field" data-question="gender"><legend><span class="question-number">2.</span> 您的性別 <span class="required">*</span><span class="legend-note">單選</span></legend><div class="choices"><label><input type="radio" name="gender" value="男性" required>男性</label><label><input type="radio" name="gender" value="女性" required>女性</label><label><input type="radio" name="gender" value="其他/不願透露" required>其他/不願透露</label></div><input class="other-input" id="gender-other" name="genderOther" aria-label="其他性別補充（選填）" placeholder="可補充說明，也可以不填" maxlength="150" hidden disabled></fieldset>
+<fieldset class="field" data-question="ageRange"><legend><span class="question-number">3.</span> 您的年齡層 <span class="required">*</span><span class="legend-note">單選</span></legend><div class="choices"><label><input type="radio" name="ageRange" value="12歲以下" required>12歲以下</label><label><input type="radio" name="ageRange" value="13-18" required>13-18</label><label><input type="radio" name="ageRange" value="18-22" required>18-22</label><label><input type="radio" name="ageRange" value="22-35" required>22-35</label><label><input type="radio" name="ageRange" value="36-45" required>36-45</label><label><input type="radio" name="ageRange" value="46-55" required>46-55</label><label><input type="radio" name="ageRange" value="56-65" required>56-65</label><label><input type="radio" name="ageRange" value="66歲以上" required>66歲以上</label><label><input type="radio" name="ageRange" value="不願透露" required>不願透露</label></div></fieldset>
+<div class="field" data-question="sessionDate"><label for="sessionDate"><span class="question-number">4.</span> 參與日期 <span class="required">*</span></label><input id="sessionDate" name="sessionDate" type="date" required></div>
+<fieldset class="field" data-question="scenario"><legend><span class="question-number">5.</span> 跑團劇本 <span class="required">*</span><span class="legend-note">單選</span></legend><div class="choices"><label><input type="radio" name="scenario" value="體驗團《金之堡的卷軸》" required>體驗團《金之堡的卷軸》</label><label><input type="radio" name="scenario" value="體驗團《龍鳴的回音》" required>體驗團《龍鳴的回音》</label><label><input type="radio" name="scenario" value="TRPG Fes. 《寂靜與秩序之下》" required>TRPG Fes. 《寂靜與秩序之下》</label><label><input type="radio" name="scenario" value="竹推《洛林精神：那些不被提及的歷史》" required>竹推《洛林精神：那些不被提及的歷史》</label><label><input type="radio" name="scenario" value="體驗團《洛林精神：那些不被提及的歷史》" required>體驗團《洛林精神：那些不被提及的歷史》</label></div></fieldset>
+<fieldset class="field" data-question="previousParticipation"><legend><span class="question-number">6.</span> 是否參與過我們的其他團務？ <span class="required">*</span><span class="legend-note">單選</span></legend><div class="choices"><label><input type="radio" name="previousParticipation" value="有" required>有</label><label><input type="radio" name="previousParticipation" value="無" required>無</label></div></fieldset>
+<fieldset class="field" data-question="interests"><legend><span class="question-number">7.</span> 平時的興趣類型 <span class="required">*</span><span class="legend-note">可複選</span></legend><div class="choices"><label><input type="checkbox" name="interests" value="TRPG遊戲">TRPG遊戲</label><label><input type="checkbox" name="interests" value="劇本殺">劇本殺</label><label><input type="checkbox" name="interests" value="桌遊">桌遊</label><label><input type="checkbox" name="interests" value="RPG類電玩、手遊">RPG類電玩、手遊</label><label><input type="checkbox" name="interests" value="其他">其他</label></div><input class="other-input" id="interests-other" name="interestsOther" aria-label="其他興趣類型" placeholder="請填寫其他興趣類型" maxlength="150" hidden disabled><p class="hint error" id="interests-error" hidden>請至少選擇一項興趣類型。</p></fieldset></section>
+<section class="form-section" aria-labelledby="section-02"><div class="section-heading"><span class="section-number">02</span><div><h3 id="section-02">冒險體驗</h3><p>每一顆星，都是讓下一場冒險更好的線索。</p></div></div><div class="field slider-field" data-question="storyRating"><label for="storyRating"><span class="question-number">8.</span> 關於劇本設計，您給的評分為何？ <span class="required">*</span></label><div class="slider-control"><input id="storyRating" name="storyRating" type="range" data-answered="false" aria-valuetext="尚未填答" min="1" max="5" step="1" value="3" list="storyRating-ticks" aria-describedby="storyRating-hint"><datalist id="storyRating-ticks"><option value="1" label="1 星"></option><option value="2" label="2 星"></option><option value="3" label="3 星"></option><option value="4" label="4 星"></option><option value="5" label="5 星"></option></datalist><div class="slider-labels" aria-hidden="true"><span>1 星</span><span>2 星</span><span>3 星</span><span>4 星</span><span>5 星</span></div></div><p class="hint" id="storyRating-hint">點選或拖曳滑桿選擇 1–5 星。</p></div>
+<div class="field slider-field" data-question="characterRating"><label for="characterRating"><span class="question-number">9.</span> 關於角色設計，您給的評分為何？ <span class="required">*</span></label><div class="slider-control"><input id="characterRating" name="characterRating" type="range" data-answered="false" aria-valuetext="尚未填答" min="1" max="5" step="1" value="3" list="characterRating-ticks" aria-describedby="characterRating-hint"><datalist id="characterRating-ticks"><option value="1" label="1 星"></option><option value="2" label="2 星"></option><option value="3" label="3 星"></option><option value="4" label="4 星"></option><option value="5" label="5 星"></option></datalist><div class="slider-labels" aria-hidden="true"><span>1 星</span><span>2 星</span><span>3 星</span><span>4 星</span><span>5 星</span></div></div><p class="hint" id="characterRating-hint">點選或拖曳滑桿選擇 1–5 星。</p></div>
+<div class="field slider-field" data-question="dmRating"><label for="dmRating"><span class="question-number">10.</span> 關於DM帶團風格，您給的評分為何？ <span class="required">*</span></label><div class="slider-control"><input id="dmRating" name="dmRating" type="range" data-answered="false" aria-valuetext="尚未填答" min="1" max="5" step="1" value="3" list="dmRating-ticks" aria-describedby="dmRating-hint"><datalist id="dmRating-ticks"><option value="1" label="1 星"></option><option value="2" label="2 星"></option><option value="3" label="3 星"></option><option value="4" label="4 星"></option><option value="5" label="5 星"></option></datalist><div class="slider-labels" aria-hidden="true"><span>1 星</span><span>2 星</span><span>3 星</span><span>4 星</span><span>5 星</span></div></div><p class="hint" id="dmRating-hint">點選或拖曳滑桿選擇 1–5 星。</p></div>
+<div class="field slider-field" data-question="cardRating"><label for="cardRating"><span class="question-number">11.</span> 關於角色卡與幫助卡設計，您給的評分為何？ <span class="required">*</span></label><div class="slider-control"><input id="cardRating" name="cardRating" type="range" data-answered="false" aria-valuetext="尚未填答" min="1" max="5" step="1" value="3" list="cardRating-ticks" aria-describedby="cardRating-hint"><datalist id="cardRating-ticks"><option value="1" label="1 星"></option><option value="2" label="2 星"></option><option value="3" label="3 星"></option><option value="4" label="4 星"></option><option value="5" label="5 星"></option></datalist><div class="slider-labels" aria-hidden="true"><span>1 星</span><span>2 星</span><span>3 星</span><span>4 星</span><span>5 星</span></div></div><p class="hint" id="cardRating-hint">點選或拖曳滑桿選擇 1–5 星。</p></div>
+<div class="field slider-field" data-question="propRating"><label for="propRating"><span class="question-number">12.</span> 關於公仔、地圖等道具，您給的評分為何？ <span class="required">*</span></label><div class="slider-control"><input id="propRating" name="propRating" type="range" data-answered="false" aria-valuetext="尚未填答" min="1" max="5" step="1" value="3" list="propRating-ticks" aria-describedby="propRating-hint"><datalist id="propRating-ticks"><option value="1" label="1 星"></option><option value="2" label="2 星"></option><option value="3" label="3 星"></option><option value="4" label="4 星"></option><option value="5" label="5 星"></option></datalist><div class="slider-labels" aria-hidden="true"><span>1 星</span><span>2 星</span><span>3 星</span><span>4 星</span><span>5 星</span></div></div><p class="hint" id="propRating-hint">點選或拖曳滑桿選擇 1–5 星。</p></div>
+<div class="field slider-field" data-question="feeOpinion"><label for="feeOpinion"><span class="question-number">13.</span> 關於費用，您覺得是否合理？ <span class="required">*</span></label><div class="slider-control"><input id="feeOpinion" name="feeOpinion" type="range" data-answered="false" aria-valuetext="尚未填答" min="0" max="2" step="1" value="1" list="feeOpinion-ticks" aria-describedby="feeOpinion-hint"><datalist id="feeOpinion-ticks"><option value="0" label="太便宜"></option><option value="1" label="可以接受"></option><option value="2" label="太貴"></option></datalist><div class="slider-labels" aria-hidden="true"><span>太便宜</span><span>可以接受</span><span>太貴</span></div></div><p class="hint" id="feeOpinion-hint">點選或拖曳滑桿，選擇你對費用的感受。</p></div></section>
+<section class="form-section" aria-labelledby="section-03"><div class="section-heading"><span class="section-number">03</span><div><h3 id="section-03">想對我們說的話</h3><p>無論是喜歡的片段，或希望改進的地方，都歡迎告訴我們。</p></div></div><div class="field" data-question="privateFeedback"><label for="privateFeedback"><span class="question-number">14.</span> 請不吝給我們任何文字回饋！ <span class="optional">選填</span></label><p class="hint" id="privateFeedback-hint">此題為私下填答，不會公開</p><textarea id="privateFeedback" name="privateFeedback" rows="5" maxlength="4000" aria-describedby="privateFeedback-hint"></textarea></div>
+<div class="field" data-question="publicFeedback"><label for="publicFeedback"><span class="question-number">15.</span> 歡迎填寫公開回饋內容，我們將把您填寫的文字分享於社群軟體上，且不會公開您的身份 <span class="optional">選填</span></label><textarea id="publicFeedback" name="publicFeedback" rows="5" maxlength="4000"></textarea></div></section>
+          <div class="form-footer"><p>私下與公開回饋會分開呈現。預覽後可返回修改內容。</p><button class="primary" type="submit">確認回饋內容 <span aria-hidden="true">→</span></button><p class="hint">下一步可預覽填寫內容，確認後才會正式送出。</p></div>
+        </form>
+        <section id="feedback-success" class="notice" tabindex="-1" hidden aria-labelledby="success-title">
+          <h2 id="success-title">謝謝你的填答！</h2>
+          <p>回饋已成功送達。你的回饋，是我們進步的動力，也期待你再次參與我們的團務。</p>
+          <dl id="success-details"></dl>
+          <a class="primary" href="../">返回體驗團介紹 →</a>
+        </section>
+        <section class="afterword"><span aria-hidden="true">✧</span><h3>期待下一場冒險，再次與你相見。</h3><p>有任何問題，歡迎寫信給我們：<a href="mailto:rugathadnd@gmail.com">rugathadnd@gmail.com</a></p></section>
+      </div>
+    </div>
+  </main>
+  <dialog id="review-dialog" aria-labelledby="review-title"><div class="dialog-content"><p class="eyebrow">YOUR ADVENTURE, YOUR VOICE</p><h2 id="review-title">再看一眼，這次的冒險。</h2><p class="hint">請確認填寫內容，再按下「送出回饋」。</p><dl id="review-details"></dl><p id="submission-status" class="notice" role="status">尚未送出。</p><div class="dialog-actions"><button type="button" id="edit-button" class="secondary">返回修改</button><button type="button" id="submit-button" class="primary">送出回饋 →</button></div></div></dialog>
+</body>
+</html>

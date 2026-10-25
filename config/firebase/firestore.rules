@@ -909,6 +909,49 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+
+    match /experienceFeedback/{feedbackId} {
+      function validText(value, maximum, required) {
+        return value is string && value.size() <= maximum
+          && (!required || value.matches('.*[^\\s].*'));
+      }
+      function validRating(value) {
+        return value is int && value >= 1 && value <= 5;
+      }
+      function validFeedback() {
+        let data = request.resource.data;
+        let fields = ['schemaVersion', 'source', 'nickname', 'gender', 'genderOther',
+          'ageRange', 'sessionDate', 'scenario', 'previousParticipation', 'interests',
+          'storyRating', 'characterRating', 'dmRating', 'cardRating', 'propRating',
+          'feeOpinion', 'privateFeedback', 'publicFeedback', 'createdAt'];
+        return data.keys().hasOnly(fields.concat(['interestsOther'])) && data.keys().hasAll(fields)
+          && data.schemaVersion == 1 && data.source == 'website'
+          && validText(data.nickname, 80, true)
+          && data.gender in ['男性', '女性', '其他/不願透露']
+          && validText(data.genderOther, 150, false)
+          && (data.gender == '其他/不願透露' || data.genderOther == '')
+          && data.ageRange in ['12歲以下', '13-18', '18-22', '22-35', '36-45', '46-55', '56-65', '66歲以上', '不願透露']
+          && data.sessionDate is string && data.sessionDate.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')
+          && data.scenario in ['體驗團《金之堡的卷軸》', '體驗團《龍鳴的回音》', 'TRPG Fes. 《寂靜與秩序之下》',
+            '竹推《洛林精神：那些不被提及的歷史》', '體驗團《洛林精神：那些不被提及的歷史》']
+          && data.previousParticipation in ['有', '無']
+          && data.interests is list && data.interests.size() > 0 && data.interests.size() <= 5
+          && data.interests.toSet().size() == data.interests.size()
+          && data.interests.hasOnly(['TRPG遊戲', '劇本殺', '桌遊', 'RPG類電玩、手遊', '其他'])
+          && (data.interests.hasAny(['其他'])
+            ? ('interestsOther' in data && validText(data.interestsOther, 150, true))
+            : (!('interestsOther' in data) || data.interestsOther == ''))
+          && validRating(data.storyRating) && validRating(data.characterRating)
+          && validRating(data.dmRating) && validRating(data.cardRating) && validRating(data.propRating)
+          && data.feeOpinion in ['太便宜', '可以接受', '太貴']
+          && validText(data.privateFeedback, 4000, false) && validText(data.publicFeedback, 4000, false)
+          && data.createdAt == request.time;
+      }
+      allow create: if feedbackId.matches('[a-zA-Z0-9]{20}') && validFeedback();
+      allow read: if isAdmin();
+      allow update, delete: if false;
+    }
+
     match /migrationRuns/{runId} {
       allow get, list: if isAdmin();
       allow write: if false;

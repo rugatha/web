@@ -1,0 +1,34 @@
+/* Hero, cards, typography and spacing inherit the registration page design. */
+.hero-description,.feedback-note>p:not(.eyebrow){color:var(--subtle);font-size:14px;line-height:1.9}
+.slider-control{max-width:520px;margin:16px 0}
+.slider-control input[type=range]{display:block;width:100%;height:44px;margin:0;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;appearance:none;-webkit-appearance:none;touch-action:pan-y}
+.slider-control input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:4px;background:linear-gradient(to right,var(--accent) 0 var(--slider-fill,0%),#ffffff30 var(--slider-fill,0%) 100%)}
+.slider-control input[type=range]::-moz-range-track{height:6px;border-radius:4px;background:#ffffff30}
+.slider-control input[type=range]::-moz-range-progress{height:6px;border-radius:4px;background:var(--accent)}
+.slider-control input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:22px;height:22px;margin-top:-8px;border:2px solid var(--accent);border-radius:50%;background:var(--ink);box-shadow:0 2px 8px #0004}
+.slider-control input[type=range]::-moz-range-thumb{width:18px;height:18px;border:2px solid var(--accent);border-radius:50%;background:var(--ink);box-shadow:0 2px 8px #0004}
+.slider-labels{display:flex;justify-content:space-between;margin:0 11px;font-size:12px;color:var(--subtle)}
+.slider-labels span{position:relative;width:0;white-space:nowrap;display:flex;justify-content:center}
+.slider-labels span::before{content:'';position:absolute;top:-5px;height:4px;width:1px;background:var(--subtle)}
+.slider-field>.hint{margin-top:20px}
+#review-details .private-answer{border-left:2px solid var(--accent);padding-left:12px}
+
+/* Match the registration hero, with the Rugatha photo on the right. */
+.feedback-hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+.feedback-hero>.feedback-note{grid-column:1;grid-row:2;align-self:end}
+.feedback-hero>.hero-actions{grid-row:3}
+.slider-control input[data-answered=false]::-webkit-slider-thumb{opacity:0}
+.slider-control input[data-answered=false]::-moz-range-thumb{opacity:0}
+@media(max-width:700px){.feedback-hero{grid-template-columns:minmax(0,1fr)}.feedback-hero>.feedback-note,.feedback-hero>.hero-actions{grid-column:1;grid-row:auto}}
+
+/* An untouched slider has no selected segment in either browser engine. */
+.slider-control input[type=range][data-answered=false]::-webkit-slider-runnable-track{background:#ffffff30}
+.slider-control input[type=range][data-answered=false]::-moz-range-track{background:#ffffff30}
+.slider-control input[type=range][data-answered=false]::-moz-range-progress{background:transparent}
+
+.site-header{margin-top:32px}
+#feedback-success{padding:28px}
+#feedback-success>.primary{margin-top:24px}
+@media(max-width:700px){.site-header{margin-top:24px}#feedback-success{padding:22px}}
+
+.question-number{color:var(--subtle);margin-right:6px;font-variant-numeric:tabular-nums}
