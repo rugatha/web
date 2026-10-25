@@ -876,7 +876,7 @@ service cloud.firestore {
         let event = get(eventPath).data;
         let updated = getAfter(eventPath).data;
         return isAdmin()
-          && (!('status' in before) || before.status == 'active')
+          && before.get('status', '') != 'cancelled'
           && after.diff(before).affectedKeys().hasOnly(['status', 'cancelledAt'])
           && after.status == 'cancelled' && after.cancelledAt == request.time
           && before.partySize is int && before.partySize > 0
@@ -885,7 +885,27 @@ service cloud.firestore {
           && updated.lastCancellationId == registrationId
           && updated.updatedAt == request.time;
       }
-      allow update: if validCancellation();
+      function validAdminEdit() {
+        let before = resource.data;
+        let after = request.resource.data;
+        let delta = (before.get('status', '') == 'cancelled' ? before.partySize : 0)
+          - (after.status == 'cancelled' ? before.partySize : 0);
+        let eventPath = /databases/$(database)/documents/experienceEvents/$(before.eventId);
+        return isAdmin()
+          && after.diff(before).affectedKeys().hasOnly(['status', 'DM_Note', 'updatedAt', 'cancelledAt'])
+          && validText(after.status, 120, true)
+          && validText(after.DM_Note, 10000, false)
+          && after.updatedAt == request.time
+          && ((delta == 0 && after.get('cancelledAt', null) == before.get('cancelledAt', null))
+            || (delta != 0 && before.partySize is int && before.partySize > 0
+              && getAfter(eventPath).data.registeredPlayers == get(eventPath).data.registeredPlayers + delta
+              && getAfter(eventPath).data.registeredPlayers >= 0
+              && getAfter(eventPath).data.registeredPlayers <= get(eventPath).data.maxPlayers
+              && getAfter(eventPath).data.updatedAt == request.time
+              && ((after.status == 'cancelled' && after.cancelledAt == request.time)
+                || (after.status != 'cancelled' && after.cancelledAt == null))));
+      }
+      allow update: if validCancellation() || validAdminEdit();
       allow delete: if false;
     }
 

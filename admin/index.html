@@ -8,7 +8,7 @@
   <title>管理總覽 | Rugatha</title>
   <link rel="icon" href="/assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="/shared/styles/theme.css">
-  <link rel="stylesheet" href="./dashboard.css?v=20261025-experience-1">
+  <link rel="stylesheet" href="./dashboard.css?v=20261026-experience-2">
 </head>
 <body>
   <div id="gate" role="status" class="gate"><img src="/assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha"><p>正在驗證管理員身分…</p></div>
@@ -79,7 +79,17 @@
         <section data-screen="experience" id="screen-experience" hidden aria-labelledby="screen-title">
           <div class="toolbar"><label>場次<select id="experience-event"><option value="all">全部場次</option></select></label><label class="search">搜尋報名資料<input id="experience-search" type="search" placeholder="稱呼、聯絡方式或回覆內容"></label><button class="button" id="experience-refresh" type="button">重新整理報名資料</button></div>
           <p id="experience-status" role="status"></p><div id="experience-seats" class="experience-seats"></div>
-          <div class="panel"><h2>報名回覆</h2><p class="hint">保留各期完整回覆與取消紀錄；此頁不套用全站日期篩選。取消後會釋出該筆全部名額。</p><div id="experience-table" class="table-scroll"></div></div>
+          <div class="panel"><h2>報名回覆</h2><p class="hint">保留各期完整回覆與取消紀錄；此頁不套用全站日期篩選。可編輯狀態與 DM_Note；cancelled 代表取消並釋出名額，改回其他狀態會恢復名額。</p><div id="experience-table" class="table-scroll"></div></div>
+          <dialog id="experience-editor"><form id="experience-edit-form">
+            <h2 id="experience-edit-title">編輯報名</h2>
+            <label>狀態<input id="experience-edit-status" list="experience-status-options" maxlength="120" required></label>
+            <datalist id="experience-status-options"><option value="active">有效</option><option value="完成跑團"></option><option value="沒來"></option><option value="cancelled">已取消</option></datalist>
+            <p class="hint">可輸入自訂狀態。cancelled 會釋出名額，改回其他狀態會恢復名額。</p>
+            <label>DM_Note<textarea id="experience-edit-note" rows="6" maxlength="10000"></textarea></label>
+            <p id="experience-edit-error" class="form-error" role="status"></p>
+            <button id="experience-edit-save" class="button" type="submit">儲存</button>
+            <button id="experience-edit-cancel" class="button" type="button">關閉</button>
+          </form></dialog>
         </section>
         <footer><span>Rugatha 管理後台</span><span>時間：Asia/Taipei · 只有指定管理員可存取</span></footer>
       </div>
@@ -128,7 +138,7 @@
       const config = document.createElement('script');
       config.src = '/shared/firebase.config.js';
       config.onerror = window.RUGATHA_ADMIN_BOOT.fail;
-      config.onload = () => import('./dashboard.js?v=20261025-experience-1').catch(window.RUGATHA_ADMIN_BOOT.fail);
+      config.onload = () => import('./dashboard.js?v=20261026-experience-2').catch(window.RUGATHA_ADMIN_BOOT.fail);
       document.head.append(config);
     })();
   </script>

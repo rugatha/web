@@ -25,6 +25,14 @@ try {
  assert.match(await page.locator('#experience-table').textContent(),/test@example.test/);
  assert.match(await page.locator('#experience-table').textContent(),/避開血腥/);
  assert.equal(await page.locator('#experience-table tbody tr').count(),1);
+ await page.locator('[data-edit-registration]').click();
+ await page.fill('#experience-edit-status','完成跑團');
+ await page.fill('#experience-edit-note','DM 備註 <保留文字>');
+ await page.click('#experience-edit-save');
+ await page.locator('#experience-editor').waitFor({state:'hidden'});
+ assert.match(await page.locator('#experience-table tbody').textContent(),/完成跑團/);
+ assert.match(await page.locator('#experience-table tbody').textContent(),/DM 備註 <保留文字>/);
+ assert.equal(await page.locator('.seat-box.occupied').count(),3);
  page.on('dialog',dialog=>dialog.accept());
  await page.locator('[data-cancel-registration]').click();
  await page.waitForFunction(()=>document.querySelectorAll('.seat-box.occupied').length===0);

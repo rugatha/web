@@ -102,3 +102,28 @@ test('admin cancellation releases the entire party once, preserves answers and p
  await assertSucceeds(commitRegistration(db,'n'.repeat(20),{...answers(),partySize:3},sdk));
  assert.equal((await getDoc(doc(db,'experienceEvents/test'))).data().registeredPlayers,5);
 });
+
+test('admin edits custom status and DM_Note, cancels and restores seats atomically',async()=>{
+ const {updateRegistrationAdmin}=await import('../experience/register/registration-store.js');
+ await commitRegistration(db,id,answers(),sdk);
+ const admin=env.authenticatedContext('admin',{admin:true}).firestore();
+ const edit=(status,DM_Note='主持人備註')=>updateRegistrationAdmin(admin,id,{status,DM_Note},sdk);
+ await assertFails(updateRegistrationAdmin(db,id,{status:'完成跑團',DM_Note:'private'},sdk));
+ await assertFails(updateRegistrationAdmin(env.authenticatedContext('member').firestore(),id,{status:'完成跑團',DM_Note:'private'},sdk));
+ await assertSucceeds(edit('完成跑團'));
+ assert.equal((await getDoc(doc(admin,'experienceRegistrations',id))).data().DM_Note,'主持人備註');
+ assert.equal((await getDoc(doc(db,'experienceEvents/test'))).data().registeredPlayers,4);
+ await assertSucceeds(edit('沒來','新的備註'));
+ await assertSucceeds(edit('cancelled'));
+ assert.equal((await getDoc(doc(db,'experienceEvents/test'))).data().registeredPlayers,2);
+ await assertSucceeds(edit('cancelled','更新取消備註'));
+ assert.equal((await getDoc(doc(db,'experienceEvents/test'))).data().registeredPlayers,2);
+ await assertSucceeds(edit('完成跑團'));
+ assert.equal((await getDoc(doc(db,'experienceEvents/test'))).data().registeredPlayers,4);
+ await assertFails(updateDoc(doc(admin,'experienceRegistrations',id),{status:'cancelled',DM_Note:'',cancelledAt:serverTimestamp(),updatedAt:serverTimestamp()}));
+ await assertFails(updateDoc(doc(admin,'experienceRegistrations',id),{contact:'changed',status:'custom',DM_Note:'',updatedAt:serverTimestamp()}));
+ await assertSucceeds(edit('cancelled'));
+ await commitRegistration(db,'z'.repeat(20),{...answers(),partySize:3},sdk);
+ await assert.rejects(edit('active'),/名額不足/);
+ assert.equal((await getDoc(doc(db,'experienceEvents/test'))).data().registeredPlayers,5);
+});

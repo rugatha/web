@@ -44,3 +44,6 @@ test-results/
 /npc/individual_pics/
 /npc/portrait-*-review.html
 /npc/portrait-revision*/
+
+# Private historical registration answers.
+/experience/experience_his.csv

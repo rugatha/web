@@ -1,7 +1,8 @@
-import { cancelRegistration } from '../experience/register/registration-store.js';
+import { cancelRegistration, updateRegistrationAdmin } from '../experience/register/registration-store.js';
 import { dataTable, resetTablePage } from './data-table.js?v=20261025-admin-v5';
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const statusText = row => row.status === 'cancelled' ? '已取消' : row.status === 'active' || !row.status ? '有效' : row.status;
 const answerText = value => Array.isArray(value) ? value.join('、') : value ?? '';
 const dateText = value => value?.toDate ? value.toDate().toLocaleString('zh-TW', {timeZone:'Asia/Taipei',hour12:false}) : '未記錄';
 export function createExperienceDashboard(context) {
@@ -48,14 +49,40 @@ export function createExperienceDashboard(context) {
       {id:'name',label:'稱呼',value:r=>r.name},
       {id:'contact',label:'聯絡方式',value:r=>r.contact},
       {id:'partySize',label:'人數',type:'number',value:r=>r.partySize},
-      {id:'status',label:'狀態',type:'category',value:r=>r.status==='cancelled'?'已取消':'有效',html:r=>r.status==='cancelled'?`已取消<small>${esc(dateText(r.cancelledAt))}</small>`:`有效 <button class="button" data-cancel-registration="${esc(r.id)}" ${busy?'disabled':''}>取消報名</button>`},
+      {id:'status',label:'狀態',type:'category',value:statusText,html:r=>`${esc(statusText(r))}<br><button class="button" data-edit-registration="${esc(r.id)}" ${busy?'disabled':''}>編輯狀態／備註</button>${r.status==='cancelled'?`<small>${esc(dateText(r.cancelledAt))}</small>`:` <button class="button" data-cancel-registration="${esc(r.id)}" ${busy?'disabled':''}>取消報名</button>`}`},
+      {id:'DM_Note',label:'DM_Note',value:r=>r.DM_Note || ''},
       ...[['systems','TRPG 系統'],['systemsOther','其他系統'],['dndExperience','D&D 經驗'],['rugathaExperience','Rugatha 經驗'],['sources','得知管道'],['sourcesOther','其他管道'],['boundaries','不能接受的內容'],['notes','備註']].map(([id,label])=>({id,label,value:r=>answerText(r[id])}))
     ],filtered);
   }
   $('experience-event').addEventListener('change',()=>{resetTablePage('experience-table');render();});
   $('experience-search').addEventListener('input',()=>{resetTablePage('experience-table');render();});
   $('experience-refresh').addEventListener('click',()=>void load());
+  const editor = $('experience-editor');
+  let editingId = null;
+  $('experience-edit-cancel').addEventListener('click',()=>editor.close());
+  $('experience-edit-form').addEventListener('submit',async event=>{
+    event.preventDefault();
+    if (busy || !context().authenticated || !editingId) return;
+    const {db,sdk,generation} = context(), ticket=revision;
+    busy=true; $('experience-edit-save').disabled=true; $('experience-edit-error').textContent='';
+    try {
+      await updateRegistrationAdmin(db,editingId,{status:$('experience-edit-status').value,DM_Note:$('experience-edit-note').value},sdk);
+      if (!valid(ticket,generation)) return;
+      editor.close(); busy=false; await load();
+    } catch (error) {
+      if (valid(ticket,generation)) $('experience-edit-error').textContent=`儲存失敗：${error.message}。請確認資料後重試。`;
+    } finally { if (valid(ticket,generation)) {busy=false;$('experience-edit-save').disabled=false;render();} }
+  });
   $('experience-table').addEventListener('click',async event=>{
+    const edit = event.target.closest('[data-edit-registration]');
+    if (edit && !busy && !loading && context().authenticated) {
+      const row=rows.find(r=>r.id===edit.dataset.editRegistration);
+      if (!row) return;
+      editingId=row.id; $('experience-edit-title').textContent=`${row.name} · ${row.eventId}`;
+      $('experience-edit-status').value=row.status || 'active';
+      $('experience-edit-note').value=row.DM_Note || '';
+      $('experience-edit-error').textContent=''; editor.showModal(); return;
+    }
     const button = event.target.closest('[data-cancel-registration]');
     if (!button || busy || loading || !context().authenticated) return;
     const row = rows.find(r=>r.id===button.dataset.cancelRegistration);
@@ -70,5 +97,5 @@ export function createExperienceDashboard(context) {
       if (valid(ticket,generation)) $('experience-status').textContent='取消失敗，請重新整理確認狀態後重試；若尚未部署新版 Firebase 規則，請先部署。';
     } finally { if (valid(ticket,generation)) {busy=false;render();} }
   });
-  return { render, reset() {revision++;rows=null;events=[];loading=false;busy=false;$('experience-table').replaceChildren();$('experience-seats').replaceChildren();$('experience-search').value='';$('experience-event').replaceChildren(new Option('全部場次','all'));} };
+  return { render, reset() {editor.close();editingId=null;revision++;rows=null;events=[];loading=false;busy=false;$('experience-table').replaceChildren();$('experience-seats').replaceChildren();$('experience-search').value='';$('experience-event').replaceChildren(new Option('全部場次','all'));} };
 }

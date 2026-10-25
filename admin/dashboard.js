@@ -1,4 +1,4 @@
-import { createExperienceDashboard } from './experience-dashboard.js';
+import { createExperienceDashboard } from './experience-dashboard.js?v=20261026-2';
 import { getSiteAuth } from '/shared/auth-session.js?v=20261019-character-books-1';
 import { MIN_DATE, answerScope, isDashboardAdmin, toDate, dayKey, dateOffset, dateBounds, inRange, presetRange, fateRows, npcValues, kingdomIndex, groupNpcs, activitySeries, memberUrl, characterUrl } from './dashboard-model.js?v=20261025-admin-v5';
 import { dataTable,resetTablePages,resetTablePage,clearTableData } from './data-table.js?v=20261025-admin-v5';
@@ -13,7 +13,7 @@ const dateText = value => {
 const screens = {
   overview:['管理總覽','檢視網站內容總量與所選期間的新增資料。'],
   campaigns:['團務與章節','依團務、故事弧檢視已刊載章節，可展開查看章節明細。'],
-  experience:['體驗團報名','依場次檢視完整填答與名額，管理取消報名。'],
+  experience:['體驗團報名','依場次檢視完整填答與名額，管理狀態、DM_Note 與取消報名。'],
   members:['會員管理','查看會員清單、註冊時間、最後登入時間及關聯資料。'],
   characters:['角色卡','查看每張角色卡的建立者、職業、種族與建立時間。'],
   npcs:['NPC 統計','依宗教、性別、所在王國、種族等面向分析 NPC。'],
