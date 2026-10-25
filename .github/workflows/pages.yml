@@ -25,6 +25,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      - name: Refresh admin content inventory
+        run: node scripts/build-admin-catalog.mjs
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

@@ -704,3 +704,14 @@ test('compatibility rollout accepts v1/v2 creates before the final gate while pr
     await assertFails(updateDoc(modern, { schemaVersion: 1, updatedAt: serverTimestamp() }));
   } finally { await installRules(finalRules); }
 });
+
+test('retired page access: no client may read or append events', async () => {
+  for (const context of [environment.unauthenticatedContext(),
+    environment.authenticatedContext('member'),
+    environment.authenticatedContext('admin', { admin: true }),
+    environment.authenticatedContext('dashboard', { email: 'rugathadnd@gmail.com', email_verified: true })]) {
+    const db = context.firestore();
+    await assertFails(getDocs(collection(db, 'pageAccessEvents')));
+    await assertFails(setDoc(doc(db, 'pageAccessEvents/retired'), { path: '/campaigns/', createdAt: serverTimestamp() }));
+  }
+});

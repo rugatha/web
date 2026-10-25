@@ -6,6 +6,8 @@
     "node": ">=24 <25"
   },
   "scripts": {
+    "admin:catalog": "node scripts/build-admin-catalog.mjs",
+    "admin:check": "node scripts/build-admin-catalog.mjs --check && node --test tests/admin-dashboard.test.mjs",
     "locations:build": "node scripts/generate-location-pages.mjs",
     "locations:check": "node scripts/generate-location-pages.mjs --check",
     "locations:chapters": "python3 scripts/sync-location-chapters.py",

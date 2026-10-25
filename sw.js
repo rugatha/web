@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v29";
+const CACHE_VERSION = "rugatha-pwa-v31";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;
@@ -175,6 +175,11 @@ self.addEventListener("fetch", (event) => {
   }
 
   const pathname = new URL(request.url).pathname;
+  // Never replay an authenticated workspace or a missing-page redirect offline.
+  if (pathname.startsWith("/admin/") || pathname.startsWith("/404/")) {
+    event.respondWith(fetch(request, { cache: "no-store" }));
+    return;
+  }
   // Fresh chapter JSON exposes new reading links immediately while retaining
   // the last successful body for a previously visited chapter offline.
   if (request.mode === "navigate" || pathname === "/shared/firebase.config.js" || pathname === "/campaigns/data/chapter-content.json") {
