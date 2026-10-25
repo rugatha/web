@@ -1,0 +1,3202 @@
+{
+  "source": "campaigns/data/chapter-content.json",
+  "note_zh": "依章節正文核對地點與事件；chapters 為故事發生地（含回憶、夢境與周邊地區）。上層由同步程式彙整下層並去重。",
+  "locations": {
+    "material-realm/mattington/batherdon": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt01",
+          "evidence": "In Batherdon, known throughout the Kingdom of Mattington as the \"Town of Trades and Goods,\" dusk was settling in, and the town's most famous tavern, Song of the Bards, was as busy as ever."
+        },
+        {
+          "id": "wilds-c01-chpt02",
+          "evidence": "Next, Leah remembered that she had an animal trap and thought of catching a small creature in the nearby woods so she could ask it about Deepwood using Speak with Animals. So the two went to the wooded entrance near Batherdon's side gate and set the trap there."
+        },
+        {
+          "id": "wilds-c01-chpt03",
+          "evidence": "After spending some time piecing things together, they extracted two messages from it: \"March 18, 15049, 23:59\" and \"Batherdon, Page 1410 Bookstore, T.I.D.E.S. carriage.\" The adventurers decided to go scout things out first, while also using the half day they had left to take care of some errands in town."
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/blacksmith-shop-unnamed": {
+      "chapters": []
+    },
+    "material-realm/mattington/batherdon/deepwood": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt02",
+          "evidence": "接著，雷亞想起自己有抓小動物的捕獸夾，想去附近的森林抓隻小動物，透過動物溝通術，來打聽關於幽深林的事。於是兩人走到貝瑟頓側邊城門的樹林入口處架設陷阱。"
+        },
+        {
+          "id": "wilds-c01-chpt03",
+          "evidence": "離開糖果店後，大家也在阿龍的帶領下回到煙煙一息煙斗店。老闆聽了冒險者們說明幽深林內發生的事（包含會偷刮人腳毛的骷髏）後，給了鑰和毛毛他答應的會員卡以及梳子。同時他也推薦阿龍一款他們今天剛進貨的菸草，裡面有薄荷和胡椒的辛香味，十分特別，阿龍也豪爽地買了一份。"
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/general-store-unnamed": {
+      "chapters": []
+    },
+    "material-realm/mattington/batherdon/gravekeepers-hut": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt02",
+          "evidence": "冒險者們等到衛兵接近後，便和他們打聽消息，得知這條路沒有岔路，最深處即是「海妖墓園」，那裡有個給守墓人休息的小木屋。衛兵也透露他們因為年資較淺，被要求定期來幽深林巡守。"
+        },
+        {
+          "id": "wilds-c01-chpt03",
+          "evidence": "擊敗了骷髏後，冒險者們決定先在小木屋過夜，隔天再回爵士家。小木屋內只有一張床，羅羅率先佔領了那張床。同時，阿龍開始翻找爵士信中提到的「寶物」到底在什麼地方。他發現在床底下有個很大的木箱，於是連同床上的羅羅，將床搬起。在大家的合作下，終於將木箱搬了出來。"
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/mister-wizards-potions-of-everything": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt02",
+          "evidence": "三人花了一些時間，詢問到了附近一間魔法用品店，巫師先生的各種藥水。走入巷弄中的店內，左右兩側都是玻璃櫥窗，放滿常見的生命藥水，但也不便宜。經過店內員工的介紹，擺在櫃檯前的事比較特別的藥水，顏色琳瑯滿目，但價錢都至少要 10 枚金幣以上。店員介紹了幾款，包含要價15金幣的黃色藥水，可以讓人身體發光一分鐘；要價20金幣的綠色毒液，可以用來塗在武器上、敵人皮膚上，或是讓人喝下去；要價50金幣的藍色藥水，可以讓人飛在空中五分鐘。最後，櫃檯後方還有一罐看起來用金色裝飾雕琢的藥水，要價1000金幣。根據店員的說明，喝下去以後可以跟一名你認識的人交換身份。冒險者們看了很心動，但最終還是決定先不花錢買這些。"
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/old-bills": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt02",
+          "evidence": "因為時間不夠的關係，兩人回程後只去了最破舊的甜點店，老比爾。在老闆的介紹下，他們試吃了一桶老闆自製的各色糖果，味道十分鮮甜可口，價錢也便宜到羅羅最終買了一大麻布袋的糖果背在身後，還比第一家店的一小袋還要便宜。"
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/page-1410-bookstore": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt03",
+          "evidence": "經過了一些時間，他們拼湊出了兩條訊息：「15049年3月18日23:59」，以及「貝瑟頓第1410頁書店T.I.D.E.S.馬車」。冒險者們決定先去探勘一下，同時在剩下的半天時間，處理一下需要在城鎮內完成的雜事。"
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/sirens-cemetery": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt02",
+          "evidence": "冒險者們等到衛兵接近後，便和他們打聽消息，得知這條路沒有岔路，最深處即是「海妖墓園」，那裡有個給守墓人休息的小木屋。衛兵也透露他們因為年資較淺，被要求定期來幽深林巡守。"
+        },
+        {
+          "id": "wilds-c01-chpt03",
+          "evidence": "擊敗了骷髏後，冒險者們決定先在小木屋過夜，隔天再回爵士家。小木屋內只有一張床，羅羅率先佔領了那張床。同時，阿龍開始翻找爵士信中提到的「寶物」到底在什麼地方。他發現在床底下有個很大的木箱，於是連同床上的羅羅，將床搬起。在大家的合作下，終於將木箱搬了出來。"
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/smokey-smokey": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt02",
+          "evidence": "離開酒館後，他們依照酒館老闆的建議，來到附近的煙斗店煙煙一息。這家店只有賣比較平價的煙斗，但阿龍還是看得很開心。購買煙斗後，老闆還給了他一張會員卡，表示這家店是連鎖店，到其他店都可以使用，會有會員的優惠價。冒險者們也向他詢問關於幽深林的消息，他並不知道，但也表示好奇。老闆和同行的毛毛和鑰答應，如果他們去了幽深林，回來以後告訴他那邊有什麼狀況，他會再給他們兩人各一張會員卡。毛毛也得到了許可，之後要和他拿他們用來製作煙斗的木頭原料。"
+        },
+        {
+          "id": "wilds-c01-chpt03",
+          "evidence": "離開糖果店後，大家也在阿龍的帶領下回到煙煙一息煙斗店。老闆聽了冒險者們說明幽深林內發生的事（包含會偷刮人腳毛的骷髏）後，給了鑰和毛毛他答應的會員卡以及梳子。同時他也推薦阿龍一款他們今天剛進貨的菸草，裡面有薄荷和胡椒的辛香味，十分特別，阿龍也豪爽地買了一份。"
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/song-of-the-bards": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt01",
+          "evidence": "在麥丁頓王國內被稱為「貿易之都」的貝瑟頓，日暮低垂，當地最有名氣的酒館「吟遊詩人之歌」如往常的生意興隆。"
+        },
+        {
+          "id": "wilds-c01-chpt02",
+          "evidence": "經過一番討論，阿龍、毛毛和鑰決定先去昨晚相遇的酒館「吟遊詩人之歌」打聽關於幽深林的情報。一大早的酒館內客人很少，和前一晚的擁擠截然不同。老闆和他們聊過後，表示大家只知道幽深林很危險，不要進去，但裡面到底有什麼？為何危險？沒有人清楚。買了一些食糧後，阿龍詢問老闆是否有賣菸草。老闆自己從口袋中掏出一點自己在抽的菸草，分享給阿龍。只見阿龍從背包拿出一個不成比例的小的煙斗，嘗試使用。他和其他人說明，這是他爸爸留給他的東西，因此他很想要用用看。第一次抽菸草，控制不好的力道，不僅讓阿龍不斷咳嗽，吐出的煙也燻的其他人十分不舒服。離開前，冒險者們也問了老闆是否有懸賞令。他們有點懷疑身分不明的羅羅（到現在他們還不知道羅羅的名字）是否有可能是通緝犯，因此想確認看看。老闆拿出了一張懸賞令，上面有個大鬍子，但似乎這名大鬍子還沒有出現在貝瑟頓過。這個人很明顯和羅羅長得不一樣，因此冒險者們稍微放心了一點。"
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/syr-richmonds-estate": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt01",
+          "evidence": "一個大塊頭的身影吸引了酒館內一些人的注意，一名穿著些許破爛制服的藍色皮膚龍人，何阿龍走進了酒館。他沒有多想，便看見尚有空位的圓桌，加入了鑰、毛毛，以及雖坐同桌，但看起來沒有和他們互動的羅羅。阿龍向三位自我介紹後，把錢包掏了出來，大辣辣的算著自己身上有多少錢，然後點了酒館最貴的餐點：國王的饗宴。雖然阿龍也沒有感覺到自己有被動了包包，在鑰和毛毛說到自己被塞了紙團後，他也翻了翻自己的背包。羅羅看見，也決定翻翻看有沒有紙團。兩人掏出紙團後，羅羅似乎對眼前的謎題有些興趣，將四人的紙團拼湊在一起—只剩下一點漏缺了。看來……還會有新的人出現？雖然不知道這是什麼意思，但從紙團上的字，這似乎是來自一位里奇蒙爵士（Syr Richmond）的委託。"
+        },
+        {
+          "id": "wilds-c01-chpt03",
+          "evidence": "擊敗了骷髏後，冒險者們決定先在小木屋過夜，隔天再回爵士家。小木屋內只有一張床，羅羅率先佔領了那張床。同時，阿龍開始翻找爵士信中提到的「寶物」到底在什麼地方。他發現在床底下有個很大的木箱，於是連同床上的羅羅，將床搬起。在大家的合作下，終於將木箱搬了出來。"
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/third-candy-shop-unnamed": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt03",
+          "evidence": "The first place they all went together was the candy shop. Besides the two shops they had visited last time, there was still one more candy shop Roel and Leah had not entered yet. They went inside and bought some sweets, and the other adventurers came to the conclusion that Roel seemed to have an extremely serious candy addiction."
+        }
+      ]
+    },
+    "material-realm/mattington/batherdon/tweenies-sweeties": {
+      "chapters": [
+        {
+          "id": "wilds-c01-chpt02",
+          "evidence": "雷亞和羅羅兩人決定先去附近的商店街逛一逛，他們和路人打聽之後，找到了三間甜點店。第一家很明顯是間連鎖糖果店，繽紛的色彩，商業化的設計，以及擠不進去的店鋪，整間店都是孩子們的吵鬧聲；第二家店看起來是雜貨店，外面有各種甜點；最後一家看起來十分破舊，但有時候最好吃的東西總會出現在這種地方。兩人最終先擠進去了第一家糖果店，頹妮甜心，以秤重的方式買了兩袋糖果，要價十分昂貴。羅羅似乎發現老闆可能和他一樣，是個妖精。"
+        }
+      ]
+    },
+    "material-realm/mattington/bomozan": {
+      "chapters": [
+        {
+          "id": "brown-c01-chpt01",
+          "evidence": "「嘿！你有沒有在聽我說話？」"
+        }
+      ]
+    },
+    "material-realm/mattington/bomozan/thomass-tavern": {
+      "chapters": [
+        {
+          "id": "brown-c01-chpt01",
+          "evidence": "布朗一回神，一個壯碩男子正貼在他的眼前對他嘶吼。酒館老闆湯瑪斯搖了搖頭。看著布朗一身冒險者的裝扮，又不是當地人，湯瑪斯便告訴他，當地的小貴族溫德家族最近計畫要穿越森林，但由於森林相當危險，希望聘請人手擔任護衛，帶他們穿過去。"
+        }
+      ]
+    },
+    "material-realm/mattington/bomozan/wind-residence": {
+      "chapters": [
+        {
+          "id": "brown-c01-chpt01",
+          "evidence": "布朗一回神，一個壯碩男子正貼在他的眼前對他嘶吼。酒館老闆湯瑪斯搖了搖頭。看著布朗一身冒險者的裝扮，又不是當地人，湯瑪斯便告訴他，當地的小貴族溫德家族最近計畫要穿越森林，但由於森林相當危險，希望聘請人手擔任護衛，帶他們穿過去。"
+        }
+      ]
+    },
+    "material-realm/mattington/clyphen": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt01",
+          "evidence": "Since everyone in the city spoke Draconic, and Leah wanted to avoid being recognized, she kept as low a profile as possible. She pulled up her hood to hide the parts of herself that marked her as lizardfolk. She had heard from her master long ago that Leisnor and her other homeland, the lizardfolk-majority Clyphen, had remained tense with each other for years, always on the edge of war. She had no desire to become the spark that set it off. Meanwhile, Al-lon tried speaking to a resident who looked relatively approachable and asked where they could find an inn."
+        },
+        {
+          "id": "wilds-c05-chpt02",
+          "evidence": "Leah asked about matters related to her master and her parents, while the other adventurers were more curious about Clyphen itself and the city around them."
+        },
+        {
+          "id": "wilds-c05-chpt03",
+          "evidence": "After lunch, the debate formally began. The man behind the podium introduced himself as Ruisen, a senior reporter from the newspaper Voice of Clyphen. The debate would proceed in three segments. Following the order determined by drawing lots, President Bonza, Colonel Lisdar, and then Professor Peneo would speak in turn. In the first segment, the candidates would present their policies and appeals to the crowd. In the second, each candidate could ask one question of another candidate, who would then answer. The final segment would accept questions from the people in the audience. Very soon, the debate was underway."
+        },
+        {
+          "id": "wilds-c05-chpt04",
+          "evidence": "The adventurers hurried back to the tavern from the debate venue. In the wake of the shooting, Clyphen had erupted into chaos. Some people were shouting in the streets, some were throwing punches over nothing more than differences in color, and all kinds of graffiti had begun appearing on the walls."
+        },
+        {
+          "id": "wilds-c05-chpt05",
+          "evidence": "When it was Kaname's turn to keep watch, she thought about the past few days in Clyphen. The political turmoil here was something she had never imagined. It was fascinating in its own way, but mostly incomprehensible. She thought of her mother and sent a message through her mind, asking why people who shared a common enemy would still scheme against and hurt one another. \"Everyone has their own goals. Until those goals are achieved, everyone puts their own interests first,\" her mother replied. Before long, Kaname heard someone shifting in the room. When she turned, she saw Maribel quietly move to her side and gently rest her head against her. Her eyes were open. \"I miss Al-lon,\" Maribel whispered. \"Me too,\" Kaname replied. After a quiet discussion, they decided to send a message to Al-lon. Maribel wanted to tell him that everyone was safe so he would not worry, and Kaname sent the message for her. Before long, they received Al-lon's reply: \"It's wonderful to know that everyone is doing well. Bye-bye.\""
+        },
+        {
+          "id": "wilds-c05-chpt06",
+          "evidence": "After leaving the tavern, Ravi ran toward the gates of Clyphen with practiced ease. Along the way, he told Leah, still transformed into a cockroach, to remember the route carefully; this was her hometown, after all. The guards at the city gate were startled to see the adventurers rushing toward them. They had been about to warn the group to shelter inside during such a chaotic time, but when they recognized Ravi, they merely called, \"Be careful out there.\""
+        }
+      ]
+    },
+    "material-realm/mattington/clyphen/clinic-unnamed": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt03",
+          "evidence": "見到拉比的狀況，瑪莉貝爾跟隨著雷亞與羅羅，一同送他到附近的診所去。醫生快速處理後，表示他不確定需要多久時間拉比才能復原。拉比低聲說著醫藥費他出即可，要冒險者們不要擔心。隨後，冒險者三人便啟程回到酒館去了。"
+        },
+        {
+          "id": "wilds-c05-chpt04",
+          "evidence": "鑰透過傳訊術，試圖和被送往診所醫治槍傷的拉比溝通。恍惚的拉比透過鑰的訊息，得知皮尼歐教授遇刺身亡，整座城市陷入動亂。拉比站了起身，發現整間診所的病床都滿了，醫師一人根本無暇顧及他。他撐著虛弱的身體，慢慢走出診所，朝著酒館的路回去。隨著傳訊術的使用次數耗盡，拉比一聲口哨呼叫了他的梟，捎了口信給斷了訊的鑰，說明自己正要走回酒館。"
+        }
+      ]
+    },
+    "material-realm/mattington/clyphen/townfolk-plaza": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt02",
+          "evidence": "掛衣間的角落，兩個人正在交談著。明天有場克萊芬市長的選舉辯論會。這兩人正在討論一場刺殺的計畫，刺殺的對象，是新書院的領導者，也是這次市長選舉的候選人，皮尼歐教授。聽聞此事，儘管他們尚未決定要站在哪個派系，毛毛和羅羅都認為有必要讓皮尼歐教授知情。"
+        },
+        {
+          "id": "wilds-c05-chpt03",
+          "evidence": "鑰守著夜，突然發現窗外似乎看見人影。時間已近午夜，還有人點著火把走來走去，讓她有些警戒。她喚醒了毛毛，毛毛一看，決定去跟蹤他們。他小心翼翼地壓低音量，躡手躡腳地竄到了一樓，然後跟上這兩名可疑的人影。這兩人一身漆黑，看不出他們的派系。口中說的則是關於明天辯論會的場地安排，以及「槍擊」的字眼，很顯然和教授的刺殺計劃有所關聯。跟著兩人，毛毛來到了一個大廣場，廣場已經準備好大部分辯論會的場地佈置了。看著兩人離開後，毛毛竄上舞台調查。眼下沒有看到明顯能狙擊的位置，最後毛毛把主持人講台的抽屜拿走，作為戰利品，帶回酒館。"
+        },
+        {
+          "id": "wilds-c05-chpt04",
+          "evidence": "冒險者們從辯論會場，趕緊回到酒館。槍擊事件後的克萊芬，路上各種暴動。有人大聲叫囂，有人只因顏色不同，就大動拳腳，各樣的塗鴉也開始出現在牆上。"
+        }
+      ]
+    },
+    "material-realm/mattington/clyphen/gate-market": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt01",
+          "evidence": "The atmosphere in Clyphen was utterly different from Leisnor. Just inside the gates stood a packed market, the smell of food thick in the air, and in the blink of an eye, Fur had already bought two chicken drumsticks. The person who had slipped in through the gate tapped Leah on the shoulder. When Leah turned around, she saw a dark-green-skinned lizardfolk. He introduced himself as Ravi. He knew Leah's master and also knew about Leah's background. Leah had far too many questions she wanted to ask, so under Ravi's guidance, the group went to a nearby tavern and ordered food to fill their stomachs."
+        }
+      ]
+    },
+    "material-realm/mattington/clyphen/grave-of-leahs-parents": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt06",
+          "evidence": "等雷亞理好情緒，拉比才打開辦公室的門，讓其他冒險者們進來。瑪莉貝爾站在門框旁，似乎有點不知所措，雷亞則拭著眼淚，將信的內容唸了一遍給大家聽。唸完後，拉比推開小教堂的後門，告訴雷亞她父母的小墓碑在後面的草地間，他想帶雷亞去致意。小墓碑很簡單，上面只有兩行字：「阿哈努・席弗斯頓」、「克萊芬的蕾絲塔」，那是雷亞父母的名字。雷亞跪了下來，她請大家留給他一些空間獨處。"
+        }
+      ]
+    },
+    "material-realm/mattington/clyphen/new-academy-campus": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt02",
+          "evidence": "學校內亮晃晃的辦公室矗立，拉比敲了敲門，兩名壯碩的維安人員開了門，確認身份後便讓拉比和冒險者們進來。皮尼歐教授和他的幕僚們正在辦公室內討論著明天的辯論會內容。皮尼歐教授站起了身，和大家致意，接著便毫不保留的施放了魔法「誠實之域」。"
+        },
+        {
+          "id": "wilds-c05-chpt05",
+          "evidence": "拉比領著大家往新書院的聚集處，也就是他們之前見皮尼歐教授的學校辦公室走。雖然他對新上位的「秘書長」瓦羅恩沒什麼好感，但他畢竟是新書院出生的人，過去皮尼歐教授的理想也與冒險者們最接近，還是值得談一談，至少了解一下狀況也好。"
+        }
+      ]
+    },
+    "material-realm/mattington/clyphen/old-tree-alliance-military-camp": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt04",
+          "evidence": "在拉比的帶領下，冒險者們在與羅羅會合後，一起趁夜出門，留下瑪莉貝爾自己在房間內玩他的器械零件。來到一樓，他們和胡里歐討了一點吃的後，決定讓雷亞化身為狗，藉著嗅聞包廂內的味道，去尋找利斯達上校活動的位置。城市內的味道太複雜，雷亞無法精確判斷方向，最終拉比靠著他記憶中老樹盟活動的據點方向前進，再搭配雷亞的嗅聞。最終，他們看見了前方軍營的柵欄。"
+        },
+        {
+          "id": "wilds-c05-chpt05",
+          "evidence": "看著立德上尉的眼，雷亞感到不適。說好的給他一天的時間考慮，立德上尉雖然看起來還算冷靜，但依然充滿壓迫感。拉比嘗試和立德上尉溝通，卻發現上尉完全不把他放在眼裡。眼看變回蜥蜴人的雷亞不正面做出答覆，立德上尉背後軍營的入口開始出現更多的士兵，站在他身後。一開始，他們只是壓迫感強大的士兵們，隨著他們開始逼近，冒險者們發現士兵們口中充滿各種惡言與辱罵，絲毫不把他們放在眼裡，而立德上尉也沒有對此有任何的制止或意見。拉比快要按捺不住，把臉抵在立德上尉臉前，卻感到肚子一陣陣痛。才剛從醫院離開不久的他，被立德上尉用腳踩在地上，還吐了口口水唸到「藍色的狗」。"
+        }
+      ]
+    },
+    "material-realm/mattington/clyphen/tavern-in-clyphen": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt01",
+          "evidence": "克萊芬的氛圍與萊斯諾天壤地別。城門口內是滿滿的攤販，食物的香氣逼人，一轉眼，毛毛已經買了兩隻雞腿了。竄入門口的那人拍了拍雷亞的肩膀。雷亞一回頭，看見一名深綠色皮膚的蜥蜴人。他自我介紹名為拉維，認識雷亞的師父，也知道雷亞的身世。雷亞心中有太多問題想請教，於是在拉維的帶領下，大家前往附近一間酒館，叫了一些食物來果腹。"
+        },
+        {
+          "id": "wilds-c05-chpt02",
+          "evidence": "拉比帶著冒險者們，往市鎮內熱鬧的酒館走去。他們在一樓找了空桌子坐下，點了餐。"
+        },
+        {
+          "id": "wilds-c05-chpt03",
+          "evidence": "見到拉比的狀況，瑪莉貝爾跟隨著雷亞與羅羅，一同送他到附近的診所去。醫生快速處理後，表示他不確定需要多久時間拉比才能復原。拉比低聲說著醫藥費他出即可，要冒險者們不要擔心。隨後，冒險者三人便啟程回到酒館去了。"
+        },
+        {
+          "id": "wilds-c05-chpt04",
+          "evidence": "冒險者們從辯論會場，趕緊回到酒館。槍擊事件後的克萊芬，路上各種暴動。有人大聲叫囂，有人只因顏色不同，就大動拳腳，各樣的塗鴉也開始出現在牆上。"
+        },
+        {
+          "id": "wilds-c05-chpt05",
+          "evidence": "時間差不多，雷亞喚了拉比起來守夜，他也不移動身體，讓瑪莉貝爾可以安穩地依偎在他懷中。拉比起身，看見雷亞入眠後，走到了房外。他看見胡里歐正在將二樓喝醉的酒客們一一搬下樓。他則踏出酒館外，找了街燈旁開始寫信。一段時間後，拉比把信綁在他的梟腳上，讓梟飛往遠方，然後他就回房內去了。"
+        },
+        {
+          "id": "wilds-c05-chpt06",
+          "evidence": "拉比看了看身邊的夥伴，也看見樓梯頂端探出頭的瑪莉貝爾，她告訴拉比鑰被卡在樓梯上，睡眠法術他支撐不了太久，要趕快把鑰架下來。在瑪莉貝爾的幫助下，拉比扛下了鑰，並把她放進她停在一樓的小車上，準備離開酒館。桓托催著大家趕快往外跑，他會幫忙擋住後方來的追兵。"
+        }
+      ]
+    },
+    "material-realm/mattington/clyphen/white-chapel": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt06",
+          "evidence": "城外，左方是他們來的路，而右方是一片森林。拉比帶著大家繞進森林內。確認周圍沒有人後，雷亞便解除變身，變回蜥蜴人的模樣。拉比這也才想起，除了雷亞外，他還沒有告訴其他人他們到底要去哪。森林內，有座白色的小教堂，那裡是當年他與雷亞的師父「柳俠馬許」為雷亞父母證婚的地方，也是雷亞父母死去的地方。"
+        }
+      ]
+    },
+    "material-realm/mattington/dorrenville": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "It takes about an hour to get to the city center of Dorrenville, a town southwest of Macksohn. In order to cooperate with the weak Yung, the carriage moved forward at walking speed. The night gradually darkened and the rain began to fall. After everyone stopped their horses to discuss, they decided to move forward quickly. The city center was not far away."
+        },
+        {
+          "id": "plus-c05-chpt03",
+          "evidence": "Under the leadership of Indigo, Samael held his grandma's hand and saw Indigo mumbling words, and then the two of them traveled back to Dorrenville in the ordinary world. Samael I feel that the weather has become noticeably colder since I left here not long ago. At the invitation of Indigo, the two strolled around for a while. Samael found that Speedy and the carriage were gone, but Yung was still there, but looked weaker. Samael also saw the tavern owner just leaving the tavern, but decided not to come forward to talk. Then, Indigo took Samael's hand, recited a different spell, grabbed some plants brought from the Feywild with the other hand, and traveled back to the Feywild. Indigo clearly looks a little tired after traveling through time."
+        },
+        {
+          "id": "plus-c05-chpt05",
+          "evidence": "DorrenvilleThe cold wind brought YHWH, Franz and Ron back to consciousness. What happened a while ago? My memory always seems fuzzy. Who is that lady next to me?"
+        },
+        {
+          "id": "plus-c06-chpt01",
+          "evidence": "酒館樓上，喜利・歐喜利聽見了YHWH和英荻格的房間傳來了異樣的聲音，他將耳朵貼在門上，仔細聆聽。木頭嘎嘎聲、喘氣聲，他不知道這是什麼意思。憑藉著他的盜賊工具，喜利・歐喜利悄聲溜進了房間內，裡面一片漆黑。他躲在角落，緩緩接近，小小拉開拱起的棉被，看見裡頭似乎有肉體在扭動著。然後他聽見了英荻格說了聲「換一下」。雖然好奇，但此刻喜利・歐喜利知道自己似乎不太適合在這裡，於是他便悄聲離開，但是關門的聲音疑似被YHWH聽見了。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "天終於亮了。冒險者們看見原本一樓空無一人的櫃檯後，默默冒出了昨天看見的老婦人，而且他是真實存在有肉體的人。"
+        }
+      ]
+    },
+    "material-realm/mattington/dorrenville/circus": {
+      "chapters": []
+    },
+    "material-realm/mattington/dorrenville/monroes-flat": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt01",
+          "evidence": "米多莉、龍恩、薩梅爾和波四人隨著老闆的指示，在剛剛購物處的附近，找到了一間「旅店」。破舊的店面很顯然沒有招牌，一樓一名看起來年齡難以估計的老太太和他們收了錢，表示樓上的空間想住哪一間自己挑選。四人爬到二樓，每一間看起來都是十分破舊，不是沒有窗戶，就是窗戶都破了。看見一旁還有樓梯向上，龍恩之外的三人便決定向三樓走去，但很意外的，三樓和二樓看起來長得一模一樣。三人決定做個測試，在三樓其中一間房門口做了記號，薩梅爾和米多莉再往上爬到四樓（當然，也是長得一模一樣），發現剛剛做的記號在四樓也能看見。米多莉決定爬到五樓，從破掉的窗戶口丟了個垃圾下去，但是四樓的薩梅爾和三樓的波都沒有從窗外看見東西掉下去。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "在冒險者詢問後，發現老婦人生存的年代不太合理，據他所說，巴納沃二世剛上任不久。喜利・歐喜利想起前一晚和路人問到的，如果50年前這棟旅社便歇業了，那也許這名老婦人便是從那時被封存到現在，不斷重複播放的一段回憶。同時老婦人表示這間旅社叫門羅公寓，是他的家族歷代經營的。樓上的火也是。在快天亮時，樓上的火已經熄滅了，冒險者們也發現，縱使他們沒看見一樓被火勢燒到，牆面上卻都留有火燒的痕跡。"
+        }
+      ]
+    },
+    "material-realm/mattington/dorrenville/the-drunk-man": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "來到了多倫維爾的街道上，YHWH向路人詢問適合夜宿的地方，得到了一個叫馬戲團旅店的店名。然而，為了躲雨，大家到了附近最近的酒館便停了下來。走入醉漢酒館，裡面人不多，花了點時間和老闆殺價後，大家有了個大通鋪可以過夜。和老闆詢問後，因為覺得餐點太貴，最終只有雷米、法朗茲和波等人留下來用餐，其他幾人則在街上找了間看起來生意比較好的店家吃飯。"
+        }
+      ]
+    },
+    "material-realm/mattington/drogsland": {
+      "chapters": [
+        {
+          "id": "legends-os01",
+          "evidence": "Several lone adventurers arrived separately in Drogsland, a small town on the border of the Kingdom of Mattington commonly known as Moorland Haunt, yet none of them remembered how they had come to be there."
+        },
+        {
+          "id": "lite-c09-chpt01",
+          "evidence": "This time, the adventurers received a case from a mysterious client with a very generous reward. The client only revealed to Lott that the team should go to the cave under Drogskol Manor in Drogsland (or commonly known as Moorland Haunt) on the edge of the Mattington kingdom to get a crown back."
+        },
+        {
+          "id": "lite-c09-chpt02",
+          "evidence": "Everyone was ready to leave, but GoR felt very conflicted about leaving Eva lying on the hospital bed. After coming to Drogsland, GoR lived in Silence every day, watching newlyweds Eva and Jacob serve everyone every day, so his heart was full of entanglements. But for the sake of the team, he put such emotions aside for the time being, and everyone rushed out of the clinic and walked into the corridor."
+        },
+        {
+          "id": "lite-c09-chpt03",
+          "evidence": "The adventurers were walking on the road of Drogsland, but only Ubbo noticed a crow flying towards them. The crow alighted on the hand of Lott, who had a letter tied to his foot. Lott carefully untied the string tied to the crow's feet, but accidentally injured the crow's feet. The soles of the feet fell off, and the crow turned into pieces and disappeared."
+        }
+      ]
+    },
+    "material-realm/mattington/drogsland/abandoned-church": {
+      "chapters": [
+        {
+          "id": "legends-os01",
+          "evidence": "眾人跟隨著馬可的帶領，先跑到了當地的教堂。教堂看似廢棄，裡面完全沒有人。簡單調查後，卻發現前面的講台竟然刻有尊者涅赫布（赫內布對外自稱的名字）。同時，已經無法和大家直接溝通的馬可也朝著牆角大聲吼叫。"
+        }
+      ]
+    },
+    "material-realm/mattington/drogsland/caverns-beneath-drogskol-manor": {
+      "chapters": [
+        {
+          "id": "lite-c09-chpt01",
+          "evidence": "聽見討論的內容，鄰桌一名獨行的帽兜客，GoR，豎起了耳朵。對他而言，卓茲克別莊的洞穴是他再熟悉不過的地方，畢竟近幾天，他每天都去那裡探險，與孽物打交道。因此對於這群新來的冒險者們，他格外放了點注意力。"
+        },
+        {
+          "id": "lite-c09-chpt02",
+          "evidence": "透過庫登製造的次元門，冒險者們迅速傳送到了不遠處他們已知的洞穴空間內，暫時得以喘一口氣。"
+        },
+        {
+          "id": "lite-c09-chpt03",
+          "evidence": "冒險者們雖然暫時脫困，卻仍然找不到逃離洞穴的方法。卓茲克爵士眼看只有庫登能和他對話，感到有些無趣。在他一陣操弄下，其他冒險者都能看見與聽見他了，除了賽柏外，他一愣一愣的看著，不清楚到底大家到底在進行什麼對話。"
+        }
+      ]
+    },
+    "material-realm/mattington/drogsland/dr-crows-clinic": {
+      "chapters": [
+        {
+          "id": "legends-os01",
+          "evidence": "經過雅各的推薦，大家決定去找當地的醫生烏鴉醫生。他的「診所」佈置得像個叢林迷宮般，裡面難以定位。烏鴉醫生和大家說明自己是個巫醫，平常幫人看病，偶爾也會照顧動物。覺得自己似乎記憶出了點問題的潮酷小子請烏鴉醫生為他檢查。坐在看診的椅子上，眾人又聽見了那嘶嘶聲。烏鴉醫生告訴潮酷小子他的身體沒有問題，放了他下來。接著，大家聽見了一陣狗叫聲，一隻米克斯犬跑向了烏鴉醫生，稱為馬可。馬可不斷朝著牆角叫，烏柯用了與動物溝通的方法，了解了馬可雖然沒有看見黑影處有任何東西，卻聞到了很重的腐臭味。馬可答應帶他們追蹤這個氣味。這時，大家又聽見了嘶嘶聲，不過除了自稱是獸醫的烏鴉醫生和馬可外，這個空間也只有嘎拉嘎拉、潮酷小子、赫內布，和家亨而已。"
+        },
+        {
+          "id": "lite-c09-chpt01",
+          "evidence": "冒險者與GoR出發，走到了巫醫的診所。在GoR的推薦下，冒險者們進到了診所內，決定採買一點補給品。巫醫烏鴉醫生似乎是個德魯伊隱士，牆上用德魯伊語寫著各種零碎的隻字片語，就連懂德魯伊語的烏波也無法讀懂意思。在烏鴉醫生的說明下，他表示這裡的人記憶都怪怪的，似乎在幾年前，曾經發生了一場怪物的襲擊，而他嘗試在自己想起來的時候，趕緊把關鍵字記下來，但還是無法完整拼湊在一起。同時，他也記得自己好像曾經養過一隻狗，但究竟是哪種品種，他也不記得了。"
+        }
+      ]
+    },
+    "material-realm/mattington/drogsland/drogskol-manor": {
+      "chapters": [
+        {
+          "id": "lite-c09-chpt01",
+          "evidence": "這一次，冒險者們從一名神秘的委託人，接到了一個案子，賞金十分豐厚。委託人僅向羅特透露，請團隊到麥丁頓王國邊陲的卓茲蘭（或是俗稱鬧鬼荒野），裡面的卓茲克別莊（卓茲克別莊）底下的洞窟，去拿一個王冠回來。"
+        },
+        {
+          "id": "lite-c09-chpt03",
+          "evidence": "冒險者們對著卓茲克爵士發起攻擊，卻發現爵士似乎對於他們的攻擊沒有受到多大的影響。反之，爵士的回擊卻非常重，甚至讓他們感到十分恐懼。在大家艱困的戰鬥後，最終，爵士化為狀似玻璃的碎片，落在了卓茲克宅邸的地板上。庫登拾起碎片，看見烏犧奧泥在這裡活動的片段，接著，玻璃碎片便消失了。"
+        }
+      ]
+    },
+    "material-realm/mattington/drogsland/general-store-unnamed": {
+      "chapters": [
+        {
+          "id": "legends-os01",
+          "evidence": "潮酷小子、烏柯、赫內布，與嘎拉嘎拉分別來到了當地的沉默酒館，因為彼此的怪異而互相注意到了對方。在互相認識後，眾人向酒館老闆約瑟夫的老婆莎拉聽聞了附近的雜貨店，並前往購物。潮酷小子買了一本故事書，封面只寫了大大的「故事集」字樣，但是內容他並未先閱讀過。"
+        }
+      ]
+    },
+    "material-realm/mattington/drogsland/silence": {
+      "chapters": [
+        {
+          "id": "legends-os01",
+          "evidence": "潮酷小子、烏柯、赫內布，與嘎拉嘎拉分別來到了當地的沉默酒館，因為彼此的怪異而互相注意到了對方。在互相認識後，眾人向酒館老闆約瑟夫的老婆莎拉聽聞了附近的雜貨店，並前往購物。潮酷小子買了一本故事書，封面只寫了大大的「故事集」字樣，但是內容他並未先閱讀過。"
+        },
+        {
+          "id": "lite-c09-chpt01",
+          "evidence": "The adventurers came to the only tavern in Drogsland, Silence. But unlike the name of the store, the atmosphere inside is very lively. The boss Jacob warmly greeted the adventurers and introduced his new wife, Eva. Jacob said that in order to celebrate their wedding, all the beer in the pub will be treated to beer this week."
+        }
+      ]
+    },
+    "material-realm/mattington/drogsland/underground-lab": {
+      "chapters": [
+        {
+          "id": "lite-c09-chpt02",
+          "evidence": "推開門後，冒險者們走進了一個像是診間的地方。一名貌似「護士」的孽物，彷彿不在意他們的存在，自顧自地在診間內移動，走到醫務櫃內找尋工具，不久後便先走回了廊道內。"
+        }
+      ]
+    },
+    "material-realm/mattington/fanaur": {
+      "chapters": [
+        {
+          "id": "legends-os03",
+          "evidence": "The civil war within the Church of Keinra had not yet ended. Though his faction held the advantage, Bishop Robinson remained troubled. A spellbook kept in the church archives at Fanaur, 雪の化身の目覚め, had been stolen. How had it disappeared, and who was the thief? There were few clues, but Bishop Robinson already had an answer in mind."
+        },
+        {
+          "id": "plus-c07-chpt01",
+          "evidence": "一早，冒險者們便離開了大學城，朝著方努爾市的方向前進。因為出生於方努爾市的米多莉較為熟悉，他便帶領著大家，前往搭船去方努爾市的拉克渡口。這個時節很接近當地津菈教的節慶：勇者節，因此渡口的人很多都想前往附近的聖拉雅米島。"
+        },
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "方努爾市，龍恩在一座津菈教堂醒來。他的巫妖手臂似乎被捆綁上了一條金屬鍊子。一名修女看見他醒來，趕緊喚來神父。根據神父的說明，這些鍊子只能暫時抵擋巫妖的力量，建議龍恩去找一名被稱為瑞斯的男人。"
+        },
+        {
+          "id": "plus-c07-chpt03",
+          "evidence": "在船上，從夢中驚醒的喜利・歐喜利看著手上的紙條。思索著其中的秘密。黑暗中，米多莉詢問喜利・歐喜利發生了什麼事情。言談之間，忘記壓低音量的兩人吵醒了剩餘的夥伴，於是大伙決定一起到甲板上就著月光仔細研究一下喜利・歐喜利手上的字條。米多莉觀察了一下謎題，發現上面畫著的符號是關於行星的記號，但剩下的部分她也不清楚有什麼意義。同時米多莉也提到她關於天文學的知識是小時候在方努爾市中，一個叫做墨奎斯咖啡廳的地方學來的。由於南方出身的小孩子很多都嚮往長大要成為一名水手，而基礎的天文知識是成為水手的基本條件。所以很多水手會在工作之餘跑到咖啡廳向年輕小孩子吹噓他們的知識。冒險者們魚貫走到了夜晚的甲板上，上頭有一名正在值班的水手，他名叫里歐，或是可以稱呼他為「船夫船夫」。里歐向他們解釋了行星運行的原理，也向冒險者介紹了這個世界大致上的樣子，冒險者也熱切的和里歐討論著關於地平說、世界盡頭的冰山以及風暴神之類的話題。在沒有進一步線索的情況下，冒險者決定回到船艙內休息，盤算著到了方努爾市後可以再去墨奎斯咖啡廳打聽打聽消息。"
+        },
+        {
+          "id": "plus-c07-chpt04",
+          "evidence": "回到宅邸後，YHWH 向彼得詢問那棟廢棄建築的來歷。彼得表示，那裡原本是一座舊津菈教堂，也曾是當地居民的信仰中心。過去津菈教曾爆發一場慘烈的內戰，內戰結束後，舊教堂便遭到廢棄，直到今日仍未重新啟用。後來，從方努爾市來到娜塔夏港的津菈教徒，則在靠近村莊入口處建立了新的津菈教堂。"
+        }
+      ]
+    },
+    "material-realm/mattington/lark-ferry/berserker-gang-headquarters": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt01",
+          "evidence": "After the meal, Zek and Wull took a detour and left, saying they were going to buy some things so that the adventurers could return to the Berserker Gang mansion first. YHWH stayed at the sailor's house, trying to eavesdrop on the topics discussed by Captain Marin and the other three, while Siri secretly followed Zek and Wull and found that they bought some paint. Wull returned after buying it, while Zek went to the blacksmith shop and asked the blacksmith to help polish a sword that looked very valuable. The other adventurers returned to the house and rested for a while in the living room on the first floor. When Wull returned, Samael saw him playing his lute by the fire, and took out his lute and joined him. Beau ran upstairs to explore and found that the house had three floors, with five rooms on the second and third floors."
+        }
+      ]
+    },
+    "material-realm/mattington/lark-ferry/berserker-gang-underground-arena": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt01",
+          "evidence": "一早，冒險者們便下樓用早餐了，唯獨YHWH因為身體不適，沒有下來。早餐後，澤克將一樓的木質地板大力掰開，冒險者眼前出現了一個往地下的通道。在澤克的帶領下，冒險者們走到了地下一個圓形的競技場，中間是一個坑洞，準備好要開始進行「狂暴之儀」了。澤克表示是試煉的時候了，他朝著競技場三側的雕像一一介紹：狗頭人是評議委員會長「狂暴之聲」希岡三世；蛇人是「血蛇狂舞」耶內達特；最後則是冒險者見過的「拳出如龍」烏爾。"
+        }
+      ]
+    },
+    "material-realm/mattington/fanaur/fanaur-harbor": {
+      "chapters": [
+        {
+          "id": "legends-os03",
+          "evidence": "在羅賓遜主教的號招之下，幾名勇者來到了教堂內，接受主教發派的任務—到一座無名小島上，找尋《雪の化身の目覚め》的蹤跡。這幾名勇者包括：地精嘿嘿嘿王子、半身人芬恩、半獸人拉雅米、妖精泰瓦爾、半獸人南恩，以及人類伊努。經過主教的說明，以及對賞金的討價還價後，冒險者們來到了方努爾市的港口，尋找傳聞中的瑪琳船長。"
+        }
+      ]
+    },
+    "material-realm/mattington/fanaur/giudecca-canal": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt03",
+          "evidence": "中午過後不久，冒險者們搭乘的船在方努爾市靠岸了，他們決定直接去方努爾市的聖津菈大教堂把瑪林船長的信件交給羅賓遜主教。山田表示她還有事情要去方努爾市的珠寶匠公會處理就先行離開了。剩餘的人在米多莉的指引之下，大伙搭上了方努爾市特別的貢多拉，經過朱代卡運河，相當迅速地就到達了聖津菈大教堂。就在他們隨著神父的指引進入了主教的辦公室時，他們發現了一個熟悉的面孔，坐在神父辦公室內的正是他們過去的伙伴龍恩。"
+        }
+      ]
+    },
+    "material-realm/mattington/fanaur/great-shield-cathedral-of-keinra": {
+      "chapters": []
+    },
+    "material-realm/mattington/fanaur/jewelers-guild": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt03",
+          "evidence": "中午過後不久，冒險者們搭乘的船在方努爾市靠岸了，他們決定直接去方努爾市的聖津菈大教堂把瑪林船長的信件交給羅賓遜主教。山田表示她還有事情要去方努爾市的珠寶匠公會處理就先行離開了。剩餘的人在米多莉的指引之下，大伙搭上了方努爾市特別的貢多拉，經過朱代卡運河，相當迅速地就到達了聖津菈大教堂。就在他們隨著神父的指引進入了主教的辦公室時，他們發現了一個熟悉的面孔，坐在神父辦公室內的正是他們過去的伙伴龍恩。"
+        }
+      ]
+    },
+    "material-realm/mattington/lark-ferry/keinra-ascendance-church": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt01",
+          "evidence": "米多莉找到了當地的津菈教教堂–津菈升天教堂（津菈升天教堂），裡面的韓神父表示在附近的渡口搭船，如果非津菈教徒，會收取高額的船票，因此在米多莉的詢問下，韓神父指引冒險者們去附近的一間房子，並遞給他們一個信封，請他們交給裡面「狂暴戰士幫」的領袖。"
+        }
+      ]
+    },
+    "material-realm/mattington/lark-ferry": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt01",
+          "evidence": "一早，冒險者們便離開了大學城，朝著方努爾市的方向前進。因為出生於方努爾市的米多莉較為熟悉，他便帶領著大家，前往搭船去方努爾市的拉克渡口。這個時節很接近當地津菈教的節慶：勇者節，因此渡口的人很多都想前往附近的聖拉雅米島。"
+        }
+      ]
+    },
+    "material-realm/mattington/fanaur/fanaur-military-dock": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt03",
+          "evidence": "當晚，冒險者依照主教的安排，前往方努爾市軍用碼頭，登船啟程前往娜塔莎港。"
+        }
+      ]
+    },
+    "material-realm/mattington/fanaur/mogis-cafe": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt03",
+          "evidence": "在船上，從夢中驚醒的喜利・歐喜利看著手上的紙條。思索著其中的秘密。黑暗中，米多莉詢問喜利・歐喜利發生了什麼事情。言談之間，忘記壓低音量的兩人吵醒了剩餘的夥伴，於是大伙決定一起到甲板上就著月光仔細研究一下喜利・歐喜利手上的字條。米多莉觀察了一下謎題，發現上面畫著的符號是關於行星的記號，但剩下的部分她也不清楚有什麼意義。同時米多莉也提到她關於天文學的知識是小時候在方努爾市中，一個叫做墨奎斯咖啡廳的地方學來的。由於南方出身的小孩子很多都嚮往長大要成為一名水手，而基礎的天文知識是成為水手的基本條件。所以很多水手會在工作之餘跑到咖啡廳向年輕小孩子吹噓他們的知識。冒險者們魚貫走到了夜晚的甲板上，上頭有一名正在值班的水手，他名叫里歐，或是可以稱呼他為「船夫船夫」。里歐向他們解釋了行星運行的原理，也向冒險者介紹了這個世界大致上的樣子，冒險者也熱切的和里歐討論著關於地平說、世界盡頭的冰山以及風暴神之類的話題。在沒有進一步線索的情況下，冒險者決定回到船艙內休息，盤算著到了方努爾市後可以再去墨奎斯咖啡廳打聽打聽消息。"
+        },
+        {
+          "id": "plus-c07-chpt04",
+          "evidence": "站在那裡的，竟然是墨奎斯咖啡廳裡的那隻黑貓——莫吉斯。"
+        }
+      ]
+    },
+    "material-realm/mattington/fanaur/nimu-orphanage": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "見到了傳說中的瑞斯，瑞斯帶著瑪莉修女和龍恩前往尼姆孤兒院附近的一座水井。他們在深處看見兩名拉索斯教徒，圍著一個魔法陣，正在吟唱。而魔法陣的中央，堆放著神秘的黑色石頭，隱隱散發著毒素。在龍恩和瑞斯的攻擊下，兩名教徒很快就被擊倒了。瑞斯也給了龍恩一張他的調查紀錄，最上方寫著瑞斯・提格的研究。"
+        },
+        {
+          "id": "plus-c07-chpt03",
+          "evidence": "龍恩背著受傷的瑪莉，指揮著工人把瑞斯以及小男孩的屍體從孤兒院的地底搬回教堂。回到教堂後，龍恩立刻聯繫了羅賓遜主教，向主教說明了在孤兒院地下發現的神祕傳送陣以及駭人怪物。同時提出了自己的推測:「怪物被擊敗後變成了穿著破爛的小孩子，可能表示怪物是從小孩子變成的。因為孤兒院的小孩和其他市民不同，失蹤了也不會引起太多的關注。是不是意味著尼姆孤兒院或是方努爾市其他地區的孤兒院有拉索斯教徒滲透。」龍恩也同時和羅賓遜主教科普了拉茲特獸的長相。羅賓遜主教聽了之後相當認同龍恩的推測，他表示會慎重處理津菈教內部的問題，於是請瑪莉去請法爾班克斯以及伊森利恩過來。"
+        }
+      ]
+    },
+    "material-realm/mattington/fanaur/st-keinra-cathedral": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "冒險者們趕緊離開礦坑，先回到瑪琳船長家去，預計接下來可先回狂暴戰士幫回報消息，或接受瑪琳船長的指令，去方努爾市的聖津菈大教堂找羅賓遜主教。瑪琳船長希望冒險者們可以將島上的調查報告轉交給主教，同時也遞給大家一個勳章，可以證明他們是津菈教的協助者，路程上會方便很多。同時，山田也表示自己有任務在身，會跟著大家一同前往方努爾市。"
+        },
+        {
+          "id": "plus-c07-chpt03",
+          "evidence": "中午過後不久，冒險者們搭乘的船在方努爾市靠岸了，他們決定直接去方努爾市的聖津菈大教堂把瑪林船長的信件交給羅賓遜主教。山田表示她還有事情要去方努爾市的珠寶匠公會處理就先行離開了。剩餘的人在米多莉的指引之下，大伙搭上了方努爾市特別的貢多拉，經過朱代卡運河，相當迅速地就到達了聖津菈大教堂。就在他們隨著神父的指引進入了主教的辦公室時，他們發現了一個熟悉的面孔，坐在神父辦公室內的正是他們過去的伙伴龍恩。"
+        }
+      ]
+    },
+    "material-realm/mattington/lark-ferry/the-sailors-house": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt01",
+          "evidence": "澤克帶著冒險者們到渡口附近最熱鬧的酒館「水手之家」用晚餐，服務生帶著大家來到二樓像包廂的空間，但隔壁桌似乎已經有坐人了。澤克向冒險者們介紹坐在隔壁桌的三人，是被稱為「瑪琳船長」的瑪琳爵士（同時也被稱為「野三逼逼（意為「真實的勇氣」）伯爵」，以及冒險者們先前已經見過的莉蓮娜和拉芙。"
+        }
+      ]
+    },
+    "material-realm/mattington/fanaur/well-and-underground-ritual-site-near-nimu-orphanage": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "見到了傳說中的瑞斯，瑞斯帶著瑪莉修女和龍恩前往尼姆孤兒院附近的一座水井。他們在深處看見兩名拉索斯教徒，圍著一個魔法陣，正在吟唱。而魔法陣的中央，堆放著神秘的黑色石頭，隱隱散發著毒素。在龍恩和瑞斯的攻擊下，兩名教徒很快就被擊倒了。瑞斯也給了龍恩一張他的調查紀錄，最上方寫著瑞斯・提格的研究。"
+        }
+      ]
+    },
+    "material-realm/mattington/fenadra": {
+      "chapters": [
+        {
+          "id": "lite-c11-chpt01",
+          "evidence": "Then, 唐 opened the circular hole cover in the center of the ancestral hall and invited the adventurers to climb down into this filthy underground world: the place they called \"Fenadra (Fenadra)\" was also the place where Ubbo was truly born."
+        },
+        {
+          "id": "lite-c11-chpt02",
+          "evidence": "The stranger introduced himself as Buzz. He was obviously a goblin, and the heavy armor he wore was hidden under the white robe. Ubbo, Lott and Psyber each introduced themselves to Buzz under their aliases in Fenadra. Buzz showed that he also came from the surface. He had not stayed underground long enough for his body to deform, but it had been long enough to have walked through every area, except for the Soul Council. He wasn't sure he should go in there. After hearing about the intentions of Ubbo and others, he decided to be a guide for the time being and take them to the Soul Parliament."
+        },
+        {
+          "id": "lite-c11-chpt03",
+          "evidence": "眼看羅特一直醒不來，冒險者們決定先離開靈魂議會，保持體力，以面對明天中午的試煉。"
+        },
+        {
+          "id": "lite-c11-chpt04",
+          "evidence": "Buzz noticed what seemed to be movement within the fluid elevator. A snake's head sprang out, but the size was much different from Lott's impression. Since arriving at Fenadra, Mango disappeared without knowing when. Originally he was small enough to fit in the pouch on Lott's waist, but now he is extremely thick and it should not be difficult to swallow a person. The lines on his body were even more frightening, with faces with painful and twisted expressions imprinted on them, and even protruding limbs around his body, as if he had swallowed a person but not completely digested it."
+        }
+      ]
+    },
+    "material-realm/mattington/fenadra/exhaustion-domain": {
+      "chapters": [
+        {
+          "id": "lite-c11-chpt02",
+          "evidence": "朝著靈魂議會的方向前進，陌生人眼看烏波等人就快踏入衰竭域，便趕緊加快腳步追上他們。陌生人趕了上來，按住了烏波的肩膀，烏波掏出武器，警戒的訊問他，賽柏也掏出武器與他對峙。陌生人向他們說明，再繼續往前就要脫離不動域，進入衰竭域，他們的呼吸會變得很困難，必須要有心理準備。"
+        }
+      ]
+    },
+    "material-realm/mattington/fenadra/greenhouse": {
+      "chapters": [
+        {
+          "id": "lite-c11-chpt01",
+          "evidence": "冒險者們還摸不著頭緒，決定到處繞一下。羅特看見了一間「溫室」，有些興趣，決定過去看看，卻發現剛才那幾名衛兵正圍在溫室前，而在他們正前方的，有幾名跪在地上發抖的人們。不過更有趣的，在這些衛兵身後，有一大批十來個平民，手拿磚頭，似乎正要襲擊他們。"
+        }
+      ]
+    },
+    "material-realm/mattington/fenadra/greenhouse-dining-hall": {
+      "chapters": [
+        {
+          "id": "lite-c11-chpt01",
+          "evidence": "幾個小時後，清脆的鈴聲響起，冒險者們跟隨著其他工人一起走回溫室入口旁，從旁邊的門口走入大餐廳，享用晚餐：一大盆的土和一些乾草。羅特和賽柏吃不下去（賽柏還是忍著把乾草吃了，但是土他真的吃不下去），把他們的份送給了烏波，他們之中唯一享受其中的人。"
+        }
+      ]
+    },
+    "material-realm/mattington/fenadra/hollow-heart-domain": {
+      "chapters": [
+        {
+          "id": "lite-c11-chpt01",
+          "evidence": "透過譚，冒險者們得知斐納札分成了六個不同的地區，分別由不同的「議員」統治。而現在他們所處的「心空域（心空域）」正處於一個特別的狀態：「心空席」的議員似乎消失了，但議會刻意封鎖這個消息。對於這個空缺的職位，烏波展現了些許的興趣，譚也表示規則上「人人有機會」，甚至衣服的顏色不影響大家得到這個席位的機會，但據說其他議員們分別有內定的人選。譚透露有個稱為「靈魂議會」的地區，是共屬於議員們的特別區域，可以到這裡找他們（不過他們只有工作時間會在該地區，放飯後都會各自回到他們領導的地區休息）。"
+        },
+        {
+          "id": "lite-c11-chpt04",
+          "evidence": "烏波和巴斯則在從升降梯下到地面後，一有機會就將周圍點火，一路點到心空域。心空域的人們一看見烏波，就跪在地上向他朝拜。烏波大力喊著，要心空域的人們跟著他一起爬到地面，傳播芬尼爾的福音，但他再怎麼大喊，人們卻完全沒有反應。就連心空域的人們也感到疑惑：明明他是新任的心空席，怎麼他的話語卻沒有任何強製性？"
+        }
+      ]
+    },
+    "material-realm/mattington/fenadra/immovable-domain": {
+      "chapters": [
+        {
+          "id": "lite-c11-chpt01",
+          "evidence": "突然，走在最前面的羅特感到腳步一沉。他想起昨晚譚講到的不同地區結界一事。他們踏入了「不動域（不動域）」，腳步變得沉重而緩慢，手也變得難以使力。"
+        },
+        {
+          "id": "lite-c11-chpt02",
+          "evidence": "朝著靈魂議會的方向前進，陌生人眼看烏波等人就快踏入衰竭域，便趕緊加快腳步追上他們。陌生人趕了上來，按住了烏波的肩膀，烏波掏出武器，警戒的訊問他，賽柏也掏出武器與他對峙。陌生人向他們說明，再繼續往前就要脫離不動域，進入衰竭域，他們的呼吸會變得很困難，必須要有心理準備。"
+        }
+      ]
+    },
+    "material-realm/mattington/fenadra/plasmoid-factory": {
+      "chapters": [
+        {
+          "id": "lite-c11-chpt01",
+          "evidence": "不過，左手邊在心空域與不動域的邊界，有個工廠般的地方引起了他們的注意。冒險者們走了過去，看見兩名衛兵守衛著。經過一番交涉，烏波卸下了裝束，被允許進去裡面，但羅特和賽柏則不被允許入內，原因為「這是上頭的意思」，讓他們感到不解。"
+        },
+        {
+          "id": "lite-c11-chpt02",
+          "evidence": "看見研究人員、衛兵和電漿人一一跪在地上，呢喃著「巴薩爾・烏索」，烏波神氣的爬了下來，慢慢的走出工廠。途中，他試圖拉了拉他迷失的手足們，想將他們從工廠拯救出來，但他們遲鈍的模樣，讓他也清楚，這些「失敗品」也許就該被留在工廠內了吧。"
+        }
+      ]
+    },
+    "material-realm/mattington/fenadra/the-soul-council": {
+      "chapters": [
+        {
+          "id": "lite-c11-chpt01",
+          "evidence": "透過譚，冒險者們得知斐納札分成了六個不同的地區，分別由不同的「議員」統治。而現在他們所處的「心空域（心空域）」正處於一個特別的狀態：「心空席」的議員似乎消失了，但議會刻意封鎖這個消息。對於這個空缺的職位，烏波展現了些許的興趣，譚也表示規則上「人人有機會」，甚至衣服的顏色不影響大家得到這個席位的機會，但據說其他議員們分別有內定的人選。譚透露有個稱為「靈魂議會」的地區，是共屬於議員們的特別區域，可以到這裡找他們（不過他們只有工作時間會在該地區，放飯後都會各自回到他們領導的地區休息）。"
+        },
+        {
+          "id": "lite-c11-chpt02",
+          "evidence": "轎子的陰影停在他們身邊，賽柏似乎聽見了簾子被拉開了聲音。幾秒鐘後，簾子被拉起，轎子又繼續往前了。直到轎子的陰影不再籠罩他們，賽柏才抬起頭，並將羅特翻了回來。他看見轎子朝著與他們目的地，靈魂議會，相同的方向前進。"
+        },
+        {
+          "id": "lite-c11-chpt03",
+          "evidence": "眼看羅特一直醒不來，冒險者們決定先離開靈魂議會，保持體力，以面對明天中午的試煉。"
+        },
+        {
+          "id": "lite-c11-chpt04",
+          "evidence": "轉眼間，烏波與三名夥伴被傳送回靈魂議會。其他人，包含魯米歐、譚，或是其他支援者，都沒有出現。羅特和賽柏身體的殘缺也沒有復原。"
+        }
+      ]
+    },
+    "material-realm/mattington/fenadra/trial-arena": {
+      "chapters": [
+        {
+          "id": "lite-c11-chpt03",
+          "evidence": "流體將冒險者們送到了一個昏暗的空間，偌大的平台，周圍是如競技場的觀眾席，但空無一人。平台上，有一小群人，以及站在遠處的幾個議會成員。"
+        },
+        {
+          "id": "lite-c11-chpt04",
+          "evidence": "烏波睜開雙眼，除了眼前不遠處的魯米歐外，周圍還有六顆巨大的心臟。他的腦中傳來了聲音，告訴他與魯米歐，他們必須將對方擊倒，才能取得心空席的位子。而在勝負揭曉之時，尚未脫離心臟的支援者們，都將永遠被困在裡面。烏波這才發現，自己的夥伴們都被困在心臟裡。"
+        }
+      ]
+    },
+    "material-realm/mattington/fenadra/workers-dormitory": {
+      "chapters": [
+        {
+          "id": "lite-c11-chpt01",
+          "evidence": "等大餐廳所有人吃完後，門打開了，大家依序往外走，排成隊伍一起離開。走了好一陣子，他們看見了這裡少數的高樓：好幾棟毫無設計感的方形建築。人們排隊依序走入大樓內。大樓門口的人員登記每個人的名字，並給予他們分別的房號（烏波是3-B、賽柏是3-C，而羅特是4-A）。他們才得知這是他們今晚住宿的宿舍。"
+        },
+        {
+          "id": "lite-c11-chpt03",
+          "evidence": "巴斯帶著三人來到他之前居住在不動席的宿舍，四人一同來到一間單人房。在舍監簡單確認羅特的狀況穩定後，依然昏睡的羅特在巴斯的床上躺著。巴斯注意到烏波是月神教的信徒，和他詢問了一些相關的問題，以及和妖精王國有關的事，但他也注意到烏波很多都不清楚，讓巴斯稍微放心。"
+        }
+      ]
+    },
+    "material-realm/mattington/great-citadel": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt04",
+          "evidence": "Before sunset, the adventurers arrived at the entrance of Great Citadel. After showing the guard the scholar certificate of YHWH, everyone walked into Great Citadel easily."
+        },
+        {
+          "id": "plus-c07-chpt01",
+          "evidence": "Early in the morning, the adventurers left Great Citadel and headed towards Fanaur city. Because he was familiar with Midori who was born in Fanaur City, he led everyone to take a boat to the Lark ferry in Fanaur City. This season is very close to the local Keinra religious festival: Brave Day, so many people on the ferry want to go to the nearby Saint Rayami Island."
+        }
+      ]
+    },
+    "material-realm/mattington/great-citadel/alexs-workshop": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt04",
+          "evidence": "安卓尼科斯向大家介紹了自己的珠寶收藏，也泡了他稱為茶的透明色熱飲給大家喝。大家向安卓尼科斯詢問了關於科技區的事，決定等等可以去附近找一位名為艾麗克斯的機甲研究者，請教關於米多莉和波機械手臂的事。離開前，山田表示為了表達自己的謝意，之後可以找他或安卓尼科斯鑑定珠寶，不用算錢。安卓尼科斯也拿了一些光澤閃耀的「茶葉」作為禮品送給冒險者們。"
+        }
+      ]
+    },
+    "material-realm/mattington/great-citadel/andrea-days-office": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt04",
+          "evidence": "伊也透露給他們自己是名盜賊，觀察了幾天後，趁著守衛交班的時候翻進城牆內。他也表示發現蘿琳的靈魂似乎是被攔截了，而攔截他的人，正式現在歷史區的區長，研究宗教的安德烈亞・戴依。他表示為了拯救蘿琳，他打算潛入安德烈亞的研究室，如果被發現了，把安德烈亞殺死也無所謂。面對這名不受控制的衝動小子，冒險者們十分苦惱。冒險者們試圖強迫他藉由點按月先生的名片，強制傳送回位在麥克嵩的英荻格身邊，但意外的發現不知道是什麼原因，傳送沒能奏效，因此龍恩決定直接將他敲暈。在開始有民眾注意到的情況下，冒險者們趕緊準備出發，波一肩扛起已經昏迷的伊，大家就這樣跟著路人的說明，走到了歷史區安德烈亞研究室的門口。"
+        }
+      ]
+    },
+    "material-realm/mattington/great-citadel/andronikoss-residence": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt04",
+          "evidence": "對於剛剛發生的一切，喜利・歐喜利感到十分低落。讓無辜之人這樣受害，不是他所認可的對的事。要不要繼續和這群冒險者們冒險，他的內心還沒有答案。不顧其他人還在屋內，喜利・歐喜利決定先暫時脫隊。門外，喜利・歐喜利看見一名人形生物向他快步走來，他沒有很想搭理。那名貓人詢問喜利・歐喜利是否知道怎麼去科技區，喜利・歐喜利簡單回話後，便不再理他。貓人眼看得不到完整的答案，於是向此時剛走出來的冒險者們詢問。冒險者們得知他是名叫山田葵的人類，因為碰到一顆被寶石而被詛咒，變成貓人。山田要去科技區尋找他過去的珠寶商師傅安卓尼科斯，或稱安迪，請教。"
+        }
+      ]
+    },
+    "material-realm/mattington/great-citadel/central-tower": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt04",
+          "evidence": "在YHWH的帶領下，大家來到中央塔的一樓，拜訪今年的城主，沙蘭・哈特洛。在大家紛紛向城主自我介紹後，城主表示大家看起來都沒問題，可以在大學城好好拜訪，遇上任何問題，找他就可以，也歡迎來找他喝下午茶。"
+        }
+      ]
+    },
+    "material-realm/mattington/great-citadel/central-tower-restricted-library": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt04",
+          "evidence": "在回去茜卓博士家前，大家決定去中央塔的禁書區逛逛。在和城主沙蘭告知後，沙蘭輕鬆的就讓大家上到樓上禁書區找書了，像是根本沒有門禁一樣，也讓大家十分吃驚。"
+        }
+      ]
+    },
+    "material-realm/mattington/great-citadel/chandras-house": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt04",
+          "evidence": "冒險者們發現喜利・歐喜利不見了，在山田的帶領下，他們追上遠行的喜利・歐喜利。喜利・歐喜利表示自己需要靜一靜，晚上在茜卓博士家見。"
+        }
+      ]
+    },
+    "material-realm/mattington/great-citadel/historical-district": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt04",
+          "evidence": "YHWH得知現在大學城的城主為研究帝國歷史的沙蘭・哈特洛，歷史區的區長為研究各種宗教的安德烈亞・戴依，科技區的區長為研究機器人的佩姬・麥戴斯，自然魔法區的區長為研究水魔法的潔琳・阿瓦洛斯，最後，法師魔法區的區長則為研究魔法古籍的珍妮絲・瑞德。"
+        }
+      ]
+    },
+    "material-realm/mattington/great-citadel/mage-magic-district": {
+      "chapters": []
+    },
+    "material-realm/mattington/great-citadel/natural-magic-district": {
+      "chapters": []
+    },
+    "material-realm/mattington/great-citadel/technology-district": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt04",
+          "evidence": "YHWH得知現在大學城的城主為研究帝國歷史的沙蘭・哈特洛，歷史區的區長為研究各種宗教的安德烈亞・戴依，科技區的區長為研究機器人的佩姬・麥戴斯，自然魔法區的區長為研究水魔法的潔琳・阿瓦洛斯，最後，法師魔法區的區長則為研究魔法古籍的珍妮絲・瑞德。"
+        }
+      ]
+    },
+    "material-realm/mattington/kashla": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt03",
+          "evidence": "With the adventurers' persuasion, Sora took them out of the cafe and headed towards his home. The strange thing is that when they walked out of the original coffee shop door, it was not the original cave but a farmland outside the door. Sora took everyone around the back of the coffee shop and told them that they could reach the town where their home is located, Kashla, in about 10 minutes."
+        }
+      ]
+    },
+    "material-realm/mattington/kashla/cafe-at-the-entrance-to-kashla": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt03",
+          "evidence": "樓梯下的空間寬敞，而且傳來悠揚的音樂聲……似乎是某種琴聲。眼前是一座咖啡廳，門口是霧霧的玻璃門，裡面似乎有不少客人和服務生。眾人回頭，發現樓梯竟然不見了，也就只好硬著頭皮繼續走下去了。"
+        }
+      ]
+    },
+    "material-realm/mattington/kashla/church-cemetery": {
+      "chapters": []
+    },
+    "material-realm/mattington/kashla/dr-vaxons-clinic": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt03",
+          "evidence": "冒險者們雖然感到疑惑，但還是坐了下來。他們詢問著索拉為什麼知道他們會來？在等什麼？希望冒險們能幫他做什麼？但索拉似乎記不太清楚。索拉告訴他們，是他的家庭醫師瓦克松醫生告訴他冒險者們會來救他的預言。"
+        }
+      ]
+    },
+    "material-realm/mattington/kashla/soras-family-home": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt03",
+          "evidence": "另一方面，YHWH利用時間又跑回書店，翻了翻索拉父母的書，想了解索拉是怎麼死去的。他讀到，有一次索拉的父母為他執行儀式，利用匿名之聲的力量，召喚出了有史以來的第一隻拉茲特獸—始祖拉茲特獸，想洗滌索拉的靈魂，但索拉卻被吸乾靈魂而亡。索拉的父親無法接受兒子的死，每天與他的屍體相伴，最後無法照顧自己而死去，被埋在教堂的後花園。索拉的母親則不同，在兒子死去後，他開始拉攏匿名之聲的信徒，建立起了自己的教派，而他，也成了拉索斯夫人（拉索斯女士）。而那隻始祖拉茲特獸，則被關在索拉家的閣樓。"
+        }
+      ]
+    },
+    "material-realm/mattington/kashla/unnamed-bookstore-moores-workplace": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt03",
+          "evidence": "大家一路嘗試從索拉口中問些什麼，但索拉似乎對大多數的事情記憶都模模糊糊，沒有太大的幫助。到了卡什拉，大家原本想先去見索拉口中的這名家庭醫師，但YHWH聽見了索拉提及書店，感到很有興趣，於是大家便先去拜訪書店。"
+        }
+      ]
+    },
+    "material-realm/mattington/kashla/voice-of-anonymous-church": {
+      "chapters": [
+        {
+          "id": "plus-c06-chpt03",
+          "evidence": "診間內，米多莉、喜利・歐喜利和波試著和醫生詢問關於索拉以及這裡的事，他們得知現在是746年11月6日，而醫生似乎對拉索斯教毫無概念。關於預言，醫生表示當時他是在小鎮的教堂內禱告時在聽見的。這個教堂隸屬於一個叫「匿名之聲」的宗教組織，領導者是索拉的外曾祖父，也就是萊斯莉的父親，但大家都稱他為暗影之父，並不清楚他的本名。萊斯莉似乎不太信這個宗教。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield": {
+      "chapters": [
+        {
+          "id": "rugatha-c02-chpt03",
+          "evidence": "Outside the dungeon, Paladin found the place to be Korringfield, the town that he grew up in. Usioni picked up a flyer on the ground, with the portraits of the adventurers on it, and \"the Demons of Vowalon\" on it. Several townfolks were pointing them at the alley entrance. After a while, an old lady sneaked in the alley. Paladin recognized her as the wife of his mentor, Syr Flaerry. Lady Flaerry told the adventurers not to be worried, that she would protect them."
+        },
+        {
+          "id": "rugatha-c03-chpt01",
+          "evidence": "Rosa also went to Paladin's room, telling him about his father. Paladin's father, had an accident in the capital city, and was not treated medically in time, but sent back to Korringfield to force to retire. Rosa hoped Paladin to go see his father."
+        },
+        {
+          "id": "rugatha-c03-chpt02",
+          "evidence": "The Taipei City Council went shopping in Korringfield downtown."
+        },
+        {
+          "id": "rugatha-c03-chpt03",
+          "evidence": "Passing downtown, Syr Flaerry stopped at a wooden gate, inviting them to enter. Jiaheng pushed opened the door, only to find it noisy inside, and filled with body odor. This was far from what he expected. Syr Flaerry led the party into the Korringfield Stadium, and bought a ticket for each of them. It was a home game for Korringfield, visited by the Macksohn team. This was the stadium that Paladin enjoyed before he left Korringfield. Syr Flaerry and YHWH even bought lottery tickets at the stand."
+        },
+        {
+          "id": "rugatha-c03-chpt04",
+          "evidence": "There were three seperate branches from the alley, and they had no idea which one would be the most possible way. Lemmy climbed on the nearby roofs, trying to look from above. The others split into three and headed forward. Samael accidently ran into two strong men, one barbarian wearing animal fur, and another paladin with a helmet. The two recognized Samael and the other adventurers as the \"Demons of Vowalon\", which was painted on the flyers. They threatened them to leave Korringfield, or they would tell the kingdom. In desperation, the adventurers attacked to two, knocked them proned. They started think how to deal with the bodies, as two guards approached. The adventurers ended up killing the guards and the barbarian, making it look like a scene that they killed each other, and took the only surviving paladin back to the Flaerry house."
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/blacksmith-shop-unnamed": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt03",
+          "evidence": "吃飽後，終於面露喜色的家亨與大家一起跟著弗列里爵士，先經過了有同志酒吧的巷子，在走到七彩天堂的巷口。爵士遞給了大家各50枚金幣，讓大家好好去開心一番。雷米、米多莉和薩梅爾都把自己的50枚金幣遞給了家亨，想讓他玩得更開心。於是，家亨、帕拉丁、雷米和米多莉便前往了七彩天堂。而烏犧奧泥則跟著爵士一起前往同志酒吧。龍恩決定直接回到宅邸，薩梅爾在街上逛逛，而YHWH則跑了一趟打鐵鋪與魔法商店。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/drunken-corner": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt04",
+          "evidence": "大家從餐廳拿了廚師準備的麵包後便上路。有些人前往酒館「喝醉角落」，想打聽些消息，也看看曾經遇到的神秘老太太是否在那裡，也許能問出些什麼，卻不見他的人影。其他人到了帕拉丁與YHWH分開的七彩天堂前，一樣沒有收穫。大家會合後，薩梅爾決定讓酷爆出來聞聞看帕拉丁的味道，他們因此走進了一處巷弄內。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/flaerry-house": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt01",
+          "evidence": "來到了爵士宅邸，羅莎夫人上樓喚了弗列里爵士後，眾人才發現崔夏似乎消失了蹤影。烏柯告知了弗列里爵士後，化身成了一隻狗狗，而烏犧奧泥也帶著神王尼可，兩邊開始分頭尋找崔夏的蹤跡。"
+        },
+        {
+          "id": "rugatha-c03-chpt02",
+          "evidence": "眾人回到弗列里爵士宅邸。烏柯找了弗列里爵士，成功在他房間內的神秘書房拿到一本《儀式大全》，不過似乎沒有作者的名字。烏犧奧泥也向弗列里爵士要了額外兩件黑色緊身衣，作為備用。"
+        },
+        {
+          "id": "rugatha-c03-chpt03",
+          "evidence": "跪在爵士宅邸門口的男子，自稱為雷米，是個半妖精浪客。他說他腦中有一個聲音，要他加入「台北市議員」。不過令人起疑的是，他的脖子上掛著冒險者們有些熟悉的紫色墜飾項鍊，也就是烏柯在訣別信提到自己遺失的那條，寄宿著多姆尼爾的項鍊。眾人對雷米問話，不敢肯定他是否可信。"
+        },
+        {
+          "id": "rugatha-c03-chpt04",
+          "evidence": "回到弗列里爵士家，晚餐前的大廳，大家不見帕拉丁的身影。YHWH想起帕拉丁說過他會在晚餐前回來。眾人決定回到市中心尋找帕拉丁，而龍恩則決定待在爵士宅邸等候。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/gay-bar-syr-flaerrys-regular-haunt": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt03",
+          "evidence": "走到球場外，帕拉丁告訴弗列里爵士，夥伴家亨期待的「好地方」似乎不是這種好地方，而是那種有會員制的。爵士恍然大悟，告訴帕拉丁他這就帶大家去。走了一段路，大夥停在一個沒有招牌的店門口，爵士自行推開了門。裡面是個有包廂的高級餐廳。爵士熟門熟路的走進了其中一間包廂，讓大家入座，也點了各種不同料理。然而，家亨的表情似乎又陷入了尷尬。這也不是他所想的「好地方」。餐桌上，大家吃著，也向爵士詢問了關於麥克嵩的事。爵士告訴大家，麥克嵩什麼人都有，如果要去，要很小心。不過如果有需要，報上他的名字，國王會願意幫助他們的。帕拉丁也在爵士耳邊再次詢問了關於「好地方」的事。在多加提示後，爵士終於理解了，並向他們保證，會帶他們去他常去的那家同志酒吧。帕拉丁急忙撇清，家亨想去的應該不是這種。爵士只好趕緊告訴他們，附近還有另一家，叫做「七彩天堂」的店，應該就是家亨想去的地方。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/keinra-church": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt02",
+          "evidence": "採買結束後，米多莉到鎮上的守護之神津菈教堂進行禮拜，也打聽了關於寇林菲爾德的軼聞瑣事。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/korringfield-stadium": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt03",
+          "evidence": "走過了市中心的街區，弗列里爵士停在了一個石造的拱門前，邀請大家推門進入。家亨推了開門，卻發現裡面十分吵雜，充滿了汗臭味。這和他想的似乎有所出入。爵士帶了大家進入寇林菲爾德球場，並在售票亭為大家各買了一張球賽的票券。今天是寇林菲爾德的主場，客場球隊是麥克嵩。這裡是帕拉丁離開寇林菲爾德前很喜歡來看球賽的地方。爵士和帶了錢出門的YHWH各自和售票亭買了彩券。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/private-room-restaurant-unnamed": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt03",
+          "evidence": "走到球場外，帕拉丁告訴弗列里爵士，夥伴家亨期待的「好地方」似乎不是這種好地方，而是那種有會員制的。爵士恍然大悟，告訴帕拉丁他這就帶大家去。走了一段路，大夥停在一個沒有招牌的店門口，爵士自行推開了門。裡面是個有包廂的高級餐廳。爵士熟門熟路的走進了其中一間包廂，讓大家入座，也點了各種不同料理。然而，家亨的表情似乎又陷入了尷尬。這也不是他所想的「好地方」。餐桌上，大家吃著，也向爵士詢問了關於麥克嵩的事。爵士告訴大家，麥克嵩什麼人都有，如果要去，要很小心。不過如果有需要，報上他的名字，國王會願意幫助他們的。帕拉丁也在爵士耳邊再次詢問了關於「好地方」的事。在多加提示後，爵士終於理解了，並向他們保證，會帶他們去他常去的那家同志酒吧。帕拉丁急忙撇清，家亨想去的應該不是這種。爵士只好趕緊告訴他們，附近還有另一家，叫做「七彩天堂」的店，應該就是家亨想去的地方。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/rainbow-paradise": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt03",
+          "evidence": "走到球場外，帕拉丁告訴弗列里爵士，夥伴家亨期待的「好地方」似乎不是這種好地方，而是那種有會員制的。爵士恍然大悟，告訴帕拉丁他這就帶大家去。走了一段路，大夥停在一個沒有招牌的店門口，爵士自行推開了門。裡面是個有包廂的高級餐廳。爵士熟門熟路的走進了其中一間包廂，讓大家入座，也點了各種不同料理。然而，家亨的表情似乎又陷入了尷尬。這也不是他所想的「好地方」。餐桌上，大家吃著，也向爵士詢問了關於麥克嵩的事。爵士告訴大家，麥克嵩什麼人都有，如果要去，要很小心。不過如果有需要，報上他的名字，國王會願意幫助他們的。帕拉丁也在爵士耳邊再次詢問了關於「好地方」的事。在多加提示後，爵士終於理解了，並向他們保證，會帶他們去他常去的那家同志酒吧。帕拉丁急忙撇清，家亨想去的應該不是這種。爵士只好趕緊告訴他們，附近還有另一家，叫做「七彩天堂」的店，應該就是家亨想去的地方。"
+        },
+        {
+          "id": "rugatha-c03-chpt04",
+          "evidence": "大家從餐廳拿了廚師準備的麵包後便上路。有些人前往酒館「喝醉角落」，想打聽些消息，也看看曾經遇到的神秘老太太是否在那裡，也許能問出些什麼，卻不見他的人影。其他人到了帕拉丁與YHWH分開的七彩天堂前，一樣沒有收穫。大家會合後，薩梅爾決定讓酷爆出來聞聞看帕拉丁的味道，他們因此走進了一處巷弄內。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/syr-magnuss-house": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt01",
+          "evidence": "Paladin knocked on the door as they arrived his home, and the old servant opened the door. The old servant was happy that Paladin came back, and hoped he go to his father quickly. Paladin went upstairs, the doctor of his father, Dr. Halloway opened the door for him, and briefly explained his father's situation to him. Due to the severity of his father's wounds, an amputation was inevitable. If it got even worse, it might have even took his father's life. Paladin went to his father and talked to him. His father, Syr Magnus, cared about his favorite child, and told him whenever he decide not to adventure, he would pass on his title to him."
+        },
+        {
+          "id": "rugatha-c03-chpt04",
+          "evidence": "其他人來到帕拉丁的老家後，看見帕拉丁的父親馬格努斯爵士神清氣爽地從二樓走了下來，帕拉丁鬆了一口氣。大家尋求馬格努斯爵士的幫助，馬個努斯爵士則吩咐管家準備一輛馬車，載大家離開。帕拉丁向父親詢問，應該前往王國還是帝國比較安全？馬格努斯爵士表示自己在王國比較有人脈，甚至報上他親生母親的名字，更有幫助。於是眾人決定前往王國的首都，麥克嵩。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/the-magicians-groceries": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt02",
+          "evidence": "烏柯帶著崔夏走入了一間魔法用品店，叫「魔法師的雜貨店」，看起來像間連鎖的雜貨店一般。詢問了店員是否有能夠驅除魔法的用品後，店員帶著兩人來到了店後面的辦公室，讓裡面的魔法師諮詢，並收了100金幣的諮詢費。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/thieves-guild": {
+      "chapters": [
+        {
+          "id": "rugatha-c03-chpt03",
+          "evidence": "離開七彩天堂的帕拉丁，看見巷子口走來了兩個人影。那兩人，是他的兩位哥哥。為了避免正面接觸，他便躲了起來，目送他們兩人遠離巷子。雷米此時正好走了出來，和帕拉丁簡單聊了一下，接著便離開，去寇林菲爾德的盜賊公會。公會內看起來沒有人，只有高懸的排行榜。雷米看了看任務表，發現目前沒有尚未解決的任務。不過大約兩週後，這裡似乎會有個大慶典，有不少外地人會來，被公會認定是適合偷東西的好時機。雷米拿了張紙，把自己近期偷的東西用賊話寫了下來，塞在公會內辦公室的門縫。在他轉頭回來後，發現紙條似乎已經不見了。"
+        }
+      ]
+    },
+    "material-realm/mattington/leisnor": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt01",
+          "evidence": "Riding the horses gifted by House Arylith, the Halfway House spent about two weeks reaching one of Leah's hometowns: Leisnor, as the silver dragon had called it. Outside the heavy city gates, two dragonborn guards on alert did not deliberately make things difficult for them, but the look in their eyes made it clear this was no peaceful town of ease and celebration. Leah had finally returned close to home, and her complicated feelings were written all over her face."
+        }
+      ]
+    },
+    "material-realm/mattington/leisnor/building-where-general-maliya-detained-the-party": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt01",
+          "evidence": "來到一棟建築物內，瑪萊雅・凱耀將軍直率地推開門，走了進去。衛兵們則壓著中途之家一一跪下。在他們面前的除了凶神惡煞的紅龍人瑪萊雅・凱耀將軍外，還有一名挺拔莊重的藍龍人，以及夾在他們中間，畏畏縮縮的金龍人。"
+        }
+      ]
+    },
+    "material-realm/mattington/leisnor/inn-unnamed": {
+      "chapters": [
+        {
+          "id": "wilds-c05-chpt01",
+          "evidence": "由於城內大家都說龍語，雷亞又因為不想被認出來，盡可能低調（她拉上自己的帽兜，把自己屬於蜥蜴人特徵的部分遮住。她過去從她的師父口中聽說，萊斯諾與她的另一個家鄉，以蜥蜴人為主的克萊芬長年緊繃，戰線一觸即發，她可不想當引發戰爭的導火線），阿龍嘗試和路上看起來較為和善的居民說話，詢問旅店的位置。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt01",
+          "evidence": "After Jiaheng was taken by the guards in Korrignfield, and Lemmy went gathering information, the Taipei City Council went on the carriage provided by Paladin's Father, Syr Magnus, and headed towards Macksohn, the capital city of the Mattington Kingdom."
+        },
+        {
+          "id": "rugatha-c04-chpt02",
+          "evidence": "At the dining table, led by Samael, the group asked the Berners family many questions. They learned that the Trinix faith believed anything that gave off light possessed divinity, and chiefly worshiped the sun, moon, and stars. Jefferey also pointed out that Mr. Moon followed Phyneal, the moon god, and that the two religions coexisted without conflict. Ona said she could introduce them to the Violet of Macksohn. There would be a Glend banquet here in two days, and the Violet would certainly attend. Lance, meanwhile, curiously asked the adventurers about their adventures, and Midori told him the story of encountering Guu-guu and King Knicol, the God King in the dungeon. During the meal, Brock and YHWH also raised their suspicions about the Trinix faith, noting that its symbols and signature color schemes seemed to be everywhere in the city."
+        },
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "After leaving the garden, Midori and Ron hid in a corner and considered exploring around the palace, but from afar they spotted Syr Flaerry and his wife coming out from the garden entrance and heading toward the market. After discussing it, Midori and Ron went to meet the couple. Pulling aside for a private conversation, they learned that on the day the adventuring party had been seized by the guards, Syr Flaerry and Rosa had been away on other important business and had not even known the guards had come to Korrignfield. After everyone disappeared, Syr Flaerry did ask Syr Magnus for news, but Magnus apparently did not tell him that the group had gone to Macksohn. When the topic turned to the Violet of Macksohn being Paladin's birth mother, Syr Flaerry seemed to have already known, whereas Rosa had no idea at all. At Midori's request, Syr Flaerry agreed to try to help connect them with the Violet at the banquet the next night, and also said he would ask around about Jiaheng's whereabouts. However, he warned Midori and Ron that Jiaheng was likely in very bad condition and might never return to how he had once been. Syr Flaerry also told Midori that the Hughes family she had just met was a family known for trading rare materials from distant lands, and that its former head should have been Fred Hughes."
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "They decided to use the morning to stroll around the Royal Garden. Their furtive behavior, meant to avoid drawing the guards' attention, had the opposite effect. But when the guard who approached Ron removed his helmet, it turned out to be Glen. Ron used the chance to ask Glen about any follow-up on restaurant owner Joseph's disappearance, though he did not get much useful information. He also shared that he had heard Joseph seemed to no longer be in Macksohn. Just before Glen left, Ron and Samael happened to mention the name Sha'Doom. Glen paused and said the name sounded familiar. Recently, the Macksohn guard had been investigating possible infiltration within their ranks, and Sha'Doom was on that list. Glen repeatedly assured Ron that both he and Scar-Face were trustworthy and that there was nothing to worry about."
+        },
+        {
+          "id": "rugatha-c04-chpt05",
+          "evidence": "Standing beside King Benevol II, Paladin made several demands: that Michael and Cena be summoned to the royal box, that Jiaheng be released immediately, that his adventuring companions be given a comfortable place to stay in Macksohn, and that he receive a map of the towns around Macksohn. The king agreed to each request in turn. At the same time, Jiaheng, long absent, was escorted out by guards from behind the royal box. Though he looked somewhat dazed, he did not appear badly injured. When Michael arrived at the box, he woke Ron up, and the two of them left with Jiaheng and returned to the audience seats. Cena then came to the box as well. Paladin stepped forward, thought for a moment, and then patted him on the knee and wished him good luck, after which Cena departed."
+        },
+        {
+          "id": "rugatha-c05-chpt01",
+          "evidence": "This time, using magic, Midori chose to track \"The God King's Guidance,\" which Anedak had always worn on his chest. Unlike the last time, when searching for the great blade had failed, Midori found that The God King's Guidance was located somewhere to the northwest, outside Macksohn. After investigating, they learned it pointed toward a bleak town called Rumphton, so the Taipei City Councilors immediately set out for it."
+        },
+        {
+          "id": "legends-os04",
+          "evidence": "At last, Red Dragon too crossed the royal garden of Macksohn and left far behind the prison that had held him for so very long."
+        },
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "As Siri walked back from behind Lemmy, Samael, YHWH, Midori, Beau, Lemmy and Siri left the hotel and walked towards the city wall where they started the night before. At this time, Ron, who had already sorted out the camp tent, was meditating. After a brief discussion, everyone decided to return to Macksohn city first. Samael wants to go to Franz, while YHWH wants to pay tribute to Mr. Moon."
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "YHWH saw that Indigo was still asleep and couldn't wake up. He packed his luggage and went to the restaurant outside the hotel to wait for others to arrive. After meeting everyone, Samael and Midori went upstairs together to ask Indigo to come down, and everyone set off for Macksohn."
+        },
+        {
+          "id": "lite-c06-chpt01",
+          "evidence": "The adventurers left Sebano and decided to return to Macksohn. After spending a lot of time, the city gate of Macksohn was right in front of us. After entering the city, Paladin picked up the medal given to him by Violet, but only received the sad news from the guard that \"Violet has no influence here anymore.\" After everyone discussed, they decided to find Mr. Moon who had helped Paladin a lot."
+        },
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "看見四名夥伴啟程前往王宮，華生思索著在與貴族的晚宴前應該要先把握時間去哪裡。與大衛醫師詢問後，他計劃先前往舊城區（貧民窟）一趟，據說那裡有不少瘋子，有可能從那裡問到一些和蜘蛛神教有關的線索。華生準備要出發，但蘇加魯似乎身體不太舒服，因此無法陪同前往。"
+        },
+        {
+          "id": "lite-c06-chpt03",
+          "evidence": "時間接近中午，冒險者們清醒後，來到了旅店一樓。凱文昨晚顯然沒有拿到伊寫的紙條，只有麵包可以給冒險者們吃。冒險者們拿著麵包回到二樓房間，將麵包分食給還無法移動的圖伊特，以及剛睡醒的華生。"
+        },
+        {
+          "id": "lite-c06-chpt04",
+          "evidence": "At the request of Watson, Yi took Watson and Sugalu, as well as Tweeter, who had been hiding behind the curtains, to the second floor to find Marcus. Watson expressed his acceptance of Marcus' previous proposal to see the king, but he also suggested that they want to borrow some money so that they can prepare. Marcus responded to their offer of 150 gold and said it would be fine if they were willing to do a favor. Marcus mentions his sister Marianne Jens, who is imprisoned in the prison of the palace, hoping they can free her. After questioning by the adventurers, they learned that Marianne had left home for a while, and when she returned, Marcus learned that she had become a spy for the Spider Cult in Macksohn. Then one day she disappeared, and later I learned that she was probably imprisoned in prison by the then king, King Benevol II."
+        },
+        {
+          "id": "lite-c06-chpt05",
+          "evidence": "Watson took the initiative to ask Marcus and Marianne a lot of things. At this time, Tweeter, who was awake, and Sugalu, who was half asleep, also participated. Paladin was carefully patrolling \"his territory\". After questioning, they learned that Marcus wanted to continue to observe the actions of Pamela and other anti-king factions, so he wanted to stay in Macksohn for a while longer. However, compared to the safety of the king, it was obvious that Marcus still cared more about the safety of himself and his family."
+        },
+        {
+          "id": "lite-c07-chpt01",
+          "evidence": "After returning to the Marcus mansion, the adventurers discussed and decided to go underground first to the ruins of the Trinix Theater. According to the information obtained from the small black room, it seems to be the stronghold of the Laxthos Cult in Macksohn. Marcus decided to stay at the mansion to wait for everyone, while also taking care of Yi, who was still awake."
+        },
+        {
+          "id": "lite-c07-chpt02",
+          "evidence": "Arriving in the basement, Tweeter and Lott asked some questions to Roline, the ceramic they knew was under the cloak, and learned that the flesh in Tweeter's palm was sent to the underground waterway of Macksohn, which is also the gathering place of the Spider Cult; The Mother is running towards the birthplace of the Spider Cult in the Goblin Kingdom; Lott After asking about his life experience, he learned about his parents: two demons who sneaked into Macksohn secretly, abandoned him in the slums, and then escaped. At the same time, he also learned that he had the blood of a succubus in his body. If he wanted to learn to use the power of a succubus, he must practice abandoning reason and following instinct."
+        },
+        {
+          "id": "lite-c07-chpt03",
+          "evidence": "Watson and Marcus asked about the informant mentioned last night. Marcus said that he had already contacted his informant and would arrive at Macksohn at the earliest tomorrow night. He mentioned that this informant is a goblin, dressed in all green, and accompanied by a wolf with heterochromatic eyes. If you see him in Macksohn, you can take the initiative to talk to him."
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/arts-district": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt01",
+          "evidence": "雷米帶著大家來到了麥克嵩的藝文特區。其中一處吸引了他們的注意力，是一個潔白寬敞的雙開大門，上方刻了「崔尼斯劇院」的字樣，不過門外卻沒有任何演出的公告。雷米推開了門，帶著大家來到了劇院的大廳。眾人買了票，進場看了每日下午2點到4點都會演出的「崔尼斯簡史」。眾人對於崔尼斯王朝的認識有多有少，因此對劇的理解多寡不太一樣。演員謝幕後，米多莉向售票亭的服務人員要了節目演出表，發現演出劇中主角，霍里森・圖卡，也就是崔尼斯王朝首任皇帝霍里森一世的演員叫摩西・寇里森，而贊助本場演出的是個叫做「柏納斯一族」的團體？組織？家族？米多莉並不清楚。一直沒有進入狀況的薩梅爾抱怨著這齣劇，表示自己彈魯特琴還比較精彩。此時，一名中年男子拍了拍他的肩膀，表示自己是個星探，如果薩梅爾有興趣，可以擔任他的經紀人。他遞給了薩梅爾一張名片，上面只有個音符的符號🎵，不過薩梅爾感受到了這張名片上有傳送術的魔法。男子表示，如果要找他，只要用大拇指在音符上連續點三下就可以了，說完便轉身離去。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/bernards-mansion": {
+      "chapters": [
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "進到伯納德家，冒險者們透過圖伊特的心靈感應，討論著是否要藉機打劫，蘇加魯強硬的要大家今晚就行動，否則他就殺了伯納德。同時，伯納德邀請大家來到二樓的客房，並邀蘇加魯一起到三樓，見見他的母親。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/berners-estate": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt02",
+          "evidence": "在YHWH和帕拉丁的房間內，眾人討論著今後的對策。簡單交流後，決定明日中午先去柏納斯宅邸練習，但有重要的事就留到離開在討論，以免被柏納斯家族竊聽。"
+        },
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "米多莉與薩梅爾一同到樓上敲了敲帕拉丁和YHWH的房門，好一段時間，兩人終於起床。簡單梳洗準備好後，大家一起到一樓大廳，直到布拉克出現，大家便一同前往派頓先去找月先生。月先生陪同著大家一起來到柏納斯宅邸，經過同意，僕人引導大家到了前一天大家參觀的宴會廳練團。"
+        },
+        {
+          "id": "rugatha-c04-chpt05",
+          "evidence": "同時，家亨利用魔法，製作了一些食物，供大家食用。剛脫離險境的安納戴克想趁火打劫，在家亨與雷米的陪伴下，三人一起離開派頓，討論著應該要去哪裡。武器舖？雜貨店？或是民宅？最後，三人決定走上柏納斯山丘，到柏納斯宅邸猛闖一番。"
+        },
+        {
+          "id": "rugatha-c05-chpt01",
+          "evidence": "那人喚了雷米，雷米便睜開了雙眼。映入他眼簾的是柏納斯家的傳人蘭斯。蘭斯將雷米帶到了另一間看起來像武器房的房間，將他手腳撐開綁住，接著便讓雷米好好在這過夜休息。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/berners-hill": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt05",
+          "evidence": "同時，家亨利用魔法，製作了一些食物，供大家食用。剛脫離險境的安納戴克想趁火打劫，在家亨與雷米的陪伴下，三人一起離開派頓，討論著應該要去哪裡。武器舖？雜貨店？或是民宅？最後，三人決定走上柏納斯山丘，到柏納斯宅邸猛闖一番。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/brandons-corner": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "離開劇院後，龍恩在街上尋找外地來的潛在比武大會選手，想打聽點消息。他看見了一名壯碩的半獸人，便前往搭話。半獸人買了杯啤酒給龍恩，兩人閒聊起來。他表示自己的名字叫巨斧葛雷格力，過去幾年都有來參加比武大會，十分喜歡。葛雷格力讓龍恩使力在他的胸膛揍了一拳，認定十分有力。葛雷格力也拿出他掛在身後的斧頭，讓龍恩拿拿看，龍恩卻在接手後因為斧頭太重而蹲坐在地上。葛雷格力說明這把斧頭叫「磁鐵」，已經準備好在比武大會上好好展現了。龍恩向葛雷格力詢問未來可以去哪裡找他，葛雷格力則表示自己今天剛到，還沒找好旅店，但過去幾次來這裡都是住一家布蘭登的角落。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "來到小黑屋外，過去曾冒犯到小黑屋主人的米多莉和YHWH待在屋外，讓其他人去問事。付出了相應的代價（金幣、以及安納戴克的武器），大家得到了一些消息：能用拉茲特獸毛皮製作隱形斗篷的人，在麥克嵩目前僅有闇影之父一人；闇影之父並非大家所認知的那個人；家亨被關在王宮的室內，且最近快要出來了；法朗茲住在布蘭登的角落的107號房。"
+        },
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "The Taipei City Councilor learned from Mr. Moon that Franz returned to Brandon’s Corner where he previously lived. After saying goodbye to Mr. Moon and others, they set off to Brandon’s Corner, located next to Edmond’s Diner. YHWH, Midori and Beau decided to wait for others in Edmond’s Diner and take a quick break."
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/brocks-family-home": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "月先生在見到荒野旋律後，決定帶大家去布拉克的家。大家扛著擔架，走到了城市較貧窮的區域。月先生在其中一間房子敲了敲門，一名中老年的半獸人女子開了門，引了大家進入。布拉克的父母瞭解了布拉克的現況後也感到無能為力，月先生則從腰際掏出了一個大布袋，交給他們，裡面似乎是錢幣。月先生表示希望能讓他們生活過得好一些。布拉克的父親也提前祝荒野旋律今日的表演順利。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "來到了布拉克家，月先生推開了門。眾人一起在客廳的座椅上坐下，和布拉克的父母面對面。米多莉問起了布拉克的狀況，從布拉克母親那兒得到的卻是「你說的布拉克，是……？」。出於驚詫，眾人決定到「Brock」的房間去看看。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/dark-side": {
+      "chapters": [
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "冒險者們逃到了蘇加魯剛才去的酒館，黑暗面。小心潛入後，沒有得到多少有用的消息，也沒有檢測到任何魔法殘留。冒險者們考慮往貧民窟移動。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/dr-davids-clinic": {
+      "chapters": [
+        {
+          "id": "lite-c06-chpt01",
+          "evidence": "Everyone learned about Dr. David from Roline, so they decided to go to Dr. David's clinic to ask about the possibility of lifting the Spider King's curse. Arriving at Dr. David's clinic, the doctor asked everyone to sit at his desk after handling the last two patients. David first checked Inu, who felt the most uncomfortable, and everyone also found that the spider veins on his body spread a little too quickly. Dr. David felt bad after seeing it. He thought for a while and thought of someone he thought would be helpful, so he left everyone in the consulting room and rushed out."
+        },
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "走出神殿外，華生和男子詢問，得知母親大人幫了貧民窟的人很多事，因此受到貧民窟堅定的支持。男子也表示，華生是他看見第一個前來求助，卻沒有被母親大人吸血的人，讓他感到非常驚訝。最後，男子請求華生不要將這件事讓任何貴族知道，以免貴族前來對母親大人不利。華生允諾後，在男子的帶領下走回來原本來的道路。華生向男子表示自己兩天內還會再回來，得知他的名字是拉辛，並表示自己會帶其他東西過來給他作為感謝。拉辛則告訴華生，如果沒有見到他，其他人也都知道母親大人，要給他的東西交給母親大人就好。於是華生便離開了舊城區，準備回大衛醫師的診所了。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/dr-davids-residence": {
+      "chapters": [
+        {
+          "id": "lite-c07-chpt02",
+          "evidence": "因為不知道大衛醫師私下的住處，三人只好先前往原本診所的廢墟。第一次見到這裡的羅特滿臉吃驚。圖伊特找了附近的路人，得知大衛醫師的住處就在附近，於是三人便趨身前往。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/edmonds-diner": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "在崔尼斯劇院附近，龍恩和大衛醫師停在了一間天藍色調的餐廳門口，店名是艾德蒙餐酒館。龍恩回想起曾經在魏斯科見過這間餐廳。大衛醫師表示魏斯科的是本店，這裡的是分店。兩人享用了店內的餐點後，便在服務生的帶領下到了廚房後的一間小小會客室，與店長路易斯簡單談話。路易斯在簡單了解了龍恩的背景後，便帶龍恩逛了一下廚房，接著表示在關店前，再請龍恩來廚房試個手藝，順利的話，明日就可以上工。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "離開報名會場後，大家先到城門口買了沙威瑪當點心，接著聽從比武大會報名攤位人員的推薦，來到艾德蒙餐酒館用餐。在用餐過程中，店長路易斯前來打招呼，和龍恩表示未來歡迎他回來這裡工作。不久後，一名穿著廚師裝的男子走了出來，詢問龍恩用餐是否滿意。接著他自我介紹自己是艾德蒙，這家店的大廚。他邀請龍恩等等煎個牛排給他吃看看。看見龍恩的眾多夥伴，他便轉念，讓龍恩給每位夥伴各煎一份牛排做為請客。等待的過程中，艾德蒙自己拉了張椅子，在龍恩身邊坐了下來等待。"
+        },
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "The Taipei City Councilor learned from Mr. Moon that Franz returned to Brandon’s Corner where he previously lived. After saying goodbye to Mr. Moon and others, they set off to Brandon’s Corner, located next to Edmond’s Diner. YHWH, Midori and Beau decided to wait for others in Edmond’s Diner and take a quick break."
+        },
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "大衛醫師和丹尼斯眼看診所毀了，決定離開這個廢墟，但帕拉丁表示要告訴他們一個故事。大衛醫師表示，診所都毀了，至少也得請他和他弟弟吃頓飯吧，說什麼故事？於是帕拉丁便決定帶大衛醫師、丹尼斯，和其他冒險夥伴們一起用餐，地點則是大衛醫師推薦的艾德蒙餐酒館。在各種嘗試與評估後，圖伊特把暈倒的蘇加魯扛了起來，一起帶到餐酒館去了。"
+        },
+        {
+          "id": "lite-c06-chpt04",
+          "evidence": "離開了打鐵鋪，蘿琳決定帶大家去吃點好料的。走回熟悉的艾德蒙餐酒館，蘿琳熟門熟路的帶大家走進包廂內，並點了今日特餐。但當特餐（滿滿的各類肉品和麵包以及啤酒）上了以後，蘿琳卻面露難色，詢問店員今天怎麼沒有海鮮。除了蘿琳外，大家都吃得很開心，蘿琳則似乎很快就喝醉了，離開餐廳時不斷大聲抱怨著難吃，讓場面十分尷尬。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/gates-inn": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt01",
+          "evidence": "雷米帶著夥伴前往一家他所知道的便宜旅社，城門旅店。旅社在城市內較為窮困的區域，治安不好，但房間真的便宜。大家分了兩間雙人房以及一間單人房入住。"
+        },
+        {
+          "id": "rugatha-c04-chpt02",
+          "evidence": "而後，龍恩和雷米起了爭執。雷米各種鬼祟的行徑讓龍恩起了疑心，兩人大打出手，連YHWH和米多莉也加入戰局，最終三人成功擊暈了雷米。商討著該把雷米留在店內，還是帶回城門旅店，最終龍恩被說服了，將雷米五花大綁後壓在桌上。此時已過凌晨三點，而米多莉和YWHW回到城門旅店時也四點鐘了，兩人便呼呼大睡。"
+        },
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "同時，米多莉回到了白磚石。在大廳等待夥伴們的他與櫃檯兩名服務生克拉克與凱斯談天。米多莉打聽了一下關於斯坦芬諾的消息，他似乎是個很得客人心的酒保。另外米多莉也詢問了關於曾經從城門旅店老闆凱文那打聽到，能詢問情報的神秘地址。凱斯表示自己曾經去過，花了點錢，問到了自己想知道的事情，似乎十分滿意。凱斯說他下午兩點左右輪班，可以帶米多莉去，但米多莉因為上次去的經驗不好，似乎想要讓凱斯帶自己的夥伴過去，同時大家也約好了中午要一起練團，時間上也很難搭配。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "YHWH首先到了城門旅店，請求凱文來拯救他心愛的米多莉，但凱文貌似瀟灑地告訴他，自己已經放下米多莉，不在意他了。心灰意冷的YHWH只好轉向月先生，前往派頓去找他。在簡單說明後，月先生帶著YHWH，一起去找人（以及擔架）協助。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "大家決定先去熟悉的城門旅店住宿，然後再討論今晚是否還有其他行動。同時，波也和米多莉表示有話想和他私下說。"
+        },
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "過了午夜，帕拉丁想起了過去曾在貧民窟住過的旅店城門旅店，於是大家便朝著城門旅店的方向前進，而他們身後，一個神秘的身影悄悄跟隨。"
+        },
+        {
+          "id": "lite-c06-chpt03",
+          "evidence": "地面上，帕拉丁看見在自己眼前的是母親大人的寺廟，他知道非趕快離開不可，附近他比較熟悉的地方是城門旅店，於是他便跑回旅店去。旅店老闆凱文看見他，表示剛剛有個自稱叫蘿琳的女生來找他，他就讓那名女子先去他們房間等待了，同時凱文朝著樓上喊著蘿琳的名字。帕拉丁一聽不妙，趕緊逃走。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/goldstone-street": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "再次回到布拉克家，大家進入了布拉克的房間，搭上梯子，逐一爬到了地下。在複雜的地下城，冒險團邊走邊畫地圖。過程中，米多莉和安納戴克一度掉入了陷阱中，但也安全逃離。安納戴克和帕拉丁也在先前發現的古井處爬出，稍微遊歷了附近的街道，並向其中一位行乞的少女，詢問到此處是麥克嵩舊城區的金石街，過去是繁榮的商業區，如今卻都是貧民區，以及無家可歸的流浪漢。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/kerrys": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "薩梅爾、龍恩和法朗茲三人經過打聽後，到了城門邊尋找可以租用或購買馬車的地方。依照打聽到的內容，他們知道要找最破舊的店家：凱瑞車行，最為划算。經過實際探查後，三人決定向凱瑞車行的老闆賴瑞購買適合一家人乘坐的雙頭馬車以及一批馬，斯比迪（另外一批馬可以用雷米騎來的勇哥或是米多莉召喚的坐騎連番使用）。老闆也另外贈送了他們兩匹馬各一週份量的草料，讓馬兒不會餓肚子。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "查完了想要的資訊，大家回頭到城門口，到之前造訪過的凱瑞車行買馬。在老闆的帶領下，大家挑選了兩匹馬：偉大的西澤和麥可（隨後被大家重新取名為偉大的披薩和蜜雪兒）。老闆也附上了兩匹馬各一週的糧草送給大家。搭配著米多莉召喚出的小馬，六名冒險者與三匹馬，就這樣離開了麥克嵩。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/laxthos-assembly-hall-beneath-trinix-theatre": {
+      "chapters": [
+        {
+          "id": "lite-c06-chpt05",
+          "evidence": "Then Watson and Tweeter also gave some gold coins and asked this person some questions. They learned that the largest gathering place of the Laxthos Cult in Macksohn was in the underground passage of the Trinix Theater; the clay figures created by Hobb in their bodies set out from Sebano and were about to arrive at Macksohn, with only a few months left; the eye-opening deal that Tweeter unexpectedly reached with the God of Transactions could not be canceled, but someone destined to save Roline; finally, Roline His body will be kept safe until the destined One rescues him. Before leaving, Tweeter opened the eyes on his forehead and found that as he guessed: the person under the cloak was Roline who had turned into ceramics, but there seemed to be a puppet behind Roline, and all the body parts were disassembled and fell to the ground."
+        },
+        {
+          "id": "lite-c07-chpt01",
+          "evidence": "回到馬可斯宅邸後，冒險者們討論，決定先去一趟崔尼斯劇院廢墟的地底。根據小黑屋得到的訊息，那裡似乎是拉索斯教在麥克嵩的據點。馬可斯決定先待在宅邸等待大家，同時也照看著還沒清醒的伊。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/lemmys-home": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "After leaving the grocery store, Lemmy and Siri returned to Lemmy's home in the slums. They saw Yung parked at the door very weak and seemed to be dehydrated. Lemmy tried to find a nearby water source, but Siri suddenly ran away. The nearby well seemed to be dry and seemed to lead underground; the nearby houses were almost empty and there was no water available. Soon after, Siri came over with a large bucket of water, which he had purchased at a nearby store. After giving Yung a drink of water, the two of them led Yung and walked to the agreed city gate."
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/marcus-jenss-mansion": {
+      "chapters": [
+        {
+          "id": "lite-c06-chpt03",
+          "evidence": "In Marcus Jens's mansion, the adventurers and Marcus asked questions about Pamela, Bernard, and the Spider Cult. Marcus explained that Bernard seemed to be a relatively weak family among the nobles, but he only found out about being killed after hearing the explanations from the adventurers. Watson remembered that when he saw Pamela appearing in front of Bernard's mansion last night, he also saw Marcus appearing nearby and watching, which made him feel that maybe he couldn't fully believe what Marcus said."
+        },
+        {
+          "id": "lite-c06-chpt04",
+          "evidence": "華生決定先帶蘿琳回他家去，但蘿琳已經醉到無法說出自己住在哪裡了。在伊的評斷下，大家決定還是將蘿琳帶回馬可斯宅邸去。"
+        },
+        {
+          "id": "lite-c06-chpt05",
+          "evidence": "半夜的舊城區，異常寧靜的讓人感到害怕，伊提醒大家要提高警覺。在華生的帶領下，大家試圖朝著馬可斯宅邸的方向前進。花了一段時間，終於來到舊城區有人活動的地區了，於是伊便作回嚮導，帶著大家走回馬可斯宅邸的小捷徑。"
+        },
+        {
+          "id": "lite-c07-chpt01",
+          "evidence": "回到馬可斯宅邸後，冒險者們討論，決定先去一趟崔尼斯劇院廢墟的地底。根據小黑屋得到的訊息，那裡似乎是拉索斯教在麥克嵩的據點。馬可斯決定先待在宅邸等待大家，同時也照看著還沒清醒的伊。"
+        },
+        {
+          "id": "lite-c07-chpt02",
+          "evidence": "離開小黑屋後，三人一起走回馬可斯家去。瑪莉安前來應門，發現他們又少了人，表示要是馬可斯知道，他一定會氣瘋的。等馬可斯從樓上下來，大家便先用晚餐。羅特詢問了他的師父伊的狀況，瑪莉安表示伊還在昏迷中，狀況並不好。"
+        },
+        {
+          "id": "lite-c07-chpt03",
+          "evidence": "快速朝著麥克嵩前進，羅特回到麥克嵩時已近傍晚。他在路上看見了與馬可斯描述的線人十分相似的人：一名身穿綠色的妖精，身旁跟著一隻大狼，羅特便與他攀談，得知他的名字叫拉黎爾，他的狼叫蓋瑞。羅特帶著拉黎爾和蓋瑞回到了馬可斯宅邸先行休息，同時等著馬可斯和瑪莉安回來。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/nightfall": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "在布拉克的帶領下，大家來到了距離日出酒館不遠的一家小酒館黃昏酒館。布拉克表示這是他過去曾經演奏過的地方，因此想讓大家認識一下，不過食物和酒不怎麼好吃。大家聽著舞台上魯特琴自彈自唱的男子，喝著酒，不自覺地發現角落坐著個披著黑色斗篷的男子，目光直盯著大家。米多莉和YHWH決定先到酒館正門口堵住，薩梅爾、帕拉丁和布拉克三人則慢慢朝向那人走去，但在距離那人一桌的距離時，布拉克卻突然揮出雙拳，幸好薩梅爾和帕拉丁即時閃過。帕拉丁疾步向前，卻發現斗篷男子竟然如幻象般的消失了，而酒館的後門也被悄悄推開，隨即關上。布拉克則突然一個踉蹌，趴倒昏迷在地。眾人趕緊向酒館的工作人員求助，彈奏魯特琴的男子自願去找醫生過來。布拉克透過心靈感應，告訴帕拉丁不要理他，他們還有更重要的事要做。在醫生來到店內後，確認布拉克身上沒有明顯外傷，但身體冰冷。眾人決議將布拉克搬到醫生的診間。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/old-city-district": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "再次回到布拉克家，大家進入了布拉克的房間，搭上梯子，逐一爬到了地下。在複雜的地下城，冒險團邊走邊畫地圖。過程中，米多莉和安納戴克一度掉入了陷阱中，但也安全逃離。安納戴克和帕拉丁也在先前發現的古井處爬出，稍微遊歷了附近的街道，並向其中一位行乞的少女，詢問到此處是麥克嵩舊城區的金石街，過去是繁榮的商業區，如今卻都是貧民區，以及無家可歸的流浪漢。"
+        },
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "離開雜貨店後，雷米和喜利・歐喜利回到雷米在貧民窟的家，看見停在門口的勇哥十分虛弱，似乎是脫水了。雷米想尋找附近的水源，喜利・歐喜利卻突然跑走了。附近的水井似乎是乾的，而且好像通往了地底下；附近的民宅內幾乎都空了，而且都沒有水可以用。不久後，喜利・歐喜利提了一大桶水走了過來，是他到附近的店購買的。給勇哥喝水之後，兩人便牽著勇哥，往約定好的城門口走去。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "波的老家就在舊城區，三人花了不久時間就到了。看起來破損的家，門一推就開。波走入了他的舊臥室，翻找了一下，拿起一個小女生造型的娃娃，緊緊抱在懷裡，然後便將娃娃放進背包，示意米多莉和喜利・歐喜利可以走了。喜利・歐喜利對這個房子有點興趣，但裡面實在是太破舊了，也看不出任何有用的東西。"
+        },
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "看見四名夥伴啟程前往王宮，華生思索著在與貴族的晚宴前應該要先把握時間去哪裡。與大衛醫師詢問後，他計劃先前往舊城區（貧民窟）一趟，據說那裡有不少瘋子，有可能從那裡問到一些和蜘蛛神教有關的線索。華生準備要出發，但蘇加魯似乎身體不太舒服，因此無法陪同前往。"
+        },
+        {
+          "id": "lite-c06-chpt03",
+          "evidence": "離開舊城區，帕拉丁在附近的街區想買點東西，然而他注意到附近其他人看他的眼神都有點古怪，似乎自己衣著有些破爛，身上還有些味道，在這裡十分格格不入。帕拉丁先找了附近的雜貨店，想進去買點藥品，卻被店員擋在店外。帕拉丁簡單描述了自己想要的藥品後，店員自己走到店內去取了藥品，還是賣給了帕拉丁三罐。帕拉丁先服用了其中一罐後將另一罐塗抹在自己的傷口上，傷痛暫時緩解。同時，帕拉丁注意到藥罐的蓋子底部有個眼睛的符號。"
+        },
+        {
+          "id": "lite-c06-chpt05",
+          "evidence": "大家計畫著從井口直接爬到最上方去，那邊似乎是接到舊城區去。華生飛了上去，利用伊提供的滑輪組固定繩子，讓大家透過繩子可以攀爬上來。虛弱的瑪莉安則從手中射出了蜘蛛絲，將洞口牢牢覆蓋著，大家測試了一下，發現這蜘蛛絲堅固又有彈性，就算掉下來，應該也蠻安全的，於是大家便分批爬著繩子，來到了地面。"
+        },
+        {
+          "id": "lite-c07-chpt02",
+          "evidence": "牆上的印記和之前見過的相同，羅特向前檢視，這印記他從小在貧民窟看過不少次，相同的形式，但多多少少有差異。圖伊特也感受到這應該附著有傳送魔法。印記旁是過去母親大人退回的洞穴。華生決定先前往洞穴內探索，要圖伊特和羅特先在洞外等他。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/palace-library": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "月先生帶著大家回到昨日事發的黃昏酒館用餐，簡單了解事發狀況。薩梅爾掏出在診所門口發現的破布，月先生則提到王宮內有一座圖書館，也許可以去查查資料。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "在房間內的床上，是一隻巨大且皮膚黝黑，長滿毛皮的生物。布拉克早已不再能用人型來形容。月先生輕輕地撫摸了布拉克的毛皮，只聽到他發出了微微的低鳴聲。眾人試著去了解布拉克身上發生了什麼事，卻無法理解，但那隻生物，讓他們想起前一天在圖書館中看見的拉茲特獸。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "半小時後，已回到樓上房間的米多莉和波以及其他人一併來到樓下，凱文已準備好晚餐，讓大家分兩桌坐。大家狼吞虎嚥一番後，決定兵分兩路：米多莉和喜利・歐喜利一起陪波回他老家，薩梅爾、龍恩和YHWH則想去王宮圖書館找資料，英荻格則待在房間休息。"
+        },
+        {
+          "id": "lite-c06-chpt01",
+          "evidence": "一早醒來，帕拉丁發現他的夥伴們都還在熟睡中，其中，圖伊特、華生，以及蘇加魯似乎都睡得不太安穩。不久後，除了華生外，大家都陸續醒來了。大家討論著今天該去哪裡，最終決定先前往皇宮圖書館，尋找關於阿爾芬諾相關的知識，接著再嘗試去見新任國王，確保帕拉丁爵士的正當性。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/pamelas-mansion": {
+      "chapters": [
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "離開了潘蜜拉的宅邸，華生和伯納德一同前往大衛醫師的診所。一路上，華生感覺有個身影一直在附近，卻又無法清楚感受到是誰或是什麼。伯納德也都沒有反應。花了些時間，兩人終於來到了診所，卻只看見被火燒過的廢墟。在和附近居民詢問後，他們猜測夥伴們和大衛醫師應該是到了艾德蒙餐酒館用餐去了。"
+        },
+        {
+          "id": "lite-c06-chpt03",
+          "evidence": "接著，在華生的幫助下，帕拉丁向被起死回生的奧利佛詢問，得到了一些有用的資訊：被關在王宮監獄和蜘蛛神教有關的人，叫瑪莉安・詹斯，以及華生所知的擁王派和反王派鬥爭，和蜘蛛神教沒有直接的關係。聽到瑪莉安・詹斯的名字，華生想起了前一晚在潘蜜拉宅邸認識的神秘貴族馬可斯・詹斯，而伊也意識到，詹斯正是他的雇主，M伯爵的姓氏。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/pattons": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt02",
+          "evidence": "薩梅爾和帕拉丁使用了稍早在崔尼斯劇院遇到的經紀人給的名片，傳送到了一間辦公室。門上了鎖，且室內空無一人，也沒有光線。兩人從窗戶踏入了外頭。深夜，兩人完全不知道自己身在何處。最後，兩人決定在辦公室旁的小巷過夜，輪流守夜。薩梅爾在守夜時看見了這間辦公室的名字叫「派頓」。"
+        },
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "米多莉與薩梅爾一同到樓上敲了敲帕拉丁和YHWH的房門，好一段時間，兩人終於起床。簡單梳洗準備好後，大家一起到一樓大廳，直到布拉克出現，大家便一同前往派頓先去找月先生。月先生陪同著大家一起來到柏納斯宅邸，經過同意，僕人引導大家到了前一天大家參觀的宴會廳練團。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "在薩梅爾和龍恩回到白磚石後，大夥在一樓大廳集合，準備前往派頓去找月先生，一起前去探望布拉克。"
+        },
+        {
+          "id": "rugatha-c04-chpt05",
+          "evidence": "派頓內的四人，在經過考慮後，決定由YHWH留下來陪伴昏迷的米多莉和背部持續灼傷的安納戴克，由帕拉丁自行前往比武大會。"
+        },
+        {
+          "id": "rugatha-c05-chpt01",
+          "evidence": "台北市議員的想法分歧，由於波口氣不小，對幾位冒險者也不太禮貌，甚至得罪了帕拉丁爵士，包含帕拉丁爵士、YHWH等人對於波的加入十分不認同，唯有同為孤兒的米多莉和剛加入且心地善良的喜利希望能納波為同伴。討論過後，米多莉和喜利決定騎乘米多莉召喚的獒犬，載著波回到派頓，看看月先生和紫羅蘭等人是否能協助照顧波。"
+        },
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "麥克嵩城門的衛兵無精打采，大家輕輕鬆鬆就走入了城內。已經熟悉麥克嵩主要幹道的台北市議員很快就回到派頓事務所。敲了敲門，月先生邀請大家入內。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "離開波的老家後，三人決定前往月先生的辦公室。米多莉記得當時月先生曾告訴他們，下次他們回麥克嵩時，他很有可能已經不在人世間了，但他還是想去碰個運氣。派頓事務所的門沒有鎖，三人輕鬆地便推開了。波在月先生的辦公桌上看見一張字跡已斑駁的信，遞給了米多莉。這似乎是封道別信，月先生最後的署名是在15048年。米多莉好好將這封信收在自己的背包內。米多莉請喜利・歐喜利協助將月先生上鎖的抽屜打開，但在轉動的過程中，鎖被破壞掉了打不開，幸好鑰匙沒有損壞。波見狀直接用拳頭用力一拳，木製的抽屜便破開了。米多莉拉開抽屜，看見裡面放了一疊二十來張的月先生名片，和當時薩梅爾拿到的名片看起來一樣。在好奇心之下，喜利・歐喜利嘗試點了名片三下，這次他並沒有如薩梅爾當時一樣被傳送到哪裡去，但名片卻開始不斷震動。大家不清楚到底發生什麼事了，但在米多莉的測試下，他在名片上點了三下後，瞬間傳送到了喜利・歐喜利的身邊，現場三人都感到驚喜。離開前，米多莉也想起自己似乎有一套禮服放在這裡的更衣間內。打開門，他看見那套禮服還好好的被保存，他也就將禮服收好放在背包內，接著三人便離去了。"
+        },
+        {
+          "id": "lite-c06-chpt01",
+          "evidence": "月先生的辦公室派頓事務所看起來比印象中還要破舊不少，甚至連窗戶都破了。冒險者們走入了辦公室內，深夜的室內，裡面一個人都沒有，只有桌上留有一封信。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/royal-garden": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt02",
+          "evidence": "中午睡醒後，薩梅爾和帕拉丁在城門旅店房間外會面，並來到YHWH和米多莉分別的房間。大家討論著昨晚與今早分別的狀況，一致認為現在他們所見到的雷米肯定有問題，於是請米多莉試著和城門旅店的櫃台凱文遊說，希望能請他幫忙打開雷米住的房間，進去搜索一下。經過米多莉的努力，似乎有很大的誤會的凱文拿了鑰匙，打開了雷米的房間，卻一無所獲，空蕩蕩的。大家離開雷米的房間回到大廳後，決定先離開城門旅店，去一趟日出酒館。而在離開城門旅店前，凱文也告訴他們聽說今天日落前在王宮花園有一場比武大會的說明會，可以去參加看看。"
+        },
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "來到王宮花園的入口，兩人思索著要不要進去。花園內盡是打扮華貴的貴族，穿著簡單的龍恩只好跟在正裝的米多莉身後，悄悄進入花園。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "兩人決定利用早上的時間，到王宮花園逛逛。探頭探腦的兩人擔心被衛兵發現，卻適得其反，不過走到龍恩身邊的衛兵拿下頭盔—是葛蘭。龍恩藉機向葛蘭打聽了餐廳老闆 Joseph 失蹤事件的後續，卻沒得到多少有用的消息。他也分享了自己打聽到 Joseph 似乎已經不在麥克嵩的事。在葛蘭離開前，龍恩和薩梅爾剛好提到了沙度的名字。葛蘭頓了一下，表示他對這名字有印象。近期麥克嵩衛兵隊有針對隊伍內的可能滲透狀況進行清查，其中沙度就列在名單之內。葛蘭在三向龍恩保障自己和刀疤臉是可信的，不用擔心。"
+        },
+        {
+          "id": "rugatha-c04-chpt05",
+          "evidence": "一大清早，在白磚石醒來的龍恩和薩梅爾發現夥伴們沒有回到房內，雖然充滿疑惑，但也不知道該往哪去，只好先行前往王宮花園的入口，看看能否在比武大會相遇了。"
+        },
+        {
+          "id": "legends-os04",
+          "evidence": "跟隨著大多數僕人的方向，兩人走到了一處柵門。衛兵似乎看見了紅龍身上有種不對勁的感覺，攔住了他，巴巴則順利的穿越了柵門外的王宮花園，邁向了自由。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "三人決定去王宮花園碰碰運氣，卻發現王宮花園此刻入口已關了起來，有兩名衛兵站在門口。米多莉和衛兵詢問了是否最近有看到蘿琳？衛兵表示他通常早上都會在花園散步，可以一早來看看，但此刻花園入口已經關了，不讓他們進去。三人決定先回城門旅店休息。"
+        },
+        {
+          "id": "lite-c06-chpt01",
+          "evidence": "在華生醒來後，眾人便決定前往圖書館去。圖伊特向大家表示自己知道該怎麼去，但伊努跑得很快，似乎也胸有成竹。在伊努的帶領下，大家來到了麥克嵩王宮花園。"
+        },
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "穿過漆黑的通道，三人重新回到了王宮花園，外頭天色已黑。帕拉丁想起華生似乎和貴族約在這裡要去參加晚宴，因此提議找找看華生，卻發現沒有找到。伊努決定回診所去，於是大家在伊努的帶領下，朝著診所走。"
+        },
+        {
+          "id": "lite-c06-chpt04",
+          "evidence": "伊帶著圖伊特、華生和帕拉丁等人，出發前往王宮花園入口。在伊以M伯爵的名義說明下，衛兵變讓大家進到花園內了。伊以過去自己的印象，將花園底部的石門推開，帶著大家走入漆黑的通道內。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/royal-palace": {
+      "chapters": [
+        {
+          "id": "legends-os04",
+          "evidence": "跟隨著大多數僕人的方向，兩人走到了一處柵門。衛兵似乎看見了紅龍身上有種不對勁的感覺，攔住了他，巴巴則順利的穿越了柵門外的王宮花園，邁向了自由。"
+        },
+        {
+          "id": "lite-c06-chpt01",
+          "evidence": "在華生醒來後，眾人便決定前往圖書館去。圖伊特向大家表示自己知道該怎麼去，但伊努跑得很快，似乎也胸有成竹。在伊努的帶領下，大家來到了麥克嵩王宮花園。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/royal-prison": {
+      "chapters": [
+        {
+          "id": "lite-c06-chpt01",
+          "evidence": "來到伊什頓大人的研究室，他讓伊努躺在桌上，接著他檢查傷口，翻閱書籍，然後從手上透過能量，從傷口中吸出了大量的蜘蛛，但這些蜘蛛似乎掉到地上後就散落不見了，就像幻影一樣。伊什頓大人也似乎極度疲憊，他表示這樣做好像也沒能減輕伊努的症狀，感到無助。不過，他提到過去曾抓到一名似乎與蜘蛛王勢力相關的犯人，關押在王宮監獄內，他可以將這人帶來拷問，於是在大家的同意下，伊什頓大人便暫時離開辦公室了。"
+        },
+        {
+          "id": "lite-c06-chpt03",
+          "evidence": "接著，在華生的幫助下，帕拉丁向被起死回生的奧利佛詢問，得到了一些有用的資訊：被關在王宮監獄和蜘蛛神教有關的人，叫瑪莉安・詹斯，以及華生所知的擁王派和反王派鬥爭，和蜘蛛神教沒有直接的關係。聽到瑪莉安・詹斯的名字，華生想起了前一晚在潘蜜拉宅邸認識的神秘貴族馬可斯・詹斯，而伊也意識到，詹斯正是他的雇主，M伯爵的姓氏。"
+        },
+        {
+          "id": "lite-c06-chpt04",
+          "evidence": "離開宅邸前，圖伊特再次去拜訪馬可斯，馬可斯請圖伊特幫忙把一顆魔法球交給蘿琳，並表示按下去就可以知道怎麼到王宮監獄去了。"
+        },
+        {
+          "id": "legends-os04",
+          "evidence": "最終，紅龍也走過了麥克嵩的王宮花園，遠離了他被關了好久好久的監獄。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/secondhand-bookstore-unnamed": {
+      "chapters": [
+        {
+          "id": "lite-c07-chpt01",
+          "evidence": "冒險者們發現羅特不見了，心裡倒也輕鬆。他們準備前往崔尼斯劇院的遺址，在路邊發現了一家二手書店。圖伊特決定將之前在伊的秘密基地偷來的宗教書拿去賣，但店小二開的價錢讓他不滿意。帕拉丁試圖透過使用紫羅蘭的勳章發揮點影響力，沒想到店小二抱著圖伊特遞給他的書，一手搶來了帕拉丁的勳章，便往外跑去。圖伊特趕緊追上，並將店小二擊暈。書和勳章從店小二手中飛出，路邊圍觀的群眾搶成一片。圖伊特情急之下，攻擊群眾。除了三名失去意識且不穩定的群眾外，也有好幾名民眾昏去。圖伊特、華生和帕拉丁趕緊前去穩定他們的傷勢。不久後，這些昏迷的民眾紛紛坐起身體，大家對眼前看見的異狀感到疑惑，彷彿這只是一場魔法秀一樣。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/sunrise": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt01",
+          "evidence": "入城的龍恩在衛兵的帶領下，來到了城內的一間酒館，日出酒館。他分享了自己在沃瓦倫要到的食譜，煎了牛排，意外的熱賣。"
+        },
+        {
+          "id": "rugatha-c04-chpt02",
+          "evidence": "夜裡，冒險者們決定在日出酒館關門後回到店內和暫居於此的龍恩討論後續規劃。"
+        },
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "在與爵士夫婦道別後，龍恩便前往日出酒館去了。龍恩進到日出酒館時，看見門邊的葛蘭，告知他自己決定離開日出酒館，去別的店工作，但是有需要可以到他在白磚石的房間找他談事。說到一半，龍恩發現忙不來的法蘭奇從廚房走了出來。龍恩落下了狠話，表明自己要離開了，便快速離開。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "離開劇院後，冒險者們猶豫著要去哪裡吃晚餐，最後他們決定去日出酒館，順便看看法蘭基將餐館經營得如何。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "At night, everyone takes turns to keep vigil to avoid any emergencies. Near sunrise, there seemed to be some movement downstairs. Siri quietly walked to the stairs to watch and found that Kevin was busy coming in and out, so he went back to the room with confidence."
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/the-mothers-temple": {
+      "chapters": [
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "冒險者們同步了兩邊活動的狀況，帕拉丁也將圖伊特暫時收在背包內的貓頭鷹奧利佛的屍體取出。大家也將圖伊特先擺在牆角，讓只能以視覺感知的他至少可以看到大家。大家討論著隔日要透過華生的能力，從奧利佛口中搜集點情報，另外也要去貧民窟內母親大人的寺廟，最後再去拜訪潘蜜拉。"
+        },
+        {
+          "id": "lite-c06-chpt03",
+          "evidence": "在伊的帶領下，冒險者們來到了母親大人的寺廟。伊再三告誡冒險者們，要對母親大人恭敬，也特別提醒帕拉丁不要展現自己貴族的身份。伊輕聲推開寺廟的門，帶著冒險者們跪在母親大人的床前。華生和母親大人先感謝了前一天些除詛咒的事，便說明了來意，但他卻不小心說溜了嘴，將帕拉丁爵士的身份洩漏了出去。"
+        },
+        {
+          "id": "lite-c07-chpt02",
+          "evidence": "羅特提議應該要去見一下母親大人，於是他便帶著大家來到母親大人的神殿。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/thieves-guild": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "經過討論後，大家決定在飯後簡單分頭行動：雷米和喜利・歐喜利要去麥克嵩的盜賊公會打探消息，其他人則想去看看有沒有租賃或購買馬車的可能性。大家約好要在日落前在城門前集合。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/tournament-arena": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt05",
+          "evidence": "來到了比武大會現場，經過麥丁頓現任國王巴納沃二世的開講後，比賽便正式開始。本次參與比賽的人數大約有三十人上下，以單淘汰賽的形式，進行數輪的單淘汰賽，最終會將產出唯一的一名冠軍。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/trinix-theatre": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt01",
+          "evidence": "雷米帶著大家來到了麥克嵩的藝文特區。其中一處吸引了他們的注意力，是一個潔白寬敞的雙開大門，上方刻了「崔尼斯劇院」的字樣，不過門外卻沒有任何演出的公告。雷米推開了門，帶著大家來到了劇院的大廳。眾人買了票，進場看了每日下午2點到4點都會演出的「崔尼斯簡史」。眾人對於崔尼斯王朝的認識有多有少，因此對劇的理解多寡不太一樣。演員謝幕後，米多莉向售票亭的服務人員要了節目演出表，發現演出劇中主角，霍里森・圖卡，也就是崔尼斯王朝首任皇帝霍里森一世的演員叫摩西・寇里森，而贊助本場演出的是個叫做「柏納斯一族」的團體？組織？家族？米多莉並不清楚。一直沒有進入狀況的薩梅爾抱怨著這齣劇，表示自己彈魯特琴還比較精彩。此時，一名中年男子拍了拍他的肩膀，表示自己是個星探，如果薩梅爾有興趣，可以擔任他的經紀人。他遞給了薩梅爾一張名片，上面只有個音符的符號🎵，不過薩梅爾感受到了這張名片上有傳送術的魔法。男子表示，如果要找他，只要用大拇指在音符上連續點三下就可以了，說完便轉身離去。"
+        },
+        {
+          "id": "rugatha-c04-chpt02",
+          "evidence": "薩梅爾和帕拉丁使用了稍早在崔尼斯劇院遇到的經紀人給的名片，傳送到了一間辦公室。門上了鎖，且室內空無一人，也沒有光線。兩人從窗戶踏入了外頭。深夜，兩人完全不知道自己身在何處。最後，兩人決定在辦公室旁的小巷過夜，輪流守夜。薩梅爾在守夜時看見了這間辦公室的名字叫「派頓」。"
+        },
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "在崔尼斯劇院附近，龍恩和大衛醫師停在了一間天藍色調的餐廳門口，店名是艾德蒙餐酒館。龍恩回想起曾經在魏斯科見過這間餐廳。大衛醫師表示魏斯科的是本店，這裡的是分店。兩人享用了店內的餐點後，便在服務生的帶領下到了廚房後的一間小小會客室，與店長路易斯簡單談話。路易斯在簡單了解了龍恩的背景後，便帶龍恩逛了一下廚房，接著表示在關店前，再請龍恩來廚房試個手藝，順利的話，明日就可以上工。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "門外傳來歡欣的音樂聲，但裡面的空間有些陰暗。隨著安納戴克帶頭走了出去，眾人發現自己身處於劇院中，而這劇院正是崔尼斯劇院。舞台上演出的似乎是個雜技團，演員包含著各種不同生物。除了龍恩外，眾人盡可能低調地找了離門口較近的座位坐了下來，思考是否該逃離劇院。而龍恩則警戒地站在沒有關上的門邊。然而，米多莉沒有熄滅的火把引起了其他觀賞者的不滿，請了劇院的工作人員前來勸導。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "三人決定去之前發現拉索斯教集會場地的地下道探索，於是他們決定從當初燒毀的崔尼斯劇院進入。崔尼斯劇院現在已經停止營業，改造成了劇院遺址，看起來早上有在收費讓人進入參觀。三人趁著沒人管理時鑽了進去，從當時逃出來，通往地下的入口走下去。YHWH決定在外面等待，薩梅爾和龍恩兩人自己到了地下道。小心避開陷阱，兩人聽見了地下道似乎傳來了動物的低鳴聲，那聲音讓他們回想起了拉茲特獸。"
+        },
+        {
+          "id": "lite-c06-chpt05",
+          "evidence": "接著華生、圖伊特也給了些金幣，和這人問了些問題。他們得知，拉索斯教在麥克嵩最大的聚集地在崔尼斯劇院的地下通道；以他們身形被霍布製造出來的泥人從瑟巴諾出發，快要到麥克嵩了，只剩幾個月的路程；圖伊特與交易之神意外達成的開眼交易無法取消，但會有命定之人拯救蘿琳；最後，蘿琳的軀體在命定之人拯救他之前，都會安全地被保護好。在離開前，圖伊特張開了他額頭的眼睛，發現如他所猜測：斗篷底下的那人便是化為陶瓷的蘿琳，但蘿琳背後似乎有個木偶，身體的零件都被拆開掉落在地上了。"
+        },
+        {
+          "id": "lite-c07-chpt01",
+          "evidence": "回到馬可斯宅邸後，冒險者們討論，決定先去一趟崔尼斯劇院廢墟的地底。根據小黑屋得到的訊息，那裡似乎是拉索斯教在麥克嵩的據點。馬可斯決定先待在宅邸等待大家，同時也照看著還沒清醒的伊。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/white-brick": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt02",
+          "evidence": "落魄的龍恩帶著流浪漢回到了日出酒館用餐，還點了些酒，詢問了關於光之神教與崔尼斯劇院的事。流浪漢表示自己沒去看過崔尼斯劇院的任何劇，央求著龍恩請他看，最後被龍恩打發走了。中間疲憊的薩梅爾和帕拉丁也在日出酒館用完了餐，但大家都太疲累了，薩梅爾和帕拉丁與龍恩都沒看見彼此，擦肩而過。而後，龍恩找了附近一家稱為「白磚石」的旅店住了下來。"
+        },
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "在與爵士夫婦道別後，龍恩便前往日出酒館去了。龍恩進到日出酒館時，看見門邊的葛蘭，告知他自己決定離開日出酒館，去別的店工作，但是有需要可以到他在白磚石的房間找他談事。說到一半，龍恩發現忙不來的法蘭奇從廚房走了出來。龍恩落下了狠話，表明自己要離開了，便快速離開。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "一夜過後，龍恩和薩梅爾兩人一早便睡醒，在白磚石的一樓相遇。兩人去了一趟雜貨店，買了酷爆的飼料以及麵包。"
+        },
+        {
+          "id": "rugatha-c04-chpt05",
+          "evidence": "一大清早，在白磚石醒來的龍恩和薩梅爾發現夥伴們沒有回到房內，雖然充滿疑惑，但也不知道該往哪去，只好先行前往王宮花園的入口，看看能否在比武大會相遇了。"
+        }
+      ]
+    },
+    "material-realm/mattington/macksohn/willems-instrument-shop": {
+      "chapters": [
+        {
+          "id": "rugatha-c04-chpt02",
+          "evidence": "眾人選了風格接近的正裝後，月先生帶他們到了一家較為破舊的樂器行。月先生表示老闆威廉是他的舊識，店內樂器的品質都很不錯。除了布拉克和薩梅爾外，大家都選了自己的樂器。YHWH買了笛子，帕拉丁買了鈴鼓，而米多莉則買了把提琴。在等待劇院時，布拉克暫時離開了，直到開演前不到一分鐘才匆忙趕回，他表示自己回去關心他的父母，但眾人對他的行徑似乎多了一點小小的懷疑。"
+        },
+        {
+          "id": "lite-c07-chpt01",
+          "evidence": "來到文創區，大家找了間樂器行，決定將布拉克的鼓賣了。老闆認識布拉克，但他並不知道布拉克去了哪裡，只能請大家下次見到布拉克時，幫他打個招呼。布拉克的鼓組似乎可以賣些價錢，在圖伊特的感應下，他找到了幾個具有魔法的樂器。最終，圖伊特買了一個有魔法的陶笛，羅特則買了一隻笛子，看起來十分特別，有種妖精的味道。除了兩個樂器外，布拉克的鼓組還能再換一點錢。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "After a short rest, they went to the second floor to see Riley. The second floor was a magnificent chapel, though there were no worshippers present at the moment. The group walked deeper inside, pushed open the door at the back, and found Riley's study beyond it. Riley first explained that her assistant was currently away on business; otherwise, he should have been the one guiding them into Mudtown."
+        },
+        {
+          "id": "wilds-c03-chpt02",
+          "evidence": "隨著康妮消失在視野外，大奧斯和他的夥伴像是鬆了一口氣般，卸下了嚴肅的神情，嬉鬧著、笑著，迎接春天騎士團們一起走入領地。他招呼著大家，關心著大家是否肚子餓了還沒吃晚餐？接著帶著大家朝著領地中心走去。大家詫異著，這群「山賊」竟然毫無惡意，還如此友善，與土城內大家描述的「收取過路費的惡霸」完全不一樣。大奧斯也笑著說，這就是為何不讓康妮進來的原因—不能讓議會知道真相。冒險者們似懂非懂，但對於「討伐山賊」這件事，也更沒有把握了。"
+        },
+        {
+          "id": "wilds-c03-chpt03",
+          "evidence": "The rapier-wielding man demanded that the male earth gnome leave his final words. The gnome said, \"If you return to Mudtown, please tell my daughter, Maribel, that the world is far broader than she thinks. She must not let herself be trapped by Mudtown. Mudtown cannot understand her, but elsewhere in this world, she will shine.\" Just as the female earth gnome was about to speak, the goblin swung a greataxe into her neck, and the rapier man slashed the male gnome's throat."
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/al-lons-family-home": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "接著冒險者們決定前往阿龍家拜訪。來到土城後，已經聽過不少人向阿龍提起，應該要去見見他父親的。但阿龍離開土城時，便是因為誤傷了自己的父親，因此內心難以面對。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/apothecary-unnamed": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt02",
+          "evidence": "雜貨店內沒有阿龍想買的藥水，因此大家就到了隔壁的藥品店。然而因為藥水的要價不菲，大家決定作罷。毛毛的神色卻有些不自然，似乎是趁著老闆不注意時，幹了什麼勾當。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/applewood-family-home": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "接著，萊里簡單說明，要請冒險者們協助他搜集一項材料：「在被喬里森祝福過的河水中漂流的蘋果樹漂流木剪下的枝幹，長度需要有成年男子的前臂長，且不能有任何分枝」。在萊里的解釋下，冒險者才知道，搜集這個材料的目的，是為了製作一個能讓萊里回到T.I.D.E.S.的神秘器具（只流傳在像里奇蒙家族這種組織創始家族的歷史中）。萊里也承諾會給冒險者們每人 50 金幣作為獎賞。阿龍知道在土城，蘋果樹是由蘋果木家族管理的，絕對不能隨便亂砍，否則會有很嚴重的懲罰。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/applewood-farmland": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "冒險者們趁著下午的時間，往山邊去，來到農地區。他們盤算著該如何才能成功採集到萊里要求的蘋果木，卻被負責栽種與守衛農田的農人們發現。冒險者們也得知海雅特山上似乎有一群山賊。在密謀竄到農田內的計畫失敗後，冒險者們只能先慢慢回到市區，做別的計劃。"
+        },
+        {
+          "id": "wilds-c03-chpt03",
+          "evidence": "「你說你要蘋果木是吧？好啊，走啊。」艾迪逕自走向雨中，朝著他們家的蘋果林走去，阿龍等人則跟上。「你要蘋果木？好啊，我就砍給你啊！」艾迪抄起放在農地的斧頭，大力地、隨意地向隨意一株蘋果木揮砍，眼神夾雜著癲狂與憤怒。阿龍也像失去理智一般，拿起武器，也大力地砍著。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/council-of-sols": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "萊里也簡單介紹了一下關於土城的重要景點，如：城鎮外的海雅特山、流經城鎮中央的維爾河、城鎮的市中心軸恩廣場，以及太陽議會。萊里也說明，如果要去議會談重要的事，建議在他的助理回來後，正是登門拜訪。"
+        },
+        {
+          "id": "wilds-c03-chpt03",
+          "evidence": "康妮先帶大家回到了太陽議會。他敲了敲門，艾迪開了門後，眼睛直盯著阿龍，問他任務是否完成，緊接着也問他是不是已經將他女兒安全的送回家了？阿龍一時語塞，表示現在沒有山賊的問題了，但也表示佩妮沒有跟著他們回來。他向艾迪發誓，他會將佩妮找回來。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/general-store-unnamed": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt02",
+          "evidence": "距離康妮與冒險者們說好的午夜還有很長的時間，冒險者們思索著該如何妥善利用。在阿龍的帶領下，大家先到了城內的雜貨店，進行補給。阿龍買了一些釘子，以預備上山後和山賊們的戰鬥。其他冒險者們也進行了簡單的補給。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/heloden-falls": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "赫洛登瀑布內的峭壁上，迎面而來的是一座看起來有點現代化的神殿。萊里向大家介紹，這是他的研究機構，同時也是風暴與智慧之神喬里森的神殿，名為「渡鴉中樞」，或是當地人習慣的稱法：「瀑布後面」。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/maribels-home": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "Nearby, the adventurers spotted Maribel alone and struck up a conversation. Maribel was very grateful for the votes they had cast for her and invited them all to her home, saying she would cook lunch for everyone."
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/mount-hyatt": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "萊里也簡單介紹了一下關於土城的重要景點，如：城鎮外的海雅特山、流經城鎮中央的維爾河、城鎮的市中心軸恩廣場，以及太陽議會。萊里也說明，如果要去議會談重要的事，建議在他的助理回來後，正是登門拜訪。"
+        },
+        {
+          "id": "wilds-c03-chpt02",
+          "evidence": "午夜，春天精靈與他的春天騎士團們出發，前往海雅特山，準備去見名為「海雅特山交響樂」的山賊。"
+        },
+        {
+          "id": "wilds-c03-chpt03",
+          "evidence": "A rapier thrust toward the back of a Mount Hyatt Symphony bandit who had just run back from the distance, but Al-lon knocked the blade aside in time and saved the bandit's life."
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/mount-hyatt-symphony-camp": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt02",
+          "evidence": "As they walked, Big Os quickly introduced the place to them. They had their own farms, ranches, restaurant, and tavern. It was basically self-sufficient, less like a bandit camp and more like a small settlement. When they reached the central square, several bandits were building a bonfire out of firewood. Big Os gestured for everyone to sit down and rest, and he and Penny found a corner to sit together in, much to Al-lon's jealousy."
+        },
+        {
+          "id": "wilds-c03-chpt03",
+          "evidence": "細劍戳向從遠方跑回的海雅特交響樂山賊背後，阿龍即時將細劍撥開，拯救了山賊的性命。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/podricks-cafe": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "時間差不多，大家在陪阿龍拿完他的衣服（一套帥氣的西裝，以及一個紅色的小領結，穿在阿龍身上十分帥氣）後，便一併前往當地人習慣簡稱「咖啡廳」的波德里克咖啡廳。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/raven-nexus": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "赫洛登瀑布內的峭壁上，迎面而來的是一座看起來有點現代化的神殿。萊里向大家介紹，這是他的研究機構，同時也是風暴與智慧之神喬里森的神殿，名為「渡鴉中樞」，或是當地人習慣的稱法：「瀑布後面」。"
+        },
+        {
+          "id": "wilds-c03-chpt02",
+          "evidence": "離開藥品店後，冒險者們決定分頭進行。雷亞看見了阿龍買的釘子，腦中冒出了些點子，因此動身前往附近的樹林，找尋他眼中合適的樹枝；鑰和毛毛先返回渡鴉中樞見見阿龍的父母，順便簡單休息；羅羅去了趟武器行，買了一把輕弩和一組箭。不久後，雷亞將樹枝帶回，和阿龍要了釘子後，便簡單的手工做了一把釘頭錘，雖然沒有像武器行那麼穩固，不過還算堪用。"
+        },
+        {
+          "id": "wilds-c03-chpt03",
+          "evidence": "同一時間，抱了滿滿的蘋果木，羅羅決定先回渡鴉中樞。萊里看見羅羅依約帶來他所要求的蘋果木，十分開心，也先將賞金給了羅羅，但也表示其他人的錢，必須要等他們回來後再給他們。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/tutty-learning-center": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "經過「土堤學習中心」，阿龍也告訴其他夥伴，這是他以前上學的地方。然而冒險者們也很疑惑，怎麼上了學，阿龍還是個文盲？"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/vay-el-river": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "萊里也簡單介紹了一下關於土城的重要景點，如：城鎮外的海雅特山、流經城鎮中央的維爾河、城鎮的市中心軸恩廣場，以及太陽議會。萊里也說明，如果要去議會談重要的事，建議在他的助理回來後，正是登門拜訪。"
+        },
+        {
+          "id": "wilds-c03-chpt02",
+          "evidence": "冒險者們睡前簡單討論了一下明天的計劃：「剿匪」這條路似乎是行不通了，甚至可以說，上山這趟根本就是白費了。要拿到蘋果木，最簡單的做法，似乎還是下山後偷偷潛入 Applewood 家的領地，砍斷蘋果木，讓它從維爾河順流而下，達成萊里要的條件。"
+        },
+        {
+          "id": "wilds-c03-chpt03",
+          "evidence": "蘋果木隨著艾迪與阿龍的揮砍，丟入了維爾河，慢慢地朝下游流去。羅羅見狀，趕緊朝下游奔去。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/weapons-shop-unnamed": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt02",
+          "evidence": "離開藥品店後，冒險者們決定分頭進行。雷亞看見了阿龍買的釘子，腦中冒出了些點子，因此動身前往附近的樹林，找尋他眼中合適的樹枝；鑰和毛毛先返回渡鴉中樞見見阿龍的父母，順便簡單休息；羅羅去了趟武器行，買了一把輕弩和一組箭。不久後，雷亞將樹枝帶回，和阿龍要了釘子後，便簡單的手工做了一把釘頭錘，雖然沒有像武器行那麼穩固，不過還算堪用。"
+        }
+      ]
+    },
+    "material-realm/mattington/mudtown/zoan-plaza": {
+      "chapters": [
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "萊里也簡單介紹了一下關於土城的重要景點，如：城鎮外的海雅特山、流經城鎮中央的維爾河、城鎮的市中心軸恩廣場，以及太陽議會。萊里也說明，如果要去議會談重要的事，建議在他的助理回來後，正是登門拜訪。"
+        }
+      ]
+    },
+    "material-realm/mattington/natasha-harbor": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt04",
+          "evidence": "After dusk, the ship slowly sailed into Natasha Harbor in a drizzle. The port was deserted and the whole town looked dilapidated and lifeless."
+        }
+      ]
+    },
+    "material-realm/mattington/natasha-harbor/new-keinra-church": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt04",
+          "evidence": "眾人面面相覷，但仍決定先前往津菈教在當地的據點——新津菈教會。該處由希娜修女負責。"
+        }
+      ]
+    },
+    "material-realm/mattington/natasha-harbor/old-keinra-church": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt04",
+          "evidence": "回到宅邸後，YHWH 向彼得詢問那棟廢棄建築的來歷。彼得表示，那裡原本是一座舊津菈教堂，也曾是當地居民的信仰中心。過去津菈教曾爆發一場慘烈的內戰，內戰結束後，舊教堂便遭到廢棄，直到今日仍未重新啟用。後來，從方努爾市來到娜塔夏港的津菈教徒，則在靠近村莊入口處建立了新的津菈教堂。"
+        }
+      ]
+    },
+    "material-realm/mattington/natasha-harbor/thompson-mansion": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt04",
+          "evidence": "在彼得的帶領下，冒險者們來到了坐落於山丘上的湯普森宅邸。彼得指揮眾人協助晚宴的準備工作：龍恩與瑪莉留在廚房準備餐點；喜利・歐喜利與薩梅爾則一邊布置大廳，一邊暗中四處調查。然而，把守樓梯的衛兵並不允許兩人前往二樓，而他們在一樓也沒有發現任何明顯可疑之處。"
+        }
+      ]
+    },
+    "material-realm/mattington/new-morris": {
+      "chapters": []
+    },
+    "material-realm/mattington/rathanad": {
+      "chapters": [
+        {
+          "id": "wilds-c04-chpt01",
+          "evidence": "After about a month of travel from Mudtown, the adventurers, now joined by Maribel, finally arrived in Rathanad in the carriage driven by Mr. Green."
+        },
+        {
+          "id": "wilds-c04-chpt02",
+          "evidence": "聽見親生父親費洛登的提議，阿龍並不感到驚恐。不過就是見條龍，有什麼大不了的，但除了他之外，所有人都沒有發聲。阿龍看了看親戚們的表情，各有不同。"
+        },
+        {
+          "id": "wilds-c04-chpt03",
+          "evidence": "The adventurers cast Zone of Truth again and pressed Nylessa for her motive. Nylessa said that the painting of the twin dragons came from a dream she once had. She also said that although Vaerodan and Selyra were her uncle and aunt, their branch of the family had no younger heirs, while her own branch still had three young descendants. In her eyes, it was obvious which line was more suitable to rule. Even if her own place in the line of succession was far down the list, that did not change the fact. Her goal had not been to make herself the heir to Rathanad, but simply because she believed this was the right thing to do."
+        },
+        {
+          "id": "wilds-c04-chpt04",
+          "evidence": "At the top of the hill in Rathanad, Theramond held Nylessa by the shoulder before the gaze of the entire town. Serathe stood to one side with a greataxe in both hands, her eyes dim. Vaelric looked on in despair at his sister, who was about to die. Enelmor watched from a distance within the crowd. Al-lon looked at his new family and hesitated over what to do next."
+        }
+      ]
+    },
+    "material-realm/mattington/rathanad/arylith-estate": {
+      "chapters": [
+        {
+          "id": "wilds-c04-chpt01",
+          "evidence": "阿龍拚命詢問老尼克索與哈洛關於自己的事。他得知，這裡的領導者，被稱為「龍冠」的存在，是艾瑞利斯家族，而他是艾瑞利斯現任龍冠唯一的子嗣，卻也的確是被他父母拋棄的孩子。他甚至有個自己的名字，賽拉尼爾・艾瑞利斯。"
+        },
+        {
+          "id": "wilds-c04-chpt02",
+          "evidence": "雷雅等人詢問了哈洛聽到阿龍要見龍的任務，為何笑了出來？哈洛則表示他很意外自己是唯一笑的人。他認為能有機會見龍是件挺有趣的事，儘管冒險者們（除了阿龍外）都覺得這只是艾瑞利斯家用來把阿龍除掉的方法而已。"
+        },
+        {
+          "id": "wilds-c04-chpt03",
+          "evidence": "瑟拉蒙・艾瑞利斯，阿龍的叔叔，在案發現場陪伴著冒險者們。艾瑞利斯家族的其他成員，則各自回到房間休息。敞開的大門，走入了一名熟悉的身影。是龍人型態的哈雷爾。"
+        },
+        {
+          "id": "wilds-c04-chpt04",
+          "evidence": "瑟拉斯邀請賽拉尼爾到她的房間，讓他拿走一把武器，作為他上任龍冠的禮物。賽拉尼爾挑了昨日處刑的巨斧，上面除了還沒清洗的血跡，還有艾瑞利斯家的家徽。瑟拉斯點了點頭，將手放在巨斧上，發出了亮光，不會魔法的賽拉尼爾也能感受到這股魔力。"
+        }
+      ]
+    },
+    "material-realm/mattington/rathanad/crowns-council-hall": {
+      "chapters": [
+        {
+          "id": "wilds-c04-chpt01",
+          "evidence": "走上山坡，偌大的宅邸在眼前越來越大。而除了艾瑞利斯家之外，這裡也還有其他的貴族，但房子沒有這麼宏偉。上城區除了這些貴族的家之外，還有一處議會廳，是龍冠辦公的地方。"
+        }
+      ]
+    },
+    "material-realm/mattington/rathanad/harrel-mizels-magic-shop": {
+      "chapters": [
+        {
+          "id": "wilds-c04-chpt01",
+          "evidence": "在與這兩名龍人攀談後，冒險者們邀請他們加入他們的座位，並請他們喝了酒。老年龍人自我介紹名為尼克索，或是大家喜歡稱呼他的方式，老尼克索，而他旁邊的則是在拉撒拿唯一一家魔法商店當老闆的哈洛・米佐。阿龍心急地掏出那塊他父母交給他的龍角，嘗試對著老尼克索的角進行比對，而老尼克索也認了出來，那便是他快二十年前折斷的那支角。"
+        },
+        {
+          "id": "wilds-c04-chpt02",
+          "evidence": "其他人則在艾內莫的帶領下，再次來到哈洛的魔法商店，但他們也發現魔法商店此時是關的。毛毛試圖開鎖，卻無法成功，但他試著把窗戶搖開，讓雷亞和鑰先跳了進去，再從店內把門打開。除了艾內莫外，其他人都大搖大擺地走入了店內。"
+        }
+      ]
+    },
+    "material-realm/mattington/rathanad/middle-district": {
+      "chapters": [
+        {
+          "id": "wilds-c04-chpt01",
+          "evidence": "老尼克索鼓吹阿龍明天去見見他的家人，但瑪莉貝爾希望阿龍不要馬上答應。他認為太輕易的相信這兩名剛認識的陌生人，不一定是件好事。哈洛提議，冒險者們可以想想，如果要的話，明天早上到他在中城區的魔法商店找他，他在帶大家去接老尼克索，大夥兒在一起去見艾瑞利斯家。"
+        },
+        {
+          "id": "wilds-c04-chpt02",
+          "evidence": "艾內莫帶著冒險者們來到中城區的市集。在艾內莫的指引下，羅羅去了一家烘焙坊。他看見櫃檯前擺了兩尊精緻的龍造型的麵包，便爽快的買了下來，一手抬著一尊，蹣跚地走了出來。"
+        }
+      ]
+    },
+    "material-realm/mattington/rathanad/middle-district-market": {
+      "chapters": [
+        {
+          "id": "wilds-c04-chpt02",
+          "evidence": "Enelmor led the adventurers to the market in the middle district. Following her directions, Roel went into a bakery. He saw two exquisite dragon-shaped loaves displayed at the counter and immediately bought them, carrying one under each arm as he staggered back out."
+        }
+      ]
+    },
+    "material-realm/mattington/rathanad/myzharils-cave": {
+      "chapters": [
+        {
+          "id": "wilds-c04-chpt01",
+          "evidence": "城鎮外的洞穴有一頭龍。去找那頭龍，取得與他接觸過的證明。"
+        },
+        {
+          "id": "wilds-c04-chpt02",
+          "evidence": "狗頭人宣稱自己是幫哈洛跑腿的，剛剛是跑來送貨，但冒險者們都覺得他有偷東西的嫌疑。他們也和狗頭人詢問，得知銀龍米札哈里爾的洞穴外有一群狗頭人，負責幫忙看守洞口。另外，狗頭人很喜歡亮晶晶的東西，像是錢幣。"
+        },
+        {
+          "id": "wilds-c04-chpt03",
+          "evidence": "「好的，我想你們都知道事情的真相了。」哈雷爾瀟灑的站了起來，朝著門外走去。「現在時間還早，日落時，來我的洞穴找我吧。」哈雷爾頭也不回地走出艾瑞利斯的宅邸，在眾人的面前化身成龍，往他的洞穴飛去。此刻，奈梨紗才真正知道他愛上的，是什麼生物。"
+        },
+        {
+          "id": "wilds-c04-chpt04",
+          "evidence": "洞穴外的夜色很黑，雨綿密的落下。拉撒拿的人們在目睹一場悲劇的同一天，也迎來了新任的龍冠。"
+        }
+      ]
+    },
+    "material-realm/mattington/rathanad/tavern-and-lodgings-unnamed": {
+      "chapters": [
+        {
+          "id": "wilds-c04-chpt01",
+          "evidence": "隨著夜色漸黑，冒險者們決定還是得先找個下榻的地方。他們找了附近的一間酒館，拉了兩張桌子坐下，準備開始點餐。這裡的餐點似乎主要以肉類為主，佐以麵包，而不知道是酒館的關係還是拉撒拿當地的特性，酒類只有啤酒而已，但也是有不同款式的啤酒可以做選擇。"
+        },
+        {
+          "id": "wilds-c04-chpt02",
+          "evidence": "冒險者們回到下榻的酒館，遇見正在喝酒的老尼克索。依照哈洛的說法，老尼克索也清楚知道他的身份。"
+        },
+        {
+          "id": "wilds-c04-chpt04",
+          "evidence": "酒館內，賽拉尼爾被人民們擁簇著喊著「龍冠」，酒館老闆也識相地請所有人喝酒。雷亞則無法平息心中的怒氣。賽拉尼爾走向老尼克索，加入他的酒桌，喝醉的老尼克索開心地慶祝著賽拉尼爾的晉升。"
+        }
+      ]
+    },
+    "material-realm/mattington/rathanad/upper-district": {
+      "chapters": [
+        {
+          "id": "wilds-c04-chpt01",
+          "evidence": "走上山坡，偌大的宅邸在眼前越來越大。而除了艾瑞利斯家之外，這裡也還有其他的貴族，但房子沒有這麼宏偉。上城區除了這些貴族的家之外，還有一處議會廳，是龍冠辦公的地方。"
+        }
+      ]
+    },
+    "material-realm/mattington/rumphton": {
+      "chapters": [
+        {
+          "id": "rugatha-c05-chpt01",
+          "evidence": "This time, using magic, Midori chose to track \"The God King's Guidance,\" which Anedak had always worn on his chest. Unlike the last time, when searching for the great blade had failed, Midori found that The God King's Guidance was located somewhere to the northwest, outside Macksohn. After investigating, they learned it pointed toward a bleak town called Rumphton, so the Taipei City Councilors immediately set out for it."
+        },
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "一早，睡醒的雷米走出了房間，便朝向從窗外望見的農田走去。廣袤的麥田，農夫的數量卻屈指可數。雷米試圖和農夫打聲招呼，卻沒有得到回應。不久後，他感到些許無趣，便走回旅店門口，看見同行的夥伴們已在門口等待了。"
+        },
+        {
+          "id": "lite-c05-chpt02",
+          "evidence": "一早醒來，蘇加魯、墜兒和帕拉丁在酒館吃了老闆準備的麵包，作為早餐。同時，在用餐過程中，帕拉丁也向兩人說明了從與台北市議員們相遇後發生的種種冒險故事。然而，在過程中墜兒不斷感覺到有來自酒館其他食客的眼光緊盯著他們。在墜兒提醒後，帕拉丁決定將冒險團到麥克嵩後的旅程之後再說明，而三人也趕緊收拾行囊，離開朗甫頓。"
+        }
+      ]
+    },
+    "material-realm/mattington/rumphton/tavern-unnamed": {
+      "chapters": [
+        {
+          "id": "rugatha-c05-chpt01",
+          "evidence": "到了稍早看見聚落的位置，大家紛紛討論著是否該進入聚落，還是在城牆邊紮營，雷米和喜利兩人決定先去探查，其他人則在原地等待並紮營。花了一段時間，兩人走在朗甫頓的路上，鬆散的民宅都暗了，只有少數比較大的屋子還亮著。雷米看到了其中一間，似乎是個酒館，便踏入了酒館，進行觀察。同時，喜利在窗外緊緊看著雷米的行為。"
+        },
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "來到了多倫維爾的街道上，YHWH向路人詢問適合夜宿的地方，得到了一個叫馬戲團旅店的店名。然而，為了躲雨，大家到了附近最近的酒館便停了下來。走入醉漢酒館，裡面人不多，花了點時間和老闆殺價後，大家有了個大通鋪可以過夜。和老闆詢問後，因為覺得餐點太貴，最終只有雷米、法朗茲和波等人留下來用餐，其他幾人則在街上找了間看起來生意比較好的店家吃飯。"
+        },
+        {
+          "id": "lite-c05-chpt02",
+          "evidence": "一早醒來，蘇加魯、墜兒和帕拉丁在酒館吃了老闆準備的麵包，作為早餐。同時，在用餐過程中，帕拉丁也向兩人說明了從與台北市議員們相遇後發生的種種冒險故事。然而，在過程中墜兒不斷感覺到有來自酒館其他食客的眼光緊盯著他們。在墜兒提醒後，帕拉丁決定將冒險團到麥克嵩後的旅程之後再說明，而三人也趕緊收拾行囊，離開朗甫頓。"
+        }
+      ]
+    },
+    "material-realm/mattington/rumphton/wood-man": {
+      "chapters": [
+        {
+          "id": "rugatha-c05-chpt01",
+          "evidence": "隨著酒館老闆說明只剩下三間單人房，帕拉丁爵士、蘇加魯和墜兒以外的其他人則向他們道別，聽著老闆「推薦」的旅社「伐木人」前進。米多莉和雷米住了單人房，其他人則共享一間八人房。"
+        }
+      ]
+    },
+    "material-realm/mattington/samptano": {
+      "chapters": [
+        {
+          "id": "legends-os07",
+          "evidence": "Following their memories, WotCy and Mana Jane returned to the imperial capital, Samptano, but the guards’ uniforms had changed. A passerby told them that the Dranison Empire no longer existed; the Trinix Empire now ruled. Once she understood, Mana Jane left for home. Bitter at losing his reward, WotCy used every trick he knew to infiltrate the heavily guarded palace, disguised himself as a newly hired common laborer, and searched for the treasury. He reached the new emperor, Horison I, and warned that someone intended to attack the Mylstan Colossus, which should be important to the regime. The emperor was surprised that WotCy knew of it but showed little alarm and merely sent investigators. WotCy never received the reward he wanted."
+        }
+      ]
+    },
+    "material-realm/mattington/samptano/imperial-palace": {
+      "chapters": [
+        {
+          "id": "legends-os07",
+          "evidence": "沃特西和瑪娜・珍依照記憶，回到了帝國首都桑普塔諾市，但衛兵的穿著似乎變得不太一樣了。詢問了路人後，才知道卓尼森帝國已不復存在，現在是崔尼斯帝國掌權了。瑪娜・珍清楚狀況後，便決定離開這裡，回家去了。沒領到賞金的沃特西很不甘心，透過各種方法，混進了戒備森嚴的王宮內，偽裝成被新聘來上工的平民，並四處尋找金庫的蹤跡。他成功見到了新任的皇帝霍里森一世，告訴他有人要襲擊對他們來說應該很重要的邁爾斯坦巨像。皇帝對於他知道邁爾斯坦巨像這件事感到詫異，但也沒有因此太過慌張，僅派了人去調查而已，沃特西終究沒有得到他想要的獎賞。"
+        }
+      ]
+    },
+    "material-realm/mattington/sebano": {
+      "chapters": [
+        {
+          "id": "lite-c05-chpt02",
+          "evidence": "Because the map obtained by Paladin was placed next to YHWH, they no longer have a map to refer to at this time. They only know the current destination, Sebano is northwest of Lampton. The three decided to explore Lampton first to see if there was any place where they could supply supplies, and at the same time, they also had a deeper understanding of the town. However, after spending some time exploring, I discovered that Lampton is just a small town. Apart from pubs and hotels, there are basically no large-scale shops. Sugalu decided to go back to the tavern and ask the boss about Sebano to determine how long the journey would take."
+        },
+        {
+          "id": "lite-c05-chpt03",
+          "evidence": "The strong man has no objection to the escape of the adventurers. The only thing he is unwilling to release is Jonathan. The strong man proposed a deal, asking the adventurers to go to the mayor's house of Sebano, steal a magic cube box, and bring it to him, and he would release Jonathan. The adventurers thought for a while, decided to accept the proposal first, and then left the underground with the villains' permission."
+        },
+        {
+          "id": "lite-c05-chpt04",
+          "evidence": "Sugalu ran all the way for a long time, and found that Hobb and his followers could no longer catch up, so he started to slow down. At this moment, he also crossed the gate of Sebano's town. Hobb in the distance looked at Sugalu from a distance, throwing his magic box in his hand, and then turned away."
+        },
+        {
+          "id": "lite-c06-chpt01",
+          "evidence": "After discussion, the adventurers decided to let Inu burn the cursed house. The adventurers were walking in the empty Sebano. There was no one in the former Town of Villains. The bodies were somehow emptied, and the dilapidated house was not repaired."
+        }
+      ]
+    },
+    "material-realm/mattington/sebano/hobbs-construction-site": {
+      "chapters": [
+        {
+          "id": "lite-c05-chpt04",
+          "evidence": "看見飛走的華生，幾名工人試圖追上去。蘇加魯也看見了，大聲呼喊自己也要追上去，幫霍布把他重要的資產追回來。霍布感到些許懷疑，讓自己的手下先將蘇加魯趕回工地。不過蘇加魯馬上從旁邊繞開，繼續朝著他感覺華生飛的方向跑去。兩名工頭跟在他後面跑，霍布見狀，也跟了上來，試圖追上蘇加魯。"
+        }
+      ]
+    },
+    "material-realm/mattington/sebano/hobbs-party-house": {
+      "chapters": [
+        {
+          "id": "lite-c05-chpt02",
+          "evidence": "一早醒來，蘇加魯、墜兒和帕拉丁在酒館吃了老闆準備的麵包，作為早餐。同時，在用餐過程中，帕拉丁也向兩人說明了從與台北市議員們相遇後發生的種種冒險故事。然而，在過程中墜兒不斷感覺到有來自酒館其他食客的眼光緊盯著他們。在墜兒提醒後，帕拉丁決定將冒險團到麥克嵩後的旅程之後再說明，而三人也趕緊收拾行囊，離開朗甫頓。"
+        },
+        {
+          "id": "lite-c05-chpt03",
+          "evidence": "回到地面，夜色逐漸降臨，冒險者們對瑟巴諾不甚熟悉，在空蕩蕩的街道上，除了民宅外幾乎沒有商業行為，連路人都少之又少。冒險者們決定回到「酒館」探一探。"
+        },
+        {
+          "id": "lite-c05-chpt04",
+          "evidence": "「歡迎來到我的遊戲間」霍布粗獷的聲音從裡頭傳了出來。冒險者們想了想，便決定走了進去，找了離門口較近的椅子坐了下來，只有伊努決定留在外頭，門從後面關了起來。酒館內，冒險者們看著霍布化身成了他真正的模樣—一隻比他們都還要高且壯碩的蛙人—露出了十分開心的表情，手上把玩著包著布的魔法盒子，向冒險者們感謝將盒子送到了他的手裡。他的手下們，則是魚人般的生物，身上全是黏液。同時，霍布將一旁的喬納森釋放，表示自己遵守了當時交易的承諾。喬納森心驚膽跳的跑到了冒險者身邊，也坐了下來。"
+        }
+      ]
+    },
+    "material-realm/mattington/sebano/mayors-house": {
+      "chapters": [
+        {
+          "id": "lite-c05-chpt03",
+          "evidence": "對於冒險者們的逃脫，壯漢沒什麼意見，他唯一不願意釋放的是喬納森。壯漢提出了一個交易，請冒險者們到瑟巴諾的鎮長家，偷取一個有魔法的正方體盒子，並拿來給他，他就會將喬納森釋放。冒險者們想了想，決定先接受這個提議，接著便在惡漢們的允諾下離開了地底。"
+        },
+        {
+          "id": "lite-c05-chpt04",
+          "evidence": "跟著安娜，兩人走回了佈滿傭人屍體的鎮長家。安娜在客廳正中央用力踩了幾下，「砰」，一扇通往地下的門，就這樣被開啟了。"
+        },
+        {
+          "id": "lite-c06-chpt01",
+          "evidence": "冒險者們在鎮長家進行簡單的探索。圖伊特在鎮長辦公室找到了他過去使用的手杖，突然發現這把手杖似乎裡面藏了一把長劍，上面還抄寫了月神教的禱詞。"
+        }
+      ]
+    },
+    "material-realm/mattington/shartingson": {
+      "chapters": [
+        {
+          "id": "brown-c02-chpt01",
+          "evidence": "As he headed toward Shartingson, Brown rode into the forest with Mr. Muffins. The deeper they went, the easier it became to lose their way, because every part of the forest looked the same."
+        }
+      ]
+    },
+    "material-realm/mattington/shartingson/figurine-shop-unnamed": {
+      "chapters": [
+        {
+          "id": "brown-c02-chpt01",
+          "evidence": "那些雕工精細得驚人，布朗卻認不出雕像原型是誰。老闆向他解釋，那是最近剛過世的國王巴納沃二世，他特地雕了這尊小像作為紀念。羅納德看了之後非常感興趣，立刻接過那尊雕像，爽快付了錢。這在布朗眼中相當意外，因為他幾乎沒見過羅納德對什麼事情表現得這麼熱衷。"
+        }
+      ]
+    },
+    "material-realm/mattington/shartingson/second-tavern-unnamed": {
+      "chapters": []
+    },
+    "material-realm/mattington/shartingson/tavern-and-lodgings-brown-and-ronalds-stay": {
+      "chapters": [
+        {
+          "id": "brown-c02-chpt01",
+          "evidence": "直到日落時分，布朗和羅納德才終於抵達夏庭森。兩人就近找了一間酒館，布朗請羅納德吃飯喝酒，表達對他帶自己來到這裡的謝意，而羅納德則直接幫布朗把今晚住宿的費用付了。"
+        }
+      ]
+    },
+    "material-realm/mattington/st-rayami-island": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "觸岸時，已是深夜了。沙灘碼頭上一片漆黑，空無一人，讓瑪琳船長感到疑惑。她帶領著大家走入市中心。市中心有一處噴水池，左右兩側分別為商店街，轉角處則是瑪琳船長的家。一名穿著教會服裝的男子正在瑪琳船長家等她，表情看起來十分焦急。經過了解，島上失蹤的事件越發嚴重，甚至出現了原因不明的中毒事件。"
+        },
+        {
+          "id": "plus-c07-chpt03",
+          "evidence": "The adventurers asked where Ron had been these days. At the same time, he was also curious about the gold chain on his hand. Ron said that it had only been one day since he woke up. During the whole day, he, Reese, and Sister Mari investigated the poisoning incident in Fanaur city. As for the gold chain on the Lich's arm, it seems that members of the Keinra Cult helped him put it on. The evil magic of the Lich's arm can be suppressed, so he has now returned to being a good draconian. Bishop Ronbinson confirmed Ron's statement and carefully read the report he received from the adventurer. He found many similarities with the poisoning and disappearance incidents that occurred on St. Rayami Island and Fanaur City. So the bishop asked the adventurer and Ron to explain each other's findings. The adventurer gave the Bishop the Lababi Stone found in the Gold Coast Mines, and Ron discovered that the stone was identical to the stone he found beneath the orphanage. This further proves that the events that occurred in the two places are inextricably linked. The bishop asked the adventurer if he knew the next move of the Laxthos cult. Out of concern for Midori, Beau omitted the possibility that Yuki was involved in the Laxthos conspiracy, and told the bishop that they would hold a ceremony at Natasha on the next full moon day, which might destroy the entire southern region."
+        }
+      ]
+    },
+    "material-realm/mattington/st-rayami-island/captain-marins-house": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "觸岸時，已是深夜了。沙灘碼頭上一片漆黑，空無一人，讓瑪琳船長感到疑惑。她帶領著大家走入市中心。市中心有一處噴水池，左右兩側分別為商店街，轉角處則是瑪琳船長的家。一名穿著教會服裝的男子正在瑪琳船長家等她，表情看起來十分焦急。經過了解，島上失蹤的事件越發嚴重，甚至出現了原因不明的中毒事件。"
+        }
+      ]
+    },
+    "material-realm/mattington/st-rayami-island/gold-coast-mine": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "來到了朗費羅的小屋，幾番溝通加上海鮮湯，朗費羅才讓大家走進他的小屋。朗費羅表示自己是前陣子中毒的，中毒後臉色發黑，走路不穩，而且容易累。他也表示自己以前是礦工，但在島嶼西邊的金海岸礦坑坍塌後，他是唯一倖存的人。礦坑也在坍塌後封鎖起來了。"
+        },
+        {
+          "id": "plus-c07-chpt03",
+          "evidence": "冒險者們詢問了龍恩這幾天跑到哪裡去了？同時也對他手上的金鍊子表示好奇。龍恩說他清醒後只過了一天，這一整天他都跟瑞斯以及瑪莉牧師一起調查方努爾市內的中毒事件。至於巫妖手臂上的金鏈子似乎是津菈教的成員幫他裝上的。可以抑制巫妖手臂的邪惡魔法，所以他現在已經回歸善良龍人了。龍恩。羅賓遜主教證實了龍恩的說法並仔細閱讀了從冒險者手中拿到的報告。他發現聖拉雅米島以及方努爾市發生的中毒失蹤事件有許多相似之處。於是主教請冒險者和龍恩互相說明一下彼此的發現。冒險者將在金海岸礦坑找到的拉巴比石交給了主教，龍恩發現那個石頭和他在孤兒院下方發現的石頭一模一樣。更加證明了發生在兩地的事件是有千絲萬縷的關聯。主教詢問冒險者是否知道拉索斯教徒下一步的動作，出於對米多莉的顧慮，波將小雪極有可能涉入拉索斯教陰謀一事略去，向主教說了他們會在下一個月圓之日在娜塔莎這個地方舉行儀式，可能會將整個南方地區毀滅。"
+        }
+      ]
+    },
+    "material-realm/mattington/st-rayami-island/golden-pride": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "一早，根據瑪琳船長的說明，島上有個「聖徒雕像」（勇者雕像），在燈塔附近，是當地的觀光勝地。冒險者們朝著這個景點的方向走去。途中他們也逛了逛紀念品店，波購買了完整一套的勇者公仔紀念品，包含聖拉雅米、轟雷牧師、守望者、焰狼、火龍捲，以及煉獄，大家也從店員口中打聽到了一名住在燈塔旁，脾氣古怪的獨居老人朗費羅，不過據說他喜歡喝海鮮湯，因此冒險者們決定先去附近的酒館「黃金之傲」買海鮮湯，再去拜訪他。"
+        }
+      ]
+    },
+    "material-realm/mattington/st-rayami-island/lighthouse": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "一早，根據瑪琳船長的說明，島上有個「聖徒雕像」（勇者雕像），在燈塔附近，是當地的觀光勝地。冒險者們朝著這個景點的方向走去。途中他們也逛了逛紀念品店，波購買了完整一套的勇者公仔紀念品，包含聖拉雅米、轟雷牧師、守望者、焰狼、火龍捲，以及煉獄，大家也從店員口中打聽到了一名住在燈塔旁，脾氣古怪的獨居老人朗費羅，不過據說他喜歡喝海鮮湯，因此冒險者們決定先去附近的酒館「黃金之傲」買海鮮湯，再去拜訪他。"
+        }
+      ]
+    },
+    "material-realm/mattington/st-rayami-island/park-near-gold-coast-mine": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "冒險者們決定往金海岸礦坑前進，卻在離開時遇見了匆匆跑來的莉蓮娜，他表示拉芙在礦坑附近的公園失蹤了。"
+        }
+      ]
+    },
+    "material-realm/mattington/st-rayami-island/ronfellos-hut": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "來到了朗費羅的小屋，幾番溝通加上海鮮湯，朗費羅才讓大家走進他的小屋。朗費羅表示自己是前陣子中毒的，中毒後臉色發黑，走路不穩，而且容易累。他也表示自己以前是礦工，但在島嶼西邊的金海岸礦坑坍塌後，他是唯一倖存的人。礦坑也在坍塌後封鎖起來了。"
+        }
+      ]
+    },
+    "material-realm/mattington/st-rayami-island/saint-statue": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "一早，根據瑪琳船長的說明，島上有個「聖徒雕像」（勇者雕像），在燈塔附近，是當地的觀光勝地。冒險者們朝著這個景點的方向走去。途中他們也逛了逛紀念品店，波購買了完整一套的勇者公仔紀念品，包含聖拉雅米、轟雷牧師、守望者、焰狼、火龍捲，以及煉獄，大家也從店員口中打聽到了一名住在燈塔旁，脾氣古怪的獨居老人朗費羅，不過據說他喜歡喝海鮮湯，因此冒險者們決定先去附近的酒館「黃金之傲」買海鮮湯，再去拜訪他。"
+        }
+      ]
+    },
+    "material-realm/mattington/st-rayami-island/souvenir-shop-unnamed": {
+      "chapters": [
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "一早，根據瑪琳船長的說明，島上有個「聖徒雕像」（勇者雕像），在燈塔附近，是當地的觀光勝地。冒險者們朝著這個景點的方向走去。途中他們也逛了逛紀念品店，波購買了完整一套的勇者公仔紀念品，包含聖拉雅米、轟雷牧師、守望者、焰狼、火龍捲，以及煉獄，大家也從店員口中打聽到了一名住在燈塔旁，脾氣古怪的獨居老人朗費羅，不過據說他喜歡喝海鮮湯，因此冒險者們決定先去附近的酒館「黃金之傲」買海鮮湯，再去拜訪他。"
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt01",
+          "evidence": "A group of individuals: a human, two elves, a halfling, two dragonborns, a tielfing, and even a minotaur, dressed in different colors, arrived the ordinary town of Vowalon, with no specific intention."
+        },
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "When the adventurers were about the leave Vowalon at sunset, Midori saw someone and ran to the person. That person is the wife of the Mayor, Jasmine. The kind Jasmine prepared a basket of sandwiches, for the adventurers to enjoy in the forest. Midori was grateful for it. However, due to the fact that Midori didn't explain well why she ran awy, Usioni started up a argument against Midori."
+        },
+        {
+          "id": "rugatha-c01-chpt06",
+          "evidence": "Across the dangerous Howling Forest, the Taipei City Council finally brought the archmage Grenland back to Vowalon."
+        },
+        {
+          "id": "rugatha-c01-chpt07",
+          "evidence": "Six in the morning, Vowalon. The Tapipei City Council woke up from their horrifying nightmares one by one. Some of them got off their bed, took a walk around the town of Vowalon, where they'd been more familiar than ever."
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon/bamus-groceries": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "接著，冒險者們到了對街的巴姆的雜貨店。除了一個 Tai Tai我還要買下的神秘項鍊外，大家似乎沒有特別想買的物品。"
+        },
+        {
+          "id": "rugatha-c01-chpt06",
+          "evidence": "日落前，台北市議員分頭去了巴姆的雜貨店和道金的店，購買了一些日常用品以及裝甲。"
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon/dawkins-shop": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "在勞迪俱樂部用餐後，冒險者們到道金店鋪，帕拉丁、米多莉和薩梅爾買賣了點武器，烏犧奧泥和Tai Tai我還要也請託老闆格拉罕幫忙鍛造強化自己的武器。"
+        },
+        {
+          "id": "rugatha-c01-chpt06",
+          "evidence": "幾名冒險者先行前往道金的店，取回格拉罕為他們特製的武器。其餘幾位冒險者則帶著葛蘭倫前往寂靜殿尋找寇頓神父。葛蘭倫留下來和寇頓神父討論隔日驅除詛咒儀式的細節。米多莉則自行前往了鎮長家，想見見鎮長夫人潔絲敏。"
+        },
+        {
+          "id": "rugatha-c01-chpt07",
+          "evidence": "在黑暗與寂靜中，冒險者們不敢妄動，卻接二連三地被攻擊。直到龍恩踏出了黑暗與寂靜，才發現周圍滿是鎮民的屍體，而且有數位他們所熟悉的鎮民成為了殭屍，正無情地向他們攻擊，始作俑者，便是此時在他們前方的寇頓神父與葛蘭倫大法師。冒險者們在攻擊殭屍的同時，龍恩與後來也踏了出來，化身為冰原狼的烏柯，衝向了葛蘭倫。隨著寇頓神父與葛蘭倫的死去，黑暗與寂靜就此消逝，圍繞在他們身邊的，是化為殭屍的勞迪俱樂部的布魯斯與班尼、鎮長戴洛、夜夢者的克萊門汀，以及道金的店的格拉罕。台北市議員們忍痛將這些他們所熟悉的善良的鎮民們真正的殺死，也在心中默念著，願他們安息，而鎮民們也在真正逝去的那一刻，向冒險者們在內心中道別。"
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon/howling-forest": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "離開城門時，守門的兩位衛兵向冒險者們詢問了名字，冒險者思索了一陣子，最終做出了決定。他們回答道：「我們是『台北市議員』」。接著，他們便步向了神秘的嚎叫森林……"
+        },
+        {
+          "id": "rugatha-c01-chpt03",
+          "evidence": "「台北市議員」步入夜色，邁入了嚎叫森林。天色逐漸暗去，冒險者們在龍人德魯伊烏柯的經驗下，根據謹慎的判斷，所幸沒有迷路。然而，他也發現在路邊，似乎有用德魯伊語留下的神秘訊息。"
+        },
+        {
+          "id": "rugatha-c01-chpt05",
+          "evidence": "台北市議員帶著葛蘭倫大法師再度走入了嚎叫森林。有了法力高強的葛蘭倫，大家並不擔心遇到野狼會需要浴血奮戰，甚至，他們想看看葛蘭倫大法師在戰鬥中到底有多厲害。然而，旅途的一開始就不太順利。在走了一段時間後，大家迷了路，花了些時間才折回原處，走回正確的道路。"
+        },
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "晚餐時間過後，布朗與瑪芬先生終於穿越森林，來到了魏斯科。進城後，布朗找到一間名為「酒食樂！」的酒館，便進去用餐。在餐點送上來之前，布朗聽見酒館某處有人正在討論拉索斯的事。出於好奇，他便上前詢問，問對方是否願意告訴他更多關於拉索斯的事情。兩名女人之中，較年輕、容貌姣好的自稱梅莉，另一位年長女子則是瑪蒂達，似乎不太說話。梅莉表示，只要布朗願意各請她們一杯啤酒，她們就願意告訴他一些事。"
+        },
+        {
+          "id": "brown-c02-chpt01",
+          "evidence": "朝著夏庭森前進時，布朗和瑪芬先生騎著馬走進森林。森林裡愈走愈容易迷失方向，因為四周景色幾乎全都一模一樣。"
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon/mayor-daryl-warrens-house": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "早餐後，冒險者們拜訪了鎮長沃倫家，與鎮長戴洛與鎮長夫人潔絲敏致意。他們在鎮長說明山米克的事件後（那天早上，山米克早早出門，卻被發現倒在鎮上拉索斯教堂寂靜殿的門口，再也沒醒來），在鎮長的帶領下，前往山米克的墓前簡單致意。"
+        },
+        {
+          "id": "rugatha-c01-chpt06",
+          "evidence": "幾名冒險者先行前往道金的店，取回格拉罕為他們特製的武器。其餘幾位冒險者則帶著葛蘭倫前往寂靜殿尋找寇頓神父。葛蘭倫留下來和寇頓神父討論隔日驅除詛咒儀式的細節。米多莉則自行前往了鎮長家，想見見鎮長夫人潔絲敏。"
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon/night-dreamers": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt01",
+          "evidence": "離開俱樂部後，冒險者們步行到當地的旅店，夜夢者準備下榻。老闆艾莉森很年輕，也挺友善的。大概是因為他們是這段時間唯一的客人吧。我是說，這個城鎮「被詛咒了」，誰會想來這小鎮啊？"
+        },
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "經過了一晚的睡眠，冒險者們醒來了，但大家都感到十分疲憊，沒睡好。就像旅店的名稱「夜夢者」，每個人都做夢了。"
+        },
+        {
+          "id": "rugatha-c01-chpt06",
+          "evidence": "深夜，鎮民們紛紛離開了勞迪俱樂部，冒險者們只剩下Tai Tai 我還要還清醒著，自己回去了寂靜殿，其他的冒險者們則花了點時間，爛醉地回到了夜夢者，不過連夜夢者的老闆娘克萊門汀也醉了，他從抽屜抓出了一大把鑰匙讓冒險者們自行挑選。等到米多莉回來時，也從櫃檯隨意抓了一支鑰匙。"
+        },
+        {
+          "id": "rugatha-c01-chpt07",
+          "evidence": "在黑暗與寂靜中，冒險者們不敢妄動，卻接二連三地被攻擊。直到龍恩踏出了黑暗與寂靜，才發現周圍滿是鎮民的屍體，而且有數位他們所熟悉的鎮民成為了殭屍，正無情地向他們攻擊，始作俑者，便是此時在他們前方的寇頓神父與葛蘭倫大法師。冒險者們在攻擊殭屍的同時，龍恩與後來也踏了出來，化身為冰原狼的烏柯，衝向了葛蘭倫。隨著寇頓神父與葛蘭倫的死去，黑暗與寂靜就此消逝，圍繞在他們身邊的，是化為殭屍的勞迪俱樂部的布魯斯與班尼、鎮長戴洛、夜夢者的克萊門汀，以及道金的店的格拉罕。台北市議員們忍痛將這些他們所熟悉的善良的鎮民們真正的殺死，也在心中默念著，願他們安息，而鎮民們也在真正逝去的那一刻，向冒險者們在內心中道別。"
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon/rowdys-club": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt01",
+          "evidence": "冒險者們不約而同地來到了當地最熱鬧的酒館，勞迪俱樂部。我是說，除了這地方外，他們會想去哪裡？勞迪俱樂部的老闆，布魯斯，如一般酒館的老闆：壯碩但溫和，對冒險者們稱不上熱情，但有求必應。"
+        },
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "大家紛紛來到了勞迪俱樂部吃早餐，畢竟這是他們唯一知道能用餐的地方，並試圖從布魯斯那裡打聽更多消息。"
+        },
+        {
+          "id": "rugatha-c01-chpt06",
+          "evidence": "大家也去了一趟勞迪俱樂部，布魯斯正在準備今晚的派對，慶祝台北市議員成功將大法師葛蘭倫帶回沃瓦倫。眼看沃瓦倫的詛咒就要終結了，鎮民們都十分期待。冒險者們打聽了潔絲敏消失一事，以及關於毒三明治的各種消息。他們從一名鎮民班尼的口中了解了沃瓦倫組成了一支搜救隊，四處尋找潔絲敏，卻完全沒有任何線索。班尼對此十分自責，但也相信著潔思敏一定還活著。而關於毒三明治一事，則是沒有任何線索。"
+        },
+        {
+          "id": "rugatha-c01-chpt07",
+          "evidence": "早晨八點，眾人們集合在勞迪俱樂部享用早餐，大家都點了勞迪豪華早餐。準備離開俱樂部時，門被重重的甩開。艾菲驚慌地衝了進來，口中念念有詞，對於九點將要舉行的儀式感到非常不安。冒險者們試圖詢問，卻問不出什麼有用的資訊。"
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon/sammick-warrens-grave": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "早餐後，冒險者們拜訪了鎮長沃倫家，與鎮長戴洛與鎮長夫人潔絲敏致意。他們在鎮長說明山米克的事件後（那天早上，山米克早早出門，卻被發現倒在鎮上拉索斯教堂寂靜殿的門口，再也沒醒來），在鎮長的帶領下，前往山米克的墓前簡單致意。"
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon/temple-of-silencio": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "早餐後，冒險者們拜訪了鎮長沃倫家，與鎮長戴洛與鎮長夫人潔絲敏致意。他們在鎮長說明山米克的事件後（那天早上，山米克早早出門，卻被發現倒在鎮上拉索斯教堂寂靜殿的門口，再也沒醒來），在鎮長的帶領下，前往山米克的墓前簡單致意。"
+        },
+        {
+          "id": "rugatha-c01-chpt06",
+          "evidence": "幾名冒險者先行前往道金的店，取回格拉罕為他們特製的武器。其餘幾位冒險者則帶著葛蘭倫前往寂靜殿尋找寇頓神父。葛蘭倫留下來和寇頓神父討論隔日驅除詛咒儀式的細節。米多莉則自行前往了鎮長家，想見見鎮長夫人潔絲敏。"
+        },
+        {
+          "id": "rugatha-c01-chpt07",
+          "evidence": "寂靜殿前的廣場，鎮民們早已聚集了起來，台北市議員花了好些功夫才擠出了空間。米多莉想了想，再次擠了出去，在沒有人發現的情況下，偷偷繞到了教堂正後方，試圖尋找關於前一晚發現的神秘縫隙的線索，卻沒有收穫。"
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon/temple-plaza": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt07",
+          "evidence": "寂靜殿前的廣場，鎮民們早已聚集了起來，台北市議員花了好些功夫才擠出了空間。米多莉想了想，再次擠了出去，在沒有人發現的情況下，偷偷繞到了教堂正後方，試圖尋找關於前一晚發現的神秘縫隙的線索，卻沒有收穫。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt04",
+          "evidence": "The Taipei City Councilor arrived at the entrance of the town of Wescoe at midnight. After asking their origins and purpose, the guards let them in town."
+        },
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "After dinner, Brown and Mr. Muffins finally made it through the forest and arrived at Wescoe. Once inside the city, Brown found a tavern called \"Beer, Food, Fun!\" and went in for a meal. Before his food arrived, he overheard people somewhere in the tavern talking about Laxthos. Curious, he went over and asked whether they would be willing to tell him more. Of the two women at the table, the younger and prettier one introduced herself as Maylee. The older woman, Matilda, barely spoke. Maylee said that if Brown would buy each of them a beer, they would be happy to share a few things with him."
+        },
+        {
+          "id": "brown-c01-chpt03",
+          "evidence": "布朗眼前一片模糊混沌。幾秒鐘後，他勉強站穩身體，卻發現自己依然在同一個房間裡，只是打鬥的痕跡全都消失了，梅莉和瑪蒂達也不見蹤影。聽見緊閉的房門外似乎傳來腳步聲，布朗立刻躲進房內的衣櫃，透過門縫窺視。他看見梅莉和瑪蒂達走進房間，百無聊賴地抱怨今天一個客人都沒接到，剛才那兩名兄弟也沒有點她們。從描述來看，她們口中的兄弟似乎正是凱勒布兄弟。"
+        },
+        {
+          "id": "brown-c01-chpt04",
+          "evidence": "As the creature closed in, Brown finally broke free, only to discover that he could not find any exit leading upstairs. The thing kept advancing. Brown's head throbbed, his stomach churned, and the world before him went black. Even his darkvision was useless in that darkness. Then he realized that he no longer seemed to be in the cellar at all. What cellar? Whose cellar? In an instant, every memory he had of arriving in Wescoe vanished. Panicking, he ran in a random direction, but no matter how far he went, he found no boundary, and his headache only grew worse."
+        },
+        {
+          "id": "brown-c01-chpt05",
+          "evidence": "Looking back at Wescoe, which had seemed like a ruin only moments before, Brown felt a strange instinct urging him to step through the city gate once more. Mr. Muffins trembled behind him and refused to go in, so Brown entered alone. The moment he crossed the gate, the city looked completely normal again, thriving as if nothing had ever happened. Brown was stunned."
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/beer-food-fun": {
+      "chapters": [
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "晚餐時間過後，布朗與瑪芬先生終於穿越森林，來到了魏斯科。進城後，布朗找到一間名為「酒食樂！」的酒館，便進去用餐。在餐點送上來之前，布朗聽見酒館某處有人正在討論拉索斯的事。出於好奇，他便上前詢問，問對方是否願意告訴他更多關於拉索斯的事情。兩名女人之中，較年輕、容貌姣好的自稱梅莉，另一位年長女子則是瑪蒂達，似乎不太說話。梅莉表示，只要布朗願意各請她們一杯啤酒，她們就願意告訴他一些事。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/brothel-maylee-and-matildas-workplace": {
+      "chapters": [
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "三人來到名為彩虹叢林的妓院。媽媽桑瓦倫泰女士和布朗確認過需求後，安排三位客人各有兩名女子作伴，接著便叫出整排小姐。布朗在其中看見了自己要找的人，便點了梅莉和瑪蒂達兩人，一同進入房間。"
+        },
+        {
+          "id": "brown-c01-chpt03",
+          "evidence": "離開彩虹叢林後，因為梅莉腳上有傷，兩人回她家的路走得格外漫長，甚至還引來路人的關心。路人建議可以把她送到服從神社請神父照看，但布朗表示自己就能替梅莉簡單治療。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/caleb-brothers-pawnshop": {
+      "chapters": [
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "在 213 號房裡，布朗一早就醒了。他背起全部家當，前往「酒食樂！」吃早餐。店裡除了他之外只有兩名男子正在聊天，而布朗聽見他們正在談論卡魯神父，便湊過去詢問。兩名男子自稱是湯米和羅傑，兩人是兄弟，一起經營一間當鋪。他們提到，卡魯神父來到魏斯科的時間不算久，但只要城市有需要幫忙的地方，他都很樂意出手協助。看過布朗拿出的花後，湯米表示自己以前曾在附近的恬靜花園看過類似的花，但也只見過一次。"
+        },
+        {
+          "id": "brown-c01-chpt03",
+          "evidence": "離開花園後，兩人準備前往教堂。保險起見，布朗想先去找凱勒布兄弟。他先到酒館買了一手啤酒，準備去拜訪他們，然而當鋪已經關門。昆妮表示，也許兩兄弟正在酒吧裡，於是布朗便折返回去。果不其然，兩兄弟真的在酒吧內，但湯米已經醉到不省人事，甚至吐了布朗和羅傑一身。在布朗和羅傑合力之下，兩人先把湯米搬到吧台裡，請酒保照顧他。接著，布朗、昆妮、羅傑和瑪芬先生便離開了酒館。布朗先去服飾店換了一套衣服，羅傑也帶大家回他家更衣，之後一行人便準備前往教堂。"
+        },
+        {
+          "id": "brown-c01-chpt04",
+          "evidence": "接著，布朗又去了凱勒布兄弟的當鋪，然而兄弟倆看著他的眼神也一樣陌生，於是布朗只能失落地離開。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/edmonds-diner": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt04",
+          "evidence": "隔日，起床後，台北市議員們到對面的餐廳「埃德蒙餐酒館」用餐，這裡是當地最有名的餐館，餐點也的確高級，不過對於這裡的主廚埃德蒙，似乎有些不為人知的傳聞。他們也在魏斯科遊客中心合買了一份地圖。大夥兒分批，遊覽了魏斯科的各大景點。"
+        },
+        {
+          "id": "brown-c01-chpt03",
+          "evidence": "布朗摘下盆栽裡所有黑蓮花的花瓣後，便帶著瑪芬先生離開。接著，一人一狗來到遊客中心，等待昆妮下班。昆妮下班後，兩人一起前往附近的艾德蒙餐酒館用餐，整晚氣氛愉快，就連瑪芬先生也吃到了他能吃的東西。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/grenlands-residence": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt04",
+          "evidence": "在魏斯科的拉索斯教堂，服從神社，冒險者們從卡魯神父口中，冒險者們得知了葛蘭倫大法師的住處，並拜訪了他。花了點時間，冒險者們成功說服葛蘭倫大法師，一同回到沃瓦倫鎮，嘗試解除詛咒。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/howling-forest": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "離開城門時，守門的兩位衛兵向冒險者們詢問了名字，冒險者思索了一陣子，最終做出了決定。他們回答道：「我們是『台北市議員』」。接著，他們便步向了神秘的嚎叫森林……"
+        },
+        {
+          "id": "rugatha-c01-chpt03",
+          "evidence": "「台北市議員」步入夜色，邁入了嚎叫森林。天色逐漸暗去，冒險者們在龍人德魯伊烏柯的經驗下，根據謹慎的判斷，所幸沒有迷路。然而，他也發現在路邊，似乎有用德魯伊語留下的神秘訊息。"
+        },
+        {
+          "id": "rugatha-c01-chpt05",
+          "evidence": "台北市議員帶著葛蘭倫大法師再度走入了嚎叫森林。有了法力高強的葛蘭倫，大家並不擔心遇到野狼會需要浴血奮戰，甚至，他們想看看葛蘭倫大法師在戰鬥中到底有多厲害。然而，旅途的一開始就不太順利。在走了一段時間後，大家迷了路，花了些時間才折回原處，走回正確的道路。"
+        },
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "晚餐時間過後，布朗與瑪芬先生終於穿越森林，來到了魏斯科。進城後，布朗找到一間名為「酒食樂！」的酒館，便進去用餐。在餐點送上來之前，布朗聽見酒館某處有人正在討論拉索斯的事。出於好奇，他便上前詢問，問對方是否願意告訴他更多關於拉索斯的事情。兩名女人之中，較年輕、容貌姣好的自稱梅莉，另一位年長女子則是瑪蒂達，似乎不太說話。梅莉表示，只要布朗願意各請她們一杯啤酒，她們就願意告訴他一些事。"
+        },
+        {
+          "id": "brown-c02-chpt01",
+          "evidence": "朝著夏庭森前進時，布朗和瑪芬先生騎著馬走進森林。森林裡愈走愈容易迷失方向，因為四周景色幾乎全都一模一樣。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/maylees-home": {
+      "chapters": [
+        {
+          "id": "brown-c01-chpt03",
+          "evidence": "到了梅莉家門口，梅莉掏出鑰匙把門打開。兩人進屋關門後，梅莉立刻倒在門口失去意識。布朗聽見遠處傳來狗叫聲，便先把梅莉扛到床上，接著便在房間角落的鐵籠裡看見了瑪芬先生。布朗發現梅莉的狀況非常差，便先出去買了一些醫療用品，替她做了簡單處理，確認她不至於瀕死後，再把水潑到她臉上。經過一番審問，梅莉表示關著瑪芬先生的鐵籠鑰匙在瑪蒂達手上，但布朗不相信。當他以死亡威脅她時，梅莉便指向門口旁的盆栽，隨後又昏了過去。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/quiet-garden": {
+      "chapters": [
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "在 213 號房裡，布朗一早就醒了。他背起全部家當，前往「酒食樂！」吃早餐。店裡除了他之外只有兩名男子正在聊天，而布朗聽見他們正在談論卡魯神父，便湊過去詢問。兩名男子自稱是湯米和羅傑，兩人是兄弟，一起經營一間當鋪。他們提到，卡魯神父來到魏斯科的時間不算久，但只要城市有需要幫忙的地方，他都很樂意出手協助。看過布朗拿出的花後，湯米表示自己以前曾在附近的恬靜花園看過類似的花，但也只見過一次。"
+        },
+        {
+          "id": "brown-c01-chpt03",
+          "evidence": "吃飽之後，兩人來到恬靜花園散步。昆妮表示，這是自己第一次不是以工作人員的身份走在這裡，感覺很不一樣，同時也很感謝布朗今晚的晚餐與陪伴。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/shrine-of-obedience": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt04",
+          "evidence": "在魏斯科的拉索斯教堂，服從神社，冒險者們從卡魯神父口中，冒險者們得知了葛蘭倫大法師的住處，並拜訪了他。花了點時間，冒險者們成功說服葛蘭倫大法師，一同回到沃瓦倫鎮，嘗試解除詛咒。"
+        },
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "幾杯酒下肚後，布朗藉機問了不少關於拉索斯的問題，得知這裡的拉索斯教堂名叫服從神社，由卡魯神父主持。另外，他也打聽到，前陣子附近一座名為沃瓦倫的村莊似乎遭到毀滅。兩名女子也注意到了瑪芬先生，而梅莉非常喜歡牠，甚至讓牠坐在自己腿上。聊得正開心時，梅莉起身替布朗點了一杯特別的酒，從吧台端了回來。布朗不疑有他，便一口喝下。不久後，他開始感到暈眩，暈眩，再暈眩。布朗試著站起身去找酒保，向對方要了一杯水。回到座位後，他試圖把瑪芬先生帶走，想找個地方休息，梅莉卻把手按在瑪芬先生身上，不讓布朗帶走。疲憊不堪的布朗最終只好趴在桌上昏睡過去。"
+        },
+        {
+          "id": "brown-c01-chpt03",
+          "evidence": "離開彩虹叢林後，因為梅莉腳上有傷，兩人回她家的路走得格外漫長，甚至還引來路人的關心。路人建議可以把她送到服從神社請神父照看，但布朗表示自己就能替梅莉簡單治療。"
+        },
+        {
+          "id": "brown-c01-chpt04",
+          "evidence": "布朗睜開雙眼，發現自己又回到了那個熟悉的地下室，也就是服從神社的地底。然而這一次，身邊不再有那些可怖的屍骨圍坐成圈，只有他獨自躺在地上，以及一旁冷冷看著他的羅傑。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/the-haven": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt04",
+          "evidence": "走入了魏斯科廣場，四周一片寧靜，只有衛兵來回的穿梭。在詢問衛兵後，台北市議員走到了廣場旁的旅店，庇護地。庇護地內的櫃檯人員聽到他們來自沃瓦倫後，態度有點輕蔑，但還是在大家繳了住宿費後帶領台北市議員進入了各自的房間。"
+        },
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "市區裡的旅店仍然營業著，布朗走進了庇護地旅社。兩名櫃檯人員向他說明了一晚住宿的費用，便將鑰匙遞給他。出於好奇，布朗問櫃檯人員是否看過那朵黑色的花。仔細端詳布朗拿出的花朵後，女店員嘉莉亞表示自己沒見過，而男店員艾迪則說自己好像看過。布朗想繼續追問，但艾迪要求他先付點錢才願意幫忙。布朗掏出一枚銀幣，艾迪想了想，表示也許他該去魏斯科的服務中心，那裡或許能提供更多資訊。對於自己付了錢卻幾乎什麼都沒問到，布朗十分不滿，試圖威嚇艾迪。艾迪於是把那枚銀幣還給布朗。然而，就在布朗伸手接過銀幣的瞬間，艾迪另一隻手卻伸向布朗的錢包，想整包偷走。布朗大聲喝斥，最終艾迪才乖乖把錢還給他，轉身走進櫃檯後方的辦公室。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/wescoe-plaza": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt04",
+          "evidence": "走入了魏斯科廣場，四周一片寧靜，只有衛兵來回的穿梭。在詢問衛兵後，台北市議員走到了廣場旁的旅店，庇護地。庇護地內的櫃檯人員聽到他們來自沃瓦倫後，態度有點輕蔑，但還是在大家繳了住宿費後帶領台北市議員進入了各自的房間。"
+        }
+      ]
+    },
+    "material-realm/mattington/wescoe/wescoe-service-center": {
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt04",
+          "evidence": "隔日，起床後，台北市議員們到對面的餐廳「埃德蒙餐酒館」用餐，這裡是當地最有名的餐館，餐點也的確高級，不過對於這裡的主廚埃德蒙，似乎有些不為人知的傳聞。他們也在魏斯科遊客中心合買了一份地圖。大夥兒分批，遊覽了魏斯科的各大景點。"
+        },
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "市區裡的旅店仍然營業著，布朗走進了庇護地旅社。兩名櫃檯人員向他說明了一晚住宿的費用，便將鑰匙遞給他。出於好奇，布朗問櫃檯人員是否看過那朵黑色的花。仔細端詳布朗拿出的花朵後，女店員嘉莉亞表示自己沒見過，而男店員艾迪則說自己好像看過。布朗想繼續追問，但艾迪要求他先付點錢才願意幫忙。布朗掏出一枚銀幣，艾迪想了想，表示也許他該去魏斯科的服務中心，那裡或許能提供更多資訊。對於自己付了錢卻幾乎什麼都沒問到，布朗十分不滿，試圖威嚇艾迪。艾迪於是把那枚銀幣還給布朗。然而，就在布朗伸手接過銀幣的瞬間，艾迪另一隻手卻伸向布朗的錢包，想整包偷走。布朗大聲喝斥，最終艾迪才乖乖把錢還給他，轉身走進櫃檯後方的辦公室。"
+        },
+        {
+          "id": "brown-c01-chpt03",
+          "evidence": "布朗摘下盆栽裡所有黑蓮花的花瓣後，便帶著瑪芬先生離開。接著，一人一狗來到遊客中心，等待昆妮下班。昆妮下班後，兩人一起前往附近的艾德蒙餐酒館用餐，整晚氣氛愉快，就連瑪芬先生也吃到了他能吃的東西。"
+        },
+        {
+          "id": "brown-c01-chpt04",
+          "evidence": "布朗決定離開教堂，前往服務中心去找昆妮。當門一打開，昆妮滿臉笑容地迎接客人，但她的眼神裡對布朗只有陌生。布朗試著解釋昨晚兩人和羅傑一起前往教堂的經過，但昆妮完全無法理解，只告訴布朗，看起來他的精神狀況很差。就在這時，布朗聽見昆妮身後傳來一陣狗叫聲。"
+        }
+      ]
+    },
+    "material-realm/lothum/elnore": {
+      "chapters": [
+        {
+          "id": "legends-os02",
+          "evidence": "Five traveling adventurers were recruited through the agents of the prominent noble Syr Frederick Norman and brought to his residence. Syr Norman explained that, according to his informants, his adult son Gustavo had disappeared a month earlier in El’Nore, a village on the border between the kingdoms of Lawson and Mattington. He and his young wife Pamela, who had also been Gustavo’s childhood friend, were deeply worried. He therefore hired the adventurers at great expense to investigate Gustavo’s whereabouts, promising each of them ten platinum pieces if they returned with news of his condition."
+        }
+      ]
+    },
+    "material-realm/lothum/elnore/central-plaza-and-sacrificial-platform": {
+      "chapters": [
+        {
+          "id": "legends-os02",
+          "evidence": "馬法接著代冒險者們回到案發現場：滿月儀式的場地。廣場的正中央有個石製的圓形平台，散發出濃濃的血味與燒焦味。馬法說明平常儀式都在這裡進行，古斯塔夫死時雖然不是儀式當下，但是也是在這裡和村民起衝突的。此時，教主派的人找到了冒險者們，告知他們明天晚上會有一場滿月儀式，邀請他們參加。馬法表示不用擔心，一是絕對不會危及他們的生命。"
+        }
+      ]
+    },
+    "material-realm/lothum/elnore/hierarchs-tent": {
+      "chapters": [
+        {
+          "id": "legends-os02",
+          "evidence": "放眼望去，在艾爾諾村的住民幾乎都是妖精，但是仔細一看，其實他們都是半妖精。這裡與其說是村莊，更像是部落，村民都是居住在帳篷內。感到好奇的冒險者們拉了一名路人想要談話，卻發現對方不懂普通語。唯一懂妖精語的小小小家亨便成了大家的翻譯員。路人找來了一名名為多蘇，懂普通語的男子，帶領冒險者。和多蘇簡單交涉後，冒險者們大致知道了這裡主要的重要人物有長老（也可視為村長），同時是多蘇哥哥的巴蘇，以及宗教領袖教主大人。大夥兒也從多蘇那邊聽說了他最後一次見到古斯塔夫時是看見他和長老巴蘇吵架。大家先跟隨著多蘇來到了教主大人的營帳。"
+        }
+      ]
+    },
+    "material-realm/lothum/elnore/kojos-shop": {
+      "chapters": [
+        {
+          "id": "legends-os02",
+          "evidence": "接著，冒險者們也詢問到了一家賣各式雜貨、材料的小店。店的裝飾低調，裡面的老闆是一名人類—是定居在這裡的唯一一名人類。他自我介紹名為寇久，告誡了冒險者們在部落內要特別小心，表示因為妖精生產力低，會誘拐來到這裡的外地人，讓他們為部落產下子代。因此今晚在這裡過夜，要特別注意。寇久也為喬拉拉準備了他所需要的各式工具與材料。"
+        }
+      ]
+    },
+    "material-realm/lothum/elnore/mafas-lodging-tent": {
+      "chapters": [
+        {
+          "id": "legends-os02",
+          "evidence": "在喬拉拉變身成狗，被人抱離營帳後，大家在部落的樹林邊討論著接下來的計畫。大家先詢問到了可以住宿的地方：一個較鮮艷的大型營帳，營帳的主人叫馬法。馬法在將自己的其他客人趕走後，簡單和冒險者們聊了聊。他表示外地人來這裡都是他安排住宿，並向冒險者們透露他也曾接待過古斯塔夫。他表示古斯塔夫是個好孩子，卻因為對部落內的傳統以及儀式有所不滿，在爭吵中誤殺了前任長老而被暴民殺死。馬法帶著冒險者們來到了森林的深處前任長老納爾的墳前致意，而旁邊便是古斯塔夫的墳墓，不過他的墓碑上被人用妖精語塗鴉破壞。"
+        }
+      ]
+    },
+    "material-realm/lothum/phreit": {
+      "chapters": [
+        {
+          "id": "lite-c08-chpt01",
+          "evidence": "Arriving at the gate of the Lawson Kingdom, with the encouragement of Ra’Leer, Lott and Watson tried to ask the guards in fairy language how to get to the kingdom’s capital Phreit, but they could not get an answer they could understand, so they relied on Ra’Leer to communicate with the guards and successfully entered the border. At the same time, Ra’Leer also kept reminding the adventurers that because goblins have serious racial discrimination, when they come to the goblin kingdom, they must behave as \"more goblin\" as possible. However, his statement only left the adventurers with questions."
+        },
+        {
+          "id": "legends-os06",
+          "evidence": "《洛林精神》響遍佛萊特境廣大的野餐區，舞台上，征服者洛林帶領著大家齊聲哼唱，底下的妖精們齊聲歡呼，一同享受屬於妖精們的榮耀。"
+        }
+      ]
+    },
+    "material-realm/lothum/phreit/grocery-tent-monu-and-minas-family": {
+      "chapters": [
+        {
+          "id": "lite-c08-chpt01",
+          "evidence": "接著，冒險者們找了附近一家雜貨店採買乾糧以及其他需要的用品。在妥善計畫後，夸塞魔和羅特悄悄將乾糧從帳篷內運出，其他冒險者們則讓店內的老闆夫妻與兩名孩子莫努與米娜兄妹倆忙碌。冒險者們除了偷偷拿走的乾糧外，還額外採買了不同尺寸的袋子、繩子、岩釘，圖伊特也買了一罐他感覺到與月神有感應的藥水。然而，這家店鋪收的價錢與冒險者們在人類王國消費的金額差不多，也讓大家有些過意不去，於是華生在臨走前塞給了兩兄妹各一枚金幣作為感謝。"
+        }
+      ]
+    },
+    "material-realm/lothum/phreit/shifus-tent": {
+      "chapters": [
+        {
+          "id": "lite-c08-chpt01",
+          "evidence": "妖精的城市和人類王國內的模式很不同，大量繽紛的帳篷散落在森林間，地上的道路不像特別鋪出來的，而是走出來的。在拉黎爾的指引下，大家先去見一位被尊稱為「師父」的在地耆老，向他詢問關於蜘蛛神教和母親大人的消息。"
+        }
+      ]
+    },
+    "material-realm/lothum/phreit/wine-shop-unnamed": {
+      "chapters": [
+        {
+          "id": "lite-c08-chpt01",
+          "evidence": "冒險者們先去了一間願意接受錢幣的酒舖，買了大量劣質的酒。老闆雖然開價高昂，但在殺價後以還能接受的價格買了酒。冒險者們也在和老闆嘗試溝通後，讓老闆以比較平和的態度說明了非妖精在洛森王國的窘境。"
+        }
+      ]
+    },
+    "material-realm/lothum/stonefield": {
+      "chapters": []
+    },
+    "material-realm/chryomen/orun": {
+      "chapters": [
+        {
+          "id": "legends-os05-chpt01",
+          "evidence": "In the royal palace at Orun, capital of the Kingdom of Chryomen, empty wine bottles covered the visiting adventurers’ table at a lively banquet. Queen Marva and her daughter, Princess Uma, had ensured that adventurers and guests alike were thoroughly fed and drunk."
+        },
+        {
+          "id": "legends-os05-chpt02",
+          "evidence": "As it had twenty-seven years earlier, the palace banquet hall in Orun, Kingdom of Chryomen, bustled with adventurers. This time, however, the reigning queen at the head table was the former Princess Uma."
+        }
+      ]
+    },
+    "material-realm/chryomen/orun/mine-dragons-orb-retrieval-mission": {
+      "chapters": [
+        {
+          "id": "legends-os05-chpt01",
+          "evidence": "夢想完成「大幹一票」儀式的狗頭人希岡、愛耍酷的荒咬薄刃、身材彪悍的黑毛貓人阿嘿尼，以及此時已經酩酊大醉的妖精泰坦妮亞，在這充滿矮人的宴會廳顯得格格不入，但此時他們是宴會的焦點。雖然喝醉了的他們已經不記得女王的指示，但是隔天，他們被指派前往一座礦脈，去尋找一件寶物。"
+        }
+      ]
+    },
+    "material-realm/chryomen/orun/royal-museum": {
+      "chapters": [
+        {
+          "id": "legends-os05-chpt02",
+          "evidence": "龍之球在這二十多年內，已成功讓克里歐門王國產出了永續的電力，除了龍蛋上的紫色斑紋變得更淡之外，效力還是十分強烈。此時，龍蛋已被放在王國的博物館內，而這次女王聘請的冒險者們，任務是護送這顆蛋到指定的交易地點，與妖精的洛森王國進行交易，換取好幾箱妖精釀的美酒。"
+        }
+      ]
+    },
+    "material-realm/chryomen/orun/royal-palace": {
+      "chapters": [
+        {
+          "id": "legends-os05-chpt01",
+          "evidence": "在女王的安排下，四名冒險者住進了王宮二樓的兩間雙人房。"
+        },
+        {
+          "id": "legends-os05-chpt02",
+          "evidence": "如同 27 年前般，克里歐門王國歐倫市的王宮宴會廳正熱鬧地款待著冒險者們，不過此時坐在主桌的，是現任的女王，也就是當年的烏瑪公主。"
+        }
+      ]
+    },
+    "feywild/unaffiliated/the-great-tent": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt03",
+          "evidence": "昨日，米多莉、波和冒險者們的到來，讓不少大帳篷內的成員們都意識到預言似乎要應驗了。"
+        },
+        {
+          "id": "plus-c05-chpt04",
+          "evidence": "第三項是預見試煉。艾爾比請兩人透過中心樹，讀取他們所看見妖精荒野的未來，並分享給居民們。波先背對著樹，用雙手觸碰樹皮，並緩慢呼吸。不久後，他站了起來，大聲地朝著居民們，說著自己從中心樹中，讀取到了不管救世主是誰，妖精荒野會繼續繁榮、和平、穩定幾千幾萬年，甚至會將帳篷持續向外擴展，把帳篷外的危險去除。輪到米多莉時，米多莉將手碰向樹。然而，他只看見在黑暗之中，一個人的身影，那人是小雪。穿著簡樸的小雪的口中似乎念著什麼，但米多莉聽不見。他仔細從小雪的唇語，解讀他的意思。小雪告訴米多莉自己感覺快要消失了，要米多莉放他自由，只要米多莉還思念著他，自己就無法自由。米多莉試著想和他對話，但得到的消息都沒什麼幫助。暫時將手移開樹，米多莉再次透過中心樹讀取，畫面中依然只有小雪。小雪和米多莉說著再見，然後就消失了。米多莉感到心慌，再次嘗試與中心樹連結。這次，他看見了妖精荒野的大帳篷，有個人從帳篷外竄了進來，隨後，大量的人也竄進了帳篷，然後帳篷內的燭火都被熄滅了。帶頭那人的臉是小雪。米多莉和艾爾比說明這件事，並表示自己這樣好像沒有看到妖精荒野的未來，艾爾比則表示這樣的資訊對妖精荒野已經很有幫助了。"
+        },
+        {
+          "id": "plus-c05-chpt05",
+          "evidence": "一眨眼，大家都不見了，只留下龍恩獨自一人在偌大的帳篷裡。龍恩也不知道該去哪裡，只好在帳蓬內繞行。"
+        }
+      ]
+    },
+    "feywild/unaffiliated/the-great-tent/center-tree": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt03",
+          "evidence": "在眾人相會後，大家也陪著YHWH和薩梅爾一起到帳篷中心的大樹（這裡的人稱它為中心樹中心樹），嘗試喚起回憶。在艾爾比的說明下，這棵樹除了讓觸摸的人取得回憶（除了自己的回憶，甚至是在自己出生前的回憶），也同時是妖精荒野存取集體知識的寶庫，雖然有些內容會被刻意的封鎖住。同時，觸摸者也能對樹提出問題，從中嘗試取得答案。"
+        },
+        {
+          "id": "plus-c05-chpt04",
+          "evidence": "猶豫著該不該先去把龍恩找出來，大家最終決定先去找艾爾比，龍恩也許先跑去試煉場了也說不定。在居民的帶路下，大家見到站在中心樹邊的艾爾比，與平日穿著純白的衣服不同，今天的他，換上了全黑的裝扮。米多莉詢問艾爾比能否先吃個早餐，但艾爾比表示是時候進行試煉了。"
+        },
+        {
+          "id": "plus-c05-chpt05",
+          "evidence": "龍恩走到中心樹，用他的兩隻手，試圖再次和樹做連結，卻沒有得到什麼額外的資訊。"
+        }
+      ]
+    },
+    "feywild/unaffiliated/the-great-tent/elbys-clinic": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt03",
+          "evidence": "病床上，米多莉逐漸清醒。他意識到原本躺在身旁另一張病床上的波似乎消失了，趕緊用手把身體撐了起來—此時，他也發現了自己被炸掉的手好像變得不太一樣了。米多莉的左手動起來一樣靈活，但是現在已經不是肉體，而是十分精巧的機械手臂，使用起來，力道似乎變得更強大。而他原本近乎癱瘓的右手，依然維持肉體，此刻卻似乎能動起來了，不過手肘處似乎被厚厚的包紮了起來，仔細一聽，還能聽到金屬關節的運轉聲。米多莉看見站在診療間的一名助手，便試圖透過比手畫腳的方式和他溝通，助手見狀點了點頭，便離開了。"
+        }
+      ]
+    },
+    "feywild/unaffiliated/the-great-tent/elbys-operating-room": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt03",
+          "evidence": "龍恩興奮的跑回大家睡覺的帳篷，喚醒了米多莉，要請米多莉用他的巨斧幫他把右手砍斷，以接上這隻來路不明的手。兩人的討論引起了還沒睡著的喜利・歐喜利的注意。三人決定先離開帳篷，再進行討論。喜利・歐喜利認為這東西看起來有幾分邪惡的氣味，但是在米多莉的感應下，沒有感知到什麼奇怪之處。龍恩成功說服了米多莉幫助他，但喜利・歐喜利還是非常不放心，於是三人先去了艾爾比的手術室，喜利・歐喜利再去找艾爾比，請他幫忙評估，甚至動手術。"
+        }
+      ]
+    },
+    "feywild/unaffiliated/the-great-tent/musical-instrument-stall": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt04",
+          "evidence": "薩梅爾找到了一個賣樂器的攤位，在嘗試和店家溝通後，他試彈了一把魯特琴，聲音明顯比過去英荻格送他的那把還要好。薩梅爾向店家說了英荻格後，店家便跑去將英荻格找了過來。得知薩梅爾想要買這把琴，英荻格向店家要了支筆，便在琴上簽了自己的名字，感到十分得意。接著，在薩梅爾的要求下，英荻格給了他一顆寶石，上面似乎有記了一個簽名。英荻格表示要買東西，用這個給店家感應一下，帳就記在英荻格的名下。"
+        }
+      ]
+    },
+    "feywild/unaffiliated/the-great-tent/shared-sleeping-tent": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt03",
+          "evidence": "米多莉表示自己還沒去看過他們昨晚休息的營帳，於是艾爾比便帶著大家走到營帳前。此時，營帳內傳出了謎樣的嬉鬧聲。在討論後，大家決定晚點再過來。不過，艾爾比也表示大家平常都會共用這個營帳來睡覺，他自己也會使用，因此要大家有點心理準備。"
+        }
+      ]
+    },
+    "feywild/unaffiliated/the-great-tent/tea-area": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt03",
+          "evidence": "YHWH向英荻格詢問了不少問題，英荻格邀請大家先來吃頓下午茶，容他好好解釋。走到了帳篷中間一處，不少圓桌擺放著，英荻格請大家自己找椅子坐下，接著他和服務生說了幾句，服務生便端來了各種不同顏色的茶給大家喝，有綠色、藍色、紫色等，和一般世界的茶似乎不太一樣，喝起來更為清爽。接著，服務生也端來了一座點心塔，上面至少放滿了十五盤各式各樣的甜點，每盤上面都有三個小糕點。"
+        }
+      ]
+    },
+    "feywild/unaffiliated/the-great-tent/underground-trial-square": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt04",
+          "evidence": "在艾爾比的呼喚下，帳篷內的居民們通通向中心樹靠了過來。艾爾比念起咒語，突然間，地面開始震動，中心樹陡然向上拔起，露出了一個巨大的樹洞。艾爾比帶頭從走入樹洞，居民們也隨後跟上，冒險者們則走在最後。樹洞內是向下盤旋的樓梯，一路降下到帳篷底下巨大的廣場。"
+        }
+      ]
+    },
+    "the-deep/unaffiliated/klaucingtton": {
+      "chapters": []
+    },
+    "the-deep/unaffiliated/pactilyk": {
+      "chapters": []
+    },
+    "the-deep/unaffiliated/umaniton": {
+      "chapters": []
+    },
+    "the-deep/unaffiliated/umaniton/maester-nethers-lab": {
+      "chapters": []
+    },
+    "the-deep": {
+      "chapters": [
+        {
+          "id": "legends-os09",
+          "evidence": "但此時，冒險者們確實的醒來了。在你們正中間的地上，有鮮血繪製的法陣。從當中深淵語的內容，冒險者們判斷這是個復活儀式，上面留有一段話：「醒來，你們還沒完成你們的任務」。冒險者們也發現被復活的自己，已經成了不死生物。"
+        }
+      ]
+    },
+    "feywild": {
+      "chapters": [
+        {
+          "id": "plus-c05-chpt03",
+          "evidence": "充滿困惑的喜利・歐喜利和法朗茲兩人搞不清楚怎麼夥伴們都不見了，也完全不知道該怎麼辦才好。不久後，老闆又前來敲了敲門。喜利・歐喜利和老闆詢問了剛剛見到的那名白醫師以及夥伴消失的事。老闆簡單說明了白醫師應該是把他的夥伴們傳送到了一個叫妖精荒野(妖精荒野) 的時空去，不過那裡的時間和這裡的流速不太一樣。聽見了妖精荒野，法朗茲表示自己和過去的冒險夥伴也曾去過那裡。"
+        },
+        {
+          "id": "plus-c05-chpt04",
+          "evidence": "第三項是預見試煉。艾爾比請兩人透過中心樹，讀取他們所看見妖精荒野的未來，並分享給居民們。波先背對著樹，用雙手觸碰樹皮，並緩慢呼吸。不久後，他站了起來，大聲地朝著居民們，說著自己從中心樹中，讀取到了不管救世主是誰，妖精荒野會繼續繁榮、和平、穩定幾千幾萬年，甚至會將帳篷持續向外擴展，把帳篷外的危險去除。輪到米多莉時，米多莉將手碰向樹。然而，他只看見在黑暗之中，一個人的身影，那人是小雪。穿著簡樸的小雪的口中似乎念著什麼，但米多莉聽不見。他仔細從小雪的唇語，解讀他的意思。小雪告訴米多莉自己感覺快要消失了，要米多莉放他自由，只要米多莉還思念著他，自己就無法自由。米多莉試著想和他對話，但得到的消息都沒什麼幫助。暫時將手移開樹，米多莉再次透過中心樹讀取，畫面中依然只有小雪。小雪和米多莉說著再見，然後就消失了。米多莉感到心慌，再次嘗試與中心樹連結。這次，他看見了妖精荒野的大帳篷，有個人從帳篷外竄了進來，隨後，大量的人也竄進了帳篷，然後帳篷內的燭火都被熄滅了。帶頭那人的臉是小雪。米多莉和艾爾比說明這件事，並表示自己這樣好像沒有看到妖精荒野的未來，艾爾比則表示這樣的資訊對妖精荒野已經很有幫助了。"
+        },
+        {
+          "id": "plus-c05-chpt05",
+          "evidence": "在薩梅爾和英荻格的評估下，逃離妖精荒野回到原世界是最實際的作法。第一波，英荻格帶著YHWH、法朗茲和龍恩先回到了物質世界。"
+        }
+      ]
+    },
+    "material-realm": {
+      "chapters": [
+        {
+          "id": "lite-c13-chpt01",
+          "evidence": "羅特向賽柏訴說了自從出來冒險後的一路發展，如何從相信蜘蛛神、遭母親大人背叛、轉向愛神利希恩，然後一路走到現在。羅特覺得，自己似乎總是帶來厄運與災害，走到哪裡都沒有希望，這讓他很痛心，也懷疑自己是不是該先停下來了。賽柏看著羅特，表示這個世界本來就充滿了苦難，就算沒有羅特，這些事情還是會發生，也因此，他希望羅特不要太責怪自己。同時他也表示自己很感激能找到常翠林這個地方，讓他覺得終於有家的感覺。羅特也對於自己的信仰不斷轉換感到困擾，羨慕賽柏能找到像涅西斯這樣「看起來沒什麼問題」的宗教。賽柏則表示，每個宗教都有不同派系，也很難講這個派系沒有任何問題。不過，對於宗教的選擇，他一直以來都只有涅西斯而已，如果羅特的困擾是和換了不同宗教有關，他們身邊那位月神教的信徒，似乎是更好的談話對象。羅特點點頭，和賽柏離開了儲藏間。賽柏拍拍他的肩膀，表示不論他決定怎麼做，都支持他。"
+        },
+        {
+          "id": "rugatha-c01-chpt01",
+          "evidence": "所有的冒險都有相同的開始，而這個冒險，也並非例外。"
+        },
+        {
+          "id": "rugatha-c01-chpt02",
+          "evidence": "經過了一晚的睡眠，冒險者們醒來了，但大家都感到十分疲憊，沒睡好。就像旅店的名稱「夜夢者」，每個人都做夢了。"
+        },
+        {
+          "id": "rugatha-c01-chpt03",
+          "evidence": "「台北市議員」步入夜色，邁入了嚎叫森林。天色逐漸暗去，冒險者們在龍人德魯伊烏柯的經驗下，根據謹慎的判斷，所幸沒有迷路。然而，他也發現在路邊，似乎有用德魯伊語留下的神秘訊息。"
+        },
+        {
+          "id": "rugatha-c01-chpt04",
+          "evidence": "凌晨，台北市議員來到了魏斯科鎮的入口，守衛們問清了他們的來歷後，才放他們入城。"
+        },
+        {
+          "id": "rugatha-c01-chpt05",
+          "evidence": "台北市議員帶著葛蘭倫大法師再度走入了嚎叫森林。有了法力高強的葛蘭倫，大家並不擔心遇到野狼會需要浴血奮戰，甚至，他們想看看葛蘭倫大法師在戰鬥中到底有多厲害。然而，旅途的一開始就不太順利。在走了一段時間後，大家迷了路，花了些時間才折回原處，走回正確的道路。"
+        },
+        {
+          "id": "rugatha-c01-chpt06",
+          "evidence": "穿越危險的嚎叫森林，台北市議員終於成功帶著大法師葛蘭倫回到了沃瓦倫鎮。"
+        },
+        {
+          "id": "rugatha-c01-chpt07",
+          "evidence": "早晨六點的沃瓦倫，台北市議員們紛紛從前一晚不安的睡夢中甦醒。幾位冒險者起身，繞了繞他們這幾日逐漸熟悉的沃瓦倫。"
+        },
+        {
+          "id": "rugatha-c02-chpt01",
+          "evidence": "踏出漆黑的木製電梯，恢復體力的薩梅爾發現了地上一只小型木盒子。那是一只被稱為「洛林的音樂盒」的小盒子，裡面放送著妖精們的民謠「征服者的後裔」。"
+        },
+        {
+          "id": "rugatha-c02-chpt02",
+          "evidence": "矗立在冒險者面前的，是一個巨大的牢籠，裡面困著一個瘦弱、橘髮，膚色慘白的年輕女子。在和女子溝通後，冒險者們成功打開了牢籠，拯救了他出來。"
+        },
+        {
+          "id": "rugatha-c02-chpt03",
+          "evidence": "換班時，烏柯準備要休息，而薩梅爾因為他的渣男行徑，決定好好教訓他一番，便刻意用走音的魯特琴在他面前彈奏，搞得烏柯難以入睡。後來，家亨也利用休息的時間和薩梅爾學習了彈奏魯特琴的基礎。"
+        },
+        {
+          "id": "rugatha-c03-chpt01",
+          "evidence": "台北市議員們離開暗巷前，花了點時間，好好將自己喬裝打扮一番。接著，自稱羅莎的佛列里夫人便帶領著他們，一起走向爵士的宅邸。一路上，台北市議員們注意到街上的人們偶爾注意了一下他們，不過似乎沒有造成太大的轟動。"
+        },
+        {
+          "id": "rugatha-c03-chpt02",
+          "evidence": "台北市議員在寇林菲爾德的市中心逛著。"
+        },
+        {
+          "id": "rugatha-c03-chpt03",
+          "evidence": "跪在爵士宅邸門口的男子，自稱為雷米，是個半妖精浪客。他說他腦中有一個聲音，要他加入「台北市議員」。不過令人起疑的是，他的脖子上掛著冒險者們有些熟悉的紫色墜飾項鍊，也就是烏柯在訣別信提到自己遺失的那條，寄宿著多姆尼爾的項鍊。眾人對雷米問話，不敢肯定他是否可信。"
+        },
+        {
+          "id": "rugatha-c03-chpt04",
+          "evidence": "回到弗列里爵士家，晚餐前的大廳，大家不見帕拉丁的身影。YHWH想起帕拉丁說過他會在晚餐前回來。眾人決定回到市中心尋找帕拉丁，而龍恩則決定待在爵士宅邸等候。"
+        },
+        {
+          "id": "rugatha-c04-chpt01",
+          "evidence": "在家亨於寇林菲爾德被士兵帶走，雷米前去搜集資訊後，台北市議員們上了帕拉丁的父親，馬格努斯爵士準備的馬車，朝著麥丁頓王國的首都麥克嵩前進。"
+        },
+        {
+          "id": "rugatha-c04-chpt02",
+          "evidence": "夜裡，冒險者們決定在日出酒館關門後回到店內和暫居於此的龍恩討論後續規劃。"
+        },
+        {
+          "id": "rugatha-c04-chpt03",
+          "evidence": "日出，住在雙人房的YHWH和帕拉丁在反覆起床幾次後，最終決定繼續昏頭大睡。"
+        },
+        {
+          "id": "rugatha-c04-chpt04",
+          "evidence": "一夜過後，龍恩和薩梅爾兩人一早便睡醒，在白磚石的一樓相遇。兩人去了一趟雜貨店，買了酷爆的飼料以及麵包。"
+        },
+        {
+          "id": "rugatha-c04-chpt05",
+          "evidence": "一大清早，在白磚石醒來的龍恩和薩梅爾發現夥伴們沒有回到房內，雖然充滿疑惑，但也不知道該往哪去，只好先行前往王宮花園的入口，看看能否在比武大會相遇了。"
+        },
+        {
+          "id": "rugatha-c05-chpt01",
+          "evidence": "那人喚了雷米，雷米便睜開了雙眼。映入他眼簾的是柏納斯家的傳人蘭斯。蘭斯將雷米帶到了另一間看起來像武器房的房間，將他手腳撐開綁住，接著便讓雷米好好在這過夜休息。"
+        },
+        {
+          "id": "brown-c01-chpt01",
+          "evidence": "「嘿！你有沒有在聽我說話？」"
+        },
+        {
+          "id": "brown-c01-chpt02",
+          "evidence": "晚餐時間過後，布朗與瑪芬先生終於穿越森林，來到了魏斯科。進城後，布朗找到一間名為「酒食樂！」的酒館，便進去用餐。在餐點送上來之前，布朗聽見酒館某處有人正在討論拉索斯的事。出於好奇，他便上前詢問，問對方是否願意告訴他更多關於拉索斯的事情。兩名女人之中，較年輕、容貌姣好的自稱梅莉，另一位年長女子則是瑪蒂達，似乎不太說話。梅莉表示，只要布朗願意各請她們一杯啤酒，她們就願意告訴他一些事。"
+        },
+        {
+          "id": "brown-c01-chpt03",
+          "evidence": "布朗眼前一片模糊混沌。幾秒鐘後，他勉強站穩身體，卻發現自己依然在同一個房間裡，只是打鬥的痕跡全都消失了，梅莉和瑪蒂達也不見蹤影。聽見緊閉的房門外似乎傳來腳步聲，布朗立刻躲進房內的衣櫃，透過門縫窺視。他看見梅莉和瑪蒂達走進房間，百無聊賴地抱怨今天一個客人都沒接到，剛才那兩名兄弟也沒有點她們。從描述來看，她們口中的兄弟似乎正是凱勒布兄弟。"
+        },
+        {
+          "id": "brown-c01-chpt04",
+          "evidence": "布朗睜開雙眼，發現自己又回到了那個熟悉的地下室，也就是服從神社的地底。然而這一次，身邊不再有那些可怖的屍骨圍坐成圈，只有他獨自躺在地上，以及一旁冷冷看著他的羅傑。"
+        },
+        {
+          "id": "brown-c01-chpt05",
+          "evidence": "看著自己才剛買不久的地圖，布朗思索著下一步該往哪裡走。無論選哪個方向，他都得先穿越嚎叫森林。"
+        },
+        {
+          "id": "brown-c02-chpt01",
+          "evidence": "朝著夏庭森前進時，布朗和瑪芬先生騎著馬走進森林。森林裡愈走愈容易迷失方向，因為四周景色幾乎全都一模一樣。"
+        },
+        {
+          "id": "legends-os01",
+          "evidence": "幾位零散的冒險者分別來到了俗稱鬧鬼荒野的卓茲蘭，一座在麥丁頓王國邊界的小鎮，但他們對於自己如何來到這裡卻毫無記憶。"
+        },
+        {
+          "id": "legends-os02",
+          "evidence": "五名遊歷各處的冒險者被顯赫的貴族諾曼爵士弗雷德里克・諾曼透過眼線招募來到了他的住處。諾曼爵士說明，根據他的眼線，自己成年的兒子古斯塔夫據傳一個月前在洛森王國與麥丁頓王國邊界的艾爾諾村失蹤了，他和他的年輕妻子，同時也是古斯塔夫的青梅竹馬潘蜜拉十分擔心，因此重金禮聘冒險者們到艾爾諾村幫忙調查古斯塔夫的下落，並承諾只要能回報給他古斯塔夫的狀況，就能領取一人 10 枚白金幣的豐厚獎賞。"
+        },
+        {
+          "id": "legends-os03",
+          "evidence": "撿完木材並回到燈塔內的尼爾森與海耶斯選擇到了二樓的臥房休息。經過簡單閱讀後，泰瓦爾發現手稿主要分為四個部分：冬天之主的介紹、召喚冬天之主的儀式與活祭的奉獻、冬天之主的奴僕，以及面具。興奮的泰瓦爾用了三倍大的音量向眾人說明自己得到的資訊，卻被在二樓休息的尼爾森訓斥，表示自己的太太還在休息，請泰瓦爾放低音量。稍有收斂的泰瓦爾還是讓尼爾森感到不滿，而決定獨自外出收集更多木材。在泰瓦爾的說明下，大家理解到《雪の化身の目覚め》是用來召喚冬天之主的魔法書。冬天之主會伴隨著寒氣與暴風雪一同現身，當祂的形象具體化的瞬間，將會把週邊變成極寒世界。要成功召喚冬天之主的話需要獻上大量的活祭。另外冬天之主的僕人會嘗試召喚冬天之主。手稿上有記載冬天之主的僕人的召喚儀式以及僕人的弱點是他的冰冷心臟。只要手持炙熱的長槍貫穿僕人的心臟，僕人就會瞬間死亡。"
+        },
+        {
+          "id": "legends-os04",
+          "evidence": "本次支線創角種族與職業皆由特定清單內隨機選擇，六項基本數值為 3、3、3、18、18、18，排序也是隨機分配。等級為 3 等。其餘角色設定皆參考《玩家手冊》內設定。"
+        },
+        {
+          "id": "legends-os05-chpt01",
+          "evidence": "克里歐門王國首都歐倫市，王國的宮殿內，熱鬧的晚宴上，外地來的冒險者們桌上擺滿了空酒瓶。在現任女王瑪瓦和他的女兒烏瑪公主的款待下，冒險者們和前來參與的賓客們各個吃飽喝足。"
+        },
+        {
+          "id": "legends-os05-chpt02",
+          "evidence": "如同 27 年前般，克里歐門王國歐倫市的王宮宴會廳正熱鬧地款待著冒險者們，不過此時坐在主桌的，是現任的女王，也就是當年的烏瑪公主。"
+        },
+        {
+          "id": "legends-os06",
+          "evidence": "「親愛的子民們，今天，是我們建立王朝的第78年紀念日，很高興各位在這裡，和我一起共同慶祝。希望大家開心！」"
+        },
+        {
+          "id": "legends-os07",
+          "evidence": "睜開雙眼，冒險者們感到困惑。除了他們之外，身邊倒了一個人。那人似乎是帶他們來到這裡的嚮導，名叫帕瑞爾・亨德里克斯，但是他死透了。"
+        },
+        {
+          "id": "legends-os08",
+          "evidence": "<p style=\"text-align: center;\"><img src=\"../../../../campaigns/campaign-banners/legends-os08-2.png\" alt=\"\" loading=\"lazy\" style=\"width: 66%; max-width: 100%; height: auto;\" /></p>"
+        },
+        {
+          "id": "legends-os09",
+          "evidence": "深淵內居住的生物中，有部分被稱為「深淵人」是被從物質世界抓來深淵的生物（除了人類外，偶爾也會有其他物種），而在深淵待久了後，他們會逐漸失去理智，成為深淵人。除了深淵人之外的物種，便簡單以「深淵生物」稱之。深淵生物具有可以自由穿梭深淵與物質時空的能力，深淵人與誤闖深淵的生物則無法。"
+        },
+        {
+          "id": "legends-os10",
+          "evidence": "斑貓人獰、仙靈蓋蓋與星界精靈赫里安（簡稱赫寶）是熟識的朋友。他們受邀參與當地貴族布里奇沃斯家的婚禮，但他們與新郎或新娘的家族都沒有認識，因此對於為何被邀請，他們也不清楚。"
+        },
+        {
+          "id": "lite-c05-chpt02",
+          "evidence": "一早醒來，蘇加魯、墜兒和帕拉丁在酒館吃了老闆準備的麵包，作為早餐。同時，在用餐過程中，帕拉丁也向兩人說明了從與台北市議員們相遇後發生的種種冒險故事。然而，在過程中墜兒不斷感覺到有來自酒館其他食客的眼光緊盯著他們。在墜兒提醒後，帕拉丁決定將冒險團到麥克嵩後的旅程之後再說明，而三人也趕緊收拾行囊，離開朗甫頓。"
+        },
+        {
+          "id": "lite-c05-chpt03",
+          "evidence": "錯愕的眾人看著墜兒的消失，摸不著頭緒。原本墜兒身邊的壯漢也露出驚詫的表情，在他的規劃中，自己也應該從這裡消失的。他趕緊轉換心情，走向冒險者們。其他惡漢們則趕緊跑到通道口，堵住冒險者們的去路。"
+        },
+        {
+          "id": "lite-c05-chpt04",
+          "evidence": "「歡迎來到我的遊戲間」霍布粗獷的聲音從裡頭傳了出來。冒險者們想了想，便決定走了進去，找了離門口較近的椅子坐了下來，只有伊努決定留在外頭，門從後面關了起來。酒館內，冒險者們看著霍布化身成了他真正的模樣—一隻比他們都還要高且壯碩的蛙人—露出了十分開心的表情，手上把玩著包著布的魔法盒子，向冒險者們感謝將盒子送到了他的手裡。他的手下們，則是魚人般的生物，身上全是黏液。同時，霍布將一旁的喬納森釋放，表示自己遵守了當時交易的承諾。喬納森心驚膽跳的跑到了冒險者身邊，也坐了下來。"
+        },
+        {
+          "id": "lite-c06-chpt01",
+          "evidence": "一群人摸黑往前走，直到蘿琳摸到了對向的門，輕輕推開，門後彷彿另一個世界—一個熱鬧而輝煌的王宮園區。園區內除了衛兵外，幾乎都是穿著制服的僕人們，朝著不同方向前進。大家一面觀賞，一面跟著蘿琳繼續走。"
+        },
+        {
+          "id": "lite-c06-chpt02",
+          "evidence": "回到伯納德家的伊努，因為自己身上的蜘蛛詛咒似乎加劇了，想盡快找母親大人求助，因此在華生強烈反對的狀況下，還是上了三樓，不過圖伊特也一起陪同著。兩人來到了大臥室，推開門後，跪在床前，試著和母親大人溝通。母親大人從遠處伸出他的觸手，碰向伊努，低聲唸到「你不屬於這個世界。」，隨即伊努昏了過去。圖伊特見狀，想要阻止母親大人，自己卻也昏了過去。"
+        },
+        {
+          "id": "lite-c06-chpt03",
+          "evidence": "時間接近中午，冒險者們清醒後，來到了旅店一樓。凱文昨晚顯然沒有拿到伊寫的紙條，只有麵包可以給冒險者們吃。冒險者們拿著麵包回到二樓房間，將麵包分食給還無法移動的圖伊特，以及剛睡醒的華生。"
+        },
+        {
+          "id": "lite-c06-chpt04",
+          "evidence": "華生和蘇加魯搜刮著監牢內的屍體，發現了剛才差點丟中蘇加魯的飛鏢，上面似乎塗有深如黑色的顏料，很有可能是毒藥。同時，華生也在一名刺客的口袋內找到一罐看起來曾經裝過這種顏料的玻璃罐，蓋子底下有個眼睛的符號。"
+        },
+        {
+          "id": "lite-c06-chpt05",
+          "evidence": "地底下一片空蕩蕩，漆黑無比。"
+        },
+        {
+          "id": "lite-c07-chpt01",
+          "evidence": "這名靠在牆邊的生物是名地侏女子，是從他的家鄉突然被傳送過來的。他表示自己的名字叫卡拉米普芒果，對於這世界的事情不甚了解。冒險團隊和卡拉米普互相確認沒有惡意後，便決定結伴同行。"
+        },
+        {
+          "id": "lite-c07-chpt02",
+          "evidence": "羅特提議應該要去見一下母親大人，於是他便帶著大家來到母親大人的神殿。"
+        },
+        {
+          "id": "lite-c07-chpt03",
+          "evidence": "一早，圖伊特就醒了。看見依偎在自己身上的羅特，他十分好奇，以學者的角度觀察並記錄。他想起昨日羅特提到自己擁有魅魔的血統，便嘗試去思考，他的種種行為，是否是因為他的血統導致的？"
+        },
+        {
+          "id": "lite-c08-chpt01",
+          "evidence": "經過了九個月左右的時間，冒險者們終於長途跋涉到洛森王國。旅行途中，華生和羅特都從拉黎爾那兒學會了一點妖精語的基礎，而羅特同時也學習了一點吹奏笛子的技巧。然而，圖伊特對他身邊的法器，並沒有得到更深入的認識。不過因為一路上支出大家的旅費，M伯爵破產了。"
+        },
+        {
+          "id": "lite-c08-chpt02",
+          "evidence": "因為受到月光狩獵會的攻擊，大家整夜都睡得不太好。華生更在圖伊特守夜時，因為不放心他的狀況，幾乎都在假寐，幸好他沒有再出現任何意外。"
+        },
+        {
+          "id": "lite-c08-chpt03",
+          "evidence": "因為芒果蛛已經醒了，佛拉便將嚮導的位子再還給他。一路上，大家都很沈默，身邊少了一起旅行許久，如父親角色般的馬可斯，對大家都很難受，而拉黎爾則像是更加逃避般，陷入了他與蓋瑞的小世界。"
+        },
+        {
+          "id": "lite-c09-chpt01",
+          "evidence": "在異變的母親大人消滅羅特和芒果蛛以外的其他夥伴後，羅特渡過了十分煎熬的兩年。在這兩年間，他也逐漸從自我墮落中慢慢恢復，為了生存，接了獨立傭兵的工作。"
+        },
+        {
+          "id": "lite-c09-chpt02",
+          "evidence": "與怪物的激戰過後，冒險者們稍作休息。同時，羅特陷入了一陣恐慌。在過去夥伴們犧牲的事件後，羅特對觸肢等孽物般的特徵，便有非常不舒服的反應，因此當身上爬了三隻孽物的GoR和因興奮與好奇而變身為眼怪的烏巴都在他所屬的團隊內，再加上一口氣與四隻孽物作戰（儘管隱形的羅特幾乎沒有真正參與到戰鬥），這對他來說，都已經太多了。"
+        },
+        {
+          "id": "lite-c09-chpt03",
+          "evidence": "冒險者們雖然暫時脫困，卻仍然找不到逃離洞穴的方法。卓茲克爵士眼看只有庫登能和他對話，感到有些無趣。在他一陣操弄下，其他冒險者都能看見與聽見他了，除了賽柏外，他一愣一愣的看著，不清楚到底大家到底在進行什麼對話。"
+        },
+        {
+          "id": "lite-c10-chpt01",
+          "evidence": "在冒險者們收到了來自羽王的信後，他們便朝著羅特指認的方向前進。路上，靠著接簡單的任務，沒有多消耗費用。"
+        },
+        {
+          "id": "lite-c10-chpt02",
+          "evidence": "當羅特再次回過神來，酒館內只剩下他與酒保了。儘管他知道酒精已無法麻痺他的情緒，他還是數不清自己到底喝了幾杯。羅特站了起身，想換到身後的圓桌去。定睛一看，其中一張圓桌上，放了一本破舊的筆記本。"
+        },
+        {
+          "id": "lite-c10-chpt03",
+          "evidence": "布幕再次拉開時，一座桌子前，利希恩和天使並肩坐著，利希恩寫著字，不時拿起紙，向著天使念起他寫的詩句，內容像是「若你愛得夠深，世界會為你改寫名字」等。但一段時間後，天使卻突然僵直，在利希恩觸碰、擁抱後，卻化為粉碎，只留下利希恩仰天長嘯。"
+        },
+        {
+          "id": "lite-c10-chpt04",
+          "evidence": "「放下仇恨吧，庫登，因為世界是由愛構成的。你心中萬惡不赦的仇人，很有可能有他的不得已之處，也很有可能和你想得很不一樣。」"
+        },
+        {
+          "id": "lite-c11-chpt01",
+          "evidence": "在這個被稱為雅洛斯的地區，烏波終於看見了那座宗祠：當年他第一次與世界接觸的地方，也就是他的出生地。但如今破敗的小小宗祠，此刻似乎有個「客人」，鬼鬼祟祟地在裡頭。"
+        },
+        {
+          "id": "lite-c11-chpt02",
+          "evidence": "站在天使人雕像前，烏波感到莫名的熟悉，卻又理不清到底是怎麼回事。他看見雕像兩側的培養箱，以及穿梭在這個空間內，穿著白袍的研究員們，和他們牽著的其他電漿人們。那些電漿人，長得和他一模一樣。"
+        },
+        {
+          "id": "lite-c11-chpt03",
+          "evidence": "眼看羅特一直醒不來，冒險者們決定先離開靈魂議會，保持體力，以面對明天中午的試煉。"
+        },
+        {
+          "id": "lite-c11-chpt04",
+          "evidence": "烏波睜開雙眼，除了眼前不遠處的魯米歐外，周圍還有六顆巨大的心臟。他的腦中傳來了聲音，告訴他與魯米歐，他們必須將對方擊倒，才能取得心空席的位子。而在勝負揭曉之時，尚未脫離心臟的支援者們，都將永遠被困在裡面。烏波這才發現，自己的夥伴們都被困在心臟裡。"
+        },
+        {
+          "id": "lite-c12-chpt01",
+          "evidence": "忍著飢餓，巴斯扛起虛弱的羅特，跟著烏波朝著芒果留下的痕跡，持續往前追尋賽柏。再怎麼樣，都不能再失去夥伴了。羅特心想。樹林逐漸密集，但巨蛇留下的爬痕還依稀可見。羅特手中緊握著賽柏留下的奈西斯聖徽。雖然他不是奈西斯的信徒，但在這麼茂盛的樹林中，樹林之神奈西斯肯定是無比強大的吧。"
+        },
+        {
+          "id": "lite-c12-chpt02",
+          "evidence": "天色逐漸明亮，村莊內的情緒也隨之和緩。「不要進到森林裡去！」的警告，也變成了「如果進去的話，要小心喔！」的提醒。烏波和巴斯踏入樹林不久，就回來了。他們決定先去拜訪昨晚羅特過夜的那戶人家。"
+        },
+        {
+          "id": "lite-c12-chpt03",
+          "evidence": "羅特讓佛拉靠在樹邊休息。巴斯和烏波的心情很換亂，但也有共識現在不是吵架的時候。而在一旁不知所措的派琶，一方面想幫忙，但又對這群人不夠熟悉。他不清楚這樣的狀況到底該怎麼辦。待休息的差不多，大家便啟程，繼續朝常翠林的根據地前進了。"
+        },
+        {
+          "id": "lite-c12-chpt04",
+          "evidence": "儘管前一場戰鬥，派琶扛了不少傷，他仍催促著大家趕緊往前進。下午時間，他打算先帶冒險者們到中繼站去休息，大約晚餐時間左右可以抵達。"
+        },
+        {
+          "id": "lite-c12-chpt05",
+          "evidence": "烏波協助把搬運來到常翠林總部的東西放好後，在總部內花了點時間探索。裡面的空間如他從外面所看到的形狀，一個巨大拱起的土丘，而裡面的房間，則都採圓形的設計。烏波順著牆壁走，看見門，便嘗試開啟。同一時間，從後門和弗雷多走回室內的巴斯，向弗雷多請求，希望能看看他們的夥伴，被安置在此的賽柏。弗雷多領著巴斯，來到中央會議室旁的一個房間，輕輕推開了門。"
+        },
+        {
+          "id": "plus-c05-chpt02",
+          "evidence": "一早，睡醒的雷米走出了房間，便朝向從窗外望見的農田走去。廣袤的麥田，農夫的數量卻屈指可數。雷米試圖和農夫打聲招呼，卻沒有得到回應。不久後，他感到些許無趣，便走回旅店門口，看見同行的夥伴們已在門口等待了。"
+        },
+        {
+          "id": "plus-c05-chpt03",
+          "evidence": "白醫師撥開了一個白色的簾幕，將波和米多莉安置在裡頭的病床上，便暫時離開，去找他的助手。米多莉觀察了一下這裡的空間，除了至少八張以上的病床外，還有幾個上鎖的木櫃，漆成潔白色。不久後，白醫師帶著三名助手進來。他掏出兩顆藥丸，給米多莉選擇：一顆是灰色的，白醫師表示這和一般世界的麻醉是相同的道理；另一顆是色彩閃動的，效果較好，但是不少一般世界的生物吃了以後會有出現幻覺、瘋言瘋語的副作用。米多莉決定吃下彩色的藥丸，並給波吃灰色的。逐漸的，米多莉開始失去各種感官，以及挪動身體的能力。在他閉上眼睛前一刻，他看見助手們推進了一台機器，滋滋作響的機械聲，以及身體輕微的刺痛感……"
+        },
+        {
+          "id": "plus-c05-chpt05",
+          "evidence": "在薩梅爾和英荻格的評估下，逃離妖精荒野回到原世界是最實際的作法。第一波，英荻格帶著YHWH、法朗茲和龍恩先回到了物質世界。"
+        },
+        {
+          "id": "plus-c06-chpt01",
+          "evidence": "酒館樓上，喜利・歐喜利聽見了YHWH和英荻格的房間傳來了異樣的聲音，他將耳朵貼在門上，仔細聆聽。木頭嘎嘎聲、喘氣聲，他不知道這是什麼意思。憑藉著他的盜賊工具，喜利・歐喜利悄聲溜進了房間內，裡面一片漆黑。他躲在角落，緩緩接近，小小拉開拱起的棉被，看見裡頭似乎有肉體在扭動著。然後他聽見了英荻格說了聲「換一下」。雖然好奇，但此刻喜利・歐喜利知道自己似乎不太適合在這裡，於是他便悄聲離開，但是關門的聲音疑似被YHWH聽見了。"
+        },
+        {
+          "id": "plus-c06-chpt02",
+          "evidence": "米多莉也和大家分享了剛剛在派頓事務所拿到的月先生道別信。大家討論著月先生是否不在這個世界上了，但也不知從何確認起。同時，米多莉也拿出月先生的一疊名片。大家測試著名片的功能，先從薩梅爾帶回來的小拉茲特獸—此時已被他命名為「慢爆」，酷爆的弟弟—開始。被慢爆點過的名片，似乎直接壞掉了，沒辦法正常運作。接著，大家嘗試用已經睡著的英荻格的手指頭點，發現可以正常發揮效果。"
+        },
+        {
+          "id": "plus-c06-chpt03",
+          "evidence": "然而，閣樓關押著始祖拉茲特獸的門似乎被鎖得緊緊的，無法打開。大家決定還是先回三樓去。雖然害怕這名似乎是拉索斯教創始者的萊斯莉就在裡面，但有幾名冒險者已經狀況差到走不動了，大家還是只好硬著頭皮打開門。大床上一樣有具屍體，屬於皮特，他的身邊則放了一張紙，上面有著潦草的文字。米多莉拿起閱讀，上面寫著：這個世界是假的，只要跳出閣樓的窗戶，就能回到原本的世界。他說的話讓其他人感到不對勁，於是其他人搶過紙來看，發現讀到的內容不同：這個世界是假的，需要對始祖拉茲特獸進行驅離魔法，然後跳出閣樓的窗戶，才能回到原本的世界。此時，喜利・歐喜利、薩梅爾和波的腦中浮現出了驅離魔法的使用方法。波背著已經走不動的喜利・歐喜利，和薩梅爾三人衝到閣樓。此時閣樓關押始祖拉茲特獸的門鎖不見了。大家做好準備，便將門拉開。"
+        },
+        {
+          "id": "plus-c06-chpt04",
+          "evidence": "日落前，冒險者們來到了大學城的入口。給守衛看了YHWH的學者證後，大家便輕鬆地走入了大學城。"
+        },
+        {
+          "id": "plus-c07-chpt01",
+          "evidence": "一早，冒險者們便離開了大學城，朝著方努爾市的方向前進。因為出生於方努爾市的米多莉較為熟悉，他便帶領著大家，前往搭船去方努爾市的拉克渡口。這個時節很接近當地津菈教的節慶：勇者節，因此渡口的人很多都想前往附近的聖拉雅米島。"
+        },
+        {
+          "id": "plus-c07-chpt02",
+          "evidence": "觸岸時，已是深夜了。沙灘碼頭上一片漆黑，空無一人，讓瑪琳船長感到疑惑。她帶領著大家走入市中心。市中心有一處噴水池，左右兩側分別為商店街，轉角處則是瑪琳船長的家。一名穿著教會服裝的男子正在瑪琳船長家等她，表情看起來十分焦急。經過了解，島上失蹤的事件越發嚴重，甚至出現了原因不明的中毒事件。"
+        },
+        {
+          "id": "plus-c07-chpt03",
+          "evidence": "在船上，從夢中驚醒的喜利・歐喜利看著手上的紙條。思索著其中的秘密。黑暗中，米多莉詢問喜利・歐喜利發生了什麼事情。言談之間，忘記壓低音量的兩人吵醒了剩餘的夥伴，於是大伙決定一起到甲板上就著月光仔細研究一下喜利・歐喜利手上的字條。米多莉觀察了一下謎題，發現上面畫著的符號是關於行星的記號，但剩下的部分她也不清楚有什麼意義。同時米多莉也提到她關於天文學的知識是小時候在方努爾市中，一個叫做墨奎斯咖啡廳的地方學來的。由於南方出身的小孩子很多都嚮往長大要成為一名水手，而基礎的天文知識是成為水手的基本條件。所以很多水手會在工作之餘跑到咖啡廳向年輕小孩子吹噓他們的知識。冒險者們魚貫走到了夜晚的甲板上，上頭有一名正在值班的水手，他名叫里歐，或是可以稱呼他為「船夫船夫」。里歐向他們解釋了行星運行的原理，也向冒險者介紹了這個世界大致上的樣子，冒險者也熱切的和里歐討論著關於地平說、世界盡頭的冰山以及風暴神之類的話題。在沒有進一步線索的情況下，冒險者決定回到船艙內休息，盤算著到了方努爾市後可以再去墨奎斯咖啡廳打聽打聽消息。"
+        },
+        {
+          "id": "plus-c07-chpt04",
+          "evidence": "冒險者上船後，對船隻進行了一番調查，但並未發現任何異狀。"
+        },
+        {
+          "id": "wilds-c01-chpt01",
+          "evidence": "在麥丁頓王國內被稱為「貿易之都」的貝瑟頓，日暮低垂，當地最有名氣的酒館「吟遊詩人之歌」如往常的生意興隆。"
+        },
+        {
+          "id": "wilds-c01-chpt02",
+          "evidence": "雷亞和羅羅兩人決定先去附近的商店街逛一逛，他們和路人打聽之後，找到了三間甜點店。第一家很明顯是間連鎖糖果店，繽紛的色彩，商業化的設計，以及擠不進去的店鋪，整間店都是孩子們的吵鬧聲；第二家店看起來是雜貨店，外面有各種甜點；最後一家看起來十分破舊，但有時候最好吃的東西總會出現在這種地方。兩人最終先擠進去了第一家糖果店，頹妮甜心，以秤重的方式買了兩袋糖果，要價十分昂貴。羅羅似乎發現老闆可能和他一樣，是個妖精。"
+        },
+        {
+          "id": "wilds-c01-chpt03",
+          "evidence": "擊敗了骷髏後，冒險者們決定先在小木屋過夜，隔天再回爵士家。小木屋內只有一張床，羅羅率先佔領了那張床。同時，阿龍開始翻找爵士信中提到的「寶物」到底在什麼地方。他發現在床底下有個很大的木箱，於是連同床上的羅羅，將床搬起。在大家的合作下，終於將木箱搬了出來。"
+        },
+        {
+          "id": "wilds-c02-chpt01",
+          "evidence": "冒險者們上了馬車後，發現已經有一人在馬車上了。這名紅髮的年輕男子不多話，從袍子底下看了一眼冒險者們，便繼續沈浸在自己的世界內了。在阿龍的搭話下，才得知他名為賽希爾，是一名貴族法師學徒。同時，阿龍也向賽希爾介紹了同行的夥伴們。見到羅羅那標誌性的妖精耳朵，他不自覺得微微露出了輕蔑的神情。"
+        },
+        {
+          "id": "wilds-c02-chpt02",
+          "evidence": "隨著鐘聲響起，鑰跟隨著西奧多・伊登爵士一起移動到了宴會廳。"
+        },
+        {
+          "id": "wilds-c02-chpt03",
+          "evidence": "一早，冒險者們便被爵士宅邸客房內的魔法廣播系統喚醒，請大家移動到宴會廳，參與年度集會。冒險者們在各自的座位上簡單用了早點，集會便開始了。"
+        },
+        {
+          "id": "wilds-c03-chpt01",
+          "evidence": "當馬車停下時，除了阿龍之外，大家都下車了。近鄉情怯可以說是阿龍最貼切的心情寫照。"
+        },
+        {
+          "id": "wilds-c03-chpt02",
+          "evidence": "距離康妮與冒險者們說好的午夜還有很長的時間，冒險者們思索著該如何妥善利用。在阿龍的帶領下，大家先到了城內的雜貨店，進行補給。阿龍買了一些釘子，以預備上山後和山賊們的戰鬥。其他冒險者們也進行了簡單的補給。"
+        },
+        {
+          "id": "wilds-c03-chpt03",
+          "evidence": "細劍男子要男地侏留下他的遺言，這名地侏說道：「如果你們回到土城，請轉達給我的女兒，瑪莉貝爾— 這世界遠比她想的更廣闊。不要把自己被土城。土城無法理解她，但這個世界的其他地方，都將為她閃耀。」而當女地侏正要開口時，哥布林將巨斧砍向他的脖子，細劍男也在男地侏的脖子上劃了一刀。"
+        },
+        {
+          "id": "wilds-c04-chpt01",
+          "evidence": "從土城，加入了瑪莉貝爾的冒險者們花了一個月左右的時間，乘坐綠先生駕駛的馬車，終於抵達了拉撒拿。"
+        },
+        {
+          "id": "wilds-c04-chpt02",
+          "evidence": "聽見親生父親費洛登的提議，阿龍並不感到驚恐。不過就是見條龍，有什麼大不了的，但除了他之外，所有人都沒有發聲。阿龍看了看親戚們的表情，各有不同。"
+        },
+        {
+          "id": "wilds-c04-chpt03",
+          "evidence": "瑟拉蒙・艾瑞利斯，阿龍的叔叔，在案發現場陪伴著冒險者們。艾瑞利斯家族的其他成員，則各自回到房間休息。敞開的大門，走入了一名熟悉的身影。是龍人型態的哈雷爾。"
+        },
+        {
+          "id": "wilds-c04-chpt04",
+          "evidence": "「弟弟，世界這一塊畫布，就留給你自己發揮了。」奈梨紗低聲說著。「你那麼聰明，我相信你一定可以畫得比我好，不會和我一樣犯下這麼衝動的錯的。」"
+        },
+        {
+          "id": "wilds-c05-chpt01",
+          "evidence": "騎著艾瑞利斯家贈與的馬匹，中途之家花了大約兩週的時間，來到了雷亞的家鄉之一：銀龍口中的萊斯諾。厚重的城門外，兩名警戒的龍人衛兵並未刻意刁難，但從他們的眼神可以看出，這不是個歌舞昇平的城鎮。雷亞近鄉情卻，複雜的心情全寫在臉上。"
+        },
+        {
+          "id": "wilds-c05-chpt02",
+          "evidence": "拉比帶著冒險者們，往市鎮內熱鬧的酒館走去。他們在一樓找了空桌子坐下，點了餐。"
+        },
+        {
+          "id": "wilds-c05-chpt03",
+          "evidence": "聽見樓上的聲響，羅羅悄悄走上樓，查看狀況。只見拉比倒臥在牆邊，摀著滲血的胸口。一隻蟑螂正爬在他臉上。很快地，雷亞爬了下來，變回蜥蜴人的模樣，然後為拉比做簡單的傷口處理，便把他扛下樓了。"
+        },
+        {
+          "id": "wilds-c05-chpt04",
+          "evidence": "冒險者們從辯論會場，趕緊回到酒館。槍擊事件後的克萊芬，路上各種暴動。有人大聲叫囂，有人只因顏色不同，就大動拳腳，各樣的塗鴉也開始出現在牆上。"
+        },
+        {
+          "id": "wilds-c05-chpt05",
+          "evidence": "看著立德上尉的眼，雷亞感到不適。說好的給他一天的時間考慮，立德上尉雖然看起來還算冷靜，但依然充滿壓迫感。拉比嘗試和立德上尉溝通，卻發現上尉完全不把他放在眼裡。眼看變回蜥蜴人的雷亞不正面做出答覆，立德上尉背後軍營的入口開始出現更多的士兵，站在他身後。一開始，他們只是壓迫感強大的士兵們，隨著他們開始逼近，冒險者們發現士兵們口中充滿各種惡言與辱罵，絲毫不把他們放在眼裡，而立德上尉也沒有對此有任何的制止或意見。拉比快要按捺不住，把臉抵在立德上尉臉前，卻感到肚子一陣陣痛。才剛從醫院離開不久的他，被立德上尉用腳踩在地上，還吐了口口水唸到「藍色的狗」。"
+        },
+        {
+          "id": "wilds-c05-chpt06",
+          "evidence": "拉比看了看身邊的夥伴，也看見樓梯頂端探出頭的瑪莉貝爾，她告訴拉比鑰被卡在樓梯上，睡眠法術他支撐不了太久，要趕快把鑰架下來。在瑪莉貝爾的幫助下，拉比扛下了鑰，並把她放進她停在一樓的小車上，準備離開酒館。桓托催著大家趕快往外跑，他會幫忙擋住後方來的追兵。"
+        }
+      ]
+    },
+    "material-realm/lothum": {
+      "chapters": [
+        {
+          "id": "lite-c08-chpt01",
+          "evidence": "經過了九個月左右的時間，冒險者們終於長途跋涉到洛森王國。旅行途中，華生和羅特都從拉黎爾那兒學會了一點妖精語的基礎，而羅特同時也學習了一點吹奏笛子的技巧。然而，圖伊特對他身邊的法器，並沒有得到更深入的認識。不過因為一路上支出大家的旅費，M伯爵破產了。"
+        },
+        {
+          "id": "lite-c08-chpt02",
+          "evidence": "因為受到月光狩獵會的攻擊，大家整夜都睡得不太好。華生更在圖伊特守夜時，因為不放心他的狀況，幾乎都在假寐，幸好他沒有再出現任何意外。"
+        },
+        {
+          "id": "lite-c08-chpt03",
+          "evidence": "羅特在馬可斯的口袋中找到了一張紙條，是他的師父伊留給馬可斯的文字，要馬可斯在路上好好照顧羅特，也相信羅特一定可以成為很可靠的人的。圖伊特則找到了十顆左右馬可斯常用的小球，先收了起來。"
+        },
+        {
+          "id": "legends-os02",
+          "evidence": "五名遊歷各處的冒險者被顯赫的貴族諾曼爵士弗雷德里克・諾曼透過眼線招募來到了他的住處。諾曼爵士說明，根據他的眼線，自己成年的兒子古斯塔夫據傳一個月前在洛森王國與麥丁頓王國邊界的艾爾諾村失蹤了，他和他的年輕妻子，同時也是古斯塔夫的青梅竹馬潘蜜拉十分擔心，因此重金禮聘冒險者們到艾爾諾村幫忙調查古斯塔夫的下落，並承諾只要能回報給他古斯塔夫的狀況，就能領取一人 10 枚白金幣的豐厚獎賞。"
+        },
+        {
+          "id": "legends-os06",
+          "evidence": "《洛林精神》響遍佛萊特境廣大的野餐區，舞台上，征服者洛林帶領著大家齊聲哼唱，底下的妖精們齊聲歡呼，一同享受屬於妖精們的榮耀。"
+        },
+        {
+          "id": "legends-os05-chpt02",
+          "evidence": "龍之球在這二十多年內，已成功讓克里歐門王國產出了永續的電力，除了龍蛋上的紫色斑紋變得更淡之外，效力還是十分強烈。此時，龍蛋已被放在王國的博物館內，而這次女王聘請的冒險者們，任務是護送這顆蛋到指定的交易地點，與妖精的洛森王國進行交易，換取好幾箱妖精釀的美酒。"
+        }
+      ]
+    },
+    "material-realm/mattington/vowalon/dungeon-beneath-temple-of-silencio": {
+      "note_zh": "依使用者指定：rugatha-c01 最後一章及 rugatha-c02 全部章節均發生於此；地下城跨沃瓦倫與寇林菲爾德。",
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt07",
+          "evidence": "15048.07.23"
+        },
+        {
+          "id": "rugatha-c02-chpt01",
+          "evidence": "在地下城的牆壁上，冒險者們看見了不少看不懂語言雕刻的文字，不過依照他們過去所見，認為應該是拉索斯語。"
+        },
+        {
+          "id": "rugatha-c02-chpt02",
+          "evidence": "這名女子是一名半妖精，自稱來自貝倫的崔夏。他的父母是拉索斯的忠實信徒，卻因為遭到背叛，而使崔夏被關進地下城。在冒險者們的陪伴與照顧下，崔夏與冒險者們一同繼續前進。"
+        },
+        {
+          "id": "rugatha-c02-chpt03",
+          "evidence": "一切結束後，冒險者們推開了前方的木門，出現在他們眼前的，是一個城鎮的巷弄。眾人紛紛趕了出去，只有烏柯和崔夏還在地下城內。崔夏告訴烏柯自己不該繼續跟著台北市議員們，因為自己會拖累大家的。他誠實地告訴烏柯，拉索斯教承諾他如果完成任務，會將他的父母釋放，所以他才自願和拉索斯教要求執行任務，而且任務內容是要將台北市議員的團體分崩離析，甚至一一殺死。但是因為感受到了團隊中大家的善意，他努力想抵抗腦中拉索斯教的聲音。烏柯放在他身體內的石頭，則讓他每一次想要抵抗拉索斯時，頭部劇烈陣痛。"
+        }
+      ]
+    },
+    "material-realm/mattington/korringfield/dungeon-beneath-temple-of-silencio": {
+      "note_zh": "依使用者指定：rugatha-c01 最後一章及 rugatha-c02 全部章節均發生於此；地下城跨沃瓦倫與寇林菲爾德。",
+      "chapters": [
+        {
+          "id": "rugatha-c01-chpt07",
+          "evidence": "15048.07.23"
+        },
+        {
+          "id": "rugatha-c02-chpt01",
+          "evidence": "在地下城的牆壁上，冒險者們看見了不少看不懂語言雕刻的文字，不過依照他們過去所見，認為應該是拉索斯語。"
+        },
+        {
+          "id": "rugatha-c02-chpt02",
+          "evidence": "這名女子是一名半妖精，自稱來自貝倫的崔夏。他的父母是拉索斯的忠實信徒，卻因為遭到背叛，而使崔夏被關進地下城。在冒險者們的陪伴與照顧下，崔夏與冒險者們一同繼續前進。"
+        },
+        {
+          "id": "rugatha-c02-chpt03",
+          "evidence": "一切結束後，冒險者們推開了前方的木門，出現在他們眼前的，是一個城鎮的巷弄。眾人紛紛趕了出去，只有烏柯和崔夏還在地下城內。崔夏告訴烏柯自己不該繼續跟著台北市議員們，因為自己會拖累大家的。他誠實地告訴烏柯，拉索斯教承諾他如果完成任務，會將他的父母釋放，所以他才自願和拉索斯教要求執行任務，而且任務內容是要將台北市議員的團體分崩離析，甚至一一殺死。但是因為感受到了團隊中大家的善意，他努力想抵抗腦中拉索斯教的聲音。烏柯放在他身體內的石頭，則讓他每一次想要抵抗拉索斯時，頭部劇烈陣痛。"
+        }
+      ]
+    }
+  }
+}
