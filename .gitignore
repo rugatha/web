@@ -39,15 +39,8 @@ test-results/
 /campaigns/chapter-banners/rugatha-c01-chpt05.png
 /campaigns/chapter-banners/rugatha-c01-chpt06.png
 /campaigns/chapter-banners/rugatha-c01-chpt07.png
-/npc/individual_pics/Alfie Fuller.jpeg
-/npc/individual_pics/Benny Cozlothramuda.jpeg
-/npc/individual_pics/Bruce Dunham.jpeg
-/npc/individual_pics/Daryl Warren.png
-/npc/individual_pics/Father Kaulton.jpeg
-/npc/individual_pics/Gary.png
-/npc/individual_pics/Grenland Folsen.png
-/npc/individual_pics/Jasmine Warren.jpeg
-/npc/individual_pics/Kubao.jpeg
-/npc/individual_pics/Ra'Leer the Herder.jpeg
-/npc/individual_pics/Sammick Warren.png
-/npc/individual_pics/The Hooded-Figure.jpeg
+
+# NPC portraits are cloud-only; prevent old local originals from returning.
+/npc/individual_pics/
+/npc/portrait-*-review.html
+/npc/portrait-revision*/

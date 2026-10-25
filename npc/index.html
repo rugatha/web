@@ -318,8 +318,8 @@
       renderLoadingSkeletons();
       try {
         const [response, framing] = await Promise.all([
-          fetch('data/characters.json?v=20261025-portraits-v2'),
-          fetch('data/portrait-framing.json?v=20261025-5')
+          fetch('data/characters.json?v=20261025-npc-cloud-only-1'),
+          fetch('data/portrait-framing.json?v=20261025-review-2')
             .then(response => response.ok ? response.json() : {})
             .catch(() => ({}))
         ]);

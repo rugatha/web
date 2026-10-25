@@ -4,11 +4,6 @@
     "positionX": 50.0,
     "positionY": 85.0
   },
-  "Dennis": {
-    "zoom": 1.15,
-    "positionX": 50.0,
-    "positionY": 85.0
-  },
   "Domneil": {
     "zoom": 1,
     "positionX": 50.0,
@@ -24,19 +19,9 @@
     "positionX": 50.0,
     "positionY": 0
   },
-  "Lance_Berners": {
-    "zoom": 1.07,
-    "positionX": 50,
-    "positionY": 96.8
-  },
   "Laura_Fishburne": {
     "zoom": 1.6,
     "positionX": 81.06,
-    "positionY": 0
-  },
-  "Lumio": {
-    "zoom": 1.47,
-    "positionX": 50,
     "positionY": 0
   },
   "Marianne_Jens": {
@@ -48,11 +33,6 @@
     "zoom": 1.11,
     "positionX": 50,
     "positionY": 46.2
-  },
-  "Mr_Moon": {
-    "zoom": 1.08,
-    "positionX": 50,
-    "positionY": 82.1
   },
   "Reese_Tig": {
     "zoom": 1.68,
@@ -74,11 +54,6 @@
     "positionX": 50,
     "positionY": 0
   },
-  "Yi": {
-    "zoom": 1.12,
-    "positionX": 63.5,
-    "positionY": 51.6
-  },
   "Dr_Chandra_Pyresong": {
     "zoom": 1,
     "positionX": 82,
@@ -88,11 +63,6 @@
     "zoom": 1,
     "positionX": 50,
     "positionY": 0
-  },
-  "Zach": {
-    "zoom": 1.65,
-    "positionX": 66,
-    "positionY": 44
   },
   "Sean": {
     "zoom": 2,

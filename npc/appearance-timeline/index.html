@@ -424,7 +424,7 @@
 
     async function loadData() {
       const [charactersResponse, appearanceCsvResponse] = await Promise.all([
-        fetch('../data/characters.json?v=20261025-portraits-v2'),
+        fetch('../data/characters.json?v=20261025-npc-cloud-only-1'),
         fetch('appearance-data.csv', { cache: 'no-store' })
       ]);
       if (!charactersResponse.ok || !appearanceCsvResponse.ok) throw new Error('Unable to load timeline data');

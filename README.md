@@ -423,7 +423,7 @@ python3 shared/scripts/normalize_site_html.py
    - `qaEn`
 
 5. 圖片路徑是否對應到：
-   - `npc/individual_pics/`
+   - NPC 圖片只使用 `npc/data/characters.json` 的雲端網址；現用資產清單見 `docs/image-migration/npc-current.json`。
 
 ## 其他資料更新
 

@@ -7,7 +7,7 @@
       { "id": "samael", "name": "薩梅爾", "icon": "pc/pics/Samael.jpg" },
       { "id": "siri", "name": "喜利", "icon": "pc/pics/Siri Oslee.png" },
       { "id": "yhwh", "name": "YHWH", "icon": "pc/pics/YHWH.png" },
-      { "id": "beau", "name": "波", "icon": "npc/individual_pics/Beau.jpeg" }
+      { "id": "beau", "name": "波", "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbeau-feadf51c9f%2F32ff9cedff35c78623ed7ed8abd4a72765a82d7109203b9f021e5af3952f9b81%2Fthumb.webp?alt=media" }
     ]
   },
   "questions": [
