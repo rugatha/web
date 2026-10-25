@@ -37,6 +37,7 @@ test.beforeEach(async ({ context }) => {
 
 test('all published signatures decode and NPC profiles use their cloud URLs', async ({ page }) => {
   test.setTimeout(120000);
+  if (production) await page.context().route('**/__image-test__/', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Signature acceptance</title>' }));
   await page.goto('/__image-test__/');
   const urls = Object.values(signatureFiles);
   expect(urls).toHaveLength(140);
@@ -63,6 +64,7 @@ test('all published signatures decode and NPC profiles use their cloud URLs', as
     await expect(signature).toBeVisible();
     await expect(signature).toHaveAttribute('src', signatureFiles[id]);
     await expect.poll(() => signature.evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+    await expect.poll(() => page.locator('#npc-portrait').evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
     await page.screenshot({ path: `test-results/image-browser/signature-${id.replace(/[^a-z0-9]/gi, '-')}.png` });
   }
 });
