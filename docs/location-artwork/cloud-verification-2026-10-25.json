@@ -1,0 +1,56 @@
+[
+  {
+    "location": "material-realm/mattington/unassigned-locations/normans-estate",
+    "readable": true,
+    "hash_matches": true,
+    "bytes": 3153102
+  },
+  {
+    "location": "material-realm/mattington/unassigned-locations/odericks-dungeon",
+    "readable": true,
+    "hash_matches": true,
+    "bytes": 2996324
+  },
+  {
+    "location": "material-realm/mattington/unassigned-locations/feathered-estate",
+    "readable": true,
+    "hash_matches": true,
+    "bytes": 2432436
+  },
+  {
+    "location": "material-realm/mattington/unassigned-locations/peak-temple",
+    "readable": true,
+    "hash_matches": true,
+    "bytes": 3070679
+  },
+  {
+    "location": "material-realm/mattington/yarros",
+    "readable": true,
+    "hash_matches": true,
+    "bytes": 3418778
+  },
+  {
+    "location": "material-realm/mattington/yarros/evergreen",
+    "readable": true,
+    "hash_matches": true,
+    "bytes": 3490787
+  },
+  {
+    "location": "material-realm/chryomen/unassigned-locations/windblown-hills",
+    "readable": true,
+    "hash_matches": true,
+    "bytes": 3345456
+  },
+  {
+    "location": "material-realm/mattington/korringfield/dungeon-beneath-temple-of-silencio",
+    "readable": true,
+    "hash_matches": true,
+    "bytes": 2931778
+  },
+  {
+    "location": "material-realm/mattington/vowalon/dungeon-beneath-temple-of-silencio",
+    "readable": true,
+    "hash_matches": true,
+    "bytes": 2931778
+  }
+]

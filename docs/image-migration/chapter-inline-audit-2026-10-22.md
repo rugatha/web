@@ -10,7 +10,7 @@
 - 正規化相對／絕對路徑、URL 編碼，以及試搬 manifest 的雲端來源；依各語言核對圖片出現次數。舊版未標語言但目前已分為中英文的文章，將原文對應中文，避免誤判為漏圖。
 - 另外檢查目前所有文內圖檔存在，並用 Chrome 實際開啟含圖頁面、切換語言及逐張載入。
 
-完整逐頁及瀏覽器證據見 [chapter-inline-audit-2026-10-22.json](chapter-inline-audit-2026-10-22.json)。
+完整逐頁及瀏覽器證據見 [chapter-inline-audit-2026-10-22.json](verification-history.json)。
 
 ## 靜態比對結果
 

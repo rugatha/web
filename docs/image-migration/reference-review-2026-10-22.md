@@ -1,6 +1,6 @@
 # 重複圖與無引用圖片查核
 
-日期：2026-10-22（台北時間）。以下先記錄用途調查當時的結果；查核階段沒有刪圖。機器可讀證據見 [reference-review-2026-10-22.json](reference-review-2026-10-22.json)。使用者其後指定的清理與補圖另記於文末，前段數量及請求證據保留為修改前基準。
+日期：2026-10-22（台北時間）。以下先記錄用途調查當時的結果；查核階段沒有刪圖。機器可讀證據見 [reference-review-2026-10-22.json](verification-history.json)。使用者其後指定的清理與補圖另記於文末，前段數量及請求證據保留為修改前基準。
 
 重新執行圖片盤點：501 張圖片、四組 SHA-256 完全相同的重複圖、四張遷移範圍內無靜態引用候選圖、遺失引用候選為零。另搜尋原始／URL 編碼名稱、檢查不含副檔名的 `pc/pc_lib`、PC 與團錄動態組圖程式、Git 歷史，並用本機 Chrome 開啟十個相關頁面。
 
@@ -44,4 +44,4 @@ Chrome 開啟體驗頁、PC 列表、Cecil／Yi 個別 PC 頁、Yi NPC 頁、Lit
 - `npm run test:images`：13 項通過。
 - 本機五個刪除路徑均回傳 404；Cecil、Yi NPC、Rugatha c04 第五章與 Legends os09 的現用圖片仍能載入。
 - Chrome 實際寬度 1280px／390px，中文及切換英文共四組均通過：正文插入位置正確、圖片成功載入、alt 正確、原比例縮放且頁面沒有水平溢出；另目視檢查桌面中文與手機英文截圖。
-- 初次測試的語言狀態與 viewport 初始化有誤，修正測試後重跑四組檢查；沒有因此改動網站邏輯。完整說明及結果見 [cleanup-2026-10-22.json](cleanup-2026-10-22.json)。截圖位於忽略提交的 `test-results/image-cleanup/`。
+- 初次測試的語言狀態與 viewport 初始化有誤，修正測試後重跑四組檢查；沒有因此改動網站邏輯。完整說明及結果見 [cleanup-2026-10-22.json](verification-history.json)。截圖位於忽略提交的 `test-results/image-cleanup/`。

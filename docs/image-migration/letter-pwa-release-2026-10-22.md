@@ -23,7 +23,7 @@
 - 恢復網路後正常重新載入；沒有水平溢出。測試封鎖外部登入、資料庫、分析等請求，沒有私人帳號或雲端寫入。
 - `npm run test:images` 15 項、PWA 單元五項、既有圖片 Chrome 七項、本次 HTTPS Chrome 兩項，共 29 項通過。並未宣稱重跑全部 Emulator／會員瀏覽器測試。
 
-證據見 [本機 PWA 驗收 JSON](letter-pwa-local-2026-10-22.json)。截圖在忽略提交的 `test-results/letter-browser/`。不宣稱實體 iPhone／Android 的手勢驗收，也不保證沒看過、沒快取的圖片能離線開啟。
+證據見 [本機 PWA 驗收 JSON](verification-history.json)。截圖在忽略提交的 `test-results/letter-browser/`。不宣稱實體 iPhone／Android 的手勢驗收，也不保證沒看過、沒快取的圖片能離線開啟。
 
 ## 重跑與正式複驗
 

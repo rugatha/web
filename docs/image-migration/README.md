@@ -1,5 +1,7 @@
 # 公開圖片遷移紀錄
 
+2026-10-25 整理：歷史驗收 JSON 已整併至 [verification-history.json](verification-history.json)，每筆保留原始路徑、SHA-256 與完整結果；重複的 prepared 批次已由 uploaded 批次取代。下列日期段落反映各次作業當時狀態；目前 158 筆 NPC 主圖均使用 Firebase，部分 HTML 的社群預覽仍依賴地端原圖。地點新圖的提示詞與發布紀錄見 [地點插圖](../location-artwork/README.md)。
+
 日期：2026-10-21（台北時間）。進度追蹤見 [`../../to-do.md`](../../to-do.md)。本階段只試搬 `rugatha-c01`，其餘圖片保留原來源。
 
 2026-10-22 後續更新：依使用者新指示，[其餘三批圖片已先上傳並驗證](uploaded-2026-10-22/README.md)，包含 584 個公開變體與 292 張私人原圖備份；正式頁面仍只使用既有試搬範圍，尚未切換下一批來源。
@@ -9,8 +11,8 @@
 - 基準 commit：`76dc518e051d6048d0b375c845f8115e117e9e62`。
 - [`inventory.json`](inventory.json)：521 張圖的尺寸、格式、大小、SHA-256、靜態引用位置、重複圖及待確認項目。這是切換前盤點；動態組合路徑仍需瀏覽器驗證，沒有靜態引用不等於可以刪除。
 - [`pilot-manifest.json`](pilot-manifest.json)：一張故事弧封面、七張章節圖與十二張相關 NPC 圖；既有 entity ID 保留。每張含 480px 最長邊縮圖（品質 82）與 1600px 最長邊閱讀版（品質 85），不放大小圖。
-- [`verification-2026-10-22.json`](verification-2026-10-22.json)：2026-10-22 的當前盤點摘要、20 張／40 個變體重建比較、40 個公開端點驗證與唯讀 Storage／Monitoring 快照；待辦評估與本次測試結果見 [`to-do.md` 第 13 節](../../to-do.md#13-可執行項目評估與重驗2026-10-22)。不取代搬移前基準或原圖持久備份證據。
-- [重複圖與無引用圖片查核](reference-review-2026-10-22.md)：四組重複圖與四張候選圖的使用位置、歷史及十頁 Chrome 請求證據；其後依使用者要求移除五張，將 Lite c12 第四章驛站群像補回中英文正文。追加驗證見 [cleanup-2026-10-22.json](cleanup-2026-10-22.json)；清理與補圖已以 `46f445b` 發布並完成正式站驗證。
+- [`verification-2026-10-22.json`](verification-history.json)：2026-10-22 的當前盤點摘要、20 張／40 個變體重建比較、40 個公開端點驗證與唯讀 Storage／Monitoring 快照；待辦評估與本次測試結果見 [`to-do.md` 第 13 節](../../to-do.md#13-可執行項目評估與重驗2026-10-22)。不取代搬移前基準或原圖持久備份證據。
+- [重複圖與無引用圖片查核](reference-review-2026-10-22.md)：四組重複圖與四張候選圖的使用位置、歷史及十頁 Chrome 請求證據；其後依使用者要求移除五張，將 Lite c12 第四章驛站群像補回中英文正文。追加驗證見 [cleanup-2026-10-22.json](verification-history.json)；清理與補圖已以 `46f445b` 發布並完成正式站驗證。
 - [全站團錄文內插圖漏接檢查](chapter-inline-audit-2026-10-22.md)：100 篇團錄及新舊 HTML 比對，未發現尚未修復的漏圖；10 篇含圖團錄的中英文／桌面手機 40 組檢查、90 次圖片顯示通過。附可重跑工具及機器可讀證據。
 - [放大畫質驗收與下一批離線準備](quality-and-offline-preparation-2026-10-22.md)：五張信件原尺寸無損閱讀版與本機大圖連結、39 張三視圖比較、292 張／584 個後續變體的分批 dry-run 及驗收；尚未上傳、切換或發布。
 - [信件閱讀 PWA／離線驗收與發布](letter-pwa-release-2026-10-22.md)：worker v28、章節 JSON 更新、v27 升級、斷網整頁重載及原圖開啟驗收；閱讀改善的發布進度與後續批次 Storage 搬移分開處理。
@@ -26,7 +28,7 @@
 
 已啟用 Budget API，建立只針對本專案 Cloud Storage 的每月 **NT$30** 通知，實際支出達 50%、90%、100% 時通知預設帳單管理員。金額依既有帳單幣別 TWD 設定；通知不會自動停止服務或限制支出，未啟用 spend cap。
 
-近期唯讀 Monitoring 查詢曾取得近 30 天 504 次 API 請求、145,615,859 bytes 傳出；包含此次搬移與測試，且有資料延遲，不能直接視為訪客下載量或帳單 Class B 次數。最新可重跑快照見 [`storage-status.json`](storage-status.json)。
+近期唯讀 Monitoring 查詢曾取得近 30 天 504 次 API 請求、145,615,859 bytes 傳出；包含此次搬移與測試，且有資料延遲，不能直接視為訪客下載量或帳單 Class B 次數。最新可重跑快照見 [`storage-status.json`](verification-history.json)。
 
 免費額度判斷：目前儲存量與近期監控用量均有相當餘裕；仍須觀察正式前端切換後一個團務週期及第一個完整計費月，不能以試搬結果保證永久免費。
 
@@ -54,7 +56,7 @@
 使用 Node 24；盤點需要 macOS `sips`，圖片輸出需要 `cwebp` 1.6.0（本次版本）。Rules 測試需 Java 21 以上。
 
 ```sh
-npm run images:status -- docs/image-migration/storage-status.json
+npm run images:status -- /private/tmp/rugatha-image-storage-status.json
 npm run images:audit
 npm run images:prepare -- /absolute/path/outside/repo/pilot rugatha-c01
 ```
@@ -102,10 +104,10 @@ npm run test:image-browser
 ## 原圖清理與持久備份（2026-10-21）
 
 - 完整原圖物件：`image-originals/{category}/{asset-id}/{original-sha256}/original.{ext}`，同一個 `US-WEST1` bucket，使用 Standard storage、`private, no-store`，不建立下載 token。既有 Rules 的 default deny 已涵蓋此路徑，不必放寬權限。
-- [`pilot-manifest.json`](pilot-manifest.json) 記錄每張原圖的物件路徑、checksum 與 generation；[`original-archive-verification.json`](original-archive-verification.json) 保存首次逐張讀回驗證紀錄。
+- [`pilot-manifest.json`](pilot-manifest.json) 記錄每張原圖的物件路徑、checksum 與 generation；[`original-archive-verification.json`](verification-history.json) 保存首次逐張讀回驗證紀錄。
 - 清理前重新匿名下載 40 個公開變體，並透過 IAM 逐張讀回 20 個私人原圖；重新掃描全站靜態引用及原始／編碼檔名均為零引用，才刪除 repo 副本。清單與證據見 [`pilot-retirement.json`](pilot-retirement.json)。
 - 已將這 20 個舊路徑逐條加入 `.gitignore`，避免原圖誤加回 repo。新盤點為 501 張圖、709,860,303 bytes（約 676.98 MiB），遺失引用候選為零。
-- 刪除後，從雲端還原到全新外部目錄，20 張原圖 checksum 均一致；使用還原檔重新產生的 40 個變體與線上版本完全一致。證據見 [`original-restore-verification.json`](original-restore-verification.json)。
+- 刪除後，從雲端還原到全新外部目錄，20 張原圖 checksum 均一致；使用還原檔重新產生的 40 個變體與線上版本完全一致。證據見 [`original-restore-verification.json`](verification-history.json)。
 - Git 歷史未重寫，歷史 commit 仍保有舊檔；此次只減少當前工作樹與部署圖片負擔，不宣稱完整 clone 同步縮小。
 
 ```sh
@@ -138,7 +140,7 @@ npm run images:retire -- /path/to/reviewed-manifest.json --apply
 - 冷熱載入測量採隔離瀏覽器中的 20 張閱讀版：冷載 20 次網路請求、熱載 0 次、metadata 請求 0 次。payload 大小來自精確 manifest；耗時僅表示本次受控測量，不是全站前後測速比較。
 - 私人照片登出：真實會員頁／Web SDK 搭配 Auth、Firestore、Storage Emulator，完成上傳、登入可讀、登出導回首頁、重開會員頁不顯示、匿名讀取拒絕；登出前後所有 Rugatha Cache Storage 均無私人照片，私人請求未由 Service Worker 回應。只使用 demo 帳號與測試圖片。
 - 既有瀏覽器回歸共 36 個案例逐項通過：初跑 35 項通過，1 項因圖片與既有測試同時清理輸出 trace 而失敗；隔離輸出後重跑通過。新增會員照片隱私案例另行通過。測試介面缺少會員頁啟動程式、計數器初始化與登出導頁等待的問題已修正；未因此改動會員頁正式流程。
-- 正式站七項圖片案例逐項通過：桌面、手機、真正離線重載、HTTP 失敗後重載恢復、20 圖冷熱載入、十二個 NPC 中英文及分享 metadata，以及 20 個原圖舊網址退役。結果見 [傳輸與正式驗收紀錄](transfer-verification.json)。
+- 正式站七項圖片案例逐項通過：桌面、手機、真正離線重載、HTTP 失敗後重載恢復、20 圖冷熱載入、十二個 NPC 中英文及分享 metadata，以及 20 個原圖舊網址退役。結果見 [傳輸與正式驗收紀錄](verification-history.json)。
 - 更新後的 `npm run test:all` 包含既有功能、圖片 Rules 與圖片瀏覽器驗收。現有 Chrome 可用 `RUGATHA_TEST_BROWSER_CHANNEL=chrome`（既有套件）、`RUGATHA_IMAGE_BROWSER_CHANNEL=chrome`（圖片套件）；兩組測試已使用獨立輸出目錄，避免互相清理 trace。
 
 ## 正式發布紀錄

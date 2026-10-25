@@ -301,7 +301,7 @@ Service account、RTDB export、migration report 與 rollback 檔案屬於私密
 
 `spellbookSyncEnabled` 已在正式環境開啟，白名單為空代表所有會員可用；若改為 `false`，會員畫面會明確顯示同步停用且不展示訪客備份為雲端資料。已依序部署 Rules／前端，完成專用帳號跨瀏覽器驗收及正式停用演練。`dataWritesEnabled: false` 會暫停所有法術書寫入並保留當頁待同步操作；重新啟用後可按重試。停用同步時保留雲端與本機來源；回退應保留此停用提示，不應直接回退到僅使用舊 key 的前端。PWA cache 版本已升級，但既有開啟頁籤仍需重新整理；已完成本機 Chromium／手機模擬與 worker 驗收；正式網域已驗證 PWA v22 與版本化設定載入；資料來源轉移後 worker 升為 v23，僅額外快取兩個公開 catalog URL，不快取私人 Firebase 請求。Cloudflare 對 JavaScript 的快取可達 4 小時，因此每次變更開關都必須同步更新法術頁 `firebase.config.js?v=…` 的版本參數。
 
-玩家匯入方式：請使用原本儲存法術的瀏覽器與網站登入，按「確認合併匯入」，看到「已同步」後再離開。本機原始來源持續保留，相容期沒有截止日期。完整進度見本機 `spellbook-migration-plan.md`；正式版本、驗收、觀察及復原程序見 [法術書上線與回退](docs/spellbook-release.md)。
+玩家匯入方式：請使用原本儲存法術的瀏覽器與網站登入，按「確認合併匯入」，看到「已同步」後再離開。本機原始來源持續保留，相容期沒有截止日期。正式版本、驗收、觀察及復原程序統一見 [法術書上線與回退](docs/spellbook-release.md)，法術來源維護見 [法術資料來源](docs/spell-catalog-storage.md)。
 
 ## 法術參考資料來源
 

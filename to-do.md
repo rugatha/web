@@ -217,7 +217,7 @@
 - [x] Node 24.21.0／Java 21／已安裝 Chrome 執行 `npm run test:all`，exit code 0：既有 Rules 28、圖片單元 13、法術書單元 25、角色相關 16、既有瀏覽器 37、圖片 Rules 3、圖片瀏覽器 7，共 129 項通過。包含真實會員照片登出清除、私人快取隔離、桌面／手機模擬、離線圖片、503 後重載恢復、十二個 NPC 中英文及分享 metadata、20 個舊網址不存在；本機頁面搭配正式公開圖片，不宣稱本次重新執行正式站頁面驗收。
 - [x] 20 張閱讀圖受控冷載入為 20 次網路請求、4,373 ms；熱載入為 0 次新增網路請求、2 ms，沒有 metadata 請求。這是本次受控測試，非全站載入速度比較。另目視檢查本次桌面及 390px 手機 NPC 列表截圖，未見破圖或卡片異常。
 
-本次機器可讀證據見 [`verification-2026-10-22.json`](docs/image-migration/verification-2026-10-22.json)。建置素材位於 `/private/tmp/rugatha-image-rebuild-2026-10-22/`；完整測試 log 為 `/private/tmp/rugatha-test-all-2026-10-22.log`；截圖位於忽略提交的 `test-results/image-browser/image-pilot-{desktop,mobile}.png`。不覆寫原始 inventory、manifest 或舊驗收證據。
+本次機器可讀證據見 [`verification-2026-10-22.json`](docs/image-migration/verification-history.json)。建置素材位於 `/private/tmp/rugatha-image-rebuild-2026-10-22/`；完整測試 log 為 `/private/tmp/rugatha-test-all-2026-10-22.log`；截圖位於忽略提交的 `test-results/image-browser/image-pilot-{desktop,mobile}.png`。不覆寫原始 inventory、manifest 或舊驗收證據。
 
 仍待完成的項目與條件：
 
@@ -237,9 +237,9 @@
 - [x] 後續依使用者要求，將 Lite c12 第四章中英文驛站群像補回七名妖精圍桌交談段落後，保留窄版置中樣式、補齊雙語 alt 與尺寸；插入位置及實際版面驗證見下方追加紀錄。
 - [x] 後續依使用者指定移除三張舊素材與兩張 PC 重複副本，共 8,513,447 bytes（約 8.12 MiB）；可由 Git 歷史還原，本次沒有另建 Storage 原圖備份或舊圖片路徑轉址。保留驛站圖、現用圖片、海報及 PWA icon。
 
-逐項證據與建議見 [重複圖與無引用圖片查核](docs/image-migration/reference-review-2026-10-22.md)；請求與 checksum 明細見 [JSON 證據](docs/image-migration/reference-review-2026-10-22.json)。
+逐項證據與建議見 [重複圖與無引用圖片查核](docs/image-migration/reference-review-2026-10-22.md)；請求與 checksum 明細見 [JSON 證據](docs/image-migration/verification-history.json)。
 
-同日依使用者指示完成清理及補圖後：496 張、703,726,292 bytes，無引用及遺失引用候選均為零；剩餘兩組重複圖是仍有用途的活動海報及 PWA icon。圖片單元 13 項通過；Chrome 1280px／390px × 中英文四組確認插圖位置、alt、比例與無水平溢出，五個移除路徑本機 404、四個現用圖片來源正常。證據見 [清理與補圖驗證](docs/image-migration/cleanup-2026-10-22.json)。後續 `46f445b` 已部署正式站：正式 JSON 與提交一致，五個舊網址均 404，桌面／手機中英文四組補圖顯示通過；正式驗證紀錄位於 `/private/tmp/rugatha-production-cleanup-46f445b.json`。
+同日依使用者指示完成清理及補圖後：496 張、703,726,292 bytes，無引用及遺失引用候選均為零；剩餘兩組重複圖是仍有用途的活動海報及 PWA icon。圖片單元 13 項通過；Chrome 1280px／390px × 中英文四組確認插圖位置、alt、比例與無水平溢出，五個移除路徑本機 404、四個現用圖片來源正常。證據見 [清理與補圖驗證](docs/image-migration/verification-history.json)。後續 `46f445b` 已部署正式站：正式 JSON 與提交一致，五個舊網址均 404，桌面／手機中英文四組補圖顯示通過；正式驗證紀錄位於 `/private/tmp/rugatha-production-cleanup-46f445b.json`。
 
 ## 15. 全站團錄文內插圖漏接檢查（2026-10-22）
 

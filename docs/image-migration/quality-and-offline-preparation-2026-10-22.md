@@ -47,11 +47,11 @@ Chrome 1280px／390px × 中英文共四組通過，並用鍵盤實際開啟十�
 
 已排除 20 張已發布試搬原圖，也未加入 PC、神祇或地圖。一般縮圖最長邊 480px／q82；一般閱讀版最長邊 1600px／q85，不放大來源。五張信件在各自 `readingPolicy` 明確覆寫為原尺寸無損，manifest 頂層的 q85 僅代表預設值。
 
-供 repository 審閱的檔案：
+保留的審閱紀錄（2026-10-25 已移除重複的 prepared 批次，改引用含正式發布資訊的 uploaded 批次）：
 
-- [封面 manifest](prepared-2026-10-22/arcs-manifest.json)、[章節 manifest](prepared-2026-10-22/chapters-manifest.json)、[NPC manifest](prepared-2026-10-22/npcs-manifest.json)：記錄來源、尺寸、大小、SHA-256、預計物件路徑及 URL。這些新 URL 尚未上傳，不能當作可用正式網址。
-- [當期盤點](prepared-2026-10-22/inventory.json)：包含新增大圖連結後的引用；不覆寫歷史基準 `inventory.json`。
-- [驗收證據](prepared-2026-10-22/verification.json)：各批摘要、584 個變體解碼／checksum／尺寸、原圖核對、發布與來源切換 dry-run、49 張品質候選、信件瀏覽器檢查及 15 項圖片測試結果。
+- [封面 manifest](uploaded-2026-10-22/arcs-manifest.json)、[章節 manifest](uploaded-2026-10-22/chapters-manifest.json)、[NPC manifest](uploaded-2026-10-22/npcs-manifest.json)：來源、尺寸、大小、SHA-256、物件路徑及 URL 與原 prepared 批次相同，另有正式上傳驗證及私人原圖備份資訊。
+- [當期盤點](uploaded-2026-10-22/inventory.json)：包含新增大圖連結後的引用；不覆寫歷史基準 `inventory.json`。
+- [驗收證據](verification-history.json)：各批摘要、584 個變體解碼／checksum／尺寸、原圖核對、發布與來源切換 dry-run、49 張品質候選、信件瀏覽器檢查及 15 項圖片測試結果。
 
 三批發布 dry-run 全部通過；584 個變體逐一解碼並核對尺寸與 checksum，292 張當前來源及工作副本 checksum 也一致。來源切換 dry-run 分別預計涉及 38／86／152 個檔案，檔案有重疊，不能直接相加；dry-run 前後工作樹差異一致，未套用切換。
 

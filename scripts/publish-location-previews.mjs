@@ -6,9 +6,10 @@ import { spawn } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { storageClient } from './image-original-archive.mjs';
-import { imageBucket } from './image-assets.mjs';
+import { imageBucket, outsideDirectory } from './image-assets.mjs';
 
-const directory = path.resolve(process.argv[2] || 'output/location-previews/2026-10-24');
+if (!process.argv[2] || process.argv[2].startsWith('--')) throw Error('Usage: node scripts/publish-location-previews.mjs /outside/batch [--publish]');
+const directory = await outsideDirectory(process.argv[2]);
 const publish = process.argv.includes('--publish');
 const source = path.resolve('map/location/assets/location.json');
 const manifest = JSON.parse(await readFile(path.join(directory, 'manifest.json'), 'utf8'));
