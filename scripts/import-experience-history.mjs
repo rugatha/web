@@ -43,8 +43,11 @@ const list=async collection=>{
 };
 const existing=await list('experienceRegistrations'),existingEvents=await list('experienceEvents');
 const byName=new Map(existing.map(d=>[d.name,d]));
+const canonicalEventId=id=>existingEvents.find(d=>d.name===`${prefix}/experienceEvents/${id}`)?.fields.aliasOf?.stringValue || id;
 const writes=[];
 for(const entry of entries){
+ entry.data.eventId=canonicalEventId(entry.data.eventId);
+ entry.fields.eventId=encode(entry.data.eventId);
  const name=`${prefix}/experienceRegistrations/${entry.id}`,previous=byName.get(name);
  if(previous){if(previous.fields.historyOriginal?.stringValue!==entry.fields.historyOriginal.stringValue)throw new Error('History ID conflict');continue;}
  const duplicate=existing.some(d=>d.fields.eventId?.stringValue===entry.data.eventId && d.fields.name?.stringValue===entry.data.name && d.fields.contact?.stringValue===entry.data.contact && Date.parse(d.fields.createdAt?.timestampValue)===Date.parse(entry.fields.createdAt.timestampValue));
@@ -67,13 +70,14 @@ for(const entry of entries){
  for(const [key,value] of Object.entries(entry.fields)){
   if(['status','DM_Note'].includes(key)&&saved.fields.updatedAt)continue;
   const normalize=v=>v?.timestampValue ? Date.parse(v.timestampValue) : v?.arrayValue ? (v.arrayValue.values || []).map(normalize) : v?.stringValue ?? v?.integerValue ?? v?.booleanValue;
+  if(key==='eventId' && canonicalEventId(saved.fields[key]?.stringValue)===canonicalEventId(value.stringValue))continue;
   if(JSON.stringify(normalize(saved.fields[key]))!==JSON.stringify(normalize(value)))throw new Error(`Read-back mismatch in ${key}`);
  }
  found++;
 }
 for(const eventId of events){
- const event=verifiedEvents.find(d=>d.name===`${prefix}/experienceEvents/${eventId}`);
- const count=verified.filter(d=>d.fields.eventId?.stringValue===eventId&&d.fields.status?.stringValue!=='cancelled').reduce((s,d)=>s+Number(d.fields.partySize.integerValue),0);
+ const event=verifiedEvents.find(d=>d.name===`${prefix}/experienceEvents/${canonicalEventId(eventId)}`);
+ const count=verified.filter(d=>d.fields.eventId?.stringValue===canonicalEventId(eventId)&&d.fields.status?.stringValue!=='cancelled').reduce((s,d)=>s+Number(d.fields.partySize.integerValue),0);
  if(Number(event?.fields.registeredPlayers?.integerValue)!==count)throw new Error('Event seat count mismatch');
 }
 console.log(`Verified ${found}/${entries.length} complete historical registrations and ${events.length} event counts. Total backend registrations: ${verified.length}. Writes: ${process.argv.includes('--apply')?writes.length:0}.`);
@@ -98,8 +102,8 @@ if(process.argv.includes('--verify-ui')) {
   await page.locator('#experience-status').filter({hasText:`已讀取 ${verified.length} 筆`}).waitFor();
   const found=new Set();
   for(const eventId of events){
-   await page.selectOption('#experience-event',eventId);
-   const expected=entries.filter(e=>e.data.eventId===eventId);
+   await page.selectOption('#experience-event',canonicalEventId(eventId));
+   const expected=entries.filter(e=>canonicalEventId(e.data.eventId)===canonicalEventId(eventId));
    const rendered=await page.locator('#experience-table tbody tr').allTextContents();
    if(rendered.length!==expected.length)throw new Error('Historical UI row count mismatch');
    for(const entry of expected){

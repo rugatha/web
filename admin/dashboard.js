@@ -1,4 +1,4 @@
-import { createExperienceDashboard } from './experience-dashboard.js?v=20261026-3';
+import { createExperienceDashboard } from './experience-dashboard.js?v=20261026-4';
 import { getSiteAuth } from '/shared/auth-session.js?v=20261019-character-books-1';
 import { MIN_DATE, answerScope, isDashboardAdmin, toDate, dayKey, dateOffset, dateBounds, inRange, presetRange, fateRows, npcValues, kingdomIndex, groupNpcs, activitySeries, memberUrl, characterUrl } from './dashboard-model.js?v=20261025-admin-v5';
 import { dataTable,resetTablePages,resetTablePage,clearTableData } from './data-table.js?v=20261026-experience-v3';

@@ -4,7 +4,7 @@ import { chromium } from '@playwright/test';
 import { mkdir, readFile } from 'node:fs/promises';
 const browser=await chromium.launch({channel:'chrome',headless:true});
 const base='http://127.0.0.1:8790';
-const datasets={experienceEvents:[{id:'202610-lorin',scriptName:'洛林精神',registeredPlayers:3,maxPlayers:5},{id:'202604-1-echo',scriptName:'歷史場次',registeredPlayers:1,maxPlayers:5}],experienceRegistrations:[{id:'a'.repeat(20),createdAt:'2026-10-08T00:33:39+08:00',eventId:'202610-lorin',partySize:3,name:'同行 <三人>',contact:'test@example.test',systems:['其他'],systemsOther:'測試系統',sources:['Threads'],dndExperience:'聽過，但沒玩過',rugathaExperience:'無',boundaries:'避開血腥',notes:'三人同行'},{id:'b'.repeat(20),createdAt:'2026-04-01T12:00:00+08:00',eventId:'202604-1-echo',partySize:1,name:'以前的玩家',contact:'LINE: old'}]};
+const datasets={experienceEvents:[{id:'202610-lorin',aliasOf:'2026-10-lorin',registeredPlayers:0,maxPlayers:5},{id:'2026-10-lorin',scriptName:'洛林精神',registeredPlayers:3,maxPlayers:5},{id:'202604-1-echo',scriptName:'歷史場次',registeredPlayers:1,maxPlayers:5}],experienceRegistrations:[{id:'a'.repeat(20),createdAt:'2026-10-08T00:33:39+08:00',eventId:'2026-10-lorin',partySize:3,name:'同行 <三人>',contact:'test@example.test',systems:['其他'],systemsOther:'測試系統',sources:['Threads'],dndExperience:'聽過，但沒玩過',rugathaExperience:'無',boundaries:'避開血腥',notes:'三人同行'},{id:'b'.repeat(20),createdAt:'2026-04-01T12:00:00+08:00',eventId:'202604-1-echo',partySize:1,name:'以前的玩家',contact:'LINE: old'}]};
 try {
  const page=await browser.newPage({viewport:{width:1280,height:1000}}),errors=[];
  page.on('pageerror',error=>errors.push(error.message));
@@ -20,12 +20,15 @@ try {
  await page.goto(base+'/admin/#experience');
  await page.locator('#experience-status').filter({hasText:'已讀取'}).waitFor();
  assert.match(await page.locator('#experience-event').textContent(),/2026-10 · 洛林精神/);
+ assert.equal(await page.locator('#experience-event option').count(),3);
+ assert.match(await page.locator('#experience-current').textContent(),/本次報名狀況/);
+ assert.equal(await page.locator('#experience-current .seat-box.occupied').count(),3);
  assert.match(await page.locator('#experience-event').textContent(),/2026-04-01 · 龍鳴的回音/);
  assert.equal(await page.locator('#experience-table th').last().getAttribute('data-column'),'DM_Note');
  assert.equal(await page.locator('#experience-table th[data-column="createdAt"]').getAttribute('aria-sort'),'descending');
  const ids=await page.locator('#experience-table tbody tr').first().locator('td').allTextContents();
  assert.ok(ids[0].includes('2026-10 · 洛林精神'));
- await page.selectOption('#experience-event','202610-lorin');
+ await page.selectOption('#experience-event','2026-10-lorin');
  assert.equal(await page.locator('.seat-box').count(),5);
  assert.equal(await page.locator('.seat-box.occupied').count(),3);
  assert.equal(await page.locator('#date-controls').isVisible(),false);
@@ -37,6 +40,7 @@ try {
  await page.fill('#experience-edit-note','DM 備註 <保留文字>');
  await page.click('#experience-edit-save');
  await page.locator('#experience-editor').waitFor({state:'hidden'});
+ await page.waitForFunction(()=>document.querySelector('#experience-table tbody').textContent.includes('完成跑團'));
  assert.match(await page.locator('#experience-table tbody').textContent(),/完成跑團/);
  assert.match(await page.locator('#experience-table tbody').textContent(),/DM 備註 <保留文字>/);
  assert.equal(await page.locator('.seat-box.occupied').count(),3);
@@ -46,13 +50,14 @@ try {
  assert.match(await page.locator('#experience-table tbody').textContent(),/已取消/);
  assert.equal(await page.locator('[data-cancel-registration]').count(),0);
  await page.selectOption('#experience-event','202604-1-echo');
- assert.equal(await page.locator('.seat-box.occupied').count(),1);
+ assert.equal(await page.locator('#experience-current .seat-box.occupied').count(),0);
+ assert.match(await page.locator('#experience-current').textContent(),/本次報名狀況/);
  await page.selectOption('#experience-event','all');
  assert.equal(await page.locator('#experience-table tbody tr').count(),2);
  await page.fill('#experience-search','test@example.test');
  assert.equal(await page.locator('#experience-table tbody tr').count(),1);
  await page.fill('#experience-search','');
- await page.selectOption('#experience-event','202610-lorin');
+ await page.selectOption('#experience-event','2026-10-lorin');
  await mkdir('output/experience',{recursive:true});
  for(const width of [1280,390]) {
   await page.setViewportSize({width,height:1000});

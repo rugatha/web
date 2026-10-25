@@ -15,20 +15,24 @@ export function experienceEventLabel(id, event) {
   return `${experienceEventDate(id)}${script ? ` · ${script}` : ''}`;
 }
 export function createExperienceDashboard(context) {
-  let rows = null, events = [], loading = false, busy = false, revision = 0;
+  let rows = null, events = [], currentConfig = null, loading = false, busy = false, revision = 0;
   const valid = (ticket, auth) => context().authenticated && context().generation === auth && revision === ticket;
   async function load() {
     if (!context().authenticated || loading || busy) return;
     const {db,sdk,generation} = context(), ticket = ++revision;
     loading = true; $('experience-status').textContent = '正在讀取報名資料…';
     try {
-      const results = await Promise.all(['experienceEvents','experienceRegistrations'].map(name => sdk.getDocs(sdk.collection(db,name))));
+      const [results, config] = await Promise.all([
+        Promise.all(['experienceEvents','experienceRegistrations'].map(name => sdk.getDocs(sdk.collection(db,name)))),
+        fetch('../experience/register/experience_info.json',{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('settings unavailable');return response.json();}).catch(()=>null)
+      ]);
       if (!valid(ticket,generation)) return;
+      currentConfig=config;
       [events,rows] = results.map(result => result.docs.map(doc => ({...doc.data(),id:doc.id})));
       const selected = $('experience-event').value;
       $('experience-event').replaceChildren(new Option('全部場次','all'));
       // Include legacy registrations even when their event record is missing.
-      const ids = [...new Set([...events.map(e=>e.id),...rows.map(r=>r.eventId)])].sort((a,b)=>experienceEventDate(b).localeCompare(experienceEventDate(a)));
+      const ids = [...new Set([...events.filter(e=>!e.aliasOf).map(e=>e.id),...rows.map(r=>r.eventId)])].sort((a,b)=>experienceEventDate(b).localeCompare(experienceEventDate(a)));
       ids.forEach(id => $('experience-event').add(new Option(experienceEventLabel(id,events.find(e=>e.id===id)),id)));
       if (ids.includes(selected)) $('experience-event').value = selected;
       else if (ids.length === 1) $('experience-event').value = ids[0];
@@ -36,7 +40,7 @@ export function createExperienceDashboard(context) {
       render();
     } catch {
       if (!valid(ticket,generation)) return;
-      rows = null; $('experience-table').replaceChildren(); $('experience-seats').replaceChildren();
+      rows = null; $('experience-table').replaceChildren(); $('experience-seats').replaceChildren(); $('experience-current').replaceChildren();
       $('experience-status').textContent = '無法讀取報名資料，請按「重新整理報名資料」重試。';
     } finally { if (valid(ticket,generation)) loading = false; }
   }
@@ -48,9 +52,15 @@ export function createExperienceDashboard(context) {
     const active = scoped.filter(row => row.status !== 'cancelled');
     const people = active.reduce((sum,row)=>sum+row.partySize,0);
     const event = events.find(e=>e.id===selected);
+    const currentEvent=events.find(e=>e.id===currentConfig?.eventId && !e.aliasOf);
+    const currentRows=rows.filter(r=>r.eventId===currentConfig?.eventId && r.status!=='cancelled');
+    const currentPeople=currentRows.reduce((sum,row)=>sum+row.partySize,0);
+    $('experience-current').innerHTML=`<h2>本次報名狀況</h2>${currentEvent
+      ? `<p>${esc(experienceEventLabel(currentEvent.id,currentEvent))} · ${currentEvent.registrationOpen?'報名開放':'報名已關閉'}</p><p>${currentPeople} 人報名 / ${currentEvent.maxPlayers} 人上限 · 剩餘 ${Math.max(0,currentEvent.maxPlayers-currentPeople)} 位</p><div class="seat-boxes" role="img" aria-label="${currentPeople} 人已報名，${Math.max(0,currentEvent.maxPlayers-currentPeople)} 個空位">${Array.from({length:currentEvent.maxPlayers},(_,i)=>`<span class="seat-box ${i<currentPeople?'occupied':''}">${i<currentPeople?'已報名':'空位'}</span>`).join('')}</div>${currentEvent.registeredPlayers!==currentPeople?'<p class="form-error">場次統計與回覆人數不一致，請先執行場次同步。</p>':''}`
+      : '<p>無法讀取本次場次設定，請重新整理報名資料。</p>'}`;
     $('experience-seats').innerHTML = selected === 'all'
       ? `<p>全部場次：${active.length} 筆有效報名，共 ${people} 人；已取消 ${scoped.length-active.length} 筆。</p>`
-      : `<p>${people} 人報名 / ${event?.maxPlayers ?? '未設定'} 人上限 · 有效 ${active.length} 筆 · 取消 ${scoped.length-active.length} 筆</p>${event ? `<div class="seat-boxes" role="img" aria-label="${people} 人已報名，${Math.max(0,event.maxPlayers-people)} 個空位">${Array.from({length:event.maxPlayers},(_,i)=>`<span class="seat-box ${i<people?'occupied':''}">${i<people?'已報名':'空位'}</span>`).join('')}</div>${event.registeredPlayers!==people?'<p class="form-error">場次統計與回覆人數不一致，請先執行場次同步。</p>':''}` : '<p>缺少場次設定，無法顯示剩餘名額。</p>'}`;
+      : `<p>${esc(experienceEventLabel(selected,event))}：${people} 人報名 · 有效 ${active.length} 筆 · 取消 ${scoped.length-active.length} 筆</p>`;
     const filtered = scoped.filter(row => [experienceEventLabel(row.eventId,events.find(e=>e.id===row.eventId)),...Object.entries(row).filter(([key])=>!key.startsWith('history')).map(([,value])=>answerText(value))].join(' ').toLowerCase().includes(search));
     dataTable('experience-table',[
       {id:'eventId',label:'場次',value:r=>experienceEventLabel(r.eventId,events.find(e=>e.id===r.eventId))},
@@ -106,5 +116,5 @@ export function createExperienceDashboard(context) {
       if (valid(ticket,generation)) $('experience-status').textContent='取消失敗，請重新整理確認狀態後重試；若尚未部署新版 Firebase 規則，請先部署。';
     } finally { if (valid(ticket,generation)) {busy=false;render();} }
   });
-  return { render, reset() {editor.close();editingId=null;revision++;rows=null;events=[];loading=false;busy=false;$('experience-table').replaceChildren();$('experience-seats').replaceChildren();$('experience-search').value='';$('experience-event').replaceChildren(new Option('全部場次','all'));} };
+  return { render, reset() {editor.close();editingId=null;revision++;rows=null;events=[];currentConfig=null;loading=false;busy=false;$('experience-table').replaceChildren();$('experience-seats').replaceChildren(); $('experience-current').replaceChildren();$('experience-search').value='';$('experience-event').replaceChildren(new Option('全部場次','all'));} };
 }
