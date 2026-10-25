@@ -53,6 +53,60 @@ body {
   text-align: center;
 }
 
+.current-experience {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 32px;
+  margin: 8px 0 10px;
+  border: 1px solid rgba(123, 220, 181, 0.4);
+  border-radius: var(--radius);
+  background: linear-gradient(130deg, rgba(123, 220, 181, 0.12), rgba(19, 28, 32, 0.55));
+}
+
+.current-experience__info { min-width: 0; }
+.current-experience__eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 0.12em; }
+.current-experience h2 { margin: 0 0 12px; font-size: clamp(24px, 3vw, 32px); line-height: 1.4; overflow-wrap: anywhere; }
+.current-experience__time { margin: 0; color: var(--muted); line-height: 1.7; }
+.current-experience__action { flex-shrink: 0; text-align: center; }
+.current-experience__status { margin: 0 0 12px; color: var(--muted); font-size: 14px; font-weight: 600; }
+.current-experience__status[data-state="open"] { color: var(--accent); }
+.current-experience__status[data-state="full"],
+.current-experience__status[data-state="closed"] { color: #f6d185; }
+
+@media (max-width: 700px) {
+  .current-experience { flex-direction: column; align-items: stretch; padding: 24px 20px; gap: 20px; }
+  .current-experience__action { text-align: left; }
+  .current-experience .experience-register-link { width: 100%; }
+}
+
+.experience-register-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 48px;
+  max-width: 100%;
+  padding: 12px 24px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #15352b;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.experience-register-link:hover {
+  background: #a1e9cb;
+  border-color: #a1e9cb;
+}
+
+.experience-register-link:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 4px;
+}
+
 .experience-hero__copy {
   width: min(720px, 100%);
 }

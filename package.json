@@ -6,6 +6,7 @@
     "node": ">=24 <25"
   },
   "scripts": {
+    "dev": "python3 -m http.server 8765 --bind 127.0.0.1",
     "admin:catalog": "node scripts/build-admin-catalog.mjs",
     "admin:check": "node scripts/build-admin-catalog.mjs --check && node --test tests/admin-dashboard.test.mjs",
     "locations:build": "node scripts/generate-location-pages.mjs",

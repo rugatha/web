@@ -792,6 +792,103 @@ service cloud.firestore {
       }
     }
 
+    // Public registration intake; personal answers are only readable by admins.
+    match /experienceEvents/{eventId} {
+      function validSeatIncrement() {
+        let before = resource.data;
+        let after = request.resource.data;
+        let registration = /databases/$(database)/documents/experienceRegistrations/$(after.lastRegistrationId);
+        let answer = getAfter(registration).data;
+        return before.registrationOpen == true && request.time <= before.deadline
+          && after.diff(before).affectedKeys().hasOnly(['registeredPlayers', 'lastRegistrationId', 'updatedAt'])
+          && after.lastRegistrationId.matches('[a-zA-Z0-9]{20}')
+          && !exists(registration) && existsAfter(registration)
+          && answer.eventId == eventId
+          && answer.partySize is int && answer.partySize > 0
+          && before.registeredPlayers is int && before.registeredPlayers >= 0
+          && after.registeredPlayers is int
+          && after.registeredPlayers == before.registeredPlayers + answer.partySize
+          && after.registeredPlayers <= before.maxPlayers
+          && after.updatedAt == request.time;
+      }
+      allow get: if true;
+      allow list, create, delete: if isAdmin();
+      allow update: if isAdmin() || validSeatIncrement();
+    }
+
+    match /experienceRegistrations/{registrationId} {
+      function validText(value, maximum, required) {
+        return value is string && value.size() <= maximum
+          && (!required || value.matches('.*[^\\s].*'));
+      }
+      function validSelections(values, allowed) {
+        return values is list && values.size() > 0
+          && values.size() <= allowed.size()
+          && values.toSet().size() == values.size()
+          && values.hasOnly(allowed);
+      }
+      function validOther(values, text) {
+        return validText(text, 150, values.hasAny(['其他']))
+          && (values.hasAny(['其他']) || text == '');
+      }
+      function validRegistration() {
+        let data = request.resource.data;
+        let eventPath = /databases/$(database)/documents/experienceEvents/$(data.eventId);
+        let event = get(eventPath).data;
+        let after = getAfter(eventPath).data;
+        return data.keys().hasOnly([
+            'schemaVersion', 'eventId', 'name', 'contact', 'partySize',
+            'systems', 'systemsOther', 'dndExperience', 'rugathaExperience',
+            'sources', 'sourcesOther', 'boundaries', 'notes', 'createdAt'
+          ])
+          && data.keys().hasAll([
+            'schemaVersion', 'eventId', 'name', 'contact', 'partySize',
+            'systems', 'systemsOther', 'dndExperience', 'rugathaExperience',
+            'sources', 'sourcesOther', 'boundaries', 'notes', 'createdAt'
+          ])
+          && data.schemaVersion == 1
+          && data.eventId is string && data.eventId.size() <= 100
+          && event.registrationOpen == true && request.time <= event.deadline
+          && data.partySize is int && data.partySize >= 1
+          && data.partySize <= event.maxPlayers
+          && event.registeredPlayers is int && event.registeredPlayers >= 0
+          && data.partySize <= event.maxPlayers - event.registeredPlayers
+          && after.registeredPlayers == event.registeredPlayers + data.partySize
+          && after.lastRegistrationId == registrationId
+          && after.updatedAt == request.time
+          && validText(data.name, 80, true) && validText(data.contact, 250, true)
+          && validSelections(data.systems, ['龍與地下城 D&D', '克蘇魯的呼喚 CoC', '開拓者 Pathfinder', '其他', '無經驗'])
+          && (!data.systems.hasAny(['無經驗']) || data.systems.size() == 1)
+          && validOther(data.systems, data.systemsOther)
+          && data.dndExperience in ['聽過，但沒玩過', '有玩過，但經驗較少', '過去或現在有固定團務', '有當過 DM']
+          && data.rugathaExperience in ['有', '無']
+          && validSelections(data.sources, ['親友推薦', '社群推薦（如其他粉絲專頁）', '臉書粉絲專頁', 'Instagram', 'Threads', 'Rugatha Discord 頻道', '臉書 TRPG/D&D 相關社團', 'TRPG 嘉年華會', '龍山地下城', '其他'])
+          && validOther(data.sources, data.sourcesOther)
+          && validText(data.boundaries, 2000, false) && validText(data.notes, 2000, false)
+          && data.createdAt == request.time;
+      }
+      allow create: if registrationId.matches('[a-zA-Z0-9]{20}') && validRegistration();
+      allow read: if isAdmin();
+      function validCancellation() {
+        let before = resource.data;
+        let after = request.resource.data;
+        let eventPath = /databases/$(database)/documents/experienceEvents/$(before.eventId);
+        let event = get(eventPath).data;
+        let updated = getAfter(eventPath).data;
+        return isAdmin()
+          && (!('status' in before) || before.status == 'active')
+          && after.diff(before).affectedKeys().hasOnly(['status', 'cancelledAt'])
+          && after.status == 'cancelled' && after.cancelledAt == request.time
+          && before.partySize is int && before.partySize > 0
+          && updated.registeredPlayers == event.registeredPlayers - before.partySize
+          && updated.registeredPlayers >= 0
+          && updated.lastCancellationId == registrationId
+          && updated.updatedAt == request.time;
+      }
+      allow update: if validCancellation();
+      allow delete: if false;
+    }
+
     match /migrationRuns/{runId} {
       allow get, list: if isAdmin();
       allow write: if false;

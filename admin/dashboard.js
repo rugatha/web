@@ -1,3 +1,4 @@
+import { createExperienceDashboard } from './experience-dashboard.js';
 import { getSiteAuth } from '/shared/auth-session.js?v=20261019-character-books-1';
 import { MIN_DATE, answerScope, isDashboardAdmin, toDate, dayKey, dateOffset, dateBounds, inRange, presetRange, fateRows, npcValues, kingdomIndex, groupNpcs, activitySeries, memberUrl, characterUrl } from './dashboard-model.js?v=20261025-admin-v5';
 import { dataTable,resetTablePages,resetTablePage,clearTableData } from './data-table.js?v=20261025-admin-v5';
@@ -12,6 +13,7 @@ const dateText = value => {
 const screens = {
   overview:['管理總覽','檢視網站內容總量與所選期間的新增資料。'],
   campaigns:['團務與章節','依團務、故事弧檢視已刊載章節，可展開查看章節明細。'],
+  experience:['體驗團報名','依場次檢視完整填答與名額，管理取消報名。'],
   members:['會員管理','查看會員清單、註冊時間、最後登入時間及關聯資料。'],
   characters:['角色卡','查看每張角色卡的建立者、職業、種族與建立時間。'],
   npcs:['NPC 統計','依宗教、性別、所在王國、種族等面向分析 NPC。'],
@@ -19,11 +21,12 @@ const screens = {
 };
 const blankState = () => ({catalog:null,npcs:null,kingdoms:new Map(),members:null,characters:null,choices:null,errors:{}});
 let state=blankState(), authenticated=false, generation=0, db, sdk, range=presetRange('all'), screen='overview';
+const experience = createExperienceDashboard(() => ({ authenticated, generation, db, sdk }));
 let sliderMin=MIN_DATE, today=dayKey(new Date());
 function notice(message) { const node=document.createElement('div');node.className='notice';node.textContent=message;$('notices').append(node); }
-function failBoot() { authenticated=false;generation++;state=blankState();clearTableData();window.RUGATHA_ADMIN_BOOT?.fail(); }
+function failBoot() { authenticated=false;generation++;state=blankState();clearTableData();experience.reset();window.RUGATHA_ADMIN_BOOT?.fail(); }
 function deny() {
-  window.RUGATHA_ADMIN_BOOT?.ready();authenticated=false;generation++;state=blankState();clearTableData();
+  window.RUGATHA_ADMIN_BOOT?.ready();authenticated=false;generation++;state=blankState();clearTableData();experience.reset();
   $('dashboard').hidden=true;$('dashboard').replaceChildren();$('gate').hidden=false;$('gate').textContent='404 · Page not found';location.replace('/404/');
 }
 const count = (id,value) => { $(id).textContent=fmt(value); };
@@ -179,7 +182,7 @@ function renderFate() {
 }
 function renderActive() {
   if(!authenticated) return;
-  const renders={overview:renderOverview,campaigns:renderCampaigns,members:renderMembers,characters:renderCharacters,npcs:renderNpcs,fate:renderFate};
+  const renders={experience:experience.render,overview:renderOverview,campaigns:renderCampaigns,members:renderMembers,characters:renderCharacters,npcs:renderNpcs,fate:renderFate};
   renders[screen]();
 }
 function route() {
@@ -188,6 +191,7 @@ function route() {
   document.querySelectorAll('[data-nav]').forEach(node=>{if(node.dataset.nav===screen)node.setAttribute('aria-current','page');else node.removeAttribute('aria-current');});
   $('breadcrumb').textContent=screens[screen][0];$('screen-title').textContent=screens[screen][0];$('screen-description').textContent=screens[screen][1];
   document.title=screens[screen][0]+' | Rugatha';
+  $('date-controls').hidden = screen === 'experience';
   document.querySelectorAll('[data-time-field]').forEach(node=>node.hidden=node.dataset.timeField!==screen);
   renderActive();
 }

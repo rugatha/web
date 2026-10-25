@@ -1,0 +1,18 @@
+{
+  "active": "n",
+  "eventId": "2026-10-lorin",
+  "scriptName": "洛林精神",
+  "scriptEnglishName": "The Spirit of Lorin",
+  "dm": "威辰",
+  "location": "台北公館",
+  "locationNote": "報名成功後，將另行告知",
+  "minPlayers": 4,
+  "maxPlayers": 5,
+  "fee": 500,
+  "deadline": "2026-10-30",
+  "characterCreation": true,
+  "startDate": "2026-10-31",
+  "startTime": "13:00",
+  "endDate": "2026-10-31",
+  "endTime": "17:30"
+}

@@ -6,6 +6,16 @@ Rugatha Web 是 Rugatha 世界觀、團錄與社群工具的官方網站。前�
 
 - `https://rugatha.com`
 
+## 本機預覽
+
+在專案根目錄執行，並保持終端機運作：
+
+```sh
+npm run dev
+```
+
+報名頁：`http://localhost:8765/experience/register/`。也可使用 `http://127.0.0.1:8765/experience/register/`。請透過此網址開啟，以正常載入 JSON 與 Firebase 模組；不要直接雙擊 HTML。結束預覽時按 `Ctrl+C`。
+
 ## 專案概覽
 
 這個 repository 主要負責：

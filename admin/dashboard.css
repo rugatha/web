@@ -15,3 +15,5 @@ body{background:#fafbf9;color:#17251d}main{background:#fafbf9;min-height:100vh}.
 .sidebar .brand{display:flex;align-items:center;justify-content:center;height:144px;min-height:144px;flex-shrink:0;margin-inline:-18px;overflow:hidden}.sidebar .brand img{width:360px;max-width:none;height:144px;flex-shrink:0;object-fit:contain}@media(max-width:1200px){.sidebar .brand{margin-inline:-14px}}@media(max-width:650px){.sidebar .brand{margin-inline:-16px}}
 /* Keep the enlarged artwork, but tighten the sidebar's top and label spacing. */
 .sidebar{padding-top:2px}.sidebar .workspace-label{margin-top:4px;padding-top:12px;padding-bottom:10px}@media(max-width:650px){.sidebar{padding-top:0}}
+
+.experience-seats{margin:16px 0 24px}.seat-boxes{display:flex;flex-wrap:wrap;gap:10px}.seat-box{display:grid;place-items:center;min-width:76px;height:64px;border:1px dashed #789487;border-radius:10px;color:#53695e;background:#ffffff66}.seat-box.occupied{background:#28664d;color:white;border:1px solid #28664d}#experience-table td{max-width:320px;white-space:pre-wrap;overflow-wrap:anywhere}#experience-table .button{margin:8px 0;white-space:nowrap}

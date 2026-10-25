@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>體驗團報名 | Rugatha</title>
+  <meta name="description" content="RUGATHA EXPERIENCE ／ 冒險者招募">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rugatha.com/experience/register/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rugatha">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:title" content="體驗團報名 | Rugatha">
+  <meta property="og:description" content="RUGATHA EXPERIENCE ／ 冒險者招募">
+  <meta property="og:url" content="https://rugatha.com/experience/register/">
+  <meta property="og:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="體驗團報名 | Rugatha">
+  <meta name="twitter:description" content="RUGATHA EXPERIENCE ／ 冒險者招募">
+  <meta name="twitter:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+<link rel="icon" href="../../assets/logo/rugatha-favicon.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <link rel="stylesheet" href="styles.css?v=20261025-registration-5">
+  <meta name="theme-color" content="#445f56">
+  <script src="../../shared/firebase.config.js"></script>
+  <script defer src="register.js?v=20261025-registration-2"></script>
+</head>
+<body>
+  <a class="skip-link" href="#registration">跳至報名表</a>
+  <header class="site-header">
+    <a href="../../" aria-label="Rugatha 首頁"><img src="../../assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha" width="180"></a>
+    <a class="back-link back-link--desktop" href="../">← 體驗團介紹</a>
+  </header>
+  <section id="access-state" class="access-state" aria-live="polite" aria-labelledby="access-title">
+    <p class="eyebrow">RUGATHA EXPERIENCE</p>
+    <h1 id="access-title">正在載入場次資訊…</h1>
+    <p id="access-message">請稍候。</p>
+    <a class="primary" href="../">返回體驗團介紹 →</a>
+  </section>
+  <noscript><p class="access-state">請啟用 JavaScript 以讀取場次開放狀態及使用報名表。</p></noscript>
+  <main id="registration-page" hidden>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">RUGATHA EXPERIENCE <span>／ 冒險者招募</span></p>
+        <a class="back-link back-link--mobile" href="../">← 體驗團介紹</a>
+        <p class="status" id="event-status">場次籌備中</p>
+        <h1 id="page-title">你的下一場冒險，<br><em>從這裡開始。</em></h1>
+        <div class="tags"><span>新手友善</span><span>D&D 5e</span><span>單次冒險</span></div>
+      </div>
+      <img class="hero-art" id="event-poster" src="../../assets/banner/rugatha-experience.jpeg" alt="Rugatha 體驗團主視覺">
+      <section class="event-panel" aria-labelledby="event-heading">
+        <p class="eyebrow">SESSION DETAILS</p>
+        <h2 id="event-heading">團務資訊</h2>
+        <dl id="event-details"></dl>
+      </section>
+      <div class="hero-actions">
+        <a class="primary hero-cta" href="#registration">填寫冒險者資料 <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <div class="registration-layout">
+      <div class="form-column" id="registration">
+        <p id="full-notice" class="full-notice" role="status" tabindex="-1" hidden>本期已額滿，<br>敬請期待下個月的體驗團！</p>
+        <div class="form-intro" id="registration-intro" hidden><p class="eyebrow">YOUR ADVENTURE STARTS HERE</p><h2>冒險者報名表</h2><p>讓我們先認識你一點。<br></br><span class="required">*</span> 為必填欄位。</p></div>
+        <div class="notice" id="availability" role="status">場次籌備中，歡迎先了解報名內容；正式開放後即可送出報名資料。</div>
+        <noscript><p class="notice">請啟用 JavaScript 以查看場次及使用報名表。</p></noscript>
+        <form id="registration-form" hidden>
+          <section class="form-section" aria-labelledby="basic-heading">
+            <div class="section-heading"><span class="section-number">01</span><div><h3 id="basic-heading">基本資訊</h3><p>先打聲招呼，讓我們找到你。</p></div></div>
+            <div class="field"><label for="name">該如何稱呼您？ <span class="required">*</span></label><input id="name" name="name" autocomplete="nickname" maxlength="80" placeholder="你的名字或暱稱" required></div>
+            <div class="field"><label for="contact">聯絡 Email（無法使用時可填其他方式） <span class="required">*</span></label><p class="hint" id="contact-hint">請優先填寫 Email；若無法使用 Email，請勾選下方選項後填寫 LINE ID、Discord ID 或臉書連結。<br></br>成團後會邀請您加入 LINE 社群，後續將以 LINE 聯繫。</p><label class="contact-alternative"><input id="contact-alternative" type="checkbox"> 我無法使用 Email，改填其他聯繫方式</label><input id="contact" name="contact" type="email" autocomplete="email" maxlength="250" placeholder="you@example.com" aria-describedby="contact-hint" required></div>
+            <div class="field"><label for="party-size">報名人數 <span class="required">*</span></label><select id="party-size" name="partySize" required><option value="1">1 人（我自己）</option></select><p class="hint" id="seats-note">同行夥伴可於備註補充稱呼與經驗。</p></div>
+          </section>
+          <section class="form-section" aria-labelledby="experience-heading">
+            <div class="section-heading"><span class="section-number">02</span><div><h3 id="experience-heading">你的冒險經驗</h3><p>沒有經驗也沒關係，每位冒險者都有第一次。</p></div></div>
+            <fieldset class="field"><legend>玩過哪些 TRPG 系統？ <span class="required">*</span><span class="legend-note">可複選</span></legend><div class="choices" id="systems">
+              <label><input type="checkbox" name="systems" value="龍與地下城 D&amp;D">龍與地下城 D&amp;D</label>
+              <label><input type="checkbox" name="systems" value="克蘇魯的呼喚 CoC">克蘇魯的呼喚 CoC</label>
+              <label><input type="checkbox" name="systems" value="開拓者 Pathfinder">開拓者 Pathfinder</label>
+              <label><input type="checkbox" name="systems" value="其他">其他</label>
+              <label><input type="checkbox" name="systems" value="無經驗">無經驗</label>
+            </div><input class="other-input" id="systems-other" name="systemsOther" aria-label="其他 TRPG 系統名稱" placeholder="請填寫其他系統" maxlength="150" hidden disabled><p class="hint error" id="systems-error" hidden>請至少選擇一項 TRPG 經驗。</p></fieldset>
+            <fieldset class="field"><legend>龍與地下城遊玩經驗 <span class="required">*</span><span class="legend-note">單選</span></legend><div class="choices" id="dnd-experience">
+              <label><input type="radio" name="dndExperience" value="聽過，但沒玩過" required>聽過，但沒玩過</label>
+              <label><input type="radio" name="dndExperience" value="有玩過，但經驗較少" required>有玩過，但經驗較少</label>
+              <label><input type="radio" name="dndExperience" value="過去或現在有固定團務" required>過去或現在有固定團務</label>
+              <label><input type="radio" name="dndExperience" value="有當過 DM" required>有當過 DM</label>
+            </div></fieldset>
+            <fieldset class="field"><legend>玩過 Rugatha D&D 的其他劇本嗎？ <span class="required">*</span><span class="legend-note">單選</span></legend><div class="choices inline" id="rugatha-experience">
+              <label><input type="radio" name="rugathaExperience" value="有" required>有</label>
+              <label><input type="radio" name="rugathaExperience" value="無" required>無</label>
+            </div></fieldset>
+            <fieldset class="field"><legend>如何得知 Rugatha D&D？ <span class="required">*</span><span class="legend-note">可複選</span></legend><div class="choices" id="sources">
+              <label><input type="checkbox" name="sources" value="親友推薦">親友推薦</label>
+              <label><input type="checkbox" name="sources" value="社群推薦（如其他粉絲專頁）">社群推薦（如其他粉絲專頁）</label>
+              <label><input type="checkbox" name="sources" value="臉書粉絲專頁">臉書粉絲專頁</label>
+              <label><input type="checkbox" name="sources" value="Instagram">Instagram</label>
+              <label><input type="checkbox" name="sources" value="Threads">Threads</label>
+              <label><input type="checkbox" name="sources" value="Rugatha Discord 頻道">Rugatha Discord 頻道</label>
+              <label><input type="checkbox" name="sources" value="臉書 TRPG/D&amp;D 相關社團">臉書 TRPG/D&amp;D 相關社團</label>
+              <label><input type="checkbox" name="sources" value="TRPG 嘉年華會">TRPG 嘉年華會</label>
+              <label><input type="checkbox" name="sources" value="龍山地下城">龍山地下城</label>
+              <label><input type="checkbox" name="sources" value="其他">其他</label>
+            </div><input class="other-input" id="sources-other" name="sourcesOther" aria-label="其他得知管道" placeholder="請告訴我們在哪裡遇見 Rugatha" maxlength="150" hidden disabled><p class="hint error" id="sources-error" hidden>請至少選擇一項得知管道。</p></fieldset>
+          </section>
+          <section class="form-section" aria-labelledby="other-heading">
+            <div class="section-heading"><span class="section-number">03</span><div><h3 id="other-heading">關於你的遊戲體驗</h3><p>一起打造讓每個人都自在的冒險。</p></div></div>
+            <div class="field"><label for="boundaries">團務中有哪些不能接受的內容？ <span class="optional">選填</span></label><p class="hint" id="boundaries-hint">例如：過於詳細的暴力描寫、性相關刻畫、對現實宗教的影射等。歡迎告訴我們希望避開的內容。</p><textarea id="boundaries" name="boundaries" rows="4" maxlength="2000" placeholder="你的界線很重要，請放心告訴我們。" aria-describedby="boundaries-hint"></textarea></div>
+            <div class="field"><label for="notes">還有什麼想讓我們知道的嗎？ <span class="optional">選填</span></label><textarea id="notes" name="notes" rows="4" maxlength="2000" placeholder="同行夥伴、想問的問題，或其他備註……"></textarea></div>
+          </section>
+          <div class="form-footer"><p>資料僅供本次團務安排與聯繫使用。確認內容並送出後，資料將儲存於 Firebase，供主辦方確認報名。</p><button class="primary" id="review-button" type="submit" disabled>確認報名內容 <span aria-hidden="true">→</span></button><p class="hint">下一步可預覽填寫內容，確認後才會正式送出。</p></div>
+        </form>
+        <section id="registration-success" class="notice" tabindex="-1" hidden aria-labelledby="success-title">
+          <h2 id="success-title">感謝您的填寫！</h2>
+          <p>報名資料已成功送達，主辦方將另行確認名額。</p>
+          <dl id="success-details" aria-label="本次報名資訊"></dl>
+          <div class="success-next-steps">
+            <p>若成團，我們會邀請您加入本次體驗團的 LINE 社群。</p>
+            <p>若未成團，也會聯繫您並於社群公告。</p>
+            <p>期待跑團當日相見！</p>
+          </div>
+        </section>
+        <section class="afterword"><span aria-hidden="true">✧</span><h3>期待在冒險的起點，與你相見。</h3><p>成團與否都會另行聯繫，並於社群公告。<br>有任何問題，歡迎透過社群聯繫，或寫信給我們： <a id="contact-link" href="mailto:rugathadnd@gmail.com">rugathadnd@gmail.com</a></p></section>
+      </div>
+    </div>
+  </main>
+  <dialog id="review-dialog" aria-labelledby="review-title"><div class="dialog-content"><p class="eyebrow">ONE MORE STEP</p><h2 id="review-title">出發前，再確認一下。</h2><p class="hint">請確認填寫內容，再按下「送出報名」。資料送達後，主辦方會另行聯繫確認名額與成團資訊。</p><dl id="review-details"></dl><p id="submission-status" class="notice" role="status"></p><div class="dialog-actions"><button type="button" id="edit-button" class="secondary">返回修改</button><button type="button" id="submit-button" class="primary">送出報名 →</button></div><button type="button" class="text-link copy-button" id="copy-button">複製報名內容</button></div></dialog>
+</body>
+</html>
