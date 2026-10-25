@@ -125,3 +125,16 @@ body{background:#fafbf9;color:#17251d}main{background:#fafbf9;min-height:100vh}.
 .feedback-text-table th:first-child{width:25%}.feedback-text-table th:nth-child(2){width:18%}
 .feedback-text-table td:last-child{white-space:pre-wrap}
 .feedback-text-table tbody tr:last-child td{border-bottom:0}
+
+.d3-slot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}.d3-slot-card{border:1px solid var(--admin-line,#cbdccf);border-radius:10px;padding:16px;min-width:0}.d3-slot-card h3{font-size:14px;margin:0 0 10px}.d3-slot-card p{font-size:12px}#d3-table td{white-space:nowrap}@media(max-width:960px){.d3-slot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.d3-slot-grid{grid-template-columns:1fr}}
+
+.d3-slot-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.d3-day{min-width:0}.d3-day>h3{text-align:center;font-size:20px;color:#264930}.d3-day .d3-slot-card{margin-bottom:16px}.d3-slot-card h4{font-size:15px;margin:0 0 12px}.d3-seats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.d3-booked-seat,.d3-empty-seat{padding:12px;border:1px solid #cbdccf;border-radius:8px;overflow-wrap:anywhere;min-width:0}.d3-booked-seat{background:#e2ece4}.d3-empty-seat{display:flex;flex-direction:column;gap:16px;justify-content:center;align-items:center;color:#627667}.d3-booked-seat .button{font-size:11px}#d3-editor{max-width:520px;width:calc(100% - 32px);max-height:90vh;overflow:auto;border:1px solid #acc2b2;border-radius:14px;background:#f2f6f1;color:#233c2c;padding:24px}#d3-editor::backdrop{background:#0008}.d3-add-form{display:grid;gap:16px}.d3-add-form>label{display:grid;gap:6px}.d3-add-form fieldset{display:grid;gap:12px;border:1px solid #acc2b2}.d3-add-form fieldset label{display:flex;align-items:center;gap:8px}.d3-add-form input[type=checkbox]{width:auto}.d3-add-form .dialog-actions{display:flex;gap:12px;justify-content:flex-end}@media(max-width:650px){.d3-slot-grid{grid-template-columns:1fr}.d3-seats{grid-template-columns:1fr}}
+
+/* Keep every seat the same height across both dates. */
+.d3-booked-seat,.d3-empty-seat{height:184px;box-sizing:border-box;display:flex;flex-direction:column;gap:6px}.d3-booked-seat{background:#bfd5c6;border-color:#8aac96;color:#233c2c}.d3-seat-info{min-height:0;flex:0 1 auto;overflow:auto}.d3-seat-info strong{display:block;color:#233c2c;font-size:15px}.d3-slot-card .d3-seat-info p{margin:2px 0;color:#233c2c;font-size:15px;line-height:1.5}.d3-booked-seat>.button{align-self:center;flex-shrink:0;margin:0}.d3-empty-seat{justify-content:center}
+
+.d3-booked-seat,.d3-empty-seat{font-size:15px}.d3-booked-seat .button,.d3-empty-seat .button{font-size:15px}
+
+#d3-shipping-editor{max-width:520px;width:calc(100% - 32px);max-height:90vh;overflow:auto;border:1px solid #acc2b2;border-radius:14px;background:#f2f6f1;color:#233c2c;padding:24px}#d3-shipping-editor::backdrop{background:#0008}#d3-table td [data-d3-shipping]{display:block;margin-top:8px}
+
+[data-d3-image-email]{display:flex;align-items:center;gap:8px}[data-d3-image-email] input{width:240px;min-width:180px}

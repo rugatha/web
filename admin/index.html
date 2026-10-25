@@ -8,7 +8,7 @@
   <title>管理總覽 | Rugatha</title>
   <link rel="icon" href="/assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="/shared/styles/theme.css">
-  <link rel="stylesheet" href="./dashboard.css?v=20261026-forms-8">
+  <link rel="stylesheet" href="./dashboard.css?v=d3-12-20261026-forms-8">
 </head>
 <body>
   <div id="gate" role="status" class="gate"><img src="/assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha"><p>正在驗證管理員身分…</p></div>
@@ -24,6 +24,7 @@
           <div class="nav-submenu">
             <a href="#experience" data-nav="experience">體驗團報名</a>
             <a href="#feedback" data-nav="feedback">跑團回饋</a>
+            <a href="#d3" data-nav="d3">2026 D3</a>
           </div>
         </details>
         <a href="#members" data-nav="members"><span>♙</span>會員管理</a>
@@ -81,6 +82,36 @@
         <section data-screen="fate" id="screen-fate" hidden aria-labelledby="screen-title">
           <div class="metrics four"><article class="metric"><span>篩選後答題筆數</span><strong id="fate-answers">—</strong></article><article class="metric"><span>答題會員數</span><strong id="fate-members">—</strong></article><article class="metric"><span>已有作答的題目</span><strong id="fate-answered">—</strong></article><article class="metric"><span>篩選後題目數</span><strong id="fate-questions">—</strong></article></div>
           <div class="panel"><div class="panel-heading"><h2>NPC 題目與作答分布</h2><span class="tag">每筆回答計一次</span></div><div class="toolbar"><label class="search">搜尋題目或 NPC<input id="fate-search" type="search" placeholder="NPC 名稱、題目或選項文字"></label><label class="checkbox-control"><input id="fate-include-undated" type="checkbox" checked>納入日期未記錄的歷史作答</label><label class="checkbox-control"><input id="fate-show-unanswered" type="checkbox">顯示此期間無人作答的題目</label></div><p id="fate-date-quality" class="date-quality-note" role="status"></p><p id="fate-summary" class="result-summary"></p><div id="fate-table" class="table-scroll fate-scroll"></div><p class="hint">每題比例＝該選項答題數 ÷ 該題兩選項答題總數。零回答顯示「—」，不以 0% 表示。僅含 NPC 命運二選一題，不含團務章節問答。</p></div>
+        </section>
+        <dialog id="d3-editor" aria-labelledby="d3-editor-title">
+          <form id="d3-add-form" class="d3-add-form">
+            <h2 id="d3-editor-title">手動登記報名</h2>
+            <label>體驗時段<select id="d3-add-slot" required></select></label>
+            <label>名稱<input id="d3-add-name" required maxlength="80" autocomplete="off"></label>
+            <label>電話<input id="d3-add-phone" type="tel" required maxlength="30" pattern="[+0-9\(\) \-]{8,30}" autocomplete="off"></label>
+            <label>報名人數<select id="d3-add-party"><option value="1">1 人</option><option value="2">2 人</option></select></label>
+            <fieldset><legend>加價方案（套用至每位報名者）</legend><label><input type="checkbox" id="d3-add-miniature">3D 公仔印製（每人加 500 元）</label><label><input type="checkbox" id="d3-add-portrait">角色肖像繪製（每人加 200 元）</label></fieldset>
+            <p id="d3-add-total" aria-live="polite"></p><p id="d3-add-error" class="form-error" role="status"></p>
+            <div class="dialog-actions"><button type="button" id="d3-add-close" class="button">返回</button><button type="submit" id="d3-add-save" class="button">確認登記</button></div>
+          </form>
+        </dialog>
+        <dialog id="d3-shipping-editor" aria-labelledby="d3-shipping-title">
+          <form id="d3-shipping-form" class="d3-add-form">
+            <h2 id="d3-shipping-title">編輯寄送資料</h2><p id="d3-shipping-booking"></p>
+            <label>收件人姓名<input id="d3-recipient-name" required maxlength="80" autocomplete="off"></label>
+            <label>收件人電話<input id="d3-recipient-phone" title="請填寫完整電話（8–30 字元），例如 0912-345-678" required type="tel" maxlength="30" pattern="[+0-9\(\) \-]{8,30}" autocomplete="off"></label>
+            <label>收件人 email<input id="d3-recipient-email" required type="email" maxlength="254" autocomplete="off"></label>
+            <label>7-11 店名<input id="d3-store" required maxlength="120" autocomplete="off"></label>
+            <p class="hint">須先加購 3D 公仔印製才能編輯。四項資料皆為必填，請完整填寫後儲存。</p>
+            <p id="d3-shipping-error" class="form-error" role="status"></p>
+            <div class="dialog-actions"><button type="button" class="button" id="d3-shipping-close">返回</button><button type="submit" class="button" id="d3-shipping-save">儲存</button></div>
+          </form>
+        </dialog>
+        <section data-screen="d3" id="screen-d3" hidden aria-labelledby="screen-title">
+          <div class="toolbar"><label>體驗時段<select id="d3-slot"><option value="all">全部時段</option></select></label><label class="search">搜尋報名<input id="d3-search" type="search" placeholder="稱呼或手機"></label><button id="d3-add" type="button" class="button">手動登記報名</button><button id="d3-refresh" type="button" class="button">重新整理報名資料</button><a class="button" href="/experience/cons/d3/2026/" target="_blank" rel="noopener">開啟報名表 ↗</a></div>
+          <p id="d3-status" class="hint" role="status"></p>
+          <section class="panel" aria-labelledby="d3-slots-title"><h2 id="d3-slots-title">各時段報名狀況</h2><div id="d3-slots" class="d3-slot-grid"></div></section>
+          <div class="panel"><h2>2026 D3 報名明細</h2><p class="hint">每時段上限 2 人，加購項目套用至該筆報名的每位夥伴。此頁不套用全站日期篩選；資料以最近一次讀取為準，可按重新整理更新。</p><p id="d3-summary" class="experience-seats"></p><div id="d3-table" class="table-scroll"></div></div>
         </section>
         <section data-screen="feedback" id="screen-feedback" hidden aria-labelledby="screen-title">
           <div class="toolbar"><label>劇本<select id="feedback-script"><option value="all">全部劇本</option></select></label><label>場次<select id="feedback-event"><option value="all">全部場次</option></select></label><label class="search">搜尋回饋資料<input id="feedback-search" type="search" placeholder="暱稱、劇本或回覆內容"></label><button class="button" id="feedback-refresh" type="button">重新整理回饋資料</button></div>
@@ -156,7 +187,7 @@
       const config = document.createElement('script');
       config.src = '/shared/firebase.config.js';
       config.onerror = window.RUGATHA_ADMIN_BOOT.fail;
-      config.onload = () => import('./dashboard.js?v=20261026-forms-8').catch(window.RUGATHA_ADMIN_BOOT.fail);
+      config.onload = () => import('./dashboard.js?v=20261026-helper-1').catch(window.RUGATHA_ADMIN_BOOT.fail);
       document.head.append(config);
     })();
   </script>

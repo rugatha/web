@@ -1,0 +1,17 @@
+.con-hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:56px;padding:32px 0 48px;align-items:center}.con-hero #page-title{font-size:clamp(28px,3.6vw,46px);line-height:1.5}.con-hero p:not(.eyebrow):not(.status){font-size:14px;color:var(--subtle)}.con-hero .primary{margin-top:26px}.con-hero .event-panel{padding:30px}.con-hero .event-panel strong{color:var(--accent)}.info-block{padding:32px 0;border-top:1px solid var(--line)}.info-block .eyebrow{margin-bottom:8px}.table-scroll{overflow-x:auto;margin-top:20px}table{border-collapse:collapse;width:max-content;table-layout:auto;font-size:14px;text-align:left}caption{text-align:left;caption-side:bottom;padding-top:12px}th,td{padding:16px;border:1px solid var(--line)}thead th{background:#1c322977;color:var(--accent)}tbody th{font-weight:500}.price-table{min-width:0}.price-table td:nth-child(2){white-space:nowrap;color:var(--accent)}.schedule-table{min-width:0;text-align:center}.schedule-table thead tr:first-child th{font-family:var(--font-title);font-size:20px;padding:20px}.schedule-table td{font-size:12px;color:var(--subtle)}.schedule-table td:nth-child(3){border-right:2px solid #7bdcb555}.schedule-table td:nth-child(3n+1){white-space:nowrap;color:var(--text)}.field select{max-width:100%}.included-service{border:1px solid #7bdcb555;border-radius:10px;padding:18px;color:var(--accent)}.included-service strong{float:right;font-size:14px}.included-service .hint{display:block;clear:both;margin-top:8px}.field .addon-hint{margin-top:12px}.cost-summary{background:var(--accent-soft);border-radius:12px;padding:20px;display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px}.cost-summary strong{margin-left:auto;font-size:28px;color:var(--accent)}.cost-summary p{width:100%;margin:0}#review-details>div{padding:12px 0;border-bottom:1px solid var(--line)}#review-details dd{white-space:pre-wrap}.dialog-actions #copy-button{display:inline-flex;margin:0}.con-hero .tags{margin-top:24px}@media(max-width:700px){.con-hero{grid-template-columns:1fr;gap:28px;padding-top:12px}.con-hero .event-panel{padding:24px}.info-block h2{font-size:23px}th,td{padding:12px}.included-service strong{float:none;display:block;margin-top:6px}.cost-summary strong{font-size:24px}.choices{grid-template-columns:1fr}}
+
+
+
+/* Match the feedback form logo spacing. */
+.site-header{margin-top:32px}
+@media(max-width:700px){.site-header{margin-top:24px}}
+
+.con-hero .event-panel{margin-top:24px}.con-hero-art{display:block;width:100%;height:auto;max-width:480px;justify-self:center;align-self:center;object-fit:contain}
+@media(max-width:700px){.con-hero-art{max-width:320px}}
+
+.schedule-table tbody td{position:relative;height:64px;padding-top:0;padding-bottom:0}.schedule-table .seat-icon{position:absolute;top:10%;left:50%;transform:translateX(-50%);display:block;height:80%;width:auto;max-width:90%;object-fit:contain}
+
+.price-table th,.price-table td,.schedule-table th,.schedule-table td{white-space:nowrap}
+
+/* Align the registration card with the schedule and use the full content width. */
+.registration-layout .form-column{width:100%;max-width:none;margin:0}

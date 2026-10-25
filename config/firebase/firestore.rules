@@ -23,6 +23,11 @@ service cloud.firestore {
         );
     }
 
+    // Dedicated password-authenticated account, never an administrator.
+    function canManageD3() {
+      return isAdmin() || (signedIn() && request.auth.uid == 'd3-helper-2026');
+    }
+
     function memberPath(uid) {
       return /databases/$(database)/documents/members/$(memberKey(uid));
     }
@@ -793,6 +798,105 @@ service cloud.firestore {
     }
 
     // Public registration intake; personal answers are only readable by admins.
+    // D3 character creation: public seat counts, private contact details.
+    match /d3Slots/{slotId} {
+      function increment() {
+        let a = request.resource.data;
+        let path = /databases/$(database)/documents/d3Registrations/$(a.lastRegistrationId);
+        let answer = getAfter(path).data;
+        return resource.data.registrationOpen == true && request.time <= resource.data.deadline
+          && a.diff(resource.data).affectedKeys().hasOnly(['registeredPlayers', 'lastRegistrationId', 'updatedAt'])
+          && a.lastRegistrationId.matches('[a-zA-Z0-9]{20}')
+          && !exists(path) && existsAfter(path) && answer.slotId == slotId
+          && answer.partySize is int && answer.partySize in [1, 2]
+          && resource.data.registeredPlayers >= 0
+          && a.registeredPlayers == resource.data.registeredPlayers + answer.partySize
+          && a.registeredPlayers <= 2 && a.updatedAt == request.time;
+      }
+      allow get: if true;
+      function helperCancellation() {
+        let before = resource.data;
+        let after = request.resource.data;
+        let path = /databases/$(database)/documents/d3Registrations/$(after.lastCancellationId);
+        let booking = get(path).data;
+        return canManageD3()
+          && after.diff(before).affectedKeys().hasOnly(['registeredPlayers', 'lastCancellationId', 'updatedAt'])
+          && booking.slotId == slotId
+          && (!('status' in booking) || booking.status != 'cancelled')
+          && getAfter(path).data.status == 'cancelled'
+          && after.registeredPlayers == before.registeredPlayers - booking.partySize
+          && after.registeredPlayers >= 0 && after.updatedAt == request.time;
+      }
+      allow list: if canManageD3();
+      allow create, delete: if isAdmin();
+      allow update: if isAdmin() || increment() || helperCancellation();
+    }
+    match /d3Registrations/{id} {
+      function valid() {
+        let d = request.resource.data;
+        let path = /databases/$(database)/documents/d3Slots/$(d.slotId);
+        let before = get(path).data;
+        let after = getAfter(path).data;
+        return id.matches('[a-zA-Z0-9]{20}')
+          && d.keys().hasOnly(['slotId', 'name', 'phone', 'partySize', 'miniature', 'portrait', 'total', 'createdAt'])
+          && d.slotId.matches('2026-12-(12|13)-(12|13|14|15|16|17)')
+          && d.name is string && d.name.size() <= 80 && d.name.matches('.*[^\\s].*')
+          && d.phone is string && d.phone.matches('[+0-9() \\-]{8,30}')
+          && d.partySize is int && d.partySize in [1, 2]
+          && d.miniature is bool && d.portrait is bool
+          && d.total == (300 + (d.miniature ? 500 : 0) + (d.portrait ? 200 : 0)) * d.partySize
+          && d.createdAt == request.time && before.registrationOpen == true && request.time <= before.deadline
+          && after.lastRegistrationId == id && after.updatedAt == request.time
+          && after.registeredPlayers == before.registeredPlayers + d.partySize && after.registeredPlayers <= 2;
+      }
+      allow create: if valid();
+      allow read: if canManageD3();
+      function cancelBooking() {
+        let before = resource.data;
+        let after = request.resource.data;
+        let path = /databases/$(database)/documents/d3Slots/$(before.slotId);
+        return canManageD3()
+          && (!('status' in before) || before.status != 'cancelled')
+          && after.diff(before).affectedKeys().hasOnly(['status', 'cancelledAt'])
+          && after.status == 'cancelled' && after.cancelledAt == request.time
+          && getAfter(path).data.registeredPlayers == get(path).data.registeredPlayers - before.partySize
+          && getAfter(path).data.registeredPlayers >= 0
+          && getAfter(path).data.updatedAt == request.time;
+      }
+      function editShipping() {
+        let d = request.resource.data;
+        return canManageD3()
+          && d.diff(resource.data).affectedKeys().hasOnly(['recipientName', 'recipientPhone', 'recipientEmail', 'sevenElevenStore', 'shippingUpdatedAt'])
+          && resource.data.miniature == true
+          && d.recipientName is string && d.recipientName.size() <= 80 && d.recipientName.matches('.*[^\\s].*')
+          && d.recipientPhone is string && d.recipientPhone.size() <= 30
+          && (d.recipientPhone.matches('[+0-9() \\-]{8,30}'))
+          && d.recipientEmail is string && d.recipientEmail.size() <= 254
+          && (d.recipientEmail.matches('[^ @]+@[^ @]+[.][^ @]+'))
+          && d.sevenElevenStore is string && d.sevenElevenStore.size() <= 120 && d.sevenElevenStore.matches('.*[^\\s].*')
+          && d.shippingUpdatedAt == request.time;
+      }
+      function editAddons() {
+        let d = request.resource.data;
+        return canManageD3()
+          && d.diff(resource.data).affectedKeys().hasOnly(['miniature', 'portrait', 'total', 'addonsUpdatedAt'])
+          && d.miniature is bool && d.portrait is bool
+          && d.partySize is int && d.partySize in [1, 2]
+          && d.total == (300 + (d.miniature ? 500 : 0) + (d.portrait ? 200 : 0)) * d.partySize
+          && d.addonsUpdatedAt == request.time;
+      }
+      function editImageEmail() {
+        let d = request.resource.data;
+        return canManageD3()
+          && d.diff(resource.data).affectedKeys().hasOnly(['imageRecipientEmail', 'imageEmailUpdatedAt'])
+          && d.imageRecipientEmail is string && d.imageRecipientEmail.size() <= 254
+          && (d.imageRecipientEmail == '' || d.imageRecipientEmail.matches('[^ @]+@[^ @]+[.][^ @]+'))
+          && d.imageEmailUpdatedAt == request.time;
+      }
+      allow update: if cancelBooking() || editShipping() || editAddons() || editImageEmail();
+      allow delete: if false;
+    }
+
     match /experienceEvents/{eventId} {
       function validSeatIncrement() {
         let before = resource.data;

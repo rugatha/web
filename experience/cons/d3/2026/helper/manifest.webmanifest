@@ -1,0 +1,20 @@
+{
+  "id": "/2026-d3-helper.html",
+  "name": "2026 D3 幫手工作區",
+  "short_name": "D3 幫手",
+  "description": "龍山地下城 2026 報名、加購與寄送管理",
+  "lang": "zh-Hant",
+  "start_url": "/experience/cons/d3/2026/helper/",
+  "scope": "/experience/cons/d3/2026/helper/",
+  "display": "standalone",
+  "background_color": "#f2f6f1",
+  "theme_color": "#445f56",
+  "icons": [
+    {
+      "src": "/assets/2026-d3-helper.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
