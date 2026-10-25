@@ -191,15 +191,20 @@
       }))
     );
 
-    fetch("../npc/data/characters.json", { cache: "no-store" })
+    fetch("../npc/data/characters.json?v=20261025-portraits-v2", { cache: "no-store" })
       .then((response) => response.ok ? response.json() : Promise.reject(new Error("NPC data failed")))
       .then((characters) => {
         const images = characters
-          .filter((character) => character.image)
-          .map((character) => ({
-            src: `../npc/${character.image.split("/").map(encodeURIComponent).join("/")}`,
-            alt: character.nameEn || character.nameZh || character.id || ""
-          }));
+          .filter((character) => character.imageThumb || character.image)
+          .map((character) => {
+            const image = character.imageThumb || character.image;
+            return {
+              src: /^https?:|^\//i.test(image)
+                ? image
+                : `../npc/${image.split("/").map(encodeURIComponent).join("/")}`,
+              alt: character.nameEn || character.nameZh || character.id || ""
+            };
+          });
         renderCollage(document.querySelector('[data-collage="npc"]'), shuffle(images));
       })
       .catch(() => {

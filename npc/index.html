@@ -32,7 +32,7 @@
 <link rel="icon" type="image/png" href="../assets/logo/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../shared/styles/theme.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261025-npc-cards-9">
   <!-- Rugatha PWA -->
   <link rel="manifest" href="../manifest.webmanifest">
   <meta name="theme-color" content="#0f2d24">
@@ -94,10 +94,9 @@
 
   <template id="card-template">
     <a class="card" target="_blank" rel="noopener">
-      <img alt="">
+      <div class="card__portrait"><img alt=""></div>
       <div class="card__label">
         <span class="card__name"></span>
-        <span class="card__race"></span>
       </div>
     </a>
   </template>
@@ -181,6 +180,7 @@
     );
     const isCjk = (char) => /[\u4e00-\u9fff]/.test(char || '');
     let charactersCache = [];
+    let portraitFraming = {};
     let sortOrder = 'asc';
     let groupingMode = 'letter';
     const isAscii = (str) => /^[A-Za-z]/.test(str || '');
@@ -284,15 +284,17 @@
         card.className = 'card card--skeleton';
         card.setAttribute('aria-hidden', 'true');
         card.innerHTML = `
-          <div class="skeleton-block" style="position:absolute;inset:0;"></div>
+          <div class="card__portrait skeleton-block"></div>
           <div class="card__label">
             <span class="card__name skeleton-block"></span>
-            <span class="card__race skeleton-block"></span>
           </div>
         `;
         fragment.appendChild(card);
       }
-      grid.replaceChildren(fragment);
+      const row = document.createElement('div');
+      row.className = 'card-row';
+      row.appendChild(fragment);
+      grid.replaceChildren(row);
       statusEl.textContent = languageState.value === 'en' ? 'Loading NPC data' : '資料載入中';
     }
 
@@ -315,9 +317,15 @@
     async function loadCharacters() {
       renderLoadingSkeletons();
       try {
-        const response = await fetch('data/characters.json');
+        const [response, framing] = await Promise.all([
+          fetch('data/characters.json?v=20261025-portraits-v2'),
+          fetch('data/portrait-framing.json?v=20261025-5')
+            .then(response => response.ok ? response.json() : {})
+            .catch(() => ({}))
+        ]);
         if (!response.ok) throw new Error('無法載入角色資料');
         charactersCache = await response.json();
+        portraitFraming = framing;
         applyFilters();
         bindControls();
       } catch (error) {
@@ -492,142 +500,117 @@
       const node = template.content.firstElementChild.cloneNode(true);
       const img = node.querySelector('img');
       const nameEl = node.querySelector('.card__name');
-      const raceEl = node.querySelector('.card__race');
       const displayName = getDisplayName(character);
+      const framing = portraitFraming[character.id];
 
       node.href = resolveUrl(character.url);
+      node.dataset.npcId = character.id;
+      if (framing) {
+        img.style.setProperty('--portrait-zoom', framing.zoom);
+        img.style.setProperty('--portrait-x', `${framing.positionX}%`);
+        img.style.setProperty('--portrait-y', `${framing.positionY}%`);
+      }
       nameEl.textContent = displayName || 'NPC';
-      raceEl.textContent = getRaceKeysDisplay(character).join(', ');
+      nameEl.title = displayName || 'NPC';
       img.crossOrigin = 'anonymous';
       img.loading = 'lazy';
       img.decoding = 'async';
-      img.src = character.imageThumb || character.image;
+      img.src = framing?.image || character.imageThumb || character.image;
       img.alt = displayName || 'NPC';
       wireImageLoad(img, node);
       return node;
     }
 
+    function fitCardNames() {
+      grid.querySelectorAll('.card:not(.card--skeleton) .card__name').forEach((name) => {
+        name.style.fontSize = '18px';
+        const available = name.clientWidth;
+        if (!available || name.scrollWidth <= available) return;
+        // Measure the rendered font, including after web fonts load. Leave a
+        // pixel of room to avoid clipping from fractional layout rounding.
+        name.style.fontSize = `${Math.floor(18 * (available - 1) / name.scrollWidth * 10) / 10}px`;
+      });
+    }
+
+    function scheduleNameFit() {
+      cancelAnimationFrame(scheduleNameFit.frame);
+      scheduleNameFit.frame = requestAnimationFrame(fitCardNames);
+    }
+
     function renderCharacters(characters, { showGroupLabels = true } = {}) {
       const fragment = document.createDocumentFragment();
+      const isZh = languageState.value === 'zh';
 
-      if (groupingMode === 'race') {
-        const groups = new Map();
-        characters.forEach((character) => {
-          const raceKeys = getRaceKeysDisplay(character);
-          raceKeys.forEach((groupKey) => {
-            if (!groups.has(groupKey)) groups.set(groupKey, []);
-            groups.get(groupKey).push(character);
-          });
-        });
+      const appendRow = (members, groupKey, index) => {
+        const section = document.createElement('section');
+        section.className = 'character-group';
+        const row = document.createElement('div');
+        row.className = 'card-row';
+        row.tabIndex = 0;
+        row.setAttribute('role', 'region');
 
-        const sortedKeys = Array.from(groups.keys()).sort((a, b) => {
-          if (languageState.value === 'zh') {
-            const order = compareZhuyinStrings(a, b);
-            return sortOrder === 'asc' ? order : -order;
-          }
-          return sortOrder === 'asc'
-            ? a.localeCompare(b, 'en', { sensitivity: 'base' })
-            : b.localeCompare(a, 'en', { sensitivity: 'base' });
-        });
+        if (showGroupLabels) {
+          const heading = document.createElement('div');
+          heading.className = 'group-heading';
+          const label = document.createElement('h2');
+          label.className = 'group-label';
+          label.id = `npc-group-${index}`;
+          label.textContent = groupKey;
+          row.setAttribute('aria-labelledby', label.id);
+          section.setAttribute('aria-labelledby', label.id);
+          heading.appendChild(label);
 
-        sortedKeys.forEach((groupKey) => {
-          const groupMembers = sortCharacters(groups.get(groupKey));
-          if (showGroupLabels) {
-            const label = document.createElement('div');
-            label.className = 'group-label';
-            label.textContent = groupKey;
-            fragment.appendChild(label);
-          }
-          groupMembers.forEach((character) => {
-            fragment.appendChild(renderCard(character));
-          });
-        });
-      } else if (groupingMode === 'location') {
-        const groups = new Map();
-        characters.forEach((character) => {
-          const locationKeys = getLocationKeysDisplay(character);
-          locationKeys.forEach((groupKey) => {
-            if (!groups.has(groupKey)) groups.set(groupKey, []);
-            groups.get(groupKey).push(character);
-          });
-        });
+          const controls = document.createElement('div');
+          controls.className = 'group-controls';
+          const count = document.createElement('span');
+          count.className = 'group-count';
+          count.textContent = isZh ? `${members.length} 名角色` : `${members.length} characters`;
+          controls.appendChild(count);
+          heading.appendChild(controls);
+          section.appendChild(heading);
+        } else {
+          row.setAttribute('aria-label', isZh ? '搜尋結果' : 'Search results');
+        }
+        members.forEach(character => row.appendChild(renderCard(character)));
+        section.appendChild(row);
+        fragment.appendChild(section);
+      };
 
-        const sortedKeys = Array.from(groups.keys()).sort((a, b) => {
-          if (languageState.value === 'zh') {
-            const emptyLabel = '無';
-            const aEmpty = a === emptyLabel;
-            const bEmpty = b === emptyLabel;
-            if (aEmpty !== bEmpty) return aEmpty ? 1 : -1;
-            const order = compareZhuyinStrings(a, b);
-            return sortOrder === 'asc' ? order : -order;
-          }
-          return sortOrder === 'asc'
-            ? a.localeCompare(b, 'en', { sensitivity: 'base' })
-            : b.localeCompare(a, 'en', { sensitivity: 'base' });
-        });
-
-        sortedKeys.forEach((groupKey) => {
-          const groupMembers = sortCharacters(groups.get(groupKey));
-          if (showGroupLabels) {
-            const label = document.createElement('div');
-            label.className = 'group-label';
-            label.textContent = groupKey;
-            fragment.appendChild(label);
-          }
-          groupMembers.forEach((character) => {
-            fragment.appendChild(renderCard(character));
-          });
-        });
+      if (!showGroupLabels) {
+        // Search and random selection show each matching character once.
+        if (characters.length) appendRow(characters, '', 0);
       } else {
-        let currentGroup = null;
-        if (groupingMode === 'religion') {
-          const groups = new Map();
-          characters.forEach((character) => {
-            const religionKeys = getReligionKeysDisplay(character);
-            religionKeys.forEach((key) => {
-              if (!groups.has(key)) groups.set(key, []);
-              groups.get(key).push(character);
-            });
+        const groups = new Map();
+        characters.forEach(character => {
+          const keys = groupingMode === 'race' ? getRaceKeysDisplay(character)
+            : groupingMode === 'religion' ? getReligionKeysDisplay(character)
+            : groupingMode === 'location' ? getLocationKeysDisplay(character)
+            : [isZh ? getZhuyinGroupKey(getDisplayName(character)) : getLetterGroupKey(getDisplayName(character))];
+          new Set(keys).forEach(key => {
+            if (!groups.has(key)) groups.set(key, []);
+            groups.get(key).push(character);
           });
+        });
 
-          const sortedKeys = Array.from(groups.keys()).sort((a, b) => {
+        const keys = [...groups.keys()];
+        // Letter groups follow the already sorted character list.
+        if (groupingMode !== 'letter') {
+          keys.sort((a, b) => {
+            if (isZh && groupingMode !== 'religion') {
+              if (groupingMode === 'location' && (a === '無') !== (b === '無')) return a === '無' ? 1 : -1;
+              const order = compareZhuyinStrings(a, b);
+              return sortOrder === 'asc' ? order : -order;
+            }
             return sortOrder === 'asc'
               ? a.localeCompare(b, 'en', { sensitivity: 'base' })
               : b.localeCompare(a, 'en', { sensitivity: 'base' });
           });
-
-          sortedKeys.forEach((groupKey) => {
-            const groupMembers = sortCharacters(groups.get(groupKey));
-            if (showGroupLabels) {
-              const label = document.createElement('div');
-              label.className = 'group-label';
-              label.textContent = groupKey;
-              fragment.appendChild(label);
-            }
-            groupMembers.forEach((character) => {
-              fragment.appendChild(renderCard(character));
-            });
-          });
-        } else {
-          characters.forEach((character) => {
-            const groupKey =
-              languageState.value === 'zh'
-                ? getZhuyinGroupKey(getDisplayName(character))
-                : getLetterGroupKey(getDisplayName(character));
-            if (showGroupLabels && groupKey !== currentGroup) {
-              currentGroup = groupKey;
-              const label = document.createElement('div');
-              label.className = 'group-label';
-              label.textContent = groupKey;
-              fragment.appendChild(label);
-            }
-            fragment.appendChild(renderCard(character));
-          });
         }
+        keys.forEach((key, index) => appendRow(sortCharacters(groups.get(key)), key, index));
       }
 
-      grid.innerHTML = '';
-      grid.appendChild(fragment);
+      grid.replaceChildren(fragment);
+      scheduleNameFit();
     }
 
     function getFilteredCharacters() {
@@ -747,6 +730,9 @@
       applyFilters();
     }
 
+    new ResizeObserver(scheduleNameFit).observe(grid);
+    document.fonts.ready.then(scheduleNameFit);
+    document.fonts.addEventListener('loadingdone', scheduleNameFit);
     loadCharacters();
     // 初始化 slider 位置
     setGroupingMode(groupingMode);

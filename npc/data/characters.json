@@ -5489,8 +5489,8 @@
   {
     "id": "ScarFace",
     "url": "npc/npc_page/pages/ScarFace.html",
-    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fscar-face-99c8944985%2F6632a66bf663d254b6c58e8f189eedfdd7a08426201bab5d11afb973f23df475%2Freading.webp?alt=media",
-    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fscar-face-99c8944985%2F60f56ccad5bdb001b57078be9afdb90b88e0a0d0631bd653c3e6d532505f1a17%2Fthumb.webp?alt=media",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fscar-face-v2-7760009010%2Fc78e3ce0dd7942423b9d08340229cb2b87c1a69755889847017ebef30ec81e84%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fscar-face-v2-7760009010%2Ff98243f6185c2a91bf35190b0c81da7c7e53c2ef706d9b0aaf581ee344dc146a%2Fthumb.webp?alt=media",
     "status": "dead",
     "gender": "male",
     "descZh": "麥克嵩當地衛兵，因臉上有不少刀疤，而自稱刀疤臉。\n在龍恩的請求下協助調查日出酒館老闆喬納森的失蹤案件。\n對法蘭奇的閃爍說詞也有些起疑。\n承認自己是崔尼斯教的信徒，但也向龍恩表示不是所有崔尼斯教的人都是有問題的。\n在麥克嵩比武大會上為了保護國王巴納沃二世，遭到法蘭奇擊斃。",
@@ -5540,8 +5540,8 @@
   {
     "id": "Sean",
     "url": "npc/npc_page/pages/Sean.html",
-    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsean-5ad98178e2%2Fb12744b8a573fc4c86fb852561269bbb88a586d62eedab9331e0c19ba0fca0e3%2Freading.webp?alt=media",
-    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsean-5ad98178e2%2Fea05f4fe4dfb239bd4817ba3f11c22fe87cb475ae6139ef6cd1073a2501c5401%2Fthumb.webp?alt=media",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsean-v2-78a47bfd8f%2Fe54ad0114e789bff561dc1e30c3b63f49f9604d3940068928e9ba44de1866cee%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsean-v2-78a47bfd8f%2Ff725e68c48eecd08e0d5df4b4f8f358bbbf3ce1e0816557180b2f248a4cd7b71%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "male",
     "descZh": "龍恩在尖頂寺的師兄，武藝十分高強。\n來到麥克嵩參加比武大會。",
@@ -5819,8 +5819,8 @@
   {
     "id": "ShaDoom",
     "url": "npc/npc_page/pages/ShaDoom.html",
-    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsha-doom-cb8db5dee4%2F1a2a93e02ad762b5b6063a057c4fe630bc548cae6a909a47873fe454ff40e239%2Freading.webp?alt=media",
-    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsha-doom-cb8db5dee4%2F7707d2a30d50a34d6d9869f3ba998760d3161e7a43a04fb5b697595129321c10%2Fthumb.webp?alt=media",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsha-doom-v2-d41d6d546b%2F22aad20ac25873fe8c22cf1e5fe86aee7fb08a578592dccaa4505b1a666b05f8%2Freading.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsha-doom-v2-d41d6d546b%2F4b14a598102094c20a85bf1a14360206e8a4fa17c33811394c3801ecfd786f1a%2Fthumb.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
     "descZh": "身份未名的麥克嵩人。\n似乎與當地衛兵有很多關聯。\n手上刺有十道光芒的太陽。\n曾偽裝成雷米、拉芬奇以及安雅・拉芬奇。\n由玩家義揚操控。",

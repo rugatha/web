@@ -738,7 +738,7 @@ function stripQuotes(str) {
 
 async function loadCharacters() {
   try {
-    const res = await fetch("../../data/characters.json", { cache: "no-store" });
+    const res = await fetch("../../data/characters.json?v=20261025-portraits-v2", { cache: "no-store" });
     const chars = await res.json();
     charactersCache = Array.isArray(chars) ? chars : [];
   } catch (err) {
@@ -844,6 +844,7 @@ function render(npc) {
   renderSignature(effectiveNpc);
   setDescription(elements.zh, effectiveNpc.descZh, "（尚無中文介紹）");
   setDescription(elements.en, effectiveNpc.descEn, "(Description coming soon)");
+  renderRace(effectiveNpc);
   renderGender(effectiveNpc.gender);
   renderStatus(effectiveNpc.status);
   renderReligion(effectiveNpc);
@@ -945,6 +946,9 @@ async function renderLocationCards(npc) {
     mergedNpc.nameZh = record.nameZh || mergedNpc.nameZh;
     mergedNpc.image = resolveImage(record.image) || mergedNpc.image;
     mergedNpc.gender = record.gender || mergedNpc.gender;
+    mergedNpc.race = record.race || mergedNpc.race;
+    mergedNpc.raceEn = record.raceEn || mergedNpc.raceEn;
+    mergedNpc.raceZh = record.raceZh || mergedNpc.raceZh;
     mergedNpc.status = record.status || mergedNpc.status;
     mergedNpc.descZh = record.descZh || mergedNpc.descZh;
     mergedNpc.descEn = record.descEn || mergedNpc.descEn;
@@ -1014,6 +1018,17 @@ function setProfileInfo(className, text, labels) {
   }
   line.querySelector("dt").textContent = labels[languageState.value];
   line.querySelector("dd").textContent = text;
+}
+
+function renderRace(npc) {
+  const lang = languageState.value;
+  const preferred = toList(lang === "zh" ? npc.raceZh : npc.raceEn);
+  const fallback = toList(lang === "zh" ? npc.raceEn : npc.raceZh);
+  const entries = preferred.length ? preferred : fallback.length ? fallback : toList(npc.race);
+  const text = entries.length
+    ? entries.join(lang === "zh" ? "、" : ", ")
+    : (lang === "zh" ? "種族未知" : "Race unknown");
+  setProfileInfo("race-text", text, { zh: "種族", en: "Race" });
 }
 
 function renderGender(gender) {
