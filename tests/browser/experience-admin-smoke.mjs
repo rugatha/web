@@ -19,6 +19,8 @@ try {
  await page.addInitScript(()=>localStorage.setItem('rugatha-admin-columns:experience-table',JSON.stringify(['DM_Note','contact','name','createdAt','eventId'])));
  await page.goto(base+'/admin/#experience');
  await page.locator('#experience-status').filter({hasText:'已讀取'}).waitFor();
+ assert.equal(await page.locator('#experience-event').inputValue(),'2026-10-lorin');
+ assert.equal(await page.locator('#experience-table tbody tr').count(),1);
  assert.match(await page.locator('#experience-event').textContent(),/2026-10 · 洛林精神/);
  assert.equal(await page.locator('#experience-event option').count(),3);
  assert.match(await page.locator('#experience-current').textContent(),/本次報名狀況/);
@@ -53,6 +55,10 @@ try {
  assert.equal(await page.locator('#experience-current .seat-box.occupied').count(),0);
  assert.match(await page.locator('#experience-current').textContent(),/本次報名狀況/);
  await page.selectOption('#experience-event','all');
+ assert.equal(await page.locator('#experience-table tbody tr').count(),2);
+ await page.click('#experience-refresh');
+ await page.locator('#experience-status').filter({hasText:'已讀取'}).waitFor();
+ assert.equal(await page.locator('#experience-event').inputValue(),'all');
  assert.equal(await page.locator('#experience-table tbody tr').count(),2);
  await page.fill('#experience-search','test@example.test');
  assert.equal(await page.locator('#experience-table tbody tr').count(),1);

@@ -15,7 +15,7 @@ export function experienceEventLabel(id, event) {
   return `${experienceEventDate(id)}${script ? ` · ${script}` : ''}`;
 }
 export function createExperienceDashboard(context) {
-  let rows = null, events = [], currentConfig = null, loading = false, busy = false, revision = 0;
+  let rows = null, events = [], currentConfig = null, initialized = false, loading = false, busy = false, revision = 0;
   const valid = (ticket, auth) => context().authenticated && context().generation === auth && revision === ticket;
   async function load() {
     if (!context().authenticated || loading || busy) return;
@@ -34,8 +34,9 @@ export function createExperienceDashboard(context) {
       // Include legacy registrations even when their event record is missing.
       const ids = [...new Set([...events.filter(e=>!e.aliasOf).map(e=>e.id),...rows.map(r=>r.eventId)])].sort((a,b)=>experienceEventDate(b).localeCompare(experienceEventDate(a)));
       ids.forEach(id => $('experience-event').add(new Option(experienceEventLabel(id,events.find(e=>e.id===id)),id)));
-      if (ids.includes(selected)) $('experience-event').value = selected;
-      else if (ids.length === 1) $('experience-event').value = ids[0];
+      if (initialized && (selected === 'all' || ids.includes(selected))) $('experience-event').value = selected;
+      else $('experience-event').value = ids[0] || 'all';
+      initialized = true;
       $('experience-status').textContent = `已讀取 ${rows.length} 筆報名（含取消），更新於 ${new Date().toLocaleString('zh-TW',{timeZone:'Asia/Taipei'})}`;
       render();
     } catch {
@@ -116,5 +117,5 @@ export function createExperienceDashboard(context) {
       if (valid(ticket,generation)) $('experience-status').textContent='取消失敗，請重新整理確認狀態後重試；若尚未部署新版 Firebase 規則，請先部署。';
     } finally { if (valid(ticket,generation)) {busy=false;render();} }
   });
-  return { render, reset() {editor.close();editingId=null;revision++;rows=null;events=[];currentConfig=null;loading=false;busy=false;$('experience-table').replaceChildren();$('experience-seats').replaceChildren(); $('experience-current').replaceChildren();$('experience-search').value='';$('experience-event').replaceChildren(new Option('全部場次','all'));} };
+  return { render, reset() {editor.close();editingId=null;revision++;rows=null;events=[];currentConfig=null;initialized=false;loading=false;busy=false;$('experience-table').replaceChildren();$('experience-seats').replaceChildren(); $('experience-current').replaceChildren();$('experience-search').value='';$('experience-event').replaceChildren(new Option('全部場次','all'));} };
 }
