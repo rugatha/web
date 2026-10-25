@@ -73,3 +73,5 @@ node tests/admin-dashboard.browser.mjs
 `/admin/#experience` 讀取 `experienceEvents`、`experienceRegistrations` 全部場次，不套用全站日期篩選；每頁 25 筆，可切換場次、搜尋及翻頁。狀態顯示原始文字，`active` 顯示有效，`cancelled` 顯示已取消。每筆「編輯狀態／備註」可自行輸入狀態及 `DM_Note`，與報名者填寫的 `notes` 分開保存。只有管理員可編輯，原始填答不能由此修改。取消會原子釋出同行名額；從取消改回其他狀態會恢復名額，額滿則拒絕恢復。
 
 歷史匯入指令：`node scripts/import-experience-history.mjs` 先驗證；加 `--apply` 寫入，或 `--verify --verify-ui` 唯讀核對並在本機 8790 後台測試呈現。CSV 是私人檔案，已加入 gitignore，不得加入網站版本。匯入以固定雜湊 ID 防止重複，保留原始 CSV 欄位與台北時區時間，不覆蓋既有管理員修改。2026-10-26 已核對 36 筆、11 個場次，全部欄位與各場次人數一致；本機後台以正式讀回資料驗證 36 筆、11 場篩選及兩頁完整顯示。此 UI 核對使用唯讀 SDK 替身，管理員權限另由 Firestore 模擬器測試。
+
+體驗團場次顯示統一為 `YYYY-MM · 劇本名`，有序號則為 `YYYY-MM-01`／`YYYY-MM-02`；劇本代碼 lorin、echo、scroll 分別顯示洛林精神、龍鳴的回音、金之堡的卷軸。名稱格式套用於場次選單、表格、編輯標題與搜尋，Firebase 原始文件 ID 保留以維持報名關聯。體驗團表格固定欄序，場次、報名時間、稱呼為凍結前三欄，`DM_Note` 為最後一欄；預設依報名時間降冪，清除篩選時恢復預設排序。其他後台表格維持既有欄序拖曳功能。

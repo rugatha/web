@@ -34,7 +34,7 @@ export function resetTablePage(id){const grid=registry.get(id);if(grid)grid.page
 export function clearTableData(){registry.forEach(grid=>{grid.rows=[];grid.onResult=null;});}
 export function dataTable(id,columns,rows,options={}) {
   let grid=registry.get(id);
-  if(!grid){grid=new DataTable(id,columns);registry.set(id,grid);}
+  if(!grid){grid=new DataTable(id,columns);grid.sort=options.defaultSort ? {...options.defaultSort} : null;registry.set(id,grid);}
   grid.columns=columns;grid.rows=rows;grid.options=options;grid.onResult=options.onResult;grid.render();
 }
 class DataTable {
@@ -48,21 +48,21 @@ class DataTable {
       const button=event.target.closest('button');if(!button)return;
       if(button.dataset.sort){const key=button.dataset.sort;this.sort={id:key,direction:this.sort?.id===key&&this.sort.direction==='asc'?'desc':'asc'};this.page=1;this.render();this.container.querySelector(`[data-sort="${key}"]`).focus({preventScroll:true});}
       if(button.dataset.gridStep){this.page+=Number(button.dataset.gridStep);this.render();}
-      if(button.hasAttribute('data-clear-filters')){this.filters={};this.sort=null;this.page=1;this.render();}
+      if(button.hasAttribute('data-clear-filters')){this.filters={};this.sort=this.options.defaultSort ? {...this.options.defaultSort} : null;this.page=1;this.render();}
       if(button.hasAttribute('data-reset-order')){this.order=this.columns.map(col=>col.id);this.save();this.render();}
     });
     this.container.addEventListener('dragstart',event=>{
-      const handle=event.target.closest('[data-drag]');if(!handle)return;
+      const handle=event.target.closest('[data-drag]');if(!handle||this.options.lockOrder)return;
       this.dragged=handle.dataset.drag;event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',this.dragged);this.container.classList.add('is-dragging');
     });
     this.container.addEventListener('dragover',event=>{if(this.dragged&&event.target.closest('th[data-column]')){event.preventDefault();event.dataTransfer.dropEffect='move';}});
     this.container.addEventListener('drop',event=>{
-      const th=event.target.closest('th[data-column]');if(!th||!this.dragged)return;
+      const th=event.target.closest('th[data-column]');if(!th||!this.dragged||this.options.lockOrder)return;
       event.preventDefault();this.order=moveColumn(this.order,this.dragged,th.dataset.column);this.dragged=null;this.save();this.render();
     });
     this.container.addEventListener('dragend',()=>{this.dragged=null;this.container.classList.remove('is-dragging');});
     this.container.addEventListener('keydown',event=>{
-      const handle=event.target.closest('[data-drag]');if(!handle||!event.altKey||!['ArrowLeft','ArrowRight'].includes(event.key))return;
+      const handle=event.target.closest('[data-drag]');if(this.options.lockOrder||!handle||!event.altKey||!['ArrowLeft','ArrowRight'].includes(event.key))return;
       const index=this.order.indexOf(handle.dataset.drag),next=index+(event.key==='ArrowLeft'?-1:1);
       if(next<0||next>=this.order.length)return;
       event.preventDefault();const key=handle.dataset.drag;this.order=moveColumn(this.order,key,this.order[next]);this.save();this.render();this.container.querySelector(`[data-drag="${key}"]`).focus();
@@ -90,8 +90,24 @@ class DataTable {
     const filtered=sortTableRows(filterTableRows(this.rows,this.columns,this.filters),this.columns,this.sort);
     const size=this.options.pageSize||25,paginate=this.options.paginate!==false,totalPages=Math.max(1,Math.ceil(filtered.length/size));this.page=Math.min(this.page,totalPages);
     const visible=paginate?filtered.slice((this.page-1)*size,this.page*size):filtered;
-    const columns=this.order.map(id=>this.columns.find(col=>col.id===id)).filter(Boolean);
-    this.container.innerHTML=`<div class="table-tools"><span>點欄名排序 · 欄下方篩選 · 拖曳 ⠿ 調整欄序</span><div><button type="button" data-clear-filters>清除欄位條件</button><button type="button" data-reset-order>還原欄序</button></div></div><div class="grid-scroll"><table><thead><tr>${columns.map(col=>`<th scope="col" data-column="${col.id}" aria-sort="${this.sort?.id===col.id?(this.sort.direction==='asc'?'ascending':'descending'):'none'}"><div class="column-heading"><button type="button" class="drag-handle" draggable="true" data-drag="${col.id}" aria-label="拖曳${esc(col.label)}欄位" title="拖曳換序，或按 Alt＋左右方向鍵">⠿</button><button type="button" class="column-sort" data-sort="${col.id}">${esc(col.label)} <span>${this.sort?.id===col.id?(this.sort.direction==='asc'?'↑':'↓'):'↕'}</span></button></div>${this.headerFilter(col)}</th>`).join('')}</tr></thead><tbody>${visible.map(row=>`<tr>${columns.map(col=>`<td class="${col.className||''}" data-column="${col.id}">${col.html?col.html(row):esc(Array.isArray(col.value(row))?col.value(row).join('、'):col.value(row)??'—')}</td>`).join('')}</tr>`).join('')||`<tr><td colspan="${columns.length}" class="grid-empty">沒有符合欄位條件的資料。</td></tr>`}</tbody></table></div><div class="pagination"><span>符合 ${filtered.length} 筆${paginate?` · 每頁 ${size} 筆`:''}</span>${paginate?`<div><button data-grid-step="-1" ${this.page===1?'disabled':''}>上一頁</button> <span>${this.page} / ${totalPages}</span> <button data-grid-step="1" ${this.page===totalPages?'disabled':''}>下一頁</button></div>`:''}</div>`;
+    const columns=(this.options.lockOrder?this.columns.map(col=>col.id):this.order).map(id=>this.columns.find(col=>col.id===id)).filter(Boolean);
+    this.container.innerHTML=`<div class="table-tools"><span>點欄名排序 · 欄下方篩選${this.options.lockOrder?' · 前三欄凍結':' · 拖曳 ⠿ 調整欄序'}</span><div><button type="button" data-clear-filters>清除欄位條件</button>${this.options.lockOrder?'':'<button type="button" data-reset-order>還原欄序</button>'}</div></div><div class="grid-scroll"><table><thead><tr>${columns.map(col=>`<th scope="col" data-column="${col.id}" aria-sort="${this.sort?.id===col.id?(this.sort.direction==='asc'?'ascending':'descending'):'none'}"><div class="column-heading">${this.options.lockOrder?'':`<button type="button" class="drag-handle" draggable="true" data-drag="${col.id}" aria-label="拖曳${esc(col.label)}欄位" title="拖曳換序，或按 Alt＋左右方向鍵">⠿</button>`}<button type="button" class="column-sort" data-sort="${col.id}">${esc(col.label)} <span>${this.sort?.id===col.id?(this.sort.direction==='asc'?'↑':'↓'):'↕'}</span></button></div>${this.headerFilter(col)}</th>`).join('')}</tr></thead><tbody>${visible.map(row=>`<tr>${columns.map(col=>`<td class="${col.className||''}" data-column="${col.id}">${col.html?col.html(row):esc(Array.isArray(col.value(row))?col.value(row).join('、'):col.value(row)??'—')}</td>`).join('')}</tr>`).join('')||`<tr><td colspan="${columns.length}" class="grid-empty">沒有符合欄位條件的資料。</td></tr>`}</tbody></table></div><div class="pagination"><span>符合 ${filtered.length} 筆${paginate?` · 每頁 ${size} 筆`:''}</span>${paginate?`<div><button data-grid-step="-1" ${this.page===1?'disabled':''}>上一頁</button> <span>${this.page} / ${totalPages}</span> <button data-grid-step="1" ${this.page===totalPages?'disabled':''}>下一頁</button></div>`:''}</div>`;
+    this.frozenObserver?.disconnect();
+    if (this.options.frozenColumns?.length) {
+      const headers=this.options.frozenColumns.map(id=>this.container.querySelector(`th[data-column="${id}"]`)).filter(Boolean);
+      const position=()=>{
+        let left=0;
+        headers.forEach((header,index)=>{
+          this.container.querySelectorAll(`[data-column="${header.dataset.column}"]`).forEach(cell=>{
+            cell.classList.add('frozen-column');
+            cell.classList.toggle('frozen-edge',index===headers.length-1);
+            cell.style.left=`${left}px`;
+          });
+          left+=header.getBoundingClientRect().width;
+        });
+      };
+      position();this.frozenObserver=new ResizeObserver(position);headers.forEach(header=>this.frozenObserver.observe(header));
+    }
     this.onResult?.(filtered);
   }
 }

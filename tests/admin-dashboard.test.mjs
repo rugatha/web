@@ -80,3 +80,15 @@ test('legacy undated answers remain visible without being misclassified into a d
   assert.equal(answerScope(choices,range,false).selected.length,1);
   assert.equal(choices[1].createdAt,null);
 });
+
+test('experience event labels map scripts and preserve numbered sessions', async()=>{
+ const {experienceEventLabel}=await import('../admin/experience-dashboard.js');
+ for(const [id,label] of [
+  ['202610-lorin','2026-10 · 洛林精神'],
+  ['2026-10-lorin','2026-10 · 洛林精神'],
+  ['202604-1-echo','2026-04-01 · 龍鳴的回音'],
+  ['202604-2-echo','2026-04-02 · 龍鳴的回音'],
+  ['202505-scroll','2025-05 · 金之堡的卷軸'],
+  ['legacy','legacy · 自訂劇本']
+ ]) assert.equal(experienceEventLabel(id,{scriptName:'自訂劇本'}),label);
+});

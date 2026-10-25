@@ -1,10 +1,19 @@
 import { cancelRegistration, updateRegistrationAdmin } from '../experience/register/registration-store.js';
-import { dataTable, resetTablePage } from './data-table.js?v=20261025-admin-v5';
+import { dataTable, resetTablePage } from './data-table.js?v=20261026-experience-v3';
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const statusText = row => row.status === 'cancelled' ? '已取消' : row.status === 'active' || !row.status ? '有效' : row.status;
 const answerText = value => Array.isArray(value) ? value.join('、') : value ?? '';
 const dateText = value => value?.toDate ? value.toDate().toLocaleString('zh-TW', {timeZone:'Asia/Taipei',hour12:false}) : '未記錄';
+const scriptNames = { lorin: '洛林精神', echo: '龍鳴的回音', scroll: '金之堡的卷軸' };
+export function experienceEventDate(id) {
+  const match = /^(\d{4})-?(\d{2})(?:-(\d{1,2}))?(?:-|$)/.exec(id);
+  return match ? `${match[1]}-${match[2]}${match[3] ? `-${match[3].padStart(2,'0')}` : ''}` : id;
+}
+export function experienceEventLabel(id, event) {
+  const script = scriptNames[id.split('-').at(-1)] || event?.scriptName;
+  return `${experienceEventDate(id)}${script ? ` · ${script}` : ''}`;
+}
 export function createExperienceDashboard(context) {
   let rows = null, events = [], loading = false, busy = false, revision = 0;
   const valid = (ticket, auth) => context().authenticated && context().generation === auth && revision === ticket;
@@ -19,8 +28,8 @@ export function createExperienceDashboard(context) {
       const selected = $('experience-event').value;
       $('experience-event').replaceChildren(new Option('全部場次','all'));
       // Include legacy registrations even when their event record is missing.
-      const ids = [...new Set([...events.map(e=>e.id),...rows.map(r=>r.eventId)])].sort().reverse();
-      ids.forEach(id => $('experience-event').add(new Option(`${id} · ${events.find(e=>e.id===id)?.scriptName || '未記錄劇本'}`,id)));
+      const ids = [...new Set([...events.map(e=>e.id),...rows.map(r=>r.eventId)])].sort((a,b)=>experienceEventDate(b).localeCompare(experienceEventDate(a)));
+      ids.forEach(id => $('experience-event').add(new Option(experienceEventLabel(id,events.find(e=>e.id===id)),id)));
       if (ids.includes(selected)) $('experience-event').value = selected;
       else if (ids.length === 1) $('experience-event').value = ids[0];
       $('experience-status').textContent = `已讀取 ${rows.length} 筆報名（含取消），更新於 ${new Date().toLocaleString('zh-TW',{timeZone:'Asia/Taipei'})}`;
@@ -42,17 +51,17 @@ export function createExperienceDashboard(context) {
     $('experience-seats').innerHTML = selected === 'all'
       ? `<p>全部場次：${active.length} 筆有效報名，共 ${people} 人；已取消 ${scoped.length-active.length} 筆。</p>`
       : `<p>${people} 人報名 / ${event?.maxPlayers ?? '未設定'} 人上限 · 有效 ${active.length} 筆 · 取消 ${scoped.length-active.length} 筆</p>${event ? `<div class="seat-boxes" role="img" aria-label="${people} 人已報名，${Math.max(0,event.maxPlayers-people)} 個空位">${Array.from({length:event.maxPlayers},(_,i)=>`<span class="seat-box ${i<people?'occupied':''}">${i<people?'已報名':'空位'}</span>`).join('')}</div>${event.registeredPlayers!==people?'<p class="form-error">場次統計與回覆人數不一致，請先執行場次同步。</p>':''}` : '<p>缺少場次設定，無法顯示剩餘名額。</p>'}`;
-    const filtered = scoped.filter(row => Object.values(row).map(answerText).join(' ').toLowerCase().includes(search));
+    const filtered = scoped.filter(row => [experienceEventLabel(row.eventId,events.find(e=>e.id===row.eventId)),...Object.entries(row).filter(([key])=>!key.startsWith('history')).map(([,value])=>answerText(value))].join(' ').toLowerCase().includes(search));
     dataTable('experience-table',[
-      {id:'eventId',label:'場次',value:r=>r.eventId},
+      {id:'eventId',label:'場次',value:r=>experienceEventLabel(r.eventId,events.find(e=>e.id===r.eventId))},
       {id:'createdAt',label:'報名時間',type:'date',value:r=>r.createdAt,html:r=>esc(dateText(r.createdAt))},
       {id:'name',label:'稱呼',value:r=>r.name},
       {id:'contact',label:'聯絡方式',value:r=>r.contact},
       {id:'partySize',label:'人數',type:'number',value:r=>r.partySize},
       {id:'status',label:'狀態',type:'category',value:statusText,html:r=>`${esc(statusText(r))}<br><button class="button" data-edit-registration="${esc(r.id)}" ${busy?'disabled':''}>編輯狀態／備註</button>${r.status==='cancelled'?`<small>${esc(dateText(r.cancelledAt))}</small>`:` <button class="button" data-cancel-registration="${esc(r.id)}" ${busy?'disabled':''}>取消報名</button>`}`},
-      {id:'DM_Note',label:'DM_Note',value:r=>r.DM_Note || ''},
-      ...[['systems','TRPG 系統'],['systemsOther','其他系統'],['dndExperience','D&D 經驗'],['rugathaExperience','Rugatha 經驗'],['sources','得知管道'],['sourcesOther','其他管道'],['boundaries','不能接受的內容'],['notes','備註']].map(([id,label])=>({id,label,value:r=>answerText(r[id])}))
-    ],filtered);
+      ...[['systems','TRPG 系統'],['systemsOther','其他系統'],['dndExperience','D&D 經驗'],['rugathaExperience','Rugatha 經驗'],['sources','得知管道'],['sourcesOther','其他管道'],['boundaries','不能接受的內容'],['notes','備註']].map(([id,label])=>({id,label,value:r=>answerText(r[id])})),
+      {id:'DM_Note',label:'DM_Note',value:r=>r.DM_Note || ''}
+    ],filtered,{defaultSort:{id:'createdAt',direction:'desc'},lockOrder:true,frozenColumns:['eventId','createdAt','name']});
   }
   $('experience-event').addEventListener('change',()=>{resetTablePage('experience-table');render();});
   $('experience-search').addEventListener('input',()=>{resetTablePage('experience-table');render();});
@@ -78,7 +87,7 @@ export function createExperienceDashboard(context) {
     if (edit && !busy && !loading && context().authenticated) {
       const row=rows.find(r=>r.id===edit.dataset.editRegistration);
       if (!row) return;
-      editingId=row.id; $('experience-edit-title').textContent=`${row.name} · ${row.eventId}`;
+      editingId=row.id; $('experience-edit-title').textContent=`${row.name} · ${experienceEventLabel(row.eventId,events.find(e=>e.id===row.eventId))}`;
       $('experience-edit-status').value=row.status || 'active';
       $('experience-edit-note').value=row.DM_Note || '';
       $('experience-edit-error').textContent=''; editor.showModal(); return;

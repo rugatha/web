@@ -1,7 +1,7 @@
-import { createExperienceDashboard } from './experience-dashboard.js?v=20261026-2';
+import { createExperienceDashboard } from './experience-dashboard.js?v=20261026-3';
 import { getSiteAuth } from '/shared/auth-session.js?v=20261019-character-books-1';
 import { MIN_DATE, answerScope, isDashboardAdmin, toDate, dayKey, dateOffset, dateBounds, inRange, presetRange, fateRows, npcValues, kingdomIndex, groupNpcs, activitySeries, memberUrl, characterUrl } from './dashboard-model.js?v=20261025-admin-v5';
-import { dataTable,resetTablePages,resetTablePage,clearTableData } from './data-table.js?v=20261025-admin-v5';
+import { dataTable,resetTablePages,resetTablePage,clearTableData } from './data-table.js?v=20261026-experience-v3';
 const $ = id => document.getElementById(id);
 const fmt = value => value == null ? '—' : new Intl.NumberFormat('zh-TW').format(value);
 const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
