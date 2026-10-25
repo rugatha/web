@@ -148,6 +148,7 @@
 
     .eyebrow {
       display: inline-flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 16px;
       font-size: 12px;
@@ -156,6 +157,8 @@
       color: var(--member-muted);
       margin: 0;
     }
+
+    #admin-dashboard-link[hidden] { display: none !important; }
 
     .toolbox-link {
       display: inline-flex;
@@ -1004,6 +1007,7 @@
             </svg>
             <span data-i18n="toolboxLink">Toolbox</span>
           </a>
+          <a class="toolbox-link" id="admin-dashboard-link" href="/admin/" hidden data-i18n="adminDashboardLink">管理後台</a>
         </p>
         <h1 data-i18n="heroTitle">Your member vault for Rugatha.</h1>
         <div class="hero-badges">
@@ -1227,6 +1231,7 @@
     const firebaseDisabled =
       window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
     const MEMBER_SIGNIN_KEY = "rugatha-member-signin-attempted-at";
+    const adminDashboardLink = document.getElementById("admin-dashboard-link");
     const signOutButton = document.getElementById("sign-out");
     const signInButton = document.getElementById("sign-in");
     const nameEl = document.getElementById("user-name");
@@ -1497,6 +1502,7 @@
         achievementConditionLabel: "Condition:",
         achievementConditionUnknown: "Condition unknown.",
         achievementsUnlockedValue: "Unlocked",
+        adminDashboardLink: "Admin dashboard",
         adminDirectoryTitle: "Member Directory",
         adminDirectoryHint: "Sign in as the admin account to browse each member page.",
         adminDirectoryLoading: "Loading members...",
@@ -1565,6 +1571,7 @@
         achievementConditionLabel: "條件:",
         achievementConditionUnknown: "條件未公開。",
         achievementsUnlockedValue: "已解鎖",
+        adminDashboardLink: "管理後台",
         adminDirectoryTitle: "會員清單",
         adminDirectoryHint: "請使用 admin 帳號登入，即可點選查看各會員頁面。",
         adminDirectoryLoading: "正在載入會員資料…",
@@ -2896,6 +2903,7 @@
     const lineInAppBrowser = isLineInAppBrowser();
 
     const setSignedOut = (message) => {
+      adminDashboardLink.hidden = true;
       const dictionary = translations[authState.language] || translations.en;
       nameEl.textContent = dictionary.profileGuest;
       emailEl.textContent = dictionary.profileEmailHint;
@@ -2952,6 +2960,7 @@
     };
 
     const setSignedIn = async (user) => {
+      adminDashboardLink.hidden = !(user.emailVerified === true && user.email === ADMIN_EMAIL);
       nameEl.textContent = user.displayName || "Member";
       emailEl.textContent = user.email || "Google account";
       authState.memberId = resolveMemberId(user, null);
