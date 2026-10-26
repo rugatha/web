@@ -147,6 +147,7 @@ const loadAchievementData = async () => {
 };
 
 const showAchievementToast = (nameZh, nameEn, flavorZh, flavorEn) => {
+      if (window.RUGATHA_FEATURE_FLAGS?.achievementsUiEnabled !== true) return;
   if (!nameZh && !nameEn && !flavorZh && !flavorEn) return;
   if (!document.body) return;
   const styleId = "rugatha-achievement-toast-style";

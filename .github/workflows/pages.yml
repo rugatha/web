@@ -28,13 +28,16 @@ jobs:
       - name: Refresh admin content inventory
         run: node scripts/build-admin-catalog.mjs
 
+      - name: Prepare production site
+        run: node scripts/package-pages.mjs "$RUNNER_TEMP/site"
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ${{ runner.temp }}/site
 
   deploy:
     environment:

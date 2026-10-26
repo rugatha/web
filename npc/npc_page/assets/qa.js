@@ -172,6 +172,7 @@ if (qaRoot && !qaDisabled) {
   };
 
   const showAchievementToast = (flavorZh, flavorEn) => {
+      if (window.RUGATHA_FEATURE_FLAGS?.achievementsUiEnabled !== true) return;
     if (!flavorZh && !flavorEn) return;
     if (!document.body) return;
     const styleId = "rugatha-achievement-toast-style";

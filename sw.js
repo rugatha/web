@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v31";
+const CACHE_VERSION = "rugatha-pwa-v50";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;
@@ -26,6 +26,7 @@ const PRECACHE_URLS = [
   "/shared/character-spellbook.js?v=20261019-character-books-1",
   "/shared/character-spellbook-ui.js?v=20261019-character-books-2",
   "/shared/character-sheets.js?v=20261019-character-books-1",
+  "/shared/character-sheets.js?v=20261026-member-dashboard-1",
   "/shared/member-path.js",
   "/shared/firebase-data.js",
   "/shared/language-toggle.js",

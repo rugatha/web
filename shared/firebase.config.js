@@ -1,6 +1,7 @@
 window.RUGATHA_FEATURE_FLAGS = Object.assign({}, window.RUGATHA_FEATURE_FLAGS, {
   firebaseEnabled: true,
   qaFateEnabled: true,
+  achievementsUiEnabled: false, // Keep tracking awards; pause all member-facing achievement UI.
   dataBackend: "firestore",
   spellbookSyncMemberUids: [], // Nonempty list limits rollout to these Authentication UIDs.
   characterSpellbookMemberUids: [], // Nonempty list limits character-book acceptance to test UIDs.

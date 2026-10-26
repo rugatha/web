@@ -84,6 +84,7 @@ export const listCharacterSheets = async (appOrDb, uid) => {
         key: item.id,
         memberId: uid,
         characterName: normalizeCharacterName(data.characterName) || characterNameFromKey(item.id),
+        portrait: data.portrait || null,
         className: String(data.className || ""),
         race: String(data.race || ""),
         createdAt: timestampToIso(data.createdAt),
@@ -91,6 +92,12 @@ export const listCharacterSheets = async (appOrDb, uid) => {
       };
     })
     .sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")));
+};
+
+export const loadCharacterPortrait = async (app, portrait) => {
+  if (!portrait?.path) return "";
+  const blob = await getBlob(storageRef(getStorage(app), portrait.path), MAX_CHARACTER_PORTRAIT_BYTES);
+  return URL.createObjectURL(blob);
 };
 
 export const listAllCharacterSheets = async (appOrDb) => {

@@ -1,3 +1,5 @@
+const siteRoot = new URL("../", import.meta.url);
+
 const DATA_SOURCES = {
   chapters: "campaigns/data/chapter-content.json",
   deities: "deities/data/deities.json",
@@ -20,7 +22,7 @@ const slugify = (value) =>
     .replace(/[\s_]+/g, "-");
 
 const fetchJson = async (url) => {
-  const response = await fetch(url, { cache: "no-cache" });
+  const response = await fetch(new URL(url, siteRoot), { cache: "no-cache" });
   if (!response.ok) throw new Error(`Failed to load ${url} (${response.status})`);
   return response.json();
 };
@@ -70,7 +72,7 @@ const trackD20Click = () => {
   if (typeof window.gtag !== "function") return;
 
   window.gtag("event", "d20_click", {
-    button_location: "homepage",
+    button_location: document.querySelector("[data-random-page]") ? "member" : "homepage",
     button_asset: "others/d20.png"
   });
 };
@@ -82,7 +84,7 @@ const navigateToRandomLeafPage = async () => {
   if (!destinations.length) return;
 
   const destination = destinations[Math.floor(Math.random() * destinations.length)];
-  window.location.assign(new URL(destination, document.baseURI).href);
+  window.location.assign(new URL(destination, siteRoot).href);
 };
 
 const setupRandomD20 = () => {
@@ -102,3 +104,9 @@ const setupRandomD20 = () => {
 };
 
 setupRandomD20();
+
+// Member cards are rebuilt on language and bookmark updates.
+// Delegate clicks so newly rendered random-page buttons remain interactive.
+document.addEventListener("click", (event) => {
+  if (event.target.closest?.("[data-random-page]")) return navigateToRandomLeafPage();
+});

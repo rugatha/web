@@ -61,3 +61,25 @@ test('both character and known spellbook are deleted in one batch', async () => 
   assert.equal(await f.remove('old'), true);
   assert.deepEqual(f.deleted, [`${path}/spellbooks/default`, path]);
 });
+
+test('member character tiles retain portrait metadata and load private portrait blobs', async () => {
+  const f = fixture();
+  f.context.getDocs = async () => ({ docs: [{
+    id: 'character-one',
+    data: () => ({ characterName: 'Portrait owner', portrait: { path: 'character-portraits/owner/portrait.webp' } })
+  }] });
+  const characters = await vm.runInContext('listCharacterSheets({}, "owner")', f.context);
+  assert.equal(characters[0].portrait.path, 'character-portraits/owner/portrait.webp');
+  const reads = [];
+  f.context.storageRef = (_, path) => path;
+  f.context.getBlob = async (path, limit) => {
+    reads.push({ path, limit });
+    return new Blob(['portrait'], { type: 'image/webp' });
+  };
+  const url = await vm.runInContext('loadCharacterPortrait({}, {path: "character-portraits/owner/portrait.webp"})', f.context);
+  assert.match(url, /^blob:/);
+  assert.equal(reads[0].path, characters[0].portrait.path);
+  assert.equal(reads[0].limit, 5 * 1024 * 1024);
+  URL.revokeObjectURL(url);
+  assert.equal(await vm.runInContext('loadCharacterPortrait({}, null)', f.context), '');
+});

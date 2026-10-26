@@ -31,6 +31,7 @@
 <link rel="icon" type="image/png" href="../assets/logo/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../shared/styles/theme.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Iansui&family=Fondamento&display=swap">
   <style>
     :root {
       --member-ink: #f4f7f3;
@@ -181,7 +182,7 @@
       color: var(--member-ink);
     }
 
-    .hero-copy h1 {
+    .hero-copy .hero-tagline {
       margin: 0;
       font-size: clamp(2.2rem, 4vw, 3.2rem);
       line-height: 1.05;
@@ -397,7 +398,7 @@
 
     .profile-details {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       gap: 16px;
       padding: 16px;
       border-radius: 16px;
@@ -599,6 +600,8 @@
       color: var(--member-ink);
       text-decoration: none;
     }
+
+    .bookmark-card__random { grid-column: 1 / -1; width: 100%; min-height: 40px; padding: 0; border: 0; background: transparent; text-align: left; font: inherit; cursor: pointer; }
 
     .bookmark-card__title {
       display: block;
@@ -978,6 +981,278 @@
         padding: 22px;
       }
     }
+
+    .member-hero { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 40px; }
+    .page { max-width: 1480px; margin: auto; gap: 32px; }
+    .member-dashboard { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+    .journal-panel { min-width: 0; padding: 30px; border: 1px solid rgba(159,224,186,.18); border-radius: 24px; background: var(--member-panel); display: flex; flex-direction: column; gap: 22px; }
+    .journal-panel[hidden] { display: none; }
+    .journal-panel h2 { font-size: 1.1rem; margin: 0; }
+    .fate-panel { grid-column: 1 / -1; }
+    .member-character-list { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 16px; }
+    .member-character-item { display: block; position: relative; min-width: 0; }
+    .member-character-link { height: 100%; box-sizing: border-box; flex-direction: column; justify-content: flex-start; padding: 12px; gap: 14px; text-align: center; overflow-wrap: anywhere; }
+    .member-character-link::after { content: none; }
+    .member-character-portrait, .member-character-plus { width: 100%; aspect-ratio: 1; border-radius: 8px; object-fit: cover; background: #263a35; }
+    .member-character-portrait[src$="rugatha-icon.png"] { object-fit: contain; padding: 20px; box-sizing: border-box; }
+    .member-character-plus { display: grid; place-items: center; font-size: 3.5rem; font-weight: 300; color: var(--member-accent); }
+    .member-character-delete { position: absolute; top: 18px; right: 18px; width: 30px; min-height: 30px; border-radius: 50%; background: #352d2d; }
+    .fate-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px; }
+    .fate-card { padding: 24px; border-radius: 16px; background: rgba(0,0,0,.2); border: 1px solid rgba(159,224,186,.2); }
+    .fate-card a { color: var(--member-accent); font-size: 1.1rem; font-weight: 700; text-underline-offset: 4px; }
+    .fate-card p { line-height: 1.65; }
+    .fate-question, .fate-caption { color: var(--member-muted); font-size: .88rem; }
+    .fate-meter { height: 6px; background: rgba(255,255,255,.12); border-radius: 6px; overflow: hidden; }
+    .fate-meter span { display: block; height: 100%; background: var(--member-accent); border-radius: inherit; }
+    @media (max-width: 800px) {
+      .member-hero, .member-dashboard { grid-template-columns: minmax(0, 1fr); }
+      .hero-copy { max-width: 100%; }
+      .corner-link img { width: 64px; height: 64px; }
+      .journal-panel { padding: 22px; }
+      .hero-copy { margin-top: 64px; }
+      .profile-section-header { flex-wrap: wrap; gap: 12px; }
+    }
+
+    .journal-shortcuts { display: grid; gap: 10px; margin-top: 10px; max-width: 400px; }
+    .journal-shortcuts a { display: grid; grid-template-columns: 30px 1fr auto; align-items: center; gap: 12px; padding: 16px 18px; border: 1px solid rgba(159,224,186,.24); border-radius: 14px; background: rgba(14,22,26,.25); }
+    .journal-shortcuts a:hover, .journal-shortcuts a:focus-visible { border-color: var(--member-accent); background: rgba(14,22,26,.5); }
+    .shortcut-symbol { color: var(--member-accent-strong); font-size: 1.4rem; }
+    .account-footer { margin: 32px auto 48px; width: min(1268px, 88vw); }
+    .member-character-item { display: flex; flex-direction: column; gap: 8px; }
+    .member-character-delete { position: static; width: 100%; min-height: 36px; font-size: .82rem; border: 0; border-radius: 8px; color: #ff9c9c; background: transparent; }
+    .bookmark-list { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 16px; }
+    .bookmark-card { display: flex; flex-direction: column; padding: 12px; align-items: stretch; justify-content: space-between; gap: 12px; min-width: 0; }
+    .bookmark-card__link { display: flex; flex-direction: column; gap: 14px; text-align: center; width: 100%; }
+    .bookmark-card__title { white-space: normal; overflow-wrap: anywhere; }
+    .journal-tile-image, .bookmark-random-symbol { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; background: #263a35; }
+    .journal-tile-image[src$="rugatha-icon.png"] { object-fit: contain; padding: 18px; }
+    .bookmark-random-symbol { display: grid; place-items: center; color: var(--member-accent); font-size: 4.5rem; font-weight: 300; }
+    .bookmark-card__remove { align-self: flex-end; width: 28px; height: 28px; padding: 0; }
+    .fate-count { color: var(--member-accent); font-variant-numeric: tabular-nums; font-size: .9rem; }
+    .fate-random { align-self: flex-start; }
+    .fate-list { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 16px; }
+    .fate-card { padding: 12px; display: flex; align-items: center; flex-direction: column; gap: 16px; }
+    .fate-character { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; text-align: center; }
+    .fate-card a { font-size: .9rem; }
+    .fate-pie { --share: 0%; display: grid; place-items: center; position: relative; width: 68px; height: 68px; flex: 0 0 68px; border-radius: 50%; background: conic-gradient(var(--member-accent) var(--share), rgba(255,255,255,.12) 0); }
+    .fate-pie::before { content: ""; position: absolute; inset: 7px; border-radius: 50%; background: #1c2b29; }
+    .fate-pie .fate-caption { position: relative; color: var(--member-ink); font-size: .82rem; font-variant-numeric: tabular-nums; }
+    [id$="-section"] { scroll-margin-top: 24px; }
+
+    .journal-shortcuts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; max-width: 400px; }
+    .journal-shortcuts a { display: flex; flex-direction: column; justify-content: center; aspect-ratio: 1; padding: 18px; gap: 14px; text-align: center; font-weight: 700; border-radius: 18px; }
+    .journal-shortcuts .shortcut-symbol { font-size: 2.2rem; line-height: 1; }
+    .account-footer { padding: 0; }
+    .account-footer .profile-section[hidden] { display: none; }
+    .account-footer .profile-actions { justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .footer-home { color: var(--member-muted); text-decoration: underline; text-underline-offset: 5px; }
+    .footer-home:hover, .footer-home:focus-visible { color: var(--member-ink); }
+    .fate-panel { position: relative; overflow: hidden; background:
+      radial-gradient(circle at 20% 20%, rgba(123,220,181,.18), transparent 40%),
+      radial-gradient(circle at 85% 15%, rgba(99,179,237,.2), transparent 45%),
+      radial-gradient(circle at 30% 85%, rgba(236,72,153,.18), transparent 45%),
+      linear-gradient(140deg, rgba(8,18,24,.9), rgba(24,48,54,.85));
+      border-color: rgba(123,220,181,.28); box-shadow: 0 22px 50px rgba(0,0,0,.35); }
+    .fate-panel::before { content: ""; position: absolute; inset: 7px; border-radius: 18px; border: 1px solid rgba(255,255,255,.08); pointer-events: none; }
+    .fate-panel h2 { font-family: var(--font-fate); font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: .06em; color: #eefbf4; text-shadow: 0 8px 22px rgba(0,0,0,.5); }
+    .fate-card { background: rgba(6,12,16,.42); border-color: rgba(123,220,181,.28); }
+    .fate-same-choice { margin: 0; font-size: .72rem; color: var(--member-muted); line-height: 1.7; text-align: center; }
+    .fate-random { align-self: stretch; width: 100%; font: inherit; color: var(--member-accent); cursor: pointer; justify-content: flex-start; }
+    .fate-random-label { font-size: .9rem; font-weight: 700; }
+    .fate-random-hint { font-size: .72rem; line-height: 1.7; color: var(--member-muted); text-align: center; }
+    .fate-random:not(:disabled):hover, .fate-random:focus-visible { border-color: rgba(123,220,181,.85); box-shadow: 0 10px 28px rgba(123,220,181,.2); }
+    .fate-random:disabled { cursor: default; opacity: .6; }
+
+    .journal-shortcuts { max-width: 280px; width: 100%; gap: 12px; margin-top: auto; }
+    .journal-shortcuts a { padding: 14px; gap: 10px; border-radius: 14px; }
+    .journal-shortcuts .shortcut-symbol { font-size: 1.8rem; }
+    .hero-copy { align-self: stretch; }
+    #profile-card { align-self: stretch; gap: 24px; }
+    #profile-card > .profile-section { flex: 1; justify-content: center; gap: 18px; }
+    #profile-card .profile-details { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; padding: 24px; }
+    #profile-card .profile-details .detail { min-width: 0; min-height: 54px; justify-content: center; }
+    .fate-panel > .profile-section-header { position: relative; justify-content: center; min-height: 52px; }
+    .fate-panel h2 { text-align: center; }
+    .fate-count { position: absolute; right: 0; top: 0; max-width: 34%; text-align: right; font-size: .8rem; line-height: 1.7; }
+    .fate-pie-label { position: relative; color: var(--member-ink); font-size: 1.4rem; }
+    @media (max-width: 900px) {
+      .fate-panel > .profile-section-header { flex-direction: column; align-items: center; gap: 12px; }
+      .fate-count { position: static; max-width: 100%; align-self: flex-end; order: -1; }
+    }
+    @media (max-width: 800px) {
+      .journal-shortcuts { margin-top: 10px; }
+      #profile-card > .profile-section { flex: none; }
+      #profile-card .profile-details { gap: 16px; padding: 16px; }
+    }
+
+    /* Member journal: balanced introduction and compact account details. */
+    .member-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(28px, 4vw, 56px); }
+    .hero-copy { margin-top: 0; padding-top: 14px; max-width: none; gap: 18px; justify-content: space-between; }
+    .hero-copy .eyebrow { font-size: .72rem; letter-spacing: .16em; gap: 12px; }
+    .hero-copy .hero-tagline { font-size: clamp(2rem, 3.1vw, 2.85rem); line-height: 1.28; letter-spacing: -.02em; text-wrap: balance; }
+    .journal-shortcuts { max-width: none; width: 100%; margin-top: 8px; gap: 12px; }
+    .journal-shortcuts a { font-size: .88rem; gap: 8px; padding: 12px; }
+    .journal-shortcuts .shortcut-symbol { font-size: 1.65rem; }
+    #profile-card { padding: 28px; gap: 20px; }
+    #profile-card .profile-header { padding-bottom: 18px; border-bottom: 1px solid rgba(159,224,186,.15); align-items: center; }
+    .profile-identity { min-width: 0; gap: 5px; }
+    .profile-name { font-size: 1.12rem; }
+    .profile-email { font-size: .85rem; overflow-wrap: anywhere; }
+    .profile-member-id { font-size: .72rem; line-height: 1.6; }
+    #profile-card > .profile-section { justify-content: flex-end; gap: 16px; }
+    #profile-card .profile-section-title { font-size: .78rem; letter-spacing: .12em; }
+    #profile-card .profile-details { padding: 20px; gap: 18px 24px; }
+    #profile-card .profile-details .detail { min-height: 44px; gap: 7px; }
+    #profile-card .detail-label { font-size: .68rem; letter-spacing: .08em; }
+    #profile-card .detail-value { font-size: .9rem; line-height: 1.5; overflow-wrap: anywhere; }
+    .profile-hint:empty { display: none; }
+    .member-character-list { grid-auto-rows: 1fr; }
+    .member-character-item { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; gap: 8px; }
+    .member-character-link { height: auto; }
+    .member-character-new { justify-content: flex-start; }
+    .member-character-create-label { min-height: 36px; display: grid; place-items: center; color: var(--member-accent); font-size: .82rem; font-weight: 700; text-align: center; line-height: 1.5; }
+    .member-character-create-label:hover, .member-character-create-label:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+    .fate-panel > .profile-section-header { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; min-height: 0; }
+    .fate-panel h2 { grid-row: 2; margin: 0; justify-self: center; font-size: clamp(1.3rem, 2.2vw, 1.8rem); letter-spacing: .03em; line-height: 1.4; white-space: nowrap; }
+    .fate-count { position: static; grid-row: 1; justify-self: end; max-width: 100%; font-size: .72rem; line-height: 1.5; text-wrap: balance; }
+    .fate-card a, .fate-random-label { font-size: .84rem; line-height: 1.5; overflow-wrap: normal; word-break: normal; text-wrap: balance; }
+    .fate-same-choice, .fate-random-hint { font-size: .66rem; line-height: 1.65; text-wrap: balance; }
+    html[lang="en"] .fate-panel h2 { font-size: clamp(1.2rem, 2vw, 1.65rem); letter-spacing: .01em; }
+    html[lang="en"] .fate-count { font-size: .67rem; }
+    html[lang="en"] .fate-card a, html[lang="en"] .fate-random-label { font-size: .77rem; }
+    .footer-home { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; transition: transform 150ms ease; }
+    .footer-home img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .footer-home:hover { transform: translateY(-2px); }
+    .footer-home:focus-visible { outline: 2px solid var(--member-accent); outline-offset: 5px; }
+    @media (max-width: 800px) {
+      .member-hero { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+      .hero-copy { margin-top: 56px; padding-top: 0; gap: 18px; }
+      .hero-copy .hero-tagline { font-size: clamp(1.9rem, 6.5vw, 2.5rem); }
+      #profile-card { padding: 22px; }
+      #profile-card .profile-details { padding: 16px; gap: 16px; }
+      .fate-panel { padding: 20px; }
+      .fate-list { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
+      .fate-count { font-size: .67rem; }
+    }
+
+    .journal-shortcuts a { aspect-ratio: auto; min-height: 76px; flex-direction: row; justify-content: center; gap: 14px; padding: 16px; }
+    .journal-shortcuts .shortcut-symbol { font-size: 1.6rem; flex: 0 0 30px; text-align: center; }
+    .fate-card .fate-character { font-size: .84rem; line-height: 1.5; font-weight: 700; }
+    .fate-character > span:last-child { min-height: 3em; display: grid; place-items: center; }
+    html[lang="en"] .fate-card .fate-character { font-size: .77rem; }
+    .member-character-name { line-height: 1.5; text-align: center; }
+    @media (max-width: 800px) {
+      .journal-shortcuts a { min-height: 64px; gap: 8px; padding: 12px 10px; font-size: .8rem; }
+      .journal-shortcuts .shortcut-symbol { font-size: 1.4rem; flex-basis: 24px; }
+    }
+
+    .journal-shortcuts a { justify-content: center; text-align: center; font-size: 1rem; }
+    @media (max-width: 800px) {
+      .journal-shortcuts a { font-size: .95rem; }
+    }
+
+    /* Reserve a clear row for the fixed language control. */
+    .page { padding-top: 128px; }
+    @media (max-width: 720px) {
+      .page { padding-top: 84px; }
+      .hero-copy { margin-top: 0; }
+    }
+
+    #profile-card { position: relative; }
+    #profile-card .corner-link { top: -24px; right: 16px; }
+    #profile-card .profile-header { padding-right: 72px; }
+    @media (max-width: 800px) {
+      #profile-card .corner-link { top: -24px; right: 12px; }
+      #profile-card .profile-header { padding-right: 24px; }
+    }
+
+    .member-character-create.is-readonly a { cursor: default; }
+    .member-character-create.is-readonly .member-character-new:hover { transform: none; background: rgba(0,0,0,.24); border-color: rgba(159,224,186,.35); }
+    .member-character-create.is-readonly .member-character-create-label:hover { text-decoration: none; }
+
+    .hero-copy .hero-tagline {
+      font-family: "Iansui", "BiauKai", "DFKai-SB", "KaiTi", cursive;
+      font-weight: 400;
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      line-height: 1.3;
+      letter-spacing: -.01em;
+    }
+    html[lang="en"] .hero-copy .hero-tagline {
+      font-family: "Fondamento", "Palatino Linotype", "Book Antiqua", serif;
+    }
+    @media (max-width: 800px) {
+      .hero-copy .hero-tagline { font-size: clamp(2.25rem, 8vw, 3rem); padding-bottom: 0; }
+    }
+
+    /* Enlarge the page title using space already between the hero rows. */
+    .hero-copy { gap: 12px; }
+    html[lang="en"] .hero-copy { gap: 11px; }
+    .hero-copy .eyebrow { flex-wrap: nowrap; }
+    .hero-copy .journal-title { margin: 0; font-family: var(--font-body); font-size: 1.4rem; font-weight: 700; line-height: 28px; letter-spacing: .06em; text-transform: none; color: var(--member-ink); }
+    .hero-copy .eyebrow .toolbox-link { font-size: .72rem; line-height: 1.4; white-space: nowrap; }
+    .hero-copy .hero-tagline { color: var(--member-accent-strong); }
+    @media (max-width: 480px) {
+      html[lang="en"] .hero-copy .journal-title { font-size: 1.1rem; letter-spacing: .02em; }
+      .hero-copy .eyebrow { gap: 8px; }
+      .hero-copy .eyebrow .toolbox-link { font-size: .65rem; letter-spacing: .03em; }
+    }
+
+    .page > .admin-directory { width: 100%; min-width: 0; margin: 0; }
+    #member-characters-section, #member-bookmarks-section { box-shadow: 0 24px 50px rgba(0,0,0,.35); }
+
+    /* A quiet journal frontispiece, with map detail in the open space. */
+    .hero-copy { position: relative; isolation: isolate; }
+    .hero-copy::before {
+      content: ""; position: absolute; z-index: -1; pointer-events: none;
+      inset: 34px -16px 124px 14%;
+      background: url("./assets/journal-contours.svg") no-repeat right center / cover;
+      opacity: .2;
+      mask-image: linear-gradient(90deg, transparent, #000 48%, #000);
+    }
+    .hero-copy .eyebrow { position: relative; }
+    .hero-copy .eyebrow::after {
+      content: ""; position: absolute; left: 0; bottom: -7px;
+      width: 52px; height: 1px;
+      background: linear-gradient(90deg, var(--member-accent-strong), rgba(255,213,139,.2));
+    }
+    .hero-copy .hero-tagline { font-size: clamp(2.3rem, 3.5vw, 3.3rem); margin-bottom: auto; padding-bottom: 6px; }
+    html[lang="en"] .hero-copy .hero-tagline { min-height: calc(clamp(2.5rem, 4vw, 3.8rem) * 3.9); }
+    .journal-shortcuts a {
+      background: linear-gradient(145deg, rgba(28,49,43,.6), rgba(14,27,25,.4));
+      border-color: rgba(190,212,196,.22);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 4px 14px rgba(10,20,17,.07);
+      transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+    .journal-shortcuts a:hover, .journal-shortcuts a:focus-visible {
+      border-color: rgba(255,213,139,.7);
+      background: linear-gradient(145deg, rgba(59,65,45,.65), rgba(21,37,30,.6));
+      box-shadow: inset 0 1px 0 rgba(255,213,139,.1), 0 6px 18px rgba(10,20,17,.12);
+    }
+    @media (max-width: 800px) {
+      .hero-copy .hero-tagline { font-size: clamp(2.25rem, 8vw, 3rem); padding-bottom: 0; }
+      html[lang="en"] .hero-copy .hero-tagline { min-height: 0; }
+      .hero-copy::before { inset: 24px -8px 112px 18%; opacity: .14; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .journal-shortcuts a { transition: none; }
+    }
+
+    /* A larger journal title and a quieter quote share the intro area. */
+    .journal-intro { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 18px; min-height: calc(28px + 12px + clamp(2.3rem, 3.5vw, 3.3rem) * 2.6 + 6px); }
+    html[lang="en"] .journal-intro { min-height: calc(28px + 11px + clamp(2.5rem, 4vw, 3.8rem) * 3.9); }
+    .hero-copy .journal-title { font-size: 1.96rem; line-height: 1.25; }
+    .hero-copy .eyebrow { flex-wrap: wrap; }
+    .hero-copy .hero-tagline { font-size: clamp(1.84rem, 2.8vw, 2.64rem); min-height: 0; margin: 0; padding: 0; }
+    html[lang="en"] .hero-copy .hero-tagline { min-height: 0; }
+    @media (max-width: 800px) {
+      .journal-intro { min-height: calc(28px + 12px + clamp(2.25rem, 8vw, 3rem) * 2.6); }
+      html[lang="en"] .journal-intro { min-height: calc(28px + 11px + clamp(2.25rem, 8vw, 3rem) * 2.6); }
+      .hero-copy .hero-tagline { font-size: clamp(1.8rem, 6.4vw, 2.4rem); }
+    }
+    @media (max-width: 480px) {
+      html[lang="en"] .hero-copy .journal-title { font-size: 1.54rem; }
+      html[lang="en"] .journal-intro { min-height: calc(28px + 11px + clamp(2.25rem, 8vw, 3rem) * 3.9); }
+    }
   </style>
   <!-- Rugatha PWA -->
   <link rel="manifest" href="../manifest.webmanifest">
@@ -994,75 +1269,29 @@
     <div class="language-toggle" role="group" aria-label="Language">
       <button type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button>
     </div>
-    <a class="corner-link" href="../index.html" aria-label="Rugatha Home">
-      <img src="../assets/logo/rugatha-icon.png" alt="Rugatha home" width="100" height="100">
-    </a>
+
     <header class="member-hero">
       <div class="hero-copy">
-        <p class="eyebrow">
-          <span data-i18n="heroEyebrow">Adventurer's Journal</span>
-          <a class="toolbox-link" href="/toolbox/">
-            <svg class="toolbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14.7 6.3a4.3 4.3 0 0 0-5.4 5.4L3.5 17.5a2.1 2.1 0 1 0 3 3l5.8-5.8a4.3 4.3 0 0 0 5.4-5.4l-2.5 2.5-2.6-.7-.7-2.6 2.8-2.2Z" />
-            </svg>
-            <span data-i18n="toolboxLink">Toolbox</span>
-          </a>
+        <div class="journal-intro">
+        <div class="eyebrow">
+          <h1 class="journal-title" data-i18n="heroEyebrow">Adventurer's Journal</h1>
           <a class="toolbox-link" id="admin-dashboard-link" href="/admin/" hidden data-i18n="adminDashboardLink">管理後台</a>
-        </p>
-        <h1 data-i18n="heroTitle">Your member vault for Rugatha.</h1>
-        <div class="hero-badges">
-          <div class="profile-section-title centered" data-i18n="heroBadgesTitle">Adventurer's Badges</div>
-          <div class="badge-grid">
-            <div class="badge-item">
-              <div class="badge-label" data-i18n="badgeSTR">STR</div>
-              <div class="badge-box">
-                <div class="badge-value" id="badge-str">10/20</div>
-                <div class="badge-mod" id="badge-str-mod">+0</div>
-              </div>
-            </div>
-            <div class="badge-item">
-              <div class="badge-label" data-i18n="badgeDEX">DEX</div>
-              <div class="badge-box">
-                <div class="badge-value" id="badge-dex">10/20</div>
-                <div class="badge-mod" id="badge-dex-mod">+0</div>
-              </div>
-            </div>
-            <div class="badge-item">
-              <div class="badge-label" data-i18n="badgeCON">CON</div>
-              <div class="badge-box">
-                <div class="badge-value" id="badge-con">10/20</div>
-                <div class="badge-mod" id="badge-con-mod">+0</div>
-              </div>
-            </div>
-            <div class="badge-item">
-              <div class="badge-label" data-i18n="badgeINT">INT</div>
-              <div class="badge-box">
-                <div class="badge-value" id="badge-int">10/20</div>
-                <div class="badge-mod" id="badge-int-mod">+0</div>
-              </div>
-            </div>
-            <div class="badge-item">
-              <div class="badge-label" data-i18n="badgeWIS">WIS</div>
-              <div class="badge-box">
-                <div class="badge-value" id="badge-wis">10/20</div>
-                <div class="badge-mod" id="badge-wis-mod">+0</div>
-              </div>
-            </div>
-            <div class="badge-item">
-              <div class="badge-label" data-i18n="badgeCHA">CHA</div>
-              <div class="badge-box">
-                <div class="badge-value" id="badge-cha">10/20</div>
-                <div class="badge-mod" id="badge-cha-mod">+0</div>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="character-card" id="character-card">
-          <div id="character-card-list"></div>
+        <p class="hero-tagline" data-i18n="heroTitle">Your member vault for Rugatha.</p>
         </div>
+        <nav class="journal-shortcuts" aria-label="Explore Rugatha">
+          <a href="../toolbox/"><span data-i18n="toolboxLink">Toolbox</span></a>
+          <a href="../campaigns/"><span data-i18n="campaignsLink">Campaigns</span></a>
+          <a href="../experience/"><span data-i18n="experienceLink">Experience</span></a>
+          <a href="../characters/"><span data-i18n="charactersLink">Characters</span></a>
+        </nav>
+
       </div>
 
       <section class="profile-card" id="profile-card" aria-live="polite">
+    <a class="corner-link" href="../index.html" aria-label="Rugatha Home">
+      <img src="../assets/logo/rugatha-icon.png" alt="Rugatha home" width="100" height="100">
+    </a>
         <div class="profile-header">
           <button class="profile-photo-button" id="profile-photo-button" type="button" aria-label="Upload profile photo">
             <img class="profile-photo" id="user-photo" src="../assets/logo/rugatha-icon.png" alt="Profile photo">
@@ -1116,66 +1345,45 @@
                 <option value="">—</option>
               </select>
             </div>
-            <div class="detail full-width is-hidden" id="campaign-divider">
-              <div class="profile-divider" aria-hidden="true"></div>
-            </div>
-            <div class="detail is-hidden" id="campaign-detail">
-              <span class="detail-label" data-i18n="labelCampaign">Campaign</span>
-              <span class="detail-value view-only multiline-value" id="user-campaign">—</span>
-            </div>
-            <div class="detail is-hidden" id="character-detail">
-              <span class="detail-label" data-i18n="labelCharacter">Character</span>
-              <span class="detail-value view-only multiline-value" id="user-character">—</span>
-            </div>
+
           </div>
           <div class="profile-save" id="profile-save">
             <button type="button" id="save-adventurer" data-i18n="saveLabel">Save</button>
           </div>
         </div>
-        <div class="profile-section">
-          <h3 class="profile-section-title" data-i18n="achievementsTitle">Achievements</h3>
-          <div class="profile-details">
-            <div class="detail full-width">
-              <div class="achievement-status-line">
-                <span class="detail-label" data-i18n="achievementsEmptyLabel">Status</span>
-                <span class="detail-value" id="achievement-empty" data-i18n="achievementsEmptyValue">No achievements yet.</span>
-              </div>
-              <div class="achievement-list" id="achievement-list"></div>
-            </div>
-          </div>
-        </div>
-        <div class="profile-section">
-          <h3 class="profile-section-title" data-i18n="bookmarksTitle">Saved</h3>
-          <p class="bookmark-empty" id="bookmark-empty" data-i18n="bookmarksEmpty">No bookmarked pages yet.</p>
-          <div class="bookmark-list" id="bookmark-list" hidden></div>
-        </div>
-        <div class="profile-section" id="member-characters-section" hidden>
-          <h3 class="profile-section-title" data-i18n="charactersTitle">Characters</h3>
-          <p class="bookmark-empty" id="member-characters-empty" data-i18n="charactersEmpty">No character sheets yet.</p>
-          <div class="member-character-list" id="member-character-list"></div>
-        </div>
-        <div class="profile-section">
-          <h3 class="profile-section-title" data-i18n="loginInfoTitle">Login Info</h3>
-          <div class="profile-details">
-            <div class="detail">
-              <span class="detail-label" data-i18n="labelLastLogin">Last Login</span>
-              <span class="detail-value" id="user-last-login">—</span>
-            </div>
-            <div class="detail">
-              <span class="detail-label" data-i18n="labelLoginTime">Login Time</span>
-              <span class="detail-value" id="user-total-time">—</span>
-            </div>
-          </div>
-        </div>
-        <div class="profile-actions">
-          <button class="ghost-button" id="sign-in" type="button" disabled hidden data-i18n="signIn">Sign in</button>
-          <button class="ghost-button" id="sign-out" type="button" disabled hidden data-i18n="signOut">Sign out</button>
-        </div>
         <p class="profile-hint" id="profile-hint">Sign in to load your member profile.</p>
       </section>
     </header>
 
-  </div>
+    <main class="member-dashboard">
+      <section class="journal-panel" id="member-characters-section">
+        <h2 class="profile-section-title" data-i18n="charactersTitle">Characters</h2>
+        <div class="member-character-list" id="member-character-list"></div>
+      </section>
+      <section class="journal-panel" id="member-bookmarks-section">
+        <div class="profile-section-header">
+          <h2 class="profile-section-title" data-i18n="bookmarksTitle">Saved</h2>
+        </div>
+        <div class="bookmark-list" id="bookmark-list" hidden></div>
+      </section>
+      <section class="journal-panel fate-panel" id="member-fate-section">
+        <div class="profile-section-header">
+          <h2 class="profile-section-title" data-i18n="fateTitle">Choices of Fate</h2>
+          <span class="fate-count" id="fate-count" aria-live="polite">— / —</span>
+        </div>
+        <p class="bookmark-empty" id="fate-empty" data-i18n="fateEmpty">No choices yet. Meet the people of Rugatha to begin.</p>
+        <div class="fate-list" id="fate-list">
+          <button type="button" class="fate-card fate-random" id="fate-random" disabled>
+            <span class="fate-character">
+              <span class="bookmark-random-symbol" aria-hidden="true">?</span>
+              <span class="fate-random-label" data-i18n="fateRandom">Random NPC</span>
+            </span>
+            <span class="fate-pie fate-pie-unknown" style="--share: 0%" aria-hidden="true"><span class="fate-pie-label">?</span></span>
+            <span class="fate-random-hint"></span>
+          </button>
+        </div>
+      </section>
+    </main>
 
   <section class="admin-directory" id="admin-directory" hidden aria-live="polite">
     <div class="admin-directory-header">
@@ -1191,6 +1399,29 @@
       <option value="">Select a member</option>
     </select>
   </section>
+  </div>
+
+
+
+  <footer class="account-footer">
+        <div class="profile-section" hidden>
+          <h3 class="profile-section-title" data-i18n="loginInfoTitle">Login Info</h3>
+          <div class="profile-details">
+            <div class="detail">
+              <span class="detail-label" data-i18n="labelLastLogin">Last Login</span>
+              <span class="detail-value" id="user-last-login">—</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label" data-i18n="labelLoginTime">Login Time</span>
+              <span class="detail-value" id="user-total-time">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <button class="ghost-button" id="sign-in" type="button" disabled hidden data-i18n="signIn">Sign in</button>
+          <a class="footer-home" href="../" aria-label="回到首頁" title="回到首頁"><img src="../assets/logo/rugatha-icon.png" alt="" width="48" height="48"></a>
+        </div>
+  </footer>
 
   <script src="../shared/firebase.config.js"></script>
   <script type="module">
@@ -1200,7 +1431,6 @@
     import {
       getAuth,
       onAuthStateChanged,
-      signOut,
       GoogleAuthProvider,
       getRedirectResult,
       signInWithRedirect,
@@ -1223,8 +1453,14 @@
     } from "../shared/firebase-data.js";
     import {
       deleteCharacterSheet,
-      listCharacterSheets
-    } from "../shared/character-sheets.js?v=20261019-character-books-1";
+      listCharacterSheets,
+      loadCharacterPortrait
+    } from "../shared/character-sheets.js?v=20261026-member-dashboard-1";
+
+    import "../shared/random-page.js?v=20261026-member-dashboard-2";
+    import { choiceShare, normalizeFatePath, availableFateNpcs, pickFateNpc } from "../shared/member-fate.js?v=20261026-member-dashboard-4";
+    import { bookmarkDisplayTitle } from "../shared/member-bookmarks.js?v=20261026-bookmark-titles-1";
+    import { getBookmarkVisual, MEMBER_FALLBACK_IMAGE } from "../shared/member-visuals.js?v=20261026-member-dashboard-3";
 
     const firebaseConfig = window.RUGATHA_FIREBASE_CONFIG || null;
     const loginHidden = false;
@@ -1232,17 +1468,11 @@
       window.RUGATHA_FEATURE_FLAGS && window.RUGATHA_FEATURE_FLAGS.firebaseEnabled === false;
     const MEMBER_SIGNIN_KEY = "rugatha-member-signin-attempted-at";
     const adminDashboardLink = document.getElementById("admin-dashboard-link");
-    const signOutButton = document.getElementById("sign-out");
     const signInButton = document.getElementById("sign-in");
     const nameEl = document.getElementById("user-name");
     const emailEl = document.getElementById("user-email");
     const uidEl = document.getElementById("user-uid");
     const memberNoEl = document.getElementById("user-member-no");
-    const campaignDividerEl = document.getElementById("campaign-divider");
-    const campaignDetailEl = document.getElementById("campaign-detail");
-    const characterDetailEl = document.getElementById("character-detail");
-    const campaignEl = document.getElementById("user-campaign");
-    const characterEl = document.getElementById("user-character");
     const titleEl = document.getElementById("user-title");
     const titleDisplayEl = document.getElementById("user-title-display");
     const religionEl = document.getElementById("user-religion");
@@ -1283,10 +1513,8 @@
     const achievementListEl = document.getElementById("achievement-list");
     const achievementEmptyEl = document.getElementById("achievement-empty");
     const bookmarkListEl = document.getElementById("bookmark-list");
-    const bookmarkEmptyEl = document.getElementById("bookmark-empty");
     const memberCharactersSectionEl = document.getElementById("member-characters-section");
     const memberCharacterListEl = document.getElementById("member-character-list");
-    const memberCharactersEmptyEl = document.getElementById("member-characters-empty");
     const adminDirectoryEl = document.getElementById("admin-directory");
     const adminDirectoryListEl = document.getElementById("admin-directory-list");
     const adminDirectoryHintEl = document.getElementById("admin-directory-hint");
@@ -1446,6 +1674,24 @@
     const translations = {
       en: {
         documentTitle: "Adventurer's Journal | Rugatha",
+        characterDeleteButton: "Delete character sheet",
+        campaignsLink: "Campaigns",
+        experienceLink: "Experience",
+        charactersLink: "Characters",
+        homeLink: "Back to home",
+        fateSameChoice: "Chose the same as you",
+        fateRandom: "Random NPC",
+        fateRandomHint: "Decide their fate",
+        fateAllComplete: "You've answered every NPC",
+        fateSignIn: "Sign in to discover your next choice",
+        fateProgress: "You’ve decided {answered} of {total} destinies",
+        randomPage: "Random page",
+        fateTitle: "Choices of Fate",
+        fateEmpty: "No choices yet. Meet the people of Rugatha to begin.",
+        fateLoading: "Loading your choices…",
+        fateError: "Unable to load choices. Please try again later.",
+        fateShare: "{percent}% chose the same",
+        fateUnavailable: "Statistics unavailable",
         heroEyebrow: "Adventurer's Journal",
         toolboxLink: "Toolbox",
         heroTitle: "Your legendary stories are to be told in taverns......",
@@ -1476,7 +1722,8 @@
         bookmarksEmpty: "No bookmarked pages yet.",
         charactersTitle: "Characters",
         charactersEmpty: "No character sheets yet.",
-        characterNew: "Create Character Sheet",
+        characterNew: "Your next character",
+        characterCreateAction: "Create character sheet",
         characterDeleteConfirm: "Delete “{name}”? This cannot be undone.",
         characterDeleteLabel: "Delete character sheet {name}",
         characterDeleteFailed: "Could not delete this character sheet. Please try again.",
@@ -1515,6 +1762,24 @@
       },
       zh: {
         documentTitle: "冒險者日誌 | Rugatha",
+        characterDeleteButton: "刪除角色卡",
+        campaignsLink: "團錄",
+        experienceLink: "體驗團",
+        charactersLink: "角色",
+        homeLink: "回到首頁",
+        fateSameChoice: "與你選擇相同",
+        fateRandom: "隨機 NPC",
+        fateRandomHint: "決定命運",
+        fateAllComplete: "你已完成所有 NPC 的抉擇",
+        fateSignIn: "登入後，展開下一個抉擇",
+        fateProgress: "{total} 人中，你已決定了 {answered} 人的命運",
+        randomPage: "隨機頁面",
+        fateTitle: "命運的抉擇",
+        fateEmpty: "尚未做出命運的抉擇，前往認識 Rugatha 的人物，展開你的故事。",
+        fateLoading: "正在載入你的抉擇……",
+        fateError: "無法載入抉擇，請稍後再試。",
+        fateShare: "{percent}% 的人與你做出相同抉擇",
+        fateUnavailable: "暫無統計資料",
         heroEyebrow: "冒險者日誌",
         toolboxLink: "工具箱",
         heroTitle: "你的傳奇冒險將在酒館被傳唱……",
@@ -1548,7 +1813,8 @@
         bookmarksEmpty: "尚未收藏任何頁面。",
         charactersTitle: "角色卡",
         charactersEmpty: "尚未建立角色卡。",
-        characterNew: "角色卡建立",
+        characterNew: "你的下個角色",
+        characterCreateAction: "角色卡建立",
         characterDeleteConfirm: "確定要刪除角色卡「{name}」嗎？此動作無法復原。",
         characterDeleteLabel: "刪除角色卡 {name}",
         characterDeleteFailed: "無法刪除角色卡，請稍後再試。",
@@ -1709,6 +1975,7 @@
     };
 
     const showAchievementToast = (nameZh, nameEn, flavorZh, flavorEn) => {
+      if (window.RUGATHA_FEATURE_FLAGS?.achievementsUiEnabled !== true) return;
       if (!nameZh && !nameEn && !flavorZh && !flavorEn) return;
       if (!document.body) return;
       const styleId = "rugatha-achievement-toast-style";
@@ -1849,8 +2116,20 @@
     const getBookmarkUrl = (path) =>
       new URL(`../${String(path || "").replace(/^\/+/, "")}`, window.location.href).href;
 
+    const makeJournalImage = (src = MEMBER_FALLBACK_IMAGE) => {
+      const image = document.createElement("img");
+      image.className = "journal-tile-image";
+      image.alt = "";
+      image.loading = "lazy";
+      image.src = src || MEMBER_FALLBACK_IMAGE;
+      image.addEventListener("error", () => {
+        if (image.src !== MEMBER_FALLBACK_IMAGE) image.src = MEMBER_FALLBACK_IMAGE;
+      });
+      return image;
+    };
+
     const renderBookmarks = () => {
-      if (!bookmarkListEl || !bookmarkEmptyEl) return;
+      if (!bookmarkListEl) return;
       const dictionary = translations[authState.language] || translations.en;
       const bookmarks = Object.entries(authState.bookmarks || {})
         .map(([key, bookmark]) => ({ key, ...bookmark }))
@@ -1858,8 +2137,7 @@
         .sort((a, b) => String(b.savedAt || "").localeCompare(String(a.savedAt || "")));
 
       bookmarkListEl.innerHTML = "";
-      bookmarkListEl.hidden = bookmarks.length === 0;
-      bookmarkEmptyEl.hidden = bookmarks.length > 0;
+      bookmarkListEl.hidden = false;
 
       bookmarks.forEach((bookmark) => {
         const path = String(bookmark.path || "").replace(/^\/+/, "");
@@ -1870,7 +2148,11 @@
         link.className = "bookmark-card__link";
         link.href = getBookmarkUrl(path);
         link.innerHTML = '<span class="bookmark-card__title"></span>';
-        link.querySelector(".bookmark-card__title").textContent = bookmark.title || path;
+        const displayTitle = bookmarkDisplayTitle(bookmark.title, path);
+        link.querySelector(".bookmark-card__title").textContent = displayTitle;
+        const visual = makeJournalImage();
+        link.prepend(visual);
+        getBookmarkVisual(link.href).then((url) => { if (visual.isConnected) visual.src = url; });
         link.addEventListener("click", () => {
           if (typeof window.gtag !== "function") return;
           window.gtag("event", "bookmark_open", {
@@ -1886,7 +2168,7 @@
         removeButton.disabled = !authState.user || isViewingOtherMember();
         removeButton.setAttribute(
           "aria-label",
-          `${dictionary.bookmarkRemoveLabel}：${bookmark.title || path}`
+          `${dictionary.bookmarkRemoveLabel}：${displayTitle}`
         );
         removeButton.title = removeButton.disabled
           ? dictionary.bookmarkReadOnly
@@ -1921,42 +2203,70 @@
         card.append(link, removeButton);
         bookmarkListEl.appendChild(card);
       });
+      const randomCard = document.createElement("article");
+      randomCard.className = "bookmark-card";
+      const randomButton = document.createElement("button");
+      randomButton.type = "button";
+      randomButton.className = "bookmark-card__link bookmark-card__random";
+      randomButton.dataset.randomPage = "";
+      const randomTitle = document.createElement("span");
+      randomTitle.className = "bookmark-card__title";
+      randomTitle.textContent = dictionary.randomPage;
+      const questionMark = document.createElement("span");
+      questionMark.className = "bookmark-random-symbol";
+      questionMark.textContent = "?";
+      questionMark.setAttribute("aria-hidden", "true");
+      randomButton.append(questionMark, randomTitle);
+      randomCard.append(randomButton);
+      bookmarkListEl.append(randomCard);
     };
 
+    const characterPortraitUrls = new Map();
+
     const renderMemberCharacterSheets = () => {
-      if (!memberCharactersSectionEl || !memberCharacterListEl || !memberCharactersEmptyEl) return;
+      if (!memberCharactersSectionEl || !memberCharacterListEl) return;
       const dictionary = translations[authState.language] || translations.en;
       const targetMemberId = authState.isAdmin && requestedMemberId
         ? requestedMemberId
         : authState.user?.uid || "";
-      const canOpenCharacters = Boolean(
-        authState.user &&
-        targetMemberId &&
-        (targetMemberId === authState.user.uid || authState.isAdmin)
-      );
-      memberCharactersSectionEl.hidden = !canOpenCharacters;
+      memberCharactersSectionEl.hidden = false;
       memberCharacterListEl.replaceChildren();
-      if (!canOpenCharacters) return;
-
-      const targetQuery = targetMemberId === authState.user.uid
+      const targetQuery = targetMemberId === authState.user?.uid
         ? ""
         : `memberId=${encodeURIComponent(targetMemberId)}&`;
 
-      memberCharactersEmptyEl.hidden = memberCharacterSheets.length > 0;
       memberCharacterSheets.forEach((character) => {
         const item = document.createElement("div");
         item.className = "member-character-item";
         const link = document.createElement("a");
         link.className = "member-character-link";
         link.href = `../toolbox/character_sheet/?${targetQuery}character=${encodeURIComponent(character.key)}`;
-        link.textContent = character.characterName;
+        const portrait = document.createElement("img");
+        portrait.className = "member-character-portrait";
+        portrait.src = "../assets/logo/rugatha-icon.png";
+        portrait.alt = "";
+        portrait.loading = "lazy";
+        const label = document.createElement("span");
+        label.className = "member-character-name";
+        label.textContent = character.characterName;
+        link.append(portrait, label);
+        if (character.portrait?.path) {
+          const portraitPath = character.portrait.path;
+          if (characterPortraitUrls.has(portraitPath)) portrait.src = characterPortraitUrls.get(portraitPath);
+          else loadCharacterPortrait(app, character.portrait).then((url) => {
+            if (!url) return;
+            if (characterPortraitUrls.has(portraitPath)) URL.revokeObjectURL(url);
+            else characterPortraitUrls.set(portraitPath, url);
+            if (portrait.isConnected) portrait.src = characterPortraitUrls.get(portraitPath);
+          }).catch((error) => console.warn("Failed to load character portrait", error));
+        }
         item.appendChild(link);
 
-        if (targetMemberId === authState.user.uid) {
+        if (targetMemberId === authState.user?.uid) {
           const deleteButton = document.createElement("button");
           deleteButton.className = "member-character-delete";
           deleteButton.type = "button";
-          deleteButton.textContent = "×";
+          deleteButton.textContent = dictionary.characterDeleteButton;
           deleteButton.setAttribute(
             "aria-label",
             dictionary.characterDeleteLabel.replace("{name}", character.characterName)
@@ -1988,8 +2298,33 @@
       const createLink = document.createElement("a");
       createLink.className = "member-character-link member-character-new";
       createLink.href = "../toolbox/character_sheet/?new=1";
-      createLink.textContent = dictionary.characterNew;
-      memberCharacterListEl.appendChild(createLink);
+      const plus = document.createElement("span");
+      plus.className = "member-character-plus";
+      plus.textContent = "+";
+      plus.setAttribute("aria-hidden", "true");
+      const createLabel = document.createElement("a");
+      createLabel.className = "member-character-create-label";
+      createLabel.href = createLink.href;
+      createLabel.textContent = dictionary.characterCreateAction;
+      createLink.setAttribute("aria-label", dictionary.characterCreateAction);
+      const nextCharacterName = document.createElement("span");
+      nextCharacterName.className = "member-character-name";
+      nextCharacterName.textContent = dictionary.characterNew;
+      createLink.append(plus, nextCharacterName);
+      const createItem = document.createElement("div");
+      createItem.className = "member-character-item member-character-create";
+      createItem.append(createLink, createLabel);
+      const canCreate = !authState.user || (targetMemberId === authState.user.uid && !authState.readOnlyView);
+      if (!canCreate) {
+        createItem.classList.add("is-readonly");
+        [createLink, createLabel].forEach((link) => {
+          link.removeAttribute("href");
+          link.setAttribute("role", "link");
+          link.setAttribute("aria-disabled", "true");
+          link.tabIndex = -1;
+        });
+      }
+      memberCharacterListEl.appendChild(createItem);
     };
 
     const loadMemberCharacterSheets = async (user) => {
@@ -2047,10 +2382,14 @@
       });
       setStoredLanguage(lang);
       applyProfileCopy(lang);
+      const homeLink = document.querySelector(".footer-home");
+      homeLink.setAttribute("aria-label", dictionary.homeLink);
+      homeLink.title = dictionary.homeLink;
       updateCharacterCard(authState.characterName);
       renderAchievements();
       renderBookmarks();
       renderMemberCharacterSheets();
+      renderFateChoices();
     };
 
     let sessionStartMs = null;
@@ -2311,11 +2650,6 @@
       const normalize = (value) => (value || "").replace(/\\n/g, "\n").trim();
       const campaign = normalize(data.Campaign);
       const character = normalize(data.Character);
-      campaignEl.textContent = campaign || "—";
-      characterEl.textContent = character || "—";
-      campaignDividerEl.classList.toggle("is-hidden", !campaign && !character);
-      campaignDetailEl.classList.toggle("is-hidden", !campaign);
-      characterDetailEl.classList.toggle("is-hidden", !character);
       authState.characterName = character;
       updateCharacterCard(character);
     };
@@ -2326,6 +2660,7 @@
     };
 
     const updateBadgeDisplay = () => {
+      if (!badgeStrEl) return;
       badgeStrEl.textContent = `${badgeScores.BadgeSTR}/20`;
       badgeDexEl.textContent = `${badgeScores.BadgeDEX}/20`;
       badgeConEl.textContent = `${badgeScores.BadgeCON}/20`;
@@ -2433,6 +2768,123 @@
       }
     };
 
+    let fateMemberId = null;
+    let fateUnsubscribe = null;
+    let fateStatsUnsubscribes = [];
+    let fateEntries = [];
+    let fateStatus = "fateEmpty";
+    let fateCatalog = [];
+    let fateCatalogPromise = null;
+    const fateCountEl = document.getElementById("fate-count");
+    const fateRandomButton = document.getElementById("fate-random");
+    const loadFateCatalog = () => {
+      if (!fateCatalogPromise) fateCatalogPromise = fetch("../npc/data/characters.json")
+        .then((response) => {
+          if (!response.ok) throw new Error("Could not load NPC catalog");
+          return response.json();
+        }).then((catalog) => { fateCatalog = catalog; renderFateChoices(); })
+        .catch((error) => { fateCatalogPromise = null; console.warn(error); });
+      return fateCatalogPromise;
+    };
+    fateRandomButton.addEventListener("click", () => {
+      if (fateRandomButton.disabled) return;
+      const npc = pickFateNpc(fateCatalog, fateEntries);
+      if (npc) window.location.assign(getBookmarkUrl(npc.url));
+    });
+    const fateListEl = document.getElementById("fate-list");
+    const fateEmptyEl = document.getElementById("fate-empty");
+    const renderFateChoices = () => {
+      const dictionary = translations[authState.language] || translations.en;
+      fateListEl.replaceChildren();
+      const eligible = availableFateNpcs(fateCatalog);
+      const answered = new Set(fateEntries.map((entry) => normalizeFatePath(entry.questionPage)));
+      const count = eligible.filter((npc) => answered.has(normalizeFatePath(npc.url))).length;
+      fateCountEl.textContent = fateCatalog.length
+        ? dictionary.fateProgress.replace("{answered}", count).replace("{total}", eligible.length)
+        : "—";
+      fateCountEl.setAttribute("aria-label", dictionary.fateProgress.replace("{answered}", count).replace("{total}", eligible.length));
+      fateCountEl.title = fateCountEl.getAttribute("aria-label");
+      const hasUnanswered = eligible.some((npc) => !answered.has(normalizeFatePath(npc.url)));
+      fateRandomButton.disabled = !authState.user || isViewingOtherMember() || fateStatus !== "fateEmpty" || !hasUnanswered;
+      fateRandomButton.querySelector(".fate-random-label").textContent = dictionary.fateRandom;
+      fateRandomButton.querySelector(".fate-random-hint").textContent = dictionary.fateRandomHint;
+      fateRandomButton.title = !authState.user
+        ? dictionary.fateSignIn
+        : eligible.length && !hasUnanswered ? dictionary.fateAllComplete : dictionary.fateRandomHint;
+      fateEmptyEl.hidden = fateEntries.length > 0;
+      fateEmptyEl.textContent = dictionary[fateStatus];
+      fateEntries.forEach((entry) => {
+        const path = normalizeFatePath(entry.questionPage);
+        if (!path) return;
+        const npc = fateCatalog.find((npc) => normalizeFatePath(npc.url) === path);
+        const card = document.createElement("article");
+        card.className = "fate-card";
+        const link = document.createElement("a");
+        link.className = "fate-character";
+        link.href = getBookmarkUrl(path);
+        const name = document.createElement("span");
+        name.textContent = (authState.language === "zh" ? npc?.nameZh : npc?.nameEn) || npc?.nameEn || path.split("/").pop().replace(/_/g, " ").replace(/\.html$/, "");
+        link.append(makeJournalImage(npc?.imageThumb || npc?.image), name);
+        const share = choiceShare(entry.choice, entry.stats);
+        const caption = document.createElement("span");
+        caption.className = "fate-caption";
+        caption.textContent = share ? `${share.percent.toFixed(1)}%` : dictionary.fateUnavailable;
+        card.append(link);
+        if (share) {
+          const meter = document.createElement("div");
+          meter.className = "fate-pie";
+          meter.style.setProperty("--share", `${share.percent}%`);
+          meter.setAttribute("role", "meter");
+          meter.setAttribute("aria-label", `${name.textContent} · ${dictionary.fateShare.replace("{percent}", share.percent.toFixed(1))}`);
+          meter.setAttribute("aria-valuemin", "0");
+          meter.setAttribute("aria-valuemax", "100");
+          meter.setAttribute("aria-valuenow", share.percent.toFixed(1));
+          meter.append(caption);
+          card.append(meter);
+          const description = document.createElement("p");
+          description.className = "fate-same-choice";
+          description.textContent = dictionary.fateSameChoice;
+          card.append(description);
+        } else card.append(caption);
+        fateListEl.append(card);
+      });
+      fateListEl.append(fateRandomButton);
+    };
+    const watchFateChoices = (memberId) => {
+      if (memberId && fateMemberId === memberId) return;
+      fateUnsubscribe?.();
+      fateStatsUnsubscribes.forEach((unsubscribe) => unsubscribe());
+      fateStatsUnsubscribes = [];
+      fateMemberId = memberId;
+      fateEntries = [];
+      fateStatus = memberId ? "fateLoading" : "fateEmpty";
+      renderFateChoices();
+      if (!memberId || !db) return;
+      loadFateCatalog();
+      fateUnsubscribe = onValue(ref(db, `qa_choices/${memberId}`), (snapshot) => {
+        if (fateMemberId !== memberId) return;
+        fateStatsUnsubscribes.forEach((unsubscribe) => unsubscribe());
+        fateStatsUnsubscribes = [];
+        fateEntries = Object.entries(snapshot.val() || {}).map(([key, value]) => ({ ...value, key }))
+          .filter((entry) => normalizeFatePath(entry.questionPage) && ["C1", "C2"].includes(entry.choice));
+        fateStatus = "fateEmpty";
+        renderFateChoices();
+        fateEntries.forEach((entry) => {
+          const unsubscribe = onValue(ref(db, `qaStats/${entry.key}`), (stats) => {
+            if (fateMemberId !== memberId || !fateEntries.includes(entry)) return;
+            entry.stats = stats.val();
+            renderFateChoices();
+          }, (error) => console.warn("Failed to load fate statistics", error));
+          fateStatsUnsubscribes.push(unsubscribe);
+        });
+      }, (error) => {
+        if (fateMemberId !== memberId) return;
+        console.warn("Failed to load fate choices", error);
+        fateStatus = "fateError";
+        renderFateChoices();
+      });
+    };
+
     const loadMemberChoices = async () => {
       if (!db || !authState.user) return null;
       const keys = [authState.user.uid]
@@ -2519,6 +2971,7 @@
     };
 
     const updateCharacterCard = (characterName) => {
+      if (!characterCardEl || !characterCardListEl) return;
       const names = (characterName || "")
         .split(/\n+/)
         .map((item) => item.trim())
@@ -2625,6 +3078,7 @@
       authState.readOnlyView = readOnly;
       authState.viewedMemberId = memberId;
       watchMemberBookmarks(memberId);
+      watchFateChoices(memberId);
       uidEl.textContent = memberId;
       nameEl.textContent = displayName;
       emailEl.textContent = displayEmail;
@@ -2649,6 +3103,7 @@
     };
 
     const showReadOnlyMessage = (memberId, message) => {
+      watchFateChoices(null);
       authState.readOnlyView = true;
       authState.viewedMemberId = memberId || null;
       authState.achievements = {};
@@ -2733,6 +3188,7 @@
         authState.memberId = memberId;
         authState.viewedMemberId = memberId;
         watchMemberBookmarks(memberId);
+      watchFateChoices(memberId);
         uidEl.textContent = memberId;
         memberNoValue = data.memberNo ?? "";
         if (!memberNoValue && user.email === ADMIN_EMAIL) {
@@ -2922,10 +3378,6 @@
         signInButton.hidden = loginHidden ? true : false;
         signInButton.disabled = firebaseDisabled || !firebaseConfig;
       }
-      if (signOutButton) {
-        signOutButton.hidden = loginHidden ? true : false;
-        signOutButton.disabled = true;
-      }
       setProfileEditable(false);
       syncDisplayValues();
       syncHiddenAttributes();
@@ -2936,6 +3388,9 @@
         bookmarksUnsubscribe = null;
       }
       bookmarksMemberId = null;
+      watchFateChoices(null);
+      characterPortraitUrls.forEach((url) => URL.revokeObjectURL(url));
+      characterPortraitUrls.clear();
       authState.user = null;
       authState.message = message || dictionary.profileSignedOut;
       authState.memberId = null;
@@ -2987,10 +3442,6 @@
       if (signInButton) {
         signInButton.hidden = true;
         signInButton.disabled = true;
-      }
-      if (signOutButton) {
-        signOutButton.hidden = loginHidden ? true : false;
-        signOutButton.disabled = false;
       }
       authState.user = user;
       setProfileEditable(false);
@@ -3110,19 +3561,6 @@
           setSignedOut(dictionary.profileSignInFailed);
         });
 
-      if (!loginHidden) {
-        signOutButton.addEventListener("click", async () => {
-          try {
-            await persistSessionTime(true);
-            await signOut(auth);
-            alert("You've logged out 您已登出");
-            window.location.href = "../index.html";
-          } catch (error) {
-            console.error("Sign-out failed", error);
-          }
-        });
-      }
-
       if (signInButton && !loginHidden) {
         signInButton.addEventListener("click", () => {
           attemptRedirectSignIn();
@@ -3205,6 +3643,7 @@
 
     profileOptionsReady = loadProfileOptions();
     loadAchievementsCatalog();
+    loadFateCatalog();
     profileOptionsReady.finally(() => setLanguage(authState.language));
   </script>
 
