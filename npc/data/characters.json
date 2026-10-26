@@ -2328,12 +2328,12 @@
     "status": "alive",
     "gender": "male",
     "descZh": "駐守於地下城一處入口的巨大食人魔，戴著一個黑色的面具，手持一根巨大棍棒。似乎看不見。\n喜歡用疊字說話，最愛的東西是糖糖。\n心理單純，像個孩子一樣。",
-    "descEn": "A huge orc who guarded the entrance of a dungeon with a black mask on his face and holding a giant stick in his hand. He seemed to be blind.\nGuu-Guu loves baby talking, and candies are his favorite.\nGuu-Guu had a pure heart like a child.",
+    "descEn": "A huge ogre who guarded the entrance of a dungeon with a black mask on his face and holding a giant stick in his hand. He seemed to be blind.\nGuu-Guu loves baby talking, and candies are his favorite.\nGuu-Guu had a pure heart like a child.",
     "related": [],
     "nameEn": "Guu-Guu",
     "nameZh": "古古",
     "raceEn": [
-      "Orc"
+      "Ogre"
     ],
     "raceZh": [
       "食人魔"

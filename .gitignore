@@ -1,6 +1,6 @@
 .DS_Store
-# Root-only private data; site and maintenance data directories are versioned.
-/data/
+# species data working
+/species/
 # Firebase migration inputs, credentials, and generated reports contain private data.
 *.service-account.json
 service-account*.json
