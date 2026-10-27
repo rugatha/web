@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Jacob | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Jacob, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Jacob | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Jacob, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjacob-977106c9a2%2Fa8aa71c1732ce25873fdee109dc01d6969b257ee9504c0e714bfb8fab9e21652%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjacob-977106c9a2%2Fa8aa71c1732ce25873fdee109dc01d6969b257ee9504c0e714bfb8fab9e21652%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjacob-977106c9a2%2F2941b824fbe8781116345f60065760db5ecc2b9e669a803096766fe038e1776d%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjacob-977106c9a2%2Fa8aa71c1732ce25873fdee109dc01d6969b257ee9504c0e714bfb8fab9e21652%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Jacob">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">在鬧鬼荒野卓茲蘭當地寧靜酒館的店小二。</span><span class="description-line">然而在冒險者隔天起床後，卻成了寧靜酒館的老闆。15051年時，與伊娃結婚。</span><span class="description-line">洛特等人抵達卓茲蘭時，雅各熱情招呼他們，並為慶祝與伊娃新婚，宣布當週酒館啤酒免費。他也向冒險者說明前往卓茲克別莊的路線。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A former server at the Silence tavern in Drogsland, the haunted wilds.</span><span class="description-line">After the adventurers woke the next day, he had somehow become the owner of Silence. By 15051, he had married Eva.</span><span class="description-line">When Lott and the others arrived in Drogsland, Jacob welcomed them warmly and, to celebrate his marriage to Eva, announced that beer would be free for the week. He also explained the route to the Drogskol Estate.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Jacob" data-qa-page="npc/npc_page/pages/Jacob.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

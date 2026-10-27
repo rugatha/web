@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Gareth Berners | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Gareth Berners, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Gareth Berners | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Gareth Berners, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgareth-berners-f7f3331bcb%2Fcfe9c98c3da1efa2b1f2ffbcba5a917d07afd2795c482555f71af58dadecd6f6%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgareth-berners-f7f3331bcb%2Fcfe9c98c3da1efa2b1f2ffbcba5a917d07afd2795c482555f71af58dadecd6f6%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgareth-berners-f7f3331bcb%2Fe3ff527811dc407272649cc25ec7a5551cce3fcfd30ce1bc9991266d1d3df501%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgareth-berners-f7f3331bcb%2Fcfe9c98c3da1efa2b1f2ffbcba5a917d07afd2795c482555f71af58dadecd6f6%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Gareth Berners">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩當地貴族柏納斯的成員之一。傑弗瑞的兒子，瑟琳的丈夫，蘭斯的父親。</span><span class="description-line">現任麥丁頓王國禁衛軍的將軍，也是弗列里爵士的繼位者。</span><span class="description-line">在柏納斯家晚宴時隨時護衛著紫羅蘭。</span><span class="description-line">對於蛋糕類的甜點似乎有著難以抗拒的心理。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A family member of the Macksohn noble house, the Berners Family. The son of Jeffery, husband to Selene, and father of Lance.</span><span class="description-line">Gareth is currently the king’s guard of the Mattington Kingdom, and also the successor of Syr Flaerry.</span><span class="description-line">Took care of Xandria, the Violet of Macksohn pretty closely at the Berners banquet.</span><span class="description-line">Seems to be irresistible to sweets like cakes.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Gareth_Berners" data-qa-page="npc/npc_page/pages/Gareth_Berners.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

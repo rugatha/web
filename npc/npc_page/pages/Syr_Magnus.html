@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Syr Magnus | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Syr Magnus, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Syr Magnus | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Syr Magnus, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsyr-magnus-85d847da4c%2Facc24a6f3dab9e691ad079554702bf3704e5f3487482b578c8fd7e44dcc109ff%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsyr-magnus-85d847da4c%2Facc24a6f3dab9e691ad079554702bf3704e5f3487482b578c8fd7e44dcc109ff%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsyr-magnus-85d847da4c%2F9382d7a9e9eec477a70adc1980d3781b304e2ec2bf8c8fe828261ca19daf68ef%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsyr-magnus-85d847da4c%2Facc24a6f3dab9e691ad079554702bf3704e5f3487482b578c8fd7e44dcc109ff%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Syr Magnus">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">帕拉丁的父親。</span><span class="description-line">麥丁頓王國騎士團的副團長，因在王都麥克嵩遭到匪徒攻擊，未及時治療傷勢，導致傷口感染，被迫退休，回到寇林菲爾德養傷，卻因重傷，很有可能喪命。</span><span class="description-line">在帕拉丁犧牲了自己的左耳，透過神秘的月神教儀式後，產出了一罐粉紅色的液體。馬格努斯爵士喝下後，竟然神奇的完全康復了。</span><span class="description-line">向帕拉丁透露他的生母並不是他長期以來稱為母親的那位女人，而是他在麥克嵩遇見的另一個女子，珊吉雅，又被稱為麥克嵩的紫羅蘭。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The father of Paladin.</span><span class="description-line">The former vice-leader of the kings guard of Mattington. Syr Magnus was attacked by bandits in Macksohn, but wasn’t cured right after that, which led to his wound infected and forced to retire to rest back in Korringfield. However, the injury was too severe that it might cost him his life.</span><span class="description-line">After Paladin sacrificed his left ear, with the help of the mysterious ritual of Phyneal, a pink potion was made for Syr Magnus to drink, which got him healed magically.</span><span class="description-line">He revealed to Paladin that his mother was actually a woman called Xandria, aka the Violet of Macksohn, whom he met at Macksohn.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Syr_Magnus" data-qa-page="npc/npc_page/pages/Syr_Magnus.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

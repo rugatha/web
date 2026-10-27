@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Vaerodan Arylith | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Vaerodan Arylith, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Vaerodan Arylith | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Vaerodan Arylith, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaerodan-arylith-bc8cc13afc%2Fbcd5be139be98adf0473e7d32d9dbcf8cb76b5557ca120bc5b5e9f5566c4b35b%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaerodan-arylith-bc8cc13afc%2Fbcd5be139be98adf0473e7d32d9dbcf8cb76b5557ca120bc5b5e9f5566c4b35b%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaerodan-arylith-bc8cc13afc%2F315a568e56e36cdae5d0a97185c749cb599f1f8d803b07b15b3b5f369c18881d%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaerodan-arylith-bc8cc13afc%2Fbcd5be139be98adf0473e7d32d9dbcf8cb76b5557ca120bc5b5e9f5566c4b35b%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Vaerodan Arylith">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">阿龍的親生父親，拉撒拿龍冠。</span><span class="description-line">當年曾下令老尼克索將阿龍的蛋拋棄。</span><span class="description-line">舉止嚴肅但不嚴厲，重新見到阿龍後讓他得知自己作為艾瑞利斯繼承人的身份，並涉及銀龍相關的秘密。</span><span class="description-line">在阿龍去見銀龍後的隔天，費洛登與老婆瑟萊拉被發現死於艾瑞利斯家的畫室。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">Al-lon&#x27;s biological father and the Crown of Rathanad.</span><span class="description-line">Years ago, he ordered Old Nixul to abandon Al-lon&#x27;s egg.</span><span class="description-line">Serious but not harsh, Vaerodan revealed Al-lon&#x27;s place as an Arylith heir after they reunited, and was connected to secrets involving the silver dragon.</span><span class="description-line">A day after Al-lon went to meet the silver dragon, Vaerodan and his wife Selyra were found dead in the studio of the Arylith house.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Vaerodan_Arylith" data-qa-page="npc/npc_page/pages/Vaerodan_Arylith.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

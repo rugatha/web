@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Trisha of Baylon | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Trisha of Baylon, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Trisha of Baylon | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Trisha of Baylon, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftrisha-of-baylon-a9431aa39c%2Fcf4ff946e1f0bcb00a39bf0f9ff8833dcae0b5fe0ce4da1588159176ef819cc9%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftrisha-of-baylon-a9431aa39c%2Fcf4ff946e1f0bcb00a39bf0f9ff8833dcae0b5fe0ce4da1588159176ef819cc9%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftrisha-of-baylon-a9431aa39c%2F49170686a634de7938e28f6783a98a739c5ba3db3067a2570d69c16d363996a0%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftrisha-of-baylon-a9431aa39c%2Fcf4ff946e1f0bcb00a39bf0f9ff8833dcae0b5fe0ce4da1588159176ef819cc9%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Trisha of Baylon">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">冒險者們在地下城發現困在牢籠內的半妖精年輕女子。</span><span class="description-line">崔夏自稱來自洛森王國的貝倫部落。他的父母是拉索斯教的忠誠信徒，卻遭到背叛，而導致崔夏被綁至地下城。同時，崔夏也因為父母的關係，對拉索斯教十分了解，進而對該宗教極度厭惡。</span><span class="description-line">幼年時雙手手臂被刺上拉索斯經文的刺青。</span><span class="description-line">隨身攜帶一個裝有開鎖工具的黑色小盒子，以及兩把匕首。</span><span class="description-line">在與冒險者走在地下城的過程中，因為烏柯將一顆神祕石放在他的掌心，而將神祕石吸收進了身體裡。</span><span class="description-line">崔夏曾向米多莉透露自己會聽到聲音叫他做不好的事情，在石頭融入他身體後，如果他反抗，便會感到極度的頭痛。</span><span class="description-line">在與台北市議員們逃出地城後，與烏柯一同從寇林菲爾德逃亡，去尋找他的父母。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The half-elf young girl the adventurers found locked up in a cage in the dungeon.</span><span class="description-line">Trisha said she was from Baylon Tribe in the Lothum Kingdom. Her parents were loyal Laxthos worshippers, but was betrayed, which led to Trisha locked up in a cage.At the same time, due to her parents, Trisha was familiar with the cult, but also hated it.</span><span class="description-line">She had Laxthos scripts tattooed on her arms when she was young.</span><span class="description-line">She had a black box of locket picks on her, and also two daggers.</span><span class="description-line">When traveling with the adventurers, a mysterious stone found by Uko was absorbed by her body.</span><span class="description-line">Trisha revealed to Midori that she heard voices telling her to do bad things, and she’d felt agony if she resisted after the mysterious stone was absorbed by her.</span><span class="description-line">When the party escaped the dungeon, she and Uko left Korringfield to find her parents.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Trisha_of_Baylon" data-qa-page="npc/npc_page/pages/Trisha_of_Baylon.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

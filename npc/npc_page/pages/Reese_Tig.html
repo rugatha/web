@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Reese Tig | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Reese Tig, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Reese Tig | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Reese Tig, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Freese-tig-58d583321c%2F4e265698a613bf40ec7ea4babf405edd677e5a075aedc8b8438794164d70748f%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Freese-tig-58d583321c%2F4e265698a613bf40ec7ea4babf405edd677e5a075aedc8b8438794164d70748f%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Freese-tig-58d583321c%2Fb5998351ea9ca4632448e78971f6ef0ff3fecfb9ba4fabc767b2366fb9123ca3%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Freese-tig-58d583321c%2F4e265698a613bf40ec7ea4babf405edd677e5a075aedc8b8438794164d70748f%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1024" crossorigin="anonymous" decoding="async" alt="Reese Tig">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">居住在方努爾市的人類冒險家，又被稱為「鐵鎚」瑞斯。</span><span class="description-line">協助津菈教調查城市中發生的中毒以及失蹤事件，並與瑪莉、龍恩一同追查尼姆孤兒院前方水井下的異狀。</span><span class="description-line">在龍恩昏迷時，他曾將龍恩的巫妖手臂用神秘的鍊子鍊住以抑制巫妖的法術。</span><span class="description-line">在水井下的戰鬥中，瑞斯被怪物咬斷頭部而死；龍恩事後安排將他的遺體送回教會。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A human adventurer living in Fanaur, also known as Reese the Hammer.</span><span class="description-line">He helped the Church of Keinra investigate poisoning and disappearance cases in the city, and worked with Mary and Ron to investigate the strange activity beneath the well in front of Nym Orphanage.</span><span class="description-line">When Ron was unconscious, Reese bound Ron&#x27;s lich arm with mysterious chains to suppress the lich&#x27;s magic.</span><span class="description-line">During the battle beneath the well, a monster bit off Reese&#x27;s head and killed him. Ron later arranged for his body to be taken back to the church.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Reese_Tig" data-qa-page="npc/npc_page/pages/Reese_Tig.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

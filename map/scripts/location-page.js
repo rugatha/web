@@ -21,6 +21,10 @@ document.querySelectorAll('img[data-location-art]').forEach(image => {
   if (image.complete && !image.naturalWidth) retryLocationArt(image);
 });
 
+function isCurrentMain(nextMain) {
+  return document.getElementById('main').isEqualNode(nextMain);
+}
+
 // Read the latest content on every visit, just like NPC and deity pages.
 const base = '/map/location/';
 const route = window.location.pathname.replace(/index\.html$/, '');
@@ -47,19 +51,23 @@ function renderCurrent() {
   if (html === previousHtml) return;
   const updated = new DOMParser().parseFromString(html, 'text/html');
   const main = document.getElementById('main');
-  const expanded = new Map([...main.querySelectorAll('details[data-chapter-group]')].map(details => [details.dataset.chapterGroup, details.open]));
-  main.replaceChildren(...updated.getElementById('main').childNodes);
-  main.querySelectorAll('details[data-chapter-group]').forEach(details => {
-    if (expanded.has(details.dataset.chapterGroup)) details.open = expanded.get(details.dataset.chapterGroup);
-  });
+  const nextMain = updated.getElementById('main');
+  if (!isCurrentMain(nextMain)) {
+    const expanded = new Map([...main.querySelectorAll('details[data-chapter-group]')].map(details => [details.dataset.chapterGroup, details.open]));
+    main.replaceChildren(...nextMain.childNodes);
+    main.querySelectorAll('details[data-chapter-group]').forEach(details => {
+      if (expanded.has(details.dataset.chapterGroup)) details.open = expanded.get(details.dataset.chapterGroup);
+    });
+  }
   document.documentElement.lang = updated.documentElement.lang;
   document.title = updated.title;
-  for (const selector of ['.atlas-navigation', '.atlas-footer', '.skip-link', '.banner-link']) {
+  for (const selector of ['.atlas-navigation', '.atlas-footer', '.skip-link']) {
     const current = document.querySelector(selector);
     const next = updated.querySelector(selector);
-    current.replaceChildren(...next.childNodes);
+    if (!current.isEqualNode(next)) current.replaceChildren(...next.childNodes);
     if (next.hasAttribute('aria-label')) current.setAttribute('aria-label', next.getAttribute('aria-label'));
   }
+  document.querySelector('.banner-link')?.setAttribute('aria-label', updated.querySelector('.banner-link').getAttribute('aria-label'));
   const button = document.querySelector('[data-lang-toggle]');
   const nextButton = updated.querySelector('[data-lang-toggle]');
   button.dataset.lang = language;

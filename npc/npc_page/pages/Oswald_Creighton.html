@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Oswald Creighton | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Oswald Creighton, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Oswald Creighton | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Oswald Creighton, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Foswald-creighton-review-round2-56a904488e%2Fcac6b5372d643b5a9da6d993b1c9d4c84d7a39c8420f5c50e93522fc7ac8bec3%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Foswald-creighton-review-round2-56a904488e%2Fcac6b5372d643b5a9da6d993b1c9d4c84d7a39c8420f5c50e93522fc7ac8bec3%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Foswald-creighton-review-round2-56a904488e%2Fd7d5b7a9f5a2838d6925826d903048bc1354a4d79017cfae4138fbe8856f3f84%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Foswald-creighton-review-round2-56a904488e%2Fcac6b5372d643b5a9da6d993b1c9d4c84d7a39c8420f5c50e93522fc7ac8bec3%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Oswald Creighton">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">土城附近海雅特山上的山賊首領。</span><span class="description-line">被佩妮・蘋果木暱稱為「大奧斯」。</span><span class="description-line">為了控制手下的山賊，需每個月利用土城春天精靈身上的翠綠印記執行儀式，卻反而因為長時間相處，而讓佩妮愛上他。</span><span class="description-line">在佩妮的口中「強壯、可靠，且善良」、「人不壞」。</span><span class="description-line">在「斬殺交響樂」襲擊時，為了讓佩妮不受傷害，帶著佩妮私奔。</span><span class="description-line">一段時間後，失去雙手的奧斯華跑到拉撒拿尋找阿龍，表示佩妮的狀況不太妙，並請求協助。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The bandit lord of Mt. Hyatt near Mudtown.</span><span class="description-line">Penny Applewood nicknamed him Big Os.</span><span class="description-line">Oswald had to use the Mark of Verdant on Mudtown&#x27;s Spirit of Spring each month to perform a ritual that controlled his bandits, but the time they spent together caused Penny to fall in love with him.</span><span class="description-line">Penny described him as strong, reliable, kind, and not a bad person.</span><span class="description-line">To keep Penny from getting hurt, Oswald ran away with her during the Slashing Symphony attack.</span><span class="description-line">Some time later, Oswald came to Rathanad with both hands missing, looking for Al-lon and asking for help because Penny was in serious trouble.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Oswald_Creighton" data-qa-page="npc/npc_page/pages/Oswald_Creighton.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

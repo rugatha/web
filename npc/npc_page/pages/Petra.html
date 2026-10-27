@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Petra | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Petra, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Petra | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Petra, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpetra-review-round2-d424e72690%2Fadf5d96b125d26b27aedd5c9ede95c4c4910bd3b586e1c7c22858db5e765dff9%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpetra-review-round2-d424e72690%2Fadf5d96b125d26b27aedd5c9ede95c4c4910bd3b586e1c7c22858db5e765dff9%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpetra-review-round2-d424e72690%2F113d13f33039f614546c90918f569c3c7229498d404f3f9e4e7979ef6064c1ed%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpetra-review-round2-d424e72690%2Fadf5d96b125d26b27aedd5c9ede95c4c4910bd3b586e1c7c22858db5e765dff9%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Petra">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">居住在金海岸礦坑中的老鼠人。</span><span class="description-line">受到拉索斯教徒的脅迫，在島上綁架居民。</span><span class="description-line">冒險者們在礦坑中救下驚魂未定的佩特拉，得知他的夥伴臭皮已被殺死；他也向冒險者說明礦坑中有人類拉索斯教徒和長爪黑毛怪物出沒。</span><span class="description-line">在金海岸礦坑的戰鬥中展現了驚人的求生意志。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A ratfolk living in the Gold Coast Mines.</span><span class="description-line">Forced by followers of Laxthos, Petra kidnapped residents on the island.</span><span class="description-line">The adventurers rescued a terrified Petra in the mines and learned that his companion Stooges had been killed. Petra also told them that a human Laxthos cultist and a black-furred, long-clawed monster had been appearing in the tunnels.</span><span class="description-line">Petra displayed an astonishing will to survive during the battle in the Gold Coast Mines.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Petra" data-qa-page="npc/npc_page/pages/Petra.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

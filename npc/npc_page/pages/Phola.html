@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Phola | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Phola, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Phola | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Phola, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fphola-fb5351d157%2F39471c14200e2c27f08bfbe1fffb0d254361dc916a0b7e293c9615c4f38eb445%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fphola-fb5351d157%2F39471c14200e2c27f08bfbe1fffb0d254361dc916a0b7e293c9615c4f38eb445%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fphola-fb5351d157%2F9d6ebad2f76c1df9c4015431a74d8540d2ce2be86fd73a7f90968edafcd7104b%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fphola-fb5351d157%2F39471c14200e2c27f08bfbe1fffb0d254361dc916a0b7e293c9615c4f38eb445%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Phola">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">弗萊特境內的嚮導之一，相對年輕而較無經驗，但根據師父的說法「很有潛力」。事後冒險者們發現他是師父的孫子。</span><span class="description-line">嗜酒；在與冒險者們的旅行過程中，受到圖伊特感化而戒酒，並信奉芬尼爾。</span><span class="description-line">在母親大人異變事件後，佛拉與羅特、芒果成為僅存的三人。</span><span class="description-line">多年後，他身為戴著白色面具的芬尼爾信徒，與羅特的隊伍交戰；重傷昏迷前喊出羅特的名字，身分才被認出。羅特不願再失去這名舊夥伴，治療並一路照料他，帶著他跟隨派琶前往常翠林。</span><span class="description-line">即使仍未完全康復、行走跛腳，佛拉仍主動分擔物資，並在芒果與蛇妖襲擊常翠林總部時支援冒險者，於危急時刻治療眾人。</span><span class="description-line">他認為身為芬尼爾信徒，不適合久留在涅西斯的領地；與羅特談過母親大人事件留下的傷痛後，兩人一同悄悄離開常翠林，尋找尚未決定的未來。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">One of the guides in Phreit, Phola was younger and less experienced than the others, but Shifu described him as promising. The adventurers later learned that he was Shifu&#x27;s grandson.</span><span class="description-line">Once addicted to alcohol, he was influenced by Tweeter during his travels with the adventurers to quit drinking and become a follower of Phyneal.</span><span class="description-line">After the massacre committed by The Mother in her mutated form, Phola, Lott, and Mango were the only survivors.</span><span class="description-line">Years later, Phola fought Lott&#x27;s party as a white-masked follower of Phyneal. He called Lott&#x27;s name before collapsing from his wounds, revealing his identity. Unwilling to lose another old companion, Lott healed and cared for him while the group followed Py&#x27;Par to the Evergreen.</span><span class="description-line">Though still limping and not fully recovered, Phola helped carry supplies and supported the adventurers during Mango and the Lamiae&#x27;s attack on the Evergreen headquarters, healing others at critical moments.</span><span class="description-line">Believing that a follower of Phyneal could not remain long in Nessis&#x27;s domain, Phola spoke with Lott about the pain left by The Mother&#x27;s massacre. The two then quietly left the Evergreen together to seek an as-yet undecided future.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Phola" data-qa-page="npc/npc_page/pages/Phola.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

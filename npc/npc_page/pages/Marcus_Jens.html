@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Marcus Jens | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Marcus Jens, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Marcus Jens | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Marcus Jens, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarcus-jens-30b0218529%2Feae6f91773e37f7e1094e00adf5e641802d88fae70c42e82defc7e3c04172f66%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarcus-jens-30b0218529%2Feae6f91773e37f7e1094e00adf5e641802d88fae70c42e82defc7e3c04172f66%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarcus-jens-30b0218529%2F6520ec5a4f5dd27c637130c840a23a4cbb1ad04fd3005c0314d098868f86db3d%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarcus-jens-30b0218529%2Feae6f91773e37f7e1094e00adf5e641802d88fae70c42e82defc7e3c04172f66%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Marcus Jens">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩的貴族，家族從事情報搜集。</span><span class="description-line">雇用了一名叫伊的貧民窟少年（伊稱呼他為M伯爵），似乎在調查和蜘蛛神教相關的事。</span><span class="description-line">有一名叫瑪莉安的妹妹被關在王宮監獄內，冒險者受他委託，將瑪莉安從監獄救出來。</span><span class="description-line">多年前曾購買了大量的魔法球，魔法球的功能似乎非常多元，而且不是只有他自己能使用。</span><span class="description-line">馬可斯是月神教的信徒。</span><span class="description-line">在麥克嵩的擁王派失利後，與冒險者們一同逃往洛森王國，前往尋找母親大人的旅途。然而，在一次與月光狩獵會的戰鬥中，被敵人的詛咒殺死。冒險者將他安葬，並立了一個木製的墓碑。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A Macksohn noble whose family specializes in intelligence gathering.</span><span class="description-line">Marcus hired a young man from the old town named Yi, who called him Count M, to collect information about The Spider Religion.</span><span class="description-line">His sister Marianne was imprisoned in the royal prison, and Marcus commissioned the adventurers to rescue her.</span><span class="description-line">Years earlier, he purchased a large number of magical spheres with many functions, and he did not seem to be their only user.</span><span class="description-line">Marcus was a follower of the moon god.</span><span class="description-line">After the pro-king faction lost in Macksohn, he fled with the adventurers to the Lothum Kingdom to search for The Mother. During a battle with the Moonlight Hunters, he was killed by a curse. The adventurers buried him and marked his grave with a wooden marker.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Marcus_Jens" data-qa-page="npc/npc_page/pages/Marcus_Jens.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

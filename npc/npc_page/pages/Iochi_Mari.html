@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Iochi Mari | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Iochi Mari, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Iochi Mari | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Iochi Mari, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fiochi-mari-review-v2-dc9a874dc1%2F2cd63c35e31085499a8315778fec0f6488fdf9525d3739a538680aa0cd56d567%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fiochi-mari-review-v2-dc9a874dc1%2F2cd63c35e31085499a8315778fec0f6488fdf9525d3739a538680aa0cd56d567%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fiochi-mari-review-v2-dc9a874dc1%2F9545f22251e78644d1302c64ea54edd584b9a1e62889f91df4142afe4d2097a6%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fiochi-mari-review-v2-dc9a874dc1%2F2cd63c35e31085499a8315778fec0f6488fdf9525d3739a538680aa0cd56d567%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Iochi Mari">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">一名有著銀白毛色的狐狸人修女，目前在方努爾市的聖津菈大教堂服務。</span><span class="description-line">小時候和米多莉、小雪一起在尼姆孤兒院長大。</span><span class="description-line">米多莉等人回到方努爾市後，伊洛協助接待他們，也陪同處理聖拉雅米島事件後續與小雪相關的狀況。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A foxfolk nun with silver-white fur, currently serving at St. Keinra Cathedral in Fanaur City.</span><span class="description-line">She grew up in Nym Orphanage together with Midori and Yuki.</span><span class="description-line">After Midori and the others returned to Fanaur, Iochi helped receive them and became involved in the aftermath of the St. Rayami Island incident and the situation surrounding Yuki.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Iochi_Mari" data-qa-page="npc/npc_page/pages/Iochi_Mari.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

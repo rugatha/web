@@ -64,8 +64,8 @@ GitHub Pages workflow 位於：
 部署流程：
 
 1. `main` 分支有更新時自動觸發。
-2. GitHub Actions 直接把 repo 根目錄作為 Pages artifact 上傳。
-3. 不需額外安裝依賴或執行 build 指令。
+2. GitHub Actions 更新管理內容清單與章節獨立資料檔。
+3. 打包網站執行檔後，上傳為 Pages artifact 並部署。
 
 ## 目錄結構
 
@@ -143,7 +143,7 @@ GitHub Pages workflow 位於：
    Campaign 清單、故事弧圖譜、章節節點、URL override、章節圖片對應與全站共用設定。
 
 2. `campaigns/data/chapter-content.json`
-   團錄章節正文資料來源。章節頁 HTML 只保留頁面骨架，實際中英內文、日期段落、引用與少數文內 HTML 都由這個 JSON 提供。
+   團錄章節正文資料來源。章節頁 HTML 只保留頁面骨架，實際中英內文、日期段落、引用與少數文內 HTML 都由這個 JSON 提供。修改後執行 `npm run chapters:build`，產生供各章節單獨載入的 `campaigns/data/chapters/`；部署流程也會自動重建。
 
 3. `campaigns/data/campaigns.js`
    Campaign 頁面的活動資料。

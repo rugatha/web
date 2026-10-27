@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>BoBoVBoBoW | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of BoBoVBoBoW, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="BoBoVBoBoW | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of BoBoVBoBoW, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbobo-v-bobo-w-1b029f1b16%2F98e3422486d1be8e62b909cadede24a6b7b4fcdeceda27deb6f02d50a5021a0a%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbobo-v-bobo-w-1b029f1b16%2F98e3422486d1be8e62b909cadede24a6b7b4fcdeceda27deb6f02d50a5021a0a%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbobo-v-bobo-w-1b029f1b16%2Fd5d08b344a927fc37c023f30618e752ff0c1031ac4d1e08036cca20efdb256fa%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbobo-v-bobo-w-1b029f1b16%2F98e3422486d1be8e62b909cadede24a6b7b4fcdeceda27deb6f02d50a5021a0a%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="BoBo-V/BoBo-W">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">札克的機器人夥伴，跟隨冒險者前往礦脈，取得龍蛋。</span><span class="description-line">自行取得龍蛋後將它融入身體，進化成啵啵W。</span><span class="description-line">二十多年後，以啵啵W的身份，協助啵啵C進化成啵啵Z，完成克里歐門王國與洛森王國的交易。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The robot companion of Zach, following the adventurers to the mine to retrieve the Dragon’s Orb.</span><span class="description-line">After retrieving the Dragon’s Orb, BoBo-V merged with it and evolved into BoBo-W.</span><span class="description-line">20 years later, BoBo-W helped BoBo-C evolve into BoBo-Z, finalizing the trade between the Chryomen Kingdom and the Lothum Kingdom.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="BoBoVBoBoW" data-qa-page="npc/npc_page/pages/BoBoVBoBoW.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

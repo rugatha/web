@@ -137,12 +137,12 @@
     const chapterId = getChapterId();
     if (!chapterId) return;
 
-    const dataUrl = new URL("data/chapter-content.json", getCampaignsBase()).href;
+    const dataUrl = new URL(`data/chapters/${encodeURIComponent(chapterId)}.json`, getCampaignsBase()).href;
     try {
       const res = await fetch(dataUrl, { cache: "no-cache" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      renderContent(data && data[chapterId]);
+      const entry = await res.json();
+      renderContent(entry);
     } catch (err) {
       console.warn("Chapter content unavailable:", err && err.message ? err.message : err);
     }

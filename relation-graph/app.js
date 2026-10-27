@@ -812,7 +812,7 @@ function computeLayout(graph) {
     }
   }
 
-  for (let tick = 0; tick < 280; tick += 1) {
+  for (let tick = 0; tick < 24; tick += 1) {
     pairs.forEach(([a, b]) => {
       let dx = b.x - a.x;
       let dy = b.y - a.y;

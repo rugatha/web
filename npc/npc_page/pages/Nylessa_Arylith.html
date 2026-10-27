@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Nylessa Arylith | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Nylessa Arylith, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Nylessa Arylith | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Nylessa Arylith, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fnylessa-arylith-cd3dce7c63%2F3499dfd4a7b6bbdba2a98df00101497267a3e52de63a78c7f2ece20690c15ab5%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fnylessa-arylith-cd3dce7c63%2F3499dfd4a7b6bbdba2a98df00101497267a3e52de63a78c7f2ece20690c15ab5%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fnylessa-arylith-cd3dce7c63%2Fece10377f9d9e4fa33e06542d8c9125a610d5b6ad3f7be02ce61c889023651cf%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fnylessa-arylith-cd3dce7c63%2F3499dfd4a7b6bbdba2a98df00101497267a3e52de63a78c7f2ece20690c15ab5%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1024" crossorigin="anonymous" decoding="async" alt="Nylessa Arylith">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">阿龍的堂妹。</span><span class="description-line">身材嬌小，和顏悅色，熱愛藝術。</span><span class="description-line">與弟弟維瑞克感情很好，並對魔法商店老闆哈洛・米佐有很強烈的愛意。</span><span class="description-line">受到哈洛的煽動，在畫室內殺害其伯伯費洛登與伯母瑟萊拉，並擺放成其在夢中所見的「雙龍登仙」姿勢。</span><span class="description-line">案發前請維瑞克為他竄改記憶，消除他的意圖；案發後請維瑞克為他竄改記憶，消除他行兇的記憶。</span><span class="description-line">在確認其為兇手後，受到新任龍冠阿龍的審判，砍去其手，流放拉撒拿。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">Al-lon’s cousin.</span><span class="description-line">Has a petite build, and a pleasant face. Love arts.</span><span class="description-line">Nylessa is good with her brother Vaelric, and has a strong romantic intention towards the magic item shop owner Harrel Mizel.</span><span class="description-line">She was incited by Harrel, killed her uncle Vaerodan and aunt Selyra, and posture them as &quot;the Two Dragons Ascension&quot;, which she dreamt.</span><span class="description-line">Nylessa asked Vaelric to modify her memory to erase her intention, and to remove her memory of the murder after the event.</span><span class="description-line">After being accused of being the murderer, Nylessa is put into trial by the new Crown, Al-lon, chopping off her hands, and exile out of Rathanad.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Nylessa_Arylith" data-qa-page="npc/npc_page/pages/Nylessa_Arylith.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

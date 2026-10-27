@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Edmond | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Edmond, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Edmond | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Edmond, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fedmond-3f8b12ef8d%2Ff2208469cae90f00268cdb6f1f4a2456c217e90578bf8afd056588717db6f7b0%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fedmond-3f8b12ef8d%2Ff2208469cae90f00268cdb6f1f4a2456c217e90578bf8afd056588717db6f7b0%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fedmond-3f8b12ef8d%2F8194338ed323f2f1a6660bcc8ec2f40b0b88014137b856e0df4671d47b90b4f0%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fedmond-3f8b12ef8d%2Ff2208469cae90f00268cdb6f1f4a2456c217e90578bf8afd056588717db6f7b0%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Edmond">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">艾德蒙餐酒館的老闆兼大廚，不過現在不太親自下廚了。</span><span class="description-line">戴著特殊設計的廚師帽，似乎很刻意地把自己的耳朵塞在帽子底下。</span><span class="description-line">在麥克嵩分店中，艾德蒙曾親自邀請龍恩試做牛排，並肯定他的廚藝，希望龍恩能留在餐酒館工作。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The owner and chef of Edmond&#x27;s Diner, though he rarely cooks in person now.</span><span class="description-line">Edmond wears a specially designed chef&#x27;s hat and seems to deliberately tuck his ears underneath it to hide his elven identity.</span><span class="description-line">At the Macksohn branch, Edmond personally invited Ron to cook steaks for him, approved of Ron&#x27;s skill, and hoped Ron would stay to work at the diner.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Edmond" data-qa-page="npc/npc_page/pages/Edmond.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

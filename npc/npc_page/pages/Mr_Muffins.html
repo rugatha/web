@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Mr Muffins | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Mr Muffins, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Mr Muffins | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Mr Muffins, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-muffins-92112484ca%2F272bfbdb0ddf0656ed1403dfe2b458322c68170b6360610023fbafed6dd7a6bb%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-muffins-92112484ca%2F272bfbdb0ddf0656ed1403dfe2b458322c68170b6360610023fbafed6dd7a6bb%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-muffins-92112484ca%2F764b7806362849a894b0c8ea520327c485465a1de19d2fb741614512416ec047%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-muffins-92112484ca%2F272bfbdb0ddf0656ed1403dfe2b458322c68170b6360610023fbafed6dd7a6bb%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Mr. Muffins">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">過去由溫德家飼養的巴哥犬，現在與布朗一起冒險。</span><span class="description-line">似乎能透過心靈感應的方式與人溝通，甚至可以化成似人的生物或野狼。</span><span class="description-line">對溫德大人似乎懷有很深的敵意，但對彼得則是非常保護。</span><span class="description-line">在布朗離開波馬贊後跟隨他前往魏斯科與夏庭森。途中，瑪芬先生曾變成野狼撲倒馬匹，證實布朗先前在波馬贊見到的野狼正是他。</span><span class="description-line">之後，瑪芬先生似乎失去與布朗溝通的能力，只剩下普通犬隻般的反應；即使戴著羅納德給他的魔術師帽，也只會吠叫與抗拒布朗修剪指甲。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A pug formerly kept by the Wind family, now adventuring with Brown.</span><span class="description-line">Mr. Muffins seems able to communicate telepathically and can even transform into a humanoid being or a wolf.</span><span class="description-line">He appears to harbor deep hostility toward Lord Wind, but is very protective of Peter.</span><span class="description-line">After Brown left Bomozan, Mr. Muffins followed him to Wescoe and Shartingson. On the road, he transformed into a wolf and pounced on Brown&#x27;s horse, confirming that the wolf Brown had seen in Bomozan was indeed him.</span><span class="description-line">Later, Mr. Muffins seemed to lose the ability to communicate with Brown and behaved more like an ordinary dog; even while wearing the magician&#x27;s hat Ronald gave him, he only barked and resisted when Brown tried to trim his claws.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Mr_Muffins" data-qa-page="npc/npc_page/pages/Mr_Muffins.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

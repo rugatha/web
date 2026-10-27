@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Rosa Flaerry | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Rosa Flaerry, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Rosa Flaerry | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Rosa Flaerry, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Frosa-flaerry-9267b51697%2Fcd18c027209ed3bef0fc5b77618109329bb5544ee9ccf511a084d9ae8ed4338f%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Frosa-flaerry-9267b51697%2Fcd18c027209ed3bef0fc5b77618109329bb5544ee9ccf511a084d9ae8ed4338f%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Frosa-flaerry-9267b51697%2Fd943f2702058a6d6cce8af1235d2e86b08d7376cdf353444a6edc959e5a1f859%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Frosa-flaerry-9267b51697%2Fcd18c027209ed3bef0fc5b77618109329bb5544ee9ccf511a084d9ae8ed4338f%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Rosa Flaerry">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">帕拉丁的導師，前麥丁頓王國騎士團團長弗列里爵士的夫人。</span><span class="description-line">在冒險者們踏離地下城，來到寇林菲爾德時承諾要保護他們。</span><span class="description-line">麥克嵩比武大會時，在混亂中受傷而下肢殘廢。先前在柏納斯家的晚宴中，曾與弗列里爵士一同出面，協助帕拉丁面對紫羅蘭。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The wife of Syr Flaerry, Paladin&#x27;s mentor and the former leader of the King&#x27;s Guard in Mattington.</span><span class="description-line">When the adventurers left the dungeon and reached Korringfield, she promised to protect them.</span><span class="description-line">During the Macksohn Tournament, Rosa was injured in the chaos and lost the use of her lower body. Earlier, at the Berners banquet, she and Syr Flaerry stepped in to help Paladin face the Violet.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Rosa_Flaerry" data-qa-page="npc/npc_page/pages/Rosa_Flaerry.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

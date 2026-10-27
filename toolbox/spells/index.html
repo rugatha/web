@@ -1307,7 +1307,6 @@
   <script src="../../shared/spell-catalog.js?v=20261018-storage-1"></script>
   <script type="module">
     import { spellSearchRank } from "../../shared/spellbook-state.js?v=20261019-character-books-1";
-    import { mountSpellbook } from "../../shared/spellbook-page.js?v=20261019-character-books-1";
     let bookController = null;
     let bookWritable = false;
     const state = {
@@ -2241,7 +2240,9 @@
         state.spells = (spellData.spell || []).map(normalizeSpell);
         state.classSpells = classSpellData;
         state.collapsedClasses = new Set([...new Set(state.spells.flatMap((spell) => spell.classes || []))]);
-        bookController = mountSpellbook({
+        const mountBook = async () => {
+          const { mountSpellbook } = await import("../../shared/spellbook-page.js?v=20261019-character-books-1");
+          bookController = mountSpellbook({
           knownIds: new Set(state.spells.map(spellBookKey)),
           language: () => currentLanguage,
           panel: document.getElementById("spellbookSync"),
@@ -2250,7 +2251,8 @@
             bookWritable = canEdit;
             refreshSpellBookDisplays();
           }
-        });
+          });
+        };
         populateFilters();
         renderClassView();
         renderBookView();
@@ -2258,6 +2260,11 @@
         elements.table.hidden = false;
         applyFilters();
         updateView();
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(mountBook, { timeout: 1500 });
+        } else {
+          setTimeout(mountBook, 0);
+        }
       })
       .catch((error) => {
         elements.load.className = "error-state";

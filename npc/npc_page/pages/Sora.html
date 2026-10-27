@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Sora | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Sora, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Sora | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Sora, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsora-9ef8557e28%2F2c2751e5c71571755d1cf8fca10b6d74e260e31f515d746e8cc308b7b061d1ad%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsora-9ef8557e28%2F2c2751e5c71571755d1cf8fca10b6d74e260e31f515d746e8cc308b7b061d1ad%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsora-9ef8557e28%2Fadc338c793537c9a49e0c9149c0400ea539d11e28a84f1a3a415c30027ba1faf%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fsora-9ef8557e28%2F2c2751e5c71571755d1cf8fca10b6d74e260e31f515d746e8cc308b7b061d1ad%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Sora">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">卡什拉鎮居民，被匿名之聲的領袖萊斯麗與瓦克松醫師利用作為儀式材料而死亡；他的父親彼特之後一直與他的屍體同住。</span><span class="description-line">在746年的卡什拉幻象或記憶中，索拉依照瓦克松醫師的預言等待冒險者，介紹嘟嘟與瓦萊羅給眾人認識，也逐漸想起自己早已死去；真相揭露後，他在眾人面前化為塵土。</span><span class="description-line">冒險者後來在彼特家床底找到他與嘟嘟的屍體，並得知始祖拉茲特獸曾抽乾他的靈魂。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A resident of Kashla who was used as ritual material by Leslie Grunfeld, leader of the Anonymous Voice, and Dr. Vaxon. His father Pete later lived with his corpse.</span><span class="description-line">In the Kashla illusion or memory of year 746, Sora waited for the adventurers according to Dr. Vaxon’s prophecy, introduced Dudu and Valero, and gradually remembered that he had already died; when the truth surfaced, he dissolved into dust before them.</span><span class="description-line">The adventurers later found his and Dudu’s bodies under Pete’s bed, and learned that the Progenitor Laztek had drained his soul.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Sora" data-qa-page="npc/npc_page/pages/Sora.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

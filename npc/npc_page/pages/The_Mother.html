@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>The Mother | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of The Mother, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="The Mother | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of The Mother, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-mother-38e5d09326%2F9be3cf81f7954343c5759b0d73e9fda1d9c2db29df87e373a5711ec4301a522e%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-mother-38e5d09326%2F9be3cf81f7954343c5759b0d73e9fda1d9c2db29df87e373a5711ec4301a522e%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-mother-38e5d09326%2F528c6cc2abb0a332a6d6fcf347fb8f3c86623fd1cc31f9a7f31fb45af0e8ba3d%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-mother-38e5d09326%2F9be3cf81f7954343c5759b0d73e9fda1d9c2db29df87e373a5711ec4301a522e%2Freading.webp?alt=media 768w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="768" height="768" crossorigin="anonymous" decoding="async" alt="The Mother">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩舊城區蜘蛛神教的宗教領袖。</span><span class="description-line">出現在舊城區的一座隱密神殿（被稱為母親大人的寺廟）內，接見來訪者時，會從牆壁內的洞穴出現，現身於床上。</span><span class="description-line">冒險者們也發現在貴族伯納德・諾姆家的三樓，有個房間，和寺廟格局相似，母親大人也會在這裡出現。</span><span class="description-line">有一張佈滿皺紋的臉，表情難以解讀。會發出各種奇異的聲響來進行溝通，也會以普通語說話。</span><span class="description-line">實際上，早在阿爾芬諾誕生前就已存在於妖精王國境內，但其起源未知。</span><span class="description-line">被安娜奪舍後，鑽入帕拉丁的體內逃走。</span><span class="description-line">之後在洛森王國的一座洞穴內，異變的母親大人殺死了拉黎爾、蓋瑞，以及洛特以外的多數冒險者；佛拉因在洞外等待而倖存，洛特與芒果則因圖伊特以自身存在的所有證據作為交易才得以活下來。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The religious leader of The Spider Religion in old town Macksohn.</span><span class="description-line">She appeared in a hidden temple in old town, known as The Mother&#x27;s temple. When receiving visitors, she emerged from a hole in the wall and appeared on a bed.</span><span class="description-line">The adventurers also discovered a similar room on the third floor of Bernard Norm&#x27;s house, where The Mother could also appear.</span><span class="description-line">She had a wrinkled face and an unreadable expression. She communicated through strange sounds and could also speak Common.</span><span class="description-line">In truth, she had existed in the Feywild before Alfenor&#x27;s birth, though her origin remains unknown.</span><span class="description-line">After Anna possessed her body, The Mother&#x27;s soul escaped into Paladin&#x27;s body.</span><span class="description-line">Later, in a cave in the Lothum Kingdom, The Mother, in her mutated form, killed Ra&#x27;Leer, Gary, and most of the adventurers except Lott. Phola survived because he waited outside, while Lott and Mango survived because Tweeter traded away every proof of his own existence.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="The_Mother" data-qa-page="npc/npc_page/pages/The_Mother.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script>window.faithDeityName = "The Mother";</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>

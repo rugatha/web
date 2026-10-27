@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Daryl Warren | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Daryl Warren, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Daryl Warren | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Daryl Warren, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdaryl-warren-93124e8ff3%2F5ced7e28eedfe9b067edb7f4ec13b0149c8263c9bef3b106bfc33237c44b8c93%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdaryl-warren-93124e8ff3%2F5ced7e28eedfe9b067edb7f4ec13b0149c8263c9bef3b106bfc33237c44b8c93%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdaryl-warren-93124e8ff3%2F1b52b12e0b1331d508efca04ecc0f7f407775260bbb05dd3fde13d13291cd887%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdaryl-warren-93124e8ff3%2F5ced7e28eedfe9b067edb7f4ec13b0149c8263c9bef3b106bfc33237c44b8c93%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Daryl Warren">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">沃瓦倫鎮的鎮長。</span><span class="description-line">潔絲敏的丈夫，山米克的父親；在山米克死後便變得鬱鬱寡歡。潔絲敏失蹤後，戴洛向冒險者說明她前往寂靜殿後便再也沒有回來，並先支付賞金，希望他們能找回潔絲敏。</span><span class="description-line">沃瓦倫滅鎮事件中，戴洛死亡並被化為殭屍；冒險者們最後將他與其他熟識鎮民一同安息。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The mayor of Vowalon.</span><span class="description-line">Daryl was Jasmine&#x27;s husband and Sammick&#x27;s father, and became depressed after Sammick&#x27;s death. After Jasmine disappeared, he told the adventurers that she had left for the Temple of Silence and never returned, and paid them in advance in the hope that they would find her.</span><span class="description-line">During the Vowalon massacre, Daryl died and was turned into a zombie. The adventurers ultimately laid him to rest alongside the other townsfolk they knew.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Daryl_Warren" data-qa-page="npc/npc_page/pages/Daryl_Warren.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

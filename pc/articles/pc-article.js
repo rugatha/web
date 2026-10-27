@@ -133,13 +133,15 @@
   };
 
   const renderAdventureLogBody = (body, text, fallback) => {
-    body.innerHTML = "";
     const content = text || fallback;
     const paragraphs = String(content || "")
       .split(/\n{2,}/)
       .map((paragraph) => paragraph.trim())
       .filter(Boolean);
 
+    const existing = Array.from(body.querySelectorAll("p"), (node) => node.textContent);
+    if (existing.length === paragraphs.length && existing.every((value, index) => value === paragraphs[index])) return;
+    body.replaceChildren();
     paragraphs.forEach((paragraph) => {
       const node = document.createElement("p");
       node.textContent = paragraph;

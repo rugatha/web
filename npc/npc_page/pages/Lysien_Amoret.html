@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Lysien Amoret | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Lysien Amoret, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Lysien Amoret | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Lysien Amoret, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flysien-amoret-9ce27f95b2%2F4f47f544e4c7915d756fb2702ca7ca74fdd4319124831a5d20a60e20596d1fa4%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flysien-amoret-9ce27f95b2%2F4f47f544e4c7915d756fb2702ca7ca74fdd4319124831a5d20a60e20596d1fa4%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flysien-amoret-9ce27f95b2%2F151f1bc30d4e3a2159b6ef17877ec57e0efe6250f6d4649179fe3fe5559bf212%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flysien-amoret-9ce27f95b2%2F4f47f544e4c7915d756fb2702ca7ca74fdd4319124831a5d20a60e20596d1fa4%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1024" crossorigin="anonymous" decoding="async" alt="Lysien Amoret">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">覆羽莊園的主人，周遭時間流動異常，與羽毛、天使和岡斯身上的詛咒有關。他曾視岡斯為實驗失敗品，並稱他的變化與芬尼爾王冠有關。冒險者介入後，利希恩透過儀式被推向芬尼爾的神性，最終成為「永恆與愛之神阿莫雷」；覆羽莊園消失，原址留下供奉他的新神殿。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A son of the Amoret family in Baker and master of the Feathered Estate, where time behaved strangely. His condition was tied to feathers, angels, and the curse affecting GoR.</span><span class="description-line">Gons considered him a failed experiment and linked his transformation to the Crown of Phyneal.</span><span class="description-line">After the adventurers intervened, Lysien was pushed through a ritual into the divinity of Phyneal and the Amoret line, becoming the Amoret God of Eternity and Love; the Feathered Estate vanished, leaving a new shrine to him in its place.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Lysien_Amoret" data-qa-page="npc/npc_page/pages/Lysien_Amoret.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

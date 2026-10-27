@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Yi | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Yi, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Yi | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Yi, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyi-review-v2-9f3e4948b5%2F348202a41c8f5033215db7a15b2f5340e33e9598f8d428ddcbe1df7c09476310%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyi-review-v2-9f3e4948b5%2F348202a41c8f5033215db7a15b2f5340e33e9598f8d428ddcbe1df7c09476310%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyi-review-v2-9f3e4948b5%2F31b196ef108d5a75b792d325db48683eda50b6f85ddfefcf9ba6d0a2432b471d%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyi-review-v2-9f3e4948b5%2F348202a41c8f5033215db7a15b2f5340e33e9598f8d428ddcbe1df7c09476310%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Yi">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">神祕盜賊，洛特的師父，常以假名和地下交易活動。</span><span class="description-line">龍恩、烏柯與伊努在王都祕密基地買下推特出版的伊寫真書時，伊正因先前事件受傷，躺在馬可斯莊園中恢復，並與徒弟洛特短暫重逢。</span><span class="description-line">在大學城安德烈亞儀式後，龍恩將被綁住且昏迷的伊丟進後院坑洞，再把逐漸陶瓷化的麥爾文壓在上面一同埋下；之後龍恩曾想確認伊與麥爾文是否還在洞裡，卻找不到安德烈亞的房子。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A mysterious thief, Lott’s mentor, and a figure who often operates through aliases and underground dealings.</span><span class="description-line">When Ron, Uko, and Inu bought Tweeter’s photo book of Yi at the capital’s secret base, Yi was recovering from earlier injuries at Marcus’s estate and briefly reunited with his apprentice Lott.</span><span class="description-line">After Andrea’s ritual in University Town, Ron threw the bound and unconscious Yi into a backyard pit, buried the increasingly ceramic Melvin on top of him, and later tried to check on them but could no longer find Andrea’s house.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="伊" data-qa-page="npc/npc_page/pages/伊.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

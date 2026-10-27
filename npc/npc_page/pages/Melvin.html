@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Melvin | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Melvin, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Melvin | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Melvin, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin-6fc2057850%2F1e359f72c7a3554e36b6f35892b9ac14ab0ca63e6a194a47dc96e93272c9be59%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin-6fc2057850%2F1e359f72c7a3554e36b6f35892b9ac14ab0ca63e6a194a47dc96e93272c9be59%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin-6fc2057850%2F9a73a49383e882e58b64834115b2ca36dd875a9de88a12591531b952fe4b4a63%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin-6fc2057850%2F1e359f72c7a3554e36b6f35892b9ac14ab0ca63e6a194a47dc96e93272c9be59%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Melvin">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">大學城歷史區區長安德烈亞・戴依的助理。</span><span class="description-line">自稱沒有什麼學術能力，只能幫安德烈亞打雜，且似乎十分懼怕安德烈亞。</span><span class="description-line">最終在安德烈亞示範給冒險者們看的月神教靈魂轉移儀式中，麥爾文被當作「無辜的靈魂」犧牲，使蘿琳的靈魂得以回到身體。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The assistant of Andrea Day, the head of the History District at the Great Citadel.</span><span class="description-line">He claimed to have little academic ability and said he could only help Andrea with chores, and he seemed deeply afraid of Andrea.</span><span class="description-line">During Andrea&#x27;s demonstration of a Phyneal soul-transfer ritual for the adventurers, Melvin was sacrificed as the innocent soul, allowing Roline&#x27;s soul to return to her body.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Melvin" data-qa-page="npc/npc_page/pages/Melvin.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

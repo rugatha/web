@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Alfenor | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Alfenor, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Alfenor | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Alfenor, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfenor-dc46da5917%2F63c0b55d5443b76c51dd7121bd3e22ede33f1f90c30fefa5d179f691179acecd%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfenor-dc46da5917%2F63c0b55d5443b76c51dd7121bd3e22ede33f1f90c30fefa5d179f691179acecd%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfenor-dc46da5917%2F48c10ba6ed7edf0108f469ee7cb6c3f2e8a9ee81806a75c1b178a64f97a71964%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfenor-dc46da5917%2F63c0b55d5443b76c51dd7121bd3e22ede33f1f90c30fefa5d179f691179acecd%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Alfenor">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">被稱為蜘蛛王。</span><span class="description-line">是多數人認定蜘蛛神教的主神，但其實地位低於母親大人。</span><span class="description-line">10836年，由妖精王國的艾蒙醫生、法倫主教，和諾威爾的屍體粉塵，透過儀式融合而成。</span><span class="description-line">冒險者在麥克嵩王宮圖書館地下特殊館藏中得知，阿爾芬諾並非單一妖精化身，而是由一群妖精對人類的恨意灌入單一妖精軀體後形成的集體意志。</span><span class="description-line">阿爾芬諾曾透過圖書館員與圖伊特、伊努進行心靈對話，展現強大的力量；對話結束時，圖書館員也被吸成乾屍。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">Known as the Spider King.</span><span class="description-line">Most people regard Alfenor as the main god of the Spider God religion, but his standing is actually below The Mother.</span><span class="description-line">In 10836, Alfenor was created through a ritual that fused Dr. Aemon, Bishop Falon, and the powdered corpse of Norwell from the elven kingdom.</span><span class="description-line">In the restricted collections beneath the Macksohn royal library, the adventurers learned that Alfenor was not a single elf incarnation, but a collective will born when the hatred of many elves toward humans was poured into one elven body.</span><span class="description-line">Alfenor once used a librarian to communicate telepathically with Tweeter and Inu, displaying immense power; when the conversation ended, the librarian had been drained into a dried corpse.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Alfenor" data-qa-page="npc/npc_page/pages/Alfenor.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script>window.faithDeityName = "Alfenor";</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>

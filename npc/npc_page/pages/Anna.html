@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Anna | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Anna, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Anna | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Anna, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fanna-6ca9353e12%2F686de1626fd53aafe5c0261619f6c3ad9e99bceee547b365b9c5ea1e1e94f24a%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fanna-6ca9353e12%2F686de1626fd53aafe5c0261619f6c3ad9e99bceee547b365b9c5ea1e1e94f24a%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fanna-6ca9353e12%2F1fd48a504f0a50ec9e18c2c6f938a12b4410207bfe4e08474f770f8a3a16b504%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fanna-6ca9353e12%2F686de1626fd53aafe5c0261619f6c3ad9e99bceee547b365b9c5ea1e1e94f24a%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Anna">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">瑟巴諾鎮長索恩的妻子，視覺年齡約二十初頭，是個妖精。在索恩當上鎮長一段時間後來到瑟巴諾，與索恩相識並結婚。</span><span class="description-line">在瑟巴諾被離奇屠村後，出現在帕拉丁面前，並透過自己的技術，將溶成泥的冒險者們重新培育出來。</span><span class="description-line">似乎是蜘蛛王阿爾芬諾的後裔以及信徒。</span><span class="description-line">在鎮長家的地底有座自己的實驗室。</span><span class="description-line">將冒險者們重新培育出來後，安娜便消失了，但冒險者們卻發現自己身上出現了蜘蛛網型的印記，似乎是個詛咒。</span><span class="description-line">再次出現時，安娜與母親大人一同威脅帕拉丁，後來又偽裝成蘿琳試著將帕拉丁帶走，實際是想對帕拉丁逼婚，以藉由他的貴族身份拿點好處。</span><span class="description-line">透過帕拉丁的身體，將母親大人奪舍後，成為新的蜘蛛神。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">Anna is an elf who is the wife of mayor Thorne of Sebano, and looks like in her early 20s. She came to Sebano short after Thorne became the mayor of the town, and got married in a short time.</span><span class="description-line">After the macabre slaughter of Sebano, Anna showed up to Paladin, and reformed the other adventurers from mud.</span><span class="description-line">Anna seems to be a descendant and believer of Alfenor.</span><span class="description-line">She has her own lab at the basement of the mayor’s house.</span><span class="description-line">After recreating the adventurers, Anna disappeared, but the adventurers found some spider web-shaped totem on their bodies, that seems like a curse.</span><span class="description-line">When Anna reappeared, she and The Mother threatened Paladin, and also disguised as Roline, trying to take Paladin away. She was intended to force Paladin into marriage to take advantage of his noble identity.</span><span class="description-line">Anna later invaded The Mother’s body through Paladin, and became the new Spider God.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Anna" data-qa-page="npc/npc_page/pages/Anna.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script>window.faithDeityName = "Anna";</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>

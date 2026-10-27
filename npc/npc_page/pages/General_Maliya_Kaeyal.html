@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>General Maliya Kaeyal | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of General Maliya Kaeyal, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="General Maliya Kaeyal | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of General Maliya Kaeyal, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgeneral-maliya-kaeyal-3b95c35386%2Fcfbaceeec512bbd28b158dfd5c13a7c048093627c8862c927ae382cc985d30a0%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgeneral-maliya-kaeyal-3b95c35386%2Fcfbaceeec512bbd28b158dfd5c13a7c048093627c8862c927ae382cc985d30a0%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgeneral-maliya-kaeyal-3b95c35386%2Fda3e36b7236401a966f914f0df204372ea763244d92460eb05ecc1b9bbabfbb9%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fgeneral-maliya-kaeyal-3b95c35386%2Fcfbaceeec512bbd28b158dfd5c13a7c048093627c8862c927ae382cc985d30a0%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="General Maliya Kaeyal">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">萊斯諾的將軍，中年紅龍人女性。</span><span class="description-line">個性強硬且難以溝通，連市長與大臣都對他敬畏三分。</span><span class="description-line">強烈主張要「收復」對面的蜥蜴人城鎮克萊芬。</span><span class="description-line">中途之家抵達萊斯諾後，被瑪萊雅安排的衛兵圍捕。瑪萊雅將他們押到市長與大臣面前，並強迫他們前往克萊芬當一週的間諜，承諾任務完成後給予報酬。</span><span class="description-line">瑪萊雅後來率領數以千計的萊斯諾軍隊，聯同老樹盟與市民連線包圍林中的白色小教堂，下令摧毀教堂與雷亞父母的墓碑。戰鬥中，他親自以巨劍攻擊中途之家；柳俠馬許現身後，瑪萊雅顯得極為忌憚，只能眼看馬許開啟裂縫帶走眾人。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The general of Leisnor, a middle-aged red dragonborn woman.</span><span class="description-line">Maliya is fierce and difficult to negotiate with; even the mayor and the minister fear her.</span><span class="description-line">She strongly advocates &quot;recovering&quot; the lizardfolk town of Clyphen.</span><span class="description-line">After the Halfway Home reached Leisnor, Maliya had city guards ambush and capture them. She brought them before the mayor and minister, then forced them to act as spies in Clyphen for a week, promising payment if they completed the mission.</span><span class="description-line">Maliya later led thousands of Leisnor soldiers, joined by the Old Tree League and the Citizen&#x27;s Connection, to surround the small white chapel in the woods. She ordered the chapel and the grave of Leah&#x27;s parents destroyed, then personally attacked the Halfway Home with her greatsword. When Marsh the Willow appeared, even Maliya treated him with extreme caution and could only watch as he opened a fissure and took the party away.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="General_Maliya_Kaeyal" data-qa-page="npc/npc_page/pages/General_Maliya_Kaeyal.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

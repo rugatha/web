@@ -733,7 +733,15 @@
     new ResizeObserver(scheduleNameFit).observe(grid);
     document.fonts.ready.then(scheduleNameFit);
     document.fonts.addEventListener('loadingdone', scheduleNameFit);
-    loadCharacters();
+    renderLoadingSkeletons();
+    let hasStartedLoading = false;
+    const startLoading = () => {
+      if (hasStartedLoading) return;
+      hasStartedLoading = true;
+      loadCharacters();
+    };
+    window.addEventListener("load", startLoading, { once: true });
+    setTimeout(startLoading, 1500);
     // 初始化 slider 位置
     setGroupingMode(groupingMode);
     updateSortToggleLabel();

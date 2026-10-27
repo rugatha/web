@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Zek | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Zek, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Zek | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Zek, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fzek-review-v2-fa11db0d2e%2F39b6befde53c35f9609e9a49ba698651fc91a6062023acbb380fef76d262af7e%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fzek-review-v2-fa11db0d2e%2F39b6befde53c35f9609e9a49ba698651fc91a6062023acbb380fef76d262af7e%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fzek-review-v2-fa11db0d2e%2Fd739aa2771eb2064f8d9db8224495ed253a5844a395bff0541e36fd0992d803c%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fzek-review-v2-fa11db0d2e%2F39b6befde53c35f9609e9a49ba698651fc91a6062023acbb380fef76d262af7e%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Zek">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">狂暴戰士幫的領袖，鬥名為「鬥破蒼穹」。</span><span class="description-line">在狂怒儀式中帶領戰士們以戰鬥與吶喊祭拜津菈，並將波與YHWH分別取名為「撓撓耳朵」與「舔舔地板」。</span><span class="description-line">艾希斯前往聖拉雅米島後失蹤，澤克請冒險者尋找他的下落，並交給他們艾希斯的劍「異教徒剋星」與一封要轉交給艾希斯的信。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The leader of the Raging Warriors, known in battle as Skybreaker.</span><span class="description-line">During the Rite of Fury, Zek led the warriors in honoring Keinra through combat and shouting, and gave Beau and YHWH the fighting names Scratches-Ears and Licks-Floor.</span><span class="description-line">After Essis disappeared on St. Rayami Island, Zek asked the adventurers to find her, giving them Essis&#x27;s sword, Heretic Slayer, and a letter to deliver to her.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Zek" data-qa-page="npc/npc_page/pages/Zek.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

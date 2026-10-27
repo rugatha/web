@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Cash Applewood | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Cash Applewood, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Cash Applewood | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Cash Applewood, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcash-applewood-e0f54d3788%2F806a8a43e9e7740aabd34de282e285ed468af75c7deac7d85363dcc97f410c88%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcash-applewood-e0f54d3788%2F806a8a43e9e7740aabd34de282e285ed468af75c7deac7d85363dcc97f410c88%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcash-applewood-e0f54d3788%2Fa67d793d2ea946c1b341de8a470b8b69f2542c8476969db02ed6822689431bad%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcash-applewood-e0f54d3788%2F806a8a43e9e7740aabd34de282e285ed468af75c7deac7d85363dcc97f410c88%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Cash Applewood">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">本名凱希斯。</span><span class="description-line">佩妮的弟弟，長相清秀，十分崇拜阿龍。</span><span class="description-line">為了讓連任三年的姊姊佩妮卸下「春天精靈」的重擔，同時保住蘋果木家因春天精靈得到的利益，曾想女裝參選。</span><span class="description-line">後來議會確認翠綠印記只適用於女性，凱許無法真正履行春天精靈的義務。海雅特終章襲擊後，艾迪辭去議員席位並將身份交給凱許；凱許曾想撤銷父親驅逐阿龍的決定，卻得知無法更改。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">Cassius Applewood.</span><span class="description-line">Penny&#x27;s younger brother, a delicate-looking boy who deeply admires Al-lon.</span><span class="description-line">To free Penny from the burden of being the Spirit of Spring for a fourth year while preserving the benefits the title brought the Applewood family, Cash tried to run while dressed as a girl.</span><span class="description-line">The council later confirmed that the Mark of Verdant only worked on girls, so Cash could not actually fulfill the Spirit of Spring&#x27;s duties. After the Hyatt Finale attack, Addie resigned from the council and passed his seat to Cash; Cash tried to revoke his father&#x27;s decision to expel Al-lon, only to learn that it could not be undone.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Cash_Applewood" data-qa-page="npc/npc_page/pages/Cash_Applewood.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

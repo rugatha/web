@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Marianne Jens | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Marianne Jens, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Marianne Jens | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Marianne Jens, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarianne-jens-85edeb6a2b%2F9bea81f1feb0833ed533cef76d642e9eb64f3a80b890bb3cc89b0c430464fb37%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarianne-jens-85edeb6a2b%2F9bea81f1feb0833ed533cef76d642e9eb64f3a80b890bb3cc89b0c430464fb37%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarianne-jens-85edeb6a2b%2F3ce7c58de3b358fed161c26586159617b2ab6a8756b4dd9c2e64ae51cd4330cd%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarianne-jens-85edeb6a2b%2F9bea81f1feb0833ed533cef76d642e9eb64f3a80b890bb3cc89b0c430464fb37%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Marianne Jens">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩貴族馬可斯・詹斯的妹妹。</span><span class="description-line">年輕時曾經離家出走過一段時間。</span><span class="description-line">被關在麥克嵩王宮監獄，是蜘蛛神教在麥克嵩的間諜。</span><span class="description-line">過去曾和當時名為瑪麗蓮的瑪莉恩為同夥，但因為被背判而被送入地牢。</span><span class="description-line">安娜過去是他的下屬。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The sister of the Macksohn noble Marcus Jens.</span><span class="description-line">She ran out of home was she was young for some time.</span><span class="description-line">She was locked in the Macksohn Palace Jail for some time, as she was the spy of the Spider God.</span><span class="description-line">She was a companion of Marilyn, but was send to jail by Marilyn betraying her.</span><span class="description-line">Anna was her subordinate.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Marianne_Jens" data-qa-page="npc/npc_page/pages/Marianne_Jens.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

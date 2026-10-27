@@ -28,6 +28,9 @@ jobs:
       - name: Refresh admin content inventory
         run: node scripts/build-admin-catalog.mjs
 
+      - name: Refresh chapter content files
+        run: node scripts/build-chapter-content.mjs
+
       - name: Prepare production site
         run: node scripts/package-pages.mjs "$RUNNER_TEMP/site"
 

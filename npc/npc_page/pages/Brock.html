@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Brock | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Brock, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Brock | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Brock, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbrock-review-round2-0099a49356%2F1b3503be0a1586d61e95b28afee44c422f151285775bc4229c2c52289225d98b%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbrock-review-round2-0099a49356%2F1b3503be0a1586d61e95b28afee44c422f151285775bc4229c2c52289225d98b%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbrock-review-round2-0099a49356%2Fb9a3346b14d7d0fb90afb56928593f49fb07e66744107d0e3b6600fdf19f60b8%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbrock-review-round2-0099a49356%2F1b3503be0a1586d61e95b28afee44c422f151285775bc4229c2c52289225d98b%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Brock">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩當地人，年約30的半獸人，舉止溫文有禮，有他自己的幽默感。對麥克嵩與崔尼斯教有些不信任。</span><span class="description-line">在月先生的推薦下，加入冒險者們組成的樂團「荒野旋律」，擔任打擊手。他從小在麥克嵩長大，父母曾經營武器打鐵鋪，卻因經營不善而倒閉，也曾在黃昏酒館演出。</span><span class="description-line">被斗篷人攻擊後陷入昏迷，身體逐漸變黑、長出毛皮，越來越不像人型生物。冒險者探望時，他已像拉茲特獸一樣低鳴，父母的認知也受到影響。</span><span class="description-line">後來布拉克從床下沉入地底並消失，房間地板下出現通往麥克嵩舊城區地下通道的洞穴，冒險者在其中遇見多隻拉茲特獸。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A local Macksohn half-orc around thirty years old, polite and humorous in his own way. He distrusted Macksohn and the Trinix religion.</span><span class="description-line">Introduced by Mr. Moon, Brock joined the adventurers&#x27; band, Rhythm of the Wild, as its drummer. He grew up in Macksohn, where his parents once ran a weapon smithy that failed, and he had performed at the Nightfall tavern.</span><span class="description-line">After being attacked by the hooded figure, Brock fell unconscious. His body darkened, grew fur, and became less and less humanoid. When the adventurers visited him, he could only whimper like a Laztek, and his parents&#x27; perception of reality had also been affected.</span><span class="description-line">Later, Brock sank through the floor beneath his bed and disappeared, leaving a tunnel into the underground passages of old-town Macksohn, where the adventurers encountered multiple Lazteks.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Brock" data-qa-page="npc/npc_page/pages/Brock.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Maribel Muddlewick | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Maribel Muddlewick, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Maribel Muddlewick | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Maribel Muddlewick, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmaribel-muddlewick-e9ddbf97d2%2Ff2f6c9c201d2a03b4e0c509301c410901ed3e55c98b3230133be0ca96a3b3962%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmaribel-muddlewick-e9ddbf97d2%2Ff2f6c9c201d2a03b4e0c509301c410901ed3e55c98b3230133be0ca96a3b3962%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmaribel-muddlewick-e9ddbf97d2%2F5a520ec725d3e70383a065fb7b94dd75e42037b3fbb1f52ae383c35793618120%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmaribel-muddlewick-e9ddbf97d2%2Ff2f6c9c201d2a03b4e0c509301c410901ed3e55c98b3230133be0ca96a3b3962%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Maribel Muddlewick">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">本年度競爭土城「春天精靈」的女孩之一，但輸給了佩妮・蘋果木。他原本想透過擔任春天精靈，來和「聽說存在」的山賊進行談判，為土城謀取較為公平的利益。</span><span class="description-line">父母外出旅行兩年以上都還沒回到土城來。</span><span class="description-line">在與瑪莉貝爾相處後，冒險者們發現他廚藝精湛、飽讀詩書，且有足夠的獨立生活能力。</span><span class="description-line">後來瑪莉貝爾離開土城，加入阿龍等人組成的冒險團「中途之家」。他在萊斯諾被瑪萊雅將軍脅迫前往克萊芬當間諜，並在克萊芬市長辯論會中目睹皮尼歐教授遭槍殺。</span><span class="description-line">教授之死讓瑪莉貝爾受到極大衝擊。他偷走行兇的槍械，緊抓著它不放，並開始研究槍械與立德上尉留下的通訊裝置。</span><span class="description-line">在白色小教堂，他為雷亞父母獻上以魔法召出的白花。瑪萊雅將軍的軍隊襲擊時，瑪莉貝爾全力保護同伴，並握住鑰的手，將自己的精力不斷傳給他。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A girl who ran for Mudtown&#x27;s Spirit of Spring that year, but lost to Penny Applewood. She wanted to become the Spirit of Spring so she could negotiate with the rumored bandits and win fairer terms for Mudtown.</span><span class="description-line">Her parents had been traveling for more than two years and had not returned to Mudtown.</span><span class="description-line">After spending time with Maribel, the adventurers found her to be an excellent cook, well-read, and capable of living independently.</span><span class="description-line">Maribel later left Mudtown and joined Al-lon&#x27;s adventuring group, the Halfway Home. In Leisnor, General Maliya coerced the group into spying in Clyphen, where Maribel witnessed Professor Peneo&#x27;s assassination during the mayoral debate.</span><span class="description-line">The professor&#x27;s death deeply shook Maribel. She stole the murder weapon, clung to it, and began studying both the gun and the communication device Captain Reid left behind.</span><span class="description-line">At the white chapel, she conjured white flowers to place at the grave of Leah&#x27;s parents. When General Maliya&#x27;s forces attacked, Maribel fought to protect her companions and gripped Kaname&#x27;s hand, continuously pouring her own vitality into her.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Maribel_Muddlewick" data-qa-page="npc/npc_page/pages/Maribel_Muddlewick.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

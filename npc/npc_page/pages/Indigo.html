@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Indigo | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Indigo, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Indigo | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Indigo, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Findigo-review-v2-81ea24c86c%2F06f45c4d25f232a8abbe15a096fbd3a7e39ab8e1173ac2643bfbc2c707e1c70e%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Findigo-review-v2-81ea24c86c%2F06f45c4d25f232a8abbe15a096fbd3a7e39ab8e1173ac2643bfbc2c707e1c70e%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Findigo-review-v2-81ea24c86c%2Fd0eacfcc9a787e839355c100e95d05ce76cf8c6ec7b9aa896757e5f16eeabf24%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Findigo-review-v2-81ea24c86c%2F06f45c4d25f232a8abbe15a096fbd3a7e39ab8e1173ac2643bfbc2c707e1c70e%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Indigo">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">薩梅爾的阿嬤。</span><span class="description-line">原本以為在十多年前已經病死，卻離奇地出現在妖精荒野。</span><span class="description-line">懂一般語、妖精語，以及仙靈語，而且有穿越一般世界與妖精荒野的能力。</span><span class="description-line">在妖精荒野作為冒險者們的嚮導之一。</span><span class="description-line">喜歡挖苦薩梅爾，但其實對薩梅爾也很照顧與看好。</span><span class="description-line">身邊時常跟著不同的男伴。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The grandmother of Samael.</span><span class="description-line">She was considered dead from illness more than 10 years ago, but appeared in the Feywild instead.</span><span class="description-line">Knowing common, Elvish, and Fey, Indigo also had the ability to travel between the material world and Feywild.</span><span class="description-line">Act as a guide to the adventurers in the Feywild.</span><span class="description-line">Liked to talk to Samael sarcastically, but actually looked after Samael and had high expectation to Samael.</span><span class="description-line">Indigo often had different male partners along her side.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Indigo" data-qa-page="npc/npc_page/pages/Indigo.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

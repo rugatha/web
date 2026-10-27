@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Bernard Norm | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Bernard Norm, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Bernard Norm | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Bernard Norm, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbernard-norm-review-round2-16dee75d23%2F8356d65c9d9aa9bf9a5b4de8050593a807c3425b92a9bb09ffb9daef90294e91%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbernard-norm-review-round2-16dee75d23%2F8356d65c9d9aa9bf9a5b4de8050593a807c3425b92a9bb09ffb9daef90294e91%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbernard-norm-review-round2-16dee75d23%2Fe8ca8d4c5414a8cd0a2a7bb1c702d98ab05e4169df5082f5c3204645282a16dc%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbernard-norm-review-round2-16dee75d23%2F8356d65c9d9aa9bf9a5b4de8050593a807c3425b92a9bb09ffb9daef90294e91%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Bernard Norm">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩的年輕貴族，家族似是經營牲畜的。</span><span class="description-line">似乎對貴族間的雜交派對頗為熟悉。</span><span class="description-line">與華生和蘇加魯在王宮花園相談甚歡，而且對蘇加魯十分在意。</span><span class="description-line">在潘蜜拉家的晚宴後，伯納德帶蘇加魯到母親大人所在的三樓房間請安，展現出明顯畏懼。當晚冒險者們逃離伯納德宅邸時，發現伯納德的屍體倒在門口，身體像被吸乾般毫無血色；外頭則是潘蜜拉與暴民縱火。後續拷問刺客得知，伯納德宅邸事件與潘蜜拉的勢力有關。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A young noble of Macksohn, whose family appears to be in the livestock business.</span><span class="description-line">He seemed familiar with secret orgy parties among the nobility.</span><span class="description-line">Bernard had a pleasant conversation with Watson and Sugalu in the royal garden, and seemed especially interested in Sugalu.</span><span class="description-line">After Pamela&#x27;s dinner, Bernard brought Sugalu to a third-floor room to greet The Mother, showing clear fear. That night, as the adventurers fled Bernard&#x27;s estate, they found Bernard&#x27;s bloodless corpse at the door while Pamela and a mob set the house on fire outside. Later interrogation of assassins connected the incident at Bernard&#x27;s estate to Pamela&#x27;s faction.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Bernard_Norm" data-qa-page="npc/npc_page/pages/Bernard_Norm.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

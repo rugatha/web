@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Roline Hughes | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Roline Hughes, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Roline Hughes | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Roline Hughes, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Froline-hughes-review-v2-375278b2e7%2F773efbe1c4cb3324ecce5e9cd7410c17ce96b2254ca56c6a31c52078ae08b09f%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Froline-hughes-review-v2-375278b2e7%2F773efbe1c4cb3324ecce5e9cd7410c17ce96b2254ca56c6a31c52078ae08b09f%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Froline-hughes-review-v2-375278b2e7%2F27164c8e14540ef36e53e481aba1193c3d534682fb3323d04a4a4121ca8b6253%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Froline-hughes-review-v2-375278b2e7%2F773efbe1c4cb3324ecce5e9cd7410c17ce96b2254ca56c6a31c52078ae08b09f%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Roline Hughes">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩貴族休斯家族的新任掌門人。</span><span class="description-line">從小就展現出極好的社交天賦，因此父親努力培養他作為家族的接班人。</span><span class="description-line">與米多莉和龍恩在麥克嵩王宮花園初見。</span><span class="description-line">在比武大會事件後對龍恩產生了極深的情愫。</span><span class="description-line">在認識龍恩前，似乎常常出入貴族的秘密雜交派對，但如今亟欲隱藏這段過去。</span><span class="description-line">在帕拉丁等人於15048年再次回到麥克嵩時，用心幫助他們，甚至作為掩護讓他們逃出王宮。不久後被安娜冒用身份，襲擊帕拉丁。後來再次見到帕拉丁時，協助落魄的他買東西。</span><span class="description-line">在圖伊特打開第三隻眼時，他的靈魂成了與交易之神芬諾爾交易時，被犧牲的祭品，身體化成了陶瓷。</span><span class="description-line">15048年的蘿琳在小黑屋掛著斗篷，作為交易之神的代言人。</span><span class="description-line">15050年在YHWH等人回到麥克嵩時，與YHWH在文創區巧遇，但看起來眼神空洞，似乎還沒有恢復成原本的樣貌。</span><span class="description-line">龍恩等人到了大學城，透過歷史區區長安德烈亞・戴依的儀式，犧牲靈魂乾淨的麥爾文，成功將蘿琳的靈魂送回他的體內。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The new head of the noble Hughes family of Macksohn.</span><span class="description-line">Roline showed exceptional social talent from childhood, and her father raised her as the family&#x27;s successor.</span><span class="description-line">She first met Midori and Ron in the Macksohn Royal Garden.</span><span class="description-line">After the Macksohn Tournament, she developed deep feelings for Ron.</span><span class="description-line">Before meeting Ron, she seemed to have frequently attended secret noble orgies, a past she now desperately wants to hide.</span><span class="description-line">When Paladin and the others returned to Macksohn in 15048, Roline helped them sincerely and even covered their escape from the palace. Soon after, Anna impersonated her and attacked Paladin. When Roline later met the ruined Paladin again, she helped him buy supplies.</span><span class="description-line">When Tweeter opened his third eye, Roline&#x27;s soul became the sacrifice in a bargain with Phynoir, god of trade, and her body turned into porcelain.</span><span class="description-line">The Roline of 15048 hung a cloak in the Dark House as Phynoir&#x27;s proxy.</span><span class="description-line">In 15050, when YHWH and the others returned to Macksohn, YHWH met her in the Creative District, but her eyes looked hollow and she did not seem fully restored.</span><span class="description-line">When Ron and the others reached the Great Citadel, they performed a ritual with Andrea Day of the History District, sacrificing the pure-souled Melvin and successfully returning Roline&#x27;s soul to her body.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Roline_Hughes" data-qa-page="npc/npc_page/pages/Roline_Hughes.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

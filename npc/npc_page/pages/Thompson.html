@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Thompson | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Thompson, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Thompson | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Thompson, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthompson-review-v2-d2c243474c%2F5ecf52ce6d0cd1bf1aaf20d1d49a0788df06714f279ff31fa136019965fd0bb1%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthompson-review-v2-d2c243474c%2F5ecf52ce6d0cd1bf1aaf20d1d49a0788df06714f279ff31fa136019965fd0bb1%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthompson-review-v2-d2c243474c%2Fcaa8ae76acdd4be8ee79d915a1827d4e8a02d2e16615f19fbf526812b8fcfc41%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthompson-review-v2-d2c243474c%2F5ecf52ce6d0cd1bf1aaf20d1d49a0788df06714f279ff31fa136019965fd0bb1%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Thompson">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">於貝瑟頓經營許久的小型書店「第1410頁」內工作的店員。</span><span class="description-line">與毛毛熟識，會提供雞腿給毛毛吃，似乎與領養他的貴族家庭也有不少交流。</span><span class="description-line">自稱是T.I.D.E.S.組織的相關人員，但並非內部成員。冒險者依照紙條來到第1410頁書店時，湯普生告訴他們當晚搭上T.I.D.E.S.馬車後會得到更多答案，也向鑰分享了與喬里森和T.I.D.E.S.相關的線索。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A clerk at Page 1410, a long-running small bookstore in Batherdon.</span><span class="description-line">Thompson is familiar with Dawn Light Fur and gives him chicken drumsticks, and also seems to have contact with the noble family that adopted Fur.</span><span class="description-line">He claims to be connected to T.I.D.E.S., but not an actual member. When the adventurers came to Page 1410 following the note, Thompson told them they would receive more answers after boarding the T.I.D.E.S. carriage that night, and shared clues with Kaname about Jeorisan and T.I.D.E.S.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Thompson" data-qa-page="npc/npc_page/pages/Thompson.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

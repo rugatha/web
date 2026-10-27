@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Cena | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Cena, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Cena | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Cena, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcena-review-v2-26dd4249e9%2Fb1dcd4d612fb55fc8b3182c722a4d3b3e1fc8868e508613c191613684c34af2c%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcena-review-v2-26dd4249e9%2Fb1dcd4d612fb55fc8b3182c722a4d3b3e1fc8868e508613c191613684c34af2c%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcena-review-v2-26dd4249e9%2Fdb8e1062eda3a9f81e1f9844f18f734fe39e806f81181b6e769d473bc1d3d719%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcena-review-v2-26dd4249e9%2Fb1dcd4d612fb55fc8b3182c722a4d3b3e1fc8868e508613c191613684c34af2c%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Cena">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">馬格努斯爵士聘請的馬伕，本名約翰，被帕拉丁稱為希納。</span><span class="description-line">在駕馬車前往麥克嵩前，才剛被馬格努斯爵士聘用一個月不到，薪水都還沒領。</span><span class="description-line">協助帕拉丁將拷問他的衛兵擊暈，假扮成衛兵押解帕拉丁走在麥克嵩城內。</span><span class="description-line">與帕拉丁一同在日出酒館鬥毆，帶著帕拉丁的魅力頭帶與大部分的武器消失在麥克嵩。</span><span class="description-line">在比武大會說明會前，與一名女子，碧翠絲，出現在王宮前市集。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A coachman hired by Syr Magnus. His name was John, but was mocked by Paladin as Cena.</span><span class="description-line">Before driving the carriage to Macksohn, he had only been hired less than a month, without getting his payment yet.</span><span class="description-line">Cena helped knocked out the guard that tortured Paladin, and disguised as the guard to take Paladin into Macksohn.</span><span class="description-line">Cena joined Paladin in the tavern fight in Sunrise, but disappeared with Paladin’s Headband of Charm and most weapons after the fight.</span><span class="description-line">Before the Macksohn Tournament, he was seen with a noble lady, Beatrice, at the Macksohn Plaza.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Cena" data-qa-page="npc/npc_page/pages/Cena.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

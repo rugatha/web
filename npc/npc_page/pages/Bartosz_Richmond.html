@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Bartosz Richmond | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Bartosz Richmond, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Bartosz Richmond | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Bartosz Richmond, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbartosz-richmond-review-v2-110f826d27%2Fe1026ed009657130aba7c397fc881d09290d61a5a166aed16f374cd1b2c8883f%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbartosz-richmond-review-v2-110f826d27%2Fe1026ed009657130aba7c397fc881d09290d61a5a166aed16f374cd1b2c8883f%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbartosz-richmond-review-v2-110f826d27%2Fe6045228de88d9e877bb726114127aafdff438098bda0af423da5f7660cd030a%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbartosz-richmond-review-v2-110f826d27%2Fe1026ed009657130aba7c397fc881d09290d61a5a166aed16f374cd1b2c8883f%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Bartosz Richmond">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">貝瑟頓的里奇蒙爵士。</span><span class="description-line">里奇蒙家族似乎過去十分興旺，如今卻風華不再，且淪為城內人的笑話。</span><span class="description-line">爵士於60歲左右時便開始失智，只能靠宅邸內的傭人用輪椅推著行動。他時不時會呼喊「艾格妮絲」這個名字，但從家譜無法確定他喊的是老婆，還是同名的祖母。</span><span class="description-line">他有個女兒叫萊里，也對「T.I.D.E.S.」等詞語有所反應。</span><span class="description-line">冒險者帶回箱子後，巴托斯短暫恢復神智，透露自己曾是T.I.D.E.S.高層，且高層能與智慧之神喬里森溝通；他將五枚不同顏色的戒指作為報酬交給冒險者後，坐回輪椅並石化。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">Syr Richmond of Batherdon.</span><span class="description-line">The Richmond family was once prosperous, but has now declined into something of a joke in the city.</span><span class="description-line">Bartosz began suffering from dementia around the age of sixty and could only move with the help of a servant pushing his wheelchair. He often called out the name Agnes, though the family tree made it unclear whether he meant his wife or his grandmother, who shared the same name.</span><span class="description-line">He has a daughter named Riley and reacts to words such as T.I.D.E.S.</span><span class="description-line">After the adventurers brought back the box, Bartosz briefly regained his mind and revealed that he had once been a high-ranking member of T.I.D.E.S., whose leaders could communicate with Jeorisan, the god of wisdom. He gave the adventurers five rings of different colors as their reward, then sat back in his wheelchair and turned to stone.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Bartosz_Richmond" data-qa-page="npc/npc_page/pages/Bartosz_Richmond.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

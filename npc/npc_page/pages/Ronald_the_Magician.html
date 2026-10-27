@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Ronald the Magician | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Ronald the Magician, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Ronald the Magician | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Ronald the Magician, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fronald-the-magician-8127f00a7d%2F176ac21583ec94b0295ec7f44bdd9d23bd774d22000d01cf31d967cf2f3edd61%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fronald-the-magician-8127f00a7d%2F176ac21583ec94b0295ec7f44bdd9d23bd774d22000d01cf31d967cf2f3edd61%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fronald-the-magician-8127f00a7d%2F1efc8d33406a020cbca330a7a067e46ba484d7f573d91235c1cb1b390ae22224%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fronald-the-magician-8127f00a7d%2F176ac21583ec94b0295ec7f44bdd9d23bd774d22000d01cf31d967cf2f3edd61%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Ronald the Magician">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">被稱為魔術師，看起來會使用魔法。</span><span class="description-line">在嚎叫森林出現，種植一種藍色的小顆果實，吃下後會有強烈飽足感。</span><span class="description-line">他似乎是個喜歡追求樂趣的人，對植物與奇異事物很感興趣。</span><span class="description-line">布朗在前往夏庭森途中遇見羅納德。羅納德替瑪芬先生戴上魔術師帽，帶布朗前往夏庭森，並對傳說中的黑蓮花和紀念巴納沃二世的小雕像展現出強烈興趣。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">Known as Ronald the Magician, he appears capable of using magic.</span><span class="description-line">He appeared in the Howling Forest, where he grows small blue fruits that create a strong sense of fullness when eaten.</span><span class="description-line">Ronald seems to enjoy pursuing fun and is interested in plants and strange curiosities.</span><span class="description-line">Brown met Ronald while traveling to Shartingson. Ronald placed a magician&#x27;s hat on Mr. Muffins, guided Brown to Shartingson, and showed strong interest in the legendary black lotus and in a small figurine commemorating King Benevol II.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Ronald_the_Magician" data-qa-page="npc/npc_page/pages/Ronald_the_Magician.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

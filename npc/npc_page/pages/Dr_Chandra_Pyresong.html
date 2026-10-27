@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Dr Chandra Pyresong | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Dr Chandra Pyresong, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Dr Chandra Pyresong | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Dr Chandra Pyresong, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-chandra-pyresong-2f1b6a9ae2%2F251e1a1a96c3383943c4620c60fe60cd7be1ff2437b747ff5521108672648967%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-chandra-pyresong-2f1b6a9ae2%2F251e1a1a96c3383943c4620c60fe60cd7be1ff2437b747ff5521108672648967%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-chandra-pyresong-2f1b6a9ae2%2F45898bda3842bdac9332b891e94762ff17535c68652cceb17706a9a044d4d3e1%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-chandra-pyresong-2f1b6a9ae2%2F251e1a1a96c3383943c4620c60fe60cd7be1ff2437b747ff5521108672648967%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1024" crossorigin="anonymous" decoding="async" alt="Dr. Chandra Pyresong">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">龍恩在大學城追捕的一名方努爾研究者，擅長火焰與機械，身旁有一隻疑似鳳凰企鵝的奇特鳥類。</span><span class="description-line">冒險者抵達方努爾時，他的住處因事件而被燒毀，後來只留下皮革般的殘餘物；他最終在與龍恩的戰鬥中引爆裝置自毀，試圖炸死龍恩但失敗。</span><span class="description-line">茜卓・派松博士死後，沙蘭將他的方努爾房產轉給YHWH。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A Fanaur researcher pursued by Ron in University Town, skilled with fire and machinery, and accompanied by a strange bird resembling a phoenix penguin.</span><span class="description-line">When the adventurers arrived in Fanaur, his home had burned down after the incident, leaving only leather-like remains. He ultimately detonated a device during his fight with Ron, trying and failing to kill him.</span><span class="description-line">After Chandra’s death, Shalan transferred his Fanaur property to YHWH.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Dr_Chandra_Pyresong" data-qa-page="npc/npc_page/pages/Dr_Chandra_Pyresong.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

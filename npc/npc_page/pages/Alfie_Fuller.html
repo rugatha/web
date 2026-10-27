@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Alfie Fuller | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Alfie Fuller, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Alfie Fuller | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Alfie Fuller, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfie-fuller-10bbaf3f2f%2F185aa8b9c9ec0918136f658db8c5ed31e8915715b630486141c46472dacec7a7%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfie-fuller-10bbaf3f2f%2F185aa8b9c9ec0918136f658db8c5ed31e8915715b630486141c46472dacec7a7%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfie-fuller-10bbaf3f2f%2F1ff103d8f5010c4bfce1065f92a4b05642891ed714e4c37715b0f7107c4cc745%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfie-fuller-10bbaf3f2f%2F185aa8b9c9ec0918136f658db8c5ed31e8915715b630486141c46472dacec7a7%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Alfie Fuller">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">沃瓦倫鎮的酒鬼，年約50，看起來在鎮上沒有家人，似乎總是醉醺醺地遊蕩在街上。</span><span class="description-line">時常酒醉後闖入勞迪俱樂部嚇唬來訪的外地人，住在布魯斯家隔壁的破舊房屋內。</span><span class="description-line">解除詛咒儀式前，艾菲驚慌地衝進勞迪俱樂部，預感自己再也見不到明天的太陽。沃瓦倫滅鎮後，艾菲也成為死者之一。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The town drunk of Vowalon, about fifty years old, with no apparent family in town. He was usually seen wandering the streets drunk.</span><span class="description-line">He often burst into Rowdy&#x27;s Club while drunk to frighten visiting outsiders, and lived in a shabby house next to Bruce&#x27;s home.</span><span class="description-line">Before the ritual meant to lift the curse, Alfie rushed into Rowdy&#x27;s Club in panic and said he believed he would never see tomorrow&#x27;s sun. After the Vowalon massacre, Alfie was among the dead.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Alfie_Fuller" data-qa-page="npc/npc_page/pages/Alfie_Fuller.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

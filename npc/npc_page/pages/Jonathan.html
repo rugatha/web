@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Jonathan | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Jonathan, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Jonathan | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Jonathan, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjonathan-9cdb98de27%2F2dfb0a2a83f4d8d891143c17c3a2ba44eec472420d8ca5a5a87e83be8b9d44c1%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjonathan-9cdb98de27%2F2dfb0a2a83f4d8d891143c17c3a2ba44eec472420d8ca5a5a87e83be8b9d44c1%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjonathan-9cdb98de27%2Fcd04e128797b7099e9c2b84c87c05bcccecdc16633083db51547b51ef61b8f11%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fjonathan-9cdb98de27%2F2dfb0a2a83f4d8d891143c17c3a2ba44eec472420d8ca5a5a87e83be8b9d44c1%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1024" crossorigin="anonymous" decoding="async" alt="Jonathan">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩日出酒館的老闆與主廚。</span><span class="description-line">因為小時候曾被龍人欺凌，而在酒館鬥毆事件中對龍恩出手。鬥毆後為表歉意，聘用龍恩在日出酒館作為廚師，並讓龍恩住在日出酒館後台的員工休息室。</span><span class="description-line">然而因龍恩住宿的第一晚就遇到雷米造成的突發事件，讓喬納森決定出錢給龍恩在外面找地方住。</span><span class="description-line">隔天喬納森卻失蹤了。</span><span class="description-line">隨著法蘭奇給予的線索，帕拉丁與他的新夥伴們在瑟巴諾發現了化名為喬納斯的喬納森，但他似乎被捲入了什麼事件，被霍布五花大綁。</span><span class="description-line">最後，在帕拉丁面前被安娜殺死。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The owner and chef of Sunrise, a local tavern in Macksohn.</span><span class="description-line">Jonathan was bullied by dragonborns when he was a kid, so he attacked Ron in the tavern fight. To apologize, he hired Ron as the chef in Sunrise, and permit him to live in the employee’s room.</span><span class="description-line">However, the first night Ron lived in Sunrise, there were incident caused by Lemmy, which led to Jonathan changed his mind and instead gave money for Ron to find somewhere else to live outside the tavern.</span><span class="description-line">The next day, Jonathan was nowhere to be found.</span><span class="description-line">Following Frankie’s lead, Paladin and his new group of adventurers found Jonathan at Sebano, with the alias Jonas. But he was in the midst of some trouble, as he got tied up by Hobb.</span><span class="description-line">In the end, Jonathan was brutally murdered by Anna in front of Paladin.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Jonathan" data-qa-page="npc/npc_page/pages/Jonathan.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>The Hooded Figure | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of The Hooded Figure, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="The Hooded Figure | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of The Hooded Figure, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-hooded-figure-4f5fd01f3c%2Fd5153425b2adf57449efbf5504e76cf0c0ddc4ec871dfda3582c663568895c14%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-hooded-figure-4f5fd01f3c%2Fd5153425b2adf57449efbf5504e76cf0c0ddc4ec871dfda3582c663568895c14%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-hooded-figure-4f5fd01f3c%2F6d069034a9e7c91823cf29897175a75e47fc6fb7a1c4f7693d679322314dd312%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-hooded-figure-4f5fd01f3c%2Fd5153425b2adf57449efbf5504e76cf0c0ddc4ec871dfda3582c663568895c14%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="The Hooded Figure">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">沃瓦倫鎮出現的神秘存在。</span><span class="description-line">只有在深夜時，會披著黑色斗篷，出現在鎮上的街道上，露出他橘紅色閃閃發光的雙眼，有人還曾聽過他發出惡魔般的狂笑聲。</span><span class="description-line">他的身份至今無人知曉。</span><span class="description-line">在沃瓦倫滅鎮事件後，被冒險者目擊逃入寂靜殿內，疑似躲進了神父辦公室後掩藏通往地下的密室。</span><span class="description-line">在麥克嵩曾被帕拉丁和薩梅爾分別目擊到。</span><span class="description-line">依照法朗茲的說明，他是拉索斯教的傳訊者，會出現在不同的城市。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A mysterious figure seen in Vowalon.</span><span class="description-line">Only at midnight, this hooded figure would be seen on the streets, with its orange eyes glowing. Some even claimed that they heard it laughed manically.</span><span class="description-line">Its identity had not been revealed until now.</span><span class="description-line">After the incident in Vowalon, it was seen sneaking into the Temple of Silencio, suspected to delve into the dungeon from the Father’s office.</span><span class="description-line">He was seen by both Paladin and Samael at Mackoshn.</span><span class="description-line">As Franz’s investigation implied, it is a courier of Laxthos, appearing in different cities.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="The_Hooded_Figure" data-qa-page="npc/npc_page/pages/The_Hooded_Figure.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

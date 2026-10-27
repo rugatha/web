@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Yung | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Yung, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Yung | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Yung, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyung-ed8ddf2ea8%2F364f1f66942904d80c46230cc3b7ca91131cc159922aa605beb372106e7f563c%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyung-ed8ddf2ea8%2F364f1f66942904d80c46230cc3b7ca91131cc159922aa605beb372106e7f563c%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyung-ed8ddf2ea8%2Fb2b900d92c90185ade66d133c98b970ab141e06230f593927a257da3107a1d1a%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyung-ed8ddf2ea8%2F364f1f66942904d80c46230cc3b7ca91131cc159922aa605beb372106e7f563c%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Yung">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">馬格努斯爵士給雷米騎去麥克嵩的馬。</span><span class="description-line">年紀較大，跑的速度比較慢，但是依舊穩健且可靠。</span><span class="description-line">在多侖維爾時一度因缺水而十分虛弱；眾人遷就勇哥的狀態放慢馬車速度。後來薩梅爾短暫回到一般世界時，發現斯比迪和馬車不見了，勇哥仍在原處但更加虛弱；之後勇哥也從酒館旁消失。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The horse Syr Magnus gave Lemmy to ride to Macksohn.</span><span class="description-line">Yung is older and slower, but still steady and reliable.</span><span class="description-line">In Dorrenville, he became extremely weak from dehydration, so the group slowed the carriage to match his condition. When Samael briefly returned to the material world, Speedy and the carriage were gone while Yung remained, even weaker; later, Yung also disappeared from beside the tavern.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="勇哥" data-qa-page="npc/npc_page/pages/勇哥.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

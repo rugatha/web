@@ -29,9 +29,6 @@
   <meta name="twitter:title" content="NPC Appearance Timeline | Rugatha">
   <meta name="twitter:description" content="Browse NPC appearances across every Rugatha campaign by in-world date.">
   <meta name="twitter:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../../shared/styles/theme.css">
   <link rel="stylesheet" href="timeline.css">
@@ -395,6 +392,7 @@
           row.className = 'gantt-row';
           const name = state.language === 'en' ? npc.nameEn : npc.nameZh;
           const portrait = npc.imageThumb || npc.image;
+          const thumbName = npc.url?.match(/\/([^/]+)\.html(?:[?#]|$)/)?.[1];
           const avatar = portrait ? `<img src="${imageUrl(portrait)}" alt="" loading="lazy">` : '<span class="npc-initial" aria-hidden="true">?</span>';
           const label = npc.url ? `<a href="${npc.url.startsWith('npc/') ? `../../${npc.url}` : `../${npc.url}`}" target="_blank" rel="noopener">${avatar}<span>${name}</span></a>` : `<span>${avatar}<span>${name}</span></span>`;
           const segments = appearanceSegments.map((segment) => {
@@ -468,7 +466,14 @@
     });
     $$('.language-toggle button').forEach((button) => button.addEventListener('click', () => updateLanguage(state.language === 'en' ? 'zh' : 'en')));
     try { state.language = localStorage.getItem('npc-timeline-lang') === 'en' ? 'en' : 'zh'; } catch (_) {}
-    loadData().catch(() => { $('#timeline').innerHTML = `<div class="empty-state"><span>!</span><h2>${textFor('資料載入失敗', 'Unable to load timeline')}</h2><p>${textFor('請稍後再試。', 'Please try again later.')}</p></div>`; });
+    let startedLoading = false;
+    const startLoading = () => {
+      if (startedLoading) return;
+      startedLoading = true;
+      loadData().catch(() => { $('#timeline').innerHTML = `<div class="empty-state"><span>!</span><h2>${textFor('資料載入失敗', 'Unable to load timeline')}</h2><p>${textFor('請稍後再試。', 'Please try again later.')}</p></div>`; });
+    };
+    window.addEventListener('load', startLoading, { once: true });
+    setTimeout(startLoading, 1500);
   </script>
 
   <script src="../../shared/firebase.config.js"></script>

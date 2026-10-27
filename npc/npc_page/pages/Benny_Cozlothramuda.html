@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Benny Cozlothramuda | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Benny Cozlothramuda, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Benny Cozlothramuda | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Benny Cozlothramuda, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbenny-cozlothramuda-review-v2-183e4733b4%2F6181899bc4a514fc804af19d21b98692c785f81bb75816775a103d4bf7a0620c%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbenny-cozlothramuda-review-v2-183e4733b4%2F6181899bc4a514fc804af19d21b98692c785f81bb75816775a103d4bf7a0620c%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbenny-cozlothramuda-review-v2-183e4733b4%2F74b1d222b3bd8bf284dfd26549406f34b40beb643ed1794b31cf8f3757bb9af9%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbenny-cozlothramuda-review-v2-183e4733b4%2F6181899bc4a514fc804af19d21b98692c785f81bb75816775a103d4bf7a0620c%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Benny Cozlothramuda">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">本名班傑明，出身於歷史悠久的矮人家族。</span><span class="description-line">沃瓦倫長年的腕力冠軍，個性爽朗。曾作為潔絲敏失蹤事件的搜救隊一員，雖然對於沒能找到潔絲敏感到懊惱，但沒有過度責怪自己。</span><span class="description-line">慶祝葛蘭倫回到沃瓦倫的派對上，班尼與烏西歐尼比腕力，輸後大方把刻有家族姓氏的金戒指送給他。沃瓦倫滅鎮事件中，班尼死亡並被化為殭屍，最後由冒險者們讓他安息。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">Born Benjamin, from an old dwarven family.</span><span class="description-line">Benny was Vowalon&#x27;s long-time arm-wrestling champion and had a cheerful personality. He joined the search party for the missing Jasmine, and though he regretted failing to find her, he did not blame himself too harshly.</span><span class="description-line">At the party celebrating Grenland&#x27;s return to Vowalon, Benny arm-wrestled Usioni and, after losing, generously gave him a gold ring engraved with his family name. During the Vowalon massacre, Benny died and was turned into a zombie, and the adventurers ultimately laid him to rest.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Benny_Cozlothramuda" data-qa-page="npc/npc_page/pages/Benny_Cozlothramuda.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

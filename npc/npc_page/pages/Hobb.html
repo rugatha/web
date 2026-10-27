@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Hobb | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Hobb, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Hobb | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Hobb, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fhobb-670506ea3a%2Fad7d723e26bfedbacf13637ae71e5ce2ad439d0cc0a69aa63e13edb93dca7d55%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fhobb-670506ea3a%2Fad7d723e26bfedbacf13637ae71e5ce2ad439d0cc0a69aa63e13edb93dca7d55%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fhobb-670506ea3a%2F60a9f82744d8e37798345df0be6ad4ce0fb4217fef9858932e1940355d85c481%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fhobb-670506ea3a%2Fad7d723e26bfedbacf13637ae71e5ce2ad439d0cc0a69aa63e13edb93dca7d55%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Hobb">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">瑟巴諾當地的黑幫老大之一，身材十分壯碩，但是手下似乎都不太擅長打架。</span><span class="description-line">鎮上的一間酒館「霍布的派對屋」似乎是他的黑幫集散地。</span><span class="description-line">似乎是拉索斯教的信奉者，手下的身上有刺拉索斯語的祝禱文，與德雷爾過去就認識。</span><span class="description-line">和冒險者們談了交易，只要他們將鎮長家的魔法盒交給他，就能贖回被他綁走的喬納森。</span><span class="description-line">真身是來自深淵的一頭綁匪怪蛙，其手下為魚人，與拉索斯教簽訂了契約。他計劃在瑟巴諾建造某種偉大的裝置，卻被冒險者們打斷，也失去大多數手下。</span><span class="description-line">在搶到魔法盒子後，霍布利用盒子與黏液製造出冒險者們的複製體，將多名冒險者溶成泥後消失。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">One of Sebano&#x27;s local gang bosses, very large and strong, though his men did not seem very capable.</span><span class="description-line">His tavern, Hobb&#x27;s Party House, served as a gathering place for his gang.</span><span class="description-line">He appeared to be a follower of Laxthos; his men bore Laxthosian prayers tattooed on their bodies, and he seemed to have known Drayer from before.</span><span class="description-line">Hobb struck a deal with the adventurers: if they brought him the magic box from the mayor&#x27;s house, he would release the kidnapped Jonathan.</span><span class="description-line">His true form was a kidnapper frog-like creature from the Deep, served by fishmen and bound by contract to Laxthos. He planned to build a great device in Sebano, but the adventurers disrupted the plan and killed most of his workers.</span><span class="description-line">After seizing the magic box, Hobb used it and slime to create copies of the adventurers, melted several of them into mud, and vanished.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Hobb" data-qa-page="npc/npc_page/pages/Hobb.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

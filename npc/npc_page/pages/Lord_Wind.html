@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Lord Wind | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Lord Wind, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Lord Wind | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Lord Wind, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flord-wind-f6b34fe0a1%2Fe6d8fa2ac978bf38d98d519858c2a7278715f513414e22b1d02a6d3751ec3524%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flord-wind-f6b34fe0a1%2Fe6d8fa2ac978bf38d98d519858c2a7278715f513414e22b1d02a6d3751ec3524%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flord-wind-f6b34fe0a1%2F7d4a40753f0424a1b5ba41f8f3bd37c88268050f65e927a4aea7d43e4e590ae1%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Flord-wind-f6b34fe0a1%2Fe6d8fa2ac978bf38d98d519858c2a7278715f513414e22b1d02a6d3751ec3524%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Lord Wind">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">溫德家中的父親。</span><span class="description-line">似乎是拉索斯教的人員，或是從事相關的貿易工作。</span><span class="description-line">曾聘請布朗護送溫德一家穿越森林前往魏斯科，承諾支付五十枚金幣。彼得聞到黑蓮花昏倒後，溫德大人憤怒地解除委託並將彼得抱回屋內求醫。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The father of the Wind family.</span><span class="description-line">He seemed to work for Laxthos, or to be involved in business related to Laxthos.</span><span class="description-line">He hired Brown to escort the Wind family through the forest to Wescoe and promised fifty gold pieces as payment. After Peter fainted from smelling the black lotus, Lord Wind angrily canceled the job and carried Peter inside to seek a doctor.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Lord_Wind" data-qa-page="npc/npc_page/pages/Lord_Wind.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Varoen | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Varoen, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Varoen | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Varoen, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaroen-0ebf136f2e%2Fb7429c0d8c2c2f9ec1c99dece01c7b69a51b03526abfa2ef1fce68891f602510%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,12 +57,14 @@
       </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaroen-0ebf136f2e%2Fb7429c0d8c2c2f9ec1c99dece01c7b69a51b03526abfa2ef1fce68891f602510%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaroen-0ebf136f2e%2F20d60f9f4241770751de7b1e96eff74c7a0b4889d899ac8be9afe0acc88131a2%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fvaroen-0ebf136f2e%2Fb7429c0d8c2c2f9ec1c99dece01c7b69a51b03526abfa2ef1fce68891f602510%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1024" crossorigin="anonymous" decoding="async" alt="Varoen">
         </div>
+        </div>
         <div class="content">
-          <p id="npc-desc-zh" class="body"></p>
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">克萊芬「新書院」的參謀與秘書長，頭上繫著藍色頭巾。</span><span class="description-line">在皮尼歐教授於辯論會上遭到刺殺後，瓦羅恩走上舞台，宣稱新書院不會有新的主席，而自己仍會作為秘書長帶領派系前進。</span><span class="description-line">他冷靜得近乎冷酷的反應，以及輕輕一指便讓雷亞雙腿發麻跪下的手段，都讓冒險者們感到不寒而慄。</span><span class="description-line">教授死後，瓦羅恩順理成章地接掌新書院，使雷亞與中途之家開始懷疑他與「新曙光」和刺殺事件之間可能有所牽連。</span></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A strategist and secretary-general of the New Academy in Clyphen, known for the blue headscarf she wears.</span><span class="description-line">After Professor Peneo was assassinated during the debate, Varoen stepped onto the stage and declared that the New Academy would not choose a new chair, and that she would continue leading it as secretary-general.</span><span class="description-line">Her calm, almost cold response, along with the casual gesture that made Leah&#x27;s legs go numb and forced her to kneel, left the adventurers deeply unsettled.</span><span class="description-line">After the professor&#x27;s death, Varoen smoothly took control of the New Academy, leading Leah and the Halfway Home to suspect she may be connected to New Dawn and the assassination.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Varoen" data-qa-page="npc/npc_page/pages/Varoen.html">
@@ -102,7 +102,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

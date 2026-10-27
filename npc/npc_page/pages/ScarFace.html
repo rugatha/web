@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>ScarFace | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of ScarFace, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="ScarFace | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of ScarFace, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fscar-face-v2-7760009010%2Fc78e3ce0dd7942423b9d08340229cb2b87c1a69755889847017ebef30ec81e84%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fscar-face-v2-7760009010%2Fc78e3ce0dd7942423b9d08340229cb2b87c1a69755889847017ebef30ec81e84%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fscar-face-v2-7760009010%2Ff98243f6185c2a91bf35190b0c81da7c7e53c2ef706d9b0aaf581ee344dc146a%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fscar-face-v2-7760009010%2Fc78e3ce0dd7942423b9d08340229cb2b87c1a69755889847017ebef30ec81e84%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Scar-Face">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩當地衛兵，因臉上有不少刀疤，而自稱刀疤臉。</span><span class="description-line">在龍恩的請求下協助調查日出酒館老闆喬納森的失蹤案件。</span><span class="description-line">對法蘭奇的閃爍說詞也有些起疑。</span><span class="description-line">承認自己是崔尼斯教的信徒，但也向龍恩表示不是所有崔尼斯教的人都是有問題的。</span><span class="description-line">在麥克嵩比武大會上為了保護國王巴納沃二世，遭到法蘭奇擊斃。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A guard in Macksohn. He called himself &quot;Scar-Face&quot; due to a lot of scars on his face.</span><span class="description-line">Scar-Face helped Ron investigated into the missing incident of Jonathan, the owner of Sunrise.</span><span class="description-line">He had doubts toward Frankie.</span><span class="description-line">Scar-Face admitted to be a believer of Trinix, but also explained to Ron that not all Trinix believers had something wrong with them.</span><span class="description-line">He was killed by Frankie protecting the late King Benevol II.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="ScarFace" data-qa-page="npc/npc_page/pages/ScarFace.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

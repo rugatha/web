@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +31,6 @@
 <link rel="icon" type="image/png" href="../assets/logo/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../shared/styles/theme.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Iansui&family=Fondamento&display=swap">
   <style>
     :root {
       --member-ink: #f4f7f3;
@@ -73,7 +72,6 @@
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 32px;
       align-items: stretch;
-      animation: reveal 600ms ease-out;
     }
 
     .language-toggle {
@@ -1274,19 +1272,32 @@
       <div class="hero-copy">
         <div class="journal-intro">
         <div class="eyebrow">
-          <h1 class="journal-title" data-i18n="heroEyebrow">Adventurer's Journal</h1>
+          <h1 class="journal-title" data-i18n="heroEyebrow">冒險者日誌</h1>
           <a class="toolbox-link" id="admin-dashboard-link" href="/admin/" hidden data-i18n="adminDashboardLink">管理後台</a>
         </div>
-        <p class="hero-tagline" data-i18n="heroTitle">Your member vault for Rugatha.</p>
+        <p class="hero-tagline" data-i18n="heroTitle">你的傳奇冒險將在酒館被傳唱……</p>
         </div>
         <nav class="journal-shortcuts" aria-label="Explore Rugatha">
-          <a href="../toolbox/"><span data-i18n="toolboxLink">Toolbox</span></a>
-          <a href="../campaigns/"><span data-i18n="campaignsLink">Campaigns</span></a>
-          <a href="../experience/"><span data-i18n="experienceLink">Experience</span></a>
-          <a href="../characters/"><span data-i18n="charactersLink">Characters</span></a>
+          <a href="../toolbox/"><span data-i18n="toolboxLink">工具箱</span></a>
+          <a href="../campaigns/"><span data-i18n="campaignsLink">團錄</span></a>
+          <a href="../experience/"><span data-i18n="experienceLink">體驗團</span></a>
+          <a href="../characters/"><span data-i18n="charactersLink">角色</span></a>
         </nav>
 
       </div>
+
+      <script>
+        try {
+          if (localStorage.getItem("rugatha-member-lang") === "en") {
+            document.documentElement.lang = "en";
+            document.querySelector(".journal-title").textContent = "Adventurer's Journal";
+            document.querySelector(".hero-tagline").textContent = "Your legendary stories are to be told in taverns......";
+            ["Toolbox", "Campaigns", "Experience", "Characters"].forEach((label, index) => {
+              document.querySelectorAll(".journal-shortcuts span")[index].textContent = label;
+            });
+          }
+        } catch (error) {}
+      </script>
 
       <section class="profile-card" id="profile-card" aria-live="polite">
     <a class="corner-link" href="../index.html" aria-label="Rugatha Home">
@@ -2370,7 +2381,7 @@
       document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.getAttribute("data-i18n");
-        if (dictionary[key]) {
+        if (dictionary[key] && el.textContent !== dictionary[key]) {
           el.textContent = dictionary[key];
         }
       });

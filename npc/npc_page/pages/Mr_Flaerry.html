@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Mr Flaerry | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Mr Flaerry, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Mr Flaerry | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Mr Flaerry, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-flaerry-4d583607f8%2F60f4606246c1b50247b5be25fb4cb0b22d672ef286ab10b0716f89cf81512ada%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-flaerry-4d583607f8%2F60f4606246c1b50247b5be25fb4cb0b22d672ef286ab10b0716f89cf81512ada%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-flaerry-4d583607f8%2Fa6bfa549ab690806e0384e21c224346f2ab47160329b1f1c71ebd34d3ece2ea7%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-flaerry-4d583607f8%2F60f4606246c1b50247b5be25fb4cb0b22d672ef286ab10b0716f89cf81512ada%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Mr. Flaerry">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">帕拉丁的老師，前邁丁頓王國騎士團團長，現已退休。</span><span class="description-line">待客十分大方，不過似乎和太太羅莎之間有些相處上的狀況，分房睡。</span><span class="description-line">對於寇林菲爾德一代的性產業似乎暸若指掌。</span><span class="description-line">膝下無子，視帕拉丁為己出。</span><span class="description-line">為了讓麥克嵩的紫羅蘭承認帕拉丁是她的兒子，放棄了自己的爵位。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The mentor of Paladin, ex-head of the knight in the Mattington Kingdom, now retired.</span><span class="description-line">Was a generous host, but seems to have some gap with his wife, as they slept separately.</span><span class="description-line">Knew a lot about the sex industry in Korringfield.</span><span class="description-line">Flaerry didn’t have any child, thus saw Paladin as his son.</span><span class="description-line">He gave up his title to ask for the Violet of Macksohn to admit Paladin as her child.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Mr_Flaerry" data-qa-page="npc/npc_page/pages/Mr_Flaerry.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

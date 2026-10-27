@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Pamela Yaso | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Pamela Yaso, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Pamela Yaso | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Pamela Yaso, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpamela-yaso-9a1f64a925%2Fb30363d7b4166e1eebdf9dd860c4f8daf5974c86e6cb82a94ba100a7d188eb12%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpamela-yaso-9a1f64a925%2Fb30363d7b4166e1eebdf9dd860c4f8daf5974c86e6cb82a94ba100a7d188eb12%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpamela-yaso-9a1f64a925%2F970dd95379c37d9738142a91af343fca50176d2cf99e816654242f8c1c4310e8%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpamela-yaso-9a1f64a925%2Fb30363d7b4166e1eebdf9dd860c4f8daf5974c86e6cb82a94ba100a7d188eb12%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Pamela Yaso">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩的貴族，家裡似乎是經營農作物的，幾個世代前才搬遷到麥克嵩。</span><span class="description-line">與華生和蘇加魯在王宮花園相談甚歡，並邀請他們前來家裡作客。</span><span class="description-line">在家中的晚宴，潘蜜拉要求貴族們表態是否支持新任國王；他實際上是反對國王派，也被認為在鬥爭中策劃將支持國王派的人馬幾乎都殺光，其中包含他的朋友伯納德。</span><span class="description-line">伯納德宅邸被燒時，潘蜜拉出現在外頭率領暴民高喊「異教徒」。後來冒險者拷問刺客，得知潘蜜拉至少掌握近百名傭兵，並計畫結合奴隸與傭兵攻入王宮、發動政變。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A Macksohn noble whose family seems to be in the crop business and moved to Macksohn a few generations ago.</span><span class="description-line">Pamela had a pleasant conversation with Watson and Sugalu in the royal garden and invited them to her home.</span><span class="description-line">At dinner, she demanded that the nobles declare whether they supported the new king. Pamela was actually aligned against the king, and was believed to have orchestrated the elimination of almost everyone in the pro-king faction, including her friend Bernard.</span><span class="description-line">When Bernard&#x27;s estate was burned, Pamela appeared outside leading a mob shouting heretic. Later, the adventurers interrogated assassins and learned that Pamela controlled nearly a hundred mercenaries and planned to combine slaves and mercenaries to storm the palace in a coup.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Pamela_Yaso" data-qa-page="npc/npc_page/pages/Pamela_Yaso.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

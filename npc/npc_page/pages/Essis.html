@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Essis | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Essis, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Essis | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Essis, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fessis-review-v2-2abf795aa4%2F73ed4063002be9eb6187698e0294c40bf4f645656ea66557bd9c9645d665aeac%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fessis-review-v2-2abf795aa4%2F73ed4063002be9eb6187698e0294c40bf4f645656ea66557bd9c9645d665aeac%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fessis-review-v2-2abf795aa4%2F7f17232d12d402e4391508b208e230954a74e3a86dd9129190f84fb26d940ac1%2Fthumb.webp?alt=media 320w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fessis-review-v2-2abf795aa4%2F73ed4063002be9eb6187698e0294c40bf4f645656ea66557bd9c9645d665aeac%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1536" crossorigin="anonymous" decoding="async" alt="Essis">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">狂暴戰士幫成員之一，鬥名為「巫妖剋星」。</span><span class="description-line">前往聖拉雅米島調查後下落不明。冒險者在金海岸礦坑下方的廢墟中找到了精神不穩、幾乎倒下的艾希斯，並得知拉索斯教徒一直在礦坑中擄人與實驗。</span><span class="description-line">礦坑戰鬥結束後，艾希斯將「異教徒剋星」插入傳送法陣，使其釋出寶石與拉索斯的訊息。之後他將武器交給波，並返回狂暴戰士幫向澤克回報。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A member of the Raging Warriors, known in battle as Lichbane.</span><span class="description-line">She went missing after traveling to St. Rayami Island for an investigation. The adventurers found her in the ruins beneath the Gold Coast Mines, mentally unstable and near collapse, and learned that Laxthos cultists had been abducting people and experimenting there.</span><span class="description-line">After the battle in the mines, Essis thrust Heretic Slayer into the teleportation circle, causing it to release gems and a message from Laxthos. She later entrusted the weapon to Beau and returned to the Raging Warriors to report to Zek.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Essis" data-qa-page="npc/npc_page/pages/Essis.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

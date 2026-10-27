@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Penny Applewood | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Penny Applewood, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Penny Applewood | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Penny Applewood, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpenny-applewood-review-v2-4a38fff9d6%2Fa7c808af4fb6b98952f4d5458ad55e05cdf362f435743b963c885f62ac26b4d4%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpenny-applewood-review-v2-4a38fff9d6%2Fa7c808af4fb6b98952f4d5458ad55e05cdf362f435743b963c885f62ac26b4d4%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpenny-applewood-review-v2-4a38fff9d6%2Fc3550ca50dbf5bbfebe92282944905688e50a9939b97c1bf6e3f0a7669958616%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fpenny-applewood-review-v2-4a38fff9d6%2Fa7c808af4fb6b98952f4d5458ad55e05cdf362f435743b963c885f62ac26b4d4%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Penny Applewood">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">本名佩妮洛普。</span><span class="description-line">蘋果木家的長女，是土城最漂亮的女孩之一，也是阿龍的初戀。</span><span class="description-line">已蟬聯土城連續三年的「春日精靈」。</span><span class="description-line">愛上山賊首領奧斯華・克雷頓，暱稱他為大奧斯。</span><span class="description-line">在斬殺交響樂襲擊時，與大奧斯私奔；後來失去雙手的奧斯華前往拉撒拿尋找阿龍，表示佩妮陷入危機並需要援助。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">Penelope Applewood.</span><span class="description-line">The eldest daughter of the Applewood family, one of the prettiest girls in Mudtown, and Al-lon&#x27;s first love.</span><span class="description-line">Penny had been Mudtown&#x27;s Spirit of Spring for three consecutive years.</span><span class="description-line">She fell in love with the bandit lord Oswald Creighton, whom she nicknamed Big Os.</span><span class="description-line">During the Slashing Symphony attack, she ran away with Big Os. Later, Oswald appeared in Rathanad with both hands missing, looking for Al-lon and saying that Penny was in danger and needed help.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Penny_Applewood" data-qa-page="npc/npc_page/pages/Penny_Applewood.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

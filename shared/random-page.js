@@ -63,10 +63,15 @@ const loadRandomDestinations = async () => {
   return [...new Set([...chapterPages, ...deityPages, ...npcPages, ...pcPages, ...EXTRA_PC_PAGES, ...locationPages])];
 };
 
-const randomDestinations = loadRandomDestinations().catch((error) => {
-  console.error("Unable to prepare random page destinations", error);
-  return [];
-});
+let randomDestinations;
+const getRandomDestinations = () => {
+  randomDestinations ||= loadRandomDestinations().catch((error) => {
+    console.error("Unable to prepare random page destinations", error);
+    randomDestinations = null;
+    return [];
+  });
+  return randomDestinations;
+};
 
 const trackD20Click = () => {
   if (typeof window.gtag !== "function") return;
@@ -80,7 +85,7 @@ const trackD20Click = () => {
 const navigateToRandomLeafPage = async () => {
   trackD20Click();
 
-  const destinations = await randomDestinations;
+  const destinations = await getRandomDestinations();
   if (!destinations.length) return;
 
   const destination = destinations[Math.floor(Math.random() * destinations.length)];

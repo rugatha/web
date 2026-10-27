@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>King Benevol II | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of King Benevol II, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="King Benevol II | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of King Benevol II, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-benevol-ii-0e7a6f2374%2Fd16e66d6d542d606fed6c3728ced584c4024726c06d2601b2a3c412ad99d6b92%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-benevol-ii-0e7a6f2374%2Fd16e66d6d542d606fed6c3728ced584c4024726c06d2601b2a3c412ad99d6b92%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-benevol-ii-0e7a6f2374%2F8667d70a3df472e83ca4205cc1659e1ca8aed220dafd3de933ceeb143835f42a%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-benevol-ii-0e7a6f2374%2Fd16e66d6d542d606fed6c3728ced584c4024726c06d2601b2a3c412ad99d6b92%2Freading.webp?alt=media 1024w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1024" height="1024" crossorigin="anonymous" decoding="async" alt="King Benevol II">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥丁頓的前任統治者。</span><span class="description-line">在麥克嵩比武大會時遭到法蘭奇吸乾精力，卻在法蘭奇消失後彷彿完全恢復元氣，悄悄逃離包廂。</span><span class="description-line">在那之後，據說他傳位給兒子艾略特四世，並自此失蹤。後來冒險者在瑟巴諾附近發現，一對不知情的夫妻正奉麥克嵩拉索斯主教之命運送巴納沃二世的皇冠、玉璽與屍體；夫妻隨後遭疑似瑪莉恩派出的刺客射殺。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The former ruler of the Mattington Kingdom.</span><span class="description-line">During the Macksohn Tournament, Frankie drained his vitality, but after Frankie vanished, Benevol seemed to recover completely and quietly fled the private box.</span><span class="description-line">Afterward, he was said to have passed the throne to his son Elliot IV and then disappeared. Later, near Sebano, the adventurers found an unwitting couple transporting Benevol II&#x27;s crown, royal seal, and corpse on orders from a Laxthos bishop in Macksohn. The couple were then shot dead by assassins likely sent by Marian.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="King_Benevol_II" data-qa-page="npc/npc_page/pages/King_Benevol_II.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

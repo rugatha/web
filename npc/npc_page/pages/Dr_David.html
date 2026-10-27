@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Dr David | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Dr David, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Dr David | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Dr David, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-david-review-v2-590c813d7a%2F18869e2f69103b515367b4320908157b7362cce8b4f766fccb75f1cfac4e6461%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-david-review-v2-590c813d7a%2F18869e2f69103b515367b4320908157b7362cce8b4f766fccb75f1cfac4e6461%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-david-review-v2-590c813d7a%2F04e5882f11cf253cbb0897094914c7622dfc10f7e98d665236b963ba8bca681d%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-david-review-v2-590c813d7a%2F18869e2f69103b515367b4320908157b7362cce8b4f766fccb75f1cfac4e6461%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Dr. David">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩當地醫生。</span><span class="description-line">在日出酒館目睹殺人事件後被雷米威脅。</span><span class="description-line">在米多莉博得他的信任後，從他身上得到不少關於這座城市的情報，也引薦龍恩去艾德蒙餐酒館（麥克嵩分店）擔任廚師。</span><span class="description-line">為人十分理性與冷靜。</span><span class="description-line">與日出酒館前老闆喬納森、衛兵刀疤臉以及艾德蒙餐酒館的店長路易斯都是舊識。</span><span class="description-line">非常照顧他的弟弟，丹尼斯。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A local doctor in Macksohn.</span><span class="description-line">Threatened by Lemmy after he saw the murder in Sunrise.</span><span class="description-line">After gaining his trust, Midori got a lot of information about Macksohn from him, and also recommend Ron to Edmond’s Diner as a cook</span><span class="description-line">Is a radical and calm man.</span><span class="description-line">He had known the ex-owner of Sunrise, Jonathan, the guard, Scar-Face, and the manager of Edmond’s Diner, Lewis for a long time.</span><span class="description-line">Dr. David takes very good care of his brother, Dennis.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Dr_David" data-qa-page="npc/npc_page/pages/Dr_David.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

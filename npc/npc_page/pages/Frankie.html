@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Frankie | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Frankie, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Frankie | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Frankie, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrankie-review-round2-206f11a1bc%2F6489004bfc046cf5c32e5a226f967c2f418386a1cfbe99951c0cbb63f4e28d51%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrankie-review-round2-206f11a1bc%2F6489004bfc046cf5c32e5a226f967c2f418386a1cfbe99951c0cbb63f4e28d51%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrankie-review-round2-206f11a1bc%2F8b42333029746dbfcbebccf0a8fe016c28f8405061aaa39e2a0815bef782013e%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrankie-review-round2-206f11a1bc%2F6489004bfc046cf5c32e5a226f967c2f418386a1cfbe99951c0cbb63f4e28d51%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Frankie">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩日出酒館的店小二。</span><span class="description-line">在荒野旋律組成時，搶先擔任樂團的贊助人，被薩梅爾敬稱為老闆。</span><span class="description-line">在日出老闆喬納森失蹤時，與龍恩一同前往老闆家，但沒有找到人。法蘭奇前後言詞不一的行為讓龍恩感到非常可疑。之後暫時擔任日出的老闆，但與老闆失蹤似乎有什麼關聯。</span><span class="description-line">在台北市議員重返日出酒館時，因為態度惡劣且敲詐他們，法蘭奇被切斷右手臂，且放入百寶袋內，慘遭滅口。在他被放入袋子前的最後一刻，口中吐出了瑟巴諾的地名。</span><span class="description-line">台北市議員們將法蘭奇棄屍於地下道內一處開口的底下。</span><span class="description-line">在麥克嵩比武大會授獎儀式後，悄悄出現在國王巴納沃二世身後。在吸乾了國王的精力後，化身為名為「暗影之父」的惡魔，飛向台北市議員們所處的觀眾席，對他們出擊。在被台北市議員們擊敗時，留下了「我會回來的。」一句話，便消失不見。</span><span class="description-line">後來法朗茲判斷，暗影之父可能會附身或幻化成不同的人，法蘭奇只是其顯現之一。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A waiter at Sunrise in Macksohn.</span><span class="description-line">When Rhythm of the Wild formed, Frankie became the band&#x27;s first sponsor and was respectfully called Boss by Samael.</span><span class="description-line">When Jonathan, the owner of Sunrise, disappeared, Frankie went with Ron to Jonathan&#x27;s house, but they found nothing. His inconsistent statements made Ron suspicious. Frankie later became Sunrise&#x27;s temporary owner and seemed connected to Jonathan&#x27;s disappearance.</span><span class="description-line">When the Councilors of Taipei returned to Sunrise, Frankie was maimed and killed after acting hostile and extorting them. In his final moment before being placed in the bag of holding, he uttered the name Sebano.</span><span class="description-line">The Councilors abandoned Frankie&#x27;s body in the sewers.</span><span class="description-line">After the Macksohn Tournament award ceremony, Frankie appeared behind King Benevol II. After draining the king&#x27;s vitality, he transformed into the demon known as the Shadow Father and attacked the party. When the Councilors defeated him, he said, &quot;I will return,&quot; then vanished.</span><span class="description-line">Franz later concluded that the Shadow Father may possess or manifest through different people, with Frankie being one of those appearances.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Frankie" data-qa-page="npc/npc_page/pages/Frankie.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

@@ -839,9 +839,10 @@ function render(npc) {
   ensureContentSections();
   const effectiveNpc = applyViolentOverride(npc);
   updateTitle(effectiveNpc);
-  if ((effectiveNpc.image || "").startsWith("https://firebasestorage.googleapis.com/")) elements.portrait.crossOrigin = "anonymous";
+  const portraitSource = effectiveNpc.image || "";
+  if (portraitSource.startsWith("https://firebasestorage.googleapis.com/") && elements.portrait.crossOrigin !== "anonymous") elements.portrait.crossOrigin = "anonymous";
   if (effectiveNpc.image !== npc.image) elements.portrait.removeAttribute("srcset");
-  elements.portrait.src = effectiveNpc.image || "";
+  if (elements.portrait.getAttribute("src") !== portraitSource) elements.portrait.src = portraitSource;
   renderSignature(effectiveNpc);
   setDescription(elements.zh, effectiveNpc.descZh, "（尚無中文介紹）");
   setDescription(elements.en, effectiveNpc.descEn, "(Description coming soon)");
@@ -989,17 +990,24 @@ window.addEventListener("qa:violent", (event) => {
 function setDescription(el, text, fallback) {
   if (!el) return;
   const content = (text || "").trim() || fallback;
-  el.innerHTML = "";
-  const blocks = content.split(/\n{2,}/); // split paragraphs
-  blocks.forEach((block, bIdx) => {
-    const lines = block.split(/\n+/);
-    lines.forEach((line, lIdx) => {
-      const span = document.createElement("span");
-      span.className = "description-line";
-      if (bIdx > 0 && lIdx === 0) span.classList.add("description-paragraph");
-      span.textContent = line;
-      el.appendChild(span);
-    });
+  const lines = content.split(/\n{2,}/).flatMap((block, blockIndex) =>
+    block.split(/\n+/).map((line, lineIndex) => ({
+      text: line,
+      paragraph: blockIndex > 0 && lineIndex === 0
+    }))
+  );
+  const existing = Array.from(el.querySelectorAll(".description-line"));
+  if (existing.length === lines.length && existing.every((node, index) =>
+    node.textContent === lines[index].text &&
+    node.classList.contains("description-paragraph") === lines[index].paragraph
+  )) return;
+  el.replaceChildren();
+  lines.forEach(({ text, paragraph }) => {
+    const span = document.createElement("span");
+    span.className = "description-line";
+    if (paragraph) span.classList.add("description-paragraph");
+    span.textContent = text;
+    el.appendChild(span);
   });
 }
 

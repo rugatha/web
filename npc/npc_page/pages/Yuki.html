@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Yuki | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Yuki, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Yuki | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Yuki, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyuki-review-v2-e99f94ac11%2Fd9378e8fdc66793cbe42f8f03f066687d787ad1002eb251848f09efdabdc44d9%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyuki-review-v2-e99f94ac11%2Fd9378e8fdc66793cbe42f8f03f066687d787ad1002eb251848f09efdabdc44d9%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyuki-review-v2-e99f94ac11%2F401774efb95800295889e97285f85fd28d8c56d6dfa3b5a91620465da5a31fef%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyuki-review-v2-e99f94ac11%2Fd9378e8fdc66793cbe42f8f03f066687d787ad1002eb251848f09efdabdc44d9%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Yuki">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">對米多莉而言非常重要的人，多次以幻影出現在米多莉的腦中，也曾在妖精荒野時被艾爾比以幻象呈現在大家面前。</span><span class="description-line">過去似乎曾被關押在一個伸手不見五指的地方。</span><span class="description-line">在聖拉雅米島的洞穴，被發現操控著拉茲特獸攻擊老鼠人；在金海岸礦坑事件中，冒險者取得的紀錄顯示他與拉索斯教的實驗與滿月儀式有關，且與米多莉可能站在對立面。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A very important figure to Midori, who appeared in Midori&#x27;s mind many times and was also shown to the party as an illusion by Elby in the Feywild.</span><span class="description-line">She seems to have once been imprisoned in a place of complete darkness.</span><span class="description-line">On St. Rayami Island, Yuki was found controlling a Laztek to attack ratfolk. During the Gold Coast Mines incident, records recovered by the adventurers tied her to Laxthos experiments and a full-moon ritual, suggesting that she and Midori may now stand on opposing sides.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Yuki" data-qa-page="npc/npc_page/pages/Yuki.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

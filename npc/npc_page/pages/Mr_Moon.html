@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Mr Moon | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Mr Moon, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Mr Moon | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Mr Moon, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-moon-review-v2-d513271cf5%2Fa4c6061a4f6083e84138536b2d97aa03c156c59299a2769a704e349e7bb610e5%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-moon-review-v2-d513271cf5%2Fa4c6061a4f6083e84138536b2d97aa03c156c59299a2769a704e349e7bb610e5%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-moon-review-v2-d513271cf5%2F3b58cc31598dbe20b71fd0d4b69bc6af588db93b48f0bec301586e40989cebe8%2Fthumb.webp?alt=media 360w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmr-moon-review-v2-d513271cf5%2Fa4c6061a4f6083e84138536b2d97aa03c156c59299a2769a704e349e7bb610e5%2Freading.webp?alt=media 1086w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1086" height="1448" crossorigin="anonymous" decoding="async" alt="Mr. Moon">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">麥克嵩當地的音樂經紀人，有個辦公室名叫「派頓」。</span><span class="description-line">給人一種精明狡黠的感覺。</span><span class="description-line">在崔尼斯劇院挖掘到薩梅爾，邀請薩梅爾與他簽約，並給了薩梅爾一個有🎵符號的名片。</span><span class="description-line">帶冒險者們組成的樂團「荒野旋律」來到柏納斯家的宅邸演奏。</span><span class="description-line">與柏納斯家族似乎有長期穩地的合作。</span><span class="description-line">月之神芬尼爾的信徒。</span><span class="description-line">在麥克嵩似乎有些許影響力，曾告訴薩梅爾與帕拉丁遇到衛兵找麻煩時，可以報上他的名號。</span><span class="description-line">在（部分）台北市議員離開麥克嵩前，透露自己過去和月神的交易，讓他已與死亡距離不遠。</span><span class="description-line">在冒險者們回到麥克嵩時，月先生已經死去了。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">A local agent in Macksohn, who owned an office called Patton’s.</span><span class="description-line">He gave people a sense of smart and cunning.</span><span class="description-line">When Mr. Moon found Samael at the Trinix Theatre, he invited Samael to sign with him and gave Samael a name card with the musical note 🎵.</span><span class="description-line">Mr. Moon brought Rhythm of the Wild, the band formed by the adventurers to perform at the mansion of the Berners family.</span><span class="description-line">He seemed to be working with the Berners family long term.</span><span class="description-line">Mr. Moon is a worshiper of Phyneal, the God of Moon.</span><span class="description-line">He had some power in Macksohn, as he once told Samael and Paladin that whenever they had some problem with the guards, they can simply say his name.</span><span class="description-line">As some members of the adventurers left Macksohn, he revealed the deal he had with the God of Moon, that made him close to death.</span><span class="description-line">When the adventurers got back to Macksohn, Mr. Moon was already dead.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Mr_Moon" data-qa-page="npc/npc_page/pages/Mr_Moon.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

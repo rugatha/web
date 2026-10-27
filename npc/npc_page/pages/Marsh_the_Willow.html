@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
   <script>
@@ -11,6 +11,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Marsh the Willow | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Marsh the Willow, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -27,9 +28,6 @@
   <meta name="twitter:title" content="Marsh the Willow | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Marsh the Willow, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarsh-the-willow-ba0ec7cd6b%2F1ad16a70eb99c90418b049046d7390fa79d9d21befe17ef9ec22cf6f9d3c7c16%2Freading.webp?alt=media">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
@@ -56,12 +54,14 @@
       </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarsh-the-willow-ba0ec7cd6b%2F1ad16a70eb99c90418b049046d7390fa79d9d21befe17ef9ec22cf6f9d3c7c16%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarsh-the-willow-ba0ec7cd6b%2Fb48d6538adcc3b65272ebe5be9803e197df7656f37c04c90897080e5898ec913%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmarsh-the-willow-ba0ec7cd6b%2F1ad16a70eb99c90418b049046d7390fa79d9d21befe17ef9ec22cf6f9d3c7c16%2Freading.webp?alt=media 1254w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="1254" height="1254" crossorigin="anonymous" decoding="async" alt="Marsh the Willow">
         </div>
+        </div>
         <div class="content">
-          <p id="npc-desc-zh" class="body"></p>
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">雷亞的師父，居住在風拂山丘。馬許神情慵懶、略顯不耐，卻擁有連瑪萊雅將軍都十分忌憚的強大力量。</span><span class="description-line">多年前，馬許與拉比曾在林中的白色小教堂為雷亞的父母阿哈努・席弗斯頓與克萊芬的蕾絲塔證婚，也為他們埋葬；雷亞也自小在他的指導下於風拂山丘修煉。</span><span class="description-line">瑪萊雅將軍率軍摧毀小教堂並包圍中途之家時，馬許撕開一道通往風拂山丘的黑暗裂縫現身。他輕易擊飛試圖追趕的士兵，將雷亞與同伴們帶離戰場，並要他們回去繼續修煉。</span></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The master of Leah, Marsh lives in the Windblown Hills. He carries himself with a lazy, faintly irritated air, yet possesses power formidable enough to make even General Maliya extremely wary.</span><span class="description-line">Years ago, Marsh and Ravi officiated the wedding of Leah&#x27;s parents, Ahanu Silverstone and Lesta of Clyphen, at the small white chapel in the woods, and also buried them. Leah also trained under Marsh in the Windblown Hills from childhood.</span><span class="description-line">When General Maliya&#x27;s army destroyed the chapel and surrounded the Halfway Home, Marsh appeared through a dark fissure leading to the Windblown Hills. He effortlessly knocked away a pursuing soldier, brought Leah and her companions out of the battle, and ordered them to return with him for more training.</span></p>
         </div>
       </div>
 
@@ -101,7 +101,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>

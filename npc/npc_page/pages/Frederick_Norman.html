@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try { if (localStorage.getItem("npc-lang") === "en") { document.documentElement.dataset.lang = "en"; document.documentElement.lang = "en"; } } catch (_) {}</script>
   <title>Frederick Norman | NPC | Rugatha</title>
   <meta name="description" content="Read the profile of Frederick Norman, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="robots" content="index, follow">
@@ -29,10 +30,7 @@
   <meta name="twitter:title" content="Frederick Norman | NPC | Rugatha">
   <meta name="twitter:description" content="Read the profile of Frederick Norman, an NPC in Rugatha, including appearances, locations, and related characters.">
   <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrederick-norman-89c9e0cd46%2F0648ecf5aa9b5799edf48ab636db64ce37040ae59d87d5cd2822f7cf27be6b36%2Freading.webp?alt=media">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/logo/rugatha-favicon-32.png">
   <link rel="icon" type="image/png" href="../../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../assets/styles.css?v=20261025-npc-profile-4">
   <!-- Rugatha PWA -->
@@ -59,14 +57,16 @@
         </div>
 
       <div class="layout">
+        <div class="npc-profile">
         <div class="portrait">
           <img id="npc-portrait" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrederick-norman-89c9e0cd46%2F0648ecf5aa9b5799edf48ab636db64ce37040ae59d87d5cd2822f7cf27be6b36%2Freading.webp?alt=media" srcset="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrederick-norman-89c9e0cd46%2F7ee1e795f99d7ee35eb0f1530d760613e6d35a0865e6287ef97fd96e74963c2f%2Fthumb.webp?alt=media 480w, https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ffrederick-norman-89c9e0cd46%2F0648ecf5aa9b5799edf48ab636db64ce37040ae59d87d5cd2822f7cf27be6b36%2Freading.webp?alt=media 512w" sizes="(max-width: 700px) calc(100vw - 48px), 420px" width="512" height="512" crossorigin="anonymous" decoding="async" alt="Frederick Norman">
         </div>
+        </div>
         <div class="content">
 
-          <p id="npc-desc-zh" class="body"></p>
+          <p id="npc-desc-zh" class="body"><span class="description-line">T.I.D.E.S.組織的現任領導者，人稱諾曼爵士。</span><span class="description-line">在《古斯塔夫諾曼的神秘失蹤》中，出錢聘請冒險者們尋找其失蹤兒子古斯塔夫。雖然愛護兒子，但不想太過介入其生活。</span><span class="description-line">有非常多眼線，以及不小的影響力；冒險者逃離艾爾諾後，也曾讓他們在諾曼宅邸待了好一段日子。</span><span class="description-line">在T.I.D.E.S.集會中，弗雷德里克介紹組織階級與規則，主持方尖碑挑戰制度，並在蘿拉・費許朋成功挑戰萊里後，正式宣布萊里不再是方尖碑、也不再是T.I.D.E.S.成員。</span></p>
 
-          <p id="npc-desc-en" class="body"></p>
+          <p id="npc-desc-en" class="body"><span class="description-line">The current leader of T.I.D.E.S., commonly called Syr Norman.</span><span class="description-line">In The Disappearance of Gustavo Norman, he hired the adventurers to find his missing son Gustavo. Though he loved his son, he tried not to interfere too much in Gustavo&#x27;s life.</span><span class="description-line">Frederick has many informants and considerable influence; after the adventurers escaped El&#x27;Nore, he also let them stay at the Norman estate for some time.</span><span class="description-line">At a T.I.D.E.S. gathering, Frederick explained the organization&#x27;s ranks and rules, presided over the Obelisk challenge system, and after Laura Fishburne successfully challenged Riley, formally declared that Riley was no longer an Obelisk or a member of T.I.D.E.S.</span></p>
         </div>
       </div>
       <div class="qa qa--fate" data-qa data-qa-src="../../data/characters.json" data-qa-id="Frederick_Norman" data-qa-page="npc/npc_page/pages/Frederick_Norman.html">
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script type="module" src="../assets/scripts.js?v=20261025-npc-cloud-only-1"></script>
+  <script type="module">window.addEventListener("load", () => import("../assets/scripts.js?v=20261025-npc-cloud-only-1"));</script>
   <script src="../../../shared/firebase.config.js"></script>
   <script type="module" src="../assets/qa.js?v=20261025-npc-cloud-only-1"></script>
   <script type="module" src="../../../shared/auth.js"></script>
