@@ -60,7 +60,7 @@ test('location pages link to current routes and existing local pages and resourc
 
 test('every location uses a Firebase PNG and review-only fields are absent', () => {
   for (const [route, node] of routes) {
-    assert.match(node.image, /^https:\/\/firebasestorage\.googleapis\.com\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images%2Flocations%2F[a-z0-9_-]+%2F[a-f0-9]{64}%2Freading\.png\?alt=media$/, route);
+    assert.match(node.image, /^https:\/\/firebasestorage\.googleapis\.com\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images%2Flocations(?:%2F[a-z0-9_-]+){1,4}%2Freading-[a-f0-9]{8}\.png\?alt=media$/, route);
     assert.equal('art_fix' in node, false, route);
   }
 });

@@ -2,7 +2,7 @@
 import { readFile, writeFile, mkdir, unlink } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { join, dirname, resolve } from 'node:path';
-import { prepare, outsideDirectory, sha256, publicImageUrl, root } from './image-assets.mjs';
+import { prepare, outsideDirectory, sha256, publicImageUrl, readableImageObject, root } from './image-assets.mjs';
 
 const [inventoryPath, outputPath] = process.argv.slice(2);
 if (!inventoryPath || !outputPath || process.argv.length !== 4) {
@@ -37,7 +37,7 @@ for (const category of ['arcs', 'chapters', 'npcs']) {
       join(directory, 'originals', image.source), '-o', temporary]);
     const bytes = await readFile(temporary);
     const digest = sha256(bytes);
-    const object = `public-images/${category}/${image.id}/${digest}/reading.webp`;
+    const object = readableImageObject(category, image.id, digest, 'reading');
     const target = join(directory, 'objects', object);
     await mkdir(dirname(target), { recursive: true });
     await writeFile(target, bytes);

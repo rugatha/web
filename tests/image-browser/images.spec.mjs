@@ -6,8 +6,19 @@ import { signatureFiles } from '../../npc/npc_page/assets/signature-files.js';
 
 const characters = JSON.parse(readFileSync('npc/data/characters.json', 'utf8'));
 const alfie = characters.find(npc => npc.id === 'Alfie_Fuller');
-const manifest = JSON.parse(readFileSync('docs/image-migration/pilot-manifest.json', 'utf8'));
-const oldPaths = new Set(manifest.images.map(image => '/' + image.source));
+const pilot = JSON.parse(readFileSync('docs/image-migration/pilot-manifest.json', 'utf8'));
+const currentNpcs = JSON.parse(readFileSync('docs/image-migration/npc-current.json', 'utf8'));
+const paths = JSON.parse(readFileSync('docs/image-migration/readable-paths-2026-10-28.json', 'utf8'));
+const renamed = new Map(paths.items.map(item => [item.from, item.to]));
+const manifest = { ...pilot, images: pilot.images.map(image => {
+  if (image.category === 'npcs') return currentNpcs.images.find(current => current.entityIds.some(id => image.entityIds.includes(id))) || image;
+  return { ...image, variants: Object.fromEntries(Object.entries(image.variants).map(([key, variant]) => {
+    const object = renamed.get(variant.object);
+    if (!object) throw new Error(`Missing readable image: ${variant.object}`);
+    return [key, { ...variant, object, url: `https://firebasestorage.googleapis.com/v0/b/${paths.bucket}/o/${encodeURIComponent(object)}?alt=media` }];
+  })) };
+}) };
+const oldPaths = new Set(pilot.images.map(image => '/' + image.source));
 const production = process.env.RUGATHA_IMAGE_TEST_BASE_URL;
 async function startImageWorker(page) {
   if (production) await page.context().route('**/__image-test__/', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Image cache acceptance</title>' }));
@@ -101,7 +112,7 @@ for (const mobile of [false, true]) {
     await expect(cover).toHaveAttribute('src', /public-images/);
     await expect.poll(() => cover.evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
     await expect(page.locator('.chapter-list__image')).toHaveCount(7);
-    await expect(page.locator('.chapter-list__image').first()).toHaveAttribute('src', /thumb\.webp/);
+    await expect(page.locator('.chapter-list__image').first()).toHaveAttribute('src', /thumb-[a-f0-9]{8}\.webp/);
     for (let chapter = 1; chapter <= 7; chapter++) {
       await page.goto(`/campaigns/pages/rugatha/rugatha-c01/chpt0${chapter}.html`);
       const hero = page.locator('img[src*="public-images%2Fchapters"]').first();
@@ -128,13 +139,13 @@ test('real worker caches a CORS image for offline rendering', async ({ page, con
   const render = src => renderImage(page, src);
   expect(await render(alfie.image)).toBeGreaterThan(0);
   await expect.poll(() => page.evaluate(async () => {
-    const cache = await caches.open('rugatha-pwa-v29-public-images'); return (await cache.keys()).length;
+    const cache = await caches.open('rugatha-pwa-v52-public-images'); return (await cache.keys()).length;
   })).toBeGreaterThan(0);
   if (production) {
     // Cache a controlled document through the real network-first navigation
     // handler, then stop fulfilling it. Offline reload must use Cache Storage.
     await page.reload();
-    await expect.poll(() => page.evaluate(async () => !!(await (await caches.open('rugatha-pwa-v29-runtime')).match(location.href)))).toBe(true);
+    await expect.poll(() => page.evaluate(async () => !!(await (await caches.open('rugatha-pwa-v52-runtime')).match(location.href)))).toBe(true);
     await context.unroute('**/__image-test__/');
   }
   await context.setOffline(true);
@@ -153,7 +164,7 @@ test('temporary HTTP failure shows one uncached placeholder and recovers on the 
   await context.route(alfie.image, fault);
   expect(await renderImage(page, alfie.image)).toBe(192);
   expect(attempts).toBe(1);
-  expect(await page.evaluate(async src => !!(await (await caches.open('rugatha-pwa-v29-public-images')).match(src)), alfie.image)).toBe(false);
+  expect(await page.evaluate(async src => !!(await (await caches.open('rugatha-pwa-v52-public-images')).match(src)), alfie.image)).toBe(false);
   await context.unroute(alfie.image, fault);
   // Chrome can reuse a decoded image within the same document. The supported
   // retry is the next page load, without a timer or repeated failing requests.
@@ -172,7 +183,7 @@ test('all twenty reading variants have zero additional warm network or metadata 
     await Promise.all(sources.map(async source => { const image = new Image(); image.crossOrigin = 'anonymous'; image.src = source; document.body.append(image); await image.decode(); }));
   }, urls);
   const coldStart = Date.now(); await renderBatch(); const coldMs = Date.now() - coldStart;
-  await expect.poll(() => page.evaluate(async () => (await (await caches.open('rugatha-pwa-v29-public-images')).keys()).length)).toBe(20);
+  await expect.poll(() => page.evaluate(async () => (await (await caches.open('rugatha-pwa-v52-public-images')).keys()).length)).toBe(20);
   const coldRequests = requests.length;
   expect(coldRequests).toBe(20);
   const warmStart = Date.now(); await renderBatch(); const warmMs = Date.now() - warmStart;

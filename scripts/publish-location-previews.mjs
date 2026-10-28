@@ -6,7 +6,7 @@ import { spawn } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { storageClient } from './image-original-archive.mjs';
-import { imageBucket, outsideDirectory } from './image-assets.mjs';
+import { imageBucket, outsideDirectory, readableImageObject } from './image-assets.mjs';
 
 if (!process.argv[2] || process.argv[2].startsWith('--')) throw Error('Usage: node scripts/publish-location-previews.mjs /outside/batch [--publish]');
 const directory = await outsideDirectory(process.argv[2]);
@@ -19,7 +19,7 @@ const images = await Promise.all(manifest.map(async entry => {
   const bytes = await readFile(path.join(directory, entry.file));
   if (bytes.subarray(0, 8).toString('hex') !== '89504e470d0a1a0a') throw Error('Expected a PNG');
   const hash = sha(bytes);
-  const object = `public-images/locations/${entry.location_key.replaceAll('/', '--')}/${hash}/reading.png`;
+  const object = readableImageObject('locations', entry.location_key.replaceAll('/', '--'), hash, 'reading', 'png');
   return { ...entry, bytes, hash, object, url: `https://firebasestorage.googleapis.com/v0/b/${imageBucket}/o/${encodeURIComponent(object)}?alt=media` };
 }));
 if (!publish) {

@@ -22,7 +22,7 @@ function visit(node, depth = 0, segments = [], ancestors = []) {
   if (!node || typeof node.name_en !== 'string' || !node.desc_zh?.trim()) throw new Error(`Missing name/description: ${segments.join('/')}`);
   if (depth > 0 && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(node.slug)) throw new Error(`Unsafe slug: ${node.slug}`);
   const imagePath = image(node);
-  const firebaseImage = typeof imagePath === 'string' && /^https:\/\/firebasestorage\.googleapis\.com\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images%2Flocations%2F[a-z0-9_-]+%2F[a-f0-9]{64}%2Freading\.png\?alt=media$/.test(imagePath);
+  const firebaseImage = typeof imagePath === 'string' && /^https:\/\/firebasestorage\.googleapis\.com\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images%2Flocations(?:%2F[a-z0-9_-]+){1,4}%2Freading-[a-f0-9]{8}\.png\?alt=media$/.test(imagePath);
   if (!firebaseImage) throw new Error(`Location art must use Firebase Storage: ${imagePath}`);
   for (const key of ['chapters']) {
     if (node[key] !== undefined && !Array.isArray(node[key])) throw new Error(`Invalid chapter list: ${segments.join('/')}`);

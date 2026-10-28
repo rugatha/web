@@ -10,6 +10,20 @@ import { tmpdir } from 'node:os';
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const imageBucket = 'rugatha-87e15.firebasestorage.app';
 export const publicImageUrl = (bucket, object) => `https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${encodeURIComponent(object)}?alt=media`;
+export function readableImageObject(category, id, sha, variant, extension = 'webp') {
+  if (!/^[a-f0-9]{64}$/.test(sha)) throw new Error('Invalid image checksum');
+  let parts;
+  if (category === 'arcs' || category === 'chapters') {
+    const match = id.replace(/-[a-f0-9]{10}$/, '').match(/^([a-z]+)-([a-z]+\d+(?:-\d+)?)(?:-chpt([\d_-]+))?$/);
+    if (!match || (category === 'chapters') !== !!match[3]) throw new Error(`Invalid campaign image ID: ${id}`);
+    parts = [match[1], match[2], ...(match[3] ? [`chapter-${match[3]}`] : [])];
+  } else if (category === 'npcs') parts = [id.replace(/-[a-f0-9]{10}$/, '')];
+  else if (category === 'signatures') parts = [id];
+  else if (category === 'locations') parts = id.split('--');
+  else throw new Error(`Invalid image category: ${category}`);
+  if (!parts.every(part => /^[a-z0-9_-]+$/.test(part))) throw new Error(`Invalid image path: ${id}`);
+  return `public-images/${category}/${parts.join('/')}/${variant}-${sha.slice(0, 8)}.${extension}`;
+}
 export const categories = {
   'campaigns/campaign-banners/': 'arcs',
   'campaigns/chapter-banners/': 'chapters',
@@ -40,7 +54,7 @@ export function npcSourceFor(npc, images) {
     const path = decodeURIComponent(url.pathname);
     if (!path.startsWith(prefix)) return null;
     const id = path.slice(prefix.length).split('/')[0];
-    return images.find(image => image.category === 'npcs' && image.id === id)?.source || null;
+    return images.find(image => image.category === 'npcs' && (image.id === id || image.id.replace(/-[a-f0-9]{10}$/, '') === id))?.source || null;
   } catch (_) { return null; }
 }
 
@@ -197,7 +211,7 @@ export async function prepare(inventoryPath, output, batch = 'rugatha-c01', orig
       execFileSync('cwebp', ['-quiet', '-q', String(spec.quality), '-m', '6', '-metadata', 'icc', '-resize', String(width), String(height), encoderSource, '-o', temporary]);
       const bytes = await readFile(temporary);
       const hash = sha256(bytes);
-      const object = `public-images/${image.category}/${image.id}/${hash}/${name}.webp`;
+      const object = readableImageObject(image.category, image.id, hash, name);
       const target = join(directory, 'objects', object);
       await mkdir(dirname(target), { recursive: true });
       await copyFile(temporary, target);

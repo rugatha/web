@@ -3,7 +3,7 @@ import { readFile, writeFile, copyFile, mkdtemp, unlink } from 'node:fs/promises
 import { join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
-import { root, audit, imageBucket, sha256, publicImageUrl } from './image-assets.mjs';
+import { root, audit, imageBucket, sha256, publicImageUrl, readableImageObject } from './image-assets.mjs';
 import { archiveDescriptor, storageClient, verifyArchive } from './image-original-archive.mjs';
 
 export function retirementPlan(manifest, inventory) {
@@ -17,7 +17,7 @@ export function retirementPlan(manifest, inventory) {
     seen.add(image.source);
     if (Object.keys(image.variants || {}).sort().join(',') !== 'reading,thumb') throw new Error(`Both public variants are required: ${image.source}`);
     for (const [name, variant] of Object.entries(image.variants)) {
-      if (!/^[a-f0-9]{64}$/.test(variant.sha256) || variant.object !== `public-images/${image.category}/${image.id}/${variant.sha256}/${name}.webp` || variant.url !== publicImageUrl(imageBucket, variant.object) || !Number.isSafeInteger(variant.bytes) || variant.bytes <= 0) throw new Error(`Invalid public variant: ${image.source}`);
+      if (!/^[a-f0-9]{64}$/.test(variant.sha256) || ![`public-images/${image.category}/${image.id}/${variant.sha256}/${name}.webp`, readableImageObject(image.category, image.id, variant.sha256, name)].includes(variant.object) || variant.url !== publicImageUrl(imageBucket, variant.object) || !Number.isSafeInteger(variant.bytes) || variant.bytes <= 0) throw new Error(`Invalid public variant: ${image.source}`);
     }
     const local = inventory.images.find(item => item.source === image.source);
     if (!local || local.sha256 !== image.original.sha256 || local.bytes !== image.original.bytes) throw new Error(`Original changed or absent: ${image.source}`);
@@ -41,7 +41,7 @@ export async function retireOriginals(manifestPath, apply = false) {
     const result = await verifyArchive(client, image);
     archived.push({ source: image.source, sha256: image.original.sha256, bytes: image.original.bytes, archive: result.archive });
     for (const [name, variant] of Object.entries(image.variants)) {
-      if (!['thumb', 'reading'].includes(name) || !/^[a-f0-9]{64}$/.test(variant.sha256) || variant.object !== `public-images/${image.category}/${image.id}/${variant.sha256}/${name}.webp` || variant.url !== publicImageUrl(imageBucket, variant.object)) throw new Error('Unexpected public variant');
+      if (!['thumb', 'reading'].includes(name) || !/^[a-f0-9]{64}$/.test(variant.sha256) || ![`public-images/${image.category}/${image.id}/${variant.sha256}/${name}.webp`, readableImageObject(image.category, image.id, variant.sha256, name)].includes(variant.object) || variant.url !== publicImageUrl(imageBucket, variant.object)) throw new Error('Unexpected public variant');
       const response = await fetch(variant.url, { headers: { Origin: 'https://rugatha.com' } });
       const bytes = Buffer.from(await response.arrayBuffer());
       if (!response.ok || bytes.length !== variant.bytes || sha256(bytes) !== variant.sha256 || response.headers.get('cache-control') !== variant.cacheControl || !response.headers.get('content-type')?.startsWith('image/webp')) throw new Error(`Public variant verification failed: ${variant.object}`);

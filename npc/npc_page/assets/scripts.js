@@ -91,7 +91,7 @@ function applyViolentOverride(npc) {
     nameZh: npc.violentNameZh || override.nameZh || npc.nameZh || npc.name,
     descEn: npc.violentDescEn || override.descEn || npc.descEn,
     descZh: npc.violentDescZh || override.descZh || npc.descZh,
-    image: "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-vaxon-lich-963493ecfe%2Fe527fc8c181e46a8c69eadb935be94fa0be75da64d2e56774539bd97d0395e5e%2Freading.webp?alt=media"
+    image: "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-vaxon-lich%2Freading-e527fc8c.webp?alt=media"
   };
 }
 

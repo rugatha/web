@@ -8,10 +8,17 @@ const hash = 'a'.repeat(64);
 const path = `public-images/arcs/rugatha-c01-test/${hash}/reading.webp`;
 const original = `image-originals/arcs/rugatha-c01-test/${hash}/original.png`;
 const signature = `public-images/signatures/sora/${hash}/signature.png`;
+const readable = [
+  'public-images/arcs/rugatha/c01/reading-1234abcd.webp',
+  'public-images/chapters/rugatha/c01/chapter-01/thumb-1234abcd.webp',
+  'public-images/npcs/sora/reading-1234abcd.webp',
+  'public-images/signatures/sora/signature-1234abcd.png',
+  'public-images/locations/material-realm/mattington/city/tavern/reading-1234abcd.png'
+];
 before(async () => {
   environment = await initializeTestEnvironment({ projectId: 'demo-rugatha-images', storage: { rules: readFileSync('config/firebase/storage.rules', 'utf8') } });
   await environment.withSecurityRulesDisabled(async context => {
-    for (const object of [path, original, signature, signature.replace(hash, 'invalid'), signature.replace('signature.png', 'other.png'), path.replace('/arcs/', '/private/'), path.replace(hash, 'invalid'), 'profile-photos/owner/avatar.png', 'catalogs/spells/test/spells-phb.json']) {
+    for (const object of [path, original, signature, ...readable, signature.replace(hash, 'invalid'), signature.replace('signature.png', 'other.png'), path.replace('/arcs/', '/private/'), path.replace(hash, 'invalid'), 'profile-photos/owner/avatar.png', 'catalogs/spells/test/spells-phb.json']) {
       await uploadString(ref(context.storage(), object), 'test bytes', 'raw', { contentType: 'image/webp' });
     }
   });
@@ -49,6 +56,16 @@ test('public variants are anonymous read-only; listing and app-admin writes fail
   const admin = environment.authenticatedContext('admin', { admin: true }).storage();
   await assertFails(uploadString(ref(admin, path), 'replacement'));
   await assertFails(deleteObject(ref(admin, path)));
+});
+
+test('readable editorial paths allow get but deny list and writes', async () => {
+  const storage = environment.unauthenticatedContext().storage();
+  for (const object of readable) {
+    await assertSucceeds(getBytes(ref(storage, object)));
+    await assertFails(uploadString(ref(storage, object), 'replacement'));
+  }
+  await assertFails(listAll(ref(storage, 'public-images/locations/material-realm')));
+  await assertFails(getBytes(ref(storage, readable[0].replace('1234abcd', 'invalid'))));
 });
 
 test('invalid public paths and private profile photos remain inaccessible', async () => {

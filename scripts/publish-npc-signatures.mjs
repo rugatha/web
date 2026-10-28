@@ -6,7 +6,7 @@ import { spawn } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { storageClient } from './image-original-archive.mjs';
-import { imageBucket } from './image-assets.mjs';
+import { imageBucket, readableImageObject } from './image-assets.mjs';
 import { signatureFiles } from '../npc/npc_page/assets/signature-files.js';
 
 const publish = process.argv.includes('--publish');
@@ -24,7 +24,7 @@ const images = await Promise.all(Object.entries(signatureFiles).map(async ([id, 
   const bytes = await readFile(path.join('npc/signatures', file));
   if (bytes.subarray(0, 8).toString('hex') !== '89504e470d0a1a0a') throw Error(`Invalid PNG: ${id}`);
   const hash = sha(bytes);
-  const object = `public-images/signatures/${id.toLowerCase().replace(/[^a-z0-9_-]/g, '-')}/${hash}/signature.png`;
+  const object = readableImageObject('signatures', id.toLowerCase().replace(/[^a-z0-9_-]/g, '-'), hash, 'signature', 'png');
   return {id, file, bytes, hash, object, url: `https://firebasestorage.googleapis.com/v0/b/${imageBucket}/o/${encodeURIComponent(object)}?alt=media`};
 }));
 if (!publish) {

@@ -61,6 +61,52 @@ service firebase.storage {
       allow list, write: if false;
     }
 
+    // Readable editorial paths. The short checksum in the file name keeps each
+    // URL immutable while people can browse by series, chapter, NPC or place.
+    match /public-images/arcs/{series}/{campaign}/{fileName} {
+      allow get: if series.matches('[a-z0-9_-]+')
+        && campaign.matches('[a-z0-9_-]+')
+        && fileName.matches('(thumb|reading)-[a-f0-9]{8}\\.webp');
+      allow list, write: if false;
+    }
+
+    match /public-images/chapters/{series}/{campaign}/{chapter}/{fileName} {
+      allow get: if series.matches('[a-z0-9_-]+')
+        && campaign.matches('[a-z0-9_-]+')
+        && chapter.matches('chapter-[a-z0-9_-]+')
+        && fileName.matches('(thumb|reading)-[a-f0-9]{8}\\.webp');
+      allow list, write: if false;
+    }
+
+    match /public-images/npcs/{character}/{fileName} {
+      allow get: if character.matches('[a-z0-9_-]+')
+        && fileName.matches('(thumb|reading)-[a-f0-9]{8}\\.webp');
+      allow list, write: if false;
+    }
+
+    match /public-images/signatures/{character}/{fileName} {
+      allow get: if character.matches('[a-z0-9_-]+')
+        && fileName.matches('signature-[a-f0-9]{8}\\.png');
+      allow list, write: if false;
+    }
+
+    match /public-images/locations/{place}/{fileName} {
+      allow get: if place.matches('[a-z0-9_-]+') && fileName.matches('reading-[a-f0-9]{8}\\.png');
+      allow list, write: if false;
+    }
+    match /public-images/locations/{realm}/{place}/{fileName} {
+      allow get: if realm.matches('[a-z0-9_-]+') && place.matches('[a-z0-9_-]+') && fileName.matches('reading-[a-f0-9]{8}\\.png');
+      allow list, write: if false;
+    }
+    match /public-images/locations/{realm}/{region}/{place}/{fileName} {
+      allow get: if realm.matches('[a-z0-9_-]+') && region.matches('[a-z0-9_-]+') && place.matches('[a-z0-9_-]+') && fileName.matches('reading-[a-f0-9]{8}\\.png');
+      allow list, write: if false;
+    }
+    match /public-images/locations/{realm}/{region}/{city}/{place}/{fileName} {
+      allow get: if realm.matches('[a-z0-9_-]+') && region.matches('[a-z0-9_-]+') && city.matches('[a-z0-9_-]+') && place.matches('[a-z0-9_-]+') && fileName.matches('reading-[a-f0-9]{8}\\.png');
+      allow list, write: if false;
+    }
+
     match /profile-photos/{uid}/{fileName} {
       allow get: if isOwner(uid) || isAdmin();
       allow list: if false;

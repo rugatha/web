@@ -61,7 +61,7 @@
   const imageBannerBase = isArcPage || isNestedPage ? campaignBannerBase : campaignBannerBase;
   const chapterImageMap = {
     // Rugatha main
-    "rugatha-c01": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Farcs%2Frugatha-c01-c600135691%2F89e07b5df302b62a10a64d64d901df03206eff0a0385d6d4a3c65ec2f320ebc8%2Fthumb.webp?alt=media",
+    "rugatha-c01": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Farcs%2Frugatha%2Fc01%2Fthumb-89e07b5d.webp?alt=media",
     "rugatha-c02": "rugatha-c02.jpg",
     "rugatha-c03": "rugatha-c03.jpg",
     "rugatha-c03-chpt01": "rugatha-c03-chpt01.png",

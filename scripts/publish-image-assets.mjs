@@ -2,7 +2,7 @@
 import { readFile } from 'node:fs/promises';
 import { join, resolve, sep } from 'node:path';
 import { createRequire } from 'node:module';
-import { sha256, outsideDirectory, imageBucket, publicImageUrl } from './image-assets.mjs';
+import { sha256, outsideDirectory, imageBucket, publicImageUrl, readableImageObject } from './image-assets.mjs';
 
 const [directoryArg, ...flags] = process.argv.slice(2);
 if (!directoryArg || flags.some(flag => flag !== '--publish')) throw new Error('Usage: node scripts/publish-image-assets.mjs /outside/batch [--publish]');
@@ -14,7 +14,7 @@ const objects = [];
 for (const image of manifest.images) {
   for (const [variant, object] of Object.entries(image.variants)) {
     const expected = `public-images/${image.category}/${image.id}/${object.sha256}/${variant}.webp`;
-    if (!['arcs', 'chapters', 'npcs'].includes(image.category) || !['thumb', 'reading'].includes(variant) || !/^[a-z0-9_-]+$/.test(image.id) || !/^[a-f0-9]{64}$/.test(object.sha256) || object.object !== expected) throw new Error('Invalid object path');
+    if (!['arcs', 'chapters', 'npcs'].includes(image.category) || !['thumb', 'reading'].includes(variant) || !/^[a-z0-9_-]+$/.test(image.id) || !/^[a-f0-9]{64}$/.test(object.sha256) || ![expected, readableImageObject(image.category, image.id, object.sha256, variant)].includes(object.object)) throw new Error('Invalid object path');
     const local = resolve(directory, 'objects', object.object);
     if (!local.startsWith(join(directory, 'objects') + sep)) throw new Error('Invalid local path');
     const bytes = await readFile(local);

@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v51";
+const CACHE_VERSION = "rugatha-pwa-v52";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;
@@ -75,7 +75,9 @@ const isPublicImage = (request) => {
   const url = new URL(request.url);
   if (url.origin !== "https://firebasestorage.googleapis.com" || url.search !== "?alt=media") return false;
   try {
-    return /^\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images\/(arcs|chapters|npcs)\/[a-z0-9_-]+\/[a-f0-9]{64}\/(thumb|reading)\.webp$/.test(decodeURIComponent(url.pathname));
+    const path = decodeURIComponent(url.pathname);
+    return /^\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images\/(arcs|chapters|npcs)\/[a-z0-9_-]+\/[a-f0-9]{64}\/(thumb|reading)\.webp$/.test(path)
+      || /^\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images\/(?:arcs\/[a-z0-9_-]+\/[a-z0-9_-]+|chapters\/[a-z0-9_-]+\/[a-z0-9_-]+\/chapter-[a-z0-9_-]+|npcs\/[a-z0-9_-]+)\/(thumb|reading)-[a-f0-9]{8}\.webp$/.test(path);
   } catch (_) { return false; }
 };
 

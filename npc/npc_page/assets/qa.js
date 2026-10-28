@@ -56,7 +56,7 @@ if (qaRoot && !qaDisabled) {
     if (!portrait) return;
     portrait.removeAttribute("srcset");
     portrait.crossOrigin = "anonymous";
-    portrait.src = "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-vaxon-lich-963493ecfe%2Fe527fc8c181e46a8c69eadb935be94fa0be75da64d2e56774539bd97d0395e5e%2Freading.webp?alt=media";
+    portrait.src = "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fdr-vaxon-lich%2Freading-e527fc8c.webp?alt=media";
     portrait.alt = "Dr. Vaxon Lich";
   };
 

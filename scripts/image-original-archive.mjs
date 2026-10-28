@@ -8,8 +8,12 @@ import { root, imageBucket, categoryFor, assetId, sha256, outsideDirectory, publ
 export function archiveDescriptor(image) {
   const extension = extname(image.source).toLowerCase();
   if (!['arcs', 'chapters', 'npcs'].includes(image.category) || categoryFor(image.source) !== image.category || resolve(root, image.source) !== join(resolve(root), image.source) || image.source.split('/').includes('..') || image.id !== assetId(image.source) || !/^[a-f0-9]{64}$/.test(image.original.sha256) || !['.jpg', '.jpeg', '.png', '.webp'].includes(extension) || !Number.isSafeInteger(image.original.bytes) || image.original.bytes <= 0) throw new Error(`Invalid original descriptor: ${image.source}`);
+  const legacy = `image-originals/${image.category}/${image.id}/${image.original.sha256}/original${extension}`;
+  const readable = image.category === 'npcs'
+    ? `image-originals/npcs/${image.id.replace(/-[a-f0-9]{10}$/, '')}/original-${image.original.sha256.slice(0, 8)}${extension}`
+    : `image-originals/${image.category}/${image.id.replace(/-[a-f0-9]{10}$/, '').replace(/-chpt([\d_-]+)$/, '/chapter-$1').replace(/^([a-z]+)-/, '$1/')}/original-${image.original.sha256.slice(0, 8)}${extension}`;
   return {
-    object: `image-originals/${image.category}/${image.id}/${image.original.sha256}/original${extension}`,
+    object: image.original.archive?.object === legacy ? legacy : readable,
     sha256: image.original.sha256, bytes: image.original.bytes,
     contentType: extension === '.png' ? 'image/png' : extension === '.webp' ? 'image/webp' : 'image/jpeg',
     cacheControl: 'private, no-store', storageClass: 'STANDARD'
