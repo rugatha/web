@@ -643,8 +643,14 @@ service cloud.firestore {
       function ownsMember() {
         return signedIn() && memberKey(request.auth.uid) == key;
       }
+      // First registration probes the legacy UID path and the next allocated
+      // number. Do not allow probing every other member number by status code.
       allow get: if ownsMember() || isAdmin()
-        || (signedIn() && !exists(/databases/$(database)/documents/members/$(key)));
+        || (signedIn() && key == request.auth.uid
+          && !exists(/databases/$(database)/documents/members/$(key)))
+        || (signedIn() && key.matches('[0-9]{4}-[0-9]{4}')
+          && int(key.replace('-', '')) == get(counterPath()).data.lastAllocated + 1
+          && !exists(/databases/$(database)/documents/members/$(key)));
       allow list: if isAdmin();
       allow create: if signedIn() && key == request.resource.data.memberNo
         && getAfter(/databases/$(database)/documents/memberKeys/$(request.auth.uid)).data.memberNo == key

@@ -131,6 +131,9 @@ test("member documents are private to their owner and admin", async () => {
   await assertSucceeds(getDoc(doc(ownerDb, "members/0000-0001")));
   await assertFails(getDoc(doc(otherDb, "members/0000-0001")));
   await assertFails(getDoc(doc(publicDb, "members/0000-0001")));
+  await assertFails(getDoc(doc(ownerDb, "members/0000-0004")));
+  await assertSucceeds(getDoc(doc(ownerDb, "members/owner")));
+  await assertSucceeds(getDoc(doc(ownerDb, "members/0000-0003")));
   const snapshot = await assertSucceeds(getDocs(query(collection(adminDb, "members"))));
   assert.equal(snapshot.size, 2);
 });
