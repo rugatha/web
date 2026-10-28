@@ -24,6 +24,7 @@
     "test:images": "node --test tests/image-assets.test.mjs tests/image-pwa.test.mjs tests/image-retirement.test.mjs",
     "test:image-browser": "playwright test --config playwright.images.config.mjs",
     "test:letter-browser": "playwright test --config playwright.letters.config.mjs",
+    "test:auth-browser": "node --test tests/auth-browser.test.mjs && node tests/auth-browser-smoke.mjs",
     "test:image-rules": "firebase emulators:exec --project demo-rugatha-images --only storage \"node --test tests/image-storage-rules.test.mjs\"",
     "test:rules": "firebase emulators:exec --project demo-rugatha --only firestore,storage \"node --test tests/firebase-rules.test.mjs\"",
     "test": "npm run test:rules && npm run test:images && npm run test:spellbooks && node --test tests/character-*.test.mjs toolbox/character_sheet/tests/*.test.mjs",

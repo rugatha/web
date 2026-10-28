@@ -1,5 +1,6 @@
 import { getSiteAuth } from './auth-session.js?v=20261019-character-books-1';
 import { hidePageBookmark, setupPageBookmark } from "./bookmark.js";
+import { embeddedBrowser, externalBrowserUrl, lineExternalBrowserUrl } from './auth-browser.js';
 
 const getFirebaseConfig = () => window.RUGATHA_FIREBASE_CONFIG || null;
 const loginHidden = false;
@@ -34,13 +35,6 @@ const trackSuccessfulLogin = (method = "google") => {
   window.gtag("event", "login", { method });
 };
 
-const isLikelyInAppBrowser = () => {
-  const ua = navigator.userAgent || "";
-  return /(FBAN|FBAV|Instagram|Line|TikTok|Twitter|WeChat|QQ|Weibo|WebView|wv)/i.test(
-    ua
-  );
-};
-const isLineInAppBrowser = () => /Line/i.test(navigator.userAgent || "");
 const isMobileDevice = () => {
   const ua = navigator.userAgent || "";
   return /Android|iPhone|iPad|iPod|Mobi/i.test(ua);
@@ -224,9 +218,7 @@ const setupAuth = async () => {
   const loginButton = document.getElementById("google-login");
   const logoutButton = document.getElementById("google-logout");
   const statusEl = document.getElementById("auth-status");
-  const inAppBrowser = isLikelyInAppBrowser();
-  const lineInAppBrowser = isLineInAppBrowser();
-  const useRedirectOnly = inAppBrowser;
+  const inAppBrowser = embeddedBrowser(navigator.userAgent || '');
   const getCanonicalRedirectUrl = () => {
     const path = `${window.location.pathname || "/"}${window.location.search || ""}${window.location.hash || ""}`;
     return new URL(path, "https://rugatha.com").href;
@@ -262,15 +254,43 @@ const setupAuth = async () => {
     return;
   }
 
-  if (lineInAppBrowser) {
-    loginButton.disabled = false;
-    loginButton.removeAttribute("aria-disabled");
-    loginButton.addEventListener("click", () => {
-      alert("Google login is blocked inside LINE. Please open Rugatha in Safari or Chrome and sign in there.");
+  if (inAppBrowser) {
+    const chinese = getAuthLanguage() === 'zh';
+    const externalUrl = externalBrowserUrl(window.location).href;
+    loginButton.hidden = true;
+    const copy = document.createElement('button');
+    copy.type = 'button';
+    copy.className = 'auth-button';
+    copy.textContent = chinese ? '複製網址' : 'Copy page URL';
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(externalUrl);
+        statusEl.textContent = chinese ? '已複製網址，請貼到 Safari 或 Chrome 開啟後登入。' : 'URL copied. Open it in Safari or Chrome to sign in.';
+      } catch {
+        const field = document.createElement('input');
+        field.type = 'text';
+        field.readOnly = true;
+        field.value = externalUrl;
+        field.setAttribute('aria-label', chinese ? '請複製這個網址' : 'Copy this URL');
+        copy.replaceWith(field);
+        field.focus();
+        field.select();
+        statusEl.textContent = chinese ? '請複製選取的網址，貼到 Safari 或 Chrome 開啟。' : 'Copy the selected URL and open it in Safari or Chrome.';
+      }
     });
-    logoutButton.disabled = true;
-    logoutButton.setAttribute("aria-disabled", "true");
-    statusEl.textContent = "Open in Safari/Chrome to sign in";
+    if (inAppBrowser === 'line') {
+      const link = document.createElement('a');
+      link.className = 'auth-button';
+      link.href = lineExternalBrowserUrl(window.location).href;
+      link.textContent = chinese ? '在外部瀏覽器開啟' : 'Open in browser';
+      loginButton.after(link, copy);
+      statusEl.textContent = chinese ? '請先用外部瀏覽器開啟，再使用 Google 登入。' : 'Open in a browser before signing in with Google.';
+    } else {
+      loginButton.after(copy);
+      statusEl.textContent = chinese ? '請用頁面選單「在瀏覽器開啟」，或複製網址貼到 Safari／Chrome，再使用 Google 登入。' : 'Use the menu to open this page in a browser, or copy its URL into Safari or Chrome, then sign in.';
+    }
+    statusEl.hidden = false;
+    statusEl.style.maxWidth = '360px';
     return;
   }
 
@@ -608,31 +628,21 @@ const setupAuth = async () => {
     try {
       await persistenceReady;
       showAuthStatus("Auth: redirecting...");
-      if (useRedirectOnly) {
-        try {
-          await signInWithRedirect(auth, provider);
-        } catch (redirectError) {
-          console.warn("Redirect sign-in failed, falling back to handler URL", redirectError);
-          fallbackToHandler();
-        }
-        return;
-      } else {
-        try {
-          showAuthStatus("Auth: opening popup...");
-          await signInWithPopup(auth, provider);
-        } catch (popupError) {
-          const code = popupError?.code || "";
-          if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
-            showAuthStatus("Auth: popup blocked, redirecting...");
-            try {
-              await signInWithRedirect(auth, provider);
-            } catch (redirectError) {
-              console.warn("Redirect sign-in failed, falling back to handler URL", redirectError);
-              fallbackToHandler();
-            }
-          } else {
-            throw popupError;
+      try {
+        showAuthStatus("Auth: opening popup...");
+        await signInWithPopup(auth, provider);
+      } catch (popupError) {
+        const code = popupError?.code || "";
+        if (code === "auth/popup-blocked" || code === "auth/popup-closed-by-user") {
+          showAuthStatus("Auth: popup blocked, redirecting...");
+          try {
+            await signInWithRedirect(auth, provider);
+          } catch (redirectError) {
+            console.warn("Redirect sign-in failed, falling back to handler URL", redirectError);
+            fallbackToHandler();
           }
+        } else {
+          throw popupError;
         }
       }
     } catch (error) {
