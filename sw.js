@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v52";
+const CACHE_VERSION = "rugatha-pwa-v53";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;
@@ -84,6 +84,11 @@ const isPublicImage = (request) => {
 const IMAGE_MAX_ENTRIES = 120;
 const IMAGE_MAX_BYTES = 32 * 1024 * 1024;
 const IMAGE_MAX_AGE = 30 * 24 * 60 * 60 * 1000;
+// These URLs were replaced in place; bypass their previous immutable HTTP cache.
+const REPLACED_MELVIN_IMAGES = new Set([
+  "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin%2Freading-1e359f72.webp?alt=media",
+  "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin%2Fthumb-9a73a493.webp?alt=media"
+]);
 let imageCacheWrite = Promise.resolve();
 const imageFallback = async (otherwise = Response.error()) => {
   const fallback = await caches.match?.("/assets/logo/rugatha-icon-192.png");
@@ -101,7 +106,7 @@ const imageCacheFirst = async (request, event) => {
   try {
     // An img without crossorigin starts as no-cors. Explicit CORS fetch gives a
     // readable response; never store opaque responses with unknown size/status.
-    const response = await fetch(new Request(request, { mode: "cors", credentials: "omit" }));
+    const response = await fetch(new Request(request, { mode: "cors", credentials: "omit", cache: REPLACED_MELVIN_IMAGES.has(request.url) ? "reload" : "default" }));
     if (!response.ok || !response.headers.get("Content-Type")?.startsWith("image/webp")) return imageFallback(response);
     const body = await response.clone().arrayBuffer();
     if (body.byteLength > 1024 * 1024) return response;

@@ -7,7 +7,7 @@ const base = 'https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebase
 const url = n => `${base}${encodeURIComponent(`public-images/npcs/npc-${n}/${'a'.repeat(64)}/thumb.webp`)}?alt=media`;
 function worker({ bytes = 20, fallback = false } = {}) {
   const listeners = {}, stores = new Map();
-  let calls = 0, offline = false, status = 200, now = Date.now();
+  let calls = 0, offline = false, status = 200, now = Date.now(), lastCacheMode;
   const caches = {
     async match(request) {
       if (fallback && request === '/assets/logo/rugatha-icon-192.png') return new Response('site-icon', { headers: { 'Content-Type': 'image/png' } });
@@ -30,12 +30,13 @@ function worker({ bytes = 20, fallback = false } = {}) {
     fetch: async request => {
       calls++;
       assert.equal(request.mode, 'cors'); assert.equal(request.credentials, 'omit');
+      lastCacheMode = request.cache;
       if (offline) throw new Error('offline');
       return new Response(new Uint8Array(bytes), { status, headers: { 'Content-Type': 'image/webp' } });
     }
   });
   return {
-    stores, get calls() { return calls; }, offline: value => offline = value,
+    stores, get calls() { return calls; }, get lastCacheMode() { return lastCacheMode; }, offline: value => offline = value,
     status: value => status = value, advance: duration => now += duration,
     async fetch(value) {
       let response;
@@ -47,6 +48,14 @@ function worker({ bytes = 20, fallback = false } = {}) {
     }
   };
 }
+
+test('replaced Melvin URL bypasses the browser HTTP cache on first fetch', async () => {
+  const w = worker();
+  await w.fetch(`${base}public-images%2Fnpcs%2Fmelvin%2Freading-1e359f72.webp?alt=media`);
+  assert.equal(w.lastCacheMode, 'reload');
+  await w.fetch(url(1));
+  assert.equal(w.lastCacheMode, 'default');
+});
 
 test('public images are cache-first and available offline; private or token URLs bypass cache', async () => {
   const w = worker();
