@@ -1,25 +1,71 @@
 {
-  "chapterKey": "plus-c08/temp",
+  "chapterKey": "plus-c08/chpt01",
   "groups": {
-    "ron": [{ "id": "ron", "name": "龍恩", "icon": "pc/pics/Ron.png" }],
+    "ron": [
+      {
+        "id": "ron",
+        "name": "龍恩",
+        "icon": "pc/pics/Ron.png",
+        "nameEn": "Ron"
+      }
+    ],
     "party": [
-      { "id": "midori", "name": "米多莉", "icon": "pc/pics/Midori.png" },
-      { "id": "samael", "name": "薩梅爾", "icon": "pc/pics/Samael.jpg" },
-      { "id": "siri", "name": "喜利", "icon": "pc/pics/Siri Oslee.png" },
-      { "id": "yhwh", "name": "YHWH", "icon": "pc/pics/YHWH.png" },
-      { "id": "beau", "name": "波", "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbeau%2Fthumb-32ff9ced.webp?alt=media" }
+      {
+        "id": "midori",
+        "name": "米多莉",
+        "icon": "pc/pics/Midori.png",
+        "nameEn": "Midori"
+      },
+      {
+        "id": "samael",
+        "name": "薩梅爾",
+        "icon": "pc/pics/Samael.jpg",
+        "nameEn": "Samael"
+      },
+      {
+        "id": "siri",
+        "name": "喜利",
+        "icon": "pc/pics/Siri Oslee.png",
+        "nameEn": "Siri"
+      },
+      {
+        "id": "yhwh",
+        "name": "YHWH",
+        "icon": "pc/pics/YHWH.png",
+        "nameEn": "YHWH"
+      },
+      {
+        "id": "beau",
+        "name": "波",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbeau%2Fthumb-32ff9ced.webp?alt=media",
+        "nameEn": "Beau"
+      }
     ]
   },
   "questions": [
     {
-      "id": "crossroads",
+      "id": "midori-and-koyuki",
       "group": "party",
-      "question": "霧中的岔路通往四個地方，你決定往哪裡走？",
-      "options": ["走向亮著燈的旅店",
-        "調查古老的石塔",
-        "沿著河岸尋找線索",
-        "留在原地等待天亮"],
-      "customLabel": "自行輸入"
+      "question": "",
+      "options": [
+        "「這是屬於妳們的人生，不管最後決定留下來獲釋離開，我都支持妳們。」",
+        "「我們不是還有未完成的事嗎？等一切結束後，我們再一起回來吧？」",
+        "「妳們已經經歷太多了。如果這裡就是妳們想稱為家的地方，那就留下來吧。我們會帶著妳們的意志繼續往前的。」",
+        "「還是先請小雪和主教把這邊安頓下來，等我們把問題解決後，再回來討論未來看怎麼做？」"
+      ],
+      "customLabel": "自行填答",
+      "showCustomOption": true,
+      "en": {
+        "question": "",
+        "options": [
+          "“These are your lives. Whether you decide to stay or leave, I will support you.”",
+          "“Don’t we still have unfinished business? Once everything is over, let’s come back together.”",
+          "“You’ve already been through so much. If this is the place you want to call home, then stay. We’ll carry your resolve with us as we move forward.”",
+          "“Why don’t we ask Yuki and the bishop to settle things here first? Once we’ve solved our problems, we can return and talk about what comes next.”"
+        ],
+        "customLabel": "Write your own answer"
+      }
     }
-  ]
+  ],
+  "credentialMode": "character-password"
 }

@@ -1,4 +1,13 @@
 (() => {
+  let navObserver = null;
+  let renderVersion = 0;
+  const revision = document.currentScript?.src
+    ? new URL(document.currentScript.src).searchParams.get('v') : '';
+  const versionedUrl = (path, base) => {
+    const url = new URL(path, base);
+    if (revision) url.searchParams.set('v', revision);
+    return url.href;
+  };
   const graph = (window.RUGATHA_CONFIG && window.RUGATHA_CONFIG.graph) || {};
   const graphNodes = Array.isArray(graph.data)
     ? graph.data
@@ -43,13 +52,15 @@
         })();
 
   const ensureDetailScript = () => {
+    // Interactive chapters already own their title, language toggle and form.
+    if (document.body.dataset.choicesConfig) return;
     const alreadyLoaded =
       Array.from(document.getElementsByTagName("script")).some((el) =>
         (el.src || "").includes("/campaigns/scripts/detail.js")
       );
     if (alreadyLoaded) return;
     const script = document.createElement("script");
-    script.src = new URL("../../../scripts/detail.js?v=20261025-site-update-1", window.location.href).href;
+    script.src = new URL("../../../scripts/detail.js?v=20261029-plus-c08-arc-1", window.location.href).href;
     script.defer = true;
     script.dataset.name = "campaign-detail-loader";
     document.head.appendChild(script);
@@ -65,7 +76,7 @@
   };
 
   const fetchOverrides = async () => {
-    const overridesUrl = new URL("data/chapter-nav.json", campaignsBase).href;
+    const overridesUrl = versionedUrl("data/chapter-nav.json", campaignsBase);
     try {
       const res = await fetch(overridesUrl, { cache: "no-cache" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -80,7 +91,7 @@
   const fetchChapterTitles = async () => {
     if (window.__RUGATHA_CHAPTER_TITLE_MAP) return window.__RUGATHA_CHAPTER_TITLE_MAP;
     if (window.__RUGATHA_CHAPTER_TITLES_PROMISE) return window.__RUGATHA_CHAPTER_TITLES_PROMISE;
-    const titlesUrl = new URL("data/chapter-titles.json", campaignsBase).href;
+    const titlesUrl = versionedUrl("data/chapter-titles.json", campaignsBase);
     window.__RUGATHA_CHAPTER_TITLES_PROMISE = fetch(titlesUrl, { cache: "no-cache" })
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -103,7 +114,7 @@
   const fetchStoryArcTitles = async () => {
     if (window.__RUGATHA_STORY_ARC_TITLE_MAP) return window.__RUGATHA_STORY_ARC_TITLE_MAP;
     if (window.__RUGATHA_STORY_ARC_TITLES_PROMISE) return window.__RUGATHA_STORY_ARC_TITLES_PROMISE;
-    const titlesUrl = new URL("data/story-arc-titles.json", campaignsBase).href;
+    const titlesUrl = versionedUrl("data/story-arc-titles.json", campaignsBase);
     window.__RUGATHA_STORY_ARC_TITLES_PROMISE = fetch(titlesUrl, { cache: "no-cache" })
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -137,6 +148,9 @@
   };
 
   const main = async () => {
+    const currentVersion = ++renderVersion;
+    navObserver?.disconnect();
+    navObserver = null;
     ensureDetailScript();
     ensureAchievementScript();
     const [overrides, chapterTitles, storyArcTitles] = await Promise.all([
@@ -144,6 +158,7 @@
       fetchChapterTitles(),
       fetchStoryArcTitles()
     ]);
+    if (currentVersion !== renderVersion) return;
     const lang = getCurrentLanguage();
     const i18n = {
       navAria: { zh: "章節導覽", en: "Chapter navigation" },
@@ -398,6 +413,11 @@
     nav.appendChild(buildItem("next", nextChapter, targetArc, campaign));
 
     const placeNav = () => {
+      const explicitTarget = document.querySelector("[data-role='chapter-nav-container']");
+      if (explicitTarget) {
+        explicitTarget.appendChild(nav);
+        return true;
+      }
       const related = document.querySelector(".related-locations") || document.querySelector(".related-npcs") || document.querySelector(".related-guests") || document.querySelector(".related-pcs--main");
       if (related && related.parentNode) {
         related.parentNode.insertBefore(nav, related.nextSibling);
@@ -419,12 +439,13 @@
 
     const initialPlaced = placeNav();
     if (!initialPlaced) {
-      const observer = new MutationObserver(() => {
+      navObserver = new MutationObserver(() => {
         if (placeNav()) {
-          observer.disconnect();
+          navObserver?.disconnect();
+          navObserver = null;
         }
       });
-      observer.observe(document.body, { childList: true, subtree: true });
+      navObserver.observe(document.body, { childList: true, subtree: true });
     }
   };
 

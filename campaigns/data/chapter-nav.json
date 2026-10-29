@@ -259,6 +259,14 @@
       "url": "/campaigns/pages/rugatha-plus/plus-c07/"
     },
     "prev-chapter": "plus-c07-chpt03",
+    "next-chapter": "plus-c08-chpt01"
+  },
+  "plus-c08-chpt01": {
+    "story-arc": {
+      "id": "plus-c08",
+      "url": "/campaigns/pages/rugatha-plus/plus-c08/"
+    },
+    "prev-chapter": "plus-c07-chpt04",
     "next-chapter": null
   },
   "lite-c05-chpt02": {

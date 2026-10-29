@@ -4,6 +4,7 @@ import argparse
 import getpass
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,6 +14,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apply', action='store_true', help='Write to Firestore using Application Default Credentials')
     parser.add_argument('--password-suffix', help='Shared suffix, e.g. 1234 or MMDD; omit to preserve existing passwords')
+    parser.add_argument('--passwords-stdin', action='store_true', help='Read an object of character IDs and exact passwords from stdin; never print or save passwords')
     args = parser.parse_args()
     config = json.loads((ROOT / 'campaigns/data/plus-08-multiple-choices.json').read_text())
     arc, chapter = config['chapterKey'].split('/')
@@ -26,6 +28,14 @@ def main():
         q['id']: {'allowedCharacters': [p['id'] for p in config['groups'][q['group']]]}
         for q in config['questions']
     }}
+    if args.passwords_stdin:
+        if args.password_suffix is not None:
+            raise SystemExit('Use either --passwords-stdin or --password-suffix')
+        passwords = json.load(sys.stdin)
+        if set(passwords) != set(NAMES) or any(not isinstance(value, str) or not value for value in passwords.values()):
+            raise SystemExit('Provide one nonempty password for each of the six character IDs')
+        payload['passwordHashes'] = {key: hashlib.sha256(value.encode()).hexdigest() for key, value in passwords.items()}
+        del passwords
     if args.password_suffix is not None:
         payload['passwordHashes'] = {key: hashlib.sha256(f'{name}_{args.password_suffix}'.encode()).hexdigest() for key, name in NAMES.items()}
     print(f"Target: rugatha-87e15 / {path}; {len(payload['questions'])} question(s)")

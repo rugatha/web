@@ -16,7 +16,10 @@ __pycache__/
 migration-private/
 rtdb-export*.json
 *rtdb-export*.json
-campaigns/pages/rugatha-plus/plus-c08/
+campaigns/pages/rugatha-plus/plus-c08/*
+!campaigns/pages/rugatha-plus/plus-c08/chpt01.html
+!campaigns/pages/rugatha-plus/plus-c08/temp.html
+!campaigns/pages/rugatha-plus/plus-c08/index.html
 # Browser acceptance artifacts
 playwright-report/
 test-results/

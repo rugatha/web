@@ -1,4 +1,11 @@
 (() => {
+  const revision = document.currentScript?.src
+    ? new URL(document.currentScript.src).searchParams.get('v') : '';
+  const versionedDataUrl = (filename) => {
+    const url = new URL(`data/${filename}`, campaignsBase);
+    if (revision) url.searchParams.set('v', revision);
+    return url.href;
+  };
   const campaigns =
     window.RUGATHA_CONFIG && Array.isArray(window.RUGATHA_CONFIG.campaigns)
       ? window.RUGATHA_CONFIG.campaigns
@@ -89,6 +96,7 @@
     "plus-c07-chpt02": "plus-c07-chpt02.png",
     "plus-c07-chpt03": "plus-c07-chpt03.png",
     "plus-c07-chpt04": "plus-c07-chpt04.png",
+    "plus-c08-chpt01": "plus-c08-chpt01.png",
     "brown-c01": "brown-c01.jpg",
     "brown-c01-chpt01": "brown-c01-chpt01.png",
     "brown-c01-chpt02": "brown-c01-chpt02.png",
@@ -126,6 +134,7 @@
     // Rugatha Plus
     "plus-c06": "plus-c06.jpg",
     "plus-c07": "plus-c07.png",
+    "plus-c08": "plus-c08.png?v=20261029-peak-temple-title",
     // Rugatha Lite
     "lite-c06": "lite-c06.jpg",
     "lite-c07": "lite-c07.jpg",
@@ -299,7 +308,7 @@
   const loadChapterTitleMap = async () => {
     if (window.__RUGATHA_CHAPTER_TITLE_MAP) return window.__RUGATHA_CHAPTER_TITLE_MAP;
     if (window.__RUGATHA_CHAPTER_TITLES_PROMISE) return window.__RUGATHA_CHAPTER_TITLES_PROMISE;
-    const titlesUrl = new URL("data/chapter-titles.json", campaignsBase).href;
+    const titlesUrl = versionedDataUrl("chapter-titles.json");
     window.__RUGATHA_CHAPTER_TITLES_PROMISE = fetch(titlesUrl, { cache: "no-cache" })
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -322,7 +331,7 @@
   const loadStoryArcTitleMap = async () => {
     if (window.__RUGATHA_STORY_ARC_TITLE_MAP) return window.__RUGATHA_STORY_ARC_TITLE_MAP;
     if (window.__RUGATHA_STORY_ARC_TITLES_PROMISE) return window.__RUGATHA_STORY_ARC_TITLES_PROMISE;
-    const titlesUrl = new URL("data/story-arc-titles.json", campaignsBase).href;
+    const titlesUrl = versionedDataUrl("story-arc-titles.json");
     window.__RUGATHA_STORY_ARC_TITLES_PROMISE = fetch(titlesUrl, { cache: "no-cache" })
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);

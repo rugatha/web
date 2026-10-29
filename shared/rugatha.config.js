@@ -219,6 +219,13 @@
       level: 3,
       parent: "plus"
     },
+    {
+      id: "plus-c08",
+      label: "A Place Called Home",
+      title: "A Place Called Home 名為家的地方",
+      level: 3,
+      parent: "plus"
+    },
 
     // ===== Rugatha Lite =====
     {
@@ -632,6 +639,13 @@
       }
     ],
 
+    "plus-c08": [
+      {
+        id: "plus-c08-chpt01",
+        title: "Chapter 1: Memories Overflowing",
+        url: "../plus-c08/chpt01.html"
+      }
+    ],
     "lite-c05": [
       {
         id: "lite-c05-chpt01",
@@ -1064,6 +1078,7 @@
     "plus-c07-chpt02": "../chapter-banners/plus-c07-chpt02.png",
     "plus-c07-chpt03": "../chapter-banners/plus-c07-chpt03.png",
     "plus-c07-chpt04": "../chapter-banners/plus-c07-chpt04.png",
+    "plus-c08-chpt01": "../chapter-banners/plus-c08-chpt01.png",
     "lite-c05-chpt02": "../chapter-banners/lite-c05-chpt02.png",
     "lite-c05-chpt01": "../chapter-banners/rugatha-c05-chpt01.png",
     "lite-c05-chpt03": "../chapter-banners/lite-c05-chpt03.png",
@@ -1201,6 +1216,7 @@
     "lite-c05": "../rugatha-lite/lite-c05/",
     "plus-c06": "../rugatha-plus/plus-c06/",
     "plus-c07": "../rugatha-plus/plus-c07/",
+    "plus-c08": "../rugatha-plus/plus-c08/",
     "lite-c06": "../rugatha-lite/lite-c06/",
     "lite-c07": "../rugatha-lite/lite-c07/",
     "lite-c08": "../rugatha-lite/lite-c08/",

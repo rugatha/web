@@ -233,6 +233,19 @@
             }
           ],
           "url": "/campaigns/pages/rugatha-plus/plus-c07/"
+        },
+        {
+          "id": "plus-c08",
+          "title": "名為家的地方",
+          "chapters": 1,
+          "chapterList": [
+            {
+              "id": "plus-c08-chpt01",
+              "title": "第一章：回憶滿盈",
+              "url": "/campaigns/pages/rugatha-plus/plus-c08/chpt01.html"
+            }
+          ],
+          "url": "/campaigns/pages/rugatha-plus/plus-c08/"
         }
       ]
     },

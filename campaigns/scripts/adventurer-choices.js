@@ -9,12 +9,32 @@ const status = document.querySelector('#gate-status');
 const form = document.querySelector('#unlock-form');
 const unlock = document.querySelector('#unlock-button');
 const siteBase = new URL('../../', import.meta.url);
-const dataUrl = new URL('../data/plus-08-multiple-choices.json', import.meta.url);
+const dataUrl = new URL(`../data/${document.body.dataset.choicesConfig || 'plus-08-multiple-choices.json'}`, import.meta.url);
 const chapterDataUrl = new URL('../data/chapter-content.json', import.meta.url);
+// Keep older Service Worker entries for the temp page out of this chapter.
+dataUrl.searchParams.set('chapter', document.body.dataset.chapterContentId);
+chapterDataUrl.searchParams.set('chapter', document.body.dataset.chapterContentId);
+const revision = new URL(import.meta.url).searchParams.get('v');
+if (revision) {
+  dataUrl.searchParams.set('v', revision);
+  chapterDataUrl.searchParams.set('v', revision);
+}
 let uid = '', character = null, config, chapterSettings, db, unsubscribe = [], busy = false;
+const bilingual = (zh, en) => ({ zh, en: en || zh });
+const setText = (node, text) => {
+  if (text && typeof text === 'object') {
+    node.dataset.textZh = text.zh;
+    node.dataset.textEn = text.en;
+    node.textContent = document.documentElement.dataset.lang === 'en' ? text.en : text.zh;
+  } else {
+    delete node.dataset.textZh;
+    delete node.dataset.textEn;
+    node.textContent = text;
+  }
+};
 const element = (tag, text, className) => {
   const node = document.createElement(tag);
-  if (text !== undefined) node.textContent = text;
+  if (text !== undefined) setText(node, text);
   if (className) node.className = className;
   return node;
 };
@@ -31,31 +51,26 @@ const portrait = person => {
 };
 const voter = person => {
   const node = element('div', undefined, 'adventure-voter');
-  node.append(portrait(person), element('span', person.name));
+  node.append(portrait(person), element('span', bilingual(person.name, person.nameEn)));
   return node;
 };
-function lock(message = '請輸入角色密碼。') {
+function lock(message = bilingual('請輸入角色密碼。', 'Please enter your character password.')) {
   unsubscribe.forEach(stop => stop());
   unsubscribe = [];
   character = null;
   page.hidden = true;
   gate.hidden = false;
   root.replaceChildren();
-  status.textContent = message;
+  setText(status, message);
 }
 function showChapter() {
   gate.hidden = true;
   page.hidden = false;
   root.replaceChildren();
   root.closest('.campaign-detail').hidden = false;
-  if (chapterSettings.lock === 1 && character) {
-    const identity = element('div', undefined, 'adventure-characters');
-    identity.append(voter(character));
-    root.append(identity);
-  }
   if (!document.querySelector('script[data-temp-content]')) {
     const script = element('script');
-    script.src = new URL('./chapter-content.js', import.meta.url).href;
+    script.src = new URL('./chapter-content.js?v=20261029-language-1', import.meta.url).href;
     script.dataset.tempContent = 'true';
     document.body.append(script);
   }
@@ -70,15 +85,17 @@ function renderResults(target, question, answers, people) {
     row.append(icons, element('p', text, 'adventure-result-text'));
     target.append(row);
   };
-  question.options.forEach((text, index) => makeRow(`${index + 1}. ${text}`, people.filter(person => (answers.get(person.id)?.option ?? 1) === index + 1)));
+  question.options.forEach((text, index) => makeRow(bilingual(`${index + 1}. ${text}`, `${index + 1}. ${question.en?.options[index] || text}`), people.filter(person => (answers.get(person.id)?.option ?? 1) === index + 1)));
   const custom = people.filter(person => answers.get(person.id)?.option === 5);
+  if (question.showCustomOption && !custom.length) makeRow(bilingual(`5. ${question.customLabel}`, `5. ${question.en?.customLabel || question.customLabel}`), []);
   custom.forEach(person => makeRow(answers.get(person.id).customText, [person]));
 }
 function renderQuestion(question) {
   const people = config.groups[question.group];
   const section = element('section', undefined, 'adventure-question');
   if (chapterSettings.lock === 1) {
-    section.append(element('h2', '冒險者的抉擇？'), element('p', question.question));
+    section.append(element('h2', bilingual('冒險者的抉擇？', 'What will the adventurers choose?')));
+    if (question.question) section.append(element('p', bilingual(question.question, question.en?.question)));
   }
   root.append(section);
   const answersPath = `${accessPath()}/questions/${question.id}/answers`;
@@ -91,19 +108,19 @@ function renderQuestion(question) {
     options.setAttribute('aria-label', '選擇答案');
     let selected = 1, saving = false, loaded = false;
     const buttons = [...question.options, question.customLabel].map((text, index) => {
-      const button = element('button', `${index + 1}. ${text}`, 'adventure-option');
+      const button = element('button', bilingual(`${index + 1}. ${text}`, `${index + 1}. ${[...(question.en?.options || question.options), question.en?.customLabel || question.customLabel][index]}`), 'adventure-option');
       button.type = 'button';
       button.addEventListener('click', () => { selected = index + 1; sync(); });
       options.append(button);
       return button;
     });
-    const customLabel = element('label', '請輸入你的選擇');
+    const customLabel = element('label', bilingual('請輸入你的選擇', 'Enter your answer'));
     const custom = element('textarea', undefined, 'adventure-custom');
     custom.id = `custom-${question.id}`;
     customLabel.htmlFor = custom.id;
     custom.maxLength = 4000;
-    const confirm = element('button', '確認', 'adventure-confirm');
-    const message = element('p', '讀取已儲存的答案…');
+    const confirm = element('button', bilingual('確認', 'Confirm'), 'adventure-confirm');
+    const message = element('p', bilingual('讀取已儲存的答案…', 'Loading your saved answer…'));
     message.setAttribute('role', 'status');
     const sync = () => {
       buttons.forEach((button, index) => {
@@ -126,16 +143,16 @@ function renderQuestion(question) {
         custom.value = snapshot.data().customText;
       }
       loaded = true;
-      message.textContent = snapshot.exists() ? '已載入你的答案；可以修改後再次確認。' : '尚未送出答案時，視為選擇第一項；確認後儲存你的選擇。';
+      setText(message, snapshot.exists() ? bilingual('已載入你的答案；可以修改後再次確認。', 'Your answer is loaded; you can edit and confirm it again.') : bilingual('尚未送出答案時，視為選擇第一項；確認後儲存你的選擇。', 'Your default is option 1 until you submit. Confirm to save your choice.'));
       sync();
-    }, () => { message.textContent = '無法讀取答案，請重新解鎖或檢查連線。'; }));
+    }, () => { setText(message, bilingual('無法讀取答案，請重新解鎖或檢查連線。', 'Unable to load your answer. Unlock again or check your connection.')); }));
     answerForm.addEventListener('submit', async event => {
       event.preventDefault();
       if (saving || !loaded || !answerForm.reportValidity()) return;
-      if (selected === 5 && !custom.value.trim()) { message.textContent = '請輸入自訂答案。'; return; }
+      if (selected === 5 && !custom.value.trim()) { setText(message, bilingual('請輸入自訂答案。', 'Please enter your own answer.')); return; }
       saving = true;
       sync();
-      message.textContent = '儲存中…';
+      setText(message, bilingual('儲存中…', 'Saving…'));
       try {
         await runTransaction(db, async transaction => {
           const previous = await transaction.get(answerRef);
@@ -146,20 +163,21 @@ function renderQuestion(question) {
             updatedAt: serverTimestamp()
           });
         });
-        message.textContent = '答案已儲存至 Firestore。';
+        setText(message, bilingual('答案已儲存至 Firestore。', 'Your answer has been saved.'));
       } catch (error) {
-        message.textContent = error.code === 'permission-denied' ? '儲存失敗：請重新解鎖，或確認角色組別與 Firestore 設定。' : '儲存失敗，請檢查網路後重試。';
+        setText(message, error.code === 'permission-denied' ? bilingual('儲存失敗：請重新解鎖，或確認角色組別與 Firestore 設定。', 'Unable to save. Unlock again or check the character group and Firestore settings.') : bilingual('儲存失敗，請檢查網路後重試。', 'Unable to save. Check your connection and try again.'));
       } finally { saving = false; sync(); }
     });
   } else if (chapterSettings.lock === 1 && character) {
-    section.append(element('p', `${character.name} 不在本題的冒險者組別中。`));
+    section.append(element('p', bilingual(`${character.name} 不在本題的冒險者組別中。`, `${character.nameEn || character.name} is not in this question’s adventurer group.`)));
   }
   if (chapterSettings.lock !== 0) return;
   const reveal = element('section', undefined, 'adventure-reveal');
-  reveal.append(element('h2', '冒險者的抉擇。'), element('p', question.question));
+  reveal.append(element('h2', bilingual('冒險者的抉擇。', 'The adventurers’ choices')));
+  if (question.question) reveal.append(element('p', bilingual(question.question, question.en?.question)));
   section.append(reveal);
   const results = element('div', undefined, 'adventure-results');
-  const resultStatus = element('p', '讀取公布答案中…');
+  const resultStatus = element('p', bilingual('讀取公布答案中…', 'Loading published answers…'));
   resultStatus.setAttribute('role', 'status');
   reveal.append(resultStatus, results);
   unsubscribe.push(onSnapshot(collection(db, answersPath), snapshot => {
@@ -170,7 +188,7 @@ function renderQuestion(question) {
   }, () => {
     results.replaceChildren();
     resultStatus.hidden = false;
-    resultStatus.textContent = '答案尚未開放，或無法讀取公布資料。';
+    setText(resultStatus, bilingual('答案尚未開放，或無法讀取公布資料。', 'Answers are not available yet, or could not be loaded.'));
   }));
 }
 async function start() {
@@ -209,7 +227,9 @@ async function start() {
     }
     uid = nextUid;
     unlock.disabled = !uid || busy;
-    if (!character) status.textContent = uid ? '請輸入角色密碼，例如 Midori_加上密碼。' : '正在建立安全連線…';
+    if (!character) setText(status, uid
+      ? (config.credentialMode === 'character-password' ? bilingual('請選擇冒險者並輸入角色密碼。', 'Choose your character and enter their password.') : bilingual('請輸入角色密碼，例如 Midori_加上密碼。', 'Enter your character password, such as Midori_ followed by the password.'))
+      : bilingual('正在建立安全連線…', 'Establishing a secure connection…'));
   });
   await auth.authStateReady();
   if (!auth.currentUser) await signInAnonymously(auth);
@@ -219,7 +239,9 @@ async function start() {
     busy = true;
     unlock.disabled = true;
     const credential = document.querySelector('#chapter-password').value;
-    const person = allCharacters().find(person => credential.startsWith(`${person.id === 'yhwh' ? 'YHWH' : person.id[0].toUpperCase() + person.id.slice(1)}_`));
+    const person = config.credentialMode === 'character-password'
+      ? allCharacters().find(person => person.id === document.querySelector('#chapter-character')?.value)
+      : allCharacters().find(person => credential.startsWith(`${person.id === 'yhwh' ? 'YHWH' : person.id[0].toUpperCase() + person.id.slice(1)}_`));
     try {
       if (!person) throw new Error('invalid-credential');
       const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(credential));
@@ -231,8 +253,11 @@ async function start() {
       unsubscribe = [];
       showChapter();
     } catch (error) {
-      status.textContent = error.code === 'permission-denied' || error.message === 'invalid-credential' ? '角色密碼不正確，或本章尚未設定密碼。' : '驗證失敗，請檢查網路與 Firestore 設定。';
+      setText(status, error.code === 'permission-denied' || error.message === 'invalid-credential' ? bilingual('角色密碼不正確，或本章尚未設定密碼。', 'The character password is incorrect or has not been configured for this chapter.') : bilingual('驗證失敗，請檢查網路與 Firestore 設定。', 'Verification failed. Check your connection and Firestore settings.'));
     } finally { busy = false; unlock.disabled = !uid; }
   });
 }
-start().catch(error => { status.textContent = `無法載入：${error.message}`; });
+start().catch(error => {
+  gate.hidden = false;
+  status.textContent = `無法載入：${error.message}`;
+});

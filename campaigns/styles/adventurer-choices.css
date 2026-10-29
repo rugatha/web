@@ -4,9 +4,13 @@
 .adventure-canvas .campaign-detail:first-child { border-radius: 18px 18px 0 0; }
 .adventure-canvas .campaign-detail:last-child { border-radius: 0 0 18px 18px; }
 .adventure-canvas .campaign-detail:not(.arc-detail) { display: block; }
+.adventure-canvas > [data-role="chapter-nav-container"] { background: var(--card); padding: 0 18px 18px; border-radius: 0 0 18px 18px; }
 .adventure-canvas .campaign-detail__content, .adventure-canvas .campaign-detail__content_zh { max-width: none; }
 #unlock-form { display: grid; gap: 12px; max-width: 360px; }
-#chapter-password, .adventure-custom { box-sizing: border-box; width: 100%; padding: 12px; border: 1px solid var(--detail-edge); border-radius: 10px; background: var(--panel); color: var(--text); font: inherit; }
+#password-gate .campaign-detail { display: block; }
+#password-gate .campaign-detail__content { max-width: none; }
+#password-gate h1 { width: 100%; text-align: center; }
+#chapter-character, #chapter-password, .adventure-custom { box-sizing: border-box; width: 100%; padding: 12px; border: 1px solid var(--detail-edge); border-radius: 10px; background: var(--panel); color: var(--text); font: inherit; }
 .adventure-question { padding-bottom: 24px; }
 .adventure-characters { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 24px; }
 .adventure-character, .adventure-option, .adventure-confirm { font: inherit; cursor: pointer; color: var(--text); background: var(--panel); border: 2px solid var(--detail-edge); border-radius: 12px; padding: 12px 16px; }

@@ -1,4 +1,6 @@
 (() => {
+  const revision = document.currentScript?.src
+    ? new URL(document.currentScript.src).searchParams.get('v') : '';
   const getCampaignsBase = () => {
     if (typeof window.RUGATHA_CAMPAIGNS_BASE === "string") {
       return window.RUGATHA_CAMPAIGNS_BASE;
@@ -12,6 +14,9 @@
   };
 
   const getPreferredLanguage = () => {
+    if (window.__RUGATHA_CHAPTER_LANG === 'zh' || window.__RUGATHA_CHAPTER_LANG === 'en') {
+      return window.__RUGATHA_CHAPTER_LANG;
+    }
     try {
       const stored = localStorage.getItem("npc-lang");
       if (stored === "zh" || stored === "en") return stored;
@@ -137,7 +142,8 @@
     const chapterId = getChapterId();
     if (!chapterId) return;
 
-    const dataUrl = new URL(`data/chapters/${encodeURIComponent(chapterId)}.json`, getCampaignsBase()).href;
+    const dataUrl = new URL(`data/chapters/${encodeURIComponent(chapterId)}.json`, getCampaignsBase());
+    if (revision) dataUrl.searchParams.set('v', revision);
     try {
       const res = await fetch(dataUrl, { cache: "no-cache" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -148,5 +154,6 @@
     }
   };
 
+  window.addEventListener('rugatha:chapter-language-change', applyLanguageVisibility);
   main();
 })();
