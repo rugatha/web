@@ -1,6 +1,8 @@
 .DS_Store
 # species data working
 /species/
+# lab
+/lab/
 # Firebase migration inputs, credentials, and generated reports contain private data.
 *.service-account.json
 service-account*.json
