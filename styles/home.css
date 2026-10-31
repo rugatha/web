@@ -1328,3 +1328,13 @@ body {
     mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 36%, rgba(0, 0, 0, 0) 100%);
   }
 }
+
+/* Current experience stays between the three entry links and account controls. */
+.home-current-experience { grid-column: 1 / -1; grid-row: 4; margin: 4px 0; }
+@media (min-width: 901px) {
+  .hub > .auth-entry { grid-row: 5; }
+  .hub > .schedule-widget { grid-row: 6; }
+}
+@media (max-width: 900px) {
+  .home-current-experience { grid-row: 5; }
+}

@@ -31,7 +31,8 @@
 <link rel="icon" type="image/png" href="assets/logo/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="shared/styles/theme.css">
-  <link rel="stylesheet" href="styles/home.css?v=calendar-logo-normal-20260801">
+  <link rel="stylesheet" href="styles/home.css?v=20261101-current-experience">
+  <link rel="stylesheet" href="experience/current-event.css?v=20261101-compact-actions">
   <style>
     .auth-entry {
       position: static;
@@ -397,7 +398,7 @@
         <a href="experience/index.html" class="about-link-card">
           <div class="about-link-copy about-link-copy--centered">
             <span class="about-link-title home-i18n-en">Rugatha Experience<br><span class="experience-signup-copy">Come and sign up!</span></span>
-            <span class="about-link-title home-i18n-zh">體驗團資訊<br><span class="experience-signup-copy">來報名體驗團吧！</span></span>
+            <span class="about-link-title home-i18n-zh">體驗團資訊<br><span class="experience-signup-copy">歡迎訂閱體驗團快報！</span></span>
           </div>
         </a>
         <a href="member/index.html" class="about-link-card" id="adventurer-journal-link">
@@ -406,6 +407,22 @@
             <span class="about-link-title home-i18n-zh">冒險者日誌</span>
           </div>
         </a>
+      </section>
+
+      <section class="current-experience home-current-experience" aria-labelledby="current-experience-title">
+        <div class="current-experience__info">
+          <p class="current-experience__eyebrow">最新一期體驗團</p>
+          <h2 id="current-experience-title">正在載入場次資訊…</h2>
+          <p class="current-experience__time" id="current-experience-time"></p>
+        </div>
+        <div class="current-experience__action">
+          <p class="current-experience__status" id="current-experience-status" role="status" data-state="loading">正在確認報名狀態…</p>
+          <a class="experience-register-link" id="current-experience-link" href="experience/register/"><span>查看報名頁面</span><span aria-hidden="true">→</span></a>
+          <div class="experience-subscribe-action">
+            <a class="experience-register-link" href="experience/subscribe/"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m4 7 6.7 5.2a2.1 2.1 0 0 0 2.6 0L20 7"></path></svg><span data-current-subscribe-text>訂閱體驗團快報</span></a>
+          </div>
+        </div>
+        <noscript><p>請啟用 JavaScript 查看當期資訊，或直接開啟報名頁面。</p></noscript>
       </section>
 
       <section class="auth-entry" aria-label="Account">
@@ -522,6 +539,7 @@
   <script src="shared/rugatha.config.js"></script>
   <script type="module" src="shared/random-page.js"></script>
   <script src="shared/firebase.config.js"></script>
+  <script type="module" src="experience/current-event.js?v=20261101-home"></script>
   <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-auth-compat.js"></script>
   <script type="module" src="shared/auth.js?v=20261028-external-browser-1"></script>
