@@ -1,3 +1,4 @@
+import { createSubscriptionsDashboard } from './subscriptions-dashboard.js?v=20261101-1';
 import { createD3Dashboard } from './d3-dashboard.js?v=20261026-helper-1';
 import { createFeedbackDashboard } from './feedback-dashboard.js?v=20261026-forms-8';
 import { createExperienceDashboard } from './experience-dashboard.js?v=20261026-5';
@@ -18,6 +19,7 @@ const screens = {
   experience:['體驗團報名','依場次檢視完整填答與名額，管理狀態、DM_Note 與取消報名。'],
   d3:['2026 D3','查看龍山地下城創角活動的各時段名額、報名資料與加購項目。'],
   feedback:['跑團回饋','依場次檢視完整回覆、評分與費用感受，查看所選劇本與場次的回饋平均分。'],
+  subscriptions:['訂閱','檢視體驗團快報的訂閱狀況、會員比對與訂閱名單。'],
   members:['會員管理','查看會員清單、註冊時間、最後登入時間及關聯資料。'],
   characters:['角色卡','查看每張角色卡的建立者、職業、種族與建立時間。'],
   npcs:['NPC 統計','依宗教、性別、所在王國、種族等面向分析 NPC。'],
@@ -28,11 +30,12 @@ let state=blankState(), authenticated=false, generation=0, db, sdk, range=preset
 const experience = createExperienceDashboard(() => ({ authenticated, generation, db, sdk }));
 const d3 = createD3Dashboard(() => ({ authenticated, generation, db, sdk }));
 const feedback = createFeedbackDashboard(() => ({ authenticated, generation, db, sdk }));
+const subscriptions = createSubscriptionsDashboard(() => ({ authenticated, generation, db, sdk, members:state.members, memberError:state.errors.members }));
 let sliderMin=MIN_DATE, today=dayKey(new Date());
 function notice(message) { const node=document.createElement('div');node.className='notice';node.textContent=message;$('notices').append(node); }
-function failBoot() { authenticated=false;generation++;state=blankState();clearTableData();experience.reset();feedback.reset();d3.reset();window.RUGATHA_ADMIN_BOOT?.fail(); }
+function failBoot() { authenticated=false;generation++;state=blankState();clearTableData();experience.reset();feedback.reset();d3.reset();subscriptions.reset();window.RUGATHA_ADMIN_BOOT?.fail(); }
 function deny() {
-  window.RUGATHA_ADMIN_BOOT?.ready();authenticated=false;generation++;state=blankState();clearTableData();experience.reset();feedback.reset();d3.reset();
+  window.RUGATHA_ADMIN_BOOT?.ready();authenticated=false;generation++;state=blankState();clearTableData();experience.reset();feedback.reset();d3.reset();subscriptions.reset();
   $('dashboard').hidden=true;$('dashboard').replaceChildren();$('gate').hidden=false;$('gate').textContent='404 · Page not found';location.replace('/404/');
 }
 const count = (id,value) => { $(id).textContent=fmt(value); };
@@ -188,7 +191,7 @@ function renderFate() {
 }
 function renderActive() {
   if(!authenticated) return;
-  const renders={d3:d3.render,feedback:feedback.render,experience:experience.render,overview:renderOverview,campaigns:renderCampaigns,members:renderMembers,characters:renderCharacters,npcs:renderNpcs,fate:renderFate};
+  const renders={subscriptions:subscriptions.render,d3:d3.render,feedback:feedback.render,experience:experience.render,overview:renderOverview,campaigns:renderCampaigns,members:renderMembers,characters:renderCharacters,npcs:renderNpcs,fate:renderFate};
   renders[screen]();
 }
 function route() {
@@ -198,7 +201,7 @@ function route() {
   if (['experience','feedback','d3'].includes(screen)) $('forms-navigation').open=true;
   $('breadcrumb').textContent=(['experience','feedback','d3'].includes(screen)?'報名與表單 / ':'')+screens[screen][0];$('screen-title').textContent=screens[screen][0];$('screen-description').textContent=screens[screen][1];
   document.title=screens[screen][0]+' | Rugatha';
-  $('date-controls').hidden = ['experience','feedback','d3'].includes(screen);
+  $('date-controls').hidden = ['experience','feedback','d3','subscriptions'].includes(screen);
   document.querySelectorAll('[data-time-field]').forEach(node=>node.hidden=node.dataset.timeField!==screen);
   renderActive();
 }

@@ -8,7 +8,7 @@
   <title>管理總覽 | Rugatha</title>
   <link rel="icon" href="/assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="/shared/styles/theme.css">
-  <link rel="stylesheet" href="./dashboard.css?v=d3-12-20261026-forms-8">
+  <link rel="stylesheet" href="./dashboard.css?v=20261101-subscriptions-1">
 </head>
 <body>
   <div id="gate" role="status" class="gate"><img src="/assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha"><p>正在驗證管理員身分…</p></div>
@@ -27,6 +27,7 @@
             <a href="#d3" data-nav="d3">2026 D3</a>
           </div>
         </details>
+        <a href="#subscriptions" data-nav="subscriptions"><span>✉</span>訂閱</a>
         <a href="#members" data-nav="members"><span>♙</span>會員管理</a>
         <a href="#characters" data-nav="characters"><span>▧</span>角色卡</a>
         <a href="#npcs" data-nav="npcs"><span>◈</span>NPC 統計</a>
@@ -125,6 +126,16 @@
           <p id="feedback-summary" class="experience-seats"></p>
           <div class="panel"><h2>跑團回饋回覆</h2><p class="hint">保留各期完整回覆；此頁不套用全站日期篩選。上方平均分會隨劇本、場次、搜尋與欄位條件同步更新，計算包含所有分頁的符合資料。私下回饋僅供管理員閱讀，公開回饋不會自動發布。</p><div id="feedback-table" class="table-scroll"></div></div>
         </section>
+        <section data-screen="subscriptions" id="screen-subscriptions" hidden aria-labelledby="screen-title">
+          <div class="toolbar"><button class="button" id="subscriptions-refresh" type="button">重新整理訂閱資料</button><button class="button" id="subscriptions-copy" type="button" disabled>複製所有訂閱中的 email</button></div>
+          <p id="subscriptions-status" role="status"></p>
+          <p class="hint">複製清單包含所有訂閱中的 email，以逗號分隔並去除重複，不受表格篩選或分頁影響。可直接貼到 Gmail；群發時可使用密件副本。</p>
+          <p id="subscriptions-copy-status" role="status" aria-live="polite"></p>
+          <div id="subscriptions-copy-fallback" hidden><label for="subscriptions-copy-emails">訂閱中的 email 清單</label><textarea id="subscriptions-copy-emails" rows="4" readonly></textarea></div>
+          <div class="metrics three"><article class="metric"><span>累計訂閱總人數</span><strong id="subscriptions-total">—</strong><small>含已取消訂閱者</small></article><article class="metric"><span>訂閱中</span><strong id="subscriptions-active">—</strong></article><article class="metric"><span>取消訂閱</span><strong id="subscriptions-cancelled">—</strong></article></div>
+          <div class="panel"><div class="panel-heading"><h2>體驗團快報 · 累計訂閱總人數</h2><span class="tag">全部期間</span></div><div id="subscriptions-trend" class="trend-chart"></div><p id="subscriptions-trend-note" class="hint"></p></div>
+          <div class="panel"><div class="panel-heading"><h2>訂閱名單</h2></div><p id="subscriptions-summary" class="result-summary"></p><div id="subscriptions-table" class="table-scroll"></div></div>
+        </section>
         <section data-screen="experience" id="screen-experience" hidden aria-labelledby="screen-title">
           <div class="toolbar"><label>場次<select id="experience-event"><option value="all">全部場次</option></select></label><label class="search">搜尋報名資料<input id="experience-search" type="search" placeholder="稱呼、聯絡方式或回覆內容"></label><button class="button" id="experience-refresh" type="button">重新整理報名資料</button></div>
           <p id="experience-status" role="status"></p><section id="experience-current" class="panel experience-current" aria-label="本次報名狀況"></section><div id="experience-seats" class="experience-seats"></div>
@@ -187,7 +198,7 @@
       const config = document.createElement('script');
       config.src = '/shared/firebase.config.js';
       config.onerror = window.RUGATHA_ADMIN_BOOT.fail;
-      config.onload = () => import('./dashboard.js?v=20261026-helper-1').catch(window.RUGATHA_ADMIN_BOOT.fail);
+      config.onload = () => import('./dashboard.js?v=20261101-subscriptions-1').catch(window.RUGATHA_ADMIN_BOOT.fail);
       document.head.append(config);
     })();
   </script>

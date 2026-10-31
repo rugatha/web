@@ -138,3 +138,9 @@ body{background:#fafbf9;color:#17251d}main{background:#fafbf9;min-height:100vh}.
 #d3-shipping-editor{max-width:520px;width:calc(100% - 32px);max-height:90vh;overflow:auto;border:1px solid #acc2b2;border-radius:14px;background:#f2f6f1;color:#233c2c;padding:24px}#d3-shipping-editor::backdrop{background:#0008}#d3-table td [data-d3-shipping]{display:block;margin-top:8px}
 
 [data-d3-image-email]{display:flex;align-items:center;gap:8px}[data-d3-image-email] input{width:240px;min-width:180px}
+
+/* Keep newsletter chart labels readable on narrow screens. */
+#subscriptions-trend{overflow-x:auto}
+#subscriptions-trend svg{min-width:600px}
+#subscriptions-copy-fallback{margin:12px 0 20px}
+#subscriptions-copy-emails{font:inherit;width:100%;box-sizing:border-box}

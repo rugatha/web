@@ -79,3 +79,16 @@ node tests/admin-dashboard.browser.mjs
 2026-10-26 整合重複十月場次：`202610-lorin` 的 4 筆報名關聯改為 `2026-10-lorin`，原始填答及 CSV 來源保留，原場次關閉並標記 `aliasOf`，不再出現在場次選單。總報名紀錄仍為 36 筆。`本次報名狀況` 以 `experience_info.json.eventId` 為準，獨立顯示本次有效人數、上限、剩餘席位與報名開關，不受下方歷史場次選單或搜尋影響。`scripts/merge-experience-events.mjs` 預設只讀，`--apply` 在交易內整合關聯及人數。
 
 體驗團報名初次載入預設選取最新場次，只列該場回覆；手動選「全部場次」可檢視完整歷史紀錄。重新整理報名資料或儲存編輯後，保留當次所選場次（包含全部場次）。
+
+
+## 體驗團快報訂閱
+
+`/admin/#subscriptions` 為側欄獨立「訂閱」分類，管理員唯讀查詢 `experienceNewsletterSubscriptions`，不套用全站日期區間。可重新整理訂閱資料；會員資料沿用本頁載入時的 `members`。
+
+- 指標顯示累計訂閱總人數（含取消）、目前訂閱中與取消訂閱人數。
+- 折線圖依 `createdAt` 首次訂閱時間累計，包含已取消訂閱者，重新訂閱不重複計數。90 天內逐日、較長期間逐月，顯示至台北今天；未記錄時間者仍列於名單與指標，但不列入曲線。現有文件只保留最近狀態，故不將曲線宣稱為各日當時有效訂閱人數。
+- 名單欄位：訂閱者 email、訂閱狀態（active＝訂閱中、unsubscribed＝取消訂閱）、會員（是／否）、首次訂閱時間。會員比對忽略 email 大小寫及前後空白，保留 `+tag` 差異；會員資料尚未載入或讀取失敗時明示未完成比對，不當作非會員。使用共用表格搜尋、分類篩選、排序、每頁 25 筆與欄位換序。
+- 「複製所有訂閱中的 email」僅取 `status == active`，去重後以逗號分隔，可貼至 Gmail 收件者或密件副本。複製範圍不受表格篩選與分頁影響；剪貼簿被拒絕時顯示可手動複製的已選取清單。載入中、空有效名單或讀取失敗時停用按鈕，登出清空資料。
+- 延用既有管理員權限與 Firestore Rules，無需變更 Firebase 後端；前端仍由既有 Pages 流程發布。
+
+驗證：`node --test tests/subscriptions-dashboard.test.mjs tests/admin-dashboard.test.mjs`、`node tests/browser/subscriptions-admin-smoke.mjs`。瀏覽器測試使用本機伺服器、測試程序內的 Firebase 替身與 Chrome，涵蓋名單、曲線、會員比對、分頁篩選、完整複製、剪貼簿失敗、空資料、讀取失敗重試、未授權及手機版面。

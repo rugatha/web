@@ -88,7 +88,7 @@ npm run newsletter:check
 
 此指令檢查產生檔與來源一致，並測試跨日場次、換劇本、停用場次及動態文字跳脫。寄信仍由主辦方手動執行；產生或發布 HTML 都不會自動寄出。
 
-在 Firebase Console 開啟 `experienceNewsletterSubscriptions`，篩選 `status == active`，以 `email` 欄位作為有效名單。退訂保留文件並將狀態改為 `unsubscribed`，供排除與重新訂閱使用；不儲存原始 IP，限流文件只用 HMAC 識別。
+在管理後台 `/admin/#subscriptions` 檢視訂閱狀態與會員比對，按「複製所有訂閱中的 email」即可取得以逗號分隔的完整有效名單，貼至 Gmail 收件者或密件副本欄位。也可在 Firebase Console 開啟 `experienceNewsletterSubscriptions`，篩選 `status == active`，以 `email` 欄位作為有效名單。退訂保留文件並將狀態改為 `unsubscribed`，供排除與重新訂閱使用；不儲存原始 IP，限流文件只用 HMAC 識別。
 
 退訂原因為選填，位於 `unsubscribeFeedback.reasons`（複選陣列）、`unsubscribeFeedback.note`（最多 1,000 字的自由意見）與 `unsubscribeFeedback.submittedAt`。管理員可在同一文件查看；這些意見不公開。重新訂閱保留最近回饋，下次實際退訂再更新；重複送出同次退訂不覆寫。
 
