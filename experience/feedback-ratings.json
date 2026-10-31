@@ -1,0 +1,36 @@
+{
+  "updatedAt": "2026-10-31T15:21:19.371Z",
+  "responseCount": 39,
+  "ratings": [
+    {
+      "key": "storyRating",
+      "label": "劇本設計",
+      "count": 39,
+      "average": 4.666666666666667
+    },
+    {
+      "key": "characterRating",
+      "label": "角色設計",
+      "count": 39,
+      "average": 4.666666666666667
+    },
+    {
+      "key": "dmRating",
+      "label": "DM 帶團風格",
+      "count": 39,
+      "average": 4.794871794871795
+    },
+    {
+      "key": "cardRating",
+      "label": "角色卡與幫助卡",
+      "count": 39,
+      "average": 4.615384615384615
+    },
+    {
+      "key": "propRating",
+      "label": "公仔與地圖道具",
+      "count": 39,
+      "average": 4.743589743589744
+    }
+  ]
+}

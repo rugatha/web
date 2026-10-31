@@ -1,6 +1,6 @@
 {
-  "active": "n",
-  "eventId": "2026-10-lorin",
+  "active": "y",
+  "eventId": "2026-11-lorin",
   "scriptName": "洛林精神",
   "scriptEnglishName": "The Spirit of Lorin",
   "dm": "威辰",
@@ -9,10 +9,10 @@
   "minPlayers": 4,
   "maxPlayers": 5,
   "fee": 500,
-  "deadline": "2026-10-30",
+  "deadline": "2026-11-14",
   "characterCreation": true,
-  "startDate": "2026-10-31",
+  "startDate": "2026-11-21",
   "startTime": "13:00",
-  "endDate": "2026-10-31",
+  "endDate": "2026-11-21",
   "endTime": "17:30"
 }

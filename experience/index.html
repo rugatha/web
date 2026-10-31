@@ -32,7 +32,7 @@
 <link rel="icon" type="image/png" href="../assets/logo/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../shared/styles/theme.css">
-  <link rel="stylesheet" href="styles/experience.css?v=20261025-current-event">
+  <link rel="stylesheet" href="styles/experience.css?v=20261031-feedback-panels">
   <!-- Rugatha PWA -->
   <link rel="manifest" href="../manifest.webmanifest">
   <meta name="theme-color" content="#0f2d24">
@@ -54,7 +54,6 @@
     <main class="page-shell experience-shell">
       <section class="experience-hero">
         <div class="experience-hero__copy">
-          <p class="experience-hero__eyebrow">Rugatha Experience</p>
           <h1>Rugatha 體驗團</h1>
           <p class="experience-hero__lede">
             Rugatha D&D 每個月定期舉辦適合新手的體驗團<br>我們每半年會推出一次新的劇本<br>歡迎關注我們的網站及社群媒體，報名我們的體驗團！
@@ -85,7 +84,6 @@
           >
           <div class="experience-card__body">
             <p class="experience-card__tag">2025 exp1</p>
-            <h2 class="experience-card__title">The Scroll of the Golden Castle</h2>
             <h2 class="experience-card__title">金之堡的卷軸</h2>
             <p class="experience-card__description">
               一場神秘的夢、一樁來自貴族的請託<br>
@@ -107,7 +105,6 @@
           >
           <div class="experience-card__body">
             <p class="experience-card__tag">2026 exp1</p>
-            <h2 class="experience-card__title">Echoes of the Dragon's Roar</h2>
             <h2 class="experience-card__title">龍鳴的回音</h2>
             <p class="experience-card__description">
               陣陣龍鳴不時從洞穴傳出<br>
@@ -128,7 +125,6 @@
           >
           <div class="experience-card__body">
             <p class="experience-card__tag">2026 exp2</p>
-            <h2 class="experience-card__title">The Spirit of Lorin</h2>
             <h2 class="experience-card__title">洛林精神</h2>
             <p class="experience-card__description">
               旅行途中，你們在人類王國麥丁頓的首都「麥克嵩」停留一天休息<br>
@@ -145,12 +141,25 @@
 
       <section class="feedback-section" aria-label="Player feedback">
         <div class="feedback-section__intro">
-          <p class="feedback-section__eyebrow">Rugatha Experience Player Feedback</p>
           <h2 class="feedback-section__title">體驗團玩家回饋</h2>
           <p class="feedback-section__note">回饋內容包含每月體驗團與各活動體驗團，時長依活動屬性不同而有異</p>
         </div>
 
-        <div class="feedback-wall" id="feedback-wall"></div>
+        <section class="feedback-ratings" aria-labelledby="feedback-ratings-title">
+          <div class="feedback-ratings__heading">
+            <h3 id="feedback-ratings-title">問卷統計</h3>
+            <p id="feedback-ratings-status" role="status">正在載入玩家評分…</p>
+          </div>
+          <div id="feedback-ratings" aria-describedby="feedback-ratings-status"></div>
+          <noscript><p class="feedback-empty">請啟用 JavaScript 查看評分統計。</p></noscript>
+        </section>
+
+        <section class="feedback-written" aria-labelledby="feedback-written-title">
+          <div class="feedback-written__heading">
+            <h3 id="feedback-written-title">文字回饋</h3>
+          </div>
+          <div class="feedback-wall" id="feedback-wall"></div>
+        </section>
       </section>
     </main>
   </div>
@@ -206,6 +215,7 @@
     loadFeedback();
   </script>
 
+  <script type="module" src="./feedback-ratings.js?v=20261031-2"></script>
   <script src="../shared/firebase.config.js"></script>
   <script type="module" src="../shared/auth.js"></script>
   <script type="module" src="./current-event.js?v=20261025-3"></script>
