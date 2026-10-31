@@ -53,6 +53,7 @@ npm run dev
 - 主要資料庫：Cloud Firestore
 - 圖片儲存：Cloud Storage
 - 資料後端：Cloud Firestore（Realtime Database 已停用）
+- 體驗團快報訂閱／退訂：Firebase Cloud Functions，須另行部署；GitHub Pages workflow 僅發布網站。
 - Firebase Web SDK：頁面直接載入官方 ESM modules
 - PWA：`manifest.webmanifest`、`sw.js`、`shared/pwa.js`
 - 工具與測試：Node.js 24、Python 3、Firebase Emulator Suite

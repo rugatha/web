@@ -1,10 +1,10 @@
 # Rugatha 體驗團快報：第一版設計
 
-狀態：已實作訂閱／退訂頁、Firebase callable 後端與權限規則，通過本機 Emulator 與瀏覽器驗證；尚未部署正式後端、寄送信件或實作報名歸因。依目前確認的流程，名單存入 Firebase，由主辦方自行從 Gmail 手動寄出 HTML 信件、管理收件者群組。
+狀態：已實作訂閱／退訂頁、Firebase callable 後端與權限規則，通過本機及正式瀏覽器驗證；2026/11/01 已完成正式後端部署，尚未寄送信件或實作報名歸因。依目前確認的流程，名單存入 Firebase，由主辦方自行從 Gmail 手動寄出 HTML 信件、管理收件者群組。
 
 ## 使用體驗
 
-1. 使用者從體驗團介紹頁、報名成功頁或社群的超連結進入 `https://rugatha.com/experience/subscribe/`（已實作，待部署）。
+1. 使用者從體驗團介紹頁、報名成功頁或社群的超連結進入 `https://rugatha.com/experience/subscribe/`（已上線）。
 2. 填寫 email 並同意接收體驗團資訊，按下「訂閱快報」。不必登入網站或 Google 帳號。
 3. 後端成功寫入 Firebase Firestore 後顯示「訂閱完成」。第一版直接訂閱，不寄送確認信；報名活動也不自動加入訂閱。
 4. 每次有新體驗團，主辦方更新 `experience_info.json` 並執行 `npm run newsletter:build` 產生當期 HTML，預覽並測試後，自行從 `rugathadnd@gmail.com` 寄給有效訂閱者。收件者群組由主辦方管理。
@@ -57,7 +57,7 @@ Firestore 是訂閱狀態的依據。使用者退訂後，Firestore 立即排除
 
 ## 信件設計
 
-正式信件檔：[experience-notification.html](../experience/subscribe/experience-notification.html)。由 `experience/register/experience_info.json` 自動產生，舊的 docs 預覽網址會轉到這個檔案。更新 JSON 後執行 `npm run newsletter:build`，GitHub Pages 部署也會重建。退訂頁已實作，仍需部署後端與網站後才能正式使用。
+正式信件檔：[experience-notification.html](../experience/subscribe/experience-notification.html)。由 `experience/register/experience_info.json` 自動產生，舊的 docs 預覽網址會轉到這個檔案。更新 JSON 後執行 `npm run newsletter:build`，GitHub Pages 部署也會重建。訂閱與退訂頁及後端均已上線。
 
 - 標頭使用 `assets/banner/rugatha-banner-trademark-transparent.png`，深綠底襯托金色標誌，附上 `alt="Rugatha"`。
 - 當期 banner 使用 `campaigns/campaign-banners/exp-e03.jpeg`（《洛林精神》）。目前與報名頁的 `assets/banner/rugatha-experience.jpeg` 圖片內容相同；採劇本固定路徑，避免日後替換通用圖片時舊信圖片跟著改變。
@@ -71,7 +71,7 @@ Firestore 是訂閱狀態的依據。使用者退訂後，Firestore 立即排除
 - 使用 table 排版、inline CSS、系統字型；手動寄出時保留渲染後的 HTML 格式，將 HTML 原始碼貼入一般 Gmail 內文不會自動變成設計好的信件。寄送前要實寄測試。
 - 不在靜態信件宣稱即時剩餘名額；報名頁負責查詢 Firestore。
 
-共用退訂連結：`https://rugatha.com/experience/unsubscribe/`（已實作，待部署）。採「填 email＋確認」以配合同一份 HTML 群發；這種流程不驗證信箱所有權，訂閱與退訂都可能由知道該地址的人提交。若日後需要驗證，需另加信箱確認機制。回應統一使用「若此信箱有訂閱，已完成取消訂閱」，不對外揭露名單是否存在。
+共用退訂連結：`https://rugatha.com/experience/unsubscribe/`（已上線）。採「填 email＋確認」以配合同一份 HTML 群發；這種流程不驗證信箱所有權，訂閱與退訂都可能由知道該地址的人提交。若日後需要驗證，需另加信箱確認機制。回應統一使用「若此信箱有訂閱，已完成取消訂閱」，不對外揭露名單是否存在。
 
 ## 追蹤設計
 

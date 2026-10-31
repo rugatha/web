@@ -46,7 +46,9 @@ npm run test:newsletter
 
 ## 正式部署
 
-本次未部署正式 Firebase 或網站，也沒有新增真實訂閱者。完成以下設定後才能正式使用：
+**GitHub Pages 發布與 Firebase 後端部署是兩件事。** 若頁面正常開啟，但訂閱時失敗，先檢查 `asia-east1` 的 `experienceNewsletter` 是否已部署。2026/11/01 首次正式驗證曾發現頁面 HTTP 200、函式網址 HTTP 404，且 Cloud Functions API 未啟用；單純重推 Pages 無法修正這個問題。
+
+2026/11/01 已補部署正式 `experienceNewsletter` 與 Firestore Rules，啟用所需 API、設定 Secret Manager 密鑰及建置映像 7 天清理政策。已在正式網站用專用測試地址驗證訂閱與退訂，核對 Firestore 狀態後刪除測試資料，未寄送 email。網站本身由既有 GitHub Pages 流程發布。以下保留部署程序：
 
 1. 確認 `rugatha-87e15` 可部署 Cloud Functions，並已啟用所需服務及計費方案。
 2. 登入具備部署權限的帳號，在 Secret Manager 建立 `NEWSLETTER_HMAC_KEY`。使用安全亂數產生至少 32 字元的值，透過 CLI 的隱藏輸入提供，不放前端、repository 或指令參數。
@@ -62,7 +64,7 @@ npm run test:newsletter
    ```
 
 4. 透過既有 GitHub Pages 流程發布網站檔案。Pages 部署本身不會部署 Firebase Function 或 Rules；建議後端先發布。
-5. 用自己的測試 email 走一次訂閱／退訂，在 Firebase Console 核對對應狀態，最後清理測試資料。此步驟尚未執行。
+5. 部署後用專用測試 email 走一次訂閱／退訂，核對 Firestore 狀態，最後清理測試資料。2026/11/01 已完成正式 Chrome 瀏覽器驗證。
 
 HMAC key 決定同地址的文件 ID，**不要直接輪替**；若需更換，必須先遷移既有訂閱文件與確認退訂查找仍可用。
 
