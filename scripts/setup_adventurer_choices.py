@@ -15,6 +15,7 @@ def main():
     parser.add_argument('--apply', action='store_true', help='Write to Firestore using Application Default Credentials')
     parser.add_argument('--password-suffix', help='Shared suffix, e.g. 1234 or MMDD; omit to preserve existing passwords')
     parser.add_argument('--passwords-stdin', action='store_true', help='Read an object of character IDs and exact passwords from stdin; never print or save passwords')
+    parser.add_argument('--review-password', action='store_true', help='Prompt privately for a chapter review password; store only its hash in Firebase')
     args = parser.parse_args()
     config = json.loads((ROOT / 'campaigns/data/plus-08-multiple-choices.json').read_text())
     arc, chapter = config['chapterKey'].split('/')
@@ -47,6 +48,19 @@ def main():
     firebase_admin.initialize_app(options={'projectId': 'rugatha-87e15'})
     client = firestore.client()
     target = client.document(path)
+    existing = target.get().to_dict() or {}
+    if 'passwordHashes' in payload:
+        payload['passwordHashes'] = {**existing.get('passwordHashes', {}), **payload['passwordHashes']}
+    if args.review_password:
+        password = getpass.getpass('Chapter review password: ')
+        if not password:
+            raise SystemExit('A nonempty review password is required')
+        # Preserve existing role hashes when only the review credential changes.
+        hashes = dict(existing.get('passwordHashes', {}))
+        hashes.update(payload.get('passwordHashes', {}))
+        hashes['admin'] = hashlib.sha256(password.encode()).hexdigest()
+        payload['passwordHashes'] = hashes
+        del password
     if 'passwordHashes' not in payload and not target.get().exists:
         suffix = getpass.getpass('Initial shared password suffix: ')
         if not suffix:

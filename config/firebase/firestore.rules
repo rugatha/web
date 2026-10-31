@@ -760,6 +760,9 @@ service cloud.firestore {
       function questionSettings(questionId) {
         return get(accessPath()).data.questions[questionId];
       }
+      function hasReviewAccess() {
+        return hasAccess() && get(grantPath()).data.characterId == 'admin';
+      }
       function publicChapter() {
         return 'lock' in get(accessPath()).data && get(accessPath()).data.lock == 0;
       }
@@ -771,7 +774,7 @@ service cloud.firestore {
         allow create, update: if isOwner(uid)
           && request.resource.data.keys().hasOnly(['characterId', 'passwordHash', 'verifiedAt'])
           && request.resource.data.keys().hasAll(['characterId', 'passwordHash', 'verifiedAt'])
-          && request.resource.data.characterId in ['midori', 'samael', 'siri', 'yhwh', 'beau', 'ron']
+          && request.resource.data.characterId in ['midori', 'samael', 'siri', 'yhwh', 'beau', 'ron', 'admin']
           && request.resource.data.passwordHash is string
           && request.resource.data.passwordHash == get(accessPath()).data.passwordHashes[request.resource.data.characterId]
           && request.resource.data.verifiedAt == request.time;
@@ -780,6 +783,7 @@ service cloud.firestore {
       match /questions/{questionId}/answers/{characterId} {
         function canAnswer() {
           return hasAccess()
+            && get(grantPath()).data.characterId != 'admin'
             && get(grantPath()).data.characterId == characterId
             && characterId in questionSettings(questionId).allowedCharacters;
         }
@@ -794,9 +798,9 @@ service cloud.firestore {
             && ((data.option == 5 && data.customText.size() > 0) || (data.option != 5 && data.customText == ''))
             && data.updatedAt == request.time;
         }
-        allow get: if isAdmin() || publicChapter()
+        allow get: if isAdmin() || publicChapter() || hasReviewAccess()
           || (hasAccess() && get(grantPath()).data.characterId == characterId);
-        allow list: if isAdmin() || publicChapter();
+        allow list: if isAdmin() || publicChapter() || hasReviewAccess();
         allow create: if canAnswer() && validAnswer() && request.resource.data.createdAt == request.time;
         allow update: if canAnswer() && validAnswer() && request.resource.data.createdAt == resource.data.createdAt;
         allow delete: if isAdmin();

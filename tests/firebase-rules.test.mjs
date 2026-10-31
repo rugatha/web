@@ -422,13 +422,39 @@ async function seedAdventureAccess(lock = 1) {
     await setDoc(doc(context.firestore(), chapterPath), {
       chapterKey: 'plus-c08/temp',
       lock,
-      passwordHashes: { midori: credentialHash, ron: 'b'.repeat(64) },
+      passwordHashes: { midori: credentialHash, ron: 'b'.repeat(64), admin: 'd'.repeat(64) },
       questions: { crossroads: { allowedCharacters: ['midori', 'samael'] } }
     });
   });
 }
 const adventureAnswer = (uid, characterId = 'midori', option = 1, customText = '') => ({
   uid, characterId, option, customText, createdAt: serverTimestamp(), updatedAt: serverTimestamp()
+});
+
+test('chapter review password grants read-only access to all answers without exposing credentials', async () => {
+  await seedAdventureAccess(1);
+  const db = environment.authenticatedContext('reviewer').firestore();
+  const player = environment.authenticatedContext('player').firestore();
+  const path = `${chapterPath}/questions/crossroads/answers`;
+  await environment.withSecurityRulesDisabled(async context => {
+    await setDoc(doc(context.firestore(), path, 'midori'), { characterId: 'midori', option: 5, customText: '完整答案' });
+  });
+  await assertFails(setDoc(doc(db, `${chapterPath}/grants/reviewer`), credentialGrant('admin', 'wrong')));
+  await assertSucceeds(setDoc(doc(db, `${chapterPath}/grants/reviewer`), credentialGrant('admin', 'd'.repeat(64))));
+  await assertSucceeds(getDocs(collection(db, path)));
+  await assertSucceeds(getDoc(doc(db, path, 'midori')));
+  await assertFails(getDoc(doc(db, chapterPath)));
+  await assertFails(setDoc(doc(db, path, 'samael'), adventureAnswer('reviewer', 'samael')));
+  await assertFails(updateDoc(doc(db, path, 'midori'), { option: 2, customText: '', updatedAt: serverTimestamp() }));
+  await assertFails(deleteDoc(doc(db, path, 'midori')));
+  await assertFails(setDoc(doc(db, `${chapterPath}/grants/other`), credentialGrant('admin', 'd'.repeat(64))));
+  await assertFails(getDocs(collection(db, 'chapterAccess/plus-c08/pages/other/questions/crossroads/answers')));
+  await setDoc(doc(player, `${chapterPath}/grants/player`), credentialGrant());
+  await assertFails(getDocs(collection(player, path)));
+  await environment.withSecurityRulesDisabled(async context => {
+    await updateDoc(doc(context.firestore(), chapterPath), { 'passwordHashes.admin': 'e'.repeat(64) });
+  });
+  await assertFails(getDocs(collection(db, path)));
 });
 
 test('chapter passwords remain private; only a matching role credential creates a grant', async () => {

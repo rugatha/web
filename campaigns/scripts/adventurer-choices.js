@@ -19,7 +19,7 @@ if (revision) {
   dataUrl.searchParams.set('v', revision);
   chapterDataUrl.searchParams.set('v', revision);
 }
-let uid = '', character = null, config, chapterSettings, db, unsubscribe = [], busy = false;
+let uid = '', character = null, reviewMode = false, config, chapterSettings, db, unsubscribe = [], busy = false;
 const bilingual = (zh, en) => ({ zh, en: en || zh });
 const setText = (node, text) => {
   if (text && typeof text === 'object') {
@@ -49,15 +49,19 @@ const portrait = person => {
   img.alt = person.name;
   return img;
 };
-const voter = person => {
+const voter = (person, submitted) => {
   const node = element('div', undefined, 'adventure-voter');
   node.append(portrait(person), element('span', bilingual(person.name, person.nameEn)));
+  if (submitted !== undefined) node.append(element('small', submitted
+    ? bilingual('已提交', 'Submitted')
+    : bilingual('未提交・預設第一項', 'Not submitted · defaults to 1'), 'adventure-submission-status'));
   return node;
 };
 function lock(message = bilingual('請輸入角色密碼。', 'Please enter your character password.')) {
   unsubscribe.forEach(stop => stop());
   unsubscribe = [];
   character = null;
+  reviewMode = false;
   page.hidden = true;
   gate.hidden = false;
   root.replaceChildren();
@@ -81,7 +85,7 @@ function renderResults(target, question, answers, people) {
   const makeRow = (text, voters) => {
     const row = element('div', undefined, `adventure-result ${voters.length ? 'is-chosen' : 'is-empty'}`);
     const icons = element('div', undefined, 'adventure-voters');
-    voters.forEach(person => icons.append(voter(person)));
+    voters.forEach(person => icons.append(voter(person, reviewMode ? answers.has(person.id) : undefined)));
     row.append(icons, element('p', text, 'adventure-result-text'));
     target.append(row);
   };
@@ -93,14 +97,14 @@ function renderResults(target, question, answers, people) {
 function renderQuestion(question) {
   const people = config.groups[question.group];
   const section = element('section', undefined, 'adventure-question');
-  if (chapterSettings.lock === 1) {
+  if (chapterSettings.lock === 1 && !reviewMode) {
     section.append(element('h2', bilingual('冒險者的抉擇？', 'What will the adventurers choose?')));
     if (question.question) section.append(element('p', bilingual(question.question, question.en?.question)));
   }
   root.append(section);
   const answersPath = `${accessPath()}/questions/${question.id}/answers`;
   const eligible = people.some(person => person.id === character?.id);
-  if (chapterSettings.lock === 1 && eligible) {
+  if (chapterSettings.lock === 1 && eligible && !reviewMode) {
     section.append(voter(character));
     const answerForm = element('form');
     const options = element('div', undefined, 'adventure-options');
@@ -168,12 +172,13 @@ function renderQuestion(question) {
         setText(message, error.code === 'permission-denied' ? bilingual('儲存失敗：請重新解鎖，或確認角色組別與 Firestore 設定。', 'Unable to save. Unlock again or check the character group and Firestore settings.') : bilingual('儲存失敗，請檢查網路後重試。', 'Unable to save. Check your connection and try again.'));
       } finally { saving = false; sync(); }
     });
-  } else if (chapterSettings.lock === 1 && character) {
+  } else if (chapterSettings.lock === 1 && character && !reviewMode) {
     section.append(element('p', bilingual(`${character.name} 不在本題的冒險者組別中。`, `${character.nameEn || character.name} is not in this question’s adventurer group.`)));
   }
-  if (chapterSettings.lock !== 0) return;
+  if (chapterSettings.lock !== 0 && !reviewMode) return;
   const reveal = element('section', undefined, 'adventure-reveal');
   reveal.append(element('h2', bilingual('冒險者的抉擇。', 'The adventurers’ choices')));
+  if (reviewMode) reveal.append(element('p', bilingual('管理檢視', 'Review mode')));
   if (question.question) reveal.append(element('p', bilingual(question.question, question.en?.question)));
   section.append(reveal);
   const results = element('div', undefined, 'adventure-results');
@@ -183,8 +188,13 @@ function renderQuestion(question) {
   unsubscribe.push(onSnapshot(collection(db, answersPath), snapshot => {
     const answers = new Map(snapshot.docs.map(answer => [answer.id, answer.data()]));
     renderResults(results, question, answers, people);
-    resultStatus.textContent = '';
-    resultStatus.hidden = true;
+    if (reviewMode) {
+      const submitted = people.filter(person => answers.has(person.id)).length;
+      setText(resultStatus, bilingual(`已提交 ${submitted} / ${people.length} 人；未提交者顯示預設第一項。`, `${submitted} / ${people.length} submitted; unanswered characters default to option 1.`));
+    } else {
+      resultStatus.textContent = '';
+      resultStatus.hidden = true;
+    }
   }, () => {
     results.replaceChildren();
     resultStatus.hidden = false;
@@ -242,12 +252,16 @@ async function start() {
     const person = config.credentialMode === 'character-password'
       ? allCharacters().find(person => person.id === document.querySelector('#chapter-character')?.value)
       : allCharacters().find(person => credential.startsWith(`${person.id === 'yhwh' ? 'YHWH' : person.id[0].toUpperCase() + person.id.slice(1)}_`));
+    const reviewLogin = config.credentialMode === 'character-password'
+      && document.querySelector('#chapter-character')?.value === '';
+    const loginId = reviewLogin ? 'admin' : person?.id;
     try {
-      if (!person) throw new Error('invalid-credential');
+      if (!loginId) throw new Error('invalid-credential');
       const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(credential));
       const passwordHash = Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
-      await setDoc(doc(db, accessPath(), 'grants', uid), { characterId: person.id, passwordHash, verifiedAt: serverTimestamp() });
-      character = person;
+      await setDoc(doc(db, accessPath(), 'grants', uid), { characterId: loginId, passwordHash, verifiedAt: serverTimestamp() });
+      character = reviewLogin ? null : person;
+      reviewMode = reviewLogin;
       document.querySelector('#chapter-password').value = '';
       unsubscribe.forEach(stop => stop());
       unsubscribe = [];
