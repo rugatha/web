@@ -5,6 +5,8 @@
 /lab/
 # cicd
 /cicd/
+# experience subscription
+/experience/subscribe/experience-notification.html
 # Firebase migration inputs, credentials, and generated reports contain private data.
 *.service-account.json
 service-account*.json
@@ -15,6 +17,9 @@ ui-debug.log
 .firebase/
 .venv/
 node_modules/
+/functions/.secret.local
+/functions/.env*
+functions-debug.log
 __pycache__/
 *.pyc
 migration-private/

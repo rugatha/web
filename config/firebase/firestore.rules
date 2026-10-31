@@ -1066,6 +1066,16 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    // Newsletter writes are validated by the callable backend. Addresses remain private.
+    match /experienceNewsletterSubscriptions/{subscriptionId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    match /experienceNewsletterLimits/{limitId} {
+      allow read, write: if false;
+    }
+
     match /migrationRuns/{runId} {
       allow get, list: if isAdmin();
       allow write: if false;

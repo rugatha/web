@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>取消訂閱體驗團快報 | Rugatha</title>
+  <meta name="description" content="填寫訂閱時使用的 email，即可取消 Rugatha 體驗團快報。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rugatha.com/experience/unsubscribe/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rugatha">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:title" content="取消訂閱體驗團快報 | Rugatha">
+  <meta property="og:description" content="填寫訂閱時使用的 email，即可取消 Rugatha 體驗團快報。">
+  <meta property="og:url" content="https://rugatha.com/experience/unsubscribe/">
+  <meta property="og:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="取消訂閱體驗團快報 | Rugatha">
+  <meta name="twitter:description" content="填寫訂閱時使用的 email，即可取消 Rugatha 體驗團快報。">
+  <meta name="twitter:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+  <meta name="theme-color" content="#445f56">
+  <link rel="icon" href="../../assets/logo/rugatha-favicon.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <link rel="stylesheet" href="../subscribe/styles.css?v=20261101-2">
+  <script src="../../shared/firebase.config.js"></script>
+  <script type="module" src="../subscribe/subscribe.js?v=20261101-2"></script>
+</head>
+<body data-action="unsubscribe">
+  <a class="skip-link" href="#newsletter-form">跳至取消訂閱體驗團快報表單</a>
+  <header class="site-header">
+    <a href="../../" aria-label="Rugatha 首頁"><img src="../../assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha" width="200"></a>
+    <a class="back-link" href="../">← 體驗團介紹</a>
+  </header>
+  <main>
+    <section class="newsletter-layout" aria-labelledby="page-title">
+      <div class="newsletter-copy">
+        <p class="eyebrow">RUGATHA EXPERIENCE ／ Rugatha 體驗團快報</p>
+        <h1 id="page-title">先向快報道別，<br>冒險隨時歡迎你。</h1>
+        <p class="lede">填寫訂閱時使用的 email，即可取消 Rugatha 體驗團快報。</p>
+        <div class="details">
+          <p><span aria-hidden="true">✧</span>新場次開放時，不定期寄送</p>
+          <p><span aria-hidden="true">✧</span>不用註冊會員，email 即可訂閱</p>
+          <p><span aria-hidden="true">✧</span>每封信都能取消訂閱</p>
+        </div>
+      </div>
+      <div class="newsletter-card">
+        <form id="newsletter-form" aria-describedby="form-intro form-status">
+          <h2>取消訂閱體驗團快報</h2>
+          <p class="card-intro" id="form-intro">請確認輸入的是訂閱時使用的 email。</p>
+          <label class="field-label" for="email">Email <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
+          <fieldset class="unsubscribe-reasons" aria-describedby="reasons-hint">
+            <legend>不想收到 Rugatha 體驗團快報的原因 <span class="optional">選填・可複選</span></legend>
+            <p class="field-hint" id="reasons-hint">如果願意，請告訴我們原因，幫助快報變得更好。留白也能直接退訂。</p>
+            <label><input type="checkbox" name="reasons" value="收到快報的頻率太高"><span>收到快報的頻率太高</span></label>
+            <label><input type="checkbox" name="reasons" value="快報內容不符合我的需求"><span>快報內容不符合我的需求</span></label>
+            <label><input type="checkbox" name="reasons" value="已透過其他管道取得最新資訊"><span>已透過其他管道取得最新資訊</span></label>
+            <label><input type="checkbox" name="reasons" value="不記得曾訂閱這份快報"><span>不記得曾訂閱這份快報</span></label>
+            <label><input type="checkbox" name="reasons" value="想減少收到的電子郵件"><span>想減少收到的電子郵件</span></label>
+            <label><input type="checkbox" name="reasons" value="其他"><span>其他</span></label>
+          </fieldset>
+          <label class="field-label" for="unsubscribe-note">其他原因或想告訴我們的話 <span class="optional">選填</span></label>
+          <textarea id="unsubscribe-note" name="note" rows="4" maxlength="1000" placeholder="不一定要勾選原因，也可以直接在這裡告訴我們。" aria-describedby="note-hint"></textarea>
+          <p class="field-hint" id="note-hint">最多 1,000 字，僅供主辦方改善服務參考，不會公開。</p>
+          <p class="form-status" id="form-status" role="alert" aria-live="polite"></p>
+          <button class="primary" id="submit-button" type="submit" disabled>確認取消訂閱</button>
+          <p class="fine-print">通知由 rugathadnd@gmail.com 寄出。<br>訂閱不代表預約名額，報名結果以主辦方通知為準。</p>
+          <noscript><p>請啟用 JavaScript 以完成取消訂閱體驗團快報。</p></noscript>
+        </form>
+        <section class="success" id="success" tabindex="-1" aria-labelledby="success-title" hidden>
+          <div class="success-mark" aria-hidden="true">✧</div>
+          <h2 id="success-title">退訂申請已完成</h2>
+          <p>若此信箱有訂閱，已完成取消訂閱。未來想再收到新場次通知，隨時歡迎重新訂閱。</p>
+          <a href="../">查看體驗團資訊 →</a>
+        </section>
+      </div>
+    </section>
+    <footer class="page-footer"><span>有任何問題，歡迎來信 <a href="mailto:rugathadnd@gmail.com">rugathadnd@gmail.com</a></span><a href="../subscribe/">重新訂閱快報</a></footer>
+  </main>
+</body>
+</html>

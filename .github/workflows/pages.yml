@@ -31,6 +31,9 @@ jobs:
       - name: Refresh chapter content files
         run: node scripts/build-chapter-content.mjs
 
+      - name: Refresh experience notification email
+        run: node scripts/build-experience-notification.mjs
+
       - name: Prepare production site
         run: node scripts/package-pages.mjs "$RUNNER_TEMP/site"
 

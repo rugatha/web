@@ -16,6 +16,8 @@ npm run dev
 
 報名頁：`http://localhost:8765/experience/register/`。也可使用 `http://127.0.0.1:8765/experience/register/`。請透過此網址開啟，以正常載入 JSON 與 Firebase 模組；不要直接雙擊 HTML。結束預覽時按 `Ctrl+C`。
 
+體驗團快報訂閱／退訂另提供 demo Firebase 預覽：`npm run dev:newsletter`，開啟 `http://127.0.0.1:8766/experience/subscribe/`。需先安裝 `functions/` dependencies 與 Java 21；本機試用、測試及正式部署步驟見 [快報設定說明](docs/experience-newsletter-setup.md)。
+
 ## 專案概覽
 
 這個 repository 主要負責：

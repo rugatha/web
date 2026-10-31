@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>訂閱體驗團快報 | Rugatha</title>
+  <meta name="description" content="新體驗團開放報名時，把劇本、時間、地點與報名方式，一起寄到你的信箱。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rugatha.com/experience/subscribe/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rugatha">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:title" content="訂閱體驗團快報 | Rugatha">
+  <meta property="og:description" content="新體驗團開放報名時，把劇本、時間、地點與報名方式，一起寄到你的信箱。">
+  <meta property="og:url" content="https://rugatha.com/experience/subscribe/">
+  <meta property="og:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="訂閱體驗團快報 | Rugatha">
+  <meta name="twitter:description" content="新體驗團開放報名時，把劇本、時間、地點與報名方式，一起寄到你的信箱。">
+  <meta name="twitter:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+  <meta name="theme-color" content="#445f56">
+  <link rel="icon" href="../../assets/logo/rugatha-favicon.png">
+  <link rel="stylesheet" href="../../shared/styles/theme.css">
+  <link rel="stylesheet" href="../subscribe/styles.css?v=20261101-2">
+  <script src="../../shared/firebase.config.js"></script>
+  <script type="module" src="../subscribe/subscribe.js?v=20261101-2"></script>
+</head>
+<body data-action="subscribe">
+  <a class="skip-link" href="#newsletter-form">跳至訂閱體驗團快報表單</a>
+  <header class="site-header">
+    <a href="../../" aria-label="Rugatha 首頁"><img src="../../assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha" width="200"></a>
+    <a class="back-link" href="../">← 體驗團介紹</a>
+  </header>
+  <main>
+    <section class="newsletter-layout" aria-labelledby="page-title">
+      <div class="newsletter-copy">
+        <p class="eyebrow">RUGATHA EXPERIENCE ／ 體驗團快報</p>
+        <h1 id="page-title">讓下一場冒險，<br>來敲你的信箱。</h1>
+        <p class="lede">新體驗團開放報名時，把劇本、時間、地點與報名方式，一起寄到你的信箱。</p>
+        <div class="details">
+          <p><span aria-hidden="true">✧</span>新場次開放時，不定期寄送</p>
+          <p><span aria-hidden="true">✧</span>不用註冊會員，email 即可訂閱</p>
+          <p><span aria-hidden="true">✧</span>每封信都能取消訂閱</p>
+        </div>
+      </div>
+      <div class="newsletter-card">
+        <form id="newsletter-form" aria-describedby="form-intro form-status">
+          <h2>訂閱體驗團快報</h2>
+          <p class="card-intro" id="form-intro">只需要 email，就能收到新場次通知。</p>
+          <label class="field-label" for="email">Email <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
+          <label class="consent" for="consent"><input id="consent" name="consent" type="checkbox" required><span>我同意收到 Rugatha 體驗團資訊，並了解可隨時透過信件底端的連結取消訂閱。</span></label>
+          <p class="form-status" id="form-status" role="alert" aria-live="polite"></p>
+          <button class="primary" id="submit-button" type="submit" disabled>訂閱快報</button>
+          <p class="fine-print">通知由 rugathadnd@gmail.com 寄出。<br>訂閱不代表預約名額，報名結果以主辦方通知為準。</p>
+          <noscript><p>請啟用 JavaScript 以完成訂閱體驗團快報。</p></noscript>
+        </form>
+        <section class="success" id="success" tabindex="-1" aria-labelledby="success-title" hidden>
+          <div class="success-mark" aria-hidden="true">✧</div>
+          <h2 id="success-title">訂閱完成</h2>
+          <p>下一次有新體驗團時，我們會透過 email 通知你。期待在冒險的起點，與你相見。</p>
+          <a href="../">查看體驗團資訊 →</a>
+        </section>
+      </div>
+    </section>
+    <footer class="page-footer"><span>有任何問題，歡迎來信 <a href="mailto:rugathadnd@gmail.com">rugathadnd@gmail.com</a></span><a href="../unsubscribe/">取消訂閱</a></footer>
+  </main>
+</body>
+</html>
