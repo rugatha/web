@@ -67,6 +67,8 @@ body {
 
 .current-experience__info { min-width: 0; }
 .experience-subscribe-action { display: flex; justify-content: center; padding-bottom: 18px; }
+.experience-subscribe-action .experience-register-link { gap: 10px; }
+.experience-subscribe-action svg { flex-shrink: 0; }
 .current-experience__eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 0.12em; }
 .current-experience h2 { margin: 0 0 12px; font-size: clamp(24px, 3vw, 32px); line-height: 1.4; overflow-wrap: anywhere; }
 .current-experience__time { margin: 0; color: var(--muted); line-height: 1.7; }
