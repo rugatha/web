@@ -4,7 +4,7 @@
       "zh": "11月體驗團 《洛林精神》報名",
       "en": "\"The Spirit of Lorin\" Registration"
     },
-    "date": "2026-11-XX",
+    "date": "2026-11-14",
     "category": {
       "zh": "體驗團",
       "en": "Beginner-Friendly\nOne-Shot"
@@ -20,18 +20,18 @@
   },
   {
     "title": {
-      "zh": "10月體驗團 《洛林精神》",
-      "en": "October One-Shot \"The Spirit of Lorin\""
+      "zh": "11月體驗團 《洛林精神》",
+      "en": "November One-Shot \"The Spirit of Lorin\""
     },
-    "date": "2026-10-31",
+    "date": "2026-11-21",
     "category": {
       "zh": "體驗團",
       "en": "Beginner-Friendly\nOne-Shot"
     },
     "link": "/experience/index.html",
     "note": {
-      "zh": "報名截止 2026/10/124 23:59 (GMT+8)",
-      "en": "Registration closes on October 24th, 2026, at 11:59 PM (GMT+8)"
+      "zh": "報名截止 2026/11/14 23:59 (GMT+8)",
+      "en": "Registration closes on November 14th, 2026, at 11:59 PM (GMT+8)"
     },
     "image": "assets/banner/rugatha-experience.jpeg",
     "isTransparent": false,
@@ -96,8 +96,8 @@
   },
   {
     "title": {
-      "zh": "Rugatha Lite S46 (TBD)",
-      "en": "Rugatha Lite S46 (TBD)"
+      "zh": "Rugatha Lite S46",
+      "en": "Rugatha Lite S46"
     },
     "date": "2026-11-14",
     "category": {
