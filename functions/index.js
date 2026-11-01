@@ -20,7 +20,7 @@ export const experienceNewsletter = onCall({
       timestamp: () => FieldValue.serverTimestamp(),
     });
   } catch (error) {
-    const code = ['invalid-argument', 'resource-exhausted', 'failed-precondition'].includes(error.code)
+    const code = ['invalid-argument', 'resource-exhausted', 'failed-precondition', 'unavailable'].includes(error.code)
       ? error.code : 'internal';
     // Do not include submitted addresses or database errors in logs or responses.
     throw new HttpsError(code, code);

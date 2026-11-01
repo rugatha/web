@@ -1,11 +1,13 @@
 // All Firebase doubles live in the test process. No production preview identity.
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
-import { mkdir } from 'node:fs/promises';
+import { mkdir,readFile } from 'node:fs/promises';
 import { dayKey,dateOffset } from '../admin/dashboard-model.js';
 const browser=await chromium.launch({channel:'chrome',headless:true});
-const base='http://127.0.0.1:8790',today=dayKey(new Date()),recent=today+'T04:00:00Z',old='2026-01-02T00:00:00Z';
+const base=process.env.RUGATHA_ADMIN_TEST_BASE||'http://127.0.0.1:8790',today=dayKey(new Date()),recent=today+'T04:00:00Z',old='2026-01-02T00:00:00Z';
 const admin={email:'rugathadnd@gmail.com',emailVerified:true};
+const catalog=JSON.parse(await readFile(new URL('../admin/catalog.json',import.meta.url),'utf8'));
+const catalogArcs=catalog.campaigns.flatMap(campaign=>campaign.arcs);
 const members=Array.from({length:28},(_,i)=>({id:`0000-${String(i+1).padStart(4,'0')}`,memberNo:`0000-${String(i+1).padStart(4,'0')}`,memberId:`uid-${i+1}`,displayName:i===0?'Owner <test>':`Member ${i+1}`,email:`member${i+1}@example.test`,campaign:i===0?'Rugatha Lite':'',createdAt:i===0?recent:old,lastLoginAt:recent}));
 const datasets={members,
   'members/0000-0001/characters':[{id:'Ada%20One',characterName:'Ada <One>',className:'wizard',race:'human',createdAt:recent,updatedAt:recent}],
@@ -30,7 +32,7 @@ async function open(user,{failure=false,sdkFailure=false,authHung=false,dependen
   await page.goto(base+'/admin/');return {context,page,errors};
 }
 const ready=async page=>page.locator('#sync-status').filter({hasText:'更新於'}).waitFor();
-async function navigate(page,name){await page.locator(`[data-nav="${name}"]`).click();await page.locator(`#screen-${name}`).waitFor();assert.equal(await page.locator('[data-screen]:visible').count(),1);}
+async function navigate(page,name){if(await page.locator('#admin-menu-open').isVisible())await page.locator('#admin-menu-open').click();const group=page.locator(`[data-nav="${name}"]`).locator('xpath=ancestor::details');if(await group.count())await group.evaluate(node=>node.open=true);await page.locator(`[data-nav="${name}"]`).click();await page.locator(`#screen-${name}`).waitFor();assert.equal(await page.locator('[data-screen]:visible').count(),1);}
 try {
   const local=await browser.newContext(),file=await local.newPage();
   await file.goto(new URL('../admin/index.html',import.meta.url).href);assert.match(await file.locator('#gate').textContent(),/直接開啟 HTML/);assert.equal(await file.locator('#dashboard').isVisible(),false);await local.close();
@@ -43,7 +45,7 @@ try {
     const guest=await open(user);await guest.page.waitForURL(base+'/404/');assert.equal((await guest.page.reload()).status(),404);await guest.context.close();
   }
   const {context,page,errors}=await open(admin);await ready(page);
-  assert.equal(await page.locator('#overview-members').textContent(),'28');assert.equal(await page.locator('#overview-characters').textContent(),'2');assert.equal(await page.locator('#overview-arcs').textContent(),'34');assert.equal(await page.locator('#overview-chapters').textContent(),'99');
+  assert.equal(await page.locator('#overview-members').textContent(),'28');assert.equal(await page.locator('#overview-characters').textContent(),'2');assert.equal(await page.locator('#overview-arcs').textContent(),String(catalogArcs.length));assert.equal(await page.locator('#overview-chapters').textContent(),String(catalogArcs.reduce((total,arc)=>total+arc.chapters,0)));
   assert.equal(await page.locator('[data-nav="traffic"]').count(),0);assert.equal(await page.evaluate(()=>window.testReads.some(path=>path.includes('pageAccess'))),false);
   await navigate(page,'members');assert.equal(await page.locator('#member-table tbody tr').count(),25);await page.locator('#member-table [data-grid-step="1"]').click();assert.equal(await page.locator('#member-table tbody tr').count(),3);
   assert.equal(await page.locator('#refresh').count(),0);

@@ -1076,6 +1076,15 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
+    match /experienceNewsletterEvents/{eventId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    match /experienceNewsletterSystem/{controlId} {
+      allow read, write: if false;
+    }
+
     match /migrationRuns/{runId} {
       allow get, list: if isAdmin();
       allow write: if false;

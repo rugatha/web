@@ -8,12 +8,13 @@
   <title>管理總覽 | Rugatha</title>
   <link rel="icon" href="/assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="/shared/styles/theme.css">
-  <link rel="stylesheet" href="./dashboard.css?v=20261101-subscriptions-1">
+  <link rel="stylesheet" href="./dashboard.css?v=20261101-mobile-navigation">
 </head>
 <body>
   <div id="gate" role="status" class="gate"><img src="/assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha"><p>正在驗證管理員身分…</p></div>
   <div id="dashboard" hidden>
-    <aside class="sidebar">
+    <aside class="sidebar" id="admin-sidebar">
+      <div class="mobile-menu-heading"><strong>管理分類</strong><button id="admin-menu-close" type="button" aria-label="關閉選單">×</button></div>
       <a class="brand" href="/"><img src="/assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha"></a>
       <div class="workspace-label">管理後台</div>
       <nav aria-label="管理分類">
@@ -27,7 +28,10 @@
             <a href="#d3" data-nav="d3">2026 D3</a>
           </div>
         </details>
-        <a href="#subscriptions" data-nav="subscriptions"><span>✉</span>訂閱</a>
+        <details class="nav-group" id="subscriptions-navigation" open>
+          <summary><span>✉</span>訂閱</summary>
+          <div class="nav-submenu"><a href="#subscriptions" data-nav="subscriptions">體驗團快報</a></div>
+        </details>
         <a href="#members" data-nav="members"><span>♙</span>會員管理</a>
         <a href="#characters" data-nav="characters"><span>▧</span>角色卡</a>
         <a href="#npcs" data-nav="npcs"><span>◈</span>NPC 統計</a>
@@ -35,7 +39,9 @@
       </nav>
       <div class="sidebar-bottom"><span class="admin-badge">管理員限定</span><p>rugathadnd@gmail.com</p><a href="/">返回網站 ↗</a></div>
     </aside>
+    <dialog id="admin-navigation-dialog" aria-label="管理分類選單"></dialog>
     <main>
+      <div class="mobile-admin-bar"><button id="admin-menu-open" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="admin-navigation-dialog"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg><span>選單</span></button><strong id="admin-mobile-title">管理總覽</strong><a href="/" aria-label="返回網站"><svg aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7M5 9v11h14V9M9 20v-7h6v7"></path></svg></a></div>
       <header class="topbar"><span>Rugatha <span class="separator">/</span> <b id="breadcrumb">管理總覽</b></span><span id="sync-status" role="status">尚未更新</span></header>
       <div class="global-filter-region">
         <div id="date-controls" class="date-controls">
@@ -46,7 +52,7 @@
         </div>
       </div>
       <div class="main-content">
-        <div class="page-heading"><div><h1 id="screen-title">管理總覽</h1><p id="screen-description">檢視網站內容、會員及答題資料。</p></div></div>
+        <div class="page-heading"><div><h1 id="screen-title" tabindex="-1">管理總覽</h1><p id="screen-description">檢視網站內容、會員及答題資料。</p></div></div>
         <div id="notices" role="status"></div>
         <section data-screen="overview" id="screen-overview" aria-labelledby="screen-title">
           <div class="metrics">
@@ -134,7 +140,8 @@
           <div id="subscriptions-copy-fallback" hidden><label for="subscriptions-copy-emails">訂閱中的 email 清單</label><textarea id="subscriptions-copy-emails" rows="4" readonly></textarea></div>
           <div class="metrics three"><article class="metric"><span>累計訂閱總人數</span><strong id="subscriptions-total">—</strong><small>含已取消訂閱者</small></article><article class="metric"><span>訂閱中</span><strong id="subscriptions-active">—</strong></article><article class="metric"><span>取消訂閱</span><strong id="subscriptions-cancelled">—</strong></article></div>
           <div class="panel"><div class="panel-heading"><h2>體驗團快報 · 累計訂閱總人數</h2><span class="tag">全部期間</span></div><div id="subscriptions-trend" class="trend-chart"></div><p id="subscriptions-trend-note" class="hint"></p></div>
-          <div class="panel"><div class="panel-heading"><h2>訂閱名單</h2></div><p id="subscriptions-summary" class="result-summary"></p><div id="subscriptions-table" class="table-scroll"></div></div>
+          <div class="panel"><div class="panel-heading"><h2>訂閱名單</h2></div><p class="hint">退訂原因顯示最近一次退訂的回覆；重新訂閱後仍會保留。</p><p id="subscriptions-summary" class="result-summary"></p><div id="subscriptions-table" class="table-scroll"></div></div>
+          <div class="panel"><div class="panel-heading"><h2>訂閱歷程</h2></div><div class="toolbar"><label>訂閱者<select id="subscriptions-history-email"><option value="">全部訂閱者</option></select></label></div><p class="hint">每次訂閱、取消訂閱分別保留；預設最新事件在前，點「事件時間」可切換排序，也可依訂閱者及欄位篩選。</p><p id="subscriptions-history-summary" class="result-summary"></p><div id="subscriptions-history-table" class="table-scroll"></div></div>
         </section>
         <section data-screen="experience" id="screen-experience" hidden aria-labelledby="screen-title">
           <div class="toolbar"><label>場次<select id="experience-event"><option value="all">全部場次</option></select></label><label class="search">搜尋報名資料<input id="experience-search" type="search" placeholder="稱呼、聯絡方式或回覆內容"></label><button class="button" id="experience-refresh" type="button">重新整理報名資料</button></div>
@@ -198,7 +205,7 @@
       const config = document.createElement('script');
       config.src = '/shared/firebase.config.js';
       config.onerror = window.RUGATHA_ADMIN_BOOT.fail;
-      config.onload = () => import('./dashboard.js?v=20261101-subscriptions-1').catch(window.RUGATHA_ADMIN_BOOT.fail);
+      config.onload = () => import('./dashboard.js?v=20261101-mobile-navigation').catch(window.RUGATHA_ADMIN_BOOT.fail);
       document.head.append(config);
     })();
   </script>

@@ -144,3 +144,35 @@ body{background:#fafbf9;color:#17251d}main{background:#fafbf9;min-height:100vh}.
 #subscriptions-trend svg{min-width:600px}
 #subscriptions-copy-fallback{margin:12px 0 20px}
 #subscriptions-copy-emails{font:inherit;width:100%;box-sizing:border-box}
+#subscriptions-table td.subscription-reason,#subscriptions-history-table td.subscription-reason{min-width:220px;max-width:360px;white-space:pre-wrap;overflow-wrap:anywhere}
+
+/* Mobile navigation uses the same vertical menu in a modal drawer. */
+.mobile-admin-bar,.mobile-menu-heading{display:none}
+#admin-navigation-dialog{padding:0;border:0;background:#263f36;color:#ecf2ed}
+#admin-navigation-dialog::backdrop{background:rgba(8,20,15,.55)}
+.nav-group:has(a[aria-current=page])>summary{color:#d8ffe3}
+body.admin-menu-open{overflow:hidden}
+@media(max-width:760px){
+  #dashboard>main{margin-left:0;min-width:0}
+  .mobile-admin-bar{display:flex;position:sticky;top:0;z-index:12;align-items:center;justify-content:space-between;gap:12px;min-height:60px;padding:8px 16px;background:#263f36;color:#ecf2ed;border-bottom:1px solid #426050}
+  .mobile-admin-bar>button{display:inline-flex;align-items:center;gap:8px;min-height:44px;background:#385b4b;border-color:#60826c;font-size:13px;color:#ecf2ed}
+  .mobile-admin-bar>strong{font-size:15px;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mobile-admin-bar>a{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;color:#c4e8d2}
+  #dashboard .topbar{height:auto;min-height:34px;padding:8px 16px;justify-content:flex-end}
+  #dashboard .topbar>span:first-child{display:none}
+  #admin-navigation-dialog{inset:0 auto 0 0;margin:0;width:min(336px,calc(100vw - 32px));max-width:none;height:100vh;height:100dvh;max-height:none;border-radius:0 18px 18px 0;box-shadow:12px 0 40px #0004;overflow:hidden}
+  #admin-navigation-dialog .sidebar{position:static;inset:auto;display:flex;flex-direction:column;width:100%;height:100%;min-height:0;padding:12px 16px 20px;border:0;overflow:hidden}
+  .mobile-menu-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-shrink:0;padding-bottom:8px}
+  .mobile-menu-heading strong{font-size:15px;letter-spacing:.06em}
+  #admin-menu-close{display:grid;place-items:center;width:40px;min-height:40px;padding:0;border-color:#60826c;background:transparent;color:#ecf2ed;font-size:26px;line-height:1}
+  #admin-navigation-dialog .sidebar .brand{height:72px;min-height:72px;margin:0}
+  #admin-navigation-dialog .sidebar .brand img{width:200px;height:72px;max-width:100%}
+  #admin-navigation-dialog .workspace-label{display:none}
+  #admin-navigation-dialog .sidebar nav{display:grid;grid-template-columns:minmax(0,1fr);align-items:stretch;align-content:start;gap:4px;overflow-y:auto;overflow-x:hidden;min-height:0;margin-top:14px;padding:0 2px 12px;flex:1;overscroll-behavior:contain}
+  #admin-navigation-dialog nav>a,#admin-navigation-dialog .nav-group summary{min-height:44px;padding:11px 12px;gap:12px;border-radius:10px;font-size:14px;white-space:normal}
+  #admin-navigation-dialog nav a span,#admin-navigation-dialog .nav-group summary>span{width:20px;font-size:19px}
+  #admin-navigation-dialog .nav-submenu{display:grid;gap:4px;margin:2px 0 6px 24px;padding-left:8px}
+  #admin-navigation-dialog .nav-submenu a{min-height:42px;padding:10px 12px;font-size:13px;white-space:normal}
+  #admin-navigation-dialog .sidebar-bottom{flex-shrink:0;padding:14px 12px 0}
+  #admin-navigation-dialog .sidebar-bottom p{margin:4px 0 10px}
+}

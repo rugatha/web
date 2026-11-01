@@ -106,9 +106,15 @@ try {
   assert.equal(withoutFeedback.status, 'unsubscribed');
   assert.deepEqual(withoutFeedback.unsubscribeFeedback.reasons, []);
   assert.equal(withoutFeedback.unsubscribeFeedback.note, '');
+  const history=await db.collection('experienceNewsletterEvents').where('email','==',email).get();
+  const historyRows=history.docs.map(doc=>doc.data()).sort((a,b)=>a.sequence-b.sequence);
+  assert.deepEqual(historyRows.map(event=>event.action),['subscribe','unsubscribe','subscribe','unsubscribe']);
+  assert.equal(historyRows[1].note,'希望快報內容能更精簡。');
+  assert.equal(historyRows[3].note,'');
   assert.deepEqual(errors, []);
   console.log('Browser: consent, failure/retry, real callable writes, optional cancellation feedback, blank cancellation, resubscribe, mobile and desktop layout passed.');
   await rows.docs[0].ref.delete();
+  for(const event of history.docs)await event.ref.delete();
 } finally {
   await browser?.close();
   await new Promise(resolve => server.close(resolve));

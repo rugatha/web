@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 import test, { before, after, beforeEach } from 'node:test';
 import { initializeTestEnvironment, assertFails, assertSucceeds } from '@firebase/rules-unit-testing';
 import { doc, setDoc, getDoc, getDocs, collection, updateDoc, deleteDoc } from 'firebase/firestore';
-import { CONSENT_VERSION, SUBSCRIPTIONS, LIMITS, privateId, updateSubscription } from '../functions/newsletter-store.js';
+import { CONSENT_VERSION, SUBSCRIPTIONS, LIMITS, EVENTS, CONTROL, privateId, updateSubscription } from '../functions/newsletter-store.js';
 const require = createRequire(new URL('../functions/package.json', import.meta.url));
 const { initializeApp, deleteApp } = require('firebase-admin/app');
 const { getFirestore, FieldValue } = require('firebase-admin/firestore');
@@ -123,6 +123,54 @@ test('rate limiting is enforced on the backend and resets after the window', asy
 test('concurrent subscriptions share one document; plus aliases are preserved', async () => {
   await Promise.all([1, 2, 3].map(number => updateSubscription(db, request(), options(`ip-${number}`))));
   assert.equal((await db.collection(SUBSCRIPTIONS).get()).size, 1);
+  assert.equal((await db.collection(EVENTS).get()).size, 1);
   await updateSubscription(db, request('adventurer+newsletter@example.com'), options());
   assert.equal((await db.collection(SUBSCRIPTIONS).get()).size, 2);
+});
+
+test('every state transition appends an immutable history event with its own feedback', async () => {
+  const email=request().email;
+  await updateSubscription(db, { action:'unsubscribe',email }, options());
+  assert.equal((await db.collection(EVENTS).get()).size,0);
+  await updateSubscription(db, request(), options());
+  await updateSubscription(db, request(), options());
+  await updateSubscription(db, {action:'unsubscribe',email,reasons:['想減少收到的電子郵件'],note:'第一次退訂'}, options());
+  const first=(await db.collection(EVENTS).where('sequence','==',2).get()).docs[0];
+  const firstData=first.data();
+  await updateSubscription(db, {action:'unsubscribe',email,note:'重複送出'}, options());
+  await updateSubscription(db, request(), options());
+  await updateSubscription(db, {action:'unsubscribe',email,note:'第二次退訂'}, options());
+  const history=(await db.collection(EVENTS).get()).docs.map(doc=>doc.data()).sort((a,b)=>a.sequence-b.sequence);
+  assert.deepEqual(history.map(event=>event.action),['subscribe','unsubscribe','subscribe','unsubscribe']);
+  assert.deepEqual(history.map(event=>event.sequence),[1,2,3,4]);
+  assert.ok(history.every(event=>event.email===email&&event.subscriberId===ref(email).id&&event.occurredAt.toMillis()));
+  assert.deepEqual((await first.ref.get()).data(),firstData);
+  assert.equal(history[1].note,'第一次退訂');
+  assert.equal(history[3].note,'第二次退訂');
+  assert.equal((await ref(email).get()).data().eventCount,4);
+});
+
+test('history and maintenance control remain private and cannot be changed through client SDKs', async () => {
+  await updateSubscription(db, request(), options());
+  const event=(await db.collection(EVENTS).get()).docs[0];
+  for (const claims of [null,{}, {admin:true}]) {
+    const client=claims===null?env.unauthenticatedContext().firestore():env.authenticatedContext('tester',claims).firestore();
+    const target=doc(client,EVENTS,event.id);
+    if(claims?.admin)await assertSucceeds(getDocs(collection(client,EVENTS)));
+    else {await assertFails(getDocs(collection(client,EVENTS)));await assertFails(getDoc(target));}
+    await assertFails(updateDoc(target,{note:'changed'}));
+    await assertFails(deleteDoc(target));
+    await assertFails(setDoc(doc(client,EVENTS,'invented'),{action:'subscribe'}));
+    await assertFails(getDoc(doc(client,CONTROL,'control')));
+    await assertFails(setDoc(doc(client,CONTROL,'control'),{acceptingSubscriptions:true}));
+  }
+});
+
+test('maintenance pauses writes atomically without creating subscriptions, events or rate records', async () => {
+  await db.collection(CONTROL).doc('control').set({acceptingSubscriptions:false});
+  for(const data of [request(),{action:'unsubscribe',email:request().email}])await assert.rejects(updateSubscription(db,data,options()),{code:'unavailable'});
+  for(const name of [SUBSCRIPTIONS,EVENTS,LIMITS])assert.equal((await db.collection(name).get()).size,0);
+  await db.collection(CONTROL).doc('control').update({acceptingSubscriptions:true});
+  await updateSubscription(db,request(),options());
+  assert.equal((await db.collection(EVENTS).get()).size,1);
 });

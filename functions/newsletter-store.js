@@ -3,6 +3,8 @@ import { createHmac } from 'node:crypto';
 export const CONSENT_VERSION = '2026-10-31-v1';
 export const SUBSCRIPTIONS = 'experienceNewsletterSubscriptions';
 export const LIMITS = 'experienceNewsletterLimits';
+export const EVENTS = 'experienceNewsletterEvents';
+export const CONTROL = 'experienceNewsletterSystem';
 export const UNSUBSCRIBE_REASONS = [
   '收到快報的頻率太高',
   '快報內容不符合我的需求',
@@ -47,8 +49,11 @@ export async function updateSubscription(db, data, { secret, ip, timestamp, now 
   const { email, action, reasons, note } = validateRequest(data);
   const ref = db.collection(SUBSCRIPTIONS).doc(privateId(secret, 'email', email));
   const limitRef = db.collection(LIMITS).doc(privateId(secret, 'ip', ip || 'unknown'));
+  const eventRef = db.collection(EVENTS).doc();
+  const controlRef = db.collection(CONTROL).doc('control');
   await db.runTransaction(async transaction => {
-    const [existing, limit] = await Promise.all([transaction.get(ref), transaction.get(limitRef)]);
+    const [existing, limit, control] = await Promise.all([transaction.get(ref), transaction.get(limitRef), transaction.get(controlRef)]);
+    if (control.data()?.acceptingSubscriptions === false) fail('unavailable');
     const previous = limit.data();
     const sameWindow = previous && now - previous.windowStart < 10 * 60 * 1000;
     if (sameWindow && previous.requests >= 10) fail('resource-exhausted');
@@ -57,16 +62,28 @@ export async function updateSubscription(db, data, { secret, ip, timestamp, now 
       requests: sameWindow ? previous.requests + 1 : 1,
     });
     const before = existing.data();
+    const changed = action === 'subscribe' ? before?.status !== 'active' : before?.status === 'active';
+    if (!changed) return;
+    const sequence = (Number.isSafeInteger(before?.eventCount) ? before.eventCount : 0) + 1;
+    transaction.create(eventRef, {
+      schemaVersion: 1, subscriberId: ref.id, email, action, sequence,
+      occurredAt: timestamp(), source: 'website',
+      reasons: action === 'unsubscribe' ? reasons : [],
+      note: action === 'unsubscribe' ? note : '',
+      ...(action === 'subscribe' ? { consentVersion: CONSENT_VERSION } : {}),
+    });
     if (action === 'unsubscribe') {
-      if (before?.status === 'active') transaction.update(ref, {
+      transaction.update(ref, {
         status: 'unsubscribed', unsubscribedAt: timestamp(), updatedAt: timestamp(),
         unsubscribeFeedback: { reasons, note, submittedAt: timestamp() },
+        eventCount: sequence, lastEventId: eventRef.id,
       });
     } else if (before?.status !== 'active') {
       transaction.set(ref, {
         email, status: 'active', source: 'website', consentVersion: CONSENT_VERSION,
         createdAt: before?.createdAt || timestamp(), updatedAt: timestamp(),
         subscribedAt: timestamp(), unsubscribedAt: null,
+        eventCount: sequence, lastEventId: eventRef.id,
         ...(before?.unsubscribeFeedback ? { unsubscribeFeedback: before.unsubscribeFeedback } : {}),
       });
     }

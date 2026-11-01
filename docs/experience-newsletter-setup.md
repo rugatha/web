@@ -30,7 +30,7 @@ PATH=/opt/homebrew/opt/node@24/bin:/opt/homebrew/opt/openjdk@21/bin:$PATH npm ru
 npm run test:newsletter
 ```
 
-本次通過八組 Firestore／後端測試與 Chrome 整合驗證：
+本次通過十一組 Firestore／後端測試與 Chrome 整合驗證：
 
 - email 正規化、重複與同時訂閱不重複建檔，保留 `+tag`。
 - 退訂、重複退訂、不存在地址退訂與重新訂閱。
@@ -97,3 +97,15 @@ npm run newsletter:check
 共用退訂頁只要求 email，不驗證信箱所有權，符合目前免登入與相同 HTML 群發的流程；知道地址的人也能提交訂閱／退訂。回應不揭露名單是否已有該地址。App Check 尚未設定；已實作輸入驗證、交易內限流與最小存取權限。
 
 參考：[callable Functions](https://firebase.google.com/docs/functions/callable)、[環境與 Secret 設定](https://firebase.google.com/docs/functions/config-env)、[runtime 與部署要求](https://firebase.google.com/docs/functions/manage-functions)。
+
+## 訂閱事件歷程
+
+每次實際狀態變更，同一個 Firestore transaction 會同步更新 `experienceNewsletterSubscriptions`（目前狀態）並新增 `experienceNewsletterEvents`（不可由前端修改的事件）。同一 email 只有一筆目前狀態，但可以有多筆事件；重複提交相同狀態或退訂不存在的地址，不新增事件。
+
+每筆事件包含 `subscriberId`、`email`、`action`（subscribe／unsubscribe）、`sequence`（該訂閱者的事件序號）、`occurredAt`（伺服器時間）、`reasons`、`note`、`source` 與 schema 版本；訂閱事件另附同意文案版本。取消訂閱的原因寫入該次事件，之後再訂閱或退訂不會覆蓋它。
+
+後台「訂閱」頁新增「訂閱歷程」區，預設最新事件在前；可依訂閱者下拉篩選，並使用事件時間欄切換排序、篩選日期，或依事件與原因搜尋。所有名單與歷程只允許管理員讀取。
+
+重置工具 `scripts/reset-newsletter-data.mjs --project rugatha-87e15` 預設只顯示文件數量。`--pause` 暫停寫入、`--apply` 清除訂閱名單／事件歷程／限流三個集合、`--resume` 恢復寫入；清除前必須先部署支援維護開關的後端。其他會員、報名與回饋集合不在工具範圍內。清除是永久操作，僅在使用者明確要求時執行，不會匯出另存私人名單。
+
+2026/11/01 依使用者明確要求完成首次清空切換：刪除原有 2 筆訂閱名單與 2 筆限流資料，原歷程為 0 筆；沒有將舊狀態推算成歷史事件。以維護開關暫停寫入後完成後端部署與清除，再恢復服務。正式瀏覽器驗證四次實際狀態變更可保留四筆事件及兩次不同的退訂意見，重複請求不新增事件；專用測試地址的 5 筆測試文件已全部刪除，未寄信。後台歷程介面已通過本機驗證，正式網站發布仍待使用者確認。

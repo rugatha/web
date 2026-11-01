@@ -1,4 +1,5 @@
-import { createSubscriptionsDashboard } from './subscriptions-dashboard.js?v=20261101-1';
+import { setupAdminNavigation } from './navigation.js?v=20261101-mobile';
+import { createSubscriptionsDashboard } from './subscriptions-dashboard.js?v=20261101-history';
 import { createD3Dashboard } from './d3-dashboard.js?v=20261026-helper-1';
 import { createFeedbackDashboard } from './feedback-dashboard.js?v=20261026-forms-8';
 import { createExperienceDashboard } from './experience-dashboard.js?v=20261026-5';
@@ -19,13 +20,14 @@ const screens = {
   experience:['體驗團報名','依場次檢視完整填答與名額，管理狀態、DM_Note 與取消報名。'],
   d3:['2026 D3','查看龍山地下城創角活動的各時段名額、報名資料與加購項目。'],
   feedback:['跑團回饋','依場次檢視完整回覆、評分與費用感受，查看所選劇本與場次的回饋平均分。'],
-  subscriptions:['訂閱','檢視體驗團快報的訂閱狀況、會員比對與訂閱名單。'],
+  subscriptions:['體驗團快報','檢視快報的訂閱狀況、會員比對、訂閱名單與完整歷程。'],
   members:['會員管理','查看會員清單、註冊時間、最後登入時間及關聯資料。'],
   characters:['角色卡','查看每張角色卡的建立者、職業、種族與建立時間。'],
   npcs:['NPC 統計','依宗教、性別、所在王國、種族等面向分析 NPC。'],
   fate:['命運的抉擇','總覽各 NPC 的題目、選項、答題數與選項比例。']
 };
 const blankState = () => ({catalog:null,npcs:null,kingdoms:new Map(),members:null,characters:null,choices:null,errors:{}});
+const navigation=setupAdminNavigation();
 let state=blankState(), authenticated=false, generation=0, db, sdk, range=presetRange('all'), screen='overview';
 const experience = createExperienceDashboard(() => ({ authenticated, generation, db, sdk }));
 const d3 = createD3Dashboard(() => ({ authenticated, generation, db, sdk }));
@@ -33,8 +35,9 @@ const feedback = createFeedbackDashboard(() => ({ authenticated, generation, db,
 const subscriptions = createSubscriptionsDashboard(() => ({ authenticated, generation, db, sdk, members:state.members, memberError:state.errors.members }));
 let sliderMin=MIN_DATE, today=dayKey(new Date());
 function notice(message) { const node=document.createElement('div');node.className='notice';node.textContent=message;$('notices').append(node); }
-function failBoot() { authenticated=false;generation++;state=blankState();clearTableData();experience.reset();feedback.reset();d3.reset();subscriptions.reset();window.RUGATHA_ADMIN_BOOT?.fail(); }
+function failBoot() { navigation.close();authenticated=false;generation++;state=blankState();clearTableData();experience.reset();feedback.reset();d3.reset();subscriptions.reset();window.RUGATHA_ADMIN_BOOT?.fail(); }
 function deny() {
+  navigation.close();
   window.RUGATHA_ADMIN_BOOT?.ready();authenticated=false;generation++;state=blankState();clearTableData();experience.reset();feedback.reset();d3.reset();subscriptions.reset();
   $('dashboard').hidden=true;$('dashboard').replaceChildren();$('gate').hidden=false;$('gate').textContent='404 · Page not found';location.replace('/404/');
 }
@@ -195,11 +198,14 @@ function renderActive() {
   renders[screen]();
 }
 function route() {
+  navigation.close();
   const requested=location.hash.slice(1);screen=screens[requested]?requested:'overview';
   document.querySelectorAll('[data-screen]').forEach(node=>node.hidden=node.dataset.screen!==screen);
   document.querySelectorAll('[data-nav]').forEach(node=>{if(node.dataset.nav===screen)node.setAttribute('aria-current','page');else node.removeAttribute('aria-current');});
   if (['experience','feedback','d3'].includes(screen)) $('forms-navigation').open=true;
-  $('breadcrumb').textContent=(['experience','feedback','d3'].includes(screen)?'報名與表單 / ':'')+screens[screen][0];$('screen-title').textContent=screens[screen][0];$('screen-description').textContent=screens[screen][1];
+  if(screen==='subscriptions') $('subscriptions-navigation').open=true;
+  $('admin-mobile-title').textContent=screens[screen][0];
+  $('breadcrumb').textContent=(['experience','feedback','d3'].includes(screen)?'報名與表單 / ':screen==='subscriptions'?'訂閱 / ':'')+screens[screen][0];$('screen-title').textContent=screens[screen][0];$('screen-description').textContent=screens[screen][1];
   document.title=screens[screen][0]+' | Rugatha';
   $('date-controls').hidden = ['experience','feedback','d3','subscriptions'].includes(screen);
   document.querySelectorAll('[data-time-field]').forEach(node=>node.hidden=node.dataset.timeField!==screen);
