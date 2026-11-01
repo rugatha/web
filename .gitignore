@@ -1,6 +1,9 @@
 # OS files
 .DS_Store
 
+# Template pages
+template/
+
 # Dependencies and Python caches
 node_modules/
 .venv/
@@ -35,6 +38,7 @@ test-results/
 /docs/image-migration/storage-status.json
 
 # Local working directories
+/skills/
 /species/
 /lab/
 /cicd/
