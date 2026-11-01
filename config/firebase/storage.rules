@@ -47,6 +47,12 @@ service firebase.storage {
       allow list, write: if false;
     }
 
+    // Newsletter campaign artwork is public-read, published only through IAM.
+    match /public-images/experience/{fileName} {
+      allow get: if fileName.matches('subscription-[a-f0-9]{64}\\.png');
+      allow list, write: if false;
+    }
+
     // Generated location artwork, preserved at its original PNG resolution.
     match /public-images/locations/{assetId}/{hash}/reading.png {
       allow get: if assetId.matches('[a-z0-9_-]+')

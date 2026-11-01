@@ -13,7 +13,8 @@ const readable = [
   'public-images/chapters/rugatha/c01/chapter-01/thumb-1234abcd.webp',
   'public-images/npcs/sora/reading-1234abcd.webp',
   'public-images/signatures/sora/signature-1234abcd.png',
-  'public-images/locations/material-realm/mattington/city/tavern/reading-1234abcd.png'
+  'public-images/locations/material-realm/mattington/city/tavern/reading-1234abcd.png',
+  `public-images/experience/subscription-${hash}.png`
 ];
 before(async () => {
   environment = await initializeTestEnvironment({ projectId: 'demo-rugatha-images', storage: { rules: readFileSync('config/firebase/storage.rules', 'utf8') } });

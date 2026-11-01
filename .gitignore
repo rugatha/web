@@ -1,34 +1,30 @@
+# OS files
 .DS_Store
-# species data working
-/species/
-# lab
-/lab/
-# cicd
-/cicd/
-# experience subscription
-/experience/subscribe/experience-notification.html
-# Firebase migration inputs, credentials, and generated reports contain private data.
+
+# Dependencies and Python caches
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# Firebase credentials, secrets, and local state
 *.service-account.json
 service-account*.json
+.firebase/
+/functions/.secret.local
+/functions/.env*
+
+# Firebase debug logs
 firebase-debug.log
 firestore-debug.log
 database-debug.log
 ui-debug.log
-.firebase/
-.venv/
-node_modules/
-/functions/.secret.local
-/functions/.env*
 functions-debug.log
-__pycache__/
-*.pyc
+
+# Private Firebase migration inputs and reports
 migration-private/
-rtdb-export*.json
 *rtdb-export*.json
-campaigns/pages/rugatha-plus/plus-c08/*
-!campaigns/pages/rugatha-plus/plus-c08/chpt01.html
-!campaigns/pages/rugatha-plus/plus-c08/temp.html
-!campaigns/pages/rugatha-plus/plus-c08/index.html
+
 # Browser acceptance artifacts
 playwright-report/
 test-results/
@@ -37,6 +33,23 @@ test-results/
 /output/
 /docs/image-migration/prepared-*/
 /docs/image-migration/storage-status.json
+
+# Local working directories
+/species/
+/lab/
+/cicd/
+
+# Experience subscription assets and private historical responses
+/experience/subscribe/experience-notification.html
+/experience/subscription.png
+/experience/experience_his.csv
+/experience/feedback_his.csv
+
+# Campaign working pages (keep the listed pages tracked)
+campaigns/pages/rugatha-plus/plus-c08/*
+!campaigns/pages/rugatha-plus/plus-c08/chpt01.html
+!campaigns/pages/rugatha-plus/plus-c08/temp.html
+!campaigns/pages/rugatha-plus/plus-c08/index.html
 
 # Full spell catalogs live in Firebase Storage; test caches must stay outside Git.
 /toolbox/spells/spells-phb.json
@@ -56,9 +69,3 @@ test-results/
 /npc/individual_pics/
 /npc/portrait-*-review.html
 /npc/portrait-revision*/
-
-# Private historical registration answers.
-/experience/experience_his.csv
-
-# Private historical feedback answers.
-/experience/feedback_his.csv
