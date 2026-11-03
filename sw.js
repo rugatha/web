@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v53";
+const CACHE_VERSION = "rugatha-pwa-v54";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;

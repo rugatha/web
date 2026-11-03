@@ -1,0 +1,28 @@
+/* Opt-in adjustments for reviewed NPC profile pages. */
+body.npc-page-standard {
+  --muted: #d1ded6;
+}
+
+.npc-page-standard .language-toggle {
+  top: 16px;
+  left: 16px;
+}
+
+.npc-page-standard .language-toggle button {
+  flex: 0 0 88px;
+  width: 88px;
+  height: 88px;
+}
+
+@media (max-width: 640px) {
+  .npc-page-standard .language-toggle {
+    top: 12px;
+    left: 12px;
+  }
+
+  .npc-page-standard .language-toggle button {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}

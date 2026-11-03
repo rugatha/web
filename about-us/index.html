@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -32,7 +32,7 @@
 <link rel="icon" type="image/png" href="../assets/logo/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../shared/styles/theme.css">
-  <link rel="stylesheet" href="styles/about.css">
+  <link rel="stylesheet" href="styles/about.css?v=20261101-hero-type-2">
   <!-- Rugatha PWA -->
   <link rel="manifest" href="../manifest.webmanifest">
   <meta name="theme-color" content="#0f2d24">
@@ -42,24 +42,24 @@
   <link rel="apple-touch-icon" href="../assets/logo/rugatha-icon-192.png">
   <script defer src="../shared/pwa.js"></script>
   <script src="../shared/language-toggle.js"></script>
+  <script defer src="scripts/language.js?v=20261101-language-2"></script>
 </head>
-<body>
+<body data-lang="zh">
+  <div class="about-language-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-option="zh" data-lang-toggle aria-label="目前語言：中文；切換為 English"></button>
+  </div>
   <div class="page">
-    <header class="banner" aria-label="Rugatha banner image">
-      <a href="../index.html" class="banner-link" aria-label="Back to Rugatha home">
-        <img src="../assets/banner/rugatha-banner-trademark.png" alt="Rugatha banner" class="banner-logo" loading="lazy">
+    <header class="banner" aria-label="Rugatha">
+      <a href="../index.html" class="banner-link" aria-label="返回 Rugatha 首頁" data-about-label="home">
+        <img src="../assets/banner/rugatha-banner-trademark.png" alt="Rugatha" class="banner-logo" loading="lazy">
       </a>
     </header>
 
     <main class="page-shell about-shell">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow"></p>
-          <h2>神祇與冒險碰撞，魔法與故事綻放</h2>
-          <h2>Gods and Adventures Collides, Magic and Stories Blossoms</h2>
-          <p class="lede">Rugatha D&D是台灣原創的「龍與地下城」世界觀、團務，與設定<br>從2021年中第一次跑團，至今已經數年了<br>一開始，我們只是一群私下跑團的朋友，但一路上認識了越來越多人，也組成擁有不同面向的團隊，一起擴展這個世界，寫下屬於我們獨有的故事</p>
-          <div class="lede-divider" aria-hidden="true"></div>
-          <p class="lede">Rugatha D&D is a original Dungeons and Dragons world, campaigns and settings from Taiwan<br>It's been some years since we started in mid 2021<br>We started as friends playing D&D in private, but we've met new people along the way, built a team with differet aspects, to expand this world, and write our own stories</p>
+          <h2 data-about-i18n="headline">神祇與冒險碰撞，魔法與故事綻放</h2>
+          <p class="lede" data-about-i18n="intro">Rugatha D&D是台灣原創的「龍與地下城」世界觀、團務，與設定<br>從2021年中第一次跑團，至今已經數年了<br>一開始，我們只是一群私下跑團的朋友，但一路上認識了越來越多人，也組成擁有不同面向的團隊，一起擴展這個世界，寫下屬於我們獨有的故事</p>
           <div class="pill-row">
             <span class="pill">TRPG</span>
             <span class="pill">D&D 5e</span>
@@ -67,97 +67,96 @@
           </div>
         </div>
         <figure class="hero-graphic">
-          <img class="hero-badge" src="../assets/logo/rugatha-icon.png" alt="" aria-hidden="true">
-          <img class="hero-photo" src="assets/rugatha-photo.png" alt="Rugatha table moment" loading="lazy">
+          <img class="hero-photo" src="assets/rugatha-photo.png" alt="Rugatha 跑團合照" data-about-alt="photo" loading="lazy">
         </figure>
       </section>
 
       <section class="checklist">
         <div class="check-item">
           <span class="check-icon" aria-hidden="true"></span>
-          <p class="check-text"><b>與官方不同的世界觀</b></p>
+          <p class="check-text"><b data-about-i18n="world">與官方不同的世界觀</b></p>
         </div>
         <div class="check-item">
           <span class="check-icon" aria-hidden="true"></span>
-          <p class="check-text"><b>獨一無二的劇本</b></p>
+          <p class="check-text"><b data-about-i18n="stories">獨一無二的劇本</b></p>
         </div>
         <div class="check-item">
           <span class="check-icon" aria-hidden="true"></span>
-          <p class="check-text"><b>從玩家角色出發，量身訂做的個人故事線</b></p>
+          <p class="check-text"><b data-about-i18n="personal">從玩家角色出發，量身訂做的個人故事線</b></p>
         </div>
         <div class="check-item">
           <span class="check-icon" aria-hidden="true"></span>
-          <p class="check-text"><b>你從未有過的D&D體驗</b></p>
+          <p class="check-text"><b data-about-i18n="experience">你從未有過的D&D體驗</b></p>
         </div>
       </section>
 
       <section class="timeline">
         <div class="timeline-intro">
-          <p class="section-label">Our journey</p>
-          <h2>Rugatha 的里程碑</h2>
+          <p class="section-label" data-about-i18n="journey">Our journey</p>
+          <h2 data-about-i18n="milestones">Rugatha 的里程碑</h2>
         </div>
-        <div class="timeline-track" aria-label="Rugatha timeline">
+        <div class="timeline-track" aria-label="Rugatha 里程碑" data-about-label="timeline">
           <article class="timeline-item promo">
             <div class="timeline-date">
               <span class="timeline-year">2026/5/30</span>
-              <span class="timeline-meta">Hsinchu Promo</span>
+              <span class="timeline-meta" data-about-i18n="hsinchu-meta">新竹推廣會</span>
             </div>
             <div class="timeline-marker" aria-hidden="true">
               <span class="marker-dot"></span>
             </div>
             <div class="timeline-card">
-              <span class="timeline-tag promo">Promo</span>
-              <h3>2026 5月新竹推廣會</h3>
-              <p>Rugatha D&D首次參與推廣會活動</p>
-              <p class="timeline-note">"Are you going to restrain and stop the hatred from spreading, or repeat the history?"<br>-- The Spirit of Lorin: The Untold History</p>
+              <span class="timeline-tag promo" data-about-i18n="promo">推廣會</span>
+              <h3 data-about-i18n="hsinchu">2026 5月新竹推廣會</h3>
+              <p data-about-i18n="hsinchu-copy">Rugatha D&D首次參與推廣會活動</p>
+              <p class="timeline-note" data-about-i18n="quote-1">「你們會抑制仇恨、阻止它蔓延，還是讓歷史重演？」<br>——《洛林精神：未曾訴說的歷史》</p>
             </div>
           </article>
           
           <article class="timeline-item con">
             <div class="timeline-date">
               <span class="timeline-year">2026/5/23</span>
-              <span class="timeline-meta">TRPG FES.</span>
+              <span class="timeline-meta" data-about-i18n="fes-meta">TRPG 嘉年華會</span>
             </div>
             <div class="timeline-marker" aria-hidden="true">
               <span class="marker-dot"></span>
             </div>
             <div class="timeline-card">
-              <span class="timeline-tag con">Con</span>
-              <h3>2026 桌上角色扮演嘉年華</h3>
-              <p>Rugatha D&D首次參與嘉年華，主持一天共4場的D&D跑團體驗<br>2026公仔初登場，開放限時預購<br>開始調查2027長團調查</p>
-              <p class="timeline-note">"This is what the church tells me to do." Says Brother Matt. "It's not about what I want. THIS is the rule."<br>-- Beneath Silence and Rules</p>
+              <span class="timeline-tag con" data-about-i18n="con">展會</span>
+              <h3 data-about-i18n="fes26">2026 TRPG 嘉年華會</h3>
+              <p data-about-i18n="fes26-copy">Rugatha D&D首次參與嘉年華，主持一天共4場的D&D跑團體驗<br>2026公仔初登場，開放限時預購<br>開始調查2027長團調查</p>
+              <p class="timeline-note" data-about-i18n="quote-2">「教會就是這樣吩咐我的。」馬特弟兄說。「這無關我的意願。這就是規則。」<br>——《沉默與規則之下》</p>
             </div>
           </article>
           
           <article class="timeline-item con">
             <div class="timeline-date">
               <span class="timeline-year">2025/12/13<br>2025/12/14</span>
-              <span class="timeline-meta">D3</span>
+              <span class="timeline-meta" data-about-i18n="d3-meta">龍山地下城</span>
             </div>
             <div class="timeline-marker" aria-hidden="true">
               <span class="marker-dot"></span>
             </div>
             <div class="timeline-card">
-              <span class="timeline-tag con">Con</span>
-              <h3>2025 龍山地下城</h3>
-              <p>Rugatha D&D首次參與擺攤，並主持兩天共8場的D&D跑團體驗</p>
-              <p class="timeline-note">"Is it the answer you want? Or to survive and leave this room?" The Golden Dragon asked, in a gentle voice.<br>-- The Dragonslayers' Dining Table</p>
+              <span class="timeline-tag con" data-about-i18n="con">展會</span>
+              <h3 data-about-i18n="d3">2025 龍山地下城</h3>
+              <p data-about-i18n="d3-copy">Rugatha D&D首次參與擺攤，並主持兩天共8場的D&D跑團體驗</p>
+              <p class="timeline-note" data-about-i18n="quote-3">「你想要的是答案，還是活著離開這個房間？」金龍溫柔地問道。<br>——《屠龍者的餐桌》</p>
             </div>
           </article>
 
           <article class="timeline-item con">
             <div class="timeline-date">
               <span class="timeline-year">2025/5/11</span>
-              <span class="timeline-meta">TRPG FES.</span>
+              <span class="timeline-meta" data-about-i18n="fes-meta">TRPG 嘉年華會</span>
             </div>
             <div class="timeline-marker" aria-hidden="true">
               <span class="marker-dot"></span>
             </div>
             <div class="timeline-card">
-              <span class="timeline-tag con">Con</span>
-              <h3>2025 桌上角色扮演嘉年華</h3>
-              <p>Rugatha D&D名片初登場</p>
-              <p class="timeline-note">Hi we are Rugatha D&D :)</p>
+              <span class="timeline-tag con" data-about-i18n="con">展會</span>
+              <h3 data-about-i18n="fes25">2025 TRPG 嘉年華會</h3>
+              <p data-about-i18n="cards">Rugatha D&D名片初登場</p>
+              <p class="timeline-note" data-about-i18n="quote-4">嗨，我們是 Rugatha D&amp;D :)</p>
             </div>
           </article>
 
@@ -170,10 +169,10 @@
               <span class="marker-dot"></span>
             </div>
             <div class="timeline-card">
-              <span class="timeline-tag campaign">Campaign</span>
+              <span class="timeline-tag campaign" data-about-i18n="campaign">團務</span>
               <h3>Rugatha Wilds</h3>
-              <p>新的一批冒險者們在貝瑟頓的酒館相遇，但他們並不知道，這是命運的牽引而非巧合</p>
-              <p class="timeline-note">Pieces of papers, like puzzles, fit into each others.</p>
+              <p data-about-i18n="wilds">新的一批冒險者們在貝瑟頓的酒館相遇，但他們並不知道，這是命運的牽引而非巧合</p>
+              <p class="timeline-note" data-about-i18n="quote-5">一張張紙，如同拼圖般彼此嵌合。</p>
             </div>
           </article>
 
@@ -186,10 +185,10 @@
               <span class="marker-dot"></span>
             </div>
             <div class="timeline-card">
-              <span class="timeline-tag campaign">Campaign</span>
+              <span class="timeline-tag campaign" data-about-i18n="campaign">團務</span>
               <h3>Rugatha Lite</h3>
-              <p>新的冒險者加入殘存的夥伴，月神芬尼爾的勢力逐漸籠罩</p>
-              <p class="timeline-note">"Sebano, Town of Villains." Yeah, sure, why not?</p>
+              <p data-about-i18n="lite">新的冒險者加入殘存的夥伴，月神芬尼爾的勢力逐漸籠罩</p>
+              <p class="timeline-note" data-about-i18n="quote-6">「賽巴諾，惡棍之城。」好吧，當然，有何不可？</p>
             </div>
           </article>
 
@@ -202,10 +201,10 @@
               <span class="marker-dot"></span>
             </div>
             <div class="timeline-card">
-              <span class="timeline-tag campaign">Campaign</span>
+              <span class="timeline-tag campaign" data-about-i18n="campaign">團務</span>
               <h3>Rugatha Plus</h3>
-              <p>冒險者分道揚鑣，冒險團隊之一回到麥克嵩探尋拉索斯的陰謀</p>
-              <p class="timeline-note">The gates of Macksohn was still there, but you know it's different from the first time you step into this city.</p>
+              <p data-about-i18n="plus">冒險者分道揚鑣，冒險團隊之一回到麥克嵩探尋拉索斯的陰謀</p>
+              <p class="timeline-note" data-about-i18n="quote-7">麥克嵩的城門依然矗立，但你知道，一切已不同於你第一次踏入這座城市的時候。</p>
             </div>
           </article>
 
@@ -218,10 +217,10 @@
               <span class="marker-dot"></span>
             </div>
             <div class="timeline-card">
-              <span class="timeline-tag campaign">Campaign</span>
+              <span class="timeline-tag campaign" data-about-i18n="campaign">團務</span>
               <h3>Rugatha</h3>
-              <p>冒險者們第一次在Rugatha的世界登場</p>
-              <p class="timeline-note">You all meet in a tavern......</p>
+              <p data-about-i18n="first">冒險者們第一次在Rugatha的世界登場</p>
+              <p class="timeline-note" data-about-i18n="quote-8">你們在一間酒館相遇……</p>
             </div>
           </article>
         </div>
@@ -234,29 +233,29 @@
             .eDynhg:hover{-webkit-text-decoration:none !important;text-decoration:none !important;}/*!sc*/
             data-styled.g160[id="sc-1ykasxb-0"]{content:"eDynhg,"}/*!sc*/
           </style>
-          <a style="background-color:#B0553F;color:#F8E0BE;border:none" href="https://rugathadnd.bobaboba.me" target="_blank" class="sc-1ykasxb-0 eDynhg boba-btn"><img height="100%" style="border-radius:50%;border:1px solid rgba(255, 255, 255, 0.16);background:rgba(255, 255, 255, 0.12);box-sizing:border-box;" src="assets/donate_icon.png" alt="donate icon"/><div style="flex:1;text-align:left">小額贊助<br>Donate us</div></a>
+          <a style="background-color:#B0553F;color:#F8E0BE;border:none" href="https://rugathadnd.bobaboba.me" target="_blank" class="sc-1ykasxb-0 eDynhg boba-btn"><img height="100%" style="border-radius:50%;border:1px solid rgba(255, 255, 255, 0.16);background:rgba(255, 255, 255, 0.12);box-sizing:border-box;" src="assets/donate_icon.png" alt="" aria-hidden="true"/><div style="flex:1;text-align:left" data-about-i18n="donate">小額贊助</div></a>
         </blockquote>
-        <a class="social-btn fb" href="https://www.facebook.com/rugatha" target="_blank" rel="noopener">
+        <a class="social-btn fb" aria-label="Facebook" href="https://www.facebook.com/rugatha" target="_blank" rel="noopener">
           <span class="social-icon" aria-hidden="true">
             <img src="assets/fb-icon.png" alt="" aria-hidden="true">
           </span>
         </a>
-        <a class="social-btn ig" href="https://www.instagram.com/rugathadnd" target="_blank" rel="noopener">
+        <a class="social-btn ig" aria-label="Instagram" href="https://www.instagram.com/rugathadnd" target="_blank" rel="noopener">
           <span class="social-icon" aria-hidden="true">
             <img src="assets/ig-icon.png" alt="" aria-hidden="true">
           </span>
         </a>
-        <a class="social-btn threads" href="https://www.threads.com/@rugathadnd" target="_blank" rel="noopener">
+        <a class="social-btn threads" aria-label="Threads" href="https://www.threads.com/@rugathadnd" target="_blank" rel="noopener">
           <span class="social-icon" aria-hidden="true">
             <img src="assets/threads-icon.png" alt="" aria-hidden="true">
           </span>
         </a>
-        <a class="social-btn discord" href="https://discord.gg/bNVgXqEgvv" target="_blank" rel="noopener">
+        <a class="social-btn discord" aria-label="Discord" href="https://discord.gg/bNVgXqEgvv" target="_blank" rel="noopener">
           <span class="social-icon" aria-hidden="true">
             <img src="assets/dc-icon.webp" alt="" aria-hidden="true">
           </span>
         </a>
-        <a class="social-btn mail" href="mailto:rugathadnd@gmail.com?subject=Hello%20Rugatha" rel="noopener">
+        <a class="social-btn mail" aria-label="Email" href="mailto:rugathadnd@gmail.com?subject=Hello%20Rugatha" rel="noopener">
           <span class="social-icon" aria-hidden="true">
             <img src="assets/gmail-icon.webp" alt="" aria-hidden="true">
           </span>

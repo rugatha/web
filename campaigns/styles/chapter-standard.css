@@ -1,0 +1,11 @@
+/* Opt-in reading layout; only reviewed chapter pages use this class. */
+.chapter-page-standard [data-role="chapter-content"] > .campaign-detail__content,
+.chapter-page-standard [data-role="chapter-content"] > .campaign-detail__content_zh,
+.chapter-page-standard [data-role="chapter-content"] > .campaign-detail__content_en {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+  font-size: 16px;
+  line-height: 1.95;
+  overflow-wrap: anywhere;
+}

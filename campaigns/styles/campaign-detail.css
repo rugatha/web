@@ -716,6 +716,17 @@ body[data-empty-campaign-arcs="true"] .campaign-detail__chapters h2 {
   }
 }
 
+@media (max-width: 640px) {
+  .campaign-page-standard.campaign-overview-page [data-role="campaign-detail"] > .campaign-detail__media {
+    width: min(200px, 52vw);
+    margin-inline: auto;
+  }
+
+  .campaign-page-standard.campaign-overview-page [data-role="campaign-detail"] > .campaign-detail__media img {
+    max-height: 200px;
+  }
+}
+
 @media (max-width: 540px) {
   body {
     padding-inline: 12px;

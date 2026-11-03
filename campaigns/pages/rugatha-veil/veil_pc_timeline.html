@@ -53,8 +53,8 @@
     }
 
     .site-mark img {
-      width: min(210px, 52vw);
-      height: 116px;
+      width: min(320px, 80vw);
+      height: auto;
       object-fit: contain;
       opacity: 0.92;
     }
@@ -455,9 +455,6 @@
         padding-top: 12px;
       }
 
-      .site-mark img {
-        height: 90px;
-      }
 
       h1 {
         font-size: 2.65rem;
@@ -486,9 +483,22 @@
         transition-duration: 0.01ms !important;
       }
     }
+    .language-toggle { position: fixed; top: 16px; left: 16px; z-index: 1000; }
+    .language-toggle button { display: grid; place-items: center; width: 88px; height: 88px; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; }
+    .language-toggle__icon { width: 100%; height: 100%; object-fit: contain; }
+    .language-toggle button:focus-visible { outline: 2px solid var(--veil-gold); outline-offset: 3px; }
+    @media (max-width: 640px) {
+      .language-toggle { top: 12px; left: 12px; }
+      .language-toggle button { width: 44px; height: 44px; }
+    }
+    html[lang="en"] h1 { font-size: clamp(2rem, 5vw, 4rem); letter-spacing: 0.02em; }
   </style>
+  <script src="../../../shared/language-toggle.js"></script>
 </head>
-<body>
+<body data-lang="zh">
+  <div class="language-toggle" aria-label="Language">
+    <button type="button" data-lang-toggle aria-label="目前語言：中文" aria-pressed="false"></button>
+  </div>
   <div class="page">
     <header class="site-mark">
       <a href="../../../index.html" aria-label="返回 Rugatha 首頁">
@@ -635,8 +645,13 @@
         allButton.setAttribute('aria-pressed', String(allSelected));
         clearButton.setAttribute('aria-pressed', String(activeCharacters.length === 0));
         document.querySelector('.timeline-table').style.minWidth = `${178 + (activeCharacters.length * 160)}px`;
-        status.textContent = `目前顯示 ${activeCharacters.length} 位角色。`;
+        status.textContent = document.body.dataset.lang === 'en'
+          ? `Showing ${activeCharacters.length} characters.`
+          : `目前顯示 ${activeCharacters.length} 位角色。`;
       }
+
+      window.addEventListener('rugatha:language-changed', updateTimeline);
+      updateTimeline();
 
       characterButtons.forEach((button) => {
         button.addEventListener('click', () => {
@@ -660,5 +675,6 @@
       });
     })();
   </script>
+  <script src="scripts/timeline-language.js?v=20261102-standard-1"></script>
 </body>
 </html>

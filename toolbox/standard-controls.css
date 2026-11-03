@@ -1,0 +1,22 @@
+/* Shared language control sizing for reviewed toolbox pages. */
+body .language-toggle {
+  top: 16px;
+  left: 16px;
+}
+
+body .language-toggle button {
+  width: 88px;
+  height: 88px;
+}
+
+@media (max-width: 640px) {
+  body .language-toggle {
+    top: 12px;
+    left: 12px;
+  }
+
+  body .language-toggle button {
+    width: 44px;
+    height: 44px;
+  }
+}

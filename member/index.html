@@ -1251,6 +1251,11 @@
       html[lang="en"] .hero-copy .journal-title { font-size: 1.54rem; }
       html[lang="en"] .journal-intro { min-height: calc(28px + 11px + clamp(2.25rem, 8vw, 3rem) * 3.9); }
     }
+    /* Keep the four shortcuts directly below the adventurer information card. */
+    .member-hero > .journal-shortcuts { grid-column: 2; margin-top: 0; align-self: start; }
+    @media (max-width: 800px) {
+      .member-hero > .journal-shortcuts { grid-column: 1; }
+    }
   </style>
   <!-- Rugatha PWA -->
   <link rel="manifest" href="../manifest.webmanifest">
@@ -1277,27 +1282,11 @@
         </div>
         <p class="hero-tagline" data-i18n="heroTitle">你的傳奇冒險將在酒館被傳唱……</p>
         </div>
-        <nav class="journal-shortcuts" aria-label="Explore Rugatha">
-          <a href="../toolbox/"><span data-i18n="toolboxLink">工具箱</span></a>
-          <a href="../campaigns/"><span data-i18n="campaignsLink">團錄</span></a>
-          <a href="../experience/"><span data-i18n="experienceLink">體驗團</span></a>
-          <a href="../characters/"><span data-i18n="charactersLink">角色</span></a>
-        </nav>
+
 
       </div>
 
-      <script>
-        try {
-          if (localStorage.getItem("rugatha-member-lang") === "en") {
-            document.documentElement.lang = "en";
-            document.querySelector(".journal-title").textContent = "Adventurer's Journal";
-            document.querySelector(".hero-tagline").textContent = "Your legendary stories are to be told in taverns......";
-            ["Toolbox", "Campaigns", "Experience", "Characters"].forEach((label, index) => {
-              document.querySelectorAll(".journal-shortcuts span")[index].textContent = label;
-            });
-          }
-        } catch (error) {}
-      </script>
+
 
       <section class="profile-card" id="profile-card" aria-live="polite">
     <a class="corner-link" href="../index.html" aria-label="Rugatha Home">
@@ -1364,6 +1353,25 @@
         </div>
         <p class="profile-hint" id="profile-hint">Sign in to load your member profile.</p>
       </section>
+        <nav class="journal-shortcuts" aria-label="Explore Rugatha">
+          <a href="../toolbox/"><span data-i18n="toolboxLink">工具箱</span></a>
+          <a href="../campaigns/"><span data-i18n="campaignsLink">團錄</span></a>
+          <a href="../experience/"><span data-i18n="experienceLink">體驗團</span></a>
+          <a href="../characters/"><span data-i18n="charactersLink">角色</span></a>
+        </nav>
+
+      <script>
+        try {
+          if (localStorage.getItem("rugatha-member-lang") === "en") {
+            document.documentElement.lang = "en";
+            document.querySelector(".journal-title").textContent = "Adventurer's Journal";
+            document.querySelector(".hero-tagline").textContent = "Your legendary stories are to be told in taverns......";
+            ["Toolbox", "Campaigns", "Experience", "Characters"].forEach((label, index) => {
+              document.querySelectorAll(".journal-shortcuts span")[index].textContent = label;
+            });
+          }
+        } catch (error) {}
+      </script>
     </header>
 
     <main class="member-dashboard">

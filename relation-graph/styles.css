@@ -45,7 +45,7 @@ body {
 
 .hero__brand {
   display: block;
-  width: min(420px, 82vw);
+  width: min(320px, 80vw);
 }
 
 .hero__banner {
@@ -525,16 +525,6 @@ body {
     padding-top: 88px;
   }
 
-  .language-toggle {
-    top: 12px;
-    left: 12px;
-    width: fit-content;
-  }
-
-  .language-toggle button {
-    width: 44px;
-    height: 44px;
-  }
 
   .facet-grid {
     grid-template-columns: 1fr;
@@ -552,5 +542,18 @@ body {
   .graph-frame,
   .graph {
     min-height: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .language-toggle {
+    top: 12px;
+    left: 12px;
+    width: fit-content;
+  }
+
+  .language-toggle button {
+    width: 44px;
+    height: 44px;
   }
 }

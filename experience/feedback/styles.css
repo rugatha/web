@@ -27,6 +27,7 @@
 .slider-control input[type=range][data-answered=false]::-moz-range-progress{background:transparent}
 
 .site-header{margin-top:32px}
+.site-header img{width:min(320px,80vw)}
 #feedback-success{padding:28px}
 #feedback-success>.primary{margin-top:24px}
 @media(max-width:700px){.site-header{margin-top:24px}#feedback-success{padding:22px}}

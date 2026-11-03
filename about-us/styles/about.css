@@ -9,6 +9,39 @@ body {
   padding: 30px 18px 64px;
 }
 
+.about-language-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+}
+
+.about-language-toggle button {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.about-language-toggle .language-toggle__icon {
+  width: 100%;
+  height: 100%;
+}
+
+.about-language-toggle button:hover {
+  opacity: 0.86;
+}
+
+.about-language-toggle button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .page {
   width: min(1180px, 100%);
 }
@@ -37,9 +70,10 @@ body {
     var(--panel);
   box-shadow: var(--shadow);
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 18px;
-  padding: 24px 24px 20px;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  padding: 32px;
 }
 
 .hero::before,
@@ -72,16 +106,27 @@ body {
   z-index: 1;
 }
 
-.hero h1 {
-  margin: 6px 0 10px;
-  font-size: 34px;
-  letter-spacing: -0.01em;
+.hero h2 {
+  margin: 0 0 20px;
+  color: #f2d184;
+  font-family: "Palatino Linotype", "Palatino", "Noto Serif TC", "Songti TC", serif;
+  font-size: clamp(34px, 3.8vw, 50px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.025em;
+  text-wrap: balance;
+  text-shadow: 0 2px 14px rgba(242, 209, 132, 0.12);
+}
+
+body[data-lang="en"] .hero h2 {
+  font-size: clamp(26px, 2.6vw, 34px);
 }
 
 .hero .lede {
   margin: 0 0 14px;
   color: var(--muted);
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 .lede-divider {
@@ -105,11 +150,14 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.06);
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.04em;
 }
 
 .hero-graphic {
+  position: relative;
+  z-index: 1;
+  margin: 0;
   border-radius: 0;
   border: none;
   background: none;
@@ -131,12 +179,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(19, 28, 32, 0.82);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 12px 32px rgba(0, 0, 0, 0.24);
-}
-
-.hero-badge {
-  width: 160px;
-  height: 160px;
-  border-radius: 0;
 }
 
 .panel-grid {
@@ -689,8 +731,26 @@ body {
 }
 
 @media (max-width: 640px) {
-  .hero h1 {
-    font-size: 28px;
+  body {
+    padding-top: 72px;
+  }
+
+  .about-language-toggle {
+    top: 12px;
+    left: 12px;
+  }
+
+  .about-language-toggle button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero h2 {
+    font-size: 34px;
+  }
+
+  body[data-lang="en"] .hero h2 {
+    font-size: 26px;
   }
 
   .page-shell {

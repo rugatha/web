@@ -1,0 +1,39 @@
+/* Opt-in adjustments for reviewed player character profiles. */
+body.pc-page-standard {
+  --muted: #d1ded6;
+}
+
+.pc-page-standard .language-toggle {
+  top: 16px;
+  left: 16px;
+}
+
+.pc-page-standard .language-toggle button {
+  width: 88px;
+  height: 88px;
+}
+
+.pc-page-standard .title {
+  font-family: "Iansui", "BiauKai", "DFKai-SB", "KaiTi", cursive;
+  font-weight: 400;
+}
+
+html[lang="en"] .pc-page-standard .title {
+  font-family: "Fondamento", "Palatino Linotype", "Book Antiqua", serif;
+}
+
+@media (min-width: 641px) {
+  body.pc-page-standard { padding-top: 120px; }
+}
+
+@media (max-width: 640px) {
+  .pc-page-standard .language-toggle {
+    top: 12px;
+    left: 12px;
+  }
+
+  .pc-page-standard .language-toggle button {
+    width: 44px;
+    height: 44px;
+  }
+}

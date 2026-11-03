@@ -142,7 +142,11 @@ body {
 .deity-profile::before {
   content: "";
   position: absolute;
-  inset: -60% -20% auto -20%;
+  top: -60%;
+  left: 50%;
+  /* Keep the halo centered without adding horizontal scroll overflow. */
+  width: min(140%, 100vw);
+  transform: translateX(-50%);
   height: 80%;
   background: radial-gradient(circle, rgba(123, 220, 181, 0.25), transparent 65%);
   filter: blur(12px);

@@ -1,9 +1,9 @@
 :root {
   --bg: #445f56;
   --panel: #151922;
-  --accent: #60a5fa;
-  --text: #e8ecf5;
-  --muted: #94a3b8;
+  --accent: #7bdcb5;
+  --text: #ecf2ed;
+  --muted: #d1ded6;
   --shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   --radius: 18px;
   --font-body: "Space Grotesk", "Noto Sans TC", system-ui, sans-serif;
@@ -54,7 +54,7 @@ p.lead {
 .banner {
   display: block;
   margin: 0 auto;
-  max-width: 320px;
+  width: min(320px, 80vw);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: none;
@@ -141,6 +141,9 @@ p.lead {
     padding-top: 72px;
   }
 
+}
+
+@media (max-width: 640px) {
   .language-toggle {
     top: 12px;
     left: 12px;
@@ -212,7 +215,7 @@ p.lead {
 
 .controls button[aria-pressed="true"] {
   border-color: var(--accent);
-  background: rgba(96, 165, 250, 0.12);
+  background: rgba(123, 220, 181, 0.12);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
@@ -295,8 +298,8 @@ p.lead {
 }
 
 .toggle-group button[aria-pressed="true"] {
-  color: #e0edff;
-  background: rgba(96, 165, 250, 0.18);
+  color: var(--text);
+  background: rgba(123, 220, 181, 0.18);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
