@@ -52,6 +52,7 @@ test-results/
 # Campaign working pages (keep the listed pages tracked)
 campaigns/pages/rugatha-plus/plus-c08/*
 !campaigns/pages/rugatha-plus/plus-c08/chpt01.html
+!campaigns/pages/rugatha-plus/plus-c08/chpt02.html
 !campaigns/pages/rugatha-plus/plus-c08/temp.html
 !campaigns/pages/rugatha-plus/plus-c08/index.html
 

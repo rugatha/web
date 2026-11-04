@@ -2560,8 +2560,8 @@
     "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fiochi-mari-review-v2%2Fthumb-9545f222.webp?alt=media",
     "status": "alive",
     "gender": "female",
-    "descZh": "一名有著銀白毛色的狐狸人修女，目前在方努爾市的聖津菈大教堂服務。\n小時候和米多莉、小雪一起在尼姆孤兒院長大。\n米多莉等人回到方努爾市後，伊洛協助接待他們，也陪同處理聖拉雅米島事件後續與小雪相關的狀況。",
-    "descEn": "A foxfolk nun with silver-white fur, currently serving at St. Keinra Cathedral in Fanaur City.\nShe grew up in Nym Orphanage together with Midori and Yuki.\nAfter Midori and the others returned to Fanaur, Iochi helped receive them and became involved in the aftermath of the St. Rayami Island incident and the situation surrounding Yuki.",
+    "descZh": "一名有著銀白毛色的狐狸人修女，目前在方努爾市的聖津菈大教堂服務。\n小時候和米多莉、小雪一起在尼姆孤兒院長大。\n米多莉等人回到方努爾市後，伊洛協助接待他們，也陪同處理聖拉雅米島事件後續與小雪相關的狀況。\n娜塔莎港戰鬥後，瑪莉在舊教堂協助接待冒險者。羅賓遜主教准許眾人自由搜索聖津菈大教堂，但指定必須由她陪同，協助尋找通往尖頂寺的傳送陣。",
+    "descEn": "A foxfolk nun with silver-white fur, currently serving at St. Keinra Cathedral in Fanaur City.\nShe grew up in Nym Orphanage together with Midori and Yuki.\nAfter Midori and the others returned to Fanaur, Iochi helped receive them and became involved in the aftermath of the St. Rayami Island incident and the situation surrounding Yuki.\nAfter the battle at Natasha Harbor, Mari helped host the adventurers at the old church. Bishop Robinson permitted them to search Saint Keinra Cathedral freely for a teleportation circle to Peak Temple, but required her to accompany them.",
     "related": [
       "Bishop_Robinson",
       "Reese_Tig",
@@ -3946,8 +3946,8 @@
     "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fcaptain-marin-review-v2%2Fthumb-b6ffbe5e.webp?alt=media",
     "status": "alive",
     "gender": "female",
-    "descZh": "方努爾市的一名船長。\n受羅賓遜主教委託，載冒險者們到南方的荒島，尋找《雪の化身の目覚め》的下落。多年後，聖拉雅米島成為她的封地；她接獲島上居民失蹤與中毒的消息後，帶新的冒險者登島調查，並請他們將調查報告送往聖津菈大教堂。\n在金海岸礦坑事件後，她提供津菈教協助者勳章，讓冒險者前往方努爾回報拉索斯教與拉巴比石的線索。",
-    "descEn": "A captain from Fanaur.\nCommissioned by Bishop Robinson to bring adventurers to the southern island to find the book \"雪の化身の目覚め.\" Years later, St. Rayami Island became her fiefdom. After residents began disappearing and suffering unexplained poisonings, she brought new adventurers to investigate and asked them to deliver their report to Saint Keinra Cathedral.\nAfter the Gold Coast Mine incident, she gave the adventurers badges identifying them as Keinra's helpers so they could report the Laxthos and Lababi-stone clues in Fanaur.",
+    "descZh": "方努爾市的一名船長。\n受羅賓遜主教委託，載冒險者們到南方的荒島，尋找《雪の化身の目覚め》的下落。多年後，聖拉雅米島成為她的封地；她接獲島上居民失蹤與中毒的消息後，帶新的冒險者登島調查，並請他們將調查報告送往聖津菈大教堂。\n在金海岸礦坑事件後，她提供津菈教協助者勳章，讓冒險者前往方努爾回報拉索斯教與拉巴比石的線索。\n與湯普生爵士的戰鬥後，瑪琳與前一晚參與營救的夥伴在娜塔莎港舊教堂用餐後，讓澤克與華生登船，準備一同出航。",
+    "descEn": "A captain from Fanaur.\nCommissioned by Bishop Robinson to bring adventurers to the southern island to find the book \"雪の化身の目覚め.\" Years later, St. Rayami Island became her fiefdom. After residents began disappearing and suffering unexplained poisonings, she brought new adventurers to investigate and asked them to deliver their report to Saint Keinra Cathedral.\nAfter the Gold Coast Mine incident, she gave the adventurers badges identifying them as Keinra's helpers so they could report the Laxthos and Lababi-stone clues in Fanaur.\nAfter the fight against Syr Thompson, after dining at Natasha Harbor’s old church with the companions involved in the previous night’s rescue, Marin took Zek and Watson aboard her ship to prepare for departure.",
     "related": [
       "Bishop_Robinson",
       "Liliana",
@@ -5218,8 +5218,8 @@
     "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbishop-robinson-review-round2%2Fthumb-a489a6b0.webp?alt=media",
     "status": "alive",
     "gender": "male",
-    "descZh": "津菈教大主教。\n在聖拉雅米事件中，羅賓遜主教接收瑪琳船長送來的調查報告，將島上的失蹤、中毒與方努爾尼姆孤兒院地下的拉巴比石互相比對，並命令裁判官調查孤兒院。米多莉從檔案室發現孤兒院販賣兒童的紀錄後，持文件質問主教並攻擊他，丟下聖徽越獄；羅賓遜因此受傷，但仍請冒險者先找到米多莉、安撫她並將聖徽歸還。",
-    "descEn": "An archbishop of the Church of the Keinra.\nDuring the St. Rayami incident, Robinson received Captain Marin's report in Fanaur and compared the island's disappearances and poisonings with the Lababi stones beneath Nimu Orphanage. He assigned inquisitors to investigate the orphanage. After Midori found records showing that the orphanage had sold children, she confronted and attacked Robinson, dropped her holy symbol, and escaped; Robinson was injured but still asked the adventurers to find Midori, calm her, and return the symbol.",
+    "descZh": "津菈教大主教。\n在聖拉雅米事件中，羅賓遜主教接收瑪琳船長送來的調查報告，將島上的失蹤、中毒與方努爾尼姆孤兒院地下的拉巴比石互相比對，並命令裁判官調查孤兒院。米多莉從檔案室發現孤兒院販賣兒童的紀錄後，持文件質問主教並攻擊他，丟下聖徽越獄；羅賓遜因此受傷，但仍請冒險者先找到米多莉、安撫她並將聖徽歸還。\n羅賓遜在娜塔莎港舊教堂感謝冒險者除去教會死敵湯普生爵士，邀請小雪前往聖津菈大教堂，也公開歡迎米多莉回家。他同意冒險者在瑪莉修女陪同下自由搜索大教堂，尋找通往尖頂寺的傳送陣。",
+    "descEn": "An archbishop of the Church of the Keinra.\nDuring the St. Rayami incident, Robinson received Captain Marin's report in Fanaur and compared the island's disappearances and poisonings with the Lababi stones beneath Nimu Orphanage. He assigned inquisitors to investigate the orphanage. After Midori found records showing that the orphanage had sold children, she confronted and attacked Robinson, dropped her holy symbol, and escaped; Robinson was injured but still asked the adventurers to find Midori, calm her, and return the symbol.\nAt Natasha Harbor’s old church, Robinson thanked the adventurers for defeating Syr Thompson, an enemy of the church. He invited Yuki to Saint Keinra Cathedral and publicly welcomed Midori home. He also allowed the party to search the cathedral for a teleportation circle to Peak Temple, on condition that Sister Mari accompany them.",
     "related": [
       "Captain_Marin",
       "Iochi_Mari",
@@ -6694,8 +6694,8 @@
     "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fyuki-review-v2%2Fthumb-401774ef.webp?alt=media",
     "status": "alive",
     "gender": "female",
-    "descZh": "對米多莉而言非常重要的人，多次以幻影出現在米多莉的腦中，也曾在妖精荒野時被艾爾比以幻象呈現在大家面前。\n過去似乎曾被關押在一個伸手不見五指的地方。\n在聖拉雅米島的洞穴，被發現操控著拉茲特獸攻擊老鼠人；在金海岸礦坑事件中，冒險者取得的紀錄顯示他與拉索斯教的實驗與滿月儀式有關，且與米多莉可能站在對立面。",
-    "descEn": "A very important figure to Midori, who appeared in Midori's mind many times and was also shown to the party as an illusion by Elby in the Feywild.\nShe seems to have once been imprisoned in a place of complete darkness.\nOn St. Rayami Island, Yuki was found controlling a Laztek to attack ratfolk. During the Gold Coast Mines incident, records recovered by the adventurers tied her to Laxthos experiments and a full-moon ritual, suggesting that she and Midori may now stand on opposing sides.",
+    "descZh": "對米多莉而言非常重要的人，多次以幻影出現在米多莉的腦中，也曾在妖精荒野時被艾爾比以幻象呈現在大家面前。\n過去似乎曾被關押在一個伸手不見五指的地方。\n在聖拉雅米島的洞穴，被發現操控著拉茲特獸攻擊老鼠人；在金海岸礦坑事件中，冒險者取得的紀錄顯示他與拉索斯教的實驗與滿月儀式有關，且與米多莉可能站在對立面。\n娜塔莎港戰鬥後，小雪獲救並回到米多莉身邊。她婉拒羅賓遜主教前往聖津菈大教堂的邀請，決定留下整頓湯普生宅邸、為過去的所作所為贖罪，並請求將娜塔莎港封給米多莉，邀她一同留下。",
+    "descEn": "A very important figure to Midori, who appeared in Midori's mind many times and was also shown to the party as an illusion by Elby in the Feywild.\nShe seems to have once been imprisoned in a place of complete darkness.\nOn St. Rayami Island, Yuki was found controlling a Laztek to attack ratfolk. During the Gold Coast Mines incident, records recovered by the adventurers tied her to Laxthos experiments and a full-moon ritual, suggesting that she and Midori may now stand on opposing sides.\nAfter the battle at Natasha Harbor, Yuki was rescued and reunited with Midori. She declined Bishop Robinson’s invitation to Saint Keinra Cathedral, choosing to remain and put Thompson’s manor in order as atonement for her past deeds. She asked that Natasha Harbor be granted to Midori and invited her to stay.",
     "related": [
       "Iochi_Mari"
     ],
@@ -6786,8 +6786,8 @@
     "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fzek-review-v2%2Fthumb-d739aa27.webp?alt=media",
     "status": "alive",
     "gender": "male",
-    "descZh": "狂暴戰士幫的領袖，鬥名為「鬥破蒼穹」。\n在狂怒儀式中帶領戰士們以戰鬥與吶喊祭拜津菈，並將波與YHWH分別取名為「撓撓耳朵」與「舔舔地板」。\n艾希斯前往聖拉雅米島後失蹤，澤克請冒險者尋找他的下落，並交給他們艾希斯的劍「異教徒剋星」與一封要轉交給艾希斯的信。",
-    "descEn": "The leader of the Raging Warriors, known in battle as Skybreaker.\nDuring the Rite of Fury, Zek led the warriors in honoring Keinra through combat and shouting, and gave Beau and YHWH the fighting names Scratches-Ears and Licks-Floor.\nAfter Essis disappeared on St. Rayami Island, Zek asked the adventurers to find her, giving them Essis's sword, Heretic Slayer, and a letter to deliver to her.",
+    "descZh": "狂暴戰士幫的領袖，鬥名為「鬥破蒼穹」。\n在狂怒儀式中帶領戰士們以戰鬥與吶喊祭拜津菈，並將波與YHWH分別取名為「撓撓耳朵」與「舔舔地板」。\n艾希斯前往聖拉雅米島後失蹤，澤克請冒險者尋找他的下落，並交給他們艾希斯的劍「異教徒剋星」與一封要轉交給艾希斯的信。\n澤克在娜塔莎港舊教堂與冒險者用餐，之後與華生一同登上瑪琳船長的船，準備出航。",
+    "descEn": "The leader of the Raging Warriors, known in battle as Skybreaker.\nDuring the Rite of Fury, Zek led the warriors in honoring Keinra through combat and shouting, and gave Beau and YHWH the fighting names Scratches-Ears and Licks-Floor.\nAfter Essis disappeared on St. Rayami Island, Zek asked the adventurers to find her, giving them Essis's sword, Heretic Slayer, and a letter to deliver to her.\nZek dined with the adventurers at Natasha Harbor’s old church, then boarded Captain Marin’s ship with Watson to prepare for departure.",
     "related": [
       "Beau",
       "Essis",

@@ -72,7 +72,6 @@
     "descZh": "卓尼森王朝末年，帝國被人民發起的革命，史稱「平民革命」推翻，而造成了整個帝國接近一週時間的暴亂，三大王國都作勢想取得帝國的控制權，但沒有一方能完全壓制。而當時的皇帝喬森十三世（喬森・卓尼森，）則被俘虜。\n隸屬於光之神崔尼斯教派的軍團「崔尼斯的聖騎士」因為受到多數人民的支持，且分別與三大王國進行了談判和交涉後，順利取得了統治帝國的權利。軍團承諾沿用「卓尼森帝國」作為國號，維持三大王國的統治方式，且不干涉三大王國分別的權力平衡。同時，軍團將集中在首都桑普塔諾市，改制為新任皇帝的禁衛軍。軍團的首領，人類聖騎士，霍里森・圖卡在三大王國的首肯與人民的擁戴下，登基為霍里森一世。\n霍里森一世為了表達自己對光之神的榮耀，將王朝訂為「崔尼斯王朝」，也把光之神的教派奉為帝國的國教。雖然如此，但是為了維護與三大王國的承諾，他並不懲處不信奉光之神的人們，容許人民對其他神祇的崇拜。久而久之，在以光之神為名的崔尼斯王朝，反而孕育了更多新的神明，五位新神教派分別誕生。",
     "descEn": "At the end of the Dranison Dynasty, the empire was overthrown by a popular uprising known as the Commoners' Revolution, causing nearly a week of unrest. The three great kingdoms all sought to seize control, but none could fully prevail. The emperor at the time, Georson XIII (Georson Dranison), was captured.\nThe God of Light, Trinix's legion, the Paladins of Trinix, gained majority support and, after negotiating with the three kingdoms, secured the right to rule the empire. They promised to keep the name 'Dranison Empire,' maintain the three-kingdom system, and not interfere with each kingdom's internal balance of power. The legion was concentrated in the capital of Sumptano and reformed into the new emperor's guard. Their leader, the human paladin Hollison Tuka, ascended the throne as Hollison I with the consent of the three kingdoms and the people's support.\nTo honor Trinix, Hollison I named the dynasty the Trinixity Dynasty and made the Trinix faith the state religion. Even so, to uphold his promises to the three kingdoms, he did not punish nonbelievers and allowed the worship of other gods. Over time, under the Trinixity Dynasty, more new gods were born; five new godly sects emerged."
   },
-
   {
     "type": "era",
     "era": "lothum",
@@ -100,7 +99,6 @@
     "descZh": "在征服者洛林統一帝國78年（10836）紀念日的隔日，由妖精王國首都佛萊特境的艾蒙醫生、前涅西斯主教法倫，和洛林的左右手諾威爾（的屍體粉塵），透過儀式進行融合，成為一名被稱為阿爾芬諾的孽物，逃離佛萊特境。\n在那之後，蜘蛛神教便開始發展，逐漸從妖精王國的境內向外延伸。",
     "descEn": "The day after the 78th anniversary of Conqueror Lorin's unification of the empire (10836), Dr. Elmond of the elven capital Phreit Realm, former Nessis bishop Fallon, and Lorin's right hand, Norvelle (his corpse dust), were fused through a ritual into a creature called Alfenor, which escaped Phreit Realm.\nAfter that, The Spider Religion began to grow, gradually spreading from within the elven kingdom."
   },
-
   {
     "type": "era",
     "era": "new-dranison",
@@ -719,6 +717,26 @@
     "date": "15051.05.11",
     "descZh": "米多莉發現津菈教過去曾販賣孤兒小雪的紀錄，憤而攻擊羅賓遜主教、留下聖徽並逃離教會。\n冒險者們推測她已前往娜塔莎港，遂啟程追趕並試圖阻止即將舉行的儀式。",
     "descEn": "Midori discovered records showing that the Keinra church had sold the orphan Snow, then attacked Bishop Robinson, left her holy symbol behind, and fled the church.\nBelieving she had gone to Natasha Port, the adventurers set out after her and to stop the impending ritual."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
+    "tag": "rugatha-plus",
+    "date": "15051.05.14",
+    "titleZh": "龍恩重返尖頂寺",
+    "titleEn": "Ron Returns to Peak Temple",
+    "descZh": "娜塔莎港戰鬥後，龍恩與同伴失散，無意間傳送回尖頂寺。\n他沿繩梯避開守衛潛入寺內，在童年藏身的廢棄倉庫休息。",
+    "descEn": "After the battle at Natasha Harbor, Ron became separated from his companions and unintentionally teleported to Peak Temple.\nHe slipped past the guards by a rope ladder and rested in the abandoned storeroom where he had hidden as a child."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
+    "tag": "rugatha-plus",
+    "date": "15051.05.14",
+    "titleZh": "娜塔莎港戰後的抉擇",
+    "titleEn": "Choices After the Battle of Natasha Harbor",
+    "descZh": "小雪獲救後與米多莉團聚；羅賓遜主教歡迎米多莉回到聖津菈大教堂，並准許冒險者在瑪莉修女陪同下搜索通往尖頂寺的傳送陣。\n小雪希望留在娜塔莎港贖罪，請求將港口封給米多莉，並邀她一同留下；米多莉尚未作答。",
+    "descEn": "Yuki was rescued and reunited with Midori. Bishop Robinson welcomed Midori back to Saint Keinra Cathedral and allowed the adventurers to search for the teleportation circle to Peak Temple with Sister Mari accompanying them.\nWishing to remain at Natasha Harbor to atone, Yuki asked that it be granted to Midori and invited her to stay; Midori had not yet answered."
   },
   {
     "type": "event",

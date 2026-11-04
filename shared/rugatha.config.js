@@ -644,6 +644,11 @@
         id: "plus-c08-chpt01",
         title: "Chapter 1: Memories Overflowing",
         url: "../plus-c08/chpt01.html"
+      },
+      {
+        id: "plus-c08-chpt02",
+        title: "Chapter 2: Senior and Junior",
+        url: "../plus-c08/chpt02.html"
       }
     ],
     "lite-c05": [
@@ -1079,6 +1084,7 @@
     "plus-c07-chpt03": "../chapter-banners/plus-c07-chpt03.png",
     "plus-c07-chpt04": "../chapter-banners/plus-c07-chpt04.png",
     "plus-c08-chpt01": "../chapter-banners/plus-c08-chpt01.png",
+    "plus-c08-chpt02": "../chapter-banners/plus-c08-chpt02.png",
     "lite-c05-chpt02": "../chapter-banners/lite-c05-chpt02.png",
     "lite-c05-chpt01": "../chapter-banners/rugatha-c05-chpt01.png",
     "lite-c05-chpt03": "../chapter-banners/lite-c05-chpt03.png",

@@ -195,6 +195,7 @@ self.addEventListener("fetch", (event) => {
     || pathname === "/campaigns/data/chapter-content.json"
     || pathname.startsWith("/campaigns/data/chapters/")
     || pathname === "/campaigns/data/plus-08-multiple-choices.json"
+    || pathname === "/campaigns/data/plus-08-chpt02-multiple-choices.json"
     || pathname === "/campaigns/scripts/adventurer-choices.js") {
     event.respondWith(networkFirst(request));
     return;

@@ -267,7 +267,7 @@
       "url": "/campaigns/pages/rugatha-plus/plus-c08/"
     },
     "prev-chapter": "plus-c07-chpt04",
-    "next-chapter": null
+    "next-chapter": "plus-c08-chpt02"
   },
   "lite-c05-chpt02": {
     "story-arc": {
@@ -803,6 +803,14 @@
       "url": "/campaigns/pages/rugatha-legends/legends-os05/"
     },
     "prev-chapter": "legends-os05-chpt01",
+    "next-chapter": null
+  },
+  "plus-c08-chpt02": {
+    "story-arc": {
+      "id": "plus-c08",
+      "url": "/campaigns/pages/rugatha-plus/plus-c08/"
+    },
+    "prev-chapter": "plus-c08-chpt01",
     "next-chapter": null
   }
 }

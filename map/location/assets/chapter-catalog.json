@@ -1384,5 +1384,33 @@
       "url": "/campaigns/pages/rugatha-legends/legends-os10/"
     },
     "image": "/campaigns/campaign-banners/legends-os10.png"
+  },
+  "plus-c08-chpt01": {
+    "campaign": {
+      "id": "plus",
+      "name": "Rugatha Plus",
+      "url": "/campaigns/pages/rugatha-plus/"
+    },
+    "arc": {
+      "id": "plus-c08",
+      "title_zh": "名為家的地方",
+      "title_en": "A Place Called Home",
+      "url": "/campaigns/pages/rugatha-plus/plus-c08/"
+    },
+    "image": "/campaigns/chapter-banners/plus-c08-chpt01.png"
+  },
+  "plus-c08-chpt02": {
+    "campaign": {
+      "id": "plus",
+      "name": "Rugatha Plus",
+      "url": "/campaigns/pages/rugatha-plus/"
+    },
+    "arc": {
+      "id": "plus-c08",
+      "title_zh": "名為家的地方",
+      "title_en": "A Place Called Home",
+      "url": "/campaigns/pages/rugatha-plus/plus-c08/"
+    },
+    "image": "/campaigns/chapter-banners/plus-c08-chpt02.png"
   }
 }

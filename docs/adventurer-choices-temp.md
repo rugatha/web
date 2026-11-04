@@ -5,7 +5,7 @@
 正文由 `campaigns/data/chapter-content.json` 的 `plus-c08-chpt01` 控制。
 正文採與其他章節相同的 `source`、`title`、`tagline`、`date`、`image`、`content.zh` 與 `content.en` 結構，只多一個 `lock`。中文與英文各有 27 個段落項目。
 頁面左上角的語言按鈕沿用全站 `npc-lang` 偏好，切換正文、標題、抉擇與鎖定表單，不重建作答表單或丟棄未送出的內容。
-題目與角色組別統一由 `campaigns/data/plus-08-multiple-choices.json` 控制。
+第一章題目與角色組別由 `campaigns/data/plus-08-multiple-choices.json` 控制；第二章使用 `campaigns/data/plus-08-chpt02-multiple-choices.json`，題目 `ron-and-tarmo` 僅龍恩可作答。
 正式頁的腳本帶版本參數；Service Worker 對題目、章節 JSON 與抉擇腳本優先讀取網路，避免沿用舊測試內容。
 
 ## 公布與作答
@@ -14,7 +14,7 @@
 - `lock: 1`：需要選擇角色並輸入角色密碼，才能檢視正文與作答區；不公布其他角色答案。
 - `lock: 0`：直接顯示正文與答案區，不顯示密碼欄位或作答表單，也不啟動匿名登入。
 
-目前第一章為 `lock: 1`。題目組別中尚未作答的角色預設計入選項 1，並在該選項顯示角色圖示；實際送出後改用 Firestore 儲存的答案。
+目前第一章為 `lock: 0`，第二章為 `lock: 1`。題目組別中尚未作答的角色預設計入選項 1，並在該選項顯示角色圖示；實際送出後改用 Firestore 儲存的答案。
 預設結果由組別名單與現有答案計算，不建立假的提交紀錄，每個角色僅計一次。
 本題顯示四個固定選項與第五項「自行填答」。自訂答案最多 4000 字，保留換行與空白，以純文字顯示。
 龍恩屬於獨立的 `ron` 組，其餘五人屬於 `party` 組。
@@ -36,6 +36,8 @@
 
 `python3 scripts/setup_adventurer_choices.py` 預設只預覽目標，`--apply` 才會寫入 Firebase。
 需使用已具權限的 Application Default Credentials，Python 套件見 `config/python/requirements-admin.txt`。
+
+第二章初次設定：`python3 scripts/setup_adventurer_choices.py --config campaigns/data/plus-08-chpt02-multiple-choices.json --copy-credentials-from plus-c08/chpt01 --apply`，會在記憶體中複製原有六個角色與管理檢視密碼雜湊，不輸出密碼、不更動第一章答案。後續同步第二章只需提供 `--config` 與 `--apply`。
 
 修改角色組別或 `lock` 後，執行工具加上 `--apply` 同步權限設定；不提供密碼參數時會保留原有密碼。
 `--passwords-stdin` 可從 stdin 接收六個角色 ID 對應的完整密碼，只在記憶體中計算雜湊，不輸出密碼。請使用隱藏輸入，勿將密碼放在命令參數、shell 歷史、文件或版本控制內。

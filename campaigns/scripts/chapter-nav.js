@@ -52,15 +52,13 @@
         })();
 
   const ensureDetailScript = () => {
-    // Interactive chapters already own their title, language toggle and form.
-    if (document.body.dataset.choicesConfig) return;
     const alreadyLoaded =
       Array.from(document.getElementsByTagName("script")).some((el) =>
         (el.src || "").includes("/campaigns/scripts/detail.js")
       );
     if (alreadyLoaded) return;
     const script = document.createElement("script");
-    script.src = new URL("../../../scripts/detail.js?v=20261029-plus-c08-arc-1", window.location.href).href;
+    script.src = new URL("../../../scripts/detail.js?v=20261104-plus-c08-2", window.location.href).href;
     script.defer = true;
     script.dataset.name = "campaign-detail-loader";
     document.head.appendChild(script);
@@ -424,6 +422,7 @@
         return true;
       }
       const contentTarget =
+        document.querySelector("#chapter-page") ||
         document.querySelector(".campaign-detail:not(.arc-detail) .campaign-detail__content") ||
         document.querySelector(".campaign-detail:not(.arc-detail)") ||
         document.querySelector(".detail-canvas") ||

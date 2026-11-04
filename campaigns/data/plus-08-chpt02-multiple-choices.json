@@ -1,0 +1,71 @@
+{
+  "chapterKey": "plus-c08/chpt02",
+  "groups": {
+    "ron": [
+      {
+        "id": "ron",
+        "name": "龍恩",
+        "icon": "pc/pics/Ron.png",
+        "nameEn": "Ron"
+      }
+    ],
+    "party": [
+      {
+        "id": "midori",
+        "name": "米多莉",
+        "icon": "pc/pics/Midori.png",
+        "nameEn": "Midori"
+      },
+      {
+        "id": "samael",
+        "name": "薩梅爾",
+        "icon": "pc/pics/Samael.jpg",
+        "nameEn": "Samael"
+      },
+      {
+        "id": "siri",
+        "name": "喜利",
+        "icon": "pc/pics/Siri Oslee.png",
+        "nameEn": "Siri"
+      },
+      {
+        "id": "yhwh",
+        "name": "YHWH",
+        "icon": "pc/pics/YHWH.png",
+        "nameEn": "YHWH"
+      },
+      {
+        "id": "beau",
+        "name": "波",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbeau%2Fthumb-32ff9ced.webp?alt=media",
+        "nameEn": "Beau"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "ron-and-tarmo",
+      "group": "ron",
+      "question": "龍恩的抉擇：",
+      "options": [
+        "「師兄，你不是出去冒險了嗎？怎麼會在這邊？」",
+        "「我剛剛做的事情⋯⋯你看見了多少？」",
+        "「噢，對啊，我就回來看看師父。師兄好久不見。」",
+        "不回答塔爾莫，只是緩緩後退，與他保持距離"
+      ],
+      "customLabel": "自行填答",
+      "showCustomOption": true,
+      "en": {
+        "question": "Ron’s choice:",
+        "options": [
+          "“Weren’t you out adventuring, brother? What are you doing here?”",
+          "“How much of what I just did... did you see?”",
+          "“Oh, yes. I just came back to see our master. It’s been a while, brother.”",
+          "Say nothing to Tarmo; slowly back away and keep your distance."
+        ],
+        "customLabel": "Write your own answer"
+      }
+    }
+  ],
+  "credentialMode": "character-password"
+}

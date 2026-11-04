@@ -68,7 +68,7 @@ function lock(message = bilingual('請輸入角色密碼。', 'Please enter your
   setText(status, message);
 }
 function showChapter() {
-  gate.hidden = true;
+  if (gate) gate.hidden = true;
   page.hidden = false;
   root.replaceChildren();
   root.closest('.campaign-detail').hidden = false;
@@ -272,6 +272,7 @@ async function start() {
   });
 }
 start().catch(error => {
-  gate.hidden = false;
-  status.textContent = `無法載入：${error.message}`;
+  if (gate) gate.hidden = false;
+  const errorStatus = status || root;
+  errorStatus.textContent = `無法載入：${error.message}`;
 });

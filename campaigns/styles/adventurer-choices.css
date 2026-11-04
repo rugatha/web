@@ -1,5 +1,6 @@
 [hidden] { display: none !important; }
 .adventure-canvas { gap: 0; }
+.adventure-canvas .chapter-date { margin: 0 0 10px; color: var(--muted); font-weight: 600; letter-spacing: .01em; }
 .adventure-canvas .campaign-detail { border-radius: 0; border: 0; box-shadow: none; }
 .adventure-canvas .campaign-detail:first-child { border-radius: 18px 18px 0 0; }
 .adventure-canvas .campaign-detail:last-child { border-radius: 0 0 18px 18px; }

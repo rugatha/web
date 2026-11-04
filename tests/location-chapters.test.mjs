@@ -20,7 +20,13 @@ test('each related chapter has an existing campaign, arc, chapter and resolved t
     if (metadata.image.startsWith('/')) await access(new URL(`..${metadata.image}`, import.meta.url));
     else assert.match(metadata.image, /^https:\/\/firebasestorage\.googleapis\.com\//);
   }
-  assert.match(catalog['rugatha-c01-chpt01'].image, /thumb\.webp/);
+  // Cloud thumbnails use a content hash in their filename. Verify the small
+  // chapter variant and public download route rather than the retired name.
+  const thumbnail = new URL(catalog['rugatha-c01-chpt01'].image);
+  assert.equal(thumbnail.hostname, 'firebasestorage.googleapis.com');
+  assert.match(decodeURIComponent(thumbnail.pathname),
+    /^\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images\/chapters\/rugatha\/c01\/chapter-01\/thumb-[a-f0-9]{8}\.webp$/);
+  assert.equal(thumbnail.searchParams.get('alt'), 'media');
 });
 
 test('chapters are grouped by campaign and arc, retaining every chapter exactly once', () => {

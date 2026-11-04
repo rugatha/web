@@ -97,6 +97,7 @@
     "plus-c07-chpt03": "plus-c07-chpt03.png",
     "plus-c07-chpt04": "plus-c07-chpt04.png",
     "plus-c08-chpt01": "plus-c08-chpt01.png",
+    "plus-c08-chpt02": "plus-c08-chpt02.png",
     "brown-c01": "brown-c01.jpg",
     "brown-c01-chpt01": "brown-c01-chpt01.png",
     "brown-c01-chpt02": "brown-c01-chpt02.png",
@@ -653,7 +654,7 @@
   };
 
   const renderRelatedPcSection = () => {
-    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
+    const container = document.querySelector("#chapter-page") || document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
     if (
       !container ||
       !Array.isArray(relatedPcState.pcIds) ||
@@ -686,7 +687,7 @@
   };
 
   const renderRelatedGuestSection = () => {
-    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
+    const container = document.querySelector("#chapter-page") || document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
     if (
       !container ||
       !Array.isArray(relatedGuestState.pcIds) ||
@@ -717,7 +718,7 @@
   };
 
   const renderRelatedNpcSection = () => {
-    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
+    const container = document.querySelector("#chapter-page") || document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
     if (!container || !Array.isArray(relatedNpcState.npcIds) || !relatedNpcState.charById || !relatedNpcState.siteBase) return;
 
     const existing = container.querySelector(".related-npcs");
@@ -805,7 +806,7 @@
   };
 
   const renderRelatedLocationSection = () => {
-    const container = document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
+    const container = document.querySelector("#chapter-page") || document.querySelector(".detail-canvas") || document.querySelector(".page") || document.body;
     container.querySelector(".related-locations")?.remove();
     if (!relatedLocations.length) return;
     const section = window.RugathaLocationCards.createLocationCards(relatedLocations, languageState.value);
@@ -873,7 +874,8 @@
   };
 
   const ensureLanguageToggle = () => {
-    const container = document.querySelector(".detail-canvas") || document.querySelector(".page");
+    if (document.querySelector("[data-chapter-language-toggle]")) return;
+    const container = document.querySelector("#chapter-page") || document.querySelector(".detail-canvas") || document.querySelector(".page");
     if (!container) return;
 
     let bar = container.querySelector(".chapter-language-toggle-bar");
@@ -1177,6 +1179,17 @@
   updateStoryArcBadge();
   updateArcChaptersHeading();
   updateCampaignStoryArcsHeading();
+  window.addEventListener("rugatha:chapter-language-change", event => {
+    if (!document.querySelector("[data-chapter-language-toggle]")) return;
+    languageState.value = event.detail.lang;
+    updateChapterTitle();
+    updateChapterArcTagline();
+    updateStoryArcBadge();
+    renderRelatedPcSection();
+    renderRelatedGuestSection();
+    renderRelatedNpcSection();
+    renderRelatedLocationSection();
+  });
   renderRelatedPcs();
   renderRelatedGuests();
   renderRelatedNpcs();
