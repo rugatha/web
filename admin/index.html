@@ -58,8 +58,8 @@
           <div class="metrics">
             <a class="metric" href="#members"><span>累計會員數</span><strong id="overview-members">—</strong><small>全部會員，不受日期篩選影響 ↗</small></a>
             <a class="metric" href="#characters"><span>雲端角色卡數</span><strong id="overview-characters">—</strong><small>全部角色卡，不受日期篩選影響 ↗</small></a>
-            <a class="metric" href="#npcs"><span>NPC 數</span><strong id="overview-npcs">—</strong><small>網站 NPC 目錄 ↗</small></a>
-            <a class="metric" href="#campaigns"><span>故事弧數</span><strong id="overview-arcs">—</strong><small><b id="overview-chapters">—</b> 個已刊載章節 ↗</small></a>
+            <a class="metric" href="#experience"><span>最新體驗團報名人數 / 總名額</span><strong id="overview-experience">—</strong><small id="overview-experience-note">正在讀取本次場次…</small></a>
+            <a class="metric" href="#subscriptions"><span>體驗團快報訂閱人數</span><strong id="overview-subscriptions">—</strong><small id="overview-subscriptions-note">目前訂閱中，不含已退訂；不受日期篩選影響 ↗</small></a>
           </div>
           <div class="panel"><div class="panel-heading"><h2>期間資料摘要</h2><span class="tag">日期區間適用</span></div><div class="summary-stats"><div>新增會員<strong id="overview-new-members">—</strong></div><div>新建角色卡<strong id="overview-new-characters">—</strong></div><div>區間內答題（日期已知）<strong id="overview-answers">—</strong><a href="#fate" id="overview-undated" class="undated-link"></a></div></div><div class="legend"><span class="dot mint"></span>新增會員<span class="dot sand"></span>新建角色卡</div><div id="overview-trend" class="trend-chart"></div><p id="trend-note" class="hint"></p></div>
           <p class="source-note">會員、角色卡與答題：Firebase。團務、章節與 NPC：網站現有資料。</p>
@@ -205,7 +205,7 @@
       const config = document.createElement('script');
       config.src = '/shared/firebase.config.js';
       config.onerror = window.RUGATHA_ADMIN_BOOT.fail;
-      config.onload = () => import('./dashboard.js?v=20261101-mobile-navigation').catch(window.RUGATHA_ADMIN_BOOT.fail);
+      config.onload = () => import('./dashboard.js?v=20261104-overview-metrics').catch(window.RUGATHA_ADMIN_BOOT.fail);
       document.head.append(config);
     })();
   </script>

@@ -1,15 +1,16 @@
 // All Firebase doubles live in the test process. No production preview identity.
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
-import { mkdir,readFile } from 'node:fs/promises';
+import { mkdir } from 'node:fs/promises';
 import { dayKey,dateOffset } from '../admin/dashboard-model.js';
 const browser=await chromium.launch({channel:'chrome',headless:true});
 const base=process.env.RUGATHA_ADMIN_TEST_BASE||'http://127.0.0.1:8790',today=dayKey(new Date()),recent=today+'T04:00:00Z',old='2026-01-02T00:00:00Z';
 const admin={email:'rugathadnd@gmail.com',emailVerified:true};
-const catalog=JSON.parse(await readFile(new URL('../admin/catalog.json',import.meta.url),'utf8'));
-const catalogArcs=catalog.campaigns.flatMap(campaign=>campaign.arcs);
 const members=Array.from({length:28},(_,i)=>({id:`0000-${String(i+1).padStart(4,'0')}`,memberNo:`0000-${String(i+1).padStart(4,'0')}`,memberId:`uid-${i+1}`,displayName:i===0?'Owner <test>':`Member ${i+1}`,email:`member${i+1}@example.test`,campaign:i===0?'Rugatha Lite':'',createdAt:i===0?recent:old,lastLoginAt:recent}));
 const datasets={members,
+  experienceEvents:[{id:'overview-current',scriptName:'總覽測試場次',maxPlayers:6},{id:'2099-future',maxPlayers:10}],
+  experienceRegistrations:[{eventId:'overview-current',partySize:2,status:'active'},{eventId:'overview-current',partySize:1},{eventId:'overview-current',partySize:3,status:'cancelled'},{eventId:'2099-future',partySize:5,status:'active'}],
+  experienceNewsletterSubscriptions:[{email:'active@example.test',status:'active'},{email:'second@example.test',status:'active'},{email:'cancelled@example.test',status:'unsubscribed'}],
   'members/0000-0001/characters':[{id:'Ada%20One',characterName:'Ada <One>',className:'wizard',race:'human',createdAt:recent,updatedAt:recent}],
   'members/0000-0002/characters':[{id:'Old',characterName:'Old card',className:'fighter',race:'elf',createdAt:old,updatedAt:recent}],
   'members/0000-0001/qaChoices':[{choice:'C1',questionPage:'npc/npc_page/pages/Addie_Applewood.html',createdAt:recent}],
@@ -29,6 +30,7 @@ async function open(user,{failure=false,sdkFailure=false,authHung=false,dependen
     if(file==='firebase-firestore.js')body=`export const getFirestore=()=>({});export const collection=(db,...parts)=>({path:parts.join('/')});const data=${JSON.stringify(datasets)};export const getDocs=async ref=>{(window.testReads??=[]).push(ref.path);${failure?"throw Object.assign(new Error('denied'),{code:'permission-denied'});":"return {docs:(data[ref.path]||[]).map((item,i)=>({id:item.id||String(i),data:()=>item}))};"}};`;
     await route.fulfill({status:200,contentType:'application/javascript',body});
   });
+  await page.route('**/experience/register/experience_info.json',route=>route.fulfill({json:{eventId:'overview-current',scriptName:'總覽測試場次'}}));
   await page.goto(base+'/admin/');return {context,page,errors};
 }
 const ready=async page=>page.locator('#sync-status').filter({hasText:'更新於'}).waitFor();
@@ -45,7 +47,14 @@ try {
     const guest=await open(user);await guest.page.waitForURL(base+'/404/');assert.equal((await guest.page.reload()).status(),404);await guest.context.close();
   }
   const {context,page,errors}=await open(admin);await ready(page);
-  assert.equal(await page.locator('#overview-members').textContent(),'28');assert.equal(await page.locator('#overview-characters').textContent(),'2');assert.equal(await page.locator('#overview-arcs').textContent(),String(catalogArcs.length));assert.equal(await page.locator('#overview-chapters').textContent(),String(catalogArcs.reduce((total,arc)=>total+arc.chapters,0)));
+  assert.equal(await page.locator('#overview-members').textContent(),'28');assert.equal(await page.locator('#overview-characters').textContent(),'2');assert.equal(await page.locator('#overview-npcs, #overview-arcs, #overview-chapters').count(),0);
+  assert.equal(await page.locator('#overview-experience').textContent(),'3 / 6');
+  assert.match(await page.locator('#overview-experience-note').textContent(),/總覽測試場次/);
+  assert.equal(await page.locator('#overview-subscriptions').textContent(),'2');
+  await page.locator('[data-preset="7"]').click();
+  assert.equal(await page.locator('#overview-experience').textContent(),'3 / 6');
+  assert.equal(await page.locator('#overview-subscriptions').textContent(),'2');
+  await page.locator('[data-preset="all"]').click();
   assert.equal(await page.locator('[data-nav="traffic"]').count(),0);assert.equal(await page.evaluate(()=>window.testReads.some(path=>path.includes('pageAccess'))),false);
   await navigate(page,'members');assert.equal(await page.locator('#member-table tbody tr').count(),25);await page.locator('#member-table [data-grid-step="1"]').click();assert.equal(await page.locator('#member-table tbody tr').count(),3);
   assert.equal(await page.locator('#refresh').count(),0);
@@ -90,6 +99,6 @@ try {
   await navigate(page,'overview');await page.screenshot({path:'output/admin/v4-overview.png',fullPage:true});await navigate(page,'members');await page.screenshot({path:'output/admin/v4-members.png'});
   await page.setViewportSize({width:390,height:844});for(const name of ['overview','members','characters','campaigns','npcs','fate']){await navigate(page,name);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,`overflow: ${name}`);}await navigate(page,'overview');await page.screenshot({path:'output/admin/v4-mobile.png',fullPage:true});
   await page.evaluate(()=>window.testSignOut());await page.waitForURL(base+'/404/');assert.deepEqual(errors,[]);await context.close();
-  const failure=await open(admin,{failure:true});await ready(failure.page);assert.equal(await failure.page.locator('#overview-members').textContent(),'—');assert.match(await failure.page.locator('#notices').textContent(),/permission-denied/);await failure.context.close();
+  const failure=await open(admin,{failure:true});await ready(failure.page);assert.equal(await failure.page.locator('#overview-members').textContent(),'—');assert.match(await failure.page.locator('#notices').textContent(),/permission-denied/);assert.equal(await failure.page.locator('#overview-experience').textContent(),'—');assert.equal(await failure.page.locator('#overview-subscriptions').textContent(),'—');assert.match(await failure.page.locator('#overview-experience-note').textContent(),/讀取失敗/);assert.match(await failure.page.locator('#overview-subscriptions-note').textContent(),/讀取失敗/);await failure.context.close();
   console.log('PASS: persistent draggable columns, header filters/sorting, 2026 floor, light workspace, NPC pie overview, answered-only default, six independent screens, date boundaries/presets/drag, paginated members, character ownership/links, arc expansion, six NPC dimensions, full fate overview, retired access, auth/error handling and responsive layouts');
 } finally {await browser.close();}

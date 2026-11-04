@@ -26,7 +26,7 @@ const screens = {
   npcs:['NPC 統計','依宗教、性別、所在王國、種族等面向分析 NPC。'],
   fate:['命運的抉擇','總覽各 NPC 的題目、選項、答題數與選項比例。']
 };
-const blankState = () => ({catalog:null,npcs:null,kingdoms:new Map(),members:null,characters:null,choices:null,errors:{}});
+const blankState = () => ({catalog:null,npcs:null,kingdoms:new Map(),members:null,characters:null,choices:null,experience:null,subscriptions:null,errors:{}});
 const navigation=setupAdminNavigation();
 let state=blankState(), authenticated=false, generation=0, db, sdk, range=presetRange('all'), screen='overview';
 const experience = createExperienceDashboard(() => ({ authenticated, generation, db, sdk }));
@@ -82,10 +82,15 @@ function trend(target, groups, labels) {
   $('trend-note').textContent=`${data.monthly?'依月':'依日'}彙整。日期區間包含起訖日；未記錄建立時間的資料不納入趨勢圖。`;
 }
 function renderOverview() {
-  count('overview-members',state.members?.length);count('overview-characters',state.characters?.length);count('overview-npcs',state.npcs?.length);
-  count('overview-arcs',state.catalog?.campaigns.flatMap(c=>c.arcs).length);count('overview-chapters',state.catalog?.campaigns.flatMap(c=>c.arcs).reduce((n,a)=>n+a.chapters,0));
+  count('overview-members',state.members?.length);count('overview-characters',state.characters?.length);
   count('overview-new-members',state.members?.filter(m=>inRange(m.createdAt,range)).length);
   count('overview-new-characters',state.characters?.filter(c=>inRange(c.createdAt,range)).length);
+  $('overview-experience').textContent=state.experience ? `${fmt(state.experience.people)} / ${fmt(state.experience.maxPlayers)}` : '—';
+  $('overview-experience-note').textContent=state.experience
+    ? `${state.experience.label} · 報名人數 / 總名額 ↗`
+    : state.errors.experience ? '報名資料讀取失敗，請重新載入重試 ↗' : '正在讀取本次場次…';
+  count('overview-subscriptions',state.subscriptions);
+  $('overview-subscriptions-note').textContent=state.errors.subscriptions ? '訂閱資料讀取失敗，請重新載入重試 ↗' : '目前訂閱中，不含已退訂；不受日期篩選影響 ↗';
   const scope=state.choices?answerScope(state.choices,range):null;
   count('overview-answers',scope?.dated.length);
   $('overview-undated').textContent=scope?.undated.length?`另 ${scope.undated.length} 筆日期未記錄，查看歷史作答 ↗`:'';
@@ -244,11 +249,30 @@ async function loadData() {
       if(charError){state.errors.characters='角色卡未完整讀取';notice('部分角色卡讀取失敗，角色卡總數與清單暫不顯示，避免誤用部分數據。');}else state.characters=characters;
       if(choiceError){state.errors.choices='答題資料未完整讀取';notice('部分答題資料讀取失敗，答題數與比例暫不顯示。');}else state.choices=choices;
       syncSliderDomain();renderActive();
+    })(),
+    (async()=>{
+      const [config,events,registrations]=await Promise.all([
+        fetchJson('../experience/register/experience_info.json'),read('experienceEvents'),read('experienceRegistrations')
+      ]);
+      if(!current())return;
+      const event=events.find(event=>event.id===config.eventId && !event.aliasOf);
+      if(!event)throw new Error('找不到本次體驗團場次');
+      state.experience={
+        people:registrations.filter(row=>row.eventId===event.id && row.status!=='cancelled').reduce((sum,row)=>sum+row.partySize,0),
+        maxPlayers:event.maxPlayers,label:event.scriptName || config.scriptName || event.id
+      };
+      renderActive();
+    })(),
+    (async()=>{
+      const rows=await read('experienceNewsletterSubscriptions');
+      if(!current())return;
+      state.subscriptions=rows.filter(row=>row.status==='active').length;
+      renderActive();
     })()
   ]);
   if(!current())return;
   results.forEach((result,index)=>{if(result.status==='rejected') {
-    const kind=index===0?'static':'members',label=index===0?'網站目錄':'會員資料';state.errors[kind]=label+'讀取失敗';
+    const [kind,label]=[['static','網站目錄'],['members','會員資料'],['experience','體驗團報名資料'],['subscriptions','體驗團快報訂閱資料']][index];state.errors[kind]=label+'讀取失敗';
     if(index===1){state.errors.characters='會員資料讀取失敗';state.errors.choices='會員資料讀取失敗';}
     notice(`${label}讀取失敗（${result.reason?.code || result.reason?.message || '連線異常'}），請重新載入頁面重試。`);
   }});
