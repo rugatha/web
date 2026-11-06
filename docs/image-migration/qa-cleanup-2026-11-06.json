@@ -1,7 +1,7 @@
 {
   "checkedDate": "2026-11-06",
-  "qaFilesRemoved": 45,
-  "qaBytesRemoved": 23254036,
+  "qaFilesRemoved": 61,
+  "qaBytesRemoved": 32307374,
   "files": [
     {
       "path": "output/admin/dashboard-charts.png",
@@ -227,9 +227,106 @@
       "path": "/private/tmp/rugatha-site-images-2026-11-06/browser-site/site-images-PC-lists-profi-a140a--load-cloud-images-at-390px/test-failed-1.png",
       "bytes": 171672,
       "sha256": "7fd95143c6647656befc5dc7052e15ed493e999edd417594292a67de67282492"
+    },
+    {
+      "path": "test-results/image-browser/site-images-about-390.png",
+      "bytes": 1213636,
+      "sha256": "a2f4149446e4c30167825999df457919a73d324049a04ce9a52d51e26ec98a22",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "test-results/image-browser/site-images-pc-1280.png",
+      "bytes": 1478529,
+      "sha256": "2ab7e1714b37e3b060bdabacec444bef80d30f1408bf84536964e0f600c06ffe",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "test-results/image-browser/site-images-map.png",
+      "bytes": 1481874,
+      "sha256": "8e994e7d3ffc248cdc7ff979f1f1c3a3859d54c91b45ee9569b9a52185ab0072",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "test-results/image-browser/site-images-pc-390.png",
+      "bytes": 1356280,
+      "sha256": "b2adb672728bedb3cf1d38fe53470b367cde72f23e696cde66afb14b8b1d343c",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "test-results/image-browser/migration-assets.png",
+      "bytes": 1345262,
+      "sha256": "5ace402f7ac3572f1fdfcad0f5263bd90e6a92e3a65643b8cda5f564022ce4d1",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "test-results/image-browser/site-images-about-1280.png",
+      "bytes": 1907814,
+      "sha256": "b758e3b9274af71658b94ae25e2606b8f2833edde98a7dd922bfb885a00a39cb",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/production-browser/.last-run.json",
+      "bytes": 96,
+      "sha256": "436ccdfe231944ae0fd18cbe49767d8720dbc6f98392d58bade209f54476bdcd",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/production-browser/site-images-PC-lists-profi-a140a--load-cloud-images-at-390px/test-failed-1.png",
+      "bytes": 203798,
+      "sha256": "ae9b578a26a9460619b486bc12bbaf844326dee42417f9a3c37f61a5ee1ef822",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/production-browser/site-images-PC-lists-profi-a140a--load-cloud-images-at-390px/error-context.md",
+      "bytes": 16125,
+      "sha256": "5a7182955c185d12c68662296befcce0a09b0a14f0ed8bf75771cbc5c7076160",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/production-mobile-recheck/.last-run.json",
+      "bytes": 45,
+      "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/browser-site/.last-run.json",
+      "bytes": 145,
+      "sha256": "a4156c07c74a6ff49f36fa8b1e76fd038e72d0966919672e3aed610c588bccf1",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/browser-site/site-images-PC-lists-profi-37f04-load-cloud-images-at-1280px/error-context.md",
+      "bytes": 24800,
+      "sha256": "a7aed9d9634f32e9447e3cb97c9172b33b087925d604e6d06bc49f6cb1cd9641",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/browser-site/site-images-PC-lists-profi-a140a--load-cloud-images-at-390px/error-context.md",
+      "bytes": 24799,
+      "sha256": "05b810469d9d1a7a5d8596fd5d9a562e9977d7b7a821277e9e7053ab1f6e1bab",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/browser-site-recheck/.last-run.json",
+      "bytes": 45,
+      "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/browser-dimensions/.last-run.json",
+      "bytes": 45,
+      "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+      "phase": "post-deployment cleanup"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/browser-regression/.last-run.json",
+      "bytes": 45,
+      "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+      "phase": "post-deployment cleanup"
     }
   ],
   "protectedImages": 155,
   "protectedLocalPrompts": 9,
-  "temporaryOriginalCopiesRemoved": true
+  "temporaryOriginalCopiesRemoved": true,
+  "productionQaCleanedAt": "2026-11-06T08:28:17.027324+00:00"
 }

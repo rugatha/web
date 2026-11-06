@@ -1,0 +1,2027 @@
+{
+  "checkedAt": "2026-11-06T08:16:47.805Z",
+  "origin": "https://rugatha.com",
+  "retired": [
+    {
+      "path": "campaigns/campaign-banners/exp-e03.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "assets/banner/rugatha-banner-trademark.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/exp-e01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/brown-c01.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os01.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "assets/banner/rugatha-experience.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/exp-e02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/brown-c02.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os06.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os08-2.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os05.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os02.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os08.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os03.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os04.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os07.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os09.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/lite-c05.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/legends-os10.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/lite-c06.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/lite-c09.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/lite-c07.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/lite-c10.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/lite-c08.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/lite-c11.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/lite-c12.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/plus-c05.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/lite-c13.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/plus-c06.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/plus-c08.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/plus-c07.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/rugatha-c02.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/rugatha-c03.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/rugatha-c04.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/rugatha-c05.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/wilds-c01.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/wilds-c02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/wilds-c03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/wilds-c04.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/wilds-c05.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/wilds-c06.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/brown-c01-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/brown-c01-chpt04.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/brown-c01-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/brown-c01-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/brown-c01-chpt05.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/brown-c02-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/legends-os05-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c05-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/legends-os05-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c05-chpt04.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c05-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c06-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c06-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c06-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c06-chpt04.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c06-chpt05.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c07-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c07-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c07-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c08-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c08-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c08-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c09-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c09-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt02-3.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt02-4.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt02-2.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt02-5.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt02-6.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt02-7.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt02-8.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt03-2.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt03-3.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt02.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c09-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt03-4.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c11-chpt01.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c11-chpt02.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt03.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c10-chpt04.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c12-chpt01.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c11-chpt03.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c11-chpt04.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c12-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c12-chpt04-01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c12-chpt03.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c12-chpt04.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c13-chpt01.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c05-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/lite-c12-chpt05.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c05-chpt04.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c05-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c06-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c05-chpt05.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c06-chpt04.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c07-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c06-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c06-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c07-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c07-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c07-chpt04.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c08-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c02-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c02-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/plus-c08-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c02-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c03-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c03-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c04-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c04-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c04-chpt04.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c04-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c03-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c04-chpt05.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c05-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c03-chpt04.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c01-chpt01.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c01-chpt02.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c01-chpt03.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c02-chpt01.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c03-chpt03.JPG",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c02-chpt03.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c03-chpt01.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c03-chpt02.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c04-chpt02.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c04-chpt03.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c04-chpt01.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt02.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c04-chpt04.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt01.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt03.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt06.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt04.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt05.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "about-us/assets/dc-icon.webp",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "about-us/assets/fb-icon.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "about-us/assets/ig-icon.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "about-us/assets/donate_icon.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "about-us/assets/gmail-icon.webp",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "about-us/assets/rugatha-photo.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Amoret.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Kalinius.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Daligon.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Jeorisan.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Keinra.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "about-us/assets/threads-icon.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Laxthos.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Maxus.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Phyneal.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Phynoir.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Trinix.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Nessis.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "deities/images/Ultisen.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "emperors/gallery/dranison-georson.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "emperors/gallery/lothum-jelix.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "emperors/gallery/new-dranison-kylenor.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "emperors/gallery/new-dranison-carlos.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "emperors/gallery/dranison-walston.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "emperors/gallery/trinix-hollison.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "emperors/gallery/lothum-lorin.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "emperors/gallery/trinix-reylan.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "map/assets/dranison-map.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "member/assets/journal-contours.svg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/wilds-c02-chpt02.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/lite-buzz-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/npc_page/assets/kraft-paper-v2.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/lite-buzz-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/lite-lott-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/lite-lott-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/lite-ubbo-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-midori-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-beau-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-beau-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/lite-ubbo-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-midori-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-ron-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-ron-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-siri-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-samael-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-samael-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-yhwh-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-siri-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/plus-yhwh-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-al-lon-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-al-lon-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-kaname-peresia-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-maribel-muddlewick-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-kaname-peresia-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-dawn-light-fur-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-leah-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-dawn-lite-fur-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-maribel-muddlewick-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-leah-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-ravi-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-roel-lancelot-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Al-lon.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-ravi-en.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/assets/wilds-roel-lancelot-zh.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Anedak.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Brown.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Buzz.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Drayer.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Cecil.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Cold-Ham.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Dawn Light Fur.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Jiaheng.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/GoR.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Inu.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Kaname.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Lemmy.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Kudan.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Lott.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Leah.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Mr. Green.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Midori.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Paladin.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Pascal.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Roel.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Samael.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Psyber.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Sugalu.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Tai Tai Wo Hai Yao.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Siri Oslee.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Ravi.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Ron.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Tweeter.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/YHWH.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Uko.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Yi.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Usioni.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Ubbo.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics/Watson.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Al-lon.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/GoR.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Dawn Light Fur Full.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Al-lon_full.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Kaname_comic.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Kudan.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Kaname.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Dawn Light Fur.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Leah.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Lott.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Lemmy.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Midori.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Paladin.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Psyber.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Midori_Anime.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Roel.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Pascal.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Siri.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Tweeter.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Siri Oslee.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Roel_portrait.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Ron.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Uko.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Ubbo.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Samael.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Watson.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Al-lon.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/Usioni.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/pics_by_players/YHWH.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Anedak.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Beau_Artificial_Hand.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Beau_Young.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Beau_Young_Artificial_Hand.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/GoR.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Buzz.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Brown.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Dawn Light Fur.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Cecil.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Drayer.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Cold-Ham.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Inu.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Jiaheng.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Kudan.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Kaname.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Lemmy.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Midori.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Leah.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Lott.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Midori_Artificial_Hand.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Ron.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Roel.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Pascal.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Psyber.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Ravi.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Paladin.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Samael.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Mr. Green.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Uko.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Tai Tai Wo Hai Yao.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Sugalu.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Siri Oslee.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Ubbo.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Tweeter.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Usioni.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Watson.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c01-chpt01.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c01-chpt03.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c01-chpt04.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/YHWH.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c01-chpt02.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "pc/three_views/Yi.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-banners/rugatha-c01.jpg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c01-chpt05.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c01-chpt07.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "campaigns/chapter-banners/rugatha-c01-chpt06.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Bruce Dunham.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Daryl Warren.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Father Kaulton.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Alfie Fuller.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Benny Cozlothramuda.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Gary.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Kubao.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Sammick Warren.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Ra'Leer the Herder.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/The Hooded-Figure.jpeg",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Grenland Folsen.png",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "npc/individual_pics/Jasmine Warren.jpeg",
+      "status": 404,
+      "passed": true
+    }
+  ],
+  "preserved": [
+    {
+      "path": "assets/banner/rugatha-banner-preview.png",
+      "status": 200,
+      "bytes": 121381,
+      "passed": true
+    },
+    {
+      "path": "assets/banner/rugatha-banner.png",
+      "status": 200,
+      "bytes": 121673,
+      "passed": true
+    },
+    {
+      "path": "assets/2026-d3-helper.png",
+      "status": 200,
+      "bytes": 162427,
+      "passed": true
+    },
+    {
+      "path": "assets/banner/rugatha-banner-trademark-transparent.png",
+      "status": 200,
+      "bytes": 131585,
+      "passed": true
+    },
+    {
+      "path": "assets/campaign_logo/logo_RBrown.png",
+      "status": 200,
+      "bytes": 385860,
+      "passed": true
+    },
+    {
+      "path": "assets/campaign_logo/logo_RLite.png",
+      "status": 200,
+      "bytes": 386665,
+      "passed": true
+    },
+    {
+      "path": "assets/campaign_logo/logo_RPlus.png",
+      "status": 200,
+      "bytes": 380239,
+      "passed": true
+    },
+    {
+      "path": "assets/campaign_logo/logo_RLegends.png",
+      "status": 200,
+      "bytes": 499096,
+      "passed": true
+    },
+    {
+      "path": "assets/cons/d3/2025.jpg",
+      "status": 200,
+      "bytes": 112808,
+      "passed": true
+    },
+    {
+      "path": "assets/campaign_logo/logo_RVeil.png",
+      "status": 200,
+      "bytes": 393683,
+      "passed": true
+    },
+    {
+      "path": "assets/campaign_logo/logo_RWilds.png",
+      "status": 200,
+      "bytes": 360668,
+      "passed": true
+    },
+    {
+      "path": "assets/cons/trpg_fes/2026.jpg",
+      "status": 200,
+      "bytes": 151829,
+      "passed": true
+    },
+    {
+      "path": "assets/icons/deities-icon.png",
+      "status": 200,
+      "bytes": 381878,
+      "passed": true
+    },
+    {
+      "path": "assets/icons/characters-icon.png",
+      "status": 200,
+      "bytes": 495698,
+      "passed": true
+    },
+    {
+      "path": "assets/icons/emperors-icon.png",
+      "status": 200,
+      "bytes": 551405,
+      "passed": true
+    },
+    {
+      "path": "assets/logo/D&D_logo.png",
+      "status": 200,
+      "bytes": 82838,
+      "passed": true
+    },
+    {
+      "path": "assets/icons/map-icon.png",
+      "status": 200,
+      "bytes": 459656,
+      "passed": true
+    },
+    {
+      "path": "assets/logo/rugatha-icon-192.png",
+      "status": 200,
+      "bytes": 42232,
+      "passed": true
+    },
+    {
+      "path": "assets/campaign_logo/logo_RProsper.png",
+      "status": 200,
+      "bytes": 394822,
+      "passed": true
+    },
+    {
+      "path": "assets/logo/rugatha-favicon-32.png",
+      "status": 200,
+      "bytes": 3062,
+      "passed": true
+    },
+    {
+      "path": "assets/logo/rugatha-favicon.png",
+      "status": 200,
+      "bytes": 204988,
+      "passed": true
+    },
+    {
+      "path": "assets/logo/rugatha-icon-32.png",
+      "status": 200,
+      "bytes": 2115,
+      "passed": true
+    },
+    {
+      "path": "assets/logo/rugatha-icon-512.png",
+      "status": 200,
+      "bytes": 162427,
+      "passed": true
+    },
+    {
+      "path": "assets/logo/rugatha-icon-maskable-512.png",
+      "status": 200,
+      "bytes": 162427,
+      "passed": true
+    },
+    {
+      "path": "assets/others/d20.png",
+      "status": 200,
+      "bytes": 70607,
+      "passed": true
+    },
+    {
+      "path": "assets/icons/campaigns-icon.png",
+      "status": 200,
+      "bytes": 455596,
+      "passed": true
+    },
+    {
+      "path": "assets/others/dm-screen.jpg",
+      "status": 200,
+      "bytes": 1320344,
+      "passed": true
+    },
+    {
+      "path": "assets/others/lan-zh.png",
+      "status": 200,
+      "bytes": 357988,
+      "passed": true
+    },
+    {
+      "path": "assets/others/lan-en.png",
+      "status": 200,
+      "bytes": 336706,
+      "passed": true
+    },
+    {
+      "path": "assets/logo/rugatha-icon-curtain.png",
+      "status": 200,
+      "bytes": 2026371,
+      "passed": true
+    },
+    {
+      "path": "assets/logo/rugatha-icon.png",
+      "status": 200,
+      "bytes": 1265213,
+      "passed": true
+    },
+    {
+      "path": "assets/others/tagline-zh.png",
+      "status": 200,
+      "bytes": 19770,
+      "passed": true
+    },
+    {
+      "path": "assets/others/survey-cake.png",
+      "status": 200,
+      "bytes": 52565,
+      "passed": true
+    },
+    {
+      "path": "assets/icons/history-icon.png",
+      "status": 200,
+      "bytes": 483376,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-legends-logo.jpg",
+      "status": 200,
+      "bytes": 17056,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-brown-logo.jpg",
+      "status": 200,
+      "bytes": 22000,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-light-logo.jpg",
+      "status": 200,
+      "bytes": 19059,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-logo.jpg",
+      "status": 200,
+      "bytes": 17021,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-plus-logo.jpg",
+      "status": 200,
+      "bytes": 19196,
+      "passed": true
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-wilds-logo.jpg",
+      "status": 200,
+      "bytes": 41279,
+      "passed": true
+    },
+    {
+      "path": "assets/others/dm-screen.png",
+      "status": 200,
+      "bytes": 152204,
+      "passed": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "experience/index.html",
+      "status": 200,
+      "sha256": "6bd401a769a04f49946a7a5da758c243231aa34b27308496f652d777dffab1ce",
+      "passed": true
+    },
+    {
+      "path": "map/scripts/map-page.js",
+      "status": 200,
+      "sha256": "0238b8704be78ba1a82d55133a970711825703d4185a9fa034ac8e4cb826b9a3",
+      "passed": true
+    },
+    {
+      "path": "pc/index.html",
+      "status": 200,
+      "sha256": "ba169db151de7fe66e2868b9c4f7a9236106c83ce18c43447062c8317b4c9688",
+      "passed": true
+    },
+    {
+      "path": "characters/index.html",
+      "status": 200,
+      "sha256": "4d8d2c61f8b73edcbc5a587e310580689c956004f4ee29ed07c807b0ac129ab5",
+      "passed": true
+    },
+    {
+      "path": "deities/data/deities.json",
+      "status": 200,
+      "sha256": "d500938a90483738ef86f6c1cff9874d569647a8d2cd139668a353936cfcf286",
+      "passed": true
+    },
+    {
+      "path": "member/index.html",
+      "status": 200,
+      "sha256": "2bf3f43f9e7f5d9b6aaf8423dec65e7083cdf4a1b2af8a45924a97c75b8499a8",
+      "passed": true
+    },
+    {
+      "path": "sw.js",
+      "status": 200,
+      "sha256": "856e02fd92c48a7ebdf0033da635287d1504fff7ccf9a9ced6b2a2ac2fd33f87",
+      "passed": true
+    },
+    {
+      "path": "pc/pc_lib",
+      "status": 200,
+      "sha256": "522375d02f5ae24b534c42da15f1c71000c60cc80d38c79403e85dfb72091f68",
+      "passed": true
+    },
+    {
+      "path": "campaigns/pages/rugatha-plus/plus-c08/chpt02.html",
+      "status": 200,
+      "sha256": "4bc53dfa5e138c1066a6d2dd4a3e4387cae68c40821c1e506a9edc238e11039c",
+      "passed": true
+    },
+    {
+      "path": "shared/rugatha.config.js",
+      "status": 200,
+      "sha256": "5fe6ae65d7d0938704c60f384ef946f5729f52e85afd0c0c56a907b2ce332ca6",
+      "passed": true
+    },
+    {
+      "path": "emperors/scripts/app.js",
+      "status": 200,
+      "sha256": "796bd849d75c357612cf5501b0f7136bb958166cd286bf85eea7cc9d2ebcdb97",
+      "passed": true
+    },
+    {
+      "path": "npc/npc_page/pages/Melvin.html",
+      "status": 200,
+      "sha256": "bcd0b2c77f2b1835206406bc35d934dd2062b8b959f14938e61a9f701847a582",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "summary": {
+    "retiredChecked": 334,
+    "preservedChecked": 41,
+    "sourceFilesChecked": 12,
+    "failures": 0
+  },
+  "deployment": {
+    "status": "success",
+    "target": "https://rugatha.com",
+    "commit": "fd29aeb27f617b554474513b3958565638da629e",
+    "workflowRun": "https://github.com/rugatha/web/actions/runs/42186343621",
+    "workflowCompletedAt": "2026-11-06T08:15:40Z",
+    "verifiedAt": "2026-11-06T08:28:17.027324+00:00",
+    "workerVersion": "rugatha-pwa-v56",
+    "browserCasesPassed": 10,
+    "initialBrowserPassed": 9,
+    "initialBrowserTimeouts": 1,
+    "mobileRecheckPassed": 1,
+    "verificationNote": "The mobile case initially timed out waiting for the load event after Siri content and portrait had rendered. Rechecked using DOMContentLoaded plus explicit decode, original dimensions and full card counts; passed without changes to public site files.",
+    "httpVerification": {
+      "retiredChecked": 334,
+      "preservedChecked": 41,
+      "sourceFilesChecked": 12,
+      "failures": 0
+    }
+  },
+  "browserLogSHA256": "564a30f91074bf4b8840d243be72007146511b930b678f8db7a30061bd1ec0d7",
+  "browserRetryLogSHA256": "fc050115b49fcc4810ecbf10939800fb7031a0e2d888cc05cd4abf23364f9c76"
+}

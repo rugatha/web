@@ -44,7 +44,7 @@ for (const width of [1280, 390]) {
     const oldPaths = new Set(manifest.images.map(image => '/' + image.source));
     page.on('request', request => { if (oldPaths.has(decodeURIComponent(new URL(request.url()).pathname))) retiredRequests.push(request.url()); });
     for (const path of ['/pc/', '/characters/', '/pc/articles/al-lon.html', '/pc/articles/siri-oslee.html', '/deities/pages/trinix.html', '/emperors/', '/about-us/']) {
-      await page.goto(path);
+      await page.goto(path, { waitUntil: 'domcontentloaded', timeout: 30000 });
       await expect.poll(() => page.locator('img').evaluateAll(images => images.filter(img => img.src.includes('/o/public-images%2Fsite%2F')).length)).toBeGreaterThan(0);
       const images = page.locator('img[src*="/o/public-images%2Fsite%2F"]');
       await images.evaluateAll(images => images.forEach(img => { img.loading = 'eager'; }));

@@ -306,9 +306,24 @@
     ]
   },
   "deployment": {
-    "status": "pending",
+    "status": "success",
     "target": "https://rugatha.com",
+    "commit": "fd29aeb27f617b554474513b3958565638da629e",
+    "workflowRun": "https://github.com/rugatha/web/actions/runs/42186343621",
+    "workflowCompletedAt": "2026-11-06T08:15:40Z",
+    "verifiedAt": "2026-11-06T08:28:17.027324+00:00",
     "workerVersion": "rugatha-pwa-v56",
+    "browserCasesPassed": 10,
+    "initialBrowserPassed": 9,
+    "initialBrowserTimeouts": 1,
+    "mobileRecheckPassed": 1,
+    "verificationNote": "The mobile case initially timed out waiting for the load event after Siri content and portrait had rendered. Rechecked using DOMContentLoaded plus explicit decode, original dimensions and full card counts; passed without changes to public site files.",
+    "httpVerification": {
+      "retiredChecked": 334,
+      "preservedChecked": 41,
+      "sourceFilesChecked": 12,
+      "failures": 0
+    },
     "initialAttempt": {
       "commit": "1bfa6525ff3a3e14b8a4fcdcc4fc5d2d72ad37db",
       "run": "https://github.com/rugatha/web/actions/runs/42185655806",

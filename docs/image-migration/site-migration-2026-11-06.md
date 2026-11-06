@@ -69,6 +69,8 @@ node scripts/site-image-assets.mjs restore \
 
 ## 正式發布
 
-本批次已完成發布前驗收，將透過 main 的既有 **Deploy Pages** workflow 發布到 [rugatha.com](https://rugatha.com)。正式部署結果與逐頁複驗將補於本節及 [機器可讀摘要](site-migration-2026-11-06.json)。
+已正式部署至 [rugatha.com](https://rugatha.com)。發布 commit 為 `fd29aeb27f617b554474513b3958565638da629e`，[Deploy Pages 成功](https://github.com/rugatha/web/actions/runs/42186343621)，完成時間為 2026-11-06 16:15（台北）。
+
+正式複驗於 2026-11-06 16:28（台北）完成：十項匿名瀏覽器案例全部通過，包含全部 164 張原格式圖片、298 個先前批次變體、桌面／手機、地圖與真正離線重載；334 個舊圖片直連均為 404／410；41 張保留圖片與12個關鍵網頁／程式檔 SHA-256 均與發布來源一致。詳細證據見 [正式驗證 JSON](production-verification-2026-11-06.json) 與 [整體摘要](site-migration-2026-11-06.json)。手機案例初次等待整頁 load 逾時，快照已顯示內容與肖像；改成 DOMReady 後逐圖 decode、尺寸與卡片數驗證，重跑通過，正式公開程式沒有變更。驗收後已清理這輪正式站截圖及測試產物。
 
 首次發布 `1bfa6525` 的 [Deploy Pages](https://github.com/rugatha/web/actions/runs/42185655806) 在產生通知信時停止，尚未執行部署。原因為通知生成器原本只接受 Rugatha 網域圖片；已新增固定 bucket、公開路徑、無 token 的 Firebase 圖片允許規則，並重跑完整建置及六項通知測試通過。
