@@ -36,7 +36,9 @@ try {
   await page.goto(`http://127.0.0.1:${server.address().port}/experience/feedback/`);
   await page.locator('#feedback-form').waitFor({state:'visible'});
   assert.equal(await page.locator('progress, #copy-button').count(),0);
-  assert.equal(await page.locator('.hero-art').getAttribute('src'),'../../about-us/assets/rugatha-photo.png');
+  const images = JSON.parse(await readFile('docs/image-migration/site-current.json', 'utf8'));
+  const photo = images.images.find(image => image.source === 'about-us/assets/rugatha-photo.png').public.url;
+  assert.equal(await page.locator('.hero-art').getAttribute('src'), photo);
   assert.equal(await page.locator('output:visible').count(),0);
   assert.equal(await page.locator('input[type=range]:invalid').count(),6);
   assert.deepEqual(await page.locator('.question-number').allTextContents(),Array.from({length:15},(_,i)=>`${i+1}.`));

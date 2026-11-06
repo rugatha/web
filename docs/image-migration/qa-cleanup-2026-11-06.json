@@ -1,0 +1,235 @@
+{
+  "checkedDate": "2026-11-06",
+  "qaFilesRemoved": 45,
+  "qaBytesRemoved": 23254036,
+  "files": [
+    {
+      "path": "output/admin/dashboard-charts.png",
+      "bytes": 276803,
+      "sha256": "6b782a1d143622864f1ad1d06e88f53e88532316ee596ef5d7d96c706647e3f8"
+    },
+    {
+      "path": "output/admin/dashboard-desktop.png",
+      "bytes": 268673,
+      "sha256": "fc635ced54c054f5947a841e5a3c6f432c57163dd72d36a888e118df318dc7ea"
+    },
+    {
+      "path": "output/admin/dashboard-mobile.png",
+      "bytes": 363521,
+      "sha256": "587d42d95eb1791b132b238856b4385e3be4754e7bde7ce496e471766c570239"
+    },
+    {
+      "path": "output/admin/mobile-navigation-open.png",
+      "bytes": 37977,
+      "sha256": "01e236a75a350ea0fea83930e4f7f5539c304ebc076c71aec06b1304ff0b5a13"
+    },
+    {
+      "path": "output/admin/subscriptions-desktop.png",
+      "bytes": 399279,
+      "sha256": "eba4eb4e36809a70eac15dc78408cdb28e0655c37e1e3a02cec6061c5dff06a6"
+    },
+    {
+      "path": "output/admin/subscriptions-mobile.png",
+      "bytes": 239785,
+      "sha256": "a088e1a11822464f116c12c4dd398603eeb56a3773392178c92df0dc90c18ef6"
+    },
+    {
+      "path": "output/admin/v3-fate.png",
+      "bytes": 170549,
+      "sha256": "1f90845ad7ac4a82b69bc98eafa844c1fdca67c0cbb4051e1e656103080b11fd"
+    },
+    {
+      "path": "output/admin/v3-members.png",
+      "bytes": 159809,
+      "sha256": "40b54416240ffe10ab60d63ec05815fac11c247271171b1bd9c5f4435afeb21e"
+    },
+    {
+      "path": "output/admin/v3-mobile.png",
+      "bytes": 100250,
+      "sha256": "885049f4046fa9ef47df504725731cdb33a51e74230db376ba870bd349938dec"
+    },
+    {
+      "path": "output/admin/v3-overview.png",
+      "bytes": 139685,
+      "sha256": "d5ed75a06ed5a0d4c57ceb0e522fefbb9bd84f3afb082a22a2f59578980d046f"
+    },
+    {
+      "path": "output/admin/v4-fate.png",
+      "bytes": 193371,
+      "sha256": "d00d7adba87d6ecedf95827ec886cc3077c376456a4880cd8b0c964de3f948ab"
+    },
+    {
+      "path": "output/admin/v4-members.png",
+      "bytes": 168189,
+      "sha256": "9e22eab2496153429341962d148dd165fa5ee191217c295cfd181a51011f4024"
+    },
+    {
+      "path": "output/admin/v4-mobile.png",
+      "bytes": 102847,
+      "sha256": "61d7a21e91e6a74e579bbc6458ee0ce17eb9bf98122da84c94bbd3012999bff7"
+    },
+    {
+      "path": "output/admin/v4-npcs.png",
+      "bytes": 511049,
+      "sha256": "32ba67419cf7ecfa3d78cd1c7e043b888866d2a3d373b331672c1b6197cbf49d"
+    },
+    {
+      "path": "output/admin/v4-overview.png",
+      "bytes": 175764,
+      "sha256": "7651e51a85d4572de5b0e5879cd1340275feeb8c156ab38a73ba1f226ee37d75"
+    },
+    {
+      "path": "output/experience/admin-desktop.png",
+      "bytes": 166527,
+      "sha256": "47d080a5e7384fa2579cf930397dec4ab4254d5f1c6f57cf97ed9d39d021eab4"
+    },
+    {
+      "path": "output/experience/admin-frozen-1280.png",
+      "bytes": 162756,
+      "sha256": "ff96393af6fd8a7945459190e1ab52f9accd9dedbd726f21a6f536607a620bd9"
+    },
+    {
+      "path": "output/experience/admin-frozen-390.png",
+      "bytes": 126597,
+      "sha256": "9c8573f00de3de8b19917e9f0f716b99d5d6f1576c7e711b6b729f87104a8b6c"
+    },
+    {
+      "path": "output/experience/admin-mobile.png",
+      "bytes": 126709,
+      "sha256": "5b2674f38ef78a50b3ba41a6a8432b3e0b1727731df93c10ca1e9341195094cb"
+    },
+    {
+      "path": "output/experience/current-event-desktop.png",
+      "bytes": 524248,
+      "sha256": "1e4b5b3d1ac4739abd1110954211000fd626a07214bd47930d7aab8ac71963f5"
+    },
+    {
+      "path": "output/experience/current-event-mobile.png",
+      "bytes": 142633,
+      "sha256": "e24529d3b024feae6d4835be8de72ccd61e683e548d65bc265aeafc58cd5153d"
+    },
+    {
+      "path": "output/experience/entry-1280.png",
+      "bytes": 475874,
+      "sha256": "b7bb1a9991477718bb5023c7dcd7f0a69d3797c1a0176c3c4b7c426a97aed50a"
+    },
+    {
+      "path": "output/experience/entry-390.png",
+      "bytes": 199077,
+      "sha256": "b1ee44ae827fd2a1a39a01e3eb9115a25863fdd6c61d21d9dc40e2390931f72f"
+    },
+    {
+      "path": "output/experience/register-1280.png",
+      "bytes": 1652830,
+      "sha256": "5313a1bc7c31a76f3ddd0387c6cd4f58cefd09a10a5e4dfd5183a70ab2a7916f"
+    },
+    {
+      "path": "output/experience/register-390.png",
+      "bytes": 1012778,
+      "sha256": "e107daebb307a918bb87725dfa2285f579dfeec6c0b74c89b6f1b7f1d9a88a7e"
+    },
+    {
+      "path": "output/experience/register-full-1280.png",
+      "bytes": 863148,
+      "sha256": "9548979a66c53402c9228a9aa41e0d8effc7b81cc06614fd8c77f281fd97ab0e"
+    },
+    {
+      "path": "output/experience/register-full-390.png",
+      "bytes": 473122,
+      "sha256": "b542d617df0c281db7aaec1cc7b40fb65164cd9f14a803c9ea9a96dd1a9b59aa"
+    },
+    {
+      "path": "output/newsletter/subscribe-balanced-desktop.png",
+      "bytes": 715056,
+      "sha256": "9dd194d7366951a43f66122e33aac3d814e79c681ba43ca972b83c24e35063cd"
+    },
+    {
+      "path": "output/newsletter/subscribe-balanced-mobile.png",
+      "bytes": 385061,
+      "sha256": "78726d5fc2e62522d813e96abe48024dec775fad8df2f1866c03a003c2fb307f"
+    },
+    {
+      "path": "output/newsletter/subscribe-balanced-narrow.png",
+      "bytes": 296775,
+      "sha256": "0fcf2c822c2467b2cd607aa7fb9660c79b2c68cbaf80791359ff75189792c519"
+    },
+    {
+      "path": "output/newsletter/subscribe-desktop.png",
+      "bytes": 727518,
+      "sha256": "083ad6914d3a48a934d49f0aa3f8032a4b1daef13beda82cb5ecbeb0ac1bdeed"
+    },
+    {
+      "path": "output/newsletter/subscribe-mobile.png",
+      "bytes": 384396,
+      "sha256": "9d985641bf9d4c59dbc6cc80eb7249a9994e4924f6a7f17770088227ef85af76"
+    },
+    {
+      "path": "test-results/image-browser/.last-run.json",
+      "bytes": 45,
+      "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903"
+    },
+    {
+      "path": "test-results/image-browser/image-pilot-desktop.png",
+      "bytes": 494823,
+      "sha256": "75b142be79becc267465f4e430b96db0ffe36a2c646ed5e75250e39ae68b6110"
+    },
+    {
+      "path": "test-results/image-browser/image-pilot-mobile.png",
+      "bytes": 210108,
+      "sha256": "dd3af6382ee348d4406d69922cb4b8cb59cb309f3591fe915015aa91d7a50f4b"
+    },
+    {
+      "path": "test-results/image-browser/migration-assets.png",
+      "bytes": 1345262,
+      "sha256": "5ace402f7ac3572f1fdfcad0f5263bd90e6a92e3a65643b8cda5f564022ce4d1"
+    },
+    {
+      "path": "test-results/image-browser/signature-Fre-Do.png",
+      "bytes": 761027,
+      "sha256": "151142467ad205171dd95ebb8a555fbde2cba0ae72e225c14c622ea23f727ee8"
+    },
+    {
+      "path": "test-results/image-browser/signature-Sora.png",
+      "bytes": 638869,
+      "sha256": "8637e26b83e4b55df2780574833d01f500a2821fa9158fc04755fc880c414ca7"
+    },
+    {
+      "path": "test-results/image-browser/site-images-about-1280.png",
+      "bytes": 1907814,
+      "sha256": "b758e3b9274af71658b94ae25e2606b8f2833edde98a7dd922bfb885a00a39cb"
+    },
+    {
+      "path": "test-results/image-browser/site-images-about-390.png",
+      "bytes": 1213636,
+      "sha256": "a2f4149446e4c30167825999df457919a73d324049a04ce9a52d51e26ec98a22"
+    },
+    {
+      "path": "test-results/image-browser/site-images-map.png",
+      "bytes": 1487583,
+      "sha256": "f674329451c1cd76fceb1d7f4f164365c25fd062a6b0669c8704326c296b2761"
+    },
+    {
+      "path": "test-results/image-browser/site-images-pc-1280.png",
+      "bytes": 1478529,
+      "sha256": "2ab7e1714b37e3b060bdabacec444bef80d30f1408bf84536964e0f600c06ffe"
+    },
+    {
+      "path": "test-results/image-browser/site-images-pc-390.png",
+      "bytes": 1356280,
+      "sha256": "b2adb672728bedb3cf1d38fe53470b367cde72f23e696cde66afb14b8b1d343c"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/browser-site/site-images-PC-lists-profi-37f04-load-cloud-images-at-1280px/test-failed-1.png",
+      "bytes": 445732,
+      "sha256": "5e1596c985a7d2251ad2ca449bb897f8600c2a20220272cf6f34a94ca8214a99"
+    },
+    {
+      "path": "/private/tmp/rugatha-site-images-2026-11-06/browser-site/site-images-PC-lists-profi-a140a--load-cloud-images-at-390px/test-failed-1.png",
+      "bytes": 171672,
+      "sha256": "7fd95143c6647656befc5dc7052e15ed493e999edd417594292a67de67282492"
+    }
+  ],
+  "protectedImages": 155,
+  "protectedLocalPrompts": 9,
+  "temporaryOriginalCopiesRemoved": true
+}

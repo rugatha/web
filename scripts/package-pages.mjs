@@ -1,5 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { copyFile, mkdir } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -24,6 +25,8 @@ for (const file of new Set(files)) {
   const allowed = parts.length === 1 ? publicRootFiles.has(file) : publicDirectories.has(parts[0]);
   if (!allowed || parts.some(part => part.startsWith('.') || ['tests', '__tests__', '__pycache__'].includes(part))) continue;
   if (file.startsWith('shared/scripts/') || /(?:\.(?:test|spec)\.[cm]?js|\.(?:md|py|pyc|log))$/i.test(file)) continue;
+  // git ls-files also includes tracked paths removed in an uncommitted cleanup.
+  if (!existsSync(resolve(root, file))) continue;
   const destination = resolve(output, file);
   await mkdir(dirname(destination), { recursive: true });
   await copyFile(resolve(root, file), destination);

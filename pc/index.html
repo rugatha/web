@@ -264,7 +264,7 @@
   <main class="page">
     <header class="hero">
       <a class="hero-banner" href="https://rugatha.com/" aria-label="Rugatha home">
-        <img src="../assets/banner/rugatha-banner-trademark.png" alt="Rugatha banner">
+        <img src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fatlas-cover-firebase%2Freading-c565780a.png?alt=media" alt="Rugatha banner">
       </a>
       <h1 id="page-title">玩家角色</h1>
     </header>
@@ -374,8 +374,7 @@
       return { race, role };
     };
 
-    const resolvePcImageCandidates = (name) =>
-      ["jpg", "jpeg", "png"].map((ext) => `./pics/${name}.${ext}`);
+    const resolvePcImageCandidates = (name) => /^https?:\/\//.test(name || "") ? [name] : [];
 
     const isGuestPlayer = (pc) => String(pc.guest || "").trim() === "1";
 

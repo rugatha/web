@@ -1,0 +1,314 @@
+{
+  "checkedDate": "2026-11-06",
+  "selectedImages": 164,
+  "bytesRemoved": 211684369,
+  "policy": "Preserve original dimensions, formats and exact bytes; no resizing or lossy recompression.",
+  "collections": {
+    "about": 7,
+    "deities": 12,
+    "emperors": 8,
+    "maps": 1,
+    "member": 1,
+    "npc-backgrounds": 1,
+    "pc-cards": 32,
+    "pc-portraits": 35,
+    "pc-player-art": 28,
+    "pc-three-views": 39
+  },
+  "publicObjects": 164,
+  "privateOriginals": 164,
+  "protected": {
+    "websiteImages": 41,
+    "workingImages": 113,
+    "testFixtures": 1,
+    "imagegenPrompts": 9,
+    "allChecksumsUnchanged": true
+  },
+  "localWebsiteImages": [
+    {
+      "path": "assets/2026-d3-helper.png",
+      "bytes": 162427,
+      "sha256": "d1cda3bc841038cd71c90004ea7115eb61c34b17a2403bdb08633b2ff90193ab"
+    },
+    {
+      "path": "assets/banner/rugatha-banner-preview.png",
+      "bytes": 121381,
+      "sha256": "c770d61ecab147d59786a4d836237746f2c1ea048f268c228735b859a4c37d2d"
+    },
+    {
+      "path": "assets/banner/rugatha-banner-trademark-transparent.png",
+      "bytes": 131585,
+      "sha256": "e2693dfffa5c086ae5f9aa27d4abfee74aebfa389b674933e2818db6d44e04c3"
+    },
+    {
+      "path": "assets/banner/rugatha-banner.png",
+      "bytes": 121673,
+      "sha256": "eefd1bd08466d34e58f9f5c1bc1869966e078ae4b082fa880ddda6b5e47d4b1d"
+    },
+    {
+      "path": "assets/campaign_logo/logo_RBrown.png",
+      "bytes": 385860,
+      "sha256": "74495c05a6b3d736bb3fc75ac125aef33f5313ed7e7d03023db33c16581f37c7"
+    },
+    {
+      "path": "assets/campaign_logo/logo_RLegends.png",
+      "bytes": 499096,
+      "sha256": "bbea883bf23ee1c2872ae7cfc3a8990930c95c375d6cfe84029d82e4ce1abb49"
+    },
+    {
+      "path": "assets/campaign_logo/logo_RLite.png",
+      "bytes": 386665,
+      "sha256": "91de5e66ae25dc33041e4d53df9462a4a87a4f684b2a15104b1bae857d7cdd77"
+    },
+    {
+      "path": "assets/campaign_logo/logo_RPlus.png",
+      "bytes": 380239,
+      "sha256": "af533f87459acab613b0ceaa94efaa1cb0632a822ba60751df6eea0e31784608"
+    },
+    {
+      "path": "assets/campaign_logo/logo_RProsper.png",
+      "bytes": 394822,
+      "sha256": "ef16878990056deede0418f42ecffc7afe8446f5d5c154069e67b0d253fa5d21"
+    },
+    {
+      "path": "assets/campaign_logo/logo_RVeil.png",
+      "bytes": 393683,
+      "sha256": "08c2728a8d69345afe3e628eb32454ec45d9cb6c39101aaafcf8e0d49afd031c"
+    },
+    {
+      "path": "assets/campaign_logo/logo_RWilds.png",
+      "bytes": 360668,
+      "sha256": "1d654976ab497c3cc878182e9fbc9b72e1d0bdc400099dc171a770ef5b53b1c4"
+    },
+    {
+      "path": "assets/cons/d3/2025.jpg",
+      "bytes": 112808,
+      "sha256": "298c1c869dd1bcf567889fc9cb998f862efa38f36c1779a31fc0f3a33ed51025"
+    },
+    {
+      "path": "assets/cons/trpg_fes/2026.jpg",
+      "bytes": 151829,
+      "sha256": "bba62a41463e563dfe680b6b573c63b8c7bd17f9d30458c0741c61742b5332c7"
+    },
+    {
+      "path": "assets/icons/campaigns-icon.png",
+      "bytes": 455596,
+      "sha256": "1eab27d6fc2f1fed1cac2e90175d5116d5f6c0ba7f38cdee272893d89440d84f"
+    },
+    {
+      "path": "assets/icons/characters-icon.png",
+      "bytes": 495698,
+      "sha256": "30d094d862dc9b18f90006e5eebc57990aacf900d16b091611b4dc646547cdd1"
+    },
+    {
+      "path": "assets/icons/deities-icon.png",
+      "bytes": 381878,
+      "sha256": "641723faafff71c2c6358e72ddd8e034987bf76d341158eb7687a0ab487b58e6"
+    },
+    {
+      "path": "assets/icons/emperors-icon.png",
+      "bytes": 551405,
+      "sha256": "61c9921291e457b47b12f678998dd4e1679147e29adea43fa3b3847461e23ab1"
+    },
+    {
+      "path": "assets/icons/history-icon.png",
+      "bytes": 483376,
+      "sha256": "3b9439bef511e324cc5e6a68fa79f7ae2c383c662bbb870beb46dd4f31e3c6f7"
+    },
+    {
+      "path": "assets/icons/map-icon.png",
+      "bytes": 459656,
+      "sha256": "c7470bfa80eae0d444b95ad340fced3e132a257ef9060439dc60f2b19d82110a"
+    },
+    {
+      "path": "assets/logo/D&D_logo.png",
+      "bytes": 82838,
+      "sha256": "0f50cde2570309add117df670a3f328269c7cd026411df0d487dcb9f7d96b8b8"
+    },
+    {
+      "path": "assets/logo/rugatha-favicon-32.png",
+      "bytes": 3062,
+      "sha256": "48e2cd91802433df2397fb492757437f1386f8e32ac439f8ca16124f7b2a91e8"
+    },
+    {
+      "path": "assets/logo/rugatha-favicon.png",
+      "bytes": 204988,
+      "sha256": "65ae5ae9c91bad34b664a0d1987d9b0b4403264e78d181d9bed2fa32698f347b"
+    },
+    {
+      "path": "assets/logo/rugatha-icon-192.png",
+      "bytes": 42232,
+      "sha256": "66526df553e7a897299b1a35d833abf856b909b8d5cede94aa31fffbbe4eebd7"
+    },
+    {
+      "path": "assets/logo/rugatha-icon-32.png",
+      "bytes": 2115,
+      "sha256": "b5bac181a94695fdc21609829ba9ebcfc02cbdaf02531e5bbbdda997dd7f8ff9"
+    },
+    {
+      "path": "assets/logo/rugatha-icon-512.png",
+      "bytes": 162427,
+      "sha256": "d1cda3bc841038cd71c90004ea7115eb61c34b17a2403bdb08633b2ff90193ab"
+    },
+    {
+      "path": "assets/logo/rugatha-icon-curtain.png",
+      "bytes": 2026371,
+      "sha256": "77db3311a1c3b85ee7dc4d1ce780355b62156ec12da1c558b07841c206bfb9d0"
+    },
+    {
+      "path": "assets/logo/rugatha-icon-maskable-512.png",
+      "bytes": 162427,
+      "sha256": "d1cda3bc841038cd71c90004ea7115eb61c34b17a2403bdb08633b2ff90193ab"
+    },
+    {
+      "path": "assets/logo/rugatha-icon.png",
+      "bytes": 1265213,
+      "sha256": "ab2151ce1bc672a7f7ed2423754c9dedae4f71454bce2ca48816ae2781013ad4"
+    },
+    {
+      "path": "assets/others/d20.png",
+      "bytes": 70607,
+      "sha256": "94f9bbcbe0364a5a75f0e6430ea59686da151aea5989eb38225a4145868069be"
+    },
+    {
+      "path": "assets/others/dm-screen.jpg",
+      "bytes": 1320344,
+      "sha256": "9e00e18c04080a3033a2c5da64a17461f0ff7a6a60de9fb1e5f36b337bd227d7"
+    },
+    {
+      "path": "assets/others/dm-screen.png",
+      "bytes": 152204,
+      "sha256": "b55dcc19fe1c587b8e63ca61317b5657684acfabe99fb0e01d531ddc132ce348"
+    },
+    {
+      "path": "assets/others/lan-en.png",
+      "bytes": 336706,
+      "sha256": "03e1986aa922f1173596978994f2630922a6a9ca182aa9160731b23af3d8581a"
+    },
+    {
+      "path": "assets/others/lan-zh.png",
+      "bytes": 357988,
+      "sha256": "647d893d59575880bdb81011aca470998af18fa78f9300ed11612cdedd560ea4"
+    },
+    {
+      "path": "assets/others/survey-cake.png",
+      "bytes": 52565,
+      "sha256": "fa769aae328357f3927e12c6bfbad8cb2093d8e63e67b50dd0f6b5108a832218"
+    },
+    {
+      "path": "assets/others/tagline-zh.png",
+      "bytes": 19770,
+      "sha256": "dc06f4a448aff815cd69d37291d7b4e5538ea640cdb2d582e2a60cacce700a59"
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-brown-logo.jpg",
+      "bytes": 22000,
+      "sha256": "9c119c102787fc57d6c846fd92172c876911f830173567dff26b08ce2e112134"
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-legends-logo.jpg",
+      "bytes": 17056,
+      "sha256": "144e4aed9a12336a4e6e5d084c5fda3922de33caed33e5e324af6365be63f334"
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-light-logo.jpg",
+      "bytes": 19059,
+      "sha256": "a579f4662ab71acc779abf59ea271ac48c85c6609afd9dfdb76c0c9835643ef2"
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-logo.jpg",
+      "bytes": 17021,
+      "sha256": "9bafb527573c3af7308125779c35e88938ded0a445dadbeeea30e1817749074e"
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-plus-logo.jpg",
+      "bytes": 19196,
+      "sha256": "38a5ae1af6ed073e5326148f9651cbf91a3dbd18bc626a4343d50e7fdeb027ee"
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-wilds-logo.jpg",
+      "bytes": 41279,
+      "sha256": "3d5123af8ffaa155c214e82db6dae3dc7d59e1624e44291a4bcba3fda52bf05a"
+    }
+  ],
+  "remainingWebsiteBytes": 12827813,
+  "emptyFoldersRemoved": [
+    "pc/pics",
+    "deities/images",
+    "about-us/assets",
+    "member/assets",
+    "pc/three_views",
+    "pc/assets",
+    "emperors/gallery",
+    "pc/pics_by_players"
+  ],
+  "validation": {
+    "unitTests": 20,
+    "storageRulesTests": 6,
+    "adminTests": 10,
+    "imageBrowserCases": 19,
+    "siteHttpsCases": 6,
+    "strictPageDimensionRechecks": 2,
+    "feedbackEmulatorSmoke": "passed",
+    "chapterFiles": 101,
+    "packageWebsiteImages": 41,
+    "privateRestoreSample": {
+      "restoredAndVerified": [
+        {
+          "source": "member/assets/journal-contours.svg",
+          "sha256": "baf30c6234e67c0f3a4a46f590984a52c83cce7f78f2dcf115544de7996274e1",
+          "bytes": 1606
+        },
+        {
+          "source": "pc/three_views/Al-lon.png",
+          "sha256": "0464fddfe29fc7239fb9eb4100345df1c3956e674d8f51793011e74fc6901d3e",
+          "bytes": 3155493
+        }
+      ]
+    },
+    "staticMissingCandidates": 0,
+    "protectedChecksums": "all unchanged",
+    "diffCheck": "passed"
+  },
+  "cloud": {
+    "checkedAt": "2026-11-06T08:02:50.101Z",
+    "bucket": "rugatha-87e15.firebasestorage.app",
+    "location": "US-WEST1",
+    "liveObjects": 1620,
+    "liveBytes": 1704728137,
+    "billingEnabled": true,
+    "budgets": [
+      {
+        "displayName": "Rugatha Storage 月費通知（NT$30）",
+        "amount": {
+          "specifiedAmount": {
+            "currencyCode": "TWD",
+            "units": "30"
+          }
+        },
+        "thresholdRules": [
+          {
+            "thresholdPercent": 0.5,
+            "spendBasis": "CURRENT_SPEND"
+          },
+          {
+            "thresholdPercent": 0.9,
+            "spendBasis": "CURRENT_SPEND"
+          },
+          {
+            "thresholdPercent": 1,
+            "spendBasis": "CURRENT_SPEND"
+          }
+        ],
+        "defaultRecipientsEnabled": true
+      }
+    ]
+  },
+  "deployment": {
+    "status": "pending",
+    "target": "https://rugatha.com",
+    "workerVersion": "rugatha-pwa-v56"
+  },
+  "qaCleanupReport": "qa-cleanup-2026-11-06.json",
+  "uploadRecovery": "Pascal upload timed out once; independent create-only retry verified successfully before the complete manifest was assembled. All 164 originals and public copies were freshly re-read before deletion."
+}

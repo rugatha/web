@@ -22,7 +22,7 @@ export const getBookmarkVisual = (pageUrl) => {
   if (!visualCache.has(url.href)) {
     visualCache.set(url.href, (async () => {
       // The map landing page's main visual is the map itself.
-      if (/\/map\/(index\.html)?$/.test(url.pathname)) return new URL('map/assets/dranison-map.jpg', siteRoot).href;
+      if (/\/map\/(index\.html)?$/.test(url.pathname)) return new URL('https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fmaps%2Fdranison-map-e445f2d376%2Fimage-c7b457c9.jpg?alt=media', siteRoot).href;
       const response = await fetch(url);
       if (!response.ok) throw new Error('Unable to load saved-page visual');
       const page = new DOMParser().parseFromString(await response.text(), 'text/html');

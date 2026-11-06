@@ -11,7 +11,7 @@ const EMPEROR_ERAS = [
           zh: "沃斯頓一世",
           en: "Walston I"
         },
-        image: "gallery/dranison-walston.jpeg",
+        image: "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Femperors%2Fdranison-walston-d49fe77cb1%2Fimage-c4054d7b.jpeg?alt=media",
         title: {
           zh: "王朝首任皇帝",
           en: "First Emperor of the Era"
@@ -26,7 +26,7 @@ const EMPEROR_ERAS = [
           zh: "喬森十三世",
           en: "Georson XIII"
         },
-        image: "gallery/dranison-georson.jpeg",
+        image: "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Femperors%2Fdranison-georson-8df8a783ea%2Fimage-28328301.jpeg?alt=media",
         title: {
           zh: "王朝末任皇帝",
           en: "Last Emperor of the Era"
@@ -50,7 +50,7 @@ const EMPEROR_ERAS = [
           zh: "霍里森一世",
           en: "Hollison I"
         },
-        image: "gallery/trinix-hollison.jpeg",
+        image: "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Femperors%2Ftrinix-hollison-c0b0a31176%2Fimage-31bec427.jpeg?alt=media",
         title: {
           zh: "王朝首任皇帝",
           en: "First Emperor of the Era"
@@ -65,7 +65,7 @@ const EMPEROR_ERAS = [
           zh: "瑞蘭十五世",
           en: "Reylan XV"
         },
-        image: "gallery/trinix-reylan.jpeg",
+        image: "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Femperors%2Ftrinix-reylan-598c5dc69c%2Fimage-843c1d2d.jpeg?alt=media",
         title: {
           zh: "王朝末任皇帝",
           en: "Last Emperor of the Era"
@@ -89,7 +89,7 @@ const EMPEROR_ERAS = [
           zh: "征服者洛林",
           en: "Lorin the Conqueror"
         },
-        image: "gallery/lothum-lorin.jpeg",
+        image: "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Femperors%2Flothum-lorin-4eb0081d57%2Fimage-3baf7815.jpeg?alt=media",
         title: {
           zh: "王朝首任皇帝",
           en: "First Emperor of the Era"
@@ -104,7 +104,7 @@ const EMPEROR_ERAS = [
           zh: "年輕的傑里斯",
           en: "Jelix the Young"
         },
-        image: "gallery/lothum-jelix.jpeg",
+        image: "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Femperors%2Flothum-jelix-572f868906%2Fimage-b7e61aa9.jpeg?alt=media",
         title: {
           zh: "王朝末任皇帝",
           en: "Last Emperor of the Era"
@@ -128,7 +128,7 @@ const EMPEROR_ERAS = [
           zh: "卡洛斯七世",
           en: "Carlos VII"
         },
-        image: "gallery/new-dranison-carlos.jpeg",
+        image: "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Femperors%2Fnew-dranison-carlos-1b930aa65e%2Fimage-64b5ccf4.jpeg?alt=media",
         title: {
           zh: "王朝首任皇帝",
           en: "First Emperor of the Era"
@@ -143,7 +143,7 @@ const EMPEROR_ERAS = [
           zh: "凱里諾六世",
           en: "Kylenor VI"
         },
-        image: "gallery/new-dranison-kylenor.jpeg",
+        image: "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Femperors%2Fnew-dranison-kylenor-63ecebc0fa%2Fimage-f32f477f.jpeg?alt=media",
         title: {
           zh: "王朝現任皇帝",
           en: "Current Emperor of the Era"

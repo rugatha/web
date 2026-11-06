@@ -22,7 +22,7 @@
     "images:switch": "node scripts/switch-image-assets.mjs",
     "images:originals": "node scripts/image-original-archive.mjs",
     "images:retire": "node scripts/retire-image-originals.mjs",
-    "test:images": "node --test tests/image-assets.test.mjs tests/image-pwa.test.mjs tests/image-retirement.test.mjs",
+    "test:images": "node --test tests/image-assets.test.mjs tests/image-pwa.test.mjs tests/image-retirement.test.mjs tests/site-image-assets.test.mjs",
     "test:image-browser": "playwright test --config playwright.images.config.mjs",
     "test:letter-browser": "playwright test --config playwright.letters.config.mjs",
     "test:auth-browser": "node --test tests/auth-browser.test.mjs && node tests/auth-browser-smoke.mjs",

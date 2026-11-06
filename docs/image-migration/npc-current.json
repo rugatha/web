@@ -4005,50 +4005,50 @@
       "role": "portrait"
     },
     {
-      "source": "npc/individual_pics/Melvin.jpeg",
-      "id": "melvin-6fc2057850",
+      "source": "npc/individual_pics/Melvin.jpg",
+      "id": "melvin-bf70c47b40",
       "category": "npcs",
       "entityIds": [
         "Melvin"
       ],
+      "role": "portrait",
       "original": {
-        "bytes": 159165,
-        "sha256": "18deccb60d84aa4b73c3d588e589da001b7685d8302b9a553824f9cbe8ec06dd",
-        "width": 512,
-        "height": 512,
+        "bytes": 333046,
+        "sha256": "d20e7628a14643b1a04e77e63e20affa0890ac35bccf14b38c09dacff25d614c",
+        "width": 1254,
+        "height": 1254,
         "archive": {
-          "object": "image-originals/npcs/melvin/original-18deccb6.jpeg",
-          "sha256": "18deccb60d84aa4b73c3d588e589da001b7685d8302b9a553824f9cbe8ec06dd",
-          "bytes": 159165,
+          "object": "image-originals/npcs/melvin/original-d20e7628.jpg",
+          "sha256": "d20e7628a14643b1a04e77e63e20affa0890ac35bccf14b38c09dacff25d614c",
+          "bytes": 333046,
           "contentType": "image/jpeg",
           "cacheControl": "private, no-store",
           "storageClass": "STANDARD",
-          "generation": "1793168122926687"
+          "generation": "1793187464814417"
         }
       },
       "variants": {
         "thumb": {
-          "object": "public-images/npcs/melvin/thumb-9a73a493.webp",
-          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin%2Fthumb-9a73a493.webp?alt=media",
-          "sha256": "9a73a49383e882e58b64834115b2ca36dd875a9de88a12591531b952fe4b4a63",
-          "bytes": 17816,
+          "object": "public-images/npcs/melvin/thumb-3780b5a0.webp",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin%2Fthumb-3780b5a0.webp?alt=media",
+          "sha256": "3780b5a00c531df18b5ce1a6bd1444fbaa9f58f5b50f27f69458de706de3685a",
+          "bytes": 23798,
           "width": 480,
           "height": 480,
           "contentType": "image/webp",
           "cacheControl": "public, max-age=31536000, immutable"
         },
         "reading": {
-          "object": "public-images/npcs/melvin/reading-1e359f72.webp",
-          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin%2Freading-1e359f72.webp?alt=media",
-          "sha256": "1e359f72c7a3554e36b6f35892b9ac14ab0ca63e6a194a47dc96e93272c9be59",
-          "bytes": 26442,
+          "object": "public-images/npcs/melvin/reading-c048f1a8.webp",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fmelvin%2Freading-c048f1a8.webp?alt=media",
+          "sha256": "c048f1a8d35673cc38b2234ba9ce3c947ce0afdf8d9819f282a7764b5061ef37",
+          "bytes": 30040,
           "width": 512,
           "height": 512,
           "contentType": "image/webp",
           "cacheControl": "public, max-age=31536000, immutable"
         }
-      },
-      "role": "portrait"
+      }
     },
     {
       "source": "npc/individual_pics/Mikkel Drogskol-review-v2.png",

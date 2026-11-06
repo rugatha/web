@@ -14,7 +14,9 @@ const readable = [
   'public-images/npcs/sora/reading-1234abcd.webp',
   'public-images/signatures/sora/signature-1234abcd.png',
   'public-images/locations/material-realm/mattington/city/tavern/reading-1234abcd.png',
-  `public-images/experience/subscription-${hash}.png`
+  `public-images/experience/subscription-${hash}.png`,
+  'public-images/site/pc-three-views/al-lon/image-1234abcd.png',
+  'public-images/site/member/journal/image-1234abcd.svg'
 ];
 before(async () => {
   environment = await initializeTestEnvironment({ projectId: 'demo-rugatha-images', storage: { rules: readFileSync('config/firebase/storage.rules', 'utf8') } });
@@ -76,4 +78,19 @@ test('invalid public paths and private profile photos remain inaccessible', asyn
   await assertFails(getBytes(ref(storage, 'profile-photos/owner/avatar.png')));
   await assertSucceeds(getBytes(ref(environment.authenticatedContext('owner').storage(), 'profile-photos/owner/avatar.png')));
   await assertSucceeds(getBytes(ref(storage, 'catalogs/spells/test/spells-phb.json')));
+});
+
+test('site images allow only reviewed immutable paths and never client writes', async () => {
+  const path = readable.find(path => path.startsWith('public-images/site/'));
+  for (const context of [environment.unauthenticatedContext(), environment.authenticatedContext('admin', { admin: true })]) {
+    const storage = context.storage();
+    await assertSucceeds(getBytes(ref(storage, path)));
+    await assertFails(listAll(ref(storage, 'public-images/site')));
+    await assertFails(uploadString(ref(storage, path), 'replacement'));
+    await assertFails(deleteObject(ref(storage, path)));
+    await assertFails(getBytes(ref(storage, path.replace('/pc-three-views/', '/private/'))));
+    await assertFails(getBytes(ref(storage, path.replace('1234abcd', 'invalid'))));
+    await assertFails(getBytes(ref(storage, path.replace('image-', 'original-'))));
+    await assertFails(getBytes(ref(storage, path.replace('public-images/', 'image-originals/'))));
+  }
 });

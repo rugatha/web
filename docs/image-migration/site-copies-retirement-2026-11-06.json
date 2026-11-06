@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-11-06T07:18:23.795Z",
+  "mode": "removed-after-cloud-verification",
+  "bucket": "rugatha-87e15.firebasestorage.app",
+  "count": 2,
+  "bytes": 1975710,
+  "liveReferences": 0,
+  "images": [
+    {
+      "source": "assets/banner/rugatha-banner-trademark.png",
+      "original": {
+        "sha256": "c565780a8013f69dbc9bab1f81da7bf1d00240820d202752bed267c8962c8c3d",
+        "bytes": 131589,
+        "archive": {
+          "object": "image-originals/site-assets/rugatha-banner-trademark/original-c565780a.png",
+          "sha256": "c565780a8013f69dbc9bab1f81da7bf1d00240820d202752bed267c8962c8c3d",
+          "bytes": 131589,
+          "generation": "1793948696245257",
+          "anonymousStatus": 403
+        }
+      },
+      "public": {
+        "object": "public-images/locations/atlas-cover-firebase/reading-c565780a.png",
+        "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fatlas-cover-firebase%2Freading-c565780a.png?alt=media",
+        "sha256": "c565780a8013f69dbc9bab1f81da7bf1d00240820d202752bed267c8962c8c3d",
+        "bytes": 131589,
+        "contentType": "image/png",
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      "verifiedAt": "2026-11-06T07:18:23.795Z"
+    },
+    {
+      "source": "assets/banner/rugatha-experience.jpeg",
+      "original": {
+        "sha256": "84d6f0d349f92e76a2bae856553271fa078b04e1d3366b477b37bec67f60ab24",
+        "bytes": 1844121,
+        "archive": {
+          "object": "image-originals/arcs/exp/e03/original-84d6f0d3.jpeg",
+          "sha256": "84d6f0d349f92e76a2bae856553271fa078b04e1d3366b477b37bec67f60ab24",
+          "bytes": 1844121,
+          "contentType": "image/jpeg",
+          "cacheControl": "private, no-store",
+          "storageClass": "STANDARD",
+          "generation": "1793948783253495"
+        }
+      },
+      "public": {
+        "object": "public-images/arcs/exp/e03/reading-bdf253cf.webp",
+        "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Farcs%2Fexp%2Fe03%2Freading-bdf253cf.webp?alt=media",
+        "sha256": "bdf253cfdf180941aeea0aa59c4f7b346b4ddf8da45c1fde1cb4da7b57f64d86",
+        "bytes": 145036,
+        "width": 1131,
+        "height": 1600,
+        "contentType": "image/webp",
+        "cacheControl": "public, max-age=31536000, immutable"
+      },
+      "verifiedAt": "2026-11-06T07:18:26.307Z"
+    }
+  ],
+  "removed": [
+    "assets/banner/rugatha-banner-trademark.png",
+    "assets/banner/rugatha-experience.jpeg"
+  ]
+}

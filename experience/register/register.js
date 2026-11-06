@@ -82,7 +82,7 @@ if (config.scriptName) {
   });
   document.title = `${validDate(config.startsAt) ? new Intl.DateTimeFormat('zh-TW', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit' }).format(new Date(config.startsAt)) + ' ' : ''}《${config.scriptName}》體驗團報名頁面 | Rugatha`;
 }
-const posterCandidates = ['png', 'jpg', 'jpeg'].map(extension => `../../assets/banner/rugatha-experience.${extension}`);
+const posterCandidates = [...['png', 'jpg'].map(extension => `../../assets/banner/rugatha-experience.${extension}`), "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Farcs%2Fexp%2Fe03%2Freading-bdf253cf.webp?alt=media"];
 const poster = $('event-poster');
 poster.alt = config.scriptName ? `《${config.scriptName}》體驗團海報` : 'Rugatha 體驗團主視覺';
 let posterIndex = 0;

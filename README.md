@@ -492,4 +492,4 @@ python3 shared/scripts/normalize_site_html.py
 
 ## 公開內容圖片遷移
 
-圖片搬移計畫與 checkbox 進度見 [to-do.md](to-do.md)，試搬範圍、發布工具、驗收及回退紀錄見 [圖片遷移文件](docs/image-migration/README.md)。`rugatha-c01` 的 20 張試搬原圖已備份至私人 Storage 並移除 repo 副本；其餘圖片保留，於 11/21 後檢查用量再決定是否擴大。
+圖片搬移計畫與 checkbox 進度見 [to-do.md](to-do.md)，發布工具、驗收及回退紀錄見 [圖片遷移文件](docs/image-migration/README.md)。2026-11-06 已完成 Melvin／Plus c08 修復與封面／章節清理，並將 PC、神祇、帝王、地圖及其他頁面圖片搬至雲端。地端網站圖片僅保留根目錄 `assets/` 的 35 張與 `campaigns/campaign-logos/` 的六張；本機工作素材與測試 fixture 保留。完整原圖存於私人 Storage，公開圖片不可由客戶端列出或修改。現用清單為 [campaign-current.json](docs/image-migration/campaign-current.json)、[npc-current.json](docs/image-migration/npc-current.json) 與 [site-current.json](docs/image-migration/site-current.json)；發布與驗收見 [完整遷移紀錄](docs/image-migration/site-migration-2026-11-06.md)。

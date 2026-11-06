@@ -79,14 +79,7 @@
 
   const isGuestPlayer = (pc) => String(pc && pc.guest ? pc.guest : "").trim() === "1";
 
-  const resolvePortraitCandidates = (name) => [
-    `../portrait/${name}.jpg`,
-    `../portrait/${name}.jpeg`,
-    `../portrait/${name}.png`,
-    `../pics/${name}.jpg`,
-    `../pics/${name}.jpeg`,
-    `../pics/${name}.png`
-  ];
+  const resolvePortraitCandidates = (name) => /^https?:\/\//.test(name || "") ? [name] : [];
 
   const resolveChapterUrl = (chapterId) => {
     const parts = String(chapterId || "").split("-");

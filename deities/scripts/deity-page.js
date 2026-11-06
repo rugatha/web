@@ -1,5 +1,5 @@
 (() => {
-  const fallbackImage = "../assets/banner/rugatha-banner-trademark.png";
+  const fallbackImage = "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fatlas-cover-firebase%2Freading-c565780a.png?alt=media";
 
   const nameEl = document.querySelector("[data-deity='name']");
   const titleEl = document.querySelector("[data-deity='title']");

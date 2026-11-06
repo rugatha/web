@@ -20,6 +20,20 @@ const manifest = { ...pilot, images: pilot.images.map(image => {
 }) };
 const oldPaths = new Set(pilot.images.map(image => '/' + image.source));
 const production = process.env.RUGATHA_IMAGE_TEST_BASE_URL;
+// Chromium's test host mapping does not apply to Playwright's Node API client.
+const apiPath = path => !production && process.env.RUGATHA_IMAGE_TEST_HTTPS === '1'
+  ? new URL(path, 'https://127.0.0.1:8767').href : path;
+let cacheVersion;
+test.beforeAll(async ({ request }) => {
+  let script = readFileSync('sw.js', 'utf8');
+  if (production) {
+    const response = await request.get('/sw.js');
+    expect(response.ok()).toBe(true);
+    script = await response.text();
+  }
+  cacheVersion = script.match(/const CACHE_VERSION = "([^"]+)";/)?.[1];
+  expect(cacheVersion).toMatch(/^rugatha-pwa-v\d+$/);
+});
 async function startImageWorker(page) {
   if (production) await page.context().route('**/__image-test__/', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Image cache acceptance</title>' }));
   await page.goto('/__image-test__/');
@@ -33,14 +47,13 @@ const renderImage = (page, src) => page.evaluate(async value => {
   const image = new Image(); image.crossOrigin = 'anonymous'; image.src = value;
   document.body.append(image); await image.decode(); return image.naturalWidth;
 }, src);
-test.beforeEach(async ({ context }) => {
+test.beforeEach(async ({ context, baseURL }) => {
   // Browsers may read the public image endpoint only. Auth, analytics and all
   // production databases are blocked, regardless of current user login state.
   await context.route('**/*', route => {
     const url = new URL(route.request().url());
     if (route.request().method() !== 'GET') return route.abort();
-    if (url.hostname === '127.0.0.1') return route.continue();
-    if (production && url.origin === new URL(production).origin) return route.continue();
+    if (url.origin === new URL(baseURL).origin) return route.continue();
     if (url.origin === 'https://firebasestorage.googleapis.com' && decodeURIComponent(url.pathname).includes('/o/public-images/') && url.search === '?alt=media') return route.continue();
     return route.abort();
   });
@@ -138,14 +151,14 @@ test('real worker caches a CORS image for offline rendering', async ({ page, con
   await startImageWorker(page);
   const render = src => renderImage(page, src);
   expect(await render(alfie.image)).toBeGreaterThan(0);
-  await expect.poll(() => page.evaluate(async () => {
-    const cache = await caches.open('rugatha-pwa-v52-public-images'); return (await cache.keys()).length;
-  })).toBeGreaterThan(0);
+  await expect.poll(() => page.evaluate(async name => {
+    const cache = await caches.open(name); return (await cache.keys()).length;
+  }, `${cacheVersion}-public-images`)).toBeGreaterThan(0);
   if (production) {
     // Cache a controlled document through the real network-first navigation
     // handler, then stop fulfilling it. Offline reload must use Cache Storage.
     await page.reload();
-    await expect.poll(() => page.evaluate(async () => !!(await (await caches.open('rugatha-pwa-v52-runtime')).match(location.href)))).toBe(true);
+    await expect.poll(() => page.evaluate(async name => !!(await (await caches.open(name)).match(location.href)), `${cacheVersion}-runtime`)).toBe(true);
     await context.unroute('**/__image-test__/');
   }
   await context.setOffline(true);
@@ -164,7 +177,7 @@ test('temporary HTTP failure shows one uncached placeholder and recovers on the 
   await context.route(alfie.image, fault);
   expect(await renderImage(page, alfie.image)).toBe(192);
   expect(attempts).toBe(1);
-  expect(await page.evaluate(async src => !!(await (await caches.open('rugatha-pwa-v52-public-images')).match(src)), alfie.image)).toBe(false);
+  expect(await page.evaluate(async ({ src, name }) => !!(await (await caches.open(name)).match(src)), { src: alfie.image, name: `${cacheVersion}-public-images` })).toBe(false);
   await context.unroute(alfie.image, fault);
   // Chrome can reuse a decoded image within the same document. The supported
   // retry is the next page load, without a timer or repeated failing requests.
@@ -172,7 +185,8 @@ test('temporary HTTP failure shows one uncached placeholder and recovers on the 
   expect(await renderImage(page, alfie.image)).toBe(manifest.images.find(image => image.entityIds.includes('Alfie_Fuller')).variants.reading.width);
 });
 
-test('all twenty reading variants have zero additional warm network or metadata requests', async ({ page, context }) => {
+test('all twenty reading variants have zero additional warm network or metadata requests', async ({ page, context, browserName }) => {
+  test.skip(browserName !== 'chromium', 'Playwright exposes service-worker network request attribution only in Chromium; offline cache behavior is tested separately.');
   await startImageWorker(page);
   const requests = [];
   context.on('request', request => {
@@ -183,7 +197,7 @@ test('all twenty reading variants have zero additional warm network or metadata 
     await Promise.all(sources.map(async source => { const image = new Image(); image.crossOrigin = 'anonymous'; image.src = source; document.body.append(image); await image.decode(); }));
   }, urls);
   const coldStart = Date.now(); await renderBatch(); const coldMs = Date.now() - coldStart;
-  await expect.poll(() => page.evaluate(async () => (await (await caches.open('rugatha-pwa-v52-public-images')).keys()).length)).toBe(20);
+  await expect.poll(() => page.evaluate(async name => (await (await caches.open(name)).keys()).length, `${cacheVersion}-public-images`)).toBe(20);
   const coldRequests = requests.length;
   expect(coldRequests).toBe(20);
   const warmStart = Date.now(); await renderBatch(); const warmMs = Date.now() - warmStart;
@@ -199,7 +213,7 @@ test('all migrated NPC detail pages and anonymous share metadata use the new ima
   const oldRequests = [];
   page.on('request', request => { if (oldPaths.has(decodeURIComponent(new URL(request.url()).pathname))) oldRequests.push(request.url()); });
   for (const npc of characters.filter(npc => manifest.images.some(image => image.entityIds.includes(npc.id)))) {
-    const response = await request.get('/' + npc.url);
+    const response = await request.get(apiPath('/' + npc.url));
     expect(response.ok()).toBe(true);
     const html = await response.text();
     expect(html).toContain(`property="og:image" content="${npc.image}"`);
@@ -219,7 +233,7 @@ test('all migrated NPC detail pages and anonymous share metadata use the new ima
 
 test('retired repository image URLs are absent while cloud variants remain available', async ({ request }) => {
   for (const image of manifest.images) {
-    const retired = await request.get(`/${encodeURI(image.source)}?image-retirement=20261021`, { headers: { 'Cache-Control': 'no-cache' } });
+    const retired = await request.get(apiPath(`/${encodeURI(image.source)}?image-retirement=20261021`), { headers: { 'Cache-Control': 'no-cache' } });
     expect([404, 410]).toContain(retired.status());
   }
 });

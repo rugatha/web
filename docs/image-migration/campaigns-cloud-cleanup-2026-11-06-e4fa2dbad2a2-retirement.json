@@ -1,0 +1,2234 @@
+{
+  "checkedAt": "2026-11-06T07:17:05.081Z",
+  "mode": "removed-after-cloud-verification",
+  "bucket": "rugatha-87e15.firebasestorage.app",
+  "count": 148,
+  "bytes": 303590745,
+  "liveReferences": 0,
+  "publicVariantsVerified": 296,
+  "originalUrlPolicy": "Retire old direct image URLs without redirects, as authorized by the user; pages and share metadata use public immutable variants.",
+  "originals": [
+    {
+      "source": "campaigns/campaign-banners/brown-c01.jpg",
+      "sha256": "7fafa523f65ce015651bdd9e3e4ea08a7a274cf97bba43821430896fc1861ab3",
+      "bytes": 332489,
+      "archive": {
+        "object": "image-originals/arcs/brown/c01/original-7fafa523.jpg",
+        "sha256": "7fafa523f65ce015651bdd9e3e4ea08a7a274cf97bba43821430896fc1861ab3",
+        "bytes": 332489,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948782967622"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/brown-c02.jpg",
+      "sha256": "458b284fd8a7acef06c2bcf9da330d6c4e404421fe910864dda7b1dcf71487cd",
+      "bytes": 495722,
+      "archive": {
+        "object": "image-originals/arcs/brown/c02/original-458b284f.jpg",
+        "sha256": "458b284fd8a7acef06c2bcf9da330d6c4e404421fe910864dda7b1dcf71487cd",
+        "bytes": 495722,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948782967964"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/exp-e01.png",
+      "sha256": "d23240f02c005a929fec403a47260466a0e4f6de2b06fc39e111adf88b3f8cfe",
+      "bytes": 2800309,
+      "archive": {
+        "object": "image-originals/arcs/exp/e01/original-d23240f0.png",
+        "sha256": "d23240f02c005a929fec403a47260466a0e4f6de2b06fc39e111adf88b3f8cfe",
+        "bytes": 2800309,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948783076106"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/exp-e02.png",
+      "sha256": "36c1d56ae768f2a97e4608abd12e19da6a8eaf2e17556d58c8580dcc250de7f9",
+      "bytes": 2815165,
+      "archive": {
+        "object": "image-originals/arcs/exp/e02/original-36c1d56a.png",
+        "sha256": "36c1d56ae768f2a97e4608abd12e19da6a8eaf2e17556d58c8580dcc250de7f9",
+        "bytes": 2815165,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948782961509"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/exp-e03.jpeg",
+      "sha256": "84d6f0d349f92e76a2bae856553271fa078b04e1d3366b477b37bec67f60ab24",
+      "bytes": 1844121,
+      "archive": {
+        "object": "image-originals/arcs/exp/e03/original-84d6f0d3.jpeg",
+        "sha256": "84d6f0d349f92e76a2bae856553271fa078b04e1d3366b477b37bec67f60ab24",
+        "bytes": 1844121,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948783253495"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os01.jpg",
+      "sha256": "d3b230dcaffda8766e501c5ab62cb3962915619c5827e7981c25fcd8d36ffc41",
+      "bytes": 335002,
+      "archive": {
+        "object": "image-originals/arcs/legends/os01/original-d3b230dc.jpg",
+        "sha256": "d3b230dcaffda8766e501c5ab62cb3962915619c5827e7981c25fcd8d36ffc41",
+        "bytes": 335002,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948783207164"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os02.jpg",
+      "sha256": "21c6aa34f5e6571d6f47355f723bbdcef186bb952c939c117227a6e6d1907a0b",
+      "bytes": 340253,
+      "archive": {
+        "object": "image-originals/arcs/legends/os02/original-21c6aa34.jpg",
+        "sha256": "21c6aa34f5e6571d6f47355f723bbdcef186bb952c939c117227a6e6d1907a0b",
+        "bytes": 340253,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948784048020"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os03.jpg",
+      "sha256": "cc2875a2a89c3b6337547722496126da15ec20e0b351300ae2a324645b01121a",
+      "bytes": 400707,
+      "archive": {
+        "object": "image-originals/arcs/legends/os03/original-cc2875a2.jpg",
+        "sha256": "cc2875a2a89c3b6337547722496126da15ec20e0b351300ae2a324645b01121a",
+        "bytes": 400707,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948783314392"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os04.jpg",
+      "sha256": "c61b6c6151b67cd803eb778cd0035fe056e2fef7bf8641185507d9656f275bb8",
+      "bytes": 406864,
+      "archive": {
+        "object": "image-originals/arcs/legends/os04/original-c61b6c61.jpg",
+        "sha256": "c61b6c6151b67cd803eb778cd0035fe056e2fef7bf8641185507d9656f275bb8",
+        "bytes": 406864,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948783443307"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os05.jpg",
+      "sha256": "dd618a44cd192c039b737b2eae04bb3177b1b98d068836e6966a645211ac54c0",
+      "bytes": 471455,
+      "archive": {
+        "object": "image-originals/arcs/legends/os05/original-dd618a44.jpg",
+        "sha256": "dd618a44cd192c039b737b2eae04bb3177b1b98d068836e6966a645211ac54c0",
+        "bytes": 471455,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948783477440"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os06.jpg",
+      "sha256": "8e06edab27087cc54f40dadfc8ef706db48546ee65a8759d066256b31bdd0200",
+      "bytes": 456776,
+      "archive": {
+        "object": "image-originals/arcs/legends/os06/original-8e06edab.jpg",
+        "sha256": "8e06edab27087cc54f40dadfc8ef706db48546ee65a8759d066256b31bdd0200",
+        "bytes": 456776,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948784033218"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os07.jpg",
+      "sha256": "01bc19713fa2d00efc1a86c34bc376b4f281aac906f4c135e44b60b9066532ed",
+      "bytes": 308242,
+      "archive": {
+        "object": "image-originals/arcs/legends/os07/original-01bc1971.jpg",
+        "sha256": "01bc19713fa2d00efc1a86c34bc376b4f281aac906f4c135e44b60b9066532ed",
+        "bytes": 308242,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948784110839"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os08-2.png",
+      "sha256": "6e338cbab9cbce6efb1277be84c5a52ef0ebac5e9cfb394374797c884fb505bd",
+      "bytes": 3553885,
+      "archive": {
+        "object": "image-originals/arcs/legends/os08-2/original-6e338cba.png",
+        "sha256": "6e338cbab9cbce6efb1277be84c5a52ef0ebac5e9cfb394374797c884fb505bd",
+        "bytes": 3553885,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948784257718"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os08.png",
+      "sha256": "ffc9df3b54d830ca6663f8d1a77fc7202886ff9573b3f447b060a402ebf8ebea",
+      "bytes": 9585757,
+      "archive": {
+        "object": "image-originals/arcs/legends/os08/original-ffc9df3b.png",
+        "sha256": "ffc9df3b54d830ca6663f8d1a77fc7202886ff9573b3f447b060a402ebf8ebea",
+        "bytes": 9585757,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948784311590"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os09.png",
+      "sha256": "67662d21e3b69e9067bc60feac19042dbea1d9b739dfa12d7989f8ed235e5128",
+      "bytes": 9233996,
+      "archive": {
+        "object": "image-originals/arcs/legends/os09/original-67662d21.png",
+        "sha256": "67662d21e3b69e9067bc60feac19042dbea1d9b739dfa12d7989f8ed235e5128",
+        "bytes": 9233996,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948784256863"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/legends-os10.png",
+      "sha256": "b94c4663d8bd1fd7ce2455bf9bdd944e6e340666a4914705991554b932a704b1",
+      "bytes": 2843332,
+      "archive": {
+        "object": "image-originals/arcs/legends/os10/original-b94c4663.png",
+        "sha256": "b94c4663d8bd1fd7ce2455bf9bdd944e6e340666a4914705991554b932a704b1",
+        "bytes": 2843332,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948784327185"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/lite-c05.jpg",
+      "sha256": "1ef4ad9d1292ab5e12c20ab257ce6b1234bc77de11a16fae2ecf1b1309329788",
+      "bytes": 495021,
+      "archive": {
+        "object": "image-originals/arcs/lite/c05/original-1ef4ad9d.jpg",
+        "sha256": "1ef4ad9d1292ab5e12c20ab257ce6b1234bc77de11a16fae2ecf1b1309329788",
+        "bytes": 495021,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948784484732"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/lite-c06.jpg",
+      "sha256": "31fa10db0e31d2be763ed6b58d289311129b7e62c5315674074f22bf6869b070",
+      "bytes": 457821,
+      "archive": {
+        "object": "image-originals/arcs/lite/c06/original-31fa10db.jpg",
+        "sha256": "31fa10db0e31d2be763ed6b58d289311129b7e62c5315674074f22bf6869b070",
+        "bytes": 457821,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948785109367"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/lite-c07.jpg",
+      "sha256": "388462200dc5c63d603e5c234226b40c7eba62fac20579978ec6fccaa4bf8b6c",
+      "bytes": 411881,
+      "archive": {
+        "object": "image-originals/arcs/lite/c07/original-38846220.jpg",
+        "sha256": "388462200dc5c63d603e5c234226b40c7eba62fac20579978ec6fccaa4bf8b6c",
+        "bytes": 411881,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948784553960"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/lite-c08.png",
+      "sha256": "94c75e03f47568f2c3d9ea7117e94a97974efd3ccb0bacf63cf3119669045175",
+      "bytes": 13239464,
+      "archive": {
+        "object": "image-originals/arcs/lite/c08/original-94c75e03.png",
+        "sha256": "94c75e03f47568f2c3d9ea7117e94a97974efd3ccb0bacf63cf3119669045175",
+        "bytes": 13239464,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948785088734"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/lite-c09.jpg",
+      "sha256": "1921e000575f8b45997698c304adcc305c12fcab2f632632f3d9654277ce0660",
+      "bytes": 12426492,
+      "archive": {
+        "object": "image-originals/arcs/lite/c09/original-1921e000.jpg",
+        "sha256": "1921e000575f8b45997698c304adcc305c12fcab2f632632f3d9654277ce0660",
+        "bytes": 12426492,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948785141081"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/lite-c10.png",
+      "sha256": "86a0274ae7f2acbc982f4f7d4661218490ae126691b4e754b8427f8704a33398",
+      "bytes": 1036457,
+      "archive": {
+        "object": "image-originals/arcs/lite/c10/original-86a0274a.png",
+        "sha256": "86a0274ae7f2acbc982f4f7d4661218490ae126691b4e754b8427f8704a33398",
+        "bytes": 1036457,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948785198085"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/lite-c11.png",
+      "sha256": "c827353fb889c3180bb7592e198b38a538967c24b6e84664e246283e68011014",
+      "bytes": 2526615,
+      "archive": {
+        "object": "image-originals/arcs/lite/c11/original-c827353f.png",
+        "sha256": "c827353fb889c3180bb7592e198b38a538967c24b6e84664e246283e68011014",
+        "bytes": 2526615,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948785356453"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/lite-c12.png",
+      "sha256": "91e48b170b1ec19bd302a963881e7791064b8b0e193ec4bf8df683a444db515a",
+      "bytes": 2567804,
+      "archive": {
+        "object": "image-originals/arcs/lite/c12/original-91e48b17.png",
+        "sha256": "91e48b170b1ec19bd302a963881e7791064b8b0e193ec4bf8df683a444db515a",
+        "bytes": 2567804,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948785355484"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/lite-c13.png",
+      "sha256": "5e2c6ecc8c70def8a6ac203441407d2399de148852f0931f79acf5d71edcf1e6",
+      "bytes": 2081789,
+      "archive": {
+        "object": "image-originals/arcs/lite/c13/original-5e2c6ecc.png",
+        "sha256": "5e2c6ecc8c70def8a6ac203441407d2399de148852f0931f79acf5d71edcf1e6",
+        "bytes": 2081789,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948785372427"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/plus-c05.jpg",
+      "sha256": "ecb2df3999fe5b0bd78478b6b01cd44cf2353e9a087cc3f9a0be24adacdcdbf6",
+      "bytes": 494890,
+      "archive": {
+        "object": "image-originals/arcs/plus/c05/original-ecb2df39.jpg",
+        "sha256": "ecb2df3999fe5b0bd78478b6b01cd44cf2353e9a087cc3f9a0be24adacdcdbf6",
+        "bytes": 494890,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948785518094"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/plus-c06.jpg",
+      "sha256": "4707c9d2ec6cb9ddf9e112090ae484858f27913ebe568d389d1004b20bb9a59f",
+      "bytes": 352149,
+      "archive": {
+        "object": "image-originals/arcs/plus/c06/original-4707c9d2.jpg",
+        "sha256": "4707c9d2ec6cb9ddf9e112090ae484858f27913ebe568d389d1004b20bb9a59f",
+        "bytes": 352149,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948785591312"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/plus-c07.png",
+      "sha256": "3f1cf45d414d00e246787ca3b3e7c4de8c708000e89a27c2af8f17c25e6f3519",
+      "bytes": 3056351,
+      "archive": {
+        "object": "image-originals/arcs/plus/c07/original-3f1cf45d.png",
+        "sha256": "3f1cf45d414d00e246787ca3b3e7c4de8c708000e89a27c2af8f17c25e6f3519",
+        "bytes": 3056351,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948786150394"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/rugatha-c02.jpg",
+      "sha256": "e8bfb4f57e7ee7f94b7c3cf4bf312459b86e245f81d667f611f61fab41335c7a",
+      "bytes": 386468,
+      "archive": {
+        "object": "image-originals/arcs/rugatha/c02/original-e8bfb4f5.jpg",
+        "sha256": "e8bfb4f57e7ee7f94b7c3cf4bf312459b86e245f81d667f611f61fab41335c7a",
+        "bytes": 386468,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948786026977"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/rugatha-c03.jpg",
+      "sha256": "4100cb61c15ee9d8dd01706198fe9edcbd924202047c97d6f89fa7fe21a45332",
+      "bytes": 483858,
+      "archive": {
+        "object": "image-originals/arcs/rugatha/c03/original-4100cb61.jpg",
+        "sha256": "4100cb61c15ee9d8dd01706198fe9edcbd924202047c97d6f89fa7fe21a45332",
+        "bytes": 483858,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948786171955"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/rugatha-c04.jpg",
+      "sha256": "232747a2c96b8962283a9f546e16be3391967a25db84b001e85c556464280da3",
+      "bytes": 372386,
+      "archive": {
+        "object": "image-originals/arcs/rugatha/c04/original-232747a2.jpg",
+        "sha256": "232747a2c96b8962283a9f546e16be3391967a25db84b001e85c556464280da3",
+        "bytes": 372386,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948786240426"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/rugatha-c05.png",
+      "sha256": "1042b6af894d12c649275b620df9ca1809939e49580647c7c8ec379a9c99f009",
+      "bytes": 4777664,
+      "archive": {
+        "object": "image-originals/arcs/rugatha/c05/original-1042b6af.png",
+        "sha256": "1042b6af894d12c649275b620df9ca1809939e49580647c7c8ec379a9c99f009",
+        "bytes": 4777664,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948786390644"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/wilds-c01.jpg",
+      "sha256": "1bc4bf12e3c79f7357dab365edfd868cab7557c8fcd2e48814c4b5a1425e6f41",
+      "bytes": 1824457,
+      "archive": {
+        "object": "image-originals/arcs/wilds/c01/original-1bc4bf12.jpg",
+        "sha256": "1bc4bf12e3c79f7357dab365edfd868cab7557c8fcd2e48814c4b5a1425e6f41",
+        "bytes": 1824457,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948786418191"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/wilds-c02.png",
+      "sha256": "077741f014644f7cf8e448c82e5d1345964a6db185d6d414c099dee2ee3caa3b",
+      "bytes": 1258284,
+      "archive": {
+        "object": "image-originals/arcs/wilds/c02/original-077741f0.png",
+        "sha256": "077741f014644f7cf8e448c82e5d1345964a6db185d6d414c099dee2ee3caa3b",
+        "bytes": 1258284,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948786406422"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/wilds-c03.png",
+      "sha256": "4afffc4be744a0e1acfee3f7d3c64b834696e871f72e45ef42dcb4ab14c4f7da",
+      "bytes": 1044848,
+      "archive": {
+        "object": "image-originals/arcs/wilds/c03/original-4afffc4b.png",
+        "sha256": "4afffc4be744a0e1acfee3f7d3c64b834696e871f72e45ef42dcb4ab14c4f7da",
+        "bytes": 1044848,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948786460197"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/wilds-c04.png",
+      "sha256": "6a87f49213708098c8b8a0c80ad44e222dc325b88c0e68daf3ea4f1d4d2e919e",
+      "bytes": 3064258,
+      "archive": {
+        "object": "image-originals/arcs/wilds/c04/original-6a87f492.png",
+        "sha256": "6a87f49213708098c8b8a0c80ad44e222dc325b88c0e68daf3ea4f1d4d2e919e",
+        "bytes": 3064258,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948786630359"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/wilds-c05.png",
+      "sha256": "c3590be96a378c1a74a9f4b79088eb591c010035073e2a7ff27514866830ccca",
+      "bytes": 1508042,
+      "archive": {
+        "object": "image-originals/arcs/wilds/c05/original-c3590be9.png",
+        "sha256": "c3590be96a378c1a74a9f4b79088eb591c010035073e2a7ff27514866830ccca",
+        "bytes": 1508042,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948787014225"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/wilds-c06.png",
+      "sha256": "ac9d29975f3a6381155c8c2d37cd66275536e9cd85cb9ab5ef76ef910280b2c6",
+      "bytes": 3331079,
+      "archive": {
+        "object": "image-originals/arcs/wilds/c06/original-ac9d2997.png",
+        "sha256": "ac9d29975f3a6381155c8c2d37cd66275536e9cd85cb9ab5ef76ef910280b2c6",
+        "bytes": 3331079,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948786641543"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/brown-c01-chpt01.png",
+      "sha256": "cfc645eb4837820cc8e38b7e56e3d36b4c263db0124193d996369a10ba9a42a0",
+      "bytes": 2684117,
+      "archive": {
+        "object": "image-originals/chapters/brown/c01/chapter-01/original-cfc645eb.png",
+        "sha256": "cfc645eb4837820cc8e38b7e56e3d36b4c263db0124193d996369a10ba9a42a0",
+        "bytes": 2684117,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948787088731"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/brown-c01-chpt02.png",
+      "sha256": "46c71ad01fe40546f8635ba86f163d6891819065ddf812c8f5c20a0c7638a919",
+      "bytes": 2294089,
+      "archive": {
+        "object": "image-originals/chapters/brown/c01/chapter-02/original-46c71ad0.png",
+        "sha256": "46c71ad01fe40546f8635ba86f163d6891819065ddf812c8f5c20a0c7638a919",
+        "bytes": 2294089,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948787245847"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/brown-c01-chpt03.png",
+      "sha256": "d2f0a473bb609c4eff56c19508435e30e6e7183abadfdad35bb6f13b196f1d11",
+      "bytes": 2556161,
+      "archive": {
+        "object": "image-originals/chapters/brown/c01/chapter-03/original-d2f0a473.png",
+        "sha256": "d2f0a473bb609c4eff56c19508435e30e6e7183abadfdad35bb6f13b196f1d11",
+        "bytes": 2556161,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948787163336"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/brown-c01-chpt04.png",
+      "sha256": "348b4598313f1bf72f3535f703c11d551e732e1026a26a65b859bc70be542a57",
+      "bytes": 2330933,
+      "archive": {
+        "object": "image-originals/chapters/brown/c01/chapter-04/original-348b4598.png",
+        "sha256": "348b4598313f1bf72f3535f703c11d551e732e1026a26a65b859bc70be542a57",
+        "bytes": 2330933,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948787366729"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/brown-c01-chpt05.png",
+      "sha256": "873fa933be5976cc57238a86cda0016f5cf99e01c7bf9e43b6f1321b2da41bd9",
+      "bytes": 2577986,
+      "archive": {
+        "object": "image-originals/chapters/brown/c01/chapter-05/original-873fa933.png",
+        "sha256": "873fa933be5976cc57238a86cda0016f5cf99e01c7bf9e43b6f1321b2da41bd9",
+        "bytes": 2577986,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948787346276"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/brown-c02-chpt01.png",
+      "sha256": "aff8e437a8fcfe00d1403d932c1fa6987dcc21b327c563b3571f34d4afd79b6b",
+      "bytes": 2509694,
+      "archive": {
+        "object": "image-originals/chapters/brown/c02/chapter-01/original-aff8e437.png",
+        "sha256": "aff8e437a8fcfe00d1403d932c1fa6987dcc21b327c563b3571f34d4afd79b6b",
+        "bytes": 2509694,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948787499488"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/legends-os05-chpt01.png",
+      "sha256": "5e66c0466889a7b0e7b24bc192f2f02d0b01bbd1a7119ba6e6b0fb68690c6615",
+      "bytes": 2437697,
+      "archive": {
+        "object": "image-originals/chapters/legends/os05/chapter-01/original-5e66c046.png",
+        "sha256": "5e66c0466889a7b0e7b24bc192f2f02d0b01bbd1a7119ba6e6b0fb68690c6615",
+        "bytes": 2437697,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948787565510"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/legends-os05-chpt02.png",
+      "sha256": "e588c0c48b3e5996ebe6d2b1ceb10fd0434b1b7e1f9378e675f9449d808cf2b8",
+      "bytes": 2035520,
+      "archive": {
+        "object": "image-originals/chapters/legends/os05/chapter-02/original-e588c0c4.png",
+        "sha256": "e588c0c48b3e5996ebe6d2b1ceb10fd0434b1b7e1f9378e675f9449d808cf2b8",
+        "bytes": 2035520,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948787575032"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c05-chpt02.png",
+      "sha256": "663d4caa15a523f78d946081e79605298410e1bd10426377214366c3b8783f56",
+      "bytes": 3109830,
+      "archive": {
+        "object": "image-originals/chapters/lite/c05/chapter-02/original-663d4caa.png",
+        "sha256": "663d4caa15a523f78d946081e79605298410e1bd10426377214366c3b8783f56",
+        "bytes": 3109830,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948787938835"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c05-chpt03.png",
+      "sha256": "7f7ddba29e012a5d484a91a73cb8723a4439bfff5b651cb51aa181a25b13fb88",
+      "bytes": 2857185,
+      "archive": {
+        "object": "image-originals/chapters/lite/c05/chapter-03/original-7f7ddba2.png",
+        "sha256": "7f7ddba29e012a5d484a91a73cb8723a4439bfff5b651cb51aa181a25b13fb88",
+        "bytes": 2857185,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948788137224"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c05-chpt04.png",
+      "sha256": "61626ef51d9f18e5d287da7bb3a14e7ee7706f7288ea0c35d2e74070b5cb0190",
+      "bytes": 2695454,
+      "archive": {
+        "object": "image-originals/chapters/lite/c05/chapter-04/original-61626ef5.png",
+        "sha256": "61626ef51d9f18e5d287da7bb3a14e7ee7706f7288ea0c35d2e74070b5cb0190",
+        "bytes": 2695454,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948788085621"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c06-chpt01.png",
+      "sha256": "33cc7b897094ae9275894db256619d89f0b4f45f562262c91ae67775b04c3368",
+      "bytes": 2928513,
+      "archive": {
+        "object": "image-originals/chapters/lite/c06/chapter-01/original-33cc7b89.png",
+        "sha256": "33cc7b897094ae9275894db256619d89f0b4f45f562262c91ae67775b04c3368",
+        "bytes": 2928513,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948788079391"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c06-chpt02.png",
+      "sha256": "07b165f9b8acab1e5bb56b4a7428ae7d3ab9a72af786029ef68ee89b937b5cd0",
+      "bytes": 2803105,
+      "archive": {
+        "object": "image-originals/chapters/lite/c06/chapter-02/original-07b165f9.png",
+        "sha256": "07b165f9b8acab1e5bb56b4a7428ae7d3ab9a72af786029ef68ee89b937b5cd0",
+        "bytes": 2803105,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948788396004"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c06-chpt03.png",
+      "sha256": "a2cbb7430accd176679a2dadbb8de6edb331c62af3a4e45304a475e5f8d28d6b",
+      "bytes": 2851614,
+      "archive": {
+        "object": "image-originals/chapters/lite/c06/chapter-03/original-a2cbb743.png",
+        "sha256": "a2cbb7430accd176679a2dadbb8de6edb331c62af3a4e45304a475e5f8d28d6b",
+        "bytes": 2851614,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948788399470"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c06-chpt04.png",
+      "sha256": "fd31e7fda903df3918f3680b33565cc92b67be82e3d2d83ec0812fffe91a3e7e",
+      "bytes": 2720635,
+      "archive": {
+        "object": "image-originals/chapters/lite/c06/chapter-04/original-fd31e7fd.png",
+        "sha256": "fd31e7fda903df3918f3680b33565cc92b67be82e3d2d83ec0812fffe91a3e7e",
+        "bytes": 2720635,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948788572947"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c06-chpt05.png",
+      "sha256": "afcfa6b1e59e734ca64095ffc99c808f48299bd8e1a35bf93caee9306190895b",
+      "bytes": 2877676,
+      "archive": {
+        "object": "image-originals/chapters/lite/c06/chapter-05/original-afcfa6b1.png",
+        "sha256": "afcfa6b1e59e734ca64095ffc99c808f48299bd8e1a35bf93caee9306190895b",
+        "bytes": 2877676,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948788374474"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c07-chpt01.png",
+      "sha256": "8370c13a628b239200cd7ce50768e6218c3c6fa4e27976a329876106cdf6fe01",
+      "bytes": 2632482,
+      "archive": {
+        "object": "image-originals/chapters/lite/c07/chapter-01/original-8370c13a.png",
+        "sha256": "8370c13a628b239200cd7ce50768e6218c3c6fa4e27976a329876106cdf6fe01",
+        "bytes": 2632482,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948788663978"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c07-chpt02.png",
+      "sha256": "8b31d5d94a416781184768092452fa8ebe00084c5a76ec48f77ca215a182efbf",
+      "bytes": 3263823,
+      "archive": {
+        "object": "image-originals/chapters/lite/c07/chapter-02/original-8b31d5d9.png",
+        "sha256": "8b31d5d94a416781184768092452fa8ebe00084c5a76ec48f77ca215a182efbf",
+        "bytes": 3263823,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948788604908"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c07-chpt03.png",
+      "sha256": "ae43ffd056921402d7e7c8f671760c9c3c0aeaf28ad9b67c12a34c397599b3c4",
+      "bytes": 2637037,
+      "archive": {
+        "object": "image-originals/chapters/lite/c07/chapter-03/original-ae43ffd0.png",
+        "sha256": "ae43ffd056921402d7e7c8f671760c9c3c0aeaf28ad9b67c12a34c397599b3c4",
+        "bytes": 2637037,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948788965907"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c08-chpt01.png",
+      "sha256": "31ab8667cd188c1c5664269f5ce035a8512ed6f3cc8b160f99ca31762a605d8d",
+      "bytes": 3039842,
+      "archive": {
+        "object": "image-originals/chapters/lite/c08/chapter-01/original-31ab8667.png",
+        "sha256": "31ab8667cd188c1c5664269f5ce035a8512ed6f3cc8b160f99ca31762a605d8d",
+        "bytes": 3039842,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948789189147"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c08-chpt02.png",
+      "sha256": "ebed5988f42d47cb469bdaddf675f1139261642f5013570727b29f800b62a1df",
+      "bytes": 2801918,
+      "archive": {
+        "object": "image-originals/chapters/lite/c08/chapter-02/original-ebed5988.png",
+        "sha256": "ebed5988f42d47cb469bdaddf675f1139261642f5013570727b29f800b62a1df",
+        "bytes": 2801918,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948789187049"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c08-chpt03.png",
+      "sha256": "d8ec06013fde081a0ee36ee5bd345e89ff0678d4da89c8310608c5b0777b5679",
+      "bytes": 2794902,
+      "archive": {
+        "object": "image-originals/chapters/lite/c08/chapter-03/original-d8ec0601.png",
+        "sha256": "d8ec06013fde081a0ee36ee5bd345e89ff0678d4da89c8310608c5b0777b5679",
+        "bytes": 2794902,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948789327974"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c09-chpt01.png",
+      "sha256": "2882a52650de3aabbfae1ba07a5dfe21f98d644b6145e90da4ec3fcb244a58ca",
+      "bytes": 2712019,
+      "archive": {
+        "object": "image-originals/chapters/lite/c09/chapter-01/original-2882a526.png",
+        "sha256": "2882a52650de3aabbfae1ba07a5dfe21f98d644b6145e90da4ec3fcb244a58ca",
+        "bytes": 2712019,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948789418132"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c09-chpt02.png",
+      "sha256": "60e1bade333527e2036225b5b0645f79250d899e792307cce0db7a507b2b19c4",
+      "bytes": 2867100,
+      "archive": {
+        "object": "image-originals/chapters/lite/c09/chapter-02/original-60e1bade.png",
+        "sha256": "60e1bade333527e2036225b5b0645f79250d899e792307cce0db7a507b2b19c4",
+        "bytes": 2867100,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948789401021"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+      "sha256": "ec0a7dcca0c8dfe055131b9f83fc4a44bf402f13363b4a76911046b3d942d54a",
+      "bytes": 351037,
+      "archive": {
+        "object": "image-originals/chapters/lite/c09/chapter-03-2/original-ec0a7dcc.jpeg",
+        "sha256": "ec0a7dcca0c8dfe055131b9f83fc4a44bf402f13363b4a76911046b3d942d54a",
+        "bytes": 351037,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948789432235"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c09-chpt03.png",
+      "sha256": "8fabedd6256eb353b8095b9a7eb41569a47780ae66f7b083536046b170d7aca5",
+      "bytes": 2553141,
+      "archive": {
+        "object": "image-originals/chapters/lite/c09/chapter-03/original-8fabedd6.png",
+        "sha256": "8fabedd6256eb353b8095b9a7eb41569a47780ae66f7b083536046b170d7aca5",
+        "bytes": 2553141,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948789590968"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt01.png",
+      "sha256": "90940a4c4476c8fad3a0480c536ff81e2c961c9faed0e45585af68c230ba5e50",
+      "bytes": 2941120,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-01/original-90940a4c.png",
+        "sha256": "90940a4c4476c8fad3a0480c536ff81e2c961c9faed0e45585af68c230ba5e50",
+        "bytes": 2941120,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948789709082"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt02-2.png",
+      "sha256": "ad2bc390009a4ca0925eb9744f70ce4d0413d12f97a403c553283945b20127a9",
+      "bytes": 2344823,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-02-2/original-ad2bc390.png",
+        "sha256": "ad2bc390009a4ca0925eb9744f70ce4d0413d12f97a403c553283945b20127a9",
+        "bytes": 2344823,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948790232287"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt02-3.png",
+      "sha256": "4ccc887c93df29688be8048894a282b2fe7d5521e77d430353ab202e9350daf9",
+      "bytes": 2662730,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-02-3/original-4ccc887c.png",
+        "sha256": "4ccc887c93df29688be8048894a282b2fe7d5521e77d430353ab202e9350daf9",
+        "bytes": 2662730,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948789943821"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt02-4.png",
+      "sha256": "4ac10e67cdb436f85db1fdf3a8c89ac8ba9f511eb249daa94ee39f16c10aea28",
+      "bytes": 2335606,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-02-4/original-4ac10e67.png",
+        "sha256": "4ac10e67cdb436f85db1fdf3a8c89ac8ba9f511eb249daa94ee39f16c10aea28",
+        "bytes": 2335606,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948789808693"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt02-5.png",
+      "sha256": "6539de18eee1dc847dac863b1ebfec6c7623e33a2b862f94f7a71c07669a4fa4",
+      "bytes": 3634453,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-02-5/original-6539de18.png",
+        "sha256": "6539de18eee1dc847dac863b1ebfec6c7623e33a2b862f94f7a71c07669a4fa4",
+        "bytes": 3634453,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948790362819"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt02-6.png",
+      "sha256": "6696ac62ef5f1ad21c5625797639ef325da0f713393238a1e184c637053668bc",
+      "bytes": 3006945,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-02-6/original-6696ac62.png",
+        "sha256": "6696ac62ef5f1ad21c5625797639ef325da0f713393238a1e184c637053668bc",
+        "bytes": 3006945,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948790301956"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt02-7.png",
+      "sha256": "246397052da2e63f79095906dc96e6d5ae8a57e6c3f9f90be5ae2911efaf985d",
+      "bytes": 3719803,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-02-7/original-24639705.png",
+        "sha256": "246397052da2e63f79095906dc96e6d5ae8a57e6c3f9f90be5ae2911efaf985d",
+        "bytes": 3719803,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948790638416"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt02-8.png",
+      "sha256": "a83abc6684fa9a09025b154aba3db6d1b6de4e45b1e96083e620f4fe88cf4853",
+      "bytes": 2856737,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-02-8/original-a83abc66.png",
+        "sha256": "a83abc6684fa9a09025b154aba3db6d1b6de4e45b1e96083e620f4fe88cf4853",
+        "bytes": 2856737,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948790468736"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt02.jpeg",
+      "sha256": "edcde902034abf8a99e10a1371bacb264ec9fb470e2dba1a22f731042fbc8c7a",
+      "bytes": 988593,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-02/original-edcde902.jpeg",
+        "sha256": "edcde902034abf8a99e10a1371bacb264ec9fb470e2dba1a22f731042fbc8c7a",
+        "bytes": 988593,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948790524731"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt03-2.png",
+      "sha256": "803bd756ab106cadd0a2ca3b1ed98a2b7a7a0b3c241a84ee29dd67ce09601927",
+      "bytes": 2272597,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-03-2/original-803bd756.png",
+        "sha256": "803bd756ab106cadd0a2ca3b1ed98a2b7a7a0b3c241a84ee29dd67ce09601927",
+        "bytes": 2272597,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948790792153"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt03-3.png",
+      "sha256": "13a64c3e83f7978d2071c0178960ea446c428d1602747888a200d9678b7157ed",
+      "bytes": 2959243,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-03-3/original-13a64c3e.png",
+        "sha256": "13a64c3e83f7978d2071c0178960ea446c428d1602747888a200d9678b7157ed",
+        "bytes": 2959243,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948790757153"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt03-4.png",
+      "sha256": "de7bbe9644fddb603b64e0732a1abe24ed7ddbb9f1248490a4be0769aa3f5d6f",
+      "bytes": 3079774,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-03-4/original-de7bbe96.png",
+        "sha256": "de7bbe9644fddb603b64e0732a1abe24ed7ddbb9f1248490a4be0769aa3f5d6f",
+        "bytes": 3079774,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948791164796"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt03.jpeg",
+      "sha256": "2510219d236d409caf68abdb5787f0da89800c6e339b569ca1e1449834da9bfc",
+      "bytes": 869334,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-03/original-2510219d.jpeg",
+        "sha256": "2510219d236d409caf68abdb5787f0da89800c6e339b569ca1e1449834da9bfc",
+        "bytes": 869334,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948791343228"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c10-chpt04.jpeg",
+      "sha256": "324408b146a01a1afb67a7e85d82c8a2db2d2a57509c31518b7b522459bd6c38",
+      "bytes": 537778,
+      "archive": {
+        "object": "image-originals/chapters/lite/c10/chapter-04/original-324408b1.jpeg",
+        "sha256": "324408b146a01a1afb67a7e85d82c8a2db2d2a57509c31518b7b522459bd6c38",
+        "bytes": 537778,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948790975324"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c11-chpt01.jpeg",
+      "sha256": "e82f08f03166b5488e090c2d3e2d8d502423110e73d880ac0bbeffa47d00e0da",
+      "bytes": 711857,
+      "archive": {
+        "object": "image-originals/chapters/lite/c11/chapter-01/original-e82f08f0.jpeg",
+        "sha256": "e82f08f03166b5488e090c2d3e2d8d502423110e73d880ac0bbeffa47d00e0da",
+        "bytes": 711857,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948791394577"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c11-chpt02.jpeg",
+      "sha256": "e9da83042255ebc5cde6ba5748058873cd11dc5049f3fe1a4933448cf7043383",
+      "bytes": 618308,
+      "archive": {
+        "object": "image-originals/chapters/lite/c11/chapter-02/original-e9da8304.jpeg",
+        "sha256": "e9da83042255ebc5cde6ba5748058873cd11dc5049f3fe1a4933448cf7043383",
+        "bytes": 618308,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948791293118"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c11-chpt03.jpeg",
+      "sha256": "1ee04f58c5ca2579b77328e0a7124104ac7d9228ad5640382090247a0197b314",
+      "bytes": 671678,
+      "archive": {
+        "object": "image-originals/chapters/lite/c11/chapter-03/original-1ee04f58.jpeg",
+        "sha256": "1ee04f58c5ca2579b77328e0a7124104ac7d9228ad5640382090247a0197b314",
+        "bytes": 671678,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948791697147"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c11-chpt04.jpeg",
+      "sha256": "ad2f84e1a0d80dca349563b848787a983bb683d2536322a75100e1973e9808ff",
+      "bytes": 537797,
+      "archive": {
+        "object": "image-originals/chapters/lite/c11/chapter-04/original-ad2f84e1.jpeg",
+        "sha256": "ad2f84e1a0d80dca349563b848787a983bb683d2536322a75100e1973e9808ff",
+        "bytes": 537797,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948791554257"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c12-chpt01.jpeg",
+      "sha256": "d4a785245b360069687f29280d97e09e9967ad59222736eb3ea50d6569f45fad",
+      "bytes": 648137,
+      "archive": {
+        "object": "image-originals/chapters/lite/c12/chapter-01/original-d4a78524.jpeg",
+        "sha256": "d4a785245b360069687f29280d97e09e9967ad59222736eb3ea50d6569f45fad",
+        "bytes": 648137,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948792009722"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c12-chpt02.png",
+      "sha256": "213f4c53915a589709a6aa77dbec57eb084b6f2c120074823cb592d6841fa7f7",
+      "bytes": 2691754,
+      "archive": {
+        "object": "image-originals/chapters/lite/c12/chapter-02/original-213f4c53.png",
+        "sha256": "213f4c53915a589709a6aa77dbec57eb084b6f2c120074823cb592d6841fa7f7",
+        "bytes": 2691754,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948791608385"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c12-chpt03.jpeg",
+      "sha256": "dc0c30fd465beb5289fac44acfd5037715631176cd3abd5627a6cc28ddfe42be",
+      "bytes": 683681,
+      "archive": {
+        "object": "image-originals/chapters/lite/c12/chapter-03/original-dc0c30fd.jpeg",
+        "sha256": "dc0c30fd465beb5289fac44acfd5037715631176cd3abd5627a6cc28ddfe42be",
+        "bytes": 683681,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948791768321"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c12-chpt04-01.png",
+      "sha256": "6b46a10d4e8e2801229c55510ef3b938b19fe4c5bdd5ef46a6cca2afdc561079",
+      "bytes": 2393504,
+      "archive": {
+        "object": "image-originals/chapters/lite/c12/chapter-04-01/original-6b46a10d.png",
+        "sha256": "6b46a10d4e8e2801229c55510ef3b938b19fe4c5bdd5ef46a6cca2afdc561079",
+        "bytes": 2393504,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948792343590"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c12-chpt04.jpeg",
+      "sha256": "fcb51187110ebbea152141130938069a01d5b9806005dc9f8d955a3496ccbdf8",
+      "bytes": 770557,
+      "archive": {
+        "object": "image-originals/chapters/lite/c12/chapter-04/original-fcb51187.jpeg",
+        "sha256": "fcb51187110ebbea152141130938069a01d5b9806005dc9f8d955a3496ccbdf8",
+        "bytes": 770557,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948792318885"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c12-chpt05.jpeg",
+      "sha256": "b18e488f1092a7610c3bcefc1a7a61c67c21042d29fca35389e192277fb75221",
+      "bytes": 805560,
+      "archive": {
+        "object": "image-originals/chapters/lite/c12/chapter-05/original-b18e488f.jpeg",
+        "sha256": "b18e488f1092a7610c3bcefc1a7a61c67c21042d29fca35389e192277fb75221",
+        "bytes": 805560,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948792103253"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c13-chpt01.jpeg",
+      "sha256": "8972b863a7c5cac9fc75049d27d4b329cd880a39e24c306ccbdf623972f0d28c",
+      "bytes": 472999,
+      "archive": {
+        "object": "image-originals/chapters/lite/c13/chapter-01/original-8972b863.jpeg",
+        "sha256": "8972b863a7c5cac9fc75049d27d4b329cd880a39e24c306ccbdf623972f0d28c",
+        "bytes": 472999,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948792480579"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c05-chpt02.png",
+      "sha256": "a5cc4bb83701ed259767f865aa224890ee1fb5e659c71dad000d101b7ff79a55",
+      "bytes": 2821346,
+      "archive": {
+        "object": "image-originals/chapters/plus/c05/chapter-02/original-a5cc4bb8.png",
+        "sha256": "a5cc4bb83701ed259767f865aa224890ee1fb5e659c71dad000d101b7ff79a55",
+        "bytes": 2821346,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948792378236"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c05-chpt03.png",
+      "sha256": "2ce2f854656299a46d96d74510a27c3bac331f9cedfe1f6570b1ab18c15c60b6",
+      "bytes": 3204444,
+      "archive": {
+        "object": "image-originals/chapters/plus/c05/chapter-03/original-2ce2f854.png",
+        "sha256": "2ce2f854656299a46d96d74510a27c3bac331f9cedfe1f6570b1ab18c15c60b6",
+        "bytes": 3204444,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948792758141"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c05-chpt04.png",
+      "sha256": "6f29a0a067a8f7c8e2a1b9fdfc9dd656dbbaef57d2d9fd99b8695900f99e0faa",
+      "bytes": 3398302,
+      "archive": {
+        "object": "image-originals/chapters/plus/c05/chapter-04/original-6f29a0a0.png",
+        "sha256": "6f29a0a067a8f7c8e2a1b9fdfc9dd656dbbaef57d2d9fd99b8695900f99e0faa",
+        "bytes": 3398302,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948792747994"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c05-chpt05.png",
+      "sha256": "60dfce4bdc5ecd704f49c373976c511c58f95d3efdc6193c6cb56959eacf515c",
+      "bytes": 2683340,
+      "archive": {
+        "object": "image-originals/chapters/plus/c05/chapter-05/original-60dfce4b.png",
+        "sha256": "60dfce4bdc5ecd704f49c373976c511c58f95d3efdc6193c6cb56959eacf515c",
+        "bytes": 2683340,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948792636924"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c06-chpt01.png",
+      "sha256": "b86d01ff5d3ffee184eec93ac579ac7d6d7a30e76c7442b855f5897e960bd54b",
+      "bytes": 2753228,
+      "archive": {
+        "object": "image-originals/chapters/plus/c06/chapter-01/original-b86d01ff.png",
+        "sha256": "b86d01ff5d3ffee184eec93ac579ac7d6d7a30e76c7442b855f5897e960bd54b",
+        "bytes": 2753228,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948793010871"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c06-chpt02.png",
+      "sha256": "496d4f698dc27c1dfc907daacc36c0218d627f2eef252d8311cac2188336e5f1",
+      "bytes": 2779356,
+      "archive": {
+        "object": "image-originals/chapters/plus/c06/chapter-02/original-496d4f69.png",
+        "sha256": "496d4f698dc27c1dfc907daacc36c0218d627f2eef252d8311cac2188336e5f1",
+        "bytes": 2779356,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948793064865"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c06-chpt03.png",
+      "sha256": "ba29ade8c200b88371293f15c8c221ab37b4b6a5702cf72257c83e646633c5f2",
+      "bytes": 3000430,
+      "archive": {
+        "object": "image-originals/chapters/plus/c06/chapter-03/original-ba29ade8.png",
+        "sha256": "ba29ade8c200b88371293f15c8c221ab37b4b6a5702cf72257c83e646633c5f2",
+        "bytes": 3000430,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948793421153"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c06-chpt04.png",
+      "sha256": "839abd876450b09f4256988d9ba9845374c1f4f9628455f5ccf97ac3e718e7b6",
+      "bytes": 2777596,
+      "archive": {
+        "object": "image-originals/chapters/plus/c06/chapter-04/original-839abd87.png",
+        "sha256": "839abd876450b09f4256988d9ba9845374c1f4f9628455f5ccf97ac3e718e7b6",
+        "bytes": 2777596,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948793271595"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c07-chpt01.png",
+      "sha256": "1cee64bf1724c12f81859f2379b1fc3a21bbdc6fc32053e7bd5cf4450b6b2fe7",
+      "bytes": 3001813,
+      "archive": {
+        "object": "image-originals/chapters/plus/c07/chapter-01/original-1cee64bf.png",
+        "sha256": "1cee64bf1724c12f81859f2379b1fc3a21bbdc6fc32053e7bd5cf4450b6b2fe7",
+        "bytes": 3001813,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948793214641"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c07-chpt02.png",
+      "sha256": "d3ded94d6a8208f30899baf88eb0960af236b3458ff316fb1c56dbea079e3dd1",
+      "bytes": 3158436,
+      "archive": {
+        "object": "image-originals/chapters/plus/c07/chapter-02/original-d3ded94d.png",
+        "sha256": "d3ded94d6a8208f30899baf88eb0960af236b3458ff316fb1c56dbea079e3dd1",
+        "bytes": 3158436,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948793432924"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c07-chpt03.png",
+      "sha256": "47b2dc9bbd9ae453676885894df30fb89d449ccfe361c672e15e8b0d852388f9",
+      "bytes": 3190485,
+      "archive": {
+        "object": "image-originals/chapters/plus/c07/chapter-03/original-47b2dc9b.png",
+        "sha256": "47b2dc9bbd9ae453676885894df30fb89d449ccfe361c672e15e8b0d852388f9",
+        "bytes": 3190485,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948793541137"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c07-chpt04.png",
+      "sha256": "90e20608e96cf64436f162151dbaa25304a70293995a53021d4ea85768167378",
+      "bytes": 3011908,
+      "archive": {
+        "object": "image-originals/chapters/plus/c07/chapter-04/original-90e20608.png",
+        "sha256": "90e20608e96cf64436f162151dbaa25304a70293995a53021d4ea85768167378",
+        "bytes": 3011908,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948794042232"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c02-chpt01.png",
+      "sha256": "c723787301cd7b3a8d0497de6a9b99d3374d79c548616f4e39ae09d172baac7e",
+      "bytes": 2805481,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c02/chapter-01/original-c7237873.png",
+        "sha256": "c723787301cd7b3a8d0497de6a9b99d3374d79c548616f4e39ae09d172baac7e",
+        "bytes": 2805481,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948793782235"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c02-chpt02.png",
+      "sha256": "8f828e5c9dbe13b01dfcb4669cefb19a35c7859d4e3493cea923e759ee996457",
+      "bytes": 2778819,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c02/chapter-02/original-8f828e5c.png",
+        "sha256": "8f828e5c9dbe13b01dfcb4669cefb19a35c7859d4e3493cea923e759ee996457",
+        "bytes": 2778819,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948793990021"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c02-chpt03.png",
+      "sha256": "51ef7745bdb3d94a993c464f3dc89f987411aeca654be464dc6f43b1cb18bea5",
+      "bytes": 3035502,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c02/chapter-03/original-51ef7745.png",
+        "sha256": "51ef7745bdb3d94a993c464f3dc89f987411aeca654be464dc6f43b1cb18bea5",
+        "bytes": 3035502,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948793784663"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c03-chpt01.png",
+      "sha256": "f3d040e4fc92495a85c1b55f57d9354777c1b0cc4bda8abe31565ea50dfc5fdb",
+      "bytes": 2421965,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c03/chapter-01/original-f3d040e4.png",
+        "sha256": "f3d040e4fc92495a85c1b55f57d9354777c1b0cc4bda8abe31565ea50dfc5fdb",
+        "bytes": 2421965,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948794032488"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c03-chpt02.png",
+      "sha256": "e6fae64180bbd148499391e46267fd35cdb782f9355ee06fa6edea1dcc6f33aa",
+      "bytes": 2624965,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c03/chapter-02/original-e6fae641.png",
+        "sha256": "e6fae64180bbd148499391e46267fd35cdb782f9355ee06fa6edea1dcc6f33aa",
+        "bytes": 2624965,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948794345289"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c03-chpt03.png",
+      "sha256": "638c3e0c1abe26464c7ae1ba7bd017247dd46e1ac2f5cb4dad78e34b30bff426",
+      "bytes": 2408822,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c03/chapter-03/original-638c3e0c.png",
+        "sha256": "638c3e0c1abe26464c7ae1ba7bd017247dd46e1ac2f5cb4dad78e34b30bff426",
+        "bytes": 2408822,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948794579109"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c03-chpt04.png",
+      "sha256": "fde9c12ad1304b0cd913a8830204b20e2d0dc71e8968e975c342597a855e6d96",
+      "bytes": 2542960,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c03/chapter-04/original-fde9c12a.png",
+        "sha256": "fde9c12ad1304b0cd913a8830204b20e2d0dc71e8968e975c342597a855e6d96",
+        "bytes": 2542960,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948794463532"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c04-chpt01.png",
+      "sha256": "ed83047cba856ac32b3d2faf2da575469fe46d38389b2961578fb931c86c52cd",
+      "bytes": 2710348,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c04/chapter-01/original-ed83047c.png",
+        "sha256": "ed83047cba856ac32b3d2faf2da575469fe46d38389b2961578fb931c86c52cd",
+        "bytes": 2710348,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948794819134"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c04-chpt02.png",
+      "sha256": "64f0d292b0066b52e9a97f953bddc39fd39d1586572d4a222053f7bccf7973eb",
+      "bytes": 2858790,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c04/chapter-02/original-64f0d292.png",
+        "sha256": "64f0d292b0066b52e9a97f953bddc39fd39d1586572d4a222053f7bccf7973eb",
+        "bytes": 2858790,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948794639603"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c04-chpt03.png",
+      "sha256": "c9d3bbe0b4e7684d21fd825b3cc508cf5f367c308e51c178511e4e6282cdb300",
+      "bytes": 2868536,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c04/chapter-03/original-c9d3bbe0.png",
+        "sha256": "c9d3bbe0b4e7684d21fd825b3cc508cf5f367c308e51c178511e4e6282cdb300",
+        "bytes": 2868536,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948794784664"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c04-chpt04.png",
+      "sha256": "80d17a4e98a332531d4ebc1f2d9712eb0c9bf027732ee31d9878ed10e158ccb5",
+      "bytes": 2938886,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c04/chapter-04/original-80d17a4e.png",
+        "sha256": "80d17a4e98a332531d4ebc1f2d9712eb0c9bf027732ee31d9878ed10e158ccb5",
+        "bytes": 2938886,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948794957512"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c04-chpt05.png",
+      "sha256": "000bbe035d35aaf1e5a8d7fd051ae942c3a995984a01d1c19e734c41c49388ce",
+      "bytes": 3291501,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c04/chapter-05/original-000bbe03.png",
+        "sha256": "000bbe035d35aaf1e5a8d7fd051ae942c3a995984a01d1c19e734c41c49388ce",
+        "bytes": 3291501,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948794839037"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/rugatha-c05-chpt01.png",
+      "sha256": "e9a1464e246718b4a31f9d5a7fca46d83a703f0d6d0d9275ce11ada6a48d67c5",
+      "bytes": 2722386,
+      "archive": {
+        "object": "image-originals/chapters/rugatha/c05/chapter-01/original-e9a1464e.png",
+        "sha256": "e9a1464e246718b4a31f9d5a7fca46d83a703f0d6d0d9275ce11ada6a48d67c5",
+        "bytes": 2722386,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948795355600"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+      "sha256": "f8dfa89bef358e119b88a792d2d1943c7380a14ecb674eb47d6431b71cf5ef42",
+      "bytes": 333167,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c01/chapter-01-2/original-f8dfa89b.jpeg",
+        "sha256": "f8dfa89bef358e119b88a792d2d1943c7380a14ecb674eb47d6431b71cf5ef42",
+        "bytes": 333167,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948795505514"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+      "sha256": "ce538210a87eeac7e071bd0a20ce963f721695dbcd4d1d63efdb5182ccfe9649",
+      "bytes": 234546,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c01/chapter-01-3/original-ce538210.jpeg",
+        "sha256": "ce538210a87eeac7e071bd0a20ce963f721695dbcd4d1d63efdb5182ccfe9649",
+        "bytes": 234546,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948795020191"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+      "sha256": "e519da1ccc80c9d8452d5cc98096c5f5437ee6a705984c5609f85da93002bd41",
+      "bytes": 1830287,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c01/chapter-01-4/original-e519da1c.jpeg",
+        "sha256": "e519da1ccc80c9d8452d5cc98096c5f5437ee6a705984c5609f85da93002bd41",
+        "bytes": 1830287,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948795670531"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c01-chpt01.jpeg",
+      "sha256": "a4579aa331c7fedb4c6c35c689a2c1189b03e5aaf668da4c4a42300474971a74",
+      "bytes": 821775,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c01/chapter-01/original-a4579aa3.jpeg",
+        "sha256": "a4579aa331c7fedb4c6c35c689a2c1189b03e5aaf668da4c4a42300474971a74",
+        "bytes": 821775,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948795503157"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+      "sha256": "7f4b7168ccdfc2ec91430d51331d3e52310f94975ff1d8b22d6162aa21c1aa7c",
+      "bytes": 241686,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c01/chapter-02-2/original-7f4b7168.webp",
+        "sha256": "7f4b7168ccdfc2ec91430d51331d3e52310f94975ff1d8b22d6162aa21c1aa7c",
+        "bytes": 241686,
+        "contentType": "image/webp",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948795747154"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c01-chpt02.jpeg",
+      "sha256": "54fb8e3042296ce72c841d06827d19ddac7fd804b8c29ed967fed8e548db7df3",
+      "bytes": 874574,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c01/chapter-02/original-54fb8e30.jpeg",
+        "sha256": "54fb8e3042296ce72c841d06827d19ddac7fd804b8c29ed967fed8e548db7df3",
+        "bytes": 874574,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948795726172"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c01-chpt03.jpeg",
+      "sha256": "c98087da1c025874e442b8cbea05acd27d5ead9979bee5ad37c81b2aa4f49e23",
+      "bytes": 766078,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c01/chapter-03/original-c98087da.jpeg",
+        "sha256": "c98087da1c025874e442b8cbea05acd27d5ead9979bee5ad37c81b2aa4f49e23",
+        "bytes": 766078,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948796051506"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c02-chpt01.jpeg",
+      "sha256": "4064e9ca51c0d015f32ec4203c3afe9a8a1812b96fe827a912cc17b99129e69c",
+      "bytes": 535373,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c02/chapter-01/original-4064e9ca.jpeg",
+        "sha256": "4064e9ca51c0d015f32ec4203c3afe9a8a1812b96fe827a912cc17b99129e69c",
+        "bytes": 535373,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948795892158"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c02-chpt02.jpeg",
+      "sha256": "490c87960f0e2e130a4ee5604d4a06c9c6dae0b397398aca9dba2aead5c6496d",
+      "bytes": 624383,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c02/chapter-02/original-490c8796.jpeg",
+        "sha256": "490c87960f0e2e130a4ee5604d4a06c9c6dae0b397398aca9dba2aead5c6496d",
+        "bytes": 624383,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948795998657"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c02-chpt03.jpeg",
+      "sha256": "362011d7bd1b9c060411c1f4c05180962e76a33c36b14ef79eefeab29a0bbd48",
+      "bytes": 395565,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c02/chapter-03/original-362011d7.jpeg",
+        "sha256": "362011d7bd1b9c060411c1f4c05180962e76a33c36b14ef79eefeab29a0bbd48",
+        "bytes": 395565,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948796337040"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c03-chpt01.jpeg",
+      "sha256": "532266f47a79e0bb0ccac65d138a7f3993d856e978dce506e5d59f33b0f92b03",
+      "bytes": 549028,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c03/chapter-01/original-532266f4.jpeg",
+        "sha256": "532266f47a79e0bb0ccac65d138a7f3993d856e978dce506e5d59f33b0f92b03",
+        "bytes": 549028,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948796291869"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c03-chpt02.jpeg",
+      "sha256": "eedf11533ac79016491e06b5522efb24f75306ba0ce205532a6ca9948160989a",
+      "bytes": 867020,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c03/chapter-02/original-eedf1153.jpeg",
+        "sha256": "eedf11533ac79016491e06b5522efb24f75306ba0ce205532a6ca9948160989a",
+        "bytes": 867020,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948796504066"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+      "sha256": "8283405bbaacc4b2ae9504c90a90c1bc6a172beaa7d10608c9b6fa7eb056eba7",
+      "bytes": 240495,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c03/chapter-03-2/original-8283405b.jpeg",
+        "sha256": "8283405bbaacc4b2ae9504c90a90c1bc6a172beaa7d10608c9b6fa7eb056eba7",
+        "bytes": 240495,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948796632499"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+      "sha256": "1a4b92d24705c6c7712c1df373cc6aa7242a223b85c935f952844b62670ae94e",
+      "bytes": 547709,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c03/chapter-03-3/original-1a4b92d2.jpeg",
+        "sha256": "1a4b92d24705c6c7712c1df373cc6aa7242a223b85c935f952844b62670ae94e",
+        "bytes": 547709,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948796488610"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c03-chpt03.JPG",
+      "sha256": "8a5d96cf64336095cdb9f39f7a4327f34d060fe89b5773220fe8563f594c80f3",
+      "bytes": 767666,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c03/chapter-03/original-8a5d96cf.jpg",
+        "sha256": "8a5d96cf64336095cdb9f39f7a4327f34d060fe89b5773220fe8563f594c80f3",
+        "bytes": 767666,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948796925180"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+      "sha256": "0c3e99a4e9cd570e0d7465a060189a9f373857cf412616d45d5d51d3f23296c1",
+      "bytes": 159039,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c04/chapter-01-2/original-0c3e99a4.jpeg",
+        "sha256": "0c3e99a4e9cd570e0d7465a060189a9f373857cf412616d45d5d51d3f23296c1",
+        "bytes": 159039,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948796780910"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c04-chpt01.jpeg",
+      "sha256": "4b013e08ffc34df8bf57a4f1da4f140124e9420251976fffeff294d4b107b9c0",
+      "bytes": 872743,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c04/chapter-01/original-4b013e08.jpeg",
+        "sha256": "4b013e08ffc34df8bf57a4f1da4f140124e9420251976fffeff294d4b107b9c0",
+        "bytes": 872743,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948797220242"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c04-chpt02.jpeg",
+      "sha256": "78eda1aabb4cd41227f407196b2c0852559f58a439f2b2336ef2ff10f3be5219",
+      "bytes": 975209,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c04/chapter-02/original-78eda1aa.jpeg",
+        "sha256": "78eda1aabb4cd41227f407196b2c0852559f58a439f2b2336ef2ff10f3be5219",
+        "bytes": 975209,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948797050060"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c04-chpt03.jpeg",
+      "sha256": "401bbee4a88f4902f5624106fff917e8c9bf4392e951f4410413918e58406a35",
+      "bytes": 456552,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c04/chapter-03/original-401bbee4.jpeg",
+        "sha256": "401bbee4a88f4902f5624106fff917e8c9bf4392e951f4410413918e58406a35",
+        "bytes": 456552,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948797093927"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c04-chpt04.jpeg",
+      "sha256": "9a83cfa4701cdc380c34e10fa93b1f4f241129c3fb3e677c43ad82ed327d1122",
+      "bytes": 564308,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c04/chapter-04/original-9a83cfa4.jpeg",
+        "sha256": "9a83cfa4701cdc380c34e10fa93b1f4f241129c3fb3e677c43ad82ed327d1122",
+        "bytes": 564308,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948797467663"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt01.jpeg",
+      "sha256": "8569c059e5160e594e35e2d75ffb8deff41f24f95d5546b6750d47a1c6c31e7e",
+      "bytes": 716383,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-01/original-8569c059.jpeg",
+        "sha256": "8569c059e5160e594e35e2d75ffb8deff41f24f95d5546b6750d47a1c6c31e7e",
+        "bytes": 716383,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948797265271"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt02.jpeg",
+      "sha256": "1e85c8e1d94bb357d879d297026e3d76024b4142abc0bc2c8580b923e294d1bf",
+      "bytes": 570535,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-02/original-1e85c8e1.jpeg",
+        "sha256": "1e85c8e1d94bb357d879d297026e3d76024b4142abc0bc2c8580b923e294d1bf",
+        "bytes": 570535,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948797666290"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt03.jpeg",
+      "sha256": "3b4a7312a310d06448be8cebf1dc6f06700e1d57e5b5238f7a71a1bd2b0b1aea",
+      "bytes": 604385,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-03/original-3b4a7312.jpeg",
+        "sha256": "3b4a7312a310d06448be8cebf1dc6f06700e1d57e5b5238f7a71a1bd2b0b1aea",
+        "bytes": 604385,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948797725787"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt04.jpeg",
+      "sha256": "e3c7be0b02af529c6b8995bbf804f78b9b56e7ef90d765561b5b685ad56dbfd1",
+      "bytes": 449499,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-04/original-e3c7be0b.jpeg",
+        "sha256": "e3c7be0b02af529c6b8995bbf804f78b9b56e7ef90d765561b5b685ad56dbfd1",
+        "bytes": 449499,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948797590630"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt05.jpeg",
+      "sha256": "bf0b1d046c50c5b39c0596ae59994ae261181567d9b837fd280364032d1e144e",
+      "bytes": 464906,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-05/original-bf0b1d04.jpeg",
+        "sha256": "bf0b1d046c50c5b39c0596ae59994ae261181567d9b837fd280364032d1e144e",
+        "bytes": 464906,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948797984699"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06.jpeg",
+      "sha256": "1c99832070cb4e2c954847b0af2506a1c63d8a61bec82635c008a369278182a8",
+      "bytes": 662933,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-06/original-1c998320.jpeg",
+        "sha256": "1c99832070cb4e2c954847b0af2506a1c63d8a61bec82635c008a369278182a8",
+        "bytes": 662933,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948797883065"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+      "sha256": "5ce4734d77161deea68444d7b0daedf9477c9c04223ac2f4e47657f8f60efbf4",
+      "bytes": 94211,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-06_1/original-5ce4734d.jpg",
+        "sha256": "5ce4734d77161deea68444d7b0daedf9477c9c04223ac2f4e47657f8f60efbf4",
+        "bytes": 94211,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948798303393"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+      "sha256": "f44190536854df886633004c1cf32f9a182d9b4d3ab0b41e0e676c73114e1fae",
+      "bytes": 80205,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-06_2/original-f4419053.jpg",
+        "sha256": "f44190536854df886633004c1cf32f9a182d9b4d3ab0b41e0e676c73114e1fae",
+        "bytes": 80205,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948798017056"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+      "sha256": "45484616e963b70c657dadf1609e38e78b76619e73f43f5b0e505ebad8d79d82",
+      "bytes": 406683,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-06_3/original-45484616.jpeg",
+        "sha256": "45484616e963b70c657dadf1609e38e78b76619e73f43f5b0e505ebad8d79d82",
+        "bytes": 406683,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948798235154"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+      "sha256": "2cdbdb63b2007cf0824693b4af1618589bf15f1f0eb87c0a3868f26b131410f6",
+      "bytes": 390268,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-06_4/original-2cdbdb63.jpeg",
+        "sha256": "2cdbdb63b2007cf0824693b4af1618589bf15f1f0eb87c0a3868f26b131410f6",
+        "bytes": 390268,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948798619590"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+      "sha256": "ae560134fe5f89b03efff96b13a56b65fa7afa73e61b54d8ece284fcbd574b74",
+      "bytes": 306610,
+      "archive": {
+        "object": "image-originals/chapters/wilds/c05/chapter-06_5/original-ae560134.jpeg",
+        "sha256": "ae560134fe5f89b03efff96b13a56b65fa7afa73e61b54d8ece284fcbd574b74",
+        "bytes": 306610,
+        "contentType": "image/jpeg",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948798401730"
+      }
+    },
+    {
+      "source": "campaigns/campaign-banners/plus-c08.png",
+      "sha256": "586f8a3c11dbaab6c48fcc5504562e01d321478886a44392f40175b5decbe622",
+      "bytes": 2905224,
+      "archive": {
+        "object": "image-originals/arcs/plus/c08/original-586f8a3c.png",
+        "sha256": "586f8a3c11dbaab6c48fcc5504562e01d321478886a44392f40175b5decbe622",
+        "bytes": 2905224,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948610815359"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c08-chpt01.png",
+      "sha256": "6d56de732d99b5a11f3c288a47ea6bacf60ad8a99928483145a600619b10875b",
+      "bytes": 2611773,
+      "archive": {
+        "object": "image-originals/chapters/plus/c08/chapter-01/original-6d56de73.png",
+        "sha256": "6d56de732d99b5a11f3c288a47ea6bacf60ad8a99928483145a600619b10875b",
+        "bytes": 2611773,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948615827336"
+      }
+    },
+    {
+      "source": "campaigns/chapter-banners/plus-c08-chpt02.png",
+      "sha256": "a37c01a0dccca87c8768940e5d7dd804772eaad86762bac2c80203a6fbfc5368",
+      "bytes": 2319251,
+      "archive": {
+        "object": "image-originals/chapters/plus/c08/chapter-02/original-a37c01a0.png",
+        "sha256": "a37c01a0dccca87c8768940e5d7dd804772eaad86762bac2c80203a6fbfc5368",
+        "bytes": 2319251,
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "storageClass": "STANDARD",
+        "generation": "1793948620080645"
+      }
+    }
+  ],
+  "removed": [
+    "campaigns/campaign-banners/brown-c01.jpg",
+    "campaigns/campaign-banners/brown-c02.jpg",
+    "campaigns/campaign-banners/exp-e01.png",
+    "campaigns/campaign-banners/exp-e02.png",
+    "campaigns/campaign-banners/exp-e03.jpeg",
+    "campaigns/campaign-banners/legends-os01.jpg",
+    "campaigns/campaign-banners/legends-os02.jpg",
+    "campaigns/campaign-banners/legends-os03.jpg",
+    "campaigns/campaign-banners/legends-os04.jpg",
+    "campaigns/campaign-banners/legends-os05.jpg",
+    "campaigns/campaign-banners/legends-os06.jpg",
+    "campaigns/campaign-banners/legends-os07.jpg",
+    "campaigns/campaign-banners/legends-os08-2.png",
+    "campaigns/campaign-banners/legends-os08.png",
+    "campaigns/campaign-banners/legends-os09.png",
+    "campaigns/campaign-banners/legends-os10.png",
+    "campaigns/campaign-banners/lite-c05.jpg",
+    "campaigns/campaign-banners/lite-c06.jpg",
+    "campaigns/campaign-banners/lite-c07.jpg",
+    "campaigns/campaign-banners/lite-c08.png",
+    "campaigns/campaign-banners/lite-c09.jpg",
+    "campaigns/campaign-banners/lite-c10.png",
+    "campaigns/campaign-banners/lite-c11.png",
+    "campaigns/campaign-banners/lite-c12.png",
+    "campaigns/campaign-banners/lite-c13.png",
+    "campaigns/campaign-banners/plus-c05.jpg",
+    "campaigns/campaign-banners/plus-c06.jpg",
+    "campaigns/campaign-banners/plus-c07.png",
+    "campaigns/campaign-banners/rugatha-c02.jpg",
+    "campaigns/campaign-banners/rugatha-c03.jpg",
+    "campaigns/campaign-banners/rugatha-c04.jpg",
+    "campaigns/campaign-banners/rugatha-c05.png",
+    "campaigns/campaign-banners/wilds-c01.jpg",
+    "campaigns/campaign-banners/wilds-c02.png",
+    "campaigns/campaign-banners/wilds-c03.png",
+    "campaigns/campaign-banners/wilds-c04.png",
+    "campaigns/campaign-banners/wilds-c05.png",
+    "campaigns/campaign-banners/wilds-c06.png",
+    "campaigns/chapter-banners/brown-c01-chpt01.png",
+    "campaigns/chapter-banners/brown-c01-chpt02.png",
+    "campaigns/chapter-banners/brown-c01-chpt03.png",
+    "campaigns/chapter-banners/brown-c01-chpt04.png",
+    "campaigns/chapter-banners/brown-c01-chpt05.png",
+    "campaigns/chapter-banners/brown-c02-chpt01.png",
+    "campaigns/chapter-banners/legends-os05-chpt01.png",
+    "campaigns/chapter-banners/legends-os05-chpt02.png",
+    "campaigns/chapter-banners/lite-c05-chpt02.png",
+    "campaigns/chapter-banners/lite-c05-chpt03.png",
+    "campaigns/chapter-banners/lite-c05-chpt04.png",
+    "campaigns/chapter-banners/lite-c06-chpt01.png",
+    "campaigns/chapter-banners/lite-c06-chpt02.png",
+    "campaigns/chapter-banners/lite-c06-chpt03.png",
+    "campaigns/chapter-banners/lite-c06-chpt04.png",
+    "campaigns/chapter-banners/lite-c06-chpt05.png",
+    "campaigns/chapter-banners/lite-c07-chpt01.png",
+    "campaigns/chapter-banners/lite-c07-chpt02.png",
+    "campaigns/chapter-banners/lite-c07-chpt03.png",
+    "campaigns/chapter-banners/lite-c08-chpt01.png",
+    "campaigns/chapter-banners/lite-c08-chpt02.png",
+    "campaigns/chapter-banners/lite-c08-chpt03.png",
+    "campaigns/chapter-banners/lite-c09-chpt01.png",
+    "campaigns/chapter-banners/lite-c09-chpt02.png",
+    "campaigns/chapter-banners/lite-c09-chpt03-2.jpeg",
+    "campaigns/chapter-banners/lite-c09-chpt03.png",
+    "campaigns/chapter-banners/lite-c10-chpt01.png",
+    "campaigns/chapter-banners/lite-c10-chpt02-2.png",
+    "campaigns/chapter-banners/lite-c10-chpt02-3.png",
+    "campaigns/chapter-banners/lite-c10-chpt02-4.png",
+    "campaigns/chapter-banners/lite-c10-chpt02-5.png",
+    "campaigns/chapter-banners/lite-c10-chpt02-6.png",
+    "campaigns/chapter-banners/lite-c10-chpt02-7.png",
+    "campaigns/chapter-banners/lite-c10-chpt02-8.png",
+    "campaigns/chapter-banners/lite-c10-chpt02.jpeg",
+    "campaigns/chapter-banners/lite-c10-chpt03-2.png",
+    "campaigns/chapter-banners/lite-c10-chpt03-3.png",
+    "campaigns/chapter-banners/lite-c10-chpt03-4.png",
+    "campaigns/chapter-banners/lite-c10-chpt03.jpeg",
+    "campaigns/chapter-banners/lite-c10-chpt04.jpeg",
+    "campaigns/chapter-banners/lite-c11-chpt01.jpeg",
+    "campaigns/chapter-banners/lite-c11-chpt02.jpeg",
+    "campaigns/chapter-banners/lite-c11-chpt03.jpeg",
+    "campaigns/chapter-banners/lite-c11-chpt04.jpeg",
+    "campaigns/chapter-banners/lite-c12-chpt01.jpeg",
+    "campaigns/chapter-banners/lite-c12-chpt02.png",
+    "campaigns/chapter-banners/lite-c12-chpt03.jpeg",
+    "campaigns/chapter-banners/lite-c12-chpt04-01.png",
+    "campaigns/chapter-banners/lite-c12-chpt04.jpeg",
+    "campaigns/chapter-banners/lite-c12-chpt05.jpeg",
+    "campaigns/chapter-banners/lite-c13-chpt01.jpeg",
+    "campaigns/chapter-banners/plus-c05-chpt02.png",
+    "campaigns/chapter-banners/plus-c05-chpt03.png",
+    "campaigns/chapter-banners/plus-c05-chpt04.png",
+    "campaigns/chapter-banners/plus-c05-chpt05.png",
+    "campaigns/chapter-banners/plus-c06-chpt01.png",
+    "campaigns/chapter-banners/plus-c06-chpt02.png",
+    "campaigns/chapter-banners/plus-c06-chpt03.png",
+    "campaigns/chapter-banners/plus-c06-chpt04.png",
+    "campaigns/chapter-banners/plus-c07-chpt01.png",
+    "campaigns/chapter-banners/plus-c07-chpt02.png",
+    "campaigns/chapter-banners/plus-c07-chpt03.png",
+    "campaigns/chapter-banners/plus-c07-chpt04.png",
+    "campaigns/chapter-banners/rugatha-c02-chpt01.png",
+    "campaigns/chapter-banners/rugatha-c02-chpt02.png",
+    "campaigns/chapter-banners/rugatha-c02-chpt03.png",
+    "campaigns/chapter-banners/rugatha-c03-chpt01.png",
+    "campaigns/chapter-banners/rugatha-c03-chpt02.png",
+    "campaigns/chapter-banners/rugatha-c03-chpt03.png",
+    "campaigns/chapter-banners/rugatha-c03-chpt04.png",
+    "campaigns/chapter-banners/rugatha-c04-chpt01.png",
+    "campaigns/chapter-banners/rugatha-c04-chpt02.png",
+    "campaigns/chapter-banners/rugatha-c04-chpt03.png",
+    "campaigns/chapter-banners/rugatha-c04-chpt04.png",
+    "campaigns/chapter-banners/rugatha-c04-chpt05.png",
+    "campaigns/chapter-banners/rugatha-c05-chpt01.png",
+    "campaigns/chapter-banners/wilds-c01-chpt01-2.jpeg",
+    "campaigns/chapter-banners/wilds-c01-chpt01-3.jpeg",
+    "campaigns/chapter-banners/wilds-c01-chpt01-4.jpeg",
+    "campaigns/chapter-banners/wilds-c01-chpt01.jpeg",
+    "campaigns/chapter-banners/wilds-c01-chpt02-2.webp",
+    "campaigns/chapter-banners/wilds-c01-chpt02.jpeg",
+    "campaigns/chapter-banners/wilds-c01-chpt03.jpeg",
+    "campaigns/chapter-banners/wilds-c02-chpt01.jpeg",
+    "campaigns/chapter-banners/wilds-c02-chpt02.jpeg",
+    "campaigns/chapter-banners/wilds-c02-chpt03.jpeg",
+    "campaigns/chapter-banners/wilds-c03-chpt01.jpeg",
+    "campaigns/chapter-banners/wilds-c03-chpt02.jpeg",
+    "campaigns/chapter-banners/wilds-c03-chpt03-2.jpeg",
+    "campaigns/chapter-banners/wilds-c03-chpt03-3.jpeg",
+    "campaigns/chapter-banners/wilds-c03-chpt03.JPG",
+    "campaigns/chapter-banners/wilds-c04-chpt01-2.jpeg",
+    "campaigns/chapter-banners/wilds-c04-chpt01.jpeg",
+    "campaigns/chapter-banners/wilds-c04-chpt02.jpeg",
+    "campaigns/chapter-banners/wilds-c04-chpt03.jpeg",
+    "campaigns/chapter-banners/wilds-c04-chpt04.jpeg",
+    "campaigns/chapter-banners/wilds-c05-chpt01.jpeg",
+    "campaigns/chapter-banners/wilds-c05-chpt02.jpeg",
+    "campaigns/chapter-banners/wilds-c05-chpt03.jpeg",
+    "campaigns/chapter-banners/wilds-c05-chpt04.jpeg",
+    "campaigns/chapter-banners/wilds-c05-chpt05.jpeg",
+    "campaigns/chapter-banners/wilds-c05-chpt06.jpeg",
+    "campaigns/chapter-banners/wilds-c05-chpt06_1.jpg",
+    "campaigns/chapter-banners/wilds-c05-chpt06_2.jpg",
+    "campaigns/chapter-banners/wilds-c05-chpt06_3.jpeg",
+    "campaigns/chapter-banners/wilds-c05-chpt06_4.jpeg",
+    "campaigns/chapter-banners/wilds-c05-chpt06_5.jpeg",
+    "campaigns/campaign-banners/plus-c08.png",
+    "campaigns/chapter-banners/plus-c08-chpt01.png",
+    "campaigns/chapter-banners/plus-c08-chpt02.png"
+  ]
+}

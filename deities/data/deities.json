@@ -13,7 +13,7 @@
       "en": ["Light", "Hope"],
       "zh": ["光", "希望"]
     },
-    "image": "images/Trinix.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Ftrinix-fb05419fd8%2Fimage-0d105586.png?alt=media",
     "link": "./pages/trinix.html",
     "saying": {
       "en": "Let Light Lead Us",
@@ -35,7 +35,7 @@
       "en": ["Luna"],
       "zh": ["月"]
     },
-    "image": "images/Phyneal.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fphyneal-5f8e205a65%2Fimage-1eedf33d.png?alt=media",
     "link": "./pages/phyneal.html",
     "saying": {
       "en": "The Moon Reveals All that is Hidden",
@@ -57,7 +57,7 @@
       "en": ["Exchange", "Prophecy"],
       "zh": ["交易", "預言"]
     },
-    "image": "images/Phynoir.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fphynoir-8cbd215a8f%2Fimage-8073ea5a.png?alt=media",
     "link": "./pages/phynoir.html",
     "saying": {
       "en": "What Would You Offer for a Trade?",
@@ -79,7 +79,7 @@
       "en": ["Woods", "Life"],
       "zh": ["樹林", "生命"]
     },
-    "image": "images/Nessis.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fnessis-d4d2b25e9b%2Fimage-c14b3c7f.png?alt=media",
     "link": "./pages/nessis.html",
     "saying": {
       "en": "Life, Birth in Nature, Ends in Nature",
@@ -101,7 +101,7 @@
       "en": ["Protection", "Justice"],
       "zh": ["守護", "正義"]
     },
-    "image": "images/Keinra.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fkeinra-cfdb8e45fb%2Fimage-65d83074.png?alt=media",
     "link": "./pages/keinra.html",
     "saying": {
       "en": "I Will Protect Until the End of the World",
@@ -123,7 +123,7 @@
       "en": ["Storm", "Intelligence"],
       "zh": ["風暴", "智慧"]
     },
-    "image": "images/Jeorisan.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fjeorisan-fd71b0a7c4%2Fimage-7417e9b1.png?alt=media",
     "link": "./pages/jeorisan.html",
     "saying": {
       "en": "Truth Rise from Chaos",
@@ -145,7 +145,7 @@
       "en": ["Trickery", "Drama"],
       "zh": ["詐欺", "戲劇"]
     },
-    "image": "images/Ultisen.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fultisen-8335ef06c9%2Fimage-115d716f.png?alt=media",
     "link": "./pages/ultisen.html",
     "saying": {
       "en": "Dramas are as Lies, Deadly Beautiful",
@@ -167,7 +167,7 @@
       "en": ["Fire", "Forge"],
       "zh": ["火", "熔鍛"]
     },
-    "image": "images/Maxus.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fmaxus-60af52743d%2Fimage-4bc8be81.png?alt=media",
     "link": "./pages/maxus.html",
     "saying": {
       "en": "Melt, Rebirth",
@@ -189,7 +189,7 @@
       "en": ["Silence", "Rules"],
       "zh": ["寂靜", "秩序"]
     },
-    "image": "images/Laxthos.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Flaxthos-7afbc35718%2Fimage-6dda01b2.png?alt=media",
     "link": "./pages/laxthos.html",
     "saying": {
       "en": "Obey Destiny in Silence",
@@ -211,7 +211,7 @@
       "en": ["Trades", "Wealth"],
       "zh": ["貿易", "財富"]
     },
-    "image": "images/Kalinius.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fkalinius-215e009240%2Fimage-7e3db2b1.png?alt=media",
     "link": "./pages/kalinius.html",
     "saying": {
       "en": "Gold Pieces, Omnipotent",
@@ -233,7 +233,7 @@
       "en": ["War", "Strength"],
       "zh": ["戰爭", "力量"]
     },
-    "image": "images/Daligon.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fdaligon-0282e47e2b%2Fimage-aa356f46.png?alt=media",
     "link": "./pages/daligon.html",
     "saying": {
       "en": "Only the Truiumphant Decide History",
@@ -255,7 +255,7 @@
       "en": ["Love", "Everlasting"],
       "zh": ["愛", "永恆"]
     },
-    "image": "images/Amoret.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Famoret-b0abb81c0c%2Fimage-b06ad80e.png?alt=media",
     "link": "./pages/amoret.html",
     "saying": {
       "en": "Those Who are Against Love, are My Nemesis",

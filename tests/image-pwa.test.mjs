@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 const base = 'https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/';
 const url = n => `${base}${encodeURIComponent(`public-images/npcs/npc-${n}/${'a'.repeat(64)}/thumb.webp`)}?alt=media`;
-function worker({ bytes = 20, fallback = false } = {}) {
+function worker({ bytes = 20, fallback = false, contentType = 'image/webp' } = {}) {
   const listeners = {}, stores = new Map();
   let calls = 0, offline = false, status = 200, now = Date.now(), lastCacheMode;
   const caches = {
@@ -32,7 +32,7 @@ function worker({ bytes = 20, fallback = false } = {}) {
       assert.equal(request.mode, 'cors'); assert.equal(request.credentials, 'omit');
       lastCacheMode = request.cache;
       if (offline) throw new Error('offline');
-      return new Response(new Uint8Array(bytes), { status, headers: { 'Content-Type': 'image/webp' } });
+      return new Response(new Uint8Array(bytes), { status, headers: { 'Content-Type': contentType } });
     }
   });
   return {
@@ -55,6 +55,30 @@ test('replaced Melvin URL bypasses the browser HTTP cache on first fetch', async
   assert.equal(w.lastCacheMode, 'reload');
   await w.fetch(url(1));
   assert.equal(w.lastCacheMode, 'default');
+});
+
+test('the reviewed cloud banner is available offline without accepting other location PNGs', async () => {
+  const w = worker({ contentType: 'image/png' });
+  const banner = `${base}public-images%2Flocations%2Fatlas-cover-firebase%2Freading-c565780a.png?alt=media`;
+  assert.equal((await w.fetch(banner)).ok, true);
+  w.offline(true);
+  assert.equal((await w.fetch(banner)).ok, true);
+  assert.equal(w.calls, 1);
+  assert.equal(await w.fetch(banner.replace('atlas-cover-firebase', 'unreviewed')), undefined);
+  assert.equal(await w.fetch(banner + '&token=secret'), undefined);
+});
+
+test('full-resolution site images retain bounded offline caching and validate their MIME type', async () => {
+  const site = `${base}${encodeURIComponent('public-images/site/pc-three-views/al-lon/image-1234abcd.png')}?alt=media`;
+  const w = worker({ bytes: 3 * 1024 * 1024, contentType: 'image/png' });
+  assert.equal((await w.fetch(site)).ok, true);
+  w.offline(true);
+  assert.equal((await w.fetch(site)).ok, true);
+  assert.equal(w.calls, 1);
+  assert.equal(await w.fetch(site.replace('pc-three-views', 'private')), undefined);
+  const wrongType = worker({ contentType: 'image/svg+xml', fallback: true });
+  assert.equal((await wrongType.fetch(site)).headers.get('Cache-Control'), 'no-store');
+  assert.equal([...wrongType.stores.values()][0].size, 0);
 });
 
 test('public images are cache-first and available offline; private or token URLs bypass cache', async () => {

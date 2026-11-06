@@ -1,0 +1,2159 @@
+{
+  "reviewDate": "2026-11-06",
+  "timezone": "Asia/Taipei",
+  "storageSnapshot": {
+    "checkedAt": "2026-11-06T06:51:26.513Z",
+    "bucket": "rugatha-87e15.firebasestorage.app",
+    "location": "US-WEST1",
+    "storageClass": "REGIONAL",
+    "softDeletePolicy": {
+      "retentionDurationSeconds": "604800",
+      "effectiveTime": "2026-09-25T09:58:08.639Z"
+    },
+    "liveObjects": 1280,
+    "liveBytes": 1272529598,
+    "metricsWindowDays": 30,
+    "metrics": {
+      "api/request_count": {
+        "total": 23786,
+        "truncated": false
+      },
+      "network/sent_bytes_count": {
+        "total": 8103612099,
+        "truncated": false
+      }
+    },
+    "limitations": "Live size excludes noncurrent and soft-deleted objects. Monitoring includes this migration and is delayed; request_count is not a Class B billing total. Not a billing invoice or guaranteed remaining free allowance.",
+    "billingEnabled": true,
+    "linkedProjects": {
+      "count": 1,
+      "truncated": false
+    },
+    "budgets": [
+      {
+        "displayName": "Rugatha Storage 月費通知（NT$30）",
+        "amount": {
+          "specifiedAmount": {
+            "currencyCode": "TWD",
+            "units": "30"
+          }
+        },
+        "thresholdRules": [
+          {
+            "thresholdPercent": 0.5,
+            "spendBasis": "CURRENT_SPEND"
+          },
+          {
+            "thresholdPercent": 0.9,
+            "spendBasis": "CURRENT_SPEND"
+          },
+          {
+            "thresholdPercent": 1,
+            "spendBasis": "CURRENT_SPEND"
+          }
+        ],
+        "defaultRecipientsEnabled": true
+      }
+    ],
+    "budgetsTruncated": false
+  },
+  "publicAccess": {
+    "startedAt": "2026-11-06T06:52:09.880Z",
+    "uniqueObjects": 960,
+    "http200": 960,
+    "bytesDownloaded": 677370848,
+    "matchingChecksums": 957,
+    "noBaselineChecksum": 1,
+    "groups": {
+      "arcs-pending": 76,
+      "chapters-pending": 214,
+      "npc-current": 318,
+      "site-chapters": 14,
+      "site-arcs": 2,
+      "site-locations": 195,
+      "site-experience": 1,
+      "site-signatures": 140
+    },
+    "exceptions": [
+      {
+        "object": "public-images/npcs/melvin/thumb-9a73a493.webp",
+        "sha256": "9a73a49383e882e58b64834115b2ca36dd875a9de88a12591531b952fe4b4a63",
+        "bytes": 17816,
+        "group": "npc-current",
+        "status": 200,
+        "actualBytes": 23798,
+        "checksumOk": false,
+        "sizeOk": false,
+        "contentType": "image/webp",
+        "cacheControl": "public, max-age=0, no-cache",
+        "cors": "*"
+      },
+      {
+        "object": "public-images/npcs/melvin/reading-1e359f72.webp",
+        "sha256": "1e359f72c7a3554e36b6f35892b9ac14ab0ca63e6a194a47dc96e93272c9be59",
+        "bytes": 26442,
+        "group": "npc-current",
+        "status": 200,
+        "actualBytes": 30040,
+        "checksumOk": false,
+        "sizeOk": false,
+        "contentType": "image/webp",
+        "cacheControl": "public, max-age=0, no-cache",
+        "cors": "*"
+      }
+    ]
+  },
+  "browser": {
+    "initialPassed": 7,
+    "initialFailed": 2,
+    "failureCause": "Tests hard-code cache v52; production and local worker are v54 with identical SHA-256.",
+    "temporaryV54RecheckPassed": 2,
+    "firefox": "Opened NPC page using native UI; image rendering and offline acceptance not verified."
+  },
+  "dryRunFiles": {
+    "arcs": 70,
+    "chapters": 335
+  },
+  "usageDetails": {
+    "checkedAt": "2026-11-06T06:53:17.859Z",
+    "windowDays": 30,
+    "metrics": {
+      "api/request_count": {
+        "truncated": false,
+        "series": [
+          {
+            "labels": {
+              "method": "ReadObject",
+              "response_code": "CANCELLED"
+            },
+            "total": 73,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-11-04T06:53:17.859Z",
+                  "endTime": "2026-11-05T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "3"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-02T06:53:17.859Z",
+                  "endTime": "2026-11-03T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-31T06:53:17.859Z",
+                  "endTime": "2026-11-01T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-29T06:53:17.859Z",
+                  "endTime": "2026-10-30T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "15"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "39"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "9"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "WriteObject",
+              "response_code": "CANCELLED"
+            },
+            "total": 3,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "FAILED_PRECONDITION",
+              "method": "ReadObject"
+            },
+            "total": 2,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-26T06:53:17.859Z",
+                  "endTime": "2026-10-27T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "WriteObject",
+              "response_code": "INVALID_ARGUMENT"
+            },
+            "total": 1,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "NOT_FOUND",
+              "method": "GetObjectMetadata"
+            },
+            "total": 2850,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-31T06:53:17.859Z",
+                  "endTime": "2026-11-01T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "9"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1274"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "144"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "231"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "253"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "875"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "60"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "DeleteObject",
+              "response_code": "OK"
+            },
+            "total": 1562,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "3"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1273"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "153"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "133"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "GetBucketMetadata",
+              "response_code": "OK"
+            },
+            "total": 33,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "5"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "8"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "8"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "9"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "GetObjectMetadata",
+              "response_code": "OK"
+            },
+            "total": 3193,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-31T06:53:17.859Z",
+                  "endTime": "2026-11-01T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "17"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1346"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "307"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "289"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "252"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "876"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "101"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "4"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "ListObjects",
+              "response_code": "OK"
+            },
+            "total": 36,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "16"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "6"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "6"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "5"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "ReadObject",
+              "response_code": "OK"
+            },
+            "total": 11910,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-11-05T06:53:17.859Z",
+                  "endTime": "2026-11-06T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "56"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-04T06:53:17.859Z",
+                  "endTime": "2026-11-05T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "241"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-03T06:53:17.859Z",
+                  "endTime": "2026-11-04T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "55"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-02T06:53:17.859Z",
+                  "endTime": "2026-11-03T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "164"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-01T06:53:17.859Z",
+                  "endTime": "2026-11-02T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "149"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-31T06:53:17.859Z",
+                  "endTime": "2026-11-01T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "181"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-30T06:53:17.859Z",
+                  "endTime": "2026-10-31T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "139"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-29T06:53:17.859Z",
+                  "endTime": "2026-10-30T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "24"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "92"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2792"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-26T06:53:17.859Z",
+                  "endTime": "2026-10-27T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "266"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1711"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2560"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "909"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1720"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "800"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-20T06:53:17.859Z",
+                  "endTime": "2026-10-21T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "4"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-19T06:53:17.859Z",
+                  "endTime": "2026-10-20T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "4"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "21"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-17T06:53:17.859Z",
+                  "endTime": "2026-10-18T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-16T06:53:17.859Z",
+                  "endTime": "2026-10-17T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-15T06:53:17.859Z",
+                  "endTime": "2026-10-16T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "3"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-14T06:53:17.859Z",
+                  "endTime": "2026-10-15T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-13T06:53:17.859Z",
+                  "endTime": "2026-10-14T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-12T06:53:17.859Z",
+                  "endTime": "2026-10-13T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "3"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-11T06:53:17.859Z",
+                  "endTime": "2026-10-12T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-10T06:53:17.859Z",
+                  "endTime": "2026-10-11T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-09T06:53:17.859Z",
+                  "endTime": "2026-10-10T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-08T06:53:17.859Z",
+                  "endTime": "2026-10-09T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "4"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-07T06:53:17.859Z",
+                  "endTime": "2026-10-08T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "RewriteObject.From",
+              "response_code": "OK"
+            },
+            "total": 1273,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1273"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "OK",
+              "method": "RewriteObject.To"
+            },
+            "total": 1273,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1273"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "TestIamPermissions",
+              "response_code": "OK"
+            },
+            "total": 1,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "OK",
+              "method": "UpdateObjectMetadata"
+            },
+            "total": 5,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "WriteObject",
+              "response_code": "OK"
+            },
+            "total": 1566,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-31T06:53:17.859Z",
+                  "endTime": "2026-11-01T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "5"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "144"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "227"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "252"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "875"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "60"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "ListObjects",
+              "response_code": "PERMISSION_DENIED"
+            },
+            "total": 1,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-11-02T06:53:17.859Z",
+                  "endTime": "2026-11-03T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "UNAUTHENTICATED",
+              "method": "GetBucketMetadata"
+            },
+            "total": 1,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "UNAUTHENTICATED",
+              "method": "ListObjects"
+            },
+            "total": 3,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-11-05T06:53:17.859Z",
+                  "endTime": "2026-11-06T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-02T06:53:17.859Z",
+                  "endTime": "2026-11-03T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "network/sent_bytes_count": {
+        "truncated": false,
+        "series": [
+          {
+            "labels": {
+              "method": "ReadObject",
+              "response_code": "CANCELLED"
+            },
+            "total": 138412032,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-11-04T06:53:17.859Z",
+                  "endTime": "2026-11-05T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "6291456"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-02T06:53:17.859Z",
+                  "endTime": "2026-11-03T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2097152"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-31T06:53:17.859Z",
+                  "endTime": "2026-11-01T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "4194304"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-29T06:53:17.859Z",
+                  "endTime": "2026-10-30T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "0"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "29360128"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "4194304"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "75497472"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "16777216"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "CANCELLED",
+              "method": "WriteObject"
+            },
+            "total": 0,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "0"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "0"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "FAILED_PRECONDITION",
+              "method": "ReadObject"
+            },
+            "total": 0,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-26T06:53:17.859Z",
+                  "endTime": "2026-10-27T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "0"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "WriteObject",
+              "response_code": "INVALID_ARGUMENT"
+            },
+            "total": 44,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "44"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "GetObjectMetadata",
+              "response_code": "NOT_FOUND"
+            },
+            "total": 1353851,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-31T06:53:17.859Z",
+                  "endTime": "2026-11-01T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "974"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "3727"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "514498"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "76416"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "124329"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "147029"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "454742"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "31402"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "734"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "OK",
+              "method": "DeleteObject"
+            },
+            "total": 0,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "0"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "0"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "0"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "0"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "OK",
+              "method": "GetBucketMetadata"
+            },
+            "total": 3682,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "58"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "285"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "589"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "530"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1081"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1139"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "GetObjectMetadata",
+              "response_code": "OK"
+            },
+            "total": 4514004,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-31T06:53:17.859Z",
+                  "endTime": "2026-11-01T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1415"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "18974"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2013290"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "457603"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "166929"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "406048"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1295858"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "150291"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "3596"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "ListObjects",
+              "response_code": "OK"
+            },
+            "total": 8491018,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "5886426"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1954898"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "604476"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "35993"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "9193"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "32"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "OK",
+              "method": "ReadObject"
+            },
+            "total": 7944655426,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-11-05T06:53:17.859Z",
+                  "endTime": "2026-11-06T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "84137604"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-04T06:53:17.859Z",
+                  "endTime": "2026-11-05T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "283706616"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-03T06:53:17.859Z",
+                  "endTime": "2026-11-04T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "46679575"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-02T06:53:17.859Z",
+                  "endTime": "2026-11-03T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "145578710"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-01T06:53:17.859Z",
+                  "endTime": "2026-11-02T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "88290380"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-31T06:53:17.859Z",
+                  "endTime": "2026-11-01T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "89566989"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-30T06:53:17.859Z",
+                  "endTime": "2026-10-31T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "53054174"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-29T06:53:17.859Z",
+                  "endTime": "2026-10-30T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "25198400"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "12266389"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1511962146"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-26T06:53:17.859Z",
+                  "endTime": "2026-10-27T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "51404674"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "500864266"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1664807123"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2621318433"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "596285909"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "153241112"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-20T06:53:17.859Z",
+                  "endTime": "2026-10-21T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2320020"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-19T06:53:17.859Z",
+                  "endTime": "2026-10-20T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1251086"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "11645638"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-17T06:53:17.859Z",
+                  "endTime": "2026-10-18T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "91076"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-16T06:53:17.859Z",
+                  "endTime": "2026-10-17T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "45538"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-15T06:53:17.859Z",
+                  "endTime": "2026-10-16T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "159914"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-14T06:53:17.859Z",
+                  "endTime": "2026-10-15T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "91076"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-13T06:53:17.859Z",
+                  "endTime": "2026-10-14T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "45538"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-12T06:53:17.859Z",
+                  "endTime": "2026-10-13T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "136614"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-11T06:53:17.859Z",
+                  "endTime": "2026-10-12T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "45538"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-10T06:53:17.859Z",
+                  "endTime": "2026-10-11T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "114376"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-09T06:53:17.859Z",
+                  "endTime": "2026-10-10T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "45538"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-08T06:53:17.859Z",
+                  "endTime": "2026-10-09T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "209898"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-07T06:53:17.859Z",
+                  "endTime": "2026-10-08T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "91076"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "RewriteObject.From",
+              "response_code": "OK"
+            },
+            "total": 1904512,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1904512"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "RewriteObject.To",
+              "response_code": "OK"
+            },
+            "total": 1904512,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1904512"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "OK",
+              "method": "TestIamPermissions"
+            },
+            "total": 159,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "159"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "OK",
+              "method": "UpdateObjectMetadata"
+            },
+            "total": 6343,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-27T06:53:17.859Z",
+                  "endTime": "2026-10-28T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2471"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1473"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2399"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "OK",
+              "method": "WriteObject"
+            },
+            "total": 2363898,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-31T06:53:17.859Z",
+                  "endTime": "2026-11-01T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1415"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "5869"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-25T06:53:17.859Z",
+                  "endTime": "2026-10-26T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "216576"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-24T06:53:17.859Z",
+                  "endTime": "2026-10-25T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "345983"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-23T06:53:17.859Z",
+                  "endTime": "2026-10-24T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "406048"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-22T06:53:17.859Z",
+                  "endTime": "2026-10-23T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1296573"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-21T06:53:17.859Z",
+                  "endTime": "2026-10-22T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "89353"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-10-18T06:53:17.859Z",
+                  "endTime": "2026-10-19T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "2081"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "PERMISSION_DENIED",
+              "method": "ListObjects"
+            },
+            "total": 380,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-11-02T06:53:17.859Z",
+                  "endTime": "2026-11-03T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "380"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "method": "GetBucketMetadata",
+              "response_code": "UNAUTHENTICATED"
+            },
+            "total": 0,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-10-28T06:53:17.859Z",
+                  "endTime": "2026-10-29T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "0"
+                }
+              }
+            ]
+          },
+          {
+            "labels": {
+              "response_code": "UNAUTHENTICATED",
+              "method": "ListObjects"
+            },
+            "total": 2238,
+            "points": [
+              {
+                "interval": {
+                  "startTime": "2026-11-05T06:53:17.859Z",
+                  "endTime": "2026-11-06T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "746"
+                }
+              },
+              {
+                "interval": {
+                  "startTime": "2026-11-02T06:53:17.859Z",
+                  "endTime": "2026-11-03T06:53:17.859Z"
+                },
+                "value": {
+                  "int64Value": "1492"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "evidenceSHA256": {
+    "rugatha-access-audit-2026-11-06.json": "af36700b97e5abf00dc9e2d72e3726472b251fcbb2c8a6f90255c3155c9a46fd",
+    "rugatha-image-browser-2026-11-06.log": "9f58345ed73edf70df0503a9f5760eaa1c24fee391f162cb639f76fad56250d2",
+    "rugatha-image-cache-recheck-2026-11-06.log": "1d0fabae55a53cbe8641bdcaac46c6b0cbd1faa89ee60821e6d36509c4b0bd30"
+  },
+  "limitations": [
+    "Monitoring is bucket-wide and includes maintenance/tests; not billing usage or visitor-only access.",
+    "Private original archives were not re-downloaded in this review.",
+    "No uploads, source switches, image deletions, or deployments performed."
+  ]
+}

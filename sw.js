@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v54";
+const CACHE_VERSION = "rugatha-pwa-v56";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;
@@ -68,12 +68,21 @@ const SPELL_CATALOG_URLS = [
   "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/catalogs%2Fspells%2F2026-10-18-v1%2Fclass_spells.json?alt=media"
 ];
 
-// Only immutable editorial WebP variants from the reviewed bucket may enter this
+const BANNER_IMAGE_URL = "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fatlas-cover-firebase%2Freading-c565780a.png?alt=media";
+const isSiteImage = request => {
+  try {
+    return /^\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images\/site\/(pc-portraits|pc-three-views|pc-player-art|pc-cards|deities|emperors|about|maps|member|npc-backgrounds)\/[a-z0-9_-]+\/image-[a-f0-9]{8}\.(png|jpg|jpeg|webp|svg)$/.test(decodeURIComponent(new URL(request.url).pathname));
+  } catch (_) { return false; }
+};
+
+// Only immutable editorial variants from the reviewed bucket may enter this
 // cache. Download tokens, other buckets, private objects and other endpoints bypass it.
 const isPublicImage = (request) => {
   if (request.method !== "GET") return false;
   const url = new URL(request.url);
   if (url.origin !== "https://firebasestorage.googleapis.com" || url.search !== "?alt=media") return false;
+  if (request.url === BANNER_IMAGE_URL) return true;
+  if (isSiteImage(request)) return true;
   try {
     const path = decodeURIComponent(url.pathname);
     return /^\/v0\/b\/rugatha-87e15\.firebasestorage\.app\/o\/public-images\/(arcs|chapters|npcs)\/[a-z0-9_-]+\/[a-f0-9]{64}\/(thumb|reading)\.webp$/.test(path)
@@ -107,9 +116,12 @@ const imageCacheFirst = async (request, event) => {
     // An img without crossorigin starts as no-cors. Explicit CORS fetch gives a
     // readable response; never store opaque responses with unknown size/status.
     const response = await fetch(new Request(request, { mode: "cors", credentials: "omit", cache: REPLACED_MELVIN_IMAGES.has(request.url) ? "reload" : "default" }));
-    if (!response.ok || !response.headers.get("Content-Type")?.startsWith("image/webp")) return imageFallback(response);
+    const extension = new URL(request.url).pathname.split('.').pop();
+    const siteTypes = { png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp', svg: 'image/svg+xml' };
+    const contentType = isSiteImage(request) ? siteTypes[extension] : request.url === BANNER_IMAGE_URL ? "image/png" : "image/webp";
+    if (!response.ok || !response.headers.get("Content-Type")?.startsWith(contentType)) return imageFallback(response);
     const body = await response.clone().arrayBuffer();
-    if (body.byteLength > 1024 * 1024) return response;
+    if (body.byteLength > (isSiteImage(request) ? 10 : 1) * 1024 * 1024) return response;
     const headers = new Headers(response.headers);
     headers.set("X-Rugatha-Cached-At", String(Date.now()));
     headers.set("Content-Length", String(body.byteLength));

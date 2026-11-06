@@ -78,7 +78,7 @@ const pinIcon = L.icon({
   popupAnchor: [0, -8]
 });
 
-const mapImageUrl = '/map/assets/dranison-map.jpg';
+const mapImageUrl = 'https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fmaps%2Fdranison-map-e445f2d376%2Fimage-c7b457c9.jpg?alt=media';
 const image = new Image();
 image.onload = () => {
   const bounds = [[0, 0], [image.naturalHeight, image.naturalWidth]];

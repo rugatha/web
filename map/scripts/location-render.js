@@ -128,7 +128,7 @@ ${marker}
 <body>
   <a class="skip-link" href="#main">${t('跳至主要內容', 'Skip to content')}</a>
   <header class="atlas-header">
-    <div class="banner" aria-label="Rugatha banner image"><a class="banner-link" href="/" aria-label="${t('前往 Rugatha 首頁', 'Go to Rugatha home')}"><img class="banner-logo" src="/assets/banner/rugatha-banner-trademark.png" alt="Rugatha banner" width="720" height="517"></a></div>
+    <div class="banner" aria-label="Rugatha banner image"><a class="banner-link" href="/" aria-label="${t('前往 Rugatha 首頁', 'Go to Rugatha home')}"><img class="banner-logo" src="https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fatlas-cover-firebase%2Freading-c565780a.png?alt=media" alt="Rugatha banner" width="720" height="517"></a></div>
     <nav class="atlas-navigation" aria-label="${t('主選單', 'Main navigation')}"><a href="/map/map/">${t('卓尼森島地圖', 'Dranison Map')}</a><a href="${base}"${depth === 0 ? ' aria-current="page"' : ''}>${levels[0]}</a></nav>
   </header>
   <div class="location-language-toggle" role="group" aria-label="Language"><button class="location-language-button" type="button" data-lang="${en ? 'en' : 'zh'}" data-lang-toggle aria-pressed="true" aria-label="${t('目前語言：中文，切換為 English', 'Current language: English, switch to Chinese')}"></button></div>

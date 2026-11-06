@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, symlink, rm, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, relative } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { assetId, referenceCandidates, outsideDirectory, root, npcSourceFor, imageBucket, publicImageUrl, prepare, sha256, imageInfo } from '../scripts/image-assets.mjs';
 
@@ -40,7 +40,7 @@ test('CMYK cover converts to repeatable sRGB variants without modifying its orig
 }, async () => {
   const temporary = await mkdtemp(join(tmpdir(), 'image-cmyk-test-'));
   try {
-    const source = 'campaigns/campaign-banners/lite-c09.jpg';
+    const source = 'tests/fixtures/images/lite-c09.jpg';
     const original = await readFile(join(root, source));
     const record = { source, id: assetId(source), category: 'arcs', bytes: original.length,
       sha256: sha256(original), ...imageInfo(join(root, source)) };
@@ -67,13 +67,15 @@ test('CMYK cover converts to repeatable sRGB variants without modifying its orig
 
 test('source-switch dry-run uses fresh batch references and preserves the old pilot fallback', async () => {
   const temporary = await mkdtemp(join(tmpdir(), 'image-reference-snapshot-'));
+  const fixture = await mkdtemp(join(root, 'tests/.image-reference-'));
   try {
     const source = 'campaigns/chapter-banners/lite-c12-chpt04-01.png';
     const baseline = JSON.parse(await readFile(join(root, 'docs/image-migration/inventory.json'), 'utf8'));
     const image = baseline.images.find(item => item.source === source);
     assert.equal(image.references.length, 0); // This illustration was restored after the pilot snapshot.
-    const file = 'campaigns/data/chapter-content.json';
-    const before = await readFile(join(root, file));
+    const file = relative(root, join(fixture, 'content.json'));
+    const before = Buffer.from(JSON.stringify({ image: '../../../../campaigns/chapter-banners/lite-c12-chpt04-01.png' }));
+    await writeFile(join(root, file), before);
     const manifest = { bucket: imageBucket, images: [{ source, original: { sha256: image.sha256 },
       variants: { reading: { object: 'public-images/chapters/test/' + 'a'.repeat(64) + '/reading.webp' } } }] };
     await writeFile(join(temporary, 'manifest.json'), JSON.stringify(manifest));
@@ -87,5 +89,6 @@ test('source-switch dry-run uses fresh batch references and preserves the old pi
     await assert.rejects(readFile(join(temporary, 'source-changes.json')), { code: 'ENOENT' });
   } finally {
     await rm(temporary, { recursive: true, force: true });
+    await rm(fixture, { recursive: true, force: true });
   }
 });

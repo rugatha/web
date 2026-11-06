@@ -33,7 +33,7 @@
       "zh": "報名截止 2026/11/14 23:59 (GMT+8)",
       "en": "Registration closes on November 14th, 2026, at 11:59 PM (GMT+8)"
     },
-    "image": "assets/banner/rugatha-experience.jpeg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Farcs%2Fexp%2Fe03%2Freading-bdf253cf.webp?alt=media",
     "isTransparent": false,
     "deadline": false
   },
@@ -52,7 +52,7 @@
       "zh": "《柳絮因風起》",
       "en": "\"Where the Willow Drifts\""
     },
-    "image": "campaigns/campaign-banners/wilds-c06.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Farcs%2Fwilds%2Fc06%2Freading-9516236a.webp?alt=media",
     "isTransparent": false,
     "deadline": false
   },
@@ -109,7 +109,7 @@
       "zh": "《石原鎮之前》",
       "en": "\"Before Stonefield\""
     },
-    "image": "campaigns/campaign-banners/lite-c13.png",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Farcs%2Flite%2Fc13%2Freading-cfa6ebd3.webp?alt=media",
     "isTransparent": false,
     "deadline": false
   }

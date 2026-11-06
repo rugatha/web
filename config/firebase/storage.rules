@@ -113,6 +113,15 @@ service firebase.storage {
       allow list, write: if false;
     }
 
+    // Existing public website art, preserved without resizing or recompression.
+    match /public-images/site/{collection}/{assetId}/{fileName} {
+      allow get: if collection in ['pc-portraits', 'pc-three-views', 'pc-player-art',
+          'pc-cards', 'deities', 'emperors', 'about', 'maps', 'member', 'npc-backgrounds']
+        && assetId.matches('[a-z0-9_-]+')
+        && fileName.matches('image-[a-f0-9]{8}\\.(png|jpg|jpeg|webp|svg)');
+      allow list, write: if false;
+    }
+
     match /profile-photos/{uid}/{fileName} {
       allow get: if isOwner(uid) || isAdmin();
       allow list: if false;

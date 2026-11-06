@@ -1,0 +1,2491 @@
+{
+  "checkedDate": "2026-11-06",
+  "timezone": "Asia/Taipei",
+  "scope": "專案目錄內所有常見圖片格式；排除 .git、node_modules、.codex、.aws、.agents 與 .cache。含 Git 忽略的本機工作素材及驗收產物，不包含專案外 /private/tmp。",
+  "summary": {
+    "網站圖片": {
+      "count": 205,
+      "bytes": 224512182
+    },
+    "本機工作素材": {
+      "count": 113,
+      "bytes": 250248016
+    },
+    "驗收截圖／產物": {
+      "count": 33,
+      "bytes": 13087918
+    },
+    "測試 fixture": {
+      "count": 1,
+      "bytes": 560903
+    }
+  },
+  "totalCount": 352,
+  "totalBytes": 488409019,
+  "items": [
+    {
+      "path": "experience/subscription.png",
+      "bytes": 2450825,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "lab/front-page-new/assets/threshold.webp",
+      "bytes": 335826,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/aasimar.png",
+      "bytes": 2678202,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/bach-tahn.png",
+      "bytes": 2005706,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/banderhobb.png",
+      "bytes": 3179042,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/basari.png",
+      "bytes": 2766117,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/bone-golem-action.png",
+      "bytes": 2276665,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/bone-golem.png",
+      "bytes": 2567402,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/bovitaur-action.png",
+      "bytes": 2991265,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/bovitaur.png",
+      "bytes": 2837877,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/bullywags.png",
+      "bytes": 2484896,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/caprataur.png",
+      "bytes": 1328653,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/catfolk.png",
+      "bytes": 1985442,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/centaur.png",
+      "bytes": 1972724,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/construct.png",
+      "bytes": 1812006,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/contract-demon.png",
+      "bytes": 2982182,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/crabman-action.png",
+      "bytes": 2920456,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/crabman.png",
+      "bytes": 2868728,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/deepling.png",
+      "bytes": 2694043,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/demon.png",
+      "bytes": 2493307,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/dhampir.png",
+      "bytes": 1625381,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/dog.png",
+      "bytes": 2386638,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/dragon-kin-kobold.png",
+      "bytes": 1810469,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/dragon.png",
+      "bytes": 2103759,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/dragonborn.png",
+      "bytes": 2450978,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/dryad.png",
+      "bytes": 2039760,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/dwarf.png",
+      "bytes": 2228589,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/elf.png",
+      "bytes": 1886404,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/enhanced-laztek-v2.png",
+      "bytes": 1031947,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/enhanced-laztek-v3-cutout.png",
+      "bytes": 2253181,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/enhanced-laztek-v3.png",
+      "bytes": 2250795,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/enhanced-laztek-v4.png",
+      "bytes": 1191772,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/enhanced-laztek.png",
+      "bytes": 1941924,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/fae.png",
+      "bytes": 2183408,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/fairy.png",
+      "bytes": 2692057,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/faun.png",
+      "bytes": 1271634,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/felian.png",
+      "bytes": 1748111,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/fey-blessed.png",
+      "bytes": 1896969,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/firbolg.png",
+      "bytes": 2573709,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/fishfolk.png",
+      "bytes": 2240327,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/forest-goblin-v2.png",
+      "bytes": 2905914,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/forest-goblin-v3.png",
+      "bytes": 2789720,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/forest-goblin.png",
+      "bytes": 2936641,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/foxfolk.png",
+      "bytes": 2421237,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/frogfolk.png",
+      "bytes": 2195839,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/gargoyle.png",
+      "bytes": 2755438,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/gnome.png",
+      "bytes": 2137615,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/goatfolk.png",
+      "bytes": 1830848,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/goblin.png",
+      "bytes": 3038818,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/god.png",
+      "bytes": 1825276,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/goliath.png",
+      "bytes": 2288597,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/half-elf.png",
+      "bytes": 1876732,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/half-orc.png",
+      "bytes": 2231181,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/halfling.png",
+      "bytes": 2735378,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/harengon.png",
+      "bytes": 1672343,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/horse.png",
+      "bytes": 1561062,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/hound-kin-kobold.png",
+      "bytes": 2268547,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/human.png",
+      "bytes": 1984216,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/kalashtar-action.png",
+      "bytes": 2444002,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/kalashtar.png",
+      "bytes": 2141967,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/kenku.png",
+      "bytes": 2509456,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/klaussian.png",
+      "bytes": 2646395,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/kobold.png",
+      "bytes": 2111827,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/lamia.png",
+      "bytes": 2250041,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/laztek.png",
+      "bytes": 2265118,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/lich.png",
+      "bytes": 1927875,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/lizardfolk.png",
+      "bytes": 2175168,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/lobsterfolk-action.png",
+      "bytes": 2084531,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/lobsterfolk.png",
+      "bytes": 2061205,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/merfolk-action.png",
+      "bytes": 2674134,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/merfolk.png",
+      "bytes": 1826770,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/mimic.png",
+      "bytes": 3083432,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/minotaur.png",
+      "bytes": 2953399,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/naga.png",
+      "bytes": 1703311,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/ogre.png",
+      "bytes": 2609354,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/orc.png",
+      "bytes": 2154153,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/piscian-action.png",
+      "bytes": 2528075,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/piscian.png",
+      "bytes": 2062521,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/pixie.png",
+      "bytes": 2351439,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/plasmoid.png",
+      "bytes": 1539989,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/primal-demon.png",
+      "bytes": 2852618,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/primal-laztek.png",
+      "bytes": 2837034,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/pure-blood.png",
+      "bytes": 1654926,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/pure-laztek-v2.png",
+      "bytes": 2079241,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/pure-laztek-v3.png",
+      "bytes": 2232689,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/pure-laztek-v4.png",
+      "bytes": 2328684,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/pure-laztek.png",
+      "bytes": 2327729,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/quasit.png",
+      "bytes": 1838994,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/ramotaur.png",
+      "bytes": 1552649,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/ranakin.png",
+      "bytes": 2132535,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/ratfolk.png",
+      "bytes": 2201853,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/satyr.png",
+      "bytes": 919592,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/scorpionfolk.png",
+      "bytes": 2210499,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/shadar-kai-action.png",
+      "bytes": 2268618,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/shadar-kai.png",
+      "bytes": 2021687,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/shapeshifter.png",
+      "bytes": 2289052,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/skeleton.png",
+      "bytes": 1259372,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/snakefolk.png",
+      "bytes": 3104929,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/specter.png",
+      "bytes": 2449287,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/sphinx.png",
+      "bytes": 2853393,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/spider.png",
+      "bytes": 2426228,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/spirit-action.png",
+      "bytes": 2032379,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/squirrel.png",
+      "bytes": 2269117,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/tabaxi-action.png",
+      "bytes": 1826179,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/tabaxi.png",
+      "bytes": 1869975,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/tiefling.png",
+      "bytes": 1971517,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/underground-goblin.png",
+      "bytes": 2370892,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/vampire.png",
+      "bytes": 1756021,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/werewolf.png",
+      "bytes": 2430983,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/wolf.png",
+      "bytes": 2286540,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/wraith-action.png",
+      "bytes": 2577421,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/wraith.png",
+      "bytes": 2254138,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "species/assets/portrait/zombie.png",
+      "bytes": 1762505,
+      "category": "本機工作素材",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "tests/fixtures/images/lite-c09.jpg",
+      "bytes": 560903,
+      "category": "測試 fixture",
+      "tracked": false,
+      "gitIgnored": false
+    },
+    {
+      "path": "about-us/assets/dc-icon.webp",
+      "bytes": 17606,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "about-us/assets/donate_icon.png",
+      "bytes": 35563,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "about-us/assets/fb-icon.png",
+      "bytes": 3727,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "about-us/assets/gmail-icon.webp",
+      "bytes": 11774,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "about-us/assets/ig-icon.png",
+      "bytes": 1335709,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "about-us/assets/rugatha-photo.png",
+      "bytes": 2594268,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "about-us/assets/threads-icon.png",
+      "bytes": 7404,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/2026-d3-helper.png",
+      "bytes": 162427,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/banner/rugatha-banner-preview.png",
+      "bytes": 121381,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/banner/rugatha-banner-trademark-transparent.png",
+      "bytes": 131585,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/banner/rugatha-banner.png",
+      "bytes": 121673,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/campaign_logo/logo_RBrown.png",
+      "bytes": 385860,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/campaign_logo/logo_RLegends.png",
+      "bytes": 499096,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/campaign_logo/logo_RLite.png",
+      "bytes": 386665,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/campaign_logo/logo_RPlus.png",
+      "bytes": 380239,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/campaign_logo/logo_RProsper.png",
+      "bytes": 394822,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/campaign_logo/logo_RVeil.png",
+      "bytes": 393683,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/campaign_logo/logo_RWilds.png",
+      "bytes": 360668,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/cons/d3/2025.jpg",
+      "bytes": 112808,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/cons/trpg_fes/2026.jpg",
+      "bytes": 151829,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/icons/campaigns-icon.png",
+      "bytes": 455596,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/icons/characters-icon.png",
+      "bytes": 495698,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/icons/deities-icon.png",
+      "bytes": 381878,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/icons/emperors-icon.png",
+      "bytes": 551405,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/icons/history-icon.png",
+      "bytes": 483376,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/icons/map-icon.png",
+      "bytes": 459656,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/logo/D&D_logo.png",
+      "bytes": 82838,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/logo/rugatha-favicon-32.png",
+      "bytes": 3062,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/logo/rugatha-favicon.png",
+      "bytes": 204988,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/logo/rugatha-icon-192.png",
+      "bytes": 42232,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/logo/rugatha-icon-32.png",
+      "bytes": 2115,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/logo/rugatha-icon-512.png",
+      "bytes": 162427,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/logo/rugatha-icon-curtain.png",
+      "bytes": 2026371,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/logo/rugatha-icon-maskable-512.png",
+      "bytes": 162427,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/logo/rugatha-icon.png",
+      "bytes": 1265213,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/others/d20.png",
+      "bytes": 70607,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/others/dm-screen.jpg",
+      "bytes": 1320344,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/others/dm-screen.png",
+      "bytes": 152204,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/others/lan-en.png",
+      "bytes": 336706,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/others/lan-zh.png",
+      "bytes": 357988,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/others/survey-cake.png",
+      "bytes": 52565,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "assets/others/tagline-zh.png",
+      "bytes": 19770,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-brown-logo.jpg",
+      "bytes": 22000,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-legends-logo.jpg",
+      "bytes": 17056,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-light-logo.jpg",
+      "bytes": 19059,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-logo.jpg",
+      "bytes": 17021,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-plus-logo.jpg",
+      "bytes": 19196,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "campaigns/campaign-logos/rugatha-wilds-logo.jpg",
+      "bytes": 41279,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Amoret.png",
+      "bytes": 2424987,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Daligon.png",
+      "bytes": 2521220,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Jeorisan.png",
+      "bytes": 2085987,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Kalinius.png",
+      "bytes": 2549760,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Keinra.png",
+      "bytes": 1985799,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Laxthos.png",
+      "bytes": 1982534,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Maxus.png",
+      "bytes": 2255411,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Nessis.png",
+      "bytes": 2186474,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Phyneal.png",
+      "bytes": 1838488,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Phynoir.png",
+      "bytes": 2508649,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Trinix.png",
+      "bytes": 2024789,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "deities/images/Ultisen.png",
+      "bytes": 2173108,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "emperors/gallery/dranison-georson.jpeg",
+      "bytes": 333513,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "emperors/gallery/dranison-walston.jpeg",
+      "bytes": 259004,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "emperors/gallery/lothum-jelix.jpeg",
+      "bytes": 274595,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "emperors/gallery/lothum-lorin.jpeg",
+      "bytes": 291740,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "emperors/gallery/new-dranison-carlos.jpeg",
+      "bytes": 299710,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "emperors/gallery/new-dranison-kylenor.jpeg",
+      "bytes": 297681,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "emperors/gallery/trinix-hollison.jpeg",
+      "bytes": 296545,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "emperors/gallery/trinix-reylan.jpeg",
+      "bytes": 291509,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "map/assets/dranison-map.jpg",
+      "bytes": 2217683,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "member/assets/journal-contours.svg",
+      "bytes": 1606,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "npc/npc_page/assets/kraft-paper-v2.jpg",
+      "bytes": 325739,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/lite-buzz-en.png",
+      "bytes": 81482,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/lite-buzz-zh.png",
+      "bytes": 84012,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/lite-lott-en.png",
+      "bytes": 70778,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/lite-lott-zh.png",
+      "bytes": 73194,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/lite-ubbo-en.png",
+      "bytes": 59790,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/lite-ubbo-zh.png",
+      "bytes": 61787,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-beau-en.png",
+      "bytes": 431495,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-beau-zh.png",
+      "bytes": 439144,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-midori-en.png",
+      "bytes": 425806,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-midori-zh.png",
+      "bytes": 434209,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-ron-en.png",
+      "bytes": 282971,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-ron-zh.png",
+      "bytes": 287778,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-samael-en.png",
+      "bytes": 218104,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-samael-zh.png",
+      "bytes": 229247,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-siri-en.png",
+      "bytes": 257312,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-siri-zh.png",
+      "bytes": 264852,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-yhwh-en.png",
+      "bytes": 370871,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/plus-yhwh-zh.png",
+      "bytes": 378580,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-al-lon-en.png",
+      "bytes": 558674,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-al-lon-zh.png",
+      "bytes": 554431,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-dawn-light-fur-en.png",
+      "bytes": 102803,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-dawn-lite-fur-zh.png",
+      "bytes": 106232,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-kaname-peresia-en.png",
+      "bytes": 296259,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-kaname-peresia-zh.png",
+      "bytes": 304533,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-leah-en.png",
+      "bytes": 91479,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-leah-zh.png",
+      "bytes": 93761,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-maribel-muddlewick-en.png",
+      "bytes": 432815,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-maribel-muddlewick-zh.png",
+      "bytes": 442371,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-ravi-en.png",
+      "bytes": 76134,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-ravi-zh.png",
+      "bytes": 78430,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-roel-lancelot-en.png",
+      "bytes": 44463,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/assets/wilds-roel-lancelot-zh.png",
+      "bytes": 45536,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Al-lon.png",
+      "bytes": 486056,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Anedak.png",
+      "bytes": 470226,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Brown.png",
+      "bytes": 619645,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Buzz.jpg",
+      "bytes": 61221,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Cecil.png",
+      "bytes": 2570191,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Cold-Ham.png",
+      "bytes": 2625559,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Dawn Light Fur.jpg",
+      "bytes": 45946,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Drayer.png",
+      "bytes": 782938,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/GoR.png",
+      "bytes": 473399,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Inu.png",
+      "bytes": 208244,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Jiaheng.png",
+      "bytes": 322106,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Kaname.jpg",
+      "bytes": 70483,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Kudan.jpg",
+      "bytes": 105960,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Leah.jpeg",
+      "bytes": 1319191,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Lemmy.png",
+      "bytes": 344468,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Lott.jpeg",
+      "bytes": 63042,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Midori.png",
+      "bytes": 563124,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Mr. Green.png",
+      "bytes": 2205806,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Paladin.png",
+      "bytes": 421609,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Pascal.png",
+      "bytes": 442187,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Psyber.jpg",
+      "bytes": 104763,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Ravi.png",
+      "bytes": 1359491,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Roel.png",
+      "bytes": 404098,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Ron.png",
+      "bytes": 328791,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Samael.jpg",
+      "bytes": 40640,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Siri Oslee.png",
+      "bytes": 114422,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Sugalu.png",
+      "bytes": 896151,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Tai Tai Wo Hai Yao.png",
+      "bytes": 955437,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Tweeter.png",
+      "bytes": 125579,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Ubbo.png",
+      "bytes": 396130,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Uko.jpg",
+      "bytes": 416762,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Usioni.png",
+      "bytes": 506038,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Watson.png",
+      "bytes": 409825,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/YHWH.png",
+      "bytes": 136862,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics/Yi.png",
+      "bytes": 225546,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Al-lon.jpg",
+      "bytes": 490750,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Al-lon_full.jpg",
+      "bytes": 1026189,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Dawn Light Fur Full.jpg",
+      "bytes": 292552,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Dawn Light Fur.jpg",
+      "bytes": 387728,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/GoR.png",
+      "bytes": 1470311,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Kaname.png",
+      "bytes": 21014,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Kaname_comic.jpg",
+      "bytes": 221026,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Kudan.jpg",
+      "bytes": 187209,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Leah.jpg",
+      "bytes": 174864,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Lemmy.jpg",
+      "bytes": 81977,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Lott.jpg",
+      "bytes": 144919,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Midori.jpg",
+      "bytes": 571893,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Midori_Anime.jpg",
+      "bytes": 87492,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Paladin.png",
+      "bytes": 2583742,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Pascal.png",
+      "bytes": 2453121,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Psyber.jpg",
+      "bytes": 482604,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Roel.png",
+      "bytes": 1123884,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Roel_portrait.png",
+      "bytes": 345723,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Ron.png",
+      "bytes": 276410,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Samael.jpg",
+      "bytes": 67181,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Siri Oslee.png",
+      "bytes": 5617609,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Siri.png",
+      "bytes": 16705,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Tweeter.jpg",
+      "bytes": 109438,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Ubbo.jpg",
+      "bytes": 84542,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Uko.jpg",
+      "bytes": 179208,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Usioni.png",
+      "bytes": 8652405,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/Watson.jpg",
+      "bytes": 50424,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/pics_by_players/YHWH.jpg",
+      "bytes": 60716,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Al-lon.png",
+      "bytes": 3155493,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Anedak.png",
+      "bytes": 3314704,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Beau_Artificial_Hand.png",
+      "bytes": 3217876,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Beau_Young.png",
+      "bytes": 3176714,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Beau_Young_Artificial_Hand.png",
+      "bytes": 3171138,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Brown.png",
+      "bytes": 3069956,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Buzz.png",
+      "bytes": 3015006,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Cecil.png",
+      "bytes": 2900745,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Cold-Ham.png",
+      "bytes": 3024792,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Dawn Light Fur.png",
+      "bytes": 3019113,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Drayer.png",
+      "bytes": 3034691,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/GoR.png",
+      "bytes": 3103664,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Inu.png",
+      "bytes": 3059858,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Jiaheng.png",
+      "bytes": 3097128,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Kaname.png",
+      "bytes": 3084337,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Kudan.png",
+      "bytes": 3018855,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Leah.png",
+      "bytes": 3212450,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Lemmy.png",
+      "bytes": 3092293,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Lott.png",
+      "bytes": 3066577,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Midori.png",
+      "bytes": 3023511,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Midori_Artificial_Hand.png",
+      "bytes": 3085339,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Mr. Green.png",
+      "bytes": 3144993,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Paladin.png",
+      "bytes": 2951813,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Pascal.png",
+      "bytes": 3188192,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Psyber.png",
+      "bytes": 3164493,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Ravi.png",
+      "bytes": 3213980,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Roel.png",
+      "bytes": 3110250,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Ron.png",
+      "bytes": 3041287,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Samael.png",
+      "bytes": 2972154,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Siri Oslee.png",
+      "bytes": 3139338,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Sugalu.png",
+      "bytes": 3107454,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Tai Tai Wo Hai Yao.png",
+      "bytes": 2978823,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Tweeter.png",
+      "bytes": 3041567,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Ubbo.png",
+      "bytes": 3275530,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Uko.png",
+      "bytes": 3162152,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Usioni.png",
+      "bytes": 3123013,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Watson.png",
+      "bytes": 3028650,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/YHWH.png",
+      "bytes": 2972377,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "pc/three_views/Yi.png",
+      "bytes": 3128576,
+      "category": "網站圖片",
+      "tracked": true,
+      "gitIgnored": false
+    },
+    {
+      "path": "output/admin/dashboard-charts.png",
+      "bytes": 276803,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/dashboard-desktop.png",
+      "bytes": 268673,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/dashboard-mobile.png",
+      "bytes": 363521,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/mobile-navigation-open.png",
+      "bytes": 37977,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/subscriptions-desktop.png",
+      "bytes": 399279,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/subscriptions-mobile.png",
+      "bytes": 239785,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/v3-fate.png",
+      "bytes": 170549,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/v3-members.png",
+      "bytes": 159809,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/v3-mobile.png",
+      "bytes": 100250,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/v3-overview.png",
+      "bytes": 139685,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/v4-fate.png",
+      "bytes": 193371,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/v4-members.png",
+      "bytes": 168189,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/v4-mobile.png",
+      "bytes": 102847,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/v4-npcs.png",
+      "bytes": 511049,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/admin/v4-overview.png",
+      "bytes": 175764,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/admin-desktop.png",
+      "bytes": 166527,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/admin-frozen-1280.png",
+      "bytes": 162756,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/admin-frozen-390.png",
+      "bytes": 126597,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/admin-mobile.png",
+      "bytes": 126709,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/current-event-desktop.png",
+      "bytes": 524248,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/current-event-mobile.png",
+      "bytes": 142633,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/entry-1280.png",
+      "bytes": 475874,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/entry-390.png",
+      "bytes": 199077,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/register-1280.png",
+      "bytes": 1652830,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/register-390.png",
+      "bytes": 1012778,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/register-full-1280.png",
+      "bytes": 863148,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/experience/register-full-390.png",
+      "bytes": 473122,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/newsletter/subscribe-balanced-desktop.png",
+      "bytes": 715056,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/newsletter/subscribe-balanced-mobile.png",
+      "bytes": 385061,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/newsletter/subscribe-balanced-narrow.png",
+      "bytes": 296775,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/newsletter/subscribe-desktop.png",
+      "bytes": 727518,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "output/newsletter/subscribe-mobile.png",
+      "bytes": 384396,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    },
+    {
+      "path": "test-results/image-browser/migration-assets.png",
+      "bytes": 1345262,
+      "category": "驗收截圖／產物",
+      "tracked": false,
+      "gitIgnored": true
+    }
+  ]
+}

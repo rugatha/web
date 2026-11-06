@@ -5,7 +5,7 @@
       {
         "id": "ron",
         "name": "龍恩",
-        "icon": "pc/pics/Ron.png",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fron-cde8f9ab40%2Fimage-5dfe37fb.png?alt=media",
         "nameEn": "Ron"
       }
     ],
@@ -13,25 +13,25 @@
       {
         "id": "midori",
         "name": "米多莉",
-        "icon": "pc/pics/Midori.png",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fmidori-16add8cb4c%2Fimage-c1d32fd6.png?alt=media",
         "nameEn": "Midori"
       },
       {
         "id": "samael",
         "name": "薩梅爾",
-        "icon": "pc/pics/Samael.jpg",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fsamael-d063d635c9%2Fimage-c0ac9dbc.jpg?alt=media",
         "nameEn": "Samael"
       },
       {
         "id": "siri",
         "name": "喜利",
-        "icon": "pc/pics/Siri Oslee.png",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fsiri-oslee-fcce8003f4%2Fimage-f5f50b6f.png?alt=media",
         "nameEn": "Siri"
       },
       {
         "id": "yhwh",
         "name": "YHWH",
-        "icon": "pc/pics/YHWH.png",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fyhwh-98297c2873%2Fimage-6e362197.png?alt=media",
         "nameEn": "YHWH"
       },
       {
