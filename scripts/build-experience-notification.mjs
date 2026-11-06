@@ -25,7 +25,12 @@ export function findScenario(source, scriptName) {
     const introduction = article.match(/<p\b[^>]*class="experience-card__description"[^>]*>([\s\S]*?)<\/p>/)?.[1];
     if (!banner || !introduction) throw new Error(`Missing banner or introduction for ${scriptName}`);
     const url = new URL(decode(banner), 'https://rugatha.com/experience/');
-    if (url.origin !== 'https://rugatha.com') throw new Error('Scenario banner must use the public Rugatha domain');
+    const cloudPath = decodeURIComponent(url.pathname);
+    const publicCloudImage = url.origin === 'https://firebasestorage.googleapis.com'
+      && !url.username && !url.password && !url.hash && url.search === '?alt=media'
+      && cloudPath.startsWith('/v0/b/rugatha-87e15.firebasestorage.app/o/public-images/')
+      && !cloudPath.split('/').includes('..') && /\.(webp|png|jpe?g|svg)$/.test(cloudPath);
+    if (url.origin !== 'https://rugatha.com' && !publicCloudImage) throw new Error('Scenario banner must use the Rugatha domain or reviewed public Firebase image paths');
     return { banner: url.href, introduction: introduction.split(/<br\s*\/?\s*>/i).map(text).filter(Boolean) };
   }
   throw new Error(`Cannot find scriptName "${scriptName}" in experience/index.html`);

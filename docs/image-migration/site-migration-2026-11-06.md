@@ -37,7 +37,7 @@ worker 升至 **v56**，只允許已核對類別與 hash 檔名的原格式圖�
 ## 驗收
 
 - 圖片工具、清理及 PWA 單元：20 項通過；Storage Rules Emulator：六項通過。
-- 管理目錄：10 項通過；101 篇章節檔案與管理目錄生成檢查通過。
+- 管理目錄：10 項通過；101 篇章節檔案與管理目錄生成檢查通過；通知信生成與六項測試通過。
 - HTTP 圖片瀏覽器套件：19 項全部通過，包含既有九項、上一批四項與本輪六項。
 - 本輪六項 HTTPS 案例通過：全部 164 張依原尺寸解碼、桌面／390px 手機完整頁面、地圖縮放、三視圖真正離線整頁重載及雙語卡片清單；PC 跨團重複卡片改以 35 張唯一肖像及 44 張卡片核對，另重驗兩組頁面原尺寸與 `decode()`，避免預設圖或 async decode 誤判。
 - 體驗回饋表單使用 demo Firestore Emulator smoke 通過，未寫入正式使用者資料。
@@ -70,3 +70,5 @@ node scripts/site-image-assets.mjs restore \
 ## 正式發布
 
 本批次已完成發布前驗收，將透過 main 的既有 **Deploy Pages** workflow 發布到 [rugatha.com](https://rugatha.com)。正式部署結果與逐頁複驗將補於本節及 [機器可讀摘要](site-migration-2026-11-06.json)。
+
+首次發布 `1bfa6525` 的 [Deploy Pages](https://github.com/rugatha/web/actions/runs/42185655806) 在產生通知信時停止，尚未執行部署。原因為通知生成器原本只接受 Rugatha 網域圖片；已新增固定 bucket、公開路徑、無 token 的 Firebase 圖片允許規則，並重跑完整建置及六項通知測試通過。

@@ -268,7 +268,8 @@
     },
     "staticMissingCandidates": 0,
     "protectedChecksums": "all unchanged",
-    "diffCheck": "passed"
+    "diffCheck": "passed",
+    "notificationTests": 6
   },
   "cloud": {
     "checkedAt": "2026-11-06T08:02:50.101Z",
@@ -307,7 +308,12 @@
   "deployment": {
     "status": "pending",
     "target": "https://rugatha.com",
-    "workerVersion": "rugatha-pwa-v56"
+    "workerVersion": "rugatha-pwa-v56",
+    "initialAttempt": {
+      "commit": "1bfa6525ff3a3e14b8a4fcdcc4fc5d2d72ad37db",
+      "run": "https://github.com/rugatha/web/actions/runs/42185655806",
+      "result": "failed before deployment: newsletter generator rejected migrated Firebase banner; allowlist fixed and complete build repeated locally"
+    }
   },
   "qaCleanupReport": "qa-cleanup-2026-11-06.json",
   "uploadRecovery": "Pascal upload timed out once; independent create-only retry verified successfully before the complete manifest was assembled. All 164 originals and public copies were freshly re-read before deletion."
