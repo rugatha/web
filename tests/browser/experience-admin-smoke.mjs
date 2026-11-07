@@ -50,6 +50,13 @@ try {
  assert.match(await page.locator('#experience-table tbody').textContent(),/完成跑團/);
  assert.match(await page.locator('#experience-table tbody').textContent(),/DM 備註 <保留文字>/);
  assert.equal(await page.locator('.seat-box.occupied').count(),3);
+ await page.getByRole('button',{name:'編輯 DM_Note',exact:true}).click();
+ assert.equal(await page.locator('#experience-edit-save').isEnabled(),true,'save must unlock after the first successful edit');
+ assert.equal(await page.locator('#experience-edit-note').inputValue(),'DM 備註 <保留文字>');
+ await page.fill('#experience-edit-note','第二次儲存');
+ await page.click('#experience-edit-save');
+ await page.locator('#experience-editor').waitFor({state:'hidden'});
+ await page.waitForFunction(()=>document.querySelector('#experience-table tbody').textContent.includes('第二次儲存'));
  page.on('dialog',dialog=>dialog.accept());
  await page.locator('[data-cancel-registration]').click();
  await page.waitForFunction(()=>document.querySelectorAll('.seat-box.occupied').length===0);
@@ -57,6 +64,12 @@ try {
  assert.equal(await page.locator('[data-cancel-registration]').count(),0);
  await page.selectOption('#experience-event','202604-1-echo');
  assert.match(await page.locator('#experience-table tbody').textContent(),/未記錄/);
+ await page.getByRole('button',{name:'編輯 DM_Note',exact:true}).click();
+ assert.equal(await page.locator('#experience-edit-save').isEnabled(),true,'save must also unlock for a different registration');
+ await page.fill('#experience-edit-note','另一筆報名備註');
+ await page.click('#experience-edit-save');
+ await page.locator('#experience-editor').waitFor({state:'hidden'});
+ await page.waitForFunction(()=>document.querySelector('#experience-table tbody').textContent.includes('另一筆報名備註'));
  assert.equal(await page.locator('#experience-current .seat-box.occupied').count(),0);
  assert.match(await page.locator('#experience-current').textContent(),/本次報名狀況/);
  await page.selectOption('#experience-event','all');

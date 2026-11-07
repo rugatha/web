@@ -87,14 +87,17 @@ export function createExperienceDashboard(context) {
     event.preventDefault();
     if (busy || !context().authenticated || !editingId) return;
     const {db,sdk,generation} = context(), ticket=revision;
+    let refresh = false;
     busy=true; $('experience-edit-save').disabled=true; $('experience-edit-error').textContent='';
     try {
       await updateRegistrationAdmin(db,editingId,{status:$('experience-edit-status').value,DM_Note:$('experience-edit-note').value},sdk);
       if (!valid(ticket,generation)) return;
-      editor.close(); busy=false; await load();
+      editor.close(); refresh = true;
     } catch (error) {
       if (valid(ticket,generation)) $('experience-edit-error').textContent=`儲存失敗：${error.message}。請確認資料後重試。`;
     } finally { if (valid(ticket,generation)) {busy=false;$('experience-edit-save').disabled=false;render();} }
+    // Restore the editor before load() advances the revision.
+    if (refresh && valid(ticket,generation)) await load();
   });
   $('experience-table').addEventListener('click',async event=>{
     const edit = event.target.closest('[data-edit-registration]');
