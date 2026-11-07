@@ -74,7 +74,7 @@ export function createExperienceDashboard(context) {
       {id:'partySize',label:'人數',type:'number',value:r=>r.partySize},
       {id:'status',label:'狀態',type:'category',value:statusText,html:r=>`${esc(statusText(r))}<br><button class="button" data-edit-registration="${esc(r.id)}" ${busy?'disabled':''}>編輯狀態／備註</button>${r.status==='cancelled'?`<small>${esc(dateText(r.cancelledAt))}</small>`:` <button class="button" data-cancel-registration="${esc(r.id)}" ${busy?'disabled':''}>取消報名</button>`}`},
       ...[['systems','TRPG 系統'],['systemsOther','其他系統'],['dndExperience','D&D 經驗'],['rugathaExperience','Rugatha 經驗'],['sources','得知管道'],['sourcesOther','其他管道'],['boundaries','不能接受的內容'],['notes','備註']].map(([id,label])=>({id,label,value:r=>answerText(r[id])})),
-      {id:'DM_Note',label:'DM_Note',value:r=>r.DM_Note || ''}
+      {id:'DM_Note',label:'DM_Note',value:r=>r.DM_Note || '',html:r=>`${esc(r.DM_Note || '')}<br><button class="button" data-edit-registration="${esc(r.id)}" data-edit-note="true" ${busy?'disabled':''}>編輯 DM_Note</button>`}
     ],filtered,{defaultSort:{id:'createdAt',direction:'desc'},lockOrder:true,frozenColumns:['eventId','createdAt','name']});
   }
   $('experience-event').addEventListener('change',()=>{resetTablePage('experience-table');render();});
@@ -104,7 +104,9 @@ export function createExperienceDashboard(context) {
       editingId=row.id; $('experience-edit-title').textContent=`${row.name} · ${experienceEventLabel(row.eventId,events.find(e=>e.id===row.eventId))}`;
       $('experience-edit-status').value=row.status || 'active';
       $('experience-edit-note').value=row.DM_Note || '';
-      $('experience-edit-error').textContent=''; editor.showModal(); return;
+      $('experience-edit-error').textContent=''; editor.showModal();
+      if (edit.dataset.editNote === 'true') $('experience-edit-note').focus();
+      return;
     }
     const button = event.target.closest('[data-cancel-registration]');
     if (!button || busy || loading || !context().authenticated) return;

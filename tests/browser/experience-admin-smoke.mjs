@@ -40,7 +40,8 @@ try {
  assert.equal(await page.locator('#experience-table th[data-column="contactMethod"]').textContent().then(t=>t.includes('聯繫方式')),true);
  assert.match(await page.locator('#experience-table').textContent(),/避開血腥/);
  assert.equal(await page.locator('#experience-table tbody tr').count(),1);
- await page.locator('[data-edit-registration]').click();
+ await page.getByRole('button',{name:'編輯 DM_Note',exact:true}).click();
+ assert.equal(await page.locator('#experience-edit-note').evaluate(el=>el===document.activeElement),true);
  await page.fill('#experience-edit-status','完成跑團');
  await page.fill('#experience-edit-note','DM 備註 <保留文字>');
  await page.click('#experience-edit-save');

@@ -97,3 +97,5 @@ node tests/admin-dashboard.browser.mjs
 體驗團新報名會以布林欄位 `contactAlternative` 記錄「我無法使用 Email，改填其他聯繫方式」：勾選為 `true`、未勾選為 `false`。舊紀錄沒有此欄位代表未記錄，不可依 `contact` 內容推定勾選狀態；規則允許舊版已開啟表單暫時省略欄位，但若提供則必須為布林值。
 
 新版體驗團表單採 `schemaVersion: 2`，必存 `contactAlternative` 與 `contactMethod`。預設為 `false`／`Email` 且前端及 Firestore 均驗證 Email 格式；勾選後必選 LINE ID、Discord ID、臉書連結、Instagram 或其他，聯繫資訊仍存於 `contact`。後台分欄顯示勾選狀態、聯繫方式與聯繫資訊；缺少舊欄位顯示「未記錄」，不猜測。
+
+`DM_Note` 欄提供「編輯 DM_Note」按鈕，開啟既有編輯視窗並聚焦備註輸入框；儲存後更新 Firebase 並重新讀取報名表格。
