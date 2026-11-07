@@ -26,11 +26,19 @@ try {
 const $ = (id) => document.getElementById(id);
 const form = $('registration-form');
 const dialog = $('review-dialog');
+const emailPattern = $('contact').pattern;
 $('contact-alternative').addEventListener('change', () => {
   const other = $('contact-alternative').checked;
   $('contact').type = other ? 'text' : 'email';
   $('contact').autocomplete = other ? 'off' : 'email';
-  $('contact').placeholder = other ? '例如：LINE ID：your_id' : 'you@example.com';
+  $('contact').placeholder = other ? '請輸入聯繫資訊' : 'you@example.com';
+  $('contact-fields').classList.toggle('is-alternative', other);
+  $('contact-method-field').hidden = !other;
+  $('contact-method').disabled = !other;
+  $('contact-value-label').hidden = !other;
+  $('contact-heading').firstChild.textContent = other ? '聯繫資訊 ' : '聯絡 Email ';
+  if (other) $('contact').removeAttribute('pattern');
+  else $('contact').pattern = emailPattern;
   $('contact').setCustomValidity('');
 });
 const dateFormat = new Intl.DateTimeFormat('zh-TW', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false });
@@ -174,6 +182,9 @@ form.addEventListener('submit', (event) => {
   if (invalid) { invalid.focus(); return; }
   if (submitted || submitting) return;
   if (!eventState || seatError || eventState.remainingSeats < 1) { $('availability').textContent = availability().note; return; }
+  const alternative = $('contact-alternative').checked;
+  $('contact').setCustomValidity(!alternative && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('contact').value.trim()) ? '請填寫有效的 Email，例如 you@example.com。' : '');
+  if (!form.reportValidity()) return;
   const data = new FormData(form);
   if (!String(data.get('name')).trim() || !String(data.get('contact')).trim()) {
     const input = !String(data.get('name')).trim() ? $('name') : $('contact');
@@ -190,8 +201,10 @@ form.addEventListener('submit', (event) => {
     }
   }
   pendingRegistration = {
-    schemaVersion: 1, eventId: config.eventId,
+    schemaVersion: 2, eventId: config.eventId,
     name: String(data.get('name')).trim(), contact: String(data.get('contact')).trim(),
+    contactAlternative: alternative,
+    contactMethod: alternative ? data.get('contactMethod') : 'Email',
     partySize: Number(data.get('partySize')), systems: data.getAll('systems'),
     systemsOther: data.getAll('systems').includes('其他') ? String(data.get('systemsOther')).trim() : '',
     dndExperience: data.get('dndExperience'), rugathaExperience: data.get('rugathaExperience'),
@@ -202,7 +215,7 @@ form.addEventListener('submit', (event) => {
   const selectedValues = (key) => data.getAll(key).map((value) => value === '其他' ? `其他：${String(data.get(`${key}Other`) || '').trim()}` : value).join('、');
   const answers = [
     ['報名場次', config.scriptName || '最新一期體驗團（待公告）'], ['活動時間', formatDate(config.startsAt)],
-    ['稱呼', String(data.get('name')).trim()], ['聯繫方式', String(data.get('contact')).trim()], ['報名人數', `${data.get('partySize')} 人`],
+    ['稱呼', String(data.get('name')).trim()], ['聯繫方式', pendingRegistration.contactMethod], ['聯繫資訊', pendingRegistration.contact], ['報名人數', `${data.get('partySize')} 人`],
     ['玩過的 TRPG 系統', selectedValues('systems')], ['D&D 遊玩經驗', data.get('dndExperience')], ['玩過 Rugatha 劇本', data.get('rugathaExperience')],
     ['得知管道', selectedValues('sources')], ['不能接受的內容', String(data.get('boundaries')).trim() || '未填寫'], ['備註', String(data.get('notes')).trim() || '未填寫'],
   ];
@@ -240,7 +253,8 @@ $('submit-button').addEventListener('click', async () => {
     summary.replaceChildren();
     [
       ['報名人', pendingRegistration.name],
-      ['聯繫方式', pendingRegistration.contact],
+      ['聯繫方式', pendingRegistration.contactMethod],
+      ['聯繫資訊', pendingRegistration.contact],
       ['報名劇本', `《${config.scriptName}》`],
       ['跑團時間', `開始：${formatDate(config.startsAt)}\n結束：${formatDate(config.endsAt)}`],
       ['跑團地點', [config.location, config.locationNote].filter(Boolean).join(' · ')],

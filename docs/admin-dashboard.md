@@ -93,3 +93,7 @@ node tests/admin-dashboard.browser.mjs
 - 延用既有管理員權限與 Firestore Rules，無需變更 Firebase 後端；前端仍由既有 Pages 流程發布。
 
 驗證：`node --test tests/subscriptions-dashboard.test.mjs tests/admin-dashboard.test.mjs`、`node tests/browser/subscriptions-admin-smoke.mjs`。瀏覽器測試使用本機伺服器、測試程序內的 Firebase 替身與 Chrome，涵蓋名單、曲線、會員比對、分頁篩選、完整複製、剪貼簿失敗、空資料、讀取失敗重試、未授權及手機版面。
+
+體驗團新報名會以布林欄位 `contactAlternative` 記錄「我無法使用 Email，改填其他聯繫方式」：勾選為 `true`、未勾選為 `false`。舊紀錄沒有此欄位代表未記錄，不可依 `contact` 內容推定勾選狀態；規則允許舊版已開啟表單暫時省略欄位，但若提供則必須為布林值。
+
+新版體驗團表單採 `schemaVersion: 2`，必存 `contactAlternative` 與 `contactMethod`。預設為 `false`／`Email` 且前端及 Firestore 均驗證 Email 格式；勾選後必選 LINE ID、Discord ID、臉書連結、Instagram 或其他，聯繫資訊仍存於 `contact`。後台分欄顯示勾選狀態、聯繫方式與聯繫資訊；缺少舊欄位顯示「未記錄」，不猜測。

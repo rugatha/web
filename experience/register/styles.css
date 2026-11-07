@@ -39,3 +39,5 @@ body{background:var(--bg)}
 /* Experience uses the same warm yellow as the homepage experience category. */
 .status.is-full,.full-notice{color:#f6d185}
 .hero-art{border-radius:var(--radius);box-shadow:0 20px 40px rgba(0,0,0,.32),0 5px 12px rgba(0,0,0,.16)}
+
+.contact-fields.is-alternative{display:grid;grid-template-columns:minmax(110px,1fr) minmax(0,2fr);gap:12px}.contact-fields>div{min-width:0}.contact-fields label{display:block;margin-bottom:10px;white-space:nowrap}.contact-fields select{max-width:none}

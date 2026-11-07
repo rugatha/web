@@ -9,7 +9,7 @@ let env;
 let db;
 const id = 'a'.repeat(20);
 const event = { registrationOpen: true, deadline: Timestamp.fromDate(new Date('2099-01-01')), maxPlayers: 5, registeredPlayers: 2 };
-const answers = () => ({ schemaVersion: 1, eventId: 'test', name: '冒險者', contact: 'LINE: test', partySize: 2, systems: ['龍與地下城 D&D', '其他'], systemsOther: '測試系統', dndExperience: '有玩過，但經驗較少', rugathaExperience: '無', sources: ['Instagram', 'Threads'], sourcesOther: '', boundaries: '避免過度暴力', notes: '同行一人' });
+const answers = () => ({ schemaVersion: 2, eventId: 'test', name: '冒險者', contact: 'LINE: test', contactAlternative: true, contactMethod: 'LINE ID', partySize: 2, systems: ['龍與地下城 D&D', '其他'], systemsOther: '測試系統', dndExperience: '有玩過，但經驗較少', rugathaExperience: '無', sources: ['Instagram', 'Threads'], sourcesOther: '', boundaries: '避免過度暴力', notes: '同行一人' });
 before(async () => {
   env = await initializeTestEnvironment({ projectId: 'demo-rugatha-registration', firestore: { rules: readFileSync('config/firebase/firestore.rules', 'utf8') } });
   db = env.unauthenticatedContext().firestore();
@@ -33,12 +33,30 @@ test('guest saves all answers and atomically counts party size; only admins read
   const saved=await assertSucceeds(getDoc(doc(admin,'experienceRegistrations',id)));
   assert.deepEqual(saved.data().sources,['Instagram','Threads']);
   assert.equal(saved.data().partySize,2);
+  assert.equal(saved.data().contactAlternative,true);
   assert.ok(saved.data().createdAt instanceof Timestamp);
   await assertSucceeds(getDocs(collection(admin,'experienceRegistrations')));
   const member=env.authenticatedContext('member').firestore();
   await assertFails(getDoc(doc(member,'experienceRegistrations',id)));
   await assertFails(updateDoc(doc(db,'experienceRegistrations',id),{name:'changed'}));
   await assertFails(deleteDoc(doc(db,'experienceRegistrations',id)));
+});
+test('saves unchecked contact preference and preserves unknown for legacy submissions', async () => {
+ const admin=env.authenticatedContext('admin',{admin:true}).firestore();
+ await assertSucceeds(commitRegistration(db,id,{...answers(),contact:'test@example.test',contactAlternative:false,contactMethod:'Email'},sdk));
+ assert.equal((await getDoc(doc(admin,'experienceRegistrations',id))).data().contactAlternative,false);
+ const legacy=answers(); legacy.schemaVersion=1; delete legacy.contactAlternative; delete legacy.contactMethod;
+ await assertSucceeds(commitRegistration(db,'l'.repeat(20),{...legacy,partySize:1},sdk));
+ assert.equal(Object.hasOwn((await getDoc(doc(admin,'experienceRegistrations','l'.repeat(20)))).data(),'contactAlternative'),false);
+});
+test('new schema requires contact mode and method; all alternative methods save',async()=>{
+ for(const key of ['contactAlternative','contactMethod']) {
+  const data=answers();delete data[key];await assertFails(rawSubmission(data));
+ }
+ for(const [i,contactMethod] of ['LINE ID','Discord ID','臉書連結','Instagram','其他'].entries()) {
+  await seed({...event,registeredPlayers:0});
+  await assertSucceeds(commitRegistration(db,String(i).repeat(20),{...answers(),contactMethod,partySize:1},sdk));
+ }
 });
 test('server rejects expired, closed and full events',async()=>{
  for(const change of [{deadline:Timestamp.fromDate(new Date('2000-01-01'))},{registrationOpen:false},{registeredPlayers:5}]){
@@ -49,6 +67,10 @@ test('server rejects expired, closed and full events',async()=>{
 test('server rejects malformed answers and oversize parties',async()=>{
  for(const change of [
   {partySize:4},{partySize:1.5},{partySize:0},{name:'   '},{contact:''},
+  {contactAlternative:'true'},{contactAlternative:0},{contactAlternative:null},
+  {contactMethod:'Email'},{contactMethod:'SMS'},
+  {contactAlternative:false,contactMethod:'LINE ID'},
+  ...['invalid','test@example','test @example.com','test\t@example.com','test@example.com\n',''].map(contact=>({contactAlternative:false,contactMethod:'Email',contact})),
   {systems:['無經驗','龍與地下城 D&D'],systemsOther:''},{systems:['not-an-option']},
   {systemsOther:''},{sources:[]},{sources:['Instagram','Instagram']},
   {dndExperience:['有當過 DM']},{rugathaExperience:'maybe'},{notes:'x'.repeat(2001)},

@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { chromium } from '@playwright/test';
 import { mkdir, readFile } from 'node:fs/promises';
 const browser=await chromium.launch({channel:'chrome',headless:true});
-const base='http://127.0.0.1:8790';
-const datasets={experienceEvents:[{id:'202610-lorin',aliasOf:'2026-10-lorin',registeredPlayers:0,maxPlayers:5},{id:'2026-10-lorin',scriptName:'洛林精神',registeredPlayers:3,maxPlayers:5},{id:'202604-1-echo',scriptName:'歷史場次',registeredPlayers:1,maxPlayers:5}],experienceRegistrations:[{id:'a'.repeat(20),createdAt:'2026-10-08T00:33:39+08:00',eventId:'2026-10-lorin',partySize:3,name:'同行 <三人>',contact:'test@example.test',systems:['其他'],systemsOther:'測試系統',sources:['Threads'],dndExperience:'聽過，但沒玩過',rugathaExperience:'無',boundaries:'避開血腥',notes:'三人同行'},{id:'b'.repeat(20),createdAt:'2026-04-01T12:00:00+08:00',eventId:'202604-1-echo',partySize:1,name:'以前的玩家',contact:'LINE: old'}]};
+const base=process.env.RUGATHA_TEST_BASE_URL || 'http://127.0.0.1:8790';
+const datasets={experienceEvents:[{id:'202610-lorin',aliasOf:'2026-10-lorin',registeredPlayers:0,maxPlayers:5},{id:'2026-10-lorin',scriptName:'洛林精神',registeredPlayers:3,maxPlayers:5},{id:'202604-1-echo',scriptName:'歷史場次',registeredPlayers:1,maxPlayers:5}],experienceRegistrations:[{id:'a'.repeat(20),createdAt:'2026-10-08T00:33:39+08:00',eventId:'2026-10-lorin',partySize:3,name:'同行 <三人>',contact:'test@example.test',contactAlternative:false,contactMethod:'Email',systems:['其他'],systemsOther:'測試系統',sources:['Threads'],dndExperience:'聽過，但沒玩過',rugathaExperience:'無',boundaries:'避開血腥',notes:'三人同行'},{id:'b'.repeat(20),createdAt:'2026-04-01T12:00:00+08:00',eventId:'202604-1-echo',partySize:1,name:'以前的玩家',contact:'LINE: old'}]};
 try {
  const page=await browser.newPage({viewport:{width:1280,height:1000}}),errors=[];
  page.on('pageerror',error=>errors.push(error.message));
@@ -17,6 +17,7 @@ try {
   await route.fulfill({contentType:'application/javascript',body});
  });
  await page.addInitScript(()=>localStorage.setItem('rugatha-admin-columns:experience-table',JSON.stringify(['DM_Note','contact','name','createdAt','eventId'])));
+ await page.route('**/experience_info.json',route=>route.fulfill({json:{eventId:'2026-10-lorin'}}));
  await page.goto(base+'/admin/#experience');
  await page.locator('#experience-status').filter({hasText:'已讀取'}).waitFor();
  assert.equal(await page.locator('#experience-event').inputValue(),'2026-10-lorin');
@@ -35,6 +36,8 @@ try {
  assert.equal(await page.locator('.seat-box.occupied').count(),3);
  assert.equal(await page.locator('#date-controls').isVisible(),false);
  assert.match(await page.locator('#experience-table').textContent(),/test@example.test/);
+ assert.match(await page.locator('#experience-table tbody').textContent(),/未勾選/);
+ assert.equal(await page.locator('#experience-table th[data-column="contactMethod"]').textContent().then(t=>t.includes('聯繫方式')),true);
  assert.match(await page.locator('#experience-table').textContent(),/避開血腥/);
  assert.equal(await page.locator('#experience-table tbody tr').count(),1);
  await page.locator('[data-edit-registration]').click();
@@ -52,6 +55,7 @@ try {
  assert.match(await page.locator('#experience-table tbody').textContent(),/已取消/);
  assert.equal(await page.locator('[data-cancel-registration]').count(),0);
  await page.selectOption('#experience-event','202604-1-echo');
+ assert.match(await page.locator('#experience-table tbody').textContent(),/未記錄/);
  assert.equal(await page.locator('#experience-current .seat-box.occupied').count(),0);
  assert.match(await page.locator('#experience-current').textContent(),/本次報名狀況/);
  await page.selectOption('#experience-event','all');
@@ -97,8 +101,8 @@ try {
   assert.ok(size.textWidth/size.available>=.88,`title too small at ${width}`);assert.ok(size.height<=size.line+1,`title wraps at ${width}`);assert.ok(size.width<=size.available+1,`title overflows at ${width}`);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   assert.equal(await page.locator('#contact').getAttribute('type'),'email');
-  await page.locator('#contact-alternative').check();assert.equal(await page.locator('#contact').getAttribute('type'),'text');
-  await page.locator('#contact-alternative').uncheck();assert.equal(await page.locator('#contact').getAttribute('type'),'email');
+  await page.locator('#contact-alternative').check();assert.equal(await page.locator('#contact-method').isVisible(),true);assert.equal(await page.locator('#contact').getAttribute('type'),'text');
+  await page.locator('#contact-alternative').uncheck();assert.equal(await page.locator('#contact-method').isDisabled(),true);assert.equal(await page.locator('#contact').getAttribute('type'),'email');
   assert.equal(await page.locator('footer').count(),0);
   const poster=await page.locator('#event-poster').evaluate(el=>({radius:getComputedStyle(el).borderRadius,shadow:getComputedStyle(el).boxShadow}));
   assert.equal(poster.radius,'18px');assert.notEqual(poster.shadow,'none');

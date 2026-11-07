@@ -21,11 +21,11 @@
   <meta name="twitter:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
 <link rel="icon" href="../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../../shared/styles/theme.css">
-  <link rel="stylesheet" href="styles.css?v=20261025-registration-5">
+  <link rel="stylesheet" href="styles.css?v=20261108-contact-method">
   <style>.site-header img { width: min(320px, 80vw); }</style>
   <meta name="theme-color" content="#445f56">
   <script src="../../shared/firebase.config.js"></script>
-  <script defer src="register.js?v=20261025-registration-2"></script>
+  <script defer src="register.js?v=20261108-contact-method"></script>
 </head>
 <body>
   <a class="skip-link" href="#registration">跳至報名表</a>
@@ -69,7 +69,12 @@
           <section class="form-section" aria-labelledby="basic-heading">
             <div class="section-heading"><span class="section-number">01</span><div><h3 id="basic-heading">基本資訊</h3><p>先打聲招呼，讓我們找到你。</p></div></div>
             <div class="field"><label for="name">該如何稱呼您？ <span class="required">*</span></label><input id="name" name="name" autocomplete="nickname" maxlength="80" placeholder="你的名字或暱稱" required></div>
-            <div class="field"><label for="contact">聯絡 Email（無法使用時可填其他方式） <span class="required">*</span></label><p class="hint" id="contact-hint">請優先填寫 Email；若無法使用 Email，請勾選下方選項後填寫 LINE ID、Discord ID 或臉書連結。<br></br>成團後會邀請您加入 LINE 社群，後續將以 LINE 聯繫。</p><label class="contact-alternative"><input id="contact-alternative" type="checkbox"> 我無法使用 Email，改填其他聯繫方式</label><input id="contact" name="contact" type="email" autocomplete="email" maxlength="250" placeholder="you@example.com" aria-describedby="contact-hint" required></div>
+            <div class="field"><label id="contact-heading" for="contact">聯絡 Email <span class="required">*</span></label><p class="hint" id="contact-hint">請優先填寫 Email；若無法使用 Email，請勾選下方選項並選擇其他聯繫方式。<br></br>成團後會邀請您加入 LINE 社群，後續將以 LINE 聯繫。</p><label class="contact-alternative"><input id="contact-alternative" type="checkbox"> 我無法使用 Email，改填其他聯繫方式</label>
+              <div id="contact-fields" class="contact-fields">
+                <div id="contact-method-field" hidden><label for="contact-method">聯繫方式 <span class="required">*</span></label><select id="contact-method" name="contactMethod" disabled required><option value="" disabled selected>請選擇</option><option>LINE ID</option><option>Discord ID</option><option>臉書連結</option><option>Instagram</option><option>其他</option></select></div>
+                <div><label id="contact-value-label" for="contact" hidden>聯繫資訊 <span class="required">*</span></label><input id="contact" name="contact" type="email" autocomplete="email" maxlength="250" placeholder="you@example.com" aria-describedby="contact-hint" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" required></div>
+              </div>
+            </div>
             <div class="field"><label for="party-size">報名人數 <span class="required">*</span></label><select id="party-size" name="partySize" required><option value="1">1 人（我自己）</option></select><p class="hint" id="seats-note">同行夥伴可於備註補充稱呼與經驗。</p></div>
           </section>
           <section class="form-section" aria-labelledby="experience-heading">

@@ -951,7 +951,7 @@ service cloud.firestore {
         let event = get(eventPath).data;
         let after = getAfter(eventPath).data;
         return data.keys().hasOnly([
-            'schemaVersion', 'eventId', 'name', 'contact', 'partySize',
+            'schemaVersion', 'eventId', 'name', 'contact', 'contactAlternative', 'contactMethod', 'partySize',
             'systems', 'systemsOther', 'dndExperience', 'rugathaExperience',
             'sources', 'sourcesOther', 'boundaries', 'notes', 'createdAt'
           ])
@@ -960,7 +960,18 @@ service cloud.firestore {
             'systems', 'systemsOther', 'dndExperience', 'rugathaExperience',
             'sources', 'sourcesOther', 'boundaries', 'notes', 'createdAt'
           ])
-          && data.schemaVersion == 1
+          // Older open forms may omit this field; absence means unknown.
+          && (!('contactAlternative' in data) || data.contactAlternative is bool)
+          && data.schemaVersion in [1, 2]
+          && (data.schemaVersion == 1 || data.keys().hasAll(['contactAlternative', 'contactMethod']))
+          && (!('contactMethod' in data) || (
+            data.contactAlternative is bool
+            && (data.contactAlternative
+              ? data.contactMethod in ['LINE ID', 'Discord ID', '臉書連結', 'Instagram', '其他']
+              : data.contactMethod == 'Email')
+          ))
+          && (!('contactAlternative' in data) || data.contactAlternative != false
+            || data.contact.matches('[^\\s@]+@[^\\s@]+[.][^\\s@]+'))
           && data.eventId is string && data.eventId.size() <= 100
           && event.registrationOpen == true && request.time <= event.deadline
           && data.partySize is int && data.partySize >= 1

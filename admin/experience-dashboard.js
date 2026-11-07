@@ -3,6 +3,7 @@ import { dataTable, resetTablePage } from './data-table.js?v=20261026-experience
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const statusText = row => row.status === 'cancelled' ? '已取消' : row.status === 'active' || !row.status ? '有效' : row.status;
+const contactMethodText = row => row.contactMethod === '臉書連結' ? 'Facebook' : row.contactMethod ?? '未記錄';
 const answerText = value => Array.isArray(value) ? value.join('、') : value ?? '';
 const dateText = value => value?.toDate ? value.toDate().toLocaleString('zh-TW', {timeZone:'Asia/Taipei',hour12:false}) : '未記錄';
 const scriptNames = { lorin: '洛林精神', echo: '龍鳴的回音', scroll: '金之堡的卷軸' };
@@ -62,12 +63,14 @@ export function createExperienceDashboard(context) {
     $('experience-seats').innerHTML = selected === 'all'
       ? `<p>全部場次：${active.length} 筆有效報名，共 ${people} 人；已取消 ${scoped.length-active.length} 筆。</p>`
       : `<p>${esc(experienceEventLabel(selected,event))}：${people} 人報名 · 有效 ${active.length} 筆 · 取消 ${scoped.length-active.length} 筆</p>`;
-    const filtered = scoped.filter(row => [experienceEventLabel(row.eventId,events.find(e=>e.id===row.eventId)),...Object.entries(row).filter(([key])=>!key.startsWith('history')).map(([,value])=>answerText(value))].join(' ').toLowerCase().includes(search));
+    const filtered = scoped.filter(row => [experienceEventLabel(row.eventId,events.find(e=>e.id===row.eventId)),contactMethodText(row),...Object.entries(row).filter(([key])=>!key.startsWith('history')).map(([,value])=>answerText(value))].join(' ').toLowerCase().includes(search));
     dataTable('experience-table',[
       {id:'eventId',label:'場次',value:r=>experienceEventLabel(r.eventId,events.find(e=>e.id===r.eventId))},
       {id:'createdAt',label:'報名時間',type:'date',value:r=>r.createdAt,html:r=>esc(dateText(r.createdAt))},
       {id:'name',label:'稱呼',value:r=>r.name},
-      {id:'contact',label:'聯絡方式',value:r=>r.contact},
+      {id:'contactAlternative',label:'無法使用 Email',type:'category',value:r=>r.contactAlternative === true ? '有勾選' : r.contactAlternative === false ? '未勾選' : '未記錄'},
+      {id:'contactMethod',label:'聯繫方式',type:'category',value:contactMethodText},
+      {id:'contact',label:'聯繫資訊',value:r=>r.contact},
       {id:'partySize',label:'人數',type:'number',value:r=>r.partySize},
       {id:'status',label:'狀態',type:'category',value:statusText,html:r=>`${esc(statusText(r))}<br><button class="button" data-edit-registration="${esc(r.id)}" ${busy?'disabled':''}>編輯狀態／備註</button>${r.status==='cancelled'?`<small>${esc(dateText(r.cancelledAt))}</small>`:` <button class="button" data-cancel-registration="${esc(r.id)}" ${busy?'disabled':''}>取消報名</button>`}`},
       ...[['systems','TRPG 系統'],['systemsOther','其他系統'],['dndExperience','D&D 經驗'],['rugathaExperience','Rugatha 經驗'],['sources','得知管道'],['sourcesOther','其他管道'],['boundaries','不能接受的內容'],['notes','備註']].map(([id,label])=>({id,label,value:r=>answerText(r[id])})),
