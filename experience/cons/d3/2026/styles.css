@@ -17,7 +17,7 @@
 
 /* A loose arrangement of complete illustrations, with no image covering another. */
 .con-hero-collage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px 22px;align-items:start;padding:24px 12px 48px;min-width:0;isolation:isolate}
-.collage-card{display:block;min-width:0;text-decoration:none;color:#e5d4af;transition:transform .2s ease;transform-origin:center;filter:drop-shadow(0 14px 16px #07171155)}
+.collage-card{appearance:none;background:none;border:0;padding:0;text-align:left;font:inherit;cursor:zoom-in;display:block;min-width:0;text-decoration:none;color:#e5d4af;transition:transform .2s ease;transform-origin:center;filter:drop-shadow(0 14px 16px #07171155)}
 .collage-card img{display:block;width:100%;height:auto;border-radius:5px;outline:1px solid #e5d4af55}
 .collage-card span{display:block;padding:12px 2px 0;font-size:12px;line-height:1.6;letter-spacing:.03em}
 .collage-card b{font-size:11px;color:var(--accent);margin-right:7px}
@@ -28,3 +28,11 @@
 @media(min-width:701px) and (max-width:1000px){.con-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px}.con-hero-collage{gap:24px 14px;padding-inline:6px}.collage-card--creation{width:88%}.collage-card span{font-size:11px}}
 @media(max-width:700px){.con-hero-collage{width:100%;max-width:440px;justify-self:center;grid-template-columns:minmax(0,1fr);gap:30px;padding:16px 14px 24px}.collage-card--creation,.collage-card--portrait,.collage-card--miniature{grid-column:1;width:84%;max-width:340px;margin-top:0}.collage-card--creation{justify-self:start}.collage-card--portrait{justify-self:end}.collage-card--miniature{justify-self:start}.collage-card span{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.collage-card{transition:none}}
+
+#image-viewer{box-sizing:border-box;width:min(900px,calc(100vw - 24px));max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);margin:auto;padding:54px 12px 12px;border:1px solid #e5d4af55;border-radius:12px;background:#152c25;overflow:auto;color:var(--ink)}
+#image-viewer::backdrop{background:#06110ee6}
+#image-viewer-image{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100dvh - 150px);margin:auto;object-fit:contain;border-radius:4px}
+#image-viewer-caption{margin:12px 0 0;text-align:center;font-size:13px;color:#e5d4af}
+#image-viewer .image-viewer-close{position:absolute;right:12px;top:10px;display:flex;align-items:center;gap:12px;border:1px solid #ffffff40;border-radius:6px;background:#20372e;color:var(--ink);padding:4px 12px;line-height:1.5;font-size:14px}
+.image-viewer-close span{font-size:24px}
+html:has(#image-viewer[open]){overflow:hidden}
