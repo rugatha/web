@@ -1,0 +1,1357 @@
+{
+  "schema_version": 1,
+  "coordinate_system": "SVG 1843 × 1344, top-left origin",
+  "note": "城鎮為局部聚落範圍，非行政區分割。明確方位與行程優先於原地圖標記；未載明方位的配置為示意，路程不換算為精確比例尺。",
+  "kingdoms": {
+    "mattington": {
+      "macksohn": {
+        "center": [
+          1161,
+          820
+        ],
+        "polygon": [
+          [
+            1144,
+            802
+          ],
+          [
+            1154,
+            800
+          ],
+          [
+            1165,
+            798
+          ],
+          [
+            1182,
+            810
+          ],
+          [
+            1184,
+            828
+          ],
+          [
+            1166,
+            842
+          ],
+          [
+            1148,
+            834
+          ],
+          [
+            1138,
+            822
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "首都；以此為基準安排西北的朗甫頓與西南的多侖維爾。",
+        "sources": [
+          "/map/location/material-realm/mattington/macksohn/",
+          "/campaigns/pages/rugatha/rugatha-c05/chpt01.html",
+          "/campaigns/pages/rugatha-plus/plus-c05/chpt02.html"
+        ],
+        "label_offset": [
+          30,
+          5
+        ]
+      },
+      "dorrenville": {
+        "center": [
+          1141,
+          841
+        ],
+        "polygon": [
+          [
+            1138,
+            822
+          ],
+          [
+            1148,
+            834
+          ],
+          [
+            1166,
+            842
+          ],
+          [
+            1157,
+            852
+          ],
+          [
+            1138,
+            850
+          ],
+          [
+            1126,
+            839
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "位於麥克嵩西南方，步行速度的馬車約一小時到市中心；以接鄰的示意邊界呈現近郊關係，共用邊界並非文中確定的行政界線。",
+        "sources": [
+          "/map/location/material-realm/mattington/dorrenville/",
+          "/campaigns/pages/rugatha-plus/plus-c05/chpt02.html"
+        ],
+        "label_offset": [
+          -22,
+          23
+        ]
+      },
+      "rumphton": {
+        "center": [
+          1160,
+          791
+        ],
+        "polygon": [
+          [
+            1154,
+            800
+          ],
+          [
+            1149,
+            788
+          ],
+          [
+            1158,
+            781
+          ],
+          [
+            1170,
+            785
+          ],
+          [
+            1174,
+            793
+          ],
+          [
+            1165,
+            798
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "依位置校正，朗甫頓緊鄰麥克嵩北側城郊；與瑟巴諾及首都形成相連聚落。細部邊界仍為示意。",
+        "sources": [
+          "/map/location/material-realm/mattington/rumphton/",
+          "/campaigns/pages/rugatha/rugatha-c05/chpt01.html"
+        ],
+        "label_offset": [
+          35,
+          -12
+        ]
+      },
+      "sebano": {
+        "center": [
+          1140,
+          788
+        ],
+        "polygon": [
+          [
+            1144,
+            802
+          ],
+          [
+            1130,
+            795
+          ],
+          [
+            1129,
+            784
+          ],
+          [
+            1138,
+            778
+          ],
+          [
+            1149,
+            788
+          ],
+          [
+            1154,
+            800
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "依位置校正，瑟巴諾緊鄰麥克嵩，位於朗甫頓西北側；共用小段邊界呈現近鄰關係，章節的步行時間不換算為精確比例尺。",
+        "sources": [
+          "/map/location/material-realm/mattington/sebano/",
+          "/campaigns/pages/rugatha-lite/lite-c05/chpt02.html"
+        ],
+        "label_offset": [
+          -32,
+          -17
+        ]
+      },
+      "korringfield": {
+        "center": [
+          1060,
+          813
+        ],
+        "polygon": [
+          [
+            1045.8,
+            807.8
+          ],
+          [
+            1054.0,
+            800.6
+          ],
+          [
+            1066.8,
+            802.0
+          ],
+          [
+            1075,
+            811.0
+          ],
+          [
+            1069.8,
+            821.5
+          ],
+          [
+            1057.8,
+            826
+          ],
+          [
+            1046.5,
+            819.5
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "與麥克嵩有馬車往來；章節未給明確方向，暫沿用舊圖偏西的示意位置。",
+        "sources": [
+          "/map/location/material-realm/mattington/korringfield/",
+          "/campaigns/pages/rugatha/rugatha-c03/chpt04.html"
+        ],
+        "label_offset": [
+          -16,
+          24
+        ]
+      },
+      "leisnor": {
+        "center": [
+          969,
+          793
+        ],
+        "polygon": [
+          [
+            958,
+            785
+          ],
+          [
+            971,
+            779
+          ],
+          [
+            983,
+            786
+          ],
+          [
+            981,
+            800
+          ],
+          [
+            969,
+            805
+          ],
+          [
+            958,
+            801
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "依位置校正，與克萊芬一起移近克里歐門邊境；兩城仍緊鄰，並保留與拉撒拿間的腹地。",
+        "sources": [
+          "/map/location/material-realm/mattington/leisnor/",
+          "/campaigns/pages/rugatha-wilds/wilds-c05/chpt01.html"
+        ],
+        "label_offset": [
+          25,
+          -15
+        ]
+      },
+      "clyphen": {
+        "center": [
+          947,
+          793
+        ],
+        "polygon": [
+          [
+            936,
+            784
+          ],
+          [
+            948,
+            780
+          ],
+          [
+            958,
+            785
+          ],
+          [
+            958,
+            801
+          ],
+          [
+            946,
+            806
+          ],
+          [
+            935,
+            798
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "依位置校正，移至靠近克里歐門的麥丁頓北部邊境，仍與萊斯諾緊鄰並共用一段示意邊界。",
+        "sources": [
+          "/map/location/material-realm/mattington/clyphen/",
+          "/campaigns/pages/rugatha-wilds/wilds-c05/chpt01.html"
+        ],
+        "label_offset": [
+          -25,
+          24
+        ]
+      },
+      "vowalon": {
+        "center": [
+          960,
+          906
+        ],
+        "polygon": [
+          [
+            951.5,
+            902.8
+          ],
+          [
+            956.4,
+            898.4
+          ],
+          [
+            964.0,
+            899.2
+          ],
+          [
+            969,
+            904.8
+          ],
+          [
+            965.9,
+            911.2
+          ],
+          [
+            958.6,
+            914
+          ],
+          [
+            951.9,
+            910.0
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "與魏斯科被嚎叫森林隔開；兩鎮之間保留林地，不接壤。",
+        "sources": [
+          "/map/location/material-realm/mattington/vowalon/",
+          "/campaigns/pages/rugatha/rugatha-c01/chpt02.html",
+          "/campaigns/pages/rugatha/rugatha-c01/chpt05.html"
+        ]
+      },
+      "wescoe": {
+        "center": [
+          1010,
+          906
+        ],
+        "polygon": [
+          [
+            997.6,
+            901.6
+          ],
+          [
+            1004.8,
+            895.5
+          ],
+          [
+            1015.9,
+            896.6
+          ],
+          [
+            1023,
+            904.4
+          ],
+          [
+            1018.5,
+            913.1
+          ],
+          [
+            1008.0,
+            917
+          ],
+          [
+            998.3,
+            911.5
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "嚎叫森林另一端的熱鬧城鎮；與沃瓦倫有來回穿林的旅程。",
+        "sources": [
+          "/map/location/material-realm/mattington/wescoe/",
+          "/campaigns/pages/rugatha/rugatha-c01/chpt02.html",
+          "/campaigns/pages/rugatha/rugatha-c01/chpt04.html"
+        ]
+      },
+      "bomozan": {
+        "center": [
+          1012,
+          858
+        ],
+        "polygon": [
+          [
+            1003.5,
+            854.8
+          ],
+          [
+            1008.4,
+            850.4
+          ],
+          [
+            1016.0,
+            851.2
+          ],
+          [
+            1021,
+            856.8
+          ],
+          [
+            1017.9,
+            863.2
+          ],
+          [
+            1010.6,
+            866
+          ],
+          [
+            1003.9,
+            862.0
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "前往魏斯科需穿越森林，晚餐時間過後抵達；兩地留出森林與旅程，方向暫沿用舊圖。",
+        "sources": [
+          "/map/location/material-realm/mattington/bomozan/",
+          "/campaigns/pages/rugatha-brown/brown-c01/chpt01.html",
+          "/campaigns/pages/rugatha-brown/brown-c01/chpt02.html"
+        ]
+      },
+      "shartingson": {
+        "center": [
+          1000,
+          960
+        ],
+        "polygon": [
+          [
+            991.5,
+            956.8
+          ],
+          [
+            996.4,
+            952.4
+          ],
+          [
+            1004.0,
+            953.2
+          ],
+          [
+            1009,
+            958.8
+          ],
+          [
+            1005.9,
+            965.2
+          ],
+          [
+            998.6,
+            968
+          ],
+          [
+            991.9,
+            964.0
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "從魏斯科離開後，騎馬穿過森林前往；方位暫沿用舊圖，兩鎮不接壤。",
+        "sources": [
+          "/map/location/material-realm/mattington/shartingson/",
+          "/campaigns/pages/rugatha-brown/brown-c01/chpt05.html",
+          "/campaigns/pages/rugatha-brown/brown-c02/chpt01.html"
+        ]
+      },
+      "batherdon": {
+        "center": [
+          1030,
+          996
+        ],
+        "polygon": [
+          [
+            1014.8,
+            990.8
+          ],
+          [
+            1023.6,
+            983.6
+          ],
+          [
+            1037.2,
+            985.0
+          ],
+          [
+            1046,
+            994.0
+          ],
+          [
+            1040.4,
+            1004.5
+          ],
+          [
+            1027.6,
+            1009
+          ],
+          [
+            1015.6,
+            1002.5
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "貿易之都，幽深林在城郊；與其他城鎮無明確方位線索，暫沿用原圖大略位置。",
+        "sources": [
+          "/map/location/material-realm/mattington/batherdon/",
+          "/campaigns/pages/rugatha-wilds/wilds-c01/chpt01.html"
+        ]
+      },
+      "mudtown": {
+        "center": [
+          800,
+          866
+        ],
+        "polygon": [
+          [
+            790.5,
+            862.4
+          ],
+          [
+            796.0,
+            857.5
+          ],
+          [
+            804.5,
+            858.4
+          ],
+          [
+            810,
+            864.6
+          ],
+          [
+            806.5,
+            871.9
+          ],
+          [
+            798.5,
+            875
+          ],
+          [
+            791.0,
+            870.5
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "地侏聚落，海雅特山在附近；依位置校正往克里歐門靠近，置於麥丁頓北側邊境附近。",
+        "sources": [
+          "/map/location/material-realm/mattington/mudtown/",
+          "/campaigns/pages/rugatha-wilds/wilds-c03/chpt03.html"
+        ]
+      },
+      "rathanad": {
+        "center": [
+          704,
+          958
+        ],
+        "polygon": [
+          [
+            691.6,
+            953.6
+          ],
+          [
+            698.8,
+            947.5
+          ],
+          [
+            709.9,
+            948.6
+          ],
+          [
+            717,
+            956.4
+          ],
+          [
+            712.5,
+            965.1
+          ],
+          [
+            702.0,
+            969
+          ],
+          [
+            692.3,
+            963.5
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "建於山丘上的龍人城鎮；騎馬往萊斯諾約兩週，與東部雙城之間保留長途腹地。",
+        "sources": [
+          "/map/location/material-realm/mattington/rathanad/",
+          "/campaigns/pages/rugatha-wilds/wilds-c05/chpt01.html"
+        ]
+      },
+      "great-citadel": {
+        "center": [
+          730,
+          1165
+        ],
+        "polygon": [
+          [
+            713.9,
+            1159.0
+          ],
+          [
+            723.2,
+            1150.8
+          ],
+          [
+            737.6,
+            1152.2
+          ],
+          [
+            747,
+            1162.8
+          ],
+          [
+            741.0,
+            1174.8
+          ],
+          [
+            727.5,
+            1180
+          ],
+          [
+            714.7,
+            1172.5
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "位於麥丁頓王國南部；依位置校正再往南移，置於南方陸地，與北方城鎮保留大片腹地。",
+        "sources": [
+          "/map/location/material-realm/mattington/great-citadel/",
+          "/campaigns/pages/rugatha-plus/plus-c06/chpt03.html",
+          "/campaigns/pages/rugatha-plus/plus-c07/chpt01.html"
+        ]
+      },
+      "lark-ferry": {
+        "center": [
+          780,
+          1110
+        ],
+        "polygon": [
+          [
+            772.4,
+            1107.6
+          ],
+          [
+            776.8,
+            1104.3
+          ],
+          [
+            783.6,
+            1104.9
+          ],
+          [
+            788,
+            1109.1
+          ],
+          [
+            785.2,
+            1113.9
+          ],
+          [
+            778.8,
+            1116
+          ],
+          [
+            772.8,
+            1113.0
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "位於方努爾北方，隨方努爾一起移向大學城東側的沿海地區；保留渡船往來。",
+        "sources": [
+          "/map/location/material-realm/mattington/lark-ferry/",
+          "/campaigns/pages/rugatha-plus/plus-c07/chpt01.html"
+        ],
+        "label_offset": [
+          -30,
+          -12
+        ]
+      },
+      "fanaur": {
+        "center": [
+          780,
+          1150
+        ],
+        "polygon": [
+          [
+            763.9,
+            1145.2
+          ],
+          [
+            773.2,
+            1138.6
+          ],
+          [
+            787.6,
+            1139.8
+          ],
+          [
+            797,
+            1148.2
+          ],
+          [
+            791.0,
+            1157.8
+          ],
+          [
+            777.5,
+            1162
+          ],
+          [
+            764.7,
+            1156.0
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "方努爾位於大學城東側的海岸邊，兩地之間僅保留約一座小城鎮的距離；拉克渡口在北方，娜塔夏港在東南方，聖拉雅米島在東北外海。",
+        "sources": [
+          "/map/location/material-realm/mattington/fanaur/",
+          "/campaigns/pages/rugatha-plus/plus-c05/chpt02.html",
+          "/campaigns/pages/rugatha-plus/plus-c07/chpt01.html",
+          "/campaigns/pages/rugatha-plus/plus-c07/chpt03.html"
+        ],
+        "label_offset": [
+          -30,
+          -17
+        ]
+      },
+      "natasha-harbor": {
+        "center": [
+          881,
+          1163
+        ],
+        "polygon": [
+          [
+            873.4,
+            1160.6
+          ],
+          [
+            877.8,
+            1157.3
+          ],
+          [
+            884.6,
+            1157.9
+          ],
+          [
+            889,
+            1162.1
+          ],
+          [
+            886.2,
+            1166.9
+          ],
+          [
+            879.8,
+            1169
+          ],
+          [
+            873.8,
+            1166.0
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "依位置校正，娜塔夏港再往南移，位於方努爾東南方較南端的海岸，與方努爾以渡船往來。",
+        "sources": [
+          "/map/location/material-realm/mattington/natasha-harbor/",
+          "/campaigns/pages/rugatha-plus/plus-c07/chpt03.html"
+        ],
+        "label_offset": [
+          20,
+          24
+        ]
+      },
+      "st-rayami-island": {
+        "center": [
+          826,
+          1138
+        ],
+        "polygon": [
+          [
+            819.4,
+            1135.6
+          ],
+          [
+            823.2,
+            1132.3
+          ],
+          [
+            829.1,
+            1132.9
+          ],
+          [
+            833,
+            1137.1
+          ],
+          [
+            830.5,
+            1141.9
+          ],
+          [
+            825.0,
+            1144
+          ],
+          [
+            819.7,
+            1141.0
+          ]
+        ],
+        "kind": "island",
+        "placement_note": "依位置校正，聖拉雅米島移至更東北的外海，在方努爾東北方，與大陸完全分離。",
+        "sources": [
+          "/map/location/material-realm/mattington/st-rayami-island/",
+          "/campaigns/pages/rugatha-plus/plus-c07/chpt01.html",
+          "/campaigns/pages/rugatha-plus/plus-c07/chpt02.html"
+        ],
+        "label_offset": [
+          32,
+          -13
+        ]
+      },
+      "yarros": {
+        "center": [
+          1234,
+          767
+        ],
+        "polygon": [
+          [
+            1205.5,
+            756.6
+          ],
+          [
+            1222.0,
+            742.3
+          ],
+          [
+            1247.5,
+            744.9
+          ],
+          [
+            1264,
+            763.1
+          ],
+          [
+            1253.5,
+            783.9
+          ],
+          [
+            1229.5,
+            793
+          ],
+          [
+            1207.0,
+            780.0
+          ]
+        ],
+        "kind": "forest",
+        "placement_note": "麥丁頓與洛森交界的森林地區；依位置校正往洛森邊界靠近，東緣直接延伸至國界。斐納札位於其地底。",
+        "sources": [
+          "/map/location/material-realm/mattington/yarros/"
+        ],
+        "label_offset": [
+          25,
+          -22
+        ]
+      },
+      "fenadra": {
+        "center": [
+          1230,
+          776
+        ],
+        "polygon": [
+          [
+            1221.5,
+            773.2
+          ],
+          [
+            1226.4,
+            769.4
+          ],
+          [
+            1234.0,
+            770.0
+          ],
+          [
+            1239,
+            775.0
+          ],
+          [
+            1235.8,
+            780.5
+          ],
+          [
+            1228.7,
+            783
+          ],
+          [
+            1221.9,
+            779.5
+          ]
+        ],
+        "kind": "underground",
+        "placement_note": "位於雅洛斯地底，隨雅洛斯一起移近洛森邊境；保留與地表森林重疊的地下關係。",
+        "sources": [
+          "/map/location/material-realm/mattington/fenadra/"
+        ],
+        "label_offset": [
+          -20,
+          20
+        ]
+      },
+      "drogsland": {
+        "center": [
+          1097,
+          624
+        ],
+        "polygon": [
+          [
+            1088.5,
+            620.8
+          ],
+          [
+            1093.4,
+            616.4
+          ],
+          [
+            1101.0,
+            617.2
+          ],
+          [
+            1106,
+            622.8
+          ],
+          [
+            1102.8,
+            629.2
+          ],
+          [
+            1095.7,
+            632
+          ],
+          [
+            1088.9,
+            628.0
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "麥丁頓邊陲小鎮；暫置北側邊緣，不由舊圖自動平均推開。",
+        "sources": [
+          "/map/location/material-realm/mattington/drogsland/",
+          "/campaigns/pages/rugatha-legends/legends-os01/index.html"
+        ]
+      },
+      "kashla": {
+        "center": [
+          1070,
+          981
+        ],
+        "polygon": [
+          [
+            1063.3,
+            978.6
+          ],
+          [
+            1067.2,
+            975.3
+          ],
+          [
+            1073.2,
+            975.9
+          ],
+          [
+            1077,
+            980.1
+          ],
+          [
+            1074.5,
+            984.9
+          ],
+          [
+            1069.0,
+            987
+          ],
+          [
+            1063.7,
+            984.0
+          ]
+        ],
+        "kind": "historic",
+        "placement_note": "已消失的舊城鎮，透過幻境與洞穴相連；確切位置未知，僅作小範圍歷史地點示意。",
+        "sources": [
+          "/map/location/material-realm/mattington/kashla/"
+        ]
+      },
+      "samptano": {
+        "center": [
+          1100,
+          951
+        ],
+        "polygon": [
+          [
+            1082.0,
+            944.6
+          ],
+          [
+            1092.4,
+            935.8
+          ],
+          [
+            1108.5,
+            937.4
+          ],
+          [
+            1119,
+            948.6
+          ],
+          [
+            1112.3,
+            961.4
+          ],
+          [
+            1097.2,
+            967
+          ],
+          [
+            1082.9,
+            959.0
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "帝國首都，仍位於麥丁頓境內；無明確相對方位，暫作孤立城市示意。",
+        "sources": [
+          "/map/location/material-realm/mattington/samptano/"
+        ]
+      }
+    },
+    "lothum": {
+      "elnore": {
+        "center": [
+          1261,
+          782
+        ],
+        "polygon": [
+          [
+            1252.5,
+            778.8
+          ],
+          [
+            1257.4,
+            774.4
+          ],
+          [
+            1265.0,
+            775.2
+          ],
+          [
+            1270,
+            780.8
+          ],
+          [
+            1266.8,
+            787.2
+          ],
+          [
+            1259.7,
+            790
+          ],
+          [
+            1252.9,
+            786.0
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "洛森與麥丁頓邊界的半妖精村落；靠近邊境，但不推定與特定麥丁頓城鎮接壤。",
+        "sources": [
+          "/map/location/material-realm/lothum/elnore/",
+          "/campaigns/pages/rugatha-legends/legends-os02/index.html"
+        ]
+      },
+      "phreit": {
+        "center": [
+          1450,
+          600
+        ],
+        "polygon": [
+          [
+            1426.2,
+            591.6
+          ],
+          [
+            1440.0,
+            580.0
+          ],
+          [
+            1461.2,
+            582.1
+          ],
+          [
+            1475,
+            596.9
+          ],
+          [
+            1466.2,
+            613.6
+          ],
+          [
+            1446.2,
+            621
+          ],
+          [
+            1427.5,
+            610.5
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "洛森首都，幅員較廣；與邊境村落間保留大片森林腹地。此處方位為概略配置。",
+        "sources": [
+          "/map/location/material-realm/lothum/phreit/",
+          "/campaigns/pages/rugatha-lite/lite-c08/chpt01.html"
+        ]
+      }
+    },
+    "chryomen": {
+      "orun": {
+        "center": [
+          840,
+          775
+        ],
+        "polygon": [
+          [
+            821.0,
+            768.2
+          ],
+          [
+            832.0,
+            758.9
+          ],
+          [
+            849.0,
+            760.5
+          ],
+          [
+            860,
+            772.5
+          ],
+          [
+            853.0,
+            786.0
+          ],
+          [
+            837.0,
+            792
+          ],
+          [
+            822.0,
+            783.5
+          ]
+        ],
+        "kind": "town",
+        "placement_note": "克里歐門首都，王宮與宴會廳在城內；沿舊圖大略位置，保留王國大部分未探索腹地。",
+        "sources": [
+          "/map/location/material-realm/chryomen/orun/"
+        ]
+      }
+    }
+  },
+  "features": [
+    {
+      "kingdom": "mattington",
+      "kind": "forest",
+      "name": "嚎叫森林",
+      "points": [
+        [
+          976,
+          889
+        ],
+        [
+          981,
+          901
+        ],
+        [
+          980,
+          915
+        ]
+      ],
+      "label": [
+        984,
+        932
+      ],
+      "sources": [
+        "/campaigns/pages/rugatha/rugatha-c01/chpt02.html"
+      ]
+    },
+    {
+      "kingdom": "mattington",
+      "kind": "waterway",
+      "name": "渡船往來",
+      "points": [
+        [
+          785,
+          1115
+        ],
+        [
+          797,
+          1123
+        ],
+        [
+          810,
+          1130
+        ],
+        [
+          820,
+          1134
+        ]
+      ],
+      "label": [
+        818,
+        1110
+      ],
+      "sources": [
+        "/campaigns/pages/rugatha-plus/plus-c07/chpt01.html"
+      ]
+    },
+    {
+      "kingdom": "mattington",
+      "kind": "waterway",
+      "name": "",
+      "points": [
+        [
+          792,
+          1145
+        ],
+        [
+          807,
+          1140
+        ],
+        [
+          820,
+          1138
+        ]
+      ],
+      "label": [
+        0,
+        0
+      ],
+      "sources": [
+        "/campaigns/pages/rugatha-plus/plus-c07/chpt02.html"
+      ]
+    },
+    {
+      "kingdom": "mattington",
+      "kind": "waterway",
+      "name": "",
+      "points": [
+        [
+          790,
+          1155
+        ],
+        [
+          811,
+          1157
+        ],
+        [
+          843,
+          1159
+        ],
+        [
+          874,
+          1162
+        ]
+      ],
+      "label": [
+        0,
+        0
+      ],
+      "sources": [
+        "/campaigns/pages/rugatha-plus/plus-c07/chpt03.html"
+      ]
+    }
+  ],
+  "standalone_pois": {
+    "mattington": {
+      "normans-estate": {
+        "point": [
+          875,
+          929
+        ],
+        "placement_note": "私人宅邸，參考原版地圖的諾曼宅邸大略位置；不歸屬任何城鎮。",
+        "sources": [
+          "/map/location/material-realm/mattington/unassigned-locations/normans-estate/"
+        ]
+      },
+      "odericks-dungeon": {
+        "point": [
+          1152,
+          1048
+        ],
+        "placement_note": "參考原版地圖的歐德里克地窖大略位置；不歸屬任何城鎮。",
+        "sources": [
+          "/map/location/material-realm/mattington/unassigned-locations/odericks-dungeon/"
+        ]
+      },
+      "feathered-estate": {
+        "point": [
+          1041,
+          892
+        ],
+        "placement_note": "荒野中的莊園，參考原版地圖大略位置；不歸屬任何城鎮。",
+        "sources": [
+          "/map/location/material-realm/mattington/unassigned-locations/feathered-estate/"
+        ]
+      },
+      "peak-temple": {
+        "point": [
+          1142,
+          938
+        ],
+        "placement_note": "獨立寺廟，參考原版地圖的尖頂寺大略位置；不歸屬任何城鎮。",
+        "sources": [
+          "/map/location/material-realm/mattington/unassigned-locations/peak-temple/"
+        ]
+      }
+    },
+    "chryomen": {
+      "windblown-hills": {
+        "point": [
+          960,
+          570
+        ],
+        "placement_note": "克里歐門境內人煙稀少的山丘，確切位置未定，先以王國內獨立地標呈現。",
+        "sources": [
+          "/map/location/material-realm/chryomen/unassigned-locations/windblown-hills/"
+        ]
+      }
+    }
+  }
+}

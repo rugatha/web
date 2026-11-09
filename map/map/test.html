@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>物質時空・互動地圖 | Rugatha</title>
+  <link rel="icon" href="/assets/logo/rugatha-favicon.png">
+  <link rel="stylesheet" href="/map/styles/map-explorer.css">
+  <script type="module" src="/map/scripts/map-explorer.js"></script>
+</head>
+<body>
+<a class="skip" href="#explorer">跳至地圖探索</a>
+<header class="site-header"><a class="brand" href="/">RUGATHA <span>世界圖誌</span></a><nav aria-label="主選單"><a href="/map/map/">原版地圖</a><a href="/map/location/">地點圖鑑 ↗</a></nav></header>
+<main id="explorer">
+  <div class="intro"><div><p class="eyebrow">THE DRANISON EMPIRE / WORLD ATLAS</p><h1>物質時空<span>探索卓尼森島</span></h1></div><p>從王國的邊界，走進城鎮與街巷。<br>選擇一片土地，展開你的旅程。</p></div>
+  <nav id="trail" class="trail" aria-label="地圖層級"></nav>
+  <div class="explorer">
+    <section class="map-stage" aria-label="互動地圖">
+      <div class="map-caption"><span class="live-dot"></span><span id="map-level">全島視角</span></div>
+      <svg id="world-map" viewBox="300 150 1500 1120" role="group" aria-label="卓尼森島地圖；可使用旁邊的清單探索" tabindex="0">
+        <g id="territories"></g><g id="markers"></g>
+      </svg>
+      <div id="hover-label" class="hover-label" hidden></div>
+      <div class="map-controls" aria-label="地圖控制"><button id="zoom-in" aria-label="放大地圖">＋</button><button id="zoom-out" aria-label="縮小地圖">−</button><button id="reset-view" aria-label="重設全島視角">⌂</button></div>
+      <div class="compass" aria-hidden="true">N<span>✧</span></div>
+      <div class="map-bottom"><span id="map-hint">滑過王國查看輪廓 · 點選深入探索</span><span>DRANISON · 物質時空</span></div>
+
+    </section>
+    <aside class="discovery" aria-label="地點資訊"><div id="place-summary" aria-live="polite"></div><div class="directory"><label for="place-search">尋找此層地點</label><input id="place-search" type="search" placeholder="輸入王國名稱…" autocomplete="off"><div class="list-heading"><span id="list-title">選擇王國</span><span id="list-count"></span></div><div id="place-list"></div></div></aside>
+  </div>
+  <footer class="page-note"><span>✧ 互動地圖試作</span><p>城鎮依地點描述與章節的相對位置配置；精確邊界、距離與未記載方位仍為示意。地點分類與內容依地點圖鑑。僅呈現物質時空與已收錄地點，城鎮與地標之外保留尚未探索的空間。</p></footer>
+</main>
+</body>
+</html>
