@@ -1,6 +1,6 @@
 import { initializeApp, getApps } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js';
 import { collection, doc, getFirestore, onSnapshot, runTransaction, serverTimestamp } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js';
-import { commitD3Registration } from './registration-store.js';
+import { commitD3Registration } from './registration-store.js?v=20261109-price-1';
 const app = getApps().find(app => app.name === '[DEFAULT]') || initializeApp(window.RUGATHA_FIREBASE_CONFIG);
 const db = getFirestore(app);
 export const newId = () => doc(collection(db, 'd3Registrations')).id;

@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/admin/dashboard.css?v=20261026-helper-1">
   <link rel="stylesheet" href="/experience/cons/d3/2026/helper/helper.css?v=2">
   <script src="/shared/firebase.config.js"></script>
-  <script type="module" src="/experience/cons/d3/2026/helper/helper.js?v=3"></script>
+  <script type="module" src="/experience/cons/d3/2026/helper/helper.js?v=20261109-price-1"></script>
 </head>
 <body>
   <section id="helper-gate" class="gate">
@@ -38,7 +38,7 @@
             <label>名稱<input id="d3-add-name" required maxlength="80" autocomplete="off"></label>
             <label>電話<input id="d3-add-phone" type="tel" required maxlength="30" pattern="[+0-9\(\) \-]{8,30}" autocomplete="off"></label>
             <label>報名人數<select id="d3-add-party"><option value="1">1 人</option><option value="2">2 人</option></select></label>
-            <fieldset><legend>加價方案（套用至每位報名者）</legend><label><input type="checkbox" id="d3-add-miniature">3D 公仔印製（每人加 500 元）</label><label><input type="checkbox" id="d3-add-portrait">角色肖像繪製（每人加 200 元）</label></fieldset>
+            <p class="hint">基本費用每人 500 元，含創角卡與角色速寫；兩天 12:00–13:00 時段每人 400 元。</p><fieldset><legend>加價方案（套用至每位報名者）</legend><label><input type="checkbox" id="d3-add-miniature">3D 公仔印製（每人加 500 元）</label></fieldset>
             <p id="d3-add-total" aria-live="polite"></p><p id="d3-add-error" class="form-error" role="status"></p>
             <div class="dialog-actions"><button type="button" id="d3-add-close" class="button">返回</button><button type="submit" id="d3-add-save" class="button">確認登記</button></div>
           </form>

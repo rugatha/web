@@ -1,7 +1,7 @@
 import { initializeApp, getApps } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js';
 import { initializeAuth, browserSessionPersistence, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js';
 import * as sdk from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js';
-import { createD3Dashboard } from '/admin/d3-dashboard.js?v=20261026-helper-1';
+import { createD3Dashboard } from '/admin/d3-dashboard.js?v=20261109-price-1';
 import { clearTableData } from '/admin/data-table.js?v=20261026-experience-v3';
 const $=id=>document.getElementById(id);
 let authenticated=false,generation=0;

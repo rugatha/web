@@ -6,7 +6,7 @@ const source=readFileSync('experience/cons/d3/2026/helper/sw.js','utf8');
 function worker(){
  const listeners={},deleted=[];
  const self={location:{origin:'https://rugatha.com'},addEventListener:(name,fn)=>listeners[name]=fn,clients:{claim:async()=>{}},skipWaiting:async()=>{}};
- const caches={keys:async()=>['rugatha-pwa-v31-static','d3-helper-shell-v1','d3-helper-shell-v2'],delete:async name=>deleted.push(name)};
+ const caches={keys:async()=>['rugatha-pwa-v31-static','d3-helper-shell-v1','d3-helper-shell-v2','d3-helper-shell-v3'],delete:async name=>deleted.push(name)};
  vm.runInNewContext(source,{self,caches,URL,fetch:async()=>({ok:false})});return {listeners,deleted};
 }
 test('helper worker never intercepts personal data, auth, other pages or writes',()=>{
@@ -21,7 +21,7 @@ test('helper worker never intercepts personal data, auth, other pages or writes'
 test('helper cache lifecycle preserves the main site PWA caches',async()=>{
  const {listeners,deleted}=worker();let finished;
  listeners.activate({waitUntil:promise=>finished=promise});await finished;
- assert.deepEqual(deleted,['d3-helper-shell-v1']);
+ assert.deepEqual(deleted,['d3-helper-shell-v1','d3-helper-shell-v2']);
 });
 test('helper manifest has an independent identity and a scope limited to its entry page',()=>{
  const manifest=JSON.parse(readFileSync('experience/cons/d3/2026/helper/manifest.webmanifest','utf8'));

@@ -1,3 +1,4 @@
+import { d3Total } from './pricing.js';
 export async function commitD3Registration(db, id, answers, sdk) {
   const { doc, runTransaction, serverTimestamp } = sdk;
   const ref = doc(db, 'd3Slots', answers.slotId);
@@ -53,17 +54,17 @@ export async function updateD3Shipping(db, id, shipping, sdk) {
   });
 }
 
-// Read the latest other add-on inside the transaction to preserve concurrent edits.
+// Read the latest booking so the price uses its actual slot and party size.
 export async function updateD3Addon(db, id, field, enabled, sdk) {
-  if (!['miniature', 'portrait'].includes(field) || typeof enabled !== 'boolean') throw new Error('加購選項不正確');
+  if (field !== 'miniature' || typeof enabled !== 'boolean') throw new Error('加購選項不正確');
   return sdk.runTransaction(db, async tx => {
     const ref = sdk.doc(db, 'd3Registrations', id);
     const snapshot = await tx.get(ref);
     if (!snapshot.exists()) throw new Error('找不到此筆報名');
     const row = snapshot.data();
-    const miniature = field === 'miniature' ? enabled : row.miniature;
-    const portrait = field === 'portrait' ? enabled : row.portrait;
-    const patch = { miniature, portrait, total: (300 + (miniature ? 500 : 0) + (portrait ? 200 : 0)) * row.partySize, addonsUpdatedAt: sdk.serverTimestamp() };
+    const miniature = enabled;
+    const portrait = true;
+    const patch = { miniature, portrait, total: d3Total(row.slotId, miniature, row.partySize), addonsUpdatedAt: sdk.serverTimestamp() };
     tx.update(ref, patch);
     return { miniature, portrait, total: patch.total };
   });

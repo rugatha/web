@@ -853,8 +853,8 @@ service cloud.firestore {
           && d.name is string && d.name.size() <= 80 && d.name.matches('.*[^\\s].*')
           && d.phone is string && d.phone.matches('[+0-9() \\-]{8,30}')
           && d.partySize is int && d.partySize in [1, 2]
-          && d.miniature is bool && d.portrait is bool
-          && d.total == (300 + (d.miniature ? 500 : 0) + (d.portrait ? 200 : 0)) * d.partySize
+          && d.miniature is bool && d.portrait == true
+          && d.total == ((d.slotId.matches('2026-12-(12|13)-12') ? 400 : 500) + (d.miniature ? 500 : 0)) * d.partySize
           && d.createdAt == request.time && before.registrationOpen == true && request.time <= before.deadline
           && after.lastRegistrationId == id && after.updatedAt == request.time
           && after.registeredPlayers == before.registeredPlayers + d.partySize && after.registeredPlayers <= 2;
@@ -890,9 +890,9 @@ service cloud.firestore {
         let d = request.resource.data;
         return canManageD3()
           && d.diff(resource.data).affectedKeys().hasOnly(['miniature', 'portrait', 'total', 'addonsUpdatedAt'])
-          && d.miniature is bool && d.portrait is bool
+          && d.miniature is bool && d.portrait == true
           && d.partySize is int && d.partySize in [1, 2]
-          && d.total == (300 + (d.miniature ? 500 : 0) + (d.portrait ? 200 : 0)) * d.partySize
+          && d.total == ((d.slotId.matches('2026-12-(12|13)-12') ? 400 : 500) + (d.miniature ? 500 : 0)) * d.partySize
           && d.addonsUpdatedAt == request.time;
       }
       function editImageEmail() {

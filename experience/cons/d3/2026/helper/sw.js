@@ -1,9 +1,9 @@
-const CACHE = 'd3-helper-shell-v2';
+const CACHE = 'd3-helper-shell-v3';
 // Static UI only. Never cache authentication responses or registration data.
 const SHELL = [
   '/experience/cons/d3/2026/helper/', '/experience/cons/d3/2026/helper/index.html', '/experience/cons/d3/2026/helper/manifest.webmanifest',
   '/experience/cons/d3/2026/helper/helper.js', '/experience/cons/d3/2026/helper/helper.css',
-  '/experience/cons/d3/2026/helper/helper-pwa.js', '/experience/cons/d3/2026/registration-store.js',
+  '/experience/cons/d3/2026/helper/helper-pwa.js', '/experience/cons/d3/2026/registration-store.js', '/experience/cons/d3/2026/pricing.js',
   '/admin/d3-dashboard.js', '/admin/data-table.js', '/admin/dashboard-model.js', '/admin/dashboard.css',
   '/shared/firebase.config.js', '/shared/styles/theme.css',
   '/assets/banner/rugatha-banner-trademark-transparent.png',

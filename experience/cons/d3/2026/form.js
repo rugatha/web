@@ -1,4 +1,5 @@
-import { newId, watchSlot, save } from './firebase-registration.js';
+import { d3Total } from './pricing.js';
+import { newId, watchSlot, save } from './firebase-registration.js?v=20261109-price-1';
 const times = Array.from({ length: 6 }, (_, i) => `${12 + i}:00-${13 + i}:00`);
 const dates = { '2026-12-12': '12/12（六）', '2026-12-13': '12/13（日）' };
 const availability = Object.fromEntries(Object.keys(dates).map(date => [date, times.map(() => null)]));
@@ -60,22 +61,26 @@ function updateTimes() {
   time.disabled = !date.value || loaded.size !== 12;
   if (date.value && loaded.size === 12) times.forEach((slot, i) => {
     const seats = Math.max(0, Math.min(2, availability[date.value][i]));
-    const option = new Option(`${slot} ｜剩餘 ${seats} 人`, slot);
+    const option = new Option(`${slot}${i === 0 ? '（基本費用 400 元）' : ''} ｜剩餘 ${seats} 人`, slot);
     const settings = slots[slotId(date.value, i)];
     option.disabled = seats < Number(party.value) || !settings?.registrationOpen || settings.deadline < Date.now();
     time.add(option);
     if (slot === previous && !option.disabled) time.value = previous;
   });
+  updateCost();
 }
 function cost() {
-  return 300 + (form.elements.miniature.checked ? 500 : 0) + (form.elements.portrait.checked ? 200 : 0);
+  return d3Total(slotId(date.value, times.indexOf(time.value)), form.elements.miniature.checked);
 }
 const money = value => `新臺幣 ${value.toLocaleString('zh-TW')}`;
+function updateCost() {
+  document.querySelector('#total').textContent = money(cost() * Number(party.value));
+  document.querySelector('#cost-breakdown').textContent = `每人 ${money(cost())} × ${party.value} 人${time.value === times[0] ? '（12:00–13:00 優惠）' : ''}`;
+}
 form.addEventListener('change', event => {
   if (event.target === date) { time.value = ''; updateTimes(); }
   if (event.target === party) updateTimes();
-  document.querySelector('#total').textContent = money(cost() * Number(party.value));
-  document.querySelector('#cost-breakdown').textContent = `每人 ${money(cost())} × ${party.value} 人`;
+  updateCost();
 });
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -83,7 +88,7 @@ form.addEventListener('submit', event => {
   if (!form.elements.name.value.trim()) { form.elements.name.focus(); return; }
   const remaining = availability[date.value]?.[times.indexOf(time.value)] ?? 0;
   if (Number(party.value) > remaining) { updateTimes(); return; }
-  const services = ['角色卡教學', ...(form.elements.miniature.checked ? ['3D 公仔印製'] : []), ...(form.elements.portrait.checked ? ['角色肖像圖繪製'] : [])];
+  const services = ['創角卡教學', '角色速寫', ...(form.elements.miniature.checked ? ['3D 公仔印製'] : [])];
   const details = [
     ['稱呼', form.elements.name.value.trim()], ['手機', form.elements.phone.value.trim()],
     ['報名時段', `${dates[date.value]} ${time.value}`], ['報名人數', `${party.value} 人`],
@@ -100,7 +105,7 @@ form.addEventListener('submit', event => {
     row.append(term, description);
     list.append(row);
   }
-  pending = { slotId: slotId(date.value, times.indexOf(time.value)), name: form.elements.name.value.trim(), phone: form.elements.phone.value.trim(), partySize: Number(party.value), miniature: form.elements.miniature.checked, portrait: form.elements.portrait.checked, total: cost() * Number(party.value) };
+  pending = { slotId: slotId(date.value, times.indexOf(time.value)), name: form.elements.name.value.trim(), phone: form.elements.phone.value.trim(), partySize: Number(party.value), miniature: form.elements.miniature.checked, portrait: true, total: cost() * Number(party.value) };
   submissionId = newId();
   reviewText = '2026 龍山地下城 Rugatha D&D 創角報名（尚未送出）\n' + details.map(([label, value]) => `${label}：${value}`).join('\n');
   document.querySelector('#copy-status').textContent = '';

@@ -1,6 +1,6 @@
 import { setupAdminNavigation } from './navigation.js?v=20261101-mobile';
 import { createSubscriptionsDashboard } from './subscriptions-dashboard.js?v=20261101-history';
-import { createD3Dashboard } from './d3-dashboard.js?v=20261026-helper-1';
+import { createD3Dashboard } from './d3-dashboard.js?v=20261109-price-1';
 import { createFeedbackDashboard } from './feedback-dashboard.js?v=20261026-forms-8';
 import { createExperienceDashboard } from './experience-dashboard.js?v=20261108-dm-note-save-fix';
 import { getSiteAuth } from '/shared/auth-session.js?v=20261019-character-books-1';

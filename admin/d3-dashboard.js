@@ -1,4 +1,5 @@
-import { commitD3Registration, cancelD3Registration, updateD3Shipping, updateD3Addon, updateD3ImageEmail } from '../experience/cons/d3/2026/registration-store.js?v=20261026-helper-1';
+import { d3Total } from '../experience/cons/d3/2026/pricing.js';
+import { commitD3Registration, cancelD3Registration, updateD3Shipping, updateD3Addon, updateD3ImageEmail } from '../experience/cons/d3/2026/registration-store.js?v=20261109-price-1';
 import { dataTable, resetTablePage } from './data-table.js?v=20261026-experience-v3';
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -53,13 +54,13 @@ export function createD3Dashboard(context) {
       const people = bookings.reduce((n,row)=>n+row.partySize,0);
       const count = slot?.registeredPlayers;
       const known = Number.isInteger(count) && count>=0 && count<=2;
-      const seats = bookings.flatMap(row=>Array.from({length:row.partySize},(_,i)=>`<div class="d3-booked-seat" aria-label="${esc(row.name)}，本筆 ${row.partySize} 人報名，第 ${i+1} 位"><div class="d3-seat-info"><strong>${esc(row.name)}</strong><p>${esc(phoneText(row.phone))}</p><p>${[row.miniature?'3D':'',row.portrait?'肖像':''].filter(Boolean).join('、')||'無加價'}</p><p title="本筆 ${row.partySize} 人總費用">${esc(money(row.total))}</p></div><button type="button" class="button" data-d3-cancel="${esc(row.id)}" ${busy?'disabled':''}>取消報名</button></div>`));
+      const seats = bookings.flatMap(row=>Array.from({length:row.partySize},(_,i)=>`<div class="d3-booked-seat" aria-label="${esc(row.name)}，本筆 ${row.partySize} 人報名，第 ${i+1} 位"><div class="d3-seat-info"><strong>${esc(row.name)}</strong><p>${esc(phoneText(row.phone))}</p><p>${[row.miniature?'3D':'',row.portrait?'速寫':''].filter(Boolean).join('、')||'無加價'}</p><p title="本筆 ${row.partySize} 人總費用">${esc(money(row.total))}</p></div><button type="button" class="button" data-d3-cancel="${esc(row.id)}" ${busy?'disabled':''}>取消報名</button></div>`));
       const open = slot?.registrationOpen && slot.deadline?.toMillis?.()>Date.now();
       if (known) for(let i=0;i<2-count;i++) seats.push(`<div class="d3-empty-seat"><span>空位</span><button type="button" class="button" data-d3-add="${id}" ${busy || !open?'disabled':''}>登記報名</button></div>`);
       return `<article class="d3-slot-card"><h4>${esc(slotLabel(id).split(' ')[1])}</h4>${known?`<p>${count} 人報名 · 剩餘 ${2-count} 位</p><div class="d3-seats">${seats.join('')}</div><p class="hint">${open?'報名開放':'報名已關閉／截止'}</p>${count!==people?'<p class="form-error">船位統計與報名人數不一致，請確認資料。</p>':''}`:'<p class="form-error">此時段未設定或名額資料異常。</p>'}</article>`;
     }).join('')}</section>`).join('');
     const validFiltered = filtered.filter(row=>row.status!=='cancelled');
-    $('d3-summary').textContent = `符合 ${filtered.length} 筆報名（含取消 ${filtered.length-validFiltered.length} 筆） · ${validFiltered.reduce((n,r)=>n+r.partySize,0)} 人 · 3D 公仔 ${validFiltered.reduce((n,r)=>n+(r.miniature?r.partySize:0),0)} 份 · 角色肖像 ${validFiltered.reduce((n,r)=>n+(r.portrait?r.partySize:0),0)} 份 · 報名總金額 ${money(validFiltered.reduce((n,r)=>n+r.total,0))}（非收款紀錄）`;
+    $('d3-summary').textContent = `符合 ${filtered.length} 筆報名（含取消 ${filtered.length-validFiltered.length} 筆） · ${validFiltered.reduce((n,r)=>n+r.partySize,0)} 人 · 3D 公仔 ${validFiltered.reduce((n,r)=>n+(r.miniature?r.partySize:0),0)} 份 · 角色速寫 ${validFiltered.reduce((n,r)=>n+(r.portrait?r.partySize:0),0)} 份 · 報名總金額 ${money(validFiltered.reduce((n,r)=>n+r.total,0))}（非收款紀錄）`;
     dataTable('d3-table',[
       {id:'slotId',label:'體驗時段',value:r=>slotLabel(r.slotId)},
       {id:'createdAt',label:'報名時間',type:'date',value:r=>r.createdAt,html:r=>esc(dateText(r.createdAt))},
@@ -68,7 +69,7 @@ export function createD3Dashboard(context) {
       {id:'imageRecipientEmail',label:'收件人 email',value:r=>r.imageRecipientEmail || '',html:r=>`<form data-d3-image-email="${esc(r.id)}"><input type="email" name="imageEmail" maxlength="254" value="${esc(r.imageRecipientEmail || '')}" aria-label="${esc(r.name)}的圖檔收件 email" placeholder="接收圖檔的 email" ${busy?'disabled':''}><button class="button" type="submit" ${busy?'disabled':''}>儲存</button></form>`},
       {id:'partySize',label:'報名人數',type:'number',value:r=>r.partySize},
       {id:'miniature',label:'3D 公仔印製',type:'category',value:r=>r.miniature?'有加購':'未加購',html:r=>addonSelect(r,'miniature','3D 公仔印製',busy)},
-      {id:'portrait',label:'角色肖像繪製',type:'category',value:r=>r.portrait?'有加購':'未加購',html:r=>addonSelect(r,'portrait','角色肖像繪製',busy)},
+      {id:'portrait',label:'角色速寫',type:'category',value:r=>r.portrait?'含速寫':'未選購（舊方案）'},
       {id:'total',label:'報名金額',type:'number',value:r=>r.total,html:r=>esc(money(r.total))},
       {id:'status',label:'狀態',type:'category',value:r=>r.status==='cancelled'?'已取消':'有效'},
       {id:'recipientName',label:'收件人姓名',value:r=>r.recipientName || '',html:r=>`${esc(r.recipientName || '')}<button type="button" class="button" data-d3-shipping="${esc(r.id)}" ${busy || !r.miniature?'disabled':''} title="${r.miniature?'編輯寄送資料':'須先加購 3D 公仔印製'}">編輯寄送資料</button>`},
@@ -83,7 +84,7 @@ export function createD3Dashboard(context) {
   $('d3-refresh').addEventListener('click',()=>void load());
   const editor = $('d3-editor');
   let addingId = null;
-  function total() { return (300+($('d3-add-miniature').checked?500:0)+($('d3-add-portrait').checked?200:0))*Number($('d3-add-party').value); }
+  function total() { return d3Total($('d3-add-slot').value,$('d3-add-miniature').checked,Number($('d3-add-party').value)); }
   function updateTotal() { $('d3-add-total').textContent = `總費用：${money(total())}`; }
   function updatePartyOptions() {
     const slot = slots.find(slot=>slot.id===$('d3-add-slot').value);
@@ -121,7 +122,7 @@ export function createD3Dashboard(context) {
     const {db,sdk,generation}=context(),ticket=revision;
     busy=true;$('d3-add-save').disabled=true;$('d3-add-close').disabled=true;$('d3-add-error').textContent='正在登記…';
     try {
-      await commitD3Registration(db,addingId,{slotId:$('d3-add-slot').value,name,phone:$('d3-add-phone').value.trim(),partySize:Number($('d3-add-party').value),miniature:$('d3-add-miniature').checked,portrait:$('d3-add-portrait').checked,total:total()},sdk);
+      await commitD3Registration(db,addingId,{slotId:$('d3-add-slot').value,name,phone:$('d3-add-phone').value.trim(),partySize:Number($('d3-add-party').value),miniature:$('d3-add-miniature').checked,portrait:true,total:total()},sdk);
       if(!valid(ticket,generation))return;
       editor.close();busy=false;$('d3-add-save').disabled=false;$('d3-add-close').disabled=false;await load();
     }catch(error){if(valid(ticket,generation))$('d3-add-error').textContent=`登記失敗：${error.message}。請確認剩餘名額後重試。`;}
