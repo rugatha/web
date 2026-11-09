@@ -21,10 +21,10 @@
 .collage-card img{display:block;width:100%;height:auto;border-radius:5px;outline:1px solid #e5d4af55}
 .collage-card span{display:block;padding:12px 2px 0;font-size:12px;line-height:1.6;letter-spacing:.03em}
 .collage-card b{font-size:11px;color:var(--accent);margin-right:7px}
-.collage-card--creation{grid-column:1 / -1;width:76%;justify-self:center;transform:rotate(-4deg)}
-.collage-card--portrait{transform:rotate(-3deg);margin-top:4px}
-.collage-card--miniature{transform:rotate(5deg);margin-top:32px}
-.collage-card:hover,.collage-card:focus-visible{transform:translateY(-5px) rotate(0deg);z-index:1}
+.collage-card--creation{grid-column:1 / -1;width:76%;justify-self:center}
+.collage-card--portrait{margin-top:4px}
+.collage-card--miniature{margin-top:32px}
+.collage-card:hover,.collage-card:focus-visible{transform:translateY(-5px);z-index:1}
 @media(min-width:701px) and (max-width:1000px){.con-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px}.con-hero-collage{gap:24px 14px;padding-inline:6px}.collage-card--creation{width:88%}.collage-card span{font-size:11px}}
-@media(max-width:700px){.con-hero-collage{width:100%;max-width:440px;justify-self:center;grid-template-columns:minmax(0,1fr);gap:30px;padding:16px 14px 24px}.collage-card--creation,.collage-card--portrait,.collage-card--miniature{grid-column:1;width:84%;max-width:340px;margin-top:0}.collage-card--creation{justify-self:start;transform:rotate(-3deg)}.collage-card--portrait{justify-self:end;transform:rotate(3deg)}.collage-card--miniature{justify-self:start;transform:rotate(-2deg)}.collage-card span{font-size:13px}}
+@media(max-width:700px){.con-hero-collage{width:100%;max-width:440px;justify-self:center;grid-template-columns:minmax(0,1fr);gap:30px;padding:16px 14px 24px}.collage-card--creation,.collage-card--portrait,.collage-card--miniature{grid-column:1;width:84%;max-width:340px;margin-top:0}.collage-card--creation{justify-self:start}.collage-card--portrait{justify-self:end}.collage-card--miniature{justify-self:start}.collage-card span{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.collage-card{transition:none}}
