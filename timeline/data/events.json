@@ -735,8 +735,28 @@
     "date": "15051.05.14",
     "titleZh": "娜塔莎港戰後的抉擇",
     "titleEn": "Choices After the Battle of Natasha Harbor",
-    "descZh": "小雪獲救後與米多莉團聚；羅賓遜主教歡迎米多莉回到聖津菈大教堂，並准許冒險者在瑪莉修女陪同下搜索通往尖頂寺的傳送陣。\n小雪希望留在娜塔莎港贖罪，請求將港口封給米多莉，並邀她一同留下；米多莉尚未作答。",
-    "descEn": "Yuki was rescued and reunited with Midori. Bishop Robinson welcomed Midori back to Saint Keinra Cathedral and allowed the adventurers to search for the teleportation circle to Peak Temple with Sister Mari accompanying them.\nWishing to remain at Natasha Harbor to atone, Yuki asked that it be granted to Midori and invited her to stay; Midori had not yet answered."
+    "descZh": "小雪獲救後與米多莉團聚；羅賓遜主教歡迎米多莉回到聖津菈大教堂，並准許冒險者在瑪莉修女陪同下搜索通往尖頂寺的傳送陣。\n小雪希望留在娜塔莎港贖罪，請求將港口封給米多莉，並邀她一同留下。米多莉決定先尋找失散的龍恩，與小雪勾指約定會回來。",
+    "descEn": "Yuki was rescued and reunited with Midori. Bishop Robinson welcomed Midori back to Saint Keinra Cathedral and allowed the adventurers to search for the teleportation circle to Peak Temple with Sister Mari accompanying them.\nWishing to remain at Natasha Harbor to atone, Yuki asked that it be granted to Midori and invited her to stay. Midori chose to search for the missing Ron first, making a pinky promise to return to Yuki."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
+    "tag": "rugatha-plus",
+    "date": "15051.05.16",
+    "titleZh": "重返聖津菈大教堂",
+    "titleEn": "Return to Saint Keinra Cathedral",
+    "descZh": "冒險者在羅賓遜主教帶領下返回方努爾，準備在瑪莉修女協助下搜索通往尖頂寺的地下傳送陣。",
+    "descEn": "Bishop Robinson led the adventurers back to Fanaur, where they prepared to search Saint Keinra Cathedral’s basements for the teleportation circle to Peak Temple with Sister Mari’s help."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
+    "tag": "rugatha-plus",
+    "date": "15051.05.16",
+    "titleZh": "龍恩失控與師兄重逢",
+    "titleEn": "Ron’s Blackout and Reunion with Tarmo",
+    "descZh": "龍恩在尖頂寺斷片後，發現一名師弟已死，自己手中握著對方的眼球。他藏起遺體，懷疑巫妖的手、書與眼睛之間的關聯，隨後在走廊遇見師兄塔爾莫。",
+    "descEn": "After blacking out at Peak Temple, Ron found a junior monk dead and the boy’s eyes in his own hands. He hid the body and suspected a link between the lich’s hand, book, and eye, then encountered his senior Tarmo in the corridor."
   },
   {
     "type": "event",

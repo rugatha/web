@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "batch": "all",
+  "bucket": "rugatha-87e15.firebasestorage.app",
+  "encoder": "1.6.0\nlibsharpyuv: 0.4.2",
+  "variants": {
+    "thumb": {
+      "maxEdge": 480,
+      "quality": 82
+    },
+    "reading": {
+      "maxEdge": 1600,
+      "quality": 85
+    }
+  },
+  "images": [
+    {
+      "source": "campaigns/chapter-banners/plus-c08-chpt03.png",
+      "id": "plus-c08-chpt03-2ab359a220",
+      "category": "chapters",
+      "entityIds": [
+        "plus-c08-chpt03"
+      ],
+      "original": {
+        "bytes": 2744748,
+        "sha256": "e5bc564d90ed3efdff6e4b7e363456d2562d57121bc05858fa009bdeb637fb9c",
+        "width": 1672,
+        "height": 941,
+        "archive": {
+          "object": "image-originals/chapters/plus/c08/chapter-03/original-e5bc564d.png",
+          "sha256": "e5bc564d90ed3efdff6e4b7e363456d2562d57121bc05858fa009bdeb637fb9c",
+          "bytes": 2744748,
+          "contentType": "image/png",
+          "cacheControl": "private, no-store",
+          "storageClass": "STANDARD",
+          "generation": "1794403932818437"
+        }
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/chapters/plus/c08/chapter-03/thumb-9a9d6eaf.webp",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fplus%2Fc08%2Fchapter-03%2Fthumb-9a9d6eaf.webp?alt=media",
+          "sha256": "9a9d6eafb92626c333ed275844846a8f09983fed372e616d1798973c95e9d380",
+          "bytes": 26140,
+          "width": 480,
+          "height": 270,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable"
+        },
+        "reading": {
+          "object": "public-images/chapters/plus/c08/chapter-03/reading-952e8c9b.webp",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fplus%2Fc08%2Fchapter-03%2Freading-952e8c9b.webp?alt=media",
+          "sha256": "952e8c9bf1cc5eccc528353f2eac4d52ef55d5c6232d2f9e6b7c9a3a2b4b027c",
+          "bytes": 235092,
+          "width": 1600,
+          "height": 900,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable"
+        }
+      }
+    }
+  ]
+}

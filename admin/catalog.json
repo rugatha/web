@@ -237,7 +237,7 @@
         {
           "id": "plus-c08",
           "title": "名為家的地方",
-          "chapters": 2,
+          "chapters": 3,
           "chapterList": [
             {
               "id": "plus-c08-chpt01",
@@ -248,6 +248,11 @@
               "id": "plus-c08-chpt02",
               "title": "第二章：師兄與師弟",
               "url": "/campaigns/pages/rugatha-plus/plus-c08/chpt02.html"
+            },
+            {
+              "id": "plus-c08-chpt03",
+              "title": "第三章：進與出",
+              "url": "/campaigns/pages/rugatha-plus/plus-c08/chpt03.html"
             }
           ],
           "url": "/campaigns/pages/rugatha-plus/plus-c08/"

@@ -53,6 +53,7 @@ test-results/
 campaigns/pages/rugatha-plus/plus-c08/*
 !campaigns/pages/rugatha-plus/plus-c08/chpt01.html
 !campaigns/pages/rugatha-plus/plus-c08/chpt02.html
+!campaigns/pages/rugatha-plus/plus-c08/chpt03.html
 !campaigns/pages/rugatha-plus/plus-c08/temp.html
 !campaigns/pages/rugatha-plus/plus-c08/index.html
 
@@ -393,3 +394,5 @@ campaigns/pages/rugatha-plus/plus-c08/*
 /pc/three_views/Watson.png
 /pc/three_views/YHWH.png
 /pc/three_views/Yi.png
+
+/campaigns/chapter-banners/plus-c08-chpt03.png

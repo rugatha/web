@@ -1,0 +1,71 @@
+{
+  "chapterKey": "plus-c08/chpt03",
+  "groups": {
+    "ron": [
+      {
+        "id": "ron",
+        "name": "龍恩",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fron-cde8f9ab40%2Fimage-5dfe37fb.png?alt=media",
+        "nameEn": "Ron"
+      }
+    ],
+    "party": [
+      {
+        "id": "midori",
+        "name": "米多莉",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fmidori-16add8cb4c%2Fimage-c1d32fd6.png?alt=media",
+        "nameEn": "Midori"
+      },
+      {
+        "id": "samael",
+        "name": "薩梅爾",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fsamael-d063d635c9%2Fimage-c0ac9dbc.jpg?alt=media",
+        "nameEn": "Samael"
+      },
+      {
+        "id": "siri",
+        "name": "喜利",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fsiri-oslee-fcce8003f4%2Fimage-f5f50b6f.png?alt=media",
+        "nameEn": "Siri"
+      },
+      {
+        "id": "yhwh",
+        "name": "YHWH",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fyhwh-98297c2873%2Fimage-6e362197.png?alt=media",
+        "nameEn": "YHWH"
+      },
+      {
+        "id": "beau",
+        "name": "波",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbeau%2Fthumb-32ff9ced.webp?alt=media",
+        "nameEn": "Beau"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "mari-joins-party",
+      "group": "party",
+      "question": "冒險者的抉擇：",
+      "options": [
+        "「當然，瑪莉，妳也是我們的一份子了。」",
+        "「都可以，妳想來我們歡迎，但也不強迫妳。」",
+        "「大教堂還有不少事需要妳幫忙打理的吧？等我們回來後再來找妳吧？」",
+        "「並不是每個人都希望妳跟著我們一起。別把自己當成台北市議員的一份子。」"
+      ],
+      "customLabel": "自行填答",
+      "showCustomOption": true,
+      "en": {
+        "question": "The adventurers’ choice:",
+        "options": [
+          "“Of course, Mari. You’re one of us now.”",
+          "“Either way is fine. You’re welcome to come if you want, but there’s no pressure.”",
+          "“Doesn’t the cathedral still need your help with quite a few things? We’ll come and see you when we get back.”",
+          "“Not everyone wants you to come with us. Don’t presume you’re one of the Taipei City Councilors.”"
+        ],
+        "customLabel": "Write your own answer"
+      }
+    }
+  ],
+  "credentialMode": "character-password"
+}
