@@ -88,8 +88,8 @@
       page: "./pages/rugatha-lite/index.html",
       image: campaignPng("logo_RLite.png"),
       accent: "#DDDDD3",
-      nextSession_zh: "2026/10/24",
-      nextSession_en: "2026/10/24"
+      nextSession_zh: "2026/11/14",
+      nextSession_en: "2026/11/14"
     },
     {
       name: "Rugatha Wilds",
