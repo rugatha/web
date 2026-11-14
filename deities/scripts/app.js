@@ -61,7 +61,14 @@ function createCard(deity) {
   image.className = "deity-image";
 
   if (deity.image) {
-    image.style.backgroundImage = `url(${deity.image})`;
+    const portrait = document.createElement("img");
+    portrait.src = deity.thumbnail || deity.image;
+    portrait.alt = "";
+    portrait.width = 160;
+    portrait.height = 160;
+    portrait.loading = "lazy";
+    portrait.decoding = "async";
+    image.appendChild(portrait);
   } else {
     image.classList.add("fallback");
     image.style.backgroundImage = `url(${fallbackImage})`;

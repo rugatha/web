@@ -14,6 +14,7 @@
       "zh": ["光", "希望"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Ftrinix-fb05419fd8%2Fimage-0d105586.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Ftrinix-fb05419fd8%2Fimage-6e9b20ac.webp?alt=media",
     "link": "./pages/trinix.html",
     "saying": {
       "en": "Let Light Lead Us",
@@ -36,6 +37,7 @@
       "zh": ["月"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fphyneal-5f8e205a65%2Fimage-1eedf33d.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fphyneal-5f8e205a65%2Fimage-d83502f4.webp?alt=media",
     "link": "./pages/phyneal.html",
     "saying": {
       "en": "The Moon Reveals All that is Hidden",
@@ -58,6 +60,7 @@
       "zh": ["交易", "預言"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fphynoir-8cbd215a8f%2Fimage-8073ea5a.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fphynoir-8cbd215a8f%2Fimage-af4a958a.webp?alt=media",
     "link": "./pages/phynoir.html",
     "saying": {
       "en": "What Would You Offer for a Trade?",
@@ -80,6 +83,7 @@
       "zh": ["樹林", "生命"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fnessis-d4d2b25e9b%2Fimage-c14b3c7f.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fnessis-d4d2b25e9b%2Fimage-aa2a8e88.webp?alt=media",
     "link": "./pages/nessis.html",
     "saying": {
       "en": "Life, Birth in Nature, Ends in Nature",
@@ -102,6 +106,7 @@
       "zh": ["守護", "正義"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fkeinra-cfdb8e45fb%2Fimage-65d83074.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fkeinra-cfdb8e45fb%2Fimage-22df8673.webp?alt=media",
     "link": "./pages/keinra.html",
     "saying": {
       "en": "I Will Protect Until the End of the World",
@@ -124,6 +129,7 @@
       "zh": ["風暴", "智慧"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fjeorisan-fd71b0a7c4%2Fimage-7417e9b1.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fjeorisan-fd71b0a7c4%2Fimage-62e12fe9.webp?alt=media",
     "link": "./pages/jeorisan.html",
     "saying": {
       "en": "Truth Rise from Chaos",
@@ -146,6 +152,7 @@
       "zh": ["詐欺", "戲劇"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fultisen-8335ef06c9%2Fimage-115d716f.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fultisen-8335ef06c9%2Fimage-de91b55a.webp?alt=media",
     "link": "./pages/ultisen.html",
     "saying": {
       "en": "Dramas are as Lies, Deadly Beautiful",
@@ -168,6 +175,7 @@
       "zh": ["火", "熔鍛"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fmaxus-60af52743d%2Fimage-4bc8be81.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fmaxus-60af52743d%2Fimage-9be89749.webp?alt=media",
     "link": "./pages/maxus.html",
     "saying": {
       "en": "Melt, Rebirth",
@@ -190,6 +198,7 @@
       "zh": ["寂靜", "秩序"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Flaxthos-7afbc35718%2Fimage-6dda01b2.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Flaxthos-7afbc35718%2Fimage-004e599f.webp?alt=media",
     "link": "./pages/laxthos.html",
     "saying": {
       "en": "Obey Destiny in Silence",
@@ -212,6 +221,7 @@
       "zh": ["貿易", "財富"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fkalinius-215e009240%2Fimage-7e3db2b1.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fkalinius-215e009240%2Fimage-d2415563.webp?alt=media",
     "link": "./pages/kalinius.html",
     "saying": {
       "en": "Gold Pieces, Omnipotent",
@@ -234,6 +244,7 @@
       "zh": ["戰爭", "力量"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fdaligon-0282e47e2b%2Fimage-aa356f46.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fdaligon-0282e47e2b%2Fimage-4c3d8a5f.webp?alt=media",
     "link": "./pages/daligon.html",
     "saying": {
       "en": "Only the Truiumphant Decide History",
@@ -256,6 +267,7 @@
       "zh": ["愛", "永恆"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Famoret-b0abb81c0c%2Fimage-b06ad80e.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Famoret-b0abb81c0c%2Fimage-e28e467f.webp?alt=media",
     "link": "./pages/amoret.html",
     "saying": {
       "en": "Those Who are Against Love, are My Nemesis",
@@ -278,6 +290,7 @@
       "zh": ["蜘蛛"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-mother%2Freading-9be3cf81.webp?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-mother%2Fthumb-528c6cc2.webp?alt=media",
     "link": "../npc/npc_page/pages/The_Mother.html",
     "saying": null,
     "category": "spider-religion"
@@ -297,6 +310,7 @@
       "zh": ["蜘蛛"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fanna%2Freading-686de162.webp?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fanna%2Fthumb-1fd48a50.webp?alt=media",
     "link": "../npc/npc_page/pages/Anna.html",
     "saying": null,
     "category": "spider-religion"
@@ -316,6 +330,7 @@
       "zh": ["蜘蛛"]
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfenor%2Freading-63c0b55d.webp?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfenor%2Fthumb-48c10ba6.webp?alt=media",
     "link": "../npc/npc_page/pages/Alfenor.html",
     "saying": null,
     "category": "spider-religion"
@@ -331,6 +346,7 @@
       "zh": "地底王"
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-knicol%2Freading-47270609.webp?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-knicol%2Fthumb-39036e30.webp?alt=media",
     "link": "../npc/npc_page/pages/King_Knicol.html",
     "saying": null,
     "category": "dubbed"
