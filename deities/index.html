@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZZFKMJ65Y"></script>
@@ -43,7 +43,7 @@
   <script defer src="../shared/pwa.js"></script>
   <script src="../shared/language-toggle.js"></script>
 </head>
-<body>
+<body data-lang="zh">
   <div class="page">
     <header class="banner" aria-label="Rugatha banner image">
       <a href="../index.html" class="banner-link" aria-label="Go to Rugatha home">
@@ -55,8 +55,15 @@
       <div class="lang-toggle-wrap">
         <div class="lang-toggle" role="group" aria-label="Language"><button class="lang-toggle__button is-active" type="button" data-lang="zh" aria-pressed="true" aria-label="目前語言：中文" data-lang-toggle></button></div>
       </div>
-      <section class="deity-section">
-        <div id="deity-grid" class="deity-grid" role="list"></div>
+      <header class="page-intro">
+        <p class="eyebrow">THE DIVINE ARCHIVE</p>
+        <h1 data-copy="title">神祇與信仰</h1>
+        <p class="intro-copy" data-copy="intro">循著神的名諱，探索 Rugatha 的權能、信仰與神諭。</p>
+        <div class="intro-ornament" aria-hidden="true"><span>✦</span></div>
+      </header>
+      <nav id="category-nav" class="category-nav" aria-label="神祇分類"></nav>
+      <section class="deity-section" aria-label="神祇圖鑑">
+        <div id="deity-grid" class="deity-groups" aria-busy="true"></div>
       </section>
     </main>
   </div>

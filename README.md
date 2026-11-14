@@ -443,7 +443,7 @@ python3 shared/scripts/normalize_site_html.py
 - 更新 PC 時，檢查 `pc/pc_lib`、`pc/articles/`、`pc/pics/`、`pc/three_views/` 與章節 PC 對照。
 - 更新時間線時，檢查 `timeline/data/events.json` 的時間排序、中英標題與描述。
 - 更新地圖時，檢查 `map/assets/locations.json` 與地圖圖片座標是否一致。
-- 更新神祇時，檢查 `deities/data/deities.json`、`deities/pages/` 與 `deities/images/`。
+- 更新神祇時，檢查 `deities/data/deities.json` 與入口牌卡的樣式／渲染器；神祇已改為無詳情連結的圖鑑牌卡。宗教 Logo 可於資料新增 `logo` 圖片 URL。
 - 更新法術來源時，在 repo 外準備 JSON，發布新的 Firebase Storage 版本；維護方式與識別碼／順序限制見 [法術資料來源](docs/spell-catalog-storage.md)。
 - 更新會員成就時，檢查 `member/achievements.csv` 欄位格式。
 - 更新首頁行事曆時，檢查 `shared/calendar-events.json`。

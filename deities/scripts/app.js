@@ -17,6 +17,20 @@ const categoryLabels = {
   dubbed: { zh: "被冊封者", en: "The Dubbed" }
 };
 
+// Presentation accents follow each deity's domains; content stays in deities.json.
+const deityAccents = {
+  trinix: "235, 205, 132", phyneal: "181, 198, 243", nessis: "147, 211, 165",
+  keinra: "164, 205, 227", jeorisan: "155, 186, 235", ultisen: "202, 170, 225",
+  maxus: "239, 167, 123", laxthos: "182, 200, 204", kalinius: "225, 199, 133",
+  daligon: "229, 151, 143", amoret: "233, 174, 194", phynoir: "188, 169, 225",
+  "the-mother": "198, 166, 209", anna: "174, 186, 229", alfenor: "191, 176, 209",
+  "king-knicol": "208, 189, 150"
+};
+const pageCopy = {
+  zh: { title: "神祇與信仰", intro: "循著神的名諱，探索 Rugatha 的權能、信仰與神諭。", categories: "神祇分類", gallery: "神祇圖鑑" },
+  en: { title: "Deities & Faiths", intro: "Follow the names of the divine. Discover the powers, faiths and words of Rugatha’s gods.", categories: "Deity categories", gallery: "Deity archive" }
+};
+
 let currentLang = "zh";
 let deitiesCache = [];
 const DEITY_SKELETON_GROUPS = [3, 3];
@@ -45,17 +59,11 @@ const getLocalizedList = (value) => {
 };
 
 function createCard(deity) {
-  const card = document.createElement(deity.link ? "a" : "article");
+  const card = document.createElement("article");
   card.className = "deity-card";
   card.setAttribute("role", "listitem");
   const nameText = getLocalizedText(deity.name);
-
-  if (deity.link) {
-    card.href = deity.link;
-    card.target = "_blank";
-    card.rel = "noreferrer noopener";
-    card.setAttribute("aria-label", `Open ${nameText || "deity"} on rugatha.com`);
-  }
+  card.style.setProperty("--deity-rgb", deityAccents[deity.slug] || "123, 220, 181");
 
   const image = document.createElement("div");
   image.className = "deity-image";
@@ -64,8 +72,8 @@ function createCard(deity) {
     const portrait = document.createElement("img");
     portrait.src = deity.thumbnail || deity.image;
     portrait.alt = "";
-    portrait.width = 160;
-    portrait.height = 160;
+    portrait.width = 480;
+    portrait.height = 480;
     portrait.loading = "lazy";
     portrait.decoding = "async";
     image.appendChild(portrait);
@@ -86,27 +94,60 @@ function createCard(deity) {
 
   const tagline = document.createElement("p");
   tagline.className = "deity-tagline";
-  tagline.textContent = getLocalizedText(deity.title);
+  const subtitle = getLocalizedText(deity.title);
+  const domains = getLocalizedList(deity.domains).filter(Boolean);
+  if (domains.length) {
+    const pattern = domains
+      .slice()
+      .sort((a, b) => b.length - a.length)
+      .map(domain => domain.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+      .join("|");
+    let offset = 0;
+    for (const match of subtitle.matchAll(new RegExp(pattern, "gi"))) {
+      tagline.append(document.createTextNode(subtitle.slice(offset, match.index)));
+      const emphasis = document.createElement("strong");
+      emphasis.className = "deity-domain";
+      emphasis.textContent = match[0];
+      tagline.appendChild(emphasis);
+      offset = match.index + match[0].length;
+    }
+    tagline.append(document.createTextNode(subtitle.slice(offset)));
+  } else {
+    tagline.textContent = subtitle;
+  }
 
   body.append(title, tagline);
 
-  const domains = getLocalizedList(deity.domains);
-  if (domains.length) {
-    const chipRow = document.createElement("div");
-    chipRow.className = "chip-row";
+  const stage = document.createElement("div");
+  stage.className = "deity-stage";
+  stage.append(image, createLogoSlot(deity));
 
-    domains.forEach((domain) => {
-      const chip = document.createElement("span");
-      chip.className = "chip";
-      chip.textContent = domain;
-      chipRow.appendChild(chip);
-    });
-
-    body.appendChild(chipRow);
+  const saying = getLocalizedText(deity.saying);
+  if (saying) {
+    const quote = document.createElement("blockquote");
+    quote.className = "deity-saying";
+    quote.textContent = saying;
+    body.appendChild(quote);
   }
 
-  card.append(image, body);
+  card.append(stage, body);
   return card;
+}
+
+// A deity's `logo` overrides the shared Rugatha placeholder when its artwork is ready.
+function createLogoSlot(deity = {}) {
+  const slot = document.createElement("div");
+  slot.className = "deity-logo-slot";
+  const logo = document.createElement("img");
+  logo.src = deity.logo || "../assets/logo/rugatha-icon.png";
+  logo.alt = "";
+  logo.width = 72;
+  logo.height = 72;
+  logo.loading = "lazy";
+  logo.decoding = "async";
+  slot.appendChild(logo);
+  slot.setAttribute("aria-hidden", "true");
+  return slot;
 }
 
 function createSkeletonCard() {
@@ -126,17 +167,11 @@ function createSkeletonCard() {
   const tagline = document.createElement("div");
   tagline.className = "deity-tagline skeleton-block";
 
-  const chipRow = document.createElement("div");
-  chipRow.className = "chip-row";
-
-  for (let index = 0; index < 2; index += 1) {
-    const chip = document.createElement("span");
-    chip.className = "chip skeleton-block";
-    chipRow.appendChild(chip);
-  }
-
-  body.append(title, tagline, chipRow);
-  card.append(image, body);
+  body.append(title, tagline);
+  const stage = document.createElement("div");
+  stage.className = "deity-stage";
+  stage.append(image, createLogoSlot());
+  card.append(stage, body);
   return card;
 }
 
@@ -177,6 +212,16 @@ async function loadDeities() {
 
 function renderDeities(deities) {
   grid.innerHTML = "";
+  grid.setAttribute("aria-busy", "false");
+  document.documentElement.lang = currentLang === "zh" ? "zh-Hant" : "en";
+  document.body.dataset.lang = currentLang;
+  document.querySelectorAll("[data-copy]").forEach(element => {
+    element.textContent = pageCopy[currentLang][element.dataset.copy];
+  });
+  document.querySelector(".deity-section").setAttribute("aria-label", pageCopy[currentLang].gallery);
+  const nav = document.getElementById("category-nav");
+  nav.replaceChildren();
+  nav.setAttribute("aria-label", pageCopy[currentLang].categories);
 
   categoryOrder.forEach((categoryKey) => {
     const categoryDeities = deities.filter((deity) => deity.category === categoryKey);
@@ -184,18 +229,29 @@ function renderDeities(deities) {
 
     const section = document.createElement("section");
     section.className = "category-group";
+    section.id = categoryKey;
+    section.setAttribute("aria-labelledby", `${categoryKey}-title`);
     const heading = document.createElement("h2");
     heading.className = "category-title";
+    heading.id = `${categoryKey}-title`;
     heading.textContent = getLocalizedText(categoryLabels[categoryKey]);
+    const categoryHeader = document.createElement("header");
+    categoryHeader.className = "category-header";
+    categoryHeader.append(heading);
+    const navLink = document.createElement("a");
+    navLink.href = `#${categoryKey}`;
+    navLink.textContent = heading.textContent;
+    nav.appendChild(navLink);
 
     const groupGrid = document.createElement("div");
     groupGrid.className = "deity-grid";
+    groupGrid.setAttribute("role", "list");
 
     categoryDeities.forEach((deity) => {
       groupGrid.appendChild(createCard(deity));
     });
 
-    section.append(heading, groupGrid);
+    section.append(categoryHeader, groupGrid);
     grid.appendChild(section);
   });
 }
@@ -207,7 +263,7 @@ function setupLanguageToggle() {
     button.dataset.lang = currentLang;
     button.classList.add("is-active");
     button.setAttribute("aria-pressed", "true");
-    button.setAttribute("aria-label", currentLang === "en" ? "目前語言：English" : "目前語言：中文");
+    button.setAttribute("aria-label", currentLang === "en" ? "Current language: English; switch to 中文" : "目前語言：中文；切換為 English");
     window.RugathaLanguageToggle?.setButtonIcon(button, currentLang);
   };
 
@@ -233,6 +289,7 @@ if (grid) {
     })
     .catch((error) => {
       console.error(error);
+      grid.setAttribute("aria-busy", "false");
       grid.innerHTML =
         '<p class="load-error">Unable to load deities right now.</p>';
     });

@@ -15,3 +15,5 @@ RUGATHA_IMAGE_BROWSER_CHANNEL=chrome npx playwright test --config playwright.ima
 ```
 
 製作工具只新增衍生圖，所有縮圖通過公開端點驗證後才更新資料引用。圖片已上傳；HTML、CSS、JS 與 JSON 為本機變更，需隨網站正常部署流程發布。
+
+目前牌卡改為滿寬 1:1 方形圖像，沿用上述 WebP 衍生圖並置中裁切；已移除詳情連結與 `deities/pages/*.html`。每張圖下緣中央預留圓形宗教 Logo 欄位，在 `deities.json` 的神祇物件加入 `logo` 圖片 URL 即可顯示，未提供時顯示 Rugatha Logo（`assets/logo/rugatha-icon.png`）。
