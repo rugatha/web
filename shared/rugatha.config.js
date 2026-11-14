@@ -99,8 +99,8 @@
       page: "./pages/rugatha-wilds/index.html",
       image: campaignPng("logo_RWilds.png"),
       accent: "#DCE3E7",
-      nextSession_zh: "2026/11/21",
-      nextSession_en: "2026/11/21"
+      nextSession_zh: "2026/11/28",
+      nextSession_en: "2026/11/28"
     },
     {
       name: "Rugatha Veil",
@@ -110,8 +110,8 @@
       page: "./pages/rugatha-veil/index.html",
       image: campaignPng("logo_RVeil.png"),
       accent: "#E3D0AB",
-      nextSession_zh: "2026/10/3",
-      nextSession_en: "2026/10/3"
+      nextSession_zh: "2027/1/23",
+      nextSession_en: "2027/1/23"
     },
     {
       name: "Rugatha Prosper",
