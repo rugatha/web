@@ -480,12 +480,17 @@
         {
           "id": "lite-c13",
           "title": "石原鎮之前",
-          "chapters": 1,
+          "chapters": 2,
           "chapterList": [
             {
               "id": "lite-c13-chpt01",
               "title": "第一章：再見，羅特",
               "url": "/campaigns/pages/rugatha-lite/lite-c13/chpt01.html"
+            },
+            {
+              "id": "lite-c13-chpt02",
+              "title": "第二章：狼人的陰影",
+              "url": "/campaigns/pages/rugatha-lite/lite-c13/chpt02.html"
             }
           ],
           "url": "/campaigns/pages/rugatha-lite/lite-c13/"

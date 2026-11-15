@@ -833,6 +833,11 @@
         id: "lite-c13-chpt01",
         title: "Chapter 1: Goodbye, Lott",
         url: "../lite-c13/chpt01.html"
+      },
+      {
+        id: "lite-c13-chpt02",
+        title: "Chapter 2: Shadows of the Werewolves",
+        url: "../lite-c13/chpt02.html"
       }
     ],
 
@@ -1125,6 +1130,7 @@
     "lite-c12-chpt03": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Flite%2Fc12%2Fchapter-03%2Fthumb-b030dd55.webp?alt=media",
     "lite-c12-chpt04": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Flite%2Fc12%2Fchapter-04%2Fthumb-08b92078.webp?alt=media",
     "lite-c12-chpt05": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Flite%2Fc12%2Fchapter-05%2Fthumb-edae0cb0.webp?alt=media",
+    "lite-c13-chpt02": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Flite%2Fc13%2Fchapter-02%2Fthumb-7352ab13.webp?alt=media",
     "lite-c13-chpt01": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Flite%2Fc13%2Fchapter-01%2Fthumb-212af7d2.webp?alt=media",
     "wilds-c01-chpt01": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fwilds%2Fc01%2Fchapter-01%2Fthumb-2625c12c.webp?alt=media",
     "wilds-c01-chpt02": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fwilds%2Fc01%2Fchapter-02%2Fthumb-f810f0b4.webp?alt=media",
