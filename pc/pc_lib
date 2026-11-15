@@ -722,14 +722,14 @@
     "imageWidth": 714,
     "imageHeight": 710,
     "active": {
-      "Rugatha": false,
+      "Rugatha": true,
       "Rugatha Lite": false
     },
     "origin": {
       "Rugatha": false,
       "Rugatha Lite": true
     },
-    "dead": true
+    "dead": false
   },
   {
     "name_en": "Anedak",
@@ -758,7 +758,7 @@
     "origin": {
       "Rugatha": false
     },
-    "dead": false
+    "dead": true
   },
   {
     "name_en": "Ubbo",
