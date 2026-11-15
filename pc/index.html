@@ -30,7 +30,6 @@
   <meta name="twitter:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
 <link rel="icon" type="image/png" href="../assets/logo/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/rugatha-favicon-32.png">
-  <link rel="stylesheet" href="../campaigns/styles/campaign-detail.css">
   <style>
     :root {
       --font-body: "Space Grotesk", "Noto Sans TC", system-ui, sans-serif;
@@ -138,8 +137,8 @@
       object-fit: contain;
     }
 
-    .related-pcs {
-      margin-top: 0;
+    .related-pcs__title:empty {
+      display: none;
     }
 
     .campaign-section + .campaign-section {
@@ -147,88 +146,451 @@
     }
 
     .campaign-section__title {
-      margin: 0 0 14px;
-      font-size: 1.5rem;
-      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin: 0 0 24px;
+      font-size: 1.15rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #f5e6b8;
-      text-align: center;
+    }
+
+    .campaign-section__title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: rgba(245, 230, 184, 0.24);
     }
 
     .related-pcs__grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: start;
+      gap: 24px 20px;
     }
 
     .related-pcs__card {
-      min-height: 126px;
-      flex: 1 1 280px;
-      min-width: 220px;
-      max-width: 320px;
+      position: relative;
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      padding: 24px 13px 14px;
       color: inherit;
       text-decoration: none;
       background:
-        radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.08), transparent 28%),
-        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 7px),
-        var(--pc-card-bg, rgba(35, 43, 58, 0.96));
-      border-color: var(--pc-card-border, rgba(255, 223, 163, 0.16));
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.06),
-        0 12px 26px rgba(0, 0, 0, 0.18);
+        radial-gradient(ellipse at 50% 0, rgba(240, 209, 142, 0.12), transparent 44%),
+        var(--pc-card-bg, #202e29);
+      border: 1px solid #9d824c;
+      box-shadow: inset 0 0 0 5px #171d18, 0 8px 24px rgba(0, 0, 0, 0.24);
+      transition: transform 180ms ease, box-shadow 180ms ease;
     }
 
-    .related-pcs__card::before,
-    .related-pcs__card::after {
-      content: none;
+    .related-pcs__card::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      pointer-events: none;
+      background: url("./legendary-frame.svg") center / 100% 100% no-repeat;
     }
 
-    .related-pcs__meta {
-      max-width: 100%;
-      width: auto;
-      padding: 0;
-      border-radius: 0;
-      background: transparent;
-      border: 0;
-      color: rgba(203, 214, 207, 0.72);
-      font-size: 0.8rem;
-      font-weight: 500;
-      line-height: 1.12;
-      backdrop-filter: none;
+    .related-pcs__card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
     }
 
-    .related-pcs__name {
-      font-size: 1.6rem;
-      line-height: 1;
+    .related-pcs__card:focus-visible {
+      outline: 3px solid #f5e6b8;
+      outline-offset: 5px;
     }
 
     .related-pcs__body {
-      grid-template-columns: 92px minmax(0, 1fr);
-      grid-template-areas: "portrait text";
-    }
-
-    .related-pcs__text {
-      grid-area: text;
-      justify-content: center;
-      gap: 9px;
+      display: flex;
+      flex-direction: column;
     }
 
     .related-pcs__portrait {
-      grid-area: portrait;
-      justify-self: start;
+      position: relative;
+      order: -1;
+      flex: none;
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: rgba(10, 20, 16, 0.16);
+      border: 1px solid #ac9364;
+      border-radius: 16% 16% 3px 3px / 7% 7% 3px 3px;
+    }
+
+    .related-pcs__portrait::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--pc-card-accent), #ecd6a3, var(--pc-card-accent));
+      pointer-events: none;
+    }
+
+    /* Fill the uniform frame without stretching or letterboxing the artwork. */
+    .related-pcs__portrait-image {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .related-pcs__portrait.is-empty {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1;
+      color: var(--muted);
+      font-size: 2.5rem;
+    }
+
+    .related-pcs__text {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 14px 10px 10px;
+      min-width: 0;
+      height: var(--pc-text-height, auto);
+      overflow: auto;
+    }
+
+    .related-pcs__text > * {
+      flex-shrink: 0;
+    }
+
+    .related-pcs__name {
+      margin: 0 0 3px;
+      text-align: center;
+      padding: 5px 8px;
+      border: 1px solid #b59a60;
+      border-radius: 5px;
+      background: linear-gradient(90deg, rgba(227, 193, 125, 0.13), rgba(15, 26, 21, 0.9), rgba(227, 193, 125, 0.13));
+      box-shadow: inset 0 1px 0 rgba(255, 233, 186, 0.28);
+      color: #fff7df;
+      font-weight: 700;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .related-pcs__meta {
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    .related-pcs__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: auto;
+      padding: 10px 0 4px;
+      border-top: 1px solid var(--pc-card-border);
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.5;
     }
 
     .related-pcs__player {
-      margin-top: 6px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      opacity: 0.88;
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
-    .related-pcs__player.is-guest {
-      font-size: 0.82rem;
-      opacity: 0.72;
+    .related-pcs__guest {
+      flex: none;
+      color: #e6cd98;
+      font-size: 0.65rem;
+    }
+
+    @media (max-width: 1000px) {
+      .related-pcs__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .related-pcs__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 12px;
+      }
+
+      .related-pcs__text {
+        padding: 12px 5px 8px;
+        gap: 4px;
+      }
+
+      .campaign-section__title {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .related-pcs__grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .related-pcs__card {
+        transition: none;
+      }
+
+      .related-pcs__card:hover {
+        transform: none;
+      }
+    }
+
+    .pc-browse-tools {
+      margin: 18px 0 28px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .pc-browse-tools > summary {
+      width: fit-content;
+      margin-left: auto;
+      padding: 10px 0 10px 14px;
+      cursor: pointer;
+      color: #ead6a8;
+    }
+
+    .pc-browse-tools[open] > summary { margin-bottom: 8px; }
+    .pc-browse-tools summary:focus-visible, .pc-roster-history summary:focus-visible {
+      outline: 2px solid #e6cd98;
+      outline-offset: 4px;
+    }
+
+    .pc-filters {
+      padding: 18px;
+      border: 1px solid rgba(229, 207, 155, 0.3);
+      border-radius: 10px;
+      background: rgba(17, 32, 27, 0.65);
+    }
+
+    .pc-advanced { margin-top: 14px; }
+    .pc-advanced > summary { padding: 8px 0; cursor: pointer; }
+    .pc-advanced[open] > summary { margin-bottom: 6px; }
+
+    .pc-roster-history { margin-top: 24px; }
+
+    .pc-roster-history > summary {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 56px;
+      padding: 14px 18px;
+      border: 1px solid #aa9665;
+      border-radius: 7px;
+      background: rgba(22, 39, 31, 0.8);
+      color: #f1dfb3;
+      font-size: 1rem;
+      font-weight: 700;
+      list-style: none;
+      cursor: pointer;
+    }
+    .pc-roster-history > summary::-webkit-details-marker { display: none; }
+    .pc-roster-history > summary::marker { content: ""; }
+    .pc-roster-history > summary::before {
+      content: "+";
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 28px;
+      height: 28px;
+      border: 1px solid #bda570;
+      border-radius: 4px;
+      color: #ffe3a5;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+    .pc-roster-history[open] > summary::before { content: "−"; }
+    .pc-roster-history > summary::after {
+      content: attr(data-expand);
+      margin-left: auto;
+      color: #d5cfbf;
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+    .pc-roster-history[open] > summary::after { content: attr(data-collapse); }
+    .pc-roster-history > summary:hover { background: #283e32; }
+    .pc-roster-history[open] > .related-pcs__grid { margin-top: 20px; }
+    @media (max-width: 640px) {
+      .pc-roster-history > summary { gap: 9px; padding: 12px; font-size: 0.9rem; }
+      .pc-roster-history > summary::after { font-size: 0.65rem; }
+    }
+
+    .pc-roster-heading {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .pc-filters__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .pc-filters label {
+      display: grid;
+      gap: 7px;
+      color: #e6cd98;
+      font-size: 0.8rem;
+    }
+
+    .pc-filters select {
+      width: 100%;
+      min-width: 0;
+      min-height: 42px;
+      padding: 9px 12px;
+      border: 1px solid rgba(209, 222, 214, 0.35);
+      border-radius: 5px;
+      background: #253c32;
+      color: var(--text);
+      font: inherit;
+      font-size: 0.9rem;
+      color-scheme: dark;
+    }
+
+    .pc-filters select:focus-visible,
+    .pc-filters button:focus-visible {
+      outline: 2px solid #e6cd98;
+      outline-offset: 3px;
+    }
+
+    .pc-filters__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .pc-filters button {
+      flex: none;
+      min-height: 40px;
+      padding: 8px 12px;
+      border: 1px solid rgba(229, 207, 155, 0.45);
+      border-radius: 5px;
+      background: transparent;
+      color: #e6cd98;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .pc-filters__note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.7;
+    }
+
+    .pc-label-short { display: none; }
+
+    .pc-statuses {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin: 3px 0;
+    }
+
+    .pc-status {
+      padding: 3px 7px;
+      border: 1px solid #758d80;
+      border-radius: 4px;
+      background: #283b32;
+      color: #d1ded6;
+      font-size: 0.65rem;
+      line-height: 1.5;
+    }
+
+    .pc-status--active {
+      background: #294a39;
+      border-color: #7cbd97;
+      color: #c8f2d9;
+    }
+
+    .pc-status--origin {
+      background: #453f2c;
+      border-color: #b49a5f;
+      color: #f1dda9;
+    }
+
+    .pc-deceased {
+      position: absolute;
+      z-index: 1;
+      top: 10px;
+      left: 10px;
+      padding: 5px 10px;
+      border: 1px solid #d2a8a5;
+      border-radius: 3px;
+      background: #512e35;
+      color: #ffe4df;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+
+    .related-pcs__card.is-deceased {
+      border-color: #738695;
+      border-radius: 3px;
+      background: linear-gradient(155deg, #2c3946, #161f2b 70%);
+      box-shadow: inset 0 0 0 5px #111923, 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    .related-pcs__card.is-deceased::before { background-image: url("./memorial-frame.svg"); }
+    .is-deceased .related-pcs__portrait { border-color: #8a9cae; border-radius: 2px; }
+    .is-deceased .related-pcs__portrait-image { filter: saturate(0.65); }
+    .is-deceased .related-pcs__portrait::after { background: #8a9cae; }
+    .is-deceased .related-pcs__name {
+      border-color: #8295a7;
+      background: #24303d;
+      color: #e4ecf4;
+      box-shadow: none;
+    }
+    .is-deceased .related-pcs__footer { border-color: #617180; }
+    .is-deceased .related-pcs__guest { color: #bacbd8; }
+    .is-deceased .pc-deceased { background: #172431; border-color: #b6c8d6; color: #e4edf6; }
+
+    .pc-empty {
+      padding: 40px 20px;
+      border: 1px dashed rgba(229, 207, 155, 0.4);
+      border-radius: 10px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .pc-filters { padding: 14px; }
+      .pc-filters__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .pc-filters__bottom { align-items: flex-start; }
+      .related-pcs__footer {
+        flex-wrap: nowrap;
+        margin-top: 4px;
+        padding-top: 8px;
+      }
+      .related-pcs__player {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .pc-player-prefix, .pc-label-full { display: none; }
+      .pc-label-short { display: inline; }
+      .related-pcs__name { font-size: 1rem; }
+      .related-pcs__meta { font-size: 0.75rem; line-height: 1.45; }
+      .pc-statuses { flex-wrap: nowrap; gap: 4px; }
+      .pc-status { padding: 2px 5px; font-size: 0.6rem; white-space: nowrap; }
+      .related-pcs__guest { font-size: 0.6rem; white-space: nowrap; }
     }
 
     .error {
@@ -275,13 +637,31 @@
       </div>
     </div>
 
-    <section class="related-pcs" aria-live="polite">
+    <details class="pc-browse-tools" id="browse-tools">
+      <summary id="browse-tools-label">尋找特定冒險者</summary>
+      <form class="pc-filters" id="pc-filters" aria-label="角色篩選">
+      <div class="pc-filters__grid" id="filter-controls"></div>
+      <details class="pc-advanced">
+        <summary id="advanced-label">更多條件</summary>
+        <div class="pc-filters__grid" id="advanced-controls"></div>
+      </details>
+      <div class="pc-filters__bottom">
+        <span id="pc-result-count" role="status" aria-live="polite"></span>
+        <button type="reset" id="filter-reset">清除篩選</button>
+      </div>
+      <p class="pc-filters__note" id="filter-note"></p>
+      </form>
+    </details>
+
+    <section class="related-pcs">
       <h2 class="related-pcs__title">Player Characters</h2>
       <div id="pc-groups"></div>
     </section>
   </main>
 
-  <script>
+  <script type="module">
+    import { matchesPcFilters, getCampaignStatus, sortCampaignPcs } from "./pc-status.js";
+
     const i18n = {
       title: {
         zh: "玩家角色",
@@ -295,11 +675,45 @@
         zh: "",
         en: ""
       },
+      player: {
+        zh: "玩家",
+        en: "Player"
+      },
       guestPlayer: {
         zh: "客串玩家",
         en: "Guest Player"
       }
     };
+
+    const labels = {
+      zh: {
+        campaign: "團務", active: "隊伍狀態", origin: "加入時點", dead: "生死狀態",
+        participation: "參與身份", player: "玩家", all: "全部", activeYes: "隊伍成員",
+        activeNo: "已離隊", originYes: "初始成員", originNo: "後續加入",
+        deadYes: "已故", deadNo: "存活", unknown: "待確認", regular: "固定玩家", guest: "客串玩家",
+        reset: "清除篩選", filters: "角色篩選", empty: "沒有符合條件的冒險者，請調整或清除篩選。",
+        note: "隊伍狀態與初始成員依各團務分別判定；已結團團務以結團時的隊伍為準。已故為角色目前的狀態。",
+        expand: "展開查看", collapse: "收起", find: "尋找特定冒險者", advanced: "更多條件", currentRoster: "隊伍成員",
+        formerRoster: count => `過去的夥伴（${count}）`,
+        filterSummary: count => count ? `尋找特定冒險者 · ${count} 項條件` : "尋找特定冒險者",
+        count: (people, cards) => `${people} 位冒險者 · ${cards} 張團務牌卡`
+      },
+      en: {
+        campaign: "Campaign", active: "Party status", origin: "Joined", dead: "Life status",
+        participation: "Participation", player: "Player", all: "All", activeYes: "Party member",
+        activeNo: "Former member", originYes: "Founding member", originNo: "Joined later",
+        deadYes: "Deceased", deadNo: "Alive", unknown: "Unconfirmed", regular: "Regular player", guest: "Guest player",
+        reset: "Clear filters", filters: "Character filters", empty: "No adventurers match. Adjust or clear the filters.",
+        note: "Party membership and founding status are specific to each campaign. For completed campaigns, membership reflects the final party. Deceased reflects the character’s current state.",
+        expand: "Show", collapse: "Hide", find: "Find an adventurer", advanced: "More options", currentRoster: "Party members",
+        formerRoster: count => `Past companions (${count})`,
+        filterSummary: count => count ? `Find an adventurer · ${count} filters` : "Find an adventurer",
+        count: (people, cards) => `${people} adventurers · ${cards} campaign cards`
+      }
+    };
+    const filters = { campaign: "all", active: "all", origin: "all", dead: "all", participation: "all", player: "all" };
+    let pcData = [];
+    const expandedCampaigns = new Set();
 
     const campaignOrder = [
       "Rugatha",
@@ -311,7 +725,6 @@
 
     const campaignAccents = {
       "Rugatha": "#9fe0ba",
-      "Rugatha Plus": "#c8f9ff",
       "Rugatha Plus": "#c8f9ff",
       "Rugatha Lite": "#ffe7a3",
       "Rugatha Wilds": "#c1e27a",
@@ -349,6 +762,7 @@
       const rgb = hexToRgb(accent);
       if (!rgb) return;
       const { r, g, b } = rgb;
+      card.style.setProperty("--pc-card-accent", accent);
       card.style.setProperty("--pc-card-bg", `rgba(${Math.max(18, Math.round(r * 0.2))}, ${Math.max(22, Math.round(g * 0.2))}, ${Math.max(30, Math.round(b * 0.2))}, 0.96)`);
       card.style.setProperty("--pc-card-border", `rgba(${r}, ${g}, ${b}, 0.56)`);
     };
@@ -383,11 +797,26 @@
         .map((value) => String(value || "").trim())
         .filter((value) => value && value !== "NA" && value !== "0");
 
+    const setResponsiveLabel = (element, full, compact) => {
+      if (full === compact) {
+        element.textContent = full;
+        return;
+      }
+      for (const [className, value] of [["pc-label-full", full], ["pc-label-short", compact]]) {
+        const label = document.createElement("span");
+        label.className = className;
+        label.textContent = value;
+        element.appendChild(label);
+      }
+      element.title = full;
+    };
+
     const createCard = (pc, campaign) => {
       const card = document.createElement("a");
       card.className = "related-pcs__card";
       card.href = `./articles/${slugify(pc.name_en)}.html`;
       applyCampaignAccent(card, campaign);
+      card.classList.toggle("is-deceased", pc.dead === true);
 
       const body = document.createElement("div");
       body.className = "related-pcs__body";
@@ -397,7 +826,7 @@
       text.className = "related-pcs__text";
       body.appendChild(text);
 
-      const name = document.createElement("div");
+      const name = document.createElement("h4");
       name.className = "related-pcs__name";
       name.textContent = currentLang === "en"
         ? (pc.name_en || pc.name_zh || "")
@@ -405,34 +834,76 @@
       text.appendChild(name);
 
       const metaValues = getMetaValues(pc);
-      const metaText = [metaValues.race, metaValues.role].filter(Boolean).join(" | ");
-      if (metaText) {
+      for (const value of [metaValues.race, metaValues.role].filter(Boolean)) {
         const meta = document.createElement("div");
         meta.className = "related-pcs__meta";
-        meta.textContent = metaText;
+        meta.textContent = value;
         text.appendChild(meta);
       }
 
-      if (isGuestPlayer(pc)) {
-        const player = document.createElement("div");
-        player.className = "related-pcs__player";
-        player.classList.add("is-guest");
-        player.textContent = i18n.guestPlayer[currentLang];
-        text.appendChild(player);
+      const statuses = document.createElement("div");
+      statuses.className = "pc-statuses";
+      const active = getCampaignStatus(pc, "active", campaign);
+      const origin = getCampaignStatus(pc, "origin", campaign);
+      const membership = document.createElement("span");
+      membership.className = `pc-status${active === true ? " pc-status--active" : ""}`;
+      const membershipLabel = active === true ? labels[currentLang].activeYes
+        : active === false ? labels[currentLang].activeNo : labels[currentLang].unknown;
+      setResponsiveLabel(membership, membershipLabel, currentLang === "en"
+        ? (active === true ? "In party" : active === false ? "Former" : "Unknown") : membershipLabel);
+      statuses.appendChild(membership);
+      if (origin === true) {
+        const founding = document.createElement("span");
+        founding.className = "pc-status pc-status--origin";
+        setResponsiveLabel(founding, labels[currentLang].originYes, currentLang === "en" ? "Founder" : labels[currentLang].originYes);
+        statuses.appendChild(founding);
+      }
+      text.appendChild(statuses);
+
+      const playerName = String(pc.player || "").trim();
+      {
+        const footer = document.createElement("div");
+        footer.className = "related-pcs__footer";
+        if (playerName) {
+          const player = document.createElement("span");
+          player.className = "related-pcs__player";
+          const prefix = document.createElement("span");
+          prefix.className = "pc-player-prefix";
+          prefix.textContent = `${i18n.player[currentLang]} · `;
+          player.append(prefix, document.createTextNode(playerName));
+          player.title = `${i18n.player[currentLang]} · ${playerName}`;
+          footer.appendChild(player);
+        }
+        const participation = document.createElement("span");
+        participation.className = "related-pcs__guest";
+        const participationLabel = isGuestPlayer(pc) ? labels[currentLang].guest : labels[currentLang].regular;
+        setResponsiveLabel(participation, participationLabel, currentLang === "en"
+          ? (isGuestPlayer(pc) ? "Guest" : "Regular") : participationLabel);
+        footer.appendChild(participation);
+        text.appendChild(footer);
       }
 
       const portrait = document.createElement("div");
       portrait.className = "related-pcs__portrait";
       body.appendChild(portrait);
+      if (pc.dead === true) {
+        const deceased = document.createElement("span");
+        deceased.className = "pc-deceased";
+        deceased.textContent = labels[currentLang].deadYes;
+        portrait.appendChild(deceased);
+      }
 
       const candidates = resolvePcImageCandidates(pc.image || pc.name_en);
       const img = document.createElement("img");
       img.className = "related-pcs__portrait-image";
-      img.alt = pc.name_en;
+      img.alt = ""; // The adjacent character name labels the same link.
+      if (pc.imageWidth > 0 && pc.imageHeight > 0) {
+        img.width = pc.imageWidth;
+        img.height = pc.imageHeight;
+      }
       img.loading = "lazy";
       img.decoding = "async";
       let index = 0;
-      img.src = candidates[index];
       img.addEventListener("error", () => {
         index += 1;
         if (index < candidates.length) {
@@ -441,10 +912,32 @@
         }
         portrait.classList.add("is-empty");
         img.remove();
+        const fallback = document.createElement("span");
+        fallback.textContent = (currentLang === "en" ? pc.name_en : pc.name_zh || pc.name_en || "?").slice(0, 1);
+        portrait.appendChild(fallback);
       });
       portrait.appendChild(img);
+      if (candidates.length) {
+        img.src = candidates[index];
+      } else {
+        img.dispatchEvent(new Event("error"));
+      }
 
       return card;
+    };
+
+    let cardLayoutFrame = 0;
+    const fitCardText = () => {
+      cancelAnimationFrame(cardLayoutFrame);
+      cardLayoutFrame = requestAnimationFrame(() => {
+        const page = document.querySelector(".page");
+        // Measure natural content, then share its maximum so cards stay equal.
+        page.style.removeProperty("--pc-text-height");
+        const panels = [...document.querySelectorAll(".related-pcs__text")]
+          .filter(panel => panel.getClientRects().length);
+        const height = Math.ceil(Math.max(0, ...panels.map(panel => panel.getBoundingClientRect().height)));
+        if (height) page.style.setProperty("--pc-text-height", `${height}px`);
+      });
     };
 
     const createCampaignSection = (campaign, pcs) => {
@@ -456,17 +949,37 @@
       title.textContent = campaign;
       section.appendChild(title);
 
-      const grid = document.createElement("div");
-      grid.className = "related-pcs__grid";
-      pcs
-        .slice()
-        .sort((a, b) => {
-          const guestDiff = Number(isGuestPlayer(a)) - Number(isGuestPlayer(b));
-          if (guestDiff !== 0) return guestDiff;
-          return a.name_en.localeCompare(b.name_en);
-        })
-        .forEach((pc) => grid.appendChild(createCard(pc, campaign)));
-      section.appendChild(grid);
+      const sorted = sortCampaignPcs(pcs, campaign);
+      const current = sorted.filter(pc => getCampaignStatus(pc, "active", campaign) !== false);
+      const former = sorted.filter(pc => getCampaignStatus(pc, "active", campaign) === false);
+      const makeGrid = list => {
+        const grid = document.createElement("div");
+        grid.className = "related-pcs__grid";
+        list.forEach(pc => grid.appendChild(createCard(pc, campaign)));
+        return grid;
+      };
+      if (current.length) {
+        section.appendChild(makeGrid(current));
+      }
+      if (former.length) {
+        const history = document.createElement("details");
+        history.className = "pc-roster-history";
+        // Explicit searches reveal all matching cards, including former members.
+        history.open = Object.values(filters).some(value => value !== "all") || expandedCampaigns.has(campaign);
+        const summary = document.createElement("summary");
+        summary.textContent = labels[currentLang].formerRoster(former.length);
+        summary.dataset.expand = labels[currentLang].expand;
+        summary.dataset.collapse = labels[currentLang].collapse;
+        history.append(summary, makeGrid(former));
+        history.addEventListener("toggle", () => {
+          // Ignore queued events from groups removed by a language/filter render.
+          if (!history.isConnected) return;
+          if (history.open) expandedCampaigns.add(campaign);
+          else expandedCampaigns.delete(campaign);
+          fitCardText();
+        });
+        section.appendChild(history);
+      }
 
       return section;
     };
@@ -479,45 +992,108 @@
       document.querySelectorAll("[data-lang]").forEach((button) => {
         button.dataset.lang = currentLang;
         button.setAttribute("aria-pressed", "true");
-        button.setAttribute("aria-label", currentLang === "en" ? "目前語言：English" : "目前語言：中文");
+        button.setAttribute("aria-label", currentLang === "en" ? "Current language: English" : "目前語言：中文");
         window.RugathaLanguageToggle?.setButtonIcon(button, currentLang);
       });
     };
 
-    const render = async () => {
-      const groups = document.getElementById("pc-groups");
-      groups.innerHTML = "";
-      updateLanguageUi();
+    const renderFilterControls = () => {
+      const t = labels[currentLang];
+      const controls = document.getElementById("filter-controls");
+      controls.replaceChildren();
+      const advanced = document.getElementById("advanced-controls");
+      advanced.replaceChildren();
+      const players = [...new Set(pcData.map(pc => String(pc.player || "").trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+      const campaigns = [...new Set(pcData.flatMap(getCampaigns))];
+      const config = {
+        campaign: campaigns.map(value => [value, value]),
+        active: [["true", t.activeYes], ["false", t.activeNo], ["unknown", t.unknown]],
+        origin: [["true", t.originYes], ["false", t.originNo], ["unknown", t.unknown]],
+        dead: [["false", t.deadNo], ["true", t.deadYes], ["unknown", t.unknown]],
+        participation: [["regular", t.regular], ["guest", t.guest]],
+        player: players.map(value => [value, value])
+      };
+      for (const [key, options] of Object.entries(config)) {
+        const label = document.createElement("label");
+        const title = document.createElement("span");
+        title.textContent = t[key];
+        const select = document.createElement("select");
+        select.name = key;
+        select.id = `filter-${key}`;
+        for (const [value, caption] of [["all", t.all], ...options]) {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = caption;
+          select.appendChild(option);
+        }
+        select.value = filters[key];
+        select.disabled = pcData.length === 0;
+        select.addEventListener("change", () => {
+          filters[key] = select.value;
+          renderResults();
+        });
+        label.append(title, select);
+        ( ["campaign", "participation", "player"].includes(key) ? controls : advanced ).appendChild(label);
+      }
+      document.getElementById("pc-filters").setAttribute("aria-label", t.filters);
+      document.getElementById("filter-reset").textContent = t.reset;
+      document.getElementById("filter-note").textContent = t.note;
+      document.getElementById("advanced-label").textContent = t.advanced;
+    };
 
+    const renderResults = () => {
+      const groups = document.getElementById("pc-groups");
+      groups.replaceChildren();
+      document.getElementById("browse-tools-label").textContent = labels[currentLang].filterSummary(Object.values(filters).filter(value => value !== "all").length);
+      const people = new Set();
+      let cards = 0;
+      const campaigns = [...new Set([...campaignOrder, ...pcData.flatMap(getCampaigns)])];
+      for (const campaign of campaigns) {
+        const list = pcData.filter(pc => getCampaigns(pc).includes(campaign) && matchesPcFilters(pc, campaign, filters));
+        if (!list.length) continue;
+        list.forEach(pc => people.add(pc.name_en));
+        cards += list.length;
+        groups.appendChild(createCampaignSection(campaign, list));
+      }
+      document.getElementById("pc-result-count").textContent = labels[currentLang].count(people.size, cards);
+      if (!cards) {
+        const empty = document.createElement("p");
+        empty.className = "pc-empty";
+        empty.textContent = labels[currentLang].empty;
+        groups.appendChild(empty);
+      }
+      fitCardText();
+    };
+
+    const render = () => {
+      updateLanguageUi();
+      renderFilterControls();
+      renderResults();
+    };
+
+    document.getElementById("pc-filters").addEventListener("submit", event => event.preventDefault());
+    document.getElementById("pc-filters").addEventListener("reset", event => {
+      event.preventDefault();
+      Object.keys(filters).forEach(key => { filters[key] = "all"; });
+      expandedCampaigns.clear();
+      render();
+    });
+
+    const load = async () => {
+      updateLanguageUi();
+      renderFilterControls();
       try {
         const res = await fetch("./pc_lib", { cache: "no-cache" });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         if (!Array.isArray(data) || !data.length) throw new Error("pc_lib is empty");
-
-        const pcs = data
-          .filter((entry) => normalizePcKey(entry.name_en))
-          .sort((a, b) => a.name_en.localeCompare(b.name_en));
-
-        const grouped = new Map(campaignOrder.map((campaign) => [campaign, []]));
-        pcs.forEach((pc) => {
-          getCampaigns(pc).forEach((campaign) => {
-            if (!grouped.has(campaign)) grouped.set(campaign, []);
-            grouped.get(campaign).push(pc);
-          });
-        });
-
-        campaignOrder.forEach((campaign) => {
-          const list = grouped.get(campaign) || [];
-          if (!list.length) return;
-          groups.appendChild(createCampaignSection(campaign, list));
-        });
-
+        pcData = data.filter(entry => normalizePcKey(entry.name_en)).sort((a, b) => a.name_en.localeCompare(b.name_en));
+        render();
       } catch (error) {
-        const message = document.createElement("div");
+        const message = document.createElement("p");
         message.className = "error";
-        message.textContent = error && error.message ? error.message : String(error);
-        groups.replaceWith(message);
+        message.textContent = currentLang === "en" ? "Unable to load characters. Please reload to try again." : "無法載入角色，請重新整理再試一次。";
+        document.getElementById("pc-groups").replaceChildren(message);
       }
     };
 
@@ -529,7 +1105,16 @@
       });
     });
 
-    render();
+    let lastPageWidth = 0;
+    new ResizeObserver(entries => {
+      const width = entries[0].contentRect.width;
+      if (width !== lastPageWidth) {
+        lastPageWidth = width;
+        fitCardText();
+      }
+    }).observe(document.querySelector(".page"));
+    document.fonts.ready.then(fitCardText);
+    load();
   </script>
 
   <script src="../shared/firebase.config.js"></script>
