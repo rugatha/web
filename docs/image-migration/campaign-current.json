@@ -6701,6 +6701,51 @@
           "cacheControl": "public, max-age=31536000, immutable"
         }
       }
+    },
+    {
+      "source": "campaigns/chapter-banners/lite-c13-chpt02.png",
+      "id": "lite-c13-chpt02-83a71c77b6",
+      "category": "chapters",
+      "entityIds": [
+        "lite-c13-chpt02"
+      ],
+      "original": {
+        "bytes": 2699082,
+        "sha256": "63cdbcd5828dc76b4686d20824c1da3e99a3367ee392f45c91b9b4104c1291a5",
+        "width": 1672,
+        "height": 941,
+        "archive": {
+          "object": "image-originals/chapters/lite/c13/chapter-02/original-63cdbcd5.png",
+          "sha256": "63cdbcd5828dc76b4686d20824c1da3e99a3367ee392f45c91b9b4104c1291a5",
+          "bytes": 2699082,
+          "contentType": "image/png",
+          "cacheControl": "private, no-store",
+          "storageClass": "STANDARD",
+          "generation": "1794736335867799"
+        }
+      },
+      "variants": {
+        "reading": {
+          "object": "public-images/chapters/lite/c13/chapter-02/reading-d7022b1e.webp",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Flite%2Fc13%2Fchapter-02%2Freading-d7022b1e.webp?alt=media",
+          "sha256": "d7022b1e81175a8af93ac01ac2c84a83d6e47d877b20c7376347093c385ee385",
+          "bytes": 256228,
+          "width": 1600,
+          "height": 900,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable"
+        },
+        "thumb": {
+          "object": "public-images/chapters/lite/c13/chapter-02/thumb-7352ab13.webp",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Flite%2Fc13%2Fchapter-02%2Fthumb-7352ab13.webp?alt=media",
+          "sha256": "7352ab1356226cdb32e5cfb9fb223fc55132be1f55070eb2925c69e938852b59",
+          "bytes": 29992,
+          "width": 480,
+          "height": 270,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable"
+        }
+      }
     }
   ]
 }
