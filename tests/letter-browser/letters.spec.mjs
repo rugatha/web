@@ -18,7 +18,7 @@ for (const width of [1280, 390]) {
     if (production) await context.route('**/__image-test__/', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Letter PWA acceptance</title>' }));
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/__image-test__/');
-    await page.evaluate(() => localStorage.setItem('npc-lang', 'zh'));
+    await page.evaluate(() => localStorage.setItem('rugatha-language', 'zh'));
     if (!production) {
       await page.evaluate(async () => {
         await navigator.serviceWorker.register('/__image-test__/old-sw.js', { scope: '/', updateViaCache: 'none' });

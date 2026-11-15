@@ -11,7 +11,7 @@
   const labelEls = document.querySelectorAll("[data-label-zh]");
   const ariaLabelEls = document.querySelectorAll("[data-aria-zh]");
 
-  let currentLang = "zh";
+  let currentLang = window.RugathaLanguageToggle.getLanguage();
   let deityData = null;
 
   const textOrFallback = (value, fallback = "") =>
@@ -111,6 +111,7 @@
   };
 
   const updateStaticLabels = () => {
+    document.documentElement.lang = currentLang === "en" ? "en" : "zh-Hant";
     labelEls.forEach((el) => {
       const zh = el.dataset.labelZh || "";
       const en = el.dataset.labelEn || "";
@@ -140,6 +141,7 @@
       updateButtonState(button);
       button.addEventListener("click", () => {
         currentLang = currentLang === "en" ? "zh" : "en";
+        window.RugathaLanguageToggle.setLanguage(currentLang);
         langButtons.forEach(updateButtonState);
         updateStaticLabels();
         fillContent(deityData);

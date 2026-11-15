@@ -83,6 +83,8 @@ GitHub Pages workflow 位於：
 
 - `shared/`
   全站共用設定、Firebase data adapter、登入、收藏、角色卡儲存、語言切換、PWA、字典與共用樣式。
+  語言偏好統一使用 localStorage 的 `rugatha-language`（`zh`／`en`），沒有有效設定時預設中文，不依瀏覽器語言自動切換。
+  新頁面可使用 `RugathaLanguageToggle.getLanguage()` 初始化，並在使用者切換時呼叫 `setLanguage()` 保存選擇；不要另外建立頁面專屬的語言記錄。
 
 - `campaigns/`
   團務入口、章節頁、故事弧頁、團錄資料、banner、logo、章節導覽與相關腳本。

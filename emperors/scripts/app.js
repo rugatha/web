@@ -160,7 +160,7 @@ const EMPEROR_ERAS = [
 const container = document.getElementById("emperor-eras");
 const langButtons = document.querySelectorAll(".lang-toggle__button");
 const titleEl = document.getElementById("emperors-title");
-let currentLang = "zh";
+let currentLang = window.RugathaLanguageToggle.getLanguage();
 const titleSuffix = "Rugatha";
 
 const getLocalizedText = (value) => {
@@ -248,6 +248,7 @@ if (container) {
   };
 
   const updateTitle = () => {
+    document.documentElement.lang = currentLang === "en" ? "en" : "zh-Hant";
     if (!titleEl) return;
     const zhTitle = titleEl.dataset.titleZh || "";
     const enTitle = titleEl.dataset.titleEn || "";
@@ -271,6 +272,7 @@ if (container) {
       updateButtonState(button);
       button.addEventListener("click", () => {
         currentLang = currentLang === "en" ? "zh" : "en";
+        window.RugathaLanguageToggle.setLanguage(currentLang);
         langButtons.forEach(updateButtonState);
         updateTitle();
         render();

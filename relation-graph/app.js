@@ -125,7 +125,7 @@ const I18N = {
 const state = {
   graphData: null,
   currentGraph: null,
-  language: "zh",
+  language: window.RugathaLanguageToggle.getLanguage(),
   toggles: {
     campaigns: true,
     arcs: true,
@@ -1302,6 +1302,7 @@ function installEvents() {
     els.languageButtons.forEach((button) => {
       button.addEventListener("click", () => {
         state.language = state.language === "en" ? "zh" : "en";
+        window.RugathaLanguageToggle.setLanguage(state.language);
         applyStaticI18n();
         refresh();
       });

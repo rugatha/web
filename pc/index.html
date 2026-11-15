@@ -319,7 +319,7 @@
       "Rugatha Legends": "#f6d185"
     };
 
-    let currentLang = "zh";
+    let currentLang = window.RugathaLanguageToggle.getLanguage();
 
     const normalizePcKey = (value) =>
       String(value || "")
@@ -472,6 +472,7 @@
     };
 
     const updateLanguageUi = () => {
+      document.documentElement.lang = currentLang === "en" ? "en" : "zh-Hant";
       document.title = i18n.documentTitle[currentLang];
       document.getElementById("page-title").textContent = i18n.title[currentLang];
       document.querySelector(".related-pcs__title").textContent = i18n.sectionTitle[currentLang];
@@ -523,6 +524,7 @@
     document.querySelectorAll("[data-lang]").forEach((button) => {
       button.addEventListener("click", () => {
         currentLang = button.dataset.lang === "en" ? "zh" : "en";
+        window.RugathaLanguageToggle.setLanguage(currentLang);
         render();
       });
     });

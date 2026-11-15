@@ -269,7 +269,7 @@
         window.RugathaLanguageToggle?.setButtonIcon(button, lang);
       });
       try {
-        localStorage.setItem("characters-lang", lang);
+        localStorage.setItem("rugatha-language", lang);
       } catch (_) {
         // Storage may be unavailable in private browsing contexts.
       }
@@ -277,12 +277,12 @@
 
     const getInitialLanguage = () => {
       try {
-        const stored = localStorage.getItem("characters-lang");
+        const stored = localStorage.getItem("rugatha-language");
         if (stored === "zh" || stored === "en") return stored;
       } catch (_) {
         // Ignore storage access errors.
       }
-      return navigator.language && navigator.language.toLowerCase().startsWith("en") ? "en" : "zh";
+      return "zh";
     };
 
     renderCollage(

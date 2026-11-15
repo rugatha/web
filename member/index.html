@@ -1362,7 +1362,7 @@
 
       <script>
         try {
-          if (localStorage.getItem("rugatha-member-lang") === "en") {
+          if (localStorage.getItem("rugatha-language") === "en") {
             document.documentElement.lang = "en";
             document.querySelector(".journal-title").textContent = "Adventurer's Journal";
             document.querySelector(".hero-tagline").textContent = "Your legendary stories are to be told in taverns......";
@@ -2370,7 +2370,8 @@
 
     const getStoredLanguage = () => {
       try {
-        return localStorage.getItem("rugatha-member-lang");
+        const language = localStorage.getItem("rugatha-language");
+        return language === "en" || language === "zh" ? language : null;
       } catch (error) {
         return null;
       }
@@ -2378,7 +2379,7 @@
 
     const setStoredLanguage = (value) => {
       try {
-        localStorage.setItem("rugatha-member-lang", value);
+        localStorage.setItem("rugatha-language", value);
       } catch (error) {}
     };
 

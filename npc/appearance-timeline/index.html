@@ -280,7 +280,7 @@
       document.title = state.language === 'en' ? 'NPC Appearance Timeline | Rugatha' : 'NPC 出場時間線 | Rugatha';
       renderFilters();
       renderTimeline();
-      try { localStorage.setItem('npc-timeline-lang', state.language); } catch (_) {}
+      try { localStorage.setItem('rugatha-language', state.language); } catch (_) {}
     }
 
     function renderFilters() {
@@ -465,7 +465,8 @@
       renderTimeline();
     });
     $$('.language-toggle button').forEach((button) => button.addEventListener('click', () => updateLanguage(state.language === 'en' ? 'zh' : 'en')));
-    try { state.language = localStorage.getItem('npc-timeline-lang') === 'en' ? 'en' : 'zh'; } catch (_) {}
+    try { state.language = localStorage.getItem('rugatha-language') === 'en' ? 'en' : 'zh'; } catch (_) {}
+    updateLanguage(state.language);
     let startedLoading = false;
     const startLoading = () => {
       if (startedLoading) return;

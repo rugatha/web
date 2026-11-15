@@ -10,7 +10,7 @@ const listEl = document.getElementById("timeline-list");
 const langButtons = document.querySelectorAll(".lang-toggle__button");
 const titleEl = document.getElementById("timeline-title");
 const legendLabels = document.querySelectorAll(".legend-label");
-let currentLang = "zh";
+let currentLang = window.RugathaLanguageToggle.getLanguage();
 let activeTags = [];
 const titleSuffix = "Rugatha";
 
@@ -237,6 +237,7 @@ function setupLanguageToggle() {
     updateButtonState(button);
     button.addEventListener("click", () => {
       currentLang = currentLang === "en" ? "zh" : "en";
+      window.RugathaLanguageToggle.setLanguage(currentLang);
       langButtons.forEach(updateButtonState);
       updateTitle();
       updateLegendLabels();
@@ -246,6 +247,7 @@ function setupLanguageToggle() {
 }
 
 function updateTitle() {
+  document.documentElement.lang = currentLang === "en" ? "en" : "zh-Hant";
   if (!titleEl) return;
   const zhTitle = titleEl.dataset.titleZh || "";
   const enTitle = titleEl.dataset.titleEn || "";

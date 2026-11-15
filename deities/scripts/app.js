@@ -31,7 +31,7 @@ const pageCopy = {
   en: { title: "Deities & Faiths", intro: "Follow the names of the divine. Discover the powers, faiths and words of Rugatha’s gods.", categories: "Deity categories", gallery: "Deity archive" }
 };
 
-let currentLang = "zh";
+let currentLang = window.RugathaLanguageToggle.getLanguage();
 let deitiesCache = [];
 const DEITY_SKELETON_GROUPS = [3, 3];
 const PAGE_TITLES = {
@@ -271,6 +271,7 @@ function setupLanguageToggle() {
     updateButtonState(button);
     button.addEventListener("click", () => {
       currentLang = currentLang === "en" ? "zh" : "en";
+      window.RugathaLanguageToggle.setLanguage(currentLang);
       langButtons.forEach(updateButtonState);
       document.title = PAGE_TITLES[currentLang] || PAGE_TITLES.en;
       renderDeities(deitiesCache);

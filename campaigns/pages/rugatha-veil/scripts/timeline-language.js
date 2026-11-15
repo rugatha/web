@@ -22,7 +22,7 @@
     if (translations.has(key)) copies.push({ node, original: node.textContent, key });
   }
   const button = document.querySelector('[data-lang-toggle]');
-  const storageKey = 'rugatha-veil-timeline-lang';
+  const storageKey = 'rugatha-language';
   let language = 'zh';
   try { if (localStorage.getItem(storageKey) === 'en') language = 'en'; } catch (_) {}
   function applyLanguage(next) {

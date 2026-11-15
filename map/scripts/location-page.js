@@ -34,7 +34,7 @@ let previousHtml = '';
 let data = null;
 let chapterCatalog = {};
 let language = 'zh';
-try { language = localStorage.getItem('npc-lang') === 'en' ? 'en' : 'zh'; }
+try { language = localStorage.getItem('rugatha-language') === 'en' ? 'en' : 'zh'; }
 catch { /* Use Chinese when browser storage is unavailable. */ }
 
 function renderCurrent() {
@@ -104,7 +104,7 @@ async function refresh() {
 
 document.querySelector('[data-lang-toggle]').addEventListener('click', () => {
   language = language === 'en' ? 'zh' : 'en';
-  try { localStorage.setItem('npc-lang', language); }
+  try { localStorage.setItem('rugatha-language', language); }
   catch { /* Switching languages also works without browser storage. */ }
   renderCurrent();
 });

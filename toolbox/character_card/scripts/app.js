@@ -212,7 +212,7 @@ const LANGS = {
     }
   }
 };
-let currentLang = "zh";
+let currentLang = window.RugathaLanguageToggle.getLanguage();
 
 let imgBitmap = null;
 let accent = defaultAccent;
@@ -593,6 +593,7 @@ function initLevelSelects() {
 }
 
 function applyTranslations() {
+  document.documentElement.lang = currentLang === "en" ? "en" : "zh-Hant";
   const t = LANGS[currentLang];
   document.title = t.documentTitle;
   if (textNodes.formTitle) textNodes.formTitle.textContent = t.formTitle;
@@ -645,6 +646,7 @@ function applyTranslations() {
 
 function toggleLanguage() {
   currentLang = currentLang === "zh" ? "en" : "zh";
+  window.RugathaLanguageToggle.setLanguage(currentLang);
   applyTranslations();
   drawCard();
 }

@@ -23,7 +23,7 @@ const i18n = {
 
 let currentLanguage = (() => {
   try {
-    return localStorage.getItem("rugathaCampaignLanguage") || "zh";
+    return localStorage.getItem("rugatha-language") || "zh";
   } catch (_) {
     return "zh";
   }
@@ -55,7 +55,7 @@ const setLanguage = (language) => {
     el.textContent = language === "en" ? el.dataset.sessionEn || "TBD" : el.dataset.sessionZh || "TBD";
   });
   try {
-    localStorage.setItem("rugathaCampaignLanguage", language);
+    localStorage.setItem("rugatha-language", language);
   } catch (_) {}
 };
 

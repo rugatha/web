@@ -18,13 +18,12 @@
       return window.__RUGATHA_CHAPTER_LANG;
     }
     try {
-      const stored = localStorage.getItem("npc-lang");
+      const stored = localStorage.getItem("rugatha-language");
       if (stored === "zh" || stored === "en") return stored;
     } catch (_) {
       // Ignore storage access errors.
     }
-    const docLang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
-    return docLang.startsWith("en") ? "en" : "zh";
+    return "zh";
   };
 
   const getChapterId = () => {

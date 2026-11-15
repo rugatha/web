@@ -1,9 +1,9 @@
 (() => {
   const button = document.querySelector('[data-chapter-language-toggle]');
   if (!button) return;
-  let language = document.documentElement.lang.startsWith('en') ? 'en' : 'zh';
+  let language = 'zh';
   try {
-    const stored = localStorage.getItem('npc-lang');
+    const stored = localStorage.getItem('rugatha-language');
     if (stored === 'en' || stored === 'zh') language = stored;
   } catch (_) { /* Language switching also works without storage. */ }
 
@@ -26,7 +26,7 @@
   };
   button.addEventListener('click', () => {
     language = language === 'en' ? 'zh' : 'en';
-    try { localStorage.setItem('npc-lang', language); } catch (_) { /* Optional. */ }
+    try { localStorage.setItem('rugatha-language', language); } catch (_) { /* Optional. */ }
     apply();
   });
   apply();

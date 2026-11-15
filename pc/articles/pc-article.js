@@ -69,7 +69,7 @@
 
   const getStoredLanguage = () => {
     try {
-      const stored = localStorage.getItem("npc-lang");
+      const stored = localStorage.getItem("rugatha-language");
       if (stored === "zh" || stored === "en") return stored;
     } catch (_) {
       // ignore storage errors
@@ -145,7 +145,7 @@
   const setLanguage = (nextLang) => {
     state.lang = nextLang === "en" ? "en" : "zh";
     try {
-      localStorage.setItem("npc-lang", state.lang);
+      localStorage.setItem("rugatha-language", state.lang);
     } catch (_) {
       // ignore storage errors
     }
@@ -318,6 +318,7 @@
 
   const init = async () => {
     state.lang = getStoredLanguage();
+    document.documentElement.lang = state.lang === "en" ? "en" : "zh-Hant";
 
     const app = document.getElementById("app");
     if (app && !document.querySelector(".page-return")) {

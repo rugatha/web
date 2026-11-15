@@ -27,7 +27,7 @@ const messages = {
   },
 };
 let language = 'zh';
-try { language = localStorage.getItem('npc-lang') === 'en' ? 'en' : 'zh'; } catch {}
+try { language = localStorage.getItem('rugatha-language') === 'en' ? 'en' : 'zh'; } catch {}
 function updateLanguage() {
   const copy = messages[language];
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-Hant';
@@ -52,7 +52,7 @@ function updateLanguage() {
 }
 document.querySelector('[data-lang-toggle]').addEventListener('click', () => {
   language = language === 'en' ? 'zh' : 'en';
-  try { localStorage.setItem('npc-lang', language); } catch {}
+  try { localStorage.setItem('rugatha-language', language); } catch {}
   updateLanguage();
 });
 updateLanguage();

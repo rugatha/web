@@ -565,7 +565,7 @@
         document.getElementById("google-logout")?.setAttribute("aria-label", language === "en" ? "Sign out" : "登出");
         window.dispatchEvent(new CustomEvent("rugatha:language-changed", { detail: { language } }));
         try {
-          localStorage.setItem("rugatha-home-lang", language);
+          localStorage.setItem("rugatha-language", language);
         } catch (_) {
           // Storage may be unavailable in private browsing contexts.
         }
@@ -576,7 +576,7 @@
       });
 
       try {
-        applyLanguage(localStorage.getItem("rugatha-home-lang") || "zh");
+        applyLanguage(localStorage.getItem("rugatha-language") || "zh");
       } catch (_) {
         applyLanguage("zh");
       }

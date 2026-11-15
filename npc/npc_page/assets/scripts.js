@@ -129,7 +129,7 @@ function updateSectionTitles() {
 
 function getPreferredLanguage() {
   try {
-    const stored = localStorage.getItem("npc-lang");
+    const stored = localStorage.getItem("rugatha-language");
     if (stored === "zh" || stored === "en") return stored;
   } catch (_) {
     // ignore storage access errors
@@ -153,6 +153,7 @@ function applyLanguage(lang) {
   const next = lang === "en" ? "en" : "zh";
   languageState.value = next;
   document.documentElement.setAttribute("data-lang", next);
+  document.documentElement.lang = next === "en" ? "en" : "zh-Hant";
   updateLanguageToggle();
   updateSectionTitles();
   if (currentNpc) {
@@ -164,7 +165,7 @@ function applyLanguage(lang) {
     window.dispatchEvent(new CustomEvent("qa:reload"));
   }
   try {
-    localStorage.setItem("npc-lang", next);
+    localStorage.setItem("rugatha-language", next);
   } catch (_) {
     // ignore storage access errors
   }

@@ -297,13 +297,12 @@
 
   const getPreferredLanguage = () => {
     try {
-      const stored = localStorage.getItem("npc-lang");
+      const stored = localStorage.getItem("rugatha-language");
       if (stored === "zh" || stored === "en") return stored;
     } catch (_) {
       // ignore storage access errors
     }
-    const docLang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
-    return docLang.startsWith("en") ? "en" : "zh";
+    return "zh";
   };
 
   const loadChapterTitleMap = async () => {
@@ -847,6 +846,7 @@
     languageState.value = next;
     window.__RUGATHA_CHAPTER_LANG = next;
     document.documentElement.setAttribute("data-lang", next);
+    document.documentElement.lang = next === "en" ? "en" : "zh-Hant";
     updateLanguageToggle();
     updateChapterTitle();
     updateArcTitle();
@@ -863,7 +863,7 @@
     renderRelatedLocationSection();
     window.dispatchEvent(new CustomEvent("rugatha:chapter-language-change", { detail: { lang: next } }));
     try {
-      localStorage.setItem("npc-lang", next);
+      localStorage.setItem("rugatha-language", next);
     } catch (_) {
       // ignore storage access errors
     }
@@ -1168,6 +1168,7 @@
   languageState.value = getPreferredLanguage();
   window.__RUGATHA_CHAPTER_LANG = languageState.value;
   document.documentElement.setAttribute("data-lang", languageState.value);
+  document.documentElement.lang = languageState.value === "en" ? "en" : "zh-Hant";
   setText("tagline", getDisplayTagline(languageState.value));
   ensureLanguageToggle();
   updateChapterContentLanguage();

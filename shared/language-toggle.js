@@ -5,6 +5,22 @@
 
   const normalizeLanguage = (language) => language === "en" ? "en" : "zh";
 
+  // All pages share this device preference. Ignore the old per-page keys:
+  // they can disagree and have no timestamp identifying the latest choice.
+  const storageKey = "rugatha-language";
+  const getLanguage = () => {
+    try {
+      return normalizeLanguage(localStorage.getItem(storageKey));
+    } catch (_) {
+      return "zh";
+    }
+  };
+  const setLanguage = (language) => {
+    const next = normalizeLanguage(language);
+    try { localStorage.setItem(storageKey, next); } catch (_) {}
+    return next;
+  };
+
   const getIconUrl = (language) =>
     new URL(`lan-${normalizeLanguage(language)}.png`, assetBase).href;
 
@@ -48,6 +64,9 @@
   };
 
   window.RugathaLanguageToggle = {
+    storageKey,
+    getLanguage,
+    setLanguage,
     iconSize,
     getIconUrl,
     ensureIcon,

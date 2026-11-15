@@ -188,13 +188,12 @@
 
     const getPreferredLanguage = () => {
       try {
-        const stored = localStorage.getItem('npc-lang');
+        const stored = localStorage.getItem('rugatha-language');
         if (stored === 'zh' || stored === 'en') return stored;
       } catch (_) {
         // ignore storage access errors
       }
-      const docLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-      return docLang.startsWith('en') ? 'en' : 'zh';
+      return "zh";
     };
 
     const updateLanguageToggle = () => {
@@ -240,6 +239,7 @@
     const applyLanguage = (lang) => {
       languageState.value = lang === 'en' ? 'en' : 'zh';
       document.documentElement.setAttribute('data-lang', languageState.value);
+      document.documentElement.lang = languageState.value === 'en' ? 'en' : 'zh-Hant';
       updateLanguageToggle();
       updateI18n();
       updateSortToggleLabel();
@@ -250,7 +250,7 @@
         renderLoadingSkeletons();
       }
       try {
-        localStorage.setItem('npc-lang', languageState.value);
+        localStorage.setItem('rugatha-language', languageState.value);
       } catch (_) {
         // ignore storage access errors
       }

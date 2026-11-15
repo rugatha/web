@@ -176,7 +176,7 @@
     "en": "D3"
   }
 };
-  const storageKey = 'rugatha-about-lang';
+  const storageKey = 'rugatha-language';
   const button = document.querySelector('[data-lang-toggle]');
   if (!button) return;
   const labels = {
