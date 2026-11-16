@@ -10,6 +10,9 @@
     "class_zh": [
       "戰士"
     ],
+    "religion": [
+      "king-knicol"
+    ],
     "player": "Nathan",
     "guest": "0",
     "campaign": [
@@ -26,7 +29,13 @@
     "origin": {
       "Rugatha": true
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha": {
+        "zh": "帶著神王尼可跳車離開。",
+        "en": "Jumped off the carriage with God-King Knicol and left the party."
+      }
+    }
   },
   {
     "name_en": "Midori",
@@ -38,6 +47,9 @@
     ],
     "class_zh": [
       "聖騎士"
+    ],
+    "religion": [
+      "keinra"
     ],
     "player": "Joseph",
     "guest": "0",
@@ -73,6 +85,7 @@
       "遊俠",
       "聖騎士"
     ],
+    "religion": [],
     "player": "Samuel",
     "guest": "0",
     "campaign": [
@@ -92,7 +105,13 @@
       "Rugatha": true,
       "Rugatha Lite": true
     },
-    "dead": true
+    "dead": true,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "遭母親大人奪舍而亡。",
+        "en": "Died after being possessed by The Mother."
+      }
+    }
   },
   {
     "name_en": "Uko",
@@ -105,6 +124,7 @@
     "class_zh": [
       "德魯伊"
     ],
+    "religion": [],
     "player": "Roger",
     "guest": "0",
     "campaign": [
@@ -121,7 +141,13 @@
     "origin": {
       "Rugatha": true
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha": {
+        "zh": "與崔夏私奔。",
+        "en": "Eloped with Trisha."
+      }
+    }
   },
   {
     "name_en": "Ron",
@@ -134,6 +160,7 @@
     "class_zh": [
       "武僧"
     ],
+    "religion": [],
     "player": "Hark",
     "guest": "0",
     "campaign": [
@@ -168,6 +195,7 @@
       "吟遊詩人",
       "遊俠"
     ],
+    "religion": [],
     "player": "HugeCat",
     "guest": "0",
     "campaign": [
@@ -200,6 +228,7 @@
     "class_zh": [
       "牧師"
     ],
+    "religion": [],
     "player": "Henry",
     "guest": "0",
     "campaign": [
@@ -216,7 +245,13 @@
     "origin": {
       "Rugatha": true
     },
-    "dead": true
+    "dead": true,
+    "deactive_reason": {
+      "Rugatha": {
+        "zh": "遭柏納斯家族殺害。",
+        "en": "Killed by the Berners family."
+      }
+    }
   },
   {
     "name_en": "Tai Tai Wo Hai Yao",
@@ -229,6 +264,7 @@
     "class_zh": [
       "法師"
     ],
+    "religion": [],
     "player": "拉拉",
     "guest": "0",
     "campaign": [
@@ -245,7 +281,13 @@
     "origin": {
       "Rugatha": true
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha": {
+        "zh": "加入拉索斯教，退出冒險團隊。",
+        "en": "Joined the Laxthos cult and left the adventuring party."
+      }
+    }
   },
   {
     "name_en": "YHWH",
@@ -258,6 +300,7 @@
     "class_zh": [
       "術士"
     ],
+    "religion": [],
     "player": "拉拉",
     "guest": "0",
     "campaign": [
@@ -266,7 +309,7 @@
     ],
     "record_zh": "YHWH在沃瓦倫慶功夜以 Tai Tai我還要老師的身份登場，隨後加入台北市議員；沃瓦倫儀式失控後，他進入寂靜殿地下城，從異界傳送回來後以法術射殺正在宣言的哥布林王，使哥布林四散。\n\n他後來前往寇林菲爾德、麥克嵩與多侖維爾，在雷米爆炸消失後取走項鍊。妖精荒野失守時，他與同伴穿越異界尋找失蹤者；追查巫妖之手時，他整理龍恩失蹤、茜卓博士皮衣與安德烈亞研究室的關聯，最後繼承茜卓博士在大學城的房子。\n\n前往聖拉雅米島時，YHWH 加入狂暴戰士幫的入會試煉，獲得鬥名「舔舔地板」；在金海岸礦坑外，他聽見多姆尼爾說礦坑底部有東西，便與約瑟夫搬走炸藥，協助炸傷變異拉茲特獸。抵達方努爾後，他向華生借閱《魂、骨與血》上半冊，從死靈轉化與拉巴比石的線索推測尼姆孤兒院地下的法陣可能正在製造不死生物。\n\n15051.05.16，YHWH 隨隊伍在羅賓遜主教帶領下返回方努爾的聖津菈大教堂，準備在瑪莉修女協助下尋找通往尖頂寺的地下傳送陣、追尋失散的龍恩。",
     "record_en": "YHWH appeared on the night of Vowalon's celebration as Tai Tai Wo Hai Yao's teacher and joined the Taipei City Councilors. After the ritual collapsed, he entered the dungeon beneath the Temple of Silence and, after returning from another plane, used magic to shoot the proclaiming goblin king, scattering the goblins. He later traveled through Korringfield, Macksohn, and Dorrenville, took Lemmy's necklace after the explosion, investigated the links between Ron's disappearance, Dr. Chandra's leather coat, and Andrea's laboratory, and inherited Chandra's house in Great Citadel.\n\nOn the journey to Saint Rayami Island, YHWH passed the Berserk Warriors' initiation and received the fighting name \"Lick the Floor.\" Outside Gold Coast Mine, Domneil told him that something valuable lay below, so he and Joseph moved explosives from the mine and helped blast the mutated Laztek. In Fanaur, YHWH borrowed the first half of Soul, Bone and Blood from Watson; its notes on necromantic transformation and Lababi stones led him to suspect that the magic circle beneath Nimu Orphanage was being used to create undead creatures.\n\nOn 15051.05.16, YHWH returned with the party and Bishop Robinson to Saint Keinra Cathedral in Fanaur, preparing to search with Sister Mari for the underground teleportation circle to Peak Temple and their missing companion Ron.",
-    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fyhwh-98297c2873%2Fimage-6e362197.png?alt=media",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fyhwh-98297c2873%2Fimage-8f7a19f4.png?alt=media",
     "imageWidth": 272,
     "imageHeight": 290,
     "active": {
@@ -290,6 +333,7 @@
     "class_zh": [
       "浪客"
     ],
+    "religion": [],
     "player": "Roger",
     "guest": "0",
     "campaign": [
@@ -309,7 +353,13 @@
       "Rugatha": false,
       "Rugatha Plus": true
     },
-    "dead": true
+    "dead": true,
+    "deactive_reason": {
+      "Rugatha Plus": {
+        "zh": "遭蘭斯・柏納斯埋在他體內的魔法炸死。",
+        "en": "Killed by an explosion from the magic Lance Berners had implanted in his body."
+      }
+    }
   },
   {
     "name_en": "Siri Oslee",
@@ -322,6 +372,7 @@
     "class_zh": [
       "浪客"
     ],
+    "religion": [],
     "player": "式謙",
     "guest": "0",
     "campaign": [
@@ -356,6 +407,10 @@
       "契術師",
       "術士"
     ],
+    "religion": [
+      "phyneal",
+      "phynoir"
+    ],
     "player": "Milker",
     "guest": "0",
     "campaign": [
@@ -372,7 +427,13 @@
     "origin": {
       "Rugatha Lite": true
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "與芬諾爾達成協議，將自己的存在與眾人對他的記憶抹除，換取羅特的生存。",
+        "en": "Made a bargain with Phynoir to erase his own existence and everyone's memories of him in exchange for Lott's survival."
+      }
+    }
   },
   {
     "name_en": "Yi",
@@ -385,6 +446,7 @@
     "class_zh": [
       "浪客"
     ],
+    "religion": [],
     "player": "Nasa",
     "guest": "1",
     "campaign": [
@@ -401,7 +463,13 @@
     "origin": {
       "Rugatha Lite": false
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "因吸食過多「檸檬」，導致身心失能，無法繼續冒險。",
+        "en": "Excessive use of the drug “lemon” left him physically and mentally incapacitated, unable to continue adventuring."
+      }
+    }
   },
   {
     "name_en": "Inu",
@@ -414,6 +482,7 @@
     "class_zh": [
       "術士"
     ],
+    "religion": [],
     "player": "Lala",
     "guest": "0",
     "campaign": [
@@ -430,7 +499,13 @@
     "origin": {
       "Rugatha Lite": false
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "遭母親大人驅逐。",
+        "en": "Banished by The Mother."
+      }
+    }
   },
   {
     "name_en": "Lott",
@@ -444,6 +519,10 @@
     "class_zh": [
       "浪客",
       "契術師"
+    ],
+    "religion": [
+      "amoret",
+      "spider-religion"
     ],
     "player": "Nasa",
     "guest": "0",
@@ -461,7 +540,13 @@
     "origin": {
       "Rugatha Lite": false
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "與佛拉一起從常翠林總部私奔。",
+        "en": "Eloped with Phola, leaving the Evergreen headquarters."
+      }
+    }
   },
   {
     "name_en": "Al-lon",
@@ -473,6 +558,9 @@
     ],
     "class_zh": [
       "野蠻人"
+    ],
+    "religion": [
+      "jeorisan"
     ],
     "player": "黑爾",
     "guest": "0",
@@ -503,6 +591,7 @@
     "class_zh": [
       "契術師"
     ],
+    "religion": [],
     "player": "雀",
     "guest": "0",
     "campaign": [
@@ -531,6 +620,9 @@
     ],
     "class_zh": [
       "浪客"
+    ],
+    "religion": [
+      "kalinius"
     ],
     "player": "MoYu",
     "guest": "0",
@@ -561,6 +653,9 @@
     "class_zh": [
       "牧師"
     ],
+    "religion": [
+      "jeorisan"
+    ],
     "player": "阿流",
     "guest": "0",
     "campaign": [
@@ -590,6 +685,7 @@
     "class_zh": [
       "戰士"
     ],
+    "religion": [],
     "player": "Joseph",
     "guest": "0",
     "campaign": [
@@ -621,6 +717,7 @@
       "聖騎士",
       "野蠻人"
     ],
+    "religion": [],
     "player": "Samuel",
     "guest": "0",
     "campaign": [
@@ -637,7 +734,13 @@
     "origin": {
       "Rugatha Lite": false
     },
-    "dead": true
+    "dead": true,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "遭異變的母親大人殺死。",
+        "en": "Killed by The Mother in her transformed state."
+      }
+    }
   },
   {
     "name_en": "Leah",
@@ -651,6 +754,9 @@
     "class_zh": [
       "德魯伊",
       "戰士"
+    ],
+    "religion": [
+      "nessis"
     ],
     "player": "Nasa",
     "guest": "0",
@@ -681,6 +787,7 @@
     "class_zh": [
       "法師"
     ],
+    "religion": [],
     "player": "Nasa",
     "guest": "0",
     "campaign": [
@@ -697,7 +804,13 @@
     "origin": {
       "Rugatha Lite": true
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "因戴上月光狩獵會成員的面具而消失。",
+        "en": "Disappeared after putting on the mask of a Moonlight Hunt member."
+      }
+    }
   },
   {
     "name_en": "Sugalu",
@@ -709,6 +822,9 @@
     ],
     "class_zh": [
       "戰士"
+    ],
+    "religion": [
+      "king-knicol"
     ],
     "player": "Nathan",
     "guest": "0",
@@ -729,7 +845,13 @@
       "Rugatha": false,
       "Rugatha Lite": true
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "在戰鬥後消逝無蹤。",
+        "en": "Vanished without a trace after the battle."
+      }
+    }
   },
   {
     "name_en": "Anedak",
@@ -742,6 +864,9 @@
     "class_zh": [
       "野蠻人"
     ],
+    "religion": [
+      "king-knicol"
+    ],
     "player": "Nathan",
     "guest": "0",
     "campaign": [
@@ -753,12 +878,18 @@
     "imageWidth": 512,
     "imageHeight": 512,
     "active": {
-      "Rugatha": true
+      "Rugatha": false
     },
     "origin": {
       "Rugatha": false
     },
-    "dead": true
+    "dead": true,
+    "deactive_reason": {
+      "Rugatha": {
+        "zh": "遭柏納斯家族殺害。",
+        "en": "Killed by the Berners family."
+      }
+    }
   },
   {
     "name_en": "Ubbo",
@@ -772,6 +903,9 @@
     "class_zh": [
       "德魯伊",
       "術士"
+    ],
+    "religion": [
+      "phyneal"
     ],
     "player": "Milker",
     "guest": "0",
@@ -804,6 +938,9 @@
       "聖騎士",
       "野蠻人"
     ],
+    "religion": [
+      "nessis"
+    ],
     "player": "Samuel",
     "guest": "0",
     "campaign": [
@@ -820,7 +957,13 @@
     "origin": {
       "Rugatha Lite": false
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "選擇留在常翠林，不繼續冒險。",
+        "en": "Chose to stay with the Evergreen rather than continue adventuring."
+      }
+    }
   },
   {
     "name_en": "Drayer",
@@ -833,6 +976,7 @@
     "class_zh": [
       "牧師"
     ],
+    "religion": [],
     "player": "Henry",
     "guest": "0",
     "campaign": [
@@ -845,14 +989,20 @@
     "imageWidth": 668,
     "imageHeight": 686,
     "active": {
-      "Rugatha": false,
+      "Rugatha": true,
       "Rugatha Lite": false
     },
     "origin": {
       "Rugatha": true,
       "Rugatha Lite": true
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "揭露自己身為拉索斯教臥底的身份，透過傳送陣離開。",
+        "en": "Revealed herself as an undercover agent of the Laxthos cult and left through a teleportation circle."
+      }
+    }
   },
   {
     "name_en": "Kudan",
@@ -865,6 +1015,7 @@
     "class_zh": [
       "術士"
     ],
+    "religion": [],
     "player": "Nathan",
     "guest": "0",
     "campaign": [
@@ -881,7 +1032,13 @@
     "origin": {
       "Rugatha Lite": false
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "隨著覆羽莊園的崩塌而消失。",
+        "en": "Disappeared as the Feathered Estate collapsed."
+      }
+    }
   },
   {
     "name_en": "Brown",
@@ -893,6 +1050,9 @@
     ],
     "class_zh": [
       "野蠻人"
+    ],
+    "religion": [
+      "laxthos"
     ],
     "player": "Timothy",
     "guest": "0",
@@ -923,6 +1083,7 @@
     "class_zh": [
       "遊俠"
     ],
+    "religion": [],
     "player": "Amber",
     "guest": "0",
     "campaign": [
@@ -939,7 +1100,13 @@
     "origin": {
       "Rugatha Lite": false
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Lite": {
+        "zh": "在旅行途中與冒險者們分離。",
+        "en": "Parted ways with the adventurers during their travels."
+      }
+    }
   },
   {
     "name_en": "Cecil",
@@ -952,6 +1119,7 @@
     "class_zh": [
       "法師"
     ],
+    "religion": [],
     "player": "阿樂",
     "guest": "1",
     "campaign": [
@@ -968,7 +1136,13 @@
     "origin": {
       "Rugatha Wilds": true
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Wilds": {
+        "zh": "與冒險者們在 T.I.D.E.S. 集會上分道揚鑣。",
+        "en": "Parted ways with the adventurers at the T.I.D.E.S. gathering."
+      }
+    }
   },
   {
     "name_en": "Mr. Green",
@@ -980,6 +1154,9 @@
     ],
     "class_zh": [
       "聖騎士"
+    ],
+    "religion": [
+      "jeorisan"
     ],
     "player": "Hark",
     "guest": "1",
@@ -997,7 +1174,13 @@
     "origin": {
       "Rugatha Wilds": true
     },
-    "dead": false
+    "dead": false,
+    "deactive_reason": {
+      "Rugatha Wilds": {
+        "zh": "與冒險者們在拉撒拿分道揚鑣。",
+        "en": "Parted ways with the adventurers in Rathanad."
+      }
+    }
   },
   {
     "name_en": "Ravi",
@@ -1011,6 +1194,9 @@
     "class_zh": [
       "遊俠",
       "吟遊詩人"
+    ],
+    "religion": [
+      "nessis"
     ],
     "player": "Joseph",
     "guest": "1",
@@ -1042,6 +1228,7 @@
     "class_zh": [
       "德魯伊"
     ],
+    "religion": [],
     "player": "拉拉",
     "guest": "1",
     "campaign": [

@@ -4,6 +4,15 @@ export const getCampaignStatus = (pc, field, campaign) => {
   return typeof value === "boolean" ? value : null;
 };
 
+export const getDeactiveReason = (pc, campaign, language = "zh") => {
+  if (getCampaignStatus(pc, "active", campaign) !== false) return "";
+  const reason = pc.deactive_reason?.[campaign];
+  const value = typeof reason === "string"
+    ? (language === "zh" ? reason : "")
+    : reason?.[language];
+  return typeof value === "string" ? value.trim() : "";
+};
+
 export const sortCampaignPcs = (pcs, campaign) => pcs.slice().sort((a, b) => {
   // Within each party-status group, deceased members follow all living members.
   const rank = pc => getCampaignStatus(pc, "active", campaign) === true ? 0

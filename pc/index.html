@@ -287,6 +287,29 @@
       overflow-wrap: anywhere;
     }
 
+    .related-pcs__departure {
+      margin: 3px 0;
+      padding-left: 8px;
+      border-left: 2px solid #b19a6a;
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .related-pcs__departure-title {
+      display: block;
+      margin-bottom: 4px;
+      color: #f1dda9;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .is-deceased .related-pcs__departure { border-color: #969696; }
+    .is-deceased .related-pcs__departure-title { color: #e1e1e1; }
+
     .related-pcs__footer {
       display: flex;
       align-items: center;
@@ -543,24 +566,25 @@
     }
 
     .related-pcs__card.is-deceased {
-      border-color: #738695;
+      --muted: #d6d6d6;
+      border-color: #858585;
       border-radius: 3px;
-      background: linear-gradient(155deg, #2c3946, #161f2b 70%);
-      box-shadow: inset 0 0 0 5px #111923, 0 8px 24px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(155deg, #383838, #202020 70%);
+      box-shadow: inset 0 0 0 5px #171717, 0 8px 24px rgba(0, 0, 0, 0.3);
     }
     .related-pcs__card.is-deceased::before { background-image: url("./memorial-frame.svg"); }
-    .is-deceased .related-pcs__portrait { border-color: #8a9cae; border-radius: 2px; }
-    .is-deceased .related-pcs__portrait-image { filter: saturate(0.65); }
-    .is-deceased .related-pcs__portrait::after { background: #8a9cae; }
+    .is-deceased .related-pcs__portrait { border-color: #a0a0a0; border-radius: 2px; }
+    .is-deceased .related-pcs__portrait-image { filter: grayscale(1); }
+    .is-deceased .related-pcs__portrait::after { background: #a0a0a0; }
     .is-deceased .related-pcs__name {
-      border-color: #8295a7;
-      background: #24303d;
-      color: #e4ecf4;
+      border-color: #969696;
+      background: #303030;
+      color: #ececec;
       box-shadow: none;
     }
-    .is-deceased .related-pcs__footer { border-color: #617180; }
-    .is-deceased .related-pcs__guest { color: #bacbd8; }
-    .is-deceased .pc-deceased { background: #172431; border-color: #b6c8d6; color: #e4edf6; }
+    .is-deceased .related-pcs__footer { border-color: #737373; }
+    .is-deceased .related-pcs__guest { color: #c8c8c8; }
+    .is-deceased .pc-deceased { background: #262626; border-color: #bfbfbf; color: #ededed; }
 
     .pc-empty {
       padding: 40px 20px;
@@ -660,7 +684,7 @@
   </main>
 
   <script type="module">
-    import { matchesPcFilters, getCampaignStatus, sortCampaignPcs } from "./pc-status.js";
+    import { matchesPcFilters, getCampaignStatus, getDeactiveReason, sortCampaignPcs } from "./pc-status.js";
 
     const i18n = {
       title: {
@@ -859,6 +883,19 @@
         statuses.appendChild(founding);
       }
       text.appendChild(statuses);
+
+      const departureReason = getDeactiveReason(pc, campaign, currentLang);
+      if (departureReason) {
+        const departure = document.createElement("p");
+        departure.className = "related-pcs__departure";
+        const departureTitle = document.createElement("strong");
+        departureTitle.className = "related-pcs__departure-title";
+        departureTitle.textContent = currentLang === "en" ? "Departure reason" : "離隊原因";
+        const departureBody = document.createElement("span");
+        departureBody.textContent = departureReason;
+        departure.append(departureTitle, departureBody);
+        text.appendChild(departure);
+      }
 
       const playerName = String(pc.player || "").trim();
       {

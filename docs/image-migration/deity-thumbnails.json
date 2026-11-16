@@ -157,6 +157,32 @@
       "height": 320,
       "contentType": "image/webp",
       "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "slug": "spider-religion",
+      "source": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fspider-religion-v2-9e606af724%2Fimage-ba293f32.png?alt=media",
+      "sourceBytes": 3056696,
+      "object": "public-images/site/deities/spider-religion-v2-9e606af724/image-bc5ff17b.webp",
+      "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fspider-religion-v2-9e606af724%2Fimage-bc5ff17b.webp?alt=media",
+      "sha256": "bc5ff17bee807837a0cda46c45e8bf49109cc5658cdb97eff19c1efef45a6619",
+      "bytes": 48024,
+      "width": 480,
+      "height": 480,
+      "contentType": "image/webp",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "slug": "king-knicol",
+      "source": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fking-knicol-v3-23180764f8%2Fimage-abb849dd.png?alt=media",
+      "sourceBytes": 2137193,
+      "object": "public-images/site/deities/king-knicol-v3-23180764f8/image-72f7e08e.webp",
+      "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fking-knicol-v3-23180764f8%2Fimage-72f7e08e.webp?alt=media",
+      "sha256": "72f7e08eb6932e543f47712d87ad03fc24fd60e2adec152e2faecd1e76f1fea5",
+      "bytes": 25596,
+      "width": 480,
+      "height": 480,
+      "contentType": "image/webp",
+      "cacheControl": "public, max-age=31536000, immutable"
     }
   ]
 }

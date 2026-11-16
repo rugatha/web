@@ -63,7 +63,7 @@
       "en": "What Would You Offer for a Trade?",
       "zh": "你願意拿什麼來做個交易？"
     },
-    "category": "obscured"
+    "category": "other-faiths"
   },
   {
     "slug": "nessis",
@@ -261,78 +261,50 @@
       "en": "Those Who are Against Love, are My Nemesis",
       "zh": "與愛為敵之人，皆是我的仇敵"
     },
-    "category": "newly-ascended"
+    "category": "other-faiths"
   },
   {
-    "slug": "the-mother",
+    "slug": "spider-religion",
     "name": {
-      "en": "The Mother",
-      "zh": "母親大人"
-    },
-    "title": {
       "en": "The Spider God",
       "zh": "蜘蛛神"
     },
-    "domains": {
-      "en": ["Spider"],
-      "zh": ["蜘蛛"]
-    },
-    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-mother%2Freading-9be3cf81.webp?alt=media",
-    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-mother%2Fthumb-528c6cc2.webp?alt=media",
-    "saying": null,
-    "category": "spider-religion"
-  },
-  {
-    "slug": "anna",
-    "name": {
-      "en": "Anna",
-      "zh": "安娜"
-    },
     "title": {
-      "en": "The New Spider God",
-      "zh": "新蜘蛛神"
+      "en": "The Spider Religion",
+      "zh": "蜘蛛神信仰"
     },
     "domains": {
       "en": ["Spider"],
       "zh": ["蜘蛛"]
     },
-    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fanna%2Freading-686de162.webp?alt=media",
-    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fanna%2Fthumb-1fd48a50.webp?alt=media",
-    "saying": null,
-    "category": "spider-religion"
-  },
-  {
-    "slug": "alfenor",
-    "name": {
-      "en": "Alfenor",
-      "zh": "阿爾芬諾"
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fspider-religion-v2-9e606af724%2Fimage-ba293f32.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fspider-religion-v2-9e606af724%2Fimage-bc5ff17b.webp?alt=media",
+    "saying": {
+      "en": "Help the Poor and Offer Blood to the God.",
+      "zh": "濟弱扶貧，以血祭神。"
     },
-    "title": {
-      "en": "The Spider King",
-      "zh": "蜘蛛王"
-    },
-    "domains": {
-      "en": ["Spider"],
-      "zh": ["蜘蛛"]
-    },
-    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfenor%2Freading-63c0b55d.webp?alt=media",
-    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Falfenor%2Fthumb-48c10ba6.webp?alt=media",
-    "saying": null,
-    "category": "spider-religion"
+    "category": "other-faiths"
   },
   {
     "slug": "king-knicol",
     "name": {
-      "en": "King Knicol",
-      "zh": "神王尼可"
+      "en": "The God-King",
+      "zh": "神王教"
     },
     "title": {
       "en": "King of the Underground",
       "zh": "地底王"
     },
-    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-knicol%2Freading-47270609.webp?alt=media",
-    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fking-knicol%2Fthumb-39036e30.webp?alt=media",
-    "saying": null,
-    "category": "dubbed"
+    "domains": {
+      "en": ["Underground"],
+      "zh": ["地底"]
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fking-knicol-v3-23180764f8%2Fimage-abb849dd.png?alt=media",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fking-knicol-v3-23180764f8%2Fimage-72f7e08e.webp?alt=media",
+    "saying": {
+      "en": "The God-King is the One True Guide!",
+      "zh": "神王，是唯一的指引！"
+    },
+    "category": "other-faiths"
   }
 ]

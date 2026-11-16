@@ -2,9 +2,11 @@
 
 `pc_lib` 為 JSON 陣列，每筆代表一位冒險者。狀態欄位使用 `true`（是）、`false`（否）、`null`（待確認）；不要將待確認的值當成否。
 
+- `religion`：角色信仰，統一使用字串陣列（string list），每個值為 `deities/data/deities.json` 的 `slug`。例如 `"religion": ["keinra"]`（津菈）、`"religion": ["king-knicol"]`（神王教）；多個信仰如 `"religion": ["amoret", "spider-religion"]`。尚未填寫時使用空陣列 `[]`。`deities` 的 PC 信徒名錄直接讀取此欄位。
 - `active`：以 `campaign` 中的團務名稱為鍵，表示目前是否仍在該團隊伍中。已結團的團務，以結團時是否仍在隊伍中為準。
 - `origin`：以 `campaign` 中的團務名稱為鍵，表示該段團務開始時是否已在本團。
 - `dead`：角色是否已死亡，為角色層級的狀態。
+- `deactive_reason`：選填，以團務名稱為鍵的離隊原因，每團包含 `zh`、`en` 文字欄位。沒有內容的團務項目應移除，若全部沒有內容則移除整個欄位。僅在該團 `active: false` 且目前語言有填寫原因時，顯示於 PC 牌卡的狀態標示下方。切換語言不會混用另一語言。亦可直接填字串，會視為中文原因，英文模式不顯示。
 
 跨團角色的 `active`、`origin` 可分別設定，例如以下為格式示意，非角色的實際狀態：
 
@@ -18,6 +20,17 @@
 ```
 
 新增團務關聯時，需同步在 `active` 與 `origin` 加入相同團務名稱。新狀態尚未確認時可用 `null`，確認後再填入布林值。
+
+需要填寫離隊原因時，再於 `deactive_reason` 加入對應團務。填寫方式如下（僅為格式示意）：
+
+```json
+"deactive_reason": {
+  "Rugatha": {
+    "zh": "返回故鄉，與隊伍道別。",
+    "en": "Returned home and parted ways with the party."
+  }
+}
+```
 
 本次手動狀態表已同步至 `pc_lib` 並移除。依填寫約定，`V` 為 `true`、空白為 `false`；`active`、`origin` 按各團務分別套用，`dead` 則在同一角色任一列有 `V` 時設為 `true`，全部留白時設為 `false`。
 

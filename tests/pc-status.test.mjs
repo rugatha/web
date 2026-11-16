@@ -1,10 +1,52 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { getCampaignStatus, matchesPcFilters, sortCampaignPcs } from '../pc/pc-status.js';
+import { getCampaignStatus, getDeactiveReason, matchesPcFilters, sortCampaignPcs } from '../pc/pc-status.js';
 
 const pcs = JSON.parse(fs.readFileSync(new URL('../pc/pc_lib', import.meta.url), 'utf8'));
 const find = name => pcs.find(pc => pc.name_en === name);
+
+test('departure reasons follow the displayed campaign and language', () => {
+  const pc = {
+    active: { Rugatha: false, 'Rugatha Plus': true },
+    deactive_reason: {
+      Rugatha: { zh: '  返回故鄉。 ', en: ' Returned home. ' },
+      'Rugatha Plus': { zh: '尚未離隊', en: 'Still in party' }
+    }
+  };
+  assert.equal(getDeactiveReason(pc, 'Rugatha', 'zh'), '返回故鄉。');
+  assert.equal(getDeactiveReason(pc, 'Rugatha', 'en'), 'Returned home.');
+  assert.equal(getDeactiveReason(pc, 'Rugatha Plus', 'zh'), '');
+  assert.equal(getDeactiveReason(pc, 'Rugatha Lite', 'zh'), '');
+});
+
+test('empty and untranslated departure reasons remain hidden', () => {
+  const pc = { active: { Rugatha: false }, deactive_reason: { Rugatha: { zh: '已離隊' } } };
+  assert.equal(getDeactiveReason(pc, 'Rugatha', 'en'), '');
+  pc.deactive_reason.Rugatha = '已離隊';
+  assert.equal(getDeactiveReason(pc, 'Rugatha', 'zh'), '已離隊');
+  assert.equal(getDeactiveReason(pc, 'Rugatha', 'en'), '');
+  pc.deactive_reason.Rugatha = { zh: '  ', en: '' };
+  assert.equal(getDeactiveReason(pc, 'Rugatha', 'zh'), '');
+  assert.equal(getDeactiveReason({ active: { Rugatha: false } }, 'Rugatha'), '');
+});
+
+test('departure reasons are optional and reference valid campaigns', () => {
+  for (const pc of pcs) {
+    if (!pc.deactive_reason) continue;
+    assert(Object.keys(pc.deactive_reason).length > 0);
+    for (const [campaign, reason] of Object.entries(pc.deactive_reason)) {
+      assert(pc.campaign.includes(campaign), `${pc.name_en}: ${campaign}`);
+      if (typeof reason === 'string') {
+        assert(reason.trim());
+        continue;
+      }
+      assert.equal(typeof reason.zh, 'string');
+      assert.equal(typeof reason.en, 'string');
+      assert(reason.zh.trim() || reason.en.trim());
+    }
+  }
+});
 
 test('membership filters use the displayed campaign, while death is shared', () => {
   const paladin = find('Paladin');
@@ -47,8 +89,9 @@ test('cleared filters include every campaign card', () => {
 });
 
 test('current members precede former founders; current founders come first', () => {
-  const sorted = sortCampaignPcs([find('Anedak'), find('Drayer'), find('Midori'), find('Usioni')], 'Rugatha');
-  assert.deepEqual(sorted.map(pc => pc.name_en), ['Midori', 'Anedak', 'Drayer', 'Usioni']);
+  const member = (name_en, active, origin) => ({ name_en, active: { Rugatha: active }, origin: { Rugatha: origin }, dead: false });
+  const sorted = sortCampaignPcs([member('Later', true, false), member('Former', false, true), member('Founder', true, true)], 'Rugatha');
+  assert.deepEqual(sorted.map(pc => pc.name_en), ['Founder', 'Later', 'Former']);
 });
 
 test('sorting follows each campaign and preserves the input array', () => {
@@ -61,8 +104,12 @@ test('sorting follows each campaign and preserves the input array', () => {
 });
 
 test('deceased founders follow living later members within each roster group', () => {
-  const sorted = sortCampaignPcs([find('Paladin'), find('Lemmy'), find('Anedak'), find('Jiaheng'), find('Usioni')], 'Rugatha');
-  assert.deepEqual(sorted.map(pc => pc.name_en), ['Anedak', 'Paladin', 'Lemmy', 'Usioni', 'Jiaheng']);
+  const member = (name_en, active, origin, dead) => ({ name_en, active: { Rugatha: active }, origin: { Rugatha: origin }, dead });
+  const sorted = sortCampaignPcs([
+    member('Dead founder', true, true, true), member('Living later', true, false, false),
+    member('Dead former founder', false, true, true), member('Living former', false, false, false)
+  ], 'Rugatha');
+  assert.deepEqual(sorted.map(pc => pc.name_en), ['Living later', 'Dead founder', 'Living former', 'Dead former founder']);
 });
 
 test('all deceased characters appear last in each campaign membership category', () => {

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "batch": "deity-art-2026-11-16",
+  "bucket": "rugatha-87e15.firebasestorage.app",
+  "policy": "Preserve original dimensions, formats and exact bytes; no resizing or lossy recompression.",
+  "images": [
+    {
+      "source": "deities/images/spider-religion-v2.png",
+      "collection": "deities",
+      "id": "spider-religion-v2-9e606af724",
+      "bytes": 3056696,
+      "sha256": "ba293f320ba33740bc01016b8809ef1ac479cf3ccc78ebb60883dd028d9e40a6",
+      "public": {
+        "object": "public-images/site/deities/spider-religion-v2-9e606af724/image-ba293f32.png",
+        "contentType": "image/png",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fspider-religion-v2-9e606af724%2Fimage-ba293f32.png?alt=media",
+        "generation": "1794843966478046"
+      },
+      "archive": {
+        "object": "image-originals/site/deities/spider-religion-v2-9e606af724/original-ba293f32.png",
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "generation": "1794843961605635"
+      },
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "source": "deities/images/king-knicol-v3.png",
+      "collection": "deities",
+      "id": "king-knicol-v3-23180764f8",
+      "bytes": 2137193,
+      "sha256": "abb849dd6b6804f89fde15cd4ad4b0c777675de29bb60444cd9b5b56cb26da4a",
+      "public": {
+        "object": "public-images/site/deities/king-knicol-v3-23180764f8/image-abb849dd.png",
+        "contentType": "image/png",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fking-knicol-v3-23180764f8%2Fimage-abb849dd.png?alt=media",
+        "generation": "1794843965237221"
+      },
+      "archive": {
+        "object": "image-originals/site/deities/king-knicol-v3-23180764f8/original-abb849dd.png",
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "generation": "1794843959959432"
+      },
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    }
+  ],
+  "publication": {
+    "verifiedAt": "2026-11-16T15:46:10.733Z",
+    "publicImages": 2,
+    "privateOriginals": 2,
+    "checks": [
+      "IAM read-back checksum",
+      "anonymous public checksum",
+      "CORS",
+      "immutable cache headers",
+      "private anonymous denial",
+      "no download tokens"
+    ]
+  },
+  "retirement": {
+    "mode": "removed-after-cloud-verification",
+    "removedLocalFiles": [
+      "deities/images/spider-religion-v2.png",
+      "deities/images/spider-religion-v2.webp",
+      "deities/images/spider-religion-v2-thumb.webp",
+      "deities/images/king-knicol-v3.png",
+      "deities/images/king-knicol-v3.webp",
+      "deities/images/king-knicol-v3-thumb.webp",
+      "output/imagegen/deities/king-knicol-v2.png",
+      "output/imagegen/deities/king-knicol-v2.webp",
+      "output/imagegen/deities/king-knicol-v2-thumb.webp",
+      "output/imagegen/deities/references/anedak.png",
+      "output/imagegen/deities/references/keinra.png",
+      "output/imagegen/deities/references/knicol.jpeg",
+      "output/imagegen/deities/references/nessis.png",
+      "output/imagegen/deities/references/sugalu.png",
+      "output/imagegen/deities/references/usioni.png"
+    ]
+  }
+}

@@ -2193,23 +2193,23 @@
       "source": "pc/pics/YHWH.png",
       "collection": "pc-portraits",
       "id": "yhwh-98297c2873",
-      "bytes": 136862,
-      "sha256": "6e362197ef7bc94d4726203af17425eb41bd945dc1c5d9af883b76f7542b6203",
+      "bytes": 2330732,
+      "sha256": "8f7a19f42dfbd4b47744581b8e9d91166ed22258b2b090364232d070d433e04e",
       "public": {
-        "object": "public-images/site/pc-portraits/yhwh-98297c2873/image-6e362197.png",
+        "object": "public-images/site/pc-portraits/yhwh-98297c2873/image-8f7a19f4.png",
         "contentType": "image/png",
         "cacheControl": "public, max-age=31536000, immutable",
-        "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fyhwh-98297c2873%2Fimage-6e362197.png?alt=media",
-        "generation": "1793950954845503"
+        "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fyhwh-98297c2873%2Fimage-8f7a19f4.png?alt=media",
+        "generation": "1794846349725214"
       },
       "archive": {
-        "object": "image-originals/site/pc-portraits/yhwh-98297c2873/original-6e362197.png",
+        "object": "image-originals/site/pc-portraits/yhwh-98297c2873/original-8f7a19f4.png",
         "contentType": "image/png",
         "cacheControl": "private, no-store",
-        "generation": "1793950953056676"
+        "generation": "1794846344435137"
       },
-      "width": 272,
-      "height": 290,
+      "width": 1215,
+      "height": 1295,
       "format": "png"
     },
     {
@@ -3775,6 +3775,52 @@
       "width": 1536,
       "height": 1024,
       "format": "png"
+    },
+    {
+      "source": "deities/images/spider-religion-v2.png",
+      "collection": "deities",
+      "id": "spider-religion-v2-9e606af724",
+      "bytes": 3056696,
+      "sha256": "ba293f320ba33740bc01016b8809ef1ac479cf3ccc78ebb60883dd028d9e40a6",
+      "public": {
+        "object": "public-images/site/deities/spider-religion-v2-9e606af724/image-ba293f32.png",
+        "contentType": "image/png",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fspider-religion-v2-9e606af724%2Fimage-ba293f32.png?alt=media",
+        "generation": "1794843966478046"
+      },
+      "archive": {
+        "object": "image-originals/site/deities/spider-religion-v2-9e606af724/original-ba293f32.png",
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "generation": "1794843961605635"
+      },
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "source": "deities/images/king-knicol-v3.png",
+      "collection": "deities",
+      "id": "king-knicol-v3-23180764f8",
+      "bytes": 2137193,
+      "sha256": "abb849dd6b6804f89fde15cd4ad4b0c777675de29bb60444cd9b5b56cb26da4a",
+      "public": {
+        "object": "public-images/site/deities/king-knicol-v3-23180764f8/image-abb849dd.png",
+        "contentType": "image/png",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fdeities%2Fking-knicol-v3-23180764f8%2Fimage-abb849dd.png?alt=media",
+        "generation": "1794843965237221"
+      },
+      "archive": {
+        "object": "image-originals/site/deities/king-knicol-v3-23180764f8/original-abb849dd.png",
+        "contentType": "image/png",
+        "cacheControl": "private, no-store",
+        "generation": "1794843959959432"
+      },
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
     }
   ],
   "publication": {
@@ -3790,5 +3836,23 @@
       "no download tokens"
     ],
     "note": "163 images passed the original upload/read-back run; Pascal passed an independent create-only retry after the original request stalled. All 328 metadata records refreshed before source switch; retirement repeats full byte verification."
-  }
+  },
+  "additionalBatches": [
+    {
+      "manifest": "docs/image-migration/deity-art-2026-11-16.json",
+      "publication": {
+        "verifiedAt": "2026-11-16T15:46:10.733Z",
+        "publicImages": 2,
+        "privateOriginals": 2,
+        "checks": [
+          "IAM read-back checksum",
+          "anonymous public checksum",
+          "CORS",
+          "immutable cache headers",
+          "private anonymous denial",
+          "no download tokens"
+        ]
+      }
+    }
+  ]
 }

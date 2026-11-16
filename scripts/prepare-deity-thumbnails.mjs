@@ -11,6 +11,12 @@ const readJSON = async path => JSON.parse(await readFile(join(root, path), 'utf8
 const dataPath = join(root, 'deities/data/deities.json');
 const dataText = await readFile(dataPath, 'utf8');
 const deities = JSON.parse(dataText);
+const flags = process.argv.slice(2);
+if (flags.length > 1 || flags.some(flag => !flag.startsWith('--slugs='))) throw Error('Usage: prepare-deity-thumbnails.mjs [--slugs=slug,slug]');
+const selected = flags.length ? new Set(flags[0].slice('--slugs='.length).split(',')) : null;
+if (selected && [...selected].some(slug => !deities.some(deity => deity.slug === slug))) throw Error('Unknown deity slug');
+const manifestPath = join(root, 'docs/image-migration/deity-thumbnails.json');
+const existing = selected ? JSON.parse(await readFile(manifestPath, 'utf8')).images : [];
 const site = await readJSON('docs/image-migration/site-current.json');
 const npcs = await readJSON('docs/image-migration/npc-current.json');
 const client = await storageClient();
@@ -18,6 +24,7 @@ const temporary = await mkdtemp(join(tmpdir(), 'deity-thumbnails-'));
 const images = [];
 try {
   for (const deity of deities) {
+    if (selected && !selected.has(deity.slug)) continue;
     const npc = npcs.images.find(image => image.variants.reading.url === deity.image);
     if (npc) {
       deity.thumbnail = npc.variants.thumb.url;
@@ -31,8 +38,10 @@ try {
     if (sha256(original) !== source.sha256) throw Error(`Source checksum mismatch: ${deity.slug}`);
     const input = join(temporary, 'source.png'), output = join(temporary, 'thumbnail.webp');
     await writeFile(input, original);
-    // 480 × 320 preserves the original 3:2 framing and gives a 160px circle 2x detail.
-    execFileSync('cwebp', ['-quiet', '-q', '82', '-resize', '480', '320', input, '-o', output]);
+    // Preserve each original's framing, including square artwork.
+    const scale = Math.min(1, 480 / Math.max(source.width, source.height));
+    const width = Math.round(source.width * scale), height = Math.round(source.height * scale);
+    execFileSync('cwebp', ['-quiet', '-q', '82', '-resize', String(width), String(height), input, '-o', output]);
     const bytes = await readFile(output), hash = sha256(bytes);
     const object = `public-images/site/deities/${source.id}/image-${hash.slice(0, 8)}.webp`;
     const contentType = 'image/webp', cacheControl = 'public, max-age=31536000, immutable';
@@ -50,11 +59,12 @@ try {
     const check = await fetch(url, { headers: { Origin: 'https://rugatha.com' }, signal: AbortSignal.timeout(60000) });
     if (!check.ok || sha256(Buffer.from(await check.arrayBuffer())) !== hash || check.headers.get('cache-control') !== cacheControl || !check.headers.get('content-type')?.startsWith(contentType) || !['*', 'https://rugatha.com'].includes(check.headers.get('access-control-allow-origin'))) throw Error(`Public verification failed: ${deity.slug}`);
     deity.thumbnail = url;
-    images.push({ slug: deity.slug, source: deity.image, sourceBytes: source.bytes, object, url, sha256: hash, bytes: bytes.length, width: 480, height: 320, contentType, cacheControl });
+    images.push({ slug: deity.slug, source: deity.image, sourceBytes: source.bytes, object, url, sha256: hash, bytes: bytes.length, width, height, contentType, cacheControl });
     console.log(`${deity.slug}: ${source.bytes} → ${bytes.length} bytes, verified`);
   }
   // Switch only after every derivative is publicly verified.
-  await writeFile(join(root, 'docs/image-migration/deity-thumbnails.json'), JSON.stringify({ schemaVersion: 1, bucket: imageBucket, images }, null, 2) + '\n');
+  const merged = selected ? [...existing.filter(image => !selected.has(image.slug)), ...images] : images;
+  await writeFile(manifestPath, JSON.stringify({ schemaVersion: 1, bucket: imageBucket, images: merged }, null, 2) + '\n');
   let updated = dataText;
   for (const deity of deities) {
     const imageLine = `"image": ${JSON.stringify(deity.image)},`;
