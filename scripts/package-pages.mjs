@@ -13,7 +13,7 @@ if (output === root) throw new Error('Output must differ from the source directo
 const publicDirectories = new Set([
   'about-us', 'admin', 'assets', 'campaigns', 'characters', 'deities',
   'emperors', 'experience', 'map', 'member', 'npc', 'pc', 'relation-graph',
-  'shared', 'styles', 'timeline', 'toolbox'
+  'shared', 'species', 'styles', 'timeline', 'toolbox'
 ]);
 const publicRootFiles = new Set(['CNAME', 'index.html', 'manifest.webmanifest', 'sw.js']);
 const files = execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], {
