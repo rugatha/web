@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="瀏覽 Rugatha 各種族的介紹、亞種與生物類型。">
+  <meta name="theme-color" content="#0f2d24">
+  <title>種族圖鑑 | Rugatha</title>
+  <link rel="icon" type="image/png" href="../assets/logo/rugatha-favicon.png">
+  <link rel="stylesheet" href="../shared/styles/theme.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="../shared/language-toggle.js"></script>
+  <script defer src="index.js"></script>
+</head>
+<body>
+  <div class="language-toggle" role="group" aria-label="Language">
+    <button type="button" id="language-button" data-lang="zh" data-lang-toggle aria-pressed="true" aria-label="目前語言：中文"></button>
+  </div>
+  <header class="site-header">
+    <a class="banner" href="../index.html" aria-label="Rugatha 首頁">
+      <img src="../assets/banner/rugatha-banner-trademark-transparent.png" alt="Rugatha">
+    </a>
+    <div class="title-bar">
+      <p class="eyebrow" id="eyebrow">RUGATHA · 種族圖鑑</p>
+      <h1 id="page-title">種族</h1>
+      <p class="lead" id="page-lead">認識 Rugatha 的各種族，依生物類型篩選並展開亞種介紹。</p>
+      <div class="search-bar">
+        <label class="sr-only" for="species-search" id="search-label">搜尋種族</label>
+        <input id="species-search" type="search" autocomplete="off" placeholder="搜尋種族名稱" aria-labelledby="search-label">
+        <span class="search-count" id="search-count" aria-live="polite"></span>
+      </div>
+    </div>
+  </header>
+  <main class="page">
+    <div class="filter-bar" id="type-filters" role="group" aria-label="依生物類型篩選" hidden></div>
+    <div class="species-list" id="species-list"><p class="page-message" role="status">正在讀取種族資料…</p></div>
+  </main>
+</body>
+</html>

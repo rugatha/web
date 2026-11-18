@@ -1,0 +1,1429 @@
+{
+  "human": {
+    "name": {
+      "zh": "人類",
+      "en": "Human"
+    },
+    "subspecies": {
+      "deepfolk": {
+        "name": {
+          "zh": "深淵人",
+          "en": "Deepfolk"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "深淵人原本是從物質世界被帶入深淵的生物，以人類居多，偶爾也有其他物種。\n長久滯留會使他們逐漸失去理智，轉變為深淵人。\n深淵人與深淵原生生物不同，他們無法自由往返深淵與物質世界。",
+          "en": "Deepfolk began as beings taken from the Material Realm into The Deep, mostly humans but sometimes members of other peoples.\nA long stay gradually erodes their sanity and transforms them into Deepfolk.\nUnlike creatures native to The Deep, they cannot travel freely between it and the Material Realm."
+        },
+        "portrait": "assets/portrait/deepling.png",
+        "creature-type": [
+          "humanoid",
+          "deepling"
+        ]
+      },
+      "fey-blessed": {
+        "name": {
+          "zh": "仙眷者",
+          "en": "Fey-Blessed"
+        },
+        "desc": {
+          "zh": "被仙靈祝福的人類，與他們的子嗣。\n外觀上與一般人類難以分出區別，但其血脈中具有精類的血統，在極低的機率下，可能產出妖精後代。\n他們的精類特徵通常都在成年後才慢慢被發現，如較短的睡眠時間、與大自然的協調，或無師自通的妖精語。他們也能輕鬆往返妖精荒野與物質世界，且不會遺忘在妖精荒野發生的事。",
+          "en": "Fey-Blessed are humans blessed by fairies, and their descendants.\nThey are hard to distinguish from other humans, but their blood carries fey ancestry and, on very rare occasions, may produce an elven child.\nTheir fey traits usually emerge gradually after adulthood: shorter sleep, harmony with nature, or an instinctive grasp of Elvish. They can also travel easily between the Feywild and Material Realm without forgetting what happened in the Feywild."
+        },
+        "portrait": "assets/portrait/fey-blessed.png",
+        "creature-type": [
+          "humanoid",
+          "fey"
+        ],
+        "subspecies": {}
+      },
+      "kalashtar": {
+        "name": {
+          "zh": "離夢人",
+          "en": "Kalashtar"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "離夢人是與夢境息息相關的人類。\n因為離夢人與靈性的共鳴，他們時常從事宗教相關的工作，例如牧師、聖騎士，或是占卜師等。",
+          "en": "Kalashtar are human that are closely connected to dreams.\nTheir spiritual affinity often leads them to religious work, such as serving as clerics or paladins, or to divination."
+        },
+        "portrait": "assets/portrait/kalashtar-action.png",
+        "creature-type": [
+          "humanoid"
+        ]
+      }
+    },
+    "desc": {
+      "zh": "人類是 Rugatha 世界中最常見的生物之一，而麥丁頓王國更是人類統治、以人類為最大宗的王國。\n然而，因為遍及整個大陸，覆蓋各種不同地形與氣候，人類的外觀、習性與文化，在各地間都有不同的發展。\n人類普遍適應力強，到處都能居住，也因此，人類是冒險者數量相對較多的種族。",
+      "en": "Humans are among the most common peoples in Rugatha. The Mattington Kingdom is ruled by humans, who also make up most of its population.\nSpread across the continent and its varied landscapes and climates, humans have developed different appearances, customs, and cultures in different regions.\nHumans are generally adaptable and can live almost anywhere. As a result, a relatively large number of adventurers are human."
+    },
+    "portrait": "assets/portrait/human.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "elf": {
+    "name": {
+      "zh": "妖精",
+      "en": "Elf"
+    },
+    "subspecies": {
+      "lorinnese": {
+        "portrait": "assets/portrait/lorinnese-v2.png",
+        "name": {
+          "zh": "洛林裔",
+          "en": "Lorinnese"
+        },
+        "desc": {
+          "zh": "洛林裔妖精是妖精中種族主義較深的族群，也有著最典型妖精的樣貌：白皮膚、尖耳朵，客觀貌美年輕的面容。\n他們相信自己是洛林王朝開國君主征服者洛林的嫡系後代，擁有最高尚的妖精血統，也對非妖精種族，包含半妖精，充滿敵意。\n他們大量集中在弗萊特境與其以北。",
+          "en": "Lorinnese elves are among the more deeply racist elven peoples. They also have the most classic elven appearance: fair skin, pointed ears, and youthful, strikingly beautiful faces.\nThey believe themselves to be direct descendants of Lorin the Conqueror, the founding ruler of the Lorin Dynasty, and to possess the noblest elven bloodline. They are hostile toward non-elven peoples, including half-elves.\nThey are heavily concentrated in Phreit and the lands to its north."
+        },
+        "creature-type": [
+          "fey",
+          "humanoid"
+        ]
+      },
+      "sielken": {
+        "portrait": "assets/portrait/sielken-v2.png",
+        "name": {
+          "zh": "希爾肯",
+          "en": "Sielken"
+        },
+        "desc": {
+          "zh": "希爾肯妖精有著棕褐色的肌膚，喜愛絲綢與華美的衣著。他們普遍住在洛森王國與其他王國的交界地區。\n他們比起其他妖精，更在意階級制度，但也相對對其他種族更包容。\n希爾肯妖精熱愛與其他種族貿易，獲取所需的各種物資。",
+          "en": "Sielken elves have brown skin and a fondness for silk and sumptuous clothing. They generally live along the borders between the Lothum Kingdom and other kingdoms.\nThey place greater importance on social hierarchy than other elves, yet are also more accepting of other peoples.\nSielken elves enjoy trading with other peoples to obtain the many goods and supplies they need."
+        },
+        "creature-type": [
+          "fey",
+          "humanoid"
+        ]
+      },
+      "darkborn": {
+        "portrait": "assets/portrait/darkborn.png",
+        "name": {
+          "zh": "闇生",
+          "en": "Darkborn"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "闇生妖精為 Rugatha 世界中較為低調的一支妖精種族，他們有著灰黑色的皮膚。\n闇生妖精通常住在密林或洞穴之中，甚至有傳聞他們有地底的聚落。\n與其他妖精相比，他們通常較為冷靜沉著且果斷。\n也有些妖精支派會歧視他們，認為他們不夠「純種」。",
+          "en": "Darkborn elves are one of the more reserved elven peoples in Rugatha. They have gray-black skin.\nThey usually live in dense forests or caves, and there are even rumors of underground Darkborn settlements.\nCompared with other elves, they tend to be calmer, more composed, and more decisive.\nSome other elven groups discriminate against them, considering them insufficiently \"pure-blooded\"."
+        },
+        "creature-type": [
+          "fey",
+          "humanoid"
+        ]
+      },
+      "shadar-kai": {
+        "name": {
+          "zh": "幽族",
+          "en": "Shadar-Kai"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "在 Rugatha，幽族是妖精的一種。\n他們通常膚色灰白，有著深色頭髮，但這只是他們在物質世界的樣貌。幽族相信他們在死後，會在幽影界再次甦醒，以不同的樣貌重生---可能更加衰老與枯槁，但保有一樣的靈魂與記憶。",
+          "en": "In Rugatha, Shadar-Kai is a subspecies of elf.\nThey usually have pale gray skin and dark hair, though that is only how they appear in the Material Realm. They believe that after death they awaken in the Shadowfell, reborn with a different appearance—perhaps older and more withered—while retaining the same soul and memories."
+        },
+        "portrait": "assets/portrait/shadar-kai-action.png",
+        "creature-type": [
+          "humanoid"
+        ]
+      }
+    },
+    "desc": {
+      "zh": "妖精是 Rugatha 世界中常見的種族，通常有著修長的身體、尖耳朵，與俊美的外貌。\n他們傾向與大自然為伍，對野生動物友善。\n洛森王國是妖精為主的王國，偶爾也有零星的半妖精住民。然而洛森王國有極為嚴重的種族歧視，若你不是純種妖精，入夜後最好不要單獨外出。",
+      "en": "Elves are a common people in Rugatha, typically slender, pointed-eared, and beautiful.\nThey tend to live close to nature and are friendly toward wild animals.\nThe Lothum Kingdom is predominantly elven, though a few half-elves live there as well. Racial discrimination is severe there: if you are not a pure-blooded elf, it is best not to go out alone after dark."
+    },
+    "portrait": "assets/portrait/elf.png",
+    "creature-type": [
+      "fey",
+      "humanoid"
+    ]
+  },
+  "half-elf": {
+    "name": {
+      "zh": "半妖精",
+      "en": "Half-Elf"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "半妖精是妖精與其他種族（多為人類）共同生下的子嗣。\n在 Rugatha 的世界中，雖然洛森王國偶有半妖精的城鎮，但典型的半妖精還是流離失所，不被妖精承認，也不被人類接納。\n不過，他們也同時有人類的靈活和韌性，也有妖精的輕巧與細膩。",
+      "en": "Half-elves are the children of elves and members of other peoples, most often humans.\nAlthough there are a few half-elven towns in the Lothum Kingdom, half-elves in Rugatha are typically displaced, acknowledged by neither elves nor humans.\nThey possess both human adaptability and resilience and elven grace and sensitivity."
+    },
+    "portrait": "assets/portrait/half-elf.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "dwarf": {
+    "name": {
+      "zh": "矮人",
+      "en": "Dwarf"
+    },
+    "subspecies": {
+      "meldough": {
+        "name": {
+          "zh": "梅鐸",
+          "en": "Meldough"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "梅鐸矮人是較為傳統的矮人，通常較為矮壯，且總是笑呵呵的。\n他們熱愛飲酒，也對工藝、岩石等十分拿手。",
+          "en": "Meldough dwarves are a more traditional dwarven people, typically short and stocky, and always smiling and laughing.\nThey love drinking and are highly skilled in crafts, working with stone, and related pursuits."
+        },
+        "portrait": "assets/portrait/meldough-female.png",
+        "creature-type": [
+          "humanoid"
+        ]
+      },
+      "joelan": {
+        "name": {
+          "zh": "裘倫",
+          "en": "Joelan"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "裘倫矮人是精於機械、科技的矮人。\n比起其他矮人，他們更喜歡把自己打理的乾乾淨淨，斯文優雅。",
+          "en": "Joelan dwarves specialize in machinery and technology.\nCompared with other dwarves, they take greater care to keep themselves impeccably clean and well-groomed, presenting a refined and elegant appearance."
+        },
+        "portrait": "assets/portrait/joelan.png",
+        "creature-type": [
+          "humanoid"
+        ]
+      }
+    },
+    "desc": {
+      "zh": "矮人是 Rugatha 世界中常見的種族之一。\n壯碩矮小的身形，搭配濃密的毛髮，是典型的矮人形象。他們雖對人有戒心，但一旦任你為朋友，就會對你忠心耿耿，甚至願意賣命。\n克里歐門王國是矮人主要生存的區域，但他們也樂於為了品嚐各地的佳釀，旅行到洛森王國或麥丁頓王國。",
+      "en": "Dwarves are among the common peoples of Rugatha.\nA stout, short build and thick hair are typical dwarf traits. They may be wary of others, but once they accept someone as a friend, they are fiercely loyal and may even risk their lives for them.\nThe Chryomen Kingdom is their main homeland, though dwarves happily travel to the Lothum or Mattington Kingdoms to sample local drinks."
+    },
+    "portrait": "assets/portrait/dwarf.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "halfling": {
+    "name": {
+      "zh": "半身人",
+      "en": "Halfling"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "半身人是 Rugatha 中最友善的種族之一。他們身材矮小，不太愛穿鞋，但通常臉上都帶著微笑。\n半身人通常與人類居住在相同的城鎮，做著與人接觸的工作，像是嚮導、服務生、櫃檯人員等。\n不過，半身人也是十分務實的種族，對他們來說穩定的收入與充足的農作是生活的必須。",
+      "en": "Halflings are among the friendliest peoples in Rugatha. They are short, seldom wear shoes, and usually have a smile on their faces.\nThey tend to share towns with humans and work with the public as guides, servers, and receptionists.\nThey are also practical: a steady income and enough crops are essential to their lives."
+    },
+    "portrait": "assets/portrait/halfling.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "half-orc": {
+    "name": {
+      "zh": "半獸人",
+      "en": "Half-Orc"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "半獸人是獸人與其他物種（通常是人類）的混血種族，獸人的高大與肌肉，成了他們明顯的外貌特徵。\n半獸人多住在矮人統治的克里歐門王國，但在人類為主的麥丁頓王國也不乏他們的身影。\n縱使肌肉發達，Rugatha 也有不少著名的吟遊詩人是半獸人。",
+      "en": "Half-orcs are descended from orcs and other peoples, usually humans. Their height and muscular build make their orc heritage easy to see.\nMany live in the dwarf-ruled Chryomen Kingdom, though they are also found in the predominantly human Mattington Kingdom.\nDespite their muscular appearance, several celebrated bards in Rugatha are half-orcs."
+    },
+    "portrait": "assets/portrait/half-orc.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "featherkin": {
+    "name": {
+      "zh": "羽族",
+      "en": "Featherkin"
+    },
+    "subspecies": {
+      "kenku": {
+        "name": {
+          "zh": "天狗",
+          "en": "Kenku"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "天狗天生帶著神秘的色彩，在 Rugatha 的紀錄也較少。\n他們因受到詛咒，只能從聽過的語句拼湊出想說的話，且長在身上的翅膀，無法讓他們飛翔。",
+          "en": "Kenku are shrouded in mystery, and records of them in Rugatha are scarce.\nA curse forces them to piece together what they wish to say from words and phrases they have heard, and the wings on their bodies cannot carry them in flight."
+        },
+        "portrait": "assets/portrait/kenku.png",
+        "creature-type": [
+          "humanoid"
+        ]
+      },
+      "birdman": {
+        "name": {
+          "zh": "鳥人",
+          "en": "Birdman"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "鳥人通常有著大型鳥類的外貌，雙足站立。\n他們熱愛與其他種族交流，常常作為信差或探險隊的先鋒。",
+          "en": "Birdmen typically resemble large birds and stand upright on two legs.\nThey love interacting with other peoples and often serve as couriers or scouts at the forefront of expeditions."
+        },
+        "portrait": "assets/portrait/birdman.png",
+        "creature-type": [
+          "humanoid"
+        ]
+      }
+    },
+    "desc": {
+      "zh": "羽族是有著鳥類外貌，雙足站立的人形生物。\n在 Rugatha，羽族主要生活於部落之中，有時會與其他物種同住。",
+      "en": "Featherkin are birdlike humanoids who walk on two legs.\nIn Rugatha, they mainly live in tribes, sometimes alongside other peoples."
+    },
+    "portrait": "assets/portrait/featherkin.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "dragonborn": {
+    "name": {
+      "zh": "龍人",
+      "en": "Dragonborn"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "龍人是有著龍的樣貌，雙足站立的人形生物。\n在 Rugatha，龍人通常有自己的城鎮，多採世襲統治，統治者被尊稱為「龍冠」。\n儘管他們的祖先為龍，但他們對龍多半有混雜著敬畏、厭惡，與崇拜的複雜情緒。",
+      "en": "Dragonborn are dragonlike humanoids who walk on two legs.\nIn Rugatha, they usually have towns of their own, often ruled by hereditary leaders honored with the title Dragon Crown.\nAlthough dragons are their ancestors, dragonborn generally feel a complex mixture of awe, dislike, and reverence toward them."
+    },
+    "portrait": "assets/portrait/dragonborn.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "foxfolk": {
+    "name": {
+      "zh": "狐狸人",
+      "en": "Foxfolk"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "狐狸人是有著狐狸樣貌，雙足站立的人形生物。\n在 Rugatha，狐狸人常常出沒在人類城鎮，不過通常不會聚集成巨大的族群。\n他們聰明、靈活，也因此能勝任各式各樣不同的工作。",
+      "en": "Foxfolk are foxlike humanoids who walk on two legs.\nIn Rugatha, they often appear in human towns but seldom form large communities of their own.\nThey are clever and agile, suited to many different kinds of work."
+    },
+    "portrait": "assets/portrait/foxfolk.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "lizardfolk": {
+    "name": {
+      "zh": "蜥蜴人",
+      "en": "Lizardfolk"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "蜥蜴人是有著蜥蜴外貌的直立型人形生物，外觀上和龍人有一些相似。\n在 Rugatha 蜥蜴人通常有自己的聚落，但如果是在龍人聚落附近，很容易被攻擊與騷擾。\n蜥蜴人對於獵捕其他動物有很高的興趣，通常也都會拿動物屍體加工成衣著、武器，或甚至戰利品。",
+      "en": "Lizardfolk are upright, lizardlike humanoids who somewhat resemble dragonborn.\nIn Rugatha, they generally have settlements of their own, but those near dragonborn settlements are often attacked and harassed.\nThey are keen hunters and commonly turn animal remains into clothing, weapons, or trophies."
+    },
+    "portrait": "assets/portrait/lizardfolk.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "ratfolk": {
+    "name": {
+      "zh": "老鼠人",
+      "en": "Ratfolk"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "老鼠人是有著老鼠外貌，雙足戰力的人形生物。他們體型較小，身手矯健，也很懂得生存。\nRugatha 的老鼠人比較多避開陽光，居住在山洞內，但也有一些外出冒險的老鼠人的紀錄。\n老鼠人通常為群居，對同伴有著極強的情感，若遇上同伴受傷或死去，個體可能受到影響而產生極大的情緒。",
+      "en": "Ratfolk are small, nimble, ratlike humanoids who know how to survive.\nMost ratfolk in Rugatha avoid sunlight and live in caves, though some have ventured out as adventurers.\nThey usually live in groups and form strong bonds. An injured or dead companion can provoke intense grief in an individual."
+    },
+    "portrait": "assets/portrait/ratfolk.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "catfolk": {
+    "name": {
+      "zh": "貓人",
+      "en": "Catfolk"
+    },
+    "subspecies": {
+      "tabaxi": {
+        "name": {
+          "zh": "班貓人",
+          "en": "Tabaxi"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "班貓人的形象有如站立的貓，體型通常嬌小。\n有些人認為因為人類對貓有獨特的情感，讓斑貓人在人類地區可以很好的發展，但這點尚未被證實。",
+          "en": "Tabaxi look like cats walking upright and are usually small.\nSome believe that humans' particular affection for cats helps tabaxi thrive in human lands, though this has not been confirmed."
+        },
+        "portrait": "assets/portrait/tabaxi-action.png",
+        "creature-type": []
+      },
+      "felian": {
+        "name": {
+          "zh": "菲利安",
+          "en": "Felian"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "菲利安是擁有貓耳朵，其餘皆與人類外型相似的生物。\n對某些人來說，他們的外型讓人感到不安，但也有人覺得他們的耳朵特別可愛，進而喜歡這類生物。",
+          "en": "Felians have cat ears but otherwise look much like humans.\nSome find their appearance unsettling, while others find their ears especially endearing."
+        },
+        "portrait": "assets/portrait/felian.png",
+        "creature-type": []
+      }
+    },
+    "desc": {
+      "zh": "貓人是有著貓的特徵，雙足站立的人形生物。\n在 Rugatha，貓人多與人類群體生活的範圍重疊，且在城市內能有很好的發展。",
+      "en": "Catfolk are bipedal humanoids with feline features.\nIn Rugatha, they often live in the same areas as humans and can thrive in cities."
+    },
+    "portrait": "assets/portrait/catfolk.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "aasimar": {
+    "name": {
+      "zh": "天使人",
+      "en": "Aasimar"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "天使人是有著天使祝福的人形生物。他們的外貌與人類相當，除非張開翅膀，否則很難看出差異。\n天使人的翅膀通常得靠魔法才能張開，而且要到一定歲數才會長出，有些是像天使的羽翼，也有如骷髏般的骨翅。",
+      "en": "Aasimar are humanoids blessed by angels. They look much like humans and are hard to distinguish until they spread their wings.\nTheir wings usually require magic to unfold and only grow in after a certain age. Some have feathered angelic wings, while others have skeletal wings."
+    },
+    "portrait": "assets/portrait/aasimar.png",
+    "creature-type": [
+      "celestial",
+      "humanoid"
+    ]
+  },
+  "tiefling": {
+    "name": {
+      "zh": "魔人",
+      "en": "Tiefling"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "魔人是有著惡魔血脈的人形生物。他們膚色各異，但頭上都長有明顯的角。膚色通常與群體有關，角的形狀則偏向個體差異。\n魔人通常群聚生活，但也偶有在人類城鎮生活的紀錄。通常都是較有身份地位，或有特定專業的魔人，才能避免在人類城鎮被另眼看待。\n然而，一般來說，魔人是充滿好奇的種族，而這份好奇會帶他們通往更多的知識還是致命的危險，就不一定了......",
+      "en": "Tieflings are humanoids with demonic ancestry. Their skin comes in many colors, but they all have prominent horns. Skin color often reflects their community, while horn shape varies more by individual.\nTieflings generally live together, though some live in human towns. Those with status or a particular profession are usually better able to avoid prejudice there.\nIn general, tieflings are curious. Whether that curiosity leads them to greater knowledge or mortal danger is another matter..."
+    },
+    "portrait": "assets/portrait/tiefling.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "dog": {
+    "name": {
+      "zh": "狗",
+      "en": "Dog"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "狗是常見與人類共同居住的生物，有些有明確任務，如守衛、偵查，有些則單純是陪伴。\n狗的種類很多，不同種類間的外貌與性格也有很大的差異。\n曾有零星的狗化身為狼人的紀錄，但目前多為坊間流傳，沒有被證實。",
+      "en": "Dogs commonly live alongside humans. Some have specific jobs, such as guarding or tracking, while others are companions.\nThere are many kinds of dogs, with wide differences in appearance and temperament.\nThere have been scattered stories of dogs turning into werewolves, but these remain unverified rumors."
+    },
+    "portrait": "assets/portrait/dog.png",
+    "creature-type": [
+      "beast"
+    ]
+  },
+  "horse": {
+    "name": {
+      "zh": "馬",
+      "en": "Horse"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "馬是 Rugatha 最常見的坐騎，騎士們有時直接騎乘馬匹，有時則駕馬車。\n城鎮內通常也有馬廄或販售馬匹的馬行，這裡也成了馬匹間交流的場所。\n騎士們與馬匹之間通常要花上幾年的時間，才能培養出默契，但偶爾也有騎士與馬之間有少見的默契，第一次騎乘就毫無障礙。",
+      "en": "Horses are the most common mounts in Rugatha. Knights ride them directly or use them to pull carriages.\nTowns usually have stables or horse dealers, which also give horses a place to socialize.\nIt normally takes knights and horses years to develop a rapport, though a few rare pairs ride together effortlessly from their first meeting."
+    },
+    "portrait": "assets/portrait/horse.png",
+    "creature-type": [
+      "beast"
+    ]
+  },
+  "spider": {
+    "name": {
+      "zh": "蜘蛛",
+      "en": "Spider"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "蜘蛛是 Rugatha 常見的生物之一。他們與蜘蛛神教之間，也有著很大的關聯。\n蛛絲也是其他生物時常拿來作為材料的東西，因此有些人會飼養蜘蛛來取其蛛絲。",
+      "en": "Spiders are common in Rugatha and have close ties to The Spider Religion.\nOther peoples frequently use silk as a material, so some raise spiders to harvest it."
+    },
+    "portrait": "assets/portrait/spider.png",
+    "creature-type": [
+      "beast"
+    ]
+  },
+  "squirrel": {
+    "name": {
+      "zh": "松鼠",
+      "en": "Squirrel"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "松鼠是野外常見的小型生物。通常與人親近，但也有懼怕人類的群體。\n他們體型小，但個性常常十分兇猛，在危急時刻甚至會咬人以求逃脫。\n根據聽得懂松鼠語的冒險者的紀錄，松鼠的語彙中充滿了大量的髒話，與他們親人的外表有著極大的反差。",
+      "en": "Squirrels are common small creatures in the wild. They are usually comfortable around people, though some groups fear humans.\nThey are small but often fierce, and may bite to escape danger.\nAccording to adventurers who understand squirrel speech, their vocabulary is packed with swear words, a sharp contrast with their friendly appearance."
+    },
+    "portrait": "assets/portrait/squirrel.png",
+    "creature-type": [
+      "beast"
+    ]
+  },
+  "wolf": {
+    "name": {
+      "zh": "狼",
+      "en": "Wolf"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "狼是森林中常見的野生生物，通常是群居的。\n他們與大自然共鳴，容易受到月亮的影響。\n狼與人形生物間有機會形成很好的夥伴，有很多一起冒險與生活的紀錄。",
+      "en": "Wolves are common forest animals and usually live in packs.\nThey are attuned to nature and easily affected by the moon.\nWolves can become close companions to humanoids; there are many accounts of them living and adventuring together."
+    },
+    "portrait": "assets/portrait/wolf.png",
+    "creature-type": [
+      "beast"
+    ]
+  },
+  "dryad": {
+    "name": {
+      "zh": "樹靈",
+      "en": "Dryad"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "樹靈是與樹共存的生物，通常見於妖精荒野，接近他們的人通常會感受到強烈的魔法。\nRugatha 的樹靈出生時，通常會與一株植物綁定命運，一旦其中一方死去，另一方則會失去生命。",
+      "en": "Dryads live in close connection with trees and are usually found in the Feywild. Anyone approaching them is likely to sense strong magic.\nAt birth, a dryad in Rugatha is usually bound to a plant. If either one dies, the other dies as well."
+    },
+    "portrait": "assets/portrait/dryad.png",
+    "creature-type": [
+      "fey"
+    ]
+  },
+  "dragon": {
+    "name": {
+      "zh": "龍",
+      "en": "Dragon"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "龍是強大的魔法生物，但數量相對稀少。\n有些龍喜歡化身為人形生物，就進融入並觀察其他生物。\n他們普遍有極高的智商且貪財，但性格與行為模式通常在不同類型的龍之間有所差異，個體差異更大。",
+      "en": "Dragons are powerful magical creatures, though relatively few in number.\nSome like to take humanoid form to mingle with and observe other peoples.\nThey are generally highly intelligent and fond of wealth, but temperament and behavior differ among kinds of dragons and even more among individuals."
+    },
+    "portrait": "assets/portrait/dragon.png",
+    "creature-type": [
+      "dragon"
+    ]
+  },
+  "ogre": {
+    "name": {
+      "zh": "食人魔",
+      "en": "Ogre"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "食人魔是普遍生存於克里歐門王國的巨大物種。他們強壯，但通常也粗魯殘暴。\n食人魔通常有自己的群體，當中弱小的個體通常會被群體踢除，甚至流浪到矮人或人類的城鎮內自力更生。",
+      "en": "Ogres are huge creatures found mainly in the Chryomen Kingdom. They are strong but often rough and violent.\nThey generally live in groups. Weaker individuals may be expelled and even end up fending for themselves in dwarf or human towns."
+    },
+    "portrait": "assets/portrait/ogre.png",
+    "creature-type": [
+      "giant"
+    ]
+  },
+  "construct": {
+    "name": {
+      "zh": "組構體",
+      "en": "Construct"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "組構體是由金屬製作而成的魔法生物，外型不一，通常以其被製造出來的目的來決定外型。\n有些組構體具有自我意識，能獨立行動；有些則受限於其製造者的派遣，執行指定的任務。\n製造組構體的技術，大量集中於克里歐門王國，但也有部分古老的組構體，現在仍出現於麥丁頓王國境內。",
+      "en": "Constructs are magical beings made of metal. Their forms vary and usually reflect the purpose for which they were made.\nSome are self-aware and can act independently; others carry out tasks assigned by their creators.\nThe craft of making constructs is concentrated in the Chryomen Kingdom, though some ancient constructs still appear in the Mattington Kingdom."
+    },
+    "portrait": "assets/portrait/construct.png",
+    "creature-type": [
+      "construct"
+    ]
+  },
+  "plasmoid": {
+    "name": {
+      "zh": "流漿怪",
+      "en": "Plasmoid"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "流漿怪是不具有特定外型的生物，可以依照當下情境或需求，改變其外觀。\n對流漿怪來說，大多數的物質都是可以作為食物的，他們將物體塞入身體內進行消化，而非如一般生物有著完整的消化系統。\n有報告指出，他們可能是從實驗室被製作出來的，但此份報告尚未被證實。",
+      "en": "Plasmoids have no fixed shape and can change their appearance to suit the moment.\nMost substances can serve as food for them. They draw objects into their bodies to digest them rather than using a conventional digestive system.\nOne report claims they may have been created in a laboratory, but this remains unverified."
+    },
+    "portrait": "assets/portrait/plasmoid.png",
+    "creature-type": [
+      "ooze",
+      "humanoid"
+    ]
+  },
+  "spirit": {
+    "name": {
+      "zh": "精靈",
+      "en": "Spirit"
+    },
+    "subspecies": {
+      "wraith": {
+        "name": {
+          "zh": "遊魂",
+          "en": "Wraith"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "遊魂是精靈的其中一種，通常具有較為完整的心智，且可以操控與控制幽靈。",
+          "en": "Wraiths are a type of spirit. They usually retain a relatively complete mind and can command and control specters."
+        },
+        "portrait": "assets/portrait/wraith-action.png",
+        "creature-type": [
+          "undead"
+        ]
+      },
+      "specter": {
+        "name": {
+          "zh": "幽靈",
+          "en": "Specter"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "幽靈是較為低階的精靈，通常有其他生物控制、指揮他們進行特定的行為。\n有一些儀式可以從死者體內抽取出幽靈。",
+          "en": "Specters are lesser spirits, usually directed by other beings to carry out particular acts.\nSome rituals can draw a specter out of a dead body."
+        },
+        "portrait": "assets/portrait/spirit-action.png",
+        "creature-type": [
+          "undead"
+        ]
+      }
+    },
+    "desc": {
+      "zh": "精靈是由生物的魂魄所化身而成。一般通常是生物死去後留下的魂魄，但也有部分精靈是從個體的靈魂直接分離出來的。\n精靈通常有固定的外貌，而且通常會停留在魂魄離開身體時，該身體的模樣。\n除了本體外，精靈也可以寄宿在其他物體上，作為附身或引發騷靈現象。",
+      "en": "Spirits arise from the souls of living beings. Most are souls left behind after death, though some split directly from a living individual's soul.\nThey usually have a stable appearance resembling the body at the moment the soul left it.\nSpirits can also inhabit other objects, possessing them or causing poltergeist activity."
+    },
+    "portrait": "assets/portrait/specter.png",
+    "creature-type": [
+      "undead"
+    ]
+  },
+  "god": {
+    "name": {
+      "zh": "神",
+      "en": "God"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "神是高於一般物種的存在，且沒有固定的外貌形象。\n通常，神會選擇在他們的信眾前以特定形象現身，可能是與信眾相似的物種，或是祂所象徵的意象。\n關於神是如何誕生的，至今還沒有可靠的紀錄。",
+      "en": "Gods exist above ordinary beings and have no fixed appearance.\nThey generally choose a particular form when appearing to followers, perhaps resembling their worshippers or embodying what they represent.\nThere is still no reliable account of how gods come into being."
+    },
+    "portrait": "assets/portrait/god.png",
+    "creature-type": [
+      "celestial"
+    ]
+  },
+  "banderhobb": {
+    "name": {
+      "zh": "綁匪怪蛙",
+      "en": "Banderhobb"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "綁匪怪蛙是誕生於深淵時空的生物，但有能穿越到物質時空的能力。\n他們通常有著巨大青蛙的樣貌，但身體與經過的環境常會沾附難以去除的黏液。\n綁匪怪蛙通常具有魔法，能將自己偽裝成其他生物的樣貌，讓他們能在不同地區隱藏身分。",
+      "en": "Banderhobbs originate in The Deep but can cross into the Material Realm.\nThey usually resemble enormous frogs, though both their bodies and the places they pass through are often coated in stubborn slime.\nThey commonly possess magic that lets them disguise themselves as other creatures and hide their identities in different places."
+    },
+    "portrait": "assets/portrait/banderhobb.png",
+    "creature-type": [
+      "monstrosity"
+    ]
+  },
+  "snakefolk": {
+    "name": {
+      "zh": "蛇人",
+      "en": "Snakefolk"
+    },
+    "subspecies": {
+      "naga": {
+        "name": {
+          "zh": "那伽",
+          "en": "Naga"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "那伽有蛇的頭與尾部，但長出強壯的兩隻手的蛇人。\nRugatha 的那伽通常有信仰，但不一定會是神職人員。",
+          "en": "Naga are snakefolk with serpentine heads and tails and two powerful arms.\nIn Rugatha, they usually practice a faith, though they are not necessarily clergy."
+        },
+        "portrait": "assets/portrait/naga.png",
+        "creature-type": []
+      },
+      "lamia": {
+        "name": {
+          "zh": "拉彌亞",
+          "en": "Lamia"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "拉彌亞是擁有人頭與蛇身的蛇人。\n他們有時會靠衣物遮蔽下半身，假扮成人類，來降低人類的戒心。",
+          "en": "Lamia are snakefolk with human heads and serpentine bodies.\nThey sometimes hide their lower bodies under clothing and pass as humans to put people at ease."
+        },
+        "portrait": "assets/portrait/lamia.png",
+        "creature-type": []
+      }
+    },
+    "desc": {
+      "zh": "蛇人是半人半蛇的生物，不同亞種中，人與蛇的配置不同。\n蛇人通常有很好的身體素質，不是力量大，就是有靈活的身體。",
+      "en": "Snakefolk are beings with both human and snake traits. The arrangement of those traits varies by subspecies.\nThey generally have impressive physical abilities, whether great strength or exceptional flexibility."
+    },
+    "portrait": "assets/portrait/snakefolk.png",
+    "creature-type": [
+      "humanoid",
+      "monstrosity"
+    ]
+  },
+  "shapeshifter": {
+    "name": {
+      "zh": "變形獸",
+      "en": "Shapeshifter"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "變形獸沒有固定的外貌，完全依據需求來變形。\n他們可能混雜在城鎮，也可能出現在野外。\n也因為他們的特色，很多委託人喜歡委託變形獸來進行秘密任務。",
+      "en": "Shapeshifters have no fixed appearance and change form to meet their needs.\nThey may blend into towns or appear in the wild.\nBecause of this ability, clients often hire them for secret missions."
+    },
+    "portrait": "assets/portrait/shapeshifter.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "goatfolk": {
+    "name": {
+      "zh": "羊人",
+      "en": "Goatfolk"
+    },
+    "subspecies": {
+      "satyr": {
+        "name": {
+          "zh": "羊蹄人",
+          "en": "Satyr"
+        },
+        "desc": {
+          "zh": "羊蹄人有著人類的頭，上面長得羊角；下半身則如羊的雙足站立。\n羊蹄人通常很有音樂天份，演奏樂器或舞蹈都是他們常有的特殊技能。同時，他們也是喜歡惡作劇與開玩笑的群體。",
+          "en": "Satyrs have human heads with goat horns and walk on two goatlike legs.\nThey are often gifted musicians and dancers. They also enjoy pranks and jokes."
+        },
+        "portrait": "assets/portrait/satyr.png",
+        "subspecies": {},
+        "creature-type": []
+      },
+      "caprataur": {
+        "name": {
+          "zh": "卡普拉陶爾",
+          "en": "Caprataur"
+        },
+        "desc": {
+          "zh": "卡普拉陶爾的頭上長著羊角與羊耳，下半身則是羊的四隻腳。\n他們通常生活在山丘上，從事農業相關的工作。",
+          "en": "Caprataurs have goat horns and ears and four goat legs beneath their upper bodies.\nThey usually live in the hills and work in agriculture."
+        },
+        "portrait": "assets/portrait/caprataur.png",
+        "subspecies": {},
+        "creature-type": []
+      },
+      "faun": {
+        "name": {
+          "zh": "法翁",
+          "en": "Faun"
+        },
+        "desc": {
+          "zh": "法翁有著明顯的羊的臉部特徵，並同樣保有羊的下半身，雙足站立。\n法翁通常較為重視大自然，與其他羊人相比，他們個性比較平靜沈穩，甚至可以說比較嚴肅。",
+          "en": "Fauns have pronounced goatlike facial features and walk on two goatlike legs.\nThey tend to value nature. Compared with other goatfolk, they are calmer and more composed, even somewhat serious."
+        },
+        "portrait": "assets/portrait/faun.png",
+        "subspecies": {},
+        "creature-type": []
+      }
+    },
+    "desc": {
+      "zh": "羊人是共同具有羊與人的特徵的生物。\n不同的羊人之間有很大差異，但通常都居住在大自然中，較少會在城市見到他們的蹤影。",
+      "en": "Goatfolk share both human and goat features.\nThey differ greatly from one another but usually live close to nature and are seldom seen in cities."
+    },
+    "portrait": "assets/portrait/goatfolk.png",
+    "creature-type": [
+      "fey",
+      "humanoid"
+    ]
+  },
+  "centaur": {
+    "name": {
+      "zh": "半人馬",
+      "en": "Centaur"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "半人馬是上半身為人，下半身為馬的生物。\nRugatha 的半人馬主要分布在妖精荒野內，但在物質世界偶爾也能見到他們的蹤跡。\n半人馬很介意別人把他們當作馬或是坐騎，但被惹怒時，他們一樣會強壯的後腳狠狠的踹你一番。",
+      "en": "Centaurs have human upper bodies and horse lower bodies.\nIn Rugatha, most live in the Feywild, though they are occasionally seen in the Material Realm.\nThey strongly dislike being treated as horses or mounts, and an angry centaur may give you a hard kick with a powerful hind leg."
+    },
+    "portrait": "assets/portrait/centaur.png",
+    "creature-type": [
+      "fey",
+      "monstrosity"
+    ]
+  },
+  "orc": {
+    "name": {
+      "zh": "獸人",
+      "en": "Orc"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "獸人是高大與強壯的種族，他們通常有自己的聚落，鮮少與其他物種同居。\n與半獸人不同，他們通常更崇尚武力，但也因此容易被視為血腥、暴力，甚至只有肌肉沒有大腦。",
+      "en": "Orcs are tall and strong. They usually have settlements of their own and rarely live alongside other peoples.\nUnlike half-orcs, they tend to prize physical force, which can lead others to stereotype them as bloodthirsty, violent, or all muscle and no brains."
+    },
+    "portrait": "assets/portrait/orc.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "fishfolk": {
+    "name": {
+      "zh": "魚人",
+      "en": "Fishfolk"
+    },
+    "subspecies": {
+      "merfolk": {
+        "name": {
+          "zh": "人魚",
+          "en": "Merfolk"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "人魚是有著人類上半身，蹼和腮，以及魚的腰腹的人形生物。\n他們通常以聚落生存，有著帶領宗教和武力的兩名長老領導部落。\n他們與皮西恩部落常常衝突，為 Rugatha 的海底世界帶來腥風血雨。",
+          "en": "Merfolk are humanoids with human upper bodies, webbing, gills, and fishlike lower bodies.\nThey usually live in settlements led by two elders, one responsible for religion and the other for defense.\nTheir frequent conflicts with Piscian tribes have brought bloodshed to Rugatha's undersea world."
+        },
+        "portrait": "assets/portrait/merfolk-action.png",
+        "creature-type": []
+      },
+      "piscian": {
+        "name": {
+          "zh": "皮西恩",
+          "en": "Piscian"
+        },
+        "desc": {
+          "zh": "與人魚不同，皮西恩是擁有魚的外觀，但雙足站立的人形生物。\n皮西恩與人於部落有長久的地域競爭性，也因此常常會發生衝突，甚至引發戰爭。",
+          "en": "Unlike merfolk, Piscians have fishlike features and walk upright on two legs.\nThey have long competed with merfolk tribes for territory, often leading to conflict or even war."
+        },
+        "portrait": "assets/portrait/piscian-action.png",
+        "subspecies": {},
+        "creature-type": []
+      },
+      "basari": {
+        "name": {
+          "zh": "巴薩里",
+          "en": "Basari"
+        },
+        "desc": {
+          "zh": "出生於深淵的魚人物種。\n他們通常不懂通用語，全身充滿黏液，眼神看似無神。\n在深淵中，他們常常被當作廉價勞力，雇用來做體力活。",
+          "en": "Basari are a fishfolk people native to The Deep.\nThey usually do not speak Common. Their bodies are coated in slime, and their eyes seem vacant.\nIn The Deep, they are often hired as cheap labor for physical work."
+        },
+        "portrait": "assets/portrait/basari.png",
+        "subspecies": {},
+        "creature-type": []
+      }
+    },
+    "desc": {
+      "zh": "與人魚不同，魚人指的是擁有魚的外觀，但雙足站立的人形生物。\n魚人與人於部落有長久的地域競爭性，也因此常常會發生衝突，甚至引發戰爭。\n深淵時空的魚人又與物質世界的魚人不同，他們更像集體意識下的單獨個體。",
+      "en": "Unlike merfolk, fishfolk have fishlike features and walk upright on two legs.\nThey have long competed with merfolk tribes for territory, often leading to conflict or even war.\nFishfolk from The Deep differ from those of the Material Realm: they seem more like individual bodies within a collective mind."
+    },
+    "portrait": "assets/portrait/fishfolk.png",
+    "creature-type": [
+      "monstrosity"
+    ]
+  },
+  "werewolf": {
+    "name": {
+      "zh": "狼人",
+      "en": "Werewolf"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "狼人是擁有狼外型，雙足站立的人形生物。\n依照紀錄，他們通常是由人類、狼或狗變身而成。大多數的變身都是在月圓時刻，但也有不少案例發現只要有月亮，他們都能自主變身，月圓時刻更像是他們無法控制自己變身與否。\n關於狼人為何出現，被其他狼人咬或是詛咒都有相關記載，但還沒有一套固定的說法。",
+      "en": "Werewolves are wolf-like humanoids who walk on two legs.\nRecords suggest that they usually originate from humans, wolves, or dogs. Most transformations happen under a full moon, but many accounts say they can transform at will whenever the moon is visible; the full moon may simply make the change uncontrollable.\nBites from other werewolves and curses have both been recorded as possible origins, but there is no single agreed explanation."
+    },
+    "portrait": "assets/portrait/werewolf.png",
+    "creature-type": [
+      "humanoid",
+      "monstrosity"
+    ]
+  },
+  "mimic": {
+    "name": {
+      "zh": "擬態怪",
+      "en": "Mimic"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "擬態怪是冒險中常見的生物之一。\n他們可以幻化成各種體型接近的物體，像是寶箱、木門等，只要冒險者一不小心，就把你黏在他們身上，接著開始啃食你。\n若將擬態怪殺死，他們會變回原本如軟泥般的模樣。",
+      "en": "Mimics are creatures adventurers often encounter.\nThey can take the form of similarly sized objects, such as chests or wooden doors. An unwary adventurer may stick to one and then be eaten.\nWhen killed, a mimic returns to its original, slime-like form."
+    },
+    "portrait": "assets/portrait/mimic.png",
+    "creature-type": [
+      "monstrosity",
+      "ooze"
+    ]
+  },
+  "gargoyle": {
+    "name": {
+      "zh": "石像鬼",
+      "en": "Gargoyle"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "石像鬼是常見的魔物之一。他們有翅膀，由石頭構成，通常不會移動。\n石像鬼通常有明確的保護目標，一旦目標被接觸，便會展開激烈的攻擊。\n石像鬼被殺死時，會碎裂成大量石塊，所有原先存在的魔法氣息也會完全消失。",
+      "en": "Gargoyles are common monsters. Made of stone and equipped with wings, they usually remain motionless.\nThey generally guard a specific target and attack fiercely if it is touched.\nWhen killed, a gargoyle shatters into stones, and all trace of its magic disappears."
+    },
+    "portrait": "assets/portrait/gargoyle.png",
+    "creature-type": [
+      "elemental",
+      "monstrosity"
+    ]
+  },
+  "sphinx": {
+    "name": {
+      "zh": "史芬斯",
+      "en": "Sphinx"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "史芬斯是具有高智商的天界生物。他們通常有著人類的頭部，巨大的與赤，以及獅子的軀體。\nRugatha 的史芬斯常常是好奇的研究者，對於神秘的事物，他們甚至一改平常謹慎小心的行徑，願意以身試法。",
+      "en": "Sphinxes are highly intelligent celestial beings. They typically have human heads, great wings, and lions' bodies.\nSphinxes in Rugatha are curious researchers. Faced with a mystery, they may even abandon their usual caution and experiment on themselves."
+    },
+    "portrait": "assets/portrait/sphinx.png",
+    "creature-type": [
+      "celestial"
+    ]
+  },
+  "bach-tahn": {
+    "name": {
+      "zh": "巴坦",
+      "en": "Bach’tahn"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "巴坦是深淵時空中具有魔法的蟲類。\n據傳搜集足量巴坦的腳，進行適當的儀式，便可從深淵時空穿越回物質時空。\n目前未曾有在物質時空目睹過巴坦的紀錄，即使在深淵時空，通常也不容易見到，有些深淵時空的商人甚至拿他們作為交易的商品。",
+      "en": "Bach’tahn are magical insects of The Deep.\nLegend says that gathering enough Bach’tahn legs and performing the proper ritual allows passage from The Deep back to the Material Realm.\nNo one has recorded seeing one in the Material Realm. They are rare even in The Deep, where some merchants trade them as goods."
+    },
+    "portrait": "assets/portrait/bach-tahn.png",
+    "creature-type": [
+      "beast",
+      "deepling"
+    ]
+  },
+  "zombie": {
+    "name": {
+      "zh": "殭屍",
+      "en": "Zombie"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "多數生物死後都有可能被作為殭屍復活。\n殭屍通常是透過強大的魔法或詛咒復活與操控，但就算施術者死去，殭屍仍然會繼續活動，只是沒有操控者而已。\n不同的殭屍種類狀況不同，有的會保存生前的記憶，有的則不會；有的會使用生前使用的語言，有的則沒有語言能力。當然，這些也和殭屍的腐爛程度有很大的關係。",
+      "en": "Most creatures can potentially be raised as zombies after death.\nPowerful magic or curses usually reanimate and control them. Even if the caster dies, the zombies continue moving without a master.\nDifferent zombies retain different abilities: some remember their lives or speak their former languages, while others do not. Much also depends on how far their bodies have decayed."
+    },
+    "portrait": "assets/portrait/zombie.png",
+    "creature-type": [
+      "undead"
+    ]
+  },
+  "skeleton": {
+    "name": {
+      "zh": "骷髏",
+      "en": "Skeleton"
+    },
+    "subspecies": {
+      "bone-golem": {
+        "name": {
+          "zh": "骸骨魔像",
+          "en": "Bone Golem"
+        },
+        "subspecies": {},
+        "desc": {
+          "zh": "骸骨魔像是以骨骸人工組裝並由魔法驅動的骷髏亞種，屬於構裝造物。\n湯普森製作的巨大骸骨魔像曾在晚宴與儀式中出現。",
+          "en": "Bone golems are a skeletal subtype assembled from bones and animated by magic. They are constructs. \nA large one made by Thompson appears at a banquet and during a ritual."
+        },
+        "portrait": "assets/portrait/bone-golem-action.png",
+        "creature-type": [
+          "construct",
+          "magical-creature"
+        ]
+      }
+    },
+    "desc": {
+      "zh": "骷髏是由骨頭組成的生物。大多數骷髏是由一具完整的骨骸透過魔法復活而成，但也有部分骷髏是由不同個體的骨頭組成，再透過魔法驅動。骸骨魔像便是人工組裝的特殊亞種。\n一般認為骷髏沒有自主意識，其背後有另外的操縱者。",
+      "en": "Skeletons are creatures made of bones. Most are complete skeletons reanimated by magic, but some are assembled from the bones of different individuals and then magically animated. Bone Golems are a special, deliberately assembled subspecies.\nSkeletons are generally thought to lack free will and to be controlled by someone else."
+    },
+    "portrait": "assets/portrait/skeleton.png",
+    "creature-type": [
+      "undead"
+    ]
+  },
+  "lich": {
+    "name": {
+      "zh": "巫妖",
+      "en": "Lich"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "巫妖是古老強大的不死生物，通常是由生者透過追求永生的強大魔法轉化而成。\n目前對於巫妖僅有傳聞，並未有直接目睹的經歷。\n若您有關於巫妖的任何相關訊息，請不吝向我們聯繫，我們會魑7魖／嚙x殮：蠹0魍，齇A囁……魘魕3殯？癲蠱＃魖e噬9齾讚美偉大的永生之主，瓦克松！\n讚美祂！",
+      "en": "Liches are ancient, powerful undead, usually transformed from living people through potent magic in pursuit of immortality.\nSo far, there are only rumors of liches; no direct sightings have been recorded.\nIf you have any information about them, please contact us. We will 魑7魖／嚙x殮：蠹0魍，齇A囁……魘魕3殯？癲蠱＃魖e噬9齾 praise the great Lord of Eternal Life, Vaxon!\nPraise Him!"
+    },
+    "portrait": "assets/portrait/lich.png",
+    "creature-type": [
+      "undead"
+    ]
+  },
+  "quasit": {
+    "name": {
+      "zh": "夸賽魔",
+      "en": "Quasit"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "夸賽魔是一種小型的邪魔生物，通常十分混亂、頑皮。\n他們通常由魔法使用者透過召喚，作為使魔。",
+      "en": "Quasits are small fiends, usually chaotic and mischievous.\nMagic users often summon them as familiars."
+    },
+    "portrait": "assets/portrait/quasit.png",
+    "creature-type": [
+      "fiend"
+    ]
+  },
+  "harengon": {
+    "name": {
+      "zh": "兔人",
+      "en": "Harengon"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "兔人是擁有兔子外型，雙足站立的人形生物。\n他們擁有粗壯的後腿，通常十分靈巧敏捷。\n然而，再一次大型災難後，Rugatha 的兔人瀕臨滅絕。已經很久沒有兔人被目睹的紀錄了。",
+      "en": "Harengon are rabbitlike humanoids who walk on two legs.\nTheir powerful hind legs make them nimble and quick.\nAfter a major disaster, however, the harengon of Rugatha became nearly extinct. None have been sighted for a long time."
+    },
+    "portrait": "assets/portrait/harengon.png",
+    "creature-type": [
+      "humanoid"
+    ]
+  },
+  "crabman": {
+    "name": {
+      "zh": "蟹人",
+      "en": "Crabman"
+    },
+    "desc": {
+      "zh": "蟹人是有著螃蟹的外型，巨大而強壯的軀幹的雙足站立人形生物。\n他們時常擔任守衛類的工作，或是作為傭兵。\n通常居住在深淵時空的克勞辛頓。",
+      "en": "Crabmen are large, powerful, bipedal humanoids with the appearance of crabs.\nThey often work as guards or mercenaries.\nThey usually live in Klaucingtton in The Deep."
+    },
+    "portrait": "assets/portrait/crabman.png",
+    "subspecies": {},
+    "creature-type": [
+      "monstrosity",
+      "deepling",
+      "klaussian"
+    ]
+  },
+  "lobsterfolk": {
+    "name": {
+      "zh": "龍蝦人",
+      "en": "Lobsterfolk"
+    },
+    "desc": {
+      "zh": "龍蝦人是有著龍蝦的外型的雙足站立人形生物。\n他們通常利用他們的螯，做切割類的工作。這當中也當然包含切割屍體。\n通常居住在深淵時空的克勞辛頓。",
+      "en": "Lobsterfolk are bipedal, lobsterlike humanoids.\nThey use their claws for cutting work, including the cutting of bodies.\nThey usually live in Klaucingtton in The Deep."
+    },
+    "portrait": "assets/portrait/lobsterfolk-upright.png",
+    "subspecies": {},
+    "creature-type": [
+      "monstrosity",
+      "deepling",
+      "klaussian"
+    ]
+  },
+  "scorpionfolk": {
+    "name": {
+      "zh": "蠍人",
+      "en": "Scorpionfolk"
+    },
+    "desc": {
+      "zh": "蠍人有著深淵人般涅物似的頭與軀幹，一雙大螯，以及蠍子的八隻腳與尾巴。\n他們爬行的喀啦聲令聽到的人不寒而慄。\n作為有鉗人中最兇狠的一類，他們通常從事劊子手或士兵類的工作。\n通常居住在深淵時空的克勞辛頓。",
+      "en": "Scorpionfolk have heads and torsos resembling those of Deepfolk, two large claws, and the eight legs and tail of a scorpion.\nThe clatter of their movement chills anyone who hears it.\nAmong Klaussians, they are the fiercest and often work as executioners or soldiers.\nThey usually live in Klaucingtton in The Deep."
+    },
+    "portrait": "assets/portrait/scorpionfolk-upright.png",
+    "subspecies": {},
+    "creature-type": [
+      "monstrosity",
+      "deepling",
+      "klaussian"
+    ]
+  },
+  "goliath": {
+    "name": {
+      "zh": "歌利亞",
+      "en": "Goliath"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "歌利亞是身高極高的人形生物。\n他們擁有來自巨人的血脈，但更融入社會。他們主要分布在克里歐門王國，大多生活在部落。\n與粗獷的外貌不同，歌利亞大多性格溫厚，樂於助人。",
+      "en": "Goliaths are exceptionally tall humanoids.\nThey have giant ancestry but are more integrated into society. Most live in tribes in the Chryomen Kingdom.\nDespite their rugged appearance, they are generally gentle and eager to help."
+    },
+    "portrait": "assets/portrait/goliath.png",
+    "creature-type": [
+      "giant",
+      "humanoid"
+    ]
+  },
+  "firbolg": {
+    "name": {
+      "zh": "費爾柏格",
+      "en": "Firbolg"
+    },
+    "subspecies": {},
+    "desc": {
+      "zh": "費爾柏格是隱居在山林中的巨大人形生物。\n他們有巨人的血統，但同時有精類的氣息，與大自然達成高度的協調。\n他們極度重視群體，勝過於個人，且崇尚和平主義。",
+      "en": "Firbolgs are large humanoids who live secluded in mountains and forests.\nThey have giant ancestry as well as a fey presence and live in close harmony with nature.\nThey value their community above the individual and favor peace."
+    },
+    "portrait": "assets/portrait/firbolg.png",
+    "creature-type": [
+      "fey",
+      "giant",
+      "humanoid"
+    ]
+  },
+  "goblin": {
+    "name": {
+      "zh": "哥布林",
+      "en": "Goblin"
+    },
+    "desc": {
+      "zh": "Rugatha 的哥布林大多居住在地底或森林，過著相對原始的生活。\n哥布林們通常是群居生物，以部落為單位而每個部落通常也都有一名哥布林王。他們服從哥布林王的指令，不管是上刀山還是下油鍋，都在所不惜。\n然而因為多數不會用通用語，導致他們與人類間發生不少誤會與衝突。",
+      "en": "Most goblins in Rugatha live underground or in mountain forests and lead relatively traditional lives.\nThey usually live in tribes, each with a goblin king. They obey his commands even when it means facing extreme danger.\nBecause most do not speak Common, misunderstandings and conflicts with humans are frequent."
+    },
+    "portrait": "assets/portrait/goblin.png",
+    "creature-type": [
+      "humanoid"
+    ],
+    "subspecies": {
+      "underground-goblin": {
+        "name": {
+          "zh": "葛仔",
+          "en": "Gobos"
+        },
+        "desc": {
+          "zh": "葛仔是主要居住在地底的哥布林的通稱。\n他們通常無毛，身體偏向深綠色，也較少會通用語。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/underground-goblin.png",
+        "creature-type": []
+      },
+      "forest-goblin": {
+        "name": {
+          "zh": "毛仔",
+          "en": "Furlets"
+        },
+        "desc": {
+          "zh": "毛仔是住在森林的哥布林，身上長有長毛。\n他們的毛色隨生活的地區而有所不同，大多具有保護色，有些甚至有多種不同顏色的毛髮。\n他們與其他物種有較為頻繁的交流。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/forest-goblin-v3.png",
+        "creature-type": []
+      }
+    }
+  },
+  "kobold": {
+    "name": {
+      "zh": "狗頭人",
+      "en": "Kobold"
+    },
+    "desc": {
+      "zh": "狗頭人是小型的群居生物。\n他們通常崇拜和敬畏龍，甚至會在龍的洞穴外自行聚集成小型聚落。\n狗頭人的智商通常不太高，因此常常會做出讓人無法理解的行為。然而他們的生育率極高，因此就算死亡率不低，狗頭人的數量還是能穩定成長。",
+      "en": "Kobolds are small social creatures.\nThey usually worship and fear dragons, sometimes gathering into small settlements outside a dragon's lair.\nKobolds are not generally very bright and often behave in ways others find baffling. Their high birth rate nevertheless lets their population grow despite a high death rate."
+    },
+    "portrait": "assets/portrait/kobold.png",
+    "creature-type": [
+      "humanoid"
+    ],
+    "subspecies": {
+      "hound-kin-kobold": {
+        "name": {
+          "zh": "犬親",
+          "en": "Hound-Kin"
+        },
+        "desc": {
+          "zh": "犬親狗頭人的頭與狗和狼相似，有較長的吻部。\n他們比較常出現在不同族群的城鎮中，也比較多會使用通用語。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/hound-kin-kobold.png",
+        "creature-type": []
+      },
+      "dragon-kin-kobold": {
+        "name": {
+          "zh": "龍嗣",
+          "en": "Dragonheir"
+        },
+        "desc": {
+          "zh": "龍嗣狗頭人的頭部像是蜥蜴，有些甚至與龍相似。\n他們相信自己是龍的後裔與僕人，是龍的忠實崇拜者。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/dragon-kin-kobold.png",
+        "creature-type": []
+      }
+    }
+  },
+  "minotaur": {
+    "name": {
+      "zh": "牛頭怪",
+      "en": "Minotaur"
+    },
+    "desc": {
+      "zh": "牛頭怪是有著有角生物的上半身，雙足站立的人形生物。儘管牛頭是最常見的模樣，也有羊角牛頭怪的群體。\n在 Rugatha，牛頭怪除了自然生殖外，也有特定的魔法或詛咒可以將其他人型生物變為牛頭怪，也因此有人認定牛頭怪是與魔法有頗深淵源的種族。",
+      "en": "Minotaurs are bipedal humanoids with the upper bodies of horned animals. A bull's head is most common, but there are also groups with goat horns.\nIn Rugatha, minotaurs can be born naturally, while certain spells or curses can transform other humanoids into them. For this reason, some consider minotaurs a people with deep ties to magic."
+    },
+    "portrait": "assets/portrait/minotaur.png",
+    "creature-type": [
+      "humanoid",
+      "monstrosity"
+    ],
+    "subspecies": {
+      "bovitaur": {
+        "name": {
+          "zh": "牛首牛頭怪",
+          "en": "Bovitaur"
+        },
+        "desc": {
+          "zh": "擁有牛的頭部的牛頭怪。\n一般而言，這類牛頭怪較為兇猛，也有較多發狂、無法受到控制的紀錄。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/bovitaur-action.png",
+        "creature-type": []
+      },
+      "ramotaur": {
+        "name": {
+          "zh": "羊角牛頭怪",
+          "en": "Ramotaur"
+        },
+        "desc": {
+          "zh": "擁有羚羊頭部的牛頭怪。\n他們是比較溫馴、親近其他種族的牛頭怪",
+          "en": ""
+        },
+        "portrait": "assets/portrait/ramotaur.png",
+        "creature-type": []
+      }
+    }
+  },
+  "demon": {
+    "name": {
+      "zh": "惡魔",
+      "en": "Demon"
+    },
+    "desc": {
+      "zh": "惡魔是巨大的生物，通常具有翅膀且會飛。\n他們通常深謀遠慮，願意花很長的時間做準備，來達成他們的計劃。\n有些惡魔會化成人形，也有些會滲透進人的體內，霸佔其身體。\n惡魔的破壞力強大，且在達成目標前不輕言放棄，千萬別低估他們。",
+      "en": "Demons are enormous creatures, usually winged and able to fly.\nThey tend to plan far ahead, spending a long time preparing to achieve their goals.\nSome assume humanoid form; others infiltrate a person's body and take it over.\nDemons are immensely destructive and do not give up easily. Never underestimate them."
+    },
+    "portrait": "assets/portrait/demon.png",
+    "creature-type": [
+      "fiend"
+    ],
+    "subspecies": {
+      "primal-demon": {
+        "name": {
+          "zh": "古老惡魔",
+          "en": "Ancient Demon"
+        },
+        "desc": {
+          "zh": "古老惡魔是強大而原始的惡魔。\n他們以自己的意思行動，原始、直覺、暴力但聰明。\n一般生物較少有機會見到古老惡魔",
+          "en": ""
+        },
+        "portrait": "assets/portrait/primal-demon.png",
+        "creature-type": []
+      },
+      "contract-demon": {
+        "name": {
+          "zh": "契約惡魔",
+          "en": "Contract Demon"
+        },
+        "desc": {
+          "zh": "契約惡魔多為從其他生物變成惡魔的個體，或是較弱小的惡魔。\n他們靠著與其他更強大的惡魔或勢力合作，履行契約。\n但對一般人形生物來說，他們依然是難以招架的巨大魔物。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/contract-demon.png",
+        "creature-type": []
+      }
+    }
+  },
+  "laztek": {
+    "name": {
+      "zh": "拉茲特獸",
+      "en": "Laztek"
+    },
+    "desc": {
+      "zh": "拉茲特獸是 Rugatha 特有的魔法生物。他們全身黑毛，行動遲緩，但非常的重。\n妖精荒野的野外可以見到野生的拉茲特獸，但主要的拉茲特獸是經由拉索斯教豢養或產出的。\n據傳，受洗成為正式拉索斯教的儀式牽涉拉茲特獸，而被拉茲特獸拒絕的個體，會受到魔法影響，逐漸轉化為拉茲特獸。",
+      "en": "Lazteks are magical creatures native to Rugatha. Covered in black fur, they move slowly but are extremely heavy.\nWild Lazteks can be found in the Feywild, but most are raised or produced by the Laxthos religion.\nAccording to rumor, the rite of full initiation into the faith involves a Laztek. Those rejected by one are magically affected and gradually transform into Lazteks themselves."
+    },
+    "portrait": "assets/portrait/laztek.png",
+    "creature-type": [
+      "monstrosity"
+    ],
+    "subspecies": {
+      "pure-laztek": {
+        "name": {
+          "zh": "純種拉茲特獸",
+          "en": "Pure Laztek"
+        },
+        "desc": {
+          "zh": "純種拉茲特獸是最常見的拉茲特獸，緩慢而溫馴。\n他們通常十分親人。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/pure-laztek-v4.png",
+        "creature-type": []
+      },
+      "primal-laztek": {
+        "name": {
+          "zh": "原初拉茲特獸",
+          "en": "Primal Laztek"
+        },
+        "desc": {
+          "zh": "原初拉茲特獸據傳是史上第一隻拉茲特獸，由古老儀式召喚而產出。\n牠比現行拉茲特獸體型更巨大，且擁有魅惑人心的魔法。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/primal-laztek.png",
+        "creature-type": []
+      },
+      "enhanced-laztek": {
+        "name": {
+          "zh": "特化拉茲特獸",
+          "en": "Enhanced Laztek"
+        },
+        "desc": {
+          "zh": "比起一般的拉茲特獸，特化拉茲特獸移動速度快，四肢修長且充滿肌肉。\n究竟是野生的變異種，還是有人透過魔法培育出來的，尚未有明確的答案。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/enhanced-laztek-v4.png",
+        "creature-type": []
+      }
+    }
+  },
+  "fairy": {
+    "name": {
+      "zh": "仙靈",
+      "en": "Fairy"
+    },
+    "desc": {
+      "zh": "仙靈是體型極小，振翅飛行的精類生物。若不注意看，很有可能把他們視為飛蟲。\n仙靈的話語通常具有強烈的契約力，因此千萬小心，別讓他們知道你的真名，也最好不要答應仙靈任何你沒有把握達成的事。\n在 Rugatha，部分仙靈群體被有心人士大量捕捉，賣去黑市作為高等藥材與食材。據說仙靈的翅膀磨成的粉末能拿來作為魔法物品的材料；而他們的身體在正確的料理下鮮嫩可口。",
+      "en": "Fairies are tiny winged fey. Without a close look, they can be mistaken for flying insects.\nTheir words often carry the force of a binding bargain. Be careful never to reveal your true name to a fairy, and avoid promising anything you may not be able to fulfill.\nIn Rugatha, some fairy communities are captured and sold on the black market as prized medicinal and culinary ingredients. Their ground wings are said to be useful in making magic items, while their bodies can be tender and tasty when prepared correctly."
+    },
+    "portrait": "assets/portrait/fairy.png",
+    "creature-type": [
+      "fey"
+    ],
+    "subspecies": {
+      "fae": {
+        "name": {
+          "zh": "仙子",
+          "en": "Fae"
+        },
+        "desc": {
+          "zh": "仙子有著人形外貌的仙靈，長著一對透明的翅膀。\n他們通常友善、親人，且沒有惡意。\n仙子較容易在野外樹林間看見，妖精荒野也是他們的據點。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/fae.png",
+        "creature-type": []
+      },
+      "pixie": {
+        "name": {
+          "zh": "小精靈",
+          "en": "Pixie"
+        },
+        "desc": {
+          "zh": "小精靈長得並不像人類。\n他們更黑暗、充滿心機，喜歡惡作劇。\n小精靈常生存在城市中，躲藏在下水道或廢棄工廠內。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/pixie.png",
+        "creature-type": []
+      }
+    }
+  },
+  "frogfolk": {
+    "name": {
+      "zh": "蛙人",
+      "en": "Frogfolk"
+    },
+    "desc": {
+      "zh": "蛙人是擁有青蛙外型的雙足站立人形生物。\n他們多數出現在雨林或沼澤，以小型野生動物為食。\n深淵時空的蛙人更發展出了能在沼澤內長時間暫停呼吸的技能，好讓他們在資源匱乏的環境下，做出精準的捕食。",
+      "en": "Frogfolk are bipedal humanoids with froglike features.\nMost live in rainforests or swamps and feed on small wild animals.\nFrogfolk from The Deep have also learned to hold their breath for long periods in swamps, helping them hunt precisely where resources are scarce."
+    },
+    "portrait": "assets/portrait/frogfolk.png",
+    "creature-type": [
+      "humanoid"
+    ],
+    "subspecies": {
+      "ranakin": {
+        "name": {
+          "zh": "蛙民",
+          "en": "Ranakin"
+        },
+        "desc": {
+          "zh": "蛙民是文明的蛙人，以聚落居住。他們通常體色較為鮮艷，肌膚光滑。\n蛙民樂於與其他種族貿易，交換物資，也是很好的嚮導。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/ranakin.png",
+        "creature-type": []
+      },
+      "bullywags": {
+        "name": {
+          "zh": "恐蛙人",
+          "en": "Bullywags"
+        },
+        "desc": {
+          "zh": "恐蛙人身上通常較為黏稠，膚色常與周圍環境相似，甚至有人認為他們能隨環境改變體色。\n他們主要生存在深淵時空或沼澤的暗處，靠著迅捷的跳躍能力，獵捕不幸經過的旅人。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/bullywags.png",
+        "creature-type": []
+      }
+    }
+  },
+  "vampire": {
+    "name": {
+      "zh": "吸血鬼",
+      "en": "Vampire"
+    },
+    "desc": {
+      "zh": "吸血鬼是靠吸血進食的人型生物，與著非比尋常的長壽生命。\n吸血鬼十分重視血脈，不論是親生的子嗣，或是透過吸血將其納入家族的後裔---當然也有不少不幸的個體被吸血鬼作為食物，被吸乾血液而亡。也有一些說法認為吸血鬼是被詛咒才得到他的不死之身。\n一般的吸血鬼無法接觸陽光，總是在黑暗中潛行，但較高深的吸血鬼則可以在陽光下行走。",
+      "en": "Vampires are humanoids who feed on blood and live extraordinarily long lives.\nThey care deeply about bloodlines, whether through their biological children or descendants brought into the family by feeding. Many unfortunate victims, of course, are simply drained to death. Some believe a curse gave vampires their undying lives.\nOrdinary vampires cannot bear sunlight and move through the dark, though more powerful ones can walk in daylight."
+    },
+    "portrait": "assets/portrait/vampire.png",
+    "creature-type": [
+      "humanoid",
+      "undead"
+    ],
+    "subspecies": {
+      "pure-blood": {
+        "name": {
+          "zh": "純血",
+          "en": "Pure-Blood"
+        },
+        "desc": {
+          "zh": "純血吸血鬼是由純血吸血鬼生下的子嗣。\n他們通常有著精緻的外表，高貴而美麗。\n若沒注意他們藏起的尖牙或毫無血色的嘴唇，很有可能誤將他們視為人類。\n純血吸血鬼通常也有較高深的魔法能力，可以將自己化為煙霧，或甚至改變形體。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/pure-blood.png",
+        "creature-type": []
+      },
+      "dhampir": {
+        "name": {
+          "zh": "半吸血鬼",
+          "en": "Dhampir"
+        },
+        "desc": {
+          "zh": "半吸血鬼通常是被啃咬吸血而成為吸血鬼的後裔。\n然而，也有純血吸血鬼因為生病，被退為半吸血鬼。\n他們經常身瘡百孔，形容枯槁，且需要定時進行大量的吸血，否則會陷入如野獸般的原始狀態。\n他們常常被純血吸血鬼是為奴隸或僕人，甚至不讓他們進入其住所。",
+          "en": ""
+        },
+        "portrait": "assets/portrait/dhampir.png",
+        "creature-type": []
+      }
+    }
+  }
+}

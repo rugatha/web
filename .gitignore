@@ -1,5 +1,3 @@
-assets/banner/campaign-pcs/
-docs/deities-religion-introductions.md
 
 # OS files
 .DS_Store
@@ -42,9 +40,10 @@ test-results/
 
 # Local working directories
 /skills/
-/species/
 /lab/
 /cicd/
+/assets/banner/campaign-pcs/
+/docs/deities-religion-introductions.md
 
 # Experience subscription assets and private historical responses
 /experience/subscribe/experience-notification.html
