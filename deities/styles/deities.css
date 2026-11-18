@@ -56,7 +56,7 @@ h1 { margin: 0; font-family: var(--font-display); font-size: clamp(28px, 3.3vw, 
   background: radial-gradient(ellipse at 50% 24%, rgba(var(--deity-rgb), .14), transparent 55%), var(--panel);
   box-shadow: 0 12px 28px rgba(0,0,0,.15);
   isolation: isolate;
-  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+  transition: border-color 240ms ease, box-shadow 240ms ease;
 }
 .deity-front::before, .deity-back::before {
   content: "";
@@ -93,12 +93,19 @@ h1 { margin: 0; font-family: var(--font-display); font-size: clamp(28px, 3.3vw, 
 .flip-hint { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(var(--deity-rgb), .35); border-radius: 50%; background: rgba(var(--deity-rgb), .06); }
 .flip-hint svg { width: 23px; height: 23px; }
 .deity-back { position: absolute; inset: 0; transform: rotateY(180deg); background: radial-gradient(ellipse at top, rgba(var(--deity-rgb), .14), transparent 60%), #20332d; }
-.followers-header { position: relative; padding: 26px 24px 20px; border-bottom: 1px solid rgba(var(--deity-rgb), .2); text-align: center; }
+.deity-card.is-flip-settled .deity-card-inner { transform: none; transform-style: flat; transition: none; }
+.deity-card.is-flip-settled .deity-front { visibility: hidden; }
+.deity-card.is-flip-settled .deity-back { transform: none; }
+.deity-card.is-repositioning .deity-card-inner { transition: none; }
+.followers-header { position: relative; flex-shrink: 0; padding: 26px 24px 20px; border-bottom: 1px solid rgba(var(--deity-rgb), .2); text-align: center; }
 .followers-deity-name { margin: 0 0 8px; color: rgb(var(--deity-rgb)); font-family: var(--font-display); font-size: 22px; line-height: 1.4; }
 .followers-header h3 { margin: 0 0 14px; font-size: 13px; font-weight: 500; letter-spacing: .12em; color: var(--muted); }
 .deity-return { position: relative; z-index: 3; min-height: 36px; padding: 6px 16px; border: 1px solid rgba(var(--deity-rgb), .4); border-radius: 999px; background: rgba(var(--deity-rgb), .07); color: rgb(var(--deity-rgb)); font: inherit; font-size: 12px; cursor: pointer; }
 .deity-return:hover { background: rgba(var(--deity-rgb), .16); }
-.followers-content { min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 20px 24px 24px; scrollbar-width: thin; scrollbar-color: rgba(var(--deity-rgb), .35) transparent; }
+.followers-content { min-height: 0; flex: 1 1 0; overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; -webkit-overflow-scrolling: touch; padding: 20px 24px 24px; scrollbar-gutter: stable; scrollbar-color: rgba(var(--deity-rgb), .65) rgba(var(--deity-rgb), .06); }
+.followers-content::-webkit-scrollbar { width: 8px; }
+.followers-content::-webkit-scrollbar-track { background: rgba(var(--deity-rgb), .06); border-radius: 8px; }
+.followers-content::-webkit-scrollbar-thumb { background: rgba(var(--deity-rgb), .65); border-radius: 8px; }
 .followers-content:focus-visible { outline: 2px solid var(--accent); outline-offset: -4px; }
 .followers-note { margin: 0 0 20px; color: var(--muted); font-size: 12px; line-height: 1.8; }
 .followers-shared { margin: -8px 0 20px; font-size: 12px; color: rgb(var(--deity-rgb)); }
@@ -138,6 +145,7 @@ h1 { margin: 0; font-family: var(--font-display); font-size: clamp(28px, 3.3vw, 
 }
 @media (hover: hover) and (pointer: fine) {
   .deity-card:not(.deity-card--skeleton):hover { transform: perspective(1200px) translateY(-6px) rotateX(1.5deg) rotateY(-2.5deg); }
+  .deity-card.is-flipped:hover { transform: translateY(-6px); }
   .deity-card:hover .deity-front, .deity-card:hover .deity-back { border-color: rgba(var(--deity-rgb), .65); box-shadow: 0 24px 44px rgba(0,0,0,.3); }
 }
 @media (prefers-reduced-motion: reduce) {

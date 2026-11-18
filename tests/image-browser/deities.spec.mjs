@@ -139,3 +139,63 @@ test('hover lifts and tilts the card while reduced motion keeps it still', async
   await expect(card).toHaveClass(/is-flipped/);
   await expect(card.locator('.deity-back')).not.toHaveAttribute('inert', '');
 });
+
+for (const width of [1280, 390]) {
+  test(`long NPC rosters scroll to the final person using ${width === 390 ? 'touch' : 'wheel'}`, async ({ browser, baseURL }) => {
+    const context = await browser.newContext({
+      viewport: { width, height: 900 },
+      hasTouch: width === 390,
+      isMobile: width === 390
+    });
+    const page = await context.newPage();
+    await page.route('**/*', route => {
+      const request = route.request();
+      if (request.resourceType() === 'script' && new URL(request.url()).origin !== new URL(baseURL).origin) return route.abort();
+      return route.continue();
+    });
+    await page.goto(`${baseURL}/deities/`);
+    const card = page.locator('.deity-card[data-deity="laxthos"]');
+    await card.locator('.deity-flip').click();
+    await expect(card).toHaveClass(/is-flip-settled/);
+    const last = card.locator('.followers-group--npc a').last();
+    await expect(last).toHaveAttribute('href', /npc_page/);
+    const content = card.locator('.followers-content');
+    await card.scrollIntoViewIfNeeded();
+    const bounds = await content.boundingBox();
+    const headerBefore = await card.locator('.followers-header').boundingBox();
+    const pageScroll = await page.evaluate(() => scrollY);
+    const scrollRange = await content.evaluate(el => el.scrollHeight - el.clientHeight);
+    expect(scrollRange).toBeGreaterThan(300);
+    if (width === 390) {
+      const cdp = await context.newCDPSession(page);
+      for (let swipe = 0; swipe < 6; swipe++) {
+        await cdp.send('Input.synthesizeScrollGesture', {
+          x: bounds.x + bounds.width / 2,
+          y: bounds.y + bounds.height - 32,
+          yDistance: -280,
+          speed: 1200,
+          gestureSourceType: 'touch',
+          preventFling: true
+        });
+      }
+      await cdp.detach();
+    } else {
+      await page.mouse.move(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2);
+      await page.mouse.wheel(0, 3000);
+    }
+    await expect.poll(() => content.evaluate(el => el.scrollHeight - el.clientHeight - el.scrollTop)).toBeLessThan(2);
+    await expect(card).toHaveClass(/is-flipped/);
+    expect(await page.evaluate(() => scrollY)).toBe(pageScroll);
+    const headerAfter = await card.locator('.followers-header').boundingBox();
+    expect(headerAfter.y).toBeCloseTo(headerBefore.y, 0);
+    const lastBounds = await last.boundingBox();
+    const contentBounds = await content.boundingBox();
+    expect(lastBounds.y).toBeGreaterThanOrEqual(contentBounds.y);
+    expect(lastBounds.y + lastBounds.height).toBeLessThanOrEqual(contentBounds.y + contentBounds.height);
+    await page.screenshot({ path: `test-results/image-browser/deities-npc-scrolled-${width}.png` });
+    const href = await last.getAttribute('href');
+    await last.click();
+    await expect(page).toHaveURL(new URL(href, `${baseURL}/deities/`).href);
+    await context.close();
+  });
+}

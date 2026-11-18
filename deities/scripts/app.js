@@ -31,8 +31,8 @@ const followerData = { pc: null, npc: null };
 const followerStatus = { pc: "idle", npc: "idle" };
 let followersPromise = null;
 const followerCopy = {
-  zh: { title: "信徒名錄", expand: "點選翻至人物清冊", collapse: "翻回正面", loading: "正在載入人物…", empty: "尚無可確認的人物紀錄。", failed: "人物資料暫時無法載入。", retry: "重新載入", pc: "玩家角色", npc: "非玩家角色", note: "依已知信仰紀錄整理，可能包含過往信仰。", spider: "蜘蛛神教共同名單" },
-  en: { title: "Followers", expand: "Flip to view followers", collapse: "Back to deity", loading: "Loading characters…", empty: "No confirmed character records yet.", failed: "Character records could not be loaded.", retry: "Try again", pc: "Player characters", npc: "Non-player characters", note: "Known faith records may include former affiliations.", spider: "Shared Spider Religion roster" }
+  zh: { title: "信徒名錄", expand: "點選翻至人物清冊", collapse: "翻回正面", loading: "正在載入人物…", empty: "尚無可確認的人物紀錄。", failed: "人物資料暫時無法載入。", retry: "重新載入", pc: "玩家角色", npc: "非玩家角色", note: "依已知信仰紀錄整理，可能包含過往信仰。較長的清單可向下捲動查看。", spider: "蜘蛛神教共同名單" },
+  en: { title: "Followers", expand: "Flip to view followers", collapse: "Back to deity", loading: "Loading characters…", empty: "No confirmed character records yet.", failed: "Character records could not be loaded.", retry: "Try again", pc: "Player characters", npc: "Non-player characters", note: "Known faith records may include former affiliations. Scroll down to see longer lists.", spider: "Shared Spider Religion roster" }
 };
 const DEITY_SKELETON_GROUPS = [3, 3];
 const PAGE_TITLES = {
@@ -159,7 +159,25 @@ function createCard(deity) {
   const back = createFollowers(deity);
   inner.append(front, back);
   card.appendChild(inner);
+  let settleTimer;
+  // Keep the 3D transition, then return the visible back to an ordinary scroll
+  // surface. Chromium can otherwise send wheel/touch scrolling through the
+  // doubly rotated back face to the page beneath it.
+  const settleFlip = () => {
+    window.clearTimeout(settleTimer);
+    if (card.classList.contains("is-flipped")) card.classList.add("is-flip-settled");
+  };
+  inner.addEventListener("transitionend", event => {
+    if (event.target === inner && event.propertyName === "transform") settleFlip();
+  });
   const setFlipped = (flipped, focus = true) => {
+    window.clearTimeout(settleTimer);
+    if (!flipped && card.classList.contains("is-flip-settled")) {
+      card.classList.add("is-repositioning");
+      card.classList.remove("is-flip-settled");
+      void inner.offsetHeight;
+      card.classList.remove("is-repositioning");
+    }
     card.classList.toggle("is-flipped", flipped);
     front.inert = flipped;
     front.setAttribute("aria-hidden", String(flipped));
@@ -170,6 +188,8 @@ function createCard(deity) {
       flippedCards.add(deity.slug);
       renderFollowers(back.querySelector(".followers-content"), deity);
       if (Object.values(followerStatus).includes("idle")) loadFollowers();
+      if (!focus || window.matchMedia("(prefers-reduced-motion: reduce)").matches) settleFlip();
+      else settleTimer = window.setTimeout(settleFlip, 700);
     } else {
       flippedCards.delete(deity.slug);
     }
@@ -177,9 +197,25 @@ function createCard(deity) {
   };
   flip.addEventListener("click", () => setFlipped(true));
   back.querySelector(".deity-return").addEventListener("click", () => setFlipped(false));
+  let pointerStart = null;
+  let dragged = false;
+  back.addEventListener("pointerdown", event => {
+    pointerStart = { x: event.clientX, y: event.clientY };
+    dragged = false;
+  });
+  back.addEventListener("pointermove", event => {
+    if (pointerStart && Math.hypot(event.clientX - pointerStart.x, event.clientY - pointerStart.y) > 8) dragged = true;
+  });
+  back.addEventListener("pointercancel", () => { dragged = true; });
   back.addEventListener("click", event => {
     const target = event.target;
+    if (dragged) return;
     if (!target.matches(".deity-back, .followers-header, .followers-content, .followers-group")) return;
+    // The scrollbar is an input control, not blank space for flipping back.
+    if (target.matches(".followers-content")) {
+      const scrollbarWidth = target.offsetWidth - target.clientWidth;
+      if (event.clientX >= target.getBoundingClientRect().right - scrollbarWidth) return;
+    }
     if (window.getSelection()?.isCollapsed === false) return;
     setFlipped(false);
   });
