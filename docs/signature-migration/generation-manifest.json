@@ -1538,5 +1538,16 @@
     "file": "Marsh_the_Willow.png",
     "generator": "built-in image_gen",
     "transparent_background": true
+  },
+  {
+    "id": "Tar_Mo",
+    "name": "Tar'Mo",
+    "class": "武僧／聖騎士",
+    "note": "尖頂寺出身，龍恩的師兄；信仰拉索斯；左臂肘下截肢，善用交際與蠱惑。",
+    "design": "Pale ivory cursive with angular T and M and a curved-blade underline.",
+    "prompt": "Use case: logo-brand. Asset: transparent PNG fantasy character handwritten signature, only exact text \"Tar’Mo\" (T a r apostrophe M o), legible in an elegant yet sharp, confident personal cursive hand. One single signature centered with generous clear margins, horizontal composition. Warm pale ivory ink, long angular T crossbar, tightly linked lowercase ar, prominent pointed M, a restrained sweeping underline tapering like a curved blade. Slight natural ink variation, no typeset font appearance. Character is a cunning half-elf monk/paladin. Only this signature and its underline. Actual transparent background, no paper, no checkerboard, no shadows, no scene, no extra symbols or text.",
+    "file": "Tar_Mo.png",
+    "generator": "built-in image_gen",
+    "transparent_background": true
   }
 ]

@@ -819,7 +819,7 @@
       "url": "/campaigns/pages/rugatha-plus/plus-c08/"
     },
     "prev-chapter": "plus-c08-chpt02",
-    "next-chapter": null
+    "next-chapter": "plus-c08-chpt04"
   },
   "lite-c13-chpt02": {
     "story-arc": {
@@ -827,6 +827,14 @@
       "url": "/campaigns/pages/rugatha-lite/lite-c13/"
     },
     "prev-chapter": "lite-c13-chpt01",
+    "next-chapter": null
+  },
+  "plus-c08-chpt04": {
+    "story-arc": {
+      "id": "plus-c08",
+      "url": "/campaigns/pages/rugatha-plus/plus-c08/"
+    },
+    "prev-chapter": "plus-c08-chpt03",
     "next-chapter": null
   }
 }

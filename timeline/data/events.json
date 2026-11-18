@@ -761,6 +761,36 @@
   {
     "type": "event",
     "era": "new-dranison",
+    "tag": "rugatha-plus",
+    "date": "15051.05.16",
+    "titleZh": "尖頂寺封鎖與蘿琳計畫",
+    "titleEn": "Peak Temple Sealed and the Plan Involving Roline",
+    "descZh": "住持採納尚恩提議，決定架起魔法屏障，僅保留正門出入口並加倍守衛。\n尚恩奉命率隊前往麥克嵩，打算邀請龍恩在意的蘿琳・休斯來寺，作為解決危機的棋子。",
+    "descEn": "The abbot accepted Sean's proposal to erect a magical barrier, leaving only the main gate open and doubling its guards.\nSean was sent to Macksohn to invite Roline Hughes, whom Ron cared for deeply, to the temple as a pawn in resolving the crisis."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
+    "tag": "rugatha-plus",
+    "date": "15051.05.18",
+    "titleZh": "塔爾莫揭露巫妖手臂的來歷",
+    "titleEn": "Tar'Mo Reveals the Lich Arm's Origins",
+    "descZh": "塔爾莫向龍恩透露，自己曾在拉索斯教的灰祠試圖接上乾枯手臂卻失敗，隨後偷走手臂逃入妖精荒野。\n他承認在中心樹前將手臂交給龍恩，並決定轉而協助他。",
+    "descEn": "Tar'Mo told Ron that he had tried and failed to attach the withered arm at the Grey Shrine, a Laxthos chapel, then stolen it and fled to the Feywild.\nHe admitted giving the arm to Ron before the central tree and resolved to help him instead."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
+    "tag": "rugatha-plus",
+    "date": "15051.05.19",
+    "titleZh": "通往尖頂寺的傳送陣重現",
+    "titleEn": "The Teleportation Circle to Peak Temple Rediscovered",
+    "descZh": "酷爆從聖津菈大教堂地下二樓掃具間的鬆動磚頭後發現隱藏空間，波擴大入口，讓冒險者進入。\n眾人找到由六顆石頭環繞的傳送陣；波讀懂拉索斯語操作說明，邀請瑪莉修女同行。",
+    "descEn": "Kubao discovered a hidden space behind a loose brick in the second-basement cleaning cupboard of the Great Shield Cathedral of Keinra. Beau widened the opening so the adventurers could enter.\nThey found a teleportation circle ringed by six stones. Beau read its Laxthosian instructions and invited Sister Mari to accompany them."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
     "titleZh": "抵達覆羽莊園",
     "titleEn": "Arriving the Feathered Estate",
     "tag": "rugatha-lite",

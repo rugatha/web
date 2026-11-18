@@ -51,14 +51,6 @@ test-results/
 /experience/experience_his.csv
 /experience/feedback_his.csv
 
-# Campaign working pages (keep the listed pages tracked)
-campaigns/pages/rugatha-plus/plus-c08/*
-!campaigns/pages/rugatha-plus/plus-c08/chpt01.html
-!campaigns/pages/rugatha-plus/plus-c08/chpt02.html
-!campaigns/pages/rugatha-plus/plus-c08/chpt03.html
-!campaigns/pages/rugatha-plus/plus-c08/temp.html
-!campaigns/pages/rugatha-plus/plus-c08/index.html
-
 # Full spell catalogs live in Firebase Storage; test caches must stay outside Git.
 /toolbox/spells/spells-phb.json
 /toolbox/race_class/class_spells.json

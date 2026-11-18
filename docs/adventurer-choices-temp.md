@@ -14,7 +14,7 @@
 - `lock: 1`：需要選擇角色並輸入角色密碼，才能檢視正文與作答區；不公布其他角色答案。
 - `lock: 0`：直接顯示正文與答案區，不顯示密碼欄位或作答表單，也不啟動匿名登入。
 
-目前第一、二章為 `lock: 0`，第三章為 `lock: 1`。題目組別中尚未作答的角色預設計入選項 1，並在該選項顯示角色圖示；實際送出後改用 Firestore 儲存的答案。
+目前第一至三章為 `lock: 0`，第四章 Rite of Seclusion 為 `lock: 1`。題目組別中尚未作答的角色預設計入選項 1，並在該選項顯示角色圖示；實際送出後改用 Firestore 儲存的答案。
 預設結果由組別名單與現有答案計算，不建立假的提交紀錄，每個角色僅計一次。
 本題顯示四個固定選項與第五項「自行填答」。自訂答案最多 4000 字，保留換行與空白，以純文字顯示。
 龍恩屬於獨立的 `ron` 組，其餘五人屬於 `party` 組。
@@ -51,3 +51,5 @@
 管理授權使用本章 `passwordHashes.admin`，僅可讀取本章答案，不具其他管理後台權限，也不能新增、修改或刪除角色答案。密碼明文與實際雜湊不存入 git；更新可執行 `scripts/setup_adventurer_choices.py --apply --review-password`，工具會隱藏輸入。角色密碼、既有答案及其他管理密碼在一般設定同步時保留。
 
 第三章設定：`python3 scripts/setup_adventurer_choices.py --config campaigns/data/plus-08-chpt03-multiple-choices.json --copy-credentials-from plus-c08/chpt02 --apply`。複製既有六名角色及管理檢視密碼，不重設密碼。第二章同步公開設定時使用原本第二章 config 加 `--apply`，保留答案。
+
+第四章設定：`python3 scripts/setup_adventurer_choices.py --config campaigns/data/plus-08-chpt04-multiple-choices.json --copy-credentials-from plus-c08/chpt03 --apply`。題目 `ron-and-elder-tiara` 僅龍恩可作答，其餘角色可解鎖閱讀。2026-11-18 已同步第三章公開與第四章上鎖設定，第四章沿用第三章全部角色及管理檢視密碼雜湊；既有答案保留。

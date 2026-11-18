@@ -11,7 +11,7 @@ Reviewed 2026-11-11 against the Chinese chapter, `npc/data/characters.json`, `pc
 | 波 | Beau | NPC name |
 | 蘿琳・休斯 | Roline Hughes | NPC name; Lady Hughes uses the same surname |
 | 喜利／喜力 | Siri | PC Siri Oslee; given-name form matches the dialogue |
-| 龍恩／隆恩 | Ron | PC name |
+| 龍恩 | Ron | PC name |
 | 米多莉 | Midori | PC name |
 | 薩梅爾 | Samael | PC name |
 | YHWH | YHWH | PC name |

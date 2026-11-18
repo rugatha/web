@@ -1,0 +1,71 @@
+{
+  "chapterKey": "plus-c08/chpt04",
+  "groups": {
+    "ron": [
+      {
+        "id": "ron",
+        "name": "龍恩",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fron-cde8f9ab40%2Fimage-5dfe37fb.png?alt=media",
+        "nameEn": "Ron"
+      }
+    ],
+    "party": [
+      {
+        "id": "midori",
+        "name": "米多莉",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fmidori-16add8cb4c%2Fimage-c1d32fd6.png?alt=media",
+        "nameEn": "Midori"
+      },
+      {
+        "id": "samael",
+        "name": "薩梅爾",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fsamael-d063d635c9%2Fimage-c0ac9dbc.jpg?alt=media",
+        "nameEn": "Samael"
+      },
+      {
+        "id": "siri",
+        "name": "喜利",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fsiri-oslee-fcce8003f4%2Fimage-f5f50b6f.png?alt=media",
+        "nameEn": "Siri"
+      },
+      {
+        "id": "yhwh",
+        "name": "YHWH",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fyhwh-98297c2873%2Fimage-8f7a19f4.png?alt=media",
+        "nameEn": "YHWH"
+      },
+      {
+        "id": "beau",
+        "name": "波",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbeau%2Fthumb-32ff9ced.webp?alt=media",
+        "nameEn": "Beau"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "ron-and-elder-tiara",
+      "group": "ron",
+      "question": "龍恩的抉擇：",
+      "options": [
+        "「蒂雅菈長老，該是你做出最後貢獻的時候了。」朝塔爾莫點點頭",
+        "「別急，他還有利用價值。」要塔爾莫先不要衝動",
+        "「我們把他作為人質，直衝住持的廳堂吧。」",
+        "出手先將蒂雅菈長老擊暈，之後再想要怎麼做"
+      ],
+      "customLabel": "自行填答",
+      "showCustomOption": true,
+      "en": {
+        "question": "Ron's choice:",
+        "options": [
+          "“Elder Tiara, it is time for you to make your final contribution.” Nod to Tar'Mo.",
+          "“Wait. She is still useful.” Tell Tar'Mo not to act rashly.",
+          "“Let's take her hostage and make straight for the abbot's hall.”",
+          "Knock Elder Tiara unconscious first, then decide what to do."
+        ],
+        "customLabel": "Write your own answer"
+      }
+    }
+  ],
+  "credentialMode": "character-password"
+}

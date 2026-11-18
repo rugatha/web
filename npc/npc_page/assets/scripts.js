@@ -1,5 +1,5 @@
 import { createLocationCards } from "../../../shared/location-cards.js";
-import { signatureFiles } from "./signature-files.js";
+import { signatureFiles } from "./signature-files.js?v=20261118-tarmo-1";
 
 const npcId = getRequestedNpc();
 
@@ -1091,8 +1091,8 @@ function getMetaContainer() {
 function renderSignature(npc) {
   const profile = document.querySelector(".npc-profile");
   if (!profile) return;
-  const src = signatureFiles[npc.id];
   const existing = profile.querySelector(".npc-signature");
+  const src = signatureFiles[npc.id] || existing?.getAttribute("src");
   if (!src) {
     existing?.remove();
     return;

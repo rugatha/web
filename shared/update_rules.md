@@ -7,6 +7,14 @@
 2. 若是「純文案微調」，只需處理實際受影響項目；若是「新增章節 / 新增 NPC / 新增故事弧」，要完整檢查下列所有連動。
 3. 本文件優先以目前專案內實際存在的檔案路徑為準。
 
+## Git 忽略規則與正式部署清單
+
+每次新增、移除或修改 `.gitignore` 規則，都必須同步檢查 `/scripts/package-pages.mjs` 的 `publicDirectories`、`publicRootFiles` 及排除規則，依預期發布範圍調整；新增網站最上層目錄時也一樣。
+
+- 從 `.gitignore` 移除網站內容時，確認其目錄／檔案已允許發布，且相關頁面、資料與資源都會被打包。維護工具等僅需版本控制的內容，不應因此加入公開白名單。
+- 加入 `.gitignore` 的內容若應停止公開，確認部署打包也會排除；已追蹤檔案仍會被 `git ls-files --cached` 列出，不能只靠 `.gitignore`。
+- 發布範圍變更後，在 repo 外的全新暫存目錄執行 `node scripts/package-pages.mjs <暫存目錄>`，確認應發布的檔案存在、應排除的檔案不存在，再部署。
+
 ## 公開圖片 Storage
 
 NPC 及已搬移的封面／章節使用公開 Storage 版本；2026-11-06 另完成 Melvin 版本修復與 Plus c08 補圖。現用 NPC 清單為 `/docs/image-migration/npc-current.json`，本輪封面／章節為 `/docs/image-migration/campaign-current.json`；試搬歷史另保留於 `pilot-manifest.json`。實際發布與驗收狀態以 `/docs/image-migration/README.md`、`/to-do.md` 為準。

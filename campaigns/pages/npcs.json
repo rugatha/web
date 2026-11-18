@@ -689,22 +689,31 @@
       "Yuki",
       "Captain_Marin",
       "Zek",
-      "pc:Watson"
+      "pc:Watson",
+      "Tar_Mo"
     ],
     "plus-c08-chpt02": [
       "Beau",
       "Bishop_Robinson",
       "Iochi_Mari",
-      "Yuki"
+      "Yuki",
+      "Tar_Mo"
     ],
     "plus-c08-chpt03": [
       "Beau",
       "Bishop_Robinson",
       "Iochi_Mari",
-      "Kubao"
+      "Kubao",
+      "Tar_Mo"
     ],
     "lite-c13-chpt02": [
       "Fre'Do"
+    ],
+    "plus-c08-chpt04": [
+      "Beau",
+      "Iochi_Mari",
+      "Roline_Hughes",
+      "Tar_Mo"
     ]
   }
 }

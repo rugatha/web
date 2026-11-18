@@ -392,8 +392,8 @@
     "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbeau%2Fthumb-32ff9ced.webp?alt=media",
     "status": "alive",
     "gender": "female",
-    "descZh": "麥克嵩當地的七歲小女孩。父母在比武大會中死去，因此成為孤兒。\n因為視台北市議員為偶像，要求加入一起冒險。在米多莉與喜利的認可下加入台北市議員，並視米多莉為媽媽，喜利為爸爸。\n說話十分衝動不忌言，才剛加入台北市議員，得罪了當中不少人。\n到妖精荒野後，以救世主的身份留在那裡，但最終除了波外，其他當地居民都在拉索斯教入侵後被消滅。回到物質世界時已年過40，便和冒險者們一起繼續以剿滅拉索斯教為目標冒險。\n15051.05.14，波支持米多莉的決定，也表示自己已準備好繼續對抗拉索斯教。米多莉決定尋找龍恩後，她隨隊伍於 15051.05.16 返回聖津菈大教堂。",
-    "descEn": "A seven-year-old girl from Macksohn whose parents died in the Macksohn Tournament, leaving her an orphan.\nBeau idolized the Councilors of Taipei and asked to join them. With Midori and Siri's approval, she joined the party and came to see Midori as her mother and Siri as her father.\nShe speaks recklessly and offended several party members soon after joining.\nAfter traveling to the Feywild, Beau stayed there as the Savior. When the Laxthos invasion destroyed the local civilization, she was the only survivor. Because of the Feywild's time distortion, she returned to the material world in her forties and continued traveling with the adventurers to fight Laxthos.\nOn 15051.05.14, Beau supported Midori’s decision and declared herself ready to continue fighting the Laxthos cult. After Midori chose to search for Ron, Beau returned with the party to Saint Keinra Cathedral on 15051.05.16.",
+    "descZh": "麥克嵩當地的七歲小女孩。父母在比武大會中死去，因此成為孤兒。\n因為視台北市議員為偶像，要求加入一起冒險。在米多莉與喜利的認可下加入台北市議員，並視米多莉為媽媽，喜利為爸爸。\n說話十分衝動不忌言，才剛加入台北市議員，得罪了當中不少人。\n到妖精荒野後，以救世主的身份留在那裡，但最終除了波外，其他當地居民都在拉索斯教入侵後被消滅。回到物質世界時已年過40，便和冒險者們一起繼續以剿滅拉索斯教為目標冒險。\n15051.05.14，波支持米多莉的決定，也表示自己已準備好繼續對抗拉索斯教。米多莉決定尋找龍恩後，她隨隊伍於 15051.05.16 返回聖津菈大教堂。\n15051.05.19，酷爆找到地下隱藏空間後，波用劍擴大掃具間的入口。她讀懂法陣上基礎拉索斯語的操作說明，讓眾人站在六顆石頭間的空隙，並邀請瑪莉修女一同前往尋找龍恩。",
+    "descEn": "A seven-year-old girl from Macksohn whose parents died in the Macksohn Tournament, leaving her an orphan.\nBeau idolized the Councilors of Taipei and asked to join them. With Midori and Siri's approval, she joined the party and came to see Midori as her mother and Siri as her father.\nShe speaks recklessly and offended several party members soon after joining.\nAfter traveling to the Feywild, Beau stayed there as the Savior. When the Laxthos invasion destroyed the local civilization, she was the only survivor. Because of the Feywild's time distortion, she returned to the material world in her forties and continued traveling with the adventurers to fight Laxthos.\nOn 15051.05.14, Beau supported Midori’s decision and declared herself ready to continue fighting the Laxthos cult. After Midori chose to search for Ron, Beau returned with the party to Saint Keinra Cathedral on 15051.05.16.\nOn 15051.05.19, after Kubao discovered a hidden underground space, Beau widened the entrance in the cleaning cupboard with her sword. She read the circle's instructions in basic Laxthosian, directed the others to stand between its six stones, and invited Sister Mari to join the search for Ron.",
     "related": [
       "Elby__Dr_White",
       "Zek"
@@ -2457,6 +2457,53 @@
     }
   },
   {
+    "id": "Tar_Mo",
+    "url": "npc/npc_page/pages/Tar_Mo.html",
+    "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftar_mo%2Freading-f5a247c8.webp?alt=media",
+    "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftar_mo%2Fthumb-1d70eabc.webp?alt=media",
+    "status": "alive",
+    "gender": "male",
+    "descZh": "尖頂寺出身的半妖精武僧兼聖騎士，信仰拉索斯，是龍恩年幼時帶領他的師兄。外貌俊俏而風霜漸重，常帶著難以讀懂的微笑；左臂在肘下截斷，僅餘右手。\n依塔爾莫本人所述，他離開尖頂寺後曾風光一時，卻因得罪派系而四處逃亡，最後受與尖頂寺有關的拉索斯教會收留，躲進偏僻的「灰祠」。看守一隻受神父與修女保護的乾枯手臂時，他一時衝動斬斷自己的手臂，卻無法將其接上；之後偷走手臂，逃往妖精荒野。\n在妖精荒野的中心樹前，他遇見渴求金屬手臂的龍恩，認定師弟比自己更像「被選中的人」，並將那隻手臂交給龍恩。他返回物質世界的旅程比預期多耗了數年，部分妖精荒野的記憶也無法找回。\n他在尖頂寺與龍恩重逢，任由師弟毆打自己，仍微笑著詢問那隻變異手臂是否好用。他以拉索斯語重述「本該屬於你的東西，終究會回到你身邊」，隨後開啟黑色漩渦，帶龍恩到安靜處交談，表明願意協助他。\n他協助龍恩在尖頂寺尋找眼睛，嘗試清除僧人的記憶或施加蠱惑，再放走他們，暗中監看住持的動向。他主張藉恐慌逼寺方替他們找出眼睛，並告訴龍恩，得到眼睛後將有足以對抗世界的力量。\n蒂雅菈長老前來通報閉門儀式與住持的計畫。當她表示受詛咒所限、不能洩露找尋眼睛的方法時，塔爾莫以彎刀抵住她的喉嚨，將最後的決定交給龍恩。",
+    "descEn": "A half-elf monk and paladin from Peak Temple who worships Laxthos. Tar'Mo was the senior who guided Ron as a young novice. Once strikingly handsome, he now bears the marks of a harder life and often wears an unreadable smile. His left arm is amputated below the elbow; only his right hand remains.\nAccording to Tar'Mo, he enjoyed a period of success after leaving Peak Temple, but offended powerful factions and became a fugitive. A Laxthos church connected to the temple eventually sheltered him in the remote Grey Shrine. While guarding a withered arm protected by its priests and nuns, he impulsively severed his own arm, only to find that he could not attach the relic. He later stole it and fled to the Feywild.\nAt the central tree in the Feywild, he encountered Ron pleading for a metal arm. Convinced that his junior was more likely than he was to be a “chosen one,” he gave the arm to Ron. His return to the Material Realm took several years longer than expected, and parts of his memories of the Feywild remain inaccessible.\nhe reunited with Ron at Peak Temple. He let his junior punch him, still smiling as he asked how the altered arm was working. Repeating the Laxthosian words “What was meant to be yours will find its way back to you in the end,” he opened a black vortex, led Ron somewhere quiet to talk, and offered his help.\nhe helped Ron search Peak Temple for the eye. He tried wiping monks' memories or charming them before releasing them to watch the abbot's movements. His plan was to create panic and make the temple find the eye for them. He told Ron that possessing it would give him the power to take on the world.\nElder Tiara brought news of the rite of seclusion and the abbot's plan. When she said a curse prevented her from revealing how the eye would be found, Tar'Mo held a curved blade to her throat and left the final decision to Ron.",
+    "related": [],
+    "nameEn": "Tar'Mo",
+    "nameZh": "塔爾莫",
+    "raceEn": [
+      "Half-Elf"
+    ],
+    "raceZh": [
+      "半妖精"
+    ],
+    "religionEn": [
+      "Laxthos"
+    ],
+    "religionZh": [
+      "拉索斯"
+    ],
+    "locationEn": [
+      "Peak Temple",
+      "The Great Tent"
+    ],
+    "locationZh": [
+      "尖頂寺",
+      "巨大帳篷"
+    ],
+    "qaZh": {
+      "Q": "塔爾莫微笑著攔住你：「別急著出拳。讓他們以為自己還有選擇，不是更有趣嗎？」",
+      "C1": "收起武器，先聽聽他的計畫。",
+      "C2": "拒絕繞圈子，直接逼問眼前的守衛。",
+      "R1": "塔爾莫滿意地點頭，放走了神情恍惚的守衛。「有時候，讓別人替你找答案，比自己動手更快。」",
+      "R2": "塔爾莫退到一旁，笑意未減。「也好。那就讓我看看，你的拳頭能問出多少答案。」"
+    },
+    "qaEn": {
+      "Q": "Tar'Mo stops you with a smile. “Don't throw a punch just yet. Isn't it more interesting to let them think they still have a choice?”",
+      "C1": "Put away your weapon and hear his plan.",
+      "C2": "Refuse to play games and question the guard directly.",
+      "R1": "Tar'Mo nods approvingly and lets the dazed guard go. “Sometimes it's quicker to let someone else find the answer for you.”",
+      "R2": "Tar'Mo steps aside, his smile unchanged. “Very well. Let's see how many answers your fists can get.”"
+    }
+  },
+  {
     "id": "The_Hooded_Figure",
     "url": "npc/npc_page/pages/The_Hooded_Figure.html",
     "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fthe-hooded-figure%2Freading-d5153425.webp?alt=media",
@@ -2560,8 +2607,8 @@
     "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fiochi-mari-review-v2%2Fthumb-9545f222.webp?alt=media",
     "status": "alive",
     "gender": "female",
-    "descZh": "一名有著銀白毛色的狐狸人修女，目前在方努爾市的聖津菈大教堂服務。\n小時候和米多莉、小雪一起在尼姆孤兒院長大。\n米多莉等人回到方努爾市後，伊洛協助接待他們，也陪同處理聖拉雅米島事件後續與小雪相關的狀況。\n娜塔莎港戰鬥後，瑪莉在舊教堂協助接待冒險者。羅賓遜主教准許眾人自由搜索聖津菈大教堂，但指定必須由她陪同，協助尋找通往尖頂寺的傳送陣。\n15051.05.16，冒險者返回聖津菈大教堂後，瑪莉接手協助眾人搜索地下傳送陣，提醒他們地下室十分廣大，找到法陣後仍需要研究啟動方式。",
-    "descEn": "A foxfolk nun with silver-white fur, currently serving at St. Keinra Cathedral in Fanaur City.\nShe grew up in Nym Orphanage together with Midori and Yuki.\nAfter Midori and the others returned to Fanaur, Iochi helped receive them and became involved in the aftermath of the St. Rayami Island incident and the situation surrounding Yuki.\nAfter the battle at Natasha Harbor, Mari helped host the adventurers at the old church. Bishop Robinson permitted them to search Saint Keinra Cathedral freely for a teleportation circle to Peak Temple, but required her to accompany them.\nOn 15051.05.16, after the adventurers returned to Saint Keinra Cathedral, Mari took over assisting their search for the underground teleportation circle. She warned that the basements were extensive and that even after finding it they would need to study how to activate it.",
+    "descZh": "一名有著銀白毛色的狐狸人修女，目前在方努爾市的聖津菈大教堂服務。\n小時候和米多莉、小雪一起在尼姆孤兒院長大。\n米多莉等人回到方努爾市後，伊洛協助接待他們，也陪同處理聖拉雅米島事件後續與小雪相關的狀況。\n娜塔莎港戰鬥後，瑪莉在舊教堂協助接待冒險者。羅賓遜主教准許眾人自由搜索聖津菈大教堂，但指定必須由她陪同，協助尋找通往尖頂寺的傳送陣。\n15051.05.16，冒險者返回聖津菈大教堂後，瑪莉接手協助眾人搜索地下傳送陣，提醒他們地下室十分廣大，找到法陣後仍需要研究啟動方式。\n15051.05.19，瑪莉與冒險者進入酷爆找到的地下隱藏空間，見到由六顆石頭環繞的傳送陣。波邀請她一同前往尋找龍恩，她表示若同行，必須先告知羅賓遜主教。",
+    "descEn": "A foxfolk nun with silver-white fur, currently serving at St. Keinra Cathedral in Fanaur City.\nShe grew up in Nym Orphanage together with Midori and Yuki.\nAfter Midori and the others returned to Fanaur, Iochi helped receive them and became involved in the aftermath of the St. Rayami Island incident and the situation surrounding Yuki.\nAfter the battle at Natasha Harbor, Mari helped host the adventurers at the old church. Bishop Robinson permitted them to search Saint Keinra Cathedral freely for a teleportation circle to Peak Temple, but required her to accompany them.\nOn 15051.05.16, after the adventurers returned to Saint Keinra Cathedral, Mari took over assisting their search for the underground teleportation circle. She warned that the basements were extensive and that even after finding it they would need to study how to activate it.\nOn 15051.05.19, Mari entered the hidden underground chamber Kubao had discovered with the adventurers and saw the teleportation circle ringed by six stones. Beau invited her to join the search for Ron; Mari said she would first need to inform Bishop Robinson.",
     "related": [
       "Bishop_Robinson",
       "Reese_Tig",
@@ -5267,8 +5314,8 @@
     "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Froline-hughes-review-v2%2Fthumb-27164c8e.webp?alt=media",
     "status": "alive",
     "gender": "female",
-    "descZh": "麥克嵩貴族休斯家族的新任掌門人。\n從小就展現出極好的社交天賦，因此父親努力培養他作為家族的接班人。\n與米多莉和龍恩在麥克嵩王宮花園初見。\n在比武大會事件後對龍恩產生了極深的情愫。\n在認識龍恩前，似乎常常出入貴族的秘密雜交派對，但如今亟欲隱藏這段過去。\n在帕拉丁等人於15048年再次回到麥克嵩時，用心幫助他們，甚至作為掩護讓他們逃出王宮。不久後被安娜冒用身份，襲擊帕拉丁。後來再次見到帕拉丁時，協助落魄的他買東西。\n在圖伊特打開第三隻眼時，他的靈魂成了與交易之神芬諾爾交易時，被犧牲的祭品，身體化成了陶瓷。\n15048年的蘿琳在小黑屋掛著斗篷，作為交易之神的代言人。\n15050年在YHWH等人回到麥克嵩時，與YHWH在文創區巧遇，但看起來眼神空洞，似乎還沒有恢復成原本的樣貌。\n龍恩等人到了大學城，透過歷史區區長安德烈亞・戴依的儀式，犧牲靈魂乾淨的麥爾文，成功將蘿琳的靈魂送回他的體內。",
-    "descEn": "The new head of the noble Hughes family of Macksohn.\nRoline showed exceptional social talent from childhood, and her father raised her as the family's successor.\nShe first met Midori and Ron in the Macksohn Royal Garden.\nAfter the Macksohn Tournament, she developed deep feelings for Ron.\nBefore meeting Ron, she seemed to have frequently attended secret noble orgies, a past she now desperately wants to hide.\nWhen Paladin and the others returned to Macksohn in 15048, Roline helped them sincerely and even covered their escape from the palace. Soon after, Anna impersonated her and attacked Paladin. When Roline later met the ruined Paladin again, she helped him buy supplies.\nWhen Tweeter opened his third eye, Roline's soul became the sacrifice in a bargain with Phynoir, god of trade, and her body turned into porcelain.\nThe Roline of 15048 hung a cloak in the Dark House as Phynoir's proxy.\nIn 15050, when YHWH and the others returned to Macksohn, YHWH met her in the Creative District, but her eyes looked hollow and she did not seem fully restored.\nWhen Ron and the others reached the Great Citadel, they performed a ritual with Andrea Day of the History District, sacrificing the pure-souled Melvin and successfully returning Roline's soul to her body.",
+    "descZh": "麥克嵩貴族休斯家族的新任掌門人。\n從小就展現出極好的社交天賦，因此父親努力培養他作為家族的接班人。\n與米多莉和龍恩在麥克嵩王宮花園初見。\n在比武大會事件後對龍恩產生了極深的情愫。\n在認識龍恩前，似乎常常出入貴族的秘密雜交派對，但如今亟欲隱藏這段過去。\n在帕拉丁等人於15048年再次回到麥克嵩時，用心幫助他們，甚至作為掩護讓他們逃出王宮。不久後被安娜冒用身份，襲擊帕拉丁。後來再次見到帕拉丁時，協助落魄的他買東西。\n在圖伊特打開第三隻眼時，他的靈魂成了與交易之神芬諾爾交易時，被犧牲的祭品，身體化成了陶瓷。\n15048年的蘿琳在小黑屋掛著斗篷，作為交易之神的代言人。\n15050年在YHWH等人回到麥克嵩時，與YHWH在文創區巧遇，但看起來眼神空洞，似乎還沒有恢復成原本的樣貌。\n龍恩等人到了大學城，透過歷史區區長安德烈亞・戴依的儀式，犧牲靈魂乾淨的麥爾文，成功將蘿琳的靈魂送回他的體內。\n15051.05.16，尖頂寺僧人尚恩向住持提議，利用龍恩對蘿琳的在意，邀請她前往尖頂寺協助解決危機。住持同意派尚恩帶隊前往麥克嵩與她交涉。",
+    "descEn": "The new head of the noble Hughes family of Macksohn.\nRoline showed exceptional social talent from childhood, and her father raised her as the family's successor.\nShe first met Midori and Ron in the Macksohn Royal Garden.\nAfter the Macksohn Tournament, she developed deep feelings for Ron.\nBefore meeting Ron, she seemed to have frequently attended secret noble orgies, a past she now desperately wants to hide.\nWhen Paladin and the others returned to Macksohn in 15048, Roline helped them sincerely and even covered their escape from the palace. Soon after, Anna impersonated her and attacked Paladin. When Roline later met the ruined Paladin again, she helped him buy supplies.\nWhen Tweeter opened his third eye, Roline's soul became the sacrifice in a bargain with Phynoir, god of trade, and her body turned into porcelain.\nThe Roline of 15048 hung a cloak in the Dark House as Phynoir's proxy.\nIn 15050, when YHWH and the others returned to Macksohn, YHWH met her in the Creative District, but her eyes looked hollow and she did not seem fully restored.\nWhen Ron and the others reached the Great Citadel, they performed a ritual with Andrea Day of the History District, sacrificing the pure-souled Melvin and successfully returning Roline's soul to her body.\nOn 15051.05.16, Sean, a monk of Peak Temple, proposed inviting Roline to help resolve the crisis, using Ron's attachment to her. The abbot agreed and sent Sean to lead a party to Macksohn to speak with her.",
     "related": [
       "Andrea_Day",
       "Anna",
@@ -6930,8 +6977,8 @@
     "imageThumb": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fkubao%2Fthumb-213f5ba7.webp?alt=media",
     "status": "alive",
     "gender": "neutral",
-    "descZh": "薩梅爾於嚎叫森林守夜時撿起的幼狼，隨著台北市議員們一起行動。\n在地下城時，透過烏柯告知大家他的本名為戴倫，不過願意接受酷爆為他的名字。\n雷米在多侖維爾爆炸身亡後，酷爆曾啃食地上的肉塊，被薩梅爾趕緊抱起制止。",
-    "descEn": "A wolf pup that Samael found during a night watch in the Howling Forest, who then traveled with the Taipei City Council adventurers.\nIn the dungeon, Kubao told the group through Uko that his original name was Darren, though he was willing to accept Kubao as his name.\nAfter Lemmy died in the Dorrenville explosion, Kubao started eating the pieces of flesh on the ground, and Samael quickly picked him up to stop him.",
+    "descZh": "薩梅爾於嚎叫森林守夜時撿起的幼狼，隨著台北市議員們一起行動。\n在地下城時，透過烏柯告知大家他的本名為戴倫，不過願意接受酷爆為他的名字。\n雷米在多侖維爾爆炸身亡後，酷爆曾啃食地上的肉塊，被薩梅爾趕緊抱起制止。\n15051.05.19，酷爆鑽過聖津菈大教堂地下二樓掃具間水桶後的鬆動磚頭，發現下方隱藏的空間，讓冒險者終於找到通往尖頂寺的傳送陣。",
+    "descEn": "A wolf pup that Samael found during a night watch in the Howling Forest, who then traveled with the Taipei City Council adventurers.\nIn the dungeon, Kubao told the group through Uko that his original name was Darren, though he was willing to accept Kubao as his name.\nAfter Lemmy died in the Dorrenville explosion, Kubao started eating the pieces of flesh on the ground, and Samael quickly picked him up to stop him.\nOn 15051.05.19, Kubao squeezed past a loose brick behind a bucket in the second-basement cleaning cupboard of the Great Shield Cathedral of Keinra. He discovered a hidden chamber beneath it, allowing the adventurers to finally find the teleportation circle to Peak Temple.",
     "related": [
       "Manbao"
     ],

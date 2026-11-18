@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "batch": "all",
+  "bucket": "rugatha-87e15.firebasestorage.app",
+  "encoder": "1.6.0\nlibsharpyuv: 0.4.2",
+  "variants": {
+    "thumb": {
+      "maxEdge": 480,
+      "quality": 82
+    },
+    "reading": {
+      "maxEdge": 1600,
+      "quality": 85
+    }
+  },
+  "images": [
+    {
+      "source": "npc/individual_pics/Tar_Mo.png",
+      "id": "tar_mo-986f99147e",
+      "category": "npcs",
+      "entityIds": [
+        "Tar_Mo"
+      ],
+      "original": {
+        "bytes": 2301541,
+        "sha256": "9c10cb9a1dab3dbc392db999fda5e28dad31e0575ed59bd01c1ee29bdb7c32f8",
+        "width": 1254,
+        "height": 1254,
+        "archive": {
+          "object": "image-originals/npcs/tar_mo/original-9c10cb9a.png",
+          "sha256": "9c10cb9a1dab3dbc392db999fda5e28dad31e0575ed59bd01c1ee29bdb7c32f8",
+          "bytes": 2301541,
+          "contentType": "image/png",
+          "cacheControl": "private, no-store",
+          "storageClass": "STANDARD",
+          "generation": "1795007219064179"
+        }
+      },
+      "variants": {
+        "thumb": {
+          "object": "public-images/npcs/tar_mo/thumb-1d70eabc.webp",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftar_mo%2Fthumb-1d70eabc.webp?alt=media",
+          "sha256": "1d70eabc4f440bdb868bd3cdc8dd47534b570fd42123be7e90335e0900877df1",
+          "bytes": 31726,
+          "width": 480,
+          "height": 480,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable"
+        },
+        "reading": {
+          "object": "public-images/npcs/tar_mo/reading-f5a247c8.webp",
+          "url": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Ftar_mo%2Freading-f5a247c8.webp?alt=media",
+          "sha256": "f5a247c8e0d57d26c1aca8650ac201986d6d5dfe085c8e5c6b2c006e1bad6a23",
+          "bytes": 186490,
+          "width": 1254,
+          "height": 1254,
+          "contentType": "image/webp",
+          "cacheControl": "public, max-age=31536000, immutable"
+        }
+      },
+      "role": "portrait"
+    }
+  ]
+}

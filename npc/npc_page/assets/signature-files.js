@@ -1,5 +1,6 @@
 // Firebase Storage signatures, keyed by character ID; see docs/signature-migration/published.json.
 export const signatureFiles = {
+  "Tar_Mo": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Ftar_mo%2Fsignature-6eb078e4.png?alt=media",
   "Addie_Applewood": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Faddie_applewood%2Fsignature-b0df5760.png?alt=media",
   "Alex": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Falex%2Fsignature-870250b1.png?alt=media",
   "Alfenor": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsignatures%2Falfenor%2Fsignature-fa694c6a.png?alt=media",
