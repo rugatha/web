@@ -21,8 +21,23 @@
       page_title: 'D&D 法術表 | Rugatha'
     });
   </script>
-  <title>D&D 法術表 | Rugatha</title>
-  <link rel="icon" type="image/png" href="../../assets/logo/rugatha-favicon.png">
+  <title>D&amp;D 法術表 | Rugatha</title>
+  <meta name="description" content="採用 D&amp;D 5e 2014 版《玩家手冊》內容 僅供遊玩使用，請勿外流">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rugatha.com/toolbox/spells/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rugatha">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:title" content="D&amp;D 法術表 | Rugatha">
+  <meta property="og:description" content="採用 D&amp;D 5e 2014 版《玩家手冊》內容 僅供遊玩使用，請勿外流">
+  <meta property="og:url" content="https://rugatha.com/toolbox/spells/">
+  <meta property="og:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="D&amp;D 法術表 | Rugatha">
+  <meta name="twitter:description" content="採用 D&amp;D 5e 2014 版《玩家手冊》內容 僅供遊玩使用，請勿外流">
+  <meta name="twitter:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+<link rel="icon" type="image/png" href="../../assets/logo/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../../shared/styles/theme.css">
   <script src="../../shared/language-toggle.js"></script>
@@ -473,6 +488,15 @@
       color: #27251f;
       background: var(--spell-panel);
       border-left: 4px solid var(--spell-accent);
+    }
+
+    @media (min-width: 721px) {
+      .detail-row .detail-panel {
+        position: sticky;
+        left: 0;
+        width: min(980px, calc(100vw - 78px));
+        box-sizing: border-box;
+      }
     }
 
     .detail-meta {
@@ -1174,7 +1198,7 @@
       <section class="title-bar">
         <div class="title-copy">
           <h1 data-i18n="title">D&D 法術表</h1>
-          <p data-i18n="intro">採用D&amp;D 5e玩家手冊內容<br>僅供遊玩使用，請勿外流</p>
+          <p data-i18n="intro">採用 D&amp;D 5e 2014 版《玩家手冊》內容<br>僅供遊玩使用，請勿外流</p>
           <hr class="title-divider" aria-hidden="true">
           <p data-i18n="bookIntro">可將會使用到的法術按下「加入」<br>一併在「法術書」裡檢視</p>
           <div class="view-toggle" aria-label="切換法術視圖">
@@ -1305,9 +1329,10 @@
 
   <script defer src="../../shared/pwa.js?v=20261018-spell-catalog"></script>
   <script src="../../shared/firebase.config.js?v=character-books-20261019-public2"></script>
-  <script src="../../shared/spell-catalog.js?v=20261018-storage-1"></script>
+  <script src="../../shared/spell-catalog.js?v=20261122-content-2"></script>
   <script type="module">
     import { spellSearchRank } from "../../shared/spellbook-state.js?v=20261019-character-books-1";
+    import { stripSpellTags, formatSpellTime, formatSpellRange, formatSpellDuration, spellTableCellText } from "../../shared/spell-display.js?v=20261122-content-2";
     let bookController = null;
     let bookWritable = false;
     const state = {
@@ -1322,7 +1347,6 @@
       spellBook: new Set(),
       classSpells: null,
     };
-
 
     const classOrder = ["吟遊詩人", "牧師", "德魯伊", "聖騎士", "遊俠", "術士", "契術師", "法師"];
 
@@ -1344,13 +1368,13 @@
 
     const translations = {
       zh: {
-        title: "D&D 法術表", intro: "採用D&amp;D 5e玩家手冊內容<br>僅供遊玩使用，請勿外流",
+        title: "D&D 法術表", intro: "採用 D&amp;D 5e 2014 版《玩家手冊》內容<br>僅供遊玩使用，請勿外流",
         bookIntro: "可將會使用到的法術按下「加入」<br>一併在「法術書」裡檢視",
         listView: "法術清單", classView: "職業法術", bookView: "法術書", search: "搜尋",
         searchPlaceholder: "法術名稱、英文、內容、材料", level: "等級", school: "學派", all: "全部",
         components: "成分", verbal: "聲", somatic: "勢", material: "材", damage: "傷害", save: "豁免",
         concentration: "專注", attack: "攻擊", ritual: "儀式", yes: "是", no: "否", reset: "重設",
-        spellAttack: "法術命中", savingAttack: "豁免攻擊", nonAttack: "非攻擊", source: "來源",
+        spellAttack: "法術攻擊檢定", savingAttack: "豁免檢定", nonAttack: "無攻擊或豁免檢定", source: "來源",
         syncHelpTitle: "法術書同步與匯入說明",
         syncHelpImport: "請在原本儲存法術的瀏覽器與網站登入，再按「確認合併匯入」。你也可以稍後處理；匯入會保留本機備份。",
         syncHelpOffline: "只有「已同步」表示伺服器已確認。尚未同步的變更只保留在目前頁面，關閉或重新整理前請先等待同步完成。",
@@ -1362,7 +1386,7 @@
         currentLanguage: "目前語言：中文", browserTitle: "D&D 法術表 | Rugatha"
       },
       en: {
-        title: "D&D Spell List", intro: "Based on the D&amp;D 5e Player's Handbook.<br>For play use only.",
+        title: "D&D Spell List", intro: "Based on the 2014 D&amp;D 5e Player’s Handbook.<br>For play use only.",
         bookIntro: "Use Add to save spells you use.<br>Review them together in Spellbook.",
         listView: "Spell List", classView: "Class Spells", bookView: "Spellbook", search: "Search",
         searchPlaceholder: "Spell name or details", level: "Level", school: "School", all: "All",
@@ -1471,38 +1495,25 @@
       return Number(level) === 0 ? "戲法" : `${level} 環`;
     }
 
+    function ruleTermText(value) {
+      // The legacy damage metadata calls radiant 光耀; use the prose term in Chinese UI.
+      return currentLanguage === "zh" && value === "光耀" ? "光輝" : value;
+    }
+
     function arrayText(value) {
-      return Array.isArray(value) && value.length ? value.join(currentLanguage === "en" ? ", " : "、") : "—";
+      return Array.isArray(value) && value.length ? value.map(ruleTermText).join(currentLanguage === "en" ? ", " : "、") : "—";
     }
 
     function formatTime(time) {
-      if (!Array.isArray(time) || !time.length) return "—";
-      return time.map((item) => {
-        const amount = item.number && item.number !== 1 ? `${item.number} ` : "";
-        const condition = item.condition ? (currentLanguage === "en" ? ` (${item.condition})` : `（${item.condition}）`) : "";
-        const value = `${amount}${item.unit || ""}${condition}`;
-        return currentLanguage === "en" ? value.replace(/^([a-z])/, (letter) => letter.toUpperCase()) : value;
-      }).join(currentLanguage === "en" ? ", " : "、");
+      return formatSpellTime(time, currentLanguage);
     }
 
     function formatRange(range) {
-      if (!range) return "—";
-      if (range.type === "自身" || range.type === "self") return range.type;
-      if (!range.distance) return range.type || "—";
-      const amount = range.distance.amount ? `${range.distance.amount} ` : "";
-      const unit = range.distance.type || "";
-      return `${amount}${unit}`.trim() || range.type || "—";
+      return formatSpellRange(range, currentLanguage);
     }
 
     function formatDuration(duration) {
-      if (!Array.isArray(duration) || !duration.length) return "—";
-      return duration.map((item) => {
-        if (item.duration) {
-          const amount = item.duration.amount ? `${item.duration.amount} ` : "";
-          return `${amount}${item.duration.type || ""}`.trim();
-        }
-        return `${item.type || ""}`.trim();
-      }).join(currentLanguage === "en" ? ", " : "、");
+      return formatSpellDuration(duration, currentLanguage);
     }
 
     function hasConcentration(duration) {
@@ -1628,7 +1639,6 @@
     }
 
     function attackType(spell) {
-      if (!hasDamageCalculation(spell)) return "nonAttack";
       if (spell.spellAttack && spell.spellAttack.length) return "spellAttack";
       if (spell.savingThrow && spell.savingThrow.length) return "savingAttack";
       return "nonAttack";
@@ -1638,27 +1648,8 @@
       return t(attackType(spell));
     }
 
-    function hasDamageCalculation(spell) {
-      return Boolean(
-        (spell.damageInflict && spell.damageInflict.length) ||
-        entryHasDamageCalculation(spell.entries) ||
-        entryHasDamageCalculation(spell.entriesHigherLevel)
-      );
-    }
-
-    function entryHasDamageCalculation(entries) {
-      if (!entries) return false;
-      if (typeof entries === "string") return /\{@(?:damage|scaledamage)\s/i.test(entries);
-      if (Array.isArray(entries)) return entries.some(entryHasDamageCalculation);
-      if (typeof entries === "object") return Object.values(entries).some(entryHasDamageCalculation);
-      return false;
-    }
-
     function stripTags(text) {
-      return String(text).replace(/\{@([^|}]+)\|?([^}]*)\}/g, (_, raw, display) => {
-        if (display) return display.split("|").pop();
-        return raw.replace(/^[a-zA-Z]+\s+/, "");
-      });
+      return stripSpellTags(text, currentLanguage);
     }
 
     function renderTagList(text) {
@@ -1697,7 +1688,7 @@
         const englishValues = spell[`${field}_en`] || [];
         values.forEach((value, index) => {
           if (!options.has(value)) {
-            const label = currentLanguage === "en" ? (englishValues[index] || value) : value;
+            const label = currentLanguage === "en" ? (englishValues[index] || value) : ruleTermText(value);
             options.set(value, currentLanguage === "en" ? `${label.charAt(0).toUpperCase()}${label.slice(1)}` : label);
           }
         });
@@ -2073,7 +2064,8 @@
       if (typeof entries === "string") return `<p>${renderInline(entries)}</p>`;
       if (Array.isArray(entries)) return entries.map(renderEntries).join("");
       if (entries.type === "entries" || entries.type === "條目") {
-        const name = entries.name ? `<p><strong>${escapeHtml(entries.name)}</strong></p>` : "";
+        const heading = entries[`name_${currentLanguage}`] || entries.name;
+        const name = heading ? `<p><strong>${escapeHtml(heading)}</strong></p>` : "";
         return `${name}${renderEntries(entries.entries || [])}`;
       }
       if (entries.type === "list" || entries.type === "列表") {
@@ -2082,8 +2074,8 @@
       }
       if (entries.type === "table" || entries.type === "表格") {
         const caption = entries.caption ? `<p><strong>${escapeHtml(entries.caption)}</strong></p>` : "";
-        const labels = (entries.colLabels || []).map((label) => `<th>${escapeHtml(label)}</th>`).join("");
-        const rows = (entries.rows || []).map((row) => `<tr>${row.map((cell) => `<td>${renderInline(typeof cell === "string" ? cell : plainEntryText(cell))}</td>`).join("")}</tr>`).join("");
+        const labels = (entries.colLabels || []).map((label) => `<th>${renderInline(label)}</th>`).join("");
+        const rows = (entries.rows || []).map((row) => `<tr>${row.map((cell) => `<td>${renderInline(spellTableCellText(cell))}</td>`).join("")}</tr>`).join("");
         return `${caption}<table><thead><tr>${labels}</tr></thead><tbody>${rows}</tbody></table>`;
       }
       return `<p>${renderInline(plainEntryText(entries))}</p>`;

@@ -16,7 +16,22 @@
     });
   </script>
   <title>擲骰子 | Rugatha</title>
-  <link rel="icon" type="image/png" href="../../assets/logo/rugatha-favicon.png">
+  <meta name="description" content="選擇骰子數量，讓命運替你決定。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rugatha.com/toolbox/dice_roll/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rugatha">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:title" content="擲骰子 | Rugatha">
+  <meta property="og:description" content="選擇骰子數量，讓命運替你決定。">
+  <meta property="og:url" content="https://rugatha.com/toolbox/dice_roll/">
+  <meta property="og:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="擲骰子 | Rugatha">
+  <meta name="twitter:description" content="選擇骰子數量，讓命運替你決定。">
+  <meta name="twitter:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+<link rel="icon" type="image/png" href="../../assets/logo/rugatha-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo/rugatha-favicon-32.png">
   <link rel="stylesheet" href="../../shared/styles/theme.css">
   <link rel="manifest" href="../../manifest.webmanifest">
@@ -104,6 +119,7 @@
         <section class="result empty" id="result" aria-live="polite"></section>
         <section class="history" aria-labelledby="history-title"><h2 id="history-title" data-i18n="history">擲骰紀錄</h2><ol class="history-list" id="history-list"></ol></section>
       </section>
+    <p class="rule-note" data-i18n="rules">優勢／劣勢按鈕會擲 2d20、取較高／較低值，再加入調整值，忽略其他骰子選項。多個優勢或劣勢不疊加；兩者同時存在時互相抵銷，只擲 1d20。攻擊檢定的自然 1 自動未命中，自然 20 自動命中且為重擊；能力檢定與一般豁免沒有此自動成敗規則。死亡豁免的自然 1 計兩次失敗，自然 20 恢復 1 點生命值。</p>
     </main>
   </div>
   <script>
@@ -115,15 +131,15 @@
     const idleMessages = [
       ['骰子之神即將降臨', 'The God of Dice is coming'],
       ['骰子哥布林準備好了', 'The Dice Goblins are ready'],
-      ['不是大成功，就是大失敗', "It's either critical success, or critical failure"],
-      ['下不了決定？擲骰！', "Can't decide? Roll a dice!"],
+      ['讓骰子說話', 'Let the dice decide'],
+      ['下不了決定？擲骰！', "Can't decide? Roll a die!"],
       ['骰先攻吧！', 'Roll for initiative!']
     ];
     const idleMessageIndex = Math.floor(Math.random() * idleMessages.length);
     const languageButton = document.querySelector('[data-lang-toggle]');
     const translations = {
-      zh: { browserTitle:'擲骰子 | Rugatha', back:'← 回到工具箱', title:'擲骰子', subtitle:'選擇骰子數量，讓命運替你決定。', pickerTitle:'選擇骰子', rollButton:'擲骰', resetButton:'預設', advantage:'優勢', disadvantage:'劣勢', coin:'硬幣', modifier:'調整值', advantageResult:'優勢擲骰', disadvantageResult:'劣勢擲骰', takeHigh:'取高', takeLow:'取低', heads:'正面', tails:'背面', criticalFailure:'大失敗 Critical Failure', criticalSuccess:'大成功 Critical Success', idle:'骰子正等待你的指令。', empty:'請至少選擇一顆骰子、硬幣或調整值。', result:'擲骰結果', total:'總和', history:'擲骰紀錄', language:'目前語言：中文' },
-      en: { browserTitle:'Dice Roller | Rugatha', back:'← Back to Toolbox', title:'Dice Roller', subtitle:'Choose your dice and let fate decide.', pickerTitle:'Choose Dice', rollButton:'Roll the Dice', resetButton:'Reset', advantage:'Advantage', disadvantage:'Disadvantage', coin:'Coin', modifier:'Modifier', advantageResult:'Advantage Roll', disadvantageResult:'Disadvantage Roll', takeHigh:'Take High', takeLow:'Take Low', heads:'Heads', tails:'Tails', criticalFailure:'Critical Failure', criticalSuccess:'Critical Success', idle:'The dice await your command.', empty:'Choose at least one die, coin, or modifier.', result:'Roll Results', total:'Total', history:'Roll History', language:'Current language: English' }
+      zh: { browserTitle:'擲骰子 | Rugatha', back:'← 回到工具箱', title:'擲骰子', subtitle:'選擇骰子數量，讓命運替你決定。', pickerTitle:'選擇骰子', rules:'優勢／劣勢按鈕會擲 2d20、取較高／較低值，再加入調整值，忽略其他骰子選項。多個優勢或劣勢不疊加；兩者同時存在時互相抵銷，只擲 1d20。攻擊檢定的自然 1 自動未命中，自然 20 自動命中且為重擊；能力檢定與一般豁免沒有此自動成敗規則。死亡豁免的自然 1 計兩次失敗，自然 20 恢復 1 點生命值。', rollButton:'擲骰', resetButton:'重設', advantage:'優勢', disadvantage:'劣勢', coin:'硬幣', modifier:'調整值', advantageResult:'優勢擲骰', disadvantageResult:'劣勢擲骰', takeHigh:'取高', takeLow:'取低', heads:'正面', tails:'背面', criticalFailure:'自然 1', criticalSuccess:'自然 20', idle:'骰子正等待你的指令。', empty:'請至少選擇一顆骰子、硬幣或調整值。', result:'擲骰結果', total:'總和', history:'擲骰紀錄', language:'目前語言：中文' },
+      en: { browserTitle:'Dice Roller | Rugatha', back:'← Back to Toolbox', title:'Dice Roller', subtitle:'Choose your dice and let fate decide.', pickerTitle:'Choose Dice', rules:'Advantage/disadvantage buttons roll 2d20, keep the higher/lower die, then add the modifier; other dice selections are ignored. Multiple sources do not stack. If both apply, roll 1d20. A natural 1 automatically misses on an attack; a natural 20 automatically hits and is a critical hit. Ability checks and ordinary saving throws have no such automatic success or failure. On a death save, a natural 1 counts as two failures; a natural 20 restores 1 hit point.', rollButton:'Roll the Dice', resetButton:'Reset', advantage:'Advantage', disadvantage:'Disadvantage', coin:'Coin', modifier:'Modifier', advantageResult:'Advantage Roll', disadvantageResult:'Disadvantage Roll', takeHigh:'Take High', takeLow:'Take Low', heads:'Heads', tails:'Tails', criticalFailure:'Natural 1', criticalSuccess:'Natural 20', idle:'The dice await your command.', empty:'Choose at least one die, coin, or modifier.', result:'Roll Results', total:'Total', history:'Roll History', language:'Current language: English' }
     };
     let language = localStorage.getItem('rugatha-language') === 'en' ? 'en' : 'zh';
     const options = Array.from({ length: 21 }, (_, n) => `<option value="${n}">${n}</option>`).join('');
@@ -144,7 +160,7 @@
       return `<span class="value-wrap"><span class="value${isKept ? ' is-kept' : ''}${critical ? ` is-critical ${criticalClass}` : ''}" style="animation-delay:${delay}ms">${roll}</span></span>`;
     }
     function formatHistory(entry) {
-      if (entry.type === 'mode') return `${translations[language][entry.mode]} 2d20 (${entry.rolls.join(', ')}): ${entry.total}`;
+      if (entry.type === 'mode') return `${translations[language][entry.mode]} 2d20 (${entry.rolls.join(', ')})${entry.modifier ? ` ${entry.modifier > 0 ? '+' : '-'} ${Math.abs(entry.modifier)}` : ''}: ${entry.total}`;
       const diceFormula = entry.groups.map(({ sides, rolls }) => `${rolls.length}d${sides}`).join(' + ');
       const modifierFormula = entry.modifier ? `${diceFormula}${diceFormula ? (entry.modifier > 0 ? ' + ' : ' - ') : entry.modifier > 0 ? '+' : '-'}${Math.abs(entry.modifier)}` : diceFormula;
       const coinFormula = entry.coins.length ? `${modifierFormula ? ' + ' : ''}${entry.coins.length} ${translations[language].coin} (${entry.coins.map(coin => translations[language][coin]).join(', ')})` : '';
@@ -190,16 +206,18 @@
 
     function rollD20Mode(mode) {
       const rolls = [Math.floor(Math.random() * 20) + 1, Math.floor(Math.random() * 20) + 1];
-      const total = mode === 'advantage' ? Math.max(...rolls) : Math.min(...rolls);
+      const kept = mode === 'advantage' ? Math.max(...rolls) : Math.min(...rolls);
+      const modifier = Number(document.getElementById('modifier').value);
+      const total = kept + modifier;
       const isAdvantage = mode === 'advantage';
       const title = translations[language][isAdvantage ? 'advantageResult' : 'disadvantageResult'];
       const takeLabel = translations[language][isAdvantage ? 'takeHigh' : 'takeLow'];
       result.className = 'result';
       result.dataset.state = 'result';
-      result.innerHTML = `<div class="result-header"><h2>${title}</h2><div class="total">${takeLabel} <strong>${total}</strong></div></div><div class="roll-groups"><div class="roll-group"><b>2d20</b><div class="values">${rolls.map((roll, i) => renderRollValue(roll, 20, i * 35, roll === total)).join('')}</div></div></div>`;
-      historyEntries.unshift({ type:'mode', mode, rolls, total });
+      result.innerHTML = `<div class="result-header"><h2 data-i18n="${isAdvantage ? 'advantageResult' : 'disadvantageResult'}">${title}</h2><div class="total"><span data-i18n="total">${translations[language].total}</span> <strong>${total}</strong></div></div><div class="roll-groups"><div class="roll-group"><b>2d20</b><div class="values">${rolls.map((roll, i) => renderRollValue(roll, 20, i * 35, roll === kept)).join('')}</div></div></div>`;
+      historyEntries.unshift({ type:'mode', mode, rolls, modifier, total });
       renderHistory();
-      gtag('event', 'diceroll', { dice_configuration:'2d20', dice_count:2, roll_total:total, roll_mode:mode });
+      gtag('event', 'diceroll', { dice_configuration:`2d20${modifier ? ` ${modifier > 0 ? '+' : '-'} ${Math.abs(modifier)}` : ''}`, dice_count:2, roll_total:total, roll_mode:mode });
     }
     document.getElementById('advantage-button').addEventListener('click', () => rollD20Mode('advantage'));
     document.getElementById('disadvantage-button').addEventListener('click', () => rollD20Mode('disadvantage'));
@@ -222,7 +240,7 @@
       if (!groups.length && !modifier && !coinCount) { result.className = 'result empty'; result.dataset.state = 'error'; result.innerHTML = `<span>${translations[language].empty}</span>`; return; }
       result.className = 'result';
       result.dataset.state = 'result';
-      result.innerHTML = `<div class="result-header"><h2>${translations[language].result}</h2><div class="total">${translations[language].total} <strong>${total}</strong></div></div><div class="roll-groups">${groups.map(({ sides, rolls }) => `<div class="roll-group"><b>d${sides}</b><div class="values">${rolls.map((roll, i) => renderRollValue(roll, sides, i * 35)).join('')}</div></div>`).join('')}${coinCount ? `<div class="roll-group"><b data-coin-label>${translations[language].coin}</b><div class="values">${coinResults.map((coin, i) => `<span class="value" data-coin-result="${coin}" style="animation-delay:${i * 35}ms">${translations[language][coin]}</span>`).join('')}</div></div>` : ''}</div>`;
+      result.innerHTML = `<div class="result-header"><h2 data-i18n="result">${translations[language].result}</h2><div class="total"><span data-i18n="total">${translations[language].total}</span> <strong>${total}</strong></div></div><div class="roll-groups">${groups.map(({ sides, rolls }) => `<div class="roll-group"><b>d${sides}</b><div class="values">${rolls.map((roll, i) => renderRollValue(roll, sides, i * 35)).join('')}</div></div>`).join('')}${coinCount ? `<div class="roll-group"><b data-coin-label>${translations[language].coin}</b><div class="values">${coinResults.map((coin, i) => `<span class="value" data-coin-result="${coin}" style="animation-delay:${i * 35}ms">${translations[language][coin]}</span>`).join('')}</div></div>` : ''}</div>`;
       const diceFormula = groups.map(({ sides, rolls }) => `${rolls.length}d${sides}`).join(' + ');
       const modifierFormula = modifier ? `${diceFormula}${diceFormula ? (modifier > 0 ? ' + ' : ' - ') : modifier > 0 ? '+' : '-'}${Math.abs(modifier)}` : diceFormula;
       const formula = `${modifierFormula}${coinCount ? `${modifierFormula ? ' + ' : ''}${coinCount} ${translations[language].coin} (${coinResults.map(coin => translations[language][coin]).join(', ')})` : ''}`;

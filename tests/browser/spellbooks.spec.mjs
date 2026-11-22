@@ -472,3 +472,55 @@ test('another tab finishing registration after a stale counter read is recovered
     expect([await first, second]).toEqual(['0000-0001', '0000-0001']);
   } finally { release(); await otherContext.close(); }
 });
+
+test('spell rule details retain bilingual headings, scaling dice, range shapes and table intervals', async ({ page }) => {
+  await open(page);
+  async function spell(name) {
+    await page.locator('#searchInput').fill(name);
+    const row = page.locator('#spellRows .spell-row').filter({ has: page.getByText(name, { exact: true }) });
+    const button = row.locator('[data-toggle]');
+    await expect(button).toHaveCount(1);
+    const id = await button.getAttribute('aria-controls');
+    if (await button.getAttribute('aria-expanded') !== 'true') await button.click();
+    return page.locator(`#${id} .detail-panel`);
+  }
+  let detail = await spell('Fireball');
+  await expect(detail).toContainText('At Higher Levels');
+  await expect(detail).toContainText('increases by 1d6');
+  detail = await spell('Confusion');
+  await expect(detail.locator('table')).toContainText('2–6');
+  await expect(detail).not.toContainText('__');
+  await page.locator('[data-lang-toggle]').click();
+  await expect(detail.locator('table')).toContainText('本回合不移動');
+  await detail.scrollIntoViewIfNeeded();
+  const detailBox = await detail.boundingBox();
+  const scrollBox = await page.locator('.table-wrap').boundingBox();
+  expect(detailBox.x).toBeGreaterThanOrEqual(scrollBox.x - 1);
+  expect(detailBox.x + detailBox.width).toBeLessThanOrEqual(scrollBox.x + scrollBox.width + 1);
+  await page.screenshot({ path: '/tmp/rugatha-spell-content-desktop.png' });
+  detail = await spell('Burning Hands');
+  await expect(detail).toContainText('自身（15 呎錐形）');
+  detail = await spell("Heroes' Feast");
+  await expect(detail).toContainText('免疫毒素與恐慌');
+  await expect(page.locator('#damageFilter option').filter({ hasText: '光輝' })).toHaveCount(1);
+});
+
+test('sorcerer has one complete bilingual wild magic table with all fifty effects', async ({ page }) => {
+  await page.goto(`${base}/toolbox/race_class/`);
+  await expect.poll(() => page.evaluate(() => data.class.length)).toBe(12);
+  // Set the local UI authentication state only; no production sign-in or data writes.
+  await page.evaluate(() => window.dispatchEvent(new CustomEvent('rugatha:auth-state-changed', { detail: { signedIn: true } })));
+  await page.locator('[data-mode="class"]').click();
+  const card = page.locator('.option-item').filter({ has: page.locator('.option-name', { hasText: '術士' }) }).filter({ hasNotText: '契術師' });
+  await card.locator('.option-card').click();
+  // The IDs and labels are inspected by the actual page, not mocked rendering.
+  await page.locator('[aria-controls="class-level-sorcerer-1"]').click();
+  const content = page.locator('#class-level-sorcerer-1');
+  await expect(content.locator('table')).toHaveCount(2); // Dragon ancestors plus the d100 table.
+  await expect(content.locator('table').last().locator('tbody tr')).toHaveCount(50);
+  await expect(content.locator('table').last()).toContainText('3 環火球術');
+  await expect(content.locator('table').last()).toContainText('1d10 黯蝕傷害');
+  await content.locator('table').last().screenshot({ path: '/tmp/rugatha-wild-magic-table.png' });
+  await page.locator('[data-lang-toggle]').click();
+  await expect(page.locator('#class-level-sorcerer-1 table').last()).toContainText('immunity to magic missile');
+});

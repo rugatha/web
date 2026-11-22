@@ -21,7 +21,22 @@
     });
   </script>
   <title>D&amp;D 護甲表 | Rugatha</title>
-  <link rel="icon" type="image/png" href="../../assets/logo/rugatha-favicon.png">
+  <meta name="description" content="採用 D&amp;D 5e 玩家手冊（2014）護甲資料 僅供遊玩使用，請勿外流">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rugatha.com/toolbox/armor/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rugatha">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:title" content="D&amp;D 護甲表 | Rugatha">
+  <meta property="og:description" content="採用 D&amp;D 5e 玩家手冊（2014）護甲資料 僅供遊玩使用，請勿外流">
+  <meta property="og:url" content="https://rugatha.com/toolbox/armor/">
+  <meta property="og:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="D&amp;D 護甲表 | Rugatha">
+  <meta name="twitter:description" content="採用 D&amp;D 5e 玩家手冊（2014）護甲資料 僅供遊玩使用，請勿外流">
+  <meta name="twitter:image" content="https://rugatha.com/assets/banner/rugatha-banner-preview.png">
+<link rel="icon" type="image/png" href="../../assets/logo/rugatha-favicon.png">
   <link rel="stylesheet" href="../../shared/styles/theme.css">
   <script src="../../shared/language-toggle.js"></script>
   <style>
@@ -77,18 +92,18 @@
       <section class="toolbar" aria-label="護甲篩選工具" data-i18n-aria="filterAria">
         <div class="control"><label for="searchInput" data-i18n="search">搜尋</label><input id="searchInput" type="search" placeholder="中文、英文名稱或護甲屬性" data-i18n-placeholder="searchPlaceholder"></div>
         <div class="control"><label for="categoryFilter" data-i18n="category">分類</label><select id="categoryFilter"><option value="" data-i18n="all">全部</option><option value="輕甲" data-i18n="light">輕甲</option><option value="中甲" data-i18n="medium">中甲</option><option value="重甲" data-i18n="heavy">重甲</option><option value="盾牌" data-i18n="shield">盾牌</option></select></div>
-        <div class="control"><label for="stealthFilter" data-i18n="stealth">隱匿</label><select id="stealthFilter"><option value="" data-i18n="all">全部</option><option value="否" data-i18n="noDisadvantage">無劣勢</option><option value="是" data-i18n="disadvantage">劣勢</option></select></div>
+        <div class="control"><label for="stealthFilter" data-i18n="stealth">隱藏</label><select id="stealthFilter"><option value="" data-i18n="all">全部</option><option value="否" data-i18n="noDisadvantage">無劣勢</option><option value="是" data-i18n="disadvantage">劣勢</option></select></div>
         <div class="control"><label for="strengthFilter" data-i18n="strengthRequirement">力量需求</label><select id="strengthFilter"><option value="" data-i18n="all">全部</option><option value="有" data-i18n="required">有</option><option value="無" data-i18n="notRequired">無</option></select></div>
         <button id="resetButton" type="button" data-i18n="reset">重設</button>
       </section>
-      <aside class="rule-note"><strong data-i18n="ruleTitle">AC 計算：</strong><span data-i18n="rule">輕甲＝基礎 AC＋全部敏捷調整值；中甲最多加入 +2 敏捷調整值；重甲不加入敏捷調整值。盾牌提供 +2 AC。未達力量需求時，速度降低 10 呎；穿著具有隱匿劣勢的護甲時，敏捷（隱匿）檢定具有劣勢。</span></aside>
+      <aside class="rule-note"><strong data-i18n="ruleTitle">AC 計算：</strong><span data-i18n="rule">輕甲＝基礎 AC＋全部敏捷調整值；中甲最多加入 +2 敏捷調整值；重甲不加入敏捷調整值。盾牌提供 +2 AC。未達力量需求時，速度降低 10 呎；穿著具有隱藏劣勢的護甲時，敏捷（隱藏）檢定具有劣勢。 同時只能受益於一面盾牌。矮人不受重甲力量需求造成的減速影響。穿戴不熟練的護甲或盾牌時，所有涉及力量或敏捷的能力檢定、豁免與攻擊檢定具有劣勢，且不能施放法術。</span></aside>
       <section class="table-wrap" aria-live="polite"><table><thead><tr>
         <th class="col-category"><button type="button" data-sort="category"><span data-i18n="category">分類</span> <span data-sort-icon></span></button></th>
         <th class="col-name"><button type="button" data-sort="nameZh"><span data-i18n="name">名稱</span> <span data-sort-icon></span></button></th>
         <th class="col-ac"><button type="button" data-sort="ac"><span data-i18n="ac">AC</span> <span data-sort-icon></span></button></th>
         <th class="col-dex"><button type="button" data-sort="dex"><span data-i18n="dexBonus">敏捷加值</span> <span data-sort-icon></span></button></th>
         <th class="col-str"><button type="button" data-sort="strength"><span data-i18n="strengthRequirement">力量需求</span> <span data-sort-icon></span></button></th>
-        <th class="col-stealth"><button type="button" data-sort="stealth"><span data-i18n="stealth">隱匿</span> <span data-sort-icon></span></button></th>
+        <th class="col-stealth"><button type="button" data-sort="stealth"><span data-i18n="stealth">隱藏</span> <span data-sort-icon></span></button></th>
         <th class="col-cost"><button type="button" data-sort="cost"><span data-i18n="cost">價格</span> <span data-sort-icon></span></button></th>
         <th class="col-weight"><button type="button" data-sort="weight"><span data-i18n="weight">重量</span> <span data-sort-icon></span></button></th>
       </tr></thead><tbody id="armorRows"></tbody></table><div class="empty-state" id="emptyState" hidden data-i18n="empty">沒有符合條件的護甲</div></section>
@@ -96,19 +111,19 @@
     </main>
   </div>
   <script>
-    const translations={zh:{browserTitle:"D&D 護甲表 | Rugatha",title:"D&D 護甲表",subtitle:"採用 D&D 5e 玩家手冊（2014）護甲資料",notice:"僅供遊玩使用，請勿外流",filterAria:"護甲篩選工具",search:"搜尋",searchPlaceholder:"中文、英文名稱或護甲屬性",category:"分類",light:"輕甲",medium:"中甲",heavy:"重甲",shield:"盾牌",stealth:"隱匿",noDisadvantage:"無劣勢",disadvantage:"劣勢",strengthRequirement:"力量需求",required:"有",notRequired:"無",all:"全部",reset:"重設",ruleTitle:"AC 計算：",rule:"輕甲＝基礎 AC＋全部敏捷調整值；中甲最多加入 +2 敏捷調整值；重甲不加入敏捷調整值。盾牌提供 +2 AC。未達力量需求時，速度降低 10 呎；穿著具有隱匿劣勢的護甲時，敏捷（隱匿）檢定具有劣勢。",name:"名稱",ac:"AC",dexBonus:"敏捷加值",cost:"價格",weight:"重量",empty:"沒有符合條件的護甲",countUnit:"件護甲",sourceLabel:"資料來源：",aria:"目前語言：中文"},en:{browserTitle:"D&D Armor | Rugatha",title:"D&D Armor",subtitle:"Armor data from the D&D 5e Player's Handbook (2014)",notice:"For gameplay use only. Please do not redistribute.",filterAria:"Armor filters",search:"Search",searchPlaceholder:"Name, AC, or armor property",category:"Category",light:"Light",medium:"Medium",heavy:"Heavy",shield:"Shield",stealth:"Stealth",noDisadvantage:"No disadvantage",disadvantage:"Disadvantage",strengthRequirement:"STR requirement",required:"Required",notRequired:"Not required",all:"All",reset:"Reset",ruleTitle:"AC: ",rule:"Light armor adds your full Dexterity modifier; medium armor adds up to +2; heavy armor adds no Dexterity modifier. A shield grants +2 AC. If you do not meet the Strength requirement, your speed is reduced by 10 feet; armor with stealth disadvantage imposes disadvantage on Dexterity (Stealth) checks.",name:"Name",ac:"AC",dexBonus:"DEX bonus",cost:"Cost",weight:"Weight",empty:"No armor matches the selected filters.",countUnit:"items",sourceLabel:"Source: ",aria:"Current language: English"}};
+    const translations={zh:{browserTitle:"D&D 護甲表 | Rugatha",title:"D&D 護甲表",subtitle:"採用 D&D 5e 玩家手冊（2014）護甲資料",notice:"僅供遊玩使用，請勿外流",filterAria:"護甲篩選工具",search:"搜尋",searchPlaceholder:"中文、英文名稱或護甲屬性",category:"分類",light:"輕甲",medium:"中甲",heavy:"重甲",shield:"盾牌",stealth:"隱藏",noDisadvantage:"無劣勢",disadvantage:"劣勢",strengthRequirement:"力量需求",required:"有",notRequired:"無",all:"全部",reset:"重設",ruleTitle:"AC 計算：",rule:"輕甲＝基礎 AC＋全部敏捷調整值；中甲最多加入 +2 敏捷調整值；重甲不加入敏捷調整值。盾牌提供 +2 AC。未達力量需求時，速度降低 10 呎；穿著具有隱藏劣勢的護甲時，敏捷（隱藏）檢定具有劣勢。 同時只能受益於一面盾牌。矮人不受重甲力量需求造成的減速影響。穿戴不熟練的護甲或盾牌時，所有涉及力量或敏捷的能力檢定、豁免與攻擊檢定具有劣勢，且不能施放法術。",name:"名稱",ac:"AC",dexBonus:"敏捷加值",cost:"價格",weight:"重量",empty:"沒有符合條件的護甲",countUnit:"件護甲",sourceLabel:"資料來源：",aria:"目前語言：中文"},en:{browserTitle:"D&D Armor | Rugatha",title:"D&D Armor",subtitle:"Armor data from the D&D 5e Player's Handbook (2014)",notice:"For gameplay use only. Please do not redistribute.",filterAria:"Armor filters",search:"Search",searchPlaceholder:"Name, AC, or armor property",category:"Category",light:"Light",medium:"Medium",heavy:"Heavy",shield:"Shield",stealth:"Stealth",noDisadvantage:"No disadvantage",disadvantage:"Disadvantage",strengthRequirement:"STR requirement",required:"Required",notRequired:"Not required",all:"All",reset:"Reset",ruleTitle:"AC: ",rule:"Light armor adds your full Dexterity modifier; medium armor adds up to +2; heavy armor adds no Dexterity modifier. A shield grants +2 AC. If you do not meet the Strength requirement, your speed is reduced by 10 feet; armor with stealth disadvantage imposes disadvantage on Dexterity (Stealth) checks. You can benefit from only one shield at a time. Dwarves ignore the heavy-armor speed penalty. Wearing armor or a shield without proficiency imposes disadvantage on ability checks, saving throws, and attack rolls involving Strength or Dexterity, and prevents spellcasting.",name:"Name",ac:"AC",dexBonus:"DEX bonus",cost:"Cost",weight:"Weight",empty:"No armor matches the selected filters.",countUnit:"items",sourceLabel:"Source: ",aria:"Current language: English"}};
     const categoryEn={"輕甲":"Light","中甲":"Medium","重甲":"Heavy","盾牌":"Shield"};
     const armor=[
       ["襯墊甲","Padded", "輕甲",11,"全部",null,"是",5,8], ["皮甲","Leather", "輕甲",11,"全部",null,"否",10,10], ["鑲釘皮甲","Studded Leather", "輕甲",12,"全部",null,"否",45,13],
       ["獸皮甲","Hide", "中甲",12,"最多 +2",null,"否",10,12], ["鏈甲衫","Chain Shirt", "中甲",13,"最多 +2",null,"否",50,20], ["鱗甲","Scale Mail", "中甲",14,"最多 +2",null,"是",50,45], ["胸甲","Breastplate", "中甲",14,"最多 +2",null,"否",400,20], ["半身甲","Half Plate", "中甲",15,"最多 +2",null,"是",750,40],
-      ["戒指甲","Ring Mail", "重甲",14,"無",null,"是",30,40], ["鏈甲","Chain Mail", "重甲",16,"無",13,"是",75,55], ["分段甲","Splint", "重甲",17,"無",15,"是",200,60], ["板甲","Plate", "重甲",18,"無",15,"是",1500,65], ["盾牌","Shield", "盾牌","+2","無",null,"否",10,6]
+      ["環甲","Ring Mail", "重甲",14,"無",null,"是",30,40], ["鏈甲","Chain Mail", "重甲",16,"無",13,"是",75,55], ["條板甲","Splint", "重甲",17,"無",15,"是",200,60], ["板甲","Plate", "重甲",18,"無",15,"是",1500,65], ["盾牌","Shield", "盾牌","+2","無",null,"否",10,6]
     ].map(([nameZh,nameEn,category,ac,dex,strength,stealth,cost,weight],order)=>({nameZh,nameEn,category,ac,dex,strength,stealth,cost,weight,order,searchText:`${nameZh} ${nameEn} ${category} ${categoryEn[category]} ${ac} ${dex} ${strength||""} ${stealth} ${cost} ${weight}`.toLocaleLowerCase("zh-Hant")}));
     const state={filtered:[...armor],sortKey:"order",sortDirection:"asc",language:"zh"};
     const el={search:document.getElementById("searchInput"),category:document.getElementById("categoryFilter"),stealth:document.getElementById("stealthFilter"),strength:document.getElementById("strengthFilter"),reset:document.getElementById("resetButton"),rows:document.getElementById("armorRows"),empty:document.getElementById("emptyState"),count:document.getElementById("resultCount"),languageButton:document.querySelector("[data-lang-toggle]")};
     const t=k=>translations[state.language][k]||k, collator=new Intl.Collator("zh-Hant",{numeric:true,sensitivity:"base"}), storageKey="rugatha-language";
     function getStoredLanguage(){try{return localStorage.getItem(storageKey)}catch(error){return null}}
     function localizedCategory(value){return state.language==="zh"?value:(categoryEn[value]||value)}
-    function localizedDex(value){if(value==="全部")return state.language==="zh"?value:"Full";if(value==="最多 +2")return state.language==="zh"?value:"Max +2";return value}
+    function localizedDex(value){if(value==="全部")return state.language==="zh"?value:"Full";if(value==="最多 +2")return state.language==="zh"?value:"Max +2";if(value==="無")return state.language==="zh"?"無":"None";return value}
     function setLanguage(language){state.language=language==="en"?"en":"zh";const d=translations[state.language];document.documentElement.lang=state.language==="zh"?"zh-Hant":"en";document.body.dataset.lang=state.language;document.title=d.browserTitle;document.querySelectorAll("[data-i18n]").forEach(x=>{if(d[x.dataset.i18n])x.textContent=d[x.dataset.i18n]});document.querySelectorAll("[data-i18n-placeholder]").forEach(x=>x.placeholder=d[x.dataset.i18nPlaceholder]||x.placeholder);document.querySelectorAll("[data-i18n-aria]").forEach(x=>x.setAttribute("aria-label",d[x.dataset.i18nAria]));el.languageButton.setAttribute("aria-label",d.aria);el.languageButton.setAttribute("aria-pressed","true");if(window.RugathaLanguageToggle)window.RugathaLanguageToggle.setButtonIcon(el.languageButton,state.language);try{localStorage.setItem(storageKey,state.language)}catch(error){}render()}
     function filter(){const q=el.search.value.trim().toLocaleLowerCase("zh-Hant");state.filtered=armor.filter(a=>(!q||a.searchText.includes(q))&&(!el.category.value||a.category===el.category.value)&&(!el.stealth.value||a.stealth===el.stealth.value)&&(!el.strength.value||(el.strength.value==="有"?a.strength!==null:a.strength===null)));sort()}
     function sort(){const dir=state.sortDirection==="asc"?1:-1;state.filtered.sort((a,b)=>state.sortKey==="order"?(a.order-b.order)*dir:(typeof a[state.sortKey]==="number"&&typeof b[state.sortKey]==="number"?(a[state.sortKey]-b[state.sortKey])*dir:collator.compare(String(a[state.sortKey]),String(b[state.sortKey]))*dir)||a.order-b.order);render()}

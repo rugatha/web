@@ -1,5 +1,7 @@
 // Pure path and legacy-index validation shared by UI and transport tests.
 export const LEGACY_CHARACTER_CATALOG = '2026-10-18-v1';
+// Translation-only successor: all 361 (name_en, level) pairs retain their indices.
+const INDEX_COMPATIBLE_CATALOGS = new Set([LEGACY_CHARACTER_CATALOG, '2026-11-22-v1', '2026-11-22-v2']);
 export function normalizeSpellbookScope(scope = { type: 'personal' }) {
   if (scope?.type === 'personal') return Object.freeze({ type: 'personal' });
   if (scope?.type !== 'character' || typeof scope.characterId !== 'string'
@@ -22,7 +24,7 @@ export function previewCharacterSpells(data, spells, version) {
     if (!/^spellName\d+$/.test(key) || value === '') continue;
     const row = key.slice('spellName'.length), index = String(value);
     const spell = /^(0|[1-9]\d*)$/.test(index) ? spells[Number(index)] : null;
-    if (version !== LEGACY_CHARACTER_CATALOG || !spell?.name_en
+    if (!INDEX_COMPATIBLE_CATALOGS.has(version) || !spell?.name_en
         || String(spell.level) !== String(source[`spellLevel${row}`])) unknown.push({ row, value, level: source[`spellLevel${row}`] });
     else ids.push(spell.name_en);
   }

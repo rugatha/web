@@ -4,16 +4,16 @@
 
 ## 目前資料
 
-Bucket：`rugatha-87e15.firebasestorage.app`，版本：`2026-10-18-v1`。
+Bucket：`rugatha-87e15.firebasestorage.app`，版本：`2026-11-22-v2`（2014 PHB 翻譯與顯示修正版）。
 
 | 物件 | 大小 | SHA-256 |
 | --- | ---: | --- |
-| `catalogs/spells/2026-10-18-v1/spells-phb.json` | 1,155,035 bytes；361 個法術 | `0d1745e0565461a88006fdf68e483c604d471968a051eea61f0ead9a3d0ccd46` |
-| `catalogs/spells/2026-10-18-v1/class_spells.json` | 4,975 bytes | `e1440268ea6d4a3c742a6427873ad720b1f502ba2c45d5b3a21d94f67f580538` |
+| `catalogs/spells/2026-11-22-v2/spells-phb.json` | 1,301,570 bytes；361 個法術 | `a92660185398b96b9f0d9d2dff00741c9ac0322a3d1135c68246e24be40ceca8` |
+| `catalogs/spells/2026-11-22-v2/class_spells.json` | 4,975 bytes | `e1440268ea6d4a3c742a6427873ad720b1f502ba2c45d5b3a21d94f67f580538` |
 
 `shared/spell-catalog.js` 提供版本化下載網址，三個使用頁面為 `toolbox/spells/`、`toolbox/character_sheet/`、`toolbox/race_class/`。不需要登入或下載 token。Storage Rules 僅公開上述兩種檔名的 get，禁止所有客戶端 list/create/update/delete；發布使用現有 Firebase CLI 帳號的 Google Cloud IAM 權限，不開放前端寫入。原有 CORS 已允許 GET／HEAD，沒有放寬私人照片權限或 bucket IAM。
 
-本次逐 byte 保留原資料，包含法術順序。角色卡目前仍使用陣列索引當作既有選項 ID，因此更新內容時不能重排或移除既有法術；新增法術需另行處理相容性。Firestore Rules 中的英文名稱白名單屬於權限驗證，仍保留在 repo，沒有完整說明內容。
+最初搬移逐 byte 保留原資料；2026-11-22 修正版保留全部 361 個法術的英文識別碼、環級與陣列順序，原有英文說明及 metadata 的 `_en` 欄位也保持不變。角色卡目前仍使用陣列索引當作既有選項 ID，因此更新內容時不能重排或移除既有法術；新增法術需另行處理相容性。Firestore Rules 中的英文名稱白名單屬於權限驗證，仍保留在 repo，沒有完整說明內容。
 
 ## 更新與發布
 
@@ -28,9 +28,9 @@ Bucket：`rugatha-87e15.firebasestorage.app`，版本：`2026-10-18-v1`。
 
 ## 離線與測試
 
-PWA v23 只額外攔截兩個完全相符的公開 catalog URL；不攔截 Auth／Firestore／私人 Storage 請求。已讀取過的 catalog 可從 runtime cache 離線讀取，首次未快取且離線時會顯示載入失敗。版本化物件採 stale-while-revalidate；更新 worker 時清理舊 Rugatha cache。
+PWA v59 只額外攔截兩個完全相符的公開 catalog URL；不攔截 Auth／Firestore／私人 Storage 請求。已讀取過的 catalog 可從 runtime cache 離線讀取，首次未快取且離線時會顯示載入失敗。版本化物件採 stale-while-revalidate；更新 worker 時清理舊 Rugatha cache。
 
-初次測試先執行 `npm run test:browser:setup`，或只執行 `npm run test:catalog:setup` 準備資料。測試使用 OS temp，預設為 `rugatha-spell-catalog/2026-10-18-v1/`；暫存刪除後需重新下載。測試用 HTTP server 把公開 Storage 來源替換成本機 `/__catalog__/`，瀏覽器仍阻擋所有外部主機。
+初次測試先執行 `npm run test:browser:setup`，或只執行 `npm run test:catalog:setup` 準備資料。測試使用 OS temp，預設為 `rugatha-spell-catalog/2026-11-22-v2/`；暫存刪除後需重新下載。測試用 HTTP server 把公開 Storage 來源替換成本機 `/__catalog__/`，瀏覽器仍阻擋所有外部主機。
 
 ## 轉移驗收紀錄
 
@@ -43,3 +43,12 @@ PWA v23 只額外攔截兩個完全相符的公開 catalog URL；不攔截 Auth�
 - 確認正式新來源可用後，移除 `toolbox/spells/spells-phb.json`、`toolbox/race_class/class_spells.json`，並用 `.gitignore` 防止重新加入舊路徑。完整來源與測試快取留在 repo 外。
 - 移除兩個資料檔後，`npm run test:all` exit code 0：Rules 24、法術書狀態／PWA 25、角色卡 11、Chromium 27，合計 **87 項通過、0 項失敗**。瀏覽器案例包含下載 503 提示及三頁共用來源，沒有 repo 資料 fallback。
 - 完成驗收後發布舊檔刪除與本紀錄；資料版本維持 `2026-10-18-v1`，不重新上傳、不變動法術順序。
+
+## 2026-11-22 內容修正
+
+- 修訂工具：`scripts/revise-spell-catalog-2026-11-22.py <舊版外部目錄> <新版外部目錄>`。工具固定舊版 SHA-256，保留全部識別碼順序，輸出仍留在 repo 外；只將修正規則與工具納入 Git。
+- 314 筆法術有中文用詞、繁簡、規則敘述、表格或引用文字調整，並非全部重寫；英文規則原文保持不變。明確規則誤譯包括英雄宴、衰弱射線、彈力法球、活化物件、時間停止、放逐術、觸發術、短訊術與祈願術等。
+- 共十個中文內嵌表格完成翻譯；補回困惑術與轉生術的骰欄位。法術段落標題、升環增量骰、反應觸發條件、範圍形狀、專注上限與解除／觸發期限改由顯示工具正確呈現。
+- `shared/character-spellbook.js` 明列新版為舊角色卡索引相容版本。測試固定全部 `(name_en, level)` 序列的 SHA-256：`5fd381503a976cc0f9c70e4173a54ffbcadd526111cc195a1b4bffc28ff94696`；未知版本仍拒絕用索引匯入。
+- 已上傳新版本兩個物件，並從匿名公開網址重新下載、驗證 checksum；公開 HEAD 回應與跨來源讀取標頭亦已驗證。原版本保留，未修改玩家資料。前端修改仍在工作目錄，尚未 commit／發布 Pages。
+- 職業頁的技能用詞與重複資料整理，詳見 `docs/toolbox-content-review-2026-11-22.md`。

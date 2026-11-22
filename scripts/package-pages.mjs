@@ -19,6 +19,8 @@ const publicRootFiles = new Set(['CNAME', 'index.html', 'manifest.webmanifest', 
 const files = execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], {
   cwd: root, encoding: 'utf8'
 }).split('\0').filter(Boolean);
+// Generated before packaging by the Pages workflow; ignored by Git but public.
+files.push('experience/subscribe/experience-notification.html');
 let copied = 0;
 for (const file of new Set(files)) {
   const parts = file.split('/');

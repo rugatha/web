@@ -1,5 +1,5 @@
 import { subscribeSpellbook, migrateCharacterSpellbook, spellbookSyncEnabled, characterSpellbookSyncEnabled, spellbookWritesEnabled } from './spellbooks.js?v=20261019-character-books-1';
-import { legacySpellSource, previewCharacterSpells } from './character-spellbook.js?v=20261019-character-books-1';
+import { legacySpellSource, previewCharacterSpells } from './character-spellbook.js?v=20261122-content-2';
 
 export function createCharacterSpellbookUI({ app, auth, language, catalog, refresh }) {
   const panel = document.getElementById('characterSpellbook');

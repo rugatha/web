@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v57";
+const CACHE_VERSION = "rugatha-pwa-v59";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;
@@ -18,13 +18,15 @@ const PRECACHE_URLS = [
   "/shared/pwa.js?v=20261022-letter-reading-r2",
   "/shared/auth-session.js?v=20261019-character-books-1",
   "/shared/firebase.config.js",
-  "/shared/spell-catalog.js?v=20261018-storage-1",
+  "/shared/spell-catalog.js?v=20261122-content-2",
+  "/shared/spell-display.js?v=20261122-content-2",
+  "/shared/character-spellbook.js?v=20261122-content-2",
   "/shared/spellbook-page.js?v=20261019-character-books-1",
   "/shared/spellbook-state.js?v=20261019-character-books-1",
   "/shared/spellbook-transport.js?v=20261019-character-books-1",
   "/shared/spellbooks.js?v=20261019-character-books-1",
   "/shared/character-spellbook.js?v=20261019-character-books-1",
-  "/shared/character-spellbook-ui.js?v=20261019-character-books-2",
+  "/shared/character-spellbook-ui.js?v=20261122-content-2",
   "/shared/character-sheets.js?v=20261019-character-books-1",
   "/shared/character-sheets.js?v=20261026-member-dashboard-1",
   "/shared/member-path.js",
@@ -64,8 +66,8 @@ const isSameOriginGet = (request) =>
 // Only these public, immutable reference files may enter the cross-origin cache.
 // Auth, Firestore and private Storage requests must never enter this cache.
 const SPELL_CATALOG_URLS = [
-  "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/catalogs%2Fspells%2F2026-10-18-v1%2Fspells-phb.json?alt=media",
-  "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/catalogs%2Fspells%2F2026-10-18-v1%2Fclass_spells.json?alt=media"
+  "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/catalogs%2Fspells%2F2026-11-22-v2%2Fspells-phb.json?alt=media",
+  "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/catalogs%2Fspells%2F2026-11-22-v2%2Fclass_spells.json?alt=media"
 ];
 
 const BANNER_IMAGE_URL = "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fatlas-cover-firebase%2Freading-c565780a.png?alt=media";

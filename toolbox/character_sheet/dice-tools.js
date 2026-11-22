@@ -1,9 +1,9 @@
 Object.assign(translations.zh, {
   gender: '性別（選填）', clearRolls: '清除',
   lastPart: '上一部分', nextPart: '下一部分', rollDice: '擲骰決定',
-  maxHitPoints: '最高生命值', temporaryHitPoints: '臨時生命值',
+  maxHitPoints: '生命值上限', temporaryHitPoints: '暫時生命值',
   abilityRollDone: '六項能力值已擲骰完畢，請自行決定填入方式',
-  hpRollHint: '每組第一顆生命骰固定取滿值，第二顆起隨機擲骰，每顆皆加上 CON 調整值；整組完成後加總。結果僅供參考，請自行填入生命值。',
+  hpRollHint: '此工具從角色 1 級重新計算生命值：第一顆骰須屬於起始職業，固定取滿值；之後逐級擲骰，每顆加上體魄調整值，2 級起每級至少增加 1 點。兼職不再取滿值。若只升一級，請使用升級工具。',
   hpRollInvalid: '請先設定有效的生命骰，例如 4d8/con+1。',
   hpRollPending: '尚未擲完', hpRollDone: '已擲完，請自行填入生命值',
   editMarkdown: '編輯', viewMarkdown: '檢視', emptyLog: '尚未撰寫跑團紀錄。',
@@ -14,7 +14,7 @@ Object.assign(translations.en, {
   lastPart: 'Last Part', nextPart: 'Next Part', rollDice: 'Roll Dice',
   maxHitPoints: 'Maximum Hit Points', temporaryHitPoints: 'Temporary Hit Points',
   abilityRollDone: 'All six ability scores have been rolled. Assign them as you wish.',
-  hpRollHint: 'The first hit die in each set takes its maximum value; subsequent dice are rolled randomly. Add the CON modifier to each die, then sum the set. Enter your hit points manually.',
+  hpRollHint: 'This tool recalculates HP from character level 1. Put the starting class first: only the first die takes its maximum; roll later dice and add CON to each, gaining at least 1 HP per level after 1st. Multiclassing grants no additional maximum die. Use the level-up tool for a single new level.',
   hpRollInvalid: 'Set valid hit dice first, for example 4d8/con+1.',
   hpRollPending: 'Still rolling', hpRollDone: 'Complete — enter your hit points manually',
   editMarkdown: 'Edit', viewMarkdown: 'View', emptyLog: 'No session notes yet.',
@@ -64,8 +64,9 @@ const renderDiceHistory = () => {
     const complete = set.rolls.length === parsed.dice.length;
     const bonusText = (parsed.bonus >= 0 ? '+' : '') + parsed.bonus;
     const rolls = set.rolls.map((n, i) => 'd' + parsed.dice[i] + ': ' + n + (parsed.perDie ? bonusText : '')).join(' · ');
-    const total = set.rolls.reduce((sum, n) => sum + n, 0) + parsed.bonus * (parsed.perDie ? set.rolls.length : 1);
-    const equation = parsed.perDie ? set.rolls.map(n => '(' + n + bonusText + ')').join('+') : set.rolls.join('+') + bonusText;
+    const gains = set.rolls.map((n, i) => set.minimumPerLevel && parsed.perDie && i > 0 ? Math.max(1, n + parsed.bonus) : n + (parsed.perDie ? parsed.bonus : 0));
+    const total = gains.reduce((sum, n) => sum + n, 0) + (parsed.perDie ? 0 : parsed.bonus);
+    const equation = parsed.perDie ? set.rolls.map((n, i) => set.minimumPerLevel && i > 0 ? 'max(1, ' + n + bonusText + ')' : '(' + n + bonusText + ')').join('+') : set.rolls.join('+') + bonusText;
     return '<li>' + escapeHTML(parsed.formula) + ' — ' + rolls + ' (' + set.rolls.length + '/' + parsed.dice.length + ') — ' +
       (complete ? equation + ' = ' + total + ' — ' + escapeHTML(t().hpRollDone) : escapeHTML(t().hpRollPending)) + '</li>';
   }).join('');
@@ -96,7 +97,7 @@ document.addEventListener('click', event => {
     const history = readDiceHistory('hpRollHistory');
     let set = history[history.length - 1];
     if (!set || parseHitDice(set.formula)?.formula !== parsed.formula || !Array.isArray(set.rolls) || set.rolls.length >= parsed.dice.length) {
-      set = { formula: parsed.formula, rolls: [] }; history.push(set);
+      set = { formula: parsed.formula, rolls: [], minimumPerLevel: true }; history.push(set);
     }
     const sides = parsed.dice[set.rolls.length];
     set.rolls.push(set.rolls.length === 0 ? sides : rollDie(sides));

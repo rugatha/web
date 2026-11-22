@@ -137,7 +137,7 @@ const LANGS = {
     },
   abilityLabels: ["力量", "敏捷", "體魄", "智力", "感知", "魅力"],
     canvas: {
-      uploadHint: "點擊上傳角色圖片",
+      uploadHint: "點選上傳角色圖片",
       hp: "生命值上限",
       ac: "護甲等級",
       pp: "被動觀察"

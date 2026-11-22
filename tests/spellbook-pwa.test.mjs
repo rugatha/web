@@ -51,9 +51,12 @@ test('PWA upgrade removes old Rugatha caches, preserves unrelated caches, and pr
   assert.equal(w.stores.has('rugatha-pwa-v21-runtime'), false);
   assert.equal(w.stores.has('other-app'), true);
   assert.equal(w.claimed, 1);
-  const staticCache = w.stores.get('rugatha-pwa-v29-static');
+  const cacheVersion = readFileSync('sw.js', 'utf8').match(/const CACHE_VERSION = "([^"]+)"/)[1];
+  const staticCache = w.stores.get(`${cacheVersion}-static`);
   for (const name of ['page', 'state', 'transport']) assert(staticCache.has(`/shared/spellbook-${name}.js?v=20261019-character-books-1`));
   assert(staticCache.has('/shared/spellbooks.js?v=20261019-character-books-1'));
+  assert(staticCache.has('/shared/spell-display.js?v=20261122-content-2'));
+  assert(staticCache.has('/shared/spell-catalog.js?v=20261122-content-2'));
 });
 
 test('feature flags use fresh network configuration instead of one-navigation-old cached values', async () => {
