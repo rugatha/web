@@ -121,8 +121,8 @@
       page: "./pages/rugatha-prosper/index.html",
       image: campaignPng("logo_RProsper.png"),
       accent: "#E5BC48",
-      nextSession_zh: "2026/11/22",
-      nextSession_en: "2026/11/22"
+      nextSession_zh: "2027/1/31",
+      nextSession_en: "2027/1/31"
     },
     {
       name: "Rugatha Brown",

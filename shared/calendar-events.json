@@ -77,18 +77,18 @@
   },
   {
     "title": {
-      "zh": "Rugatha Prosper S0.5",
-      "en": "Rugatha Prosper S0.5"
+      "zh": "Rugatha Prosper S1",
+      "en": "Rugatha Prosper S1"
     },
-    "date": "2026-11-22",
+    "date": "2027-01-31",
     "category": {
       "zh": "長團",
       "en": "Campaign"
     },
     "link": "",
     "note": {
-      "zh": "第 0.5 次跑團",
-      "en": "Session 0.5"
+      "zh": "第 1 次跑團",
+      "en": "Session 1"
     },
     "image": "assets/campaign_logo/logo_RProsper.png",
     "isTransparent": true,
