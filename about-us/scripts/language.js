@@ -156,7 +156,7 @@
     "en": "Pieces of papers, like puzzles, fit into each others."
   },
   "quote-6": {
-    "zh": "「賽巴諾，惡棍之城。」好吧，當然，有何不可？",
+    "zh": "「瑟巴諾，惡棍之城。」好吧，當然，有何不可？",
     "en": "\"Sebano, Town of Villains.\" Yeah, sure, why not?"
   },
   "quote-7": {

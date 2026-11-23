@@ -18,7 +18,7 @@
           "name_en": "Mattington",
           "name_zh": "麥丁頓",
           "slug": "mattington",
-          "desc_zh": "以人類為主的王國，同時也有不少矮人和妖精以外的種族。\n首都為麥克嵩。\n貿易城市、港口與鄉鎮散布其間，貴族與宗教勢力比實質王權更大。\n是冒險者旅程最頻繁踏級的國度。",
+          "desc_zh": "以人類為主的王國，同時也有不少矮人和妖精以外的種族。\n首都為麥克嵩。\n貿易城市、港口與鄉鎮散布其間，貴族與宗教勢力比實質王權更大。\n是冒險者旅程最頻繁踏及的國度。",
           "desc_en": "A predominantly human kingdom, also home to many peoples other than dwarves and elves.\nIts capital is Macksohn.\nTrading cities, ports, and towns dot the land, where nobles and religious powers wield more influence than the crown itself.\nIt is the kingdom most frequently visited on the adventurers' journeys.",
           "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm%2Fmattington%2Freading-ed044537.png?alt=media",
           "cities": [
@@ -1205,7 +1205,7 @@
                 {
                   "name_en": "Greenhouse",
                   "name_zh": "溫室",
-                  "desc_zh": "位於菲納札的溫室。\n種植菇類、食用植物與部分觀賞植物的工作場所。\n新來者會被登記姓名，並依衣服顏色安排工作。\n冒險者曾被分派從事搬土的初階勞動。\n冒險者第一次在這裡的餐廳，吃到的晚餐是一大盆土與乾草，烏波卻對這樣的食物相當享受。",
+                  "desc_zh": "位於斐納札的溫室。\n種植菇類、食用植物與部分觀賞植物的工作場所。\n新來者會被登記姓名，並依衣服顏色安排工作。\n冒險者曾被分派從事搬土的初階勞動。\n冒險者第一次在這裡的餐廳，吃到的晚餐是一大盆土與乾草，烏波卻對這樣的食物相當享受。",
                   "desc_en": "A greenhouse in Fenadra.\nMushrooms, edible plants, and some ornamental plants are grown here.\nNew arrivals have their names registered and receive work assignments according to the color of their clothing.\nThe adventurers were assigned basic labor moving soil.\nTheir first dinner in the cafeteria was a large basin of soil and hay, which Ubbo thoroughly enjoyed.",
                   "slug": "greenhouse",
                   "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm%2Fmattington%2Ffenadra%2Fgreenhouse%2Freading-1d8f4b68.png?alt=media",
@@ -1275,7 +1275,7 @@
                 {
                   "name_en": "Plasmoid Factory",
                   "name_zh": "流漿人工廠",
-                  "desc_zh": "位於菲納札心空域與不動域交界的工廠，有衛兵守門。\n內部包含手術台、倉庫與會議空間。\nRugatha Lite 的冒險者烏波獲准進入後，見到與自身相似的血漿人及研究人員。\n後來烏波也被這裡的人當作如神般的崇拜。",
+                  "desc_zh": "位於斐納札心空域與不動域交界的工廠，有衛兵守門。\n內部包含手術台、倉庫與會議空間。\nRugatha Lite 的冒險者烏波獲准進入後，見到與自身相似的血漿人及研究人員。\n後來烏波也被這裡的人當作如神般的崇拜。",
                   "desc_en": "A guarded factory on the boundary between Fenadra's Hollow Heart and Immovable Domains.\nInside are operating tables, storage rooms, and meeting areas.\nAfter gaining permission to enter, Ubbo of Rugatha Lite encountered researchers and plasmoids resembling himself.\nThe people here later began worshiping him like a god.",
                   "slug": "plasmoid-factory",
                   "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm%2Fmattington%2Ffenadra%2Fplasmoid-factory-v2%2Freading-2279f97b.png?alt=media",
@@ -1343,7 +1343,7 @@
                 {
                   "name_en": "Trial Arena",
                   "name_zh": "試煉競技場",
-                  "desc_zh": "斐納札靈魂議會高塔地下室的的試煉競技場。\n由高塔中央流體通往的昏暗大型平台，四周環繞競技場般的觀眾席。\nRugatha Lite 的冒險者烏波在議員見證下參與爭取心空席的試煉，同伴也被捲入各項考驗。",
+                  "desc_zh": "斐納札靈魂議會高塔地下室的試煉競技場。\n由高塔中央流體通往的昏暗大型平台，四周環繞競技場般的觀眾席。\nRugatha Lite 的冒險者烏波在議員見證下參與爭取心空席的試煉，同伴也被捲入各項考驗。",
                   "desc_en": "The trial arena in the basement of Fenadra's Council of Spirit tower.\nReached through the tower's central fluid column, this vast, dim platform is surrounded by spectator seating.\nBefore the councilors, Ubbo of Rugatha Lite underwent trials to claim the Hollow Heart seat, drawing his companions into the challenges as well.",
                   "slug": "trial-arena",
                   "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm%2Fmattington%2Ffenadra%2Ftrial-arena%2Freading-f1c5e886.png?alt=media",
@@ -3914,7 +3914,7 @@
               "name_zh": "瑟巴諾",
               "kingdom": "Mattington",
               "realm": "Material Realm",
-              "desc_zh": "瑟巴諾是麥丁頓王國境內，位於首都麥克嵩附近，被稱為「惡徒之城」的城鎮。\n黑道霍布與手下掌握街頭勢力，對這裡的影響超過鎮長。\n索恩鎮長家中曾藏有魔法盒子，地底更有鎮長夫人安娜的神秘實驗室。",
+              "desc_zh": "瑟巴諾是麥丁頓王國境內，位於首都麥克嵩附近，被稱為「惡棍之城」的城鎮。\n黑道霍布與手下掌握街頭勢力，對這裡的影響超過鎮長。\n索恩鎮長家中曾藏有魔法盒子，地底更有鎮長夫人安娜的神秘實驗室。",
               "desc_en": "A town near Macksohn in the Kingdom of Mattington, known as the Town of Villains.\nThe crime boss Hobb and his followers command the streets and wield greater influence than the mayor.\nMayor Thorne's house once concealed a magical box, while his wife Anna's mysterious laboratory lay underground.",
               "pois": [
                 {
@@ -5857,7 +5857,7 @@
           "name_en": "Chryomen",
           "name_zh": "克里歐門",
           "slug": "chryomen",
-          "desc_zh": "以矮人為主的王國，境內也有半獸人、地侏、半身人等種族。\n首都為歐倫，世襲的統治者多為女性。\n王室曾委託冒險者尋回龍蛋，這件寶物後來成為王國持續供電與對外交易的重要資源。",
+          "desc_zh": "以矮人為主的王國，境內也有半獸人、地侏、半身人等種族。\n首都為歐倫市，世襲的統治者多為女性。\n王室曾委託冒險者尋回龍蛋，這件寶物後來成為王國持續供電與對外交易的重要資源。",
           "desc_en": "A predominantly dwarven kingdom, also home to half-orcs, gnomes, halflings, and other peoples.\nIts capital is Orun, and its hereditary rulers are mostly women.\nThe royal family once commissioned adventurers to recover a dragon egg, which later became an important resource for generating electricity and conducting foreign trade.",
           "image": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Flocations%2Fmaterial-realm%2Fchryomen-review-round4-final%2Freading-fabe1282.png?alt=media",
           "cities": [

@@ -41,7 +41,7 @@ const EMPEROR_ERAS = [
   {
     title: {
       zh: "崔尼斯王朝",
-      en: "The Era of Trinix"
+      en: "The Trinixity Era"
     },
     tag: "Trinix",
     emperors: [
@@ -80,7 +80,7 @@ const EMPEROR_ERAS = [
   {
     title: {
       zh: "洛森王朝",
-      en: "The Era of Lothum"
+      en: "The Lothum Era"
     },
     tag: "Lothum",
     emperors: [
@@ -134,7 +134,7 @@ const EMPEROR_ERAS = [
           en: "First Emperor of the Era"
         },
         desc: {
-          zh: "原名卡洛斯・達米頓，自稱為卓尼斯後裔。\n登基後恢復自己卓尼森的姓氏。",
+          zh: "原名卡洛斯・達米頓，自稱為卓尼森後裔。\n登基後恢復自己卓尼森的姓氏。",
           en: "He was originally named Carlos Demiton, but claimed to be a descendant of the Dranison bloodline.\nUsed Dranison as his last name after he sat on the throne."
         }
       },
