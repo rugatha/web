@@ -835,6 +835,14 @@
       "url": "/campaigns/pages/rugatha-plus/plus-c08/"
     },
     "prev-chapter": "plus-c08-chpt03",
+    "next-chapter": "plus-c08-chpt05"
+  },
+  "plus-c08-chpt05": {
+    "story-arc": {
+      "id": "plus-c08",
+      "url": "/campaigns/pages/rugatha-plus/plus-c08/"
+    },
+    "prev-chapter": "plus-c08-chpt04",
     "next-chapter": null
   }
 }

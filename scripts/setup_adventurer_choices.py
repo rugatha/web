@@ -28,7 +28,7 @@ def main():
         raise SystemExit('Chapter lock must be 0 or 1')
     path = f'chapterAccess/{arc}/pages/{chapter}'
     payload = {'chapterKey': config['chapterKey'], 'lock': lock, 'questions': {
-        q['id']: {'allowedCharacters': [p['id'] for p in config['groups'][q['group']]]}
+        q['id']: {'allowedCharacters': [p['id'] for p in config['groups'][q['group']]], 'optionCount': len(q['options'])}
         for q in config['questions']
     }}
     if args.copy_credentials_from and (args.passwords_stdin or args.password_suffix is not None or args.review_password):

@@ -1,5 +1,7 @@
 # 公開圖片遷移紀錄
 
+2026-11-25：新增並依作者要求修改 Plus c08 第五章章節圖：六位不同造型的長老（含第四章的 Tiara）、外貌多元的僧人、對應席位的叉子，以及更寬廣的木構寺院；再校正全體僧人的視線與住持／長老的人物比例，並移除長老席兩側共四位額外僧人。480px 縮圖與 1600px 閱讀版已發布至新 hash 路徑，並通過匿名下載、checksum、快取標頭與 CORS 驗證；完整原圖已私人備份並核對 generation。現用清單見 `campaign-current.json`，單張紀錄見 `plus-c08-chpt05-final.json`。網站引用已更新；正式發布透過 GitHub Pages 工作流程進行。
+
 2026-11-06 最新批次：除根目錄 `assets/` 與 `campaigns/campaign-logos/` 外，其餘 164 張網站圖片已保存公開原尺寸副本與私人完整原圖，更新動態引用並清理地端。純本機工作素材、測試 fixture 與生成提示檔保留，完成的驗收截圖清理。現用清單見 [site-current.json](site-current.json)，最新範圍、驗收及正式發布紀錄見 [site-migration-2026-11-06.md](site-migration-2026-11-06.md)。以下是歷次作業紀錄，發布狀態以最新紀錄為準。
 
 2026-11-06 更新：依使用者指示修正 Melvin 的內容 hash／私人備份、上傳 Plus c08 三張圖，並將已有雲端副本的地端圖片切換來源後清理。本輪封面／章節清單為 [campaign-current.json](campaign-current.json)，網站橫幅與體驗圖副本見 [site-copies-2026-11-06.json](site-copies-2026-11-06.json)。舊批次 manifest 為歷史紀錄；145 張私人備份的 REGIONAL 類別已修正為 STANDARD，generation 以本輪清單為準。完整結果、尚未部署的本機變更及回復步驟見 [清理紀錄](cleanup-2026-11-06.md)。原訂 11/21 用量觀察與完整月份帳單待辦維持保留。

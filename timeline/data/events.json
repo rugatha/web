@@ -791,6 +791,26 @@
   {
     "type": "event",
     "era": "new-dranison",
+    "tag": "rugatha-plus",
+    "date": "15051.05.19",
+    "titleZh": "蘿琳抵達尖頂寺與途中襲擊",
+    "titleEn": "Roline Reaches Peak Temple After an Attack",
+    "descZh": "蘿琳答應協助處理龍恩的危機，隨尚恩從麥克嵩前往尖頂寺。\n途中艾曼紐爾企圖侵犯蘿琳後突然倒下；巴多殺死史丹，並挖出史丹與艾曼紐爾的眼睛。蘿琳與尚恩抵達後向住持報告，住持意識到尋找眼睛的秘密已洩漏，決定加快行動。",
+    "descEn": "Roline agreed to help resolve the crisis involving Ron and traveled from Macksohn to Peak Temple with Sean.\nOn the journey, Emmanuel tried to assault Roline and suddenly collapsed. Bar'Do killed Stan and gouged out both Stan's and Emmanuel's eyes. On hearing Sean and Roline's report, the abbot realized that the secret of the search for the eye had leaked and resolved to act faster."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
+    "tag": "rugatha-plus",
+    "date": "15051.05.20",
+    "titleZh": "尖頂寺啟動閉門儀式",
+    "titleEn": "Peak Temple Begins the Rite of Seclusion",
+    "descZh": "龍恩與塔爾莫在尖頂寺尋找巫妖的眼睛，襲擊僧人製造恐慌。寺內已有五名僧人遇害、三名失蹤、四名精神恍惚。\n住持與長老開始閉門儀式，加強魔法屏障；暗中協助龍恩的蒂雅菈長老透露住持另有尋眼計畫，卻受詛咒限制而無法說明。",
+    "descEn": "Ron and Tar'Mo attacked monks while searching Peak Temple for the lich's eye, spreading panic. Five monks had been killed, three were missing, and four were dazed.\nThe abbot and elders began a rite of seclusion to strengthen the magical barrier. Elder Tiara, secretly assisting Ron, revealed that the abbot had another plan to find the eye, but a curse prevented her from explaining it."
+  },
+  {
+    "type": "event",
+    "era": "new-dranison",
     "titleZh": "抵達覆羽莊園",
     "titleEn": "Arriving the Feathered Estate",
     "tag": "rugatha-lite",

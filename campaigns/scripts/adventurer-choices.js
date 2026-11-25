@@ -38,6 +38,7 @@ const element = (tag, text, className) => {
   if (className) node.className = className;
   return node;
 };
+const customOption = question => question.options.length + 1;
 const allCharacters = () => Object.values(config.groups).flat();
 const accessPath = () => {
   const [arc, chapter] = config.chapterKey.split('/');
@@ -90,8 +91,8 @@ function renderResults(target, question, answers, people) {
     target.append(row);
   };
   question.options.forEach((text, index) => makeRow(bilingual(`${index + 1}. ${text}`, `${index + 1}. ${question.en?.options[index] || text}`), people.filter(person => (answers.get(person.id)?.option ?? 1) === index + 1)));
-  const custom = people.filter(person => answers.get(person.id)?.option === 5);
-  if (question.showCustomOption && !custom.length) makeRow(bilingual(`5. ${question.customLabel}`, `5. ${question.en?.customLabel || question.customLabel}`), []);
+  const custom = people.filter(person => answers.get(person.id)?.option === customOption(question));
+  if (question.showCustomOption && !custom.length) makeRow(bilingual(`${customOption(question)}. ${question.customLabel}`, `${customOption(question)}. ${question.en?.customLabel || question.customLabel}`), []);
   custom.forEach(person => makeRow(answers.get(person.id).customText, [person]));
 }
 function renderQuestion(question) {
@@ -131,8 +132,8 @@ function renderQuestion(question) {
         button.setAttribute('aria-pressed', String(selected === index + 1));
         button.disabled = saving || !loaded;
       });
-      custom.hidden = customLabel.hidden = selected !== 5;
-      custom.required = selected === 5;
+      custom.hidden = customLabel.hidden = selected !== customOption(question);
+      custom.required = selected === customOption(question);
       custom.disabled = saving || !loaded;
       confirm.disabled = saving || !loaded || window.RUGATHA_FEATURE_FLAGS?.dataWritesEnabled === false;
     };
@@ -153,7 +154,7 @@ function renderQuestion(question) {
     answerForm.addEventListener('submit', async event => {
       event.preventDefault();
       if (saving || !loaded || !answerForm.reportValidity()) return;
-      if (selected === 5 && !custom.value.trim()) { setText(message, bilingual('請輸入自訂答案。', 'Please enter your own answer.')); return; }
+      if (selected === customOption(question) && !custom.value.trim()) { setText(message, bilingual('請輸入自訂答案。', 'Please enter your own answer.')); return; }
       saving = true;
       sync();
       setText(message, bilingual('儲存中…', 'Saving…'));
@@ -162,7 +163,7 @@ function renderQuestion(question) {
           const previous = await transaction.get(answerRef);
           transaction.set(answerRef, {
             characterId: answerRef.id, uid: activeUid, option: selected,
-            customText: selected === 5 ? custom.value : '',
+            customText: selected === customOption(question) ? custom.value : '',
             createdAt: previous.exists() ? previous.data().createdAt : serverTimestamp(),
             updatedAt: serverTimestamp()
           });
@@ -216,7 +217,7 @@ async function start() {
   }
   if (!/^[\w-]+\/[\w-]+$/.test(config.chapterKey)) throw new Error('章節 key 格式錯誤');
   for (const question of config.questions) {
-    if (!config.groups[question.group] || question.options.length !== 4 || !/^[\w-]+$/.test(question.id)) throw new Error('題目設定錯誤');
+    if (!config.groups[question.group] || ![4, 5].includes(question.options.length) || !/^[\w-]+$/.test(question.id)) throw new Error('題目設定錯誤');
   }
   if (!window.RUGATHA_FIREBASE_CONFIG || window.RUGATHA_FEATURE_FLAGS?.firebaseEnabled === false) throw new Error('Firebase 尚未啟用');
   const app = getApps()[0] || initializeApp(window.RUGATHA_FIREBASE_CONFIG);

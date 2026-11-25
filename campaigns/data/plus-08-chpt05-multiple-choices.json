@@ -1,0 +1,73 @@
+{
+  "chapterKey": "plus-c08/chpt05",
+  "groups": {
+    "party": [
+      {
+        "id": "midori",
+        "name": "米多莉",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fmidori-16add8cb4c%2Fimage-c1d32fd6.png?alt=media",
+        "nameEn": "Midori"
+      },
+      {
+        "id": "samael",
+        "name": "薩梅爾",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fsamael-d063d635c9%2Fimage-c0ac9dbc.jpg?alt=media",
+        "nameEn": "Samael"
+      },
+      {
+        "id": "siri",
+        "name": "喜利",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fsiri-oslee-fcce8003f4%2Fimage-f5f50b6f.png?alt=media",
+        "nameEn": "Siri"
+      },
+      {
+        "id": "yhwh",
+        "name": "YHWH",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fyhwh-98297c2873%2Fimage-8f7a19f4.png?alt=media",
+        "nameEn": "YHWH"
+      },
+      {
+        "id": "beau",
+        "name": "波",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fnpcs%2Fbeau%2Fthumb-32ff9ced.webp?alt=media",
+        "nameEn": "Beau"
+      }
+    ],
+    "ron": [
+      {
+        "id": "ron",
+        "name": "龍恩",
+        "icon": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fsite%2Fpc-portraits%2Fron-cde8f9ab40%2Fimage-5dfe37fb.png?alt=media",
+        "nameEn": "Ron"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "the-minds-eye",
+      "group": "party",
+      "question": "冒險者的抉擇：",
+      "options": [
+        "「住持，你在做什麼？」朝著隔壁包廂大喊。「不需要做到這樣吧？」",
+        "「等一下，就沒有別的方法了嗎？」大聲詢問住持",
+        "施放法術，干擾或阻止住持",
+        "觀察其他長老與僧人們的反應",
+        "「那個⋯⋯還有甜點嗎？」轉頭詢問其他人"
+      ],
+      "customLabel": "自行填答",
+      "showCustomOption": true,
+      "en": {
+        "question": "The adventurers' choice:",
+        "options": [
+          "“Abbot, what are you doing?” Shout toward the next box. “Surely this is unnecessary!”",
+          "“Wait! Is there no other way?” Call out to the abbot.",
+          "Cast a spell to disrupt or stop the abbot.",
+          "Observe the reactions of the other elders and monks.",
+          "“Um... is there still dessert?” Turn and ask the others."
+        ],
+        "customLabel": "Write your own answer"
+      }
+    }
+  ],
+  "credentialMode": "character-password"
+}

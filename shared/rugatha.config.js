@@ -659,6 +659,11 @@
         id: "plus-c08-chpt04",
         title: "Chapter 4: Rite of Seclusion",
         url: "../plus-c08/chpt04.html"
+      },
+      {
+        id: "plus-c08-chpt05",
+        title: "Chapter 5: The Mind's Eye",
+        url: "../plus-c08/chpt05.html"
       }
     ],
     "lite-c05": [
@@ -1099,6 +1104,7 @@
     "plus-c07-chpt03": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fplus%2Fc07%2Fchapter-03%2Fthumb-ccbde3b1.webp?alt=media",
     "plus-c07-chpt04": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fplus%2Fc07%2Fchapter-04%2Fthumb-9d98857b.webp?alt=media",
     "plus-c08-chpt01": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fplus%2Fc08%2Fchapter-01%2Fthumb-638bd2ad.webp?alt=media",
+    "plus-c08-chpt05": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fplus%2Fc08%2Fchapter-05%2Fthumb-71bf8392.webp?alt=media",
     "plus-c08-chpt04": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fplus%2Fc08%2Fchapter-04%2Fthumb-2d912d2e.webp?alt=media",
     "plus-c08-chpt03": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fplus%2Fc08%2Fchapter-03%2Fthumb-9a9d6eaf.webp?alt=media",
     "plus-c08-chpt02": "https://firebasestorage.googleapis.com/v0/b/rugatha-87e15.firebasestorage.app/o/public-images%2Fchapters%2Fplus%2Fc08%2Fchapter-02%2Fthumb-a90becbc.webp?alt=media",

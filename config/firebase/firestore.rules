@@ -789,13 +789,14 @@ service cloud.firestore {
         }
         function validAnswer() {
           let data = request.resource.data;
+          let customOption = questionSettings(questionId).get('optionCount', 4) + 1;
           return data.keys().hasOnly(['characterId', 'uid', 'option', 'customText', 'createdAt', 'updatedAt'])
             && data.keys().hasAll(['characterId', 'uid', 'option', 'customText', 'createdAt', 'updatedAt'])
             && data.characterId == characterId
             && data.uid == request.auth.uid
-            && data.option is int && data.option >= 1 && data.option <= 5
+            && data.option is int && data.option >= 1 && data.option <= customOption
             && data.customText is string && data.customText.size() <= 4000
-            && ((data.option == 5 && data.customText.size() > 0) || (data.option != 5 && data.customText == ''))
+            && ((data.option == customOption && data.customText.size() > 0) || (data.option != customOption && data.customText == ''))
             && data.updatedAt == request.time;
         }
         allow get: if isAdmin() || publicChapter() || hasReviewAccess()

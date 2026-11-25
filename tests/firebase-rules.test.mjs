@@ -483,6 +483,21 @@ test('role credentials constrain answers, option validation and group membership
   await assertFails(setDoc(doc(db, path, 'ron'), adventureAnswer('player', 'ron')));
 });
 
+test('five fixed chapter options preserve option five and require custom text only for option six', async () => {
+  await seedAdventureAccess();
+  await environment.withSecurityRulesDisabled(async context => {
+    await updateDoc(doc(context.firestore(), chapterPath), { 'questions.crossroads.optionCount': 5 });
+  });
+  const db = environment.authenticatedContext('player').firestore();
+  const answer = doc(db, `${chapterPath}/questions/crossroads/answers/midori`);
+  await setDoc(doc(db, `${chapterPath}/grants/player`), credentialGrant());
+  await assertSucceeds(setDoc(answer, adventureAnswer('player', 'midori', 5)));
+  await assertFails(updateDoc(answer, { option: 5, customText: 'invalid', updatedAt: serverTimestamp() }));
+  await assertFails(updateDoc(answer, { option: 6, customText: '', updatedAt: serverTimestamp() }));
+  await assertSucceeds(updateDoc(answer, { option: 6, customText: 'Another way', updatedAt: serverTimestamp() }));
+  await assertFails(updateDoc(answer, { option: 7, updatedAt: serverTimestamp() }));
+});
+
 test('lock controls publication; locked chapters hide other roles even after password verification', async () => {
   await seedAdventureAccess(1);
   const db = environment.authenticatedContext('player').firestore();
