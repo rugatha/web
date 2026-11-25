@@ -1,4 +1,4 @@
-const CACHE_VERSION = "rugatha-pwa-v59";
+const CACHE_VERSION = "rugatha-pwa-v60";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const IMAGE_CACHE = `${CACHE_VERSION}-public-images`;
@@ -26,7 +26,7 @@ const PRECACHE_URLS = [
   "/shared/spellbook-transport.js?v=20261019-character-books-1",
   "/shared/spellbooks.js?v=20261019-character-books-1",
   "/shared/character-spellbook.js?v=20261019-character-books-1",
-  "/shared/character-spellbook-ui.js?v=20261122-content-2",
+  "/shared/character-spellbook-ui.js?v=20261125-sheet-controls",
   "/shared/character-sheets.js?v=20261019-character-books-1",
   "/shared/character-sheets.js?v=20261026-member-dashboard-1",
   "/shared/member-path.js",

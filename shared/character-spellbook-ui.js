@@ -37,7 +37,7 @@ export function createCharacterSpellbookUI({ app, auth, language, catalog, refre
     const link = document.createElement('a'), url = new URL('/toolbox/spells/', window.location.href);
     url.searchParams.set('character', record.key);
     // The full spells page lists only the signed-in owner's books.
-    if (ownerUid === user.uid) { link.href = url.href; link.textContent = text('開啟此角色的完整法術書', 'Open this character’s full spellbook'); panel.append(link); }
+    if (ownerUid === user.uid) { link.href = url.href; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = text('開啟此角色的完整法術書', 'Open this character’s full spellbook'); panel.append(link); }
     if (session && ['error', 'cached', 'paused'].includes(state?.status)) button(text('重試角色法術書', 'Retry character spellbook'), () => session.retry());
     if (state?.loaded) {
       if (draftBook) button(text('重試還原備份法術', 'Retry restoring backup spells'), restoreDraft, !editable() || restoring);
@@ -56,8 +56,19 @@ export function createCharacterSpellbookUI({ app, auth, language, catalog, refre
       if (editable()) {
         const select = document.createElement('select'); select.setAttribute('aria-label', text('加入角色法術', 'Add character spell'));
         select.append(new Option(text('選擇法術', 'Choose spell'), ''));
-        catalog().spells.filter(item => !state.ids.includes(item.name_en)).forEach(item => select.append(new Option(`${item.level} · ${language() === 'en' ? item.name_en : item.name_zh}`, item.name_en)));
-        select.onchange = () => { if (select.value) change({ type: 'add', ids: [select.value] }); }; panel.append(select);
+        const search = document.createElement('input'); search.type = 'search';
+        search.placeholder = text('搜尋法術（中文或英文）', 'Search spells (Chinese or English)');
+        search.setAttribute('aria-label', search.placeholder);
+        const choices = catalog().spells.filter(item => !state.ids.includes(item.name_en)).sort((a, b) => Number(a.level) - Number(b.level) || (language() === 'en' ? a.name_en : a.name_zh).localeCompare(language() === 'en' ? b.name_en : b.name_zh, language() === 'en' ? 'en' : 'zh-Hant'));
+        const filterChoices = () => {
+          const query = search.value.trim().toLocaleLowerCase();
+          const selected = select.value;
+          select.replaceChildren(new Option(text('選擇法術', 'Choose spell'), ''));
+          choices.filter(item => item.name_en === selected || `${item.name_zh} ${item.name_en}`.toLocaleLowerCase().includes(query)).forEach(item => select.append(new Option(`${item.level} · ${language() === 'en' ? item.name_en : item.name_zh}`, item.name_en)));
+          select.value = selected;
+        };
+        search.addEventListener('input', filterChoices); filterChoices();
+        select.onchange = () => { if (select.value) change({ type: 'add', ids: [select.value] }); }; panel.append(search, select);
         button(text('清空角色書', 'Clear character spellbook'), () => {
           if (confirm(text('確定清空此角色書？', 'Clear this character spellbook?'))) change({ type: 'clear', ids: [] });
         });
