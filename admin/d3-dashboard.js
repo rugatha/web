@@ -1,10 +1,9 @@
+import { slotIds, slotLabel } from '../experience/cons/d3/2026/schedule.js?v=20261128-2h';
 import { d3Total } from '../experience/cons/d3/2026/pricing.js';
-import { commitD3Registration, cancelD3Registration, updateD3Shipping, updateD3Addon, updateD3ImageEmail } from '../experience/cons/d3/2026/registration-store.js?v=20261109-price-1';
+import { commitD3Registration, cancelD3Registration, updateD3Shipping, updateD3Addon, updateD3ImageEmail } from '../experience/cons/d3/2026/registration-store.js?v=20261128-2h';
 import { dataTable, resetTablePage } from './data-table.js?v=20261026-experience-v3';
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const slotIds = ['2026-12-12','2026-12-13'].flatMap(day => Array.from({length:6},(_,i)=>`${day}-${12+i}`));
-const slotLabel = id => slotIds.includes(id) ? `${id.slice(5,10).replace('-','/')} ${id.slice(-2)}:00–${Number(id.slice(-2))+1}:00` : id;
 const money = value => `${Number(value || 0).toLocaleString('zh-TW')} $`;
 const phoneText = value => {
   const original = String(value ?? '');
@@ -25,7 +24,7 @@ export function createD3Dashboard(context) {
       const results = await Promise.all(['d3Slots','d3Registrations'].map(name=>sdk.getDocs(sdk.collection(db,name))));
       if (!valid(ticket,generation)) return;
       slots = results[0].docs.map(doc=>({...doc.data(),id:doc.id})).filter(slot=>slotIds.includes(slot.id));
-      rows = results[1].docs.map(doc=>({...doc.data(),id:doc.id})).filter(row=>slotIds.includes(row.slotId));
+      rows = results[1].docs.map(doc=>({...doc.data(),id:doc.id}));
       $('d3-status').textContent = `已讀取 ${rows.length} 筆報名，更新於 ${new Date().toLocaleString('zh-TW',{timeZone:'Asia/Taipei'})}`;
       render();
     } catch {

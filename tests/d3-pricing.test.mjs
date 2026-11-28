@@ -3,7 +3,7 @@ import test from 'node:test';
 import { d3BasePrice, d3Total } from '../experience/cons/d3/2026/pricing.js';
 
 test('both noon sessions include the 100 dollar discount; printing stays 500 per person', () => {
-  for (const day of ['2026-12-12', '2026-12-13']) for (const hour of [12, 13, 14, 15, 16, 17]) {
+  for (const day of ['2026-12-12', '2026-12-13']) for (const hour of [12, 14, 16]) {
     const slot = `${day}-${hour}`;
     const base = hour === 12 ? 400 : 500;
     assert.equal(d3BasePrice(slot), base);

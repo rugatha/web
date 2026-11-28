@@ -63,7 +63,7 @@ test('admin manually registers and cancels a party once; guests cannot cancel',a
 
 test('standard and noon prices apply on both dates with optional printing and party sizes',async()=>{
  const admin=env.authenticatedContext('admin',{admin:true}).firestore();
- for(const day of ['2026-12-12','2026-12-13']) for(const hour of [12,13,14,15,16,17]) for(const miniature of [false,true]) for(const partySize of [1,2]) {
+ for(const day of ['2026-12-12','2026-12-13']) for(const hour of [12,14,16]) for(const miniature of [false,true]) for(const partySize of [1,2]) {
   const selectedSlot=`${day}-${hour}`;
   await env.withSecurityRulesDisabled(ctx=>sdk.setDoc(sdk.doc(ctx.firestore(),'d3Slots',selectedSlot),slot));
   const bookingId=sdk.doc(sdk.collection(admin,'d3Registrations')).id;
@@ -171,4 +171,16 @@ test('dedicated helper manages D3 only; ordinary users and matching emails gain 
  const impersonator=env.authenticatedContext('ordinary-user',{email:'2026-d3-helper@rugatha.com',email_verified:true}).firestore();
  await assertFails(sdk.getDocs(sdk.collection(impersonator,'d3Registrations')));
  await assertFails(sdk.getDocs(sdk.collection(db,'d3Registrations')));
+});
+
+
+test('retired hourly slots reject direct registration writes even if still open', async () => {
+ for (const hour of [13,15,17]) {
+  const oldSlot = `2026-12-12-${hour}`;
+  await env.withSecurityRulesDisabled(ctx=>sdk.setDoc(sdk.doc(ctx.firestore(),'d3Slots',oldSlot),slot));
+  const batch = sdk.writeBatch(db);
+  batch.set(sdk.doc(db,'d3Registrations',id),{...answers,slotId:oldSlot,total:1000,createdAt:sdk.serverTimestamp()});
+  batch.update(sdk.doc(db,'d3Slots',oldSlot),{registeredPlayers:1,lastRegistrationId:id,updatedAt:sdk.serverTimestamp()});
+  await assertFails(batch.commit());
+ }
 });

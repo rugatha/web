@@ -850,7 +850,7 @@ service cloud.firestore {
         let after = getAfter(path).data;
         return id.matches('[a-zA-Z0-9]{20}')
           && d.keys().hasOnly(['slotId', 'name', 'phone', 'partySize', 'miniature', 'portrait', 'total', 'createdAt'])
-          && d.slotId.matches('2026-12-(12|13)-(12|13|14|15|16|17)')
+          && d.slotId.matches('2026-12-(12|13)-(12|14|16)')
           && d.name is string && d.name.size() <= 80 && d.name.matches('.*[^\\s].*')
           && d.phone is string && d.phone.matches('[+0-9() \\-]{8,30}')
           && d.partySize is int && d.partySize in [1, 2]

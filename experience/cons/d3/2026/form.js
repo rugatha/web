@@ -1,7 +1,6 @@
 import { d3Total } from './pricing.js';
-import { newId, watchSlot, save } from './firebase-registration.js?v=20261109-price-1';
-const times = Array.from({ length: 6 }, (_, i) => `${12 + i}:00-${13 + i}:00`);
-const dates = { '2026-12-12': '12/12（六）', '2026-12-13': '12/13（日）' };
+import { newId, watchSlot, save } from './firebase-registration.js?v=20261128-2h';
+import { dates, times, slotIds, slotId } from './schedule.js?v=20261128-2h';
 const availability = Object.fromEntries(Object.keys(dates).map(date => [date, times.map(() => null)]));
 const form = document.querySelector('#boarding-form');
 const date = form.elements.date;
@@ -14,12 +13,11 @@ let submissionId = null;
 let sending = false;
 let completed = false;
 let requestedTime = '';
-const slotId = (day, index) => `${day}-${12 + index}`;
 const slots = {};
 const loaded = new Set();
 const reviewButton = document.querySelector('#review-button');
 function refresh() {
-  const ready = loaded.size === 12;
+  const ready = loaded.size === slotIds.length;
   reviewButton.disabled = !ready || sending || completed;
   document.querySelector('#connection-status').textContent = ready ? '名額已更新，歡迎登船報名！' : '正在讀取即時名額；若無法連線，請重新整理後再試。';
   renderSchedule();
@@ -30,7 +28,7 @@ function refresh() {
 // Unknown availability must never be presented as sold out.
 function updateRewards() {
   for (const card of document.querySelectorAll('.reward-card')) {
-    const indices = card.dataset.sailing === 'early' ? [0] : [1, 2, 3, 4, 5];
+    const indices = card.dataset.sailing === 'early' ? [0] : times.map((_, index) => index).slice(1);
     const soldOut = Object.keys(dates).every(day => indices.every(index => availability[day][index] === 0));
     card.classList.toggle('is-sold-out', soldOut);
     card.querySelector('.sold-out-stamp').hidden = !soldOut;
@@ -71,7 +69,7 @@ function renderSchedule() {
           marker.setAttribute('aria-hidden', 'true');
           marker.title = '空位，等你登船';
           const settings = slots[slotId(day, index)];
-          if (loaded.size === 12 && settings?.registrationOpen && settings.deadline >= Date.now() && !completed) {
+          if (loaded.size === slotIds.length && settings?.registrationOpen && settings.deadline >= Date.now() && !completed) {
             const link = document.createElement('a');
             link.className = 'seat-link';
             link.href = '#registration';
@@ -81,7 +79,7 @@ function renderSchedule() {
               // Check the latest state again before applying this seat to the form.
               const latest = slots[slotId(day, index)];
               const seatsLeft = availability[day][index];
-              if (loaded.size !== 12 || seatsLeft === null || seat < 2 - seatsLeft || !latest?.registrationOpen || latest.deadline < Date.now() || sending || completed) {
+              if (loaded.size !== slotIds.length || seatsLeft === null || seat < 2 - seatsLeft || !latest?.registrationOpen || latest.deadline < Date.now() || sending || completed) {
                 event.preventDefault();
                 return;
               }
@@ -110,15 +108,15 @@ function updateTimes() {
   const previous = requestedTime || time.value;
   document.querySelector('#time-field').hidden = !date.value && !requestedTime;
   const note = document.querySelector('#seats-note');
-  note.textContent = '名額即時更新，每時段上限 2 人';
+  note.textContent = '名額即時更新，每班 2 小時，上限 2 人';
   time.replaceChildren(new Option(date.value ? '請選擇時段' : '請先選擇日期', ''));
-  time.disabled = !date.value || loaded.size !== 12;
+  time.disabled = !date.value || loaded.size !== slotIds.length;
   if (time.disabled && requestedTime) {
     time.add(new Option(requestedTime, requestedTime));
     time.value = requestedTime;
     note.textContent = date.value ? '正在確認這班船的名額…' : '已帶入早鳥時段，請先選擇日期以確認名額。';
   }
-  if (date.value && loaded.size === 12) {
+  if (date.value && loaded.size === slotIds.length) {
     times.forEach((slot, i) => {
       const seats = Math.max(0, Math.min(2, availability[date.value][i]));
       const option = new Option(`${slot}${i === 0 ? '（基本費用 400 元）' : ''} ｜剩餘 ${seats} 人`, slot);
@@ -153,10 +151,10 @@ function updateCost() {
   document.querySelector('#creation-plan-price').textContent = `${money(early ? 400 : 500)}／人`;
   document.querySelector('#miniature-plan-price').textContent = `${money(early ? 900 : 1000)}／人`;
   document.querySelector('#plan-timing').textContent = !time.value
-    ? '請先選擇時段；以下為一般價，12:00–13:00 自動適用早鳥價。'
+    ? '請先選擇時段；以下為一般價，12:00–14:00 自動適用早鳥價。'
     : early ? '早鳥船班！兩個方案皆已折抵 100 元／人。' : '目前選擇一般船班，以下為完整方案價格。';
   document.querySelector('#total').textContent = money(cost() * Number(party.value));
-  document.querySelector('#cost-breakdown').textContent = `每人 ${money(cost())} × ${party.value} 人${time.value === times[0] ? '（12:00–13:00 優惠）' : ''}`;
+  document.querySelector('#cost-breakdown').textContent = `每人 ${money(cost())} × ${party.value} 人${time.value === times[0] ? '（12:00–14:00 優惠）' : ''}`;
 }
 form.addEventListener('change', event => {
   if (event.target === date) { time.value = ''; updateTimes(); }
@@ -165,7 +163,7 @@ form.addEventListener('change', event => {
 });
 form.addEventListener('submit', event => {
   event.preventDefault();
-  if (sending || completed || loaded.size !== 12 || !form.reportValidity()) return;
+  if (sending || completed || loaded.size !== slotIds.length || !form.reportValidity()) return;
   if (!form.elements.name.value.trim()) { form.elements.name.focus(); return; }
   const remaining = availability[date.value]?.[times.indexOf(time.value)] ?? 0;
   if (Number(party.value) > remaining) { updateTimes(); return; }

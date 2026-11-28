@@ -1,5 +1,7 @@
+import { slotIds } from './schedule.js?v=20261128-2h';
 import { d3Total } from './pricing.js';
 export async function commitD3Registration(db, id, answers, sdk) {
+  if (!slotIds.includes(answers.slotId)) throw new Error('請選擇有效的 2 小時班次');
   const { doc, runTransaction, serverTimestamp } = sdk;
   const ref = doc(db, 'd3Slots', answers.slotId);
   await runTransaction(db, async tx => {

@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="../../../register/styles.css">
   <link rel="stylesheet" href="styles.css?v=20261125-live-only-1">
   <script src="../../../../shared/firebase.config.js"></script>
-  <script type="module" src="form.js?v=20261125-live-only-1"></script>
+  <script type="module" src="form.js?v=20261128-2h"></script>
   <script type="module" src="image-viewer.js?v=20261109-1"></script>
 </head>
 <body>
@@ -63,7 +63,7 @@
         </button>
       </div>
     </section>
-    <div class="ship-manifest" aria-label="活動重點"><span>⚓ 龍山地下城</span><span>12.12 SAT — 12.13 SUN</span><span>每班兩位 · 新手也能當主角</span><span class="manifest-joke">暈船藥請自備。想像力也是。</span></div>
+    <div class="ship-manifest" aria-label="活動重點"><span>⚓ 龍山地下城</span><span>12.12 SAT — 12.13 SUN</span><span>每班 2 小時 · 每班兩位 · 新手也能當主角</span><span class="manifest-joke">暈船藥請自備。想像力也是。</span></div>
     <section class="onboard-section" id="treasure" aria-labelledby="services-title">
       <div class="section-label"><p class="eyebrow">THE LOOT · 本次航程收穫</p><h2 id="services-title">空手上船，<br>帶個傳說回家。</h2><p>角色卡、角色速寫，還有一點<br>「這傢伙真的是我耶」的感動。</p></div>
         <div class="event-panel" aria-label="體驗內容">
@@ -77,7 +77,7 @@
 
       <p class="eyebrow">THE BOUNTY · 船票與寶藏</p>
       <h2 id="price-title">這趟冒險得花多少金幣？</h2>
-      <p class="notice">早起的水手有魚吃，報名 12:00-13:00 的場次，直接讓你折 100 枚金幣！</p>
+      <p class="notice">早起的水手有魚吃，報名 12:00-14:00 的場次，直接讓你折 100 枚金幣！</p>
       <div class="reward-grid">
         <article class="reward-card reward-card--early" data-sailing="early" aria-labelledby="early-title">
           <span class="sold-out-stamp" role="status" hidden>售完！</span>
@@ -86,7 +86,7 @@
             <span class="loot-tag loot-tag--special">創角＋速寫</span>
             <h3 id="early-title">早鳥創角</h3>
             <p class="reward-price"><span class="coin-price"><small>NT$</small> 400</span><span>／人</span></p>
-            <p class="reward-condition">兩天的 12:00–13:00 場次適用</p>
+            <p class="reward-condition">兩天的 12:00–14:00 場次適用</p>
             <ul class="reward-includes"><li>一對二 D&amp;D 創角教學</li><li>線上捏出專屬角色形象</li><li>繪師現場繪製角色速寫</li></ul>
             <a class="reward-action" href="#registration">算我一個！</a>
           </div>
@@ -98,7 +98,7 @@
             <span class="loot-tag loot-tag--special">創角＋速寫＋公仔</span>
             <h3 id="early-miniature-title">早鳥創角+印公仔</h3>
             <p class="reward-price"><span class="coin-price"><small>NT$</small> 900</span><span>／人・含公仔</span></p>
-            <p class="reward-condition">兩天的 12:00–13:00 場次適用</p>
+            <p class="reward-condition">兩天的 12:00–14:00 場次適用</p>
             <ul class="reward-includes"><li>一對二 D&amp;D 創角教學</li><li>線上捏出專屬角色形象</li><li>繪師現場繪製角色速寫</li><li class="reward-highlight">專屬 3D 公仔印製</li></ul>
             <a class="reward-action" href="#registration">我先來的！</a>
           </div>
@@ -110,7 +110,7 @@
             <span class="loot-tag">創角＋速寫</span>
             <h3 id="standard-title">一般創角</h3>
             <p class="reward-price"><span class="coin-price"><small>NT$</small> 500</span><span>／人</span></p>
-            <p class="reward-condition">兩天的 13:00–18:00 場次適用</p>
+            <p class="reward-condition">兩天的 14:00–18:00 場次適用</p>
             <ul class="reward-includes"><li>一對二 D&amp;D 創角教學</li><li>線上捏出專屬角色形象</li><li>繪師現場繪製角色速寫</li></ul>
             <a class="reward-action" href="#registration">呦，留個位！</a>
           </div>
@@ -122,7 +122,7 @@
             <span class="loot-tag">創角＋速寫＋公仔</span>
             <h3 id="standard-miniature-title">一般創角+印公仔</h3>
             <p class="reward-price"><span class="coin-price"><small>NT$</small> 1,000</span><span>／人・含公仔</span></p>
-            <p class="reward-condition">兩天的 13:00–18:00 場次適用</p>
+            <p class="reward-condition">兩天的 14:00–18:00 場次適用</p>
             <ul class="reward-includes"><li>一對二 D&amp;D 創角教學</li><li>線上捏出專屬角色形象</li><li>繪師現場繪製角色速寫</li><li class="reward-highlight">專屬 3D 公仔印製</li></ul>
             <a class="reward-action" href="#registration">寶藏不錯過！</a>
           </div>
@@ -159,13 +159,13 @@
         <section class="form-section" aria-labelledby="boarding-title">
           <div class="section-heading"><span class="section-number">02</span><div><h3 id="boarding-title">選好你的船班</h3><p>小子，你什麼時候上船啊？</p></div></div>
           <div class="field"><label for="date">體驗日期 <span class="required">*</span></label><select id="date" name="date" required><option value="">請選擇日期</option><option value="2026-12-12">12/12（六）</option><option value="2026-12-13">12/13（日）</option></select></div>
-          <div class="field" id="time-field" hidden><label for="time">體驗時段 <span class="required">*</span></label><select id="time" name="time" required disabled aria-describedby="seats-note"><option value="">請先選擇日期</option></select><p class="hint" id="seats-note">名額即時更新，每時段上限 2 人</p></div>
+          <div class="field" id="time-field" hidden><label for="time">體驗時段 <span class="required">*</span></label><select id="time" name="time" required disabled aria-describedby="seats-note"><option value="">請先選擇日期</option></select><p class="hint" id="seats-note">名額即時更新，每班 2 小時，上限 2 人</p></div>
           <div class="field"><label for="party-size">報名人數 <span class="required">*</span></label><p class="hint">船員，報數！</p><select id="party-size" name="partySize" required><option value="1">1 人</option><option value="2">2 人</option></select></div>
         </section>
         <section class="form-section" aria-labelledby="service-title">
           <div class="section-heading"><span class="section-number">03</span><div><h3 id="service-title">來些什麼服務？</h3><p>咱們今天要來體驗些什麼呢？</p></div></div>
           <fieldset class="field plan-fieldset"><legend>選擇你的方案 <span class="required">*</span></legend>
-            <p class="hint" id="plan-timing" aria-live="polite">請先選擇時段；12:00–13:00 自動適用早鳥價。</p>
+            <p class="hint" id="plan-timing" aria-live="polite">請先選擇時段；12:00–14:00 自動適用早鳥價。</p>
             <div class="plan-choices">
               <label class="plan-choice"><input type="radio" name="package" value="creation" checked required><span><strong id="creation-plan-name">創角套組</strong><span class="plan-choice-price" id="creation-plan-price">新臺幣 500／人</span><span class="hint">創角教學、角色卡、線上捏角與現場角色速寫</span></span></label>
               <label class="plan-choice"><input type="radio" name="package" value="miniature" required><span><strong id="miniature-plan-name">創角公仔套組</strong><span class="plan-choice-price" id="miniature-plan-price">新臺幣 1,000／人</span><span class="hint">包含創角套組全部內容，以及 3D 公仔印製（含運），約一個月後寄送</span></span></label>
